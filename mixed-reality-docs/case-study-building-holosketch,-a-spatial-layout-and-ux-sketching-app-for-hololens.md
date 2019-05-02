@@ -8,7 +8,7 @@ ms.topic: article
 keywords: アプリのスケッチ HoloSketch、HoloLens、Windows Mixed Reality
 ms.openlocfilehash: d7f94a09bf4a8a16000c2345adf1a046dab4bd15
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59600134"
@@ -123,7 +123,7 @@ OneDrive フォルダーにアップロードする前に、Unity asset のバ�
 11. Unity プロジェクトの '資産' フォルダーの下には、'Assetbundles' という名前のフォルダーを作成します。
 
 12. 資産 メニューからファイルを生成する ' AssetBundles のビルド を選択します。 
-   ![[資産] メニューからファイルを生成する ' AssetBundles のビルド] を選択します。](images/holosketch-15a-assetbundles.png)
+   ![[資産] メニューからファイルを生成する ' AssetBundles のビルド を選択します。](images/holosketch-15a-assetbundles.png)
 
 
 13. **OneDrive 上の/Files/Documents/HoloSketch フォルダーに生成されたファイルをアップロードします。** Asset_unique_name ファイルのみアップロードします。 マニフェスト ファイルまたは AssetBundles ファイルをアップロードする必要はありません。 <br>
