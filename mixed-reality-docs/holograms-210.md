@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit unity academy、チュートリアル、視線入力
-ms.openlocfilehash: 63c55e8a7a348f2a3e0cc29a9795d7fabcef5df0
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 076314389ec5ed70347c26d50c6a993f55da0758
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59599374"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993552"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは**_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
@@ -103,7 +103,7 @@ Unity をエクスポートしようとしましたが、アプリが作成す�
 
 1. 移動して**編集 > プロジェクトの設定 > 品質**します。
 2. 下向きの矢印をクリックして、**既定**Windows ストア アイコンの下の行。
-3. 選択**最速**の**Windows ストア アプリ**します。
+3. 選択**非常に低い**の**Windows ストア アプリ**します。
 
 ### <a name="import-project-assets"></a>プロジェクトのアセットをインポートします。
 

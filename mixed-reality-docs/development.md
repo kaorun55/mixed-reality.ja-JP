@@ -7,12 +7,12 @@ ms.author: grbury
 ms.date: 02/12/2019
 ms.topic: article
 keywords: 複合現実、開発、開発、HoloLens、unity、directx
-ms.openlocfilehash: e48a1cbfbe084de9382b9fa1104b2d5fc0f68fcc
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: b4fa41171fff1f1fdc10359c93f4d1e7e4a84867
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597501"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993592"
 ---
 # <a name="development-launchpad"></a>スタート パッドの開発
 
@@ -38,7 +38,7 @@ ms.locfileid: "59597501"
                             <a href="install-the-tools.md">ツールをインストールします。</a>
                         </p>
                         <p>
-                            <a href="holograms-100.md">チュートリアルとサンプル アプリ</a>
+                            <a href="mrlearning-base-ch1.md">MR ラーニング:HoloLens 2 と MRTK v2</a>
                         </p>
                     </div>
                 </div>
@@ -132,10 +132,10 @@ Unreal - 近日公開予定です。
                     <div class="cardText">
                         <h3>移植ガイド</h3>
                         <p>
-                            <a href="mrtk-porting-guide.md">最新の混合を更新しています<br>実際にはツールキット (MRTK)</a>
+                            <a href="mrtk-porting-guide.md">HoloLens 2 にアプリを更新しています<br>HoloLens から (第 1 世代)</a>
                         </p>
                         <p>
-HoloLens (第 1 世代) HoloLens 2<br>- もうすぐです！
+                            <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html">Mixed Reality ツールキット (MRTK)<br>API への移植のガイド</a>
                         </p>
                         <p>
                             <a href="porting-guides.md">イマーシブ ヘッドセット アプリ</a>
@@ -202,13 +202,13 @@ HoloLens (第 1 世代) HoloLens 2<br>- もうすぐです！
 </tr><tr>
 <td> <a href="hardware-accessories.md">Gamepad</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="motion-controllers.md">アニメーション コント ローラー</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
+<td> <a href="motion-controllers.md">モーション コントローラー</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <th style="width:175px">概念と空間機能</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
 <td> <a href="coordinate-systems.md">ワールド座標</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="spatial-sound.md">空間のサウンド</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
+<td> <a href="spatial-sound.md">立体音響</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <td> <a href="spatial-mapping.md">空間マッピング</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
 </tr>

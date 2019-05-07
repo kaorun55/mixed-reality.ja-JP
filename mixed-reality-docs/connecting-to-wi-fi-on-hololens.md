@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 09/27/2018
 ms.topic: article
 keywords: HoloLens, wifi, wireless, internet, ip, ip address
-ms.openlocfilehash: 0440c3dad48d73db51e7d730e79d6eb1e74a5694
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: b064514124d861c0734ca51b3878d4a68b592fab
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604109"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64670114"
 ---
 # <a name="connecting-to-wi-fi-on-hololens"></a>HoloLens の Wi-fi に接続します。
 
@@ -40,7 +40,7 @@ HoloLens には、802.11 ac が含まれています-対応、2 倍の 2 つの 
 5. [オフ] の位置に移動する Wi-fi スライダー スイッチを選択します。 Wi-fi ラジオの RF コンポーネントをオフにされ HoloLens ですべての Wi-fi 機能を無効にします。 
 
     >[!WARNING]
-    >HoloLens を自動的にロードすることにすることはできません、[スペース](environment-considerations-for-hololens.md#spaces)Wi-fi オプションが無効になっています。
+    >HoloLens を自動的にロードすることにすることはできません、[スペース](environment-considerations-for-hololens.md#WiFi fingerprint considerations)Wi-fi オプションが無効になっています。
     
 6. スライダーのスイッチを Wi-fi オプションをオンにし、Microsoft HoloLens で Wi-fi 機能を復元"On"の位置に移動します。 選択した Wi-fi ラジオ状態 (「オン」の"Off") が再起動後も保持されます。
 

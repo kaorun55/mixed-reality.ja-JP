@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 08/06/2018
 ms.topic: article
 keywords: get started, basics, HoloLens, immersive headset, ar, vr, unity, visual studio, quick start, how to
-ms.openlocfilehash: 92fbc6eee227da571ff36401f84cf81a093062d7
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4277de37ffe4a7ab03f382626452b96bf9157634
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59601344"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873958"
 ---
 # <a name="get-started"></a>作業開始
 
@@ -63,7 +63,7 @@ Mixed Reality Toolkit は、スクリプトのコレクションと、コンポ�
 
 最初の MR プロジェクトを正常に作成したが、詳細については、おそらく空腹できました! 必要がありますに役立つリソースを次に示します。
 * [実際には開発者向けドキュメントを混在](mixed-reality.md)- いるここがある技術ドキュメント、設計のガイダンス、サンプル プロジェクト、およびケース スタディなどをチェック アウト、さらに多くします。
-* [複合現実 academy](academy.md) -MR のコア ビルディング ブロックを実装するためのプロジェクトの設定を網羅するチュートリアルの手順に従って、MR アプリにクラウド サービスに Azure を統合します。
+* [現実のチュートリアルを混在](tutorials.md)-MR のコア ビルディング ブロックを実装するためのプロジェクトの設定を網羅するチュートリアルの手順に従って、MR アプリにクラウド サービスに Azure を統合します。
 * [Unity の学習](https://unity3d.com/learn)-Unity の web サイトは、チュートリアル、プロジェクト、およびライブ トレーニング セッション creators learning の各段階でします。
 
 これらの優れたコミュニティ リソースからヘルプを取得することもできます。

@@ -6,12 +6,12 @@ ms.author: ericrehm
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、マジックのウィンドウで、視差効果
-ms.openlocfilehash: 0c0828a6ebbefdcff7f0a66f48469007c5c532df
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 945a09614fbc77400825b524f4e0b591bf7b1f6b
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59600751"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873935"
 ---
 # <a name="case-study---looking-through-holes-in-your-reality"></a>導入事例 - 実際には、セキュリティ ホールを見る
 
@@ -93,7 +93,7 @@ HoloLens があるし、自分の効果を試したいですか。 無料の 3D 
 
 Unity エディターでこのモデルの表示、flowerpot 周囲に大きな黒いボックスが表示されます。 HoloLens で、ボックスは表示されなくなります、マジック ウィンドウ有効する方法を提供します。
 
-この手法を使用するアプリをビルドする場合は、チェック アウト、 [MR 基本の 101 チュートリアル](holograms-101.md)で、 [Mixed Reality Academy](academy.md)します。 第 7 章では、(上記の絵) として非表示の黄泉を表示する、フロアが急増で終わります。 誰のチュートリアルを退屈させる必要があるか。
+この手法を使用するアプリをビルドする場合は、チェック アウト、 [MR 基本の 101 チュートリアル](holograms-101.md)で、 [Mixed Reality チュートリアル](tutorials.md)します。 第 7 章では、(上記の絵) として非表示の黄泉を表示する、フロアが急増で終わります。 誰のチュートリアルを退屈させる必要があるか。
 
 ここでは、実行できるこのアイデア [次へ] の。
 * 仮想穴内で対話型コンテンツを作成する方法と考えてください。 壁のいくつかの影響を与えるユーザーのも無理はこの方法を提供できるという意味が実際に向上します。
@@ -109,7 +109,7 @@ Unity エディターでこのモデルの表示、flowerpot 周囲に大きな�
 </table>
 
 ## <a name="see-also"></a>関連項目
-* [MR 基礎 101:デバイスとの完全なプロジェクト](holograms-101.md)
+* [MR の基本 101:デバイスを使用した完全なプロジェクト](holograms-101.md)
 * [座標系](coordinate-systems.md)
-* [空間のアンカー](spatial-anchors.md)
+* [空間アンカー](spatial-anchors.md)
 * [空間マッピング](spatial-mapping.md)

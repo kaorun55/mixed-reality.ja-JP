@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 複合現実では、Windows Mixed Reality、HoloLens、没入型、vr、mr はまず、ホログラム, academy, チュートリアル
-ms.openlocfilehash: 1f4a5490383671fba694b386015ff6742d37241b
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: fd3bed955e80ec18b7be500adbdb0fcb7062d129
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597561"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993619"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは**_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
@@ -97,7 +97,7 @@ Unity の Main Camera は、ヘッドの追跡とステレオスコ ピック �
 
 HoloLens のハイ フレーム レートの維持が非常に重要なので、最速のパフォーマンス チューニングの品質設定します。 詳細なパフォーマンスについては、 [for Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)します。
 1. 選択**編集 > プロジェクトの設定 > 品質**
-2. 選択、**ドロップダウン**下、 **Windows ストア**ロゴと選択**Very Low**します。 Windows ストアの列と最速の行のボックスが緑色で、設定を正しく適用することがわかります。
+2. 選択、**ドロップダウン**下、 **Windows ストア**ロゴと選択**Very Low**します。 設定すると正しく適用はご存知でしょう Windows ストアの列にあるボックスと**Very Low**行は緑色です。
 
 **閉塞表示対象となる複合現実のアプリケーションの**、その既定値に品質設定しておくことができます。
 

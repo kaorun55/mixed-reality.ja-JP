@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit unity、academy、チュートリアル、空間マッピング、画面の再構築、メッシュ
-ms.openlocfilehash: 8d5715337ddd20e9868b18fdf0c63c704f584972
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: ed58676a0fda660cc6b4c197239aeb53166baa4d
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59600924"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993559"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは**_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
@@ -85,7 +85,7 @@ ms.locfileid: "59600924"
     * マイク
     * SpatialPerception
 * 移動して**編集 > プロジェクトの設定 > 品質**
-* **インスペクター**パネルの [Windows ストア] アイコンの下の 'Default' の行の黒のドロップダウン矢印とする既定の設定を変更する**Fastest**します。
+* **インスペクター**パネルの [Windows ストア] アイコンの下の 'Default' の行の黒のドロップダウン矢印とする既定の設定を変更する**Very Low**します。
 * 移動して**資産 > パッケージのインポート > カスタム パッケージ**します。
 * 移動し、 **...\HolographicAcademy-Holograms-230-SpatialMapping\Starting**フォルダー。
 * をクリックして**Planetarium.unitypackage**します。

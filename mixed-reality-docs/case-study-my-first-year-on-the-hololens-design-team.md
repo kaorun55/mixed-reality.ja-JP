@@ -6,12 +6,12 @@ ms.author: haejinl
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、設計、編集、パーソナル
-ms.openlocfilehash: e16be57d42bdc003fd601b94e054c7c25ebd290e
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 050645e6096559a4f37b033e5ddfdc5444039c08
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59605031"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873952"
 ---
 # <a name="case-study---my-first-year-on-the-hololens-design-team"></a>導入事例 - マイ最初の年、HoloLens の設計チーム
 
@@ -105,7 +105,7 @@ MR/VR がまだ開発中であるためは恣意度を使用して MR/VR テク�
 
 **"3d シーンをスケッチしたはどの程度近いかに関係なくヘッドセットで実際の経験がほとんどないスケッチの場合と同じです。その理由はターゲット ヘッドセットにシーンをテストすることが重要"— Hae Jin Lee**
 
-HoloLens のプロトタイプ作成にあるすべてのチュートリアルを試しました[Mixed Reality Academy](academy.md)を開始します。 再生を開始した、 [HoloToolkit.Unity](https://github.com/Microsoft/HoloToolkit-Unity/) holographic アプリケーションの開発を加速する開発者にマイクロソフトが提供しています。 何かでスタックしたに自分の質問を投稿[HoloLens の質問と回答フォーラム](https://forums.hololens.com/categories/questions-and-answers/)します。
+HoloLens のプロトタイプ作成にあるすべてのチュートリアルを試しました[Mixed Reality チュートリアル](tutorials.md)を開始します。 再生を開始した、 [HoloToolkit.Unity](https://github.com/Microsoft/HoloToolkit-Unity/) holographic アプリケーションの開発を加速する開発者にマイクロソフトが提供しています。 何かでスタックしたに自分の質問を投稿[HoloLens の質問と回答フォーラム](https://forums.hololens.com/categories/questions-and-answers/)します。
 
 HoloLens のプロトタイプ作成の基本的な理解を取得するには、後に他の非占めるを自分でプロトタイプを支援する考えました。 したがって、HoloLens を使用して単純な光線を開発する方法を示すビデオ チュートリアルがしました。 簡単に説明の基本概念をでも HoloLens の開発に 0 個の経験があれば、作業を進めるにできる必要があります。
 

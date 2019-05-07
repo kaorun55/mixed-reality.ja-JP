@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity、設定、複合現実
-ms.openlocfilehash: a67c3a65819855be6d43941c05f9a0027abf2f6d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c7029f2dfaf246db9f972c7d89b46e4fb9b5f1a1
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59600154"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993610"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity の推奨設定
 
@@ -19,13 +19,24 @@ Unity では、一般に、すべてのプラットフォームの平均的な�
 
 ## <a name="performant-environment-set-up"></a>パフォーマンスの高い環境をセットアップ
 
-### <a name="low-quality-setting"></a>低品質の設定
+### <a name="low-quality-settings"></a>低品質の設定
 
-変更することが重要、 **Unity の品質設定**お客様の環境に **「最速」** します。 これによって、アプリケーションが適切なフレーム レートですばやく実行されていることを確認します。 Hololens の開発を非常に重要になります。 VR エクスペリエンスの強化、デスクトップの仕様によって、イマーシブ ヘッドセットでの開発用に最低品質パラメーターを指定せずには、フレーム レートがまだ達成できます。 
+変更することが重要、 **Unity の品質設定**お客様の環境に**Very Low**します。 これによって、アプリケーションが適切なフレーム レートですばやく実行されていることを確認します。 Hololens の開発を非常に重要になります。 VR エクスペリエンスの強化、デスクトップの仕様によって、イマーシブ ヘッドセットでの開発用に最低品質パラメーターを指定せずには、フレーム レートがまだ達成できます。 
 
 Unity 2018 LTS 以降では、プロジェクトの品質レベルを設定できます。
 
-[**編集** > **プロジェクト設定** > **品質**> 設定、**既定**] をクリックして、下向きの矢印を**Fastest**品質レベル
+[**編集** > **プロジェクト設定** > **品質**> 設定、**既定**] をクリックして、下向きの矢印を**Very Low**品質レベル
+
+### <a name="lighting-settings"></a>照明の設定
+
+品質のシーンの設定と同様に、Mixed Reality アプリに最適なライティング設定を設定する必要があります。 シーンに最もパフォーマンスに与える影響を与える、通常、照明の設定は、Unity で**リアルタイム グローバル照明**します。 これ移動して無効にできます**ウィンドウ** > **レンダリング** > **照明設定** > **リアルタイムグローバルの照明**します。 
+
+別の照明設定がある**組み込まれたグローバルの照明**します。 この設定は、イマーシブ ヘッドセットの高性能、視覚的にも結果を指定できますが、通常は HoloLens の開発には適用できません。 **グローバル Illumniation を組み込まれた**は不明な変化する環境の性質により、HoloLens のシーンでは見つかりませんは通常、静的な Gameobject にのみ計算されます。
+
+お読みください[Unity からのグローバルの照明](https://docs.unity3d.com/Manual/GIIntro.html)詳細についてはします。 
+
+>[!NOTE]
+> **リアルタイムのグローバル照明**設定されている**シーンあたり**のため開発者は、プロジェクトでのすべての Unity シーンには、このプロパティを保存する必要があります。 
 
 ### <a name="single-pass-instancing-rendering-path"></a>インスタンス化のレンダリング パスを 1 つのパス
 

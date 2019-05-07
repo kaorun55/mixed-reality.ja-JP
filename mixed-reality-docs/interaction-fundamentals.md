@@ -1,138 +1,187 @@
 ---
-title: 相互作用の基礎
-description: HoloLens の間で構築したエクスペリエンス (第 1 世代) HoloLens 2、イマーシブ ヘッドセットを共有すると便利ですが見つかりましたいくつを書き留めるが開始されました。
-author: rwinj
-ms.author: jennyk
-ms.date: 02/24/2019
+title: マルチ モーダルな相互作用の概要
+description: マルチ モーダルな相互作用の概要
+author: shengkait
+ms.author: shengkait
+ms.date: 04/11/2019
 ms.topic: article
-keywords: 複合現実との対話を設計します。
-ms.openlocfilehash: d594126529b6314a4706f8b6b6af856058c3280a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: 複合現実、視線の先を対象とする操作、視線の先をデザインします。
+ms.openlocfilehash: f52a0cd8ec53bfe0f4c5da2c054c538eda1c93ca
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597551"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993598"
 ---
-# <a name="interaction-fundamentals"></a>相互作用の基礎
+# <a name="introducing-instinctual-interactions"></a>Instinctual 相互作用の概要
+Instinctual、シンプルな相互作用の理念は、マイクロソフトの複合現実プラットフォーム全体で生み出します。  アプリケーションの設計者や開発者は、顧客向けの簡単で直感的な相互作用を提供できることを確認する 3 つの手順を使用しました。 
 
-HoloLens とイマーシブ ヘッドセットの間でエクスペリエンスを構築したら、下の点を共有すると便利ですが見つかりましたを書き始めたしました。 複合現実対話デザインの基本的な構成要素の役割も果たします。
+最初に、シームレスなマルチ モーダルな対話モデルに、驚くようなセンサーと手の追跡、視線、自然言語など、入力のテクノロジを組み合わせることを確認しています。  1 つの入力に基づいていないを設計して multimodally--を開発し、調査に基づき--instinctual エクスペリエンスを作成するキー。
 
-## <a name="device-support"></a>デバイスのサポート
+次に、認識して多くの開発者が、複数のデバイスをターゲット HoloLens 2 および HoloLens のことを意味するかどうか (第 1 世代) または HoloLens、VR します。  したがって、相互作用モデル (入力のテクノロジは、各デバイスでは異なります) 場合でも、デバイス間で作業を設計しました。  たとえば、6 dof コント ローラーと Windows イマーシブ ヘッドセットで相手側の対話と両方の HoloLens 2 での相手側の対話は同一アフォーとパターンを簡単にクロス デバイス アプリケーションを使用します。 だけでなく、この便利の開発者とデザイナーが、エンドユーザーに自然な感覚です。 
 
-適用される使用可能な相互作用デザイン記事と、どのデバイスの種類または種類の概要を次に示します。
+最後に、何千もの効率が高く、魅力的であることと、魔法のような相互作用を設定 MR で可能であることを意図的に採用 1 回の操作モデルでは、エンド ツー エンドを認識している間に、アプリケーションはユーザーが成功したことを確認する最善の方法と優れたエクスペリエンスを実現します。  そのために、この操作ガイドの次の 3 つ含まれています。
+* この 3 つの主要な対話モデルとコンポーネント、および各に必要なパターンのガイダンスを構成しましたしました
+* 当社のプラットフォームを提供するその他の特典に関する補足的なガイダンスが掲載されています
+* シナリオでは、適切な対話モデルを選択できるようにするためのガイダンスが掲載されています
+
+
+## <a name="three-multimodal-interaction-models"></a>次の 3 つのマルチ モーダルな相互作用モデル
+マイクロソフトの調査と日付に顧客と連携に基づいて、3 つの主要な対話モデルが複合現実エクスペリエンスの大部分を合わせてが見つかりました。
+
+多くの点では、相互作用モデルは、そのフローを完了するため、ユーザーのメンタル モデルをします。  各相互作用モデルは、顧客のニーズの一連の最適化され、それぞれが便利な強力かつそれ自体で使用できます。 
+
+次の表は、簡単な概要です。  各相互作用モデルを使用するための詳細については、イメージ、およびコード サンプルでは、下のページにリンクされます。  
+
 <br>
 
 <table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>[モデル]</strong></td>
+        <td><strong>シナリオ例</strong></td>
+        <td><strong>サイズに合わせて</strong></td>
+        <td><strong>ハードウェア</strong></td>
+    </tr>
+    <tr>
+        <td><a href="hands-and-tools.md">手およびツール</a></td>
+        <td>3D 空間エクスペリエンス<br>空間のレイアウトとデザイン、コンテンツの操作、またはシミュレーションなど</td>
+        <td>新しいユーザーに適しています<br>習得<br>基盤の簡単な visual アフォー<br>追跡と 6 の自由度のコント ローラーの間で一貫性のあるユーザー エクスペリエンス<br>優れたの音声と組み合わせると、追跡、監視または head 視線します。</td>
+        <td>HoloLens 2<br>6 dof コント ローラーを使用した没入型の Windows</td>
+    </tr>
+    <tr>
+        <td><a href="hands-free.md">ハンズフリー</a></td>
+        <td>コンテキスト対応のエクスペリエンスをユーザーの手占有されているなど、ジョブのメンテナンスを学習します。</td>
+        <td>いくつか必要な学習<br>手が利用できない場合<br>音声および自然言語のペア</td>
+        <td>HoloLens 2<br>HoloLens (第 1 世代)<br> Windows の没入型</td>
+    </tr>
+    <tr>
+        <td><a href="gaze-and-commit.md">Head 注視とコミット</a></td>
+        <td>例: 3 D プレゼンテーション、デモが発生したクリック スルー</td>
+        <td>Mobile ではなく HMDs のトレーニングが必要です。<br>アクセス可能なコント ローラーに最も適した<br>HoloLens の最適な (第 1 世代)</td>
+        <td>HoloLens 2<br>HoloLens (第 1 世代)<br> Windows の没入型<br> Mobile AR</td>
+    </tr>
+</table>
+<br>
 
-<th>
-<tr>
+ギャップやお客様のエクスペリエンスの相互作用に穴がないことを確認する最善の方法では、最初から最後までの 1 つのモデルの指示に従います。 
 
-<td style="width:150px;"><strong>入力</strong></td>
-<td style="width:150px; text-align: center;"><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
-<td style="width:150px; text-align: center;"><strong>HoloLens 2</strong></td>
-<td style="width:150px; text-align: center;"><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
-</tr>
-</th>
+設計と開発を高速化するには、詳細な情報とイメージ、およびコード サンプルへのリンクをカバレッジの各モデル内に含めています。
+
+最初に、以下のセクションを選択し、これらの相互作用モデルのいずれかを実装する次の手順をについて説明します。  
  
-<tr>
-<td> <a href="gestures.md">関節手</a></td><td style="text-align: center;"></td><td style="text-align: center;">✔️</td><td></td>
+### <a name="by-the-end-of-this-page-you-will-understand-our-guidance-on"></a>このページの目的は、ガイダンスを理解するのには。
+ 
+* お客様の相互作用モデルの選択
+* 相互作用モデルのガイダンスを使用してください。
+* 相互作用モデル間で移行
+* 次の手順を設計します。
 
-</tr><tr>
-<td> <a href="gaze-targeting.md">監視対象とします。</a></td><td style="text-align: center;"></td><td style="text-align: center;">✔️</td><td style="text-align: center;"></td>
-</tr><tr>
-<td> <a href="gaze-targeting.md">視線の先を対象とします。</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> <a href="gestures.md">ジェスチャ</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
-</tr><tr>
-<td> <a href="voice-design.md">音声のデザイン</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> ゲームパッド</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr>
-<tr>
-<td> <a href="motion-controllers.md">アニメーション コント ローラー</a></td><td></td><td style="text-align: center;"></td><td style="text-align: center;">✔️</td>
+## <a name="choosing-an-interaction-model-for-your-customer"></a>お客様の相互作用モデルの選択
 
-</tr>
-<th>
-<tr>
-<td style="width:150px;"><strong>概念と空間機能</strong></td>
-<td style="width:150px; text-align: center;"><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
-<td style="width:150px; text-align: center;"><strong>HoloLens 2</strong></td>
-<td style="width:150px; text-align: center;"><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
-</tr>
-</th>
-<tr>
+ほとんどの場合、開発者および作成者が既にあるいくつかのアイデア、ユーザー エクスペリエンスが相互作用の種類に注意してください。
+設計する顧客中心のアプローチをぜひお勧めします以下のガイダンスに従って、顧客向けに最適化された相互作用モデルを選択します。
 
-<td> <a href="spatial-sound-design.md">サウンドの空間の設計</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> <a href="spatial-mapping-design.md">空間マッピングの設計</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
-</tr><tr>
-<td> <a href="hologram.md">ホログラム</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
-</tr>
+### <a name="why-follow-this-guidance"></a>このガイダンスに従うなぜでしょうか。
 
+* 目標と物理的および cognitive 労力、intuitiveness、learnability などの主観的な基準に、相互作用モデルがテストされます。 
+* 相互作用が異なるため、ビジュアルおよびオーディオ アフォーとオブジェクトの動作異なる可能性がありますも相互作用モデル。  
+* 複数の操作モデルの一部をまとめて結合などの重荷となっており、ユーザーが混乱する同時手光線と視線の先のカーソルでは、競合のアフォーのリスクを作成します。
+
+相互作用モデルごとにアフォーと動作を最適化する方法の例をいくつかを示します。  よく見られる新しいユーザーのような質問については、としてなど"知る方法は、システムが動作している知る方法は何ができるかを知る方法は私が先ほどが認識されるとでしょうか"。
+
+<br>
+
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>[モデル]</strong></td>
+        <td><strong>知る方法が動作しますか?</strong></td>
+        <td><strong>どのような確認方法行うことができますか?</strong></td>
+        <td><strong>先ほど行った何かを確認する方法</strong></td>
+    </tr>
+    <tr>
+        <td><a href="hands-and-tools.md">手およびツール</a></td>
+        <td>メッシュ手の形を表示、指先アフォー ダンスまたは手の形の表示]、[コント ローラー光線します。</td>
+        <td>Grabbable ハンドルまたは手が近くにある場合、表示境界ボックスが表示されます。</td>
+        <td>音を再生し、グラブとリリースのアニメーションを参照してください。</td>
+    </tr>
+    <tr>
+        <td><a href="gaze-and-commit.md">Head 注視とコミット</a></td>
+        <td>フィールドのビューの中央にカーソルが参照してください。</td>
+        <td>視線の先のカーソルでは、特定のオブジェクトの上に置いたときの状態を変更します。</td>
+        <td>私を参照してください/処理を行うときに、音声と視覚的に確認メッセージを聞きます。</td>
+    </tr>   
+    <tr>
+        <td><a href="hands-free.md">ハンズフリー (視線の先およびドウェル)</a></td>
+        <td>フィールドのビューの中央にカーソルが参照してください。</td>
+        <td>進行状況インジケーターが表示されるは、対話型のオブジェクトについて熟考するとします。</td>
+        <td>私を参照してください/処理を行うときに、音声と視覚的に確認メッセージを聞きます。</td>
+    </tr>
+    <tr>
+        <td><a href="hands-free.md">楽に (音声コマンドの実行)</a></td>
+        <td>インジケーターをリッスンしていると、システムの音を表示するキャプションで表示します。</td>
+        <td>音声プロンプトとヒントを取得します。  「どのような音声」言ったとき フィードバックを表示します。</td>
+        <td>私を参照してください/をコマンドでは、曖昧性除去必要なときに、UX を取得するか、音声と視覚的に確認メッセージを聞きます。</a></td>
+    </tr>
 </table>
 
-## <a name="the-user-is-the-camera"></a>ユーザーは、カメラです。
+### <a name="below-are-the-questions-that-weve-found-help-teams-select-an-interaction-model"></a>わかりましたヘルプ チームの選択、相互作用モデル質問を次に示します。
+ 
+1.  Q:ユーザーはホログラムをタッチし、有効桁数ホログラフィック操作を実行しますか。
+A:そうである場合は、有効桁数を対象として、手やアニメーション コント ローラーを使用した操作の手とツールの対話モデルを確認します。
+ 
+2.  Q:ユーザーは、無料の実際のタスク、手を保持する必要がありますか。
+A:そうである場合を見てハンズフリー対話モデル注視し、音声ベースの対話を通じての楽に優れたエクスペリエンスを提供します。
+ 
+3.  Q:ユーザーが、複合現実アプリケーションの相互作用の学習に時間または必要がある最下位の学習曲線との対話ことでしょうか。
+A:最下位の学習曲線と最も直感的な間のやり取りの手とツールのモデルは、ユーザーは、相互作用に手を使用する限り、お勧めします。
+ 
+4.  Q:ユーザーは、ポイント、および操作のモーションのコント ローラーを使用するか。
+A:手およびツールのモデルには、アニメーション コント ローラーですばらしい体験のすべてのガイダンスが含まれています。
+ 
+5.  Q:アクセシビリティのコント ローラーまたは一般的な Bluetooth コント ローラーの場合、clicker など、ユーザーは使用でしょうか。
+A:すべての非追跡コント ローラーの Head 注視とコミットのモデルをお勧めします。  単純な「ターゲットとコミット」整備士のエクスペリエンス全体を走査できるようになっています。 
+ 
+6.  Q:自分のユーザーのみ進行状況エクスペリエンスを通じて「クリック」することにより (たとえば、3 d のスライド ショーのような環境で)、密度の高いレイアウトの UI コントロールを移動するとは対照的ですか。
+A:ユーザーは、UI の多くを制御する必要はありません場合、Head 注視し、コミットでユーザーを対象設定について心配する必要はありません learnable オプションを提供します。 
+ 
+7.  Q:ユーザーが両方 HoloLens を使用して (第 1 世代) と HoloLens 2/Windows 没入型 (VR ヘッドセット) a:Head 注視し、コミットは HoloLens の相互作用モデルであるため (第 1 世代) ことをお勧め creators HoloLens をサポートする (第 1 世代) がヘッド視線の先を使用し、機能やユーザーが、HoloLens で発生するモードをコミット (第 1 世代) ヘッドセット。  次のセクションを参照してくださいで*相互作用モデルの移行*HoloLens の複数の世代の優れたエクスペリエンスの方法の詳細について。
+ 
+8.  Q:については、(大きな領域をカバーするまたはスペース間での移動)、通常、モバイル ユーザーの 1 つのスペースで作業するユーザーとでしょうか。  
+A:相互作用モデルのいずれでも、これらのユーザーの動作します。  
 
-![ユーザーは、カメラです。](images/useriscamera-640px.jpg)
+> [!NOTE]
+> アプリの設計に固有のガイダンスについて[近日](index.md#news-and-notes)します。
 
-に関する彼らの実数部と仮想世界に移動する場合に、ユーザーの観点の設計について常に考えます。
 
-**一般的な質問**
-* ユーザーに座って、リクライニングであること、または徒歩、エクスペリエンスを使用しているときにしますか。
-* コンテンツは、別の位置にどのように調整しますか。
-* ユーザー調整できますか。
-* ユーザーが快適にアプリを使用できますか。
+## <a name="transition-interaction-models"></a>遷移の相互作用モデル
+場所、ユース ケースが必要があります 1 つ以上の相互作用モデルを使用している場合もあります。  たとえば、フロー、アプリの"作成"手とツールの対話モデルを利用してが楽にモードを現場技術者の雇用します。  
 
-**ベスト プラクティス**
-* ユーザーは、カメラであり、動作を制御します。 ドライブにできるようにします。
-* 事実上、ユーザーを転送する必要がある場合は、不安を合わせた前庭に関する問題を機密性が高いものです。
-* 短いアニメーションを使用して、
-* ダウン/左/右からアニメーション化する、または Z の代わりにフェードイン
-* 低下するタイミング
-* バック グラウンドで世界を表示します。
+お客様のエクスペリエンスが複数の操作モデルを必要とする場合は、多くのエンドユーザー間 - 初心者様にはエンドユーザーに対して特に 1 つのモデルから移行難易度は発生可能性があります、わかりました。
 
-**避けるべきこと**
-* シェイク、カメラまたは 3DOF を意図的にロックしないでください (方向、翻訳のみ)、ユーザーが感じたことができます。
-* 突然動きがありません。 ユーザーとの間にコンテンツを表示する必要がある場合、緩やかに変化かつ円滑目標の移動最大快適性します。 ユーザーは、それらに送信される大規模なメニューに対応します。
-* 高速化、またはユーザーのカメラを有効にしないでください。 ユーザーは、機密性の高い (angular と直線) の高速化します。
-
-## <a name="leverage-the-users-perspective"></a>ユーザーの視点を活用します。
-
-ユーザーは、没入型および holographic デバイス ディスプレイでの複合現実の世界を参照してください。 この表示が呼び出された、HoloLens、 [holographic フレーム](holographic-frame.md)します。
-
-2D の開発では、頻繁にアクセスされるコンテンツと設定を簡単にアクセスできるようにするための画面の隅に配置することもできます。 ただし、holographic のアプリでコンテンツをユーザーのビューの隅にない可能性がありますアクセスします。 ここでは、holographic のフレームの中央には、コンテンツの主な場所です。
-
-ユーザーは、重要なイベントまたは即時表示外にあるオブジェクトを見つけやすいように説明する必要があります。 矢印、ライトの証跡、文字ヘッドの移動、吹き出し、ポインター、空間のサウンド、および音声プロンプトを使用して、アプリで重要なコンテンツをユーザーに役立つことができます。
-
-ユーザーの快適性のために画面ロック コンテンツではなくすることをお勧めします。 ビュー内のコンテンツを保管する必要がある場合、世界中に配置および"tag-along"[スタート] メニューのようなコンテンツを作成します。 ユーザーの観点とプルのコンテンツは、環境で自然に感じられます。
-
-![フレームの端に達すると、ユーザーのビューに依存して、[スタート] メニュー](images/tagalong-1000px.jpg)<br>
-*フレームの端に達すると、ユーザーのビューに依存して、[スタート] メニュー*
-
-これらがカットしないため、holographic フレーム内に収まる場合に、HoloLens ホログラムを実際と思われます。 ユーザーは、フレーム内のホログラムの境界を確認するために移動します。 HoloLens には、ユーザーのビュー内に収まるし、メイン アクションで、フォーカスを保持するように UI を簡略化する重要です。 イマーシブ ヘッドセットがデバイスのビューのフィールド内の永続的な仮想世界の錯覚を維持するために重要です。
-
-## <a name="user-comfort"></a>快適性
-
-最大値を確実に[快適性](comfort.md)ヘッド マウントのディスプレイでは作成し、人間が 3D 図形と自然にオブジェクトの相対位置を解釈する方法を模倣した方法でコンテンツを表示するには、設計者や開発者にとって重要です世界です。 物理の観点からも重要です首部分の腕疲れるモーションが不要なコンテンツをデザインします。
-
-HoloLens のイマーシブ ヘッドセットを開発するかどうかが両方の目のビジュアルを表示するために重要です。 1 つ目のヘッドアップ ディスプレイをレンダリングのみによりにくくインターフェイスについては、ユーザーの目、脳に uneasiness の原因とします。
-
-## <a name="share-your-experience"></a>体験を共有します。
-
-使用して[実際のキャプチャを混合](mixed-reality-capture.md)ユーザーが写真や、いつでもエクスペリエンスのビデオをキャプチャできます。 スナップショットまたはビデオをお勧めする必要のあるアプリでのエクスペリエンスを検討してください。
-
-## <a name="leverage-basic-ui-elements-of-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームの基本的な UI 要素を活用します。
-
-Windows PC エクスペリエンスがデスクトップで始まるよう Windows Mixed Reality ホームから始まります。 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)を理解し、3 D の場所を移動します。 本質的な能力を活用します。 HoloLens、自宅は、実際の場所です。 イマーシブ ヘッドセット、自宅は仮想の場所です。
-
-自宅は、[スタート] メニューを開き、アプリやコンテンツを配置に使用する場所もです。 複合現実のコンテンツを自宅に入力し、同時に複数のアプリを使用して、マルチタスクを実行できます。 自宅に配置することは、デバイスを再起動する場合でも、ままです。
+> [!Note]
+> ガイドの設計者や MR で難しい場合がありますの選択は、開発者のため、複数の操作モデルを使用するための詳細ガイダンスに取り組んでいるところです。
+ 
 
 ## <a name="see-also"></a>関連項目
-* [視線の先を対象とします。](gaze-targeting.md)
+* [Head 注視とコミット](gaze-and-commit.md)
+* [直接操作](direct-manipulation.md)
+* [ポイントとコミット](point-and-commit.md)
+* [視線入力ターゲット設定](gaze-targeting.md)
 * [ジェスチャ](gestures.md)
-* [音声のデザイン](voice-design.md)
-* [アニメーション コント ローラー](motion-controllers.md)
-* [サウンドの空間の設計](spatial-sound-design.md)
+* [音声設計](voice-design.md)
+* [モーション コントローラー](motion-controllers.md)
+* [立体音響の設計](spatial-sound-design.md)
 * [空間マッピングの設計](spatial-mapping-design.md)
 * [快適性](comfort.md)
-* [Windows Mixed Reality ホームに移動します。](navigating-the-windows-mixed-reality-home.md)

@@ -6,12 +6,12 @@ ms.author: grbury
 ms.date: 02/10/2019
 ms.topic: article
 keywords: 取得未開始状態、基本、HoloLens、HoloLens 2、イマーシブ ヘッドセット、unity、visual studio
-ms.openlocfilehash: 1d23e458477cc23252ccd4c44f67c400aa356965
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 23bd173f89a468b4403d44236534bfe811a968dd
+ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605111"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873976"
 ---
 # <a name="development-overview"></a>開発の概要
 
@@ -41,13 +41,13 @@ ms.locfileid: "59605111"
 </tr><tr>
 <td> <a href="hardware-accessories.md">Gamepad</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="motion-controllers.md">アニメーション コント ローラー</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
+<td> <a href="motion-controllers.md">モーション コントローラー</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <th> 概念と空間機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
 <td> <a href="coordinate-systems.md">ワールド座標</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
-<td> <a href="spatial-sound.md">空間のサウンド</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
+<td> <a href="spatial-sound.md">立体音響</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
 </tr><tr>
 <td> <a href="spatial-mapping.md">空間マッピング</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
 </tr>
@@ -78,10 +78,10 @@ ms.locfileid: "59605111"
 * [アプリの品質基準](app-quality-criteria.md)
 
 ## <a name="see-also"></a>関連項目
-* [ツールをインストールします。](install-the-tools.md)
+* [ツールのインストール](install-the-tools.md)
 * <a href="https://azure.microsoft.com/topic/mixed-reality" target="_blank">複合現実のサービス</a>
-* [Mixed Reality チュートリアル](academy.md)
+* [Mixed Reality チュートリアル](tutorials.md)
 * [オープン ソース プロジェクト](open-source-projects.md)
-* [MR 基礎 100:Unity の概要](holograms-100.md)
+* [MR の基本 100:Unity の概要](holograms-100.md)
 * [Windows Mixed Reality 最小 PC ハードウェアの互換性ガイドライン](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [Windows ストア アプリの提出](submitting-an-app-to-the-microsoft-store.md)

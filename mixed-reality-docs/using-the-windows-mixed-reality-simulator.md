@@ -1,17 +1,17 @@
 ---
 title: Windows Mixed Reality シミュレーターの使用
 description: Windows Mixed Reality シミュレーターでは、Windows Mixed Reality イマーシブ ヘッドセットなし、PC 上の複合現実アプリをテストできます。
-author: JonMLyons
-ms.author: jlyons
-ms.date: 03/21/2018
+author: pbarnettms
+ms.author: pbarnett
+ms.date: 04/25/2019
 ms.topic: article
 keywords: Windows の混合実際には、シミュレーターのテスト
-ms.openlocfilehash: 782cab85f163edd2afc4251210b7596c73dcc8b8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: a7cbd5b5ca1c0ed0e4f81715d337d5eec68117f0
+ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59603637"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64580701"
 ---
 # <a name="using-the-windows-mixed-reality-simulator"></a>Windows Mixed Reality シミュレーターの使用
 
@@ -28,7 +28,7 @@ Windows Mixed Reality シミュレーターでは、Windows Mixed Reality イマ
    4. クリックして**セットアップ**を確定するには
 4. をクリックして、**開発者向け**Mixed Reality ポータルの左側にあるボタンをクリックします。
 5. シミュレーションのトグル スイッチを有効に**で**
-   * Admin アクセス許可が必要であり、表示されるユーザー アカウント制御ダイアログを受け入れる必要があります。
+   * シミュレーションを有効にすると、インストールし、既定で左側シミュレーションの 6-自由度のコント ローラーを有効にします。  前に、Windows 10 の月 2019年シミュレートされた 6-自由度のコント ローラーのインストール、更新プログラムが必要です管理者のアクセス許可。  いずれかが表示された場合は、ユーザー アカウント制御 ダイアログを受け入れる必要があります。
 
 今すぐ、シミュレーションを実行する必要があります!
 
@@ -50,14 +50,16 @@ Windows Mixed Reality シミュレーターでは、Windows Mixed Reality イマ
 ## <a name="tracked-controllers"></a>追跡コント ローラー
 
 Mixed Reality シミュレーターでは、最大で 2 つのハンドヘルド履歴モーション コント ローラーをシミュレートできます。 Mixed Reality ポータルのトグル スイッチを使用して有効にします。 シミュレートされた各コント ローラーがあります。
-* 空間内の位置
+* 位置と向きを領域
 * [ホーム] ボタン
 * メニュー ボタン
 * グリップのボタン
 * タッチパッド
+* スティック
+* バッテリ レベル
 
 ## <a name="see-also"></a>関連項目
 * [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)
 * [Mixed Reality シミュレーターの入力を高度な](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
-* [Unity での空間のマッピング](spatial-mapping-in-unity.md)
-* [DirectX での空間のマッピング](spatial-mapping-in-directx.md)
+* [Unity の空間マッピング](spatial-mapping-in-unity.md)
+* [DirectX の空間マッピング](spatial-mapping-in-directx.md)
