@@ -1,138 +1,187 @@
 ---
-title: 相互作用の基礎
-description: HoloLens の間で構築したエクスペリエンス (第 1 世代) HoloLens 2、イマーシブ ヘッドセットを共有すると便利ですが見つかりましたいくつを書き留めるが開始されました。
-author: rwinj
-ms.author: jennyk
-ms.date: 02/24/2019
+title: マルチ モーダルな相互作用の概要
+description: マルチ モーダルな相互作用の概要
+author: shengkait
+ms.author: shengkait
+ms.date: 04/11/2019
 ms.topic: article
-keywords: 複合現実との対話を設計します。
-ms.openlocfilehash: d594126529b6314a4706f8b6b6af856058c3280a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+keywords: 複合現実、視線の先を対象とする操作、視線の先をデザインします。
+ms.openlocfilehash: f52a0cd8ec53bfe0f4c5da2c054c538eda1c93ca
+ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597551"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993598"
 ---
-# <a name="interaction-fundamentals"></a><span data-ttu-id="26a09-104">相互作用の基礎</span><span class="sxs-lookup"><span data-stu-id="26a09-104">Interaction fundamentals</span></span>
+# <a name="introducing-instinctual-interactions"></a><span data-ttu-id="8cfff-104">Instinctual 相互作用の概要</span><span class="sxs-lookup"><span data-stu-id="8cfff-104">Introducing instinctual interactions</span></span>
+<span data-ttu-id="8cfff-105">Instinctual、シンプルな相互作用の理念は、マイクロソフトの複合現実プラットフォーム全体で生み出します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-105">The philosophy of simple, instinctual interactions is woven throughout the Microsoft Mixed Reality platform.</span></span>  <span data-ttu-id="8cfff-106">アプリケーションの設計者や開発者は、顧客向けの簡単で直感的な相互作用を提供できることを確認する 3 つの手順を使用しました。</span><span class="sxs-lookup"><span data-stu-id="8cfff-106">We've taken three steps to ensure that application designers and developers can provide easy and intuitive interactions for their customers.</span></span> 
 
-<span data-ttu-id="26a09-105">HoloLens とイマーシブ ヘッドセットの間でエクスペリエンスを構築したら、下の点を共有すると便利ですが見つかりましたを書き始めたしました。</span><span class="sxs-lookup"><span data-stu-id="26a09-105">As we've built experiences across HoloLens and immersive headsets, we've started writing down some things we found useful to share.</span></span> <span data-ttu-id="26a09-106">複合現実対話デザインの基本的な構成要素の役割も果たします。</span><span class="sxs-lookup"><span data-stu-id="26a09-106">Think of these as the fundamental building blocks for mixed reality interaction design.</span></span>
+<span data-ttu-id="8cfff-107">最初に、シームレスなマルチ モーダルな対話モデルに、驚くようなセンサーと手の追跡、視線、自然言語など、入力のテクノロジを組み合わせることを確認しています。</span><span class="sxs-lookup"><span data-stu-id="8cfff-107">First, we've made sure our amazing sensors and input technology, including hand tracking, eye tracking, and natural language, combine into seamless multimodal interaction models.</span></span>  <span data-ttu-id="8cfff-108">1 つの入力に基づいていないを設計して multimodally--を開発し、調査に基づき--instinctual エクスペリエンスを作成するキー。</span><span class="sxs-lookup"><span data-stu-id="8cfff-108">Based on our research, designing and developing multimodally -- and not based on single inputs -- is the key to creating instinctual experiences.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="26a09-107">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="26a09-107">Device support</span></span>
+<span data-ttu-id="8cfff-109">次に、認識して多くの開発者が、複数のデバイスをターゲット HoloLens 2 および HoloLens のことを意味するかどうか (第 1 世代) または HoloLens、VR します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-109">Secondly, we recognize that many developers target multiple devices, whether that means HoloLens 2 and HoloLens (1st gen) or HoloLens and VR.</span></span>  <span data-ttu-id="8cfff-110">したがって、相互作用モデル (入力のテクノロジは、各デバイスでは異なります) 場合でも、デバイス間で作業を設計しました。</span><span class="sxs-lookup"><span data-stu-id="8cfff-110">So we've designed our interaction models to work across devices (even if the input technology varies on each device).</span></span>  <span data-ttu-id="8cfff-111">たとえば、6 dof コント ローラーと Windows イマーシブ ヘッドセットで相手側の対話と両方の HoloLens 2 での相手側の対話は同一アフォーとパターンを簡単にクロス デバイス アプリケーションを使用します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-111">For example, far interaction on a Windows Immersive headset with a 6DOF controller and far interaction on a HoloLens 2 both use the identical affordances and patterns, making it easy for cross-device applications.</span></span> <span data-ttu-id="8cfff-112">だけでなく、この便利の開発者とデザイナーが、エンドユーザーに自然な感覚です。</span><span class="sxs-lookup"><span data-stu-id="8cfff-112">Not only is this convenient for developers and designers, but it feels natural to end users.</span></span> 
 
-<span data-ttu-id="26a09-108">適用される使用可能な相互作用デザイン記事と、どのデバイスの種類または種類の概要を次に示します。</span><span class="sxs-lookup"><span data-stu-id="26a09-108">Here's an outline of the available Interaction design articles and which device type or types they apply to.</span></span>
+<span data-ttu-id="8cfff-113">最後に、何千もの効率が高く、魅力的であることと、魔法のような相互作用を設定 MR で可能であることを意図的に採用 1 回の操作モデルでは、エンド ツー エンドを認識している間に、アプリケーションはユーザーが成功したことを確認する最善の方法と優れたエクスペリエンスを実現します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-113">Lastly, while we recognize that there are thousands of effective, engaging, and magical interactions possible in MR, we have found that intentionally employing a single interaction model end to end in an application is the best way to ensure users are successful and have a great experience.</span></span>  <span data-ttu-id="8cfff-114">そのために、この操作ガイドの次の 3 つ含まれています。</span><span class="sxs-lookup"><span data-stu-id="8cfff-114">To that end, we've included three things in this interaction guidance:</span></span>
+* <span data-ttu-id="8cfff-115">この 3 つの主要な対話モデルとコンポーネント、および各に必要なパターンのガイダンスを構成しましたしました</span><span class="sxs-lookup"><span data-stu-id="8cfff-115">We've structured this guidance around the three primary interaction models and the components and patterns required for each</span></span>
+* <span data-ttu-id="8cfff-116">当社のプラットフォームを提供するその他の特典に関する補足的なガイダンスが掲載されています</span><span class="sxs-lookup"><span data-stu-id="8cfff-116">We've included supplemental guidance on other benefits that our platform provides</span></span>
+* <span data-ttu-id="8cfff-117">シナリオでは、適切な対話モデルを選択できるようにするためのガイダンスが掲載されています</span><span class="sxs-lookup"><span data-stu-id="8cfff-117">We've included guidance to help select the appropriate interaction model for your scenario</span></span>
+
+
+## <a name="three-multimodal-interaction-models"></a><span data-ttu-id="8cfff-118">次の 3 つのマルチ モーダルな相互作用モデル</span><span class="sxs-lookup"><span data-stu-id="8cfff-118">Three multimodal interaction models</span></span>
+<span data-ttu-id="8cfff-119">マイクロソフトの調査と日付に顧客と連携に基づいて、3 つの主要な対話モデルが複合現実エクスペリエンスの大部分を合わせてが見つかりました。</span><span class="sxs-lookup"><span data-stu-id="8cfff-119">Based on our research and work with customers to date, we've discovered that three primary interaction models suit the majority of Mixed Reality experiences.</span></span>
+
+<span data-ttu-id="8cfff-120">多くの点では、相互作用モデルは、そのフローを完了するため、ユーザーのメンタル モデルをします。</span><span class="sxs-lookup"><span data-stu-id="8cfff-120">In many ways, the interaction model  is the user's mental model for completing their flows.</span></span>  <span data-ttu-id="8cfff-121">各相互作用モデルは、顧客のニーズの一連の最適化され、それぞれが便利な強力かつそれ自体で使用できます。</span><span class="sxs-lookup"><span data-stu-id="8cfff-121">Each of these interaction models is optimized for a set of customer needs, and each is convenient, powerful, and usable in its own right.</span></span> 
+
+<span data-ttu-id="8cfff-122">次の表は、簡単な概要です。</span><span class="sxs-lookup"><span data-stu-id="8cfff-122">The chart below is a simplified overview.</span></span>  <span data-ttu-id="8cfff-123">各相互作用モデルを使用するための詳細については、イメージ、およびコード サンプルでは、下のページにリンクされます。</span><span class="sxs-lookup"><span data-stu-id="8cfff-123">Detailed information for using each interaction model is linked in the pages below with images and code samples.</span></span>  
+
 <br>
 
 <table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><span data-ttu-id="8cfff-124"><strong>[モデル]</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-124"><strong>Model</strong></span></span></td>
+        <td><span data-ttu-id="8cfff-125"><strong>シナリオ例</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-125"><strong>Example scenarios</strong></span></span></td>
+        <td><span data-ttu-id="8cfff-126"><strong>サイズに合わせて</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-126"><strong>Fit</strong></span></span></td>
+        <td><span data-ttu-id="8cfff-127"><strong>ハードウェア</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-127"><strong>Hardware</strong></span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="8cfff-128"><a href="hands-and-tools.md">手およびツール</a></span><span class="sxs-lookup"><span data-stu-id="8cfff-128"><a href="hands-and-tools.md">Hands and tools</a></span></span></td>
+        <td><span data-ttu-id="8cfff-129">3D 空間エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="8cfff-129">3D spatial experiences</span></span><br><span data-ttu-id="8cfff-130">空間のレイアウトとデザイン、コンテンツの操作、またはシミュレーションなど</span><span class="sxs-lookup"><span data-stu-id="8cfff-130">e.g. spatial layout and design, content manipulation, or simulation</span></span></td>
+        <td><span data-ttu-id="8cfff-131">新しいユーザーに適しています</span><span class="sxs-lookup"><span data-stu-id="8cfff-131">Great for new users</span></span><br><span data-ttu-id="8cfff-132">習得</span><span class="sxs-lookup"><span data-stu-id="8cfff-132">Low learning curve</span></span><br><span data-ttu-id="8cfff-133">基盤の簡単な visual アフォー</span><span class="sxs-lookup"><span data-stu-id="8cfff-133">Grounded in easy visual affordances</span></span><br><span data-ttu-id="8cfff-134">追跡と 6 の自由度のコント ローラーの間で一貫性のあるユーザー エクスペリエンス</span><span class="sxs-lookup"><span data-stu-id="8cfff-134">Consistent UX across hand tracking and 6 DoF controllers</span></span><br><span data-ttu-id="8cfff-135">優れたの音声と組み合わせると、追跡、監視または head 視線します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-135">Great when coupled with voice, eye tracking, or head gaze</span></span></td>
+        <td><span data-ttu-id="8cfff-136">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="8cfff-136">HoloLens 2</span></span><br><span data-ttu-id="8cfff-137">6 dof コント ローラーを使用した没入型の Windows</span><span class="sxs-lookup"><span data-stu-id="8cfff-137">Windows Immersive w/ 6DOF Controllers</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="8cfff-138"><a href="hands-free.md">ハンズフリー</a></span><span class="sxs-lookup"><span data-stu-id="8cfff-138"><a href="hands-free.md">Hands-free</a></span></span></td>
+        <td><span data-ttu-id="8cfff-139">コンテキスト対応のエクスペリエンスをユーザーの手占有されているなど、ジョブのメンテナンスを学習します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-139">Contextual experiences where a user's hands are occupied e.g. on the-job learning, maintenance</span></span></td>
+        <td><span data-ttu-id="8cfff-140">いくつか必要な学習</span><span class="sxs-lookup"><span data-stu-id="8cfff-140">Some learning required</span></span><br><span data-ttu-id="8cfff-141">手が利用できない場合</span><span class="sxs-lookup"><span data-stu-id="8cfff-141">If hands are unavailable</span></span><br><span data-ttu-id="8cfff-142">音声および自然言語のペア</span><span class="sxs-lookup"><span data-stu-id="8cfff-142">pairs well with voice and natural language</span></span></td>
+        <td><span data-ttu-id="8cfff-143">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="8cfff-143">HoloLens 2</span></span><br><span data-ttu-id="8cfff-144">HoloLens (第 1 世代)</span><span class="sxs-lookup"><span data-stu-id="8cfff-144">HoloLens (1st gen)</span></span><br> <span data-ttu-id="8cfff-145">Windows の没入型</span><span class="sxs-lookup"><span data-stu-id="8cfff-145">Windows Immersive</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="8cfff-146"><a href="gaze-and-commit.md">Head 注視とコミット</a></span><span class="sxs-lookup"><span data-stu-id="8cfff-146"><a href="gaze-and-commit.md">Head-gaze and commit</a></span></span></td>
+        <td><span data-ttu-id="8cfff-147">例: 3 D プレゼンテーション、デモが発生したクリック スルー</span><span class="sxs-lookup"><span data-stu-id="8cfff-147">Click-through experiences e.g. 3D presentations, demos</span></span></td>
+        <td><span data-ttu-id="8cfff-148">Mobile ではなく HMDs のトレーニングが必要です。</span><span class="sxs-lookup"><span data-stu-id="8cfff-148">Requires training on HMDs but not on mobile</span></span><br><span data-ttu-id="8cfff-149">アクセス可能なコント ローラーに最も適した</span><span class="sxs-lookup"><span data-stu-id="8cfff-149">Best for accessible controllers</span></span><br><span data-ttu-id="8cfff-150">HoloLens の最適な (第 1 世代)</span><span class="sxs-lookup"><span data-stu-id="8cfff-150">Best for HoloLens (1st gen)</span></span></td>
+        <td><span data-ttu-id="8cfff-151">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="8cfff-151">HoloLens 2</span></span><br><span data-ttu-id="8cfff-152">HoloLens (第 1 世代)</span><span class="sxs-lookup"><span data-stu-id="8cfff-152">HoloLens (1st gen)</span></span><br> <span data-ttu-id="8cfff-153">Windows の没入型</span><span class="sxs-lookup"><span data-stu-id="8cfff-153">Windows Immersive</span></span><br> <span data-ttu-id="8cfff-154">Mobile AR</span><span class="sxs-lookup"><span data-stu-id="8cfff-154">Mobile AR</span></span></td>
+    </tr>
+</table>
+<br>
 
-<th>
-<tr>
+<span data-ttu-id="8cfff-155">ギャップやお客様のエクスペリエンスの相互作用に穴がないことを確認する最善の方法では、最初から最後までの 1 つのモデルの指示に従います。</span><span class="sxs-lookup"><span data-stu-id="8cfff-155">The best way to ensure there are no gaps or holes in the interaction for your experience is to follow the guidance for a single model from beginning to end.</span></span> 
 
-<td style="width:150px;"><span data-ttu-id="26a09-109"><strong>入力</strong></span><span class="sxs-lookup"><span data-stu-id="26a09-109"><strong>Input</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="26a09-110"><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></span><span class="sxs-lookup"><span data-stu-id="26a09-110"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="26a09-111"><strong>HoloLens 2</strong></span><span class="sxs-lookup"><span data-stu-id="26a09-111"><strong>HoloLens 2</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="26a09-112"><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></span><span class="sxs-lookup"><span data-stu-id="26a09-112"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
-</tr>
-</th>
+<span data-ttu-id="8cfff-156">設計と開発を高速化するには、詳細な情報とイメージ、およびコード サンプルへのリンクをカバレッジの各モデル内に含めています。</span><span class="sxs-lookup"><span data-stu-id="8cfff-156">To speed design and development, we've included detailed information and links to images and code samples within our coverage of each model.</span></span>
+
+<span data-ttu-id="8cfff-157">最初に、以下のセクションを選択し、これらの相互作用モデルのいずれかを実装する次の手順をについて説明します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-157">But first, the sections below walk through the steps of selecting and implementing one of these interaction models.</span></span>  
  
-<tr>
-<td> <span data-ttu-id="26a09-113"><a href="gestures.md">関節手</a></span><span class="sxs-lookup"><span data-stu-id="26a09-113"><a href="gestures.md">Articulated hands</a></span></span></td><td style="text-align: center;"></td><td style="text-align: center;"><span data-ttu-id="26a09-114">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-114">✔️</span></span></td><td></td>
+### <a name="by-the-end-of-this-page-you-will-understand-our-guidance-on"></a><span data-ttu-id="8cfff-158">このページの目的は、ガイダンスを理解するのには。</span><span class="sxs-lookup"><span data-stu-id="8cfff-158">By the end of this page, you will understand our guidance on:</span></span>
+ 
+* <span data-ttu-id="8cfff-159">お客様の相互作用モデルの選択</span><span class="sxs-lookup"><span data-stu-id="8cfff-159">Choosing an interaction model for your customer</span></span>
+* <span data-ttu-id="8cfff-160">相互作用モデルのガイダンスを使用してください。</span><span class="sxs-lookup"><span data-stu-id="8cfff-160">Using the interaction model guidance</span></span>
+* <span data-ttu-id="8cfff-161">相互作用モデル間で移行</span><span class="sxs-lookup"><span data-stu-id="8cfff-161">Transitioning between interaction models</span></span>
+* <span data-ttu-id="8cfff-162">次の手順を設計します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-162">Design next steps</span></span>
 
-</tr><tr>
-<td> <span data-ttu-id="26a09-115"><a href="gaze-targeting.md">監視対象とします。</a></span><span class="sxs-lookup"><span data-stu-id="26a09-115"><a href="gaze-targeting.md">Eye targeting</a></span></span></td><td style="text-align: center;"></td><td style="text-align: center;"><span data-ttu-id="26a09-116">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-116">✔️</span></span></td><td style="text-align: center;"></td>
-</tr><tr>
-<td> <span data-ttu-id="26a09-117"><a href="gaze-targeting.md">視線の先を対象とします。</a></span><span class="sxs-lookup"><span data-stu-id="26a09-117"><a href="gaze-targeting.md">Gaze targeting</a></span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-118">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-118">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-119">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-119">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-120">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-120">✔️</span></span></td>
-</tr><tr>
-<td> <span data-ttu-id="26a09-121"><a href="gestures.md">ジェスチャ</a></span><span class="sxs-lookup"><span data-stu-id="26a09-121"><a href="gestures.md">Gestures</a></span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-122">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-122">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-123">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-123">✔️</span></span></td><td></td>
-</tr><tr>
-<td> <span data-ttu-id="26a09-124"><a href="voice-design.md">音声のデザイン</a></span><span class="sxs-lookup"><span data-stu-id="26a09-124"><a href="voice-design.md">Voice design</a></span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-125">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-125">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-126">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-126">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-127">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-127">✔️</span></span></td>
-</tr><tr>
-<td> <span data-ttu-id="26a09-128">ゲームパッド</span><span class="sxs-lookup"><span data-stu-id="26a09-128">Gamepad</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-129">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-129">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-130">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-130">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-131">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-131">✔️</span></span></td>
-</tr>
-<tr>
-<td> <span data-ttu-id="26a09-132"><a href="motion-controllers.md">アニメーション コント ローラー</a></span><span class="sxs-lookup"><span data-stu-id="26a09-132"><a href="motion-controllers.md">Motion controllers</a></span></span></td><td></td><td style="text-align: center;"></td><td style="text-align: center;"><span data-ttu-id="26a09-133">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-133">✔️</span></span></td>
+## <a name="choosing-an-interaction-model-for-your-customer"></a><span data-ttu-id="8cfff-163">お客様の相互作用モデルの選択</span><span class="sxs-lookup"><span data-stu-id="8cfff-163">Choosing an interaction model for your customer</span></span>
 
-</tr>
-<th>
-<tr>
-<td style="width:150px;"><span data-ttu-id="26a09-134"><strong>概念と空間機能</strong></span><span class="sxs-lookup"><span data-stu-id="26a09-134"><strong>Perception and spatial features</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="26a09-135"><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></span><span class="sxs-lookup"><span data-stu-id="26a09-135"><a href="hololens-hardware-details.md"><strong>HoloLens (1st gen)</strong></a></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="26a09-136"><strong>HoloLens 2</strong></span><span class="sxs-lookup"><span data-stu-id="26a09-136"><strong>HoloLens 2</strong></span></span></td>
-<td style="width:150px; text-align: center;"><span data-ttu-id="26a09-137"><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></span><span class="sxs-lookup"><span data-stu-id="26a09-137"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
-</tr>
-</th>
-<tr>
+<span data-ttu-id="8cfff-164">ほとんどの場合、開発者および作成者が既にあるいくつかのアイデア、ユーザー エクスペリエンスが相互作用の種類に注意してください。</span><span class="sxs-lookup"><span data-stu-id="8cfff-164">Most likely, developers and creators already have some ideas in mind of the kinds of interaction experience they want for their users.</span></span>
+<span data-ttu-id="8cfff-165">設計する顧客中心のアプローチをぜひお勧めします以下のガイダンスに従って、顧客向けに最適化された相互作用モデルを選択します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-165">To encourage a customer-focused approach to design, we recommend following the guidance below to select the interaction model that's optimized for your customer.</span></span>
 
-<td> <span data-ttu-id="26a09-138"><a href="spatial-sound-design.md">サウンドの空間の設計</a></span><span class="sxs-lookup"><span data-stu-id="26a09-138"><a href="spatial-sound-design.md">Spatial sound design</a></span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-139">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-139">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-140">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-140">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-141">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-141">✔️</span></span></td>
-</tr><tr>
-<td> <span data-ttu-id="26a09-142"><a href="spatial-mapping-design.md">空間マッピングの設計</a></span><span class="sxs-lookup"><span data-stu-id="26a09-142"><a href="spatial-mapping-design.md">Spatial mapping design</a></span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-143">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-143">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-144">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-144">✔️</span></span></td><td></td>
-</tr><tr>
-<td> <span data-ttu-id="26a09-145"><a href="hologram.md">ホログラム</a></span><span class="sxs-lookup"><span data-stu-id="26a09-145"><a href="hologram.md">Holograms</a></span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-146">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-146">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="26a09-147">✔️</span><span class="sxs-lookup"><span data-stu-id="26a09-147">✔️</span></span></td><td></td>
-</tr>
+### <a name="why-follow-this-guidance"></a><span data-ttu-id="8cfff-166">このガイダンスに従うなぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-166">Why follow this guidance?</span></span>
 
+* <span data-ttu-id="8cfff-167">目標と物理的および cognitive 労力、intuitiveness、learnability などの主観的な基準に、相互作用モデルがテストされます。</span><span class="sxs-lookup"><span data-stu-id="8cfff-167">Our interaction models are tested for objective and subjective criteria such as physical and cognitive effort, intuitiveness, and learnability.</span></span> 
+* <span data-ttu-id="8cfff-168">相互作用が異なるため、ビジュアルおよびオーディオ アフォーとオブジェクトの動作異なる可能性がありますも相互作用モデル。</span><span class="sxs-lookup"><span data-stu-id="8cfff-168">Because interaction differs, visual and audio affordances and object behavior may also differ between the interaction models.</span></span>  
+* <span data-ttu-id="8cfff-169">複数の操作モデルの一部をまとめて結合などの重荷となっており、ユーザーが混乱する同時手光線と視線の先のカーソルでは、競合のアフォーのリスクを作成します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-169">Combining parts of multiple interaction models together creates the risk of competing affordances, such as simultaneous hand rays and a gaze cursor, which overwhelm and confuse users.</span></span>
+
+<span data-ttu-id="8cfff-170">相互作用モデルごとにアフォーと動作を最適化する方法の例をいくつかを示します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-170">Here are some examples of how affordances and behaviors are optimized for each interaction model.</span></span>  <span data-ttu-id="8cfff-171">よく見られる新しいユーザーのような質問については、としてなど"知る方法は、システムが動作している知る方法は何ができるかを知る方法は私が先ほどが認識されるとでしょうか"。</span><span class="sxs-lookup"><span data-stu-id="8cfff-171">We often see new users as similar questions, such as "how do I know the system is working, how do I know what I can do, and how do I know if it understood what I just did?"</span></span>
+
+<br>
+
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><span data-ttu-id="8cfff-172"><strong>[モデル]</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-172"><strong>Model</strong></span></span></td>
+        <td><span data-ttu-id="8cfff-173"><strong>知る方法が動作しますか?</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-173"><strong>How do I know it's working?</strong></span></span></td>
+        <td><span data-ttu-id="8cfff-174"><strong>どのような確認方法行うことができますか?</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-174"><strong>How do I know what can I do?</strong></span></span></td>
+        <td><span data-ttu-id="8cfff-175"><strong>先ほど行った何かを確認する方法</strong></span><span class="sxs-lookup"><span data-stu-id="8cfff-175"><strong>How do I know what I just did?</strong></span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="8cfff-176"><a href="hands-and-tools.md">手およびツール</a></span><span class="sxs-lookup"><span data-stu-id="8cfff-176"><a href="hands-and-tools.md">Hands and tools</a></span></span></td>
+        <td><span data-ttu-id="8cfff-177">メッシュ手の形を表示、指先アフォー ダンスまたは手の形の表示]、[コント ローラー光線します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-177">I see a hand mesh, I see a fingertip affordance or hand/ controller rays.</span></span></td>
+        <td><span data-ttu-id="8cfff-178">Grabbable ハンドルまたは手が近くにある場合、表示境界ボックスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8cfff-178">I see grabbable handles or a bounding box appear when my hand is near.</span></span></td>
+        <td><span data-ttu-id="8cfff-179">音を再生し、グラブとリリースのアニメーションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="8cfff-179">I hear audible tones and see animations on grab and release.</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="8cfff-180"><a href="gaze-and-commit.md">Head 注視とコミット</a></span><span class="sxs-lookup"><span data-stu-id="8cfff-180"><a href="gaze-and-commit.md">Head-gaze and commit</a></span></span></td>
+        <td><span data-ttu-id="8cfff-181">フィールドのビューの中央にカーソルが参照してください。</span><span class="sxs-lookup"><span data-stu-id="8cfff-181">I see a cursor in the center of my field of view.</span></span></td>
+        <td><span data-ttu-id="8cfff-182">視線の先のカーソルでは、特定のオブジェクトの上に置いたときの状態を変更します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-182">The gaze cursor changes state when over certain objects.</span></span></td>
+        <td><span data-ttu-id="8cfff-183">私を参照してください/処理を行うときに、音声と視覚的に確認メッセージを聞きます。</span><span class="sxs-lookup"><span data-stu-id="8cfff-183">I see/ hear visual and audible confirmations when I take action.</span></span></td>
+    </tr>   
+    <tr>
+        <td><span data-ttu-id="8cfff-184"><a href="hands-free.md">ハンズフリー (視線の先およびドウェル)</a></span><span class="sxs-lookup"><span data-stu-id="8cfff-184"><a href="hands-free.md">Hands-free (Gaze and dwell)</a></span></span></td>
+        <td><span data-ttu-id="8cfff-185">フィールドのビューの中央にカーソルが参照してください。</span><span class="sxs-lookup"><span data-stu-id="8cfff-185">I see a cursor in the center of my field of view.</span></span></td>
+        <td><span data-ttu-id="8cfff-186">進行状況インジケーターが表示されるは、対話型のオブジェクトについて熟考するとします。</span><span class="sxs-lookup"><span data-stu-id="8cfff-186">I see a progress indicator when I dwell on an interactable object.</span></span></td>
+        <td><span data-ttu-id="8cfff-187">私を参照してください/処理を行うときに、音声と視覚的に確認メッセージを聞きます。</span><span class="sxs-lookup"><span data-stu-id="8cfff-187">I see/ hear visual and audible confirmations when I take action.</span></span></td>
+    </tr>
+    <tr>
+        <td><span data-ttu-id="8cfff-188"><a href="hands-free.md">楽に (音声コマンドの実行)</a></span><span class="sxs-lookup"><span data-stu-id="8cfff-188"><a href="hands-free.md">Hands-free (Voice commanding)</a></span></span></td>
+        <td><span data-ttu-id="8cfff-189">インジケーターをリッスンしていると、システムの音を表示するキャプションで表示します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-189">I see a listening indicator and captions that show what the system heard.</span></span></td>
+        <td><span data-ttu-id="8cfff-190">音声プロンプトとヒントを取得します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-190">I get voice prompts and hints.</span></span>  <span data-ttu-id="8cfff-191">「どのような音声」言ったとき</span><span class="sxs-lookup"><span data-stu-id="8cfff-191">When I say "what can I say?"</span></span> <span data-ttu-id="8cfff-192">フィードバックを表示します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-192">I see feedback.</span></span></td>
+        <td><span data-ttu-id="8cfff-193">私を参照してください/をコマンドでは、曖昧性除去必要なときに、UX を取得するか、音声と視覚的に確認メッセージを聞きます。</span><span class="sxs-lookup"><span data-stu-id="8cfff-193">I see/ hear visual and audible confirmations when I give a command, or get disambiguation UX when needed.</span></span></a></td>
+    </tr>
 </table>
 
-## <a name="the-user-is-the-camera"></a><span data-ttu-id="26a09-148">ユーザーは、カメラです。</span><span class="sxs-lookup"><span data-stu-id="26a09-148">The user is the camera</span></span>
+### <a name="below-are-the-questions-that-weve-found-help-teams-select-an-interaction-model"></a><span data-ttu-id="8cfff-194">わかりましたヘルプ チームの選択、相互作用モデル質問を次に示します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-194">Below are the questions that we've found help teams select an interaction model:</span></span>
+ 
+1.  <span data-ttu-id="8cfff-195">Q:ユーザーはホログラムをタッチし、有効桁数ホログラフィック操作を実行しますか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-195">Q:  Do my users want to touch holograms and perform precision holographic manipulations?</span></span>
+<span data-ttu-id="8cfff-196">A:そうである場合は、有効桁数を対象として、手やアニメーション コント ローラーを使用した操作の手とツールの対話モデルを確認します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-196">A:  If so, check out the Hands and Tools interaction model for precision targeting and manipulation with hands or motion controllers.</span></span>
+ 
+2.  <span data-ttu-id="8cfff-197">Q:ユーザーは、無料の実際のタスク、手を保持する必要がありますか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-197">Q:  Do my users need to keep their hands free, for real-world tasks?</span></span>
+<span data-ttu-id="8cfff-198">A:そうである場合を見てハンズフリー対話モデル注視し、音声ベースの対話を通じての楽に優れたエクスペリエンスを提供します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-198">A:  If so, take a look at the Hands-Free interaction model, which provides a great hands-free experience through gaze- and voice-based interactions.</span></span>
+ 
+3.  <span data-ttu-id="8cfff-199">Q:ユーザーが、複合現実アプリケーションの相互作用の学習に時間または必要がある最下位の学習曲線との対話ことでしょうか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-199">Q:  Do my users have time to learn interactions for my mixed reality application, or do they need the interactions with the lowest learning curve possible?</span></span>
+<span data-ttu-id="8cfff-200">A:最下位の学習曲線と最も直感的な間のやり取りの手とツールのモデルは、ユーザーは、相互作用に手を使用する限り、お勧めします。</span><span class="sxs-lookup"><span data-stu-id="8cfff-200">A:  We recommend the Hands and Tools model for the lowest learning curve and most intuitive interactions, as long as users are able to use their hands for interaction.</span></span>
+ 
+4.  <span data-ttu-id="8cfff-201">Q:ユーザーは、ポイント、および操作のモーションのコント ローラーを使用するか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-201">Q:  Do my users use motion controllers for pointing and manipulation?</span></span>
+<span data-ttu-id="8cfff-202">A:手およびツールのモデルには、アニメーション コント ローラーですばらしい体験のすべてのガイダンスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8cfff-202">A:  The Hands and Tools model includes all guidance for a great experience with motion controllers.</span></span>
+ 
+5.  <span data-ttu-id="8cfff-203">Q:アクセシビリティのコント ローラーまたは一般的な Bluetooth コント ローラーの場合、clicker など、ユーザーは使用でしょうか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-203">Q:  Do my users use an accessibility controller or a common Bluetooth controller, such as a clicker?</span></span>
+<span data-ttu-id="8cfff-204">A:すべての非追跡コント ローラーの Head 注視とコミットのモデルをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="8cfff-204">A:  We recommend the Head-gaze and commit model for all non-tracked controllers.</span></span>  <span data-ttu-id="8cfff-205">単純な「ターゲットとコミット」整備士のエクスペリエンス全体を走査できるようになっています。</span><span class="sxs-lookup"><span data-stu-id="8cfff-205">It's designed to allow a user to traverse an entire experience with a simple "target and commit" mechanic.</span></span> 
+ 
+6.  <span data-ttu-id="8cfff-206">Q:自分のユーザーのみ進行状況エクスペリエンスを通じて「クリック」することにより (たとえば、3 d のスライド ショーのような環境で)、密度の高いレイアウトの UI コントロールを移動するとは対照的ですか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-206">Q: Do my users only progress through an experience by "clicking through" (for example in a 3d slideshow-like environment), as opposed to navigating dense layouts of UI controls?</span></span>
+<span data-ttu-id="8cfff-207">A:ユーザーは、UI の多くを制御する必要はありません場合、Head 注視し、コミットでユーザーを対象設定について心配する必要はありません learnable オプションを提供します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-207">A:  If users do not need to control a lot of UI, Head-gaze and commit offers a learnable option where users do not have to worry about targeting.</span></span> 
+ 
+7.  <span data-ttu-id="8cfff-208">Q:ユーザーが両方 HoloLens を使用して (第 1 世代) と HoloLens 2/Windows 没入型 (VR ヘッドセット) a:Head 注視し、コミットは HoloLens の相互作用モデルであるため (第 1 世代) ことをお勧め creators HoloLens をサポートする (第 1 世代) がヘッド視線の先を使用し、機能やユーザーが、HoloLens で発生するモードをコミット (第 1 世代) ヘッドセット。</span><span class="sxs-lookup"><span data-stu-id="8cfff-208">Q:  Do my users use both HoloLens (1st gen) and HoloLens 2/ Windows Immersive (VR headsets) A:  Since Head-gaze and commit is the interaction model for HoloLens (1st gen), we recommend that creators who support HoloLens (1st gen) use Head-gaze and commit for any features or modes that users may experience on a HoloLens (1st gen) headset.</span></span>  <span data-ttu-id="8cfff-209">次のセクションを参照してくださいで*相互作用モデルの移行*HoloLens の複数の世代の優れたエクスペリエンスの方法の詳細について。</span><span class="sxs-lookup"><span data-stu-id="8cfff-209">Please see the next section below on *Transitioning interaction models* for details on making a great experience for multiple HoloLens generations.</span></span>
+ 
+8.  <span data-ttu-id="8cfff-210">Q:については、(大きな領域をカバーするまたはスペース間での移動)、通常、モバイル ユーザーの 1 つのスペースで作業するユーザーとでしょうか。</span><span class="sxs-lookup"><span data-stu-id="8cfff-210">Q: What about for users who are generally mobile (covering a large space or moving between spaces), versus users who tend to work in a single space?</span></span>  
+<span data-ttu-id="8cfff-211">A:相互作用モデルのいずれでも、これらのユーザーの動作します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-211">A:  Any of the interaction models will work for these users.</span></span>  
 
-![ユーザーは、カメラです。](images/useriscamera-640px.jpg)
+> [!NOTE]
+> <span data-ttu-id="8cfff-212">アプリの設計に固有のガイダンスについて[近日](index.md#news-and-notes)します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-212">More guidance specific to app design [coming soon](index.md#news-and-notes).</span></span>
 
-<span data-ttu-id="26a09-150">に関する彼らの実数部と仮想世界に移動する場合に、ユーザーの観点の設計について常に考えます。</span><span class="sxs-lookup"><span data-stu-id="26a09-150">Always think about design for your user's point of view as they move about their real and virtual worlds.</span></span>
 
-<span data-ttu-id="26a09-151">**一般的な質問**</span><span class="sxs-lookup"><span data-stu-id="26a09-151">**Some questions to ask**</span></span>
-* <span data-ttu-id="26a09-152">ユーザーに座って、リクライニングであること、または徒歩、エクスペリエンスを使用しているときにしますか。</span><span class="sxs-lookup"><span data-stu-id="26a09-152">Is the user sitting, reclining, standing, or walking while using your experience?</span></span>
-* <span data-ttu-id="26a09-153">コンテンツは、別の位置にどのように調整しますか。</span><span class="sxs-lookup"><span data-stu-id="26a09-153">How does your content adjust to different positions?</span></span>
-* <span data-ttu-id="26a09-154">ユーザー調整できますか。</span><span class="sxs-lookup"><span data-stu-id="26a09-154">Can the user adjust it?</span></span>
-* <span data-ttu-id="26a09-155">ユーザーが快適にアプリを使用できますか。</span><span class="sxs-lookup"><span data-stu-id="26a09-155">Will the user be comfortable using your app?</span></span>
+## <a name="transition-interaction-models"></a><span data-ttu-id="8cfff-213">遷移の相互作用モデル</span><span class="sxs-lookup"><span data-stu-id="8cfff-213">Transition interaction models</span></span>
+<span data-ttu-id="8cfff-214">場所、ユース ケースが必要があります 1 つ以上の相互作用モデルを使用している場合もあります。</span><span class="sxs-lookup"><span data-stu-id="8cfff-214">There are also cases where your use cases may require that utilizing more than one interaction model.</span></span>  <span data-ttu-id="8cfff-215">たとえば、フロー、アプリの"作成"手とツールの対話モデルを利用してが楽にモードを現場技術者の雇用します。</span><span class="sxs-lookup"><span data-stu-id="8cfff-215">For example, your app's "creation flow" utilizes the Hands and tools interaction model, but you want to employ a Hands-free mode for field technicians.</span></span>  
 
-<span data-ttu-id="26a09-156">**ベスト プラクティス**</span><span class="sxs-lookup"><span data-stu-id="26a09-156">**Best practices**</span></span>
-* <span data-ttu-id="26a09-157">ユーザーは、カメラであり、動作を制御します。</span><span class="sxs-lookup"><span data-stu-id="26a09-157">The user is the camera and they control the movement.</span></span> <span data-ttu-id="26a09-158">ドライブにできるようにします。</span><span class="sxs-lookup"><span data-stu-id="26a09-158">Let them drive.</span></span>
-* <span data-ttu-id="26a09-159">事実上、ユーザーを転送する必要がある場合は、不安を合わせた前庭に関する問題を機密性が高いものです。</span><span class="sxs-lookup"><span data-stu-id="26a09-159">If you need to virtually transport the user, be sensitive to issues around vestibular discomfort.</span></span>
-* <span data-ttu-id="26a09-160">短いアニメーションを使用して、</span><span class="sxs-lookup"><span data-stu-id="26a09-160">Use shorter animations</span></span>
-* <span data-ttu-id="26a09-161">ダウン/左/右からアニメーション化する、または Z の代わりにフェードイン</span><span class="sxs-lookup"><span data-stu-id="26a09-161">Animate from down/left/right or fade in instead of Z</span></span>
-* <span data-ttu-id="26a09-162">低下するタイミング</span><span class="sxs-lookup"><span data-stu-id="26a09-162">Slow down timing</span></span>
-* <span data-ttu-id="26a09-163">バック グラウンドで世界を表示します。</span><span class="sxs-lookup"><span data-stu-id="26a09-163">Allow user to see the world in the background</span></span>
+<span data-ttu-id="8cfff-216">お客様のエクスペリエンスが複数の操作モデルを必要とする場合は、多くのエンドユーザー間 - 初心者様にはエンドユーザーに対して特に 1 つのモデルから移行難易度は発生可能性があります、わかりました。</span><span class="sxs-lookup"><span data-stu-id="8cfff-216">If your experience does require multiple interaction models, we've found that many end users may encounter difficulty transitioning from one model to another -- especially end users who are new to MR.</span></span>
 
-<span data-ttu-id="26a09-164">**避けるべきこと**</span><span class="sxs-lookup"><span data-stu-id="26a09-164">**What to avoid**</span></span>
-* <span data-ttu-id="26a09-165">シェイク、カメラまたは 3DOF を意図的にロックしないでください (方向、翻訳のみ)、ユーザーが感じたことができます。</span><span class="sxs-lookup"><span data-stu-id="26a09-165">Don't shake the camera or purposely lock it to 3DOF (only orientation, no translation), it can make users feel uncomfortable.</span></span>
-* <span data-ttu-id="26a09-166">突然動きがありません。</span><span class="sxs-lookup"><span data-stu-id="26a09-166">No abrupt movement.</span></span> <span data-ttu-id="26a09-167">ユーザーとの間にコンテンツを表示する必要がある場合、緩やかに変化かつ円滑目標の移動最大快適性します。</span><span class="sxs-lookup"><span data-stu-id="26a09-167">If you need to bring content to or from the user, move it slowly and smoothly toward them for maximum comfort.</span></span> <span data-ttu-id="26a09-168">ユーザーは、それらに送信される大規模なメニューに対応します。</span><span class="sxs-lookup"><span data-stu-id="26a09-168">Users will react to large menus coming at them.</span></span>
-* <span data-ttu-id="26a09-169">高速化、またはユーザーのカメラを有効にしないでください。</span><span class="sxs-lookup"><span data-stu-id="26a09-169">Don't accelerate or turn the user's camera.</span></span> <span data-ttu-id="26a09-170">ユーザーは、機密性の高い (angular と直線) の高速化します。</span><span class="sxs-lookup"><span data-stu-id="26a09-170">Users are sensitive to acceleration (both angular and translational).</span></span>
+> [!Note]
+> <span data-ttu-id="8cfff-217">ガイドの設計者や MR で難しい場合がありますの選択は、開発者のため、複数の操作モデルを使用するための詳細ガイダンスに取り組んでいるところです。</span><span class="sxs-lookup"><span data-stu-id="8cfff-217">To help guide designers and developers through choices that can be difficult in MR, we're working on more guidance for using multiple interaction models.</span></span>
+ 
 
-## <a name="leverage-the-users-perspective"></a><span data-ttu-id="26a09-171">ユーザーの視点を活用します。</span><span class="sxs-lookup"><span data-stu-id="26a09-171">Leverage the user's perspective</span></span>
-
-<span data-ttu-id="26a09-172">ユーザーは、没入型および holographic デバイス ディスプレイでの複合現実の世界を参照してください。</span><span class="sxs-lookup"><span data-stu-id="26a09-172">Users see the world of mixed reality through displays on immersive and holographic devices.</span></span> <span data-ttu-id="26a09-173">この表示が呼び出された、HoloLens、 [holographic フレーム](holographic-frame.md)します。</span><span class="sxs-lookup"><span data-stu-id="26a09-173">On the HoloLens, this display is called the [holographic frame](holographic-frame.md).</span></span>
-
-<span data-ttu-id="26a09-174">2D の開発では、頻繁にアクセスされるコンテンツと設定を簡単にアクセスできるようにするための画面の隅に配置することもできます。</span><span class="sxs-lookup"><span data-stu-id="26a09-174">In 2D development, frequently accessed content and settings may be placed in the corners of a screen to make them easily accessible.</span></span> <span data-ttu-id="26a09-175">ただし、holographic のアプリでコンテンツをユーザーのビューの隅にない可能性がありますアクセスします。</span><span class="sxs-lookup"><span data-stu-id="26a09-175">However, in holographic apps, content in the corners of the user's view may be uncomfortable to access.</span></span> <span data-ttu-id="26a09-176">ここでは、holographic のフレームの中央には、コンテンツの主な場所です。</span><span class="sxs-lookup"><span data-stu-id="26a09-176">In this case, the center of the holographic frame is the prime location for content.</span></span>
-
-<span data-ttu-id="26a09-177">ユーザーは、重要なイベントまたは即時表示外にあるオブジェクトを見つけやすいように説明する必要があります。</span><span class="sxs-lookup"><span data-stu-id="26a09-177">The user may need to be guided to help locate important events or objects beyond their immediate view.</span></span> <span data-ttu-id="26a09-178">矢印、ライトの証跡、文字ヘッドの移動、吹き出し、ポインター、空間のサウンド、および音声プロンプトを使用して、アプリで重要なコンテンツをユーザーに役立つことができます。</span><span class="sxs-lookup"><span data-stu-id="26a09-178">You can use arrows, light trails, character head movement, thought bubbles, pointers, spatial sound, and voice prompts to help guide the user to important content in your app.</span></span>
-
-<span data-ttu-id="26a09-179">ユーザーの快適性のために画面ロック コンテンツではなくすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="26a09-179">It is recommended to not lock content to the screen for the user's comfort.</span></span> <span data-ttu-id="26a09-180">ビュー内のコンテンツを保管する必要がある場合、世界中に配置および"tag-along"[スタート] メニューのようなコンテンツを作成します。</span><span class="sxs-lookup"><span data-stu-id="26a09-180">If you need to keep content in view, place it in the world and make the content "tag-along" like the Start menu.</span></span> <span data-ttu-id="26a09-181">ユーザーの観点とプルのコンテンツは、環境で自然に感じられます。</span><span class="sxs-lookup"><span data-stu-id="26a09-181">Content that gets pulled along with the user's perspective will feel more natural in the environment.</span></span>
-
-<span data-ttu-id="26a09-182">![フレームの端に達すると、ユーザーのビューに依存して、[スタート] メニュー](images/tagalong-1000px.jpg)</span><span class="sxs-lookup"><span data-stu-id="26a09-182">![The start menu follows the user's view when it reaches the edge of the frame](images/tagalong-1000px.jpg)</span></span><br>
-<span data-ttu-id="26a09-183">*フレームの端に達すると、ユーザーのビューに依存して、[スタート] メニュー*</span><span class="sxs-lookup"><span data-stu-id="26a09-183">*The Start menu follows the user's view when it reaches the edge of the frame*</span></span>
-
-<span data-ttu-id="26a09-184">これらがカットしないため、holographic フレーム内に収まる場合に、HoloLens ホログラムを実際と思われます。</span><span class="sxs-lookup"><span data-stu-id="26a09-184">On HoloLens, holograms feel real when they fit within the holographic frame since they don't get cut off.</span></span> <span data-ttu-id="26a09-185">ユーザーは、フレーム内のホログラムの境界を確認するために移動します。</span><span class="sxs-lookup"><span data-stu-id="26a09-185">Users will move in order to see the bounds of a hologram within the frame.</span></span> <span data-ttu-id="26a09-186">HoloLens には、ユーザーのビュー内に収まるし、メイン アクションで、フォーカスを保持するように UI を簡略化する重要です。</span><span class="sxs-lookup"><span data-stu-id="26a09-186">On HoloLens, it's important to simplify your UI to fit within the user's view and keep your focus on the main action.</span></span> <span data-ttu-id="26a09-187">イマーシブ ヘッドセットがデバイスのビューのフィールド内の永続的な仮想世界の錯覚を維持するために重要です。</span><span class="sxs-lookup"><span data-stu-id="26a09-187">For immersive headsets, it's important to maintain the illusion of a persistent virtual world within the device's field of view.</span></span>
-
-## <a name="user-comfort"></a><span data-ttu-id="26a09-188">快適性</span><span class="sxs-lookup"><span data-stu-id="26a09-188">User comfort</span></span>
-
-<span data-ttu-id="26a09-189">最大値を確実に[快適性](comfort.md)ヘッド マウントのディスプレイでは作成し、人間が 3D 図形と自然にオブジェクトの相対位置を解釈する方法を模倣した方法でコンテンツを表示するには、設計者や開発者にとって重要です世界です。</span><span class="sxs-lookup"><span data-stu-id="26a09-189">To ensure maximum [comfort](comfort.md) on head-mounted displays, it’s important for designers and developers to create and present content in a way that mimics how humans interpret 3D shapes and the relative position of objects in the natural world.</span></span> <span data-ttu-id="26a09-190">物理の観点からも重要です首部分の腕疲れるモーションが不要なコンテンツをデザインします。</span><span class="sxs-lookup"><span data-stu-id="26a09-190">From a physical perspective, it is also important to design content that does not require fatiguing motions of the neck or arms.</span></span>
-
-<span data-ttu-id="26a09-191">HoloLens のイマーシブ ヘッドセットを開発するかどうかが両方の目のビジュアルを表示するために重要です。</span><span class="sxs-lookup"><span data-stu-id="26a09-191">Whether developing for HoloLens or immersive headsets, it is important to render visuals for both eyes.</span></span> <span data-ttu-id="26a09-192">1 つ目のヘッドアップ ディスプレイをレンダリングのみによりにくくインターフェイスについては、ユーザーの目、脳に uneasiness の原因とします。</span><span class="sxs-lookup"><span data-stu-id="26a09-192">Rendering a heads-up display in one eye only can make an interface hard to understand, as well as causing uneasiness to the user's eye and brain.</span></span>
-
-## <a name="share-your-experience"></a><span data-ttu-id="26a09-193">体験を共有します。</span><span class="sxs-lookup"><span data-stu-id="26a09-193">Share your experience</span></span>
-
-<span data-ttu-id="26a09-194">使用して[実際のキャプチャを混合](mixed-reality-capture.md)ユーザーが写真や、いつでもエクスペリエンスのビデオをキャプチャできます。</span><span class="sxs-lookup"><span data-stu-id="26a09-194">Using [mixed reality capture](mixed-reality-capture.md), users can capture a photo or video of their experience at any time.</span></span> <span data-ttu-id="26a09-195">スナップショットまたはビデオをお勧めする必要のあるアプリでのエクスペリエンスを検討してください。</span><span class="sxs-lookup"><span data-stu-id="26a09-195">Consider experiences in your app where you may want to encourage snapshots or videos.</span></span>
-
-## <a name="leverage-basic-ui-elements-of-the-windows-mixed-reality-home"></a><span data-ttu-id="26a09-196">Windows Mixed Reality ホームの基本的な UI 要素を活用します。</span><span class="sxs-lookup"><span data-stu-id="26a09-196">Leverage basic UI elements of the Windows Mixed Reality home</span></span>
-
-<span data-ttu-id="26a09-197">Windows PC エクスペリエンスがデスクトップで始まるよう Windows Mixed Reality ホームから始まります。</span><span class="sxs-lookup"><span data-stu-id="26a09-197">Just like the Windows PC experience starts with the desktop, Windows Mixed Reality starts with the home.</span></span> <span data-ttu-id="26a09-198">[Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)を理解し、3 D の場所を移動します。 本質的な能力を活用します。</span><span class="sxs-lookup"><span data-stu-id="26a09-198">The [Windows Mixed Reality home](navigating-the-windows-mixed-reality-home.md) leverages our innate ability to understand and navigate 3D places.</span></span> <span data-ttu-id="26a09-199">HoloLens、自宅は、実際の場所です。</span><span class="sxs-lookup"><span data-stu-id="26a09-199">With HoloLens, your home is your physical space.</span></span> <span data-ttu-id="26a09-200">イマーシブ ヘッドセット、自宅は仮想の場所です。</span><span class="sxs-lookup"><span data-stu-id="26a09-200">With immersive headsets, your home is a virtual place.</span></span>
-
-<span data-ttu-id="26a09-201">自宅は、[スタート] メニューを開き、アプリやコンテンツを配置に使用する場所もです。</span><span class="sxs-lookup"><span data-stu-id="26a09-201">Your home is also where you’ll use the Start menu to open and place apps and content.</span></span> <span data-ttu-id="26a09-202">複合現実のコンテンツを自宅に入力し、同時に複数のアプリを使用して、マルチタスクを実行できます。</span><span class="sxs-lookup"><span data-stu-id="26a09-202">You can fill your home with mixed reality content and multitask by using multiple apps at the same time.</span></span> <span data-ttu-id="26a09-203">自宅に配置することは、デバイスを再起動する場合でも、ままです。</span><span class="sxs-lookup"><span data-stu-id="26a09-203">The things you place in your home stay there, even if you restart your device.</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="26a09-204">関連項目</span><span class="sxs-lookup"><span data-stu-id="26a09-204">See also</span></span>
-* [<span data-ttu-id="26a09-205">視線の先を対象とします。</span><span class="sxs-lookup"><span data-stu-id="26a09-205">Gaze targeting</span></span>](gaze-targeting.md)
-* [<span data-ttu-id="26a09-206">ジェスチャ</span><span class="sxs-lookup"><span data-stu-id="26a09-206">Gestures</span></span>](gestures.md)
-* [<span data-ttu-id="26a09-207">音声のデザイン</span><span class="sxs-lookup"><span data-stu-id="26a09-207">Voice design</span></span>](voice-design.md)
-* [<span data-ttu-id="26a09-208">アニメーション コント ローラー</span><span class="sxs-lookup"><span data-stu-id="26a09-208">Motion controllers</span></span>](motion-controllers.md)
-* [<span data-ttu-id="26a09-209">サウンドの空間の設計</span><span class="sxs-lookup"><span data-stu-id="26a09-209">Spatial sound design</span></span>](spatial-sound-design.md)
-* [<span data-ttu-id="26a09-210">空間マッピングの設計</span><span class="sxs-lookup"><span data-stu-id="26a09-210">Spatial mapping design</span></span>](spatial-mapping-design.md)
-* [<span data-ttu-id="26a09-211">快適性</span><span class="sxs-lookup"><span data-stu-id="26a09-211">Comfort</span></span>](comfort.md)
-* [<span data-ttu-id="26a09-212">Windows Mixed Reality ホームに移動します。</span><span class="sxs-lookup"><span data-stu-id="26a09-212">Navigating the Windows Mixed Reality home</span></span>](navigating-the-windows-mixed-reality-home.md)
+## <a name="see-also"></a><span data-ttu-id="8cfff-218">関連項目</span><span class="sxs-lookup"><span data-stu-id="8cfff-218">See also</span></span>
+* [<span data-ttu-id="8cfff-219">Head 注視とコミット</span><span class="sxs-lookup"><span data-stu-id="8cfff-219">Head-gaze and commit</span></span>](gaze-and-commit.md)
+* [<span data-ttu-id="8cfff-220">直接操作</span><span class="sxs-lookup"><span data-stu-id="8cfff-220">Direct manipulation</span></span>](direct-manipulation.md)
+* [<span data-ttu-id="8cfff-221">ポイントとコミット</span><span class="sxs-lookup"><span data-stu-id="8cfff-221">Point and commit</span></span>](point-and-commit.md)
+* [<span data-ttu-id="8cfff-222">視線入力ターゲット設定</span><span class="sxs-lookup"><span data-stu-id="8cfff-222">Gaze targeting</span></span>](gaze-targeting.md)
+* [<span data-ttu-id="8cfff-223">ジェスチャ</span><span class="sxs-lookup"><span data-stu-id="8cfff-223">Gestures</span></span>](gestures.md)
+* [<span data-ttu-id="8cfff-224">音声設計</span><span class="sxs-lookup"><span data-stu-id="8cfff-224">Voice design</span></span>](voice-design.md)
+* [<span data-ttu-id="8cfff-225">モーション コントローラー</span><span class="sxs-lookup"><span data-stu-id="8cfff-225">Motion controllers</span></span>](motion-controllers.md)
+* [<span data-ttu-id="8cfff-226">立体音響の設計</span><span class="sxs-lookup"><span data-stu-id="8cfff-226">Spatial sound design</span></span>](spatial-sound-design.md)
+* [<span data-ttu-id="8cfff-227">空間マッピングの設計</span><span class="sxs-lookup"><span data-stu-id="8cfff-227">Spatial mapping design</span></span>](spatial-mapping-design.md)
+* [<span data-ttu-id="8cfff-228">快適性</span><span class="sxs-lookup"><span data-stu-id="8cfff-228">Comfort</span></span>](comfort.md)
