@@ -7,12 +7,12 @@ ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、対話、スタイル、色、アプリのパターン、コントロール、サンプル アプリ、Mixed Reality Toolkit、MRTK
-ms.openlocfilehash: 470dff4319abded630e084f46193dcc79531aa54
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 8d5618b6f01f379b70f95e6493bdc670a1338e4c
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59603706"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469094"
 ---
 # <a name="design-for-mixed-reality"></a>複合現実の設計
 
@@ -64,21 +64,21 @@ ms.locfileid: "59603706"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>対話デザイン</h3>
-                        <p>
-                            <a href="interaction-fundamentals.md">相互作用の基礎</a>
-                        </p>
+                        <h3>操作の設計</h3>
                         <p>
                             <a href="comfort.md">快適性</a>
                         </p>
-                        <p>
-                            <a href="gaze-targeting.md">視線の先を対象とします。</a>
+            <p>
+                            <a href="interaction-fundamentals.md">Instinctual 相互作用</a>
                         </p>
                         <p>
-                            <a href="gestures.md">ジェスチャ</a>
+                            <a href="hands-and-tools.md">手およびコント ローラー</a>
+                        </p>
+                        <p>
+                            <a href="hands-free.md">ハンズフリー</a>
                         </p>
                          <p>
-                            <a href="voice-design.md">音声のデザイン</a>
+                            <a href="gaze-and-commit.md">Head 注視とコミット</a>
                         </p>
                     </div>
                 </div>

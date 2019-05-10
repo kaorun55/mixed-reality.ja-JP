@@ -80,21 +80,28 @@
 ## 設計の概要
 ### [複合現実とは](mixed-reality.md)
 ### [ホログラムとは](hologram.md)
+### [快適性](Comfort.md)
+### [ホログラフィック フレーム](Holographic-frame.md)
+### [空間マッピングの設計](Spatial-mapping-design.md)
+### [立体音響の設計](Spatial-sound-design.md)
 ### [デザイン チームでの最初の年](case-study-my-first-year-on-the-hololens-design-team.md)
 ### [複合現実の設計プロセスを拡張する](case-study-expanding-the-design-process-for-mixed-reality.md)
 ### [よりパーソナルなコンピューティングの追求](case-study-the-pursuit-of-more-personal-computing.md)
 ### [AfterNow のプロセス - ビジョン、プロトタイプ作成、ビルド](case-study-afternows-process-envisioning,-prototyping,-building.md)
-## 操作の設計
-### [操作の基礎](Interaction-fundamentals.md)
-### [快適性](Comfort.md)
-### [視線入力ターゲット設定](Gaze-targeting.md)
-### [ジェスチャ](Gestures.md)
-### [音声設計](Voice-design.md)
-### [ホログラムとは](Hologram.md)
-### [ホログラフィック フレーム](Holographic-frame.md)
-### [空間マッピングの設計](Spatial-mapping-design.md)
-### [立体音響の設計](Spatial-sound-design.md)
-### [モーション コントローラー](Motion-controllers.md)
+## MR 設計システムとツール
+### [本能的な操作](Interaction-fundamentals.md)
+#### [手とモーション コントローラー](hands-and-tools.md)
+##### [直接操作](direct-manipulation.md)
+##### [ポイントとコミット](point-and-commit.md)
+##### [モーション コントローラー](Motion-controllers.md)
+#### [ハンズフリー](hands-free.md)
+##### [視線入力とドウェル](Gaze-and-dwell.md)
+##### [視線入力と音声](Voice-design.md)
+#### [頭の視線入力とコミット](gaze-and-commit.md)
+### 補助操作
+#### [目の視線入力](eye-tracking.md)
+#### [視線入力ターゲット設定](Gaze-targeting.md)
+#### [ジェスチャ](Gestures.md)
 ## スタイル
 ### [色、ライト、マテリアル](color,-light-and-materials.md)
 ### [立体音響の設計](spatial-sound-design.md)
@@ -130,7 +137,8 @@
 ## Unity
 ### [Unity 開発の概要](unity-development-overview.md)
 ### 概要
-#### [Mixed Reality ツールキット](mrtk-getting-started.md)
+#### [Mixed Reality Toolkit v2 を使用した開発の高速化](mrtk-getting-started.md)
+#### [Windows Mixed Reality 用に Unity プロジェクトを構成する](Configure-Unity-Project.md)
 #### [Unity で推奨される設定](recommended-settings-for-unity.md)
 #### [Unity の再生モード](unity-play-mode.md)
 #### [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)
@@ -141,6 +149,7 @@
 #### [Unity の永続化](persistence-in-unity.md)
 #### [Unity の視線入力](gaze-in-unity.md)
 #### [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
+#### [Unity での頭と手の追跡](hand-eye-in-unit.md)
 #### [Unity の音声入力](voice-input-in-unity.md)
 #### [Unity の空間マッピング](spatial-mapping-in-unity.md)
 #### [Unity の立体音響](spatial-sound-in-unity.md)
@@ -153,6 +162,7 @@
 ### 高度なトピック
 #### [Windows 名前空間と HoloLens 用 Unity アプリの使用](using-the-windows-namespace-with-unity-apps-for-hololens.md)
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
+### レガシー ドキュメント (Unity 2017.4/HTK/MRTK v1)
 ## Unreal
 ### HoloLens 2 用 Unreal - 近日公開予定
 ## DirectX
@@ -176,9 +186,18 @@
 #### [ホログラフィック リモートの追加](add-holographic-remoting.md)
 ## WebVR
 ### [Edge での WebVR を Windows Mixed Reality と共に使用する](using-webvr-in-edge-with-windows-mixed-reality.md)
-## [チュートリアルとサンプル アプリ](academy.md)
+## [チュートリアルとサンプル アプリ](tutorials.md)
 ### Unity
-#### オープン ソースのサンプル アプリ
+#### MR 学習モジュール
+##### HoloLens 2
+###### [ベース モジュール - 概要と目標](mrlearning-base.md)
+####### [プロジェクト初期化と最初のアプリケーション](mrlearning-base-ch1.md)
+####### [ユーザー インターフェイス、手の追跡、Mixed Reality ツールキット構成](mrlearning-base-ch2.md)
+####### [ダイナミック コンテンツの配置とソルバー](mrlearning-base-ch3.md)
+####### [3D オブジェクトの操作](mrlearning-base-ch4.md)
+####### [高度な入力](mrlearning-base-ch5.md)
+####### [デモ アプリ](mrlearning-base-ch6.md)
+#### HoloLens (第 1 世代) オープン ソースのサンプル アプリ
 ##### [要素の定期的なテーブル](periodic-table-of-the-elements.md)
 ##### [月着陸船](lunar-module.md)
 ##### [銀河エクスプローラー](galaxy-explorer.md)
@@ -266,8 +285,8 @@
 
 # プログラムとイベント
 ## [Mixed Reality Dev Days](mr-dev-days.md)
+### [Mixed Reality Dev Days セッション](mr-dev-days-sessions.md)
 ### [Mixed Reality Dev Days に関する FAQ](mr-dev-days-faq.md)
-## [The Realities Show](realities-show.md)
 ## [サンフランシスコ Reactor Academy イベント予定表](sf-academy-events.md)
 ## [CVPR 2018 HoloLens Research モード セッション](cvpr-2018.md)
 ## [コンピューター ビジョン調査用のツールとしての ECCV 2018 HoloLens](eccv-2018.md)
