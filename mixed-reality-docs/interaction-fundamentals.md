@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/11/2019
 ms.topic: article
 keywords: 複合現実、視線の先を対象とする操作、視線の先をデザインします。
-ms.openlocfilehash: f52a0cd8ec53bfe0f4c5da2c054c538eda1c93ca
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: c762518a224138dab248670eaef23ccb92016fce
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993598"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469104"
 ---
 # <a name="introducing-instinctual-interactions"></a>Instinctual 相互作用の概要
 Instinctual、シンプルな相互作用の理念は、マイクロソフトの複合現実プラットフォーム全体で生み出します。  アプリケーションの設計者や開発者は、顧客向けの簡単で直感的な相互作用を提供できることを確認する 3 つの手順を使用しました。 
@@ -61,7 +61,7 @@ Instinctual、シンプルな相互作用の理念は、マイクロソフトの
         <td>HoloLens 2<br>HoloLens (第 1 世代)<br> Windows の没入型</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">Head 注視とコミット</a></td>
+        <td><a href="gaze-and-commit.md">頭の視線入力とコミット</a></td>
         <td>例: 3 D プレゼンテーション、デモが発生したクリック スルー</td>
         <td>Mobile ではなく HMDs のトレーニングが必要です。<br>アクセス可能なコント ローラーに最も適した<br>HoloLens の最適な (第 1 世代)</td>
         <td>HoloLens 2<br>HoloLens (第 1 世代)<br> Windows の没入型<br> Mobile AR</td>
@@ -107,7 +107,7 @@ Instinctual、シンプルな相互作用の理念は、マイクロソフトの
     <tr>
         <td><strong>[モデル]</strong></td>
         <td><strong>知る方法が動作しますか?</strong></td>
-        <td><strong>どのような確認方法行うことができますか?</strong></td>
+        <td><strong>何ができるかを知る方法</strong></td>
         <td><strong>先ほど行った何かを確認する方法</strong></td>
     </tr>
     <tr>
@@ -117,7 +117,7 @@ Instinctual、シンプルな相互作用の理念は、マイクロソフトの
         <td>音を再生し、グラブとリリースのアニメーションを参照してください。</td>
     </tr>
     <tr>
-        <td><a href="gaze-and-commit.md">Head 注視とコミット</a></td>
+        <td><a href="gaze-and-commit.md">頭の視線入力とコミット</a></td>
         <td>フィールドのビューの中央にカーソルが参照してください。</td>
         <td>視線の先のカーソルでは、特定のオブジェクトの上に置いたときの状態を変更します。</td>
         <td>私を参照してください/処理を行うときに、音声と視覚的に確認メッセージを聞きます。</td>
@@ -175,7 +175,7 @@ A:相互作用モデルのいずれでも、これらのユーザーの動作し
  
 
 ## <a name="see-also"></a>関連項目
-* [Head 注視とコミット](gaze-and-commit.md)
+* [頭の視線入力とコミット](gaze-and-commit.md)
 * [直接操作](direct-manipulation.md)
 * [ポイントとコミット](point-and-commit.md)
 * [視線入力ターゲット設定](gaze-targeting.md)

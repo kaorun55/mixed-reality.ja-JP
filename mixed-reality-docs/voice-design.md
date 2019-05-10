@@ -1,21 +1,21 @@
 ---
-title: 音声のデザイン
+title: 視線入力と音声
 description: 視線、ジェスチャ、音声 (GGV) は、HoloLens の相互作用の主要な手段です。 この記事では、音声の設計に思慮深いガイダンスを提供します。
-author: rwinj
-ms.author: randyw
-ms.date: 03/21/2018
+author: grbury
+ms.author: grbury
+ms.date: 04/21/2019
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、対話、音声
-ms.openlocfilehash: 2df0e15c66891b08577fcf203d11f7c7008247f1
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 35e4c72026acaa36e5fd686cf892dd602f6626d6
+ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604141"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65469081"
 ---
-# <a name="voice-design"></a>音声のデザイン
+# <a name="gaze-and-voice"></a>視線入力と音声
 
-視線、ジェスチャ、音声 (GGV) は、HoloLens の相互作用の主要な手段です。 [視線](gaze.md)と併用、[カーソル](cursors.md)はユーザーと対話する準備ができるコンテンツの対象にするためのメカニズムです。 [ジェスチャ](gestures.md)または[音声](voice-input.md)は意図機構です。 視線の先は、相互作用を完了するジェスチャまたは音声のいずれかで使用できます。
+視線、ジェスチャ、音声 (GGV) は HoloLens での対話の主要な手段 (第 1 世代)。 [視線](gaze.md)と併用、[カーソル](cursors.md)はユーザーと対話する準備ができるコンテンツの対象にするためのメカニズムです。 [ジェスチャ](gestures.md)または[音声](voice-input.md)は意図機構です。 視線の先は、相互作用を完了するジェスチャまたは音声のいずれかで使用できます。
 
 イマーシブ ヘッドセット、相互作用の主要な手段には視線の先にコミットとポイント-コミット (で、[モーションのコント ローラー](motion-controllers.md))。 ユーザーの音声機能を備えたヘッドセットの場合は、操作が完了する視線の先またはポイントとの組み合わせで音声が使用できます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "59604141"
 <tr>
 <th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td> 音声</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ (とヘッドセットがアタッチされている)</td>
+<td>視線入力と音声</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ (とヘッドセットがアタッチされている)</td>
 </tr>
 </table>
 
@@ -102,4 +102,4 @@ Windows Mixed Reality で「認識, に言って」音声モデルが採用さ�
 
 ## <a name="see-also"></a>関連項目
 * [ジェスチャ](gestures.md)
-* [視線の先を対象とします。](gaze-targeting.md)
+* [視線入力ターゲット設定](gaze-targeting.md)
