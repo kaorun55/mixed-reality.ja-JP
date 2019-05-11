@@ -6,12 +6,12 @@ ms.author: daescu
 ms.date: 02/24/2019
 ms.topic: article
 keywords: イベント、予定表、academy、スケジュール、sf、san francisco、原子炉
-ms.openlocfilehash: c896cf398bd10fc12e5afed6313cbd95e5370c31
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: 15867ebd15406741d96ea5f61a66b5d80fcfde6a
+ms.sourcegitcommit: 37b628d6e24377ffc8fe9a09750fc0033107d151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64670126"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65536104"
 ---
 # <a name="microsoft-mixed-reality-events"></a>Microsoft 混合の実際のイベント
 
@@ -21,23 +21,6 @@ ms.locfileid: "64670126"
 680 Folsom St します。<br>
 San Francisco, CA 94107
 
-
-
----
-## <a name="mixed-reality-dev-days-seattlehttpsdocsmicrosoftcomen-uswindowsmixed-realitymr-dev-days"></a>**[Mixed Reality Dev 日、シアトル](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
-### <a name="may-2-3-2019"></a>2 ~ 3 2019 年 5 月
-混合実際には開発用の日後に、スキル、ネットワーク、および、複合現実アプリケーションの次のレベルにする必要があるアイデアを構築します。
-
-**[詳細についてはこちら](https://docs.microsoft.com/en-us/windows/mixed-reality/mr-dev-days)**
-
-
-
----
-## <a name="microsoft-build-seattlehttpsemea01safelinksprotectionoutlookcomurlhttps3a2f2fwwwmicrosoftcom2fen-us2fbuilddata027c017cdaescu40microsoftcom7ca8ddee063b7949a9992308d6903e62b07c72f988bf86f141af91ab2d7cd011db477c17c07c636854994961104348sdatahozczluhbppxuyjak5i802k6bej5flmn0gek7c12bihw3dreserved0"></a>**[Microsoft//ビルド、シアトル](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fbuild&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961104348&sdata=hozCZlUHbpPxuYJaK5i802K6beJ5flmN0gEK7C1%2BIHw%3D&reserved=0)**
-### <a name="may-6-10-2019"></a>5 月 6 ~ 10、2019 年
-ご参加くださいシアトルで Microsoft のプレミア イベントの開発者向け。 最新の開発者ツールとテクノロジを体験してください。 ソフトウェア開発の将来の業界に関する洞察を取得することによって、ソフトウェアを作成する新しい方法を想像してください。 新しい開発トレンドとコードに革新的な方法を理解する、コミュニティと交流します。
-
-**Microsoft//build 2019 登録[ここ](https://emea01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fbuild&data=02%7C01%7Cdaescu%40microsoft.com%7Ca8ddee063b7949a9992308d6903e62b0%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636854994961104348&sdata=hozCZlUHbpPxuYJaK5i802K6beJ5flmN0gEK7C1%2BIHw%3D&reserved=0)**
 
 
 ---
