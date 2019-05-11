@@ -7,12 +7,12 @@ ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、対話、スタイル、色、アプリのパターン、コントロール、サンプル アプリ、Mixed Reality Toolkit、MRTK
-ms.openlocfilehash: 8d5618b6f01f379b70f95e6493bdc670a1338e4c
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: aa7b1ba42823324bf247580781b46a4f4c885d99
+ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469094"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65524347"
 ---
 # <a name="design-for-mixed-reality"></a>複合現実の設計
 
@@ -60,11 +60,11 @@ ms.locfileid: "65469094"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="images/Interaction_Icon_120x130.png" alt="Interaction design icon">
+                            <img src="images/Interaction_Icon_120x130.png" alt="MR design system and tools icon">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>操作の設計</h3>
+                        <h3>MR 設計システムとツール</h3>
                         <p>
                             <a href="comfort.md">快適性</a>
                         </p>
