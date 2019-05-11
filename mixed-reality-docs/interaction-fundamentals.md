@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/11/2019
 ms.topic: article
 keywords: 複合現実、視線の先を対象とする操作、視線の先をデザインします。
-ms.openlocfilehash: c762518a224138dab248670eaef23ccb92016fce
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: 8c578d9a67f6809df69fb132f4c46a381726596e
+ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469104"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65524335"
 ---
 # <a name="introducing-instinctual-interactions"></a>Instinctual 相互作用の概要
 Instinctual、シンプルな相互作用の理念は、マイクロソフトの複合現実プラットフォーム全体で生み出します。  アプリケーションの設計者や開発者は、顧客向けの簡単で直感的な相互作用を提供できることを確認する 3 つの手順を使用しました。 
@@ -51,7 +51,7 @@ Instinctual、シンプルな相互作用の理念は、マイクロソフトの
     <tr>
         <td><a href="hands-and-tools.md">手およびツール</a></td>
         <td>3D 空間エクスペリエンス<br>空間のレイアウトとデザイン、コンテンツの操作、またはシミュレーションなど</td>
-        <td>新しいユーザーに適しています<br>習得<br>基盤の簡単な visual アフォー<br>追跡と 6 の自由度のコント ローラーの間で一貫性のあるユーザー エクスペリエンス<br>優れたの音声と組み合わせると、追跡、監視または head 視線します。</td>
+        <td>新しいユーザーに適しています<br>習得<br>基盤の簡単な visual アフォー<br>追跡と 6 dof コント ローラーの間で一貫性のあるユーザー エクスペリエンス<br>優れたの音声と組み合わせると、追跡、監視または head 視線します。</td>
         <td>HoloLens 2<br>6 dof コント ローラーを使用した没入型の Windows</td>
     </tr>
     <tr>

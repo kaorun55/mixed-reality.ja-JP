@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 複合現実、ハンズフリー、視線、視線を対象との相互作用、デザイン
-ms.openlocfilehash: b64dec802d8ed2886021a54f302ba4a948c4f5b9
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: f39a9524831161997b59be6cf89b124fa5b29c78
+ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2019
-ms.locfileid: "64581032"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65524328"
 ---
 # <a name="optimizing-your-app-for-hands-free"></a>ハンズフリー用のアプリを最適化します。
 
@@ -97,6 +97,6 @@ ms.locfileid: "64581032"
 
 
 ## <a name="see-also"></a>関連項目
-* [視線入力とコミット](gaze-and-commit.md)
+* [頭の視線入力とコミット](gaze-and-commit.md)
 * [直接操作](direct-manipulation.md)
 * [ポイントとコミット](point-and-commit.md)
