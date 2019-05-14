@@ -48,11 +48,13 @@
 ### [AfterNow のプロセス - ビジョン、プロトタイプ作成、ビルド](case-study-afternows-process-envisioning,-prototyping,-building.md)
 ### [HoloSketch のビルド、HoloLens 用の空間レイアウトと UX スケッチ アプリ](case-study-building-holosketch,-a-spatial-layout-and-ux-sketching-app-for-hololens.md)
 ### [HoloTour 用のコンテンツのキャプチャと作成](case-study-capturing-and-creating-content-for-holotour.md)
-### [複合現実の銀河を作成する](case-study-creating-a-galaxy-in-mixed-reality.md)
 ### [フラグメントでイマーシブ エクスペリエンスを作成する](case-study-creating-an-immersive-experience-in-fragments.md)
 ### [HoloTour 用の不可能なパースペクティブの作成](case-study-creating-impossible-perspectives-for-holotour.md)
 ### [複合現実の設計プロセスを拡張する](case-study-expanding-the-design-process-for-mixed-reality.md)
 ### [HoloLens の空間マッピング機能を拡張する](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
+### Galaxy Explorer
+#### [Hololens (第 1 世代) の複合現実の銀河を作成する](case-study-creating-a-galaxy-in-mixed-reality.md)
+#### [HoloLens 2 向けに Galaxy Explorer を更新する](galaxy-explorer-update.md)
 ### [HoloStudio UI と操作設計の学習](case-study-3-holostudio-ui-and-interaction-design-learnings.md)
 ### [Lowe's キッチンからの教訓](case-study-lessons-from-the-lowes-kitchen.md)
 ### [複合現実で穴から覗く](case-study-looking-through-holes-in-your-reality.md)
@@ -190,7 +192,8 @@
 ### Unity
 #### MR 学習モジュール
 ##### HoloLens 2
-###### [ベース モジュール - 概要と目標](mrlearning-base.md)
+###### ベース モジュール
+####### [ベース モジュール - 概要と目標](mrlearning-base.md)
 ####### [プロジェクト初期化と最初のアプリケーション](mrlearning-base-ch1.md)
 ####### [ユーザー インターフェイス、手の追跡、Mixed Reality ツールキット構成](mrlearning-base-ch2.md)
 ####### [ダイナミック コンテンツの配置とソルバー](mrlearning-base-ch3.md)
