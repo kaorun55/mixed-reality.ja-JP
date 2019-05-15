@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Galaxy エクスプ ローラー、HoloLens、Windows Mixed Reality、アイデアを共有する、ケース スタディ
 ms.openlocfilehash: a478eaa35144a8ee0fbeaeb43cec4b9f901890ab
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59604831"
