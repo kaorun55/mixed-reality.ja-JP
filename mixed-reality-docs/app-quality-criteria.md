@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: アプリの品質基準、実際には、混合 mixed reality アプリ
-ms.openlocfilehash: 8070a434be462a636b314527c59f299ca77fb6d4
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e9f6cd5a6017e11cd167c8141d29b82f89af08e4
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59602381"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65628987"
 ---
 # <a name="app-quality-criteria"></a>アプリの品質基準
 
@@ -120,7 +120,7 @@ While ソックスを着けずに、デバイスと、エクスペリエンス�
 * [安定化平面を使用して、ケース スタディ](case-study-using-the-stabilization-plane-to-reduce-holographic-turbulence.md)
 * [複合現実のパフォーマンスを理解](understanding-performance-for-mixed-reality.md)
 * [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)
-* [空間のアンカー](spatial-anchors.md)
+* [空間アンカー](spatial-anchors.md)
 * [追跡エラーの処理](coordinate-systems.md#handling-tracking-errors)
 * [フレームの静止した基準](coordinate-systems.md#stationary-frame-of-reference)
 
@@ -168,7 +168,7 @@ While ソックスを着けずに、デバイスと、エクスペリエンス�
 * [スキャン処理ルーム](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
 * [空間アンカーのベスト プラクティス](spatial-anchors.md#best-practices)
 * [追跡エラーの処理](coordinate-systems.md#handling-tracking-errors)
-* [Unity での空間のマッピング](spatial-mapping-in-unity.md)
+* [Unity の空間マッピング](spatial-mapping-in-unity.md)
 * [Vuforia 開発の概要](vuforia-development-overview.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
@@ -300,15 +300,15 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 #### <a name="documentation"></a>ドキュメント
 
-* [空間のサウンド](spatial-sound.md)
-* [サウンドの空間の設計](spatial-sound-design.md)
-* [Unity での空間のサウンド](spatial-sound-in-unity.md)
+* [立体音響](spatial-sound.md)
+* [立体音響の設計](spatial-sound-design.md)
+* [Unity の立体音響](spatial-sound-in-unity.md)
 * [ケース スタディ、HoloTour のサウンドの空間](case-study-spatial-sound-design-for-holotour.md)
 * [RoboRaid でサウンドの空間を使用して、ケース スタディ](case-study-using-spatial-sound-in-roboraid.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
-* [MR 空間 220:空間のサウンド](holograms-220.md)
+* [MR 空間 220:立体音響](holograms-220.md)
 * [MRToolkit、空間オーディオ](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/SpatialSound/README.md)
 
 ## <a name="focus-on-holographic-frame-fov-boundaries"></a>Holographic フレーム (FOV) の境界に集中します。
@@ -348,7 +348,7 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 #### <a name="documentation"></a>ドキュメント
 
-* [Holographic フレーム](holographic-frame.md)
+* [ホログラフィック フレーム](holographic-frame.md)
 * [ケース スタディ、HoloStudio UI および相互作用のデザインの学習](case-study-3-holostudio-ui-and-interaction-design-learnings.md?#problem-2-modal-dialogs-are-sometimes-out-of-the-holographic-frame)
 * [オブジェクトおよび環境のスケール](scale.md)
 * [カーソル、視覚的な合図](cursors.md#visual-cues)
@@ -402,8 +402,8 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 * [対話デザイン](hologram.md)
 * [色、光、および資料](color,-light-and-materials.md)
-* [ビルボード処理と tag-along](billboarding-and-tag-along.md)
-* [相互作用の基礎](interaction-fundamentals.md)
+* [Billboard と Tag-along](billboarding-and-tag-along.md)
+* [操作の基礎](interaction-fundamentals.md)
 * [自己モーションとユーザー locomotion](comfort.md#self-motion-and-user-locomotion)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
@@ -453,21 +453,22 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 * [Windows MR 相互作用の基礎](interaction-fundamentals.md)
 * [対話型のオブジェクト](interactable-object.md)
-* [視線の先を対象とします。](gaze-targeting.md)
+* [視線入力ターゲット設定](gaze-targeting.md)
 * [カーソル](cursors.md)
 * [快適性と視線入力](comfort.md#gaze-direction)
 * [ジェスチャ](gestures.md)
 * [音声入力](voice-input.md)
-* [音声のデザイン](voice-design.md)
-* [アニメーション コント ローラー](motion-controllers.md)
-* [Unity のガイドの移植の入力](input-porting-guide-for-unity.md)
-* [Unity におけるキーボード入力](keyboard-input-in-unity.md)
-* [これで Unity](gaze-in-unity.md)
-* [ジェスチャと Unity のアニメーション コント ローラー](gestures-and-motion-controllers-in-unity.md)
-* [Unity での音声入力](voice-input-in-unity.md)
-* [キーボード、マウス、および DirectX でコント ローラーの入力](keyboard,-mouse,-and-controller-input-in-directx.md)
-* [視線、ジェスチャ、および DirectX でモーション コント ローラー](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [DirectX での音声入力](voice-input-in-directx.md)
+* [音声設計](voice-design.md)
+* [モーション コントローラー](motion-controllers.md)
+* [Unity 用入力移植ガイド](input-porting-guide-for-unity.md)
+* [Unity でのキーボード入力](keyboard-input-in-unity.md)
+* [Unity の視線入力](gaze-in-unity.md)
+* [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
+* [Unity の音声入力](voice-input-in-unity.md)
+* [DirectX でのキーボード、マウス、およびコントローラー入力](keyboard,-mouse,-and-controller-input-in-directx.md)
+* [DirectX で Head、目の視線入力](gaze-in-directx.md)
+* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [DirectX の音声入力](voice-input-in-directx.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
@@ -515,10 +516,10 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 #### <a name="documentation"></a>ドキュメント
 
-* [対話型のオブジェクト](interactable-object.md)
-* [Unity 内のテキスト](text-in-unity.md)
-* [アプリ バー、境界ボックス](app-bar-and-bounding-box.md)
-* [音声のデザイン](voice-design.md)
+* [対話可能なオブジェクト](interactable-object.md)
+* [Unity のテキスト](text-in-unity.md)
+* [アプリ バーと境界ボックス](app-bar-and-bounding-box.md)
+* [音声設計](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
@@ -560,7 +561,7 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 #### <a name="documentation"></a>ドキュメント
 
-* [ルームのスキャンの視覚化](room-scan-visualization.md)
+* [部屋のスキャンの可視化](room-scan-visualization.md)
 * [ケース スタディ:HoloLens の空間のマッピング機能を展開します。](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
 * [ケース スタディ:空間 HoloTour の設計](case-study-spatial-sound-design-for-holotour.md)
 * [ケース スタディ:フラグメントで魅力的なエクスペリエンスを作成します。](case-study-creating-an-immersive-experience-in-fragments.md)
@@ -600,7 +601,7 @@ Mixed reality アプリでは、コンテンツは、ビューのフィールド
 
 ### <a name="resources"></a>参考資料
 
-* [Holographic フレーム](holographic-frame.md)
+* [ホログラフィック フレーム](holographic-frame.md)
 
 ## <a name="data-loading"></a>データの読み込み
 
@@ -632,4 +633,4 @@ Mixed reality アプリでは、コンテンツは、ビューのフィールド
 
 ### <a name="resources"></a>参考資料
 
-* [進行状況の表示](progress.md)
+* [進行状況を表示する](progress.md)

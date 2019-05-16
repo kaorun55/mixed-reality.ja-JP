@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Mixed Reality、視線の先との対話を設計します。
-ms.openlocfilehash: 9a12a5a3b3a583477fd98caeaa2f6890c67e2655
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 738ba9063a5d00f3bbedce989d93076d56ad1a44
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604971"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629107"
 ---
 # <a name="gaze"></a>視線入力
 
@@ -62,5 +62,5 @@ HoloLens 2 は、相互作用はユーザーのヘッド視線の先の対象と
 
 ## <a name="see-also"></a>関連項目
 * [MR 入力 210:視線入力](holograms-210.md)
-* [視線、ジェスチャ、および DirectX でモーション コント ローラー](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [これで Unity](gaze-in-unity.md)
+* [DirectX で Head、目の視線入力](gaze-in-directx.md)
+* [Unity の視線入力](gaze-in-unity.md)
