@@ -6,16 +6,16 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX、holographic レンダリング、ネイティブなネイティブ アプリ、WinRT、WinRT アプリでは、プラットフォーム Api、カスタム エンジンは、ミドルウェア
-ms.openlocfilehash: 047144cb8fcf158f74375e9ec69dca92a2a1cf01
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 60c4de7025099f38f0902e2ff24579e7088835a6
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59598631"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65628993"
 ---
 # <a name="directx-development-overview"></a>DirectX の開発の概要
 
-Windows Mixed Reality アプリの使用、 [holographic レンダリング](rendering.md)、[視線](gaze.md)、[ジェスチャ](gestures.md)、[モーションのコント ローラー](motion-controllers.md)、[音声](voice-input.md)と[空間マッピング](spatial-mapping.md)Api を構築する[複合現実](mixed-reality.md)HoloLens とイマーシブ ヘッドセットで発生します。 の 3D エンジンを使用して複合現実アプリを作成する[Unity](unity-development-overview.md)、DirectX 11 と Windows Mixed Reality Api を使用することもできます。 DirectX 12 が現在サポートされていないことに注意してください。 場合は、プラットフォームを直接活用している、本質的に作成する独自のミドルウェアまたはフレームワーク。 Windows Api サポートの両方で記述されたアプリC++とC#します。 使用したい場合C#をアプリケーションを利用することができます、 [SharpDX](http://sharpdx.org/)オープン ソース ソフトウェア ライブラリです。
+Windows Mixed Reality アプリの使用、 [holographic レンダリング](rendering.md)、[視線](gaze.md)、[ジェスチャ](gestures.md)、[モーションのコント ローラー](motion-controllers.md)、[音声](voice-input.md)と[空間マッピング](spatial-mapping.md)Api を構築する[複合現実](mixed-reality.md)HoloLens とイマーシブ ヘッドセットで発生します。 の 3D エンジンを使用して複合現実アプリを作成する[Unity](unity-development-overview.md)、または DirectX 11 または DirectX 12 を使用して Windows 混合現実 Api に対して直接コーディングすることができます。 場合は、プラットフォームを直接活用している、本質的に作成する独自のミドルウェアまたはフレームワーク。 Windows Api サポートの両方で記述されたアプリC++とC#します。 使用したい場合C#をアプリケーションを利用することができます、 [SharpDX](http://sharpdx.org/)オープン ソース ソフトウェア ライブラリです。
 
 Windows Mixed Reality サポート[2 つの種類のアプリ](app-views.md):
 * **複合現実アプリ**(UWP または Win32) を使用して、 [HolographicSpace API](getting-a-holographicspace.md)表示するために、[没入型のビュー](app-views.md)ヘッドセット表示の入力をユーザーにします。
@@ -25,7 +25,7 @@ DirectX の開発の間の相違点[2D のビューとビューの没入型](app
 
 体感型アプリを開発するには。
 * **UWP アプリ**、 [Visual Studio でテンプレートを使用して新しい UWP プロジェクトを作成する](creating-a-holographic-directx-project.md)します。 言語に基づく**Visual C++** または**Visual C#** 、下の UWP テンプレート**Windows ユニバーサル** >  **Holographic**します。
-* **Win32 アプリ**、[新しい Win32 デスクトップ プロジェクトを作成](creating-a-holographic-directx-project.md#creating-a-win32-project)しに Win32 の指示に従います、[取得、HolographicSpace](getting-a-holographicspace.md) HolographicSpace を取得するページ。
+* **Win32 アプリ**、[からを起動、 *BasicHologram* Win32 サンプル](creating-a-holographic-directx-project.md#creating-a-win32-project)します。
 
 これは、既存のアプリまたはエンジンに holographic のレンダリングのサポートを追加する必要があるコードを取得する優れた方法です。 リアルタイムの対話型ソフトウェアの開発者にとってなじみのある方法で、テンプレートでは、コードと概念が表示されます。
 
@@ -40,16 +40,17 @@ DirectX の開発の間の相違点[2D のビューとビューの没入型](app
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>複合現実の機能および入力の追加
 
 体感型アプリのユーザーの最良のエクスペリエンスを有効にするために、次のキー構成要素をサポートするために。
-* [視線、ジェスチャ、および DirectX でモーション コント ローラー](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [DirectX での音声入力](voice-input-in-directx.md)
-* [DirectX での空間のサウンド](spatial-sound-in-directx.md)
-* [DirectX での空間のマッピング](spatial-mapping-in-directx.md)
+* [DirectX で Head、目の視線入力](gaze-in-directx.md)
+* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [DirectX の音声入力](voice-input-in-directx.md)
+* [DirectX の立体音響](spatial-sound-in-directx.md)
+* [DirectX の空間マッピング](spatial-mapping-in-directx.md)
 
 これには他の主要な機能は、多くの魅力的なアプリを使用する DirectX アプリにも公開されているがあります。
-* [DirectX のアンカー空間の共有](shared-spatial-anchors-in-directx.md)
-* [DirectX の場所を特定できるカメラ](locatable-camera-in-directx.md)
-* [キーボード、マウス、および DirectX でコント ローラーの入力](keyboard,-mouse,-and-controller-input-in-directx.md)
+* [DirectX での共有された空間アンカー](shared-spatial-anchors-in-directx.md)
+* [DirectX での場所を特定できるカメラ](locatable-camera-in-directx.md)
+* [DirectX でのキーボード、マウス、およびコントローラー入力](keyboard,-mouse,-and-controller-input-in-directx.md)
 
 ## <a name="see-also"></a>関連項目
 * [アプリ モデル](app-model.md)
-* [アプリのビュー](app-views.md)
+* [アプリ ビュー](app-views.md)

@@ -1,17 +1,18 @@
 ---
-title: 視線入力とコミット
-description: 入力モデルをコミットし、視線の先の概要
+title: Head 注視とコミット
+description: Head 注視し、コミットの入力モデルの概要
 author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 03/31/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 複合現実、視線の先を対象とする操作、視線の先をデザインします。
-ms.openlocfilehash: 7bce18853e46d71d963574b35c393e5a5dbf2cd0
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: 95f2cef8c10ce3d0d2a218953613fef6f0a00362
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873986"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730817"
 ---
 # <a name="head-gaze-and-commit"></a>Head 注視とコミット
 Head 注視し、コミットが転送ポイント、head、(ヘッド-方向) の方向を持つオブジェクトを対象とする場合、入力モデルとなどを入力し、セカンダリに操作しているエア タップ手のジェスチャと音声コマンドの"Select"です。 間接的な操作、つまり到達腕以外ではコンテンツと対話するための使用に適して使用してモデルを「まで」の入力と見なされます。
@@ -53,14 +54,14 @@ Mixed reality ヘッドセットでは、位置とユーザーの頭の向きを
 - Xbox ゲームパッドの 'A' ボタンを押します
 - Xbox アダプティブ コント ローラーの 'A' ボタンを押します
 
-### <a name="gaze-and-air-tap-gesture"></a>視線入力や air ジェスチャをタップします。
+### <a name="head-gaze-and-air-tap-gesture"></a>Head 注視しエア タップ ジェスチャ
 エア タップは、垂直に保持して手のアイコンをタップするジェスチャです。 エア タップを実行するには、準備完了の位置に、人差し指を発生させるし、親指ピンチ、バックアップを解放する際、人差し指を発生させます。 HoloLens 1 では、エア タップは、最も一般的なセカンダリ入力です。
 
 ![準備が位置し、タップまたはクリック モーション指](images/readyandpress.jpg)<br>
 
 エア タップも HoloLens 2 では、使用し、元のバージョンで緩和されました。 Pinches のほぼすべての型はサポートされています、手が垂直化も。 これにより、ユーザーについて説明し、ジェスチャを実行するため、はるかに簡単です。  この新しいエア タップでは、既存のアプリケーションは HoloLens 2 の再コンパイルした後、新しい動作を自動的に取得されますので、同じ API を使って古いものが置き換えられます。
 
-### <a name="gaze-and-select-voice-command"></a>視線入力と音声コマンドの"Select"
+### <a name="head-gaze-and-select-voice-command"></a>Head 注視し、"Select"音声指示コマンド
 音声コマンドを実行すると、複合現実での主要な対話方法の 1 つです。 システムを制御する場合は、非常に強力な「自在」メカニズムを提供します。 音声の相互作用モデルの異なる種類があります。
 
 - 「クリック」作動またはセカンダリの入力としてコミットを実行する"Select"を汎用のコマンドを使用します。
@@ -72,7 +73,7 @@ Mixed reality ヘッドセットでは、位置とユーザーの頭の向きを
 詳細と使用可能なコマンドと使用方法の comprenhesive 一覧を検索するには、チェック アウト、[デザインを音声](voice-design.md)ガイダンス。
 
 
-### <a name="gaze-and-hololens-clicker"></a>視線入力、HoloLens Clicker
+### <a name="head-gaze-and-hololens-clicker"></a>Head 注視し、HoloLens Clicker
 HoloLens Clicker HoloLens 専用に構築された最初の周辺機器は、HoloLens の 1 Development Edition に含まれています。 HoloLens Clicker を最小限の手の動きをクリックし、セカンダリ入力としてコミットできます。 HoloLens clicker は、HoloLens 1 または 2 の Bluetooth 低エネルギー (BTLE) を使用してに接続します。
 
 ![](images/hololens-clicker-500px.jpg)<br>
@@ -83,7 +84,7 @@ HoloLens Clicker
 
 
 
-### <a name="gaze-and-xbox-wireless-controller"></a>視線入力と Xbox のワイヤレス コント ローラー
+### <a name="head-gaze-and-xbox-wireless-controller"></a>Head 注視と Xbox のワイヤレス コント ローラー
 Xbox のワイヤレス コント ローラーは、A ボタンを使用して入力セカンダリとして"click"作動を実行できます。 デバイスは、移動に役立つ操作および制御する、システムの既定のセットにマップされます。 コント ローラーをカスタマイズする場合は、アクセサリの Xbox アプリを使用して、Xbox のワイヤレス コント ローラーを構成します。
 
 ![](images/xboxcontroller.jpg)<br>
@@ -92,7 +93,7 @@ Xbox のワイヤレス コント ローラー
 [お使いの PC と Xbox コント ローラーのペアリング](hardware-accessories.md#pairing-bluetooth-accessories)
 
 
-### <a name="gaze-and-xbox-adaptive-controller"></a>視線の先、および Xbox のアダプティブ コント ローラー
+### <a name="head-gaze-and-xbox-adaptive-controller"></a>Head 視線入力、および Xbox のアダプティブ コント ローラー
 主に、モビリティを限られたプレイヤーがゲームのニーズを満たすように設計、Xbox アダプティブ コント ローラーは、Mixed Reality をよりアクセスできるようにする統合されたハブのデバイスです。
 
 アダプティブ Xbox コント ローラーは、A ボタンを使用して入力セカンダリとして"click"作動を実行できます。 デバイスは、移動に役立つ操作および制御する、システムの既定のセットにマップされます。 コント ローラーをカスタマイズする場合は、アクセサリの Xbox アプリを使用して、Xbox アダプティブ コント ローラーを構成します。
@@ -110,16 +111,11 @@ Xbox アダプティブ コント ローラーのポート
 <a href=https://www.xbox.com/en-US/xbox-one/accessories/controllers/xbox-adaptive-controller>詳細については使用可能な Xbox サイト</a>
 
 
-# <a name="device-support"></a>デバイスのサポート
-Head 視線し、コミットがすべての複合現実ヘッドセットでご確認いただけます。 HoloLens v1 でプライマリ入力モデルです。 通常、他ヘッドセットは手の形に基づくポインティングなどのメカニズムをアニメーション コント ローラーを含めるか、追跡手を明確します。 これらのデバイスでアプリケーションを優先すべき[ポイント-コミット](point-and-commit.md)の相手側の操作可能な場合。
-
-目注視し、コミットは HoloLens の 2 で使用できますが、プライマリ入力モデルではありません。 については、アプリケーションを作成これ場合「目視線の先のデザインのガイドライン」のセクションにジャンプします。
-
-# <a name="head-gaze-design-guidelines"></a>Head 視線のデザイン ガイドライン
+# <a name="head-gaze-design-guidelines"></a>Head 注視デザイン ガイドライン
 > [!NOTE]
 > 視線の設計に固有のガイダンスについて[近日](index.md)します。
 
-## <a name="gaze-targeting"></a>視線の先を対象とします。
+## <a name="head-gaze-targeting"></a>ヘッド-視線の先の対象とします。
 すべての対話は、ユーザーの入力モードに関係なく、対話する要素を対象とする機能に基づいて構築します。 Windows Mixed Reality でこれは、一般に、ユーザーの視線の先を使用します。
 エクスペリエンスを正常に使用するユーザーを有効にするには、ユーザーの目的、およびユーザーの実際のインテントのシステムの計算については、できる限り忠実に従う必要があります。 程度にシステムがユーザーの意図した操作を解釈する正しく、満足度が増えるとパフォーマンスが向上します。
 
@@ -142,7 +138,7 @@ Head 視線し、コミットがすべての複合現実ヘッドセットでご
 ## <a name="improving-targeting-behaviors"></a>ターゲットの動作の向上
 何かを対象とするユーザーの意図を確認 (または密接に近似)、「ニアミス」が正しくを対象としていた場合と同様の対話に試行を受け入れるように非常に便利ですができます。 複合現実エクスペリエンスに組み込むことが成功したメソッドのいくつかあります。
 
-### <a name="gaze-stabilization-gravity-wells"></a>視線入力安定化 ("重力 wells")
+### <a name="head-gaze-stabilization-gravity-wells"></a>Head 注視安定化 ("重力 wells")
 これが有効にする時間のほとんどまたはすべて。 この手法は、自然な head/ネック ジッター可能性のあるユーザーを削除します。 検索読み上げの動作が原因も移動します。
 
 ### <a name="closest-link-algorithms"></a>最も近いリンク アルゴリズム

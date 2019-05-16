@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6 dof コント ローラー、モーションのコント ローラー
-ms.openlocfilehash: b44964ab872bd080349ecf1b04b3f7082b521a24
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 7db1c16f8243081dc8f53e8722391f102c38e0d3
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604961"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629118"
 ---
 # <a name="motion-controllers"></a>アニメーション コント ローラー
 
@@ -230,10 +230,10 @@ Unity で動的にコント ローラー モデルを読み込むための方法
 [フィードバックを提供](give-us-feedback.md)フィードバック ハブで、「Mixed Reality は、入力を ->"カテゴリを使用します。
 
 ## <a name="see-also"></a>関連項目
-* [ジェスチャと Unity のアニメーション コント ローラー](gestures-and-motion-controllers-in-unity.md)
-* [視線、ジェスチャ、および DirectX でモーション コント ローラー](gaze,-gestures,-and-motion-controllers-in-directx.md)
+* [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
+* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
 * [ジェスチャ](gestures.md)
-* [MR 入力 213:アニメーション コント ローラー](mixed-reality-213.md)
+* [MR 入力 213:モーション コントローラー](mixed-reality-213.md)
 * [愛好家のガイド:Home、Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)
 * [愛好家のガイド:Windows Mixed Reality でのゲームとアプリの使用](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-games-and-apps-in-windows-mixed-reality)
 * [徹底解剖の追跡のしくみ](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/tracking-system)

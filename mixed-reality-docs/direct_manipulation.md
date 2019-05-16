@@ -1,21 +1,19 @@
 ---
-title: 手で直接操作
+title: 直接操作
 description: 直接操作の入力モデルの概要
 author: caseymeekhof
 ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
-ms.localizationpriority: high
 keywords: 実際には、視線の先、視線の先を対象との相互作用、混在、デザイン、ほぼ手 HoloLens
-ms.openlocfilehash: e241e13a778de0889942a3643246e087a107db86
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 803157bb248a5541ed524ac4f828ccbba9d59ce1
+ms.sourcegitcommit: 82d4e5cf4ad46bfdc44d0606844e28c75b6e67ce
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730751"
+ms.locfileid: "65730508"
 ---
-# <a name="direct-manipulation-with-hands"></a>手で直接操作
-直接操作は、手を直接ホログラム手を加えることを含む入力モデルです。 直接操作の目的は、オブジェクトが現実の世界と同じように動作します。 ボタンを押すだけでアクティブ化できるオブジェクトは、それを取得すること選択できる、2D のコンテンツが仮想のタッチ スクリーンのように動作します。  このため、直接操作については、ユーザーが簡単とも楽しいですね。  到達武器取引規則内では、コンテンツと対話するための使用に適してつまり、「近く」入力モデルと見なされます。
+# <a name="direct-manipulation"></a>直接操作
 
 HoloLens 2 では、自分の手でホログラム dircly をタッチすることができますを直接操作の入力モデルがあります。 直接操作の目的は、現実の世界と同じように動作するオブジェクトです。 それを押すだけでボタンをアクティブ化しもおよびを取得、取得、してオブジェクトを移動できます。 これらのシナリオで 2D のコンテンツは、仮想のタッチ スクリーンのように動作します。
 
@@ -25,13 +23,11 @@ HoloLens 2 では、自分の手でホログラム dircly をタッチするこ�
 
 ## <a name="device-support"></a>デバイスのサポート
 
-
 | 入力モデル | [HoloLens (第 1 世代)](https://review.docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details?branch=master) | HoloLens 2 |[イマーシブ ヘッドセット](https://review.docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details?branch=master)|
 |:-------- | :-------| :--------| :------------|
 | 直接操作 | ❌ がサポートされていません | 推奨 ✔️ | ➕ 代替[をポイントし、コミット](https://review.docs.microsoft.com/en-us/windows/mixed-reality/point-and-commit?branch=master)をお勧めします。
 
-直接操作では、HoloLens 2 では、プライマリ入力モデルを新しい関節手動追跡システムを使用します。 入力モデルでは、アニメーション コント ローラーを使用してイマーシブ ヘッドセットに収録されてもが、オブジェクトの操作の外部での相互作用の主要な手段としては推奨されません。  ダイレクト manipluation を HoloLens でご利用いただけません (第 1 世代)。
-
+直接操作では、HoloLens 2 では、プライマリ入力モデルを新しい関節手動追跡システムを使用します。 入力モデルでは、アニメーション コント ローラーを使用してイマーシブ ヘッドセットに収録されてもが、オブジェクトの操作の外部での相互作用の主要な手段としては推奨されません。  直接 manipluation は HoloLens v1 でご利用いただけません。
 
 ## <a name="collidable-fingertip"></a>Collidable 指先
 
@@ -115,7 +111,7 @@ HoloLens 2 には、境界ボックスを各 3D オブジェクトに適用す�
 
 ## <a name="instinctual-gestures"></a>Instinctual ジェスチャ
 
-HoloLens で (第 1 世代) 講師ユーザー ブルーム エア タップなどのいくつかの定義済みジェスチャ。 HoloLens の 2、シンボルのジェスチャを記憶するユーザーをお願いはありません。 すべての必要なユーザー ジェスチャ、ホログラムと内容との対話をユーザーの必要性は instinctual です。 Instinctual ジェスチャを実現する方法は、UI アフォーのデザインによってジェスチャを実行するユーザーをガイドです。
+HoloLens とは異なり (第 1 世代) 講師ユーザー ブルーム エア タップなどのいくつかの定義済みジェスチャ。 HoloLens の 2、シンボルのジェスチャを記憶するユーザーをお願いはありません。 すべての必要なユーザー ジェスチャ、ホログラムと内容との対話をユーザーの必要性は instinctual です。 Instinctual ジェスチャを実現する方法は、UI アフォーのデザインによってジェスチャを実行するユーザーをガイドです。
 
 などの場合は、オブジェクトのグラブまたは 2 本の指のピンチでのコントロール ポイントにぜひ、オブジェクトまたはコントロール ポイントは小にします。 5 本の指グラブを実行することをする場合、オブジェクトまたはコントロール ポイントが比較的大きななければなりません。 ボタンと同様に、小さなボタンはユーザーを制限する大きなボタンをユーザーの手のひらで押すお勧めします中に 1 本の指を押します。
 
@@ -133,7 +129,7 @@ HoloLens で (第 1 世代) 講師ユーザー ブルーム エア タップな�
 * **ときに**:誤って操作応答のトリガーを減らします。 視線では、どのようなユーザーが現在進行中でより良く理解できます。
 たとえば、以上に到達すると、実際の作業のツールを取得するときに、holographic (説明) のテキストを読んでいるとします。
 
-これにより、誤ってに (おそらくもが、ユーザーのフィールドの視野 (FOV) 外に) する前に気付きですかもいくつかの対話型 holographic ボタンに手を移動します。
+  これにより、誤ってに (おそらくもが、ユーザーのフィールドの視野 (FOV) 外に) する前に気付きですかもいくつかの対話型 holographic ボタンに手を移動します。
 
   要するに：ユーザーいないホログラムしばらくの間、見てまだ、タッチまたは把握イベントが検出されましたが、ユーザーがそのホログラムと対話する目的で実際にいる可能性があります。
 
@@ -147,7 +143,6 @@ HoloLens で (第 1 世代) 講師ユーザー ブルーム エア タップな�
 
 ## <a name="see-also"></a>関連項目
 
-* [頭の視線入力とコミット](gaze-and-commit.md)
+* [視線入力とコミット](gaze-and-commit.md)
 * [ポイントとコミット](point-and-commit.md)
-* [本能的な操作](interaction-fundamentals.md)
-
+* [操作の基礎](interaction-fundamentals.md)

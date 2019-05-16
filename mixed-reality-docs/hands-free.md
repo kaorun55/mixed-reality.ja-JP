@@ -1,19 +1,19 @@
 ---
-title: ハンズフリー用のアプリを最適化します。
+title: ハンズフリー
 description: ハンズフリー用のアプリを最適化します。
 author: liamar
 ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 複合現実、ハンズフリー、視線、視線を対象との相互作用、デザイン
-ms.openlocfilehash: f39a9524831161997b59be6cf89b124fa5b29c78
-ms.sourcegitcommit: d6d96d552ec10cd7e6502fbbc1905432e2878325
+ms.openlocfilehash: 59a460a0c46ace7e633381019d29af54b1061695
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65524328"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629019"
 ---
-# <a name="optimizing-your-app-for-hands-free"></a>ハンズフリー用のアプリを最適化します。
+# <a name="hands-free"></a>ハンズフリー
 
 
 
@@ -31,18 +31,16 @@ ms.locfileid: "65524328"
 
 ## <a name="hands-free-modalities"></a>ハンズフリー モダリティ
 
-### <a name="voice-commanding"></a>音声コマンドの実行
+### <a name="voice-commandingvoice-designmd"></a>[音声コマンドの実行](voice-design.md)
 
 コマンドと制御のインターフェイスは、音声を使用するだけでなくも複数の手順をスキップしてハンズフリー、動作をするユーザーを許可します。 このモードの使用状況の範囲からいずれかのボタンの名前を読み取るだけをユーザーにタスクを実現できるとしている担当者と会話しているを参照してください it-say it のようにアクティブにするに音量を上げるを許可します。
 
-* [音声設計](voice-design.md)
 
 
-### <a name="head-gaze-and-dwell"></a>Head 注視しドウェル
+### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[Head 注視しドウェル](gaze-and-dwell.md)
 
 ハンズフリー状況によっては、音声を使用したりはできません理想的なこともできます。 大きい音の工場出荷時の環境、プライバシー、またはソーシャル規範のすべての制約を指定できます。 ヘッド視線 + 熟考モデルでは、接続を維持しながら、ポイント、ヘッドのベクターを使用して、アプリを移動するユーザーまたはもたらすボタンがアクティブ化後一定の時間 (通常は約 1 秒程度)。 
 
-* [視線入力とドウェル](gaze-and-dwell.md)
 
 ## <a name="transitioning-in-and-out-of-hands-free"></a>ハンズフリーとの間の移行
 

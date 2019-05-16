@@ -5,13 +5,14 @@ author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 座標系、空間座標系、世界規模、世界、スケール、位置、向き、アンカー、空間アンカー、世界中ロックされている、世界中のロックの永続化の共有
-ms.openlocfilehash: eb0fae7881f1b6517da57305ef2fa3cb1ed78648
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 16165194d040ad22f7885897eddcc65cf9dcaec3
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605108"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730860"
 ---
 # <a name="spatial-anchors"></a>空間のアンカー
 
@@ -74,8 +75,8 @@ ms.locfileid: "59605108"
 
 ## <a name="see-also"></a>関連項目
 * [座標系](coordinate-systems.md)
-* [複合現実での経験を共有](shared-experiences-in-mixed-reality.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure の空間アンカー</a>
-* [Unity で永続化](persistence-in-unity.md)
+* [複合現実での共有エクスペリエンス](shared-experiences-in-mixed-reality.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
+* [Unity の永続化](persistence-in-unity.md)
 * [DirectX の空間アンカー](coordinate-systems-in-directx.md#place-holograms-in-the-world-using-spatial-anchors)
 * [導入事例 - 実際には、セキュリティ ホールを見る](case-study-looking-through-holes-in-your-reality.md)

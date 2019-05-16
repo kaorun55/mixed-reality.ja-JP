@@ -5,13 +5,14 @@ author: sostel
 ms.author: sostel
 ms.date: 04/05/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: 目の追跡、実際には、入力、目の視線の混在
-ms.openlocfilehash: 75cbba9048b620e4b00492ad3f71315fabf86677
-ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
+ms.openlocfilehash: f61f813c702cbeaa03ddc50c6a1958af3566bc1c
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2019
-ms.locfileid: "64581052"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730765"
 ---
 # <a name="eye-tracking-on-hololens-2"></a>HoloLens 2 の視線
 HoloLens 2 では、まったく新しいレベルのコンテキストと人間にわかり、Holographic 内でのエクスペリエンスに検索内容ユーザーに関する情報を使用しての驚異的な機能を開発者に提供しています。 このページは、さまざまなユース ケースの追跡を目が開発者にできる利用し、目視線入力ベースのユーザー インターフェイスを設計するとき確認する項目の概要を示します。 

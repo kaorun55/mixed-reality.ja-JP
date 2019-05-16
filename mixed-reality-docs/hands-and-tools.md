@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 複合現実、手、アニメーション コント ローラーとの対話の設計します。
-ms.openlocfilehash: 583d284ee98b8ccbc0a9c2c8670551d0a7397074
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: 4f4231dd816dc71e42d16aca1b518ad03440116e
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873995"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629025"
 ---
 # <a name="hands-and-motion-controllers"></a>手およびモーションのコント ローラー
 ## <a name="scenarios"></a>シナリオ
@@ -25,11 +25,11 @@ ms.locfileid: "64873995"
 * サービスと現実の世界を背景としてを使用してゲームに基づく場所を作成します。
 
 ## <a name="hands-and-motion-controllers-modalities"></a>手およびモーション コント ローラーのモダリティ
-### <a name="direct-manipulation-near-hand-interactiondirect-manipulationmd"></a>[(近くに手の形の相互作用) を直接操作](direct-manipulation.md)
+### <a name="direct-manipulation-with-handsdirect-manipulationmd"></a>[手で直接操作](direct-manipulation.md)
 これは、ユーザーが手を加えることと、ホログラムを直接操作できる、手の機能を活用モダリティです。 Leaveraging 日常業務のエクスペリエンスし、適切な visual アフォーを提供するには、ユーザーは仮想のものと対話する実際のオブジェクトを操作するための同じ方法で使用できます。   
 
-### <a name="point-and-commit-far-hand-interactionpoint-and-commitmd"></a>[ポイントとコミット (Far 手の形の相互作用)](point-and-commit.md)
-このモードは、距離でホログラムと対話するスーパーの電源をユーザーに提供します。 周囲の設定を最大限に利用できます。 ユーザーは、ホログラムを任意の場所に配置でき、それらの距離からアクセスできます。 メンタル モデルおよびジェスチャを制御すると、2 D および 3D ホログラムの操作が高と同期の直接操作します。
+### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[ポイントとの手でコミット](point-and-commit.md)
+このモードでは、距離でホログラムと対話するユーザーを支援します。 環境を最大限に利用できます。 ユーザーは、ホログラムを任意の場所に配置でき、それらの距離からアクセスできます。 メンタル モデルおよびジェスチャを制御すると、2 D および 3D ホログラムの操作が高と同期の直接操作します。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[モーション コントローラー](motion-controllers.md)
 アニメーション コント ローラーは、手の 1 つまたは両方を使用しているときに、大規模な距離の範囲にわたって正確な相互作用を提供することで、ユーザーの物理的な機能を拡張するツールです。 これらのハードウェア製品では、さまざまな操作の多く一般的に使用されるの相互作用し、surefooted、触るフィードバックへのショートカットを提供します。 現時点では、モーションのコント ローラーでは、のみ WMR シナリオの使用できます。 
@@ -37,8 +37,8 @@ ms.locfileid: "64873995"
 ![](images/Hands-and-controllers-720px.jpg)<br>
 
 ## <a name="see-also"></a>関連項目
-* [視線入力とコミット](gaze-and-commit.md)
+* [頭の視線入力とコミット](gaze-and-commit.md)
 * [(近くに手の形の相互作用) を直接操作](direct-manipulation.md)
 * [ポイントとコミット (Far 手の形の相互作用)](point-and-commit.md)
 * [ハンズフリー](hands-free.md)
-* [視線入力ターゲット設定](gaze-targeting.md)
+* [視線入力とドウェル](gaze-targeting.md)

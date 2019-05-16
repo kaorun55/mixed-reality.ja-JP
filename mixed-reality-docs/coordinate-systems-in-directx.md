@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 空間ロケーター、空間参照フレーム、空間座標系、空間ステージでは、実際には、混合コード、イメージの安定化、空間アンカー、空間アンカー ストア、追跡の損失、チュートリアルをサンプルします。
-ms.openlocfilehash: c8cdb39cbf4634edb4ed0a595381fc70f1388ce4
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 5a48e0a829ba8647718e28ec20760d8a764b13fe
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605151"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65628973"
 ---
 # <a name="coordinate-systems-in-directx"></a>DirectX の座標系
 
@@ -622,7 +622,7 @@ SpatialLocatorAttachedFrameOfReference を取得するには、SpatialLocator �
 SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordinateSystem, prediction->Timestamp);
 ```
 
-この SpatialPointerPose がに従ってホログラムを配置するための情報、[ユーザーの現在の針路](gaze,-gestures,-and-motion-controllers-in-directx.md)します。
+この SpatialPointerPose がに従ってホログラムを配置するための情報、[ユーザーの現在の針路](gaze-in-directx.md)します。
 
 快適性の理由から、時間の期間にわたって実行されるように、位置の変更を滑らかにするのに線形補間 ("lerp") を使用します。 これは、視線の先にホログラムのロックよりも、ユーザーに快適です。 Lerping tag-along ホログラムの位置では移動; をダンプしてホログラムを安定化することもできます。このダンプ私たちは、ユーザーに通常とは、ユーザーの頭の見えない動きと見なされますためジッター ホログラムと表示されます。
 
@@ -796,7 +796,8 @@ Windows Holographic のアプリ テンプレートが付属 LocatabilityChanged
 
 ## <a name="see-also"></a>関連項目
 * [座標系](coordinate-systems.md)
-* [空間のアンカー](spatial-anchors.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure の空間アンカー</a>
-* [視線、ジェスチャ、および DirectX でモーション コント ローラー](gaze,-gestures,-and-motion-controllers-in-directx.md)
-* [DirectX での空間のマッピング](spatial-mapping-in-directx.md)
+* [空間アンカー](spatial-anchors.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
+* [DirectX で Head、目の視線入力](gaze-in-directx.md)
+* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [DirectX の空間マッピング](spatial-mapping-in-directx.md)

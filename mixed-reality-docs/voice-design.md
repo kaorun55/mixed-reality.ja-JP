@@ -1,25 +1,23 @@
 ---
-title: 視線入力と音声
+title: 音声コマンドの実行
 description: 視線、ジェスチャ、音声 (GGV) は、HoloLens の相互作用の主要な手段です。 この記事では、音声の設計に思慮深いガイダンスを提供します。
-author: grbury
-ms.author: grbury
+author: shentan
+ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
+ms.localizationpriority: high
 keywords: Windows Mixed Reality、デザイン、対話、音声
-ms.openlocfilehash: 35e4c72026acaa36e5fd686cf892dd602f6626d6
-ms.sourcegitcommit: a4a53e6772805d89a47588857e3e8fb1fd8d9710
+ms.openlocfilehash: 49fa199b2656db95b15583ccfbee39f33942f180
+ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469081"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65730797"
 ---
-# <a name="gaze-and-voice"></a>視線入力と音声
+# <a name="voice-commanding"></a>音声コマンドの実行
 
-視線、ジェスチャ、音声 (GGV) は HoloLens での対話の主要な手段 (第 1 世代)。 [視線](gaze.md)と併用、[カーソル](cursors.md)はユーザーと対話する準備ができるコンテンツの対象にするためのメカニズムです。 [ジェスチャ](gestures.md)または[音声](voice-input.md)は意図機構です。 視線の先は、相互作用を完了するジェスチャまたは音声のいずれかで使用できます。
+("Select") のポインターとしてかどうか、ターゲットの mechaninism として視線の先を通常使用音声コマンドを使用する場合、またはアプリケーションに、コマンドを送信する (「表示, に言って」)。 一部の音声コマンドに「移動を開始する」または「Hey, Cortana」のように、すべてのターゲットを必要としないもちろん、
 
-イマーシブ ヘッドセット、相互作用の主要な手段には視線の先にコミットとポイント-コミット (で、[モーションのコント ローラー](motion-controllers.md))。 ユーザーの音声機能を備えたヘッドセットの場合は、操作が完了する視線の先またはポイントとの組み合わせで音声が使用できます。
-
-アプリを設計するときに、これらのインタラクションがうまく機能を利用する方法を検討してください。
 
 ## <a name="device-support"></a>デバイスのサポート
 
@@ -27,7 +25,7 @@ ms.locfileid: "65469081"
 <tr>
 <th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td>視線入力と音声</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ (とヘッドセットがアタッチされている)</td>
+<td></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ (とヘッドセットがアタッチされている)</td>
 </tr>
 </table>
 
@@ -51,13 +49,16 @@ ms.locfileid: "65469081"
    * "こんにちは Cortana"
    * "Select"
 
-### <a name="what-users-can-say"></a>ユーザーが言うことができます。
+### <a name="select"></a>"Select"
 
-ユーザーは、視線の先、またはポイントのいずれかのボタンをターゲットとは、単語を言います **"Select"** そのボタンをアクティブ化します。 "Select"は、常にリッスンする低電力キーワードのいずれかです。 進んで、ユーザーも使用できます"ボタン文法"、システム全体またはアプリ。 たとえば、アプリを見ているときにユーザーと言えます"Remove"(これは、アプリ バーでは) のコマンドは、世界中からアプリを削除します。
+いつでも"select"と答えるとするには、視線の先のカーソルをポイントはすべてアクティブ化されます。 
+
+>注:HoloLens 2 で単語を言うことにより最初に呼び出される注視カーソル ニーズ"select"です。 たとえば、"select"もう一度アクティブ化します。 視線の先のカーソルを非表示にするには、手--airtap を使ってか、オブジェクトをタッチします。 
 
 ### <a name="see-it-say-it"></a>表示、」ということ
 
 Windows Mixed Reality で「認識, に言って」音声モデルが採用されている場所**ボタンにラベルが関連付けられている音声コマンドと同一**します。 ラベルと音声コマンドの間の任意の dissonance 存在しないため、ユーザーを理解できる何を言おうシステムを制御します。 このボタンをもたらす中に補強するために、 **「音声は、ヒントを下げなければ」** ボタンが有効になっている音声通信が表示されます。
+
 
 ![例 1」ということを確認します。](images/voice-seeitsayit1-640px.jpg)
 

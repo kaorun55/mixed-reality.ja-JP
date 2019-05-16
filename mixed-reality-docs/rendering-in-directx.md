@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、ホログラム、レンダリング、3 D グラフィックス、HolographicFrame、レンダリング ループ、update ループ、チュートリアル、サンプル コード
-ms.openlocfilehash: fd35f971af4c3c9dfd7f21ee396c92216b3246e9
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 6edcaf808f2d7d48f480169e5579adb8984678a0
+ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605161"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65629034"
 ---
 # <a name="rendering-in-directx"></a>DirectX でのレンダリング
 
@@ -89,7 +89,7 @@ auto viewTransformContainer = cameraPose.TryGetViewTransform(coordinateSystem);
 
 ### <a name="process-gaze-and-gesture-input"></a>プロセスの視線入力および入力ジェスチャ
 
-[視線](gaze.md)と[ジェスチャ](gestures.md)入力時間ベースでないし、そのために更新する必要はありません、 **StepTimer**関数。 ただし[この入力](gaze,-gestures,-and-motion-controllers-in-directx.md)アプリは、各フレームを確認する必要があるものです。
+[視線](gaze-in-directx.md)と[手](hands-and-motion-controllers-in-directx.md)入力時間ベースでないし、そのために更新する必要はありません、 **StepTimer**関数。 ただしこの入力は、アプリは、各フレームで検索する必要があります。
 
 ### <a name="process-time-based-updates"></a>プロセスの時間ベースの更新プログラム
 
