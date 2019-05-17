@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 複合現実、視線の先、ドウェルとの対話の設計します。
-ms.openlocfilehash: 9f9fa89d7730e21e89bd24ce3b483d129c8a16db
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 05457b35c13422c8aa6663bdf52a489a4f5afdaa
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730778"
+ms.locfileid: "65813992"
 ---
 # <a name="head-gaze-and-dwell"></a>Head 注視しドウェル
 
@@ -92,9 +92,9 @@ ms.locfileid: "65730778"
 ### <a name="high-frequency-buttons"></a>高頻度のボタン
 ![Microsoft Dynamics 365 ガイド [次へ] ボタン](images/GuideNextButton.png "Microsoft Dynamics 365 ガイド [次へ] ボタン")高頻度のボタンは、アプリケーション全体でよく使用されるボタン。 これらの良い例は、Microsoft Dynamics 365 のガイドの前と [次へ] ボタンです。
 
-* 高頻度のボタンにする必要があります.
-  * ボタンのサイズの拡大をヘッド視線の先にヒットしやすくなります
-  * 人間工学の負担を回避するために目の高さの近くのままです。
+高頻度のボタンにする必要があります.
+* ボタンのサイズの拡大をヘッド視線の先にヒットしやすくなります
+* 人間工学の負担を回避するために目の高さの近くのままです。
 
 ### <a name="low-frequency-buttons"></a>低頻度のボタン
 低頻度のボタンは、アプリケーション全体で定期的と対話しないボタンです。 良い例は、[設定] メニューにアクセスするためのボタンまたはすべての作業をオフにするためのボタンにあります。

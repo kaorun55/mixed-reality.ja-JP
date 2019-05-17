@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 複合現実、unity、チュートリアル、hololens
-ms.openlocfilehash: 4546e4c8d973cbd4ce4190a974a4de9c01197e56
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: c5490e6a3b542a5ca677b309e5ed1171f8666fe7
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730937"
+ms.locfileid: "65814011"
 ---
 # <a name="mr-learning-base-module---project-initialization-and-first-application"></a>MR Learning ベースのモジュールのプロジェクトの初期化と最初のアプリケーション
 
@@ -83,7 +83,7 @@ ms.locfileid: "65730937"
 4. 作成し、アプリケーションの新しいフォルダーの名前します。 名前のフォルダーの下の図の"App"は、アプリケーションを含むに作成されました。 新しく作成したフォルダーにビルドを開始「フォルダーの選択」をクリックします。 ビルドが完了すると、Unity で [ビルド設定] ウィンドウを閉じると可能性があります。 
     ![レッスン 1 から第 5 章の手順 4](images/Lesson1Chapter5Step4.JPG)
 
-  > 注: 構成をもう一度お試しください、ビルドが失敗した場合、または Unity を再起動して、再構築します。 エラーを表示する場合は、"エラー。CS0246 = tyoe または名前空間の名前が"XX"が見つかりませんでした (が存在することを使用して、ディレクティブまたはアセンブリ参照か)"、をインストールする必要がありますし、 [Windows 10 SDK (10.0.18362.0)。](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
+  > 注: 構成をもう一度お試しください、ビルドが失敗した場合、または Unity を再起動して、再構築します。 エラーを表示する場合は、"エラー。CS0246 ="XX"が見つかりませんでした型または名前空間の名前 (が存在することを使用して、ディレクティブまたはアセンブリ参照か。)"、をインストールする必要がありますし、 [Windows 10 SDK (10.0.18362.0)。](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>)
   >
 
 5. ビルドが完了した後、新しくビルドされたアプリケーション ファイルを格納している新しく作成したフォルダーを開きます。 "MixedRealityBase.sln"ソリューション (または、プロジェクトの代替名を使用した場合は、対応する名前) をダブルクリックすると、Visual Studio でソリューション ファイルを開きます。

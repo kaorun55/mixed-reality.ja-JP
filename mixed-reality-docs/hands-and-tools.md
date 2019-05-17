@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 複合現実、手、アニメーション コント ローラーとの対話の設計します。
-ms.openlocfilehash: 4f4231dd816dc71e42d16aca1b518ad03440116e
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: b13efadd111ca970abe625221fb8045644822c37
+ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629025"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65813978"
 ---
 # <a name="hands-and-motion-controllers"></a>手およびモーションのコント ローラー
 ## <a name="scenarios"></a>シナリオ
@@ -26,9 +26,9 @@ ms.locfileid: "65629025"
 
 ## <a name="hands-and-motion-controllers-modalities"></a>手およびモーション コント ローラーのモダリティ
 ### <a name="direct-manipulation-with-handsdirect-manipulationmd"></a>[手で直接操作](direct-manipulation.md)
-これは、ユーザーが手を加えることと、ホログラムを直接操作できる、手の機能を活用モダリティです。 Leaveraging 日常業務のエクスペリエンスし、適切な visual アフォーを提供するには、ユーザーは仮想のものと対話する実際のオブジェクトを操作するための同じ方法で使用できます。   
+これは、ユーザーが手を加えることと、ホログラムを直接操作できる、手の機能を活用モダリティです。 Leaveraging 日常業務のエクスペリエンスし、適切な visual アフォーを提供するには、ユーザーは現実世界のオブジェクトを操作するのと同じ方法を使用して仮想のものを操作できます。   
 
-### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[ポイントとの手でコミット](point-and-commit.md)
+### <a name="point-and-commit-with-handspoint-and-commitmd"></a>[手を使ったポイントとコミット](point-and-commit.md)
 このモードでは、距離でホログラムと対話するユーザーを支援します。 環境を最大限に利用できます。 ユーザーは、ホログラムを任意の場所に配置でき、それらの距離からアクセスできます。 メンタル モデルおよびジェスチャを制御すると、2 D および 3D ホログラムの操作が高と同期の直接操作します。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[モーション コントローラー](motion-controllers.md)
