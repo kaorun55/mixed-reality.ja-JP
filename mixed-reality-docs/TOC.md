@@ -90,20 +90,17 @@
 ### [複合現実の設計プロセスを拡張する](case-study-expanding-the-design-process-for-mixed-reality.md)
 ### [よりパーソナルなコンピューティングの追求](case-study-the-pursuit-of-more-personal-computing.md)
 ### [AfterNow のプロセス - ビジョン、プロトタイプ作成、ビルド](case-study-afternows-process-envisioning,-prototyping,-building.md)
-## MR 設計システムとツール
-### [本能的な操作](Interaction-fundamentals.md)
-#### [手とモーション コントローラー](hands-and-tools.md)
-##### [直接操作](direct-manipulation.md)
-##### [ポイントとコミット](point-and-commit.md)
-##### [モーション コントローラー](Motion-controllers.md)
-#### [ハンズフリー](hands-free.md)
-##### [視線入力とドウェル](Gaze-and-dwell.md)
-##### [視線入力と音声](Voice-design.md)
-#### [頭の視線入力とコミット](gaze-and-commit.md)
+## [本能的な操作](Interaction-fundamentals.md)
+### [手とモーション コントローラー](hands-and-tools.md)
+#### [手で直接操作](direct-manipulation.md)
+#### [手を使ったポイントとコミット](point-and-commit.md)
+#### [モーション コントローラー](Motion-controllers.md)
+### [ハンズフリー](hands-free.md)
+#### [音声コマンド](Voice-design.md)
+#### [ヘッド視線入力とドウェル](Gaze-and-dwell.md)
+### [頭の視線入力とコミット](gaze-and-commit.md)
 ### 補助操作
-#### [目の視線入力](eye-tracking.md)
-#### [視線入力ターゲット設定](Gaze-targeting.md)
-#### [ジェスチャ](Gestures.md)
+#### [アイ視線入力](eye-tracking.md)
 ## スタイル
 ### [色、ライト、マテリアル](color,-light-and-materials.md)
 ### [立体音響の設計](spatial-sound-design.md)
@@ -175,7 +172,8 @@
 #### [DirectX でのレンダリング](rendering-in-directx.md)
 ### コア構成要素
 #### [DirectX の座標系](coordinate-systems-in-directx.md)
-#### [DirectX での視線入力、ジェスチャ、モーション コントローラー](gaze,-gestures,-and-motion-controllers-in-directx.md)
+#### [DirectX でのヘッド視線入力とアイ視線入力](gaze-in-directx.md)
+#### [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 #### [DirectX の音声入力](voice-input-in-directx.md)
 #### [DirectX の立体音響](spatial-sound-in-directx.md)
 #### [DirectX の空間マッピング](spatial-mapping-in-directx.md)
@@ -186,6 +184,7 @@
 ### 高度なトピック
 #### [XAML とホログラフィック DirectX アプリの使用](using-xaml-with-holographic-directx-apps.md)
 #### [ホログラフィック リモートの追加](add-holographic-remoting.md)
+### [OpenXR](openxr.md)
 ## WebVR
 ### [Edge での WebVR を Windows Mixed Reality と共に使用する](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## [チュートリアルとサンプル アプリ](tutorials.md)
