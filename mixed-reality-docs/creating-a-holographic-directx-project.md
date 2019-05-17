@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、holographic アプリ、新しいアプリ、UWP アプリ、テンプレートのアプリ、ホログラム、新しいプロジェクト、チュートリアル、ダウンロード、サンプル コード
-ms.openlocfilehash: 7d1ea0246cf823f74e68b4e67fbcfc275d081688
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: a7eac9d8056fe5f7bcc442d6441f71331fa96cf6
+ms.sourcegitcommit: 19c9bff21061d485821b61c9f3498daef8fa8235
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605098"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65828119"
 ---
 # <a name="creating-a-holographic-directx-project"></a>Holographic DirectX プロジェクトを作成します。
 
@@ -33,18 +33,23 @@ Mixed reality アプリには、一般的な Direct3D 11 の UWP アプリでは
 
 ## <a name="creating-a-uwp-project"></a>UWP プロジェクトを作成します。
 
-ツールをインストールした後、holographic DirectX UWP プロジェクトを作成できます。 新しいプロジェクトを作成するには
+1 回、[ツールがインストールされている](install-the-tools.md)holographic DirectX UWP プロジェクトを作成することができます。
+
+新しいプロジェクトを作成するには
 1. 開始**Visual Studio**します。
 2. **ファイル**メニューで、**新規**選択**プロジェクト**コンテキスト メニュー。 **新しいプロジェクト**ダイアログ ボックスが開きます。
 3. 展開**インストール済み**左側を展開し、 **Visual C++** 言語ノード。
 4. 移動し、 **Windows ユニバーサル > Holographic**ノード**Holographic DirectX 11 アプリ (ユニバーサル Windows) (C++/WinRT)** します。
+   ![Holographic の DirectX 11 のスクリーン ショットC++Visual Studio での WinRT UWP アプリ プロジェクト テンプレート](images/holographic-directx-app-cpp-new-project.png)<br>
+   *DirectX 11 の holographic C++Visual Studio での WinRT UWP アプリ プロジェクト テンプレート*
    >[!IMPORTANT]
    >プロジェクト テンプレートの名前が含まれているかどうかを必ず"(C++/WinRT)"。  有効でない場合は、以前のバージョンのインストールされている holographic プロジェクト テンプレートがあります。  最新のプロジェクト テンプレートを取得する[最新 HoloLens のエミュレーターをインストール](using-the-hololens-emulator.md)します。
 5. 入力、**名前**と**場所**テキスト ボックス、およびクリックまたはタップします**OK**。 Holographic アプリ プロジェクトが作成されます。
-6. 開発のため、HoloLens 2 のみを対象とすることを確認、**ターゲット バージョン**と**最小バージョン**に設定されている**Windows 10、バージョンが 1903**。  HoloLens も対象とする場合 (第 1 世代) 設定するデスクトップの Windows Mixed Reality ヘッドセットまたは**最小バージョン**に**Windows 10、バージョンは 1809**代わりに、いくつかが必要ですが<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">バージョン adapative チェック</a>HoloLens 2 の新機能を使用する場合、コードにします。
-
-![Visual Studio で holographic アプリ プロジェクト テンプレートのスクリーン ショット](images/holographic-directx-app-cpp-new-project.png)<br>
-*Visual Studio での holographic アプリ プロジェクト テンプレート*
+6. 開発のため、HoloLens 2 のみを対象とすることを確認、**ターゲット バージョン**と**最小バージョン**に設定されている**Windows 10、バージョンが 1903**。  HoloLens も対象とする場合 (第 1 世代) 設定するデスクトップの Windows Mixed Reality ヘッドセットまたは**最小バージョン**に**Windows 10、バージョンは 1809**代わりに、いくつかが必要ですが<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">バージョン アダプティブ チェック</a>HoloLens 2 の新機能を使用する場合、コードにします。
+   ![Windows 10 バージョン 1903 ターゲットと最小バージョンとしての設定のスクリーン ショット](images/new-uwp-project.png)<br>
+   *設定**Windows 10、バージョンが 1903**ターゲットと最小バージョンとして*
+   >[!IMPORTANT]
+   >表示されない場合**Windows 10、バージョンが 1903**オプションとしてがない最新の Windows 10 SDK をインストールします。  表示するには、このオプションを取得する<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">10.0.18362.0 のバージョンをインストールまたはそれ以降、Windows 10 SDK の</a>します。
 
 テンプレートを使用してプロジェクトを生成する<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>、標準に準拠した c++ 17 コンパイラをサポートする Windows ランタイム Api の c++ 17 の言語プロジェクションです。  プロジェクトでは、ユーザーからの 2 つのメーターが配置される世界ロックされているキューブを作成する方法を示します。 ユーザーは[エア タップ](gestures.md#air-tap)でユーザーの指定された別の位置に、キューブを配置するコント ローラーのボタンを押してまたは[視線](gaze.md)します。 すべての複合現実アプリを作成するには、このプロジェクトを変更できます。
 
@@ -151,9 +156,9 @@ int APIENTRY wWinMain(
 **レンダリング**メソッド`AppMain.cpp`は、 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>し、現在のアプリと空間配置の状態に従って各 holographic カメラの現在のフレームをレンダリングします。
 
 ## <a name="see-also"></a>関連項目
-* [HolographicSpace を取得します。](getting-a-holographicspace.md)
+* [HolographicSpace を入手する](getting-a-holographicspace.md)
 * <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspaceh" target="_blank">HolographicSpace</a>
 * [DirectX でのレンダリング](rendering-in-directx.md)
-* [Visual Studio を使用してデプロイをデバッグします。](using-visual-studio.md)
+* [Visual Studio を使用してデプロイおよびデバッグする](using-visual-studio.md)
 * [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)
-* [Holographic の DirectX アプリでの XAML の使用](using-xaml-with-holographic-directx-apps.md)
+* [XAML とホログラフィック DirectX アプリの使用](using-xaml-with-holographic-directx-apps.md)
