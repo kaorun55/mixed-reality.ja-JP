@@ -7,19 +7,15 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 実際には、視線の先、視線の先を対象との相互作用、混在、デザイン、ほぼ手 HoloLens
-ms.openlocfilehash: 5952d2ecb75f7addacffcec2776f34289abda6cf
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: 412d77a1d7446f82ddf43f051fdb149cb1fd559c
+ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65814003"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65940766"
 ---
 # <a name="direct-manipulation-with-hands"></a>手で直接操作
 直接操作は、手を直接ホログラム手を加えることを含む入力モデルです。 直接操作の目的は、オブジェクトが現実の世界と同じように動作します。 ボタンを押すだけでアクティブ化できるオブジェクトは、それを取得すること選択できる、2D のコンテンツが仮想のタッチ スクリーンのように動作します。  このため、直接操作については、ユーザーが簡単とも楽しいですね。  到達武器取引規則内では、コンテンツと対話するための使用に適してつまり、「近く」入力モデルと見なされます。
-
-HoloLens 2 では、手を直接ホログラムをタッチすることができますを直接操作の入力モデルがあります。 直接操作の目的は、現実の世界と同じように動作するオブジェクトです。 それを押すだけでボタンをアクティブ化しもおよびを取得、取得、してオブジェクトを移動できます。 これらのシナリオで 2D のコンテンツは、仮想のタッチ スクリーンのように動作します。
-
-直接の操作は、簡単にについては、ユーザーとが楽しいです。 Arm の範囲内にあるコンテンツと対話するための使用に適してつまり、「近くに渡します」入力モデルと見なされます。
 
 直接操作は、アフォー ダンスに基づく、つまりユーザー フレンドリです。 ユーザーに教えるにシンボリック ジェスチャはありません。 すべての対話は、タッチまたは取得できるビジュアル要素の周囲に構築されます。
 
@@ -148,6 +144,6 @@ HoloLens で (第 1 世代) 講師ユーザー ブルーム エア タップな�
 ## <a name="see-also"></a>関連項目
 
 * [頭の視線入力とコミット](gaze-and-commit.md)
-* [ポイントとコミット](point-and-commit.md)
+* [手を使ったポイントとコミット](point-and-commit.md)
 * [本能的な操作](interaction-fundamentals.md)
 

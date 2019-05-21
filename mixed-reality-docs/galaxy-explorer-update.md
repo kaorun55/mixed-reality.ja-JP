@@ -1,6 +1,6 @@
 # <a name="the-making-of-galaxy-explorer-for-hololens-2"></a>HoloLens 2 の Galaxy エクスプ ローラーの作成
 
-HoloLens 2 Galaxy エクスプ ローラーを更新する方法の旅にようこそ。 [Galaxy エクスプ ローラー](https://docs.microsoft.com/en-us/windows/mixed-reality/galaxy-explorer "Galaxy エクスプ ローラー") HoloLens のオープン ソース アプリケーションとして開発された最初 (第 1 世代)、お客様のアイデアを共有プログラムを通じて、多くの人が最初の複合現実エクスペリエンスの 1 つです。 これを更新していますので、 [HoloLens 2 の新しいエキサイティングな機能](https://www.microsoft.com/en-gb/hololens/hardware)します。
+HoloLens 2 Galaxy エクスプ ローラーを更新する方法の旅にようこそ。 [Galaxy エクスプ ローラー](https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer "Galaxy エクスプ ローラー") HoloLens のオープン ソース アプリケーションとして開発された最初 (第 1 世代)、お客様のアイデアを共有プログラムを通じて、多くの人が最初の複合現実エクスペリエンスの 1 つです。 これを更新していますので、 [HoloLens 2 の新しいエキサイティングな機能](https://www.microsoft.com/hololens/hardware)します。
 
 Microsoft Mixed Reality Studios(1) の 1 つ、として、通常は商用グレードのソリューションを開発しは開発 (&) クリエイティブと開発プロセス全体を通じてターゲット プラットフォームでテストします。 これで固有の状況ではありませんまだ HoloLens 2 のデバイスにアクセスしますが、Galaxy エクスプ ローラーに更新プログラムを開始することを嬉しく思います。 フレームワークとツールを利用してこのプロジェクトに着手していること (など[MRTK v2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)) とコミュニティ - を使用可能になるし、乗車のに沿って表示します。
 
