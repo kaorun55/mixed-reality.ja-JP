@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 写真、ビデオ、hololens、カメラ、unity、場所を特定できます。
 ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59601771"
@@ -26,8 +26,8 @@ ms.locfileid: "59601771"
 
 ## <a name="photo-capture"></a>写真をキャプチャ
 
-**名前空間:***UnityEngine.XR.WSA.WebCam*<br>
-**種類:***PhotoCapture*
+**名前空間:** *UnityEngine.XR.WSA.WebCam*<br>
+**種類:** *PhotoCapture*
 
 *PhotoCapture*もフォト ビデオ カメラで写真を実行することができます。 使用するための一般的なパターン*PhotoCapture*写真を撮るには、次のようにします。
 1. 作成、 *PhotoCapture*オブジェクト
@@ -202,8 +202,8 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 
 ## <a name="video-capture"></a>ビデオのキャプチャ
 
-**名前空間:***UnityEngine.XR.WSA.WebCam*<br>
-**種類:***VideoCapture*
+**名前空間:** *UnityEngine.XR.WSA.WebCam*<br>
+**種類:** *VideoCapture*
 
 *VideoCapture*関数に非常によく似た*PhotoCapture*します。 2 つの違いはフレーム/秒 (FPS) の値を指定する必要がありますのみ .mp4 ファイルとしてディスクに直接保存することができます。 使用して手順*VideoCapture*次に示します。
 1. 作成、 *VideoCapture*オブジェクト

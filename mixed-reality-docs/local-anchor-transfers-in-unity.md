@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 共有、アンカー、WorldAnchor、MR 共有 250、WorldAnchorTransferBatch、SpatialPerception、転送、ローカルのアンカーの転送、アンカーのエクスポート、アンカーのインポート
 ms.openlocfilehash: 82bcd07417fd5aa1b265ebc3c8edc939101dd783
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59605058"
@@ -34,7 +34,7 @@ ms.locfileid: "59605058"
 
 ### <a name="anchor-transfer"></a>アンカーの転送
 
-**名前空間:***UnityEngine.XR.WSA.Sharing*<br>
+**名前空間:**  *UnityEngine.XR.WSA.Sharing*<br>
 **種類**:*WorldAnchorTransferBatch*
 
 転送する、 [WorldAnchor](coordinate-systems-in-unity.md)、1 つの送信をアンカーを確立する必要があります。 HoloLens の 1 つのユーザーは各自の環境をスキャンし、手動またはプログラムでは、領域を共有のエクスペリエンスのアンカーでポイントを選択します。 この点を表すデータをシリアル化、およびエクスペリエンスで共有している他のデバイスに送信します。 各デバイスに、アンカーのデータをシリアル化解除し、領域内でそのポイントを検索しようとしています。 作業にアンカーを転送するためは、アンカーによって表されるポイントを識別できるように、環境を十分に各デバイスをスキャンしてする必要があります。

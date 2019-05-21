@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure、mixed reality、academy、unity、チュートリアル、api、カスタム ビジョン、没入型、hololens、vr
 ms.openlocfilehash: e6e9782a8d559af660dc4765556f1e926c5360b1
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59600001"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは**_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
+>Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
 
 <br>
 
@@ -195,7 +195,7 @@ Custom Vision Service プロジェクトのトレーニング。
 
     ![](images/AzureLabs-Lab302b-18.png)
 
-3.  既定値を確認する必要が開いている Unity、**スクリプト エディター**に設定されている**Visual Studio**します。 移動して**編集* > *設定** し、新しいウィンドウに移動**外部ツール**します。 変更**External Script Editor**に**Visual Studio 2017**します。 閉じる、**設定**ウィンドウ。
+3.  既定値を確認する必要が開いている Unity、**スクリプト エディター**に設定されている**Visual Studio**します。 移動して **編集* > *設定** し、新しいウィンドウに移動 **外部ツール** します。 変更**External Script Editor**に**Visual Studio 2017**します。 閉じる、**設定**ウィンドウ。
 
     ![](images/AzureLabs-Lab302b-19.png)
 
@@ -276,7 +276,7 @@ Custom Vision Service プロジェクトのトレーニング。
 このコースの使用を要求する、 **Newtonsoft**ライブラリで、アセットに DLL として追加することができます。 パッケージを含む[このライブラリは、このリンクからダウンロードできます。](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/NewtonsoftDLL.unitypackage)します。
 プロジェクトに Newtonsoft ライブラリをインポートするには、このコースに付属する Unity パッケージを使用します。
 
-1.  追加、 *.unitypackage*に Unity を使用して、 **資産* > *インポート**パッケージ* > *カスタム**パッケージ** メニュー オプション。
+1.  追加、 *.unitypackage* に Unity を使用して、 **資産* > *インポート* *パッケージ* > *カスタム* *パッケージ** メニュー オプション。
 
 2.  **Unity パッケージのインポート**その pop をボックスで、(およびなど)、すべてのことを確認**プラグイン**が選択されています。
 

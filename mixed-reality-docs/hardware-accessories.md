@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 操作方法、[アクセサリ]、bluetooth、bt、コント ローラー、ゲームパッド、clicker、xbox
 ms.openlocfilehash: c25f849cbf05a78ba2fe7118dbe160d05e0f5e3f
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59604738"
@@ -19,7 +19,7 @@ Windows Mixed Reality デバイスは、[アクセサリ] をサポートしま�
 
 HoloLens で、[アクセサリ] を使用するための 2 つの一般的なシナリオでは、空気の代替のジェスチャや、仮想キーボードをタップします。 これは、2 つの最も一般的な [アクセサリ]、 **HoloLens Clicker**と**Bluetooth キーボード**します。 Microsoft HoloLens 4.1 の Bluetooth 無線が含まれていて、サポート[Bluetooth HID](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Human_Interface_Device_Profile_.28HID.29)と[Bluetooth GATT](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Generic_Attribute_Profile_.28GATT.29)プロファイル。
 
-Windows Mixed Reality イマーシブ ヘッドセット アクセサリ入力を必要とを超えて[視線](gaze.md)と[音声](voice-input.md)します。 サポートされている [アクセサリ] を含める**キーボードとマウス**、**ゲームパッド**、および**[コント ローラーのモーション](motion-controllers.md)** します。
+Windows Mixed Reality イマーシブ ヘッドセット アクセサリ入力を必要とを超えて[視線](gaze.md)と[音声](voice-input.md)します。 サポートされている [アクセサリ] を含める **キーボードとマウス** 、 **ゲームパッド** 、および **[コント ローラーのモーション](motion-controllers.md)** します。
 
 ## <a name="pairing-bluetooth-accessories"></a>Bluetooth アクセサリのペアリング
 

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: キーボードの入力、unity、touchscreenkeyboard
 ms.openlocfilehash: 35f6f0df993931eea35db7b167110b341ea0c0f2
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59604888"
 ---
 # <a name="keyboard-input-in-unity"></a>Unity におけるキーボード入力
 
-**名前空間:***UnityEngine*<br>
+**名前空間:**  *UnityEngine*<br>
  **種類**:*[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)*
 
 HoloLens などの Bluetooth キーボード入力の多くの形式がサポートされますが、ほとんどのアプリケーションがすべてのユーザーが使用可能な物理キーボードにあるを想定することはできません。 アプリケーションは、テキスト入力を必要とする場合スクリーン キーボード上の何らかの形式を指定する必要があります。

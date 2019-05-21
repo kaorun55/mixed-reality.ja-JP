@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 音声入力、KeywordRecognizer、GrammarRecognizer、マイク、ディクテーション、音声
 ms.openlocfilehash: ef8114a1c877fe9b858122e0c64628d4b71a69cd
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59604818"
@@ -37,8 +37,8 @@ Unity を追加する 3 つの方法を公開する[音声入力](voice-input.md
 
 ### <a name="keywordrecognizer"></a>KeywordRecognizer
 
-**名前空間:***UnityEngine.Windows.Speech*<br>
-**種類:***KeywordRecognizer*, *PhraseRecognizedEventArgs*, *SpeechError*, *SpeechSystemStatus*
+**名前空間:** *UnityEngine.Windows.Speech*<br>
+**種類:** *KeywordRecognizer*, *PhraseRecognizedEventArgs*, *SpeechError*, *SpeechSystemStatus*
 
 させていただきます。 いくつかのステートメントを使用して、一部のキー操作を保存します。
 
@@ -99,7 +99,7 @@ keywordRecognizer.Start();
 
 ### <a name="grammarrecognizer"></a>GrammarRecognizer
 
-**名前空間:***UnityEngine.Windows.Speech*<br>
+**名前空間:** *UnityEngine.Windows.Speech*<br>
 **型**:*GrammarRecognizer*、 *PhraseRecognizedEventArgs*、 *SpeechError*、 *SpeechSystemStatus*
 
 SRGS を使用して、認識文法を指定している場合、GrammarRecognizer が使用されます。 複雑なフレーズを認識する場合、アプリがより多くのキーワードがある場合、またはオンとオフのコマンド セットを簡単に有効にする場合は便利にできます。 参照トピック[文法を使用して SRGS XML 作成](https://msdn.microsoft.com/library/hh378349(v=office.14).aspx)ファイル形式の情報。
@@ -141,7 +141,7 @@ grammarRecognizer.Start();
 
 ## <a name="dictation"></a>ディクテーション
 
-**名前空間:***UnityEngine.Windows.Speech*<br>
+**名前空間:** *UnityEngine.Windows.Speech*<br>
 **型**:*DictationRecognizer*、 *SpeechError*、 *SpeechSystemStatus*
 
 ユーザーの音声をテキストに変換するのに、DictationRecognizer を使用します。 DictationRecognizer 公開[ディクテーション](voice-input.md#dictation)機能とサポートを登録して、仮説と語句をリッスンしているため、それらを話すときに、ユーザーにフィードバックを提供することができます、イベントを完了し、その後です。 Start() と Stop() メソッドはそれぞれを有効にして、ディクテーション認識を無効にします。 完了すると、認識エンジンで、これは破棄されなければなりません Dispose() メソッドを使用して、使用するリソースを解放します。 リリースこれらのリソースに自動的に追加のパフォーマンス コストでガベージ コレクション中に場合より前は解放されません。

@@ -8,14 +8,14 @@ ms.topic: article
 keywords: Unity、フォーカス ポイント、フォーカス平面、安定化平面、安定化のポイント、reprojection、LSR、深度バッファー
 ms.openlocfilehash: 0f43c37df66ecada86dcb309fcd58d822f0f3481
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59604881"
 ---
 # <a name="focus-point-in-unity"></a>Unity でのフォーカス ポイント
 
-**名前空間:***UnityEngine.XR.WSA*<br>
+**名前空間:**  *UnityEngine.XR.WSA*<br>
 **種類**:*HolographicSettings*
 
 [フォーカス ポイント](hologram-stability.md#stabilization-plane)HoloLens、ホログラムを安定化を現在最も実行する方法についてのヒントの指定に設定されている表示できます。
