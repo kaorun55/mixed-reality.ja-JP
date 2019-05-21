@@ -19,7 +19,7 @@ ms.locfileid: "64873935"
 
 ## <a name="the-tech"></a>技術者
 
-壁面を克服するように、エイリアンした試合かどうか **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)**、壁に安全にロックを解除**[フラグメント](case-study-creating-an-immersive-experience-in-fragments.md)**、運が発生しました。UNSC 無限大格納庫を表示する、  **[E3 2015 で Halo 5 経験](https://www.youtube.com/watch?v=QDw5QjDtFy8)**、話の内容を見ています。 想像力に応じて、drywall に一時的なセキュリティ ホールを配置するか、loose floorboard 下の世界を非表示に、このビジュアルのトリックを使用できます。
+壁面を克服するように、エイリアンした試合かどうか **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)**、壁に安全にロックを解除 **[フラグメント](case-study-creating-an-immersive-experience-in-fragments.md)**、運が発生しました。UNSC 無限大格納庫を表示する、 **[E3 2015 で Halo 5 経験](https://www.youtube.com/watch?v=QDw5QjDtFy8)**、話の内容を見ています。 想像力に応じて、drywall に一時的なセキュリティ ホールを配置するか、loose floorboard 下の世界を非表示に、このビジュアルのトリックを使用できます。
 
 ![3 次元のパイプとその他の構造は、壁、侵入者を克服するように作成されたホールによってのみ表示 RoboRaid を追加します。](images/roboraid-640px.png)
 

@@ -8,7 +8,7 @@ ms.topic: article
 keywords: unity では、visual studio は、エクスポート、ビルド、展開.
 ms.openlocfilehash: 68c86fdfe0e589536dafe2bf53c7d4e5dffcc514
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59603698"
@@ -26,8 +26,8 @@ ms.locfileid: "59603698"
 2. クリックして**開くシーンを追加**ビルドにシーンを追加します。
 3. **Build Settings**ダイアログ ボックスで、HoloLens をエクスポートする次のオプションを選択します。
    * **プラットフォーム:***ユニバーサル Windows プラットフォーム*を必ず選択して**スイッチ プラットフォーム**選択を有効にします。
-   * **SDK:***ユニバーサル 10*します。
-   * **UWP のビルドの種類:***D3D*します。
+   * **SDK:**  *ユニバーサル 10*します。
+   * **UWP のビルドの種類:**  *D3D*します。
 4. **省略可能な**:**UnityC#プロジェクト。** チェックされています。
 
 >[!NOTE]

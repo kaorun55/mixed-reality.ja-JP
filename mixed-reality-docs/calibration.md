@@ -8,7 +8,7 @@ ms.topic: article
 keywords: calibration, comfort, visuals, quality, ipd
 ms.openlocfilehash: 91af069bc4ae5e49d9eb9c529f0d0db7b1567fc8
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59604791"
@@ -37,7 +37,7 @@ Cortana は、自分自身を導入後の調整は、最初のセットアップ
 
 **最初からアプリを起動します。**
 1. 使用[ブルーム](gestures.md#bloom)に[[スタート] メニュー](navigating-the-windows-mixed-reality-home.md#start-menu)します。
-2. 選択**+** をすべてのアプリを表示します。
+2. 選択 **+** をすべてのアプリを表示します。
 3. 起動**調整**します。
 
 ![シェルから調整アプリへのアクセス](images/calibration-shell.png)
@@ -46,7 +46,7 @@ Cortana は、自分自身を導入後の調整は、最初のセットアップ
 
 **設定からアプリを起動**
 1. 使用[ブルーム](gestures.md#bloom)に[[スタート] メニュー](navigating-the-windows-mixed-reality-home.md#start-menu)します。
-2. 選択**+** 場合は、すべてのアプリを表示する**設定**スタートにピン留めされていません。
+2. 選択 **+** 場合は、すべてのアプリを表示する**設定**スタートにピン留めされていません。
 3. 起動**設定**します。
 4. 移動します**システム** > **ユーティリティ**選択**オープン調整**します。
 

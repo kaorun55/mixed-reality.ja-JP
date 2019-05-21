@@ -8,7 +8,7 @@ ms.topic: article
 keywords: 座標系、空間座標系、方向専用、取り付けられているスケール、永続的なスケール、ルーム規模、世界規模、360 度は、取り付け、継続、ルーム、世界、スケール、位置、向き、Unity、アンカー、空間アンカー、世界にロックされている、世界のアンカー世界、ロックや本文-ロックされている本文のロック、損失、locatability、境界、戻しますの追跡
 ms.openlocfilehash: 36d74488b23587e5c89b40faf97921a10be7473b
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59605051"
@@ -21,8 +21,8 @@ Unity での複合現実エクスペリエンスを構築する最初の手順�
 
 ## <a name="building-an-orientation-only-or-seated-scale-experience"></a>方向専用、または取り付けられているスケールのエクスペリエンスの構築
 
-**名前空間:***UnityEngine.XR*<br>
-**種類:***XRDevice*
+**名前空間:**  *UnityEngine.XR*<br>
+**種類:**  *XRDevice*
 
 構築する、**向き専用**または**取り付けられているスケール エクスペリエンス**領域の種類を追跡、定常に Unity を設定する必要があります。 追跡するために Unity のワールド座標系を設定、[フレームの静止した基準](coordinate-systems.md#spatial-coordinate-systems)します。 カメラの既定の場所の前に、エディターで、静止した追跡モードでコンテンツが配置されます (フォワードは ~ Z)、アプリの起動時にも、ユーザーが表示されます。
 
@@ -30,8 +30,8 @@ Unity での複合現実エクスペリエンスを構築する最初の手順�
 XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 ```
 
-**名前空間:***UnityEngine.XR*<br>
-**種類:***InputTracking*
+**名前空間:**  *UnityEngine.XR*<br>
+**種類:** *InputTracking*
 
 純粋な**方向のみのエクスペリエンス**(場所ヘッド位置指定の更新プログラムは支障をきたすように見えます)、360 度のビデオ ビューアーなどを設定できます[XR します。InputTracking.disablePositionalTracking](https://docs.unity3d.com/ScriptReference/XR.InputTracking-disablePositionalTracking.html)を true にします。
 
@@ -47,8 +47,8 @@ InputTracking.Recenter();
 
 ## <a name="building-a-standing-scale-or-room-scale-experience"></a>永続的なスケールやルーム スケール エクスペリエンスの構築
 
-**名前空間:***UnityEngine.XR*<br>
-**種類:***XRDevice*
+**名前空間:**  *UnityEngine.XR*<br>
+**種類:**  *XRDevice*
 
 **継続スケール**または**ルーム スケール エクスペリエンス**フロアの基準としたコンテンツを配置する必要があります。 ユーザーの理解を使用して floor、 **[空間ステージ](coordinate-systems.md#spatial-coordinate-systems)**、現場レベルの配信元と省略可能な領域の境界を表す、ユーザーの定義、初回実行時に設定します。
 
@@ -69,8 +69,8 @@ else
 
 アプリが正常に RoomScale の空間型で、y に、コンテンツの追跡を設定すると、0、床の上にプレーンが表示されますを = です。 原点 (0, 0, 0) は、特定の場所 - セットアップ時に直面していましたが、順方向を表す Z で部屋のセットアップ中に、ユーザー縦位置、床の上になります。
 
-**名前空間:***UnityEngine.Experimental.XR*<br>
-**種類:***境界*
+**名前空間:** *UnityEngine.Experimental.XR*<br>
+**種類:** *境界*
 
 スクリプトのコードでできますを TryGetGeometry メソッドを呼び出している、境界の多角形を取得する UnityEngine.Experimental.XR.Boundary 型 TrackedArea の境界の種類を指定します。 ユーザーに (戻る頂点のリスト) の境界が定義されている場合、配信するには、安全ではわかって、**ルーム スケール エクスペリエンス**をユーザーに場所がシーンを中心ご説明を作成します。
 
@@ -86,8 +86,8 @@ if (UnityEngine.Experimental.XR.Boundary.TryGetGeometry(vertices, Boundary.Type.
 
 ## <a name="building-a-world-scale-experience"></a>世界規模のエクスペリエンスの構築
 
-**名前空間:***UnityEngine.XR.WSA*<br>
-**種類:***WorldAnchor*
+**名前空間:**  *UnityEngine.XR.WSA*<br>
+**種類:** *WorldAnchor*
 
 True の**世界規模で**ユーザーが 5 m を超える歩き回り HoloLens、ルーム スケール エクスペリエンスのために使用するもの以外の新しい手法必要があります。 1 つの主要なテクニックを使用して、作成する、[空間アンカー](coordinate-systems.md#spatial-anchors)ホログラム正確には、ユーザーのローミング距離に関係なく、物理世界の場所でのクラスターをロックし[後でもう一度これらホログラムを見つけるセッション](coordinate-systems.md#spatial-anchor-persistence)します。
 
