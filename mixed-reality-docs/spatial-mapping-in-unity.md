@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Unity、空間マッピング、レンダラー、コライダー、メッシュ、スキャン、コンポーネント
 ms.openlocfilehash: f938f5921cb2c06342a9ebcd376d690c10584df9
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59605158"
@@ -75,7 +75,7 @@ Unity のアプリでは、これら 2 つのコンポーネントを使用し�
 
 空間マッピングのレンダラーと空間マッピング コライダー コンポーネントから取得するよりも詳細に制御が必要な場合は、低レベルの空間マッピング スクリプト Api を使用できます。
 
-**名前空間:***UnityEngine.XR.WSA*<br>
+**名前空間:** *UnityEngine.XR.WSA*<br>
 **型**:*SurfaceObserver*、 *SurfaceChange*、 *SurfaceData*、 *SurfaceId*
 
 空間マッピング Api を使用するアプリケーションの推奨されるフローの概要を次に示します。

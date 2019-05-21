@@ -8,7 +8,7 @@ ms.topic: article
 keywords: Unity、損失の追跡、損失のイメージの追跡
 ms.openlocfilehash: eb675860d67e9cad0d1129b3a6f61343990a4179
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59602771"
@@ -27,8 +27,8 @@ ms.locfileid: "59602771"
 
 追跡の損失を手動で処理するに移動する必要があります**編集** > **プロジェクト設定** > **Player**  >  **ユニバーサル Windows プラットフォームの設定 タブ** > **スプラッシュ イメージ** > **Windows Holographic** "の追跡が失われる一時停止し、イメージの表示をオフにします。". その後、以下で指定した Api を使用した変更の追跡を処理する必要があります。
 
-**名前空間:***UnityEngine.XR.WSA*<br>
-**種類:***WorldManager*
+**名前空間:** *UnityEngine.XR.WSA*<br>
+**種類:** *WorldManager*
 
 * 追跡の紛失/獲得を検出するためにイベントを公開する世界マネージャー (*WorldManager.OnPositionalLocatorStateChanged*) と現在の状態を照会するプロパティ (*WorldManager.state*)
 * 追跡の状態がアクティブでない場合、ユーザーに変換しても、仮想世界に変換する、カメラは表示されません。 つまり、オブジェクトは、物理的な場所に一致しなくなると、ロックされている本文をすべて表示されます。
