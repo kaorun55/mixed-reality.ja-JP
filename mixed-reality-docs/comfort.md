@@ -6,12 +6,12 @@ ms.author: erpau
 ms.date: 04/5/2019
 ms.topic: article
 keywords: 実際には、設計の混在を癒してあげて、HoloLens 2、HoloLens (第 1 世代)
-ms.openlocfilehash: 3dac997923b3f2319cb97137c1bbd9a12c4126b1
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: 8dea3765f01a6a82fccc002d1cd5c7c9c77d0980
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993629"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974775"
 ---
 # <a name="comfort"></a>快適性
 
@@ -172,6 +172,6 @@ Windows Mixed Reality 没入型の HMDs (ascender にフォントのベースラ
 ## <a name="see-also"></a>関連項目
 * [視線入力](gaze.md)
 * [ホログラムの安定性](hologram-stability.md)
-* [操作の基礎](interaction-fundamentals.md)
+* [本能的な操作](interaction-fundamentals.md)
 * [ホログラフィック フレーム](holographic-frame.md)
 * [調整](calibration.md)

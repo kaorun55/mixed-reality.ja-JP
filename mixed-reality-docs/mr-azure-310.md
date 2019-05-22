@@ -8,13 +8,13 @@ ms.topic: article
 keywords: azure では、カスタム ビジョンは、オブジェクトの検出、実際に、アカデミー、unity、チュートリアル、api、hololens の混在
 ms.openlocfilehash: 89ee79943a88de8a34c679ae33621db5770908b0
 ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/12/2019
 ms.locfileid: "59597651"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは**_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
+>Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
 
 # <a name="mr-and-azure-310-object-detection"></a>Mr と Azure 310:オブジェクトの検出
 
@@ -208,7 +208,7 @@ Custom Vision プロジェクトのトレーニング。
 
     ![](images/AzureLabs-Lab310-22.png)
 
-3.  既定値を確認する必要が開いている Unity、**スクリプト エディター**に設定されている**Visual Studio**します。 移動して**編集* > *設定** し、新しいウィンドウに移動**外部ツール**します。 変更**External Script Editor**に**Visual Studio**します。 閉じる、**設定**ウィンドウ。
+3.  既定値を確認する必要が開いている Unity、 **スクリプト エディター** に設定されている **Visual Studio** します。 移動して **編集* > *設定** し、新しいウィンドウに移動 **外部ツール** します。 変更 **External Script Editor** に **Visual Studio** します。 閉じる、**設定**ウィンドウ。
 
     ![](images/AzureLabs-Lab310-23.png)
 

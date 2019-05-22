@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 複合現実、ジェスチャ、相互作用、設計
-ms.openlocfilehash: fabd47fef424186b826c410de725f805ff7005f5
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: 52ba7070e2c9b5632d5978c70571fcf9cda3f499
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629066"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974884"
 ---
 # <a name="gestures"></a>ジェスチャ
 
@@ -110,9 +110,9 @@ HoloLens のジェスチャは、フレーム内で"ジェスチャ"、(非常�
 * ジェスチャのフレームの境界線の重大な影響を最小限に抑える必要があります。 一般はジェスチャの結果が、境界で停止していることが逆になっていないを意味します。 などの場合は、ユーザーが、部屋の holographic によってオブジェクトを移動、移動を停止、ジェスチャのフレームが違反になった場合が**いない**出発点に返されます。 ユーザーは、可能性がありますし、いくつかのストレスが発生するが可能性があります、境界がより迅速に理解していなくてたびに完全な意図した操作を再起動します。
 
 ## <a name="see-also"></a>関連項目
-* [視線入力ターゲット設定](gaze-targeting.md)
+* [ヘッド視線入力とドウェル](gaze-and-dwell.md)
 * [音声設計](voice-design.md)
 * [MR 入力 211:ジェスチャ](holograms-211.md)
 * [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
-* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 * [モーション コントローラー](motion-controllers.md)

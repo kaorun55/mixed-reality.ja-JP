@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 実際には、視線の先、対象とする操作、視線の先を混合設計、hololens、MMR、マルチ モーダル
-ms.openlocfilehash: 771ebe44dc984c9d4550638bef405810d86b8d69
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 9d0e639d7474c7e8728282acfa8d288cfeec7043
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730831"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974905"
 ---
 # <a name="introducing-instinctual-interactions"></a>Instinctual 相互作用の概要
 
@@ -141,12 +141,13 @@ A:相互作用モデルのいずれでも、これらのユーザーの動作し
 
 ## <a name="see-also"></a>関連項目
 * [頭の視線入力とコミット](gaze-and-commit.md)
-* [直接操作](direct-manipulation.md)
-* [ポイントとコミット](point-and-commit.md)
-* [視線入力ターゲット設定](gaze-targeting.md)
+* [ヘッド視線入力とドウェル](gaze-and-dwell.md)
+* [手で直接操作](direct-manipulation.md)
+* [手を使ったポイントとコミット](point-and-commit.md)
 * [ジェスチャ](gestures.md)
-* [音声設計](voice-design.md)
+* [音声コマンド](voice-design.md)
 * [モーション コントローラー](motion-controllers.md)
 * [立体音響の設計](spatial-sound-design.md)
 * [空間マッピングの設計](spatial-mapping-design.md)
 * [快適性](comfort.md)
+

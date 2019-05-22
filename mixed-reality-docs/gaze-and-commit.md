@@ -7,12 +7,12 @@ ms.date: 03/31/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 複合現実、視線の先を対象とする操作、視線の先をデザインします。
-ms.openlocfilehash: 95f2cef8c10ce3d0d2a218953613fef6f0a00362
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: a84465de3479bf3da2131b94dd522539cd7de6e9
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730817"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974876"
 ---
 # <a name="head-gaze-and-commit"></a>Head 注視とコミット
 Head 注視し、コミットが転送ポイント、head、(ヘッド-方向) の方向を持つオブジェクトを対象とする場合、入力モデルとなどを入力し、セカンダリに操作しているエア タップ手のジェスチャと音声コマンドの"Select"です。 間接的な操作、つまり到達腕以外ではコンテンツと対話するための使用に適して使用してモデルを「まで」の入力と見なされます。
@@ -70,7 +70,7 @@ Mixed reality ヘッドセットでは、位置とユーザーの頭の向きを
 - メッセージ交換のユーザー インターフェイスまたはエンティティ、AI 自然言語の機能を搭載する Cortana のようにします。
 - カスタム commnads
 
-詳細と使用可能なコマンドと使用方法の comprenhesive 一覧を検索するには、チェック アウト、[デザインを音声](voice-design.md)ガイダンス。
+詳細と使用可能なコマンドと使用方法の comprenhesive 一覧を検索するには、チェック アウト、[音声コマンド実行](voice-design.md)ガイダンス。
 
 
 ### <a name="head-gaze-and-hololens-clicker"></a>Head 注視し、HoloLens Clicker
@@ -204,11 +204,11 @@ HoloLens のジェスチャは、フレーム内で"ジェスチャ"、(非常�
 
 
 ## <a name="see-also"></a>関連項目
-* [直接操作](direct-manipulation.md)
-* [ポイントとコミット](point-and-commit.md)
-* [操作の基礎](interaction-fundamentals.md)
-* [視線入力とドウェル](gaze-targeting.md)
-* [視線入力と音声](voice-design.md)
+* [手で直接操作](direct-manipulation.md)
+* [手を使ったポイントとコミット](point-and-commit.md)
+* [本能的な操作](interaction-fundamentals.md)
+* [ヘッド視線入力とドウェル](gaze-and-dwell.md)
+* [音声コマンド](voice-design.md)
 
 
 

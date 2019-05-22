@@ -6,12 +6,12 @@ ms.author: jonwie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、概要、ガイダンス
-ms.openlocfilehash: b4f128c001a2fa6ed72e1548ef82693ad1488099
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: ca69118dfeb766c1386420cd81053b9acb485ba7
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59598934"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974855"
 ---
 # <a name="about-this-design-guidance"></a>この設計のガイダンスについて
 
@@ -31,7 +31,7 @@ ms.locfileid: "59598934"
 
 この設計のガイダンスを編成する方法の簡単な概要を次に示します。 複数の記事へのリンクをこれらの領域の各セクションがあります。
 * **[設計の概要](mixed-reality.md)** 高度な考えを読んで - は次の原則を理解します。
-* **[対話デザイン](interaction-fundamentals.md)** -入力、コマンド処理、ナビゲーション、および、アプリのデザインに関するその他の相互作用の基本について説明します。
+* **[Instinctual 相互作用](interaction-fundamentals.md)** -入力、コマンド処理、ナビゲーション、および、アプリのデザインに関するその他の相互作用の基本について説明します。
 * **[スタイル](typography.md)** 、および文字体裁、色を使用してすばらしいアプリを作成します。
 * **[アプリのパターン](types-of-mixed-reality-apps.md)** -アプリが没入型と実際の運用環境全体でシナリオをまたがることができる方法について説明します。
 * **[コントロール](interactable-object.md)** -独自のアプリを作成する構成要素が発生するようコントロールとパターンを使用します。

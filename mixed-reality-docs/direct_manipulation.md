@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
 keywords: 実際には、視線の先、視線の先を対象との相互作用、混在、デザイン、ほぼ手 HoloLens
-ms.openlocfilehash: 803157bb248a5541ed524ac4f828ccbba9d59ce1
-ms.sourcegitcommit: 82d4e5cf4ad46bfdc44d0606844e28c75b6e67ce
+ms.openlocfilehash: a9e67f21587381dbc1090f89935eaa2b88630dae
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730508"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974754"
 ---
 # <a name="direct-manipulation"></a>直接操作
 
@@ -143,6 +143,6 @@ HoloLens とは異なり (第 1 世代) 講師ユーザー ブルーム エア �
 
 ## <a name="see-also"></a>関連項目
 
-* [視線入力とコミット](gaze-and-commit.md)
-* [ポイントとコミット](point-and-commit.md)
-* [操作の基礎](interaction-fundamentals.md)
+* [頭の視線入力とコミット](gaze-and-commit.md)
+* [手を使ったポイントとコミット](point-and-commit.md)
+* [本能的な操作](interaction-fundamentals.md)

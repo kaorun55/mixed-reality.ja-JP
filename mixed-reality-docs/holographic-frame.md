@@ -6,12 +6,12 @@ ms.author: mavitazk
 ms.date: 03/21/2018
 ms.topic: article
 keywords: フレーム、HoloLens、Windows Mixed Reality、ホログラフィック ビューのフィールド
-ms.openlocfilehash: 6773bc03dea471c97d0c6006d2ab7853a5ef3669
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c505eadbc16bb59143313aa62dd7c9d95384e0c8
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59598791"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974911"
 ---
 # <a name="holographic-frame"></a>Holographic フレーム
 
@@ -127,8 +127,8 @@ HoloLens のゲーム フラグメントでは、リビング ルームが仮想
 評判の現実的な表現では、講演する彼は、あると解釈するユーザーに向けたの評判を有効にする微妙な手法を備えた強力な中心点が用意されています。 エクスペリエンスについて、ユーザーが移動すると評判がシフト手前にしきい値に彼の周囲を超えるユーザーが離れすぎてが移動する場合に、ニュートラルな状態に戻る前に。 評判から完全に (たとえば、シーンの他の場所で何かを確認する) の方法を表示する場合、ナレーターの方向の位置は 1 回の評判に戻りますもう一度に注目がユーザー。 このような手法が immersion の強力な意味を指定し、過剰なヘッドの移動を削減し、昇格の holographic のフレーム内の中心点を作成[快適性](comfort.md)します。
 
 ## <a name="see-also"></a>関連項目
-* [相互作用の基礎](interaction-fundamentals.md)
+* [本能的な操作](interaction-fundamentals.md)
 * [快適性](comfort.md)
 * [スケール](scale.md)
-* [視線の先を対象とします。](gaze-targeting.md)
-* [ホログラム安定性](hologram-stability.md)
+* [ヘッド視線入力とドウェル](gaze-and-dwell.md)
+* [ホログラムの安定性](hologram-stability.md)

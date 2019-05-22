@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 実際には、視線の先、対象とする操作、視線の先を混合の設計します。
-ms.openlocfilehash: 1ac4f06208a7574fced0a7e27e93469ec93bf6e0
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: bbacf9bc0039280b9944f2ad6616108d9ceae1cd
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873922"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974930"
 ---
 # <a name="gaze-and-dwell"></a>視線入力とドウェル
 多くのことを確認するさまざまな方法がある、_コミット_視線の先との組み合わせなど_音声_または_ジェスチャを渡す_します。
@@ -99,5 +99,5 @@ A_熟考_ヘッドまたは目視線の先に実行できます。 考え方は�
 
 ## <a name="see-also"></a>関連項目
 * [ジェスチャ](gestures.md)
-* [音声設計](voice-design.md)
+* [音声コマンド](voice-design.md)
 * [カーソル](cursors.md)

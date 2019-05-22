@@ -7,12 +7,12 @@ ms.date: 05/13/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 複合現実、視線の先、ドウェルとの対話の設計します。
-ms.openlocfilehash: 05457b35c13422c8aa6663bdf52a489a4f5afdaa
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: aa4713407f14e94c88e654ae6648c4949f98e580
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813992"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974863"
 ---
 # <a name="head-gaze-and-dwell"></a>Head 注視しドウェル
 
@@ -124,8 +124,8 @@ ms.locfileid: "65813992"
 * 同じパターンを限り UX に関する知識を確立するために頻繁に再利用します。
  
  ## <a name="see-also"></a>関連項目
-* [直接操作](direct-manipulation.md)
-* [ポイントとコミット](point-and-commit.md)
-* [操作の基礎](interaction-fundamentals.md)
+* [手で直接操作](direct-manipulation.md)
+* [手を使ったポイントとコミット](point-and-commit.md)
+* [本能的な操作](interaction-fundamentals.md)
 * [頭の視線入力とコミット](gaze-and-commit.md)
-* [視線入力と音声](voice-design.md)
+* [音声コマンド](voice-design.md)

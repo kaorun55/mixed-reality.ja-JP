@@ -6,12 +6,12 @@ ms.author: yoyoz
 ms.date: 11/06/2018
 ms.topic: article
 keywords: vr、lbe、場所ベースのエンターテイメント、vr アーケード ゲームのイマーシブなアーケード ゲーム qr、qr コード
-ms.openlocfilehash: b0f4480496c15f811979f76143acbd456d89e249
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: e6588552c0cfa8bffa19ac2be5c247c5f73dc19c
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605118"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974898"
 ---
 # <a name="qr-code-tracking"></a>QR コードの追跡
 
@@ -176,7 +176,7 @@ QRTracking プラグインでは、QR コードを追跡するための Api を�
 Mixed Reality toolkit QR 追跡 API を使用する方法の例が見つかります[GitHub サイト](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker)します。
 
 MRTK では、使用状況の追跡 QR simpilify に必要なスクリプトを実装しました。 QR 追跡アプリを開発するために必要なすべての資産は、"QRTracker"フォルダーには。 2 つのシーンがある: 1 つ目が検出され、2 つ目は QR コードにアタッチされている座標系を使用して、ホログラムを表示する方法を示します、単に QR コードの詳細を表示するサンプルに示します。
-Prefab"QRScanner"QRCodes を使用する処理に必要なすべてのスクリプトを追加します。 QRCodeManager スクリプトをシーンに追加することができます QRCode API を実装する singileton クラスです。 QR コードの coodridnate システムにホログラムをアタッチするスクリプト"AttachToQRCode"が使用される、ホログラムのいずれかにこのスクリプトを追加することができます。 "SpatialGraphCoordinateSystem"は、QRCode 座標系を使用する方法を示します。 プロジェクト、シーンには、これらのスクリプトを使用できますか、独自直接プラグインを使用して、前述のように記述することができます。
+Prefab"QRScanner"QRCodes を使用する処理に必要なすべてのスクリプトを追加します。 QRCodeManager スクリプトは、QRCode API を実装するシングルトン クラスです。 これは、シーンに追加する必要があります。 スクリプト"AttachToQRCode"を使用して、QR コードの座標系にホログラムをアタッチする、このスクリプトは、ホログラムのいずれかに追加できます。 "SpatialGraphCoordinateSystem"は、QRCode 座標系を使用する方法を示します。 としてこれらのスクリプトを使用できるのプロジェクトでシーンまたは書き込める独自直接プラグインを使用して、前述のようです。
 
 ### <a name="implementing-qr-code-tracking-in-unity-without-mrtk"></a>QR コードが Unity MRTK なしで追跡を実装します。
 

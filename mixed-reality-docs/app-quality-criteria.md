@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: アプリの品質基準、実際には、混合 mixed reality アプリ
-ms.openlocfilehash: e9f6cd5a6017e11cd167c8141d29b82f89af08e4
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: 756bc148f290aa3406c9ac8bb7003d463c62772c
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65628987"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974749"
 ---
 # <a name="app-quality-criteria"></a>アプリの品質基準
 
@@ -403,7 +403,7 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 * [対話デザイン](hologram.md)
 * [色、光、および資料](color,-light-and-materials.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
-* [操作の基礎](interaction-fundamentals.md)
+* [本能的な操作](interaction-fundamentals.md)
 * [自己モーションとユーザー locomotion](comfort.md#self-motion-and-user-locomotion)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
@@ -451,14 +451,14 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 #### <a name="documentation"></a>ドキュメント
 
-* [Windows MR 相互作用の基礎](interaction-fundamentals.md)
+* [本能的な操作](interaction-fundamentals.md)
 * [対話型のオブジェクト](interactable-object.md)
-* [視線入力ターゲット設定](gaze-targeting.md)
+* [ヘッド視線入力とドウェル](gaze-and-dwell.md)
 * [カーソル](cursors.md)
 * [快適性と視線入力](comfort.md#gaze-direction)
 * [ジェスチャ](gestures.md)
 * [音声入力](voice-input.md)
-* [音声設計](voice-design.md)
+* [音声コマンド](voice-design.md)
 * [モーション コントローラー](motion-controllers.md)
 * [Unity 用入力移植ガイド](input-porting-guide-for-unity.md)
 * [Unity でのキーボード入力](keyboard-input-in-unity.md)
@@ -466,8 +466,8 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 * [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
 * [Unity の音声入力](voice-input-in-unity.md)
 * [DirectX でのキーボード、マウス、およびコントローラー入力](keyboard,-mouse,-and-controller-input-in-directx.md)
-* [DirectX で Head、目の視線入力](gaze-in-directx.md)
-* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [DirectX でのヘッド視線入力とアイ視線入力](gaze-in-directx.md)
+* [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 * [DirectX の音声入力](voice-input-in-directx.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
@@ -519,7 +519,7 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 * [対話可能なオブジェクト](interactable-object.md)
 * [Unity のテキスト](text-in-unity.md)
 * [アプリ バーと境界ボックス](app-bar-and-bounding-box.md)
-* [音声設計](voice-design.md)
+* [音声コマンド](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 

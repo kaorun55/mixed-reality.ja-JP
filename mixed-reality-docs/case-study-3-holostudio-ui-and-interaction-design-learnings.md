@@ -6,12 +6,12 @@ ms.author: marcghal
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 複合現実、HoloLens、HoloStudio、Windows
-ms.openlocfilehash: 217c489fed3c0588dae1c2753db6ba15da3522c8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e01e2ea888398e9982b56fd95f90ef0731ec6bc2
+ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59603210"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65974826"
 ---
 # <a name="case-study---3-holostudio-ui-and-interaction-design-learnings"></a>ケース スタディ - 3 HoloStudio UI と相互作用教訓を設計します。
 
@@ -75,6 +75,6 @@ Workbench またはスタンバイを予定していた場所をオフに切り�
 </table>
 
 ## <a name="see-also"></a>関連項目
-* [相互作用の基礎](interaction-fundamentals.md)
+* [本能的な操作](interaction-fundamentals.md)
 
  
