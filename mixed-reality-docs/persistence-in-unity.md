@@ -8,15 +8,15 @@ ms.topic: article
 keywords: HoloLens、Unity の永続化
 ms.openlocfilehash: b6a67e52b3a5ce724a90eb1a479c5eda74b0c4cb
 ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59605078"
 ---
 # <a name="persistence-in-unity"></a>Unity で永続化
 
-**名前空間:***UnityEngine.XR.WSA.Persistence*<br>
-**クラス:***WorldAnchorStore*
+**名前空間:** *UnityEngine.XR.WSA.Persistence*<br>
+**クラス:** *WorldAnchorStore*
 
 WorldAnchorStore は、アプリケーションのインスタンス間で特定の実際の位置にホログラムまま、holographic エクスペリエンスを作成するキーです。 これにより、ユーザーは個々 のホログラムまたはワークスペースを固定後は、し、検索後で、アプリのさまざまな用途で期待される場所。
 

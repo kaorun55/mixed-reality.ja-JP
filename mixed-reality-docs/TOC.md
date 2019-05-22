@@ -160,6 +160,7 @@
 #### [Unity でのキーボード入力](keyboard-input-in-unity.md)
 ### 高度なトピック
 #### [Windows 名前空間と HoloLens 用 Unity アプリの使用](using-the-windows-namespace-with-unity-apps-for-hololens.md)
+#### [Unity での Mixed Reality ネイティブ オブジェクト](unity-xrdevice-advanced.md)
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
 ### レガシー ドキュメント (Unity 2017.4/HTK/MRTK v1)
 ## Unreal
