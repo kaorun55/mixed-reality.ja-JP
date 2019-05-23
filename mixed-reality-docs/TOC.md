@@ -24,6 +24,7 @@
 #### [写真を表示する](see-your-photos.md)
 #### [センサーの調整](sensor-tuning.md)
 #### [HoloLens を更新する](updating-hololens.md)
+#### [デバイス共有](device-sharing.md)
 #### [HoloLens のデモ装着とクリーニングのガイド](hololens-demo-guide.md)
 ### イマーシブ ヘッドセット
 #### [イマーシブ ヘッドセット ハードウェアの詳細](immersive-headset-hardware-details.md)
