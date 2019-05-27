@@ -7,12 +7,12 @@ ms.date: 04/21/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality、デザイン、対話、音声
-ms.openlocfilehash: 49fa199b2656db95b15583ccfbee39f33942f180
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 084c1228d17c3e23b38d9b8918c13080598aea98
+ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730797"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66039190"
 ---
 # <a name="voice-commanding"></a>音声コマンドの実行
 
@@ -103,4 +103,4 @@ Windows Mixed Reality で「認識, に言って」音声モデルが採用さ�
 
 ## <a name="see-also"></a>関連項目
 * [ジェスチャ](gestures.md)
-* [視線入力ターゲット設定](gaze-targeting.md)
+* [ヘッド視線入力とドウェル](gaze-and-dwell.md)

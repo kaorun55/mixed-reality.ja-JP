@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 複合現実、手、アニメーション コント ローラーとの対話の設計します。
-ms.openlocfilehash: b13efadd111ca970abe625221fb8045644822c37
-ms.sourcegitcommit: b5bad4eeb5cdd0c2a7b639442656c306e8b5853b
+ms.openlocfilehash: d0e54c71ab42a09f2f9c6063a85441b98e729af1
+ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813978"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66039165"
 ---
 # <a name="hands-and-motion-controllers"></a>手およびモーションのコント ローラー
 ## <a name="scenarios"></a>シナリオ
@@ -38,7 +38,7 @@ ms.locfileid: "65813978"
 
 ## <a name="see-also"></a>関連項目
 * [頭の視線入力とコミット](gaze-and-commit.md)
-* [(近くに手の形の相互作用) を直接操作](direct-manipulation.md)
-* [ポイントとコミット (Far 手の形の相互作用)](point-and-commit.md)
+* [ヘッド視線入力とドウェル](gaze-and-dwell.md)
+* [手で直接操作](direct-manipulation.md)
+* [手を使ったポイントとコミット](point-and-commit.md)
 * [ハンズフリー](hands-free.md)
-* [視線入力とドウェル](gaze-targeting.md)
