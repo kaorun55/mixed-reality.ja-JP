@@ -6,42 +6,46 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、ホログラム、holographic のリモート処理、リモート レンダリング、ネットワークの表示、HoloLens、リモート ホログラム
-ms.openlocfilehash: 4726c6af43fe1b89fc8298e459a1af9dfa5fc667
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: 1e9567976bad1e2b72e95feca292bf3475893230
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605128"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270355"
 ---
-# <a name="add-holographic-remoting"></a><span data-ttu-id="616e2-104">Holographic のリモート処理を追加します。</span><span class="sxs-lookup"><span data-stu-id="616e2-104">Add holographic remoting</span></span>
+# <a name="add-holographic-remoting"></a><span data-ttu-id="8047a-104">Holographic のリモート処理を追加します。</span><span class="sxs-lookup"><span data-stu-id="8047a-104">Add holographic remoting</span></span>
+
+## <a name="hololens-2"></a><span data-ttu-id="8047a-105">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="8047a-105">HoloLens 2</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="616e2-105">HoloLens 2 に固有のガイダンスについて[近日](index.md#news-and-notes)します。</span><span class="sxs-lookup"><span data-stu-id="616e2-105">More guidance specific to HoloLens 2 [coming soon](index.md#news-and-notes).</span></span>
+> <span data-ttu-id="8047a-106">HoloLens 2 に固有のガイダンスについて[近日](index.md#news-and-notes)します。</span><span class="sxs-lookup"><span data-stu-id="8047a-106">More guidance specific to HoloLens 2 [coming soon](index.md#news-and-notes).</span></span>
 
-## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a><span data-ttu-id="616e2-106">Holographic のリモート処理をデスクトップまたは UWP アプリに追加します。</span><span class="sxs-lookup"><span data-stu-id="616e2-106">Add holographic remoting to your desktop or UWP app</span></span>
+<span data-ttu-id="8047a-107">Holographic のリモート処理を使用している HoloLens 開発者は、HoloLens 2 に対応できるようにするには、そのアプリを更新する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-107">HoloLens developers using Holographic Remoting will need to update their apps to make them compatible with HoloLens 2.</span></span>  <span data-ttu-id="8047a-108">まだ公開されていないリモート処理の Holographic の NuGet パッケージの新しいバージョンが必要になります。</span><span class="sxs-lookup"><span data-stu-id="8047a-108">This will require a new version of the Holographic Remoting NuGet package that is not publicly available yet.</span></span>  <span data-ttu-id="8047a-109">HoloLens の NuGet パッケージを使用して、アプリケーションでは、HoloLens 2 Holographic のリモート処理 Player に接続しようとして、接続は失敗します。</span><span class="sxs-lookup"><span data-stu-id="8047a-109">If an application using the HoloLens NuGet package attempts to connect to the Holographic Remoting Player on HoloLens 2, the connection will fail.</span></span>  <span data-ttu-id="8047a-110">HoloLens 2 NuGet パッケージが使用可能な更新プログラムは、このページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8047a-110">Watch this page for updates once the HoloLens 2 NuGet package is available.</span></span>
 
-<span data-ttu-id="616e2-107">このページには、デスクトップまたは UWP アプリに Holographic のリモート処理を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="616e2-107">This page describes how to add Holographic Remoting to a desktop or UWP app.</span></span>
+## <a name="add-holographic-remoting-to-your-desktop-or-uwp-app"></a><span data-ttu-id="8047a-111">Holographic のリモート処理をデスクトップまたは UWP アプリに追加します。</span><span class="sxs-lookup"><span data-stu-id="8047a-111">Add holographic remoting to your desktop or UWP app</span></span>
 
-<span data-ttu-id="616e2-108">Holographic のリモート処理により、アプリ、デスクトップ PC または Xbox One、多くのシステム リソースへのアクセス許可とにできるように統合リモートなどの UWP デバイスでホスト holographic のコンテンツを含む、HoloLens をターゲットに[没入型のビュー](app-views.md)に既存のデスクトップ PC のソフトウェア。</span><span class="sxs-lookup"><span data-stu-id="616e2-108">Holographic remoting allows your app to target a HoloLens with holographic content hosted on a desktop PC or on a UWP device such as the Xbox One, allowing access to more system resources and making it possible to integrate remote [immersive views](app-views.md) into existing desktop PC software.</span></span> <span data-ttu-id="616e2-109">リモート処理ホストのアプリ、HoloLens から、入力データ ストリームを受信するには、仮想の没入型ビューでコンテンツをレンダリングおよびコンテンツ フレームは、HoloLens をストリームします。</span><span class="sxs-lookup"><span data-stu-id="616e2-109">A remoting host app receives an input data stream from a HoloLens, renders content in a virtual immersive view, and streams content frames back to HoloLens.</span></span> <span data-ttu-id="616e2-110">標準の Wi-fi を使用して接続が確立します。</span><span class="sxs-lookup"><span data-stu-id="616e2-110">The connection is made using standard Wi-Fi.</span></span> <span data-ttu-id="616e2-111">リモート処理を使用して、するには、NuGet パッケージを使用して、デスクトップまたは UWP アプリに holographic のリモート処理を追加し、接続を処理し、没入型のビューで表示するためにコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="616e2-111">To use remoting, you will use a NuGet package to add holographic remoting to your desktop or UWP app, and write code to handle the connection and to render in an immersive view.</span></span> <span data-ttu-id="616e2-112">デバイスの接続を処理するタスクを簡略化するコード サンプルでは、ヘルパー ライブラリが含まれます。</span><span class="sxs-lookup"><span data-stu-id="616e2-112">Helper libraries are included in the code sample that simplify the task of handling the device connection.</span></span>
+<span data-ttu-id="8047a-112">このページには、デスクトップまたは UWP アプリに Holographic のリモート処理を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8047a-112">This page describes how to add Holographic Remoting to a desktop or UWP app.</span></span>
 
-<span data-ttu-id="616e2-113">一般的なリモート処理接続が 50 ミリ秒の待機時間と低い必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-113">A typical remoting connection will have as low as 50 ms of latency.</span></span> <span data-ttu-id="616e2-114">プレーヤー アプリは、リアルタイムでの待機時間を報告できます。</span><span class="sxs-lookup"><span data-stu-id="616e2-114">The player app can report the latency in real-time.</span></span>
+<span data-ttu-id="8047a-113">Holographic のリモート処理により、アプリ、デスクトップ PC または Xbox One、多くのシステム リソースへのアクセス許可とにできるように統合リモートなどの UWP デバイスでホスト holographic のコンテンツを含む、HoloLens をターゲットに[没入型のビュー](app-views.md)に既存のデスクトップ PC のソフトウェア。</span><span class="sxs-lookup"><span data-stu-id="8047a-113">Holographic remoting allows your app to target a HoloLens with holographic content hosted on a desktop PC or on a UWP device such as the Xbox One, allowing access to more system resources and making it possible to integrate remote [immersive views](app-views.md) into existing desktop PC software.</span></span> <span data-ttu-id="8047a-114">リモート処理ホストのアプリ、HoloLens から、入力データ ストリームを受信するには、仮想の没入型ビューでコンテンツをレンダリングおよびコンテンツ フレームは、HoloLens をストリームします。</span><span class="sxs-lookup"><span data-stu-id="8047a-114">A remoting host app receives an input data stream from a HoloLens, renders content in a virtual immersive view, and streams content frames back to HoloLens.</span></span> <span data-ttu-id="8047a-115">標準の Wi-fi を使用して接続が確立します。</span><span class="sxs-lookup"><span data-stu-id="8047a-115">The connection is made using standard Wi-Fi.</span></span> <span data-ttu-id="8047a-116">リモート処理を使用して、するには、NuGet パッケージを使用して、デスクトップまたは UWP アプリに holographic のリモート処理を追加し、接続を処理し、没入型のビューで表示するためにコードを記述します。</span><span class="sxs-lookup"><span data-stu-id="8047a-116">To use remoting, you will use a NuGet package to add holographic remoting to your desktop or UWP app, and write code to handle the connection and to render in an immersive view.</span></span> <span data-ttu-id="8047a-117">デバイスの接続を処理するタスクを簡略化するコード サンプルでは、ヘルパー ライブラリが含まれます。</span><span class="sxs-lookup"><span data-stu-id="8047a-117">Helper libraries are included in the code sample that simplify the task of handling the device connection.</span></span>
+
+<span data-ttu-id="8047a-118">一般的なリモート処理接続が 50 ミリ秒の待機時間と低い必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-118">A typical remoting connection will have as low as 50 ms of latency.</span></span> <span data-ttu-id="8047a-119">プレーヤー アプリは、リアルタイムでの待機時間を報告できます。</span><span class="sxs-lookup"><span data-stu-id="8047a-119">The player app can report the latency in real-time.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="616e2-115">この記事のコード スニペットは現在の使用を示すC++/CX ではなく c++ 17 に準拠していませんC++/WinRT で使用するため、 [ C++ holographic プロジェクト テンプレート](creating-a-holographic-directx-project.md)します。</span><span class="sxs-lookup"><span data-stu-id="616e2-115">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="616e2-116">概念は、同等のC++/WinRT のプロジェクトがコードに変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-116">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
+><span data-ttu-id="8047a-120">この記事のコード スニペットは現在の使用を示すC++/CX ではなく c++ 17 に準拠していませんC++/WinRT で使用するため、 [ C++ holographic プロジェクト テンプレート](creating-a-holographic-directx-project.md)します。</span><span class="sxs-lookup"><span data-stu-id="8047a-120">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="8047a-121">概念は、同等のC++/WinRT のプロジェクトがコードに変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-121">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
 
-### <a name="get-the-remoting-nuget-packages"></a><span data-ttu-id="616e2-117">NuGet パッケージのリモート処理の取得します。</span><span class="sxs-lookup"><span data-stu-id="616e2-117">Get the remoting NuGet packages</span></span>
+### <a name="get-the-remoting-nuget-packages"></a><span data-ttu-id="8047a-122">NuGet パッケージのリモート処理の取得します。</span><span class="sxs-lookup"><span data-stu-id="8047a-122">Get the remoting NuGet packages</span></span>
 
-<span data-ttu-id="616e2-118">Holographic のリモート処理用の NuGet パッケージを取得する次の手順に従ってし、プロジェクトからの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="616e2-118">Follow these steps to get the NuGet package for holographic remoting, and add a reference from your project:</span></span>
-1. <span data-ttu-id="616e2-119">Visual Studio でプロジェクトに移動します。</span><span class="sxs-lookup"><span data-stu-id="616e2-119">Go to your project in Visual Studio.</span></span>
-2. <span data-ttu-id="616e2-120">プロジェクト ノードを右クリックして**NuGet パッケージの管理.**</span><span class="sxs-lookup"><span data-stu-id="616e2-120">Right-click on the project node and select **Manage NuGet Packages...**</span></span>
-3. <span data-ttu-id="616e2-121">表示されるパネル で、**参照**し、「Holographic リモート処理」を検索します。</span><span class="sxs-lookup"><span data-stu-id="616e2-121">In the panel that appears, click **Browse** and then search for "Holographic Remoting".</span></span>
-4. <span data-ttu-id="616e2-122">選択**Microsoft.Holographic.Remoting**クリック**インストール**します。</span><span class="sxs-lookup"><span data-stu-id="616e2-122">Select **Microsoft.Holographic.Remoting** and click **Install**.</span></span>
-5. <span data-ttu-id="616e2-123">場合、**プレビュー**ダイアログが表示されたら、をクリックして**OK**します。</span><span class="sxs-lookup"><span data-stu-id="616e2-123">If the **Preview** dialog appears, click **OK**.</span></span>
-6. <span data-ttu-id="616e2-124">表示される次のダイアログ ボックスでは、使用許諾契約書です。</span><span class="sxs-lookup"><span data-stu-id="616e2-124">The next dialog that appears is the license agreement.</span></span> <span data-ttu-id="616e2-125">をクリックして**同意**ライセンス契約に同意します。</span><span class="sxs-lookup"><span data-stu-id="616e2-125">Click on **I Accept** to accept the license agreement.</span></span>
+<span data-ttu-id="8047a-123">Holographic のリモート処理用の NuGet パッケージを取得する次の手順に従ってし、プロジェクトからの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="8047a-123">Follow these steps to get the NuGet package for holographic remoting, and add a reference from your project:</span></span>
+1. <span data-ttu-id="8047a-124">Visual Studio でプロジェクトに移動します。</span><span class="sxs-lookup"><span data-stu-id="8047a-124">Go to your project in Visual Studio.</span></span>
+2. <span data-ttu-id="8047a-125">プロジェクト ノードを右クリックして**NuGet パッケージの管理.**</span><span class="sxs-lookup"><span data-stu-id="8047a-125">Right-click on the project node and select **Manage NuGet Packages...**</span></span>
+3. <span data-ttu-id="8047a-126">表示されるパネル で、**参照**し、「Holographic リモート処理」を検索します。</span><span class="sxs-lookup"><span data-stu-id="8047a-126">In the panel that appears, click **Browse** and then search for "Holographic Remoting".</span></span>
+4. <span data-ttu-id="8047a-127">選択**Microsoft.Holographic.Remoting**クリック**インストール**します。</span><span class="sxs-lookup"><span data-stu-id="8047a-127">Select **Microsoft.Holographic.Remoting** and click **Install**.</span></span>
+5. <span data-ttu-id="8047a-128">場合、**プレビュー**ダイアログが表示されたら、をクリックして**OK**します。</span><span class="sxs-lookup"><span data-stu-id="8047a-128">If the **Preview** dialog appears, click **OK**.</span></span>
+6. <span data-ttu-id="8047a-129">表示される次のダイアログ ボックスでは、使用許諾契約書です。</span><span class="sxs-lookup"><span data-stu-id="8047a-129">The next dialog that appears is the license agreement.</span></span> <span data-ttu-id="8047a-130">をクリックして**同意**ライセンス契約に同意します。</span><span class="sxs-lookup"><span data-stu-id="8047a-130">Click on **I Accept** to accept the license agreement.</span></span>
 
-### <a name="create-the-holographicstreamerhelpers"></a><span data-ttu-id="616e2-126">作成、HolographicStreamerHelpers</span><span class="sxs-lookup"><span data-stu-id="616e2-126">Create the HolographicStreamerHelpers</span></span>
+### <a name="create-the-holographicstreamerhelpers"></a><span data-ttu-id="8047a-131">作成、HolographicStreamerHelpers</span><span class="sxs-lookup"><span data-stu-id="8047a-131">Create the HolographicStreamerHelpers</span></span>
 
-<span data-ttu-id="616e2-127">最初に、インスタンス HolographicStreamerHelpers の必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-127">First, we need an instance of HolographicStreamerHelpers.</span></span> <span data-ttu-id="616e2-128">これは、リモート処理を処理するクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="616e2-128">Add this to the class that will be handling remoting.</span></span>
+<span data-ttu-id="8047a-132">最初に、インスタンス HolographicStreamerHelpers の必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-132">First, we need an instance of HolographicStreamerHelpers.</span></span> <span data-ttu-id="8047a-133">これは、リモート処理を処理するクラスを追加します。</span><span class="sxs-lookup"><span data-stu-id="8047a-133">Add this to the class that will be handling remoting.</span></span>
 
 ```
 #include <HolographicStreamerHelpers.h>
@@ -50,7 +54,7 @@ ms.locfileid: "59605128"
        Microsoft::Holographic::HolographicStreamerHelpers^ m_streamerHelpers;
 ```
 
-<span data-ttu-id="616e2-129">また、接続状態を追跡する必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-129">You'll also need to track connection state.</span></span> <span data-ttu-id="616e2-130">プレビューを表示する場合にコピーするテクスチャをする必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-130">If you want to render the preview, you need to have a texture to copy it to.</span></span> <span data-ttu-id="616e2-131">また、接続状態のロック、HoloLens の IP アドレスを格納する何らかの方法など、いくつかのものが必要し、など。</span><span class="sxs-lookup"><span data-stu-id="616e2-131">You also need a few things like a connection state lock, some way of storing the IP address of HoloLens, and so on.</span></span>
+<span data-ttu-id="8047a-134">また、接続状態を追跡する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-134">You'll also need to track connection state.</span></span> <span data-ttu-id="8047a-135">プレビューを表示する場合にコピーするテクスチャをする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-135">If you want to render the preview, you need to have a texture to copy it to.</span></span> <span data-ttu-id="8047a-136">また、接続状態のロック、HoloLens の IP アドレスを格納する何らかの方法など、いくつかのものが必要し、など。</span><span class="sxs-lookup"><span data-stu-id="8047a-136">You also need a few things like a connection state lock, some way of storing the IP address of HoloLens, and so on.</span></span>
 
 ```
 private:
@@ -67,9 +71,9 @@ private:
        Microsoft::WRL::ComPtr<ID3D11Texture2D>             m_spTexture;
 ```
 
-### <a name="initialize-holographicstreamerhelpers-and-connect-to-hololens"></a><span data-ttu-id="616e2-132">HolographicStreamerHelpers を初期化し、HoloLens への接続</span><span class="sxs-lookup"><span data-stu-id="616e2-132">Initialize HolographicStreamerHelpers and connect to HoloLens</span></span>
+### <a name="initialize-holographicstreamerhelpers-and-connect-to-hololens"></a><span data-ttu-id="8047a-137">HolographicStreamerHelpers を初期化し、HoloLens への接続</span><span class="sxs-lookup"><span data-stu-id="8047a-137">Initialize HolographicStreamerHelpers and connect to HoloLens</span></span>
 
-<span data-ttu-id="616e2-133">HoloLens デバイスに接続するには、HolographicStreamerHelpers のインスタンスを作成し、ターゲット IP アドレスに接続します。</span><span class="sxs-lookup"><span data-stu-id="616e2-133">To connect to a HoloLens device, create an instance of HolographicStreamerHelpers and connect to the target IP address.</span></span> <span data-ttu-id="616e2-134">Holographic のリモート処理ライブラリが正確に一致するようにエンコーダーとデコーダーの解決策が必要ですので、HoloLens の表示幅と高さに合わせてビデオ フレーム サイズを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-134">You will need to set the video frame size to match the HoloLens display width and height, because the Holographic Remoting library expects the encoder and decoder resolutions to match exactly.</span></span>
+<span data-ttu-id="8047a-138">HoloLens デバイスに接続するには、HolographicStreamerHelpers のインスタンスを作成し、ターゲット IP アドレスに接続します。</span><span class="sxs-lookup"><span data-stu-id="8047a-138">To connect to a HoloLens device, create an instance of HolographicStreamerHelpers and connect to the target IP address.</span></span> <span data-ttu-id="8047a-139">Holographic のリモート処理ライブラリが正確に一致するようにエンコーダーとデコーダーの解決策が必要ですので、HoloLens の表示幅と高さに合わせてビデオ フレーム サイズを設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-139">You will need to set the video frame size to match the HoloLens display width and height, because the Holographic Remoting library expects the encoder and decoder resolutions to match exactly.</span></span>
 
 ```
 m_streamerHelpers = ref new HolographicStreamerHelpers();
@@ -90,9 +94,9 @@ m_streamerHelpers = ref new HolographicStreamerHelpers();
        }
 ```
 
-<span data-ttu-id="616e2-135">デバイスの接続は非同期です。</span><span class="sxs-lookup"><span data-stu-id="616e2-135">The device connection is asynchronous.</span></span> <span data-ttu-id="616e2-136">Connect で、イベント ハンドラーを提供するアプリのニーズが接続解除、およびイベントをフレームに送信します。</span><span class="sxs-lookup"><span data-stu-id="616e2-136">Your app needs to provide event handlers for connect, disconnect, and frame send events.</span></span>
+<span data-ttu-id="8047a-140">デバイスの接続は非同期です。</span><span class="sxs-lookup"><span data-stu-id="8047a-140">The device connection is asynchronous.</span></span> <span data-ttu-id="8047a-141">Connect で、イベント ハンドラーを提供するアプリのニーズが接続解除、およびイベントをフレームに送信します。</span><span class="sxs-lookup"><span data-stu-id="8047a-141">Your app needs to provide event handlers for connect, disconnect, and frame send events.</span></span>
 
-<span data-ttu-id="616e2-137">OnConnected イベントは、UI を更新のレンダリングを開始および具合です。</span><span class="sxs-lookup"><span data-stu-id="616e2-137">The OnConnected event can update the UI, start rendering, and so on.</span></span> <span data-ttu-id="616e2-138">デスクトップのコード サンプルで、「接続済み」のメッセージ ウィンドウのタイトルを更新します。</span><span class="sxs-lookup"><span data-stu-id="616e2-138">In our desktop code sample, we update the window title with a "connected" message.</span></span>
+<span data-ttu-id="8047a-142">OnConnected イベントは、UI を更新のレンダリングを開始および具合です。</span><span class="sxs-lookup"><span data-stu-id="8047a-142">The OnConnected event can update the UI, start rendering, and so on.</span></span> <span data-ttu-id="8047a-143">デスクトップのコード サンプルで、「接続済み」のメッセージ ウィンドウのタイトルを更新します。</span><span class="sxs-lookup"><span data-stu-id="8047a-143">In our desktop code sample, we update the window title with a "connected" message.</span></span>
 
 ```
 m_streamerHelpers->OnConnected += ref new ConnectedEvent(
@@ -102,7 +106,7 @@ m_streamerHelpers->OnConnected += ref new ConnectedEvent(
            });
 ```
 
-<span data-ttu-id="616e2-139">OnDisconnected イベントには、再接続や UI の更新を処理できます。</span><span class="sxs-lookup"><span data-stu-id="616e2-139">The OnDisconnected event can handle reconnection, UI updates, and so on.</span></span> <span data-ttu-id="616e2-140">この例では、一時的な障害が発生した場合を再接続します。</span><span class="sxs-lookup"><span data-stu-id="616e2-140">In this example, we reconnect if there is a transient failure.</span></span>
+<span data-ttu-id="8047a-144">OnDisconnected イベントには、再接続や UI の更新を処理できます。</span><span class="sxs-lookup"><span data-stu-id="8047a-144">The OnDisconnected event can handle reconnection, UI updates, and so on.</span></span> <span data-ttu-id="8047a-145">この例では、一時的な障害が発生した場合を再接続します。</span><span class="sxs-lookup"><span data-stu-id="8047a-145">In this example, we reconnect if there is a transient failure.</span></span>
 
 ```
 Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_streamerHelpers);
@@ -142,7 +146,7 @@ Platform::WeakReference streamerHelpersWeakRef = Platform::WeakReference(m_strea
            });
 ```
 
-<span data-ttu-id="616e2-141">リモート処理コンポーネントのフレームを送信する準備ができたら、アプリには、SendFrameEvent にそのコピーを作成する機会が提供されます。</span><span class="sxs-lookup"><span data-stu-id="616e2-141">When the remoting component is ready to send a frame, your app is provided an opportunity to make a copy of it in the SendFrameEvent.</span></span> <span data-ttu-id="616e2-142">ここでは、コピー、フレーム スワップ チェーンにプレビュー ウィンドウに表示されることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="616e2-142">Here, we copy the frame to a swap chain so that we can display it in a preview window.</span></span>
+<span data-ttu-id="8047a-146">リモート処理コンポーネントのフレームを送信する準備ができたら、アプリには、SendFrameEvent にそのコピーを作成する機会が提供されます。</span><span class="sxs-lookup"><span data-stu-id="8047a-146">When the remoting component is ready to send a frame, your app is provided an opportunity to make a copy of it in the SendFrameEvent.</span></span> <span data-ttu-id="8047a-147">ここでは、コピー、フレーム スワップ チェーンにプレビュー ウィンドウに表示されることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="8047a-147">Here, we copy the frame to a swap chain so that we can display it in a preview window.</span></span>
 
 ```
 m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
@@ -170,17 +174,17 @@ m_streamerHelpers->OnSendFrame += ref new SendFrameEvent(
            });
 ```
 
-### <a name="render-holographic-content"></a><span data-ttu-id="616e2-143">Holographic のコンテンツをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="616e2-143">Render holographic content</span></span>
+### <a name="render-holographic-content"></a><span data-ttu-id="8047a-148">Holographic のコンテンツをレンダリングします。</span><span class="sxs-lookup"><span data-stu-id="8047a-148">Render holographic content</span></span>
 
-<span data-ttu-id="616e2-144">コンテンツを表示するためにリモート処理を使用して、デスクトップまたは UWP アプリ内で仮想 IFrameworkView を設定および処理するリモート処理から holographic フレーム。</span><span class="sxs-lookup"><span data-stu-id="616e2-144">To render content using remoting, you set up a virtual IFrameworkView within your desktop or UWP app and process holographic frames from remoting.</span></span> <span data-ttu-id="616e2-145">すべての Windows Holographic Api と同じ方法で、このビューがわずかに異なる設定を使用します。</span><span class="sxs-lookup"><span data-stu-id="616e2-145">All of the Windows Holographic APIs are uses the same way by this view, but it is set up slightly differently.</span></span>
+<span data-ttu-id="8047a-149">コンテンツを表示するためにリモート処理を使用して、デスクトップまたは UWP アプリ内で仮想 IFrameworkView を設定および処理するリモート処理から holographic フレーム。</span><span class="sxs-lookup"><span data-stu-id="8047a-149">To render content using remoting, you set up a virtual IFrameworkView within your desktop or UWP app and process holographic frames from remoting.</span></span> <span data-ttu-id="8047a-150">すべての Windows Holographic Api と同じ方法で、このビューがわずかに異なる設定を使用します。</span><span class="sxs-lookup"><span data-stu-id="8047a-150">All of the Windows Holographic APIs are uses the same way by this view, but it is set up slightly differently.</span></span>
 
-<span data-ttu-id="616e2-146">を作成する代わりに自分では、holographic 領域と音声のコンポーネントは、HolographicRemotingHelpers クラスから取得されます。</span><span class="sxs-lookup"><span data-stu-id="616e2-146">Instead of creating them yourself, the holographic space and speech components come from your HolographicRemotingHelpers class:</span></span>
+<span data-ttu-id="8047a-151">を作成する代わりに自分では、holographic 領域と音声のコンポーネントは、HolographicRemotingHelpers クラスから取得されます。</span><span class="sxs-lookup"><span data-stu-id="8047a-151">Instead of creating them yourself, the holographic space and speech components come from your HolographicRemotingHelpers class:</span></span>
 
 ```
 m_appView->Initialize(m_streamerHelpers->HolographicSpace, m_streamerHelpers->RemoteSpeech);
 ```
 
-<span data-ttu-id="616e2-147">Run メソッドの内部で、更新プログラムのループを使用する代わりに、デスクトップまたは UWP アプリのメイン ループからのティックの更新プログラムを提供します。</span><span class="sxs-lookup"><span data-stu-id="616e2-147">Instead of using an update loop inside of a Run method, you provide tick updates from the main loop of your desktop or UWP app.</span></span> <span data-ttu-id="616e2-148">デスクトップやメッセージの処理のコントロール内に存続する UWP アプリで利用できます。</span><span class="sxs-lookup"><span data-stu-id="616e2-148">This allows your desktop or UWP app to remain in control of message processing.</span></span>
+<span data-ttu-id="8047a-152">Run メソッドの内部で、更新プログラムのループを使用する代わりに、デスクトップまたは UWP アプリのメイン ループからのティックの更新プログラムを提供します。</span><span class="sxs-lookup"><span data-stu-id="8047a-152">Instead of using an update loop inside of a Run method, you provide tick updates from the main loop of your desktop or UWP app.</span></span> <span data-ttu-id="8047a-153">デスクトップやメッセージの処理のコントロール内に存続する UWP アプリで利用できます。</span><span class="sxs-lookup"><span data-stu-id="8047a-153">This allows your desktop or UWP app to remain in control of message processing.</span></span>
 
 ```
 void DesktopWindow::Tick()
@@ -192,7 +196,7 @@ void DesktopWindow::Tick()
    }
 ```
 
-<span data-ttu-id="616e2-149">Holographic アプリ ビューの Tick() メソッドは、更新、描画、存在するループの 1 つのイテレーションを完了します。</span><span class="sxs-lookup"><span data-stu-id="616e2-149">The holographic app view's Tick() method completes one iteration of the update, draw, present loop.</span></span>
+<span data-ttu-id="8047a-154">Holographic アプリ ビューの Tick() メソッドは、更新、描画、存在するループの 1 つのイテレーションを完了します。</span><span class="sxs-lookup"><span data-stu-id="8047a-154">The holographic app view's Tick() method completes one iteration of the update, draw, present loop.</span></span>
 
 ```
 void AppView::Tick()
@@ -212,11 +216,11 @@ void AppView::Tick()
    }
 ```
 
-<span data-ttu-id="616e2-150">Holographic アプリ ビューを更新して、レンダリング、および存在のループはまったく同じときも HoloLens - で実行されているが、デスクトップ PC で量より多くのシステム リソースへのアクセスがあります。</span><span class="sxs-lookup"><span data-stu-id="616e2-150">The holographic app view update, render, and present loop is exactly the same as it is when running on HoloLens - except that you have access to a much greater amount of system resources on your desktop PC.</span></span> <span data-ttu-id="616e2-151">多くの複数の三角形を表示、複数の描画パスがある、詳細物理学と x64 を使用してプロセスを必要とするコンテンツの読み込みに複数の 2 GB の RAM を実行できます。</span><span class="sxs-lookup"><span data-stu-id="616e2-151">You can render many more triangles, have more drawing passes, do more physics, and use x64 processes to load content that requires more than 2 GB of RAM.</span></span>
+<span data-ttu-id="8047a-155">Holographic アプリ ビューを更新して、レンダリング、および存在のループはまったく同じときも HoloLens - で実行されているが、デスクトップ PC で量より多くのシステム リソースへのアクセスがあります。</span><span class="sxs-lookup"><span data-stu-id="8047a-155">The holographic app view update, render, and present loop is exactly the same as it is when running on HoloLens - except that you have access to a much greater amount of system resources on your desktop PC.</span></span> <span data-ttu-id="8047a-156">多くの複数の三角形を表示、複数の描画パスがある、詳細物理学と x64 を使用してプロセスを必要とするコンテンツの読み込みに複数の 2 GB の RAM を実行できます。</span><span class="sxs-lookup"><span data-stu-id="8047a-156">You can render many more triangles, have more drawing passes, do more physics, and use x64 processes to load content that requires more than 2 GB of RAM.</span></span>
 
-### <a name="disconnect-and-end-the-remote-session"></a><span data-ttu-id="616e2-152">切断して、リモート セッションを終了します。</span><span class="sxs-lookup"><span data-stu-id="616e2-152">Disconnect and end the remote session</span></span>
+### <a name="disconnect-and-end-the-remote-session"></a><span data-ttu-id="8047a-157">切断して、リモート セッションを終了します。</span><span class="sxs-lookup"><span data-stu-id="8047a-157">Disconnect and end the remote session</span></span>
 
-<span data-ttu-id="616e2-153">-切断するための UI ボタンをクリックするなど、切断するには、HolographicStreamerHelpers で Disconnect() を呼び出すし、オブジェクトを解放します。</span><span class="sxs-lookup"><span data-stu-id="616e2-153">To disconnect - for example, when the user clicks a UI button to disconnect - call Disconnect() on the HolographicStreamerHelpers, and then release the object.</span></span>
+<span data-ttu-id="8047a-158">-切断するための UI ボタンをクリックするなど、切断するには、HolographicStreamerHelpers で Disconnect() を呼び出すし、オブジェクトを解放します。</span><span class="sxs-lookup"><span data-stu-id="8047a-158">To disconnect - for example, when the user clicks a UI button to disconnect - call Disconnect() on the HolographicStreamerHelpers, and then release the object.</span></span>
 
 ```
 void DesktopWindow::DisconnectFromRemoteDevice()
@@ -234,13 +238,13 @@ void DesktopWindow::DisconnectFromRemoteDevice()
    }
 ```
 
-## <a name="get-the-remoting-player"></a><span data-ttu-id="616e2-154">リモート処理のプレーヤーを取得します。</span><span class="sxs-lookup"><span data-stu-id="616e2-154">Get the remoting player</span></span>
+## <a name="get-the-remoting-player"></a><span data-ttu-id="8047a-159">リモート処理のプレーヤーを取得します。</span><span class="sxs-lookup"><span data-stu-id="8047a-159">Get the remoting player</span></span>
 
-<span data-ttu-id="616e2-155">Windows Holographic のリモート処理 player は、リモート処理ホストのアプリに接続するためのエンドポイントとして、Windows アプリ ストアで提供されます。</span><span class="sxs-lookup"><span data-stu-id="616e2-155">The Windows Holographic remoting player is offered in the Windows app store as an endpoint for remoting host apps to connect to.</span></span> <span data-ttu-id="616e2-156">Windows Holographic のリモート処理のプレーヤーを取得するには、HoloLens、リモート処理、検索から Windows アプリ ストアにアクセスし、アプリをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="616e2-156">To get the Windows Holographic remoting player, visit the Windows app store from your HoloLens, search for Remoting, and download the app.</span></span> <span data-ttu-id="616e2-157">リモート処理のプレーヤーには、リモート処理ホストのアプリをデバッグするときに役に立ちますが、画面上の統計情報を表示する機能が含まれています。</span><span class="sxs-lookup"><span data-stu-id="616e2-157">The remoting player includes a feature to display statistics on-screen, which can be useful when debugging remoting host apps.</span></span>
+<span data-ttu-id="8047a-160">Windows Holographic のリモート処理 player は、リモート処理ホストのアプリに接続するためのエンドポイントとして、Windows アプリ ストアで提供されます。</span><span class="sxs-lookup"><span data-stu-id="8047a-160">The Windows Holographic remoting player is offered in the Windows app store as an endpoint for remoting host apps to connect to.</span></span> <span data-ttu-id="8047a-161">Windows Holographic のリモート処理のプレーヤーを取得するには、HoloLens、リモート処理、検索から Windows アプリ ストアにアクセスし、アプリをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="8047a-161">To get the Windows Holographic remoting player, visit the Windows app store from your HoloLens, search for Remoting, and download the app.</span></span> <span data-ttu-id="8047a-162">リモート処理のプレーヤーには、リモート処理ホストのアプリをデバッグするときに役に立ちますが、画面上の統計情報を表示する機能が含まれています。</span><span class="sxs-lookup"><span data-stu-id="8047a-162">The remoting player includes a feature to display statistics on-screen, which can be useful when debugging remoting host apps.</span></span>
 
-## <a name="notes-and-resources"></a><span data-ttu-id="616e2-158">ノートとリソース</span><span class="sxs-lookup"><span data-stu-id="616e2-158">Notes and resources</span></span>
+## <a name="notes-and-resources"></a><span data-ttu-id="8047a-163">ノートとリソース</span><span class="sxs-lookup"><span data-stu-id="8047a-163">Notes and resources</span></span>
 
-<span data-ttu-id="616e2-159">Holographic アプリ ビューからホログラフィック領域を初期化するために使用する必要があります、Direct3D デバイスを持つアプリを指定する方法の必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-159">The holographic app view will need a way to provide your app with the Direct3D device, which must be used to initialize the holographic space.</span></span> <span data-ttu-id="616e2-160">アプリは、この Direct3D デバイスを使用して、コピーして、プレビュー フレームを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-160">Your app should use this Direct3D device to copy and display the preview frame.</span></span>
+<span data-ttu-id="8047a-164">Holographic アプリ ビューからホログラフィック領域を初期化するために使用する必要があります、Direct3D デバイスを持つアプリを指定する方法の必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-164">The holographic app view will need a way to provide your app with the Direct3D device, which must be used to initialize the holographic space.</span></span> <span data-ttu-id="8047a-165">アプリは、この Direct3D デバイスを使用して、コピーして、プレビュー フレームを表示する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-165">Your app should use this Direct3D device to copy and display the preview frame.</span></span>
 
 ```
 internal:
@@ -250,7 +254,7 @@ internal:
        }
 ```
 
-<span data-ttu-id="616e2-161">**コード サンプル:** Holographic のリモート処理の完全なコード サンプルは、リモート処理とリモート デスクトップの Win32、UWP の DirectX および XAML での UWP プロジェクトをホストと互換性がある holographic アプリケーション ビューが含まれています。</span><span class="sxs-lookup"><span data-stu-id="616e2-161">**Code sample:** A complete Holographic Remoting code sample is available, which includes a holographic application view that is compatible with remoting and remoting host projects for desktop Win32, UWP DirectX, and UWP with XAML.</span></span> <span data-ttu-id="616e2-162">取得するには、ここで参照してください。</span><span class="sxs-lookup"><span data-stu-id="616e2-162">To get it, go here:</span></span>
-* [<span data-ttu-id="616e2-163">リモート処理用の Windows Holographic のコード サンプル</span><span class="sxs-lookup"><span data-stu-id="616e2-163">Windows Holographic Code Sample for Remoting</span></span>](https://github.com/Microsoft/HoloLensCompanionKit/)
+<span data-ttu-id="8047a-166">**コード サンプル:** Holographic のリモート処理の完全なコード サンプルは、リモート処理とリモート デスクトップの Win32、UWP の DirectX および XAML での UWP プロジェクトをホストと互換性がある holographic アプリケーション ビューが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8047a-166">**Code sample:** A complete Holographic Remoting code sample is available, which includes a holographic application view that is compatible with remoting and remoting host projects for desktop Win32, UWP DirectX, and UWP with XAML.</span></span> <span data-ttu-id="8047a-167">取得するには、ここで参照してください。</span><span class="sxs-lookup"><span data-stu-id="8047a-167">To get it, go here:</span></span>
+* [<span data-ttu-id="8047a-168">リモート処理用の Windows Holographic のコード サンプル</span><span class="sxs-lookup"><span data-stu-id="8047a-168">Windows Holographic Code Sample for Remoting</span></span>](https://github.com/Microsoft/HoloLensCompanionKit/)
 
-<span data-ttu-id="616e2-164">**デバッグに注意してください。** Holographic のリモート処理ライブラリでは、初回の例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="616e2-164">**Debugging note:** The Holographic Remoting library can throw first-chance exceptions.</span></span> <span data-ttu-id="616e2-165">これらの例外は、デバッグ時にアクティブになっている Visual Studio 例外設定によって、セッションで表示される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="616e2-165">These exceptions may be visible in debugging sessions, depending on the Visual Studio exception settings that are active at the time.</span></span> <span data-ttu-id="616e2-166">これらの例外は無視して Holographic のリモート処理ライブラリによって内部的にキャッチされます。</span><span class="sxs-lookup"><span data-stu-id="616e2-166">These exceptions are caught internally by the Holographic Remoting library and can be ignored.</span></span>
+<span data-ttu-id="8047a-169">**デバッグに注意してください。** Holographic のリモート処理ライブラリでは、初回の例外をスローします。</span><span class="sxs-lookup"><span data-stu-id="8047a-169">**Debugging note:** The Holographic Remoting library can throw first-chance exceptions.</span></span> <span data-ttu-id="8047a-170">これらの例外は、デバッグ時にアクティブになっている Visual Studio 例外設定によって、セッションで表示される可能性があります。</span><span class="sxs-lookup"><span data-stu-id="8047a-170">These exceptions may be visible in debugging sessions, depending on the Visual Studio exception settings that are active at the time.</span></span> <span data-ttu-id="8047a-171">これらの例外は無視して Holographic のリモート処理ライブラリによって内部的にキャッチされます。</span><span class="sxs-lookup"><span data-stu-id="8047a-171">These exceptions are caught internally by the Holographic Remoting library and can be ignored.</span></span>
