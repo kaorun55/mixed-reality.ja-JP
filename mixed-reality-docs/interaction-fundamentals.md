@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 実際には、視線の先、対象とする操作、視線の先を混合設計、hololens、MMR、マルチ モーダル
-ms.openlocfilehash: 9d0e639d7474c7e8728282acfa8d288cfeec7043
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: d018179e20d26ee8b7b24bc74d7c1711bc788282
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974905"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270382"
 ---
 # <a name="introducing-instinctual-interactions"></a>Instinctual 相互作用の概要
 
@@ -36,11 +36,11 @@ Instinctual 相互作用モデルは、デバイスの種類も自然配置し�
 
 これらの相互作用モデルの各は便利な強力かつ独自の権限で使用できるし、一連の顧客のニーズのすべて最適化されています。 グラフの下、シナリオ、例、および各相互作用モデルの利点を表示します。  
 
-**[モデル]** | **[手およびツール](https://docs.microsoft.com/en-us/windows/mixed-reality/hands-and-tools)** | **[楽します。](https://docs.microsoft.com/en-us/windows/mixed-reality/hands-free)** | **[視線入力とコミット](https://docs.microsoft.com/en-us/windows/mixed-reality/gaze-and-commit?)**
+**[モデル]** | **[手およびモーションのコント ローラー](hands-and-tools.md)** | **[楽します。](hands-free.md)** | **[Head 注視とコミット](gaze-and-commit.md)**
 |--------- | --------------| ------------| ---------|
 **シナリオ例** | 3D 空間エクスペリエンス、spatial などのレイアウトとデザイン、コンテンツの操作、またはシミュレーション | コンテキスト対応のエクスペリエンスをユーザーの手占有されているなど、ジョブのメンテナンスを学習します。| クリックスルー エクスペリエンス、3 D のプレゼンテーション、デモなど
-**サイズに合わせて** | 追跡またはヘッド視線の先を新しいユーザーは、結合された wit の音声に適していますに注目します。 習得が。 追跡と 6 の自由度のコント ローラーの間で一貫性のある UX。 | いくつか必要な学習します。 手が音声と自然言語でうまく使用できないペアである場合 | Mobile ではなく HMDs のトレーニングが必要です。 アクセス可能なコント ローラーに最も適した HoloLens に最適な (第 1 世代) |
-**ハードウェア** | HoloLens 2 イマーシブ ヘッドセット | HoloLens 2 HoloLens (第 1 世代) イマーシブ ヘッドセット | HoloLens 2 イマーシブ ヘッドセット | HoloLens 2 HoloLens (第 1 世代) イマーシブ ヘッドセット Mobile AR |
+**サイズに合わせて** | 追跡またはヘッド視線の先を新しいユーザーは、結合された wit の音声に適していますに注目します。 習得が。 追跡と 6 の自由度のコント ローラーの間で一貫性のある UX。 | いくつか必要な学習します。 手が音声と自然言語でうまく使用できないペアである場合 | Mobile ではなく HMDs のトレーニングが必要です。 アクセス可能なコント ローラーに最適です。 HoloLens の最適な (第 1 世代)。 |
+**ハードウェア** | HoloLens 2 <br>イマーシブ ヘッドセット | HoloLens 2 <br>HoloLens (第 1 世代) <br>イマーシブ ヘッドセット | HoloLens 2 <br>イマーシブ ヘッドセット | HoloLens 2 <br>HoloLens (第 1 世代) <br>イマーシブ ヘッドセット <br>Mobile AR |
 
 各対話モデルでシームレスに使用できるすべての入力を使用するための詳細については、図と、Unity MRTK からサンプルのコンテンツへのリンクと、次のページで です。
 
@@ -75,7 +75,7 @@ Instinctual 相互作用モデルは、デバイスの種類も自然配置し�
         <td><strong>先ほど行った何かを確認する方法</strong></td>
     </tr>
     <tr>
-        <td><a href="hands-and-tools.md">手およびツール</a></td>
+        <td><a href="hands-and-tools.md">手とモーション コントローラー</a></td>
         <td>メッシュ手の形を表示、指先アフォー ダンスまたは手の形の表示]、[コント ローラー光線します。</td>
         <td>Grabbable ハンドルまたは手が近くにある場合、表示境界ボックスが表示されます。</td>
         <td>音を再生し、グラブとリリースのアニメーションを参照してください。</td>

@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic のリモート処理
-ms.openlocfilehash: 16add6c72b594822cacbef6c92ce196ab9b13429
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 24213444686dd2e5dbda4016dd551a8ead8f305a
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59605001"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270313"
 ---
 # <a name="holographic-remoting-player"></a>リモート処理の holographic プレーヤー
 
@@ -19,8 +19,7 @@ ms.locfileid: "59605001"
 
 Holographic のリモート処理 Player は、Holographic のリモート処理をサポートするために作られた PC のアプリでのみ使用できます。
 
-> [!NOTE]
-> HoloLens 2 に固有のガイダンスについて[近日](index.md#news-and-notes)します。
+Holographic のリモート処理 Player には HoloLens と HoloLens 2 の両方です。  HoloLens で Holographic のリモート処理がサポートされている PC のアプリは、HoloLens 2 Holographic Remtoing をサポートするために更新する必要があります。  バージョンのサポートについて質問がある場合は、アプリ プロバイダーに問い合わせてください。
 
 ## <a name="connecting-to-the-holographic-remoting-player"></a>リモート処理の Holographic プレーヤーへの接続
 
@@ -48,10 +47,10 @@ Holographic のリモート処理接続は**暗号化されていない**しま�
 メインの画面で言うことができる **「診断を無効にする」** 診断をオフにします。
 
 ## <a name="pc-system-requirements"></a>PC のシステム要件
-* お使いの PC**する必要があります**Windows 10 Anniversary Update を実行します。
+* お使いの PC**する必要があります**実行されている Windows 10 Anniversary Update 以降。
 * GeForce GTX 970 または AMD Radeon R9 290 または改善のグラフィックス カードをお勧めします。
 * お使いの PC をワイヤレス ホップの数を減らすイーサネット経由でネットワークに接続することをお勧めします。
 
 ## <a name="see-also"></a>関連項目
-* [ソフトウェア ライセンス条項の holographic のリモート処理](microsoft-holographic-remoting-software-license-terms.md)
+* [Holographic リモート ソフトウェア ライセンス条項](microsoft-holographic-remoting-software-license-terms.md)
 * [Microsoft プライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)

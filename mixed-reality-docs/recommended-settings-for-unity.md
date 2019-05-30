@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity、設定、複合現実
-ms.openlocfilehash: c7029f2dfaf246db9f972c7d89b46e4fb9b5f1a1
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: a26dbdb63c8bad9bb9659a6a3303c0b0ab418580
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993610"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270370"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity の推奨設定
 
@@ -83,6 +83,9 @@ Unity で .NET バックエンドおよびしたがってをお勧めします�
 3) ビルドするための SSD を使用します。
 
 お読みください[il2cpp バック エンドのビルド時間を最適化する](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)の詳細。
+
+> [!NOTE]
+> さらに、可能性があるセットアップ都合のよい、[キャッシュ サーバー](https://docs.unity3d.com/Manual/CacheServer.html)、特に大きな資産 (スクリプト ファイルを除く) または絶えずを Unity プロジェクトの場合は、シーン/資産を変更します。 プロジェクトを開くときに Unity 開発者のコンピューターで、内部キャッシュ フォーマット正規の資産に格納します。 項目を再インポートし、ため変更されたときに、再処理する必要があります。 このプロセスは 1 回実行し、キャッシュ サーバーに保存され、したがってすべての開発者が新しい変更をローカルでの再インポート処理ではなく、時間を節約するには、他の開発者と共有します。
 
 ## <a name="publishing-properties"></a>発行プロパティ
 

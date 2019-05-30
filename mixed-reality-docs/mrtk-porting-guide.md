@@ -7,12 +7,12 @@ ms.date: 04/12/19
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality、テスト、MRTK、MRTK バージョン 2、HoloLens 2
-ms.openlocfilehash: 98fde1a597bcc20b14037176748258d35ef99ab9
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 02dabd21b7a6add2ce53fe291a447e49057184d0
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730865"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270394"
 ---
 # <a name="getting-your-existing-app-ready-for-hololens-2"></a>HoloLens 2 の既存のアプリを準備
 
@@ -54,6 +54,7 @@ Unity に更新した後のデバイスで最適な結果を Unity で特定の�
 
 > [!NOTE]
 > IL2CPP バック エンドのスクリプトは Visual Studio を Unity からビルド時間が長くなるを発生することができ、開発者が、開発者のコンピューターをセットアップするため[il2cpp バック エンド ビルド時間を最適化する](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)します。
+> さらに、可能性があるセットアップ都合のよい、[キャッシュ サーバー](https://docs.unity3d.com/Manual/CacheServer.html)、特に大きな資産 (スクリプト ファイルを除く) または絶えずを Unity プロジェクトの場合は、シーン/資産を変更します。 プロジェクトを開くときに Unity 開発者のコンピューターで、内部キャッシュ フォーマット正規の資産に格納します。 項目を再インポートし、ため変更されたときに、再処理する必要があります。 このプロセスは 1 回実行し、キャッシュ サーバーに保存され、したがってすべての開発者が新しい変更をローカルでの再インポート処理ではなく、時間を節約するには、他の開発者と共有します。
 
 開発者はビルドし、HoloLens で、現在のアプリをテストした後、重大な変更をアドレス指定、更新、Unity のバージョンに移行した後、(第 1 世代)。 さらに、これは、作成してソース管理のコミットを保存するには、出発点です。 
 

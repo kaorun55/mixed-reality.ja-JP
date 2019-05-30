@@ -1,23 +1,25 @@
 ---
 title: 商用機能
-description: Microsoft HoloLens Commercial Suite には、HoloLens デバイスを管理する企業向けのより簡単にする機能が含まれています。
-author: xerxesb85
-ms.author: xerxesb
-ms.date: 03/21/2018
+description: Microsoft HoloLens Commercial Suite には、HoloLens デバイスを管理する企業向けのより簡単にする機能が含まれています。  HoloLens 2 は、既定では、商用の機能と equipt です。
+author: scooley
+ms.author: scooley
+ms.date: 05/23/2019
 ms.topic: article
 keywords: HoloLens、商用、機能、mdm、モバイル デバイス管理、キオスク モード
-ms.openlocfilehash: 5fd5c56983fb3e94376fac08c6e96510bccc0002
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4da540072fd32ac99692f0a13eb5852337c493bb
+ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604991"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66270358"
 ---
 # <a name="commercial-features"></a>商用機能
 
-Microsoft HoloLens Commercial Suite には、HoloLens デバイスを管理する企業向けのより簡単にする機能が含まれています。 商用機能は、Windows オペレーティング システムに含まれていますが、ライセンスによって有効になっています。 ライセンスを行っていれば、ほぼすべてのケースでは、Microsoft デバイス管理で HoloLens が組織に登録するときに有効です。 Microsoft HoloLens Commercial Suite を購入する、ローカルのマイクロソフト アカウント マネージャーにお問い合わせください。
+Microsoft HoloLens Commercial Suite には、HoloLens デバイスを管理する企業向けのより簡単にする機能が含まれています。
 
-&nbsp;
+HoloLens では、2 つのライセンス オプション、開発者用ライセンスおよび商用ライセンスに付属します。  HoloLens の商用 capabilitis のロックを解除する商用ライセンス開発者 liense からアップグレードします。  Microsoft HoloLens Commercial Suite を購入する、ローカルのマイクロソフト アカウント マネージャーにお問い合わせください。
+
+**HoloLens 2 の新機能**の商用機能の使用可能なすべてのデバイスに付属すべて HoloLens 2。
 
 >[!VIDEO https://www.youtube.com/embed/tNd0e2CiAkE]
 
@@ -30,7 +32,7 @@ Microsoft HoloLens Commercial Suite には、HoloLens デバイスを管理す�
 * **HoloLens のモバイル デバイス管理 (MDM)。** IT 部門は、Microsoft Intune などのソリューションを使用して同時に複数の HoloLens デバイスを管理できます。 設定の管理、インストールするアプリの選択、組織のニーズに合わせたセキュリティ構成の設定を行うことができます。
 
   ![HoloLens でモバイル デバイス管理は、複数のデバイスでのエンタープライズ グレードのデバイス管理を提供します。](images/201608-enterprisemanagement-400px.png)
-  
+   
 * **Windows Update for Business。** デバイスおよび long-term servicing branch のサポートにオペレーティング システムの更新プログラムを制御します。
 * **データのセキュリティ。** 同じレベルの他の Windows デバイスのセキュリティ保護を提供する、HoloLens の BitLocker データ暗号化が有効です。
 * **職場のアクセス。** 組織内のすべてのユーザーは、HoloLens で仮想プライベート ネットワーク経由で企業ネットワークにリモートで接続できます。 HoloLens の資格情報を必要とする Wi-fi ネットワークにアクセスできます。
@@ -84,7 +86,7 @@ Microsoft HoloLens Commercial Suite には、HoloLens デバイスを管理す�
 
 ## <a name="enabling-commercial-features"></a>商用機能を有効にします。
 
-など、キオスク モードの場合は、ビジネス向け Microsoft Store の商用機能とエンタープライズ Wi-fi アクセスをセットアップして組織の IT 管理者[HoloLens の Windows IT Center](https://technet.microsoft.com/itpro/hololens/index)デバイスの登録およびビジネス向け Microsoft Store からアプリをインストールするステップ バイ ステップの手順について説明します。
+など、キオスク モードの場合は、ビジネス向け Microsoft Store の商用機能とエンタープライズ Wi-fi アクセスをセットアップして組織の IT 管理者[HoloLens の Windows IT Center](https://docs.microsoft.com/hololens)デバイスの登録およびビジネス向け Microsoft Store からアプリをインストールするステップ バイ ステップの手順について説明します。
 
 ## <a name="see-also"></a>関連項目
 * [IT プロフェッショナル ガイド HoloLens の](https://technet.microsoft.com/itpro/hololens/index)
