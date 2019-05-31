@@ -7,12 +7,12 @@ ms.date: 04/21/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality、デザイン、対話、音声
-ms.openlocfilehash: 084c1228d17c3e23b38d9b8918c13080598aea98
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
+ms.openlocfilehash: f2362400cba2946c3e97a7128c410ddcd17b4362
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66039190"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402366"
 ---
 # <a name="voice-commanding"></a>音声コマンドの実行
 
@@ -25,7 +25,7 @@ ms.locfileid: "66039190"
 <tr>
 <th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ (とヘッドセットがアタッチされている)</td>
+<td>音声コマンドの実行</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️ (とヘッドセットがアタッチされている)</td>
 </tr>
 </table>
 
@@ -87,7 +87,7 @@ Windows Mixed Reality で「認識, に言って」音声モデルが採用さ�
 ![カーソルの音声フィードバック状態](images/voicefeedbackstates.png)<br>
 *カーソルの音声フィードバック状態*
 
-## <a name="top-things-users-should-know-about-speech-on-windows-mixed-reality"></a>最上位のモ ノのユーザーは、"speech"Windows Mixed Reality on について 必要があります。
+## <a name="top-things-users-should-know-about-speech-in-mixed-reality"></a>最上位のモ ノのユーザーは、複合現実で「音声」について 必要があります。
 * たとえば **"Select"** (anywhere を使用このボタンをクリックする) ボタンを対象とします。
 * 指定すると、**アプリ バー ボタンのラベル名**処置を実行する一部のアプリでします。 たとえば、アプリを見ているときに、ユーザーことができますコマンドを言う"Remove"、世界中からアプリを削除する (この時間を節約、手でそれをクリックする必要がなくなります)。
 * Cortana のことを示すリッスンを開始する**コルタナさん」。** 自分の質問 (」「コルタナさん高さは Eiffel tower)、(」「コルタナさん Netflix がオープン)、アプリを開くするように指示するまたは ("「コルタナさん、ホームを) [スタート] メニューを表示するように指示するとします。

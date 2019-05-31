@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 実際には、視線の先、視線の先を対象との相互作用、混在、デザイン、ほぼ手 HoloLens
-ms.openlocfilehash: 412d77a1d7446f82ddf43f051fdb149cb1fd559c
-ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
+ms.openlocfilehash: 6e3512eab4070680c48ee8e95240a17e9925822f
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940766"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402391"
 ---
 # <a name="direct-manipulation-with-hands"></a>手で直接操作
 直接操作は、手を直接ホログラム手を加えることを含む入力モデルです。 直接操作の目的は、オブジェクトが現実の世界と同じように動作します。 ボタンを押すだけでアクティブ化できるオブジェクトは、それを取得すること選択できる、2D のコンテンツが仮想のタッチ スクリーンのように動作します。  このため、直接操作については、ユーザーが簡単とも楽しいですね。  到達武器取引規則内では、コンテンツと対話するための使用に適してつまり、「近く」入力モデルと見なされます。
@@ -22,9 +22,9 @@ ms.locfileid: "65940766"
 ## <a name="device-support"></a>デバイスのサポート
 
 
-| 入力モデル | [HoloLens (第 1 世代)](https://review.docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details?branch=master) | HoloLens 2 |[イマーシブ ヘッドセット](https://review.docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details?branch=master)|
+| 入力モデル | [HoloLens (第 1 世代)](hololens-hardware-details.md) | HoloLens 2 |[イマーシブ ヘッドセット](immersive-headset-hardware-details.md)|
 |:-------- | :-------| :--------| :------------|
-| 直接操作 | ❌ がサポートされていません | 推奨 ✔️ | ➕ 代替[をポイントし、コミット](https://review.docs.microsoft.com/en-us/windows/mixed-reality/point-and-commit?branch=master)をお勧めします。
+| 手で直接操作 | ❌ がサポートされていません | 推奨 ✔️ | 方法として、➕[ポイントし、の手でコミット](point-and-commit.md)をお勧めします。
 
 直接操作では、HoloLens 2 では、プライマリ入力モデルを新しい関節手動追跡システムを使用します。 入力モデルでは、アニメーション コント ローラーを使用してイマーシブ ヘッドセットに収録されてもが、オブジェクトの操作の外部での相互作用の主要な手段としては推奨されません。  ダイレクト manipluation を HoloLens でご利用いただけません (第 1 世代)。
 

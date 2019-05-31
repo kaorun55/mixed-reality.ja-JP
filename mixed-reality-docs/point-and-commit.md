@@ -7,12 +7,12 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 実際には、相互作用、デザイン、hololens、手を混在までは、ポイントし、コミット
-ms.openlocfilehash: e69c8ff2091beff7d8fbbde4e6f24d909302290a
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 30f85d2bb455abab3a533e0a829b4fba8cea0a7a
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730809"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402385"
 ---
 # <a name="point-and-commit-with-hands"></a>ポイントとの手でコミット
 ポイントとコミットの手では、ユーザーが対象に選択し、距離の 2D のコンテンツと 3D オブジェクトを操作できる入力モデルです。 この「まで」操作方法は、複合現実に固有と方法の人間は必然的は、実世界と intereact します。 スーパー ヒーロー ムービーなどで*X-men*、文字[磁気](https://en.wikipedia.org/wiki/Magneto_(comics))問い合わせるおよびの手で距離の相手側のオブジェクトを操作できます。 これは何か実際には人間が行うことができます。 HoloLens (AR) および複合現実 (VR) のどちらも、holographic の内容のすばらしい経験だけでなく、効率的かつ効果的に相互作用するもの実際の物理的な制約の重大なこの魔法のような電力で、ユーザーがについて説明します。
@@ -21,7 +21,7 @@ ms.locfileid: "65730809"
 
 入力モデル | [HoloLens (第 1 世代)](https://docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details) | HoloLens 2 | [イマーシブ ヘッドセット](https://docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details) |
 | ---------| -----| ----- | ---------|
-ポイントとコミット (ここまでの手による操作) | ❌ がサポートされていません | 推奨 ✔️ | 推奨 ✔️
+ポイントとの手でコミット | ❌ がサポートされていません | 推奨 ✔️ | 推奨 ✔️
 
 ポイント、コミットとも呼ばれます手までは新しい関節手動追跡システムを利用する新しい機能の 1 つ。 この入力モデルもアニメーション コント ローラーを使用してイマーシブ ヘッドセットでプライマリ入力モデル。
 

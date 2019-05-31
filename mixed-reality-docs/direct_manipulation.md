@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 04/02/2019
 ms.topic: article
 keywords: 実際には、視線の先、視線の先を対象との相互作用、混在、デザイン、ほぼ手 HoloLens
-ms.openlocfilehash: a9e67f21587381dbc1090f89935eaa2b88630dae
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: bb44244a3cb932a56703f84ba129def5ee5f9b67
+ms.sourcegitcommit: 5b4292ef786447549c0199003e041ca48bb454cd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974754"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66402361"
 ---
 # <a name="direct-manipulation"></a>直接操作
 
@@ -25,7 +25,7 @@ HoloLens 2 では、自分の手でホログラム dircly をタッチするこ�
 
 | 入力モデル | [HoloLens (第 1 世代)](https://review.docs.microsoft.com/en-us/windows/mixed-reality/hololens-hardware-details?branch=master) | HoloLens 2 |[イマーシブ ヘッドセット](https://review.docs.microsoft.com/en-us/windows/mixed-reality/immersive-headset-hardware-details?branch=master)|
 |:-------- | :-------| :--------| :------------|
-| 直接操作 | ❌ がサポートされていません | 推奨 ✔️ | ➕ 代替[をポイントし、コミット](https://review.docs.microsoft.com/en-us/windows/mixed-reality/point-and-commit?branch=master)をお勧めします。
+| 直接操作 | ❌ がサポートされていません | 推奨 ✔️ | 方法として、➕[ポイントし、の手でコミット](point-and-commit.md)をお勧めします。
 
 直接操作では、HoloLens 2 では、プライマリ入力モデルを新しい関節手動追跡システムを使用します。 入力モデルでは、アニメーション コント ローラーを使用してイマーシブ ヘッドセットに収録されてもが、オブジェクトの操作の外部での相互作用の主要な手段としては推奨されません。  直接 manipluation は HoloLens v1 でご利用いただけません。
 
