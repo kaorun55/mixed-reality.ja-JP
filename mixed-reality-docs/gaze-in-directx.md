@@ -6,16 +6,16 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 視線の先、ヘッドの視線入力、head の追跡、視線、directx、入力、ホログラム
-ms.openlocfilehash: f9764132df0ca4ae2f02d8f9a5740530676eb4f5
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: ac72c5305527ed2d68945aeb32051cf2246a736e
+ms.sourcegitcommit: 60060386305eabfac2758a2c861a43c36286b151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629615"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453744"
 ---
-# <a name="head-and-eye-gaze-in-directx"></a>DirectX で Head、目の視線入力
+# <a name="head-and-eye-gaze-input-in-directx"></a>Head、目が視線の DirectX の入力
 
-Windows Mixed Reality、視線入力を使用してに、ユーザーの必要な情報を決定します。 これは、ドライブのように、プライマリの入力モデルを使用できます[された様子を確認し、コミット](gaze-and-commit.md)との相互作用の種類のコンテキストをしたりすることができます。 API を介して使用可能なベクトルの 2 種類の視線の先がある: 注視し目視線の先に移動します。  3 として両方に提供される次元光線の原点と方向。 そのシーンまたは実際には、アプリケーションに raycast できますし、ユーザーが対象とする内容を確認します。
+Windows Mixed Reality、目およびヘッド視線の先では、入力はで、ユーザーの必要な情報を確認に使用されます。 これは、ドライブのように、プライマリの入力モデルを使用できますが[注視し、コミットをヘッド](gaze-and-commit.md)、相互作用の種類のコンテキストをしたりすることです。 API を介して使用可能なベクトルの 2 種類の視線の先がある: 注視し目視線の先に移動します。  3 として両方に提供される次元光線の原点と方向。 そのシーンまたは実際には、アプリケーションに raycast できますし、ユーザーが対象とする内容を確認します。
 
 **Head 視線**でユーザーの頭が示される方向を表します。 位置と、デバイス自体の前方向と見なす、中心を表す位置を 2 つのディスプレイ間でポイントします。  Head 視線の先は、すべての複合現実デバイスで利用可能です。
 
@@ -47,20 +47,9 @@ if (pointerPose)
 
 ## <a name="using-eye-gaze"></a>目視線の先を使用します。
 
-目の視線の先の API は、ヘッド視線の先によく似ています。  使用して同じ[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API で、原点と方向が、シーンに対して raycast ことに伸びる射線を提供します。  唯一の違いは、アクセスを要求して使用する前に視線を明示的に有効にする必要があります。
-
-### <a name="declaring-the-gaze-input-capability"></a>宣言、*視線入力*機能
-
-Appxmanifest ファイルをダブルクリックします*ソリューション エクスプ ローラー*します。  移動し、*機能*セクションし、確認、*視線入力*機能します。 
-
-![視線入力機能](images/gaze-input-capability.png)
-
-次の行を追加、*パッケージ*appxmanifest ファイルのセクション。
-```xml
-  <Capabilities>
-    <DeviceCapability Name="gazeInput" />
-  </Capabilities>
-```
+目の視線の先の API は、ヘッド視線の先によく似ています。  使用して同じ[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose) API で、原点と方向が、シーンに対して raycast ことに伸びる射線を提供します。  唯一の違いは、明示的に使用する前に目の追跡を有効にする必要があります。 これは、2 つの手順を実行する必要があります。
+1. アプリでの視線を使用するユーザーのアクセス許可を要求します。
+2. パッケージ マニフェストで「視線入力」機能を有効にします。
 
 ### <a name="requesting-access-to-gaze-input"></a>視線入力へのアクセスを要求します。
 アプリが起動するときに呼び出す[EyesPose::RequestAccessAsync](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.requestaccessasync#Windows_Perception_People_EyesPose_RequestAccessAsync)目追跡へのアクセスを要求します。 システムが必要な場合、ユーザーに確認し、返す[GazeInputAccessStatus::Allowed](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.gazeinputaccessstatus)アクセスが許可されているとします。 これは、少し余分な管理のための非同期呼び出しです。 次の例のスピンアップと呼ばれるメンバー変数に格納するいると、結果を待つデタッチ std::thread *m_isEyeTrackingEnabled*します。
@@ -82,11 +71,50 @@ std::thread requestAccessThread([this]()
 requestAccessThread.detach();
 
 ```
-
 非同期呼び出しを処理するための 1 つのオプションは、デタッチ スレッドを開始します。  またはを使って新しい[co_await](https://docs.microsoft.com/en-us/windows/uwp/cpp-and-winrt-apis/concurrency)でサポートされる機能C++/WinRT です。
+ユーザーの許可を確認するための別の例を次に示します。
+-   EyesPose::IsSupported() により、目の追跡ツールがある場合にのみ、アクセス許可ダイアログをトリガーするアプリケーションです。
+-   GazeInputAccessStatus m_gazeInputAccessStatus;これは、アクセス許可プロンプトを何度もポップアップを防止します。
+
+```cpp
+GazeInputAccessStatus m_gazeInputAccessStatus; // This is to prevent popping up the permission prompt over and over again.
+
+// This will trigger to show the permission prompt to the user.
+// Ask for access if there is a corresponding device and registry flag did not disable it.
+if (Windows::Perception::People::EyesPose::IsSupported() &&
+   (m_gazeInputAccessStatus == GazeInputAccessStatus::Unspecified))
+{ 
+    Concurrency::create_task(Windows::Perception::People::EyesPose::RequestAccessAsync()).then(
+    [this](GazeInputAccessStatus status)
+    {
+        // GazeInputAccessStatus::{Allowed, DeniedBySystem, DeniedByUser, Unspecified}
+            m_gazeInputAccessStatus = status;
+        
+        // Let's be sure to not ask again.
+        if(status == GazeInputAccessStatus::Unspecified)
+        {
+                m_gazeInputAccessStatus = GazeInputAccessStatus::DeniedBySystem;    
+        }
+    });
+}
+
+```
+
+
+### <a name="declaring-the-gaze-input-capability"></a>宣言、*視線入力*機能
+
+Appxmanifest ファイルをダブルクリックします*ソリューション エクスプ ローラー*します。  移動し、*機能*セクションし、確認、*視線入力*機能します。 
+
+![視線入力機能](images/gaze-input-capability.png)
+
+次の行を追加、*パッケージ*appxmanifest ファイルのセクション。
+```xml
+  <Capabilities>
+    <DeviceCapability Name="gazeInput" />
+  </Capabilities>
+```
 
 ### <a name="getting-the-eye-gaze-ray"></a>目の視線の先光線を取得します。
-
 ET へのアクセスを受け取った後は自由に目注視光線にすべてのフレームを取得します。  ヘッドの視線入力と同様に、取得、 [SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose)呼び出して[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)目的のタイムスタンプと座標系を使用します。 含まれています、SpatialPointerPose、 [EyesPose](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose)オブジェクト、[目](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)プロパティ。 これは、目の追跡が有効になっている場合にのみ null 以外です。 そこから、デバイスでユーザーが監視の調整を呼び出すことで追跡を確認できます[EyesPose::IsCalibrationValid](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)します。  次に、使用、[視線](https://docs.microsoft.com/en-us/uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)を取得するプロパティの[SpatialRay](https://docs.microsoft.com/en-us/uwp/api/windows.perception.spatial.spatialray) contianing 目視線の位置および方向。 視線入力プロパティは、null にすることがあります、これを必ずこれを確認します。 このことができますでは、行われる調整したユーザーが自分以外を一時的に閉じるかどうかです。
 
 次のコードでは、目の視線の先光線にアクセスする方法を示します。
@@ -115,12 +143,13 @@ if (pointerPose)
 
 ## <a name="correlating-gaze-with-other-inputs"></a>その他の入力と視線の先の関連付け
 
-必要があることもあります、 [SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)過去のイベントに対応します。 たとえば、ユーザーは、エア タップを実行する場合、アプリ可能性がありますを探していたを知りたいとします。 そのために、次を使用して単に[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)フレームの予測と時間が不正確にシステムの入力の処理と表示時間の間の待機時間のためです。
+必要があることもあります、 [SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)過去のイベントに対応します。 たとえば、ユーザーは、エア タップを実行する場合、アプリ可能性がありますを探していたを知りたいとします。 そのために、次を使用して単に[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)フレームの予測と時間が不正確にシステムの入力の処理と表示時間の間の待機時間のためです。 さらに、目視線の先を使用して、対象とするため場合、人間の目をコミット操作を終了する前にも移動する傾向があります。 これを単純なエア タップして、問題の少ないが、高速の目の動きを時間の長い音声コマンドを結合するときにより重要になります。 このシナリオを処理する方法の 1 つは、する追加の呼び出しを行うには[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)、入力イベントに対応する履歴のタイムスタンプを使用します。  
 
-このシナリオを処理する方法の 1 つは、する追加の呼び出しを行うには[SpatialPointerPose::TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)、入力イベントに対応する履歴のタイムスタンプを使用します。  ただし、SpatialInteractionManager を介してルーティングを入力する場合を簡単があります。 [SpatialInteractionSourceState](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate)が非常に独自[TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.trygetpointerpose)関数。 完全に相関を提供する通話[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)せず、当て推量を排除します。 SpatialInteractionSourceStates の操作方法の詳細についてを参照してください、[手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)ドキュメント。
+ただし、SpatialInteractionManager を介してルーティングを入力する場合を簡単があります。 [SpatialInteractionSourceState](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate)が非常に独自[TryGetAtTimestamp](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.trygetpointerpose)関数。 完全に相関を提供する通話[SpatialPointerPose](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.spatial.spatialpointerpose)せず、当て推量を排除します。 SpatialInteractionSourceStates の操作方法の詳細についてを参照してください、[手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)ドキュメント。
 
 ## <a name="see-also"></a>関連項目
-* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [ヘッド注視し、コミットの入力モデル](gaze-and-commit.md)
+* [HoloLens 2 の視線](eye-tracking.md)
 * [DirectX の座標系](coordinate-systems-in-directx.md)
-* [入力モデルを注視とコミット](gaze-and-commit.md)
-
+* [DirectX での音声入力](voice-input-in-directx.md)
+* [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
