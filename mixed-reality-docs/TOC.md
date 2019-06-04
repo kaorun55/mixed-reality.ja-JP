@@ -165,7 +165,7 @@
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
 ### レガシー ドキュメント (Unity 2017.4/HTK/MRTK v1)
 ## Unreal
-### HoloLens 2 用 Unreal - 近日公開予定
+### [HoloLens 2 用 Unreal をいち早く体験](https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access)
 ## DirectX
 ### [DirectX 開発の概要](directx-development-overview.md)
 ### 概要
