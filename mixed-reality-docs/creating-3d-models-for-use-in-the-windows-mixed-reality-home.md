@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
 keywords: モデリングのガイダンスについては、資産の要件、ガイドライン、ランチャー、3 D ランチャー、テクスチャ、資料、複雑さ、三角形、メッシュ、多角形、polycount、オーサリング、3 D、モデリングの制限します。
-ms.openlocfilehash: 209a92a8e7070ca23bcb9402d8716f3f91747a96
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 73af40cf2915742cab612625c8243a36ee74d748
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59598874"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692289"
 ---
 # <a name="create-3d-models-for-use-in-the-home"></a>自宅で使用するための 3D モデルを作成します。
 
@@ -29,11 +29,11 @@ Windows Mixed Reality を 3D モデルを作成する場合は、すべての資
 
 ## <a name="detailed-guidance"></a>詳細なガイダンス
 
-## <a name="exporting-models"></a>モデルのエクスポート
+### <a name="exporting-models"></a>モデルのエクスポート
 
 Windows Mixed Reality ホーム .glb ファイル形式を使用して、埋め込み画像やバイナリ データを送信する 3D アセットを期待します。 Glb ロイヤリティをある glTF 形式のバイナリ バージョンは、無料のオープン標準の 3D アセットの配信 Khronos グループによって管理されます。 Windows アプリおよびエクスペリエンスの間でマイクロソフトの形式のサポートする際の 3D コンテンツの相互運用可能な業界標準として glTF の進化に伴ってします。 検索するには、glTF 資産を作成していないかどうか、[サポートされているエクスポーターとコンバーターの一覧](https://github.com/KhronosGroup/glTF/blob/master/README.md#converters-and-exporters)glTF ワーキング グループの github ページ。  
 
-## <a name="modeling-guidelines"></a>モデリングのガイドライン
+### <a name="modeling-guidelines"></a>モデリングのガイドライン
 
 Windows Mixed Reality ホーム環境との互換性を確保する、次のモデリングのガイドラインを使用して生成される資産が必要です。 任意のプログラムでモデリングの際に、次の推奨事項と制限事項に注意してください。
 1. アップ軸は、"Y"に設定する必要があります。
@@ -279,6 +279,6 @@ Windows MR はプリミティブ モード線およびポイントをサポー�
 
 ## <a name="see-also"></a>関連項目
 
-* [3D アプリ ランチャー (UWP アプリ) の実装します。](implementing-3d-app-launchers.md)
-* [3D アプリ ランチャー (Win32 アプリ) の実装します。](implementing-3d-app-launchers-win32.md)
-* [Windows Mixed Reality ホームに移動します。](navigating-the-windows-mixed-reality-home.md)
+* [3D アプリ起動ツールの実装 (UWP アプリ)](implementing-3d-app-launchers.md)
+* [3D アプリ起動ツールの実装 (Win32 アプリ)](implementing-3d-app-launchers-win32.md)
+* [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)
