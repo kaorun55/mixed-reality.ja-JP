@@ -6,12 +6,12 @@ ms.author: joekelly
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、空間のサウンド、デザイン、スタイル
-ms.openlocfilehash: c8f5268faf5eef779401c046947c3137d177cb89
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c758037300392d9365c16933677fb0f026976c2a
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597611"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750306"
 ---
 # <a name="spatial-sound-design"></a>サウンドの空間の設計
 
@@ -26,12 +26,23 @@ ms.locfileid: "59597611"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> 立体音響</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>サウンドの空間の設計</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
 </table>
+
 
 ## <a name="four-key-things-spatial-sound-does-for-mixed-reality-development"></a>4 つの重要な事柄について空間サウンドは、複合現実の開発には
 
@@ -96,5 +107,5 @@ ms.locfileid: "59597611"
 ユーザー エクスペリエンスを最善の複合現実では従来の 3D オーディオ テクノロジではなく、サウンドの空間を使用して 3D オーディオを実現する必要があります。 一般に、強化されたサウンドは標準の 3D サウンドを小規模の CPU コストに値するは。 優先順位の低い音、spatialized が、必ずしも、物理または仮想オブジェクトに関連付けられているサウンドおよびことはありません、ユーザーは、アプリと対話する見つける必要がありますオブジェクトは、標準の 3D オーディオを使用できます。
 
 ## <a name="see-also"></a>関連項目
-* [空間のサウンド](spatial-sound.md)
+* [立体音響](spatial-sound.md)
 * [空間マッピング](spatial-mapping.md)

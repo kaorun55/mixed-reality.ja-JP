@@ -1,17 +1,17 @@
 ---
 title: Unity で Vuforia の使用
 description: Unity での Windows Mixed Reality アプリケーションを構築する Vuforia を活用します。
-author: ChimeraScorn
-ms.author: cwhite
-ms.date: 03/21/2018
+author: ailyadis
+ms.author: ''
+ms.date: 01/28/2019
 ms.topic: article
 keywords: Vuforia、マーカー、座標、フレームの参照では、追跡
-ms.openlocfilehash: 43a74989b931fee898af0aeae9e240303b2eef01
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: c0d2f6d0707e1ddd3ee00d3eb80af9fb459f252b
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59603173"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750345"
 ---
 # <a name="using-vuforia-engine-with-unity"></a>Unity を使った Vuforia エンジンを使用します。
 
@@ -90,11 +90,11 @@ Vuforia エンジンでは、HoloLens 空間座標系に拡張追跡を使用す
 
 
 ## <a name="see-also"></a>関連項目
-* [ツールをインストールします。](install-the-tools.md)
+* [ツールのインストール](install-the-tools.md)
 * [座標系](coordinate-systems.md)
 * [空間マッピング](spatial-mapping.md)
-* [Unity でのカメラ](camera-in-unity.md)
-* [エクスポートして、Unity Visual Studio ソリューションを構築します。](exporting-and-building-a-unity-visual-studio-solution.md)
+* [Unity のカメラ](camera-in-unity.md)
+* [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)
 * [Vuforia ドキュメント:Unity での Windows 10 用の開発](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
 * [Vuforia ドキュメント:Vuforia Unity 拡張機能をインストールする方法](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
 * [Vuforia ドキュメント:Unity での HoloLens サンプルの使用](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)

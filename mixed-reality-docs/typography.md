@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、スタイル、フォント、文字体裁、ui、ux
-ms.openlocfilehash: debf125a7f82ac79fe3ad776ba9c8c0b69396848
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: 6371aa9b12b61d12acdaaae5f7730ff2ae9757f0
+ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692369"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750340"
 ---
 # <a name="typography"></a>文字体裁
 
@@ -67,9 +67,9 @@ HoloLens では、種類はホログラム加法色のシステムに基づく l
 
 ## <a name="recommended-font-size"></a>推奨のフォント サイズ
 
-予想されることができますの 2 m 離れた距離にある非常に小さく、PC またはタブレット デバイス (通常は 12: 32 ポイント) 間を参照してくださいで使用するサイズを入力します。 各フォントの特性によって異なりますが、一般に角度と読みやすさのフォントの高さを表示する推奨される最小値は、ユーザー調査研究に基づく 0.35°-0.4°/12.21-13.97mm の周囲にあります。 上で導入されたスケール ファクターで 35 40 pt を以下のです。 
+予想されることができますの 2 m 離れた距離にある非常に小さく、PC またはタブレット デバイス (通常は 12: 32 ポイント) 間を参照してくださいで使用するサイズを入力します。 各フォントの特性によって異なりますが、一般に角度と読みやすさのフォントの高さを表示する推奨される最小値は、ユーザー調査研究に基づく 0.35°-0.4°/12.21-13.97mm の周囲にあります。 35 40 pt を以下の詳細についてで導入されたスケール ファクター [Unity 内のテキスト](text-in-unity.md)ページ。 
 
-0.45m(45cm) でほぼ相互作用は、読みやすいフォントの最小の表示の角度と高さは 0.4 °-mm 0.5 °/3.14 – 3.9 です。 上で導入されたスケール ファクターでの 9-12 pt です。
+0.45m(45cm) でほぼ相互作用は、読みやすいフォントの最小の表示の角度と高さは 0.4 °-mm 0.5 °/3.14 – 3.9 です。 9-12 ポイントの詳細についてで導入されたスケール ファクター [Unity 内のテキスト](text-in-unity.md)します。
 
 ![ここまでの相互作用範囲](images/typography-distance-1000px.jpg)
 *の近くにあるコンテンツとの相互作用の範囲*
