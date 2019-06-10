@@ -133,7 +133,7 @@
 ## 複合現実クラウド サービス
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
 ### [Holographic Remoting Player](holographic-remoting-player.md)
-### [Holographic リモート ソフトウェア ライセンス条項](microsoft-holographic-remoting-software-license-terms.md)
+### [Holographic リモート ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 ## Unity
 ### [Unity 開発の概要](unity-development-overview.md)
 ### 概要
