@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、コントロール、ui、ux
-ms.openlocfilehash: 9edddc7800f0d7334d1ceba97b9a06fd6d4580ac
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: d62d86c690233f351b6c156c66eba33cb2687ea6
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59603213"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813731"
 ---
 # <a name="displaying-progress"></a>進行状況の表示
 
 プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。 使用されているインジケーターに応じて、進行状況インジケーターが表示されているときはユーザーはアプリを操作できないことを知らせたり、待ち時間の長さを示したりできます。
 
-![HoloLens の進行状況リングの例](images/640px-progress-hero.jpg)<br>
+![HoloLens の進行状況リングの例](images/HoloLens2_Loader.gif)<br>
 *HoloLens の進行状況リングの例*
 
 ## <a name="types-of-progress"></a>プログレス コントロールの種類
@@ -47,7 +47,8 @@ ms.locfileid: "59603213"
 * ユーザーに何が起こっているかに関する状態情報を提供することをお勧めします。 進行状況のプレハブは、状態を提供するための Windows リング型の標準的な進行状況を含む、さまざまな視覚スタイルを提供します。 場合は、アプリのブランドに合わせるために、進行状況のスタイルは、アニメーションがカスタム メッシュを使用することもできます。
 
 ## <a name="see-also"></a>関連項目
-* [スクリプトや Mixed Reality Toolkit の進行状況のプレハブ](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_ProgressExample.md)
-* [対話型のオブジェクト](interactable-object.md)
-* [オブジェクトのコレクション](object-collection.md)
-* [ビルボード処理と tag-along](billboarding-and-tag-along.md)
+* [進行状況のスクリプトや Mixed Reality Toolkit のプレハブ](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Loader)
+* [境界ボックス](app-bar-and-bounding-box.md)
+* [対話可能なオブジェクト](interactable-object.md)
+* [オブジェクト コレクション](object-collection.md)
+* [Billboard と Tag-along](billboarding-and-tag-along.md)

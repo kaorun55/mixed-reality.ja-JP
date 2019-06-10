@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic のリモート処理
-ms.openlocfilehash: 24213444686dd2e5dbda4016dd551a8ead8f305a
-ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
+ms.openlocfilehash: b8354295f9752e73cc9b34c1769254e49808b63f
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66270313"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813722"
 ---
 # <a name="holographic-remoting-player"></a>リモート処理の holographic プレーヤー
 
@@ -52,5 +52,5 @@ Holographic のリモート処理接続は**暗号化されていない**しま�
 * お使いの PC をワイヤレス ホップの数を減らすイーサネット経由でネットワークに接続することをお勧めします。
 
 ## <a name="see-also"></a>関連項目
-* [Holographic リモート ソフトウェア ライセンス条項](microsoft-holographic-remoting-software-license-terms.md)
+* [Holographic リモート ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft プライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)

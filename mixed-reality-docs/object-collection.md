@@ -6,19 +6,19 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、コントロールのデザイン
-ms.openlocfilehash: 88ab0359d5083d43d5d6312ef1185f67ca0caa7d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 7c3bbd82ec909b5a2e3c81f122366be564934f4d
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59605011"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813890"
 ---
 # <a name="object-collection"></a>オブジェクトのコレクション
 
-オブジェクトのコレクションは、定義済みの 3 次元の図形内のオブジェクトの配列をレイアウトできるレイアウト コントロールです。 -4 つの異なる画面スタイルがサポートしている**平面、円柱、球体**と**散布図**します。 Radius およびオブジェクトとそれらの間の領域のサイズを調整できます。 オブジェクトのコレクションには、Unity の 2D および 3D の両方から任意のオブジェクトがサポートしています。  **[Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Readme/README_ObjectCollection.md)**、Unity スクリプトを作成しましたと[例シーン](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit-Examples/UX/Scenes/ObjectCollectionExample.unity)を使用するとオブジェクトのコレクションを作成します。
+オブジェクトのコレクションは、定義済みの 3 次元の図形内のオブジェクトの配列をレイアウトできるレイアウト コントロールです。 画面のさまざまなスタイルのサポート**平面、円柱、球体**と**放射状**します。 Radius およびオブジェクトとそれらの間の領域のサイズを調整できます。 オブジェクトのコレクションには、Unity の 2D および 3D の両方から任意のオブジェクトがサポートしています。 **[Mixed Reality Toolkit](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** 、Unity スクリプトを作成したとする際に役立つ例がオブジェクトのコレクションを作成します。
 
 ![要素のアプリの定期的テーブルで使用されるオブジェクト コレクション](images/640px-objectcollection-hero-640px.jpg)<br>
-*要素のサンプル アプリの定期的テーブルで使用されるオブジェクトのコレクション*
+*オブジェクトのコレクションを使用する例*
 
 ## <a name="object-collection-examples"></a>オブジェクトのコレクションの例
 
@@ -41,8 +41,9 @@ ms.locfileid: "59605011"
 ![オブジェクトのコレクションを使用して、2 D 画像の例](images/640px-layout-3dobjects-3.jpg)
 
 ![オブジェクトのコレクションを使用して、2 D 画像の例](images/640px-layout-2dimages.jpg)<br>
-*オブジェクトのコレクションを使用して、2 D 画像の例*
+*2D イメージ オブジェクトのコレクションの使用例*
 
 ## <a name="see-also"></a>関連項目
-* [スクリプトと GitHub の混在の現実 toolkit オブジェクトのコレクションのプレハブ](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Examples/UX)
-* [対話型のオブジェクト](interactable-object.md)
+* [スクリプトと GitHub の混在の現実 toolkit オブジェクトのコレクションのプレハブ](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_ObjectCollection.md)
+* [対話可能なオブジェクト](interactable-object.md)
+* [境界ボックス](app-bar-and-bounding-box.md)
