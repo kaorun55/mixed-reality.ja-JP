@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト
-ms.openlocfilehash: ed319e2abf61caed5f36b425a4cc609ca9501dec
-ms.sourcegitcommit: 1c0fbee8fa887525af6ed92174edc42c05b25f90
+ms.openlocfilehash: 810d9846fd217cd1acb3ae0060c11f5c9173191e
+ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65730885"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66813744"
 ---
 # <a name="mixed-reality-documentation"></a>Mixed Reality に関するドキュメント
 
@@ -171,10 +171,10 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
 <td>HoloLens 2 用 MRTK の新機能を見る</td><td>2019 年 4 月</td><td> <ul><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html>MRTK に関するドキュメント</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-getting-started>MRTK v2 をお使いになる前に</a></td>
 </tr>
 <tr>
-<td>HoloLens 2 の設計と開発のガイダンス</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>ツールのインストール</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 エミュレーター</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能的な操作の設計ガイダンス</a>
+<td>HoloLens 2 の設計と開発のガイダンス</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>ツールのインストール</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 エミュレーター</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能的な操作の設計ガイダンス</a></td>
 </tr>
 <tr>
-  <td>Unreal の詳細情報</td><td>2019 年 5 月</td><td></td>
+  <td>Unreal の詳細情報</td><td>2019 年 5 月</td><td> <ul><li><a href=https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access>Unreal Engine 4 をいち早く体験</a></td>
 </tr>
 </table>
 
