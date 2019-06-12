@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間のサウンド、サラウンド サウンド、3 d のオーディオ、3d サウンド、空間オーディオ
-ms.openlocfilehash: ccb236a8b53e757ba632a1c7c6cb2d4f07735910
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: a30a484c4e47593556fbd1786158262551e11d22
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59600834"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829918"
 ---
 # <a name="spatial-sound"></a>立体音響
 
@@ -26,13 +26,24 @@ ms.locfileid: "59600834"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-
-<td> 立体音響</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> (ヘッドホン) を含む ✔️</td>
-
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>立体音響</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>(ヘッドホン) を含む ✔️</td>
+    </tr>
 </table>
 
 ## <a name="simulating-the-perceived-location-and-distance-of-sounds"></a>サウンドの距離と認識される場所をシミュレートします。
@@ -60,6 +71,6 @@ Windows のサウンド エンジンの空間には、再生 48 k サンプル �
 
 ## <a name="see-also"></a>関連項目
 * [MR 空間 220](holograms-220.md)
-* [Unity での空間のサウンド](spatial-sound-in-unity.md)
-* [DirectX での空間のサウンド](spatial-sound-in-directx.md)
-* [サウンドの空間の設計](spatial-sound-design.md)
+* [Unity の立体音響](spatial-sound-in-unity.md)
+* [DirectX の立体音響](spatial-sound-in-directx.md)
+* [立体音響の設計](spatial-sound-design.md)

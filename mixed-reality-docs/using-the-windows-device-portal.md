@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows Device Portal、HoloLens
-ms.openlocfilehash: 8b9935d6b64abfd22e2e856e0142c953a6366008
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: f4319e1efa94d90bfb8cc4e5815ffa87fc865a7f
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59600964"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830001"
 ---
 # <a name="using-the-windows-device-portal"></a>Windows Device Portal のを使用
 
@@ -36,7 +36,7 @@ HoloLens の Windows Device Portal では、構成して、Wi-fi または USB �
 5. **[For developers]** (開発者向け) メニュー項目を選択します。
 6. **[Developer Mode]** (開発者モード) を有効にします。
 7. [下へスクロール](gestures.md#composite-gestures)を有効にして**デバイス ポータル**します。
-8. Windows Device Portal を設定するため、この HoloLens にアプリを展開するには USB または Wifi 経由で、クリックして**ペア**に[ペアリング PIN を生成](using-visual-studio.md#pairing-your-device-hololens)します。 Visual Studio に最初の展開時に PIN を入力するまでは、設定アプリ PIN ポップアップのままにします。
+8. Windows Device Portal を設定するため、この HoloLens にアプリを展開するには USB または Wifi 経由で、クリックして**ペア**に[ペアリング PIN を生成](using-visual-studio.md)します。 Visual Studio に最初の展開時に PIN を入力するまでは、設定アプリ PIN ポップアップのままにします。
 
    ![Windows Holographic の設定 アプリの開発者モードを有効にします。](images/deviceportalsettings.png)
 
@@ -56,7 +56,7 @@ HoloLens の Windows Device Portal では、構成して、Wi-fi または USB �
 
 ## <a name="connecting-to-an-emulator"></a>エミュレーターに接続します。
 
-Device Portal はエミュレーターで使うこともできます。 デバイスのポータルに接続するには、使用、[ツールバー](using-the-hololens-emulator.md#anatomy-of-the-hololens-emulator)します。 次のアイコンをクリックします。![デバイスのポータルを開く アイコン](images/emulator-deviceportal.png)**デバイス ポータルを開く**:エミュレーターでの HoloLens os、Windows Device Portal を開きます。
+Device Portal はエミュレーターで使うこともできます。 デバイスのポータルに接続するには、使用、[ツールバー](using-the-hololens-emulator.md)します。 次のアイコンをクリックします。![デバイスのポータルを開く アイコン](images/emulator-deviceportal.png)**デバイス ポータルを開く**:エミュレーターでの HoloLens os、Windows Device Portal を開きます。
 
 ## <a name="creating-a-username-and-password"></a>ユーザー名とパスワードを作成します。
 
@@ -71,7 +71,7 @@ HoloLens で初めて Device Portal に接続するときは、ユーザー名�
 5. パスワードを入力し、確認用にもう一度入力します。 パスワードは 7 文字以上にする必要があります。 MSA やドメインのパスワードと同じにする必要はありません。
 6. クリックして**ペア**HoloLens で Windows Device Portal に接続します。
 
-をいつでもでも、このユーザー名またはパスワードを変更する場合、このプロセスを繰り返しクリックするか、デバイスのセキュリティ ページを参照してください、**セキュリティ**上部右、またはに移動するリンク: https://<YOUR_HOLOLENS_IP_アドレス >/devicesecurity.htm します。
+いつでもでも、このユーザー名またはパスワードを変更する場合に移動してデバイスのセキュリティ ページを使用してこの手順を繰り返します。 https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm します。
 
 ## <a name="security-certificate"></a>セキュリティ証明書
 
@@ -80,7 +80,7 @@ HoloLens で初めて Device Portal に接続するときは、ユーザー名�
 ぞれぞれの HoloLens では、SSL 接続用に一意の自己署名証明書が生成されます。 既定では、この証明書が PC の Web ブラウザーによって信頼されていないため、"証明書エラー" が発生することがあります。 この証明書を HoloLens から (USB または信頼している Wi-Fi ネットワーク経由で) ダウンロードし、PC で信頼すると、デバイスに安全に接続できます。
 1. **(USB または信頼できる、Wi-fi ネットワーク) のセキュリティで保護されたネットワーク上にいることを確認します。**
 2. このデバイスの証明書は、デバイス ポータルの [セキュリティ] ページからダウンロードします。
-   * クリックするか、**セキュリティ**アイコンの右上のリストからのリンクをまたはに移動します https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm。
+   * 移動します https://<YOUR_HOLOLENS_IP_ADDRESS>/devicepair.htm。
 3. お使いの PC でのストアの「信頼されたルート証明機関」証明書をインストールします。
    * Windows メニューでは、次のように入力します。コンピューターの証明書を管理し、アプレットを開始します。
    * 展開、**信頼されたルート証明機関**フォルダー。
@@ -242,10 +242,10 @@ Event Tracing for Windows (ETW)、HoloLens でリアルタイムに管理しま�
    3. 警告
    4. エラーではない警告
 
-トレースを開始するには、**[Enable]** (有効にする) をクリックまたはタップします。 **[Enabled Providers]** (有効なプロバイダー) ドロップダウン リストにプロバイダーが追加されます。
+トレースを開始するには、 **[Enable]** (有効にする) をクリックまたはタップします。 **[Enabled Providers]** (有効なプロバイダー) ドロップダウン リストにプロバイダーが追加されます。
 * **カスタム プロバイダー**:カスタムの ETW プロバイダーと、トレース レベルを選択します。 GUID を使用してプロバイダーを識別します。 GUID にはかっこを含めないでください。
-* **プロバイダーを有効になっている**:有効なプロバイダーを一覧表示します。 ドロップダウンからプロバイダーを選択し、**[Disable]** (無効にする) をクリックまたはタップしてトレースを停止します。 すべてのトレースを中断するには、**[Stop All]** (すべて停止) をクリックまたはタップします。
-* **プロバイダーの履歴**:現在のセッション中に有効にしていた ETW プロバイダーを示しています。 無効になっているプロバイダーをアクティブ化するには、**[Enable]** (有効にする) をクリックまたはタップします。 履歴をクリアするには、**[Clear]** (クリア) をクリックまたはタップします。
+* **プロバイダーを有効になっている**:有効なプロバイダーを一覧表示します。 ドロップダウンからプロバイダーを選択し、 **[Disable]** (無効にする) をクリックまたはタップしてトレースを停止します。 すべてのトレースを中断するには、 **[Stop All]** (すべて停止) をクリックまたはタップします。
+* **プロバイダーの履歴**:現在のセッション中に有効にしていた ETW プロバイダーを示しています。 無効になっているプロバイダーをアクティブ化するには、 **[Enable]** (有効にする) をクリックまたはタップします。 履歴をクリアするには、 **[Clear]** (クリア) をクリックまたはタップします。
 * **イベント**:表形式で選択したプロバイダーから ETW イベントを一覧表示します。 この表は、リアルタイムで更新されます。 、テーブルの下には、をクリックして、**クリア**テーブルからすべての ETW イベントを削除するボタンをクリックします。 これによってプロバイダーが無効になることはありません。 **[Save to file]** (ファイルに保存) をクリックすると、現在収集されている ETW イベントをローカルの CSV ファイルにエクスポートできます。
 * **フィルター**:ID、キーワード、レベル、プロバイダーの名前、タスクの名前、またはテキストによって収集された ETW イベントをフィルター処理できます。 いくつかの条件を組み合わせることができます。
    1. 適用する条件のこれらの条件のいずれかを示す、同じプロパティでイベントを満たすことができます。

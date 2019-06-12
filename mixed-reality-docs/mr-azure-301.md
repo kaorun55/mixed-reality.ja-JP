@@ -673,7 +673,7 @@ Azure Translator API を使用するには、アプリケーションに使用�
     ```
 
     > [!WARNING]
-    > IEnumerator メソッドの名前を編集する場合**GetTokenCoroutine()**、更新する必要がある、 *StartCoroutine*と*StopCoroutine*上記のコードで文字列値を呼び出します。 [Unity のドキュメントに従って](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StartCoroutine.html)特定を停止するには、*コルーチン*文字列値メソッドを使用する必要があります。
+    > IEnumerator メソッドの名前を編集する場合**GetTokenCoroutine()** 、更新する必要がある、 *StartCoroutine*と*StopCoroutine*上記のコードで文字列値を呼び出します。 [Unity のドキュメントに従って](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StartCoroutine.html)特定を停止するには、*コルーチン*文字列値メソッドを使用する必要があります。
 
 9.  次に、受信したテキストの翻訳を取得する (その下「サポート」ストリーム メソッド) を使用して、コルーチンを追加、 *MicrophoneManager*クラス。 このコードに送信するクエリ文字列の作成、 *Azure Translator Text API*、し、内部の Unity UnityWebRequest クラスを使用して、クエリ文字列のあるエンドポイントに 'Get' 呼び出しを行います。 結果は、結果オブジェクトの翻訳を設定するのには使用されます。 次のコードは、実装を示しています。
 
@@ -710,7 +710,7 @@ Azure Translator API を使用するには、アプリケーションに使用�
 
 ## <a name="chapter-8--configure-the-unity-scene"></a>章 – 8 Unity シーンを構成します。
 
-1.  戻る Unity エディターで、をクリックし、ドラッグ、*結果*クラス*から*、**スクリプト**フォルダーを**Main Camera** 内のオブジェクト*階層パネル*します。
+1.  戻る Unity エディターで、をクリックし、ドラッグ、 *結果* クラス *から* 、 **スクリプト** フォルダーを **Main Camera** 内のオブジェクト *階層パネル* します。
 2.  をクリックして、 **Main Camera**を見て、*インスペクター パネル*します。 内で、新しく追加した表示になります*スクリプト*コンポーネントでは、空の値の 4 つのフィールドがあります。 これらは、コード内のプロパティに出力参照です。 
 3.  適切なドラッグ**テキスト**オブジェクトから、*階層パネル*これら 4 つのスロット、次の図に示すようにします。
 

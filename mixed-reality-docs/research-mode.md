@@ -6,12 +6,12 @@ ms.author: dgedye
 ms.date: 05/03/2018
 ms.topic: article
 keywords: モード、cv、rs4、コンピューター ビジョン研究、HoloLens を調査します。
-ms.openlocfilehash: 5feda021bd6a1a90fd98c751b1cea768eed980af
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e9a7683f8d582b459185066e74655e8f2b236db4
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597511"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829935"
 ---
 # <a name="hololens-research-mode"></a>HoloLens 研究モード
 
@@ -29,11 +29,21 @@ ms.locfileid: "59597511"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> 研究モード</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>研究モード</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="before-using-research-mode"></a>調査モードを使用する前に
@@ -72,4 +82,4 @@ HoloLens の開発に使用できるすべての Api も調査モードで使用
 
 * [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 * [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)
-* [Windows Device Portal のを使用](using-the-windows-device-portal.md)
+* [Windows Device Portal を使用する](using-the-windows-device-portal.md)

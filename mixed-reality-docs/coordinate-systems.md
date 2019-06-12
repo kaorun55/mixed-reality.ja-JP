@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 座標系、空間座標系、方向専用、取り付けられているスケール、永続的なスケール、ルーム規模、世界規模、360 度は、取り付け、継続、ルーム、世界、スケール、位置、向き、静止、添付、ステージ、アンカー、空間のアンカー世界がロックされている、世界中のロック、本文がロックされている、本文のロックの境界、永続化、共有、クラウド空間アンカーの損失、追跡
-ms.openlocfilehash: fc76a30895a85ab5ca8396540a82965cc35c494e
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.openlocfilehash: f4b945a3ffb83b9ac0a94e0d793a19939aece3bb
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605148"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829861"
 ---
 # <a name="coordinate-systems"></a>座標系
 
@@ -24,19 +24,48 @@ ms.locfileid: "59605148"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> <a href="coordinate-systems.md#stationary-frame-of-reference">フレームの静止した基準</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#attached-frame-of-reference">アタッチされたフレームの参照</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#stage-frame-of-reference">ステージの参照</a></td><td style="text-align: center;"> まだサポートされていません</td><td style="text-align: center;"> まだサポートされていません</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="coordinate-systems.md#spatial-anchors">空間のアンカー</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr><tr>
-<td> <a href="spatial-mapping.md">空間マッピング</a></td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="40%" />
+    <col width="20%" />
+    <col width="20%" />
+    <col width="20%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td><a href="coordinate-systems.md#stationary-frame-of-reference">フレームの静止した基準</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#attached-frame-of-reference">アタッチされたフレームの参照</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#stage-frame-of-reference">ステージの参照</a></td>
+        <td>まだサポートされていません</td>
+        <td>まだサポートされていません</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="coordinate-systems.md#spatial-anchors">空間アンカー</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
+    <tr>
+        <td><a href="spatial-mapping.md">空間マッピング</a></td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="mixed-reality-experience-scales"></a>複合現実エクスペリエンスのスケール
@@ -57,9 +86,9 @@ ms.locfileid: "59605148"
 
 | 6 dof 追跡 | フロアの定義 | 360 ° の追跡 | 境界の定義 | 空間のアンカー | 最大のエクスペリエンス | 
 |----------|----------|----------|----------|----------|----------|
-|  いいえ |  - |  - |  - |  - |  **印刷の向きのみ** | 
+|  X |  - |  - |  - |  - |  **印刷の向きのみ** | 
 |  **はい** |  X |  - |  - |  - |  **取り付けられています** | 
-|  **はい** |  **はい** |  いいえ |  - |  - |  **お待ちの転送** | 
+|  **はい** |  **はい** |  X |  - |  - |  **お待ちの転送** | 
 |  **はい** |  **はい** |  **はい** |  X |  - |  **継続の 360 °** | 
 |  **はい** |  **はい** |  **はい** |  **はい** |  X |  **ルーム** | 
 |  **はい** |  **はい** |  **はい** |  **はい** |  **はい** |  **世界** | 
@@ -196,7 +225,7 @@ Head ロックされているコンテンツは必要があります通常、ユ
 * [GDC 2017 プレゼンテーション空間座標系と holographic のレンダリング](https://channel9.msdn.com/events/GDC/GDC-2017/GDC2017-008)
 * [Unity の座標系](coordinate-systems-in-unity.md)
 * [DirectX の座標系](coordinate-systems-in-directx.md)
-* [空間のアンカー](spatial-anchors.md)
-* [複合現実での経験を共有](shared-experiences-in-mixed-reality.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure の空間アンカー</a>
+* [空間アンカー](spatial-anchors.md)
+* [複合現実での共有エクスペリエンス](shared-experiences-in-mixed-reality.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
 * [導入事例 - 実際には、セキュリティ ホールを見る](case-study-looking-through-holes-in-your-reality.md)

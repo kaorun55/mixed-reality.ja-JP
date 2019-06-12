@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: ggv, voice, cortana, speech, input
-ms.openlocfilehash: 7fb5618c13ff1ed446241f744b598cfe2484ea45
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: e21310b940e4a4c3019f61edea695b452e74ab62
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604741"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829953"
 ---
 # <a name="voice-input"></a>音声入力
 
@@ -26,11 +26,24 @@ ms.locfileid: "59604741"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> 音声入力</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> (マイク) を使って ✔️</td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>音声入力</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>(マイク) を使って ✔️</td>
+    </tr>
 </table>
 
 ## <a name="the-select-command"></a>"Select"コマンド
@@ -112,6 +125,6 @@ Holographic キーボードがアクティブで、いつでも入力する代�
 Windows Mixed Reality Developer Edition リリース 2017 では、オーディオ エンドポイント管理のロジックが数列 (無限) 後、最初のッドマウント接続後に PC のデスクトップ アウトされ、ログ記録します。 その最初の兆候アウト/経由 WMR OOBE 後のイベントで、前に、ユーザーから音声の入っていない切り替え、システムが、ッドマウントを最初に接続する前に設定する方法に応じて音声の入っていないまでさまざまなのオーディオ機能問題が発生する可能性があります。
 
 ## <a name="see-also"></a>関連項目
-* [DirectX での音声入力](voice-input-in-directx.md)
-* [Unity での音声入力](voice-input-in-unity.md)
+* [DirectX の音声入力](voice-input-in-directx.md)
+* [Unity の音声入力](voice-input-in-unity.md)
 * [MR 入力 212:音声](holograms-212.md)

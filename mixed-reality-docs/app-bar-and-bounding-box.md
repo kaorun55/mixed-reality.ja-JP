@@ -1,17 +1,17 @@
 ---
-title: アプリ バー、境界ボックス
+title: 境界ボックスと、アプリ バー
 description: アプリ バーは、一連のホログラムの範囲の下端に表示されるボタンを含むオブジェクト レベルのメニューです。
 author: radicalad
 ms.author: adlinv
-ms.date: 03/21/2018
+ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality アプリ バー、境界ボックス
-ms.openlocfilehash: ab472e1c988e6bdfb0a69d90e90280082b3db759
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: d289be31129324c6ff419b69dbce52bd8f62eb64
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813859"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829678"
 ---
 # <a name="bounding-box-and-app-bar"></a>境界ボックスと、アプリ バー
 ![境界は、複合現実でのオブジェクトの操作の標準的なインターフェイスです。](images/640px-boundingbox-hero.jpg)<br>

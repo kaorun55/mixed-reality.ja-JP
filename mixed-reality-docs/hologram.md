@@ -6,12 +6,12 @@ ms.author: befolsom
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、ホログラム、デザイン、相互作用
-ms.openlocfilehash: 5a6cc4df764b1f92f6bea2d7d6e6effe2164e4d6
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 714b08db23aa641252291aebe89fa3059c209a6f
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597834"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829780"
 ---
 # <a name="what-is-a-hologram"></a>ホログラムとは何ですか。
 
@@ -24,11 +24,24 @@ HoloLens では、作成できます。**ホログラム**、オブジェクト�
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> ホログラム</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>ホログラム</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="a-hologram-is-made-of-light-and-sound"></a>光とサウンドのホログラムが行われました。
@@ -85,5 +98,5 @@ Holographic 開発者は、中断 2D 画面外とする世界を創造する力�
 ![リビング ルームで holographic 虚数部の世界](images/designoverview.jpg)
 
 ## <a name="see-also"></a>関連項目
-* [空間のサウンド](spatial-sound.md)
+* [立体音響](spatial-sound.md)
 * [色、ライト、マテリアル](color,-light-and-materials.md)

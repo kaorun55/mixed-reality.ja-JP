@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows Mixed Reality、Mixed Reality、仮想現実、VR、MR、ホーム、カスタム環境、場所、cliff 家、skyloft、ユーザーの作成
-ms.openlocfilehash: ef140efd88aa0d3329ae2aa7e5b202c3bfe77c0a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: MT
+ms.openlocfilehash: 8f5a3a1bdf5728260b0b7717c74a50f3356ca04a
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597521"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829640"
 ---
 # <a name="add-custom-home-environments"></a>カスタムのホーム環境を追加します。
 
@@ -25,11 +25,21 @@ ms.locfileid: "59597521"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> カスタムのホーム環境</td><td style="text-align: center;"></td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>カスタムのホーム環境</td>
+        <td>❌</td>
+        <td>✔️</td>
+    </tr>
 </table>
 
 ## <a name="trying-a-sample-environment"></a>サンプル環境をしようとしてください。
@@ -91,7 +101,7 @@ Flag|推奨値|説明
 -max-texture-size|1024 または 2048| このテクスチャの品質を向上させるために調整、既定値は 512 x 512 します。 大きい値は、環境のファイル サイズに影響が大幅にことに注意してください。 保管しておいて、256 mb の制限に注意してください。
 最小バージョン|1803|カスタム環境は windows のバージョンでのみサポートされます > 1803 を = です。 このフラグは以前のバージョンのテクスチャを削除して、最終的な資産のファイル サイズを縮小
 
-次に、例を示します。
+例:
 
 ```cmd
 WindowsMRAssetConverter FileToConvert.gltf -max-texture-size 1024 -min-version 1803

@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 05/04/2018
 ms.topic: article
 keywords: 3D、モデル、自宅内の場所、場所、world、モデリング、複合現実のホーム、web、アプリ
-ms.openlocfilehash: 3a50353aae8e03c3ebb3ee9ec2f642f21836e925
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 954086b79e3614e1b75ceb7560f9fc87435530fa
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59605021"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829732"
 ---
 # <a name="enable-placement-of-3d-models-in-the-mixed-reality-home"></a>ホーム複合現実での 3D モデルの配置を有効にします。
 
@@ -25,11 +25,21 @@ ms.locfileid: "59605021"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td>モデルのプロトコルを追加します。</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>モデルのプロトコルを追加します。</td>
+        <td>✔️</td>
+        <td>✔️</td>
+    </tr>
 </table>
 
 ## <a name="overview"></a>概要
@@ -84,4 +94,4 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 ## <a name="see-also"></a>関連項目
 
 * [Windows Mixed Reality 自宅で使用するための 3D モデルを作成します。](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-* [Windows Mixed Reality ホームに移動します。](navigating-the-windows-mixed-reality-home.md)
+* [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)

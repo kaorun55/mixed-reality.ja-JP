@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、空間のマッピング、HoloLens、surface の再構築、メッシュ
-ms.openlocfilehash: d2ddcbf9458769a60cd3ed2871c5f3405c75f10c
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 451213a79e1d482d64725ce750065611830beec3
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597884"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829957"
 ---
 # <a name="spatial-mapping-design"></a>空間マッピングの設計
 
@@ -20,11 +20,21 @@ ms.locfileid: "59597884"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> 空間マッピング</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"></td>
-</tr>
+    <colgroup>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>空間マッピングの設計</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="why-is-spatial-mapping-important"></a>空間マッピングが重要な理由
@@ -196,6 +206,6 @@ HoloLens はように、ユーザーはそれらの環境でサーフェスに�
 * まったく同じ方法で実行、HoloLens、またはアプリケーションを使用することはできませんので、実際 (および理想的にはされていない coached) のユーザーとテストを実行することをお勧めを勧めします。 実際、驚かれるかもしれませんが分岐する方法のユーザーの動作、サポート技術情報と前提条件を指定できます。
 
 ## <a name="see-also"></a>関連項目
-* [ルームのスキャンの視覚化](room-scan-visualization.md)
-* [サウンドの空間の設計](spatial-sound-design.md)
-* [Unity で永続化](persistence-in-unity.md)
+* [部屋のスキャンの可視化](room-scan-visualization.md)
+* [立体音響の設計](spatial-sound-design.md)
+* [Unity の永続化](persistence-in-unity.md)

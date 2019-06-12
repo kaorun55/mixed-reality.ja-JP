@@ -6,23 +6,36 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: 複合現実、unity、チュートリアル、hololens
-ms.openlocfilehash: 80b9b8d7cd3659c9cc20824114cdedc05eae8a85
-ms.sourcegitcommit: 45a0a7d5ce45440b251293a0380ad5b722dbbad3
+ms.openlocfilehash: 2fe07efe87086e9a8c06e1953fcef8544b03c80a
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64933653"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829878"
 ---
 # <a name="mr-learning-base-module-overview--objectives"></a>目標 (&)、MR Learning ベースのモジュールの概要
 
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-<tr>
-<th>コース</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th><th style="width:150px"> <a href="https://www.microsoft.com/en-us/hololens/hardware">HoloLens 2</a></th>
-</tr><tr>
-<td></td><td style="text-align: center;"> </td><td style="text-align: center;"> </td><td style="text-align: center;"> ✔️</td>
-</tr>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>コース</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><a href="https://www.microsoft.com/en-us/hololens/hardware"><strong>HoloLens 2</strong></a></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td></td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="before-you-start"></a>開始前の作業

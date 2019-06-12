@@ -3,15 +3,15 @@ title: Holographic のリモート処理を追加します。
 description: Holographic のリモート処理を使用して、ネットワーク経由で、HoloLens にホログラムをレンダリングする方法について説明します。
 author: MikeRiches
 ms.author: mriches
-ms.date: 03/21/2018
+ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality、ホログラム、holographic のリモート処理、リモート レンダリング、ネットワークの表示、HoloLens、リモート ホログラム
-ms.openlocfilehash: 1e9567976bad1e2b72e95feca292bf3475893230
-ms.sourcegitcommit: aba33a8ad1416f7598048ac35ae9ab1734bd5c37
+ms.openlocfilehash: 8d645f634ff0fc820893f5554fd602aa3a2f38e3
+ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66270355"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66829623"
 ---
 # <a name="add-holographic-remoting"></a>Holographic のリモート処理を追加します。
 
