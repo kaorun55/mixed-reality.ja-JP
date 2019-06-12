@@ -119,7 +119,7 @@
 ### [対話可能なオブジェクト](interactable-object.md)
 ### [オブジェクト コレクション](object-collection.md)
 ### [進行状況を表示する](progress.md)
-### [アプリ バーと境界ボックス](app-bar-and-bounding-box.md)
+### [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
 ## 複合現実の家の設計
 ### [3D アプリ起動ツールの設計ガイダンス](3d-app-launcher-design-guidance.md)
 ### [家で使用する 3D モデルの作成](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
