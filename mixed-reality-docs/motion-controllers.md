@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6 dof コント ローラー、モーションのコント ローラー
-ms.openlocfilehash: 7db1c16f8243081dc8f53e8722391f102c38e0d3
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: fc6b0dcf7f338224af9ea9bc59e07187c33adda2
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629118"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024555"
 ---
 # <a name="motion-controllers"></a>アニメーション コント ローラー
 
@@ -23,10 +23,23 @@ ms.locfileid: "65629118"
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
+<colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+</colgroup>
 <tr>
-<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> アニメーション コント ローラー</td><td style="text-align: center;"></td><td style="text-align: center;"></td><td style="text-align: center;"> ✔️</td>
+     <td><strong>機能</strong></td>
+     <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+     <td><strong>HoloLens 2</strong></td>
+     <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+</tr>
+<tr>
+     <td>アニメーション コント ローラー</td>
+     <td>❌</td>
+     <td>❌</td>
+     <td>✔️</td>
 </tr>
 </table>
 
@@ -231,7 +244,7 @@ Unity で動的にコント ローラー モデルを読み込むための方法
 
 ## <a name="see-also"></a>関連項目
 * [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
-* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 * [ジェスチャ](gestures.md)
 * [MR 入力 213:モーション コントローラー](mixed-reality-213.md)
 * [愛好家のガイド:Home、Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)

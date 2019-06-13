@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 4/25/2019
 ms.topic: article
 keywords: HoloLens、エミュレーター、ビルド、バージョン
-ms.openlocfilehash: 75ea6d1ab3f949d28364baca408d79ec9e4bb846
-ms.sourcegitcommit: 222cba2d622b47f75949bf8af80d5c62de4dceab
+ms.openlocfilehash: 017193756b5c57c5bb45351db208533f980701a7
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64914638"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024482"
 ---
 HoloLens のエミュレーター (第 1 世代) と、HoloLens 2 エミュレーターのビルドのサイド バイ サイドでインストールします。 一般に、最新使用可能なビルドを使用してをお勧めしますがいる場合や、古いエミュレーターに対して、アプリケーションをテストする必要がありますの場合がある可能性があります。 このページには、リリース バージョンへのリンクが含まれています。
 
@@ -21,7 +21,8 @@ HoloLens のエミュレーター (第 1 世代) と、HoloLens 2 エミュレ�
 
 |  ビルド |  リリース日 |  メモ | 
 |----------|----------|----------|
-|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日 | 最新の HoloLens 2 ビルドします。 |
+|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日 | 最新の HoloLens 2 ビルドします。  管理者として実行する必要がありません。  スタート メニューのショートカットを追加します。 |
+|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日 |  |
 
 
 # <a name="hololens-emulator-1st-gen-archive"></a>HoloLens のエミュレーター (第 1 世代) アーカイブ

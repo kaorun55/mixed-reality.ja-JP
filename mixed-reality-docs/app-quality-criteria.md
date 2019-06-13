@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: アプリの品質基準、実際には、混合 mixed reality アプリ
-ms.openlocfilehash: dfa1390190fad8d84982171dfbcfa101b20501dc
-ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
+ms.openlocfilehash: 8e635585c0981d81bf71fb5577232af28f2a0fdd
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66750320"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024496"
 ---
 # <a name="app-quality-criteria"></a>アプリの品質基準
 
@@ -618,7 +618,7 @@ Windows Mixed Reality では、オーディオ エンジンは、3 D の方向�
 
 * [対話可能なオブジェクト](interactable-object.md)
 * [Unity のテキスト](text-in-unity.md)
-* [アプリ バーと境界ボックス](app-bar-and-bounding-box.md)
+* [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
 * [音声コマンド](voice-design.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル

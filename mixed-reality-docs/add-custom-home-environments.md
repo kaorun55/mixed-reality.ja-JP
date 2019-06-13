@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows Mixed Reality、Mixed Reality、仮想現実、VR、MR、ホーム、カスタム環境、場所、cliff 家、skyloft、ユーザーの作成
-ms.openlocfilehash: 8f5a3a1bdf5728260b0b7717c74a50f3356ca04a
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
-ms.translationtype: HT
+ms.openlocfilehash: d0cdb878f1994cb5f898f06b98d74dee3dd4fdf1
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829640"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024534"
 ---
 # <a name="add-custom-home-environments"></a>カスタムのホーム環境を追加します。
 
@@ -150,6 +150,5 @@ Windows Mixed Reality 環境の読み込み時に 1 メートルに glTF 単位�
 カスタム環境を作成するときに作成した物理領域に一致しない音響学のレンダリング シミュレーション使用します。 サウンドが間違った方向から取得したものし、思われるかもしれませんがこもった感じです。 
 
 ## <a name="see-also"></a>関連項目
-* [実際にはホームを混合するウィンドウを移動します。](#navigating-the-windows-mixed-reality-home.md)
 * [Windows (GitHub 上) 資産コンバーターを現実の混在](https://github.com/Microsoft/glTF-Toolkit/releases)
 

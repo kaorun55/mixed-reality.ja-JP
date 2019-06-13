@@ -6,12 +6,12 @@ ms.author: erpau
 ms.date: 04/5/2019
 ms.topic: article
 keywords: 実際には、設計の混在を癒してあげて、HoloLens 2、HoloLens (第 1 世代)
-ms.openlocfilehash: 8dea3765f01a6a82fccc002d1cd5c7c9c77d0980
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: e3a78e9a990d207b19b287e1897897a5d6dee3ca
+ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974775"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024440"
 ---
 # <a name="comfort"></a>快適性
 
@@ -126,6 +126,8 @@ Windows Mixed Reality 没入型 HMDs が自動調整の IPD または VO ある�
 最適なテキストの読みやすさが目にかかる負担を軽減し、アプリケーションまたはユーザーをッドマウント中に読み取る必要があるシナリオで特に、ユーザーの快適性を維持できます。 テキストの読みやすさは、さまざまな表示プロパティ (たとえば、ピクセル密度、明るさ、コントラストなど)、レンズ プロパティ (たとえば、色収差)、および/テキストのフォント プロパティ (たとえば、特定のフォントをさまざまな要因によって異なります。特性などの重量、間隔、セリフなど、背景色、フォントの色)。  
 
 一般に、読みやすさの特定のアプリケーションをテストし、快適なエクスペリエンスのであれば、大きなフォント サイズを行ったお勧めします。 以下は、開発の開始点として一般的なガイダンスを提供します。 角度のすべてのフォント サイズが報告されることに注意してください[visual 角度](https://en.wikipedia.org/wiki/Visual_angle)特定の物理サイズではなく提供するホログラムが最適な配置のゾーン内の任意の距離のガイダンスのためのサイズの両方のアカウントが、。テキストとの距離は、ビューアーに表示されます。 
+
+参照してください[文字体裁](typography.md)と[Unity 内のテキスト](text-in-unity.md)ガイドラインの詳細ページします。
 
 ### <a name="guidance-for-holographic-devices"></a>Holographic デバイス向けガイダンス
 
