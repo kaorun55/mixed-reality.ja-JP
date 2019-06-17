@@ -1,17 +1,17 @@
 ---
 title: Unity での空間のマッピング
 description: レンダリングして、Unity で周囲の実際のジオメトリとの衝突とします。
-author: thetuvix
-ms.author: alexturn
+author: davidkline-ms
+ms.author: davidkl
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity、空間マッピング、レンダラー、コライダー、メッシュ、スキャン、コンポーネント
-ms.openlocfilehash: f938f5921cb2c06342a9ebcd376d690c10584df9
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: HT
+ms.openlocfilehash: 8f7bad1651ab31b2e83ad9d9c8f465547fbbdc5a
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605158"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148648"
 ---
 # <a name="spatial-mapping-in-unity"></a>Unity での空間のマッピング
 
@@ -75,7 +75,7 @@ Unity のアプリでは、これら 2 つのコンポーネントを使用し�
 
 空間マッピングのレンダラーと空間マッピング コライダー コンポーネントから取得するよりも詳細に制御が必要な場合は、低レベルの空間マッピング スクリプト Api を使用できます。
 
-**名前空間:** *UnityEngine.XR.WSA*<br>
+**名前空間:**  *UnityEngine.XR.WSA*<br>
 **型**:*SurfaceObserver*、 *SurfaceChange*、 *SurfaceData*、 *SurfaceId*
 
 空間マッピング Api を使用するアプリケーションの推奨されるフローの概要を次に示します。

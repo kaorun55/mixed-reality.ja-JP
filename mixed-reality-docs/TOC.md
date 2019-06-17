@@ -1,9 +1,9 @@
 # [ツールのインストール](install-the-tools.md)
 # [アプリを HL2 用に準備する](mrtk-porting-guide.md)
-# [見つける](index.md)
+# Discover
+## [Mixed Reality に関するドキュメント](index.md)
 ## [複合現実とは](mixed-reality.md)
 ## [ホログラムとは](hologram.md)
-
 ## ハードウェア
 ### HoloLens
 #### [HoloLens 2 ハードウェアの詳細](https://www.microsoft.com/hololens/hardware)
@@ -78,7 +78,8 @@
 ### [リリース ノート - 2016 年 5 月](release-notes-may-2016.md)
 ### [リリース ノート - 2016 年 3 月](release-notes-march-2016.md)
 
-# [デザイン](design.md)
+# 設計
+## [複合現実向けの設計](design.md)
 ## [この設計ガイダンスについて](about-this-design-guidance.md)
 ## 設計の概要
 ### [複合現実とは](mixed-reality.md)
@@ -129,7 +130,8 @@
 ### [HoloSketch](case-study-building-holosketch,-a-spatial-layout-and-ux-sketching-app-for-hololens.md)
 ### [アセット作成プロセス](asset-creation-process.md)
 
-# [開発](development.md)
+# 開発
+## [開発スタート パッド](development.md)
 ## 複合現実クラウド サービス
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
 ### [Holographic Remoting Player](holographic-remoting-player.md)

@@ -6,20 +6,37 @@ ms.author: mazeller
 ms.date: 04/1/2019
 ms.topic: article
 keywords: トラブルシューティングについては、既知の問題のヘルプ
-ms.openlocfilehash: a92ab52c899de44f9c5c8c86ebb6f9cd8433d395
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 2423c7292e453d97461c299e8bddfa063a29d3cd
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604951"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148700"
 ---
 # <a name="hololens-known-issues"></a>HoloLens の既知の問題
 
 これは、現在 HoloLens に影響を与える開発者に関する既知の問題の一覧です。 まずここで、異常な動作が生じる場合。 この一覧は、新しい問題が発見または報告、または将来 HoloLens のソフトウェア更新プログラムの問題については、更新された保持するは。
 
+## <a name="unable-to-connect-and-deploy-to-hololens-through-visual-studio"></a>接続し、Visual Studio での HoloLens にデプロイすることができません。
+
+>[!NOTE]
+>最終更新:6/14 午後 6 時までの @ を調査中発行します。
+
+HoloLens と Visual Studio のチームは、Visual Studio での HoloLens デバイスへのデプロイからユーザーを妨げる可能性のある問題を調査しています。
+ 
+展開段階で、ユーザーが HoloLens デバイスと開発者のマシンのことに関係なく、次のエラー メッセージを報告*開発者モード*を有効にします。
+
+*DEP0100:そのターゲット デバイスが開発者モードが有効になっていることを確認してください。開発者用ライセンスを取得できませんでした<device IP>80004005 のエラーが原因です。*
+ 
+**対応策**: 
+ 
+ユーザーは、これが常に動作する保証できませんが、デバイスのリセットで問題が解決を報告します。 デバイスをリセットする手順を確認できます[ここ](https://support.microsoft.com/en-us/help/13452/hololens-restart-reset-or-recover-hololens)します。
+ 
+問題が原因となったルートとすぐに更新プログラムは、されます。 
+
 ## <a name="issues-launching-the-microsoft-store-and-apps-on-hololens"></a>Microsoft Store と HoloLens でアプリの起動の問題
 
->[!IMPORTANT]
+>[!NOTE]
 >最終更新:午前 10 時の問題を解決 @ 4/2。 
 
 Microsoft Store および HoloLens でアプリを起動しようとしています。 問題が発生する可能性があります。 バック グラウンド アプリの更新プログラム展開フレームワーク パッケージで 1 つの中に特定のシーケンス内の新しいバージョンまたはその依存するアプリの詳細はまだ実行しているときに問題が発生するを確認します。 この場合、新しいバージョンの .NET ネイティブ Framework (バージョン 10.0.25531 に 10.0.27413) に配信されたアプリの自動更新では、正しくない更新プログラム、framework の以前のバージョンを使用するすべての実行中のアプリを実行しているアプリが発生します。  Framework 更新プログラム用のフローのとおりです:-
@@ -37,10 +54,10 @@ Microsoft Store および HoloLens でアプリを起動しようとしていま
 
 1.  設定 アプリに移動し、"更新プログラムとセキュリティ を開く
 2.  "更新プログラムの確認 をクリックします。
-3.  17763.380 する更新プログラムを使用できる場合、ハングするアプリのバグの修正プログラムを受信するには、このビルドに更新してください。
+3.  17763\.380 する更新プログラムを使用できる場合、ハングするアプリのバグの修正プログラムを受信するには、このビルドに更新してください。
 4.  このバージョンの OS を更新、時に、アプリは正常に動作する必要があります。
 
-さらに、すべて HoloLens の OS のリリースでは、私たちが投稿した FFU イメージに Microsoft ダウンロード センターに https://aka.ms/hololensdownload/10.0.17763.380します。 
+さらに、すべて HoloLens の OS のリリースでは、私たちが投稿した FFU イメージに Microsoft ダウンロード センターに https://aka.ms/hololensdownload/10.0.17763.380 します。 
 
 更新プログラムを実行したいしない場合は、3/29 の時点で、Microsoft Store の UWP アプリの新しいバージョンをリリースしました。 ストアの更新バージョンを作成したら。
 
@@ -54,7 +71,7 @@ Microsoft Store および HoloLens でアプリを起動しようとしていま
 
 1)  ダウンロードしてください[この zip ファイル](http://download.microsoft.com/download/8/5/C/85C23745-794C-419D-B8D7-115FBCCD6DA7/netfx_1.7.zip)Microsoft ダウンロード センターから。  解凍すると、2 つのファイルが生成されます。  Microsoft.NET.Native.Runtime.1.7.appx と Microsoft.NET.Native.Framework.1.7.appx
 2)  デバイスがロックを解除するデベロッパーであることを確認してください。  そのための手順は、前に実行していない場合[ここ](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fmixed-reality%2Fusing-the-windows-device-portal&data=02%7C01%7Cjalynch%40microsoft.com%7C3622a462ebd04870fccb08d6ae94cad6%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636888351416725140&sdata=ZB6Zdx9GV95PcU6FAVgWaP3eQNMsyIc%2FbNDEby3Sb8A%3D&reserved=0)します。
-3)  Windows Device Portal のに取得するとするとします。  USB 経由でこれを行うし、入力してようになります http://127.0.0.1:10080をブラウザーにします。  
+3)  Windows Device Portal のに取得するとするとします。  USB 経由でこれを行うし、入力してようになります http://127.0.0.1:10080 をブラウザーにします。  
 4)  「サイドローディング」にする必要があることを Windows Device Portal したら、2 つのファイルをダウンロードしています。  これを行うには、「アプリ」セクションにアクセスして「アプリ」をクリックするまで左側にあるバーを移動する必要があります。
 5)  次のような画面が表示されますし、下。  「アプリをインストールする」ことを示すセクションに移動し、これら 2 つの APPX ファイルを解凍した場所に移動します。  だけは一度に 1 つずつ、そのため、1 つ目を選択した後順にクリックします [移動] [デプロイ] セクションできます。  これを 2 番目の APPX ファイルを行います。 
   ![Windows Device Portal のサイド ロード アプリをインストールするには](images/20190322-DevicePortal.png)<br>
