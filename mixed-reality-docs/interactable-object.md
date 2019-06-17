@@ -3,15 +3,15 @@ title: 対話型のオブジェクト
 description: ボタンには、2 D 抽象世界でイベントをトリガーに使用されるメタファが長年です。 3 次元の複合現実の世界では、この抽象化はもはやの世界に限定しました必要はありません。
 author: cre8ivepark
 ms.author: jennyk
-ms.date: 02/24/2019
+ms.date: 06/06/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、相互作用、ui、ux
-ms.openlocfilehash: eea7eff6c591a9319b920936ce2be511cecb7496
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: b0397e00763f70e4caf55a84b6541085e56fafd4
+ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813810"
+ms.lasthandoff: 06/15/2019
+ms.locfileid: "67148733"
 ---
 # <a name="interactable-object"></a>対話型のオブジェクト
 
@@ -84,20 +84,51 @@ HoloLens の 2 を深さ perception でユーザーの信頼度を向上させ�
 
 <img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="音声コマンドのツールヒント" width="350"><br/>*音声コマンドのツールヒント*
 
+## <a name="sizing"></a>サイズ変更
+対話型のすべてのオブジェクトの有効期限は簡単にすることを確認するにはユーザーによって影響を受けるをお勧め、最小サイズ (多くの場合、ビジュアルの角度を度数で測定)、ユーザーからファイルを配置する距離に基づく対話型を満たしていることを確認します。 ビジュアルの角度を度では、ユーザーと、オブジェクト間の距離に基づいておりは一定のまま、ターゲットの物理サイズがユーザーの変更からの距離として変更可能性があります。 確認してくださいと程度からの距離に基づくオブジェクトのために必要な物理サイズを決定するには、は、visual 角度は、電卓を使用して試してください。 http://elvers.us/perception/visualAngle/
+
+対話型コンテンツの最小サイズの推奨事項を以下に示します
+
+### <a name="target-size-for-direct-hand-interaction"></a>直接手の相互作用の目標サイズ
+| 距離 | 表示角度 | サイズ |
+|---------|---------|---------|
+| 45 cm  | 2 度以上 | 1.6 × 1.6 cm |
+
+![直接手の相互作用の目標サイズ](images/TargetSizingNear.jpg)<br>
+*直接手の相互作用の目標サイズ*
+
+確認して 3.2 x 3.2 cm の大規模な最小サイズは、アイコンを格納するための十分な領域、可能性のあるいくつかテキスト * * をお勧めの直接の対話のボタンを作成する場合
+
+| 距離 | 最小サイズ |
+|---------|---------|
+| 45 cm  | 3.2 x 3.2 cm |
+
+![ターゲット サイズのボタン](images/TargetSizingButtons.png)<br>
+*ターゲット サイズのボタン*
+
+
+### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>ターゲット光線の手の形のサイズまたは相互作用の視線
+| 距離 | 表示角度 | サイズ |
+|---------|---------|---------|
+| 2 分  | 1 度以上 | 3.5 x 3.5 cm |
+
+![ターゲット光線の手の形のサイズまたは相互作用の視線](images/TargetSizingFar.jpg)<br>
+*ターゲット光線の手の形のサイズまたは相互作用の視線*
+
 ## <a name="creating-interactable-object-with-mixed-reality-toolkit-mrtk"></a>Mixed Reality Toolkit (MRTK) との対話型のオブジェクトを作成します。
 
 **[Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)** 対話型のオブジェクトを作成する際に役立つプレハブ、一連の Unity のスクリプトを見つけることができます。 これらは、オブジェクトのさまざまな種類の入力の対話操作の状態に応答を使用することができます。
 
-* **[対話型](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)**
-* **[ボタン](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)**
-* **[手の形の相互作用の例のシーン](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)**
+* [対話型](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
+* [ボタン](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
+* [手の形の相互作用の例のシーン](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)
 
 MixedRealityToolkit の標準的なシェーダーがなどのさまざまなオプションを提供します**近接 light**を視覚的およびオーディオを作成できます。
-* **[MRTK 標準シェーダー](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_MRTKStandardShader.md)**
+* [MRTK 標準シェーダー](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Documentation/README_MRTKStandardShader.md)
 
 
 ## <a name="see-also"></a>関連項目
 
-* **[境界ボックス](app-bar-and-bounding-box.md)**
-* **[オブジェクトのコレクション](object-collection.md)**
-* **[ビルボード処理と tag-along](billboarding-and-tag-along.md)**
+* [境界ボックス](app-bar-and-bounding-box.md)
+* [オブジェクト コレクション](object-collection.md)
+* [Billboard と Tag-along](billboarding-and-tag-along.md)
