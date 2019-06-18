@@ -1,25 +1,25 @@
 ---
 layout: LandingPage
 title: 設計
-description: このガイダンスは、Microsoft デザイナー、開発者、プログラム マネージャー、研究者、仕事をまたがる holographic (HoloLens) のようなデバイスを没入型のデバイス (Acer と HP Windows Mixed Reality ヘッドセット) などで作成します。 そのため、「Windows ヘッド マウント表示のための設計方法」に関するトピックのセットとしてこの作業を検討してください。
+description: このガイダンスは、ホログラフィック デバイス (HoloLens など) やイマーシブ デバイス (Acer および HP Windows Mixed Reality ヘッドセットなど) にわたって作業しているマイクロソフトのデザイナー、開発者、プログラム マネージャー、研究者によって作成されています。 そのため、この作業を 'Windows ヘッドマウント ディスプレイ向けの設計方法' のための一連のトピックと見なしてください。
 author: rwinj
 ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
 ms.localizationpriority: high
-keywords: Windows Mixed Reality、デザイン、対話、スタイル、色、アプリのパターン、コントロール、サンプル アプリ、Mixed Reality Toolkit、MRTK
+keywords: Windows Mixed Reality、設計、操作、スタイル、色、アプリ パターン、コントロール、サンプル アプリ、Mixed Reality ツールキット、MRTK
 ms.openlocfilehash: 88de9008dbea6cce3b980bbbe3d0f45b7818e7c9
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
-ms.translationtype: MT
+ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/05/2019
 ms.locfileid: "66039208"
 ---
-# <a name="design-for-mixed-reality"></a>複合現実の設計
+# <a name="design-for-mixed-reality"></a>Mixed Reality 向けの設計
 
-![複合現実の設計](images/Bicycle-Leschi10.gif)
+![Mixed Reality 向けの設計](images/Bicycle-Leschi10.gif)
 
-このガイダンスは、Microsoft デザイナー、開発者、プログラム マネージャー、研究者、仕事をまたがる holographic (HoloLens) のようなデバイスを没入型のデバイス (Acer と HP Windows Mixed Reality ヘッドセット) などで作成します。 そのため、「Windows ヘッド マウント表示のための設計方法」に関するトピックのセットとしてこの作業を検討してください。
+このガイダンスは、ホログラフィック デバイス (HoloLens など) やイマーシブ デバイス (Acer および HP Windows Mixed Reality ヘッドセットなど) にわたって作業しているマイクロソフトのデザイナー、開発者、プログラム マネージャー、研究者によって作成されています。 そのため、この作業を 'Windows ヘッドマウント ディスプレイ向けの設計方法' のための一連のトピックと見なしてください。
 
 ## <a name="article-categories"></a>記事のカテゴリ
 
@@ -34,21 +34,21 @@ ms.locfileid: "66039208"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>設計を概要します。</h3>
+                        <h3>設計の概要</h3>
                         <p>
-                            <a href="mixed-reality.md">どのような複合現実をですか。</a>
+                            <a href="mixed-reality.md">Mixed Reality とは</a>
                         </p>
                         <p>
-                            <a href="about-this-design-guidance.md">このガイドについて</a>
+                            <a href="about-this-design-guidance.md">このガイダンスについて</a>
                         </p>
                         <p>
-                            <a href="case-study-my-first-year-on-the-hololens-design-team.md">設計チームに、最初の年</a>
+                            <a href="case-study-my-first-year-on-the-hololens-design-team.md">設計チームでの最初の年</a>
                         </p>
                         <p>
-                            <a href="case-study-expanding-the-design-process-for-mixed-reality.md">複合現実のデザイン プロセスを展開します。</a>
+                            <a href="case-study-expanding-the-design-process-for-mixed-reality.md">Mixed Reality 向けの設計プロセスの拡張</a>
                         </p>
                         <p>
-                            <a href="case-study-the-pursuit-of-more-personal-computing.md">複数のパーソナル コンピューティングのフォロー アップ</a>
+                            <a href="case-study-the-pursuit-of-more-personal-computing.md">よりパーソナルなコンピューティングの追求</a>
                         </p>
                     </div>
                 </div>
@@ -70,16 +70,16 @@ ms.locfileid: "66039208"
                             <a href="comfort.md">快適性</a>
                         </p>
             <p>
-                            <a href="interaction-fundamentals.md">Instinctual 相互作用</a>
+                            <a href="interaction-fundamentals.md">本能的な操作</a>
                         </p>
                         <p>
-                            <a href="hands-and-tools.md">手およびモーションのコント ローラー</a>
+                            <a href="hands-and-tools.md">手とモーション コントローラー</a>
                         </p>
                         <p>
                             <a href="hands-free.md">ハンズフリー</a>
                         </p>
                          <p>
-                            <a href="gaze-and-commit.md">Head 注視とコミット</a>
+                            <a href="gaze-and-commit.md">頭の視線入力とコミット</a>
                         </p>
                     </div>
                 </div>
@@ -98,10 +98,10 @@ ms.locfileid: "66039208"
                     <div class="cardText">
                         <h3>スタイル</h3>
                         <p>
-                            <a href="color,-light-and-materials.md">色、ライト、マテリアル</a>
+                            <a href="color,-light-and-materials.md">色、ライト、素材</a>
                         </p>
                          <p>
-                            <a href="spatial-sound-design.md">サウンドの空間の設計</a>
+                            <a href="spatial-sound-design.md">立体音響の設計</a>
                         </p>
                         <p>
                             <a href="typography.md">文字体裁</a>
@@ -126,16 +126,16 @@ ms.locfileid: "66039208"
                     <div class="cardText">
                         <h3>アプリのパターン</h3>
                         <p>
-                            <a href="types-of-mixed-reality-apps.md">複合現実アプリの種類</a>
+                            <a href="types-of-mixed-reality-apps.md">Mixed Reality アプリの種類</a>
                         </p>
                         <p>
-                            <a href="room-scan-visualization.md">ルームのスキャンの視覚化</a>
+                            <a href="room-scan-visualization.md">部屋のスキャンの可視化</a>
                         </p>
                         <p>
                             <a href="cursors.md">カーソル</a>
                         </p>
                         <p>
-                            <a href="billboarding-and-tag-along.md">ビルボード処理と tag-along</a>
+                            <a href="billboarding-and-tag-along.md">Billboard と Tag-along</a>
                         </p>
                     </div>
                 </div>
@@ -154,19 +154,19 @@ ms.locfileid: "66039208"
                     <div class="cardText">
                         <h3>コントロール</h3>
                         <p>
-                            <a href="text-in-unity.md">Unity 内のテキスト</a>
+                            <a href="text-in-unity.md">Unity のテキスト</a>
                         </p>
                         <p>
-                            <a href="interactable-object.md">対話型のオブジェクト</a>
+                            <a href="interactable-object.md">対話可能なオブジェクト</a>
                         </p>
                         <p>
-                            <a href="object-collection.md">オブジェクトのコレクション</a>
+                            <a href="object-collection.md">オブジェクト コレクション</a>
                         </p>
                         <p>
                             <a href="progress.md">進行状況の表示</a>
                         </p>
                         <p>
-                            <a href="app-bar-and-bounding-box.md">アプリ バー、境界ボックス</a>
+                            <a href="app-bar-and-bounding-box.md">アプリ バーと境界ボックス</a>
                         </p>
                     </div>
                 </div>
@@ -178,12 +178,12 @@ ms.locfileid: "66039208"
 
 ## <a name="sample-apps"></a>サンプル アプリ
 
-設計されており、私たちのチームによって作成されたサンプルからの優れたエクスペリエンスを構築します。
+マイクロソフトのチームが設計および作成したサンプルからすばらしいエクスペリエンスを構築してください。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
     <li>
-        <a href="periodic-table-of-the-elements.md" title="要素の定期処理テーブル" data-linktype="absolute-path">
+        <a href="periodic-table-of-the-elements.md" title="要素の定期的なテーブル" data-linktype="absolute-path">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
@@ -193,8 +193,8 @@ ms.locfileid: "66039208"
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>要素の定期処理テーブル</h3>
-                            <p>オブジェクトのコレクションを使用して、さまざまな表面型で、3 D 空間内のオブジェクトの配列をレイアウトする方法について説明します。</p>
+                            <h3>要素の定期的なテーブル</h3>
+                            <p>オブジェクト コレクションを使用して、さまざまな表面の種類を持つ 3D 空間内のオブジェクトの配列をレイアウトする方法を説明します。</p>
                         </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@ ms.locfileid: "66039208"
         </a>        
     </li>
     <li>
-        <a href="lunar-module.md" title="旧暦モジュール" data-linktype="absolute-path">
+        <a href="lunar-module.md" title="月着陸船" data-linktype="absolute-path">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
@@ -212,8 +212,8 @@ ms.locfileid: "66039208"
                             </div>
                         </div>
                         <div class="cardText">
-                            <h3>旧暦モジュール</h3>
-                            <p>HoloLens 基本のジェスチャ両手追跡と Xbox コント ローラーの入力を拡張する方法について説明します。</p>
+                            <h3>月着陸船</h3>
+                            <p>HoloLens ベースのジェスチャを両手の追跡と Xbox コントローラーの入力で拡張する方法を説明します。</p>
                         </div>
                     </div>
                 </div>
@@ -221,7 +221,7 @@ ms.locfileid: "66039208"
         </a>
     </li>
     <li>
-        <a href="galaxy-explorer.md" title="Galaxy エクスプ ローラー" data-linktype="absolute-path">
+        <a href="galaxy-explorer.md" title="Galaxy Explorer" data-linktype="absolute-path">
             <div class="cardSize">
                 <div class="cardPadding">
                     <div class="card">
@@ -232,7 +232,7 @@ ms.locfileid: "66039208"
                         </div>
                         <div class="cardText">
                             <h3>Galaxy Explorer</h3>
-                            <p>Galaxy エクスプ ローラー プロジェクト準備ができました。 コミュニティとアイデアを共有するで、監視、アプリを選択したチームを作成して、ソース コードを取得できるようになりました。</p>
+                            <p>Galaxy Explorer プロジェクトの準備が完了しました。 これまではコミュニティとアイデアを共有し、アプリを選択し、チームによるその構築を見てきましたが、ソース コードを取得できるようになりました。</p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +248,7 @@ ms.locfileid: "66039208"
 
 <ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
     <li>
-    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" title="Mixed Reality Toolkit - Unity" data-linktype="absolute-path">
+    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" title="Mixed Reality ツールキット - Unity" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -258,7 +258,7 @@ ms.locfileid: "66039208"
                         </div>
                     </div>                    
             <div class="cardText">
-                        <h3>Mixed Reality Toolkit - Unity</h3>
+                        <h3>Mixed Reality ツールキット - Unity</h3>
                         <p> </p>
                     </div>
                 </div>
@@ -326,7 +326,7 @@ ms.locfileid: "66039208"
 </ul>
 
 
-## <a name="general-design-resources"></a>一般的なデザイン リソース
+## <a name="general-design-resources"></a>一般的な設計リソース
 
 <ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
     <li>
@@ -349,7 +349,7 @@ ms.locfileid: "66039208"
       </a>  
     </li>
     <li>
-    <a href="https://www.microsoft.com/design/inclusive" title="マイクロソフトの包括的なデザイン" data-linktype="absolute-path">
+    <a href="https://www.microsoft.com/design/inclusive" title="マイクロソフトでの包括性を備えた設計" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -359,7 +359,7 @@ ms.locfileid: "66039208"
                         </div>
                     </div>                    
             <div class="cardText">
-                        <h3>マイクロソフトの包括的なデザイン</h3>
+                        <h3>マイクロソフトでの包括性を備えた設計</h3>
                         <p> </p>
                     </div>
                 </div>
