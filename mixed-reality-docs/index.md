@@ -96,7 +96,7 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
                                                 </div>
                                                 <div class="cardText">
                                                     <h3 class="x-hidden-focus">Azure Spatial Anchors</h3>
-                                                  <p>Spatial Anchors はクロスプラットフォーム開発者向けサービスで、長時間にわたってデバイス間の場所を維持するオブジェクトを使用して Mixed Reality エクスペリエンスを作成できます。</p>
+                                                  <p>Spatial Anchors はクロスプラットフォーム開発者向けサービスで、時間とデバイスを超えてその場所に存続するオブジェクトを使用して Mixed Reality エクスペリエンスを作成できます。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -147,7 +147,7 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
 
 [![HoloLens 2](images/hololens2.jpg)](https://www.microsoft.com/hololens/hardware)
 
-[HoloLens 2](https://www.microsoft.com/hololens/hardware) は、最も快適でイマーシブな複合現実エクスペリエンスを、分単位で価値を提供する業界最先端のソリューションと共に提供します。これらはすべて、Microsoft のクラウドおよび AI サービスの信頼性、セキュリティ、および拡張性によってバックアップされています。 [HoloLens 2 Development Edition](https://www.microsoft.com/en-us/hololens/developers) を使用すると、HoloLens 2 と Unity ソフトウェアの無料試用版およびクラウド サービス用の Azure クレジットを組み合わせた特典付きの複合現実プランをすぐに開始できます。
+[HoloLens 2](https://www.microsoft.com/hololens/hardware) は、数分で価値を提供できる業界最先端のソリューションにより、最も快適でイマーシブな複合現実エクスペリエンスを提供します。これらはすべて、Microsoft のクラウドおよび AI サービスの信頼性、セキュリティ、および拡張性によってバックアップされています。 [HoloLens 2 Development Edition](https://www.microsoft.com/en-us/hololens/developers) を使用すると、HoloLens 2 と Unity ソフトウェアの無料試用版およびクラウド サービス用の Azure クレジットを組み合わせた特典付きの複合現実プランをすぐに開始できます。
 
 <h2>ニュースと注意事項</h2>
 

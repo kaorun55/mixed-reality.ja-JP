@@ -10,7 +10,7 @@
 #### [HoloLens (第 1 世代) ハードウェアの詳細](hololens-hardware-details.md)
 #### [HoloLens のアカウント](accounts-on-hololens.md)
 #### [調整](calibration.md)
-#### [Commercial 機能](commercial-features.md)
+#### [業務用機能](commercial-features.md)
 #### [HoloLens での Wi-Fi への接続](connecting-to-wi-fi-on-hololens.md)
 #### [HoloLens の環境への配慮](environment-considerations-for-hololens.md)
 #### [HoloLens のアプリを入手する](get-apps-for-hololens.md)
@@ -205,7 +205,7 @@
 ####### [高度な入力](mrlearning-base-ch5.md)
 ####### [デモ アプリ](mrlearning-base-ch6.md)
 #### HoloLens (第 1 世代) オープン ソースのサンプル アプリ
-##### [要素の定期的なテーブル](periodic-table-of-the-elements.md)
+##### [元素周期表](periodic-table-of-the-elements.md)
 ##### [月着陸船](lunar-module.md)
 ##### [銀河エクスプローラー](galaxy-explorer.md)
 #### HoloLens (第 1 世代) とイマーシブ ヘッドセットのチュートリアル
