@@ -145,6 +145,7 @@
 #### [Unity の再生モード](unity-play-mode.md)
 #### [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)
 #### [Unity と Visual Studio を使用するためのベスト プラクティス](best-practices-for-working-with-unity-and-visual-studio.md)
+#### [Unity IL2CPP を使用したマネージド デバッグ](managed-debugging-with-unity-il2cpp.md)
 ### コア構成要素
 #### [Unity のカメラ](camera-in-unity.md)
 #### [Unity の座標系](coordinate-systems-in-unity.md)
