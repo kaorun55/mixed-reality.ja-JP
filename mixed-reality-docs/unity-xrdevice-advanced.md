@@ -21,8 +21,8 @@ ms.locfileid: "65942098"
 
 ## <a name="xrdevice"></a>XRDevice 
 
-**名前空間:***UnityEngine.XR*<br>
-**種類:***XRDevice*
+**名前空間:** *UnityEngine.XR*<br>
+**種類:** *XRDevice*
 
 *XRDevice*を使用して、基になるネイティブ オブジェクトへのアクセスを取得することができます、 <a href="https://docs.unity3d.com/ScriptReference/XR.XRDevice.GetNativePtr.html" target="_blank">GetNativePtr</a>メソッド。 異なるプラットフォーム間で異なります GetNativePtr が返されます。 ユニバーサル Windows プラットフォームで、Windows Mixed Reality XR SDK を対象とする場合は、XRDevice.GetNativePtr は、次の構造へのポインター (IntPtr) を返します。 
 
