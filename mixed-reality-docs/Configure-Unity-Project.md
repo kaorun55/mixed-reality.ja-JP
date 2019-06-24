@@ -6,12 +6,12 @@ ms.author: Yoyoz
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity では、実際には、開発、はじめに、新しいプロジェクトの混在
-ms.openlocfilehash: aad38474781fd78425d48034877122d36d9e3e93
-ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
+ms.openlocfilehash: 68dded9d0fc9e861bdda56c4954d72ddafafa686
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65940753"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326090"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>Windows Mixed Reality を新しい Unity プロジェクトを構成します。 
 
@@ -21,7 +21,7 @@ Mixed Reality ツールキットをインポートせず、新しい Unity プ�
 
 ## <a name="per-project-settings"></a>プロジェクトの設定
 
-Windows Mixed Reality を対象とは、まず、ユニバーサル Windows プラットフォーム アプリとしてエクスポートする Unity プロジェクトを設定する必要があります。
+Windows Mixed Reality を対象とは、まず、ユニバーサル Windows プラットフォーム アプリとしてエクスポートする Unity プロジェクトを設定する必要があります。 
 1. 選択**ファイル > の設定を作成しています.**
 2. 選択**ユニバーサル Windows プラットフォーム**、プラットフォームに一覧表示し、クリックして**スイッチ プラットフォーム**
 3. 設定**SDK**に**ユニバーサル 10**

@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、コンポーネント、センサー、テクノロジ、テクニカル、破棄、破棄、
-ms.openlocfilehash: ddbce274a0573ab72e1ff7b523b6ac4b8fbb6ba2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 56b10fa9751c626578c697cd370347482a121b2a
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604631"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326201"
 ---
 # <a name="hololens-1st-gen-hardware-details"></a>HoloLens (第 1 世代) ハードウェアの詳細
 
@@ -21,7 +21,7 @@ Microsoft HoloLens では、世界中の最初の完全無制限 holographic コ
 
 ## <a name="how-to-get-microsoft-hololens"></a>Microsoft HoloLens を取得する方法
 
-Microsoft HoloLens は両方を開発エディションとして購入して、Commercial Suite の構成 (に追加のセキュリティとデバイスの管理の保証とエンタープライズ機能を含む)。 北米の場合は、パートナーを通じても HoloLens をレンタルできます。
+Microsoft HoloLens は両方を開発エディションとして購入しの保証とエンタープライズ機能を含む Commercial Suite 構成は、セキュリティとデバイスの管理を追加します。 北米の場合は、パートナーを通じても HoloLens をレンタルできます。
 
 [購入またはレンタル Microsoft HoloLens の詳細についてはここをクリックして](https://www.microsoft.com/hololens/buy)します。
 
@@ -82,7 +82,7 @@ Microsoft HoloLens は両方を開発エディションとして購入して、C
 
 ### <a name="memory"></a>メモリ
 * 64 GB のフラッシュ
-* 2 GB の RAM
+* 2 GB RAM
 
 ### <a name="whats-in-the-box"></a>ボックスには
 * HoloLens Development Edition
