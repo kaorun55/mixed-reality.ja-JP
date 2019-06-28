@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 2D アプリ、UWP、フラットなアプリ、HoloLens、イマーシブ ヘッドセット、アプリ モデルでは、バックアップ、ボタン、アプリ バー、dpi スケールの解決
-ms.openlocfilehash: 35a2e7774a79e35893821467f7e9ef8c004efa20
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: f9792a7e5fd9729bf9f5f632c699c74c58c10ddf
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59602184"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414220"
 ---
 # <a name="updating-2d-uwp-apps-for-mixed-reality"></a>複合現実の 2D の UWP アプリを更新します。
 
@@ -179,7 +179,7 @@ HoloLens を UWP アプリを移行することと、入力を理解する必要
 * [アプリ モデル](app-model.md)
 * [視線入力](gaze.md)
 * [ジェスチャ](gestures.md)
-* [アニメーション コント ローラー](motion-controllers.md)
-* [音声](voice-input.md)
-* [Microsoft Store にアプリの提出](submitting-an-app-to-the-microsoft-store.md)
+* [モーション コントローラー](motion-controllers.md)
+* [音声入力](voice-input.md)
+* [Microsoft Store へのアプリの送信](submitting-an-app-to-the-microsoft-store.md)
 * [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)

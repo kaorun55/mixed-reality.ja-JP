@@ -7,18 +7,18 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit, mixedrealitytoolkit、mixedrealitytoolkit unity、academy, チュートリアル
-ms.openlocfilehash: b94f1be256d3373deb5f177be0ee9bc0c8be3180
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: 4f1402cb9b91e0d0619c0516de9120302323b799
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64874054"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415400"
 ---
 # <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
 
 現在すべてのチュートリアルやサンプル アプリは Unity ベースです。  コンテンツを他のエンジンとプラットフォームを開発するとは、テーブルの内容に関連する見出しの下検索されます。
 
-## <a name="mr-learning-modules"></a>MR ラーニング モジュール
+## <a name="mr-learning-modules"></a>MR 学習モジュール
 
 手法と複合現実のアプリケーションを開発するためのベスト プラクティスの両方について開発者には、MR 学習のモジュールが設計されています。  初期のモジュールは、HoloLens 2 はあり、Mixed Reality Toolkit 2.0 (MRTK 2.0) を実装します。
 * 開発者向け MRTK でそのプロジェクトを設定するだけでなく UI、空間のマッピング、および基本および詳細の両方の相互作用を実装する方法を説明するためのものがベース モジュール

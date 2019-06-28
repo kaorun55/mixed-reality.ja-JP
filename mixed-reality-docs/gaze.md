@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 設計、実際には、視線の先、相互作用を混在
-ms.openlocfilehash: e0c1a925f6faeb37ec35e511cef36f9c06672c8a
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 7e65d26d3e9edabbd01d35a887ffc8622a3c6337
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829743"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414371"
 ---
 # <a name="gaze"></a>視線入力
 
@@ -84,5 +84,5 @@ HoloLens で (第 1 世代)、そのユーザーの視線入力ヘッドから�
 * [MR 入力 210:Head 視線入力](holograms-210.md)
 * [DirectX でのヘッド視線入力とアイ視線入力](gaze-in-directx.md)
 * [Unity で Head 視線入力](gaze-in-unity.md)
-* [HoloLens 2 の視線](eye-tracking.md)
+* [HoloLens 2 の目の視線の先](eye-tracking.md)
 * [Mixed Reality Toolkit を使用して Unity で目視線入力](https://aka.ms/mrtk-eyes)

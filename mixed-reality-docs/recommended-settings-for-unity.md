@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: unity、設定、複合現実
-ms.openlocfilehash: c8b5598fa702954ca14b9b013e44ed38cf6075c2
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 8afcefb49a860d66a372ebd3d0c4bcdb43038813
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148666"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415456"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity の推奨設定
 
@@ -91,7 +91,7 @@ Unity で .NET バックエンドおよびしたがってをお勧めします�
 お読みください[il2cpp バック エンドのビルド時間を最適化する](https://docs.unity3d.com/Manual/IL2CPP-OptimizingBuildTimes.html)の詳細。
 
 > [!NOTE]
-> さらに、可能性があるセットアップ都合のよい、[キャッシュ サーバー](https://docs.unity3d.com/Manual/CacheServer.html)、特に大きな資産 (スクリプト ファイルを除く) または絶えずを Unity プロジェクトの場合は、シーン/資産を変更します。 プロジェクトを開くときに Unity 開発者のコンピューターで、内部キャッシュ フォーマット正規の資産に格納します。 項目を再インポートし、ため変更されたときに、再処理する必要があります。 このプロセスは 1 回実行し、キャッシュ サーバーに保存され、したがってすべての開発者が新しい変更をローカルでの再インポート処理ではなく、時間を節約するには、他の開発者と共有します。
+> 特に、大きなアセット (スクリプト ファイルを除く) がある場合や、常にシーンやアセットを変更する Unity プロジェクトの場合は、[キャッシュ サーバー](https://docs.unity3d.com/Manual/CacheServer.html)をセットアップするとよいでしょう。 プロジェクトを開く際に、Unity は条件を満たすアセットを内部キャッシュ フォーマットで開発者のコンピューターに格納します。 項目を変更した場合は、再インポートして再処理されるようにする必要があります。 このプロセスが 1 回実行されると、キャッシュ サーバーに保存され、すべての開発者に共有されます。すべての開発者がローカルで新しい変更の再インポート処理を行う必要がなくなるので、時間を節約できます。
 
 ## <a name="publishing-properties"></a>発行プロパティ
 
@@ -160,5 +160,5 @@ Holographic のアプリ用の一般的に使用される Api を有効にする
 
 ## <a name="see-also"></a>関連項目
 * [Unity 開発の概要](unity-development-overview.md)
-* [For Mixed Reality Understaing パフォーマンス](understanding-performance-for-mixed-reality.md)
+* [Mixed Reality のパフォーマンスを理解する](understanding-performance-for-mixed-reality.md)
 * [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)

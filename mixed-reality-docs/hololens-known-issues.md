@@ -3,15 +3,15 @@ title: HoloLens の既知の問題
 description: これは、HoloLens の開発者に影響を与える既知の問題の一覧です。
 author: mattzmsft
 ms.author: mazeller
-ms.date: 04/1/2019
+ms.date: 06/14/2019
 ms.topic: article
 keywords: トラブルシューティングについては、既知の問題のヘルプ
-ms.openlocfilehash: 2423c7292e453d97461c299e8bddfa063a29d3cd
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: fd70171a908dab016b375e2207436dc11d625af9
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148700"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414352"
 ---
 # <a name="hololens-known-issues"></a>HoloLens の既知の問題
 
@@ -54,7 +54,7 @@ Microsoft Store および HoloLens でアプリを起動しようとしていま
 
 1.  設定 アプリに移動し、"更新プログラムとセキュリティ を開く
 2.  "更新プログラムの確認 をクリックします。
-3.  17763\.380 する更新プログラムを使用できる場合、ハングするアプリのバグの修正プログラムを受信するには、このビルドに更新してください。
+3.  17763.380 する更新プログラムを使用できる場合、ハングするアプリのバグの修正プログラムを受信するには、このビルドに更新してください。
 4.  このバージョンの OS を更新、時に、アプリは正常に動作する必要があります。
 
 さらに、すべて HoloLens の OS のリリースでは、私たちが投稿した FFU イメージに Microsoft ダウンロード センターに https://aka.ms/hololensdownload/10.0.17763.380 します。 

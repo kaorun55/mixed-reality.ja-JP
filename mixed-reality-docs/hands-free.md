@@ -6,12 +6,12 @@ ms.author: liamar
 ms.date: 04/20/2019
 ms.topic: article
 keywords: 複合現実、ハンズフリー、視線、視線を対象との相互作用、デザイン
-ms.openlocfilehash: 4d21fa10eabb446565bddebccdbde5e2e7bcc72a
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+ms.openlocfilehash: 7942192f644a7133335f089cfaaccfaebdd9292e
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67326152"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414389"
 ---
 # <a name="hands-free"></a>ハンズフリー
 
@@ -39,10 +39,10 @@ ms.locfileid: "67326152"
 
 ### <a name="head-gaze-and-dwellgaze-and-dwellmd"></a>[ヘッド視線入力とドウェル](gaze-and-dwell.md)
 
-ハンズフリー状況によっては、音声を使用したりはできません理想的なこともできます。 大きい音の工場出荷時の環境、プライバシー、またはソーシャル規範のすべての制約を指定できます。 ヘッド視線 + 熟考モデルでは、接続を維持しながら、ポイント、ヘッドのベクターを使用して、アプリを移動するユーザーまたはもたらすボタンがアクティブ化後一定の時間、tpically 約 1 または 2 つ目のようにします。 
+ハンズフリー状況によっては、音声を使用したりはできません理想的なこともできます。 大きい音の工場出荷時の環境、プライバシー、またはソーシャル規範のすべての制約を指定できます。 ヘッド視線 + 熟考モデルでは、接続を維持しながら、ポイント、ヘッドのベクターを使用して、アプリを移動するボタンにもたらすはアクティブ化したり、一定時間、通常は約 1 秒程度の後にします。 
 
 
-## <a name="transitioning-in-and-out-of-hands-freey"></a>ハンド freey との間の移行
+## <a name="transitioning-in-and-out-of-hands-free"></a>ハンズフリーとの間の移行
 
 これらのシナリオについての動作して、アプリケーション、エンド ツー エンド ユーザーは、いずれかの遷移可能、追加の利便性を絶対条件の範囲はコマンドを実行およびナビゲーション ホログラム対話から手を解放時間です。 
 
@@ -54,7 +54,7 @@ ms.locfileid: "67326152"
 たとえば、作業を開始するレンチ アイコンを選択して、ユーザーが自分の Hololens への参照をビデオを視聴、工場でが場合、彼女ほとんどの場合はで作業を開始ハンズフリー ボタンを押すレンチを配置する必要はありません。 音声コマンドを使用して音声セッションを呼び出し、ドウェル、開始を既に表示されている UI について熟考する彼女できる必要がありますかと、単語"select"。
 
 ユーザー機能があります。 
-* ハンズフリー ハンズフリー中に切り替える
+* ハンズフリー ハンズフリー中への切り替え
 * 自分の手で手に切り替える
 * コント ローラーを使用してコント ローラーに切り替える 
 
@@ -96,5 +96,5 @@ ms.locfileid: "67326152"
 
 ## <a name="see-also"></a>関連項目
 * [頭の視線入力とコミット](gaze-and-commit.md)
-* [直接操作](direct-manipulation.md)
-* [ポイントとコミット](point-and-commit.md)
+* [手で直接操作](direct-manipulation.md)
+* [手を使ったポイントとコミット](point-and-commit.md)
