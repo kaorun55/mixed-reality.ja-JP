@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、相互作用、ui、ux
-ms.openlocfilehash: b0397e00763f70e4caf55a84b6541085e56fafd4
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 57299cbb758a69603fc68ad5d43af8f2216e5104
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148733"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415298"
 ---
 # <a name="interactable-object"></a>対話型のオブジェクト
 
@@ -85,9 +85,9 @@ HoloLens の 2 を深さ perception でユーザーの信頼度を向上させ�
 <img src="images/640px-interactibleobject-voicecommand.jpg" alt="Tooltip for the voice command" title="音声コマンドのツールヒント" width="350"><br/>*音声コマンドのツールヒント*
 
 ## <a name="sizing"></a>サイズ変更
-対話型のすべてのオブジェクトの有効期限は簡単にすることを確認するにはユーザーによって影響を受けるをお勧め、最小サイズ (多くの場合、ビジュアルの角度を度数で測定)、ユーザーからファイルを配置する距離に基づく対話型を満たしていることを確認します。 ビジュアルの角度を度では、ユーザーと、オブジェクト間の距離に基づいておりは一定のまま、ターゲットの物理サイズがユーザーの変更からの距離として変更可能性があります。 確認してくださいと程度からの距離に基づくオブジェクトのために必要な物理サイズを決定するには、は、visual 角度は、電卓を使用して試してください。 http://elvers.us/perception/visualAngle/
+ように対話型のすべてのオブジェクトは、ユーザーが簡単に触れることができます、確認することをお勧めします。 対話型の対応最小サイズ (多くの場合、ビジュアルの円弧の角度の単位 visual 角度)、距離に基づいて、ユーザーからファイルを配置します。 ビジュアルの角度は、ユーザーの目とオブジェクト間の距離に基づいておりは一定のまま、ターゲットの物理サイズがユーザーの変更からの距離として変更可能性があります。 ユーザーからの距離に基づくオブジェクトのために必要な物理サイズを決定するには、visual 角度計算ツールを使用してお試し[この](http://elvers.us/perception/visualAngle/)します。
 
-対話型コンテンツの最小サイズの推奨事項を以下に示します
+対話型コンテンツの最小サイズの推奨事項を以下に示します。
 
 ### <a name="target-size-for-direct-hand-interaction"></a>直接手の相互作用の目標サイズ
 | 距離 | 表示角度 | サイズ |
