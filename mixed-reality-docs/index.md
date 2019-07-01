@@ -8,12 +8,12 @@ ms.date: 02/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト
-ms.openlocfilehash: 810d9846fd217cd1acb3ae0060c11f5c9173191e
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: cf513cebbbf4f05721811cb82d584f9039e378b7
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813744"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67415391"
 ---
 # <a name="mixed-reality-documentation"></a>Mixed Reality に関するドキュメント
 
@@ -72,7 +72,7 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
                                                 </div>
                                                 <div class="cardText">
                                                     <h3 class="x-hidden-focus">配布</h3>
-                                                  <p>他のユーザー用にアプリを準備し、3D ランチャーの作成を検討します。</p>
+                                                  <p>他のユーザー用にアプリケーションを準備し、3D ランチャーの作成を検討します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,7 +96,7 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
                                                 </div>
                                                 <div class="cardText">
                                                     <h3 class="x-hidden-focus">Azure Spatial Anchors</h3>
-                                                  <p>Spatial Anchors はクロスプラットフォーム開発者向けサービスで、時間とデバイスを超えてその場所に存続するオブジェクトを使用して Mixed Reality エクスペリエンスを作成できます。</p>
+                                                  <p>Spatial Anchors はクロスプラットフォーム開発者向けサービスで、時間とデバイスを超えてその場所に存続するオブジェクトを使用して複合現実エクスペリエンスを作成できます。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -147,11 +147,11 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
 
 [![HoloLens 2](images/hololens2.jpg)](https://www.microsoft.com/hololens/hardware)
 
-[HoloLens 2](https://www.microsoft.com/hololens/hardware) は、数分で価値を提供できる業界最先端のソリューションにより、最も快適でイマーシブな複合現実エクスペリエンスを提供します。これらはすべて、Microsoft のクラウドおよび AI サービスの信頼性、セキュリティ、および拡張性によってバックアップされています。 [HoloLens 2 Development Edition](https://www.microsoft.com/en-us/hololens/developers) を使用すると、HoloLens 2 と Unity ソフトウェアの無料試用版およびクラウド サービス用の Azure クレジットを組み合わせた特典付きの複合現実プランをすぐに開始できます。
+[HoloLens 2](https://www.microsoft.com/hololens/hardware) では、数分で価値を提供できる業界最先端のソリューションにより、最も快適でイマーシブな複合現実エクスペリエンスが提供されます。 これらはすべて、Microsoft のクラウドおよび AI サービスの信頼性、セキュリティ、および拡張性によってバックアップされています。 [HoloLens 2 Development Edition](https://www.microsoft.com/en-us/hololens/developers) を使用すると、HoloLens 2 と Unity ソフトウェアの無料試用版およびクラウド サービス用の Azure クレジットを組み合わせた特典付きの複合現実プランをすぐに開始できます。
 
 <h2>ニュースと注意事項</h2>
 
-<h3>2019 年 4 月</h3>
+<h3>2019 年 6 月</h3>
 
 お伝えしたとおり、複合現実エクスペリエンスをさらにお客様と共有できることを楽しみにしています。 ぜひご意見をお寄せください。Microsoft で扱ってほしいトピック、話を聞いてみたい人物、必要なチュートリアルやハウツーに関して[会話にご参加](https://holodevelopersslack.azurewebsites.net/)ください… [Twitter](https://twitter.com/MxdRealityDev) からフィードバックを送信したり、[開発者向けプログラムに参加](https://aka.ms/iwantmr)して、新しいドキュメント、ツール、イベントなどに関する更新情報を入手することもできます。 今後も引き続き最新情報をお知らせします。
 
@@ -162,7 +162,7 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
 <tr>
 <td><b>移植ガイド</b> <br>1. HoloToolKit (HTK)/Mixed Reality ツールキット (MRTK) から MRTK バージョン 2
 <br>2. HoloLens (第 1 世代) から HoloLens 2 (x86 から ARM、操作や設計に関する推奨事項)
-</td></td><td>2019 年 3 月 から 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>HoloLens 2 の既存のアプリを利用できるようにする</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>HoloToolKit から MRTK API に</a></td>
+</td></td><td>2019 年 3 月 から 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>既存のアプリケーションを HoloLens 2 で利用できるようにする</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>HoloToolKit から MRTK API に</a></td>
 </tr>
 <tr>
 <td>月単位のオープン ソース開発者向けモジュール (チュートリアルとサンプル アプリ)</td><td>2019 年 3 月 から 6 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base-ch1>MR 学習ベース モジュール</a></td>
@@ -183,4 +183,4 @@ Mixed Reality では、現実世界と仮想コンテンツを、物理的なオ
 
 
 >[!IMPORTANT]
->このサイトで提供されているすべての Mixed Reality の開発に関する資料は参照のみを目的としています。 アプリとその使用法およびエンド ユーザーに与える影響は、アプリ開発者としてお客様に責任があるものとし、これには、アプリがエンド ユーザーに対して不快感、傷害、またはその他の害をもたらしたりするものではないことや適切な警告文および免責文を含むことが含まれます。 お客様は、自分のアプリが安全であり、「[Microsoft とのアプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」のすべての責務を満たしていることを保証するために、アプリの開発と発行において常に適切な手順を踏む必要があります。 
+>このサイトで提供されるすべての複合現実の開発に関する資料は参照のみを目的としています。 アプリケーションとその使用法およびエンド ユーザーに与える影響は、アプリケーション開発者としてお客様に責任があるものとし、これには、アプリがエンド ユーザーに対して不快感、傷害、またはその他の害をもたらしたりするものではないことや適切な警告文および免責文を含むことが含まれます。 お客様は、自分のアプリケーションが安全であり、「[Microsoft とのアプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」のすべての責務を満たしていることを保証するために、アプリケーションの開発と発行において常に適切な手順を踏む必要があります。 
