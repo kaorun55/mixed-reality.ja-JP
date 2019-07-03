@@ -5,15 +5,15 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: d4220527a7de8e596f2825fd9d199d536510b972
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: 389a23129d4dfc5819cdc45d071b678e3792089d
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148626"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523159"
 ---
-# <a name="mr-learning-base-module-overview--objectives"></a>目標 (&)、MR Learning ベースのモジュールの概要
+# <a name="1-overview-and-objectives"></a>1. 概要と目標
 
 ## <a name="device-support"></a>デバイスのサポート
 

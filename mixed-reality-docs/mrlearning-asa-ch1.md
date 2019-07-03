@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: c120d22f955d366042bbcb9ac73eaa4f13dc20e9
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: fcca828fa228894e0e60986c6c7fd0053b210357
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415271"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523234"
 ---
-# <a name="getting-started-with-azure-spatial-anchors-on-hololens-2"></a>HoloLens 2 空間アンカーを Azure の概要
+# <a name="1-getting-started-with-azure-spatial-anchors"></a>1. 空間のアンカーを Azure の概要
 
-2 番目のモジュールの HoloLens 2 のチュートリアルへようこそ。 始める前に、必ずすべての[の前提条件](https://docs.microsoft.com/en-us/azure/spatial-anchors/quickstarts/get-started-unity-hololens)が完了します。 まず、完了していない場合[ベース モジュール](mrlearning-base.md)モジュールを最初に完了することを勧めします。 新しい Unity プロジェクトから開始する場合は 新しいプロジェクトの作成手順に従ってください、[ベース モジュール](mrlearning-base.md)します。 
+HoloLens 2 のチュートリアルの 2 番目のモジュールへようこそ。 始める前に、必ずすべての[の前提条件](https://docs.microsoft.com/en-us/azure/spatial-anchors/quickstarts/get-started-unity-hololens)が完了します。 まず、完了していない場合[ベース モジュール](mrlearning-base.md)モジュールを最初に完了することを勧めします。 新しい Unity プロジェクトから開始する場合は 新しいプロジェクトの作成手順に従ってください、[ベース モジュール](mrlearning-base.md)します。 
 
 ## <a name="objectives"></a>目標
 
@@ -40,7 +40,7 @@ ms.locfileid: "67415271"
 
 > 注:Azure 空間アンカー、MR ベース モジュール資産パックの詳細については、手順 6、および Mixed Reality ツールキット (MRKT) で、手順 3 ~ 4 具体的な手順についてをインポートする方法の具体的な手順については、手順 5 を参照してください。
 
-1. プロジェクトに新しいシーンを作成します。 シーンのフォルダーを右クリックして、シーン"作成、 をクリックします。 新しいシーン ASALearningmodule の名前を付けます。
+1. プロジェクトに新しいシーンを作成します。 シーンのフォルダーを右クリックして、シーンの作成をクリックします。 新しいシーン ASALearningmodule の名前を付けます。
 
 ![module2chapter1step1im](images/module2chapter1step1im.PNG)
 
@@ -49,7 +49,7 @@ ms.locfileid: "67415271"
 
 ![module2chapter1step3im](images/module2chapter1step3im.PNG)
 
-> 注:示すポップアップが表示されます、「ファイルは Mixed Reality ツールキットを選択する必要があります」します。 [Ok] をクリックすると、手順 4 に表示されます。
+> 注:Mixed Reality Toolkit のファイルを選択する必要があります、というポップアップが表示されます。 [Ok] をクリックすると、手順 4 に表示されます。
 
 4. ときに、MRTK のファイルを選択すると、選択、DefaultMixedRealityToolkitConfigurationProfile。
 
@@ -153,7 +153,7 @@ ms.locfileid: "67415271"
 
 7. デバイスにビルドする前に、デバイスが開発者モードであることを確認してください。 HoloLens 2 に初めてデプロイする場合は、Visual Studio により、PIN を使用して HoloLens 2 をペアリングするよう求められる場合があります。 次の[手順](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)開発者モードを有効にするか、Visual Studio とペアリングする必要がある場合。
 
-8. リリース構成と、"RM"のアーキテクチャを選択して、HoloLens 2 を構築するための Visual Studio を構成します。
+8. RM アーキテクチャと同様に、リリース構成を選択して、HoloLens 2 を構築するための Visual Studio を構成します。
     ![Lesson1Chapter5Step8](images/Lesson1Chapter5Step8.JPG)
    
 9. 最後に、デバッグを選択して、デバイスにビルド > デバッグなしで開始します。 デバッグなしの開始 を選択するとすぐに Visual Studio に表示されているビルドが成功した ithout デバッグ情報を基に、デバイスで開始するアプリケーション。 これは、アプリケーションが停止することなく HoloLens 2 上で実行されている間は、USB ケーブルを取り外すことができることも意味します。 ビルドを選択することも可能性があります。 > を自動的に起動するアプリケーションをしなくても、デバイスに展開するには、ソリューションの配置。
@@ -176,9 +176,9 @@ ms.locfileid: "67415271"
     
     7. Azure の空間アンカー セッションを開始します。
     
-    8. Azure 空間 aachors を検索します。 
+    8. Azure の空間アンカーを検索します。 
     
-    e を」に戻ってください元の場所を配置、アンカーを作成したときに) します。
+    」に戻ってください元の場所を e は、アンカーを作成したときに配置します。
     9. Azure の空間アンカーを削除します。
     
     10. Azure のセッションを停止します。
@@ -198,7 +198,7 @@ ms.locfileid: "67415271"
    > 注:さまざまなユーザー エクスペリエンスのフローを経験を囲む境界ボックスを切り替え、位置と回転ギズモの使用を (この手順で使用)、キューブなどの再配置オブジェクトを使用するボタンの使用など、エクスペリエンスを再配置します。、など。
 
 ## <a name="congratulations"></a>結論
-このレッスンでは、空間のアンカーを Azure の基礎について説明しました。 このレッスンでは、開始し Azure のセッションを停止し、作成、アップロード、および 1 つのデバイスでの azure のアンカーをダウンロードするためのさまざまな手順を調査できるいくつかのボタンが用意されています。 次のレッスンでは、アプリケーションの再起動後も、HoloLens の 2 を取得するために Azure のアンカー Id を保存する方法説明します。 シリーズの中には、空間の配置を実現し、複数のユーザーが共有セッション (近日公開予定のモジュールを共有の一部として。) について説明します、複数のデバイス間でアンカー Id を転送する方法も学習は
+このチュートリアルでは、空間のアンカーを Azure の基礎について説明しました。 このレッスンでは、開始し Azure のセッションを停止し、作成、アップロード、および 1 つのデバイスでの azure のアンカーをダウンロードするためのさまざまな手順を調査できるいくつかのボタンが用意されています。 次のレッスンでは、アプリケーションの再起動後も、HoloLens の 2 を取得するために Azure のアンカー Id を保存する方法説明します。 シリーズの中には、空間配置を実現し、セッションを共有する複数のユーザーについて複数のデバイス間でアンカー Id を転送する方法も学習が共有のチュートリアルの一部として近日公開予定。
 
 [次のレッスン:ASA Lesson 2](mrlearning-asa-ch2.md)
 

@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b729de818dfa21df8fbce782a24a611a365ac795
-ms.sourcegitcommit: 78e21e887bf4357c96c9ab2164559d610e8c041e
+ms.openlocfilehash: 2a4ea599fd4887f30589c2d839be305d3dc8d1bd
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465223"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523192"
 ---
-# <a name="synchronizing-shared-object-movements"></a>共有されたオブジェクトの動きを同期します。
+# <a name="4-sharing-object-movements-with-multiple-users"></a>4。オブジェクトの動きを複数のユーザーと共有
 
-このレッスンでは、共有セッションのすべての参加者が共同して、互いの相互作用を表示できるように、オブジェクトの動きを共有する方法について説明します。 このレッスンの一部として構築された、太陰暦ランチャーに磨き、[ベース モジュール チュートリアル](mrlearning-base.md)します。
+このチュートリアルでは、共有セッションのすべての参加者が共同して、互いの相互作用を表示できるように、オブジェクトの動きを共有する方法について説明します。 このレッスンの一部として構築された、太陰暦ランチャーに磨き、[ベース モジュール チュートリアル](mrlearning-base.md)します。
 
 目標:
 
@@ -26,7 +26,7 @@ ms.locfileid: "67465223"
 ### <a name="instructions"></a>手順
 
 
-1. 前のレッスンでは、(コントロール + S) から、シーンを保存します。 という名前を HLSharedProjectMainPart4.unity 必要なときに見つけやすくなるようにします。
+1. 前のレッスンでは、(コントロール + S) から、シーンを保存します。 という名前を HLSharedProjectMainPart4.unity、必要なときに見つけやすくなるようにします。
 
 2. プロジェクト ウィンドウで、Scripts フォルダー]-> [資産、Visual Studio またはコード エディターを使用することで開く GenericNetSync をダブルクリックします。  ![](images/module3chapter4updatestep2.png)
 

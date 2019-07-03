@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 4625acfcb3353e9537961a444012452139705359
-ms.sourcegitcommit: 78e21e887bf4357c96c9ab2164559d610e8c041e
+ms.openlocfilehash: 44cc41b10ed79d3085ec601ec9cf21af47b0fea5
+ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465213"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67523306"
 ---
-# <a name="connecting-multiple-users"></a>**複数のユーザーを接続します。** 
+# <a name="connecting-multiple-users"></a>複数のユーザーを接続します。
 
 このレッスンでは、ライブの共有エクスペリエンスの一部として複数のユーザーを接続する方法について説明します。 このレッスンの目的は、複数のデバイスでアプリケーションを開き、球体の場合、結合する人の表現によって表される、アバターを表示するようになります。 
 
