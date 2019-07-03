@@ -10,7 +10,7 @@
 #### [HoloLens (第 1 世代) ハードウェアの詳細](hololens-hardware-details.md)
 #### [HoloLens のアカウント](accounts-on-hololens.md)
 #### [調整](calibration.md)
-#### [業務用機能](commercial-features.md)
+#### [Commercial 機能](commercial-features.md)
 #### [HoloLens での Wi-Fi への接続](connecting-to-wi-fi-on-hololens.md)
 #### [HoloLens の環境への配慮](environment-considerations-for-hololens.md)
 #### [HoloLens のアプリを入手する](get-apps-for-hololens.md)
@@ -71,7 +71,8 @@
 
 
 ## 複合現実のリリース ノート
-### [現在のリリース ノート](release-notes-october-2018.md)
+### [現在のリリース ノート](release-notes-may-2019.md)
+### [リリース ノート - 2018 年 10 月](release-notes-october-2018.md)
 ### [リリース ノート - 2018 年 4 月](release-notes-april-2018.md)
 ### [リリース ノート - 2017 年 10 月](release-notes-october-2017.md)
 ### [リリース ノート - 2016 年 8 月](release-notes-august-2016.md)
@@ -194,16 +195,29 @@
 ### [Edge での WebVR を Windows Mixed Reality と共に使用する](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## [チュートリアルとサンプル アプリ](tutorials.md)
 ### Unity
-#### MR 学習モジュール
-##### HoloLens 2
-###### ベース モジュール
-####### [ベース モジュール - 概要と目標](mrlearning-base.md)
-####### [プロジェクト初期化と最初のアプリケーション](mrlearning-base-ch1.md)
-####### [ユーザー インターフェイス、手の追跡、Mixed Reality ツールキット構成](mrlearning-base-ch2.md)
-####### [ダイナミック コンテンツの配置とソルバー](mrlearning-base-ch3.md)
-####### [3D オブジェクトの操作](mrlearning-base-ch4.md)
-####### [高度な入力](mrlearning-base-ch5.md)
-####### [デモ アプリ](mrlearning-base-ch6.md)
+#### HoloLens 2 のチュートリアル
+##### 入門チュートリアル
+###### [1.概要と目標](mrlearning-base.md)
+###### [2.プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)
+###### [3.ユーザー インターフェイスの作成と Mixed Reality ツールキットの構成](mrlearning-base-ch2.md)
+###### [4.動的なコンテンツの配置とソルバーの使用](mrlearning-base-ch3.md)
+###### [5.3D オブジェクトの操作](mrlearning-base-ch4.md)
+###### [6.高度な入力オプションの探索](mrlearning-base-ch5.md)
+###### [7.月着陸船サンプル アプリケーションの作成](mrlearning-base-ch6.md)
+##### Azure Spatial Anchors チュートリアル
+###### [1.Azure Spatial Anchors をお使いになる前に](mrlearning-asa-ch1.md)
+###### [2.Azure Spatial Anchors の保存、取得、および共有](mrlearning-asa-ch2.md)
+##### Azure 音声認識サービス チュートリアル
+###### [1.音声認識とトランスクリプションの統合と使用](mrlearning-speechSDK-ch1.md)
+###### [2.ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
+###### [3.Azure 認識サービスの音声変換コンポーネントの追加](mrlearning-speechSDK-ch3.md)
+###### [4.インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)
+##### マルチユーザー機能のチュートリアル
+###### [1.Photon Unity ネットワークの設定](mrlearning-sharing(photon)-ch1.md)
+###### [2.Unity の開発に向けた準備](mrlearning-sharing(photon)-ch2.md)
+###### [3.複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)
+###### [4.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch4.md)
+###### [5.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch5.md)
 #### HoloLens (第 1 世代) オープン ソースのサンプル アプリ
 ##### [元素周期表](periodic-table-of-the-elements.md)
 ##### [月着陸船](lunar-module.md)
