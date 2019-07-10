@@ -207,6 +207,7 @@
 ##### Azure Spatial Anchors チュートリアル
 ###### [1.Azure Spatial Anchors をお使いになる前に](mrlearning-asa-ch1.md)
 ###### [2.Azure Spatial Anchors の保存、取得、および共有](mrlearning-asa-ch2.md)
+###### [3.Azure Spatial Anchors フィードバックの表示](mrlearning-asa-ch3.md)
 ##### Azure 音声認識サービス チュートリアル
 ###### [1.音声認識とトランスクリプションの統合と使用](mrlearning-speechSDK-ch1.md)
 ###### [2.ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
