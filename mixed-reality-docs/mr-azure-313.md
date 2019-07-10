@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure、mixed reality、academy、edge、iot edge、チュートリアル、api、通知、関数、テーブル、没入型、hololens、vr、iot、仮想マシン、ubuntu、python
-ms.openlocfilehash: 1ab7c48ac3cff1cb2283cadb171098af9e148628
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597571"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694599"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
@@ -277,7 +277,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
         sudo apt-get install python-pip
     ```
 
-2.  この章では、する必要があります、によって*ターミナル*デバイス ストレージを使用するアクセス許可、および入力するを**はい/いいえ**(はいまたは no)、型 **'y'**、キーを押しますと、**Enter**を受け入れるためのキー。
+2.  この章では、する必要があります、によって*ターミナル*デバイス ストレージを使用するアクセス許可、および入力するを**はい/いいえ**(はいまたは no)、型 **'y'** 、キーを押しますと、**Enter**を受け入れるためのキー。
 
 3.  そのコマンドが完了すると、次のコマンドを使用してをインストールする**curl**:
 
@@ -320,7 +320,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
     1.  キーボードの矢印キーを使用して、スクロール ダウン (少し方法下へスクロールする必要があります) を含む行に到達する"。
 
-        "**\<デバイス接続文字列をここでの追加 &GT;**"。
+        " **\<デバイス接続文字列をここでの追加 >** "。
 
     2. 行を置き換える **、中かっこも含め**で、**デバイスの接続文字列**先ほどメモします。
 
@@ -370,7 +370,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
 4. 拡張機能がインストールされると、VS Code を再度開くを閉じています。
 
-5. VS Code で、もう一度開きに移動します**ビュー > 統合ターミナル**します。
+5. VS Code で、もう一度開きに移動します**ビュー** > **統合ターミナル**します。
 
 6. インストールするようになりました**Cookiecutter**します。 ターミナルで次の bash コマンドを実行します。
 
@@ -390,7 +390,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
 この時点では、モジュールにプッシュされると、コンテナーを作成する必要があります、 *Container Registry*します。 使用するコンテナーをプッシュすると、 *IoT Hub の Edge*を実行しているデバイスにデプロイするサービス、 *IoT Edge ランタイム*します。
 
-1. VS Code からクリックして**ビュー > コマンド パレット**します。
+1. VS Code からクリックして**ビュー** > **コマンド パレット**します。
 
 2. パレットで、検索し、実行**Azure IoT Edge:新しい Iot Edge ソリューション**します。
 
@@ -744,7 +744,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
 ## <a name="chapter-9---package-the-solution-as-a-container"></a>第 9 章 – パッケージのコンテナーとしてソリューション
 
-1.  コンテナーとして、ファイルを「パッケージ」し、それをプッシュする準備が整いました、 **Azure Container Registry**します。 VS Code 内で開く、*統合ターミナル*(**ビュー > 統合ターミナル/CTRL + '**) へのログインに次の行を使用して**Docker** (の値に置き換えてください、コマンドの資格情報を**Azure Container Registry (ACR)**)。
+1.  コンテナーとして、ファイルを「パッケージ」し、それをプッシュする準備が整いました、 **Azure Container Registry**します。 VS Code 内で開く、*統合ターミナル*(**ビュー** > **統合ターミナル**または**Ctrl** + **\`** )、次の行へのログインを使用して、 **Docker** (の資格情報を持つコマンドの値に置き換えてください、 **Azure Container Registry (ACR)** ):
 
     ```bash
         docker login -u <ACR username> -p <ACR password> <ACR login server>
@@ -916,7 +916,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
 1. 開いている**Visual Studio** (**いない**Visual Studio Code)。
 
-2. メニューから、次のようにクリックします。**ビュー > Cloud Explorer**します。
+2. メニューから、次のようにクリックします。**ビュー** > **Cloud Explorer**します。
 
     ![クラウド エクスプ ローラーを開く](images/AzureLabs-Lab313-45.png)
 
@@ -1190,7 +1190,7 @@ Table Service で Function App と Ubuntu デバイスのメッセージが表�
 
 3.  ログイン*Power BI*で、 **Microsoft 365 アカウント**します。 ブラウザー、サインアップにリダイレクトされます。 サインアップし、Power BI アプリに戻ってもう一度サインインします。
 
-4.  をクリックして**データの取得**し、**より.**.
+4.  をクリックして**データの取得**し、**より.** .
 
     ![Power BI](images/AzureLabs-Lab313-74.png)
 

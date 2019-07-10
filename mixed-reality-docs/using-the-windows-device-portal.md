@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows Device Portal、HoloLens
-ms.openlocfilehash: f4319e1efa94d90bfb8cc4e5815ffa87fc865a7f
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 79a4a1f99125028fcaf71e185eb00093aa8c742f
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66830001"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694584"
 ---
 # <a name="using-the-windows-device-portal"></a>Windows Device Portal のを使用
 
@@ -56,7 +56,7 @@ HoloLens の Windows Device Portal では、構成して、Wi-fi または USB �
 
 ## <a name="connecting-to-an-emulator"></a>エミュレーターに接続します。
 
-Device Portal はエミュレーターで使うこともできます。 デバイスのポータルに接続するには、使用、[ツールバー](using-the-hololens-emulator.md)します。 次のアイコンをクリックします。![デバイスのポータルを開く アイコン](images/emulator-deviceportal.png)**デバイス ポータルを開く**:エミュレーターでの HoloLens os、Windows Device Portal を開きます。
+Device Portal はエミュレーターで使うこともできます。 デバイスのポータルに接続するには、使用、[ツールバー](using-the-hololens-emulator.md)します。 次のアイコンをクリックします。![デバイスのポータルを開く アイコン](images/emulator-deviceportal.png)**デバイス ポータルを開く**:エミュレーターで HoloLens OS の Windows デバイス ポータルを開きます。
 
 ## <a name="creating-a-username-and-password"></a>ユーザー名とパスワードを作成します。
 
@@ -144,19 +144,29 @@ Device Portal セッションは Home (ホーム) ページから始まります
 ![Microsoft HoloLens で Windows Device Portal での混合の実際のキャプチャ ページ](images/windows-device-portal-mixed-reality-capture-page-1000px.png)<br>
 *Microsoft HoloLens で Windows Device Portal での混合の実際のキャプチャ ページ*
 
-使用して、 [Mixed Reality キャプチャ](mixed-reality-capture.md)HoloLens のメディア ストリームを保存するページ。
+Mixed Reality キャプチャ ページを使うと、HoloLens からメディア ストリームを保存できます。
 * **設定**:次の設定を確認して記録されたメディア ストリームを制御します。
   * **ホログラム**:ビデオ ストリームの holographic のコンテンツをキャプチャします。 ホログラムは、ステレオではなくモノラルでレンダリングされます。
   * **PV カメラ**:写真/ビデオ カメラからビデオ ストリームをキャプチャします。
   * **マイクのオーディオ**:アレイ マイクからオーディオをキャプチャします。
   * **アプリの音声**:現在実行中のアプリからのオーディオをキャプチャします。
+  * **カメラからレンダリング**:写真/ビデオ、カメラの観点からするキャプチャを揃える場合[実行中のアプリでサポートされている](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)(HoloLens 2 のみ)。
   * **ライブ プレビュー品質**:画面の解像度、フレーム レート、およびストリーミング レートのライブ プレビューを選択します。
 * をクリックしてまたはタップします、**ライブ プレビュー**キャプチャ ストリームを表示するボタンをクリックします。 **ライブ プレビューを停止**キャプチャ ストリームを停止します。
 * をクリックしてまたはタップします**レコード**複合現実のストリームを記録する、指定した設定を使用して開始します。 **記録を停止**録音を終了し、保存します。
 * をクリックしてまたはタップします**Take photo**キャプチャ ストリームから静止画像を取得します。
 * **ビデオや写真**:デバイスで作成されたビデオや写真のキャプチャの一覧が表示されます。
 
-Device Portal からライブ プレビューを記録またはストリーミングしている間、HoloLens アプリでは MRC の写真やビデオをキャプチャできないことに注意してください。
+> [!NOTE]
+> ある[同時 MRC 制限](mixed-reality-capture-for-developers.md#simultaneous-mrc-limitations):
+> * アプリでは、ビデオの録画は Windows Device Portal 写真とビデオのカメラにアクセスしようとして、ビデオ記録を停止します。
+>   * 場合は、HoloLens 2 に動画の記録は停止されませんアプリ acesses SharedReadOnly モードで写真とビデオ カメラ。
+> * アプリは、写真とビデオのカメラを使用して積極的に、Windows Device Portal は、写真やビデオのレコードをできます。
+> * ライブ ストリーミングします。
+>   * HoloLens (第 1 世代) アプリにアクセスできなくなります写真/ビデオ カメラ Windows Device Portal からのライブ ストリーミング中にします。
+>   * HoloLens へライブ ストリームの場合は、アプリが実際に写真とビデオのカメラを使用する (第 1 世代) は失敗します。
+>   * HoloLens 2 は、アプリ ExclusiveControl モードで写真とビデオのカメラにアクセスしようとするときに、ライブ ストリーミングを自動的に停止します。
+>   * HoloLens 2 は中のアプリがアクティブに PV カメラを使用して、ライブ ストリームを開始できます。
 
 ### <a name="performance-tracing"></a>パフォーマンス トレース
 

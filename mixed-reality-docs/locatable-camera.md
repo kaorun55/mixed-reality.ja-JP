@@ -6,12 +6,12 @@ ms.author: wguyman, cdedmonds
 ms.date: 06/12/2019
 ms.topic: article
 keywords: カメラ、hololens、色のカメラ、前面に接続する、hololens 2、cv、基準コンピューター ビジョン、マーカー、qr コード、qr、写真、ビデオ
-ms.openlocfilehash: 323c05ca01e000942a6f8ee6dc82de7546578324
-ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
+ms.openlocfilehash: b80e201723f8f499a6d35008b9d308f93b925b1c
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67523314"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694535"
 ---
 # <a name="locatable-camera"></a>場所を特定できるカメラ
 
@@ -43,7 +43,7 @@ HoloLens には、アプリをユーザーに表示される内容を参照し�
   | Profile                                         | Video     | [プレビュー]   | それでもなお     | フレーム レート | 水平視野 (FOV H) | 推奨される使用状況                             |
   |-------------------------------------------------|-----------|-----------|-----------|-------------|----------------------------------|---------------------------------------------|
   | 従来、0 の BalancedVideoAndPhoto 100             | 2272 x 1278 | 2272 x 1278 |           | 15,30       | 64.69                            | 高品質のビデオ記録                |
-  | 従来、0 の BalancedVideoAndPhoto 100             | 896 x 504   | 896 x 504   |           | 15,30       | 64.69                            | 高品質のビデオ記録                |
+  | 従来、0 の BalancedVideoAndPhoto 100             | 896 x 504   | 896 x 504   |           | 15,30       | 64.69                            | 高品質な写真をキャプチャのストリームをプレビュー |
   | 従来、0 の BalancedVideoAndPhoto 100             |           |           | 3904 x 2196 |             | 64.69                            | 高品質な写真をキャプチャ                  |
   | BalancedVideoAndPhoto、120                       | 1952 x 1100 | 1952 x 1100 | 1952 x 1100 | 15,30       | 64.69                            | 長期間シナリオ                     |
   | BalancedVideoAndPhoto、120                       | 1504 x 846  | 1504 x 846  |           | 15,30       | 64.69                            | 長期間シナリオ                     |
@@ -51,7 +51,7 @@ HoloLens には、アプリをユーザーに表示される内容を参照し�
   | ビデオ会議、100                           | 1504 x 846  | 1504 x 846  |           | 5,15,30,60  | 64.69                            | ビデオ会議、長期間シナリオ |
   | ビデオ会議、100 の BalancedVideoAndPhoto 120 | 1920 x 1080 | 1920 x 1080 | 1920 x 1080 | 15,30       | 64.69                            | ビデオ会議、長期間シナリオ |
   | ビデオ会議、100 の BalancedVideoAndPhoto 120 | 1280 x 720  | 1280 x 720  | 1280 x 720  | 15,30       | 64.69                            | ビデオ会議、長期間シナリオ |
-  | ビデオ会議、100 の BalancedVideoAndPhoto 120 | 1128 x 635  |           |           | 15,30       | 64.69                            | ビデオ会議、長期間シナリオ |
+  | ビデオ会議、100 の BalancedVideoAndPhoto 120 | 1128 x 636  |           |           | 15,30       | 64.69                            | ビデオ会議、長期間シナリオ |
   | ビデオ会議、100 の BalancedVideoAndPhoto 120 | 960 x 540   |           |           | 15,30       | 64.69                            | ビデオ会議、長期間シナリオ |
   | ビデオ会議、100 の BalancedVideoAndPhoto 120 | 760 x 428   |           |           | 15,30       | 64.69                            | ビデオ会議、長期間シナリオ |
   | ビデオ会議、100 の BalancedVideoAndPhoto 120 | 640x360   |           |           | 15,30       | 64.69                            | ビデオ会議、長期間シナリオ |

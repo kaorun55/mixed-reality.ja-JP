@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure、mixed reality、academy、unity、チュートリアル、api、graph、没入型、hololens、vr
-ms.openlocfilehash: 98fe2c872f332a21fff3af6751ae555968073a24
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.openlocfilehash: 04c72a7ef7724cfcc27867f7f003c171a6f7851f
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597661"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694526"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
@@ -123,15 +123,15 @@ ms.locfileid: "59597661"
 
     ![](images/AzureLabs-Lab311-10.png)
 
-3.  既定値を確認する必要が開いている Unity、**スクリプト エディター**に設定されている**Visual Studio**します。 移動して**編集 > 設定**し、新しいウィンドウに移動**外部ツール**します。 変更**External Script Editor**に**Visual Studio 2017**します。 閉じる、**設定**ウィンドウ。
+3.  既定値を確認する必要が開いている Unity、 **スクリプト エディター** に設定されている **Visual Studio** します。 移動して**編集** > **設定**し、新しいウィンドウに移動**外部ツール**します。 変更 **External Script Editor** に **Visual Studio 2017** します。 閉じる、**設定**ウィンドウ。
 
     ![](images/AzureLabs-Lab311-11.png)
 
-4.  移動して**ファイル > Build Settings**を選択し、**ユニバーサル Windows プラットフォーム**、をクリックして、**スイッチ プラットフォーム**選択内容を適用するボタンをクリックします。
+4.  移動**ファイル** > **Build Settings**選択と**ユニバーサル Windows プラットフォーム**、 をクリックし、**スイッチ プラットフォーム**選択内容を適用するボタンをクリックします。
 
     ![](images/AzureLabs-Lab311-12.png)
 
-5.  **ファイル > Build Settings**、ことを確認します。
+5.  **ファイル** > **Build Settings**、ことを確認します。
 
     1. **デバイスを対象に**に設定されている**HoloLens**
     2. **ビルドの種類**に設定されている**D3D**
@@ -187,7 +187,7 @@ ms.locfileid: "59597661"
 
 9.  閉じる、 *Build Settings*ウィンドウ。
 
-10.  シーンとプロジェクトを保存 (**ファイル > シーンの保存/ファイル > プロジェクトの保存**)。
+10.  シーンとプロジェクトを保存 (**ファイル** > **保存シーン/file** > **プロジェクトの保存**)。
 
 ## <a name="chapter-3---import-libraries-in-unity"></a>第 3 章 - Unity でのインポート ライブラリ
 
@@ -205,7 +205,7 @@ ms.locfileid: "59597661"
 
 パッケージをインポートします。
 
-1.  使用して、Unity に Unity パッケージを追加、 **資産* > *パッケージのインポート* > *カスタム パッケージ** メニュー オプション。 ダウンロードしたパッケージを選択します。
+1.  使用して、Unity に Unity パッケージを追加、**資産** > **パッケージのインポート** > **カスタム パッケージ**メニュー オプション。 ダウンロードしたパッケージを選択します。
 
 2.  **Unity パッケージのインポート**その pop をボックスで、(およびなど)、すべてのことを確認**プラグイン**が選択されています。
 
@@ -266,12 +266,12 @@ ms.locfileid: "59597661"
 
 このクラスを作成します。
 
-1.  右クリックし、**資産**フォルダーで、*プロジェクト パネル*を選択し、**作成* > *フォルダー**。 フォルダーの名前**スクリプト**します。
+1.  右クリックし、**資産**フォルダーで、*プロジェクト パネル*を選択し、**作成** > **フォルダー**します。 フォルダーの名前**スクリプト**します。
 
     ![](images/AzureLabs-Lab311-26.png)
     ![](images/AzureLabs-Lab311-27.png)
 
-2.  開く、**スクリプト**フォルダー、そのフォルダー内で右クリックし、**作成* > *C\# スクリプト**。 スクリプトの名前**MeetingsUI します。**
+2.  開く、**スクリプト**フォルダー、そのフォルダー内で右クリックし、**作成** >   **C#スクリプト**します。 スクリプトの名前**MeetingsUI します。**
 
     ![](images/AzureLabs-Lab311-28.png)
 
@@ -550,7 +550,7 @@ ms.locfileid: "59597661"
 
     1.  **BuildTodayCalendarEndpoint()** 日、スケジュールされた会議を取得する期間を指定する URI を構築します。
 
-    2.  **ListMeetingsAsync()**、要求からスケジュールされた会議*Microsoft Graph*します。
+    2.  **ListMeetingsAsync()** 、要求からスケジュールされた会議*Microsoft Graph*します。
 
     ```csharp
         /// <summary>
@@ -628,7 +628,7 @@ ms.locfileid: "59597661"
 
 3.  Visual Studio で開くことをスクリプトをダブルクリックします。
 
-4.  追加すると共に、以下と一致する名前空間のコードを変更、'**\[System.Serializable\]**' 上記のタグ、 **GazeInput**クラスをシリアル化できるようにします。
+4.  追加すると共に、以下と一致する名前空間のコードを変更、' **\[System.Serializable\]** ' 上記のタグ、 **GazeInput**クラスをシリアル化できるようにします。
 
     ```csharp
     using UnityEngine;

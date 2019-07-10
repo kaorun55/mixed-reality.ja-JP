@@ -6,12 +6,12 @@ ms.author: JLyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows Device Portal の API
-ms.openlocfilehash: 507ab98734adea80d0aad41d99124e3d91846f28
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: 4b5b48c13b1b7ec8bfdf447f42097a8448b6a0e6
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59603277"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694430"
 ---
 # <a name="device-portal-api-reference"></a>デバイス ポータル API リファレンス
 
@@ -23,14 +23,14 @@ ms.locfileid: "59603277"
 
 アプリをアンインストールします。
 
-パラメーター
+Parameters
 * パッケージ:アンインストールするパッケージのファイル名。
 
 **/api/app/packagemanager/package (POST)**
 
 アプリをインストールします。
 
-パラメーター
+Parameters
 * パッケージ:パッケージをインストールするのファイル名。
 
 ペイロード
@@ -53,28 +53,28 @@ ms.locfileid: "59603277"
 
 サイドロードされたアプリのダンプの収集がクラッシュする無効にします。
 
-パラメーター
+Parameters
 * packageFullname: パッケージ名
 
 **/api/debug/dump/usermode/crashcontrol (GET)**
 
 クラッシュ ダンプの収集にサイドロードしたアプリの設定を取得します。
 
-パラメーター
+Parameters
 * packageFullname: パッケージ名
 
 **/api/debug/dump/usermode/crashcontrol (POST)**
 
 有効にし、サイドロードされたアプリのダンプ制御の設定の設定
 
-パラメーター
+Parameters
 * packageFullname: パッケージ名
 
 **/api/debug/dump/usermode/crashdump (削除)**
 
 サイドロードされたアプリのクラッシュ ダンプを削除します。
 
-パラメーター
+Parameters
 * packageFullname: パッケージ名
 * ファイル名: ダンプ ファイルの名前
 
@@ -82,7 +82,7 @@ ms.locfileid: "59603277"
 
 サイドロードされたアプリのクラッシュ ダンプを取得します。
 
-パラメーター
+Parameters
 * packageFullname: パッケージ名
 * ファイル名: ダンプ ファイルの名前
 
@@ -130,7 +130,7 @@ ms.locfileid: "59603277"
 
 IPD を設定します。
 
-パラメーター
+Parameters
 * ipd:ミリメートル単位で設定される新しい IPD 値
 
 **/api/holographic/os/webmanagement/settings/https (GET)**
@@ -141,7 +141,7 @@ Device Portal の HTTPS 要件を取得する
 
 デバイスのポータルの HTTPS 要件を設定します。
 
-パラメーター
+Parameters
 * 必須: yes、no または既定値
 
 ## <a name="holographic-perception"></a>Holographic Perception
@@ -150,7 +150,7 @@ Device Portal の HTTPS 要件を取得する
 
 Websocket のアップグレードを受け取り、30 fps で更新プログラムを送信する perception クライアントを実行します。
 
-パラメーター
+Parameters
 * clientmode:"active"強制的 visual 追跡モード受動的に確立されることはできません
 
 ## <a name="holographic-thermal"></a>Holographic 温度
@@ -169,7 +169,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 シミュレーションのモードを設定します。
 
-パラメーター
+Parameters
 * モード: シミュレーション モード: 既定では、シミュレーション、リモートのレガシ
 
 **/api/holographic/simulation/control/stream (削除)**
@@ -190,7 +190,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 録画を削除します。
 
-パラメーター
+Parameters
 * 録音:削除する記録の名前です。
 
 **/api/holographic/simulation/playback/file (POST)**
@@ -205,21 +205,21 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 録画の現在の再生状態を取得します。
 
-パラメーター
+Parameters
 * 録音:記録の名前です。
 
 **/api/holographic/simulation/playback/session/file (削除)**
 
 録画をアンロードします。
 
-パラメーター
+Parameters
 * 録音:アンロードする記録の名前です。
 
 **/api/holographic/simulation/playback/session/file (POST)**
 
 録画を読み込みます。
 
-パラメーター
+Parameters
 * 録音:記録を読み込むの名前です。
 
 **/api/holographic/simulation/playback/session/files (GET)**
@@ -230,28 +230,28 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 記録を一時停止します。
 
-パラメーター
+Parameters
 * 録音:記録の名前です。
 
 **/api/holographic/simulation/playback/session/play (POST)**
 
 記録を再生します。
 
-パラメーター
+Parameters
 * 録音:記録の名前です。
 
 **/api/holographic/simulation/playback/session/stop (POST)**
 
 録画を停止します。
 
-パラメーター
+Parameters
 * 録音:記録の名前です。
 
 **/api/holographic/simulation/playback/session/types (GET)**
 
 読み込まれた記録では、データの種類を取得します。
 
-パラメーター
+Parameters
 * 録音:記録の名前です。
 
 ## <a name="perception-simulation-recording"></a>Perception シミュレーションの記録
@@ -260,7 +260,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 録画を開始します。 1 つの記録のみを一度にアクティブにできます。 Head、手、spatialMapping または環境のいずれかを設定する必要があります。
 
-パラメーター
+Parameters
 * ヘッド:レコード ヘッド データを 1 に設定します。
 * ハンズ:1 に設定するには手の形のデータを記録します。
 * spatialMapping:空間マッピングを記録する、1 に設定します。
@@ -278,107 +278,103 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 ## <a name="mixed-reality-capture"></a>Mixed Reality キャプチャ
 
-**/api/holographic/mrc/file (削除)**
-
-デバイスから録画複合現実を削除します。
-
-パラメーター
-* ファイル名:削除するファイルのエンコード、名前、hex64
-
-**/api/holographic/mrc/settings (GET)**
-
-取得、既定値に、複合現実設定のキャプチャ
-
 **/api/holographic/mrc/file (GET)**
 
 デバイスから複合現実ファイルをダウンロードします。 使用 op ストリーミング ストリームのクエリ パラメーターを = です。
 
-パラメーター
+Parameters
 * ファイル名:取得するビデオ ファイルのエンコード、名前、hex64
 * op: ストリーム
 
-**/api/holographic/mrc/thumbnail (GET)**
+**/api/holographic/mrc/file (削除)**
 
-指定したファイルのサムネイル画像を取得します。
+デバイスから録画複合現実を削除します。
 
-パラメーター
-* ファイル名:エンコードされる場合は、サムネイルを要求する対象のファイルの名前、hex64
-
-**/api/holographic/mrc/status (GET)**
-
-記録された複合現実 (実行、停止) の状態を取得します。
+Parameters
+* ファイル名:削除するファイルのエンコード、名前、hex64
 
 **/api/holographic/mrc/files (GET)**
 
 デバイスに保存された複合現実ファイルの一覧を返します
 
+**/api/holographic/mrc/photo (POST)**
+
+複合現実の写真を撮影し、デバイス上のファイルを作成します
+
+Parameters
+* holo: キャプチャ ホログラム: true または false (既定値は false)
+* pv: キャプチャ PV カメラ: true または false (既定値は false)
+* RenderFromCamera:写真/ビデオのカメラの観点からレンダリングを (HoloLens 2 のみ): true または false (既定値は true)
+
+**/api/holographic/mrc/settings (GET)**
+
+取得、既定値に、複合現実設定のキャプチャ
+
 **/api/holographic/mrc/settings (POST)**
 
-セットの既定値に、複合現実設定のキャプチャ
+セットの既定値に、複合現実設定のキャプチャ。  これらの設定の一部は、システムの MRC 写真とビデオのキャプチャに適用されます。
+
+**/api/holographic/mrc/status (GET)**
+
+記録された複合現実 (実行、停止) の状態を取得します。
+
+**/api/holographic/mrc/thumbnail (GET)**
+
+指定したファイルのサムネイル画像を取得します。
+
+Parameters
+* ファイル名:エンコードされる場合は、サムネイルを要求する対象のファイルの名前、hex64
 
 **/api/holographic/mrc/video/control/start (POST)**
 
 複合現実の録音を開始します。
 
-パラメーター
-* holo: キャプチャ ホログラム: true または false
-* pv: キャプチャ PV カメラ: true または false
-* mic: キャプチャ マイク: true または false
-* ループバック: アプリの音声のキャプチャ: true または false
+Parameters
+* holo: キャプチャ ホログラム: true または false (既定値は false)
+* pv: キャプチャ PV カメラ: true または false (既定値は false)
+* mic: キャプチャ マイク: true または false (既定値は false)
+* ループバック: アプリの音声のキャプチャ: true または false (既定値は false)
+* RenderFromCamera:写真/ビデオのカメラの観点からレンダリングを (HoloLens 2 のみ): true または false (既定値は true)
+* vstab:有効にするビデオ安定化の (HoloLens 2 のみ): true または false (既定値は true)
+* vstabbuffer:ビデオ安定化バッファーの待機時間を (HoloLens 2 のみ):0 ~ 30 フレーム (既定値は 15 フレーム)
 
 **/api/holographic/mrc/video/control/stop (POST)**
 
 停止現在混合現実の記録
 
-**/api/holographic/mrc/photo (POST)**
+## <a name="mixed-reality-streaming"></a>複合現実のストリーミング
 
-複合現実の写真を撮影し、デバイス上のファイルを作成します
+HoloLens では、フラグメント化 mp4 のチャンクのダウンロードを使用して複合現実のライブ プレビューをサポートします。
 
-パラメーター
+複合現実のストリームは、キャプチャされるものを制御するパラメーターの同じセットを共有します。
 * holo: キャプチャ ホログラム: true または false
 * pv: キャプチャ PV カメラ: true または false
+* mic: キャプチャ マイク: true または false
+* ループバック: アプリの音声のキャプチャ: true または false
 
-複合現実のストリーミング
+指定しないと、これらの場合: ホログラム、カメラの写真とビデオ、およびアプリの音声がキャプチャします。<br>
+指定されている場合: 指定されていないパラメーターは既定で false
+
+省略可能なパラメーター (HoloLens 2 のみ)
+* RenderFromCamera: 写真/ビデオのカメラの観点からを表示: true または false (既定値は true)
+* vstab: ビデオ安定化を有効にする: true または false (既定値は false)
+* vstabbuffer: ビデオ安定化バッファーの待機時間。0 ~ 30 フレーム (既定値は 15 フレーム)
 
 **/api/holographic/stream/live.mp4 (GET)**
 
-フラグメント化 mp4 のチャンク ダウンロードを開始する
-
-パラメーター
-* holo: キャプチャ ホログラム: true または false
-* pv: キャプチャ PV カメラ: true または false
-* mic: キャプチャ マイク: true または false
-* ループバック: アプリの音声のキャプチャ: true または false
+1280x720p 30 fps 5Mbit ストリーム。
 
 **/api/holographic/stream/live_high.mp4 (GET)**
 
-フラグメント化 mp4 のチャンク ダウンロードを開始する
-
-パラメーター
-* holo: キャプチャ ホログラム: true または false
-* pv: キャプチャ PV カメラ: true または false
-* mic: キャプチャ マイク: true または false
-* ループバック: アプリの音声のキャプチャ: true または false
-
-**/api/holographic/stream/live_low.mp4 (GET)**
-
-フラグメント化 mp4 のチャンク ダウンロードを開始する
-
-パラメーター
-* holo: キャプチャ ホログラム: true または false
-* pv: キャプチャ PV カメラ: true または false
-* mic: キャプチャ マイク: true または false
-* ループバック: アプリの音声のキャプチャ: true または false
+1280x720p 30 fps 5Mbit ストリーム。
 
 **/api/holographic/stream/live_med.mp4 (GET)**
 
-フラグメント化 mp4 のチャンク ダウンロードを開始する
+854x480p 30 fps 2.5Mbit ストリーム。
 
-パラメーター
-* holo: キャプチャ ホログラム: true または false
-* pv: キャプチャ PV カメラ: true または false
-* mic: キャプチャ マイク: true または false
-* ループバック: アプリの音声のキャプチャ: true または false
+**/api/holographic/stream/live_low.mp4 (GET)**
+
+428x240p 15 fps 0.6Mbit ストリーム。
 
 ## <a name="networking"></a>ネットワーク
 
@@ -400,7 +396,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 コンピューター名を設定します。
 
-パラメーター
+Parameters
 * 名:新しいコンピューター名、hex64 エンコードされる場合に設定するには
 
 ## <a name="performance-data"></a>パフォーマンス データ
@@ -445,7 +441,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 最新のアプリを停止します。
 
-パラメーター
+Parameters
 * パッケージ:エンコードされた hex64、アプリ パッケージの完全な名前
 * 強制:強制的にすべてのプロセスを停止する (= [はい])
 
@@ -453,7 +449,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 最新のアプリを起動します。
 
-パラメーター
+Parameters
 * appid:開始するアプリの PRAID、hex64 エンコード
 * パッケージ:エンコードされた hex64、アプリ パッケージの完全な名前
 
@@ -470,7 +466,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 指定されたインターフェイス上のネットワークに関連付けられているプロファイルを削除します。
 
-パラメーター
+Parameters
 * インターフェイス: ネットワーク インターフェイスの guid
 * プロファイル: プロファイル名
 
@@ -478,7 +474,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 指定したネットワーク インターフェイス上でワイヤレス ネットワークを列挙します。
 
-パラメーター
+Parameters
 * インターフェイス: ネットワーク インターフェイスの guid
 
 戻り値のデータ
@@ -488,7 +484,7 @@ Websocket のアップグレードを受け取り、30 fps で更新プログラ
 
 接続または指定されたインターフェイス上のネットワークに接続を切断
 
-パラメーター
+Parameters
 * インターフェイス: ネットワーク インターフェイスの guid
 * ssid: ssid、hex64 への接続にエンコードします。
 * op: 接続または切断
@@ -525,12 +521,12 @@ WPR (パフォーマンス) のトレース セッションを停止します。
 
 セッションのトレース WPR (パフォーマンス) を開始します。
 
-パラメーター
+Parameters
 * プロファイル:プロファイルの名前。 使用可能なプロファイル perfprofiles/profiles.json に格納されます。
 
 戻り値のデータ
 * 起動時に、WPR セッションの状態を返します。
 
 ## <a name="see-also"></a>関連項目
-* [Windows Device Portal のを使用](using-the-windows-device-portal.md)
+* [Windows Device Portal を使用する](using-the-windows-device-portal.md)
 * [デバイス ポータル core API リファレンス (UWP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

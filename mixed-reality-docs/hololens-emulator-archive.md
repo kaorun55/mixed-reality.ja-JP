@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 4/25/2019
 ms.topic: article
 keywords: HoloLens、エミュレーター、ビルド、バージョン
-ms.openlocfilehash: 34aee87310cbdfed4e209fbba955db9cf3ff722f
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: b209e444c223c3183d2680976f68c33a3b6ed79b
+ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414400"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67694425"
 ---
 HoloLens のエミュレーター (第 1 世代) と、HoloLens 2 エミュレーターのビルドのサイド バイ サイドでインストールします。 一般に、最新使用可能なビルドを使用してをお勧めしますがいる場合や、古いエミュレーターに対して、アプリケーションをテストする必要がありますの場合がある可能性があります。 このページには、リリース バージョンへのリンクが含まれています。
 
@@ -21,7 +21,8 @@ HoloLens のエミュレーター (第 1 世代) と、HoloLens 2 エミュレ�
 
 |  ビルド |  リリース日 |  メモ | 
 |----------|----------|----------|
-|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日 | 最新の HoloLens 2 ビルドします。  管理者として実行する必要がありません。  スタート メニューのショートカットを追加します。 |
+|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019 年 7 月 8日 | 最新の HoloLens 2 ビルドします。  DiskStream.dll に署名に関する問題を対処します。 |
+|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日 | 管理者として実行する必要がありません。  スタート メニューのショートカットを追加します。 |
 |  [HoloLens 2 エミュレーター ビルド 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日 |  |
 
 
