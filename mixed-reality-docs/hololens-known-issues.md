@@ -3,15 +3,15 @@ title: HoloLens の既知の問題
 description: これは、HoloLens の開発者に影響を与える既知の問題の一覧です。
 author: mattzmsft
 ms.author: mazeller
-ms.date: 06/14/2019
+ms.date: 07/10/2019
 ms.topic: article
 keywords: トラブルシューティングについては、既知の問題のヘルプ
-ms.openlocfilehash: fd70171a908dab016b375e2207436dc11d625af9
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 1ef9e9f411e16d2f604930f3146ede1d03d7c0f6
+ms.sourcegitcommit: c36b8c8573f51afa79504c4a17084e4f55d2f664
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414352"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67789490"
 ---
 # <a name="hololens-known-issues"></a>HoloLens の既知の問題
 
@@ -20,19 +20,61 @@ ms.locfileid: "67414352"
 ## <a name="unable-to-connect-and-deploy-to-hololens-through-visual-studio"></a>接続し、Visual Studio での HoloLens にデプロイすることができません。
 
 >[!NOTE]
->最終更新:6/14 午後 6 時までの @ を調査中発行します。
+>最終更新:7/8 午後 7時 25分 - @ チームが、根本原因を特定およびは現在修正に取り組んでいます。 回避策は以下の利用。 
 
-HoloLens と Visual Studio のチームは、Visual Studio での HoloLens デバイスへのデプロイからユーザーを妨げる可能性のある問題を調査しています。
- 
-展開段階で、ユーザーが HoloLens デバイスと開発者のマシンのことに関係なく、次のエラー メッセージを報告*開発者モード*を有効にします。
+この問題の根本原因を特定できませんでした。 Visual Studio 2015 または Visual Studio 2017 の以前のリリースを展開し、HoloLens のアプリケーションをデバッグするために使用して、その後、Visual Studio 2017 または Visual Studio 2019 の最新バージョンを同じ HoloLens で使用するユーザーに影響があります。 
 
-*DEP0100:そのターゲット デバイスが開発者モードが有効になっていることを確認してください。開発者用ライセンスを取得できませんでした<device IP>80004005 のエラーが原因です。*
+Visual Studio のそれ以降のリリースは、コンポーネントの新しいバージョンを展開しますが、古いバージョンのファイルが原因で失敗する、新しいバージョン、デバイスで残されました。  これにより、次のエラー メッセージ。DEP0100:そのターゲット デバイスが開発者モードが有効になっていることを確認してください。 開発者用ライセンスを取得できませんでした<ip>80004005 のエラーが原因です。
  
 **対応策**: 
+
+私たちのチームは、現在、修正プログラムは取り組んでいます。 それまでは、問題を回避して、デプロイとデバッグをブロック解除のために、次の手順を使用できます。  
+1. Visual Studio を開く
+2. 新しいファイル]-> [プロジェクト]-> [
+3. Visual C# Windows]-> [デスクトップ] の [コンソール アプリ (.NET Framework)
+4. フレームワークが以上に設定かどうかを確認して、プロジェクトの名前 (例: HoloLensDeploymentFix) .NET Framework 4.5 は、[ok] をクリックします。
+5. ソリューション エクスプ ローラーで [参照] ノードを右クリックし、次の参照の追加 ('参照' セクションをクリックし、[参照...] をクリックします。button):
+    ```
+    C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\Microsoft.Tools.Deploy.dll
+    C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\Microsoft.Tools.Connectivity.dll
+    C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\SirepInterop.dll
+    ```
+    >[!NOTE]
+    >インストールされている 10.0.18362.0 を持っていない場合は、必要のある最新バージョンを使用します。
  
-ユーザーは、これが常に動作する保証できませんが、デバイスのリセットで問題が解決を報告します。 デバイスをリセットする手順を確認できます[ここ](https://support.microsoft.com/en-us/help/13452/hololens-restart-reset-or-recover-hololens)します。
+6. ソリューション エクスプ ローラーでプロジェクトを右クリックし、追加 メニューの 既存の項目。
  
-問題が原因となったルートとすぐに更新プログラムは、されます。 
+7. C:\Program Files (x86) \Windows Kits\10\bin\10.0.18362.0\x86 を参照し、フィルターを適用して"すべてのファイル (\*.\*)"
+ 
+8. SirepClient.dll と SshClient.dll の両方を選択し、[追加] をクリックします。
+ 
+9. 検索して (ファイルの一覧の下部にある必要があります) のソリューション エクスプ ローラーで両方のファイルを選択し、「常にコピー」を「出力ディレクトリにコピー」プロパティ ウィンドウでの変更
+ 
+10. ファイルの上部にある既存の 'using' ステートメントの一覧に、次を追加します。 
+    ```
+    using Microsoft.Tools.Deploy;
+    using System.Net;
+    ```
+ 
+11. "静的 void Main(...)"、内部では、次のコードを追加します。
+    ```
+    RemoteDeployClient client = RemoteDeployClient.CreateRemoteDeployClient();
+    client.Connect(new ConnectionOptions()
+    {
+        Credentials = new NetworkCredential("DevToolsUser", string.Empty),
+        IPAddress = IPAddress.Parse(args[0])
+    });
+    client.RemoteDevice.DeleteFile(@"C:\Data\Users\DefaultAccount\AppData\Local\DevelopmentFiles\VSRemoteTools\x86\CoreCLR\mscorlib.ni.dll");
+    ```
+12. ビルド ソリューションのビルド]-> [します。
+ 
+13. コンパイル済みの .exe (C:\MyProjects\HoloLensDeploymentFix\bin\Debug など) を格納するフォルダへのコマンド プロンプトを開きます
+ 
+14. 実行可能ファイルを実行し、コマンドライン引数として、デバイスの IP アドレスを指定します。  (USB 経由で接続している場合をできます 127.0.0.1 を使用して、デバイスの WiFi の IP アドレスを使用して、それ以外の場合)たとえば、"HoloLensDeploymentFix 127.0.0.1"
+ 
+15. ツールは、すべてのメッセージ (する必要がありますのみかかる数秒) せずに終了しましたとを展開して、Visual Studio 2017 からデバッグまたはそれ以降がなります。  ツールの利用を継続するには必要はありません。
+
+さらに更新プログラムが使用可能になります。
 
 ## <a name="issues-launching-the-microsoft-store-and-apps-on-hololens"></a>Microsoft Store と HoloLens でアプリの起動の問題
 
