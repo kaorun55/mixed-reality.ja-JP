@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: 表示、ガベージ コレクション、hololens、グラフィック、cpu、gpu
-ms.openlocfilehash: 37eac566a0315009330ac7fee96edd82348d6ba3
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.openlocfilehash: b0821f07184bff8630f6b6af0d0fc461f6fcd133
+ms.sourcegitcommit: 8f3ff9738397d9b9fdf4703b14b89d416f0186a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604911"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843334"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity のパフォーマンスに関する推奨事項
 
@@ -38,7 +38,7 @@ Unity では、優れたドキュメントを提供します。
 
 #### <a name="cache-references"></a>キャッシュの参照
 
-ベスト プラクティスの初期化時のすべての関連するコンポーネントおよび Gameobject に参照をキャッシュすることをお勧めします。 これなどの関数呼び出しを繰り返すため*[GetComponent\<T > ()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* は相対メモリのポインターを格納するためにコストが大幅に高価です。 これにも当てはまりますに、非常に、定期的に使用する[Camera.main](https://docs.unity3d.com/ScriptReference/Camera-main.html)します。 *Camera.main*に実際にしか使用*[FindGameObjectsWithTag()](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* 低いコスト カメラはシーン グラフを検索する下、 *"MainCamera"* タグ。
+ベスト プラクティスの初期化時のすべての関連するコンポーネントおよび Gameobject に参照をキャッシュすることをお勧めします。 これなどの関数呼び出しを繰り返すため *[GetComponent\<T > ()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* は相対メモリのポインターを格納するためにコストが大幅に高価です。 これにも当てはまりますに、非常に、定期的に使用する[Camera.main](https://docs.unity3d.com/ScriptReference/Camera-main.html)します。 *Camera.main*に実際にしか使用 *[FindGameObjectsWithTag()](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* 低いコスト カメラはシーン グラフを検索する下、 *"MainCamera"* タグ。
 
 ```CS
 using UnityEngine;
@@ -72,8 +72,9 @@ public class ExampleClass : MonoBehaviour
 }
 ```
 
->[!NOTE] Avoid GetComponent(string) <br/>
-> 使用する場合 *[GetComponent()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)*、さまざまなオーバー ロードが多数があります。 このデータベースが、ベース型の実装としない文字列に基づく検索オーバー ロードを常に使用する重要です。 シーン内の文字列で検索することは、型を検索するよりも大幅に高額です。 <br/>
+>[!NOTE] 
+> Avoid GetComponent(string) <br/>
+> 使用する場合 *[GetComponent()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* 、さまざまなオーバー ロードが多数があります。 このデータベースが、ベース型の実装としない文字列に基づく検索オーバー ロードを常に使用する重要です。 シーン内の文字列で検索することは、型を検索するよりも大幅に高額です。 <br/>
 > (良好)コンポーネント GetComponent (型) <br/>
 > (良好)T GetComponent\<T >) <br/>
 > (不良)コンポーネント GetComponent(string) > <br/>
@@ -110,7 +111,7 @@ public class ExampleClass : MonoBehaviour
         UnityEngine.Object.FindGameObjectsWithTag()
 
 >[!NOTE]
-> *[SendMessage()](https://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html)* と*[BroadcastMessage()](https://docs.unity3d.com/ScriptReference/GameObject.BroadcastMessage.html)* 代価除去する必要があります。 これらの関数は、1000 x 関数を直接呼び出すよりも低速の順序指定できます。
+> *[SendMessage()](https://docs.unity3d.com/ScriptReference/GameObject.SendMessage.html)* と *[BroadcastMessage()](https://docs.unity3d.com/ScriptReference/GameObject.BroadcastMessage.html)* 代価除去する必要があります。 これらの関数は、1000 x 関数を直接呼び出すよりも低速の順序指定できます。
 
 3) **ボックス化に注意してください。**
 
@@ -225,24 +226,22 @@ Unity は、GPU の描画呼び出しを減らすために多くの静的オブ�
 
 ## <a name="gpu-performance-recommendations"></a>GPU のパフォーマンスに関する推奨事項
 
-詳細については[Unity でのグラフィックス レンダリングの最適化](https://unity3d.com/learn/tutorials/temas/performance-optimization/optimizing-graphics-rendering-unity-games)
+詳細については[Unity でのグラフィックス レンダリングの最適化](https://unity3d.com/learn/tutorials/temas/performance-optimization/optimizing-graphics-rendering-unity-games) 
 
-#### <a name="reduce-poly-count"></a>ポリゴンの数を削減します。
+### <a name="optimize-depth-buffer-sharing"></a>深度バッファーの共有を最適化します。
+
+有効にすることをお勧め**深度バッファーの共有** **Player XR 設定**を最適化する[ホログラム安定性](Hologram-stability.md)します。 ただし、この設定で最終段階の深さに基づく reprojection を有効にする場合は、選択勧め**形式の 16 ビット深度**の代わりに**24 ビット深度形式**します。 帯域幅が大幅に減少 (および電源したがって)、16 ビットの深度バッファーは深度バッファーのトラフィックに関連します。 ビッグ power win、入力できますが、経験と小規模の深さの範囲に対してのみ適用、 [z ファイティング](https://en.wikipedia.org/wiki/Z-fighting)は 16 ビットより 24 ビットで発生する可能性が高くなります。 これらの成果物を避けるためには、変更のほぼ/遠ク リップ面、 [Unity カメラ](https://docs.unity3d.com/Manual/class-Camera.html)精度が低いに対応します。 HoloLens ベースのアプリケーションでは、z ファイティング通常 1000 m Unity の既定ではなく 50 m の遠ク リップ面から排除できます。
+
+### <a name="reduce-poly-count"></a>ポリゴンの数を削減します。
 
 いずれかで多角形の数が減少通常
 1) シーンからオブジェクトを削除します。
 2) 指定したメッシュの多角形の数が減少する資産デシメーション
 3) 実装する、[詳細レベル (LOD) のシステム](https://docs.unity3d.com/Manual/LevelOfDetail.html)を離れた同じジオメトリの多角形の下のバージョンを持つオブジェクトを描画するアプリケーションに
 
-#### <a name="limit-overdraw"></a>制限を範囲します。
+### <a name="understanding-shaders-in-unity"></a>Unity でシェーダーを理解します。
 
-Unity では、1 つを表示できますを切り替えることにより、そのシーンを描画できます、 [**モード メニューを描画**](https://docs.unity3d.com/Manual/ViewModes.html)の左上隅にある、**シーン ビュー**選択**アルファブレンディング**.
-
-一般に、範囲を事前に、GPU に送信される前にオブジェクトをカリング軽減できます。 Unity を実装する方法の詳細を提供する[オクルー ジョン カリング](https://docs.unity3d.com/Manual/OcclusionCulling.html)のエンジン。
-
-#### <a name="understanding-shaders-in-unity"></a>Unity でシェーダーを理解します。
-
-パフォーマンスでシェーダーを比較する簡単な近似は、各操作の平均数を識別するために実行時に実行します。 これは、Unity で非常に簡単に行うことができます。
+パフォーマンスでシェーダーを比較する簡単な近似は、各操作の平均数を識別するために実行時に実行します。 これは、Unity で簡単に行うことができます。
 
 1) シェーダー資産を選択または素材を選択し、続いてインスペクター ウィンドウの上部右隅にある、歯車アイコンを選択し、 **「シェーダーの選択」**
 
@@ -255,11 +254,29 @@ Unity では、1 つを表示できますを切り替えることにより、そ
 
     ![Unity シェーダーの標準的な操作](images/unity-standard-shader-compilation.png)
 
-##### <a name="unity-standard-shader-alternatives"></a>Unity シェーダーの標準的な代替手段
+#### <a name="optmize-pixel-shaders"></a>ピクセル シェーダーの最適化
 
-効率的に利用して物理的にベースのレンダリング (PBR) やその他の高品質なシェーダーを使用せずに確認し、安価なシェーダー。 [実際にはツールキットを混在](https://github.com/Microsoft/MixedRealityToolkit-Unity)を提供します、[標準シェーダー](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit/StandardAssets/Shaders/MixedRealityStandard.shader)複合現実プロジェクト向けに最適化されたをします。
+上記のメソッドを使用してコンパイルされた統計結果を見て、[フラグメント シェーダー](https://en.wikipedia.org/wiki/Shader#Pixel_shaders)よりもより多くの操作は通常、実行、[頂点シェーダー](https://en.wikipedia.org/wiki/Shader#Vertex_shaders)平均。 頂点シェーダーがのみ実行される、頂点ごとの画面に描画されているすべてのメッシュの間、出力画面上のピクセルあたりフラグメント シェーダー、ピクセル シェーダーとも呼ばれますが実行されます。 
+
+したがって、だけでなく、フラグメント シェーダーは頂点シェーダーよりも詳細な手順について、すべてのライティング計算のため、フラグメント シェーダーは、大規模なデータセットでほぼ常に実行します。 たとえば、画面出力が 2 k 画像によって 2 k の場合は、フラグメント シェーダーを取得できます 2, 000 * 2, 000 = 大きく 4,000,000 の実行時間。 2 つ目を表示するには、2 つの画面があるので、この数が 2 倍します。 複合現実のアプリケーションに複数のパス、全画面表示処理後の効果、または同一のピクセルに複数のメッシュをレンダリングがある場合は、この数が大幅に増加します。 
+
+そのため、フラグメント シェーダーの操作の数を減らすこと与えることが一般にはるかに大きなパフォーマンスの向上、頂点シェーダーでの最適化を。
+
+#### <a name="unity-standard-shader-alternatives"></a>Unity シェーダーの標準的な代替手段
+
+効率的に利用して物理的にベースのレンダリング (PBR) やその他の高品質なシェーダーを使用せずに確認し、安価なシェーダー。 [Mixed Reality Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)提供、 [MRTK 標準シェーダー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_MRTKStandardShader.html)複合現実プロジェクト向けに最適化されたをします。
 
 Unity では、光源、なし、頂点が点灯している、高速比較が大幅に簡略化されたシェーダーの拡散、およびその他のオプションも、標準の Unity シェーダーに提供します。 参照してください[使用状況と組み込みのシェーダーのパフォーマンスを](https://docs.unity3d.com/Manual/shader-Performance.html)詳細な情報。
+
+#### <a name="shader-preloading"></a>シェーダーの事前読み込み
+
+使用*シェーダー プリロード*とその他のテクニックを最適化する[シェーダーの読み込み時間](http://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)します。 具体的には、シェーダーの事前読み込みはランタイム シェーダーのコンパイルのためのすべての問題は表示されませんを意味します。
+
+### <a name="limit-overdraw"></a>制限を範囲します。
+
+Unity では、1 つを表示できますを切り替えることにより、そのシーンを描画できます、 [**モード メニューを描画**](https://docs.unity3d.com/Manual/ViewModes.html)の左上隅にある、**シーン ビュー**選択**アルファブレンディング**.
+
+一般に、範囲を事前に、GPU に送信される前にオブジェクトをカリング軽減できます。 Unity を実装する方法の詳細を提供する[オクルー ジョン カリング](https://docs.unity3d.com/Manual/OcclusionCulling.html)のエンジン。
 
 ## <a name="memory-recommendations"></a>メモリの推奨事項
 
@@ -287,7 +304,7 @@ Unity は、ガベージ コレクターのしくみを詳しく説明する優�
 
 ## <a name="startup-performance"></a>起動時のパフォーマンス
 
-小規模のシーンをアプリを起動しを使用する必要があります*[SceneManager.LoadSceneAsync](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadSceneAsync.html)* を残りのシーンを読み込みます。 これにより、アプリをできる限り早く対話状態を取得できます。 対応をある可能性があります、大きな CPU スパイク新しいシーンがアクティブ化中に、レンダリングされたコンテンツが途切れこと」または「問題。 これを回避する方法の 1 つは、読み込まれているシーンで AsyncOperation.allowSceneActivation プロパティを false に設定、読み込み、黒に画面のクリア、および、戻るシーンのアクティブ化が完了する場合は true に設定してシーンの待機です。
+小規模のシーンをアプリを起動しを使用する必要があります *[SceneManager.LoadSceneAsync](https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.LoadSceneAsync.html)* を残りのシーンを読み込みます。 これにより、アプリをできる限り早く対話状態を取得できます。 対応をある可能性があります、大きな CPU スパイク新しいシーンがアクティブ化中に、レンダリングされたコンテンツが途切れこと」または「問題。 これを回避する方法の 1 つは、読み込まれているシーンで AsyncOperation.allowSceneActivation プロパティを false に設定、読み込み、黒に画面のクリア、および、戻るシーンのアクティブ化が完了する場合は true に設定してシーンの待機です。
 
 スタートアップ シーンの読み込み中に、holographic のスプラッシュ スクリーンは、ユーザーに表示されることに注意してください。
 
