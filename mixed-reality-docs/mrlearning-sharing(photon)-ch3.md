@@ -1,75 +1,76 @@
 ---
-title: ラーニング モジュールを共有 HoloLens 2 を MR
-description: このコースでは、HoloLens 2 アプリケーション内でのマルチ ユーザー共有機能を実装する方法について説明します。
+title: HoloLens 2 用 MR Learning 共有モジュール
+description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法について説明します。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 44cc41b10ed79d3085ec601ec9cf21af47b0fea5
-ms.sourcegitcommit: cf9f8ebbca0301e9d277853771ff6e47701ba1c1
+ms.openlocfilehash: 92bea1f3130f67645c10e36fe40cd4bc6f8b9151
+ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67523306"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293665"
 ---
-# <a name="connecting-multiple-users"></a>複数のユーザーを接続します。
+# <a name="connecting-multiple-users"></a>複数のユーザーの接続
 
-このレッスンでは、ライブの共有エクスペリエンスの一部として複数のユーザーを接続する方法について説明します。 このレッスンの目的は、複数のデバイスでアプリケーションを開き、球体の場合、結合する人の表現によって表される、アバターを表示するようになります。 
+このレッスンでは、ライブ共有エクスペリエンスの一部として複数のユーザーを接続する方法について説明します。 このレッスンを終了すると、複数のデバイスでアプリケーションを開くことができます。また、アバターは、参加する各ユーザーの球体で表現されます。 
 
-目標:
+事項
 
-- アプリケーション内でだじゃれを構成します。
-- プレーヤーを構成します。
-- 複数のユーザー エクスペリエンスの共有に接続する方法について説明します
+- アプリケーション内でさしあたっを構成する
+- プレーヤーの構成
+- 共有エクスペリエンスで複数のユーザーを接続する方法について説明します。
 
 ### <a name="instructions"></a>手順
 
-1. 資産-> リソース メニューの プロジェクト パネルで Prefabs フォルダーにドラッグ アンド次の図に示すように、階層で NetworkLobby プレハブを削除します。
+1. 次の図に示すように、[アセット-> Resources-> Prefabs] フォルダーの [プロジェクト] パネルで、NetworkLobby prefab を階層にドラッグアンドドロップします。
 
+![Module3Chapter3step1im](images/module3chapter3step1im.PNG)
 
-   ![Module3Chapter3step1im](images/module3chapter3step1im.PNG)
+2. NetworkLobby を展開すると、Networklobby という子オブジェクトが表示されます。 NetworkRoom を選択した状態で、[インスペクター] パネルにアクセスし、[コンポーネントの追加] をクリックします。 PhotonView を検索し、コンポーネントを追加します。
 
-2. NetworkLobby を展開すると、NetworkRoom と呼ばれる子オブジェクトを確認します。 NetworkRoom が選択されている、Inspector パネルに移動し、コンポーネントの追加 をクリックします。 PhotonView を検索し、コンポーネントを追加します。
+![Module3Chapter3tep2im](images/module3chapter3step2im.PNG)
 
-   ![Module3Chapter3tep2im](images/module3chapter3step2im.PNG)
+3. 階層内に新しい空のゲームオブジェクトを作成します。 階層内を右クリックし、コンテキストメニューから [空] を選択します。 位置が x = 0、y = 0、z = 0 に設定されていることを確認し、オブジェクトに PhotonUser という名前を指定します。
 
-3. 階層内の新しい空のゲーム オブジェクトを作成します。 階層内を右クリックし、コンテキスト メニューから空を選択します。 位置 x に設定されていることを確認 = 0、y = 0、z = 0 および PhotonUser、オブジェクトの名前を付けます。
+![Module3Chapter3step3im](images/module3chapter3step3im.PNG)
 
-   ![Module3Chapter3step3im](images/module3chapter3step3im.PNG)
+4. [コンポーネントの追加] をクリックし、「Generic Net Sync」と入力します。汎用 Net Sync クラスを選択します。 クラスが表示されたら、[ユーザー] チェックボックスをクリックしてオンにします。 
 
-4. [コンポーネントの追加] をクリックし、汎用の差分同期を入力します。ジェネリックの差分同期クラスを選択します。 クラスが表示されたら、有効にするには、ユーザー チェック ボックスをクリックします。 
+![module3chapter3updateStep4im](images/module3chapter3updateStep4im.png)
 
-   ![module3chapter3updateStep4im](images/module3chapter3updateStep4im.png)
+5. [コンポーネントの追加] をもう一度クリックし、「Photon View」と入力します。 ドロップダウンリストに表示される Photon View クラスを選択します。
 
-5. ここでも、コンポーネントの追加 をクリックし、Photon ビューを入力します。 ドロップダウン リストで表示される Photon ビュー クラスを選択します。
+![module3chapter3updateStep5im](images/module3chapter3updateStep5im.png)
 
-   ![module3chapter3updateStep5im](images/module3chapter3updateStep5im.png)
+6. 汎用 Net Sync クラスのファイルアイコンをクリックします。 Photon ビューの [観測されたコンポーネント] フィールドにドラッグアンドドロップします。 
 
-6. ジェネリックの差分同期クラスのファイルのアイコンをクリックします。 ドラッグ アンド ドロップ Photon ビューのコンポーネントの検出フィールド。 ![module3chapter3updateStep6im.png](images/module3chapter3updateStep6im.png) 
+![module3chapter3updateStep6im](images/module3chapter3updateStep6im.png) 
 
-7. 次に、共有のエクスペリエンスを結合する各ユーザーを表す球体を作成します。 作成した PhotonUser オブジェクトと scrolldown を右クリックして"3 D オブジェクトをクリックして、球。 これにより、PhotonUser オブジェクトの子として、球体のゲーム オブジェクトが作成されます。
+7. 次に、共有エクスペリエンスに参加する各ユーザーを表す球体を作成します。 先ほど作成した PhotonUser オブジェクトを右クリックし、[3D オブジェクト] までスクロールして [球] をクリックします。 これにより、PhotonUser オブジェクトの子として球ゲームオブジェクトが作成されます。
 
-   ![Module3Chapter3step4im](images/module3chapter3step4im.PNG)
+![Module3Chapter3step4im](images/module3chapter3step4im.PNG)
 
-8. X に球をスケール = 0.06、y = 0.06、ad z 0.06 を = です。
+8. 球を x = 0.06、y = 0.06、ad z = 0.06 にスケールダウンします。
 
-   ![Module3hapter3step5im](images/module3chapter3step5im.PNG)
+![Module3hapter3step5im](images/module3chapter3step5im.PNG)
 
-9. プロジェクト パネルで、Prefabs フォルダーに PhotonUser ゲーム オブジェクトをドラッグし、シーンから削除します。 今すぐ生成または共有のエクスペリエンスで新しいプレーヤーをインスタンス化するときに使用できるプレハブを作成しました。
+9. PhotonUser game オブジェクトを [プロジェクト] パネルの Prefabs フォルダーにドラッグし、シーンから削除します。 これで、共有エクスペリエンスで新しいプレーヤーを生成またはインスタンス化するときに使用できる事前 fab が作成されました。
 
-   ![Module3Chapter3step6im](images/module3chapter3step6im.PNG)
+![Module3Chapter3step6im](images/module3chapter3step6im.PNG)
 
-> 注: は、ゲーム オブジェクトが、階層から削除する前に正常に Prefabs フォルダーにコピーされたいることを確認します。
+> 注: Prefabs フォルダーを階層から削除する前に、game オブジェクトが正常にコピーされていることを確認してください。
 
-10. 手順 3 での手順に従って、階層内の新しいオブジェクトを作成し、SharedPlayground という名前を付けます。 [コンポーネントの追加] をクリックし汎用ネットワーク マネージャーを検索し、クリックして、汎用ネットワーク マネージャー コンポーネントを追加します。 オブジェクトの位置を x に変更 = 0、y = 0、および z = 0。
+10. 手順 3. の指示に従って、階層内に新しいオブジェクトを作成し、SharedPlayground グラウンドという名前を指定します。 次に、[コンポーネントの追加] をクリックし、[汎用ネットワークマネージャー] を検索して、それをクリックして汎用ネットワークマネージャーコンポーネントを追加します。 オブジェクトの位置を x = 0、y = 0、z = 0 に変更します。
 
-    ![Module3Chapter3step7im](images/module3chapter3step7im.PNG)
+![Module3Chapter3step7im](images/module3chapter3step7im.PNG)
 
 
 ## <a name="congratulations"></a>結論
 
-上記の手順が完了すると、ビルド プロセスが完了することも、後は、再生ボタンをクリックし、HoloLens 2 を接続します。 頭の中を移動すると、移動、球が表示されます。 これは、Unity プロジェクトを結合するすべてのユーザーに対して表示されます。
+上記のすべての手順が完了し、ビルドプロセスも完了したら、[再生] ボタンをクリックして HoloLens 2 に接続します。 頭を移動すると球が動いていることがわかります。 これは、Unity プロジェクトに参加するすべてのユーザーに表示されます。
 
-[次のレッスン:Sharing(Photon) レッスン 4](mrlearning-sharing(photon)-ch4.md)
+[次のレッスン:共有 (Photon) レッスン4](mrlearning-sharing(photon)-ch4.md)
 

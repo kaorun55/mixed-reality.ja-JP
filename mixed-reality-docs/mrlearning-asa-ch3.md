@@ -1,88 +1,77 @@
 ---
-title: MR Learning ASA モジュール HoloLens 2 での Azure 空間アンカー
+title: MR Learning ASA モジュール Azure 空間アンカー (HoloLens 2)
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 4aabb4a35efebdd893cbb248365e534abd60f684
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+ms.openlocfilehash: c6e902710eebe205b9e944b1bf95a9ddd3bd9044
+ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67327369"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68293802"
 ---
-# <a name="displaying-azure-spatial-anchor-feedback"></a>Azure の空間アンカーからのフィードバックを表示します。
+# <a name="displaying-azure-spatial-anchor-feedback"></a>Azure 空間アンカーフィードバックの表示
 
-このレッスンでは、Azure 空間アンカーを使用する場合、アンカーの検出、イベント、およびステータスに関するフィードバックをユーザーに提供する方法について学習します。
+このレッスンでは、Azure 空間アンカーを使用するときに、アンカー検出、イベント、および状態に関するフィードバックをユーザーに提供する方法について説明します。
 
-目標:
+事項
 
-* ASA の現在のセッションに関する重要な情報を表示する UI パネルを設定する方法について説明します
+* 現在の ASA セッションに関する重要な情報を表示する UI パネルを設定する方法について説明します。
 
-* 理解し、調査をユーザーに、ASA SDK が利用できるようにするフィードバック要素
-
-  
+* ASA SDK によってユーザーに提供されるフィードバック要素について理解し、調査する
 
 ## <a name="instructions"></a>手順
 
-### <a name="set-up-asa-feedback-ui-panel"></a>ASA フィードバック UI パネルを設定します。
+### <a name="set-up-asa-feedback-ui-panel"></a>ASA フィードバック UI パネルを設定する
 
-1. このレッスンでは、"SaveAnchorToDisk"を使用していないことと"ShareAnchor"ボタンは、そのため両方のボタンを選択し、(下図参照) とインスペクター パネル内のチェック ボックスをオフにこれらのボタンを非表示にします。
+1. このレッスンでは、"SaveAnchorToDisk" と "" ボタンを使用していないので、これらのボタンを非表示にするには、両方のボタンを選択し、[インスペクター] パネルのチェックボックスをオフにします (次の図を参照)。
    
 
 ![module2chapter3step1im](images/module2chapter3step1im.PNG)
 
-2. 次に、命令のパネルを作成します。 "Instruction"ボタンを右クリックして開始し、"3 D Object"と「textmeshpro-テキストを選択します」合わせ、
+2. 次に、命令パネルを作成します。 まず、[命令] ボタンを右クリックし、[3D オブジェクト] の上にマウスポインターを移動して、[textmeshpro-text] を選択します。
 
-   
+![module2chapter3step2im](images/module2chapter3step2im.PNG)
 
-   ![module2chapter3step2im](images/module2chapter3step2im.PNG)
-
-   3. スケールと手順については、シーン内で一致するよう、テキストの配置を調整します。 また、すべてのテキストの配置の中心を確認します。 下の画像に示すように、テキスト エディターからサンプル テキストを削除します。
-
+3. シーンの指示と一致するように、スケールとテキストの配置を調整します。 また、すべてのテキストの配置が中央揃えになっていることを確認します。 次の図に示すように、テキストエディターからサンプルテキストを削除します。
 
 ![module2chapter3step3im](images/module2chapter3step3im.PNG)
 
-4. TextMeshPro オブジェクトの名前を"FeedbackPanel。"に変更します。
+4. TextMeshPro オブジェクトの名前を「フィードバックパネル」に変更します。
    
-   ![module2chapter3step4im](images/module2chapter3step4im.PNG)
-   
-5. プロジェクト パネルで、アセット を選択し、右クリックし、「エクスプ ローラーで表示します。」を選択します。
+
+![module2chapter3step4im](images/module2chapter3step4im.PNG)
+
+5. [プロジェクト] パネルで、[資産] を選択して右クリックし、[エクスプローラーで表示] を選択します。
    
 
 ![module2chapter3step4im](images/module2chapter3step5im.PNG)
 
-をクリックして[ここ](https://onedrive.live.com/?authkey=%21ABXEC8PvyQu8Qd8&id=5B7335C4342BCB0E%21395636&cid=5B7335C4342BCB0E)ファイルをダウンロードするために必要な次のいくつかの手順。
+ここで、[ここ](https://onedrive.live.com/?authkey=%21ABXEC8PvyQu8Qd8&id=5B7335C4342BCB0E%21395636&cid=5B7335C4342BCB0E)をクリックして、次のいくつかの手順で必要なファイルをダウンロードします。
 
-6. エクスプ ローラーが開いたら、assets フォルダー、"ASAmodulesAssets"フォルダーを選択し、アンカーのフィードバック スクリプトとアンカー モジュール スクリプト ファイルをフォルダーにコピーします。 
-   
+6. エクスプローラーが開いたら、assets フォルダー、"ASAmodulesAssets" フォルダーの順に選択し、アンカーフィードバックスクリプトとアンカーモジュールスクリプトファイルをフォルダーにコピーします。 
 
 ![module2chapter3step5im](images/module2chapter3step6im.PNG)
 
-> 注: 古いを上書きするか、古いを保持する場合を確認する上書きを選択するかをたずねるポップアップが表示されます。
+> 注: 古いものを上書きするか、古いものを保持するかを確認するポップアップが表示された場合は、[上書き] を選択してください。
 
-7. Assets フォルダーに戻るようになりました。 次に、"AzureSpatialAnchorsPlugin"フォルダー、し、フォルダー、および最後に、scripts フォルダーに移動し、Azure 空間アンカー デモのラッパーをそのフォルダーにコピーします。 
-   
+7. 次に、Assets フォルダーに戻ります。 次に、"AzureSpatialAnchorsPlugin" フォルダーにアクセスし、[例] フォルダーをクリックし、最後に scripts フォルダーを選択して、Azure 空間アンカーデモラッパーをそのフォルダーにコピーします。 
 
 ![module2chapter3step8im](images/module2chapter3step7im.PNG)
 
-8. ファイルをアップロードすると、これでは、ASA_feedback 階層で、"feedbackpanel"テキストを選択することを確認し、"コンポーネントの追加 をクリックします。 検索し、選択することが表示されたら、アンカーのフィードバック スクリプトを追加します。 
-   
-   
+8. ファイルがアップロードされたので、ASA_feedback 階層で "フィードバックパネル" というテキストが選択されていることを確認し、[コンポーネントの追加] をクリックしてアンカーフィードバックスクリプトを検索し、表示されたらそれを選択して追加します。 
 
 ![module2chapter3step8im](images/module2chapter3step8im.PNG)
 
-9. 次の図に示すように、スクリプトの下に空のスロットに ASA_Feedback 階層から"feedbackPanel"テキスト オブジェクトをドラッグします。 
-   
+9. 次の図に示すように、ASA_Feedback 階層の "フィードバックパネル" テキストオブジェクトを、スクリプトの下の空のスロットにドラッグします。 
 
 ![module2chapter3step9im](images/module2chapter3step9im.PNG)
 
-   
-
 ## <a name="congratulations"></a>結論
 
-このレッスンでは、ユーザーをリアルタイムのフィードバックを提供するための Azure 空間アンカー エクスペリエンスの現在の状態を表示する UI パネルを作成する方法について説明しました。
+このレッスンでは、ユーザーにリアルタイムのフィードバックを提供するための Azure 空間アンカーエクスペリエンスの現在の状態を表示する UI パネルを作成する方法について学習しました。
 
 
