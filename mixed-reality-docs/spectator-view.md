@@ -6,12 +6,12 @@ ms.author: chriba
 ms.date: 02/11/2019
 ms.topic: article
 keywords: Spectator View、iPhone、iOS、iPad、OpenCV、カメラ、ARKit、HoloLens、Mixed Reality、MixedRealityToolkit、demo、record
-ms.openlocfilehash: 02088d7b218a25c72f2eb98ae24c85a90e6e5b86
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 135a566456f1000669d2033edcf0d0b4649ccdf3
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293606"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387669"
 ---
 # <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens および HoloLens 用 Spectator ビュー2
 
@@ -20,7 +20,7 @@ ms.locfileid: "68293606"
 ## <a name="overview"></a>概要
 
 HoloLens を装着すると、それを持っていない人は、可能な偉大なる象徴を体験することができなくなります。 Spectator View を使用すると、他のユーザーは、世界で HoloLens ユーザーに表示される2D 画面で見ることができます。
-Spectator View は、モバイルデバイスで HD のホログラムを記録するための、高速で手頃な価格のアプローチを提供します。 また、DSLR カメラを使用したホログラムの高品質記録も提供します。
+Spectator View は、モバイルデバイスで HD のホログラムを記録するための、高速で手頃な価格のアプローチを提供します。 また、ビデオカメラを使用したホログラムの高品質記録も提供します。
 
 ## <a name="key-resources"></a>主要リソース
 
@@ -28,7 +28,7 @@ Spectator View は、モバイルデバイスで HD のホログラムを記録�
 * [**構造**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Architecture.md)
 * [**Samples**](https://github.com/microsoft/MixedReality-SpectatorView/tree/master/samples)
 * [**モバイルセットアップの手順**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.md)
-* [**DSLR のセットアップ手順**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.DSLR.md)
+* [**ビデオカメラのセットアップ手順**](https://github.com/microsoft/MixedReality-SpectatorView/blob/master/doc/SpectatorView.Setup.VideoCamera.md)
 
 ## <a name="use-cases"></a>ユース ケース
 * IPhone または Android デバイスを使用して、mixed reality エクスペリエンスを記録できます。 フル HD で記録し、ホログラムと偶数の影にアンチエイリアシングを適用します。 これは、ホログラムのビデオをキャプチャする費用効果が高く、迅速な方法です。
@@ -48,15 +48,15 @@ Spectator View は、モバイルデバイスで HD のホログラムを記録�
 
 次の表は、Spectator ビューのさまざまな機能とその機能を示しています。 ビデオ記録のニーズに最適なオプションを選択します。
 
-|                                      | 携帯                  |                    DSLR カメラ              |
+|                                      | 携帯                  |                    ビデオカメラ              |
 |--------------------------------------|:-----------------------:|:-------------------------------------------:|
-| HD 品質                           |         フル HD         |        Professional quality 撮影 (DSLR による決定)      |
+| HD 品質                           |         フル HD         |        Professional quality 撮影 (ビデオカメラによって決定)      |
 | カメラの移動を簡単に                 |            ✔            |                      ✔                      |
 | 3人のユーザービュー                    |            ✔            |                      ✔                      |
 | 画面にストリームできます           |            ✔            |                      ✔                      |
 | 移植性があります。                             |            ✔            |                                             |
 | ワイヤレス                             |            ✔            |                                             |
-| 追加の必要なハードウェア         |     Android フォン、iPhone    | HoloLens + テストマシン + 三脚 + DSLR + PC + Unity |
+| 追加の必要なハードウェア         |     Android フォン、iPhone    | HoloLens + テストマシン + 三脚 + ビデオカメラ + PC + Unity |
 | ハードウェア投資                  |           Low            |                     高                    |
 | クロスプラットフォーム                       |           Android、iOS   |                                             |
 | 同期されたコンテンツ                 |            ✔            |                      ✔                      |
