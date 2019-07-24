@@ -1,305 +1,305 @@
 ---
-title: 様、Azure の 302 - Computer vision
-description: このコースでは、複合現実のアプリケーションで Azure の Computer Vision を使用して、指定されたイメージ内のビジュアルのコンテンツを認識する方法について説明します。
+title: MR と Azure 302-コンピュータービジョン
+description: このコースでは、混合現実アプリケーションで Azure Computer Vision を使用して、提供されたイメージ内のビジュアルコンテンツを認識する方法について説明します。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
-keywords: azure、mixed reality、academy、unity、チュートリアル、api、コンピューター ビジョン、没入型、hololens、vr
+keywords: azure, mixed reality, academy, unity, チュートリアル, api, コンピュータービジョン, hololens, イマーシブ, vr
 ms.openlocfilehash: 9d5288904dd6cae08a995ae40a31b00fea655776
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597891"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63552326"
 ---
 >[!NOTE]
-><span data-ttu-id="b82cb-104">Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b82cb-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="b82cb-105">そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="b82cb-106">これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="b82cb-107">サポートされているデバイスで作業を続行するが保持されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="b82cb-108">一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="b82cb-109">この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
+><span data-ttu-id="8a7c0-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="8a7c0-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="8a7c0-106">これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="8a7c0-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="8a7c0-108">今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="8a7c0-109">この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
 
 <br>
 
-# <a name="mr-and-azure-302-computer-vision"></a><span data-ttu-id="b82cb-110">MR と Azure 302:コンピューター ビジョン</span><span class="sxs-lookup"><span data-stu-id="b82cb-110">MR and Azure 302: Computer vision</span></span>
+# <a name="mr-and-azure-302-computer-vision"></a><span data-ttu-id="8a7c0-110">MR と Azure 302:コンピュータービジョン</span><span class="sxs-lookup"><span data-stu-id="8a7c0-110">MR and Azure 302: Computer vision</span></span>
 
-<span data-ttu-id="b82cb-111">このコースでは複合現実のアプリケーションで Azure の Computer Vision の機能を使用して、指定されたイメージ内のビジュアルのコンテンツを認識する方法についてはします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-111">In this course, you will learn how to recognize visual content within a provided image, using Azure Computer Vision capabilities in a mixed reality application.</span></span>
+<span data-ttu-id="8a7c0-111">このコースでは、混合現実アプリケーションで Azure Computer Vision 機能を使用して、提供されたイメージ内のビジュアルコンテンツを認識する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-111">In this course, you will learn how to recognize visual content within a provided image, using Azure Computer Vision capabilities in a mixed reality application.</span></span>
 
-<span data-ttu-id="b82cb-112">認識の結果がわかりやすいタグとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-112">Recognition results will be displayed as descriptive tags.</span></span> <span data-ttu-id="b82cb-113">このサービスは、機械学習モデルをトレーニングすることがなく使用できます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-113">You can use this service without needing to train a machine learning model.</span></span> <span data-ttu-id="b82cb-114">実装では、機械学習モデルをトレーニングする必要がある場合は、次を参照してください。 [MR と Azure 302b](mr-azure-302b.md)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-114">If your implementation requires training a machine learning model, see [MR and Azure 302b](mr-azure-302b.md).</span></span>
+<span data-ttu-id="8a7c0-112">認識結果は、説明的なタグとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-112">Recognition results will be displayed as descriptive tags.</span></span> <span data-ttu-id="8a7c0-113">このサービスは、機械学習モデルをトレーニングすることなく使用できます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-113">You can use this service without needing to train a machine learning model.</span></span> <span data-ttu-id="8a7c0-114">実装に機械学習モデルのトレーニングが必要な場合は、「 [MR」と「Azure 302b](mr-azure-302b.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-114">If your implementation requires training a machine learning model, see [MR and Azure 302b](mr-azure-302b.md).</span></span>
 
 ![ラボの結果](images/AzureLabs-Lab2-000.png)
 
-<span data-ttu-id="b82cb-116">Microsoft Computer Vision には、すべてクラウドから高度なアルゴリズムを使用してイメージ処理と (戻り値情報の場合) を使用した分析を開発者に提供するように設計 Api のセットです。</span><span class="sxs-lookup"><span data-stu-id="b82cb-116">The Microsoft Computer Vision is a set of APIs designed to provide developers with image processing and analysis (with return information), using advanced algorithms, all from the cloud.</span></span> <span data-ttu-id="b82cb-117">開発者は、イメージまたは画像の URL をアップロードし、Microsoft Computer Vision API アルゴリズムがビジュアルのコンテンツを分析し、情報を返すことができる、ユーザーを選択した入力に基づいて人の顔 (を検出を含む、型と、イメージの品質を識別します。それぞれの座標を返す)、およびタグ付け、または画像を分類します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-117">Developers upload an image or image URL, and the Microsoft Computer Vision API algorithms analyze the visual content, based upon inputs chosen the user, which then can return information, including, identifying the type and quality of an image, detect human faces (returning their coordinates), and tagging, or categorizing images.</span></span> <span data-ttu-id="b82cb-118">詳細については、次を参照してください。、 [Azure Computer Vision API ページ](https://azure.microsoft.com/services/cognitive-services/computer-vision/)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-118">For more information, visit the [Azure Computer Vision API page](https://azure.microsoft.com/services/cognitive-services/computer-vision/).</span></span>
+<span data-ttu-id="8a7c0-116">Microsoft Computer Vision は、開発者がクラウドから高度なアルゴリズムを使用して、イメージの処理と分析 (戻り情報を含む) を提供するように設計された Api のセットです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-116">The Microsoft Computer Vision is a set of APIs designed to provide developers with image processing and analysis (with return information), using advanced algorithms, all from the cloud.</span></span> <span data-ttu-id="8a7c0-117">開発者がイメージまたはイメージの URL をアップロードすると、Microsoft Computer Vision API アルゴリズムによって、ユーザーが選択した入力に基づいてビジュアルコンテンツが分析されます。これにより、イメージの種類と品質の特定、人間の顔の検出 (座標を返します)、タグ付け、またはイメージの分類を行います。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-117">Developers upload an image or image URL, and the Microsoft Computer Vision API algorithms analyze the visual content, based upon inputs chosen the user, which then can return information, including, identifying the type and quality of an image, detect human faces (returning their coordinates), and tagging, or categorizing images.</span></span> <span data-ttu-id="8a7c0-118">詳細については、 [Azure Computer Vision API のページ](https://azure.microsoft.com/services/cognitive-services/computer-vision/)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-118">For more information, visit the [Azure Computer Vision API page](https://azure.microsoft.com/services/cognitive-services/computer-vision/).</span></span>
 
-<span data-ttu-id="b82cb-119">このコースを完了すると、複合現実は、次のことが、HoloLens のアプリケーションが用意されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-119">Having completed this course, you will have a mixed reality HoloLens application, which will be able to do the following:</span></span>
+<span data-ttu-id="8a7c0-119">このコースを完了すると、mixed reality HoloLens アプリケーションが完成します。これにより、次のことができるようになります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-119">Having completed this course, you will have a mixed reality HoloLens application, which will be able to do the following:</span></span>
 
-1.  <span data-ttu-id="b82cb-120">タップ ジェスチャを使用して、HoloLens のカメラはイメージをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-120">Using the Tap gesture, the camera of the HoloLens will capture an image.</span></span>
-2.  <span data-ttu-id="b82cb-121">イメージは、Azure コンピューター ビジョンの API サービスに送信されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-121">The image will be sent to the Azure Computer Vision API Service.</span></span> 
-3.  <span data-ttu-id="b82cb-122">認識されるオブジェクトは、Unity シーンに配置されている単純な UI グループに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-122">The objects recognized will be listed in a simple UI group positioned in the Unity Scene.</span></span>
+1.  <span data-ttu-id="8a7c0-120">Tap ジェスチャを使用すると、HoloLens のカメラによってイメージがキャプチャされます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-120">Using the Tap gesture, the camera of the HoloLens will capture an image.</span></span>
+2.  <span data-ttu-id="8a7c0-121">イメージは、Azure Computer Vision API サービスに送信されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-121">The image will be sent to the Azure Computer Vision API Service.</span></span> 
+3.  <span data-ttu-id="8a7c0-122">認識されたオブジェクトは、Unity シーンに配置された単純な UI グループに一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-122">The objects recognized will be listed in a simple UI group positioned in the Unity Scene.</span></span>
 
-<span data-ttu-id="b82cb-123">アプリケーションでは、責任ですが、設計と、結果を統合する方法について。</span><span class="sxs-lookup"><span data-stu-id="b82cb-123">In your application, it is up to you as to how you will integrate the results with your design.</span></span> <span data-ttu-id="b82cb-124">このコースは、Unity プロジェクトで Azure サービスを統合する方法を説明する設計されています。</span><span class="sxs-lookup"><span data-stu-id="b82cb-124">This course is designed to teach you how to integrate an Azure Service with your Unity project.</span></span> <span data-ttu-id="b82cb-125">複合現実アプリを強化するためには、このコース得た知識を使用することがあります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-125">It is your job to use the knowledge you gain from this course to enhance your mixed reality application.</span></span>
+<span data-ttu-id="8a7c0-123">アプリケーションでは、結果をデザインと統合する方法については、お客様のニーズに合わせてください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-123">In your application, it is up to you as to how you will integrate the results with your design.</span></span> <span data-ttu-id="8a7c0-124">このコースは、Azure サービスを Unity プロジェクトと統合する方法を説明することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-124">This course is designed to teach you how to integrate an Azure Service with your Unity project.</span></span> <span data-ttu-id="8a7c0-125">このコースで得られた知識を使用して、mixed reality アプリケーションを強化することができます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-125">It is your job to use the knowledge you gain from this course to enhance your mixed reality application.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="b82cb-126">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="b82cb-126">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="8a7c0-126">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="8a7c0-126">Device support</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="b82cb-127">コース</span><span class="sxs-lookup"><span data-stu-id="b82cb-127">Course</span></span></th><th style="width:150px"> <span data-ttu-id="b82cb-128"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="b82cb-128"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="b82cb-129"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="b82cb-129"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+<th><span data-ttu-id="8a7c0-127">まで</span><span class="sxs-lookup"><span data-stu-id="8a7c0-127">Course</span></span></th><th style="width:150px"> <span data-ttu-id="8a7c0-128"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="8a7c0-128"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="8a7c0-129"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="8a7c0-129"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
 </tr><tr>
-<td> <span data-ttu-id="b82cb-130">MR と Azure 302:コンピューター ビジョン</span><span class="sxs-lookup"><span data-stu-id="b82cb-130">MR and Azure 302: Computer vision</span></span></td><td style="text-align: center;"> <span data-ttu-id="b82cb-131">✔️</span><span class="sxs-lookup"><span data-stu-id="b82cb-131">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="b82cb-132">✔️</span><span class="sxs-lookup"><span data-stu-id="b82cb-132">✔️</span></span></td>
+<td> <span data-ttu-id="8a7c0-130">MR と Azure 302:コンピュータービジョン</span><span class="sxs-lookup"><span data-stu-id="8a7c0-130">MR and Azure 302: Computer vision</span></span></td><td style="text-align: center;"> <span data-ttu-id="8a7c0-131">✔️</span><span class="sxs-lookup"><span data-stu-id="8a7c0-131">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="8a7c0-132">✔️</span><span class="sxs-lookup"><span data-stu-id="8a7c0-132">✔️</span></span></td>
 </tr>
 </table>
 
 > [!NOTE]
-> <span data-ttu-id="b82cb-133">このコースは、HoloLens で主にフォーカスします、Windows Mixed Reality 没入型 (VR) ヘッドセットには、このコースで学習する内容を適用することもできます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-133">While this course primarily focuses on HoloLens, you can also apply what you learn in this course to Windows Mixed Reality immersive (VR) headsets.</span></span> <span data-ttu-id="b82cb-134">(VR) のイマーシブ ヘッドセットはアクセス可能な cameras があるないため、外部のカメラを PC に接続されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-134">Because immersive (VR) headsets do not have accessible cameras, you will need an external camera connected to your PC.</span></span> <span data-ttu-id="b82cb-135">コースを実行するとき、没入型の (VR) ヘッドセットをサポートするために使用する必要があります変更でノートが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-135">As you follow along with the course, you will see notes on any changes you might need to employ to support immersive (VR) headsets.</span></span>
+> <span data-ttu-id="8a7c0-133">このコースでは主に HoloLens に焦点を当てていますが、このコースで学習する内容を Windows Mixed Reality イマーシブ (VR) ヘッドセットにも適用できます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-133">While this course primarily focuses on HoloLens, you can also apply what you learn in this course to Windows Mixed Reality immersive (VR) headsets.</span></span> <span data-ttu-id="8a7c0-134">イマーシブ (VR) ヘッドセットにはアクセス可能なカメラがないため、外部カメラが PC に接続されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-134">Because immersive (VR) headsets do not have accessible cameras, you will need an external camera connected to your PC.</span></span> <span data-ttu-id="8a7c0-135">コースを進めると、イマーシブ (VR) ヘッドセットをサポートするために必要な変更についての注意事項が表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-135">As you follow along with the course, you will see notes on any changes you might need to employ to support immersive (VR) headsets.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="b82cb-136">前提条件</span><span class="sxs-lookup"><span data-stu-id="b82cb-136">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="8a7c0-136">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="8a7c0-136">Prerequisites</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b82cb-137">このチュートリアルは、Unity を使用した基本的な経験がある開発者向けに設計およびC#します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-137">This tutorial is designed for developers who have basic experience with Unity and C#.</span></span> <span data-ttu-id="b82cb-138">また、前提条件やこのドキュメント内の書面の手順を表すテストおよび (2018 年 5 月) の書き込み時に検証されたがどのようなことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b82cb-138">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (May 2018).</span></span> <span data-ttu-id="b82cb-139">内に一覧表示するには自由に最新のソフトウェアを使用して、[ツールをインストールする](install-the-tools.md)ことについては、このコースでとまったく同じで見つかりますの下に記載されているものよりも新しいソフトウェアでどのようなことは仮定されませんが、記事.</span><span class="sxs-lookup"><span data-stu-id="b82cb-139">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you'll find in newer software than what's listed below.</span></span>
+> <span data-ttu-id="8a7c0-137">このチュートリアルは、Unity とC#の基本的な経験を持つ開発者向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-137">This tutorial is designed for developers who have basic experience with Unity and C#.</span></span> <span data-ttu-id="8a7c0-138">また、このドキュメントに記載されている前提条件と記述に記載されている手順は、作成時にテストおよび検証されたものを表します (2018 年5月)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-138">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (May 2018).</span></span> <span data-ttu-id="8a7c0-139">「[ツールのインストール](install-the-tools.md)」の記事に記載されているように、最新のソフトウェアを自由に使用できます。ただし、このコースの情報は、以下に記載されているものよりも新しいソフトウェアで見つかったものと完全に一致するとは限りません。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-139">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you'll find in newer software than what's listed below.</span></span>
 
-<span data-ttu-id="b82cb-140">次のハードウェアとソフトウェアこのコースをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-140">We recommend the following hardware and software for this course:</span></span>
+<span data-ttu-id="8a7c0-140">このコースでは、次のハードウェアとソフトウェアをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-140">We recommend the following hardware and software for this course:</span></span>
 
-- <span data-ttu-id="b82cb-141">開発用 PC、a [Windows Mixed Reality と互換性のある](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines)(VR) ヘッドセットの没入型の開発</span><span class="sxs-lookup"><span data-stu-id="b82cb-141">A development PC, [compatible with Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines) for immersive (VR) headset development</span></span>
-- [<span data-ttu-id="b82cb-142">Windows 10 Fall Creators Update (またはそれ以降) で開発者モードが有効になっています。</span><span class="sxs-lookup"><span data-stu-id="b82cb-142">Windows 10 Fall Creators Update (or later) with Developer mode enabled</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="b82cb-143">最新の Windows 10 SDK</span><span class="sxs-lookup"><span data-stu-id="b82cb-143">The latest Windows 10 SDK</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="b82cb-144">Unity 2017.4</span><span class="sxs-lookup"><span data-stu-id="b82cb-144">Unity 2017.4</span></span>](install-the-tools.md#installation-checklist)
-- [<span data-ttu-id="b82cb-145">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="b82cb-145">Visual Studio 2017</span></span>](install-the-tools.md#installation-checklist)
-- <span data-ttu-id="b82cb-146">A [Windows Mixed Reality 没入型 (VR) ヘッドセット](immersive-headset-hardware-details.md)または[Microsoft HoloLens](hololens-hardware-details.md)開発者モードが有効</span><span class="sxs-lookup"><span data-stu-id="b82cb-146">A [Windows Mixed Reality immersive (VR) headset](immersive-headset-hardware-details.md) or [Microsoft HoloLens](hololens-hardware-details.md) with Developer mode enabled</span></span>
-- <span data-ttu-id="b82cb-147">(イマーシブ ヘッドセット開発) は、PC に接続されているカメラ</span><span class="sxs-lookup"><span data-stu-id="b82cb-147">A camera connected to your PC (for immersive headset development)</span></span>
-- <span data-ttu-id="b82cb-148">Azure のセットアップおよび Computer Vision API 取得するためのインターネット アクセス</span><span class="sxs-lookup"><span data-stu-id="b82cb-148">Internet access for Azure setup and Computer Vision API retrieval</span></span>
+- <span data-ttu-id="8a7c0-141">開発用 PC で、 [Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines) (VR) ヘッドセット開発と互換性があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-141">A development PC, [compatible with Windows Mixed Reality](https://support.microsoft.com/help/4039260/windows-10-mixed-reality-pc-hardware-guidelines) for immersive (VR) headset development</span></span>
+- [<span data-ttu-id="8a7c0-142">開発者モードが有効になっている Windows 10 の作成者の更新プログラム (またはそれ以降)</span><span class="sxs-lookup"><span data-stu-id="8a7c0-142">Windows 10 Fall Creators Update (or later) with Developer mode enabled</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="8a7c0-143">最新の Windows 10 SDK</span><span class="sxs-lookup"><span data-stu-id="8a7c0-143">The latest Windows 10 SDK</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="8a7c0-144">Unity 2017.4</span><span class="sxs-lookup"><span data-stu-id="8a7c0-144">Unity 2017.4</span></span>](install-the-tools.md#installation-checklist)
+- [<span data-ttu-id="8a7c0-145">Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="8a7c0-145">Visual Studio 2017</span></span>](install-the-tools.md#installation-checklist)
+- <span data-ttu-id="8a7c0-146">[Windows Mixed Reality イマーシブ (VR) ヘッドセット](immersive-headset-hardware-details.md)または開発者モードを有効にした[Microsoft HoloLens](hololens-hardware-details.md)</span><span class="sxs-lookup"><span data-stu-id="8a7c0-146">A [Windows Mixed Reality immersive (VR) headset](immersive-headset-hardware-details.md) or [Microsoft HoloLens](hololens-hardware-details.md) with Developer mode enabled</span></span>
+- <span data-ttu-id="8a7c0-147">PC に接続されているカメラ (イマーシブヘッドセット開発用)</span><span class="sxs-lookup"><span data-stu-id="8a7c0-147">A camera connected to your PC (for immersive headset development)</span></span>
+- <span data-ttu-id="8a7c0-148">Azure のセットアップと Computer Vision API の取得のためのインターネットアクセス</span><span class="sxs-lookup"><span data-stu-id="8a7c0-148">Internet access for Azure setup and Computer Vision API retrieval</span></span>
 
-## <a name="before-you-start"></a><span data-ttu-id="b82cb-149">開始前の作業</span><span class="sxs-lookup"><span data-stu-id="b82cb-149">Before you start</span></span>
+## <a name="before-you-start"></a><span data-ttu-id="8a7c0-149">開始前の準備</span><span class="sxs-lookup"><span data-stu-id="8a7c0-149">Before you start</span></span>
 
-1.  <span data-ttu-id="b82cb-150">このプロジェクトのビルドの問題の発生を避けるため、強くお勧めのルートまたはルート近くフォルダーでこのチュートリアルで説明したようにプロジェクトを作成すること (長いフォルダー パスはビルド時に問題を発生できます)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-150">To avoid encountering issues building this project, it is strongly suggested that you create the project mentioned in this tutorial in a root or near-root folder (long folder paths can cause issues at build-time).</span></span>
-2.  <span data-ttu-id="b82cb-151">設定して、HoloLens をテストします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-151">Set up and test your HoloLens.</span></span> <span data-ttu-id="b82cb-152">場合は、HoloLens の設定をサポートする必要がある[HoloLens のセットアップ記事を参照してください。 確認](https://docs.microsoft.com/hololens/hololens-setup)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-152">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span> 
-3.  <span data-ttu-id="b82cb-153">(場合によって役立ちますユーザーごとにこれらのタスクを実行する) 新しい HoloLens アプリの開発を始めるときに、調整とセンサーのチューニングを実行することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-153">It is a good idea to perform Calibration and Sensor Tuning when beginning developing a new HoloLens App (sometimes it can help to perform those tasks for each user).</span></span> 
+1.  <span data-ttu-id="8a7c0-150">このプロジェクトのビルドで問題が発生しないように、このチュートリアルで説明されているプロジェクトをルートまたはほぼルートフォルダーに作成することを強くお勧めします (長いフォルダーパスはビルド時に問題を引き起こす可能性があります)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-150">To avoid encountering issues building this project, it is strongly suggested that you create the project mentioned in this tutorial in a root or near-root folder (long folder paths can cause issues at build-time).</span></span>
+2.  <span data-ttu-id="8a7c0-151">HoloLens をセットアップしてテストします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-151">Set up and test your HoloLens.</span></span> <span data-ttu-id="8a7c0-152">HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-152">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span> 
+3.  <span data-ttu-id="8a7c0-153">新しい HoloLens アプリの開発を開始するときは、調整とセンサーのチューニングを実行することをお勧めします (ユーザーごとにこれらのタスクを実行するのに役立つ場合があります)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-153">It is a good idea to perform Calibration and Sensor Tuning when beginning developing a new HoloLens App (sometimes it can help to perform those tasks for each user).</span></span> 
 
-<span data-ttu-id="b82cb-154">調整に関するヘルプを参照するに従ってくださいこの[HoloLens 調整記事へのリンク](calibration.md#hololens)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-154">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens).</span></span>
+<span data-ttu-id="8a7c0-154">調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens)参照してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-154">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens).</span></span>
 
-<span data-ttu-id="b82cb-155">センサーの調整に関する詳細についてに従ってくださいこの[HoloLens センサー チューニング記事へのリンク](sensor-tuning.md)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-155">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
+<span data-ttu-id="8a7c0-155">センサーチューニングの詳細については、 [HoloLens センサーチューニングに関する記事へのリンクを](sensor-tuning.md)参照してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-155">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
 
-## <a name="chapter-1--the-azure-portal"></a><span data-ttu-id="b82cb-156">第 1 章 – Azure Portal</span><span class="sxs-lookup"><span data-stu-id="b82cb-156">Chapter 1 – The Azure Portal</span></span>
+## <a name="chapter-1--the-azure-portal"></a><span data-ttu-id="8a7c0-156">章 1-Azure Portal</span><span class="sxs-lookup"><span data-stu-id="8a7c0-156">Chapter 1 – The Azure Portal</span></span>
 
-<span data-ttu-id="b82cb-157">使用する、 *Computer Vision API*サービス、Azure でアプリケーションに使用可能にするサービスのインスタンスを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-157">To use the *Computer Vision API* service in Azure, you will need to configure an instance of the service to be made available to your application.</span></span>
+<span data-ttu-id="8a7c0-157">Azure で*Computer Vision API*サービスを使用するには、アプリケーションで使用できるようにサービスのインスタンスを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-157">To use the *Computer Vision API* service in Azure, you will need to configure an instance of the service to be made available to your application.</span></span>
 
-1.  <span data-ttu-id="b82cb-158">最初に、ログイン、 [Azure Portal](https://portal.azure.com)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-158">First, log in to the [Azure Portal](https://portal.azure.com).</span></span> 
-
-    > [!NOTE]
-    > <span data-ttu-id="b82cb-159">Azure アカウントがいない場合は、1 つを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-159">If you do not already have an Azure account, you will need to create one.</span></span> <span data-ttu-id="b82cb-160">クラスルームまたはラボのような状況では、このチュートリアルをフォローしている場合は、講師または新しいアカウントのセットアップについて proctors のいずれかにお問い合わせください。</span><span class="sxs-lookup"><span data-stu-id="b82cb-160">If you are following this tutorial in a classroom or lab situation, ask your instructor or one of the proctors for help setting up your new account.</span></span>
-
-2.  <span data-ttu-id="b82cb-161">ログインした後は、をクリックして**新規**左上隅にある検索して*Computer Vision API*、 をクリック**Enter**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-161">Once you are logged in, click on **New** in the top left corner, and search for *Computer Vision API*, and click **Enter**.</span></span>
-
-    ![Azure で新しいリソースを作成します。](images/AzureLabs-Lab2-00.png)
+1.  <span data-ttu-id="8a7c0-158">まず、 [Azure Portal](https://portal.azure.com)にログインします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-158">First, log in to the [Azure Portal](https://portal.azure.com).</span></span> 
 
     > [!NOTE]
-    > <span data-ttu-id="b82cb-163">単語**新規**に置き換えられました**リソースの作成**、新しいポータルでします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-163">The word **New** may have been replaced with **Create a resource**, in newer portals.</span></span>
+    > <span data-ttu-id="8a7c0-159">まだ Azure アカウントを持っていない場合は、アカウントを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-159">If you do not already have an Azure account, you will need to create one.</span></span> <span data-ttu-id="8a7c0-160">このチュートリアルを教室またはラボの状況で行っている場合は、新しいアカウントの設定について、インストラクターまたはそのいずれかの対処を依頼してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-160">If you are following this tutorial in a classroom or lab situation, ask your instructor or one of the proctors for help setting up your new account.</span></span>
+
+2.  <span data-ttu-id="8a7c0-161">ログインしたら、左上隅にある **[新規]** をクリックし、 *Computer Vision API*を検索して、 **Enter キー**を押します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-161">Once you are logged in, click on **New** in the top left corner, and search for *Computer Vision API*, and click **Enter**.</span></span>
+
+    ![Azure での新しいリソースの作成](images/AzureLabs-Lab2-00.png)
+
+    > [!NOTE]
+    > <span data-ttu-id="8a7c0-163">新しいポータルで、 **New**という単語が**リソースの作成**に置き換えられました。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-163">The word **New** may have been replaced with **Create a resource**, in newer portals.</span></span>
  
-3.  <span data-ttu-id="b82cb-164">新しいページがの説明を入力、 *Computer Vision API*サービス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-164">The new page will provide a description of the *Computer Vision API* service.</span></span> <span data-ttu-id="b82cb-165">このページの左下にある at、**作成**ボタンは、このサービスとの関連付けを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-165">At the bottom left of this page, select the **Create** button, to create an association with this service.</span></span>
+3.  <span data-ttu-id="8a7c0-164">新しいページには、 *Computer Vision API*サービスの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-164">The new page will provide a description of the *Computer Vision API* service.</span></span> <span data-ttu-id="8a7c0-165">このページの左下にある **[作成]** ボタンを選択して、このサービスとの関連付けを作成します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-165">At the bottom left of this page, select the **Create** button, to create an association with this service.</span></span>
 
-    ![コンピューター ビジョンの api サービスについて](images/AzureLabs-Lab2-01.png)
+    ![コンピュータービジョン api サービスについて](images/AzureLabs-Lab2-01.png)
  
-4.  <span data-ttu-id="b82cb-167">クリックすると**作成**:</span><span class="sxs-lookup"><span data-stu-id="b82cb-167">Once you have clicked on **Create**:</span></span>
+4.  <span data-ttu-id="8a7c0-167">**作成**:</span><span class="sxs-lookup"><span data-stu-id="8a7c0-167">Once you have clicked on **Create**:</span></span>
 
-    1. <span data-ttu-id="b82cb-168">必要な挿入**名前**このサービス インスタンス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-168">Insert your desired **Name** for this service instance.</span></span>
-    2. <span data-ttu-id="b82cb-169">選択、**サブスクリプション**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-169">Select a **Subscription**.</span></span>
-    3. <span data-ttu-id="b82cb-170">選択、**価格レベル**場合、これは、最初に、適切な時間を作成する、 *Computer Vision API*サービス、(F0 という名前)、free レベルを使用可能にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-170">Select the **Pricing Tier** appropriate for you, if this is the first time creating a *Computer Vision API* Service, a free tier (named F0) should be available to you.</span></span>
-    4. <span data-ttu-id="b82cb-171">選択、**リソース グループ**か新規に作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-171">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="b82cb-172">リソース グループは、監視、プロビジョニングのアクセスを制御および Azure の資産のコレクションの課金を管理する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-172">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="b82cb-173">勧めします (例: これらのラボ) など一般的なリソース グループの下の 1 つのプロジェクトに関連付けられているすべての Azure サービスを保持する)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-173">It is recommended to keep all the Azure services associated with a single project (e.g. such as these labs) under a common resource group).</span></span> 
+    1. <span data-ttu-id="8a7c0-168">このサービスインスタンスに必要な**名前**を挿入します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-168">Insert your desired **Name** for this service instance.</span></span>
+    2. <span data-ttu-id="8a7c0-169">**サブスクリプション**を選択します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-169">Select a **Subscription**.</span></span>
+    3. <span data-ttu-id="8a7c0-170">適切な**価格レベル**を選択します。これが*Computer Vision API*サービスを初めて作成する場合は、free レベル (F0) を使用できます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-170">Select the **Pricing Tier** appropriate for you, if this is the first time creating a *Computer Vision API* Service, a free tier (named F0) should be available to you.</span></span>
+    4. <span data-ttu-id="8a7c0-171">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-171">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="8a7c0-172">リソースグループは、Azure 資産のコレクションの課金を監視、制御する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-172">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="8a7c0-173">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのラボなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-173">It is recommended to keep all the Azure services associated with a single project (e.g. such as these labs) under a common resource group).</span></span> 
 
-        > <span data-ttu-id="b82cb-174">詳細にする場合、Azure リソース グループについてのご[リソース グループの記事を参照してください。](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-174">If you wish to read more about Azure Resource Groups, please [visit the resource group article](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
+        > <span data-ttu-id="8a7c0-174">Azure リソースグループの詳細については、[リソースグループ](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)に関する記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-174">If you wish to read more about Azure Resource Groups, please [visit the resource group article](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
 
-    5. <span data-ttu-id="b82cb-175">(新しいリソース グループを作成する) 場合は、リソース グループの場所を決定します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-175">Determine the Location for your resource group (if you are creating a new Resource Group).</span></span> <span data-ttu-id="b82cb-176">場所は、アプリケーションが実行リージョンにあるが理想的です。</span><span class="sxs-lookup"><span data-stu-id="b82cb-176">The location would ideally be in the region where the application would run.</span></span> <span data-ttu-id="b82cb-177">一部の Azure 資産は特定のリージョンでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-177">Some Azure assets are only available in certain regions.</span></span>
+    5. <span data-ttu-id="8a7c0-175">リソースグループの場所を決定します (新しいリソースグループを作成している場合)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-175">Determine the Location for your resource group (if you are creating a new Resource Group).</span></span> <span data-ttu-id="8a7c0-176">この場所は、アプリケーションを実行するリージョンに配置するのが理想的です。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-176">The location would ideally be in the region where the application would run.</span></span> <span data-ttu-id="8a7c0-177">一部の Azure 資産は、特定のリージョンでのみ利用できます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-177">Some Azure assets are only available in certain regions.</span></span>
 
-    6. <span data-ttu-id="b82cb-178">また、このサービスに適用される条件を理解したことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-178">You will also need to confirm that you have understood the Terms and Conditions applied to this Service.</span></span>
-    7. <span data-ttu-id="b82cb-179">[作成] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-179">Click Create.</span></span>
+    6. <span data-ttu-id="8a7c0-178">また、このサービスに適用されている使用条件を理解していることを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-178">You will also need to confirm that you have understood the Terms and Conditions applied to this Service.</span></span>
+    7. <span data-ttu-id="8a7c0-179">[作成] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-179">Click Create.</span></span>
 
-        ![サービスの作成情報](images/AzureLabs-Lab2-02.png)
+        ![サービスの作成に関する情報](images/AzureLabs-Lab2-02.png)
 
-5.  <span data-ttu-id="b82cb-181">クリックすると**作成**サービスを作成するを待機する必要があります、これは少し時間がかかる場合があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-181">Once you have clicked on **Create**, you will have to wait for the service to be created, this might take a minute.</span></span>
-6.  <span data-ttu-id="b82cb-182">通知は、サービス インスタンスが作成されたら、ポータルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-182">A notification will appear in the portal once the Service instance is created.</span></span>
+5.  <span data-ttu-id="8a7c0-181">**[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-181">Once you have clicked on **Create**, you will have to wait for the service to be created, this might take a minute.</span></span>
+6.  <span data-ttu-id="8a7c0-182">サービスインスタンスが作成されると、ポータルに通知が表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-182">A notification will appear in the portal once the Service instance is created.</span></span>
 
-    ![新しいサービスの新しい通知を参照してください。](images/AzureLabs-Lab2-03.png) 
+    ![新しいサービスの新しい通知を確認する](images/AzureLabs-Lab2-03.png) 
  
-7.  <span data-ttu-id="b82cb-184">新しいサービス インスタンスを探索する通知をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-184">Click on the notification to explore your new Service instance.</span></span> 
+7.  <span data-ttu-id="8a7c0-184">通知をクリックして、新しいサービスインスタンスを探索します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-184">Click on the notification to explore your new Service instance.</span></span> 
 
-    ![リソースに移動 ボタンを選択します。](images/AzureLabs-Lab2-04.png)
+    ![[リソースへの移行] ボタンを選択します。](images/AzureLabs-Lab2-04.png)
  
-8. <span data-ttu-id="b82cb-186">をクリックして、**リソースに移動**通知では、新しいサービス インスタンスを表示するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-186">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> <span data-ttu-id="b82cb-187">新しい Computer Vision API サービスのインスタンスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-187">You will be taken to your new Computer Vision API service instance.</span></span> 
+8. <span data-ttu-id="8a7c0-186">通知の **[リソースへのジャンプ]** ボタンをクリックして、新しいサービスインスタンスを探索します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-186">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> <span data-ttu-id="8a7c0-187">新しい Computer Vision API サービスインスタンスが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-187">You will be taken to your new Computer Vision API service instance.</span></span> 
 
-    ![Computer Vision API の新しいサービス](images/AzureLabs-Lab2-05.png)
+    ![新しい Computer Vision API サービス](images/AzureLabs-Lab2-05.png)
  
-9.  <span data-ttu-id="b82cb-189">このチュートリアルでは、内でアプリケーションがサービスのサブスクリプション キーを使用して、これは、サービスへの呼び出しを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-189">Within this tutorial, your application will need to make calls to your service, which is done through using your service’s Subscription Key.</span></span>
-10. <span data-ttu-id="b82cb-190">*クイック スタート* ページの*Computer Vision API*サービスは、最初のステップに移動し、*キーを取得する*、 をクリック**キー** (これを行うキー アイコンによって示される、サービスのナビゲーション メニューにある青いハイパーリンク キーをクリックして)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-190">From the *Quick start* page, of your *Computer Vision API* service, navigate to the first step, *Grab your keys*, and click **Keys** (you can also achieve this by clicking the blue hyperlink Keys, located in the services navigation menu, denoted by the key icon).</span></span> <span data-ttu-id="b82cb-191">これが明らかに、サービス*キー*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-191">This will reveal your service *Keys*.</span></span>
-11. <span data-ttu-id="b82cb-192">このプロジェクトの後半で必要になるため、表示されているキーの 1 つのコピーを実行します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-192">Take a copy of one of the displayed keys, as you will need this later in your project.</span></span> 
+9.  <span data-ttu-id="8a7c0-189">このチュートリアルでは、アプリケーションがサービスの呼び出しを行う必要があります。サービスは、サービスのサブスクリプションキーを使用して実行されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-189">Within this tutorial, your application will need to make calls to your service, which is done through using your service’s Subscription Key.</span></span>
+10. <span data-ttu-id="8a7c0-190">*Computer Vision API*サービスの [*クイックスタート*] ページで、最初の手順に移動し、*キーをつかん*で、 **[キー]** をクリックします (これは、[サービス] ナビゲーションメニューにある青いハイパーリンクキーをクリックして行うこともできます。キーアイコンで示されます)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-190">From the *Quick start* page, of your *Computer Vision API* service, navigate to the first step, *Grab your keys*, and click **Keys** (you can also achieve this by clicking the blue hyperlink Keys, located in the services navigation menu, denoted by the key icon).</span></span> <span data-ttu-id="8a7c0-191">これにより、サービス*キー*が表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-191">This will reveal your service *Keys*.</span></span>
+11. <span data-ttu-id="8a7c0-192">表示されているキーの1つをコピーします。これは、プロジェクトの後半で必要になります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-192">Take a copy of one of the displayed keys, as you will need this later in your project.</span></span> 
 
-12. <span data-ttu-id="b82cb-193">戻り、*クイック スタート*ページ、およびそこから、エンドポイントを取得します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-193">Go back to the *Quick start* page, and from there, fetch your endpoint.</span></span> <span data-ttu-id="b82cb-194">自分、お住まいの地域に応じて異なる可能性がありますに注意してください (これは、後で、コードに、変更を行う必要があります)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-194">Be aware yours may be different, depending on your region (which if it is, you will need to make a change to your code later).</span></span> <span data-ttu-id="b82cb-195">後で使用するには、このエンドポイントのコピーを作成するには。</span><span class="sxs-lookup"><span data-stu-id="b82cb-195">Take a copy of this endpoint for use later:</span></span>
+12. <span data-ttu-id="8a7c0-193">[*クイックスタート*] ページに戻り、そこからエンドポイントを取得します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-193">Go back to the *Quick start* page, and from there, fetch your endpoint.</span></span> <span data-ttu-id="8a7c0-194">お客様の地域によっては異なる場合があることに注意してください (その場合は、後でコードを変更する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-194">Be aware yours may be different, depending on your region (which if it is, you will need to make a change to your code later).</span></span> <span data-ttu-id="8a7c0-195">後で使用するために、このエンドポイントのコピーを取得します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-195">Take a copy of this endpoint for use later:</span></span>
 
-    ![Computer Vision API の新しいサービス](images/AzureLabs-Lab2-05-5.png)
+    ![新しい Computer Vision API サービス](images/AzureLabs-Lab2-05-5.png)
 
     > [!TIP]
-    > <span data-ttu-id="b82cb-197">さまざまなエンドポイントをチェックする[ここ](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-197">You can check what the various endpoints are [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span> 
+    > <span data-ttu-id="8a7c0-197">[ここで](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)は、さまざまなエンドポイントを確認できます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-197">You can check what the various endpoints are [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span> 
 
-## <a name="chapter-2--set-up-the-unity-project"></a><span data-ttu-id="b82cb-198">第 2 章 – Unity プロジェクトの設定</span><span class="sxs-lookup"><span data-stu-id="b82cb-198">Chapter 2 – Set up the Unity project</span></span>
+## <a name="chapter-2--set-up-the-unity-project"></a><span data-ttu-id="8a7c0-198">第2章: Unity プロジェクトを設定する</span><span class="sxs-lookup"><span data-stu-id="8a7c0-198">Chapter 2 – Set up the Unity project</span></span>
 
-<span data-ttu-id="b82cb-199">次のコード例が複合現実での開発の一般的な設定して、そのため、他のプロジェクトの適切なテンプレートには。</span><span class="sxs-lookup"><span data-stu-id="b82cb-199">The following is a typical set up for developing with mixed reality, and as such, is a good template for other projects.</span></span>
+<span data-ttu-id="8a7c0-199">次に示すのは、mixed reality で開発するための一般的な設定です。そのため、他のプロジェクトに適したテンプレートです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-199">The following is a typical set up for developing with mixed reality, and as such, is a good template for other projects.</span></span>
 
-1.  <span data-ttu-id="b82cb-200">開いている*Unity*クリック**新規**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-200">Open *Unity* and click **New**.</span></span> 
+1.  <span data-ttu-id="8a7c0-200">*Unity*を開き、 **[新規]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-200">Open *Unity* and click **New**.</span></span> 
 
     ![新しい Unity プロジェクトを開始します。](images/AzureLabs-Lab2-06.png)
 
-2.  <span data-ttu-id="b82cb-202">これで、Unity プロジェクト名を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-202">You will now need to provide a Unity Project name.</span></span> <span data-ttu-id="b82cb-203">挿入**MR_ComputerVision**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-203">Insert **MR_ComputerVision**.</span></span> <span data-ttu-id="b82cb-204">必ず、プロジェクトの種類に設定されて**3D**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-204">Make sure the project type is set to **3D**.</span></span> <span data-ttu-id="b82cb-205">設定、**場所**に該当する別の場所 (ただし、ルート ディレクトリに近づけるためのより良い)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-205">Set the **Location** to somewhere appropriate for you (remember, closer to root directories is better).</span></span> <span data-ttu-id="b82cb-206">をクリックし、**プロジェクトの作成**です。</span><span class="sxs-lookup"><span data-stu-id="b82cb-206">Then, click **Create project**.</span></span>
+2.  <span data-ttu-id="8a7c0-202">ここで、Unity プロジェクト名を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-202">You will now need to provide a Unity Project name.</span></span> <span data-ttu-id="8a7c0-203">**MR_ComputerVision**を挿入します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-203">Insert **MR_ComputerVision**.</span></span> <span data-ttu-id="8a7c0-204">プロジェクトの種類が**3d**に設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-204">Make sure the project type is set to **3D**.</span></span> <span data-ttu-id="8a7c0-205">場所を適切な**場所**に設定します (ルートディレクトリの方が適していることに注意してください)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-205">Set the **Location** to somewhere appropriate for you (remember, closer to root directories is better).</span></span> <span data-ttu-id="8a7c0-206">次に、 **[プロジェクトの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-206">Then, click **Create project**.</span></span>
 
-    ![新しい Unity プロジェクトの詳細を提供します。](images/AzureLabs-Lab2-07.png)
+    ![新しい Unity プロジェクトの詳細を指定します。](images/AzureLabs-Lab2-07.png)
 
-3.  <span data-ttu-id="b82cb-208">既定値を確認する必要が開いている Unity、**スクリプト エディター**に設定されている**Visual Studio**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-208">With Unity open, it is worth checking the default **Script Editor** is set to **Visual Studio**.</span></span> <span data-ttu-id="b82cb-209">移動して**編集 > 設定**し、新しいウィンドウに移動**外部ツール**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-209">Go to **Edit > Preferences** and then from the new window, navigate to **External Tools**.</span></span> <span data-ttu-id="b82cb-210">変更**External Script Editor**に**Visual Studio 2017**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-210">Change **External Script Editor** to **Visual Studio 2017**.</span></span> <span data-ttu-id="b82cb-211">閉じる、**設定**ウィンドウ。</span><span class="sxs-lookup"><span data-stu-id="b82cb-211">Close the **Preferences** window.</span></span>
+3.  <span data-ttu-id="8a7c0-208">既定値を確認する必要が開いている Unity、 **スクリプト エディター** に設定されている **Visual Studio** します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-208">With Unity open, it is worth checking the default **Script Editor** is set to **Visual Studio**.</span></span> <span data-ttu-id="8a7c0-209">**[> の設定の編集]** に移動し、新しいウィンドウで **[外部ツール]** に移動します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-209">Go to **Edit > Preferences** and then from the new window, navigate to **External Tools**.</span></span> <span data-ttu-id="8a7c0-210">変更 **External Script Editor** に **Visual Studio 2017** します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-210">Change **External Script Editor** to **Visual Studio 2017**.</span></span> <span data-ttu-id="8a7c0-211">**[基本設定]** ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-211">Close the **Preferences** window.</span></span>
 
-    ![スクリプト エディターの基本設定を更新します。](images/AzureLabs-Lab2-08.png)
+    ![スクリプトエディターの設定を更新します。](images/AzureLabs-Lab2-08.png)
 
-4.  <span data-ttu-id="b82cb-213">次に移動**ファイル > Build Settings**を選択し、**ユニバーサル Windows プラットフォーム**、をクリックして、**スイッチ プラットフォーム**選択内容を適用するボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-213">Next, go to **File > Build Settings** and select **Universal Windows Platform**, then click on the **Switch Platform** button to apply your selection.</span></span>
+4.  <span data-ttu-id="8a7c0-213">次に、 **[ファイル > ビルド設定]** に移動し、 **[ユニバーサル Windows プラットフォーム]** を選択します。次に、 **[プラットフォームの切り替え]** ボタンをクリックして選択内容を適用します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-213">Next, go to **File > Build Settings** and select **Universal Windows Platform**, then click on the **Switch Platform** button to apply your selection.</span></span>
 
-    ![[設定] ウィンドウ切り替え UWP プラットフォームをビルドします。](images/AzureLabs-Lab2-10.png)
+    ![[ビルドの設定] ウィンドウで、[プラットフォーム] を [UWP] に切り替えます。](images/AzureLabs-Lab2-10.png)
 
-5.  <span data-ttu-id="b82cb-215">**ファイル > Build Settings**ことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="b82cb-215">While still in **File > Build Settings** and make sure that:</span></span>
+5.  <span data-ttu-id="8a7c0-215">それでも**ファイル > ビルド設定**を行い、次のことを確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-215">While still in **File > Build Settings** and make sure that:</span></span>
 
-    1. <span data-ttu-id="b82cb-216">**デバイスを対象に**に設定されている**HoloLens**</span><span class="sxs-lookup"><span data-stu-id="b82cb-216">**Target Device** is set to **HoloLens**</span></span>
+    1. <span data-ttu-id="8a7c0-216">**ターゲットデバイス**が**HoloLens**に設定されています</span><span class="sxs-lookup"><span data-stu-id="8a7c0-216">**Target Device** is set to **HoloLens**</span></span>
 
-        > <span data-ttu-id="b82cb-217">イマーシブ ヘッドセット、設定**ターゲット デバイス**に*任意のデバイス*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-217">For the immersive headsets, set **Target Device** to *Any Device*.</span></span>
+        > <span data-ttu-id="8a7c0-217">イマーシブヘッドセットの場合は、**ターゲットデバイス**を*任意のデバイス*に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-217">For the immersive headsets, set **Target Device** to *Any Device*.</span></span>
 
-    2. <span data-ttu-id="b82cb-218">**ビルドの種類**に設定されている**D3D**</span><span class="sxs-lookup"><span data-stu-id="b82cb-218">**Build Type** is set to **D3D**</span></span>
-    3. <span data-ttu-id="b82cb-219">**SDK**に設定されている**インストールされている最新**</span><span class="sxs-lookup"><span data-stu-id="b82cb-219">**SDK** is set to **Latest installed**</span></span>
-    4. <span data-ttu-id="b82cb-220">**Visual Studio バージョン**に設定されている**インストールされている最新**</span><span class="sxs-lookup"><span data-stu-id="b82cb-220">**Visual Studio Version** is set to **Latest installed**</span></span>
-    5. <span data-ttu-id="b82cb-221">**ビルドおよび実行**に設定されている**ローカル マシン**</span><span class="sxs-lookup"><span data-stu-id="b82cb-221">**Build and Run** is set to **Local Machine**</span></span>
-    6. <span data-ttu-id="b82cb-222">シーンを保存し、ビルドに追加します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-222">Save the scene and add it to the build.</span></span>
+    2. <span data-ttu-id="8a7c0-218">**ビルドの種類**が**D3D**に設定されています</span><span class="sxs-lookup"><span data-stu-id="8a7c0-218">**Build Type** is set to **D3D**</span></span>
+    3. <span data-ttu-id="8a7c0-219">**SDK**は最新の**インストール**に設定されています</span><span class="sxs-lookup"><span data-stu-id="8a7c0-219">**SDK** is set to **Latest installed**</span></span>
+    4. <span data-ttu-id="8a7c0-220">**Visual Studio のバージョン**が、**インストールされている最新**バージョンに設定されています</span><span class="sxs-lookup"><span data-stu-id="8a7c0-220">**Visual Studio Version** is set to **Latest installed**</span></span>
+    5. <span data-ttu-id="8a7c0-221">**ビルドと実行**は**ローカルコンピューター**に設定されています</span><span class="sxs-lookup"><span data-stu-id="8a7c0-221">**Build and Run** is set to **Local Machine**</span></span>
+    6. <span data-ttu-id="8a7c0-222">シーンを保存し、ビルドに追加します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-222">Save the scene and add it to the build.</span></span>
 
-        1. <span data-ttu-id="b82cb-223">これには、選択**開くシーンを追加**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-223">Do this by selecting **Add Open Scenes**.</span></span> <span data-ttu-id="b82cb-224">保存ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-224">A save window will appear.</span></span>
+        1. <span data-ttu-id="8a7c0-223">これを行うには、[開いている**シーンの追加**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-223">Do this by selecting **Add Open Scenes**.</span></span> <span data-ttu-id="8a7c0-224">保存ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-224">A save window will appear.</span></span>
         
-            ![開いているシーン ボタンの追加 をクリック](images/AzureLabs-Lab2-11.png)
+            ![[開いているシーンを追加] ボタンをクリックする](images/AzureLabs-Lab2-11.png)
 
-        2. <span data-ttu-id="b82cb-226">新しいフォルダーを作成と、任意の将来、シーン、し、選択、**新しいフォルダー**ボタンは、新しいフォルダーを作成する名前を付けます**シーン**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-226">Create a new folder for this, and any future, scene, then select the **New folder** button, to create a new folder, name it **Scenes**.</span></span>
+        2. <span data-ttu-id="8a7c0-226">この新しいフォルダーを作成し、今後のシーンに加えて、 **[新しいフォルダー]** ボタンを選択します。新しいフォルダーを作成するには、名前を「**シーン**」にします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-226">Create a new folder for this, and any future, scene, then select the **New folder** button, to create a new folder, name it **Scenes**.</span></span>
 
-            ![新しいスクリプト フォルダーを作成します。](images/AzureLabs-Lab2-12.png)
+            ![新しいスクリプトフォルダーの作成](images/AzureLabs-Lab2-12.png)
 
-        3. <span data-ttu-id="b82cb-228">新たに作成した開く**シーン**フォルダー、し、*ファイル名*: テキスト フィールドに「 **MR_ComputerVisionScene**、順にクリックします**保存**.</span><span class="sxs-lookup"><span data-stu-id="b82cb-228">Open your newly created **Scenes** folder, and then in the *File name*: text field, type **MR_ComputerVisionScene**, then click **Save**.</span></span>
+        3. <span data-ttu-id="8a7c0-228">新しく作成した **[シーン]** フォルダーを開き、[*ファイル名*: テキスト] フィールドに「 **MR_ComputerVisionScene**」と入力し、 **[保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-228">Open your newly created **Scenes** folder, and then in the *File name*: text field, type **MR_ComputerVisionScene**, then click **Save**.</span></span>
 
-            ![シーンの新しい名前を付けます。](images/AzureLabs-Lab2-13.png)
+            ![新しいシーンに名前を付けます。](images/AzureLabs-Lab2-13.png)
 
-            > <span data-ttu-id="b82cb-230">注意してください、内の Unity シーンを保存する必要があります、*資産*フォルダー、Unity プロジェクトに関連付けられている必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-230">Be aware, you must save your Unity scenes within the *Assets* folder, as they must be associated with the Unity Project.</span></span> <span data-ttu-id="b82cb-231">Unity プロジェクトの構造の一般的な方法は、シーン フォルダー (およびその他の同様のフォルダー) を作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-231">Creating the scenes folder (and other similar folders) is a typical way of structuring a Unity project.</span></span>
+            > <span data-ttu-id="8a7c0-230">Unity プロジェクトに関連付けられている必要があるため、Unity のシーンを*Assets*フォルダー内に保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-230">Be aware, you must save your Unity scenes within the *Assets* folder, as they must be associated with the Unity Project.</span></span> <span data-ttu-id="8a7c0-231">Unity プロジェクトを構成する一般的な方法は、シーンフォルダー (およびその他の同様のフォルダー) を作成することです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-231">Creating the scenes folder (and other similar folders) is a typical way of structuring a Unity project.</span></span>
 
-    7. <span data-ttu-id="b82cb-232">設定に残っている*Build Settings*、ここでは既定値として残しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-232">The remaining settings, in *Build Settings*, should be left as default for now.</span></span>
+    7. <span data-ttu-id="8a7c0-232">それ以外の設定は、[*ビルド設定*] の [既定] のままにしておきます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-232">The remaining settings, in *Build Settings*, should be left as default for now.</span></span>
 
-6. <span data-ttu-id="b82cb-233">*Build Settings*ウィンドウの**プレーヤー設定**ボタン、領域に関連するパネルが開き、*インスペクター*が配置されています。</span><span class="sxs-lookup"><span data-stu-id="b82cb-233">In the *Build Settings* window, click on the **Player Settings** button, this will open the related panel in the space where the *Inspector* is located.</span></span> 
+6. <span data-ttu-id="8a7c0-233">[*ビルドの設定*] ウィンドウで、 **[プレーヤーの設定]** ボタンをクリックします。これにより、*インスペクター*が配置されている領域の関連パネルが開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-233">In the *Build Settings* window, click on the **Player Settings** button, this will open the related panel in the space where the *Inspector* is located.</span></span> 
 
-    ![プレーヤー設定を開きます。](images/AzureLabs-Lab2-14.png)
+    ![プレーヤーの設定を開きます。](images/AzureLabs-Lab2-14.png)
 
-7. <span data-ttu-id="b82cb-235">このパネルは、いくつかの設定を確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-235">In this panel, a few settings need to be verified:</span></span>
+7. <span data-ttu-id="8a7c0-235">このパネルでは、いくつかの設定を確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-235">In this panel, a few settings need to be verified:</span></span>
 
-    1. <span data-ttu-id="b82cb-236">**その他の設定** タブ。</span><span class="sxs-lookup"><span data-stu-id="b82cb-236">In the **Other Settings** tab:</span></span>
+    1. <span data-ttu-id="8a7c0-236">**[その他の設定]** タブで、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-236">In the **Other Settings** tab:</span></span>
 
-        1. <span data-ttu-id="b82cb-237">**ランタイム バージョンをスクリプト**する必要があります**安定した**(.NET 3.5 相当)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-237">**Scripting Runtime Version** should be **Stable** (.NET 3.5 Equivalent).</span></span>
-        2. <span data-ttu-id="b82cb-238">**バックエンドの scripting**べき **.NET**</span><span class="sxs-lookup"><span data-stu-id="b82cb-238">**Scripting Backend** should be **.NET**</span></span>
-        3. <span data-ttu-id="b82cb-239">**API の互換性レベル**べき **.NET 4.6**</span><span class="sxs-lookup"><span data-stu-id="b82cb-239">**API Compatibility Level** should be **.NET 4.6**</span></span>
+        1. <span data-ttu-id="8a7c0-237">**スクリプトランタイムのバージョン**は**安定**している必要があります (.net 3.5 と同等)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-237">**Scripting Runtime Version** should be **Stable** (.NET 3.5 Equivalent).</span></span>
+        2. <span data-ttu-id="8a7c0-238">**バックエンド**は **.net**である必要があります</span><span class="sxs-lookup"><span data-stu-id="8a7c0-238">**Scripting Backend** should be **.NET**</span></span>
+        3. <span data-ttu-id="8a7c0-239">**API 互換性レベル**は **.net 4.6**である必要があります</span><span class="sxs-lookup"><span data-stu-id="8a7c0-239">**API Compatibility Level** should be **.NET 4.6**</span></span>
 
             ![その他の設定を更新します。](images/AzureLabs-Lab2-15.png)
       
-    2. <span data-ttu-id="b82cb-241">内で、**発行の設定**] タブの [**機能**、確認してください。</span><span class="sxs-lookup"><span data-stu-id="b82cb-241">Within the **Publishing Settings** tab, under **Capabilities**, check:</span></span>
+    2. <span data-ttu-id="8a7c0-241">**[発行の設定]** タブの **[機能]** で、次の項目を確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-241">Within the **Publishing Settings** tab, under **Capabilities**, check:</span></span>
 
-        1. <span data-ttu-id="b82cb-242">**InternetClient**</span><span class="sxs-lookup"><span data-stu-id="b82cb-242">**InternetClient**</span></span>
-        2. <span data-ttu-id="b82cb-243">**Web カメラ**</span><span class="sxs-lookup"><span data-stu-id="b82cb-243">**Webcam**</span></span>
+        1. <span data-ttu-id="8a7c0-242">**InternetClient**</span><span class="sxs-lookup"><span data-stu-id="8a7c0-242">**InternetClient**</span></span>
+        2. <span data-ttu-id="8a7c0-243">**カメラ**</span><span class="sxs-lookup"><span data-stu-id="8a7c0-243">**Webcam**</span></span>
 
-            ![発行の設定を更新しています。](images/AzureLabs-Lab2-16.png)
+            ![発行設定を更新しています。](images/AzureLabs-Lab2-16.png)
 
-    3. <span data-ttu-id="b82cb-245">パネル、下の方に**XR 設定**(次に示します**発行設定**)、ティック**仮想現実サポート**、ことを確認、 **Windows Mixed Reality SDK**が追加されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-245">Further down the panel, in **XR Settings** (found below **Publish Settings**), tick **Virtual Reality Supported**, make sure the **Windows Mixed Reality SDK** is added.</span></span>
+    3. <span data-ttu-id="8a7c0-245">パネルの下にある [ **XR settings** (発行の**設定**] の下にあります) で、 **[サポートされている仮想現実]** をティックし、 **Windows Mixed reality SDK**が追加されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-245">Further down the panel, in **XR Settings** (found below **Publish Settings**), tick **Virtual Reality Supported**, make sure the **Windows Mixed Reality SDK** is added.</span></span>
 
-        ![X の R の設定を更新します。](images/AzureLabs-Lab2-17.png)
+        ![X R の設定を更新します。](images/AzureLabs-Lab2-17.png)
 
-8.  <span data-ttu-id="b82cb-247">戻り*Build Settings* _Unity C#_ プロジェクトが不要になったグレー; これの横にあるチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-247">Back in *Build Settings* _Unity C#_ Projects is no longer greyed out; tick the checkbox next to this.</span></span> 
-9.  <span data-ttu-id="b82cb-248">ビルド設定ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-248">Close the Build Settings window.</span></span>
-10. <span data-ttu-id="b82cb-249">シーンとプロジェクトを保存 (**ファイル > シーン保存/ファイル > プロジェクトを保存**)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-249">Save your Scene and Project (**FILE > SAVE SCENE / FILE > SAVE PROJECT**).</span></span>
+8.  <span data-ttu-id="8a7c0-247">*ビルド設定*に戻る_Unity C#_ プロジェクトはグレーで表示されなくなりました。このの横にあるチェックボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-247">Back in *Build Settings* _Unity C#_ Projects is no longer greyed out; tick the checkbox next to this.</span></span> 
+9.  <span data-ttu-id="8a7c0-248">[ビルドの設定] ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-248">Close the Build Settings window.</span></span>
+10. <span data-ttu-id="8a7c0-249">シーンとプロジェクトを保存します ([**ファイル] > [シーン/ファイルの保存] > [プロジェクトの保存**])。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-249">Save your Scene and Project (**FILE > SAVE SCENE / FILE > SAVE PROJECT**).</span></span>
 
-## <a name="chapter-3--main-camera-setup"></a><span data-ttu-id="b82cb-250">第 3 章 – メイン カメラのセットアップ</span><span class="sxs-lookup"><span data-stu-id="b82cb-250">Chapter 3 – Main Camera setup</span></span>
+## <a name="chapter-3--main-camera-setup"></a><span data-ttu-id="8a7c0-250">第3章–メインカメラの設定</span><span class="sxs-lookup"><span data-stu-id="8a7c0-250">Chapter 3 – Main Camera setup</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="b82cb-251">スキップする場合、 *Unity を設定する*コンポーネントのこのコースで、コードにまっすぐコンティニュし、自由にこれをダウンロード[.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage)、としてプロジェクトにインポート、[カスタム パッケージ](https://docs.unity3d.com/Manual/AssetPackages.html)から続けて[第 5 章](#chapter-5--create-the-resultslabel-class)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-251">If you wish to skip the *Unity Set up* component of this course, and continue straight into code, feel free to download this [.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage), import it into your project as a [Custom Package](https://docs.unity3d.com/Manual/AssetPackages.html), and then continue from [Chapter 5](#chapter-5--create-the-resultslabel-class).</span></span>
+> <span data-ttu-id="8a7c0-251">このコースの*Unity セットアップ*コンポーネントをスキップしてコードに直接進む場合は、 [unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage)をダウンロードし、[カスタムパッケージ](https://docs.unity3d.com/Manual/AssetPackages.html)としてプロジェクトにインポートしてから、[第5章](#chapter-5--create-the-resultslabel-class)から続行してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-251">If you wish to skip the *Unity Set up* component of this course, and continue straight into code, feel free to download this [.unitypackage](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302%20-%20Computer%20vision/Azure-MR-302.unitypackage), import it into your project as a [Custom Package](https://docs.unity3d.com/Manual/AssetPackages.html), and then continue from [Chapter 5](#chapter-5--create-the-resultslabel-class).</span></span>
 
-1.  <span data-ttu-id="b82cb-252">*階層パネル*を選択、 **Main Camera**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-252">In the *Hierarchy Panel*, select the **Main Camera**.</span></span> 
-2.  <span data-ttu-id="b82cb-253">すべてのコンポーネントを参照してください。 選択すると、ができる、 **Main Camera**で、*インスペクター パネル*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-253">Once selected, you will be able to see all the components of the **Main Camera** in the *Inspector Panel*.</span></span>
+1.  <span data-ttu-id="8a7c0-252">[*階層] パネル*で、**メインカメラ**を選択します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-252">In the *Hierarchy Panel*, select the **Main Camera**.</span></span> 
+2.  <span data-ttu-id="8a7c0-253">選択すると、**メインカメラ**のすべてのコンポーネントが [*インスペクター] パネル*に表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-253">Once selected, you will be able to see all the components of the **Main Camera** in the *Inspector Panel*.</span></span>
 
-    1. <span data-ttu-id="b82cb-254">**Camera オブジェクト**名前を指定する必要があります**Main Camera** (スペルに注意してください)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-254">The **Camera object** must be named **Main Camera** (note the spelling!)</span></span>
-    2. <span data-ttu-id="b82cb-255">Main Camera**タグ**に設定する必要があります**MainCamera** (スペルに注意してください)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-255">The Main Camera **Tag** must be set to **MainCamera** (note the spelling!)</span></span>
-    3. <span data-ttu-id="b82cb-256">必ず、**変換位置**に設定されている**0, 0, 0**</span><span class="sxs-lookup"><span data-stu-id="b82cb-256">Make sure the **Transform Position** is set to **0, 0, 0**</span></span>
-    4. <span data-ttu-id="b82cb-257">設定**フラグをクリア**に**単色**(イマーシブ ヘッドセットの無視) します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-257">Set **Clear Flags** to **Solid Color** (ignore this for immersive headset).</span></span>
-    5. <span data-ttu-id="b82cb-258">設定、**バック グラウンド**にカメラのコンポーネントの色**黒、アルファ 0 (16 進コード: #00000000)** (イマーシブ ヘッドセットの無視) します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-258">Set the **Background** Color of the Camera Component to **Black, Alpha 0 (Hex Code: #00000000)** (ignore this for immersive headset).</span></span>
+    1. <span data-ttu-id="8a7c0-254">**カメラオブジェクト**は**メインカメラ**という名前にする必要があります (スペルに注意してください)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-254">The **Camera object** must be named **Main Camera** (note the spelling!)</span></span>
+    2. <span data-ttu-id="8a7c0-255">メインカメラの**タグ**は、 **maincamera**に設定する必要があります (スペルに注意してください)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-255">The Main Camera **Tag** must be set to **MainCamera** (note the spelling!)</span></span>
+    3. <span data-ttu-id="8a7c0-256">**変換位置**が**0、0、0**に設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-256">Make sure the **Transform Position** is set to **0, 0, 0**</span></span>
+    4. <span data-ttu-id="8a7c0-257">**クリアフラグ**を**純色**に設定します (イマーシブヘッドセットの場合は無視します)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-257">Set **Clear Flags** to **Solid Color** (ignore this for immersive headset).</span></span>
+    5. <span data-ttu-id="8a7c0-258">カメラコンポーネントの**背景**色を**黒、アルファ 0 (16 進コード: #00000000)** に設定します (イマーシブヘッドセットの場合は無視します)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-258">Set the **Background** Color of the Camera Component to **Black, Alpha 0 (Hex Code: #00000000)** (ignore this for immersive headset).</span></span>
 
-        ![カメラのコンポーネントを更新します。](images/AzureLabs-Lab2-18.png)
+        ![カメラコンポーネントを更新します。](images/AzureLabs-Lab2-18.png)
  
-3.  <span data-ttu-id="b82cb-260">次に接続されている単純な"Cursor"オブジェクトを作成する必要が、 **Main Camera**、画像分析を配置するのに役立つ出力は、アプリケーションが実行されています。</span><span class="sxs-lookup"><span data-stu-id="b82cb-260">Next, you will have to create a simple “Cursor” object attached to the **Main Camera**, which will help you position the image analysis output when the application is running.</span></span> <span data-ttu-id="b82cb-261">このカーソルでは、カメラのフォーカスの中心点を決定します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-261">This Cursor will determine the center point of the camera focus.</span></span>
+3.  <span data-ttu-id="8a7c0-260">次に、**メインカメラ**に接続された単純な "Cursor" オブジェクトを作成する必要があります。これは、アプリケーションの実行時にイメージ分析出力を配置するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-260">Next, you will have to create a simple “Cursor” object attached to the **Main Camera**, which will help you position the image analysis output when the application is running.</span></span> <span data-ttu-id="8a7c0-261">このカーソルによって、カメラフォーカスの中心点が決まります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-261">This Cursor will determine the center point of the camera focus.</span></span>
 
-<span data-ttu-id="b82cb-262">カーソルを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-262">To create the Cursor:</span></span>
+<span data-ttu-id="8a7c0-262">カーソルを作成するには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-262">To create the Cursor:</span></span>
 
-1.  <span data-ttu-id="b82cb-263">*階層パネル*を右クリックし、 **Main Camera**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-263">In the *Hierarchy Panel*, right-click on the **Main Camera**.</span></span> <span data-ttu-id="b82cb-264">[ **3D オブジェクト**、] をクリックして**球**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-264">Under **3D Object**, click on **Sphere**.</span></span>
+1.  <span data-ttu-id="8a7c0-263">[*階層] パネル*で、**メインカメラ**を右クリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-263">In the *Hierarchy Panel*, right-click on the **Main Camera**.</span></span> <span data-ttu-id="8a7c0-264">**[3D オブジェクト]** で、 **[球]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-264">Under **3D Object**, click on **Sphere**.</span></span>
 
-    ![カーソル オブジェクトを選択します。](images/AzureLabs-Lab2-19.png)
+    ![Cursor オブジェクトを選択します。](images/AzureLabs-Lab2-19.png)
  
-2.  <span data-ttu-id="b82cb-266">名前の変更、**球**に**カーソル**(カーソル オブジェクトをダブルクリックまたはオブジェクトを選択した 'F2' キーボード ボタンを押す) の子であるかどうかを確認して、 **Main Camera**.</span><span class="sxs-lookup"><span data-stu-id="b82cb-266">Rename the **Sphere** to **Cursor** (double click the Cursor object or press the ‘F2’ keyboard button with the object selected), and make sure it is located as child of the **Main Camera**.</span></span>
+2.  <span data-ttu-id="8a7c0-266">**球**の名前を**カーソル**に変更します (カーソルオブジェクトをダブルクリックするか、オブジェクトが選択された状態で F2 キーを押します)。**メインカメラ**の子として配置されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-266">Rename the **Sphere** to **Cursor** (double click the Cursor object or press the ‘F2’ keyboard button with the object selected), and make sure it is located as child of the **Main Camera**.</span></span>
 
-3.  <span data-ttu-id="b82cb-267">*階層パネル*、左クリックしてで、**カーソル**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-267">In the *Hierarchy Panel*, left click on the **Cursor**.</span></span> <span data-ttu-id="b82cb-268">カーソルが選択されている、調整では、次の変数、*インスペクター パネル*:</span><span class="sxs-lookup"><span data-stu-id="b82cb-268">With the Cursor selected, adjust the following variables in the *Inspector Panel*:</span></span>
+3.  <span data-ttu-id="8a7c0-267">[*階層] パネル*で、**カーソル**を左クリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-267">In the *Hierarchy Panel*, left click on the **Cursor**.</span></span> <span data-ttu-id="8a7c0-268">カーソルを選択した状態で、[*インスペクター] パネル*で次の変数を調整します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-268">With the Cursor selected, adjust the following variables in the *Inspector Panel*:</span></span>
 
-    1. <span data-ttu-id="b82cb-269">設定、*位置を変換*に**0, 0, 5**</span><span class="sxs-lookup"><span data-stu-id="b82cb-269">Set the *Transform Position* to **0, 0, 5**</span></span>
-    2. <span data-ttu-id="b82cb-270">設定、*スケール*に**0.02、0.02、0.02**</span><span class="sxs-lookup"><span data-stu-id="b82cb-270">Set the *Scale* to **0.02, 0.02, 0.02**</span></span>
+    1. <span data-ttu-id="8a7c0-269">*変換位置*を**0、0、5**に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-269">Set the *Transform Position* to **0, 0, 5**</span></span>
+    2. <span data-ttu-id="8a7c0-270">*スケール*を**0.02、0.02、0.02**に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-270">Set the *Scale* to **0.02, 0.02, 0.02**</span></span>
 
-        ![変換の位置とスケールを更新します。](images/AzureLabs-Lab2-20.png)
+        ![変換位置とスケールを更新します。](images/AzureLabs-Lab2-20.png)
   
-## <a name="chapter-4--setup-the-label-system"></a><span data-ttu-id="b82cb-272">第 4 章 – ラベルのシステムのセットアップ</span><span class="sxs-lookup"><span data-stu-id="b82cb-272">Chapter 4 – Setup the Label system</span></span>
+## <a name="chapter-4--setup-the-label-system"></a><span data-ttu-id="8a7c0-272">Chapter 4 –ラベルシステムのセットアップ</span><span class="sxs-lookup"><span data-stu-id="8a7c0-272">Chapter 4 – Setup the Label system</span></span>
 
-<span data-ttu-id="b82cb-273">HoloLens のカメラでは、イメージをキャプチャした、そのイメージに送信する、 *Azure Computer Vision API*分析のためのサービス インスタンス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-273">Once you have captured an image with the HoloLens’ camera, that image will be sent to your *Azure Computer Vision API* Service instance for analysis.</span></span> 
+<span data-ttu-id="8a7c0-273">HoloLens のカメラを使用してイメージをキャプチャすると、そのイメージが分析のために*Azure Computer Vision API*サービスインスタンスに送信されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-273">Once you have captured an image with the HoloLens’ camera, that image will be sent to your *Azure Computer Vision API* Service instance for analysis.</span></span> 
 
-<span data-ttu-id="b82cb-274">分析の結果と呼ばれる、認識されているオブジェクトのリストが返されます**タグ**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-274">The results of that analysis will be a list of recognized objects called **Tags**.</span></span> 
+<span data-ttu-id="8a7c0-274">この分析の結果は、**タグ**と呼ばれる認識されたオブジェクトの一覧になります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-274">The results of that analysis will be a list of recognized objects called **Tags**.</span></span> 
 
-<span data-ttu-id="b82cb-275">(としてワールド空間における 3D テキスト)、写真の撮影場所にこれらのタグを表示するラベルは使用します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-275">You will use Labels (as a 3D text in world space) to display these Tags at the location the photo was taken.</span></span>
+<span data-ttu-id="8a7c0-275">これらのタグは、写真が撮影された場所に表示されるように、(ワールド空間の3D テキストとして) 使用します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-275">You will use Labels (as a 3D text in world space) to display these Tags at the location the photo was taken.</span></span>
 
-<span data-ttu-id="b82cb-276">次の手順では説明を設定する方法、**ラベル**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b82cb-276">The following steps will show how to setup the **Label** object.</span></span>
+<span data-ttu-id="8a7c0-276">次の手順では、 **Label**オブジェクトを設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-276">The following steps will show how to setup the **Label** object.</span></span>
 
-1.  <span data-ttu-id="b82cb-277">階層のパネル (場所がこの時点で関係ありませんが)、任意の場所を右クリックして**3D オブジェクト**、追加、 **3D テキスト**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-277">Right-click anywhere in the Hierarchy Panel (the location does not matter at this point), under **3D Object**, add a **3D Text**.</span></span> <span data-ttu-id="b82cb-278">名前を付けます**LabelText**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-278">Name it **LabelText**.</span></span>
+1.  <span data-ttu-id="8a7c0-277">[階層] パネル内の任意の場所を右クリックし (この時点では場所は関係ありません)、 **[3D オブジェクト]** の下に**3d テキスト**を追加します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-277">Right-click anywhere in the Hierarchy Panel (the location does not matter at this point), under **3D Object**, add a **3D Text**.</span></span> <span data-ttu-id="8a7c0-278">**Labeltext**という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-278">Name it **LabelText**.</span></span>
 
-    ![3D テキスト オブジェクトを作成します。](images/AzureLabs-Lab2-21.png)
+    ![3D テキストオブジェクトを作成します。](images/AzureLabs-Lab2-21.png)
  
-2.  <span data-ttu-id="b82cb-280">*階層パネル*、左クリックしてで、 **LabelText**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-280">In the *Hierarchy Panel*, left click on the **LabelText**.</span></span> <span data-ttu-id="b82cb-281">**LabelText**で次の変数を選択すると、調整、*インスペクター パネル*:</span><span class="sxs-lookup"><span data-stu-id="b82cb-281">With the **LabelText** selected, adjust the following variables in the *Inspector Panel*:</span></span>
+2.  <span data-ttu-id="8a7c0-280">[*階層] パネル*で、 **labeltext**を左クリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-280">In the *Hierarchy Panel*, left click on the **LabelText**.</span></span> <span data-ttu-id="8a7c0-281">**Labeltext**を選択した状態で、[*インスペクター] パネル*で次の変数を調整します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-281">With the **LabelText** selected, adjust the following variables in the *Inspector Panel*:</span></span>
 
-    1. <span data-ttu-id="b82cb-282">設定、**位置**に**0,0,0**</span><span class="sxs-lookup"><span data-stu-id="b82cb-282">Set the **Position** to **0,0,0**</span></span>
-    2. <span data-ttu-id="b82cb-283">設定、**スケール**に**0.01、0.01、0.01**</span><span class="sxs-lookup"><span data-stu-id="b82cb-283">Set the **Scale** to **0.01, 0.01, 0.01**</span></span>
-    3. <span data-ttu-id="b82cb-284">コンポーネントで**テキスト メッシュ**:</span><span class="sxs-lookup"><span data-stu-id="b82cb-284">In the component **Text Mesh**:</span></span>
-    4. <span data-ttu-id="b82cb-285">内のすべてのテキストを置き換える**テキスト**、with「...」</span><span class="sxs-lookup"><span data-stu-id="b82cb-285">Replace all the text within **Text**, with "..."</span></span>        
-    5. <span data-ttu-id="b82cb-286">設定、**アンカー**に**中央**</span><span class="sxs-lookup"><span data-stu-id="b82cb-286">Set the **Anchor** to **Middle Center**</span></span>
-    6. <span data-ttu-id="b82cb-287">設定、**配置**に**センター**</span><span class="sxs-lookup"><span data-stu-id="b82cb-287">Set the **Alignment** to **Center**</span></span>
-    7. <span data-ttu-id="b82cb-288">設定、 **タブ サイズ**に**4**</span><span class="sxs-lookup"><span data-stu-id="b82cb-288">Set the **Tab Size** to **4**</span></span>
-    8. <span data-ttu-id="b82cb-289">設定、**フォント サイズ**に**50**</span><span class="sxs-lookup"><span data-stu-id="b82cb-289">Set the **Font Size** to **50**</span></span>
-    9. <span data-ttu-id="b82cb-290">設定、**色**に **#FFFFFFFF**</span><span class="sxs-lookup"><span data-stu-id="b82cb-290">Set the **Color** to **#FFFFFFFF**</span></span>
+    1. <span data-ttu-id="8a7c0-282">**位置**を**0、0、0**に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-282">Set the **Position** to **0,0,0**</span></span>
+    2. <span data-ttu-id="8a7c0-283">**スケール**を**0.01、0.01、0.01**に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-283">Set the **Scale** to **0.01, 0.01, 0.01**</span></span>
+    3. <span data-ttu-id="8a7c0-284">コンポーネント**テキストメッシュ**で、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-284">In the component **Text Mesh**:</span></span>
+    4. <span data-ttu-id="8a7c0-285">**テキスト**内のすべてのテキストを "..." で置き換えます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-285">Replace all the text within **Text**, with "..."</span></span>        
+    5. <span data-ttu-id="8a7c0-286">**アンカー**を**中央**中央に設定する</span><span class="sxs-lookup"><span data-stu-id="8a7c0-286">Set the **Anchor** to **Middle Center**</span></span>
+    6. <span data-ttu-id="8a7c0-287">**配置**を**中央**に設定する</span><span class="sxs-lookup"><span data-stu-id="8a7c0-287">Set the **Alignment** to **Center**</span></span>
+    7. <span data-ttu-id="8a7c0-288">**タブサイズ**を**4**に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-288">Set the **Tab Size** to **4**</span></span>
+    8. <span data-ttu-id="8a7c0-289">**フォントサイズ**を**50**に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-289">Set the **Font Size** to **50**</span></span>
+    9. <span data-ttu-id="8a7c0-290">**色**を **#FFFFFFFF**に設定します</span><span class="sxs-lookup"><span data-stu-id="8a7c0-290">Set the **Color** to **#FFFFFFFF**</span></span>
 
-    ![テキストのコンポーネント](images/AzureLabs-Lab2-21-5.png)
+    ![テキストコンポーネント](images/AzureLabs-Lab2-21-5.png)
 
-3.  <span data-ttu-id="b82cb-292">ドラッグ、 **LabelText**から、*階層パネル*に、*アセット フォルダー*内での*プロジェクト パネル*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-292">Drag the **LabelText** from the *Hierarchy Panel*, into the *Asset Folder*, within in the *Project Panel*.</span></span> <span data-ttu-id="b82cb-293">これは、ように、 **LabelText**プレハブ、コードでその it をインスタンス化できるようにします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-293">This will make the **LabelText** a Prefab, so that it can be instantiated in code.</span></span>
+3.  <span data-ttu-id="8a7c0-292">[*プロジェクト] パネル*の内の [*階層] パネル*から [*アセット] フォルダー*に**labeltext**をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-292">Drag the **LabelText** from the *Hierarchy Panel*, into the *Asset Folder*, within in the *Project Panel*.</span></span> <span data-ttu-id="8a7c0-293">これにより、コードでインスタンス化できるように**Labeltext**が事前 fab になります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-293">This will make the **LabelText** a Prefab, so that it can be instantiated in code.</span></span>
 
-    ![LabelText オブジェクトのプレハブを作成します。](images/AzureLabs-Lab2-22.png)
+    ![LabelText オブジェクトの事前 fab を作成します。](images/AzureLabs-Lab2-22.png)
  
-4.  <span data-ttu-id="b82cb-295">削除する必要があります、 **LabelText**から、*階層パネル*、開くシーンでは表示されません。</span><span class="sxs-lookup"><span data-stu-id="b82cb-295">You should delete the **LabelText** from the *Hierarchy Panel*, so that it will not be displayed in the opening scene.</span></span> <span data-ttu-id="b82cb-296">プレハブを Assets フォルダーから個々 のインスタンスで呼び出すが、これは現在、シーン内に収まる必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b82cb-296">As it is now a prefab, which you will call on for individual instances from your Assets folder, there is no need to keep it within the scene.</span></span> 
-5.  <span data-ttu-id="b82cb-297">最終的なオブジェクトの構造、*階層パネル*次の図に示すようになります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-297">The final object structure in the *Hierarchy Panel* should be like the one shown in the image below:</span></span>
+4.  <span data-ttu-id="8a7c0-295">[*階層] パネル*から**labeltext**を削除して、開いているシーンには表示されないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-295">You should delete the **LabelText** from the *Hierarchy Panel*, so that it will not be displayed in the opening scene.</span></span> <span data-ttu-id="8a7c0-296">現在は、Assets フォルダーから個々のインスタンスに対して呼び出す prefab であるため、シーン内に保持する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-296">As it is now a prefab, which you will call on for individual instances from your Assets folder, there is no need to keep it within the scene.</span></span> 
+5.  <span data-ttu-id="8a7c0-297">*階層パネル*の最終的なオブジェクト構造は、次の図に示すようになります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-297">The final object structure in the *Hierarchy Panel* should be like the one shown in the image below:</span></span>
 
-    ![階層のパネルの最終的な構造体。](images/AzureLabs-Lab2-23.png)
+    ![階層パネルの最終構造。](images/AzureLabs-Lab2-23.png)
 
-## <a name="chapter-5--create-the-resultslabel-class"></a><span data-ttu-id="b82cb-299">第 5 章 – ResultsLabel クラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-299">Chapter 5 – Create the ResultsLabel class</span></span>
+## <a name="chapter-5--create-the-resultslabel-class"></a><span data-ttu-id="8a7c0-299">第5章–生成されるのは、そのためのラベルクラス</span><span class="sxs-lookup"><span data-stu-id="8a7c0-299">Chapter 5 – Create the ResultsLabel class</span></span>
 
-<span data-ttu-id="b82cb-300">最初のスクリプトを作成する必要がありますが、 *ResultsLabel*クラスは、次の原因となっています。</span><span class="sxs-lookup"><span data-stu-id="b82cb-300">The first script you need to create is the *ResultsLabel* class, which is responsible for the following:</span></span> 
+<span data-ttu-id="8a7c0-300">作成する必要のある最初のスクリプトは、次の処理を行うための、次のような、べき条件の*ラベル*クラスです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-300">The first script you need to create is the *ResultsLabel* class, which is responsible for the following:</span></span> 
 
-- <span data-ttu-id="b82cb-301">カメラの位置を基準とした、適切なワールド空間で、ラベルを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-301">Creating the Labels in the appropriate world space, relative to the position of the Camera.</span></span>
-- <span data-ttu-id="b82cb-302">イメージれたからタグを表示します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-302">Displaying the Tags from the Image Anaysis.</span></span>
+- <span data-ttu-id="8a7c0-301">カメラの位置を基準にして、適切なワールド空間にラベルを作成します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-301">Creating the Labels in the appropriate world space, relative to the position of the Camera.</span></span>
+- <span data-ttu-id="8a7c0-302">イメージ Anaysis のタグを表示します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-302">Displaying the Tags from the Image Anaysis.</span></span>
 
-<span data-ttu-id="b82cb-303">このクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-303">To create this class:</span></span> 
+<span data-ttu-id="8a7c0-303">このクラスを作成するには:</span><span class="sxs-lookup"><span data-stu-id="8a7c0-303">To create this class:</span></span> 
 
-1.  <span data-ttu-id="b82cb-304">右クリックし、*プロジェクト パネル*、し**作成 > フォルダー**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-304">Right-click in the *Project Panel*, then **Create > Folder**.</span></span> <span data-ttu-id="b82cb-305">フォルダーの名前**スクリプト**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-305">Name the folder **Scripts**.</span></span> 
+1.  <span data-ttu-id="8a7c0-304">[*プロジェクト] パネル*内を右クリックし、 **[> フォルダーの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-304">Right-click in the *Project Panel*, then **Create > Folder**.</span></span> <span data-ttu-id="8a7c0-305">フォルダーに**スクリプト**の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-305">Name the folder **Scripts**.</span></span> 
 
-    ![[スクリプト] フォルダーを作成します。](images/AzureLabs-Lab2-24.png)
+    ![Scripts フォルダーを作成します。](images/AzureLabs-Lab2-24.png)
 
-2.  <span data-ttu-id="b82cb-307">**スクリプト**フォルダーの作成、アイコンをダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-307">With the **Scripts** folder create, double click it to open.</span></span> <span data-ttu-id="b82cb-308">そのフォルダーを右クリックし、内**作成 >** し**C#スクリプト**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-308">Then within that folder, right-click, and select **Create >** then **C# Script**.</span></span> <span data-ttu-id="b82cb-309">スクリプトの名前*ResultsLabel*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-309">Name the script *ResultsLabel*.</span></span> 
+2.  <span data-ttu-id="8a7c0-307">**Scripts**フォルダー create を使用して、ダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-307">With the **Scripts** folder create, double click it to open.</span></span> <span data-ttu-id="8a7c0-308">次に、そのフォルダー内でを右クリックし、[**作成] >** **[ C#スクリプト]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-308">Then within that folder, right-click, and select **Create >** then **C# Script**.</span></span> <span data-ttu-id="8a7c0-309">スクリプトのラベルに「」という名前を*付け*ます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-309">Name the script *ResultsLabel*.</span></span> 
 
-3.  <span data-ttu-id="b82cb-310">新しいをダブルクリックします。 *ResultsLabel*スクリプト ファイルを開く**Visual Studio**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-310">Double click on the new *ResultsLabel* script to open it with **Visual Studio**.</span></span>
+3.  <span data-ttu-id="8a7c0-310">新しいスクリプト*ラベル*スクリプトをダブルクリックして、 **Visual Studio**で開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-310">Double click on the new *ResultsLabel* script to open it with **Visual Studio**.</span></span>
 
-4.  <span data-ttu-id="b82cb-311">クラス内で次のコードを挿入、 *ResultsLabel*クラス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-311">Inside the Class insert the following code in the *ResultsLabel* class:</span></span>
+4.  <span data-ttu-id="8a7c0-311">クラス内で、次のコードを入力します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-311">Inside the Class insert the following code in the *ResultsLabel* class:</span></span>
 
     ```csharp
         using System.Collections.Generic;
@@ -357,30 +357,30 @@ ms.locfileid: "59597891"
         }
     ```
 
-6.  <span data-ttu-id="b82cb-312">変更を保存することを確認する*Visual Studio*に戻る前に*Unity*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-312">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
-7.  <span data-ttu-id="b82cb-313">戻り、 *Unity エディター* をクリックし、ドラッグ、 *ResultsLabel*クラスから、**スクリプト**フォルダーを**Main Camera** 内のオブジェクト*階層パネル*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-313">Back in the *Unity Editor*, click and drag the *ResultsLabel* class from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span>
-8.  <span data-ttu-id="b82cb-314">をクリックして、 **Main Camera**を見て、*インスペクター パネル*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-314">Click on the **Main Camera** and look at the *Inspector Panel*.</span></span>
+6.  <span data-ttu-id="8a7c0-312">*Unity*に戻る前に、変更内容を*Visual Studio*に保存してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-312">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+7.  <span data-ttu-id="8a7c0-313">*Unity エディター*に戻り、**スクリプト** フォルダーの の履歴*クラスを*クリックして、*階層 パネル*の **メインカメラ** オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-313">Back in the *Unity Editor*, click and drag the *ResultsLabel* class from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span>
+8.  <span data-ttu-id="8a7c0-314">**メインカメラ**をクリックし、[*インスペクター] パネル*を確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-314">Click on the **Main Camera** and look at the *Inspector Panel*.</span></span>
 
-<span data-ttu-id="b82cb-315">カメラにドラッグしたスクリプトからが 2 つのフィールドが表示されます。**カーソル**と**Prefab ラベル**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-315">You will notice that from the script you just dragged into the Camera, there are two fields: **Cursor** and **Label Prefab**.</span></span>
+<span data-ttu-id="8a7c0-315">カメラにドラッグしたスクリプトから、次の2つのフィールドがあることがわかります。**カーソル**と**ラベルの prefab**。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-315">You will notice that from the script you just dragged into the Camera, there are two fields: **Cursor** and **Label Prefab**.</span></span>
 
-9.  <span data-ttu-id="b82cb-316">呼ばれるオブジェクトをドラッグして**カーソル**から、*階層パネル*という名前のスロットに**カーソル**、次の図に示すようにします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-316">Drag the object called **Cursor** from the *Hierarchy Panel* to the slot named **Cursor**, as shown in the image below.</span></span>
-10. <span data-ttu-id="b82cb-317">呼ばれるオブジェクトをドラッグして**LabelText**から、 *Assets フォルダー*で、*プロジェクト パネル*という名前のスロットに**ラベル Prefab**ように、次の図。</span><span class="sxs-lookup"><span data-stu-id="b82cb-317">Drag the object called **LabelText** from the *Assets Folder* in the *Project Panel* to the slot named **Label Prefab**, as shown in the image below.</span></span> 
+9.  <span data-ttu-id="8a7c0-316">次の図に示すように、[*階層] パネル\*\*\*から [*\* カーソル] というオブジェクトを **[カーソル]** という名前のスロットにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-316">Drag the object called **Cursor** from the *Hierarchy Panel* to the slot named **Cursor**, as shown in the image below.</span></span>
+10. <span data-ttu-id="8a7c0-317">次の図に示すように、[*プロジェクト] パネル*の [*アセット] フォルダー*から**labeltext**という名前のオブジェクトを**label prefab**という名前のスロットにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-317">Drag the object called **LabelText** from the *Assets Folder* in the *Project Panel* to the slot named **Label Prefab**, as shown in the image below.</span></span> 
 
-    ![Unity 内で参照のターゲットを設定します。](images/AzureLabs-Lab2-25.png)
+    ![Unity 内で参照ターゲットを設定します。](images/AzureLabs-Lab2-25.png)
 
-## <a name="chapter-6--create-the-imagecapture-class"></a><span data-ttu-id="b82cb-319">第 6 章 – ImageCapture クラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-319">Chapter 6 – Create the ImageCapture class</span></span>
+## <a name="chapter-6--create-the-imagecapture-class"></a><span data-ttu-id="8a7c0-319">Chapter 6 – ImageCapture クラスを作成する</span><span class="sxs-lookup"><span data-stu-id="8a7c0-319">Chapter 6 – Create the ImageCapture class</span></span>
 
-<span data-ttu-id="b82cb-320">次のクラスを作成することには、 *ImageCapture*クラス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-320">The next class you are going to create is the *ImageCapture* class.</span></span> <span data-ttu-id="b82cb-321">このクラスは、責任を負います。</span><span class="sxs-lookup"><span data-stu-id="b82cb-321">This class is responsible for:</span></span>
+<span data-ttu-id="8a7c0-320">次に作成するクラスは、 *Imagecapture*クラスです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-320">The next class you are going to create is the *ImageCapture* class.</span></span> <span data-ttu-id="8a7c0-321">このクラスの役割は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-321">This class is responsible for:</span></span>
 
--   <span data-ttu-id="b82cb-322">HoloLens のカメラを使用して、アプリ フォルダーに格納することとイメージをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-322">Capturing an Image using the HoloLens Camera and storing it in the App Folder.</span></span>
--   <span data-ttu-id="b82cb-323">ユーザーからのタップ ジェスチャをキャプチャします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-323">Capturing Tap gestures from the user.</span></span>
+-   <span data-ttu-id="8a7c0-322">HoloLens カメラを使用してイメージをキャプチャし、アプリフォルダーに格納します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-322">Capturing an Image using the HoloLens Camera and storing it in the App Folder.</span></span>
+-   <span data-ttu-id="8a7c0-323">ユーザーからタップジェスチャをキャプチャしています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-323">Capturing Tap gestures from the user.</span></span>
 
-<span data-ttu-id="b82cb-324">このクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-324">To create this class:</span></span> 
+<span data-ttu-id="8a7c0-324">このクラスを作成するには:</span><span class="sxs-lookup"><span data-stu-id="8a7c0-324">To create this class:</span></span> 
 
-1.  <span data-ttu-id="b82cb-325">移動して、**スクリプト**以前に作成したフォルダーです。</span><span class="sxs-lookup"><span data-stu-id="b82cb-325">Go to the **Scripts** folder you created previously.</span></span> 
-2.  <span data-ttu-id="b82cb-326">フォルダー内を右クリックして**作成 >C#スクリプト**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-326">Right-click inside the folder, **Create > C# Script**.</span></span> <span data-ttu-id="b82cb-327">スクリプトを呼び出す*ImageCapture*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-327">Call the script *ImageCapture*.</span></span> 
-3.  <span data-ttu-id="b82cb-328">新しいをダブルクリックします。 *ImageCapture*スクリプト ファイルを開く**Visual Studio**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-328">Double click on the new *ImageCapture* script to open it with **Visual Studio**.</span></span>
-4.  <span data-ttu-id="b82cb-329">ファイルの先頭には、次の名前空間を追加します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-329">Add the following namespaces to the top of the file:</span></span>
+1.  <span data-ttu-id="8a7c0-325">前に作成した**Scripts**フォルダーにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-325">Go to the **Scripts** folder you created previously.</span></span> 
+2.  <span data-ttu-id="8a7c0-326">フォルダー内を右クリックし、  **C# > スクリプトを作成**します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-326">Right-click inside the folder, **Create > C# Script**.</span></span> <span data-ttu-id="8a7c0-327">スクリプト*Imagecapture*を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-327">Call the script *ImageCapture*.</span></span> 
+3.  <span data-ttu-id="8a7c0-328">新しい*Imagecapture*スクリプトをダブルクリックして、 **Visual Studio**で開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-328">Double click on the new *ImageCapture* script to open it with **Visual Studio**.</span></span>
+4.  <span data-ttu-id="8a7c0-329">ファイルの先頭に次の名前空間を追加します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-329">Add the following namespaces to the top of the file:</span></span>
 
     ```csharp
         using System.IO;
@@ -390,7 +390,7 @@ ms.locfileid: "59597891"
         using UnityEngine.XR.WSA.WebCam;
     ```
 
-5.  <span data-ttu-id="b82cb-330">内で、次の変数を追加し、 *ImageCapture*クラス上、 *Start()* メソッド。</span><span class="sxs-lookup"><span data-stu-id="b82cb-330">Then add the following variables inside the *ImageCapture* class, above the *Start()* method:</span></span>
+5.  <span data-ttu-id="8a7c0-330">次に、 *Start ()* メソッドの上に、 *imagecapture*クラス内に次の変数を追加します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-330">Then add the following variables inside the *ImageCapture* class, above the *Start()* method:</span></span>
 
     ```csharp
         public static ImageCapture instance; 
@@ -400,9 +400,9 @@ ms.locfileid: "59597891"
         private bool currentlyCapturing = false;
     ```
  
-<span data-ttu-id="b82cb-331">**TapsCount**変数で、ユーザーからキャプチャされたタップ ジェスチャの数を格納します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-331">The **tapsCount** variable will store the number of tap gestures captured from the user.</span></span> <span data-ttu-id="b82cb-332">この番号は、キャプチャしたイメージの名前付けで使用されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-332">This number is used in the naming of the images captured.</span></span>
+<span data-ttu-id="8a7c0-331">**TapsCount**変数には、ユーザーからキャプチャしたタップジェスチャの数が格納されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-331">The **tapsCount** variable will store the number of tap gestures captured from the user.</span></span> <span data-ttu-id="8a7c0-332">この数値は、キャプチャしたイメージの名前付けに使用されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-332">This number is used in the naming of the images captured.</span></span>
 
-6.  <span data-ttu-id="b82cb-333">コードを*Awake()* と*Start()* 今すぐメソッドを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-333">Code for *Awake()* and *Start()* methods now needs to be added.</span></span> <span data-ttu-id="b82cb-334">これらが、クラスの初期化時に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-334">These will be called when the class initializes:</span></span>
+6.  <span data-ttu-id="8a7c0-333">起動可能な *()* メソッドと*Start ()* メソッドのコードを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-333">Code for *Awake()* and *Start()* methods now needs to be added.</span></span> <span data-ttu-id="8a7c0-334">これらは、クラスの初期化時に呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-334">These will be called when the class initializes:</span></span>
 
     ```csharp
         private void Awake()
@@ -421,7 +421,7 @@ ms.locfileid: "59597891"
         }
     ```
 
-7.  <span data-ttu-id="b82cb-335">タップ ジェスチャが発生したときに呼び出されるハンドラーを実装します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-335">Implement a handler that will be called when a Tap gesture occurs.</span></span> 
+7.  <span data-ttu-id="8a7c0-335">Tap ジェスチャが発生したときに呼び出されるハンドラーを実装します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-335">Implement a handler that will be called when a Tap gesture occurs.</span></span> 
 
     ```csharp
         /// <summary>
@@ -446,11 +446,11 @@ ms.locfileid: "59597891"
         }
     ```
  
-<span data-ttu-id="b82cb-336">*TapHandler()* メソッドは、ユーザーからキャプチャされたタップ数をインクリメントし、現在のカーソル位置を使用して、新しいラベルを配置する場所を決定します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-336">The *TapHandler()* method increments the number of taps captured from the user and uses the current Cursor position to determine where to position a new Label.</span></span>
+<span data-ttu-id="8a7c0-336">*TapHandler ()* メソッドは、ユーザーからキャプチャされたタップの数を増やし、現在のカーソル位置を使用して、新しいラベルを配置する場所を決定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-336">The *TapHandler()* method increments the number of taps captured from the user and uses the current Cursor position to determine where to position a new Label.</span></span>
 
-<span data-ttu-id="b82cb-337">このメソッドを呼び出して、 *ExecuteImageCaptureAndAnalysis()* メソッドをこのアプリケーションのコア機能を開始します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-337">This method then calls the *ExecuteImageCaptureAndAnalysis()* method to begin the core functionality of this application.</span></span>
+<span data-ttu-id="8a7c0-337">次に、このメソッドは、 *Executeimagecapを Andanalysis ()* メソッドを呼び出して、このアプリケーションのコア機能を開始します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-337">This method then calls the *ExecuteImageCaptureAndAnalysis()* method to begin the core functionality of this application.</span></span>
 
-8.  <span data-ttu-id="b82cb-338">イメージをキャプチャして保存すると、以下のハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-338">Once an Image has been captured and stored, the following handlers will be called.</span></span> <span data-ttu-id="b82cb-339">結果が渡されるプロセスが成功した場合、 *VisionManager* (まだ作成としています) を分析します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-339">If the process is successful, the result is passed to the *VisionManager* (which you are yet to create) for analysis.</span></span>
+8.  <span data-ttu-id="8a7c0-338">イメージをキャプチャして保存すると、次のハンドラーが呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-338">Once an Image has been captured and stored, the following handlers will be called.</span></span> <span data-ttu-id="8a7c0-339">プロセスが成功した場合、結果は分析のために (まだ作成していない) *VisionManager*に渡されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-339">If the process is successful, the result is passed to the *VisionManager* (which you are yet to create) for analysis.</span></span>
 
     ```csharp
         /// <summary>
@@ -473,7 +473,7 @@ ms.locfileid: "59597891"
         }
     ```
  
-9.  <span data-ttu-id="b82cb-340">次に、イメージのキャプチャ プロセスを開始し、イメージを格納するアプリケーションが使用するメソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-340">Then add the method that the application uses to start the Image capture process and store the image.</span></span>
+9.  <span data-ttu-id="8a7c0-340">次に、アプリケーションがイメージキャプチャプロセスを開始するために使用するメソッドを追加し、イメージを格納します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-340">Then add the method that the application uses to start the Image capture process and store the image.</span></span>
 
     ```csharp    
         /// <summary>    
@@ -515,25 +515,25 @@ ms.locfileid: "59597891"
     ```
  
 > [!WARNING] 
-> <span data-ttu-id="b82cb-341">この時点で表示されるエラーが表示されます、 *Unity エディターのコンソール パネル*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-341">At this point you will notice an error appearing in the *Unity Editor Console Panel*.</span></span> <span data-ttu-id="b82cb-342">これは、コードを参照しているため、 *VisionManager*クラスは次の章で作成されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-342">This is because the code references the *VisionManager* class which you will create in the next Chapter.</span></span>
+> <span data-ttu-id="8a7c0-341">この時点で、 *Unity エディターのコンソールパネル*にエラーが表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-341">At this point you will notice an error appearing in the *Unity Editor Console Panel*.</span></span> <span data-ttu-id="8a7c0-342">これは、次の章で作成する*VisionManager*クラスをコードが参照するためです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-342">This is because the code references the *VisionManager* class which you will create in the next Chapter.</span></span>
 
-## <a name="chapter-7--call-to-azure-and-image-analysis"></a><span data-ttu-id="b82cb-343">第 7 章 – Azure と画像分析への呼び出し</span><span class="sxs-lookup"><span data-stu-id="b82cb-343">Chapter 7 – Call to Azure and Image Analysis</span></span>
+## <a name="chapter-7--call-to-azure-and-image-analysis"></a><span data-ttu-id="8a7c0-343">第7章-Azure への呼び出しとイメージ分析</span><span class="sxs-lookup"><span data-stu-id="8a7c0-343">Chapter 7 – Call to Azure and Image Analysis</span></span>
 
-<span data-ttu-id="b82cb-344">最後のスクリプトを作成する必要がありますが、 *VisionManager*クラス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-344">The last script you need to create is the *VisionManager* class.</span></span> 
+<span data-ttu-id="8a7c0-344">作成する必要がある最後のスクリプトは、 *VisionManager*クラスです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-344">The last script you need to create is the *VisionManager* class.</span></span> 
 
-<span data-ttu-id="b82cb-345">このクラスは、責任を負います。</span><span class="sxs-lookup"><span data-stu-id="b82cb-345">This class is responsible for:</span></span>
+<span data-ttu-id="8a7c0-345">このクラスの役割は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-345">This class is responsible for:</span></span>
 
--   <span data-ttu-id="b82cb-346">バイト配列としてキャプチャされた最新のイメージを読み込んでいます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-346">Loading the latest image captured as an array of bytes.</span></span>
--   <span data-ttu-id="b82cb-347">送信するバイト配列、 *Azure Computer Vision API*分析のためのサービス インスタンス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-347">Sending the byte array to your *Azure Computer Vision API* Service instance for analysis.</span></span>
--   <span data-ttu-id="b82cb-348">JSON 文字列としての応答を受信します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-348">Receiving the response as a JSON string.</span></span>
--   <span data-ttu-id="b82cb-349">応答を逆シリアル化し、結果として得られるタグを渡す、 *ResultsLabel*クラス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-349">Deserializing the response and passing the resulting Tags to the *ResultsLabel* class.</span></span>
+-   <span data-ttu-id="8a7c0-346">バイト配列としてキャプチャされた最新のイメージを読み込んでいます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-346">Loading the latest image captured as an array of bytes.</span></span>
+-   <span data-ttu-id="8a7c0-347">分析のために、バイト配列を*Azure Computer Vision API*サービスインスタンスに送信しています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-347">Sending the byte array to your *Azure Computer Vision API* Service instance for analysis.</span></span>
+-   <span data-ttu-id="8a7c0-348">JSON 文字列として応答を受信しています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-348">Receiving the response as a JSON string.</span></span>
+-   <span data-ttu-id="8a7c0-349">応答を逆シリアル化し、結果として得られるタグを結果のタグに渡します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-349">Deserializing the response and passing the resulting Tags to the *ResultsLabel* class.</span></span>
  
-<span data-ttu-id="b82cb-350">このクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-350">To create this class:</span></span>
+<span data-ttu-id="8a7c0-350">このクラスを作成するには:</span><span class="sxs-lookup"><span data-stu-id="8a7c0-350">To create this class:</span></span>
 
-1.  <span data-ttu-id="b82cb-351">ダブルクリック、**スクリプト**フォルダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-351">Double click on the **Scripts** folder, to open it.</span></span> 
-2.  <span data-ttu-id="b82cb-352">内側を右クリックし、**スクリプト**フォルダー、をクリックして**作成 >C#スクリプト**。</span><span class="sxs-lookup"><span data-stu-id="b82cb-352">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="b82cb-353">スクリプトの名前*VisionManager*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-353">Name the script *VisionManager*.</span></span> 
-3.  <span data-ttu-id="b82cb-354">Visual Studio で開くことに新しいスクリプトをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-354">Double click on the new script to open it with Visual Studio.</span></span>
-4.  <span data-ttu-id="b82cb-355">上部にある、次と同じである名前空間の更新、 *VisionManager*クラス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-355">Update the namespaces to be the same as the following, at the top of the *VisionManager* class:</span></span>
+1.  <span data-ttu-id="8a7c0-351">**[Scripts]** フォルダーをダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-351">Double click on the **Scripts** folder, to open it.</span></span> 
+2.  <span data-ttu-id="8a7c0-352">**Scripts**フォルダー内を右クリックし、 **[Create > C# Script]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-352">Right-click inside the **Scripts** folder, click **Create > C# Script**.</span></span> <span data-ttu-id="8a7c0-353">スクリプトに*VisionManager*という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-353">Name the script *VisionManager*.</span></span> 
+3.  <span data-ttu-id="8a7c0-354">新しいスクリプトをダブルクリックして、Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-354">Double click on the new script to open it with Visual Studio.</span></span>
+4.  <span data-ttu-id="8a7c0-355">*VisionManager*クラスの先頭にある次の名前空間を更新します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-355">Update the namespaces to be the same as the following, at the top of the *VisionManager* class:</span></span>
 
     ```csharp
         using System;
@@ -544,7 +544,7 @@ ms.locfileid: "59597891"
         using UnityEngine.Networking;
     ```
  
-5.  <span data-ttu-id="b82cb-356">スクリプトの上部にある*内*、 *VisionManager*クラス (上、 *Start()* メソッド)、2 つ作成する必要があります*クラス*ですAzure からの逆シリアル化された JSON 応答を表します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-356">At the top of your script, *inside* the *VisionManager* class (above the *Start()* method), you now need to create two *Classes* that will represent the deserialized JSON response from Azure:</span></span>
+5.  <span data-ttu-id="8a7c0-356">スクリプトの先頭にある*VisionManager*クラス*内*( *Start ()* メソッドの上) で、Azure からの逆シリアル化された JSON 応答を表す2つの*クラス*を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-356">At the top of your script, *inside* the *VisionManager* class (above the *Start()* method), you now need to create two *Classes* that will represent the deserialized JSON response from Azure:</span></span>
 
     ```csharp
         [System.Serializable]
@@ -564,9 +564,9 @@ ms.locfileid: "59597891"
     ```
 
     > [!NOTE] 
-    > <span data-ttu-id="b82cb-357">*TagData*と*AnalysedObject*クラスが必要です、 *[System.Serializable]* Unity で逆シリアル化できる宣言の前に追加された属性ライブラリ。</span><span class="sxs-lookup"><span data-stu-id="b82cb-357">The *TagData* and *AnalysedObject* classes need to have the *[System.Serializable]* attribute added before the declaration to be able to be deserialized with the Unity libraries.</span></span>
+    > <span data-ttu-id="8a7c0-357">*Tagdata*クラスと Analytics *sedobject*クラスでは、Unity ライブラリを使用して逆シリアル化できるようにする前に、 *[system.string]* 属性を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-357">The *TagData* and *AnalysedObject* classes need to have the *[System.Serializable]* attribute added before the declaration to be able to be deserialized with the Unity libraries.</span></span>
 
-6.  <span data-ttu-id="b82cb-358">VisionManager クラスでは、次の変数を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-358">In the VisionManager class, you should add the following variables:</span></span>
+6.  <span data-ttu-id="8a7c0-358">VisionManager クラスでは、次の変数を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-358">In the VisionManager class, you should add the following variables:</span></span>
 
     ```csharp
         public static VisionManager instance;
@@ -582,15 +582,15 @@ ms.locfileid: "59597891"
     ```
 
     > [!WARNING] 
-    > <span data-ttu-id="b82cb-359">挿入することを確認、**認証キー**に、 **authorizationKey**変数。</span><span class="sxs-lookup"><span data-stu-id="b82cb-359">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span> <span data-ttu-id="b82cb-360">メモは、**認証キー**のこのコースでは、先頭に[第 1 章](#chapter-1--the-azure-portal)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-360">You will have noted your **Auth Key** at the beginning of this course, [Chapter 1](#chapter-1--the-azure-portal).</span></span>
+    > <span data-ttu-id="8a7c0-359">**認証キー**が**authorizationkey**変数に挿入されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-359">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span> <span data-ttu-id="8a7c0-360">**認証キー**については、このコースの[第1章](#chapter-1--the-azure-portal)で説明しました。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-360">You will have noted your **Auth Key** at the beginning of this course, [Chapter 1](#chapter-1--the-azure-portal).</span></span>
 
     > [!WARNING] 
-    > <span data-ttu-id="b82cb-361">**VisionAnalysisEndpoint**変数は、この例で指定されている異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-361">The **visionAnalysisEndpoint** variable might differ from the one specified in this example.</span></span> <span data-ttu-id="b82cb-362">**西部、米国**厳密に言うと、米国西部リージョンに作成されたサービス インスタンスにします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-362">The **west-us** strictly refers to Service instances created for the West US region.</span></span> <span data-ttu-id="b82cb-363">これを更新、[エンドポイント URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)。 ここではその例をいくつかのようになります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-363">Update this with your [endpoint URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa); here are some examples of what that might look like:</span></span>
-    > - <span data-ttu-id="b82cb-364">西ヨーロッパ: `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="b82cb-364">West Europe: `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
-    > - <span data-ttu-id="b82cb-365">東南アジア。 `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="b82cb-365">Southeast Asia: `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
-    > - <span data-ttu-id="b82cb-366">オーストラリア東部: `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="b82cb-366">Australia East: `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
+    > <span data-ttu-id="8a7c0-361">**VisionAnalysisEndpoint**変数は、この例で指定したものとは異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-361">The **visionAnalysisEndpoint** variable might differ from the one specified in this example.</span></span> <span data-ttu-id="8a7c0-362">**米国西部**は、米国西部リージョン用に作成されたサービスインスタンスを厳密に参照します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-362">The **west-us** strictly refers to Service instances created for the West US region.</span></span> <span data-ttu-id="8a7c0-363">これを[エンドポイント URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)で更新します。次に例をいくつか示します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-363">Update this with your [endpoint URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa); here are some examples of what that might look like:</span></span>
+    > - <span data-ttu-id="8a7c0-364">西ヨーロッパ:`https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="8a7c0-364">West Europe: `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
+    > - <span data-ttu-id="8a7c0-365">東南アジア:`https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="8a7c0-365">Southeast Asia: `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
+    > - <span data-ttu-id="8a7c0-366">オーストラリア東部:`https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span><span class="sxs-lookup"><span data-stu-id="8a7c0-366">Australia East: `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`</span></span>
 
-7.  <span data-ttu-id="b82cb-367">今すぐ、Awake のコードは、追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-367">Code for Awake now needs to be added.</span></span> 
+7.  <span data-ttu-id="8a7c0-367">起動するためのコードを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-367">Code for Awake now needs to be added.</span></span> 
 
     ```csharp
         private void Awake()
@@ -600,7 +600,7 @@ ms.locfileid: "59597891"
         }
     ```
 
-8.  <span data-ttu-id="b82cb-368">によってキャプチャされたイメージの分析の結果を取得する (ストリームの静的メソッドで下にある)、コルーチンを次に、追加、 *ImageCapture*クラス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-368">Next, add the coroutine (with the static stream method below it), which will obtain the results of the analysis of the image captured by the *ImageCapture* Class.</span></span> 
+8.  <span data-ttu-id="8a7c0-368">次に、コルーチン (その下に静的ストリームメソッドを含む) を追加します。これにより、 *Imagecapture*クラスによってキャプチャされたイメージの分析結果が得られます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-368">Next, add the coroutine (with the static stream method below it), which will obtain the results of the analysis of the image captured by the *ImageCapture* Class.</span></span> 
 
     ```csharp
         /// <summary>
@@ -676,69 +676,69 @@ ms.locfileid: "59597891"
         }  
     ```
 
-9.  <span data-ttu-id="b82cb-369">変更を保存することを確認する*Visual Studio*に戻る前に*Unity*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-369">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
-10. <span data-ttu-id="b82cb-370">戻る Unity エディターで、をクリックし、ドラッグ、 *VisionManager*と*ImageCapture*クラスを**スクリプト**フォルダーを**Main Camera**オブジェクト、*階層パネル*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-370">Back in the Unity Editor, click and drag the *VisionManager* and *ImageCapture* classes from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span> 
+9.  <span data-ttu-id="8a7c0-369">*Unity*に戻る前に、変更内容を*Visual Studio*に保存してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-369">Be sure to save your changes in *Visual Studio* before returning to *Unity*.</span></span>
+10. <span data-ttu-id="8a7c0-370">Unity エディターに戻り、 **[スクリプト]** フォルダーの*VisionManager*および*imagecapture*クラスをクリックして、[*階層] パネル*の **[メインカメラ]** オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-370">Back in the Unity Editor, click and drag the *VisionManager* and *ImageCapture* classes from the **Scripts** folder to the **Main Camera** object in the *Hierarchy Panel*.</span></span> 
 
-## <a name="chapter-8--before-building"></a><span data-ttu-id="b82cb-371">第 8 章: ビルドする前に</span><span class="sxs-lookup"><span data-stu-id="b82cb-371">Chapter 8 – Before building</span></span>
+## <a name="chapter-8--before-building"></a><span data-ttu-id="8a7c0-371">章 8-ビルド前</span><span class="sxs-lookup"><span data-stu-id="8a7c0-371">Chapter 8 – Before building</span></span>
 
-<span data-ttu-id="b82cb-372">アプリケーションの徹底的なテストを実行するには、必要がありますをサイドロードすること、HoloLens にします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-372">To perform a thorough test of your application you will need to sideload it onto your HoloLens.</span></span>
-<span data-ttu-id="b82cb-373">実行する前にいることを確認します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-373">Before you do, ensure that:</span></span>
+<span data-ttu-id="8a7c0-372">アプリケーションの徹底的なテストを実行するには、アプリケーションを HoloLens にサイドロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-372">To perform a thorough test of your application you will need to sideload it onto your HoloLens.</span></span>
+<span data-ttu-id="8a7c0-373">これを行う前に、次のことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-373">Before you do, ensure that:</span></span>
 
--   <span data-ttu-id="b82cb-374">説明されているすべての設定[第 2 章](#chapter-2--set-up-the-unity-project)が正しく設定されています。</span><span class="sxs-lookup"><span data-stu-id="b82cb-374">All the settings mentioned in [Chapter 2](#chapter-2--set-up-the-unity-project) are set correctly.</span></span> 
--   <span data-ttu-id="b82cb-375">関連付けられているすべてのスクリプト、 **Main Camera**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="b82cb-375">All the scripts are attached to the **Main Camera** object.</span></span> 
--   <span data-ttu-id="b82cb-376">内のすべてのフィールド、*カメラ インスペクター [メイン] パネル*が適切に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-376">All the fields in the *Main Camera Inspector Panel* are assigned properly.</span></span>
--   <span data-ttu-id="b82cb-377">挿入することを確認、**認証キー**に、 **authorizationKey**変数。</span><span class="sxs-lookup"><span data-stu-id="b82cb-377">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span>
--   <span data-ttu-id="b82cb-378">エンドポイントもチェックすることを確認、 *VisionManager*スクリプト、およびに合わせて配置 *、* リージョン (このドキュメントでは*西-ご*既定)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-378">Ensure that you have also checked your endpoint in your *VisionManager* script, and that it aligns to *your* region (this document uses *west-us* by default).</span></span>
+-   <span data-ttu-id="8a7c0-374">[第2章](#chapter-2--set-up-the-unity-project)で説明したすべての設定が正しく設定されています。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-374">All the settings mentioned in [Chapter 2](#chapter-2--set-up-the-unity-project) are set correctly.</span></span> 
+-   <span data-ttu-id="8a7c0-375">すべてのスクリプトが**メインカメラ**オブジェクトにアタッチされます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-375">All the scripts are attached to the **Main Camera** object.</span></span> 
+-   <span data-ttu-id="8a7c0-376">*メインカメラインスペクターパネル*のすべてのフィールドが適切に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-376">All the fields in the *Main Camera Inspector Panel* are assigned properly.</span></span>
+-   <span data-ttu-id="8a7c0-377">**認証キー**が**authorizationkey**変数に挿入されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-377">Make sure you insert your **Auth Key** into the **authorizationKey** variable.</span></span>
+-   <span data-ttu-id="8a7c0-378">*VisionManager*スクリプトでエンドポイントも確認し *、地域に*合わせて配置されていることを確認します (このドキュメントでは、既定で*米国西部*が使用されています)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-378">Ensure that you have also checked your endpoint in your *VisionManager* script, and that it aligns to *your* region (this document uses *west-us* by default).</span></span>
 
-## <a name="chapter-9--build-the-uwp-solution-and-sideload-the-application"></a><span data-ttu-id="b82cb-379">9 – 章ビルド UWP ソリューションおよびサイドロード アプリケーション</span><span class="sxs-lookup"><span data-stu-id="b82cb-379">Chapter 9 – Build the UWP Solution and sideload the application</span></span>
-<span data-ttu-id="b82cb-380">このプロジェクトの Unity のセクションの必要なすべてが今すぐ完了したら、ので、Unity から構築するための時間。</span><span class="sxs-lookup"><span data-stu-id="b82cb-380">Everything needed for the Unity section of this project has now been completed, so it is time to build it from Unity.</span></span>
+## <a name="chapter-9--build-the-uwp-solution-and-sideload-the-application"></a><span data-ttu-id="8a7c0-379">第9章– UWP ソリューションをビルドし、アプリケーションをサイドロードする</span><span class="sxs-lookup"><span data-stu-id="8a7c0-379">Chapter 9 – Build the UWP Solution and sideload the application</span></span>
+<span data-ttu-id="8a7c0-380">このプロジェクトの Unity セクションに必要なものはすべて完了したので、Unity から構築します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-380">Everything needed for the Unity section of this project has now been completed, so it is time to build it from Unity.</span></span>
 
-1.  <span data-ttu-id="b82cb-381">移動します*ビルド設定* - **ファイル > の設定を作成しています.**</span><span class="sxs-lookup"><span data-stu-id="b82cb-381">Navigate to *Build Settings* - **File > Build Settings…**</span></span>
-2.  <span data-ttu-id="b82cb-382">*Build Settings*ウィンドウで、をクリックして**ビルド**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-382">From the *Build Settings* window, click **Build**.</span></span>
+1.  <span data-ttu-id="8a7c0-381">ビルド設定 - **ファイル > ビルド設定**に移動します...</span><span class="sxs-lookup"><span data-stu-id="8a7c0-381">Navigate to *Build Settings* - **File > Build Settings…**</span></span>
+2.  <span data-ttu-id="8a7c0-382">[*ビルドの設定*] ウィンドウで、 **[ビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-382">From the *Build Settings* window, click **Build**.</span></span>
 
-    ![Unity からのアプリの構築](images/AzureLabs-Lab2-26.png)
+    ![Unity からアプリをビルドする](images/AzureLabs-Lab2-26.png)
 
-3.  <span data-ttu-id="b82cb-384">まだ行っていない場合、ティック**UnityC#プロジェクト**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-384">If not already, tick **Unity C# Projects**.</span></span>
-4.  <span data-ttu-id="b82cb-385">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-385">Click **Build**.</span></span> <span data-ttu-id="b82cb-386">Unity を起動、*ファイル エクスプ ローラー*ウィンドウを作成しにアプリをビルドするフォルダーを選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-386">Unity will launch a *File Explorer* window, where you need to create and then select a folder to build the app into.</span></span> <span data-ttu-id="b82cb-387">ここで、そのフォルダーを作成し、名前*アプリ*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-387">Create that folder now, and name it *App*.</span></span> <span data-ttu-id="b82cb-388">使用し、*アプリ*フォルダーを選択すると、キーを押して**フォルダーの選択**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-388">Then with the *App* folder selected, press **Select Folder**.</span></span> 
-5.  <span data-ttu-id="b82cb-389">Unity にプロジェクトをビルドを開始、*アプリ*フォルダー。</span><span class="sxs-lookup"><span data-stu-id="b82cb-389">Unity will begin building your project to the *App* folder.</span></span> 
-6.  <span data-ttu-id="b82cb-390">1 回 Unity には、(少し時間がかかる場合があります) ビルドが完了したが開き、*ファイル エクスプ ローラー*ビルドの位置にあるウィンドウ (上の windows では、常に表示されないの新しい追加の通知をタスク バーを確認ウィンドウ)。</span><span class="sxs-lookup"><span data-stu-id="b82cb-390">Once Unity has finished building (it might take some time), it will open a *File Explorer* window at the location of your build (check your task bar, as it may not always appear above your windows, but will notify you of the addition of a new window).</span></span>
+3.  <span data-ttu-id="8a7c0-384">**Unity C#プロジェクト**をまだティックしていない場合は、ティックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-384">If not already, tick **Unity C# Projects**.</span></span>
+4.  <span data-ttu-id="8a7c0-385">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-385">Click **Build**.</span></span> <span data-ttu-id="8a7c0-386">Unity は*エクスプローラー*ウィンドウを起動します。このウィンドウでは、アプリを作成するフォルダーを作成して選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-386">Unity will launch a *File Explorer* window, where you need to create and then select a folder to build the app into.</span></span> <span data-ttu-id="8a7c0-387">ここでそのフォルダーを作成し、「 *App*」という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-387">Create that folder now, and name it *App*.</span></span> <span data-ttu-id="8a7c0-388">次に、*アプリ*フォルダーを選択し、 **[フォルダーの選択]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-388">Then with the *App* folder selected, press **Select Folder**.</span></span> 
+5.  <span data-ttu-id="8a7c0-389">Unity は、*アプリ*フォルダーへのプロジェクトのビルドを開始します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-389">Unity will begin building your project to the *App* folder.</span></span> 
+6.  <span data-ttu-id="8a7c0-390">Unity のビルドが完了すると (時間がかかる場合があります)、ビルドの場所で*ファイルエクスプローラー*ウィンドウを開きます (ウィンドウの上に常に表示されるとは限りませんが、新しいウィンドウが追加されたことが通知されます)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-390">Once Unity has finished building (it might take some time), it will open a *File Explorer* window at the location of your build (check your task bar, as it may not always appear above your windows, but will notify you of the addition of a new window).</span></span>
 
-## <a name="chapter-10--deploy-to-hololens"></a><span data-ttu-id="b82cb-391">HoloLens に章 – 10 を展開します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-391">Chapter 10 – Deploy to HoloLens</span></span>
+## <a name="chapter-10--deploy-to-hololens"></a><span data-ttu-id="8a7c0-391">第10章– HoloLens へのデプロイ</span><span class="sxs-lookup"><span data-stu-id="8a7c0-391">Chapter 10 – Deploy to HoloLens</span></span>
 
-<span data-ttu-id="b82cb-392">HoloLens の展開。</span><span class="sxs-lookup"><span data-stu-id="b82cb-392">To deploy on HoloLens:</span></span>
+<span data-ttu-id="8a7c0-392">HoloLens に展開するには:</span><span class="sxs-lookup"><span data-stu-id="8a7c0-392">To deploy on HoloLens:</span></span>
 
-1.  <span data-ttu-id="b82cb-393">必要になります、HoloLens の IP アドレス (リモート) を展開し、HoloLens をことを確認するには**開発者モード**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-393">You will need the IP Address of your HoloLens (for Remote Deploy), and to ensure your HoloLens is in **Developer Mode**.</span></span> <span data-ttu-id="b82cb-394">これには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-394">To do this:</span></span>
+1.  <span data-ttu-id="8a7c0-393">Hololens が**開発者モード**になっていることを確認するには、HOLOLENS の IP アドレス (リモートデプロイ用) が必要です。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-393">You will need the IP Address of your HoloLens (for Remote Deploy), and to ensure your HoloLens is in **Developer Mode**.</span></span> <span data-ttu-id="8a7c0-394">これを行うには :</span><span class="sxs-lookup"><span data-stu-id="8a7c0-394">To do this:</span></span>
 
-    1. <span data-ttu-id="b82cb-395">ソックスを着けずに、HoloLens 中を開く、**設定**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-395">Whilst wearing your HoloLens, open the **Settings**.</span></span>
-    2. <span data-ttu-id="b82cb-396">移動して**ネットワークとインターネット > Wi-fi > 詳細オプション**</span><span class="sxs-lookup"><span data-stu-id="b82cb-396">Go to **Network & Internet > Wi-Fi > Advanced Options**</span></span>
-    3. <span data-ttu-id="b82cb-397">注、 **IPv4**アドレス。</span><span class="sxs-lookup"><span data-stu-id="b82cb-397">Note the **IPv4** address.</span></span>
-    4. <span data-ttu-id="b82cb-398">次に移動します**設定**、し**更新とセキュリティ > 開発者向け**</span><span class="sxs-lookup"><span data-stu-id="b82cb-398">Next, navigate back to **Settings**, and then to **Update & Security > For Developers**</span></span> 
-    5. <span data-ttu-id="b82cb-399">開発者モードを設定します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-399">Set Developer Mode On.</span></span>
+    1. <span data-ttu-id="8a7c0-395">HoloLens を装着した後、**設定**を開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-395">Whilst wearing your HoloLens, open the **Settings**.</span></span>
+    2. <span data-ttu-id="8a7c0-396">**[ネットワーク & インターネット > wi-fi > 詳細オプション]** にアクセス</span><span class="sxs-lookup"><span data-stu-id="8a7c0-396">Go to **Network & Internet > Wi-Fi > Advanced Options**</span></span>
+    3. <span data-ttu-id="8a7c0-397">**IPv4**アドレスをメモしておきます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-397">Note the **IPv4** address.</span></span>
+    4. <span data-ttu-id="8a7c0-398">次に、 **[設定]** に戻り、**開発者向けの & セキュリティ > を更新**します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-398">Next, navigate back to **Settings**, and then to **Update & Security > For Developers**</span></span> 
+    5. <span data-ttu-id="8a7c0-399">開発者モードをに設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-399">Set Developer Mode On.</span></span>
 
-2.  <span data-ttu-id="b82cb-400">新しい Unity ビルドに移動します (、*アプリ*フォルダー) とソリューション ファイルを開くと*Visual Studio*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-400">Navigate to your new Unity build (the *App* folder) and open the solution file with *Visual Studio*.</span></span>
-3.  <span data-ttu-id="b82cb-401">ソリューション構成の選択で**デバッグ**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-401">In the Solution Configuration select **Debug**.</span></span>
-4.  <span data-ttu-id="b82cb-402">ソリューション プラットフォーム で選択**x86**、**リモート マシン**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-402">In the Solution Platform, select **x86**, **Remote Machine**.</span></span> 
+2.  <span data-ttu-id="8a7c0-400">新しい Unity ビルド (*アプリ*フォルダー) に移動し、 *Visual Studio*でソリューションファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-400">Navigate to your new Unity build (the *App* folder) and open the solution file with *Visual Studio*.</span></span>
+3.  <span data-ttu-id="8a7c0-401">ソリューション構成で、 **[デバッグ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-401">In the Solution Configuration select **Debug**.</span></span>
+4.  <span data-ttu-id="8a7c0-402">ソリューションプラットフォームで、[ **x86**、**リモートコンピューター**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-402">In the Solution Platform, select **x86**, **Remote Machine**.</span></span> 
 
     ![Visual Studio からソリューションをデプロイします。](images/AzureLabs-Lab2-27.png)
  
-5.  <span data-ttu-id="b82cb-404">移動して、**ビルド メニューの** をクリック**ソリューションの配置**サイドロード、HoloLens をアプリケーションにします。</span><span class="sxs-lookup"><span data-stu-id="b82cb-404">Go to the **Build menu** and click on **Deploy Solution**, to sideload the application to your HoloLens.</span></span>
-6.  <span data-ttu-id="b82cb-405">アプリが、起動する準備ができて、HoloLens にインストールされているアプリの一覧に表示されます。</span><span class="sxs-lookup"><span data-stu-id="b82cb-405">Your App should now appear in the list of installed apps on your HoloLens, ready to be launched!</span></span>
+5.  <span data-ttu-id="8a7c0-404">[**ビルド] メニュー**の [ソリューションの**配置**] をクリックして、アプリケーションを HoloLens にサイドロードします。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-404">Go to the **Build menu** and click on **Deploy Solution**, to sideload the application to your HoloLens.</span></span>
+6.  <span data-ttu-id="8a7c0-405">アプリが HoloLens にインストールされているアプリの一覧に表示され、起動できる状態になります。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-405">Your App should now appear in the list of installed apps on your HoloLens, ready to be launched!</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b82cb-406">イマーシブ ヘッドセットを展開するには、設定、**ソリューション プラットフォーム**に*ローカル マシン*、設定と、**構成**に*デバッグ*で*x86*として、**プラットフォーム**します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-406">To deploy to immersive headset, set the **Solution Platform** to *Local Machine*, and set the **Configuration** to *Debug*, with *x86* as the **Platform**.</span></span> <span data-ttu-id="b82cb-407">ローカルにデプロイし、machine を使用して、**ビルド メニューの**選択*ソリューションの配置*します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-407">Then deploy to the local machine, using the **Build menu**, selecting *Deploy Solution*.</span></span> 
+> <span data-ttu-id="8a7c0-406">イマーシブヘッドセットにデプロイするには **、ソリューションプラットフォーム**を*ローカルコンピューター*に設定し、**プラットフォーム**として*x86*を使用して、**構成**を [*デバッグ*] に設定します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-406">To deploy to immersive headset, set the **Solution Platform** to *Local Machine*, and set the **Configuration** to *Debug*, with *x86* as the **Platform**.</span></span> <span data-ttu-id="8a7c0-407">次に、[**ビルド] メニュー**の [*ソリューションの配置*] をクリックして、ローカルコンピューターに配置します。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-407">Then deploy to the local machine, using the **Build menu**, selecting *Deploy Solution*.</span></span> 
 
-## <a name="your-finished-computer-vision-api-application"></a><span data-ttu-id="b82cb-408">完成した Computer Vision API アプリケーション</span><span class="sxs-lookup"><span data-stu-id="b82cb-408">Your finished Computer Vision API application</span></span>
+## <a name="your-finished-computer-vision-api-application"></a><span data-ttu-id="8a7c0-408">完成した Computer Vision API アプリケーション</span><span class="sxs-lookup"><span data-stu-id="8a7c0-408">Your finished Computer Vision API application</span></span>
 
-<span data-ttu-id="b82cb-409">これで、現実世界のオブジェクトを認識し、内容は、発生の信頼度を表示する Azure の Computer Vision API を利用している mixed reality アプリを構築します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-409">Congratulations, you built a mixed reality app that leverages the Azure Computer Vision API to recognize real world objects, and display confidence of what has been seen.</span></span>
+<span data-ttu-id="8a7c0-409">これで、Azure Computer Vision API を利用して実際のオブジェクトを認識し、表示されている内容の信頼性を表示する、mixed reality アプリを構築しました。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-409">Congratulations, you built a mixed reality app that leverages the Azure Computer Vision API to recognize real world objects, and display confidence of what has been seen.</span></span>
 
 ![ラボの結果](images/AzureLabs-Lab2-000.png)
 
-## <a name="bonus-exercises"></a><span data-ttu-id="b82cb-411">ボーナスの演習</span><span class="sxs-lookup"><span data-stu-id="b82cb-411">Bonus exercises</span></span>
+## <a name="bonus-exercises"></a><span data-ttu-id="8a7c0-411">ボーナスの演習</span><span class="sxs-lookup"><span data-stu-id="8a7c0-411">Bonus exercises</span></span>
 
-### <a name="exercise-1"></a><span data-ttu-id="b82cb-412">手順 1</span><span class="sxs-lookup"><span data-stu-id="b82cb-412">Exercise 1</span></span>
+### <a name="exercise-1"></a><span data-ttu-id="8a7c0-412">演習1</span><span class="sxs-lookup"><span data-stu-id="8a7c0-412">Exercise 1</span></span>
 
-<span data-ttu-id="b82cb-413">使用したのと同様、*タグ*パラメーター (内からわかるように、*エンドポイント*内で使用される、 *VisionManager*)、その他の情報を検出するためにアプリを拡張; を見てその他のパラメーターへのアクセスがある[ここ](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-413">Just as you have used the *Tags* parameter (as evidenced within the *endpoint* used within the *VisionManager*), extend the app to detect other information; have a look at what other parameters you have access to [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span>
+<span data-ttu-id="8a7c0-413">*Tags*パラメーターを使用したのと同じように ( *VisionManager*内で使用される*エンドポイント*内での説明に従って)、他の情報を検出するようにアプリを拡張します。他にアクセスできるパラメーターについては、[こちら](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-413">Just as you have used the *Tags* parameter (as evidenced within the *endpoint* used within the *VisionManager*), extend the app to detect other information; have a look at what other parameters you have access to [HERE](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa).</span></span>
 
-### <a name="exercise-2"></a><span data-ttu-id="b82cb-414">手順 2</span><span class="sxs-lookup"><span data-stu-id="b82cb-414">Exercise 2</span></span>
+### <a name="exercise-2"></a><span data-ttu-id="8a7c0-414">演習2</span><span class="sxs-lookup"><span data-stu-id="8a7c0-414">Exercise 2</span></span>
 
-<span data-ttu-id="b82cb-415">おそらく、番号を非表示より会話で読みやすい方法で返される Azure のデータを表示します。</span><span class="sxs-lookup"><span data-stu-id="b82cb-415">Display the returned Azure data, in a more conversational, and readable way, perhaps hiding the numbers.</span></span> <span data-ttu-id="b82cb-416">いなくても、ボットは、ユーザーに話す可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b82cb-416">As though a bot might be speaking to the user.</span></span>
+<span data-ttu-id="8a7c0-415">返された Azure データをより多くの会話で表示し、読みやすい方法で表示します (数値を非表示にするなど)。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-415">Display the returned Azure data, in a more conversational, and readable way, perhaps hiding the numbers.</span></span> <span data-ttu-id="8a7c0-416">Bot はユーザーと話し合っているかもしれません。</span><span class="sxs-lookup"><span data-stu-id="8a7c0-416">As though a bot might be speaking to the user.</span></span>
