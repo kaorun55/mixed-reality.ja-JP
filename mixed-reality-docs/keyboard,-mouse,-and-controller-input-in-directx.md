@@ -1,34 +1,34 @@
 ---
-title: キーボード、マウス、および DirectX でコント ローラーの入力
-description: キーボード、マウス、およびゲーム コント ローラーを使用する Windows Mixed Reality アプリを作成する方法について説明します。
+title: DirectX でのキーボード、マウス、およびコントローラー入力
+description: キーボード、マウス、およびゲームコントローラーを使用する Windows Mixed Reality 用のアプリを作成する方法について説明します。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、キーボード、マウス、ゲーム コント ローラー、HoloLens、xbox コント ローラーで、デスクトップ、チュートリアル、サンプル コード
+keywords: Windows Mixed Reality, キーボード, マウス, ゲームコントローラー, xbox コントローラー, HoloLens, デスクトップ, チュートリアル, サンプルコード
 ms.openlocfilehash: 1e61cb50a561492fdc6849b5b231e97fab1bb6cf
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605088"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63551009"
 ---
-# <a name="keyboard-mouse-and-controller-input-in-directx"></a><span data-ttu-id="86f37-104">キーボード、マウス、および DirectX でコント ローラーの入力</span><span class="sxs-lookup"><span data-stu-id="86f37-104">Keyboard, mouse, and controller input in DirectX</span></span>
+# <a name="keyboard-mouse-and-controller-input-in-directx"></a><span data-ttu-id="b3f2a-104">DirectX でのキーボード、マウス、およびコントローラー入力</span><span class="sxs-lookup"><span data-stu-id="b3f2a-104">Keyboard, mouse, and controller input in DirectX</span></span>
 
-<span data-ttu-id="86f37-105">キーボード、マウス、およびゲーム コント ローラーすべて Windows Mixed Reality デバイス用の入力の便利なフォームを指定できます。</span><span class="sxs-lookup"><span data-stu-id="86f37-105">Keyboards, mice, and game controllers can all be useful forms of input for Windows Mixed Reality devices.</span></span> <span data-ttu-id="86f37-106">Bluetooth キーボードとマウスの両方がサポート、HoloLens でアプリのデバッグで、または、代替形式の入力として使用します。</span><span class="sxs-lookup"><span data-stu-id="86f37-106">Bluetooth keyboards and mice are both supported on HoloLens, for use with debugging your app or as an alternate form of input.</span></span> <span data-ttu-id="86f37-107">Windows Mixed Reality は、マウス、キーボード、およびゲーム コント ローラーとなってきた、norm - Pc に接続されている、イマーシブ ヘッドセットもサポートします。</span><span class="sxs-lookup"><span data-stu-id="86f37-107">Windows Mixed Reality also supports immersive headsets attached to PCs - where mice, keyboards, and game controllers have historically been the norm.</span></span>
+<span data-ttu-id="b3f2a-105">Windows Mixed Reality デバイスでは、キーボード、マウス、およびゲームコントローラーはすべて、便利な入力形式です。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-105">Keyboards, mice, and game controllers can all be useful forms of input for Windows Mixed Reality devices.</span></span> <span data-ttu-id="b3f2a-106">Bluetooth キーボードとマウスは両方とも HoloLens でサポートされており、アプリのデバッグや別の入力形式として使用できます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-106">Bluetooth keyboards and mice are both supported on HoloLens, for use with debugging your app or as an alternate form of input.</span></span> <span data-ttu-id="b3f2a-107">Windows Mixed Reality では、Pc に接続されているイマーシブヘッドセットもサポートされています。マウス、キーボード、およびゲームコントローラーは、従来は標準でした。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-107">Windows Mixed Reality also supports immersive headsets attached to PCs - where mice, keyboards, and game controllers have historically been the norm.</span></span>
 
-<span data-ttu-id="86f37-108">HoloLens、ペアに、デバイスの Bluetooth キーボードでキーボード入力を使用して、または、Windows Device Portal を使用して、仮想入力を使用します。</span><span class="sxs-lookup"><span data-stu-id="86f37-108">To use keyboard input on HoloLens, pair a Bluetooth keyboard to your device or use virtual input via the Windows Device Portal.</span></span> <span data-ttu-id="86f37-109">Windows Mixed Reality イマーシブ ヘッドセット ソックスを着けずにいるときにキーボード入力を使用するには、デバイスに配置するか、Windows キー + Y キーの組み合わせを使用して、複合現実に入力フォーカスを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="86f37-109">To use keyboard input while wearing a Windows Mixed Reality immersive headset, assign input focus to mixed reality by putting on the device or using the Windows Key + Y keyboard combination.</span></span> <span data-ttu-id="86f37-110">HoloLens の対象としたアプリが接続されているこれらのデバイスなし機能を提供する必要がありますに留意してください。</span><span class="sxs-lookup"><span data-stu-id="86f37-110">Keep in mind that apps intended for HoloLens must provide functionality without these devices attached.</span></span>
+<span data-ttu-id="b3f2a-108">HoloLens でキーボード入力を使用するには、Bluetooth キーボードをデバイスにペアリングするか、Windows デバイスポータルを使用して仮想入力を使用します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-108">To use keyboard input on HoloLens, pair a Bluetooth keyboard to your device or use virtual input via the Windows Device Portal.</span></span> <span data-ttu-id="b3f2a-109">Windows Mixed Reality のイマーシブヘッドセットを装着しているときにキーボード入力を使用するには、をデバイスに配置するか、Windows キーと Y キーの組み合わせを使用して、混合現実に入力フォーカスを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-109">To use keyboard input while wearing a Windows Mixed Reality immersive headset, assign input focus to mixed reality by putting on the device or using the Windows Key + Y keyboard combination.</span></span> <span data-ttu-id="b3f2a-110">HoloLens 用のアプリは、これらのデバイスが接続されていない機能を提供する必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-110">Keep in mind that apps intended for HoloLens must provide functionality without these devices attached.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="86f37-111">この記事のコード スニペットは現在の使用を示すC++/CX ではなく c++ 17 に準拠していませんC++/WinRT で使用するため、 [ C++ holographic プロジェクト テンプレート](creating-a-holographic-directx-project.md)します。</span><span class="sxs-lookup"><span data-stu-id="86f37-111">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="86f37-112">概念は、同等のC++/WinRT のプロジェクトがコードに変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="86f37-112">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
+><span data-ttu-id="b3f2a-111">この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-111">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="b3f2a-112">これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-112">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
 
-## <a name="subscribe-for-corewindow-input-events"></a><span data-ttu-id="86f37-113">CoreWindow 入力イベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="86f37-113">Subscribe for CoreWindow input events</span></span>
+## <a name="subscribe-for-corewindow-input-events"></a><span data-ttu-id="b3f2a-113">CoreWindow 入力イベントをサブスクライブします</span><span class="sxs-lookup"><span data-stu-id="b3f2a-113">Subscribe for CoreWindow input events</span></span>
 
-### <a name="keyboard-input"></a><span data-ttu-id="86f37-114">キーボード入力</span><span class="sxs-lookup"><span data-stu-id="86f37-114">Keyboard input</span></span>
+### <a name="keyboard-input"></a><span data-ttu-id="b3f2a-114">キーボード入力</span><span class="sxs-lookup"><span data-stu-id="b3f2a-114">Keyboard input</span></span>
 
-<span data-ttu-id="86f37-115">Windows Holographic のアプリケーション テンプレートで他の UWP アプリと同じようにキーボード入力のイベント ハンドラーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="86f37-115">In the Windows Holographic app template, we include an event handler for keyboard input just like any other UWP app.</span></span> <span data-ttu-id="86f37-116">アプリは、Windows Mixed Reality で同じようにキーボード入力データを消費します。</span><span class="sxs-lookup"><span data-stu-id="86f37-116">Your app consumes keyboard input data the same way in Windows Mixed Reality.</span></span>
+<span data-ttu-id="b3f2a-115">Windows Holographic アプリテンプレートでは、他の UWP アプリと同じように、キーボード入力用のイベントハンドラーが追加されています。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-115">In the Windows Holographic app template, we include an event handler for keyboard input just like any other UWP app.</span></span> <span data-ttu-id="b3f2a-116">アプリでは、Windows Mixed Reality と同じ方法でキーボード入力データを使用します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-116">Your app consumes keyboard input data the same way in Windows Mixed Reality.</span></span>
 
-<span data-ttu-id="86f37-117">AppView.cpp: から</span><span class="sxs-lookup"><span data-stu-id="86f37-117">From AppView.cpp:</span></span>
+<span data-ttu-id="b3f2a-117">AppView .cpp から:</span><span class="sxs-lookup"><span data-stu-id="b3f2a-117">From AppView.cpp:</span></span>
 
 ```
 // Register for keypress notifications.
@@ -47,25 +47,25 @@ ms.locfileid: "59605088"
    }
 ```
 
-### <a name="virtual-keyboard-input"></a><span data-ttu-id="86f37-118">仮想キーボード入力</span><span class="sxs-lookup"><span data-stu-id="86f37-118">Virtual keyboard input</span></span>
-<span data-ttu-id="86f37-119">没入型のデスクトップ ヘッドセットには、Windows によって、没入型のビューに表示される仮想キーボードもサポートできます。</span><span class="sxs-lookup"><span data-stu-id="86f37-119">For immersive desktop headsets, you can also support virtual keyboards rendered by Windows over your immersive view.</span></span> <span data-ttu-id="86f37-120">これをサポートするアプリを実装できます**CoreTextEditContext**します。</span><span class="sxs-lookup"><span data-stu-id="86f37-120">To support this, your app can implement **CoreTextEditContext**.</span></span> <span data-ttu-id="86f37-121">これには、Windows 仮想キーボード正しくテキストが参加できるように、アプリ側でレンダリングされるテキスト ボックスの状態を理解することができます。</span><span class="sxs-lookup"><span data-stu-id="86f37-121">This lets Windows understand the state of your own app-rendered text boxes, so the virtual keyboard can correctly contribute to the text there.</span></span>
+### <a name="virtual-keyboard-input"></a><span data-ttu-id="b3f2a-118">仮想キーボード入力</span><span class="sxs-lookup"><span data-stu-id="b3f2a-118">Virtual keyboard input</span></span>
+<span data-ttu-id="b3f2a-119">イマーシブデスクトップヘッドセットの場合は、Windows によってレンダリングされた仮想キーボードをイマーシブビューでサポートすることもできます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-119">For immersive desktop headsets, you can also support virtual keyboards rendered by Windows over your immersive view.</span></span> <span data-ttu-id="b3f2a-120">これをサポートするために、アプリは**CoreTextEditContext**を実装できます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-120">To support this, your app can implement **CoreTextEditContext**.</span></span> <span data-ttu-id="b3f2a-121">これにより、Windows はアプリでレンダリングされたテキストボックスの状態を把握できるようになり、仮想キーボードがそこにあるテキストに正しく参加できるようになります。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-121">This lets Windows understand the state of your own app-rendered text boxes, so the virtual keyboard can correctly contribute to the text there.</span></span>
 
-<span data-ttu-id="86f37-122">CoreTextEditContext サポートの実装の詳細については、次を参照してください。、 [CoreTextEditContext サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)します。</span><span class="sxs-lookup"><span data-stu-id="86f37-122">For more information on implementing CoreTextEditContext support, see the [CoreTextEditContext sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).</span></span>
+<span data-ttu-id="b3f2a-122">CoreTextEditContext サポートの実装の詳細については、 [CoreTextEditContext サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-122">For more information on implementing CoreTextEditContext support, see the [CoreTextEditContext sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).</span></span>
 
-### <a name="mouse-input"></a><span data-ttu-id="86f37-123">マウス入力</span><span class="sxs-lookup"><span data-stu-id="86f37-123">Mouse Input</span></span>
+### <a name="mouse-input"></a><span data-ttu-id="b3f2a-123">マウス入力</span><span class="sxs-lookup"><span data-stu-id="b3f2a-123">Mouse Input</span></span>
 
-<span data-ttu-id="86f37-124">UWP CoreWindow 入力イベントのハンドラーを使用してもう一度、マウスの入力を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="86f37-124">You can also use mouse input, again via the UWP CoreWindow input event handlers.</span></span> <span data-ttu-id="86f37-125">同じように押されたジェスチャでマウスのクリックをサポートするために、Windows Holographic のアプリケーション テンプレートを変更する方法を次に示します。</span><span class="sxs-lookup"><span data-stu-id="86f37-125">Here's how to modify the Windows Holographic app template to support mouse clicks in the same way as pressed gestures.</span></span> <span data-ttu-id="86f37-126">したらこの変更は、イマーシブ ヘッドセット デバイスを装着しているときにマウスのクリックにキューブが再配置します。</span><span class="sxs-lookup"><span data-stu-id="86f37-126">After making this modification, a mouse click while wearing an immersive headset device will reposition the cube.</span></span>
+<span data-ttu-id="b3f2a-124">また、UWP CoreWindow 入力イベントハンドラーを使用して、マウス入力を再度使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-124">You can also use mouse input, again via the UWP CoreWindow input event handlers.</span></span> <span data-ttu-id="b3f2a-125">ここでは、Windows Holographic アプリケーションテンプレートを変更して、マウスのクリック操作を、押したジェスチャと同じようにサポートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-125">Here's how to modify the Windows Holographic app template to support mouse clicks in the same way as pressed gestures.</span></span> <span data-ttu-id="b3f2a-126">この変更を行った後、イマーシブヘッドセットデバイスの装着中にマウスをクリックすると、キューブが再配置されます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-126">After making this modification, a mouse click while wearing an immersive headset device will reposition the cube.</span></span>
 
-<span data-ttu-id="86f37-127">サイト サーバー、UWP アプリできますを使用して、マウスの生データはお客様 xy のところを取得します。 に注意してください、 [MouseDevice](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDevice) API。</span><span class="sxs-lookup"><span data-stu-id="86f37-127">Note that UWP apps can also get raw XY data for the mouse by using the [MouseDevice](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDevice) API.</span></span>
+<span data-ttu-id="b3f2a-127">UWP アプリでは、 [Mousedevice](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDevice) API を使用してマウスの生の XY データを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-127">Note that UWP apps can also get raw XY data for the mouse by using the [MouseDevice](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseDevice) API.</span></span>
 
-<span data-ttu-id="86f37-128">AppView.h で新しい OnPointerPressed ハンドラーを宣言することで開始します。</span><span class="sxs-lookup"><span data-stu-id="86f37-128">Start by declaring a new OnPointerPressed handler in AppView.h:</span></span>
+<span data-ttu-id="b3f2a-128">まず、AppView. h で新しい Onポインタ押されたハンドラーを宣言します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-128">Start by declaring a new OnPointerPressed handler in AppView.h:</span></span>
 
 ```
 protected:
        void OnPointerPressed(Windows::UI::Core::CoreWindow^ sender, Windows::UI::Core::PointerEventArgs^ args);
 ```
 
-<span data-ttu-id="86f37-129">AppView.cpp では、SetWindow にこのコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="86f37-129">In AppView.cpp, add this code to SetWindow:</span></span>
+<span data-ttu-id="b3f2a-129">AppView .cpp で、次のコードを SetWindow に追加します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-129">In AppView.cpp, add this code to SetWindow:</span></span>
 
 ```
 // Register for pointer pressed notifications.
@@ -73,7 +73,7 @@ protected:
        ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &AppView::OnPointerPressed);
 ```
 
-<span data-ttu-id="86f37-130">ファイルの下部にある OnPointerPressed のこの定義を配置します。</span><span class="sxs-lookup"><span data-stu-id="86f37-130">Then put this definition for OnPointerPressed at the bottom of the file:</span></span>
+<span data-ttu-id="b3f2a-130">次に、この定義を、ファイルの末尾で押された Onポインタに配置します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-130">Then put this definition for OnPointerPressed at the bottom of the file:</span></span>
 
 ```
 void AppView::OnPointerPressed(CoreWindow^ sender, PointerEventArgs^ args)
@@ -86,21 +86,21 @@ void AppView::OnPointerPressed(CoreWindow^ sender, PointerEventArgs^ args)
    }
 ```
 
-<span data-ttu-id="86f37-131">イベント ハンドラーを追加しましたが、テンプレートの主なクラスに、パススルーします。</span><span class="sxs-lookup"><span data-stu-id="86f37-131">The event handler we just added is a pass-through to the template main class.</span></span> <span data-ttu-id="86f37-132">このパススルーをサポートするために、メイン クラスを変更してみましょう。</span><span class="sxs-lookup"><span data-stu-id="86f37-132">Let's modify the main class to support this pass-through.</span></span> <span data-ttu-id="86f37-133">ヘッダー ファイルには、このパブリック メソッドの宣言を追加します。</span><span class="sxs-lookup"><span data-stu-id="86f37-133">Add this public method declaration to the header file:</span></span>
+<span data-ttu-id="b3f2a-131">追加したイベントハンドラーは、テンプレートのメインクラスへのパススルーです。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-131">The event handler we just added is a pass-through to the template main class.</span></span> <span data-ttu-id="b3f2a-132">このパススルーをサポートするようにメインクラスを変更してみましょう。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-132">Let's modify the main class to support this pass-through.</span></span> <span data-ttu-id="b3f2a-133">次のパブリックメソッド宣言をヘッダーファイルに追加します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-133">Add this public method declaration to the header file:</span></span>
 
 ```
 // Handle mouse input.
        void OnPointerPressed();
 ```
 
-<span data-ttu-id="86f37-134">このプライベート メンバー変数も必要があります。</span><span class="sxs-lookup"><span data-stu-id="86f37-134">You'll need this private member variable, as well:</span></span>
+<span data-ttu-id="b3f2a-134">このプライベートメンバー変数も必要になります。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-134">You'll need this private member variable, as well:</span></span>
 
 ```
 // Keep track of mouse input.
        bool m_pointerPressed = false;
 ```
 
-<span data-ttu-id="86f37-135">最後に、メイン クラスのマウス クリックをサポートする新しいロジックと共に更新されます。</span><span class="sxs-lookup"><span data-stu-id="86f37-135">Finally, we will update the main class with new logic to support mouse clicks.</span></span> <span data-ttu-id="86f37-136">このイベント ハンドラーを追加することで開始します。</span><span class="sxs-lookup"><span data-stu-id="86f37-136">Start by adding this event handler.</span></span> <span data-ttu-id="86f37-137">クラス名を更新してください。</span><span class="sxs-lookup"><span data-stu-id="86f37-137">Make sure to update the class name:</span></span>
+<span data-ttu-id="b3f2a-135">最後に、メインクラスを新しいロジックで更新して、マウスのクリックをサポートします。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-135">Finally, we will update the main class with new logic to support mouse clicks.</span></span> <span data-ttu-id="b3f2a-136">まず、このイベントハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-136">Start by adding this event handler.</span></span> <span data-ttu-id="b3f2a-137">クラス名を必ず更新してください。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-137">Make sure to update the class name:</span></span>
 
 ```
 void MyHolographicAppMain::OnPointerPressed()
@@ -109,7 +109,7 @@ void MyHolographicAppMain::OnPointerPressed()
    }
 ```
 
-<span data-ttu-id="86f37-138">ここで、Update メソッドでは、このポインターの姿勢を取得するための既存のロジックを置き換えます。</span><span class="sxs-lookup"><span data-stu-id="86f37-138">Now, in the Update method, replace the existing logic for getting a pointer pose with this:</span></span>
+<span data-ttu-id="b3f2a-138">次に、Update メソッドで、ポインターを取得するための既存のロジックを次のように置き換えます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-138">Now, in the Update method, replace the existing logic for getting a pointer pose with this:</span></span>
 
 ```
 SpatialInteractionSourceState^ pointerState = m_spatialInputHandler->CheckForInput();
@@ -125,13 +125,13 @@ SpatialInteractionSourceState^ pointerState = m_spatialInputHandler->CheckForInp
    m_pointerPressed = false;
 ```
 
-<span data-ttu-id="86f37-139">再コンパイルし、再デプロイします。</span><span class="sxs-lookup"><span data-stu-id="86f37-139">Recompile and redeploy.</span></span> <span data-ttu-id="86f37-140">マウス クリックがようになりましたの位置を変更、キューブには、HoloLens、イマーシブ ヘッドセット - bluetooth マウスが接続されているとすることがわかります。</span><span class="sxs-lookup"><span data-stu-id="86f37-140">You should notice that the mouse click will now reposition the cube in your immersive headset - or HoloLens with bluetooth mouse attached.</span></span>
+<span data-ttu-id="b3f2a-139">再コンパイルして再デプロイします。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-139">Recompile and redeploy.</span></span> <span data-ttu-id="b3f2a-140">マウスをクリックすると、bluetooth マウスが接続されているイマーシブヘッドセットまたは HoloLens のキューブが再配置されることがわかります。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-140">You should notice that the mouse click will now reposition the cube in your immersive headset - or HoloLens with bluetooth mouse attached.</span></span>
 
-### <a name="game-controller-support"></a><span data-ttu-id="86f37-141">ゲーム コント ローラーのサポート</span><span class="sxs-lookup"><span data-stu-id="86f37-141">Game controller support</span></span>
+### <a name="game-controller-support"></a><span data-ttu-id="b3f2a-141">ゲームコントローラーのサポート</span><span class="sxs-lookup"><span data-stu-id="b3f2a-141">Game controller support</span></span>
 
-<span data-ttu-id="86f37-142">ゲーム コント ローラーには、楽しく魅力的な Windows Mixed Reality エクスペリエンスを制御するユーザーを許可する際の便利な方法を指定できます。</span><span class="sxs-lookup"><span data-stu-id="86f37-142">Game controllers can be a fun and convenient way of allowing the user to control an immersive Windows Mixed Reality experience.</span></span>
+<span data-ttu-id="b3f2a-142">ゲームコントローラーは、ユーザーがイマーシブ Windows Mixed Reality エクスペリエンスを制御できる楽しい便利な方法です。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-142">Game controllers can be a fun and convenient way of allowing the user to control an immersive Windows Mixed Reality experience.</span></span>
 
-<span data-ttu-id="86f37-143">ゲーム コント ローラーのサポートを Windows Holographic のアプリ テンプレートに追加するのには、最初の手順では、メインのファイルのヘッダーのクラスに次のプライベート メンバー宣言を追加します。</span><span class="sxs-lookup"><span data-stu-id="86f37-143">The first step in adding support for game controllers to the Windows Holographic app template, is to add the following private member declarations to the header class for your main file:</span></span>
+<span data-ttu-id="b3f2a-143">Windows Holographic アプリテンプレートにゲームコントローラーのサポートを追加するには、まず、次のプライベートメンバー宣言をメインファイルの header クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-143">The first step in adding support for game controllers to the Windows Holographic app template, is to add the following private member declarations to the header class for your main file:</span></span>
 
 ```
 // Recognize gamepads that are plugged in after the app starts.
@@ -158,7 +158,7 @@ Windows::Foundation::EventRegistrationToken                     m_gamepadAddedEv
        std::vector<GamepadWithButtonState>                             m_gamepads;
 ```
 
-<span data-ttu-id="86f37-144">Gamepad イベント、および現在接続されている、主要なクラスのコンス トラクターで、ゲームパッドを初期化します。</span><span class="sxs-lookup"><span data-stu-id="86f37-144">Initialize gamepad events, and any gamepads that are currently attached, in the constructor for your main class:</span></span>
+<span data-ttu-id="b3f2a-144">メインクラスのコンストラクターで、ゲームパッドイベントと、現在アタッチされているすべてのゲームパッドを初期化します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-144">Initialize gamepad events, and any gamepads that are currently attached, in the constructor for your main class:</span></span>
 
 ```
 // If connected, a game controller can also be used for input.
@@ -182,7 +182,7 @@ for (auto const& gamepad : Gamepad::Gamepads)
    }
 ```
 
-<span data-ttu-id="86f37-145">メイン クラスには、これらのイベント ハンドラーを追加します。</span><span class="sxs-lookup"><span data-stu-id="86f37-145">Add these event handlers to your main class.</span></span> <span data-ttu-id="86f37-146">クラス名を更新してください。</span><span class="sxs-lookup"><span data-stu-id="86f37-146">Make sure to update the class name:</span></span>
+<span data-ttu-id="b3f2a-145">これらのイベントハンドラーを main クラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-145">Add these event handlers to your main class.</span></span> <span data-ttu-id="b3f2a-146">クラス名を必ず更新してください。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-146">Make sure to update the class name:</span></span>
 
 ```
 void MyHolographicAppMain::OnGamepadAdded(Object^, Gamepad^ args)
@@ -211,7 +211,7 @@ void MyHolographicAppMain::OnGamepadRemoved(Object^, Gamepad^ args)
    }
 ```
 
-<span data-ttu-id="86f37-147">最後に、コント ローラーの状態の変更を認識する入力のロジックを更新します。</span><span class="sxs-lookup"><span data-stu-id="86f37-147">Finally, update the input logic to recognize changes in controller state.</span></span> <span data-ttu-id="86f37-148">ここでは、マウス イベントを追加するため、上のセクションで説明した同じ m_pointerPressed 変数を使用します。</span><span class="sxs-lookup"><span data-stu-id="86f37-148">Here, we use the same m_pointerPressed variable discussed in the section above for adding mouse events.</span></span> <span data-ttu-id="86f37-149">SpatialPointerPose をチェックする前に、Update メソッドを追加します。</span><span class="sxs-lookup"><span data-stu-id="86f37-149">Add this to the Update method, just before where it checks for the SpatialPointerPose:</span></span>
+<span data-ttu-id="b3f2a-147">最後に、コントローラーの状態の変更を認識するように入力ロジックを更新します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-147">Finally, update the input logic to recognize changes in controller state.</span></span> <span data-ttu-id="b3f2a-148">ここでは、前のセクションで説明した、マウスイベントを追加するのと同じ m_pointerPressed 変数を使用します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-148">Here, we use the same m_pointerPressed variable discussed in the section above for adding mouse events.</span></span> <span data-ttu-id="b3f2a-149">SpatialPointerPose をチェックする直前に、Update メソッドに次を追加します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-149">Add this to the Update method, just before where it checks for the SpatialPointerPose:</span></span>
 
 ```
 // Check for new input state since the last frame.
@@ -241,7 +241,7 @@ void MyHolographicAppMain::OnGamepadRemoved(Object^, Gamepad^ args)
    m_pointerPressed = false;
 ```
 
-<span data-ttu-id="86f37-150">メイン クラスをクリーンアップする場合、イベントの登録を解除することを忘れないでください。</span><span class="sxs-lookup"><span data-stu-id="86f37-150">Don't forget to unregister the events when cleaning up the main class:</span></span>
+<span data-ttu-id="b3f2a-150">メインクラスをクリーンアップするときは、必ずイベントの登録を解除してください。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-150">Don't forget to unregister the events when cleaning up the main class:</span></span>
 
 ```
 if (m_gamepadAddedEventToken.Value != 0)
@@ -254,16 +254,16 @@ if (m_gamepadAddedEventToken.Value != 0)
    }
 ```
 
-<span data-ttu-id="86f37-151">再コンパイルして再デプロイします。</span><span class="sxs-lookup"><span data-stu-id="86f37-151">Recompile, and redeploy.</span></span> <span data-ttu-id="86f37-152">アタッチ、ゲーム コント ローラーとペアにまたはとそれを使用して、回転するキューブの位置を変更するようになりましたことができます。</span><span class="sxs-lookup"><span data-stu-id="86f37-152">You can now attach, or pair, a game controller and use it to reposition the spinning cube.</span></span>
+<span data-ttu-id="b3f2a-151">再コンパイルし、再デプロイします。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-151">Recompile, and redeploy.</span></span> <span data-ttu-id="b3f2a-152">これで、ゲームコントローラーをアタッチまたはペアリングし、回転するキューブの位置を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-152">You can now attach, or pair, a game controller and use it to reposition the spinning cube.</span></span>
 
-## <a name="important-guidelines-for-keyboard-and-mouse-input"></a><span data-ttu-id="86f37-153">キーボードとマウス入力に関する重要なガイドライン</span><span class="sxs-lookup"><span data-stu-id="86f37-153">Important guidelines for keyboard and mouse input</span></span>
+## <a name="important-guidelines-for-keyboard-and-mouse-input"></a><span data-ttu-id="b3f2a-153">キーボードとマウスの入力に関する重要なガイドライン</span><span class="sxs-lookup"><span data-stu-id="b3f2a-153">Important guidelines for keyboard and mouse input</span></span>
 
-<span data-ttu-id="86f37-154">Microsoft HoloLens – これは主に Windows Mixed Reality 対応の PC で使用できると – 自然なユーザー入力に依存しているデバイス上のこのコードの使用方法の主な相違点があります。</span><span class="sxs-lookup"><span data-stu-id="86f37-154">There are some key differences in how this code can be used on Microsoft HoloLens – which is a device that relies primarily on natural user input – versus what is available on a Windows Mixed Reality-enabled PC.</span></span>
-* <span data-ttu-id="86f37-155">キーボードまたはマウスが存在する入力を利用できません。</span><span class="sxs-lookup"><span data-stu-id="86f37-155">You can’t rely on keyboard or mouse input to be present.</span></span> <span data-ttu-id="86f37-156">すべてのアプリの機能は、視線、ジェスチャ、音声入力と作業する必要があります。</span><span class="sxs-lookup"><span data-stu-id="86f37-156">All of your app's functionality must work with gaze, gesture, and speech input.</span></span>
-* <span data-ttu-id="86f37-157">Bluetooth キーボードが接続されている場合は、アプリがありますを要求する任意のテキストのキーボード入力を有効にすると便利ができます。</span><span class="sxs-lookup"><span data-stu-id="86f37-157">When a Bluetooth keyboard is attached, it can be helpful to enable keyboard input for any text that your app might ask for.</span></span> <span data-ttu-id="86f37-158">たとえば、音声入力の優れた追加条項を指定できます。</span><span class="sxs-lookup"><span data-stu-id="86f37-158">This can be a great supplement for dictation, for example.</span></span>
-* <span data-ttu-id="86f37-159">アプリを設計する際、WASD (など) に依存しないようにし、マウスがゲームのコントロールを検索します。</span><span class="sxs-lookup"><span data-stu-id="86f37-159">When it comes to designing your app, don’t rely on (for example) WASD and mouse look controls for your game.</span></span> <span data-ttu-id="86f37-160">HoloLens は、ルームまでわざわざ行かずに、ユーザーに適しています。</span><span class="sxs-lookup"><span data-stu-id="86f37-160">HoloLens is designed for the user to walk around the room.</span></span> <span data-ttu-id="86f37-161">この場合、ユーザーは、カメラを直接制御します。</span><span class="sxs-lookup"><span data-stu-id="86f37-161">In this case, the user controls the camera directly.</span></span> <span data-ttu-id="86f37-162">移動/参照コントロールで部屋のカメラを促進するためのインターフェイスには、同じエクスペリエンスを提供しません。</span><span class="sxs-lookup"><span data-stu-id="86f37-162">An interface for driving the camera around the room with move/look controls won't provide the same experience.</span></span>
-* <span data-ttu-id="86f37-163">キーボード入力には、ユーザーがキーボードを使用する必要はありませんので特にアプリやゲームのエンジンのデバッグの側面を制御する優れた方法を指定できます。</span><span class="sxs-lookup"><span data-stu-id="86f37-163">Keyboard input can be an excellent way to control the debugging aspects of your app or game engine, especially since the user will not be required to use the keyboard.</span></span> <span data-ttu-id="86f37-164">接続には、同じ as CoreWindow イベント Api で、使用しているです。</span><span class="sxs-lookup"><span data-stu-id="86f37-164">Wiring it up is the same as you're used to, with CoreWindow event APIs.</span></span> <span data-ttu-id="86f37-165">このシナリオでは、デバッグ セッション中に"debug 入力専用"モードにキーボード イベントをルーティングするアプリを構成する方法を実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="86f37-165">In this scenario, you might choose to implement a way to configure your app to route keyboard events to a "debug input only" mode during your debug sessions.</span></span>
-* <span data-ttu-id="86f37-166">Bluetooth コント ローラーがうまく動作します。</span><span class="sxs-lookup"><span data-stu-id="86f37-166">Bluetooth controllers work as well.</span></span>
+<span data-ttu-id="b3f2a-154">Microsoft HoloLens でこのコードを使用する方法には、主な違いがいくつかあります。これは、主に自然なユーザー入力に依存するデバイスであり、Windows Mixed Reality 対応 PC で使用できるものと同じです。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-154">There are some key differences in how this code can be used on Microsoft HoloLens – which is a device that relies primarily on natural user input – versus what is available on a Windows Mixed Reality-enabled PC.</span></span>
+* <span data-ttu-id="b3f2a-155">キーボードやマウスの入力に依存することはできません。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-155">You can’t rely on keyboard or mouse input to be present.</span></span> <span data-ttu-id="b3f2a-156">アプリのすべての機能は、宝石、ジェスチャ、音声入力で動作する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-156">All of your app's functionality must work with gaze, gesture, and speech input.</span></span>
+* <span data-ttu-id="b3f2a-157">Bluetooth キーボードが接続されている場合は、アプリが要求するテキストに対してキーボード入力を有効にすると便利です。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-157">When a Bluetooth keyboard is attached, it can be helpful to enable keyboard input for any text that your app might ask for.</span></span> <span data-ttu-id="b3f2a-158">これは、たとえば、ディクテーションの優れた補完です。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-158">This can be a great supplement for dictation, for example.</span></span>
+* <span data-ttu-id="b3f2a-159">アプリを設計する際には、ゲームのために (たとえば) WASD やマウスのコントロールを使用しないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-159">When it comes to designing your app, don’t rely on (for example) WASD and mouse look controls for your game.</span></span> <span data-ttu-id="b3f2a-160">HoloLens は、ユーザーが部屋を移動するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-160">HoloLens is designed for the user to walk around the room.</span></span> <span data-ttu-id="b3f2a-161">この場合、ユーザーはカメラを直接制御します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-161">In this case, the user controls the camera directly.</span></span> <span data-ttu-id="b3f2a-162">移動/表示コントロールを使用して、部屋の周りにカメラを運転するためのインターフェイスは、同じエクスペリエンスを提供しません。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-162">An interface for driving the camera around the room with move/look controls won't provide the same experience.</span></span>
+* <span data-ttu-id="b3f2a-163">キーボード入力は、特にユーザーがキーボードを使用する必要がないため、アプリまたはゲームエンジンのデバッグ側面を制御するのに優れた方法です。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-163">Keyboard input can be an excellent way to control the debugging aspects of your app or game engine, especially since the user will not be required to use the keyboard.</span></span> <span data-ttu-id="b3f2a-164">この配線は、CoreWindow イベント Api を使用した場合と同じです。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-164">Wiring it up is the same as you're used to, with CoreWindow event APIs.</span></span> <span data-ttu-id="b3f2a-165">このシナリオでは、デバッグセッション中にキーボードイベントを "デバッグ入力のみ" モードにルーティングするようにアプリを構成する方法を実装することを選択できます。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-165">In this scenario, you might choose to implement a way to configure your app to route keyboard events to a "debug input only" mode during your debug sessions.</span></span>
+* <span data-ttu-id="b3f2a-166">Bluetooth コントローラーも同様に機能します。</span><span class="sxs-lookup"><span data-stu-id="b3f2a-166">Bluetooth controllers work as well.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="86f37-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="86f37-167">See also</span></span>
-* [<span data-ttu-id="86f37-168">ハードウェアのアクセサリ</span><span class="sxs-lookup"><span data-stu-id="86f37-168">Hardware accessories</span></span>](hardware-accessories.md)
+## <a name="see-also"></a><span data-ttu-id="b3f2a-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="b3f2a-167">See also</span></span>
+* [<span data-ttu-id="b3f2a-168">ハードウェア アクセサリ</span><span class="sxs-lookup"><span data-stu-id="b3f2a-168">Hardware accessories</span></span>](hardware-accessories.md)

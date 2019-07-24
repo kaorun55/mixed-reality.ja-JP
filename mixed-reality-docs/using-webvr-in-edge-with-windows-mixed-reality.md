@@ -1,38 +1,38 @@
 ---
-title: Windows Mixed Reality WebVR を Microsoft Edge でを使用しました。
-description: 使用して、Windows Mixed Reality で WebVR 用の開発の概要
+title: Microsoft Edge での WebVR と Windows Mixed Reality の使用
+description: Windows Mixed Reality での WebVR の使用と開発の概要
 author: YashMaster
 ms.author: yabahman
 ms.date: 03/21/2018
 ms.topic: article
-keywords: WebVR、WebXR、WinMR、WebAR、vr を web、web xr、mr を web、web ar、360、360 のビデオ、360 ビデオ、360 の写真、360 の写真、360 コンテンツ、没入型の web、immersiveweb、インフォメーション ワーカー
+keywords: WebVR, WebXR, WinMR, WebAR, web vr, web xr, web mr, web ar, 360, 360 ビデオ, 360 ビデオ, 360 写真, 360 写真, 360 コンテンツ, イマーシブ web, immersiveweb, IW
 ms.openlocfilehash: fab17f4dcecc34d8f1ca4836dce6de90522899cd
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604638"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548760"
 ---
-# <a name="using-webvr-in-microsoft-edge-with-windows-mixed-reality"></a><span data-ttu-id="7f7ff-104">Windows Mixed Reality WebVR を Microsoft Edge でを使用しました。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-104">Using WebVR in Microsoft Edge with Windows Mixed Reality</span></span>
+# <a name="using-webvr-in-microsoft-edge-with-windows-mixed-reality"></a><span data-ttu-id="9ff90-104">Microsoft Edge での WebVR と Windows Mixed Reality の使用</span><span class="sxs-lookup"><span data-stu-id="9ff90-104">Using WebVR in Microsoft Edge with Windows Mixed Reality</span></span>
 
-## <a name="creating-webvr-content-for-windows-mixed-reality-immersive-headsets"></a><span data-ttu-id="7f7ff-105">Windows Mixed reality を WebVR コンテンツ イマーシブ ヘッドセットを作成します。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-105">Creating WebVR content for Windows Mixed reality immersive headsets</span></span>
+## <a name="creating-webvr-content-for-windows-mixed-reality-immersive-headsets"></a><span data-ttu-id="9ff90-105">Windows Mixed reality イマーシブヘッドセットの WebVR コンテンツの作成</span><span class="sxs-lookup"><span data-stu-id="9ff90-105">Creating WebVR content for Windows Mixed reality immersive headsets</span></span>
 
-<span data-ttu-id="7f7ff-106">WebVR 1.1 は Windows 10 Fall Creators Update 以降の Microsoft Edge で使用できます。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-106">WebVR 1.1 is available in Microsoft Edge beginning with the Windows 10 Fall Creators Update.</span></span> <span data-ttu-id="7f7ff-107">今すぐ開発者は、この API を使用して、web で没入型の VR エクスペリエンスを作成することができます。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-107">Developers can now use this API to create immersive VR experiences on the web.</span></span>
+<span data-ttu-id="9ff90-106">WebVR 1.1 は、Windows 10 の秋の作成者の更新プログラム以降、Microsoft Edge で利用できます。</span><span class="sxs-lookup"><span data-stu-id="9ff90-106">WebVR 1.1 is available in Microsoft Edge beginning with the Windows 10 Fall Creators Update.</span></span> <span data-ttu-id="9ff90-107">開発者は、この API を使用して、web 上でイマーシブ VR エクスペリエンスを作成できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="9ff90-107">Developers can now use this API to create immersive VR experiences on the web.</span></span>
 
-<span data-ttu-id="7f7ff-108">WebVR API では、ッドマウントにステレオ WebGL シーンをレンダリングするために使用できるページにッドマウント姿勢のデータを提供します。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-108">The WebVR API provides HMD pose data to the page which can be used to render a stereo WebGL scene back to the HMD.</span></span> <span data-ttu-id="7f7ff-109">API のサポートの詳細についてで使用できる、 [Microsoft Edge プラットフォームの状態ページ](https://developer.microsoft.com/microsoft-edge/platform/status/webvr/)します。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-109">Details on API support is available on the [Microsoft Edge Platform Status page](https://developer.microsoft.com/microsoft-edge/platform/status/webvr/).</span></span> <span data-ttu-id="7f7ff-110">WebVR API サーフェス領域は、Microsoft Edge 内で常に存在します。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-110">The WebVR API surface area is present at all times within Microsoft Edge.</span></span> <span data-ttu-id="7f7ff-111">ただし、シミュレーターがオンにされましたかヘッドセット接続されている場合、getVRDisplays() への呼び出しはヘッドセットを返すのみです。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-111">However, a call to getVRDisplays() will only return a headset if either a headset is plugged in or the simulator has been turned on.</span></span>
+<span data-ttu-id="9ff90-108">WebVR API は、HMD のデータをページに提供します。これを使用すると、ステレオ Webvr シーンを HMD に戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="9ff90-108">The WebVR API provides HMD pose data to the page which can be used to render a stereo WebGL scene back to the HMD.</span></span> <span data-ttu-id="9ff90-109">API サポートの詳細については、 [Microsoft Edge プラットフォームの状態](https://developer.microsoft.com/microsoft-edge/platform/status/webvr/)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9ff90-109">Details on API support is available on the [Microsoft Edge Platform Status page](https://developer.microsoft.com/microsoft-edge/platform/status/webvr/).</span></span> <span data-ttu-id="9ff90-110">WebVR API のセキュリティ領域は、Microsoft Edge 内で常に存在します。</span><span class="sxs-lookup"><span data-stu-id="9ff90-110">The WebVR API surface area is present at all times within Microsoft Edge.</span></span> <span data-ttu-id="9ff90-111">ただし、getVRDisplays () を呼び出すと、ヘッドセットが電源に接続されているか、シミュレーターが有効になっている場合にのみ、ヘッドセットが返されます。</span><span class="sxs-lookup"><span data-stu-id="9ff90-111">However, a call to getVRDisplays() will only return a headset if either a headset is plugged in or the simulator has been turned on.</span></span>
 
-## <a name="viewing-webvr-content-in-windows-mixed-reality-immersive-headsets"></a><span data-ttu-id="7f7ff-112">Windows Mixed Reality イマーシブ ヘッドセットで WebVR コンテンツを表示</span><span class="sxs-lookup"><span data-stu-id="7f7ff-112">Viewing WebVR content in Windows Mixed Reality immersive headsets</span></span>
+## <a name="viewing-webvr-content-in-windows-mixed-reality-immersive-headsets"></a><span data-ttu-id="9ff90-112">Windows Mixed Reality イマーシブヘッドセットの WebVR コンテンツの表示</span><span class="sxs-lookup"><span data-stu-id="9ff90-112">Viewing WebVR content in Windows Mixed Reality immersive headsets</span></span>
 
-<span data-ttu-id="7f7ff-113">イマーシブ ヘッドセット WebVR コンテンツにアクセスするための手順が記載されて、[愛好家のガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/webvr)します。</span><span class="sxs-lookup"><span data-stu-id="7f7ff-113">Instructions for accessing WebVR content in your immersive headset can be found in the [Enthusiast's Guide](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/webvr).</span></span>
+<span data-ttu-id="9ff90-113">イマーシブヘッドセットの WebVR コンテンツにアクセスする手順については、「[ユーザーズガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/webvr)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9ff90-113">Instructions for accessing WebVR content in your immersive headset can be found in the [Enthusiast's Guide](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/webvr).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7f7ff-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="7f7ff-114">See Also</span></span>
-* [<span data-ttu-id="7f7ff-115">WebVR 情報</span><span class="sxs-lookup"><span data-stu-id="7f7ff-115">WebVR information</span></span>](http://webvr.info)
-* [<span data-ttu-id="7f7ff-116">WebVR 仕様</span><span class="sxs-lookup"><span data-stu-id="7f7ff-116">WebVR specification</span></span>](https://w3c.github.io/webvr/)
-* <span data-ttu-id="7f7ff-117">[WebVR API](https://msdn.microsoft.com/library/mt806281(v=vs.85).aspx)</span><span class="sxs-lookup"><span data-stu-id="7f7ff-117">[WebVR API](https://msdn.microsoft.com/library/mt806281(v=vs.85).aspx)</span></span>
-* <span data-ttu-id="7f7ff-118">[WebGL API](https://msdn.microsoft.com/library/bg182648(v=vs.85).aspx)</span><span class="sxs-lookup"><span data-stu-id="7f7ff-118">[WebGL API](https://msdn.microsoft.com/library/bg182648(v=vs.85).aspx)</span></span>
-* <span data-ttu-id="7f7ff-119">[Gamepad API](https://msdn.microsoft.com/library/dn743630(v=vs.85).aspx)と[ゲームパッドの拡張機能](https://w3c.github.io/gamepad/extensions.html)</span><span class="sxs-lookup"><span data-stu-id="7f7ff-119">[Gamepad API](https://msdn.microsoft.com/library/dn743630(v=vs.85).aspx) and [Gamepad Extensions](https://w3c.github.io/gamepad/extensions.html)</span></span>
-* [<span data-ttu-id="7f7ff-120">WebGL でコンテキストが失われる処理</span><span class="sxs-lookup"><span data-stu-id="7f7ff-120">Handling Lost Context in WebGL</span></span>](https://www.khronos.org/webgl/wiki/HandlingContextLost)
-* [<span data-ttu-id="7f7ff-121">Pointerlock</span><span class="sxs-lookup"><span data-stu-id="7f7ff-121">Pointerlock</span></span>](http://www.w3.org/TR/pointerlock/)
-* [<span data-ttu-id="7f7ff-122">glTF</span><span class="sxs-lookup"><span data-stu-id="7f7ff-122">glTF</span></span>](https://www.khronos.org/gltf)
-* [<span data-ttu-id="7f7ff-123">Babylon.js を使用して WebVR を有効にするには</span><span class="sxs-lookup"><span data-stu-id="7f7ff-123">Using Babylon.js to enable WebVR</span></span>](https://docs.microsoft.com/windows/uwp/get-started/adding-webvr-to-a-babylonjs-game)
+## <a name="see-also"></a><span data-ttu-id="9ff90-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="9ff90-114">See Also</span></span>
+* [<span data-ttu-id="9ff90-115">WebVR 情報</span><span class="sxs-lookup"><span data-stu-id="9ff90-115">WebVR information</span></span>](http://webvr.info)
+* [<span data-ttu-id="9ff90-116">WebVR 仕様</span><span class="sxs-lookup"><span data-stu-id="9ff90-116">WebVR specification</span></span>](https://w3c.github.io/webvr/)
+* <span data-ttu-id="9ff90-117">[WebVR API](https://msdn.microsoft.com/library/mt806281(v=vs.85).aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff90-117">[WebVR API](https://msdn.microsoft.com/library/mt806281(v=vs.85).aspx)</span></span>
+* <span data-ttu-id="9ff90-118">[WebGL API](https://msdn.microsoft.com/library/bg182648(v=vs.85).aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff90-118">[WebGL API](https://msdn.microsoft.com/library/bg182648(v=vs.85).aspx)</span></span>
+* <span data-ttu-id="9ff90-119">[ゲームパッド API](https://msdn.microsoft.com/library/dn743630(v=vs.85).aspx)と[ゲームパッド拡張機能](https://w3c.github.io/gamepad/extensions.html)</span><span class="sxs-lookup"><span data-stu-id="9ff90-119">[Gamepad API](https://msdn.microsoft.com/library/dn743630(v=vs.85).aspx) and [Gamepad Extensions](https://w3c.github.io/gamepad/extensions.html)</span></span>
+* [<span data-ttu-id="9ff90-120">WebGL での失われたコンテキストの処理</span><span class="sxs-lookup"><span data-stu-id="9ff90-120">Handling Lost Context in WebGL</span></span>](https://www.khronos.org/webgl/wiki/HandlingContextLost)
+* [<span data-ttu-id="9ff90-121">Pointerlock ロック</span><span class="sxs-lookup"><span data-stu-id="9ff90-121">Pointerlock</span></span>](http://www.w3.org/TR/pointerlock/)
+* [<span data-ttu-id="9ff90-122">glTF</span><span class="sxs-lookup"><span data-stu-id="9ff90-122">glTF</span></span>](https://www.khronos.org/gltf)
+* [<span data-ttu-id="9ff90-123">Babylon を使用して WebVR を有効にする</span><span class="sxs-lookup"><span data-stu-id="9ff90-123">Using Babylon.js to enable WebVR</span></span>](https://docs.microsoft.com/windows/uwp/get-started/adding-webvr-to-a-babylonjs-game)
 

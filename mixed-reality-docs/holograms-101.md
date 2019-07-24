@@ -1,156 +1,156 @@
 ---
-title: MR 基本 101 - デバイスでの完全なプロジェクト
-description: Unity、Visual Studio および HoloLens を使用して、Windows Mixed Reality の基本を学習するこのコーディング チュートリアルに従ってください。
+title: MR 基本 101-デバイスを含む完全なプロジェクト
+description: Unity、Visual Studio、および HoloLens を使用したこのコーディングのチュートリアルに従って、Windows Mixed Reality の基本を学習してください。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 実際には、Windows Mixed Reality、HoloLens、混合ホログラム, academy, チュートリアル
+keywords: mixed reality、Windows Mixed Reality、HoloLens、ホログラム、academy、チュートリアル
 ms.openlocfilehash: 043ffac8f30a4e29586478b5dca6ecccc2b5afd3
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59599361"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63524026"
 ---
 >[!NOTE]
-><span data-ttu-id="716f4-104">Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。</span><span class="sxs-lookup"><span data-stu-id="716f4-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="716f4-105">そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。</span><span class="sxs-lookup"><span data-stu-id="716f4-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="716f4-106">これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。</span><span class="sxs-lookup"><span data-stu-id="716f4-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="716f4-107">サポートされているデバイスで作業を続行するが保持されます。</span><span class="sxs-lookup"><span data-stu-id="716f4-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="716f4-108">一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。</span><span class="sxs-lookup"><span data-stu-id="716f4-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="716f4-109">この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。</span><span class="sxs-lookup"><span data-stu-id="716f4-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
+><span data-ttu-id="acb06-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="acb06-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="acb06-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="acb06-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="acb06-106">これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="acb06-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="acb06-108">今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。</span><span class="sxs-lookup"><span data-stu-id="acb06-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="acb06-109">この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
 
 <br>
 
-# <a name="mr-basics-101-complete-project-with-device"></a><span data-ttu-id="716f4-110">MR 基礎 101:デバイスとの完全なプロジェクト</span><span class="sxs-lookup"><span data-stu-id="716f4-110">MR Basics 101: Complete project with device</span></span>
+# <a name="mr-basics-101-complete-project-with-device"></a><span data-ttu-id="acb06-110">MR 基本 101:デバイスを含む完全なプロジェクト</span><span class="sxs-lookup"><span data-stu-id="acb06-110">MR Basics 101: Complete project with device</span></span>
 
 <br>
 
 >[!VIDEO https://www.youtube.com/embed/XKIIEC5BMWg]
 
-<span data-ttu-id="716f4-111">このチュートリアルでは、HoloLens などのコア Windows Mixed Reality 機能を示すには、Unity でビルドされた完全なプロジェクトを通じて[視線](gaze.md)、[ジェスチャ](gestures.md)、[音声入力](voice-input.md)、[空間サウンド](spatial-sound.md)と[空間マッピング](spatial-mapping.md)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-111">This tutorial will walk you through a complete project, built in Unity, that demonstrates core Windows Mixed Reality features on HoloLens including [gaze](gaze.md), [gestures](gestures.md), [voice input](voice-input.md), [spatial sound](spatial-sound.md) and [spatial mapping](spatial-mapping.md).</span></span>
+<span data-ttu-id="acb06-111">このチュートリアルでは、Unity でビルドされた完全なプロジェクトについて説明します。これは、[宝石](gaze.md)、[ジェスチャ](gestures.md)、[音声入力](voice-input.md)、[空間サウンド](spatial-sound.md)、[空間マッピング](spatial-mapping.md)など、HoloLens のコア Windows Mixed Reality 機能を示しています.</span><span class="sxs-lookup"><span data-stu-id="acb06-111">This tutorial will walk you through a complete project, built in Unity, that demonstrates core Windows Mixed Reality features on HoloLens including [gaze](gaze.md), [gestures](gestures.md), [voice input](voice-input.md), [spatial sound](spatial-sound.md) and [spatial mapping](spatial-mapping.md).</span></span>
 
-<span data-ttu-id="716f4-112">このチュートリアルを完了するには約 1 時間になります。</span><span class="sxs-lookup"><span data-stu-id="716f4-112">The tutorial will take approximately 1 hour to complete.</span></span>
+<span data-ttu-id="acb06-112">このチュートリアルの完了には約1時間かかります。</span><span class="sxs-lookup"><span data-stu-id="acb06-112">The tutorial will take approximately 1 hour to complete.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="716f4-113">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="716f4-113">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="acb06-113">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="acb06-113">Device support</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="716f4-114">コース</span><span class="sxs-lookup"><span data-stu-id="716f4-114">Course</span></span></th><th style="width:150px"> <span data-ttu-id="716f4-115"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="716f4-115"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="716f4-116"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="716f4-116"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+<th><span data-ttu-id="acb06-114">まで</span><span class="sxs-lookup"><span data-stu-id="acb06-114">Course</span></span></th><th style="width:150px"> <span data-ttu-id="acb06-115"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="acb06-115"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="acb06-116"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="acb06-116"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
 </tr><tr>
-<td><span data-ttu-id="716f4-117">MR 基礎 101:デバイスとの完全なプロジェクト</span><span class="sxs-lookup"><span data-stu-id="716f4-117">MR Basics 101: Complete project with device</span></span></td><td style="text-align: center;"> <span data-ttu-id="716f4-118">✔️</span><span class="sxs-lookup"><span data-stu-id="716f4-118">✔️</span></span></td><td style="text-align: center;"> </td>
+<td><span data-ttu-id="acb06-117">MR 基本 101:デバイスを含む完全なプロジェクト</span><span class="sxs-lookup"><span data-stu-id="acb06-117">MR Basics 101: Complete project with device</span></span></td><td style="text-align: center;"> <span data-ttu-id="acb06-118">✔️</span><span class="sxs-lookup"><span data-stu-id="acb06-118">✔️</span></span></td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
-## <a name="before-you-start"></a><span data-ttu-id="716f4-119">開始前の作業</span><span class="sxs-lookup"><span data-stu-id="716f4-119">Before you start</span></span>
+## <a name="before-you-start"></a><span data-ttu-id="acb06-119">開始前の準備</span><span class="sxs-lookup"><span data-stu-id="acb06-119">Before you start</span></span>
 
-### <a name="prerequisites"></a><span data-ttu-id="716f4-120">前提条件</span><span class="sxs-lookup"><span data-stu-id="716f4-120">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="acb06-120">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="acb06-120">Prerequisites</span></span>
 
-* <span data-ttu-id="716f4-121">正しく構成されている Windows 10 PC[ツールがインストールされている](install-the-tools.md)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-121">A Windows 10 PC configured with the correct [tools installed](install-the-tools.md).</span></span>
-* <span data-ttu-id="716f4-122">HoloLens デバイス[開発用に構成された](using-visual-studio.md#enabling-developer-mode)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-122">A HoloLens device [configured for development](using-visual-studio.md#enabling-developer-mode).</span></span>
+* <span data-ttu-id="acb06-121">適切な[ツールがインストール](install-the-tools.md)された WINDOWS 10 PC。</span><span class="sxs-lookup"><span data-stu-id="acb06-121">A Windows 10 PC configured with the correct [tools installed](install-the-tools.md).</span></span>
+* <span data-ttu-id="acb06-122">[開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens デバイス。</span><span class="sxs-lookup"><span data-stu-id="acb06-122">A HoloLens device [configured for development](using-visual-studio.md#enabling-developer-mode).</span></span>
 
-### <a name="project-files"></a><span data-ttu-id="716f4-123">プロジェクト ファイル</span><span class="sxs-lookup"><span data-stu-id="716f4-123">Project files</span></span>
+### <a name="project-files"></a><span data-ttu-id="acb06-123">プロジェクトファイル</span><span class="sxs-lookup"><span data-stu-id="acb06-123">Project files</span></span>
 
-* <span data-ttu-id="716f4-124">ダウンロード、[ファイル](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)プロジェクトに必要です。</span><span class="sxs-lookup"><span data-stu-id="716f4-124">Download the [files](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip) required by the project.</span></span><span data-ttu-id="716f4-125"> Unity 2017.2 またはそれ以降が必要です。</span><span class="sxs-lookup"><span data-stu-id="716f4-125"> Requires Unity 2017.2 or later.</span></span>
-  * <span data-ttu-id="716f4-126">Unity 5.6 のサポートを引き続き必要がある場合を使用してください[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-126">If you still need Unity 5.6 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip).</span></span>
-  * <span data-ttu-id="716f4-127">Unity 5.5 のサポートを引き続き必要がある場合を使用してください[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-127">If you still need Unity 5.5 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip).</span></span>
-  * <span data-ttu-id="716f4-128">Unity 5.4 のサポートを引き続き必要がある場合を使用してください[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-128">If you still need Unity 5.4 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip).</span></span>
-* <span data-ttu-id="716f4-129">解除アーカイブをデスクトップまたは場所に到達する簡単なその他のファイル。</span><span class="sxs-lookup"><span data-stu-id="716f4-129">Un-archive the files to your desktop or other easy to reach location.</span></span> <span data-ttu-id="716f4-130">フォルダー名として保持**Origami**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-130">Keep the folder name as **Origami**.</span></span>
+* <span data-ttu-id="acb06-124">プロジェクトに必要な[ファイル](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)をダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="acb06-124">Download the [files](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip) required by the project.</span></span><span data-ttu-id="acb06-125"> Unity 2017.2 以降が必要です。</span><span class="sxs-lookup"><span data-stu-id="acb06-125"> Requires Unity 2017.2 or later.</span></span>
+  * <span data-ttu-id="acb06-126">引き続き Unity 5.6 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="acb06-126">If you still need Unity 5.6 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip).</span></span>
+  * <span data-ttu-id="acb06-127">引き続き Unity 5.5 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="acb06-127">If you still need Unity 5.5 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip).</span></span>
+  * <span data-ttu-id="acb06-128">引き続き Unity 5.4 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="acb06-128">If you still need Unity 5.4 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip).</span></span>
+* <span data-ttu-id="acb06-129">ファイルをデスクトップまたはその他の簡単な場所に保管します。</span><span class="sxs-lookup"><span data-stu-id="acb06-129">Un-archive the files to your desktop or other easy to reach location.</span></span> <span data-ttu-id="acb06-130">フォルダー名は**Origami**のままにしておきます。</span><span class="sxs-lookup"><span data-stu-id="acb06-130">Keep the folder name as **Origami**.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="716f4-131">をダウンロードする前に、ソース コードを検索する場合がある[GitHub で入手できます](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-131">If you want to look through the source code before downloading, it's [available on GitHub](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101).</span></span>
+><span data-ttu-id="acb06-131">ダウンロードする前にソースコードを確認する場合は、GitHub から[入手でき](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)ます。</span><span class="sxs-lookup"><span data-stu-id="acb06-131">If you want to look through the source code before downloading, it's [available on GitHub](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101).</span></span>
 
-## <a name="chapter-1---holo-world"></a><span data-ttu-id="716f4-132">第 1 章 -"Holo"world</span><span class="sxs-lookup"><span data-stu-id="716f4-132">Chapter 1 - "Holo" world</span></span>
+## <a name="chapter-1---holo-world"></a><span data-ttu-id="acb06-132">Chapter 1-"Holo" ワールド</span><span class="sxs-lookup"><span data-stu-id="acb06-132">Chapter 1 - "Holo" world</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/PmtZGjYFroY]
 
-<span data-ttu-id="716f4-133">この章で、最初の Unity プロジェクトとビルド手順のセットアップがされプロセスを展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-133">In this chapter, we'll setup our first Unity project and step through the build and deploy process.</span></span>
+<span data-ttu-id="acb06-133">この章では、最初の Unity プロジェクトをセットアップし、ビルドとデプロイのプロセスをステップ実行します。</span><span class="sxs-lookup"><span data-stu-id="acb06-133">In this chapter, we'll setup our first Unity project and step through the build and deploy process.</span></span>
 
-### <a name="objectives"></a><span data-ttu-id="716f4-134">目標</span><span class="sxs-lookup"><span data-stu-id="716f4-134">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="acb06-134">目的</span><span class="sxs-lookup"><span data-stu-id="acb06-134">Objectives</span></span>
 
-* <span data-ttu-id="716f4-135">Holographic 開発のために、Unity を設定します。</span><span class="sxs-lookup"><span data-stu-id="716f4-135">Set up Unity for holographic development.</span></span>
-* <span data-ttu-id="716f4-136">ホログラムを確認します。</span><span class="sxs-lookup"><span data-stu-id="716f4-136">Make a hologram.</span></span>
-* <span data-ttu-id="716f4-137">行ったホログラムを参照してください。</span><span class="sxs-lookup"><span data-stu-id="716f4-137">See a hologram that you made.</span></span>
+* <span data-ttu-id="acb06-135">Holographic 開発用に Unity を設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-135">Set up Unity for holographic development.</span></span>
+* <span data-ttu-id="acb06-136">ホログラムを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-136">Make a hologram.</span></span>
+* <span data-ttu-id="acb06-137">作成したホログラムを確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-137">See a hologram that you made.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="716f4-138">手順</span><span class="sxs-lookup"><span data-stu-id="716f4-138">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="acb06-138">手順</span><span class="sxs-lookup"><span data-stu-id="acb06-138">Instructions</span></span>
 
-* <span data-ttu-id="716f4-139">Unity を起動します。</span><span class="sxs-lookup"><span data-stu-id="716f4-139">Start Unity.</span></span>
-* <span data-ttu-id="716f4-140">**[開く]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="716f4-140">Select **Open**.</span></span>
-* <span data-ttu-id="716f4-141">として場所を入力、 **Origami**フォルダー アーカイブされた以前のことです。</span><span class="sxs-lookup"><span data-stu-id="716f4-141">Enter location as the **Origami** folder you previously un-archived.</span></span>
-* <span data-ttu-id="716f4-142">選択**Origami**クリック**フォルダーの選択**。</span><span class="sxs-lookup"><span data-stu-id="716f4-142">Select **Origami** and click **Select Folder**.</span></span>
-* <span data-ttu-id="716f4-143">以降、 **Origami**プロジェクトに空の既定のシーンを使用して新しいファイルに保存、シーンが含まれていません。**ファイル** / **としてシーンを保存**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-143">Since the **Origami** project does not contain a scene, save the empty default scene to a new file using: **File** / **Save Scene As**.</span></span>
-* <span data-ttu-id="716f4-144">新しいシーンを名前**Origami**キーを押すと、**保存**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="716f4-144">Name the new scene **Origami** and press the **Save** button.</span></span>
+* <span data-ttu-id="acb06-139">Unity を起動します。</span><span class="sxs-lookup"><span data-stu-id="acb06-139">Start Unity.</span></span>
+* <span data-ttu-id="acb06-140">**[開く]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-140">Select **Open**.</span></span>
+* <span data-ttu-id="acb06-141">前にアーカイブしていない**Origami**フォルダーとして場所を入力します。</span><span class="sxs-lookup"><span data-stu-id="acb06-141">Enter location as the **Origami** folder you previously un-archived.</span></span>
+* <span data-ttu-id="acb06-142">**[Origami]** を選択し、 **[フォルダーの選択]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-142">Select **Origami** and click **Select Folder**.</span></span>
+* <span data-ttu-id="acb06-143">**Origami**プロジェクトにはシーンが含まれていないため、次を使用して空の既定のシーンを新しいファイルに保存します。ファイル / **を名前を付けて保存**します。</span><span class="sxs-lookup"><span data-stu-id="acb06-143">Since the **Origami** project does not contain a scene, save the empty default scene to a new file using: **File** / **Save Scene As**.</span></span>
+* <span data-ttu-id="acb06-144">新しいシーンに**Origami**という名前を**付け**、[保存] ボタンを押します。</span><span class="sxs-lookup"><span data-stu-id="acb06-144">Name the new scene **Origami** and press the **Save** button.</span></span>
 
-#### <a name="setup-the-main-virtual-camera"></a><span data-ttu-id="716f4-145">メインの仮想のカメラのセットアップ</span><span class="sxs-lookup"><span data-stu-id="716f4-145">Setup the main virtual camera</span></span>
+#### <a name="setup-the-main-virtual-camera"></a><span data-ttu-id="acb06-145">メインの仮想カメラをセットアップする</span><span class="sxs-lookup"><span data-stu-id="acb06-145">Setup the main virtual camera</span></span>
 
-* <span data-ttu-id="716f4-146">**階層パネル**、 **Main Camera**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-146">In the **Hierarchy Panel**, select **Main Camera**.</span></span>
-* <span data-ttu-id="716f4-147">**インスペクター**にトランス フォームの位置を設定**0,0,0**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-147">In the **Inspector** set its transform position to **0,0,0**.</span></span>
-* <span data-ttu-id="716f4-148">検索、**フラグをクリア**プロパティ、ドロップダウン リストからの変更と**スカイ ボックス**に**純色**。</span><span class="sxs-lookup"><span data-stu-id="716f4-148">Find the **Clear Flags** property, and change the dropdown from **Skybox** to **Solid color**.</span></span>
-* <span data-ttu-id="716f4-149">をクリックして、**バック グラウンド**フィールドをカラー ピッカーを開きます。</span><span class="sxs-lookup"><span data-stu-id="716f4-149">Click on the **Background** field to open a color picker.</span></span>
-* <span data-ttu-id="716f4-150">設定**R、G、B、および A**に**0**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-150">Set **R, G, B, and A** to **0**.</span></span>
+* <span data-ttu-id="acb06-146">[**階層] パネル**で、 **[メインカメラ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-146">In the **Hierarchy Panel**, select **Main Camera**.</span></span>
+* <span data-ttu-id="acb06-147">**インスペクター**で、変換位置を**0、0、0**に設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-147">In the **Inspector** set its transform position to **0,0,0**.</span></span>
+* <span data-ttu-id="acb06-148">" **Clear Flags** " プロパティを見つけ、ドロップ**ダウンから [** **単色**] に変更します。</span><span class="sxs-lookup"><span data-stu-id="acb06-148">Find the **Clear Flags** property, and change the dropdown from **Skybox** to **Solid color**.</span></span>
+* <span data-ttu-id="acb06-149">**[背景]** フィールドをクリックして、カラーピッカーを開きます。</span><span class="sxs-lookup"><span data-stu-id="acb06-149">Click on the **Background** field to open a color picker.</span></span>
+* <span data-ttu-id="acb06-150">**R、G、B、およびを** **0**に設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-150">Set **R, G, B, and A** to **0**.</span></span>
 
-#### <a name="setup-the-scene"></a><span data-ttu-id="716f4-151">シーンのセットアップ</span><span class="sxs-lookup"><span data-stu-id="716f4-151">Setup the scene</span></span>
+#### <a name="setup-the-scene"></a><span data-ttu-id="acb06-151">シーンを設定する</span><span class="sxs-lookup"><span data-stu-id="acb06-151">Setup the scene</span></span>
 
-* <span data-ttu-id="716f4-152">**階層パネル**、 をクリックして**作成**と**空アイテムの作成**です。</span><span class="sxs-lookup"><span data-stu-id="716f4-152">In the **Hierarchy Panel**, click on **Create** and **Create Empty**.</span></span>
-* <span data-ttu-id="716f4-153">新しい右クリックして**GameObject**名前の変更を選択します。</span><span class="sxs-lookup"><span data-stu-id="716f4-153">Right-click the new **GameObject** and select Rename.</span></span> <span data-ttu-id="716f4-154">GameObject の名前を変更**OrigamiCollection**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-154">Rename the GameObject to **OrigamiCollection**.</span></span>
-* <span data-ttu-id="716f4-155">**ホログラム**プロジェクト パネル内のフォルダー (資産の展開しホログラムを選択します。 または [プロジェクト] パネルでホログラム フォルダーをダブルクリックします)。</span><span class="sxs-lookup"><span data-stu-id="716f4-155">From the **Holograms** folder in the Project Panel (expand Assets and select Holograms or double click the Holograms folder in the Project Panel):</span></span>
-  * <span data-ttu-id="716f4-156">ドラッグ**ステージ**の子に階層に**OrigamiCollection**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-156">Drag **Stage** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
-  * <span data-ttu-id="716f4-157">ドラッグ**Sphere1**の子に階層に**OrigamiCollection**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-157">Drag **Sphere1** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
-  * <span data-ttu-id="716f4-158">ドラッグ**Sphere2**の子に階層に**OrigamiCollection**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-158">Drag **Sphere2** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
-* <span data-ttu-id="716f4-159">右クリックし、**指向性光**内のオブジェクト、**階層パネル**選択と**削除**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-159">Right-click the **Directional Light** object in the **Hierarchy Panel** and select **Delete**.</span></span>
-* <span data-ttu-id="716f4-160">**ホログラム**フォルダー、ドラッグ**ライト**のルートに、**階層パネル**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-160">From the **Holograms** folder, drag **Lights** into the root of the **Hierarchy Panel**.</span></span>
-* <span data-ttu-id="716f4-161">**階層**を選択、 **OrigamiCollection**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-161">In the **Hierarchy**, select the **OrigamiCollection**.</span></span>
-* <span data-ttu-id="716f4-162">**インスペクター**、変換の位置を設定**0、-0.5、2.0**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-162">In the **Inspector**, set the transform position to **0, -0.5, 2.0**.</span></span>
-* <span data-ttu-id="716f4-163">キーを押して、**再生**ホログラムをプレビューする Unity でボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="716f4-163">Press the **Play** button in Unity to preview your holograms.</span></span>
-* <span data-ttu-id="716f4-164">プレビュー ウィンドウの Origami オブジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="716f4-164">You should see the Origami objects in the preview window.</span></span>
-* <span data-ttu-id="716f4-165">キーを押して**再生**をもう一度プレビュー モードを停止します。</span><span class="sxs-lookup"><span data-stu-id="716f4-165">Press **Play** a second time to stop preview mode.</span></span>
+* <span data-ttu-id="acb06-152">[**階層] パネル**で、 **[作成]** をクリックし、 **[空の作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-152">In the **Hierarchy Panel**, click on **Create** and **Create Empty**.</span></span>
+* <span data-ttu-id="acb06-153">新しい [作成]**オブジェクト**を右クリックし、[名前の変更] を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-153">Right-click the new **GameObject** and select Rename.</span></span> <span data-ttu-id="acb06-154">**OrigamiCollection**オブジェクトの名前を「」に変更します。</span><span class="sxs-lookup"><span data-stu-id="acb06-154">Rename the GameObject to **OrigamiCollection**.</span></span>
+* <span data-ttu-id="acb06-155">プロジェクト パネルの **ホログラム** フォルダーから (アセット を展開して ホログラム を選択するか、プロジェクト パネルで ホログラム フォルダーをダブルクリックします)。</span><span class="sxs-lookup"><span data-stu-id="acb06-155">From the **Holograms** folder in the Project Panel (expand Assets and select Holograms or double click the Holograms folder in the Project Panel):</span></span>
+  * <span data-ttu-id="acb06-156">**ステージ**を階層にドラッグして、 **OrigamiCollection**の子にします。</span><span class="sxs-lookup"><span data-stu-id="acb06-156">Drag **Stage** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
+  * <span data-ttu-id="acb06-157">**Sphere1**を階層内にドラッグして、 **OrigamiCollection**の子にします。</span><span class="sxs-lookup"><span data-stu-id="acb06-157">Drag **Sphere1** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
+  * <span data-ttu-id="acb06-158">**Sphere2**を階層内にドラッグして、 **OrigamiCollection**の子にします。</span><span class="sxs-lookup"><span data-stu-id="acb06-158">Drag **Sphere2** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
+* <span data-ttu-id="acb06-159">[**階層] パネル**で**指向性ライト**オブジェクトを右クリックし、 **[削除]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-159">Right-click the **Directional Light** object in the **Hierarchy Panel** and select **Delete**.</span></span>
+* <span data-ttu-id="acb06-160">**[ホログラム]** フォルダーから、[**階層] パネル**のルートに**ライト**をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-160">From the **Holograms** folder, drag **Lights** into the root of the **Hierarchy Panel**.</span></span>
+* <span data-ttu-id="acb06-161">**階層**で、 **OrigamiCollection**を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-161">In the **Hierarchy**, select the **OrigamiCollection**.</span></span>
+* <span data-ttu-id="acb06-162">**インスペクター**で、変換位置を**0、-0.5、2.0**に設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-162">In the **Inspector**, set the transform position to **0, -0.5, 2.0**.</span></span>
+* <span data-ttu-id="acb06-163">Unity の **[再生]** ボタンをクリックして、ホログラムをプレビューします。</span><span class="sxs-lookup"><span data-stu-id="acb06-163">Press the **Play** button in Unity to preview your holograms.</span></span>
+* <span data-ttu-id="acb06-164">プレビューウィンドウに Origami オブジェクトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-164">You should see the Origami objects in the preview window.</span></span>
+* <span data-ttu-id="acb06-165">プレビューモードを停止するには、もう一度**Play**を押します。</span><span class="sxs-lookup"><span data-stu-id="acb06-165">Press **Play** a second time to stop preview mode.</span></span>
 
-#### <a name="export-the-project-from-unity-to-visual-studio"></a><span data-ttu-id="716f4-166">Visual Studio Unity からプロジェクトにエクスポートします。</span><span class="sxs-lookup"><span data-stu-id="716f4-166">Export the project from Unity to Visual Studio</span></span>
+#### <a name="export-the-project-from-unity-to-visual-studio"></a><span data-ttu-id="acb06-166">Unity から Visual Studio にプロジェクトをエクスポートする</span><span class="sxs-lookup"><span data-stu-id="acb06-166">Export the project from Unity to Visual Studio</span></span>
 
-* <span data-ttu-id="716f4-167">Unity の select で**ファイル > Build Settings**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-167">In Unity select **File > Build Settings**.</span></span>
-* <span data-ttu-id="716f4-168">選択**ユニバーサル Windows プラットフォーム**で、**プラットフォーム**を一覧表示し、クリックして**スイッチ プラットフォーム**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-168">Select **Universal Windows Platform** in the **Platform** list and click **Switch Platform**.</span></span>
-* <span data-ttu-id="716f4-169">設定**SDK**に**ユニバーサル 10**と**ビルドの種類**に**D3D**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-169">Set **SDK** to **Universal 10** and **Build Type** to **D3D**.</span></span>
-* <span data-ttu-id="716f4-170">確認**UnityC#プロジェクト**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-170">Check **Unity C# Projects**.</span></span>
-* <span data-ttu-id="716f4-171">をクリックして**開くシーンを追加**シーンを追加します。</span><span class="sxs-lookup"><span data-stu-id="716f4-171">Click **Add Open Scenes** to add the scene.</span></span>
-* <span data-ttu-id="716f4-172">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="716f4-172">Click **Build**.</span></span>
-* <span data-ttu-id="716f4-173">ファイル エクスプ ローラー ウィンドウが表示されますが、作成、**新しいフォルダー** "App"という名前です。</span><span class="sxs-lookup"><span data-stu-id="716f4-173">In the file explorer window that appears, create a **New Folder** named "App".</span></span>
-* <span data-ttu-id="716f4-174">1 回のクリック、**アプリ フォルダー**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-174">Single click the **App Folder**.</span></span>
-* <span data-ttu-id="716f4-175">キーを押して**フォルダーを選択します**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-175">Press **Select Folder**.</span></span>
-* <span data-ttu-id="716f4-176">Unity を完了すると、ファイル エクスプ ローラー ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="716f4-176">When Unity is done, a File Explorer window will appear.</span></span>
-* <span data-ttu-id="716f4-177">開く、**アプリ**フォルダー。</span><span class="sxs-lookup"><span data-stu-id="716f4-177">Open the **App** folder.</span></span>
-* <span data-ttu-id="716f4-178">開く (ダブルクリック) **Origami.sln**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-178">Open (double click) **Origami.sln**.</span></span>
-* <span data-ttu-id="716f4-179">デバッグからターゲットを変更する Visual Studio で、上部のツールバーを使用して**リリース**を ARM から**X86**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-179">Using the top toolbar in Visual Studio, change the target from Debug to **Release** and from ARM to **X86**.</span></span>
-* <span data-ttu-id="716f4-180">デバイスのボタンの横の矢印をクリックし、**リモート マシン**Wi-fi 経由で展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-180">Click on the arrow next to the Device button, and select **Remote Machine** to deploy over Wi-Fi.</span></span>
-  * <span data-ttu-id="716f4-181">設定、**アドレス**HoloLens の IP アドレス、名前にします。</span><span class="sxs-lookup"><span data-stu-id="716f4-181">Set the **Address** to the name or IP address of your HoloLens.</span></span> <span data-ttu-id="716f4-182">デバイスの IP アドレスがわからない場合に参照**設定 > ネットワークとインターネット > 詳細オプション**Cortana に質問してまたは **」「コルタナさん自分の IP アドレスは何ですか?**</span><span class="sxs-lookup"><span data-stu-id="716f4-182">If you do not know your device IP address, look in **Settings > Network & Internet > Advanced Options** or ask Cortana **"Hey Cortana, What's my IP address?"**</span></span>
-  * <span data-ttu-id="716f4-183">代わりに選択しますが、HoloLens が USB 経由で接続されている場合**デバイス**USB 経由で展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-183">If the HoloLens is attached over USB, you may instead select **Device** to deploy over USB.</span></span>
-  * <span data-ttu-id="716f4-184">ままに、**認証モード**設定**ユニバーサル**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-184">Leave the **Authentication Mode** set to **Universal**.</span></span>
-  * <span data-ttu-id="716f4-185">クリックして**を選択します**</span><span class="sxs-lookup"><span data-stu-id="716f4-185">Click **Select**</span></span>
+* <span data-ttu-id="acb06-167">Unity で、 **[ファイル > ビルド設定]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-167">In Unity select **File > Build Settings**.</span></span>
+* <span data-ttu-id="acb06-168">**[プラットフォーム]** ボックスの一覧の **[ユニバーサル Windows プラットフォーム]** を選択し、 **[プラットフォームの切り替え]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-168">Select **Universal Windows Platform** in the **Platform** list and click **Switch Platform**.</span></span>
+* <span data-ttu-id="acb06-169">**SDK**を**Universal 10**に設定し、**ビルドの種類**を**D3D**に設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-169">Set **SDK** to **Universal 10** and **Build Type** to **D3D**.</span></span>
+* <span data-ttu-id="acb06-170">**Unity C#プロジェクト**を確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-170">Check **Unity C# Projects**.</span></span>
+* <span data-ttu-id="acb06-171">シーンを追加するには、[開いている**シーンの追加**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-171">Click **Add Open Scenes** to add the scene.</span></span>
+* <span data-ttu-id="acb06-172">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-172">Click **Build**.</span></span>
+* <span data-ttu-id="acb06-173">表示された [エクスプローラー] ウィンドウで、"App" という名前の**新しいフォルダー**を作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-173">In the file explorer window that appears, create a **New Folder** named "App".</span></span>
+* <span data-ttu-id="acb06-174">**アプリフォルダー**をシングルクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-174">Single click the **App Folder**.</span></span>
+* <span data-ttu-id="acb06-175">**[フォルダーの選択]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-175">Press **Select Folder**.</span></span>
+* <span data-ttu-id="acb06-176">Unity が完了すると、エクスプローラーウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-176">When Unity is done, a File Explorer window will appear.</span></span>
+* <span data-ttu-id="acb06-177">**アプリ**フォルダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="acb06-177">Open the **App** folder.</span></span>
+* <span data-ttu-id="acb06-178">**Origami**を開きます (ダブルクリックします)。</span><span class="sxs-lookup"><span data-stu-id="acb06-178">Open (double click) **Origami.sln**.</span></span>
+* <span data-ttu-id="acb06-179">Visual Studio の上部のツールバーを使用して、ターゲットをデバッグから**リリース**に変更し、ARM から**X86**に変更します。</span><span class="sxs-lookup"><span data-stu-id="acb06-179">Using the top toolbar in Visual Studio, change the target from Debug to **Release** and from ARM to **X86**.</span></span>
+* <span data-ttu-id="acb06-180">デバイス ボタンの横にある矢印をクリックし、**リモートコンピューター** を選択して wi-fi 経由で展開します。</span><span class="sxs-lookup"><span data-stu-id="acb06-180">Click on the arrow next to the Device button, and select **Remote Machine** to deploy over Wi-Fi.</span></span>
+  * <span data-ttu-id="acb06-181">**アドレス**を HoloLens の名前または IP アドレスに設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-181">Set the **Address** to the name or IP address of your HoloLens.</span></span> <span data-ttu-id="acb06-182">デバイスの IP アドレスがわからない場合は、設定 の **ネットワーク & Internet > 詳細オプション >** 確認するか、cortana**に "Cortana さん、どのような IP アドレスがあるか" を**確認してください。</span><span class="sxs-lookup"><span data-stu-id="acb06-182">If you do not know your device IP address, look in **Settings > Network & Internet > Advanced Options** or ask Cortana **"Hey Cortana, What's my IP address?"**</span></span>
+  * <span data-ttu-id="acb06-183">HoloLens が USB 経由で接続されている場合は、代わりに **[デバイス]** を選択して usb 経由で展開することができます。</span><span class="sxs-lookup"><span data-stu-id="acb06-183">If the HoloLens is attached over USB, you may instead select **Device** to deploy over USB.</span></span>
+  * <span data-ttu-id="acb06-184">**認証モード**(**ユニバーサル**) に設定したままにします。</span><span class="sxs-lookup"><span data-stu-id="acb06-184">Leave the **Authentication Mode** set to **Universal**.</span></span>
+  * <span data-ttu-id="acb06-185">[**選択] を**クリック</span><span class="sxs-lookup"><span data-stu-id="acb06-185">Click **Select**</span></span>
 
-* <span data-ttu-id="716f4-186">クリックして**デバッグ > デバッグなしで開始**またはキーを押します**ctrl キーを押しながら f5 キーを押して**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-186">Click **Debug > Start Without debugging** or press **Ctrl + F5**.</span></span> <span data-ttu-id="716f4-187">最初に、デバイスに展開するには、する必要があります[Visual Studio をペアリング](using-visual-studio.md#pairing-your-device-hololens-(1st-gen))します。</span><span class="sxs-lookup"><span data-stu-id="716f4-187">If this is the first time deploying to your device, you will need to [pair it with Visual Studio](using-visual-studio.md#pairing-your-device-hololens-(1st-gen)).</span></span>
+* <span data-ttu-id="acb06-186">デバッグ をクリックして **デバッグなしで開始** を >、Ctrl キーを押し**ながら F5**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="acb06-186">Click **Debug > Start Without debugging** or press **Ctrl + F5**.</span></span> <span data-ttu-id="acb06-187">初めてデバイスをデプロイする場合は、 [Visual Studio とペアリング](using-visual-studio.md#pairing-your-device-hololens-(1st-gen))する必要があります。</span><span class="sxs-lookup"><span data-stu-id="acb06-187">If this is the first time deploying to your device, you will need to [pair it with Visual Studio](using-visual-studio.md#pairing-your-device-hololens-(1st-gen)).</span></span>
 
-* <span data-ttu-id="716f4-188">折り紙プロジェクトは今すぐ、HoloLens を展開してビルドし、実行します。</span><span class="sxs-lookup"><span data-stu-id="716f4-188">The Origami project will now build, deploy to your HoloLens, and then run.</span></span>
-* <span data-ttu-id="716f4-189">HoloLens にで、新しいホログラムを探します。</span><span class="sxs-lookup"><span data-stu-id="716f4-189">Put on your HoloLens and look around to see your new holograms.</span></span>
+* <span data-ttu-id="acb06-188">これで、Origami プロジェクトが作成され、HoloLens にデプロイされた後、が実行されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-188">The Origami project will now build, deploy to your HoloLens, and then run.</span></span>
+* <span data-ttu-id="acb06-189">HoloLens に移動し、新しいホログラムを見てみてください。</span><span class="sxs-lookup"><span data-stu-id="acb06-189">Put on your HoloLens and look around to see your new holograms.</span></span>
 
-## <a name="chapter-2---gaze"></a><span data-ttu-id="716f4-190">第 2 章 – 視線入力</span><span class="sxs-lookup"><span data-stu-id="716f4-190">Chapter 2 - Gaze</span></span>
+## <a name="chapter-2---gaze"></a><span data-ttu-id="acb06-190">第2章-宝石</span><span class="sxs-lookup"><span data-stu-id="acb06-190">Chapter 2 - Gaze</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/MSO2BoFSQbM]
 
-<span data-ttu-id="716f4-191">この章で、最初の対話の 3 つの方法を紹介するつもりが、ホログラム--で[視線](gaze.md)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-191">In this chapter, we are going to introduce the first of three ways of interacting with your holograms -- [gaze](gaze.md).</span></span>
+<span data-ttu-id="acb06-191">この章では、最初に3つの方法を使用して、ホログラムと対話する方法を紹介[します。](gaze.md)</span><span class="sxs-lookup"><span data-stu-id="acb06-191">In this chapter, we are going to introduce the first of three ways of interacting with your holograms -- [gaze](gaze.md).</span></span>
 
-### <a name="objectives"></a><span data-ttu-id="716f4-192">目標</span><span class="sxs-lookup"><span data-stu-id="716f4-192">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="acb06-192">目的</span><span class="sxs-lookup"><span data-stu-id="acb06-192">Objectives</span></span>
 
-* <span data-ttu-id="716f4-193">世界中ロックされているカーソルを使用して、視線の先を視覚化します。</span><span class="sxs-lookup"><span data-stu-id="716f4-193">Visualize your gaze using a world-locked cursor.</span></span>
+* <span data-ttu-id="acb06-193">世界でロックされているカーソルを使用して、宝石を視覚化します。</span><span class="sxs-lookup"><span data-stu-id="acb06-193">Visualize your gaze using a world-locked cursor.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="716f4-194">手順</span><span class="sxs-lookup"><span data-stu-id="716f4-194">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="acb06-194">手順</span><span class="sxs-lookup"><span data-stu-id="acb06-194">Instructions</span></span>
 
-* <span data-ttu-id="716f4-195">Unity プロジェクトに戻るしがまだ開いている場合は、ビルドの詳細設定 ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="716f4-195">Go back to your Unity project, and close the Build Settings window if it's still open.</span></span>
-* <span data-ttu-id="716f4-196">選択、**ホログラム**フォルダーで、**プロジェクト パネル**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-196">Select the **Holograms** folder in the **Project panel**.</span></span>
-* <span data-ttu-id="716f4-197">ドラッグ、**カーソル**オブジェクトを**階層パネル**ルート レベルにします。</span><span class="sxs-lookup"><span data-stu-id="716f4-197">Drag the **Cursor** object into the **Hierarchy panel** at the root level.</span></span>
-* <span data-ttu-id="716f4-198">ダブルクリックして、**カーソル**について詳しく見てを実行するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-198">Double-click on the **Cursor** object to take a closer look at it.</span></span>
-* <span data-ttu-id="716f4-199">右クリックし、**スクリプト**プロジェクト パネル内のフォルダー。</span><span class="sxs-lookup"><span data-stu-id="716f4-199">Right-click on the **Scripts** folder in the Project panel.</span></span>
-* <span data-ttu-id="716f4-200">をクリックして、**作成** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="716f4-200">Click the **Create** sub-menu.</span></span>
-* <span data-ttu-id="716f4-201">選択**C#スクリプト**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-201">Select **C# Script**.</span></span>
-* <span data-ttu-id="716f4-202">スクリプトの名前**WorldCursor**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-202">Name the script **WorldCursor**.</span></span> <span data-ttu-id="716f4-203">注:この名前では、大文字と小文字を区別します。</span><span class="sxs-lookup"><span data-stu-id="716f4-203">Note: The name is case-sensitive.</span></span> <span data-ttu-id="716f4-204">.Cs 拡張子を追加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="716f4-204">You do not need to add the .cs extension.</span></span>
-* <span data-ttu-id="716f4-205">選択、**カーソル**オブジェクト、**階層パネル**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-205">Select the **Cursor** object in the **Hierarchy panel**.</span></span>
-* <span data-ttu-id="716f4-206">ドラッグ アンド ドロップ、 **WorldCursor**にスクリプト、**インスペクター パネル**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-206">Drag and drop the **WorldCursor** script into the **Inspector panel**.</span></span>
-* <span data-ttu-id="716f4-207">ダブルクリックして、 **WorldCursor**スクリプトを Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="716f4-207">Double-click the **WorldCursor** script to open it in Visual Studio.</span></span>
-* <span data-ttu-id="716f4-208">このコードをコピーして**WorldCursor.cs**と**すべて保存**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-208">Copy and paste this code into **WorldCursor.cs** and **Save All**.</span></span>
+* <span data-ttu-id="acb06-195">Unity プロジェクトに戻り、[ビルドの設定] ウィンドウがまだ開いている場合は閉じます。</span><span class="sxs-lookup"><span data-stu-id="acb06-195">Go back to your Unity project, and close the Build Settings window if it's still open.</span></span>
+* <span data-ttu-id="acb06-196">[**プロジェクト] パネル**で **[ホログラム]** フォルダーを選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-196">Select the **Holograms** folder in the **Project panel**.</span></span>
+* <span data-ttu-id="acb06-197">**カーソル**オブジェクトをルートレベルの [**階層] パネル**にドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-197">Drag the **Cursor** object into the **Hierarchy panel** at the root level.</span></span>
+* <span data-ttu-id="acb06-198">**カーソル**オブジェクトをダブルクリックすると、詳細が表示されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-198">Double-click on the **Cursor** object to take a closer look at it.</span></span>
+* <span data-ttu-id="acb06-199">[プロジェクト] パネルの **[Scripts]** フォルダーを右クリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-199">Right-click on the **Scripts** folder in the Project panel.</span></span>
+* <span data-ttu-id="acb06-200">**[作成]** サブメニューをクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-200">Click the **Create** sub-menu.</span></span>
+* <span data-ttu-id="acb06-201">**[ C#スクリプト]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-201">Select **C# Script**.</span></span>
+* <span data-ttu-id="acb06-202">スクリプトに**WorldCursor**という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-202">Name the script **WorldCursor**.</span></span> <span data-ttu-id="acb06-203">注:この名前では、大文字と小文字を区別します。</span><span class="sxs-lookup"><span data-stu-id="acb06-203">Note: The name is case-sensitive.</span></span> <span data-ttu-id="acb06-204">.Cs 拡張子を追加する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="acb06-204">You do not need to add the .cs extension.</span></span>
+* <span data-ttu-id="acb06-205">[**階層] パネル**で**カーソル**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-205">Select the **Cursor** object in the **Hierarchy panel**.</span></span>
+* <span data-ttu-id="acb06-206">**WorldCursor**スクリプトを [**インスペクター] パネル**にドラッグアンドドロップします。</span><span class="sxs-lookup"><span data-stu-id="acb06-206">Drag and drop the **WorldCursor** script into the **Inspector panel**.</span></span>
+* <span data-ttu-id="acb06-207">**WorldCursor**スクリプトをダブルクリックして、Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="acb06-207">Double-click the **WorldCursor** script to open it in Visual Studio.</span></span>
+* <span data-ttu-id="acb06-208">このコードをコピーして**WorldCursor.cs**に貼り付け、**すべて保存**します。</span><span class="sxs-lookup"><span data-stu-id="acb06-208">Copy and paste this code into **WorldCursor.cs** and **Save All**.</span></span>
 
 ```cs
 using UnityEngine;
@@ -197,29 +197,29 @@ public class WorldCursor : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-209">アプリをリビルド**ファイル > のビルド設定**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-209">Rebuild the app from **File > Build Settings**.</span></span>
-* <span data-ttu-id="716f4-210">以前、HoloLens を展開するために使用する Visual Studio ソリューションに戻ります。</span><span class="sxs-lookup"><span data-stu-id="716f4-210">Return to the Visual Studio solution previously used to deploy to your HoloLens.</span></span>
-* <span data-ttu-id="716f4-211">'すべて再読み込み' が表示されたら選択します。</span><span class="sxs-lookup"><span data-stu-id="716f4-211">Select 'Reload All' when prompted.</span></span>
-* <span data-ttu-id="716f4-212">クリックして**デバッグ]、[デバッグなしで開始**またはキーを押します**ctrl キーを押しながら f5 キーを押して**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-212">Click **Debug -> Start Without debugging** or press **Ctrl + F5**.</span></span>
-* <span data-ttu-id="716f4-213">ここでシーンを中心になり、カーソルがオブジェクトの形状と対話する方法に注意してください。</span><span class="sxs-lookup"><span data-stu-id="716f4-213">Now look around the scene and notice how the cursor interacts with the shape of objects.</span></span>
+* <span data-ttu-id="acb06-209">**ファイル > ビルド設定**からアプリをリビルドします。</span><span class="sxs-lookup"><span data-stu-id="acb06-209">Rebuild the app from **File > Build Settings**.</span></span>
+* <span data-ttu-id="acb06-210">以前に HoloLens にデプロイするために使用した Visual Studio ソリューションに戻ります。</span><span class="sxs-lookup"><span data-stu-id="acb06-210">Return to the Visual Studio solution previously used to deploy to your HoloLens.</span></span>
+* <span data-ttu-id="acb06-211">メッセージが表示されたら、[すべて再読み込み] を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-211">Select 'Reload All' when prompted.</span></span>
+* <span data-ttu-id="acb06-212">[**デバッグ]、[デバッグなしで開始] の順にクリック >** 、Ctrl キーを押し**ながら F5**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="acb06-212">Click **Debug -> Start Without debugging** or press **Ctrl + F5**.</span></span>
+* <span data-ttu-id="acb06-213">次に、シーンを見て、カーソルがオブジェクトの形状とどのように対話するかを確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-213">Now look around the scene and notice how the cursor interacts with the shape of objects.</span></span>
 
-## <a name="chapter-3---gestures"></a><span data-ttu-id="716f4-214">第 3 章 - ジェスチャ</span><span class="sxs-lookup"><span data-stu-id="716f4-214">Chapter 3 - Gestures</span></span>
+## <a name="chapter-3---gestures"></a><span data-ttu-id="acb06-214">第3章-ジェスチャ</span><span class="sxs-lookup"><span data-stu-id="acb06-214">Chapter 3 - Gestures</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/kW3ThJ2MbvQ]
 
-<span data-ttu-id="716f4-215">この章では、サポートを追加します[ジェスチャ](gestures.md)します。</span><span class="sxs-lookup"><span data-stu-id="716f4-215">In this chapter, we'll add support for [gestures](gestures.md).</span></span> <span data-ttu-id="716f4-216">ユーザーは、ホワイト ペーパーの球体を選択するときに、Unity の物理運動エンジンを使用して重力を有効にして分類、球体にしましょう。</span><span class="sxs-lookup"><span data-stu-id="716f4-216">When the user selects a paper sphere, we'll make the sphere fall by turning on gravity using Unity's physics engine.</span></span>
+<span data-ttu-id="acb06-215">この章では、[ジェスチャ](gestures.md)のサポートを追加します。</span><span class="sxs-lookup"><span data-stu-id="acb06-215">In this chapter, we'll add support for [gestures](gestures.md).</span></span> <span data-ttu-id="acb06-216">ユーザーがペーパー球を選択すると、Unity の物理エンジンを使用して重力をオンにすることで、球がフォールされるようになります。</span><span class="sxs-lookup"><span data-stu-id="acb06-216">When the user selects a paper sphere, we'll make the sphere fall by turning on gravity using Unity's physics engine.</span></span>
 
-### <a name="objectives"></a><span data-ttu-id="716f4-217">目標</span><span class="sxs-lookup"><span data-stu-id="716f4-217">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="acb06-217">目的</span><span class="sxs-lookup"><span data-stu-id="acb06-217">Objectives</span></span>
 
-* <span data-ttu-id="716f4-218">ジェスチャに、ホログラムを制御します。</span><span class="sxs-lookup"><span data-stu-id="716f4-218">Control your holograms with the Select gesture.</span></span>
+* <span data-ttu-id="acb06-218">選択ジェスチャでホログラムを制御します。</span><span class="sxs-lookup"><span data-stu-id="acb06-218">Control your holograms with the Select gesture.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="716f4-219">手順</span><span class="sxs-lookup"><span data-stu-id="716f4-219">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="acb06-219">手順</span><span class="sxs-lookup"><span data-stu-id="acb06-219">Instructions</span></span>
 
-<span data-ttu-id="716f4-220">スクリプトの作成から始めます続いて選択ジェスチャを検出することができます。</span><span class="sxs-lookup"><span data-stu-id="716f4-220">We'll start by creating a script then can detect the Select gesture.</span></span>
+<span data-ttu-id="acb06-220">まず、スクリプトを作成してから、選択したジェスチャを検出できるようにします。</span><span class="sxs-lookup"><span data-stu-id="acb06-220">We'll start by creating a script then can detect the Select gesture.</span></span>
 
-* <span data-ttu-id="716f4-221">**スクリプト**フォルダー、という名前のスクリプト作成**GazeGestureManager**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-221">In the **Scripts** folder, create a script named **GazeGestureManager**.</span></span>
-* <span data-ttu-id="716f4-222">ドラッグ、 **GazeGestureManager**にスクリプト、 **OrigamiCollection**階層内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-222">Drag the **GazeGestureManager** script onto the **OrigamiCollection** object in the Hierarchy.</span></span>
-* <span data-ttu-id="716f4-223">開く、 **GazeGestureManager** Visual Studio でスクリプトを作成し、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="716f4-223">Open the **GazeGestureManager** script in Visual Studio and add the following code:</span></span>
+* <span data-ttu-id="acb06-221">**Scripts**フォルダーで、 **GazeGestureManager**という名前のスクリプトを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-221">In the **Scripts** folder, create a script named **GazeGestureManager**.</span></span>
+* <span data-ttu-id="acb06-222">**GazeGestureManager**スクリプトを階層内の**OrigamiCollection**オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-222">Drag the **GazeGestureManager** script onto the **OrigamiCollection** object in the Hierarchy.</span></span>
+* <span data-ttu-id="acb06-223">Visual Studio で**GazeGestureManager**スクリプトを開き、次のコードを追加します。</span><span class="sxs-lookup"><span data-stu-id="acb06-223">Open the **GazeGestureManager** script in Visual Studio and add the following code:</span></span>
 
 ```cs
 using UnityEngine;
@@ -286,11 +286,11 @@ public class GazeGestureManager : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-224">Scripts フォルダーでは、という名前のこの時点で別のスクリプトを作成**SphereCommands**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-224">Create another script in the Scripts folder, this time named **SphereCommands**.</span></span>
-* <span data-ttu-id="716f4-225">展開、 **OrigamiCollection**階層ビュー内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-225">Expand the **OrigamiCollection** object in the Hierarchy view.</span></span>
-* <span data-ttu-id="716f4-226">ドラッグ、 **SphereCommands**にスクリプト、 **Sphere1**階層パネル内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-226">Drag the **SphereCommands** script onto the **Sphere1** object in the Hierarchy panel.</span></span>
-* <span data-ttu-id="716f4-227">ドラッグ、 **SphereCommands**にスクリプト、 **Sphere2**階層パネル内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-227">Drag the **SphereCommands** script onto the **Sphere2** object in the Hierarchy panel.</span></span>
-* <span data-ttu-id="716f4-228">編集に関しては、Visual Studio でスクリプトを開くし、この既定のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="716f4-228">Open the script in Visual Studio for editing, and replace the default code with this:</span></span>
+* <span data-ttu-id="acb06-224">Scripts フォルダーに、今度は**SphereCommands**という名前の別のスクリプトを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-224">Create another script in the Scripts folder, this time named **SphereCommands**.</span></span>
+* <span data-ttu-id="acb06-225">[階層] ビューで **[OrigamiCollection]** オブジェクトを展開します。</span><span class="sxs-lookup"><span data-stu-id="acb06-225">Expand the **OrigamiCollection** object in the Hierarchy view.</span></span>
+* <span data-ttu-id="acb06-226">**SphereCommands**スクリプトを、[階層] パネルの **[Sphere1]** オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-226">Drag the **SphereCommands** script onto the **Sphere1** object in the Hierarchy panel.</span></span>
+* <span data-ttu-id="acb06-227">**SphereCommands**スクリプトを、[階層] パネルの **[Sphere2]** オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-227">Drag the **SphereCommands** script onto the **Sphere2** object in the Hierarchy panel.</span></span>
+* <span data-ttu-id="acb06-228">編集するために Visual Studio でスクリプトを開き、既定のコードを次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="acb06-228">Open the script in Visual Studio for editing, and replace the default code with this:</span></span>
 
 ```cs
 using UnityEngine;
@@ -310,27 +310,27 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-229">エクスポートし、ビルド、HoloLens にアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-229">Export, build and deploy the app to your HoloLens.</span></span>
-* <span data-ttu-id="716f4-230">球体は一層のいずれかを確認します。</span><span class="sxs-lookup"><span data-stu-id="716f4-230">Look at one of the spheres.</span></span>
-* <span data-ttu-id="716f4-231">選択ジェスチャを実行し、次の画面にドロップ球を確認します。</span><span class="sxs-lookup"><span data-stu-id="716f4-231">Perform the select gesture and watch the sphere drop onto the surface below.</span></span>
+* <span data-ttu-id="acb06-229">アプリのエクスポート、ビルド、および HoloLens へのデプロイを行います。</span><span class="sxs-lookup"><span data-stu-id="acb06-229">Export, build and deploy the app to your HoloLens.</span></span>
+* <span data-ttu-id="acb06-230">いずれかの球体を確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-230">Look at one of the spheres.</span></span>
+* <span data-ttu-id="acb06-231">選択ジェスチャを実行し、球が下の画面にあることを確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-231">Perform the select gesture and watch the sphere drop onto the surface below.</span></span>
 
-## <a name="chapter-4---voice"></a><span data-ttu-id="716f4-232">第 4 章 - 音声</span><span class="sxs-lookup"><span data-stu-id="716f4-232">Chapter 4 - Voice</span></span>
+## <a name="chapter-4---voice"></a><span data-ttu-id="acb06-232">第4章-音声</span><span class="sxs-lookup"><span data-stu-id="acb06-232">Chapter 4 - Voice</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/1-Aq0VVtHM8]
 
-<span data-ttu-id="716f4-233">この章では、2 つのサポートを追加します[音声コマンド](voice-input.md):"リセット world"には、元の場所にドロップされた球体を返し、「球体をドロップ」分類球を作成します。</span><span class="sxs-lookup"><span data-stu-id="716f4-233">In this chapter, we'll add support for two [voice commands](voice-input.md): "Reset world" to return the dropped spheres to their original location, and "Drop sphere" to make the sphere fall.</span></span>
+<span data-ttu-id="acb06-233">この章では、次の2つの[音声コマンド](voice-input.md)のサポートを追加します。"ワールドのリセット" を使用して、ドロップされた球体を元の場所に返し、"球を落下する" ようにします。</span><span class="sxs-lookup"><span data-stu-id="acb06-233">In this chapter, we'll add support for two [voice commands](voice-input.md): "Reset world" to return the dropped spheres to their original location, and "Drop sphere" to make the sphere fall.</span></span>
 
-### <a name="objectives"></a><span data-ttu-id="716f4-234">目標</span><span class="sxs-lookup"><span data-stu-id="716f4-234">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="acb06-234">目的</span><span class="sxs-lookup"><span data-stu-id="acb06-234">Objectives</span></span>
 
-* <span data-ttu-id="716f4-235">バック グラウンドでは、常にリッスンする音声コマンドを追加します。</span><span class="sxs-lookup"><span data-stu-id="716f4-235">Add voice commands that always listen in the background.</span></span>
-* <span data-ttu-id="716f4-236">音声コマンドに応答するホログラムを作成します。</span><span class="sxs-lookup"><span data-stu-id="716f4-236">Create a hologram that reacts to a voice command.</span></span>
+* <span data-ttu-id="acb06-235">常にバックグラウンドで待機する音声コマンドを追加します。</span><span class="sxs-lookup"><span data-stu-id="acb06-235">Add voice commands that always listen in the background.</span></span>
+* <span data-ttu-id="acb06-236">音声コマンドに反応するホログラムを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-236">Create a hologram that reacts to a voice command.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="716f4-237">手順</span><span class="sxs-lookup"><span data-stu-id="716f4-237">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="acb06-237">手順</span><span class="sxs-lookup"><span data-stu-id="acb06-237">Instructions</span></span>
 
-* <span data-ttu-id="716f4-238">**スクリプト**フォルダー、という名前のスクリプト作成**SpeechManager**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-238">In the **Scripts** folder, create a script named **SpeechManager**.</span></span>
-* <span data-ttu-id="716f4-239">ドラッグ、 **SpeechManager**にスクリプト、 **OrigamiCollection**階層内のオブジェクト</span><span class="sxs-lookup"><span data-stu-id="716f4-239">Drag the **SpeechManager** script onto the **OrigamiCollection** object in the Hierarchy</span></span>
-* <span data-ttu-id="716f4-240">開く、 **SpeechManager** Visual Studio でのスクリプト。</span><span class="sxs-lookup"><span data-stu-id="716f4-240">Open the **SpeechManager** script in Visual Studio.</span></span>
-* <span data-ttu-id="716f4-241">このコードをコピーして**SpeechManager.cs**と**すべて保存**:</span><span class="sxs-lookup"><span data-stu-id="716f4-241">Copy and paste this code into **SpeechManager.cs** and **Save All**:</span></span>
+* <span data-ttu-id="acb06-238">**Scripts**フォルダーで、 **SpeechManager**という名前のスクリプトを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-238">In the **Scripts** folder, create a script named **SpeechManager**.</span></span>
+* <span data-ttu-id="acb06-239">**SpeechManager**スクリプトを階層内の**OrigamiCollection**オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-239">Drag the **SpeechManager** script onto the **OrigamiCollection** object in the Hierarchy</span></span>
+* <span data-ttu-id="acb06-240">Visual Studio で**SpeechManager**スクリプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="acb06-240">Open the **SpeechManager** script in Visual Studio.</span></span>
+* <span data-ttu-id="acb06-241">このコードをコピーして**SpeechManager.cs**に貼り付け、**すべてを保存**します。</span><span class="sxs-lookup"><span data-stu-id="acb06-241">Copy and paste this code into **SpeechManager.cs** and **Save All**:</span></span>
 
 ```cs
 using System.Collections.Generic;
@@ -381,8 +381,8 @@ public class SpeechManager : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-242">開く、 **SphereCommands** Visual Studio でのスクリプト。</span><span class="sxs-lookup"><span data-stu-id="716f4-242">Open the **SphereCommands** script in Visual Studio.</span></span>
-* <span data-ttu-id="716f4-243">次のようにスクリプトを更新します。</span><span class="sxs-lookup"><span data-stu-id="716f4-243">Update the script to read as follows:</span></span>
+* <span data-ttu-id="acb06-242">Visual Studio で**SphereCommands**スクリプトを開きます。</span><span class="sxs-lookup"><span data-stu-id="acb06-242">Open the **SphereCommands** script in Visual Studio.</span></span>
+* <span data-ttu-id="acb06-243">次のようにスクリプトを更新します。</span><span class="sxs-lookup"><span data-stu-id="acb06-243">Update the script to read as follows:</span></span>
 
 ```cs
 using UnityEngine;
@@ -433,36 +433,36 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-244">エクスポートし、ビルド、HoloLens にアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-244">Export, build and deploy the app to your HoloLens.</span></span>
-* <span data-ttu-id="716f4-245">球体のいずれかを確認し、"**球のドロップ**"。</span><span class="sxs-lookup"><span data-stu-id="716f4-245">Look at one of the spheres, and say "**Drop Sphere**".</span></span>
-* <span data-ttu-id="716f4-246">たとえば"**世界のリセット**"最初の位置に戻すにします。</span><span class="sxs-lookup"><span data-stu-id="716f4-246">Say "**Reset World**" to bring them back to their initial positions.</span></span>
+* <span data-ttu-id="acb06-244">アプリのエクスポート、ビルド、および HoloLens へのデプロイを行います。</span><span class="sxs-lookup"><span data-stu-id="acb06-244">Export, build and deploy the app to your HoloLens.</span></span>
+* <span data-ttu-id="acb06-245">球体の1つを見て、"**ドロップ球**" と言います。</span><span class="sxs-lookup"><span data-stu-id="acb06-245">Look at one of the spheres, and say "**Drop Sphere**".</span></span>
+* <span data-ttu-id="acb06-246">"**世界のリセット**" と言うと、最初の位置に戻ります。</span><span class="sxs-lookup"><span data-stu-id="acb06-246">Say "**Reset World**" to bring them back to their initial positions.</span></span>
 
-## <a name="chapter-5---spatial-sound"></a><span data-ttu-id="716f4-247">第 5 章 - 空間のサウンド</span><span class="sxs-lookup"><span data-stu-id="716f4-247">Chapter 5 - Spatial sound</span></span>
+## <a name="chapter-5---spatial-sound"></a><span data-ttu-id="acb06-247">第5章-空間サウンド</span><span class="sxs-lookup"><span data-stu-id="acb06-247">Chapter 5 - Spatial sound</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/Aj4de5Ncbfo]
 
-<span data-ttu-id="716f4-248">この章で、アプリに音楽を追加し、特定のアクションでのサウンド効果をトリガーします。</span><span class="sxs-lookup"><span data-stu-id="716f4-248">In this chapter, we'll add music to the app, and then trigger sound effects on certain actions.</span></span> <span data-ttu-id="716f4-249">使用する[空間サウンド](spatial-sound.md)サウンド 3D 空間で特定の場所を提供します。</span><span class="sxs-lookup"><span data-stu-id="716f4-249">We'll be using [spatial sound](spatial-sound.md) to give sounds a specific location in 3D space.</span></span>
+<span data-ttu-id="acb06-248">この章では、アプリに音楽を追加し、特定のアクションに対してサウンド効果をトリガーします。</span><span class="sxs-lookup"><span data-stu-id="acb06-248">In this chapter, we'll add music to the app, and then trigger sound effects on certain actions.</span></span> <span data-ttu-id="acb06-249">[空間サウンド](spatial-sound.md)を使用して、3d 空間内の特定の位置にサウンドを与えます。</span><span class="sxs-lookup"><span data-stu-id="acb06-249">We'll be using [spatial sound](spatial-sound.md) to give sounds a specific location in 3D space.</span></span>
 
-### <a name="objectives"></a><span data-ttu-id="716f4-250">目標</span><span class="sxs-lookup"><span data-stu-id="716f4-250">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="acb06-250">目的</span><span class="sxs-lookup"><span data-stu-id="acb06-250">Objectives</span></span>
 
-* <span data-ttu-id="716f4-251">世界でホログラムお話しします。</span><span class="sxs-lookup"><span data-stu-id="716f4-251">Hear holograms in your world.</span></span>
+* <span data-ttu-id="acb06-251">世界中のホログラムを聞くことができます。</span><span class="sxs-lookup"><span data-stu-id="acb06-251">Hear holograms in your world.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="716f4-252">手順</span><span class="sxs-lookup"><span data-stu-id="716f4-252">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="acb06-252">手順</span><span class="sxs-lookup"><span data-stu-id="acb06-252">Instructions</span></span>
 
-* <span data-ttu-id="716f4-253">上部のメニューから選択する Unity で**編集 > プロジェクトの設定 > オーディオ**</span><span class="sxs-lookup"><span data-stu-id="716f4-253">In Unity select from the top menu **Edit > Project Settings > Audio**</span></span>
-* <span data-ttu-id="716f4-254">右側にある Inspector パネルで、検索、**立体音場プラグイン**設定および  **MS HRTF 立体音場**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-254">In the Inspector Panel on the right side, find the **Spatializer Plugin** setting and select **MS HRTF Spatializer**.</span></span>
-* <span data-ttu-id="716f4-255">**ホログラム**プロジェクト パネルで、フォルダーをドラッグ、**アンビエンス**オブジェクト、 **OrigamiCollection**階層パネル内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-255">From the **Holograms** folder in the Project panel, drag the **Ambience** object onto the **OrigamiCollection** object in the Hierarchy Panel.</span></span>
-* <span data-ttu-id="716f4-256">選択**OrigamiCollection**を見つけて、**オーディオ ソース**インスペクター パネルの コンポーネント。</span><span class="sxs-lookup"><span data-stu-id="716f4-256">Select **OrigamiCollection** and find the **Audio Source** component in the Inspector panel.</span></span> <span data-ttu-id="716f4-257">これらのプロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="716f4-257">Change these properties:</span></span>
-  * <span data-ttu-id="716f4-258">チェック、 **Spatialize**プロパティ。</span><span class="sxs-lookup"><span data-stu-id="716f4-258">Check the **Spatialize** property.</span></span>
-  * <span data-ttu-id="716f4-259">チェック、**起動状態で再生**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-259">Check the **Play On Awake**.</span></span>
-  * <span data-ttu-id="716f4-260">変更**空間 Blend**に**3D**に右側のスライダーをドラッグしています。</span><span class="sxs-lookup"><span data-stu-id="716f4-260">Change **Spatial Blend** to **3D** by dragging the slider all the way to the right.</span></span> <span data-ttu-id="716f4-261">値は、スライダーを移動するときに 0 から 1 に変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="716f4-261">The value should change from 0 to 1 when you move the slider.</span></span>
-  * <span data-ttu-id="716f4-262">チェック、**ループ**プロパティ。</span><span class="sxs-lookup"><span data-stu-id="716f4-262">Check the **Loop** property.</span></span>
-  * <span data-ttu-id="716f4-263">展開**3D サウンド設定**、入力と**0.1**の**ドップラー レベル**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-263">Expand **3D Sound Settings**, and enter **0.1** for **Doppler Level**.</span></span>
-  * <span data-ttu-id="716f4-264">設定**ボリューム ロールオフ**に**対数ロールオフ**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-264">Set **Volume Rolloff** to **Logarithmic Rolloff**.</span></span>
-  * <span data-ttu-id="716f4-265">設定**最大距離**に**20**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-265">Set **Max Distance** to **20**.</span></span>
-* <span data-ttu-id="716f4-266">**スクリプト**フォルダー、という名前のスクリプト作成**SphereSounds**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-266">In the **Scripts** folder, create a script named **SphereSounds**.</span></span>
-* <span data-ttu-id="716f4-267">ドラッグ アンド ドロップ**SphereSounds**を**Sphere1**と**Sphere2**階層内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-267">Drag and drop **SphereSounds** to the **Sphere1** and **Sphere2** objects in the Hierarchy.</span></span>
-* <span data-ttu-id="716f4-268">開いている**SphereSounds** Visual Studio で、次のコードを更新および**すべて保存**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-268">Open **SphereSounds** in Visual Studio, update the following code and **Save All**.</span></span>
+* <span data-ttu-id="acb06-253">Unity で、上部のメニューから **> プロジェクトの設定** オーディオの > の編集 の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-253">In Unity select from the top menu **Edit > Project Settings > Audio**</span></span>
+* <span data-ttu-id="acb06-254">右側の [インスペクター] パネルで、 **Spatializer プラグイン**の設定を見つけて、 **[MS HRTF Spatializer]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-254">In the Inspector Panel on the right side, find the **Spatializer Plugin** setting and select **MS HRTF Spatializer**.</span></span>
+* <span data-ttu-id="acb06-255">プロジェクト] パネルの **[ホログラム]** フォルダーから、 **[アンビエント]** オブジェクトを [階層 パネルの**OrigamiCollection**オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-255">From the **Holograms** folder in the Project panel, drag the **Ambience** object onto the **OrigamiCollection** object in the Hierarchy Panel.</span></span>
+* <span data-ttu-id="acb06-256">**OrigamiCollection** を選択し、インスペクター パネルで **オーディオソース** コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="acb06-256">Select **OrigamiCollection** and find the **Audio Source** component in the Inspector panel.</span></span> <span data-ttu-id="acb06-257">次のプロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="acb06-257">Change these properties:</span></span>
+  * <span data-ttu-id="acb06-258">**Spatialize**プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-258">Check the **Spatialize** property.</span></span>
+  * <span data-ttu-id="acb06-259">スリープ状態**になって**いることを確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-259">Check the **Play On Awake**.</span></span>
+  * <span data-ttu-id="acb06-260">スライダーを右にドラッグして、**空間 Blend**を**3d**に変更します。</span><span class="sxs-lookup"><span data-stu-id="acb06-260">Change **Spatial Blend** to **3D** by dragging the slider all the way to the right.</span></span> <span data-ttu-id="acb06-261">スライダーを移動すると、値は0から1に変更されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-261">The value should change from 0 to 1 when you move the slider.</span></span>
+  * <span data-ttu-id="acb06-262">**Loop**プロパティを確認します。</span><span class="sxs-lookup"><span data-stu-id="acb06-262">Check the **Loop** property.</span></span>
+  * <span data-ttu-id="acb06-263">**[3D サウンド設定]** を展開し、**ドップラーレベル**に「 **0.1** 」と入力します。</span><span class="sxs-lookup"><span data-stu-id="acb06-263">Expand **3D Sound Settings**, and enter **0.1** for **Doppler Level**.</span></span>
+  * <span data-ttu-id="acb06-264">**ボリュームのロール**アウトを**対数ロールオフ**に設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-264">Set **Volume Rolloff** to **Logarithmic Rolloff**.</span></span>
+  * <span data-ttu-id="acb06-265">**最大距離**を**20**に設定します。</span><span class="sxs-lookup"><span data-stu-id="acb06-265">Set **Max Distance** to **20**.</span></span>
+* <span data-ttu-id="acb06-266">**Scripts**フォルダーで、 **SphereSounds**という名前のスクリプトを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-266">In the **Scripts** folder, create a script named **SphereSounds**.</span></span>
+* <span data-ttu-id="acb06-267">**SphereSounds**を、階層内の**Sphere1**オブジェクトと**Sphere2**オブジェクトにドラッグアンドドロップします。</span><span class="sxs-lookup"><span data-stu-id="acb06-267">Drag and drop **SphereSounds** to the **Sphere1** and **Sphere2** objects in the Hierarchy.</span></span>
+* <span data-ttu-id="acb06-268">Visual Studio で**SphereSounds**を開き、次のコードを更新して**すべてを保存**します。</span><span class="sxs-lookup"><span data-stu-id="acb06-268">Open **SphereSounds** in Visual Studio, update the following code and **Save All**.</span></span>
 
 ```cs
 using UnityEngine;
@@ -542,39 +542,39 @@ public class SphereSounds : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-269">スクリプトを保存し、Unity に戻ります。</span><span class="sxs-lookup"><span data-stu-id="716f4-269">Save the script, and return to Unity.</span></span>
-* <span data-ttu-id="716f4-270">エクスポートし、ビルド、HoloLens にアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-270">Export, build and deploy the app to your HoloLens.</span></span>
-* <span data-ttu-id="716f4-271">近いとステージからかけ離れていますに移動し、サウンドを変更する並列を有効にします。</span><span class="sxs-lookup"><span data-stu-id="716f4-271">Move closer and further from the Stage and turn side-to-side to hear the sounds change.</span></span>
+* <span data-ttu-id="acb06-269">スクリプトを保存し、Unity に戻ります。</span><span class="sxs-lookup"><span data-stu-id="acb06-269">Save the script, and return to Unity.</span></span>
+* <span data-ttu-id="acb06-270">アプリのエクスポート、ビルド、および HoloLens へのデプロイを行います。</span><span class="sxs-lookup"><span data-stu-id="acb06-270">Export, build and deploy the app to your HoloLens.</span></span>
+* <span data-ttu-id="acb06-271">ステージからさらに近い場所に移動し、サウンドが変化するのを左右に並べて表示します。</span><span class="sxs-lookup"><span data-stu-id="acb06-271">Move closer and further from the Stage and turn side-to-side to hear the sounds change.</span></span>
 
-## <a name="chapter-6---spatial-mapping"></a><span data-ttu-id="716f4-272">第 6 章 - 空間のマッピング</span><span class="sxs-lookup"><span data-stu-id="716f4-272">Chapter 6 - Spatial mapping</span></span>
+## <a name="chapter-6---spatial-mapping"></a><span data-ttu-id="acb06-272">Chapter 6-空間マッピング</span><span class="sxs-lookup"><span data-stu-id="acb06-272">Chapter 6 - Spatial mapping</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/Pkt1_wNLLXY]
 
-<span data-ttu-id="716f4-273">ここでは、使用する[空間マッピング](spatial-mapping.md)現実の世界での実際のオブジェクトにゲーム ボードを配置します。</span><span class="sxs-lookup"><span data-stu-id="716f4-273">Now we are going to use [spatial mapping](spatial-mapping.md) to place the game board on a real object in the real world.</span></span>
+<span data-ttu-id="acb06-273">ここでは、[空間マッピング](spatial-mapping.md)を使用して、ゲームボードを現実世界の実際のオブジェクトに配置します。</span><span class="sxs-lookup"><span data-stu-id="acb06-273">Now we are going to use [spatial mapping](spatial-mapping.md) to place the game board on a real object in the real world.</span></span>
 
-### <a name="objectives"></a><span data-ttu-id="716f4-274">目標</span><span class="sxs-lookup"><span data-stu-id="716f4-274">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="acb06-274">目的</span><span class="sxs-lookup"><span data-stu-id="acb06-274">Objectives</span></span>
 
-* <span data-ttu-id="716f4-275">仮想世界に、現実の世界を表示します。</span><span class="sxs-lookup"><span data-stu-id="716f4-275">Bring your real world into the virtual world.</span></span>
-* <span data-ttu-id="716f4-276">ここが最も重要なホログラムを配置します。</span><span class="sxs-lookup"><span data-stu-id="716f4-276">Place your holograms where they matter most to you.</span></span>
+* <span data-ttu-id="acb06-275">実際の世界を仮想環境に移します。</span><span class="sxs-lookup"><span data-stu-id="acb06-275">Bring your real world into the virtual world.</span></span>
+* <span data-ttu-id="acb06-276">自分にとって最も重要な場所にホログラムを配置します。</span><span class="sxs-lookup"><span data-stu-id="acb06-276">Place your holograms where they matter most to you.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="716f4-277">手順</span><span class="sxs-lookup"><span data-stu-id="716f4-277">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="acb06-277">手順</span><span class="sxs-lookup"><span data-stu-id="acb06-277">Instructions</span></span>
 
-* <span data-ttu-id="716f4-278">Unity では、クリックして、**ホログラム**プロジェクト パネル内のフォルダー。</span><span class="sxs-lookup"><span data-stu-id="716f4-278">In Unity, click on the **Holograms** folder in the Project panel.</span></span>
-* <span data-ttu-id="716f4-279">ドラッグ、**空間マッピング**のルートに資産、**階層**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-279">Drag the **Spatial Mapping** asset into the root of the **Hierarchy**.</span></span>
-* <span data-ttu-id="716f4-280">をクリックして、**空間マッピング**階層内のオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-280">Click on the **Spatial Mapping** object in the Hierarchy.</span></span>
-* <span data-ttu-id="716f4-281">**インスペクター パネル**、次のプロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="716f4-281">In the **Inspector panel**, change the following properties:</span></span>
-  * <span data-ttu-id="716f4-282">チェック、 **Visual メッシュの描画**ボックス。</span><span class="sxs-lookup"><span data-stu-id="716f4-282">Check the **Draw Visual Meshes** box.</span></span>
-  * <span data-ttu-id="716f4-283">検索**描画マテリアル**右側の円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="716f4-283">Locate **Draw Material** and click the circle on the right.</span></span> <span data-ttu-id="716f4-284">型"**ワイヤー フレーム**"上部にある検索フィールドにします。</span><span class="sxs-lookup"><span data-stu-id="716f4-284">Type "**wireframe**" into the search field at the top.</span></span> <span data-ttu-id="716f4-285">[結果] をクリックし、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="716f4-285">Click on the result and then close the window.</span></span> <span data-ttu-id="716f4-286">これを行うときに、描画マテリアルの値は、ワイヤー フレームに設定を取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="716f4-286">When you do this, the value for Draw Material should get set to Wireframe.</span></span>
-* <span data-ttu-id="716f4-287">エクスポートし、ビルド、HoloLens にアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-287">Export, build and deploy the app to your HoloLens.</span></span>
-* <span data-ttu-id="716f4-288">アプリを実行すると、ワイヤー フレーム メッシュは、現実の世界をオーバーレイします。</span><span class="sxs-lookup"><span data-stu-id="716f4-288">When the app runs, a wireframe mesh will overlay your real world.</span></span>
-* <span data-ttu-id="716f4-289">この段階では、オフと床のローリング球はフォールバックをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="716f4-289">Watch how a rolling sphere will fall off the stage, and onto the floor!</span></span>
+* <span data-ttu-id="acb06-278">Unity で、プロジェクト パネルの **ホログラム** フォルダーをクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-278">In Unity, click on the **Holograms** folder in the Project panel.</span></span>
+* <span data-ttu-id="acb06-279">**空間マッピング**資産を**階層**のルートにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-279">Drag the **Spatial Mapping** asset into the root of the **Hierarchy**.</span></span>
+* <span data-ttu-id="acb06-280">階層内の**空間マッピング**オブジェクトをクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-280">Click on the **Spatial Mapping** object in the Hierarchy.</span></span>
+* <span data-ttu-id="acb06-281">[**インスペクター] パネル**で、次のプロパティを変更します。</span><span class="sxs-lookup"><span data-stu-id="acb06-281">In the **Inspector panel**, change the following properties:</span></span>
+  * <span data-ttu-id="acb06-282">**[ビジュアルメッシュの描画]** チェックボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="acb06-282">Check the **Draw Visual Meshes** box.</span></span>
+  * <span data-ttu-id="acb06-283">**[素材の描画]** を見つけ、右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="acb06-283">Locate **Draw Material** and click the circle on the right.</span></span> <span data-ttu-id="acb06-284">上部にある検索フィールドに「**ワイヤーフレーム**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="acb06-284">Type "**wireframe**" into the search field at the top.</span></span> <span data-ttu-id="acb06-285">結果をクリックし、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="acb06-285">Click on the result and then close the window.</span></span> <span data-ttu-id="acb06-286">これを行うと、描画マテリアルの値はワイヤーフレームに設定されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-286">When you do this, the value for Draw Material should get set to Wireframe.</span></span>
+* <span data-ttu-id="acb06-287">アプリのエクスポート、ビルド、および HoloLens へのデプロイを行います。</span><span class="sxs-lookup"><span data-stu-id="acb06-287">Export, build and deploy the app to your HoloLens.</span></span>
+* <span data-ttu-id="acb06-288">アプリを実行すると、ワイヤーフレームメッシュが実際の世界にオーバーレイされます。</span><span class="sxs-lookup"><span data-stu-id="acb06-288">When the app runs, a wireframe mesh will overlay your real world.</span></span>
+* <span data-ttu-id="acb06-289">ローリング球がステージとフロアにどのように分かれているかを見てください。</span><span class="sxs-lookup"><span data-stu-id="acb06-289">Watch how a rolling sphere will fall off the stage, and onto the floor!</span></span>
 
-<span data-ttu-id="716f4-290">現在、OrigamiCollection を新しい場所に移動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="716f4-290">Now we'll show you how to move the OrigamiCollection to a new location:</span></span>
+<span data-ttu-id="acb06-290">ここでは、OrigamiCollection を新しい場所に移動する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="acb06-290">Now we'll show you how to move the OrigamiCollection to a new location:</span></span>
 
-* <span data-ttu-id="716f4-291">**スクリプト**フォルダー、という名前のスクリプト作成**TapToPlaceParent**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-291">In the **Scripts** folder, create a script named **TapToPlaceParent**.</span></span>
-* <span data-ttu-id="716f4-292">**階層**、展開、 **OrigamiCollection**を選択し、**ステージ**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-292">In the **Hierarchy**, expand the **OrigamiCollection** and select the **Stage** object.</span></span>
-* <span data-ttu-id="716f4-293">ドラッグ、 **TapToPlaceParent**ステージ オブジェクトのスクリプト。</span><span class="sxs-lookup"><span data-stu-id="716f4-293">Drag the **TapToPlaceParent** script onto the Stage object.</span></span>
-* <span data-ttu-id="716f4-294">開く、 **TapToPlaceParent** Visual Studio でスクリプトを作成し、次に更新します。</span><span class="sxs-lookup"><span data-stu-id="716f4-294">Open the **TapToPlaceParent** script in Visual Studio, and update it to be the following:</span></span>
+* <span data-ttu-id="acb06-291">**Scripts**フォルダーで、 **TapToPlaceParent**という名前のスクリプトを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-291">In the **Scripts** folder, create a script named **TapToPlaceParent**.</span></span>
+* <span data-ttu-id="acb06-292">**階層**で、 **OrigamiCollection**を展開し、 **[ステージ]** オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-292">In the **Hierarchy**, expand the **OrigamiCollection** and select the **Stage** object.</span></span>
+* <span data-ttu-id="acb06-293">**TapToPlaceParent**スクリプトを Stage オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-293">Drag the **TapToPlaceParent** script onto the Stage object.</span></span>
+* <span data-ttu-id="acb06-294">Visual Studio で**TapToPlaceParent**スクリプトを開き、次のように更新します。</span><span class="sxs-lookup"><span data-stu-id="acb06-294">Open the **TapToPlaceParent** script in Visual Studio, and update it to be the following:</span></span>
 
 ```cs
 using UnityEngine;
@@ -632,26 +632,26 @@ public class TapToPlaceParent : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-295">ビルドをエクスポート、およびアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-295">Export, build and deploy the app.</span></span>
-* <span data-ttu-id="716f4-296">今すぐに gazing、選択ジェスチャを使用して、新しい場所に移動しもう一度選択ジェスチャを使用して、特定の場所にゲームを配置できる必要がありますなります。</span><span class="sxs-lookup"><span data-stu-id="716f4-296">Now you should now be able to place the game in a specific location by gazing at it, using the Select gesture and then moving to a new location, and using the Select gesture again.</span></span>
+* <span data-ttu-id="acb06-295">アプリをエクスポート、ビルド、デプロイします。</span><span class="sxs-lookup"><span data-stu-id="acb06-295">Export, build and deploy the app.</span></span>
+* <span data-ttu-id="acb06-296">これで、[選択] ジェスチャを使用して新しい場所に移動し、もう一度 Select ジェスチャを使用して、ゲームを特定の場所に配置できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="acb06-296">Now you should now be able to place the game in a specific location by gazing at it, using the Select gesture and then moving to a new location, and using the Select gesture again.</span></span>
 
-## <a name="chapter-7---holographic-fun"></a><span data-ttu-id="716f4-297">第 7 章 – Holographic 楽しい</span><span class="sxs-lookup"><span data-stu-id="716f4-297">Chapter 7 - Holographic fun</span></span>
+## <a name="chapter-7---holographic-fun"></a><span data-ttu-id="acb06-297">第7章-Holographic 楽しい</span><span class="sxs-lookup"><span data-stu-id="acb06-297">Chapter 7 - Holographic fun</span></span>
 
-### <a name="objectives"></a><span data-ttu-id="716f4-298">目標</span><span class="sxs-lookup"><span data-stu-id="716f4-298">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="acb06-298">目的</span><span class="sxs-lookup"><span data-stu-id="acb06-298">Objectives</span></span>
 
-* <span data-ttu-id="716f4-299">Holographic 黄泉の入り口を明らかになります。</span><span class="sxs-lookup"><span data-stu-id="716f4-299">Reveal the entrance to a holographic underworld.</span></span>
+* <span data-ttu-id="acb06-299">Holographic 黄泉の入口を公開します。</span><span class="sxs-lookup"><span data-stu-id="acb06-299">Reveal the entrance to a holographic underworld.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="716f4-300">手順</span><span class="sxs-lookup"><span data-stu-id="716f4-300">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="acb06-300">手順</span><span class="sxs-lookup"><span data-stu-id="acb06-300">Instructions</span></span>
 
-<span data-ttu-id="716f4-301">これを holographic 黄泉を明らかにする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="716f4-301">Now we'll show you how to uncover the holographic underworld:</span></span>
+<span data-ttu-id="acb06-301">次に、holographic 黄泉を発見する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="acb06-301">Now we'll show you how to uncover the holographic underworld:</span></span>
 
-* <span data-ttu-id="716f4-302">**ホログラム**プロジェクト パネル内のフォルダー。</span><span class="sxs-lookup"><span data-stu-id="716f4-302">From the **Holograms** folder in the Project Panel:</span></span>
-  * <span data-ttu-id="716f4-303">ドラッグ**黄泉**の子に階層に**OrigamiCollection**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-303">Drag **Underworld** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
-* <span data-ttu-id="716f4-304">**スクリプト**フォルダー、という名前のスクリプト作成**HitTarget**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-304">In the **Scripts** folder, create a script named **HitTarget**.</span></span>
-* <span data-ttu-id="716f4-305">**階層**、展開、 **OrigamiCollection**します。</span><span class="sxs-lookup"><span data-stu-id="716f4-305">In the **Hierarchy**, expand the **OrigamiCollection**.</span></span>
-* <span data-ttu-id="716f4-306">展開、**ステージ**オブジェクトし、選択、**ターゲット**オブジェクト (青の展開)。</span><span class="sxs-lookup"><span data-stu-id="716f4-306">Expand the **Stage** object and select the **Target** object (blue fan).</span></span>
-* <span data-ttu-id="716f4-307">ドラッグ、 **HitTarget**にスクリプト、**ターゲット**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-307">Drag the **HitTarget** script onto the **Target** object.</span></span>
-* <span data-ttu-id="716f4-308">開く、 **HitTarget** Visual Studio でスクリプトを作成し、次に更新します。</span><span class="sxs-lookup"><span data-stu-id="716f4-308">Open the **HitTarget** script in Visual Studio, and update it to be the following:</span></span>
+* <span data-ttu-id="acb06-302">プロジェクト パネルの **ホログラム** フォルダーから次のようにします。</span><span class="sxs-lookup"><span data-stu-id="acb06-302">From the **Holograms** folder in the Project Panel:</span></span>
+  * <span data-ttu-id="acb06-303">**OrigamiCollection**の子になるように、階層に**黄泉**をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-303">Drag **Underworld** into the Hierarchy to be a child of **OrigamiCollection**.</span></span>
+* <span data-ttu-id="acb06-304">**Scripts**フォルダーで、**ヒットターゲット**という名前のスクリプトを作成します。</span><span class="sxs-lookup"><span data-stu-id="acb06-304">In the **Scripts** folder, create a script named **HitTarget**.</span></span>
+* <span data-ttu-id="acb06-305">**階層**で、 **OrigamiCollection**を展開します。</span><span class="sxs-lookup"><span data-stu-id="acb06-305">In the **Hierarchy**, expand the **OrigamiCollection**.</span></span>
+* <span data-ttu-id="acb06-306">**ステージ**オブジェクトを展開し、**ターゲット**オブジェクト (青いファン) を選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-306">Expand the **Stage** object and select the **Target** object (blue fan).</span></span>
+* <span data-ttu-id="acb06-307">**ヒットターゲット**スクリプトを**ターゲット**オブジェクトにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-307">Drag the **HitTarget** script onto the **Target** object.</span></span>
+* <span data-ttu-id="acb06-308">Visual Studio で**ヒットするターゲット**スクリプトを開き、次のように更新します。</span><span class="sxs-lookup"><span data-stu-id="acb06-308">Open the **HitTarget** script in Visual Studio, and update it to be the following:</span></span>
 
 ```cs
 using UnityEngine;
@@ -675,31 +675,31 @@ public class HitTarget : MonoBehaviour
 }
 ```
 
-* <span data-ttu-id="716f4-309">Unity では、選択、**ターゲット**オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="716f4-309">In Unity, select the **Target** object.</span></span>
-* <span data-ttu-id="716f4-310">2 つのパブリック プロパティに表示されます、**ヒット ターゲット**コンポーネントと、シーン内のオブジェクトを参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="716f4-310">Two public properties are now visible on the **Hit Target** component and need to reference objects in our scene:</span></span>
-  * <span data-ttu-id="716f4-311">ドラッグ**黄泉**から、**階層**パネル、**黄泉**プロパティを**ヒット ターゲット**コンポーネント。</span><span class="sxs-lookup"><span data-stu-id="716f4-311">Drag **Underworld** from the **Hierarchy** panel to the **Underworld** property on the **Hit Target** component.</span></span>
-  * <span data-ttu-id="716f4-312">ドラッグ**ステージ**から、**階層**パネル、**オブジェクトを非表示にする**プロパティを**ヒット ターゲット**コンポーネント。</span><span class="sxs-lookup"><span data-stu-id="716f4-312">Drag **Stage** from the **Hierarchy** panel to the **Object to Hide** property on the **Hit Target** component.</span></span>
-* <span data-ttu-id="716f4-313">ビルドをエクスポート、およびアプリを展開します。</span><span class="sxs-lookup"><span data-stu-id="716f4-313">Export, build and deploy the app.</span></span>
-* <span data-ttu-id="716f4-314">Origami コレクションをフロアに置き、選択ジェスチャを使用してドロップ球にします。</span><span class="sxs-lookup"><span data-stu-id="716f4-314">Place the Origami Collection on the floor, and then use the Select gesture to make a sphere drop.</span></span>
-* <span data-ttu-id="716f4-315">球に達すると、ターゲット (青の展開)、展開が発生します。</span><span class="sxs-lookup"><span data-stu-id="716f4-315">When the sphere hits the target (blue fan), an explosion will occur.</span></span> <span data-ttu-id="716f4-316">コレクションを非表示にして、黄泉に穴が表示されます。</span><span class="sxs-lookup"><span data-stu-id="716f4-316">The collection will be hidden and a hole to the underworld will appear.</span></span>
+* <span data-ttu-id="acb06-309">Unity で、**ターゲット**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="acb06-309">In Unity, select the **Target** object.</span></span>
+* <span data-ttu-id="acb06-310">**ヒットターゲット**コンポーネントには、2つのパブリックプロパティが表示されるようになりました。シーン内のオブジェクトを参照する必要があります。</span><span class="sxs-lookup"><span data-stu-id="acb06-310">Two public properties are now visible on the **Hit Target** component and need to reference objects in our scene:</span></span>
+  * <span data-ttu-id="acb06-311">**[階層]** パネルから、**ヒットターゲット**コンポーネントの "**黄泉**" プロパティに **[黄泉]** をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="acb06-311">Drag **Underworld** from the **Hierarchy** panel to the **Underworld** property on the **Hit Target** component.</span></span>
+  * <span data-ttu-id="acb06-312">**[階層]** パネルから **[ステージ]** をオブジェクトにドラッグして、**ヒットターゲット**コンポーネントのプロパティを**非表示に**します。</span><span class="sxs-lookup"><span data-stu-id="acb06-312">Drag **Stage** from the **Hierarchy** panel to the **Object to Hide** property on the **Hit Target** component.</span></span>
+* <span data-ttu-id="acb06-313">アプリをエクスポート、ビルド、デプロイします。</span><span class="sxs-lookup"><span data-stu-id="acb06-313">Export, build and deploy the app.</span></span>
+* <span data-ttu-id="acb06-314">Origami コレクションを床に配置し、Select ジェスチャを使用して球をドロップします。</span><span class="sxs-lookup"><span data-stu-id="acb06-314">Place the Origami Collection on the floor, and then use the Select gesture to make a sphere drop.</span></span>
+* <span data-ttu-id="acb06-315">球がターゲット (青いファン) にヒットすると、爆発が発生します。</span><span class="sxs-lookup"><span data-stu-id="acb06-315">When the sphere hits the target (blue fan), an explosion will occur.</span></span> <span data-ttu-id="acb06-316">コレクションが非表示になり、黄泉の抜け穴が表示されます。</span><span class="sxs-lookup"><span data-stu-id="acb06-316">The collection will be hidden and a hole to the underworld will appear.</span></span>
 
-## <a name="the-end"></a><span data-ttu-id="716f4-317">最後です</span><span class="sxs-lookup"><span data-stu-id="716f4-317">The end</span></span>
+## <a name="the-end"></a><span data-ttu-id="acb06-317">最後です</span><span class="sxs-lookup"><span data-stu-id="acb06-317">The end</span></span>
 
-<span data-ttu-id="716f4-318">このチュートリアルは終わりです。</span><span class="sxs-lookup"><span data-stu-id="716f4-318">And that's the end of this tutorial!</span></span>
+<span data-ttu-id="acb06-318">これがこのチュートリアルの終わりです。</span><span class="sxs-lookup"><span data-stu-id="acb06-318">And that's the end of this tutorial!</span></span>
 
-<span data-ttu-id="716f4-319">学習内容。</span><span class="sxs-lookup"><span data-stu-id="716f4-319">You learned:</span></span>
+<span data-ttu-id="acb06-319">学習した内容:</span><span class="sxs-lookup"><span data-stu-id="acb06-319">You learned:</span></span>
 
-* <span data-ttu-id="716f4-320">Unity で holographic アプリを作成する方法。</span><span class="sxs-lookup"><span data-stu-id="716f4-320">How to create a holographic app in Unity.</span></span>
-* <span data-ttu-id="716f4-321">作成する方法、視線、ジェスチャ、音声、サウンドの使用と空間マッピング。</span><span class="sxs-lookup"><span data-stu-id="716f4-321">How to make use of gaze, gesture, voice, sound, and spatial mapping.</span></span>
-* <span data-ttu-id="716f4-322">ビルドして、Visual Studio を使用してアプリをデプロイする方法。</span><span class="sxs-lookup"><span data-stu-id="716f4-322">How to build and deploy an app using Visual Studio.</span></span>
+* <span data-ttu-id="acb06-320">Unity で holographic アプリを作成する方法。</span><span class="sxs-lookup"><span data-stu-id="acb06-320">How to create a holographic app in Unity.</span></span>
+* <span data-ttu-id="acb06-321">見つめ、ジェスチャ、音声、サウンド、および空間マッピングを使用する方法。</span><span class="sxs-lookup"><span data-stu-id="acb06-321">How to make use of gaze, gesture, voice, sound, and spatial mapping.</span></span>
+* <span data-ttu-id="acb06-322">Visual Studio を使用してアプリをビルドしてデプロイする方法。</span><span class="sxs-lookup"><span data-stu-id="acb06-322">How to build and deploy an app using Visual Studio.</span></span>
 
-<span data-ttu-id="716f4-323">独自のホログラフィック操作の作成を開始する準備が整いました。</span><span class="sxs-lookup"><span data-stu-id="716f4-323">You are now ready to start creating your own holographic experience!</span></span>
+<span data-ttu-id="acb06-323">これで、独自の holographic エクスペリエンスの作成を開始する準備ができました。</span><span class="sxs-lookup"><span data-stu-id="acb06-323">You are now ready to start creating your own holographic experience!</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="716f4-324">関連項目</span><span class="sxs-lookup"><span data-stu-id="716f4-324">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="acb06-324">関連項目</span><span class="sxs-lookup"><span data-stu-id="acb06-324">See also</span></span>
 
-* [<span data-ttu-id="716f4-325">MR 基礎 101E:エミュレーターを使用した完全なプロジェクト</span><span class="sxs-lookup"><span data-stu-id="716f4-325">MR Basics 101E: Complete project with emulator</span></span>](holograms-101e.md)
-* [<span data-ttu-id="716f4-326">視線入力</span><span class="sxs-lookup"><span data-stu-id="716f4-326">Gaze</span></span>](gaze.md)
-* [<span data-ttu-id="716f4-327">ジェスチャ</span><span class="sxs-lookup"><span data-stu-id="716f4-327">Gestures</span></span>](gestures.md)
-* [<span data-ttu-id="716f4-328">音声入力</span><span class="sxs-lookup"><span data-stu-id="716f4-328">Voice input</span></span>](voice-input.md)
-* [<span data-ttu-id="716f4-329">空間のサウンド</span><span class="sxs-lookup"><span data-stu-id="716f4-329">Spatial sound</span></span>](spatial-sound.md)
-* [<span data-ttu-id="716f4-330">空間マッピング</span><span class="sxs-lookup"><span data-stu-id="716f4-330">Spatial mapping</span></span>](spatial-mapping.md)
+* [<span data-ttu-id="acb06-325">MR の基本 101E:エミュレーターを使用した完全なプロジェクト</span><span class="sxs-lookup"><span data-stu-id="acb06-325">MR Basics 101E: Complete project with emulator</span></span>](holograms-101e.md)
+* [<span data-ttu-id="acb06-326">視線入力</span><span class="sxs-lookup"><span data-stu-id="acb06-326">Gaze</span></span>](gaze.md)
+* [<span data-ttu-id="acb06-327">ジェスチャ</span><span class="sxs-lookup"><span data-stu-id="acb06-327">Gestures</span></span>](gestures.md)
+* [<span data-ttu-id="acb06-328">音声入力</span><span class="sxs-lookup"><span data-stu-id="acb06-328">Voice input</span></span>](voice-input.md)
+* [<span data-ttu-id="acb06-329">立体音響</span><span class="sxs-lookup"><span data-stu-id="acb06-329">Spatial sound</span></span>](spatial-sound.md)
+* [<span data-ttu-id="acb06-330">空間マッピング</span><span class="sxs-lookup"><span data-stu-id="acb06-330">Spatial mapping</span></span>](spatial-mapping.md)
