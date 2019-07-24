@@ -1,49 +1,49 @@
 ---
-title: 導入事例 - Lowe の台所からの教訓
-description: HoloLens チーム Lowe の HoloLens のプロジェクトに由来するベスト プラクティスの一部を共有したいです。
+title: ケーススタディ-Lowe のキッチンからの教訓
+description: HoloLens チームは、Lowe の HoloLens プロジェクトから派生したベストプラクティスの一部を共有したいと考えています。
 author: BrandonBray
 ms.author: kevincol
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、Lowe の HoloLens、キッチン、ケース スタディ
+keywords: Windows Mixed Reality、Lowe、HoloLens、キッチン、ケーススタディ
 ms.openlocfilehash: 24759f90b8b84ec19e644fb8dff44f64c3ab81d2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59599844"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63522346"
 ---
-# <a name="case-study---lessons-from-the-lowes-kitchen"></a>導入事例 - Lowe の台所からの教訓
+# <a name="case-study---lessons-from-the-lowes-kitchen"></a>ケーススタディ-Lowe のキッチンからの教訓
 
-HoloLens チーム Lowe の HoloLens のプロジェクトに由来するベスト プラクティスの一部を共有したいです。 投影 Lowe の HoloLens のビデオは、Satya の 2016 Ignite の基調講演で以下は示されます。
+HoloLens チームは、Lowe の HoloLens プロジェクトから派生したベストプラクティスの一部を共有したいと考えています。 以下は、Satya の 2016 Ignite 基調講演で示されている Lowe の HoloLens のビデオです。
 <br>
 >[!VIDEO https://www.youtube.com/embed/gC_4JxF0e_k]
 
-## <a name="lowes-hololens-best-practices"></a>Lowe の HoloLens のベスト プラクティスします。
+## <a name="lowes-hololens-best-practices"></a>Lowe の HoloLens のベストプラクティス
 
-2 つのビデオでは、2016 年 4 月以降の 2 つの Lowe のストアにきました Lowe の HoloLens のパイロットから派生されたベスト プラクティスについて説明します。 重要なトピックは次のとおりです。
-* モバイル デバイスのパフォーマンスを最大化します。
-* 完全な holographic フレームを使用して UX メソッドを作成 (第 2 のトーク)
-* 有効桁数の配置 (第 2 のトーク)
-* Holographic エクスペリエンスを共有する (第 2 のトーク)
-* 顧客と対話する (第 2 のトーク)
+2つのビデオでは、2016年4月から2つの Lowe の店舗に含まれていた Lowe の HoloLens パイロットから得られたベストプラクティスについて説明しています。 主なトピックは次のとおりです。
+* モバイルデバイスのパフォーマンスを最大にする
+* Full holographic フレームを使用して UX メソッドを作成する (2 回目の話)
+* 有効桁数の配置 (2 番目のトーク)
+* Shared holographic エクスペリエンス (2 番目の会話)
+* 顧客との対話 (2 回目の話)
 
-## <a name="video-1"></a>ビデオ 1
+## <a name="video-1"></a>ビデオ1
 
-**モバイル デバイスのパフォーマンスを最大化**HoloLens は無制限のデバイス、デバイスで発生しているすべての処理をします。 これにより、モバイル プラットフォームを必要とされ、モバイル アプリケーションを作成するような考え方が必要です。 HoloLens アプリケーションが、ユーザーにおいしいエクスペリエンスを提供する 60 FPS を維持することをお勧めします。 低い FPS のことと、不安定なホログラムがあります。
+**モバイルデバイスのパフォーマンスを最大に**するHoloLens は、デバイスですべての処理が行われるならではデバイスです。 これにはモバイルプラットフォームが必要であり、モバイルアプリケーションの作成と同様の考え方が必要です。 Microsoft では、ユーザーに delicious エクスペリエンスを提供するために、HoloLens アプリケーションで60FPS を維持することをお勧めします。 FPS が低いと、ホログラムが不安定になる可能性があります。
 
-資産最適化/デシメーション、カスタムのシェーダーを使用するには HoloLens で開発するときに確認する最も重要なもの (を無料で利用可能な[HoloLens Toolkit](https://github.com/Microsoft/HoloToolkit-Unity))。 もう 1 つの重要な考慮事項では、プロジェクトの先頭からのフレーム レートを測定します。 によって、プロジェクトのアセットを表示する順序こともできます大規模な共同作成者
+HoloLens で開発するときに注目すべき重要な点のいくつかは、カスタムシェーダー ( [Hololens Toolkit](https://github.com/Microsoft/HoloToolkit-Unity)で無料で利用可能) を使用した、資産の最適化/確認です。 もう1つの重要な考慮事項は、プロジェクトの最初からフレームレートを測定することです。 プロジェクトによっては、アセットを表示する順序が大きな共同作成者である場合もあります。
 <br>
 >[!VIDEO https://www.youtube.com/embed/o0QIPwgiP9A]
 
-## <a name="video-2"></a>ビデオ 2
+## <a name="video-2"></a>ビデオ2
 
-**UX メソッドを holographic の完全なフレームを使用して作成**ホログラム物理世界での配置を理解することが重要です。 Lowe の使用ユーザーながらホログラムの大規模な環境をエクスペリエンス ホログラムが閉じるに役立つさまざまな UX 方法について説明します。
+**完全な holographic フレームを使用して UX メソッドを作成**する物理的な世界でのホログラムの配置について理解しておくことが重要です。 Lowe を使用すると、さまざまな UX メソッドについて説明します。これにより、ユーザーは、ホログラムの大規模な環境を見ながら、最新の状態にすることができます。
 
-**有効桁数の配置**For the Lowe のシナリオでは、物理の台所に、ホログラムの有効桁数の配置にエクスペリエンスを非常に重要でした。 仕向け、物理環境が変更されたユーザー エクスペリエンスを高める方法について説明します。
+**有効桁数の配置**Lowe のシナリオでは、ホログラムを物理的なキッチンに正確に配置することが最も重要でした。 これらの手法については、ユーザーの物理的な環境が変更されたことを仕向けるするエクスペリエンスを保証するのに役立ちます。
 
-**Holographic エクスペリエンスを共有**カップルが Lowe のエクスペリエンスが使用される主な方法です。 1 人のユーザーが、カウンターを変更および変更を他の人が表示されます。 この「共有・ エクスペリエンス」と呼ばれていました。
+**共有 holographic エクスペリエンス**結合は、Lowe のエクスペリエンスを使用する主な方法です。 1人のユーザーがカウンターを変更すると、他のユーザーが変更を確認できます。 この "共有エクスペリエンス" を呼び出しました。
 
-**顧客との対話**Lowe のデザイナーは、HoloLens を使用していないが表示される、顧客を表示する必要があります。 UWP アプリケーションに、顧客が表示されるかをキャプチャする方法を紹介します。
+**顧客との対話**Lowe のデザイナーは HoloLens を使用していませんが、顧客に表示される内容を確認する必要があります。 UWP アプリケーションで顧客が見ている内容をキャプチャする方法を示します。
 <br>
 >[!VIDEO https://www.youtube.com/embed/LceMdyKZ4PI]

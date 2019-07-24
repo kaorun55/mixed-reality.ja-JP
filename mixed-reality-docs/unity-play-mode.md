@@ -1,36 +1,36 @@
 ---
-title: Unity の再生モード
-description: Unity エディターで再生モードを使用して、アプリを展開することがなく、デバイスで変更をプレビューします。
+title: Unity Play モード
+description: Unity エディターの再生モードを使用して、アプリをデプロイせずにデバイスでの変更をプレビューします。
 author: JonMLyons
 ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Unity、リモート処理、holographic のリモート処理、プレーヤーの holographic のリモート処理
+keywords: Unity, リモート処理, holographic リモート処理, holographic リモート処理プレーヤー
 ms.openlocfilehash: c118c4af61c6eb2706ef851a6654c18ff7313453
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597824"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548734"
 ---
-# <a name="unity-play-mode"></a>Unity の再生モード
+# <a name="unity-play-mode"></a>Unity Play モード
 
-Unity プロジェクトの作業をする高速の方法では、「再生モード」を使用します。 これは、アプリを実行、ローカル Unity エディターで、PC に。 Unity では、Holographic のリモート処理を使用して、実際の HoloLens デバイスでコンテンツをプレビューする高速の方法を提供します。
+Unity プロジェクトですばやく作業を行うには、"Play Mode" を使用します。 これにより、PC の Unity エディターでアプリがローカルで実行されます。 Unity では、Holographic Remoting を使用して、実際の HoloLens デバイスでコンテンツをすばやくプレビューすることができます。
 
-## <a name="unity-play-mode-with-holographic-remoting"></a>リモート処理で Holographic unity 再生モード
+## <a name="unity-play-mode-with-holographic-remoting"></a>Holographic リモート処理を使用した Unity Play モード
 
-Holographic リモート処理では、Unity エディターで、PC で実行中、HoloLens でアプリが発生することができます。 視線、ジェスチャ、音声、および入力空間のマッピングは、お使いのコンピューター、HoloLens から送信されます。 レンダリングされたフレーム、HoloLens に送信されます。 これは、迅速に構築および完全なプロジェクトを展開することがなく、アプリをデバッグする優れた方法です。
-1. HoloLens に移動し、 **Microsoft Store**をインストールし、 **[Holographic のリモート処理 Player](https://www.microsoft.com/store/p/holographic-remoting-player/9nblggh4sv40)** アプリ。
-2. HoloLens、起動、 **Holographic のリモート処理 Player**アプリ。
-3. Unity に移動、**ウィンドウ**メニュー選択し、 **Holographic エミュレーション**します。
-4. 設定**エミュレーション モード**に**デバイスにリモート**します。
-5. **リモート マシン**、HoloLens の IP アドレスを入力します。
-6. **[接続]** をクリックします。 わかります**接続の状態**変更**接続済み**HoloLens で空白の画面が表示とします。
-7. をクリックして、**再生**再生モードを開始し、HoloLens でアプリを体験するボタンをクリックします。
+Holographic リモート処理を使用すると、PC の Unity エディターでアプリを実行しながら、HoloLens でアプリを体験できます。 宝石、ジェスチャ、音声、および空間マッピングの入力は、HoloLens から PC に送信されます。 レンダリングされたフレームが HoloLens に返されます。 これは、完全なプロジェクトをビルドして配置することなく、アプリをすばやくデバッグできる優れた方法です。
+1. HoloLens で、 **Microsoft Store**にアクセスし、 **[Holographic Remoting Player](https://www.microsoft.com/store/p/holographic-remoting-player/9nblggh4sv40)** アプリをインストールします。
+2. HoloLens で、 **Holographic Remoting Player**アプリを起動します。
+3. Unity で、 **[ウィンドウ]** メニューにアクセスし、 **[Holographic エミュレーション]** を選択します。
+4. **エミュレーションモード**を**リモートからデバイスに**設定します。
+5. **[リモートコンピューター]** には、HOLOLENS の IP アドレスを入力します。
+6. **[接続]** をクリックします。 **接続の状態**が [接続済み] に変わり、HoloLens で画面が空白になって**いる**ことを確認します。
+7. **[再生]** ボタンをクリックして再生モードを開始し、HoloLens でアプリを体験します。
 
-Holographic のリモート処理では、高速の PC と Wi-fi 接続が必要です。 参照してください[Holographic のリモート処理 Player](holographic-remoting-player.md)の完全な詳細情報。
+Holographic リモート処理には、高速 PC と Wi-fi 接続が必要です。 詳細については、「 [Holographic Remoting Player](holographic-remoting-player.md) 」を参照してください。
 
-最良の結果をアプリが正しく設定を確認します、[フォーカス ポイント](focus-point-in-unity.md)します。 これにより、最適なワイヤレス接続の待機時間にシーンを適応させる Holographic のリモート処理ができます。
+最適な結果を得るには、アプリが[フォーカスポイント](focus-point-in-unity.md)を正しく設定していることを確認します。 これにより、Holographic リモート処理によって、ワイヤレス接続の待機時間にシーンを最適に適応させることができます。
 
 ## <a name="see-also"></a>関連項目
-* [リモート処理の holographic プレーヤー](holographic-remoting-player.md)
+* [Holographic Remoting Player](holographic-remoting-player.md)

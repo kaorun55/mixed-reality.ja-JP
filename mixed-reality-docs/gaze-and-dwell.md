@@ -5,14 +5,13 @@ author: liamartinez
 ms.author: liamar
 ms.date: 05/13/2019
 ms.topic: article
-ms.localizationpriority: high
 keywords: Mixed Reality、視線入力、ドウェル、操作、デザイン
-ms.openlocfilehash: 70b25949380679d2edc81b07ab54f24fa20e3f3d
-ms.sourcegitcommit: 9b6949d7cd2e67e6bde9b32aebeaeea325baa6c4
-ms.translationtype: HT
+ms.openlocfilehash: d522ca3a6f36995959e8e6e87482279d05bf0aa3
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516012"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387540"
 ---
 # <a name="head-gaze-and-dwell"></a>頭の視線入力とドウェル
 
@@ -90,7 +89,8 @@ ms.locfileid: "66516012"
 ## <a name="ui-patterns"></a>UI のパターン
 
 ### <a name="high-frequency-buttons"></a>使用頻度の高いボタン
-![Microsoft Dynamics 365 Guides の [次へ] ボタン](images/GuideNextButton.png "Microsoft Dynamics 365 Guides の [次へ] ボタン")高頻度のボタンは、アプリケーション全体でよく使用されるボタンです。 これらの良い例は、Microsoft Dynamics 365 Guides の [次へ] ボタンと [前へ] ボタンです。
+![Microsoft Dynamics 365 ガイド [次へ] ボタン](images/GuideNextButton.png "Microsoft Dynamics 365 ガイド [次へ] ボタン")<br>
+*高頻度のボタンは、アプリケーション全体で一般的に使用されるボタンです。これらの例として、Microsoft Dynamics 365 ガイドの [次へ] ボタンと [戻る] ボタンがあります。*
 
 使用頻度の高いボタンは、次のようにする必要があります。
 * 頭の視線入力でヒットしやすいよう、大きめのボタンにする
@@ -114,7 +114,8 @@ ms.locfileid: "66516012"
 トグル ボタンを適切に機能させるには、何らかの微妙なロジックが必要です。 人がトグル ボタンをドウェルしてアクティブにするときは、ボタンから離れてから、戻ってドウェル ロジックを再起動する必要があります。 トグル可能なボタンには、明確にアクティブな状態とアクティブでない状態があることが重要です。 
 
 ### <a name="list-views"></a>リスト ビュー
-![Microsoft Dynamics 365 Guides の確認ダイアログ](images/GuidesListView.png "Microsoft Dynamics 365 Guides の確認のダイアログ")リスト ビューは、頭の視線入力とドウェル入力の特定の課題を提示します。 人がコンテンツに目を通すときに、ドウェルのターゲットの近くでは慎重に操作しなければならないなどと感じなくて済むようにする必要があります。 
+![Microsoft Dynamics 365 Guides の確認ダイアログ](images/GuidesListView.png "Microsoft Dynamics 365 Guides の確認のダイアログ")<br>
+*リストビューでは、熟考入力に特定の課題があります。熟考のターゲットを気にすることなく、コンテンツをスキャンできるようにする必要があります。*
 
 リスト ビューのデザインに関するヒント:
 * 頭の視線入力のときに行全体が強調表示されるようにしても、頭の視線入力が特定のドウェルのターゲット上にない限り、ドウェルを開始しないでください。

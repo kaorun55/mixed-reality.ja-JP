@@ -1,47 +1,47 @@
 ---
-title: Unity での場所を特定できるカメラ
-description: Unity での HoloLens 場所を特定できるカメラの使用量。
+title: Unity でのお持ちのカメラ
+description: Unity での HoloLens によるカメラの使用。
 author: wguyman
 ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 写真、ビデオ、hololens、カメラ、unity、場所を特定できます。
+keywords: 写真、ビデオ、hololens、カメラ、unity、お持ちの場合
 ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59601771"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515438"
 ---
-# <a name="locatable-camera-in-unity"></a>Unity での場所を特定できるカメラ
+# <a name="locatable-camera-in-unity"></a>Unity でのお持ちのカメラ
 
-## <a name="enabling-the-capability-for-photo-video-camera"></a>フォト ビデオ_カメラの機能を有効にします。
+## <a name="enabling-the-capability-for-photo-video-camera"></a>フォトビデオカメラの機能を有効にする
 
-使用するアプリの「web カメラ」機能を宣言する必要があります、[カメラ](locatable-camera.md)します。
-1. Unity エディターは、「> プロジェクトの設定 > プレーヤーの編集」のページに移動して、player の設定に移動します。
-2. "Windows Store" タブをクリックします。
-3. 「発行の設定 > 機能」セクションでは、確認、 **web カメラ**と**マイク**機能
+アプリで[カメラ](locatable-camera.md)を使用するには、"WebCam" 機能を宣言する必要があります。
+1. Unity エディターで、[Edit > Project Settings > Player] ページに移動して、windows media player の設定に移動します。
+2. [Windows ストア] タブをクリックします。
+3. [発行設定 > 機能] セクションで、 **Web カメラ**と**マイク**の機能を確認します。
 
-1 つの操作は、一度にカメラで発生します。 どちらのモード (写真、ビデオ、または none) にカメラがある現在を判断するには、UnityEngine.XR.WSA.WebCam.Mode を確認することができます。
+カメラで一度に実行できる操作は1つだけです。 カメラを現在使用しているモード (写真、ビデオ、またはなし) を確認するには、UnityEngine. XR を確認します。
 
-## <a name="photo-capture"></a>写真をキャプチャ
+## <a name="photo-capture"></a>写真のキャプチャ
 
-**名前空間:** *UnityEngine.XR.WSA.WebCam*<br>
+**名前空間:** *UnityEngine. XR*<br>
 **種類:** *PhotoCapture*
 
-*PhotoCapture*もフォト ビデオ カメラで写真を実行することができます。 使用するための一般的なパターン*PhotoCapture*写真を撮るには、次のようにします。
-1. 作成、 *PhotoCapture*オブジェクト
-2. 作成、 *CameraParameters*設定を持つオブジェクト
-3. 使用して写真モードを開始*StartPhotoModeAsync*
-4. 目的の写真を撮る
-    * (省略可能)その図との対話します。
-5. 写真のモードを停止し、リソースをクリーンアップします。
+*Photocapture*の種類を使用すると、写真ビデオカメラで引き続き写真を撮ることができます。 *Photocapture*を使用して写真を撮影する一般的なパターンを次に示します。
+1. *Photocapture*オブジェクトを作成する
+2. 必要な設定で*CameraParameters*オブジェクトを作成する
+3. *Startphotomodeasync*を使用して写真モードを開始する
+4. 目的の写真を撮影する
+    * optionalその画像と対話する
+5. フォトモードを停止してリソースをクリーンアップする
 
-### <a name="common-set-up-for-photocapture"></a>PhotoCapture の一般的なセットアップ
+### <a name="common-set-up-for-photocapture"></a>PhotoCapture 用の一般的な設定
 
-同じ上記の最初の 3 つの手順をまずの 3 つのすべての使用
+3つのすべての使用について、上記と同じ最初の3つの手順から開始します。
 
-まずを作成、 *PhotoCapture*オブジェクト
+まず、 *Photocapture*オブジェクトを作成します。
 
 ```cs
 PhotoCapture photoCaptureObject = null;
@@ -51,7 +51,7 @@ PhotoCapture photoCaptureObject = null;
    }
 ```
 
-オブジェクトを格納、パラメーターを設定してフォト モードを開始しました次
+次に、オブジェクトを保存し、パラメーターを設定して、写真モードを開始します。
 
 ```cs
 void OnPhotoCaptureCreated(PhotoCapture captureObject)
@@ -70,7 +70,7 @@ void OnPhotoCaptureCreated(PhotoCapture captureObject)
    }
 ```
 
-最終的には、使用、ここで示すコードをクリーンアップする同じ
+最後に、ここで紹介したものと同じクリーンアップコードを使用します。
 
 ```cs
 void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
@@ -82,11 +82,11 @@ void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
 
 これらの手順の後に、キャプチャする写真の種類を選択できます。
 
-### <a name="capture-a-photo-to-a-file"></a>ファイルに写真をキャプチャします。
+### <a name="capture-a-photo-to-a-file"></a>写真をファイルにキャプチャする
 
-ファイルに直接写真をキャプチャする、最も簡単な操作です。 写真は、JPG または PNG として保存できます。
+最も簡単な操作は、写真を直接ファイルにキャプチャすることです。 写真は、JPG または PNG として保存できます。
 
-写真のモードが正常に開始した場合ようになりましたが写真を撮影してディスクに保存
+写真モードを正常に開始した場合は、写真を撮影してディスクに保存します。
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -105,7 +105,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-ディスクに写真をキャプチャした後に、フォト モードを終了し、オブジェクトをクリーンアップし、私たちは
+写真をディスクにキャプチャした後、写真モードを終了し、オブジェクトをクリーンアップします。
 
 ```cs
 void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
@@ -122,13 +122,13 @@ void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-### <a name="capture-a-photo-to-a-texture2d"></a>Texture2D に写真をキャプチャします。
+### <a name="capture-a-photo-to-a-texture2d"></a>写真を Texture2D に取り込む
 
-Texture2D へのデータをキャプチャするときに、プロセスは、ディスクへのキャプチャに非常に似ています。
+Texture2D にデータをキャプチャする場合、プロセスはディスクへのキャプチャと非常によく似ています。
 
-上記のプロセスの設定に従います。
+上記のセットアッププロセスに従います。
 
-*OnPhotoModeStarted*メモリへのフレームのキャプチャされます。
+*Onphotomodestarted 開始*したときに、フレームをメモリにキャプチャします。
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -144,7 +144,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-テクスチャに結果を適用が、上記のコードをクリーンアップする一般的な使用されいます。
+次に、結果をテクスチャに適用し、上記の一般的なクリーンアップコードを使用します。
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -163,11 +163,11 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
    }
 ```
 
-### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a>生のバイトを写真との対話をキャプチャします。
+### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a>写真をキャプチャし、生のバイトを操作する
 
-メモリ内の生バイトと対話するフレーム、に従って同じ設定には、上記の手順と*OnPhotoModeStarted* Texture2D に写真をキャプチャするようにします。 違いは*OnCapturedPhotoToMemory*生のバイトを取得し、対話機能を使用します。
+インメモリフレームの生バイトを操作するには、Texture2D に写真をキャプチャする場合と同じように、上記と*Onphotomodestarted 開始*したときと同じセットアップ手順に従います。 違いは、生のバイトを取得して操作できる*OnCapturedPhotoToMemory*です。
 
-この例では作成、*一覧<Color>* 処理またはを使用して、テクスチャに適用されるさらに可能性がある*SetPixels()*
+この例では、 *setpixels ()* を使用してさらに処理またはテクスチャに適用できる*リスト<Color>* を作成します。
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -200,20 +200,20 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
    }
 ```
 
-## <a name="video-capture"></a>ビデオのキャプチャ
+## <a name="video-capture"></a>ビデオキャプチャ
 
-**名前空間:** *UnityEngine.XR.WSA.WebCam*<br>
+**名前空間:** *UnityEngine. XR*<br>
 **種類:** *VideoCapture*
 
-*VideoCapture*関数に非常によく似た*PhotoCapture*します。 2 つの違いはフレーム/秒 (FPS) の値を指定する必要がありますのみ .mp4 ファイルとしてディスクに直接保存することができます。 使用して手順*VideoCapture*次に示します。
-1. 作成、 *VideoCapture*オブジェクト
-2. 作成、 *CameraParameters*設定を持つオブジェクト
-3. 使用してビデオ モードの開始*StartVideoModeAsync*
-4. ビデオの録画を開始します。
-5. ビデオの録音を停止します。
-6. ビデオ モードを停止し、リソースをクリーンアップします。
+*VideoCapture*は*photocapture*と非常に似ています。 2つの違いは、1秒あたりのフレーム数 (FPS) の値を指定する必要があり、mp4 ファイルとして直接ディスクに保存できることだけです。 *VideoCapture*を使用する手順は次のとおりです。
+1. *VideoCapture*オブジェクトを作成する
+2. 必要な設定で*CameraParameters*オブジェクトを作成する
+3. *Startvideomodeasync*を使用してビデオモードを開始する
+4. ビデオの録画を開始する
+5. ビデオ記録の停止
+6. ビデオモードを停止してリソースをクリーンアップする
 
-まずを作成、 *VideoCapture*オブジェクト*VideoCapture m_VideoCapture = null;*
+まず、 *VideoCapture*オブジェクト*VideoCapture m_VideoCapture = null*を作成します。
 
 ```cs
 void Start ()
@@ -222,7 +222,7 @@ void Start ()
    }
 ```
 
-録音を開始しますパラメーターを設定します。
+次に、記録と開始のために必要なパラメーターを設定します。
 
 ```cs
 void OnVideoCaptureCreated (VideoCapture videoCapture)
@@ -252,7 +252,7 @@ void OnVideoCaptureCreated (VideoCapture videoCapture)
    }
 ```
 
-録音を開始しましたが開始されると、
+開始したら、記録を開始します。
 
 ```cs
 void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
@@ -267,7 +267,7 @@ void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-記録の開始後は、"stopping"を有効にするには、UI または動作を更新することが。 ここでだけ記録しています
+記録が開始されたら、UI または動作を更新して停止を有効にすることができます。 ここでログを記録します。
 
 ```cs
 void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -277,7 +277,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-後で、録画を停止します。 これは、タイマーまたはユーザーの入力、たとえばから発生する可能性があります。
+後で、記録を停止します。 これは、たとえば、タイマーやユーザー入力によって発生する可能性があります。
 
 ```cs
 // The user has indicated to stop recording
@@ -287,7 +287,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-記録が停止するをビデオ モードを停止して、リソースをクリーンアップします。
+記録が停止したら、ビデオモードを停止し、リソースをクリーンアップします。
 
 ```cs
 void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -304,8 +304,8 @@ void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
 ```
 
 ## <a name="troubleshooting"></a>トラブルシューティング
-* 使用可能な解決策はありません。
-    * 確認、 **web カメラ**機能は、プロジェクトで指定します。
+* 解決策はありません
+    * **Web カメラ**機能がプロジェクトで指定されていることを確認します。
 
 ## <a name="see-also"></a>関連項目
 * [場所を特定できるカメラ](locatable-camera.md)

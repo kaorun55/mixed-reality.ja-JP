@@ -1,27 +1,27 @@
 ---
 title: アプリ内購入
-description: アプリ内購入は、複合現実アプリでサポートされますが、それらを設定するには、いくつか作業があります。
+description: アプリ内購入は mixed reality アプリでサポートされていますが、設定作業がいくつかあります。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: アプリ内購入、hololens
+keywords: アプリ内購入, hololens
 ms.openlocfilehash: bc96893d1777e94295285736982fd9a7167240a4
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59602881"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515293"
 ---
 # <a name="in-app-purchases"></a>アプリ内購入
 
-アプリ内購入は、HoloLens でサポートされますが、それらを設定するには、いくつか作業があります。
+アプリ内購入は HoloLens でサポートされていますが、設定作業がいくつかあります。
 
-アプリの購入を利用するために、機能する必要があります。
-* 作成、XAML [2D ビュー](app-views.md)スレート型として表示するには
-* 没入型のビューを離れる配置をアクティブ化するために切り替える
-* Call the API: await [CurrentApp.RequestProductPurchaseAsync("DurableItemIAPName");](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_)
+アプリ購入機能を活用するためには、次のことを行う必要があります。
+* スレートとして表示される XAML [2d ビュー](app-views.md)を作成する
+* これに切り替えて配置をアクティブにします。これにより、イマーシブビューが残されます。
+* API: await [Currentapp ("DurableItemIAPName")](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_)を呼び出します。
 
-この API は、アプリ内購入の名前、説明、および価格を表示する株価の Windows OS ポップアップが表示されます。 ユーザーは、購入に関するオプションを選択できます。 アプリは、ユーザーに戻るには、UI を提示する必要がありますアクションが完了すると、その[没入型ビュー](app-views.md)します。
+この API は、アプリ内購入の名前、説明、価格を表示する Windows OS のストックポップアップを表示します。 ユーザーは購入オプションを選択できます。 アクションが完了したら、アプリはユーザーが[イマーシブビュー](app-views.md)に戻ることができる UI を提示する必要があります。
 
-デスクトップ ベースの Windows Mixed Reality イマーシブ ヘッドセットを対象としたアプリ、RequestProductPurchaseAsync API を呼び出す前に、XAML ビューに手動で切り替えることは必要はありません。
+デスクトップベースの Windows Mixed Reality イマーシブヘッドセットを対象とするアプリでは、RequestProductPurchaseAsync API を呼び出す前に、手動で XAML ビューに切り替える必要はありません。

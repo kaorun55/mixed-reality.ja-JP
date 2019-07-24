@@ -1,147 +1,147 @@
 ---
-title: MR 基本 101E のエミュレーターを使用した完全なプロジェクト
-description: このコーディング holographic アプリケーションの基礎を習得する Unity、Visual Studio および HoloLens のエミュレーターの使用に関するチュートリアルに従います。
+title: MR 基本 101E-エミュレーターを使用した完全なプロジェクト
+description: Unity、Visual Studio、および HoloLens Emulator を使用したこのコーディングのチュートリアルに従って、holographic アプリケーションの基本を学習してください。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、HoloLens、複合現実、ホログラム、academy、チュートリアル、エミュレーター
+keywords: mixed reality、Windows Mixed Reality、HoloLens、ホログラム、academy、チュートリアル、エミュレーター
 ms.openlocfilehash: 77f7d497396937bf471a69fa514cef84ab0b699d
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59599404"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63522326"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
 <br>
 
-# <a name="mr-basics-101e-complete-project-with-emulator"></a>MR 基礎 101E:エミュレーターを使用した完全なプロジェクト
+# <a name="mr-basics-101e-complete-project-with-emulator"></a>MR 基本 101E:Emulator を使用したプロジェクトの完了
 
  >[!VIDEO https://www.youtube.com/embed/Xzm8_s05mm8]
 
-このチュートリアルでは、HoloLens などのコア Windows Mixed Reality 機能を示すには、Unity でビルドされた完全なプロジェクトを通じて[視線](gaze.md)、[ジェスチャ](gestures.md)、[音声入力](voice-input.md)、[空間サウンド](spatial-sound.md)と[空間マッピング](spatial-mapping.md)します。 このチュートリアルを完了するには約 1 時間になります。
+このチュートリアルでは、Unity でビルドされた完全なプロジェクトについて説明します。これは、[宝石](gaze.md)、[ジェスチャ](gestures.md)、[音声入力](voice-input.md)、[空間サウンド](spatial-sound.md)、[空間マッピング](spatial-mapping.md)など、HoloLens のコア Windows Mixed Reality 機能を示しています. このチュートリアルの完了には約1時間かかります。
 
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
 <tr>
-<th>コース</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
+<th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td>MR 基礎 101E:エミュレーターを使用した完全なプロジェクト</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
+<td>MR 基本 101E:Emulator を使用したプロジェクトの完了</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
-## <a name="before-you-start"></a>開始前の作業
+## <a name="before-you-start"></a>開始前の準備
 
-### <a name="prerequisites"></a>前提条件
+### <a name="prerequisites"></a>必須コンポーネント
 
-* 正しく構成されている Windows 10 PC[ツールがインストールされている](install-the-tools.md)します。
+* 適切な[ツールがインストール](install-the-tools.md)された WINDOWS 10 PC。
 
-### <a name="project-files"></a>プロジェクト ファイル
+### <a name="project-files"></a>プロジェクトファイル
 
-* ダウンロード、[ファイル](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)プロジェクトに必要です。 Unity 2017.2 またはそれ以降が必要です。
-  * Unity 5.6 のサポートを引き続き必要がある場合を使用してください[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)します。
-  * Unity 5.5 のサポートを引き続き必要がある場合を使用してください[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)します。
-  * Unity 5.4 のサポートを引き続き必要がある場合を使用してください[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)します。
-* 解除アーカイブをデスクトップまたは場所に到達する簡単なその他のファイル。 フォルダー名として保持**Origami**します。
+* プロジェクトに必要な[ファイル](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip)をダウンロードします。 Unity 2017.2 以降が必要です。
+  * 引き続き Unity 5.6 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-101.zip)をご利用ください。
+  * 引き続き Unity 5.5 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-101.zip)をご利用ください。
+  * 引き続き Unity 5.4 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-101.zip)をご利用ください。
+* ファイルをデスクトップまたはその他の簡単な場所に保管します。 フォルダー名は**Origami**のままにしておきます。
 
 >[!NOTE]
->をダウンロードする前に、ソース コードを検索する場合がある[GitHub で入手できます](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)します。
+>ダウンロードする前にソースコードを確認する場合は、GitHub から[入手でき](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-101)ます。
 
-## <a name="chapter-1---holo-world"></a>第 1 章 -"Holo"world
+## <a name="chapter-1---holo-world"></a>Chapter 1-"Holo" ワールド
 
 >[!VIDEO https://www.youtube.com/embed/qotpUpIQxVU]
 
-この章で、最初の Unity プロジェクトとビルド手順のセットアップがされプロセスを展開します。
+この章では、最初の Unity プロジェクトをセットアップし、ビルドとデプロイのプロセスをステップ実行します。
 
-### <a name="objectives"></a>目標
+### <a name="objectives"></a>目的
 
-* Holographic 開発のために、Unity を設定します。
-* ホログラムを確認します。
-* 行ったホログラムを参照してください。
+* Holographic 開発用に Unity を設定します。
+* ホログラムを作成します。
+* 作成したホログラムを確認します。
 
 ### <a name="instructions"></a>手順
 
 * Unity を起動します。
 * **[開く]** を選択します。
-* として場所を入力、 **Origami**フォルダー アーカイブされた以前のことです。
-* 選択**Origami**クリック**フォルダーの選択**。
-* 新しいシーンを保存します。**ファイル** / **としてシーンを保存**します。
-* シーンという名前を**Origami**キーを押すと、**保存**ボタンをクリックします。
+* 前にアーカイブしていない**Origami**フォルダーとして場所を入力します。
+* **[Origami]** を選択し、 **[フォルダーの選択]** をクリックします。
+* 新しいシーンを保存します。ファイル / **を名前を付けて保存**します。
+* シーンに**Origami**という名前を**付け**、[保存] ボタンを押します。
 
-#### <a name="setup-the-main-camera"></a>メイン カメラのセットアップ
+#### <a name="setup-the-main-camera"></a>メインカメラの設定
 
-* **階層パネル**、 **Main Camera**します。
-* **インスペクター**にトランス フォームの位置を設定**0,0,0**します。
-* 検索、**フラグをクリア**プロパティ、ドロップダウン リストからの変更と**スカイ ボックス**に**純色**。
-* をクリックして、**バック グラウンド**フィールドをカラー ピッカーを開きます。
-* 設定**R、G、B、および A**に**0**します。
+* [**階層] パネル**で、 **[メインカメラ]** を選択します。
+* **インスペクター**で、変換位置を**0、0、0**に設定します。
+* " **Clear Flags** " プロパティを見つけ、ドロップ**ダウンから [** **単色**] に変更します。
+* **[背景]** フィールドをクリックして、カラーピッカーを開きます。
+* **R、G、B、およびを** **0**に設定します。
 
-#### <a name="setup-the-scene"></a>シーンのセットアップ
+#### <a name="setup-the-scene"></a>シーンを設定する
 
-* **階層パネル**、 をクリックして**作成**と**空アイテムの作成**です。
-* 新しい右クリックして**GameObject**名前の変更を選択します。 GameObject の名前を変更**OrigamiCollection**します。
-* **ホログラム**フォルダーで、**プロジェクト パネル**:
-  * ドラッグ**ステージ**の子に階層に**OrigamiCollection**します。
-  * ドラッグ**Sphere1**の子に階層に**OrigamiCollection**します。
-  * ドラッグ**Sphere2**の子に階層に**OrigamiCollection**します。
-* 右クリックし、**指向性光**内のオブジェクト、**階層パネル**選択と**削除**します。
-* **ホログラム**フォルダー、ドラッグ**ライト**のルートに、**階層パネル**します。
-* **階層**を選択、 **OrigamiCollection**します。
-* **インスペクター**、変換の位置を設定**0、-0.5、2.0**します。
-* キーを押して、**再生**ホログラムをプレビューする Unity でボタンをクリックします。
-* プレビュー ウィンドウの Origami オブジェクトが表示されます。
-* キーを押して**再生**をもう一度プレビュー モードを停止します。
+* [**階層] パネル**で、 **[作成]** をクリックし、 **[空の作成]** をクリックします。
+* 新しい [作成]**オブジェクト**を右クリックし、[名前の変更] を選択します。 **OrigamiCollection**オブジェクトの名前を「」に変更します。
+* [**プロジェクト] パネル**の **[ホログラム]** フォルダーから次のようにします。
+  * **ステージ**を階層にドラッグして、 **OrigamiCollection**の子にします。
+  * **Sphere1**を階層内にドラッグして、 **OrigamiCollection**の子にします。
+  * **Sphere2**を階層内にドラッグして、 **OrigamiCollection**の子にします。
+* [**階層] パネル**で**指向性ライト**オブジェクトを右クリックし、 **[削除]** を選択します。
+* **[ホログラム]** フォルダーから、[**階層] パネル**のルートに**ライト**をドラッグします。
+* **階層**で、 **OrigamiCollection**を選択します。
+* **インスペクター**で、変換位置を**0、-0.5、2.0**に設定します。
+* Unity の **[再生]** ボタンをクリックして、ホログラムをプレビューします。
+* プレビューウィンドウに Origami オブジェクトが表示されます。
+* プレビューモードを停止するには、もう一度**Play**を押します。
 
-#### <a name="export-the-project-from-unity-to-visual-studio"></a>Visual Studio Unity からプロジェクトにエクスポートします。
+#### <a name="export-the-project-from-unity-to-visual-studio"></a>Unity から Visual Studio にプロジェクトをエクスポートする
 
-* Unity の select で**ファイル > Build Settings**します。
-* 選択**Windows ストア**で、**プラットフォーム**を一覧表示し、をクリックして**スイッチ プラットフォーム**します。
-* 設定**SDK**に**ユニバーサル 10**と**ビルドの種類**に**D3D**します。
-* 確認**UnityC#プロジェクト**します。
-* をクリックして**開くシーンを追加**シーンを追加します。
-* クリックして**プレーヤー設定しています.**.
-* Inspector パネルの選択で、 **Windows ストア ロゴ**します。 選び**公開設定**します。
-* **機能**セクションで、**マイク**と**SpatialPerception**機能します。
-* ビルドの詳細設定 ウィンドウに戻り**ビルド**します。
-* 作成、**新しいフォルダー** "App"という名前です。
-* 1 回のクリック、**アプリ フォルダー**します。
-* キーを押して**フォルダーを選択します**します。
-* Unity を完了すると、ファイル エクスプ ローラー ウィンドウが表示されます。
-* 開く、**アプリ**フォルダー。
-* 開く、 **Origami Visual Studio ソリューション**します。
-* デバッグからターゲットを変更する Visual Studio で、上部のツールバーを使用して**リリース**を ARM から**X86**します。
-  * デバイスのボタンの横の矢印をクリックし、 **HoloLens のエミュレーター**します。
-  * クリックして**デバッグ]、[デバッグなしで開始**またはキーを押します**ctrl キーを押しながら f5 キーを押して**します。
-  * しばらくエミュレーター折り紙プロジェクトで開始されます。 最初に起動するときに、[エミュレーター](using-the-hololens-emulator.md)エミュレーターが起動までに 15 分の時間がかかることができます。 起動した場合は閉じないでください。
+* Unity で、 **[ファイル > ビルド設定]** を選択します。
+* **[プラットフォーム]** ボックスの一覧で **[Windows ストア]** を選択し、 **[プラットフォームの切り替え]** をクリックします。
+* **SDK**を**Universal 10**に設定し、**ビルドの種類**を**D3D**に設定します。
+* **Unity C#プロジェクト**を確認します。
+* シーンを追加するには、[開いている**シーンの追加**] をクリックします。
+* **[プレーヤーの設定]** をクリックします。
+* [インスペクター] パネルで、[ **Windows ストア] ロゴ**を選択します。 次に、 **[発行の設定]** を選択します。
+* **[機能]** セクションで、**マイク**と**SpatialPerception**機能を選択します。
+* ビルドの設定 ウィンドウに戻り、**ビルド** をクリックします。
+* "App" という名前の**新しいフォルダー**を作成します。
+* **アプリフォルダー**をシングルクリックします。
+* **[フォルダーの選択]** をクリックします。
+* Unity が完了すると、エクスプローラーウィンドウが表示されます。
+* **アプリ**フォルダーを開きます。
+* **Origami Visual Studio ソリューション**を開きます。
+* Visual Studio の上部のツールバーを使用して、ターゲットをデバッグから**リリース**に変更し、ARM から**X86**に変更します。
+  * デバイスのボタンの横にある矢印をクリックし、 **[HoloLens Emulator]** を選択します。
+  * [**デバッグ]、[デバッグなしで開始] の順にクリック >** 、Ctrl キーを押し**ながら F5**キーを押します。
+  * しばらくすると、エミュレーターは Origami プロジェクトから開始されます。 [エミュレーター](using-the-hololens-emulator.md)を初めて起動するときは、エミュレーターが起動するまでに15分程度かかることがあります。 開始したら、閉じないでください。
 
-## <a name="chapter-2---gaze"></a>第 2 章 – 視線入力
+## <a name="chapter-2---gaze"></a>第2章-宝石
 
 >[!VIDEO https://www.youtube.com/embed/BPWTbAC210k]
 
-この章で、最初の対話の 3 つの方法を紹介するつもりが、ホログラム--で[視線](gaze.md)します。
+この章では、最初に3つの方法を使用して、ホログラムと対話する方法を紹介[します。](gaze.md)
 
-### <a name="objectives"></a>目標
+### <a name="objectives"></a>目的
 
-* 世界中ロックされているカーソルを使用して、視線の先を視覚化します。
+* 世界でロックされているカーソルを使用して、宝石を視覚化します。
 
 ### <a name="instructions"></a>手順
 
-* Unity プロジェクトに戻るしがまだ開いている場合は、ビルドの詳細設定 ウィンドウを閉じます。
-* 選択、**ホログラム**フォルダーで、**プロジェクト パネル**します。
-* ドラッグ、**カーソル**オブジェクトを**階層パネル**ルート レベルにします。
-* ダブルクリックして、**カーソル**について詳しく見てを実行するオブジェクト。
-* 右クリックし、**スクリプト**プロジェクト パネル内のフォルダー。
-* をクリックして、**作成** をクリックします。
-* 選択**C#スクリプト**します。
-* スクリプトの名前**WorldCursor**します。 注:この名前では、大文字と小文字を区別します。 .Cs 拡張子を追加する必要はありません。
-* 選択、**カーソル**オブジェクト、**階層パネル**します。
-* ドラッグ アンド ドロップ、 **WorldCursor**にスクリプト、**インスペクター パネル**します。
-* ダブルクリックして、 **WorldCursor**スクリプトを Visual Studio で開きます。
-* このコードをコピーして**WorldCursor.cs**と**すべて保存**します。
+* Unity プロジェクトに戻り、[ビルドの設定] ウィンドウがまだ開いている場合は閉じます。
+* [**プロジェクト] パネル**で **[ホログラム]** フォルダーを選択します。
+* **カーソル**オブジェクトをルートレベルの [**階層] パネル**にドラッグします。
+* **カーソル**オブジェクトをダブルクリックすると、詳細が表示されます。
+* [プロジェクト] パネルの **[Scripts]** フォルダーを右クリックします。
+* **[作成]** サブメニューをクリックします。
+* **[ C#スクリプト]** を選択します。
+* スクリプトに**WorldCursor**という名前を指定します。 注:この名前では、大文字と小文字を区別します。 .Cs 拡張子を追加する必要はありません。
+* [**階層] パネル**で**カーソル**オブジェクトを選択します。
+* **WorldCursor**スクリプトを [**インスペクター] パネル**にドラッグアンドドロップします。
+* **WorldCursor**スクリプトをダブルクリックして、Visual Studio で開きます。
+* このコードをコピーして**WorldCursor.cs**に貼り付け、**すべて保存**します。
 
 ```cs
 using UnityEngine;
@@ -188,29 +188,29 @@ public class WorldCursor : MonoBehaviour
 }
 ```
 
-* アプリをリビルド**ファイル > のビルド設定**します。
-* 以前はエミュレーターにデプロイするために使用する Visual Studio ソリューションに戻ります。
-* 'すべて再読み込み' が表示されたら選択します。
-* クリックして**デバッグ]、[デバッグなしで開始**またはキーを押します**ctrl キーを押しながら f5 キーを押して**します。
-* Xbox コント ローラーを使用して、シーンを中心になります。 カーソルがオブジェクトの形状と対話する方法に注意してください。
+* **ファイル > ビルド設定**からアプリをリビルドします。
+* 以前にエミュレーターに配置するために使用した Visual Studio ソリューションに戻ります。
+* メッセージが表示されたら、[すべて再読み込み] を選択します。
+* [**デバッグ]、[デバッグなしで開始] の順にクリック >** 、Ctrl キーを押し**ながら F5**キーを押します。
+* Xbox コントローラーを使用してシーンを周囲に表示します。 カーソルがオブジェクトの形状とどのように連動するかに注目してください。
 
-## <a name="chapter-3---gestures"></a>第 3 章 - ジェスチャ
+## <a name="chapter-3---gestures"></a>第3章-ジェスチャ
 
 >[!VIDEO https://www.youtube.com/embed/6d-0RHeKHq4]
 
-この章では、サポートを追加します[ジェスチャ](gestures.md)します。 ユーザーは、ホワイト ペーパーの球体を選択するときに、Unity の物理運動エンジンを使用して重力を有効にして分類、球体にしましょう。
+この章では、[ジェスチャ](gestures.md)のサポートを追加します。 ユーザーがペーパー球を選択すると、Unity の物理エンジンを使用して重力をオンにすることで、球がフォールされるようになります。
 
-### <a name="objectives"></a>目標
+### <a name="objectives"></a>目的
 
-* ジェスチャに、ホログラムを制御します。
+* 選択ジェスチャでホログラムを制御します。
 
 ### <a name="instructions"></a>手順
 
-選択ジェスチャを検出できるよりもスクリプトの作成から始めます。
+まず、Select ジェスチャを検出できるスクリプトを作成します。
 
-* **スクリプト**フォルダー、という名前のスクリプト作成**GazeGestureManager**します。
-* ドラッグ、 **GazeGestureManager**にスクリプト、 **OrigamiCollection**階層内のオブジェクト。
-* 開く、 **GazeGestureManager** Visual Studio でスクリプトを作成し、次のコードを追加します。
+* **Scripts**フォルダーで、 **GazeGestureManager**という名前のスクリプトを作成します。
+* **GazeGestureManager**スクリプトを階層内の**OrigamiCollection**オブジェクトにドラッグします。
+* Visual Studio で**GazeGestureManager**スクリプトを開き、次のコードを追加します。
 
 ```cs
 using UnityEngine;
@@ -277,11 +277,11 @@ public class GazeGestureManager : MonoBehaviour
 }
 ```
 
-* Scripts フォルダーでは、という名前のこの時点で別のスクリプトを作成**SphereCommands**します。
-* 展開、 **OrigamiCollection**階層ビュー内のオブジェクト。
-* ドラッグ、 **SphereCommands**にスクリプト、 **Sphere1**階層パネル内のオブジェクト。
-* ドラッグ、 **SphereCommands**にスクリプト、 **Sphere2**階層パネル内のオブジェクト。
-* 編集に関しては、Visual Studio でスクリプトを開くし、この既定のコードに置き換えます。
+* Scripts フォルダーに、今度は**SphereCommands**という名前の別のスクリプトを作成します。
+* [階層] ビューで **[OrigamiCollection]** オブジェクトを展開します。
+* **SphereCommands**スクリプトを、[階層] パネルの **[Sphere1]** オブジェクトにドラッグします。
+* **SphereCommands**スクリプトを、[階層] パネルの **[Sphere2]** オブジェクトにドラッグします。
+* 編集するために Visual Studio でスクリプトを開き、既定のコードを次のコードに置き換えます。
 
 ```cs
 using UnityEngine;
@@ -301,27 +301,27 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* エクスポートし、ビルド、HoloLens のエミュレーターにアプリを展開します。
-* シーン、少し調べてみるし、球の 1 つの中央します。
-* キーを押して、 **A** Xbox コント ローラーでボタンをクリックしてまたは選択ジェスチャをシミュレートするために Space キーを押します。
+* アプリのエクスポート、ビルド、および HoloLens エミュレーターへのデプロイを行います。
+* シーンを見て、球体の1つを中心にします。
+* Xbox コントローラーの**A**ボタンを押すか、space キーを押して選択ジェスチャをシミュレートします。
 
-## <a name="chapter-4---voice"></a>第 4 章 - 音声
+## <a name="chapter-4---voice"></a>第4章-音声
 
 >[!VIDEO https://www.youtube.com/embed/LxbOhnd2_GM]
 
-この章では、2 つのサポートを追加します[音声コマンド](voice-input.md):"リセット world"には、元の場所にドロップされた球体と"ドロップ sphere"を返します、球体を分類します。
+この章では、次の2つの[音声コマンド](voice-input.md)のサポートを追加します。"ワールドのリセット" を使用して、ドロップされた球体を元の場所に返し、"ドロップ球" を使用して球をフォールします。
 
-### <a name="objectives"></a>目標
+### <a name="objectives"></a>目的
 
-* バック グラウンドでは、常にリッスンする音声コマンドを追加します。
-* 音声コマンドに応答するホログラムを作成します。
+* 常にバックグラウンドで待機する音声コマンドを追加します。
+* 音声コマンドに反応するホログラムを作成します。
 
 ### <a name="instructions"></a>手順
 
-* **スクリプト**フォルダー、という名前のスクリプト作成**SpeechManager**します。
-* ドラッグ、 **SpeechManager**にスクリプト、 **OrigamiCollection**階層内のオブジェクト
-* 開く、 **SpeechManager** Visual Studio でのスクリプト。
-* このコードをコピーして**SpeechManager.cs**と**すべて保存**:
+* **Scripts**フォルダーで、 **SpeechManager**という名前のスクリプトを作成します。
+* **SpeechManager**スクリプトを階層内の**OrigamiCollection**オブジェクトにドラッグします。
+* Visual Studio で**SpeechManager**スクリプトを開きます。
+* このコードをコピーして**SpeechManager.cs**に貼り付け、**すべてを保存**します。
 
 ```cs
 using System.Collections.Generic;
@@ -372,7 +372,7 @@ public class SpeechManager : MonoBehaviour
 }
 ```
 
-* 開く、 **SphereCommands** Visual Studio でのスクリプト。
+* Visual Studio で**SphereCommands**スクリプトを開きます。
 * 次のようにスクリプトを更新します。
 
 ```cs
@@ -424,36 +424,36 @@ public class SphereCommands : MonoBehaviour
 }
 ```
 
-* エクスポートし、ビルド、HoloLens のエミュレーターにアプリを展開します。
-* エミュレーターを PC のマイクをサポートし、音声応答: 球体のいずれかの上にカーソルが、表示を調整し、"ドロップ Sphere"。
-* たとえば"**世界のリセット**"最初の位置に戻すにします。
+* アプリのエクスポート、ビルド、および HoloLens エミュレーターへのデプロイを行います。
+* エミュレーターは PC のマイクをサポートし、音声に応答します。つまり、カーソルが球体の1つになるようにビューを調整し、"ドロップ球" と言います。
+* "**世界のリセット**" と言うと、最初の位置に戻ります。
 
-## <a name="chapter-5---spatial-sound"></a>第 5 章 - 空間のサウンド
+## <a name="chapter-5---spatial-sound"></a>第5章-空間サウンド
 
 >[!VIDEO https://www.youtube.com/embed/Xc3C4VA10w4]
 
-この章で、アプリに音楽を追加し、特定のアクションでのサウンド効果をトリガーします。 使用する[空間サウンド](spatial-sound.md)サウンド 3D 空間で特定の場所を提供します。
+この章では、アプリに音楽を追加し、特定のアクションに対してサウンド効果をトリガーします。 [空間サウンド](spatial-sound.md)を使用して、3d 空間内の特定の位置にサウンドを与えます。
 
-### <a name="objectives"></a>目標
+### <a name="objectives"></a>目的
 
-* 世界でホログラムお話しします。
+* 世界中のホログラムを聞くことができます。
 
 ### <a name="instructions"></a>手順
 
-* 上部のメニューから Unity の選択で**編集 > プロジェクトの設定 > オーディオ**
-* 検索、**立体音場プラグイン**設定および  **MS HRTF 立体音場**します。
-* **ホログラム**フォルダー、ドラッグ、**アンビエンス**オブジェクト、 **OrigamiCollection**階層パネル内のオブジェクト。
-* 選択**OrigamiCollection**を見つけて、**オーディオ ソース**コンポーネント。 これらのプロパティを変更します。
-  * チェック、 **Spatialize**プロパティ。
-  * チェック、**起動状態で再生**します。
-  * 変更**空間 Blend**に**3D**に右側のスライダーをドラッグしています。
-  * チェック、**ループ**プロパティ。
-  * 展開**3D サウンド設定**、入力と**0.1**の**ドップラー レベル**します。
-  * 設定**ボリューム ロールオフ**に**対数ロールオフ**します。
-  * 設定**最大距離**に**20**します。
-* **スクリプト**フォルダー、という名前のスクリプト作成**SphereSounds**します。
-* ドラッグ**SphereSounds**を**Sphere1**と**Sphere2**階層内のオブジェクト。
-* 開いている**SphereSounds** Visual Studio で、次のコードを更新および**すべて保存**します。
+* Unity で、上部のメニューから [ **> プロジェクトの設定を編集**します] [オーディオ] > 選択します。
+* **Spatializer プラグイン**設定を探し、 **[MS HRTF Spatializer]** を選択します。
+* **ホログラム** フォルダーから、**アンビエント** オブジェクトを 階層 パネルの**OrigamiCollection**オブジェクトにドラッグします。
+* **[OrigamiCollection]** を選択し、**オーディオソース**コンポーネントを検索します。 次のプロパティを変更します。
+  * **Spatialize**プロパティを確認します。
+  * スリープ状態**になって**いることを確認します。
+  * スライダーを右にドラッグして、**空間 Blend**を**3d**に変更します。
+  * **Loop**プロパティを確認します。
+  * **[3D サウンド設定]** を展開し、**ドップラーレベル**に「 **0.1** 」と入力します。
+  * **ボリュームのロール**アウトを**対数ロールオフ**に設定します。
+  * **最大距離**を**20**に設定します。
+* **Scripts**フォルダーで、 **SphereSounds**という名前のスクリプトを作成します。
+* **SphereSounds**を階層内の**Sphere1**オブジェクトと**Sphere2**オブジェクトにドラッグします。
+* Visual Studio で**SphereSounds**を開き、次のコードを更新して**すべてを保存**します。
 
 ```cs
 using UnityEngine;
@@ -534,38 +534,38 @@ public class SphereSounds : MonoBehaviour
 ```
 
 * スクリプトを保存し、Unity に戻ります。
-* エクスポートし、ビルド、HoloLens のエミュレーターにアプリを展開します。
-* 完全な効果を取得し、サウンドを変更するステージから離れたと緊密に移動、ヘッドホンを着用します。
+* アプリのエクスポート、ビルド、および HoloLens エミュレーターへのデプロイを行います。
+* すべての効果を取得するための磨耗のヘッドホンと、より近くに移動し、サウンドが変化することを確認します。
 
-## <a name="chapter-6---spatial-mapping"></a>第 6 章 - 空間のマッピング
+## <a name="chapter-6---spatial-mapping"></a>Chapter 6-空間マッピング
 
 >[!VIDEO https://www.youtube.com/embed/S-517Y63Cnk]
 
-ここでは、使用する[空間マッピング](spatial-mapping.md)現実の世界での実際のオブジェクトにゲーム ボードを配置します。
+ここでは、[空間マッピング](spatial-mapping.md)を使用して、ゲームボードを現実世界の実際のオブジェクトに配置します。
 
-### <a name="objectives"></a>目標
+### <a name="objectives"></a>目的
 
-* 仮想世界に、現実の世界を表示します。
-* ここが最も重要なホログラムを配置します。
+* 実際の世界を仮想環境に移します。
+* 自分にとって最も重要な場所にホログラムを配置します。
 
 ### <a name="instructions"></a>手順
 
-* をクリックして、**ホログラム**プロジェクト パネル内のフォルダー。
-* ドラッグ、**空間マッピング**のルートに資産、**階層**します。
-* をクリックして、**空間マッピング**階層内のオブジェクト。
-* **インスペクター パネル**、次のプロパティを変更します。
-  * チェック、 **Visual メッシュの描画**ボックス。
-  * 検索**描画マテリアル**右側の円をクリックします。 型"**ワイヤー フレーム**"上部にある検索フィールドにします。 [結果] をクリックし、ウィンドウを閉じます。
-* エクスポートし、ビルド、HoloLens のエミュレーターにアプリを展開します。
-* アプリの実行時に以前スキャンされた実際のリビング ルームのメッシュをワイヤー フレームでレンダリングされます。
-* この段階では、オフと床のローリング球はフォールバックをご覧ください。
+* プロジェクト パネルの **ホログラム** フォルダーをクリックします。
+* **空間マッピング**資産を**階層**のルートにドラッグします。
+* 階層内の**空間マッピング**オブジェクトをクリックします。
+* [**インスペクター] パネル**で、次のプロパティを変更します。
+  * **[ビジュアルメッシュの描画]** チェックボックスをオンにします。
+  * **[素材の描画]** を見つけ、右側にある円をクリックします。 上部にある検索フィールドに「**ワイヤーフレーム**」と入力します。 結果をクリックし、ウィンドウを閉じます。
+* アプリのエクスポート、ビルド、および HoloLens エミュレーターへのデプロイを行います。
+* アプリを実行すると、前にスキャンした実際の生活室のメッシュがワイヤーフレームでレンダリングされます。
+* ローリング球がステージとフロアにどのように分かれているかを見てください。
 
-現在、OrigamiCollection を新しい場所に移動する方法について説明します。
+ここでは、OrigamiCollection を新しい場所に移動する方法について説明します。
 
-* **スクリプト**フォルダー、という名前のスクリプト作成**TapToPlaceParent**します。
-* **階層**、展開、 **OrigamiCollection**を選択し、**ステージ**オブジェクト。
-* ドラッグ、 **TapToPlaceParent**ステージ オブジェクトのスクリプト。
-* 開く、 **TapToPlaceParent** Visual Studio でスクリプトを作成し、次に更新します。
+* **Scripts**フォルダーで、 **TapToPlaceParent**という名前のスクリプトを作成します。
+* **階層**で、 **OrigamiCollection**を展開し、 **[ステージ]** オブジェクトを選択します。
+* **TapToPlaceParent**スクリプトを Stage オブジェクトにドラッグします。
+* Visual Studio で**TapToPlaceParent**スクリプトを開き、次のように更新します。
 
 ```cs
 using UnityEngine;
@@ -623,26 +623,26 @@ public class TapToPlaceParent : MonoBehaviour
 }
 ```
 
-* ビルドをエクスポート、およびアプリを展開します。
-* Gazing ことによって、特定の場所にゲームを配置できるようになりましたに、ここでは選択ジェスチャを使用して (**A**または space キーを押す)、新しい場所に移動して、もう一度選択ジェスチャを使用します。
+* アプリをエクスポート、ビルド、デプロイします。
+* これで、特定の場所にゲームを配置できるようになりました。これを行うには、選択ジェスチャ (**a**または space キー) を使用してから新しい場所に移動し、もう一度 select ジェスチャを使用します。
 
 ## <a name="the-end"></a>最後です
 
-このチュートリアルは終わりです。
+これがこのチュートリアルの終わりです。
 
-学習内容。
+学習した内容:
 
 * Unity で holographic アプリを作成する方法。
-* 作成する方法の視線、ジェスチャ、音声、サウンド、および空間マッピングを使用します。
-* ビルドして、Visual Studio を使用してアプリをデプロイする方法。
+* 見つめ、ジェスチャ、音声、サウンド、および空間マッピングを使用する方法。
+* Visual Studio を使用してアプリをビルドしてデプロイする方法。
 
-Holographic アプリの作成を開始する準備が整いました。
+これで、独自の holographic アプリの作成を開始する準備ができました。
 
 ## <a name="see-also"></a>関連項目
 
-* [MR 基礎 101:デバイスとの完全なプロジェクト](holograms-101.md)
+* [MR の基本 101:デバイスを使用した完全なプロジェクト](holograms-101.md)
 * [視線入力](gaze.md)
 * [ジェスチャ](gestures.md)
 * [音声入力](voice-input.md)
-* [空間のサウンド](spatial-sound.md)
+* [立体音響](spatial-sound.md)
 * [空間マッピング](spatial-mapping.md)

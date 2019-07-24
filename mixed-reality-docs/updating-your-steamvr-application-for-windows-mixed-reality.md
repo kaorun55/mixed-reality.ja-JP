@@ -1,71 +1,71 @@
 ---
-title: Windows Mixed Reality を SteamVR アプリケーションを更新しています
-description: Windows Mixed Reality ヘッドセットとの互換性を最大化する SteamVR アプリケーションを更新するためのベスト プラクティス。
+title: Windows Mixed Reality 用の SteamVR アプリケーションの更新
+description: Windows Mixed Reality ヘッドセットとの互換性を最大化するために SteamVR アプリケーションを更新するためのベストプラクティス。
 author: thmignon
 ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
 keywords: SteamVR、互換性
 ms.openlocfilehash: db21651df8e586edf500f0d05def4b1ea5474284
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597854"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548668"
 ---
-# <a name="updating-your-steamvr-application-for-windows-mixed-reality"></a>Windows Mixed Reality を SteamVR アプリケーションを更新しています
+# <a name="updating-your-steamvr-application-for-windows-mixed-reality"></a>Windows Mixed Reality 用の SteamVR アプリケーションの更新
 
-開発者がテストし、Windows Mixed Reality ヘッドセットで実行するには、その SteamVR エクスペリエンスを最適化することをお勧めします。 このドキュメントでは、開発者が Windows Mixed Reality でエクスペリエンスを優れた実行することを確認すること、一般的な機能強化について説明します。
+Windows Mixed Reality ヘッドセットで実行するために、開発者は SteamVR エクスペリエンスをテストして最適化することをお勧めします。 このドキュメントでは、開発者が Windows Mixed Reality でエクスペリエンスを確実に実行できるようにするための一般的な機能強化について説明します。
 
-## <a name="initial-setup-instructions"></a>初期セットアップ手順
+## <a name="initial-setup-instructions"></a>初期セットアップの手順
 
-最初のフォローを確認して、ゲームや Windows Mixed Reality でアプリをテストを開始する、[ファースト ステップ ガイドです。](http://aka.ms/WindowsMixedRealitySteamVR)
+Windows Mixed Reality でゲームやアプリのテストを開始するには、まず、[ファーストステップガイド](http://aka.ms/WindowsMixedRealitySteamVR)に従ってください。
 
-## <a name="controller-models"></a>コント ローラー モデル
-1. 場合は、アプリは、コント ローラー モデルを表示します。
-    * 使用して、 [Windows Mixed Reality 運動コント ローラー モデル](motion-controllers.md#rendering-the-motion-controller-model)
-    * (例: 変換コンポーネント パーツを使用して IVRRenderModel::GetComponentState ローカルを取得するには ポインターの姿勢)
-2. 処理の概念のエクスペリエンスは、Api コント ローラーを区別するために、入力からヒントを取得する必要があります[(Unity など)](gestures-and-motion-controllers-in-unity.md#unity-buttonaxis-mapping-table)
+## <a name="controller-models"></a>コントローラーモデル
+1. アプリがコントローラーモデルをレンダリングする場合:
+    * [Windows Mixed Reality モーションコントローラーモデル](motion-controllers.md#rendering-the-motion-controller-model)を使用する
+    * IVRRenderModel:: GetComponentState を使用して、コンポーネントパーツへのローカル変換を取得します (例: ポインターのポーズ)
+2. ききの概念を持つエクスペリエンスでは、コントローラーを区別するために入力 Api からヒントを取得する必要があります[(Unity の例)。](gestures-and-motion-controllers-in-unity.md#unity-buttonaxis-mapping-table)
 
 ## <a name="controls"></a>コントロール
 
-設計または調整するときに、コントロールのレイアウトに注意してください、次の予約済みのコマンド セットしてください。
-1. をクリックして、**左と右アナログ スティック**に予約されている、**蒸気のダッシュ ボード**します。
-2. **Windows ボタン**Windows Mixed reality ホーム ユーザーは常に返します。
+コントロールレイアウトをデザインまたは調整する場合は、次の予約済みコマンドのセットに注意してください。
+1. **左と右のアナログサムスティック**をクリックすると、**蒸気ダッシュボード**用に予約されます。
+2. **Windows のボタンをクリック**すると、常にユーザーが Windows Mixed Reality ホームに戻ります。
 
-Thumb スティックを既定の teleportation と一致するベース可能であれば、 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)teleportation 動作
+可能であれば、既定では、 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)に準拠するように設定されています。
 
 ## <a name="tooltips-and-ui"></a>ツールヒントと UI
 
-多くの VR ゲームでは、アニメーション コント ローラー ツールチップとオーバーレイ、ゲームまたはアプリの最も重要なコマンドをユーザーに教えるの活用します。 Windows Mixed reality 用のアプリケーションのチューニング時に、Windows のコント ローラー モデルにマップするツールヒントを確認するには、エクスペリエンスのこの部分のレビューをお勧めします。
+多くの VR ゲームでは、モーションコントローラーのツールヒントとオーバーレイを利用して、ユーザーがゲームやアプリにとって最も重要なコマンドを学習できます。 Windows Mixed reality 用にアプリケーションをチューニングする場合は、ツールヒントが Windows コントローラーモデルにマップされていることを確認するために、エクスペリエンスのこの部分を確認することをお勧めします。
 
-さらがある場合は、コント ローラーのイメージを表示するエクスペリエンスで任意のポイント Windows Mixed Reality アニメーション コント ローラーを使用して更新されたイメージを提供することを確認してください。
+また、コントローラーのイメージを表示するポイントがある場合は、Windows Mixed Reality モーションコントローラーを使用して、更新されたイメージを提供するようにしてください。
 
 ## <a name="haptics"></a>Haptics
 
-以降では、 [Windows 10 April 2018 Update](release-notes-april-2018.md)、Windows Mixed Reality を SteamVR のエクスペリエンスのために haptics はサポートされています。 SteamVR アプリやゲーム haptics のサポートが既に含まれている場合も動作するはずようになりました (追加作業がない) で[Windows Mixed Reality モーションのコント ローラー](motion-controllers.md)します。
+[Windows 10 April 2018 Update](release-notes-april-2018.md)以降では、Haptics が Windows Mixed Reality での SteamVR エクスペリエンスでサポートされるようになりました。 SteamVR アプリまたはゲームに既に haptics のサポートが含まれている場合は、 [Windows Mixed Reality モーションコントローラー](motion-controllers.md)を使用して (追加の作業を行わずに) 動作するようになります。
 
-Windows Mixed Reality モーションのコント ローラーは、いくつか他 SteamVR モーションのコント ローラー、若干異なるが予想以上のユーザー エクスペリエンスにつながる可能性のある線形アクチュエータではなく、標準 haptics モーターを使用します。 そのため、テストとチューニングの Windows Mixed Reality モーションのコント ローラーで haptics の設計お勧めします。 たとえば、ハプティクス パルスの短いことがあります (5 ~ 10 ミリ秒) は Windows Mixed Reality モーションのコント ローラーに小さくします。 顕著なパルスを生成するには、もう一度電源が指示される前に、長い「クリック」(40 70ms) を迅速に作成する自動車の多くの時間の送信を試してください。
+Windows Mixed Reality モーションコントローラーは、他の SteamVR モーションコントローラーにある線形アクチュエータではなく、標準の haptics モータを使用します。これにより、予期しないユーザーエクスペリエンスが多少異なる可能性があります。 そのため、Windows Mixed Reality motion controller を使用して haptics の設計をテストおよびチューニングすることをお勧めします。 たとえば、Windows Mixed Reality モーションコントローラーでは、短い haptic パルス (5-10 ミリ秒) があまり目立たない場合があります。 より顕著なパルスを生成するには、もう一度電源をオフにするように指示する前に、より長い "クリック" (40 ~ 70 ミリ秒) を送信してください。
 
-## <a name="launching-steamvr-apps-from-windows-mixed-reality-start-menu"></a>Windows Mixed Reality スタート メニューから SteamVR アプリの起動
+## <a name="launching-steamvr-apps-from-windows-mixed-reality-start-menu"></a>Windows Mixed Reality の [スタート] メニューから SteamVR アプリを起動する
 
-ストリームによって配布、VR エクスペリエンスのしました[SteamVR ベータ版の Windows Mixed Reality を更新](https://steamcommunity.com/games/719950/announcements/detail/1687045485866139800)最新と共に[Windows Insider](https://insider.windows.com) RS5 フライト SteamVR タイトルに表示されるように、"すべてのアプリ] で Windows 混合実際には [スタート] メニューが自動的に一覧表示します。 ソフトウェア バージョンがインストールされているこれらでは、お客様は Windows Mixed Reality ホーム内から直接 SteamVR タイトルをヘッドセットを削除せず今すぐ起動できます。
+ストリームによって配布される VR エクスペリエンスについては、windows [Mixed reality For Steamvr Beta](https://steamcommunity.com/games/719950/announcements/detail/1687045485866139800)と最新の[windows Insider](https://insider.windows.com) RS5 フライトを更新しました。これにより、Steamvr タイトルが "すべてのアプリ" の windows Mixed reality の [スタート] メニューに表示されるようになりました。自動的に一覧表示されます。 これらのソフトウェアバージョンがインストールされているので、お客様は、ヘッドセットを削除せずに、Windows Mixed Reality ホーム内から直接 SteamVR タイトルを起動できるようになりました。
 
 ## <a name="windows-mixed-reality-logo"></a>Windows Mixed Reality ロゴ
 
-Windows Mixed Reality サポートをタイトルを表示するには、移動、アプリのランディング ページに「ストア ページの編集」リンクに"基本情報 タブをクリックし、「仮想現実です」まで下へスクロール "非表示にする Windows Mixed Reality"をオフにし、ストアに発行します。
+タイトルの Windows Mixed Reality サポートを表示するには、アプリのランディングページの [ストアの編集] ページに移動し、[基本情報] タブをクリックして、[仮想現実] を下にスクロールします。 [Windows Mixed Reality を非表示にする] をオフにして、ストアに発行します。
 
-## <a name="bugs-and-feedback"></a>バグやフィードバック
+## <a name="bugs-and-feedback"></a>バグとフィードバック
 
-Windows Mixed Reality SteamVR エクスペリエンスを向上する際、お客様のフィードバックは貴重ではありません。 すべてのフィードバックと使用してバグを送信してください、 [Windows フィードバック Hub](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/filing-feedback)します。 いくつか紹介[SteamVR フィードバックを参考になったできるだけさせる方法に関するヒント](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality#sharing-feedback-on-steamvr)します。
+Windows Mixed Reality SteamVR エクスペリエンスを向上させるために、お客様のフィードバックは非常に重要です。 すべてのフィードバックとバグを[Windows フィードバックハブ](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/filing-feedback)から送信してください。 ここでは[、SteamVR フィードバックを可能な限り活用するためのヒント](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality#sharing-feedback-on-steamvr)を紹介します。
 
-質問またはコメントを共有する場合もアドレスで、[蒸気フォーラム](http://steamcommunity.com/app/719950/discussions/)します。
+共有する質問やコメントがある場合は、[ストリームフォーラム](http://steamcommunity.com/app/719950/discussions/)からもご連絡いただけます。
 
 ## <a name="faqs-and-troubleshooting"></a>FAQ とトラブルシューティング
 
-設定するか、エクスペリエンスの再生の一般的な問題が発生した場合[をチェック アウト、最新のトラブルシューティング手順](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#steamvr)します。
+一般的な問題が発生したときに、エクスペリエンスをセットアップまたは再生するには、[最新のトラブルシューティング手順を確認](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#steamvr)してください。
 
 ## <a name="see-also"></a>関連項目
-* [ツールをインストールします。](install-the-tools.md)
-* [ヘッドセットとアニメーション コント ローラーのドライバーの履歴](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/mixed-reality-software)
-* [Windows Mixed Reality 最小 PC ハードウェアの互換性ガイドライン](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
+* [ツールのインストール](install-the-tools.md)
+* [ヘッドセットとモーションコントローラーのドライバー履歴](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/mixed-reality-software)
+* [Windows Mixed Reality の PC ハードウェアの最小互換性ガイドライン](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)

@@ -1,45 +1,45 @@
 ---
-title: 3D アプリ ランチャー (UWP アプリ) の実装します。
-description: HoloLens と没入型の (VR) ヘッドセットの両方で 3D アプリ ランチャーと Windows Mixed Reality UWP アプリとゲーム (Microsoft Store を介して配布)、ロゴを作成する方法。
+title: 3D アプリランチャーを実装する (UWP アプリ)
+description: HoloLens とイマーシブ (VR) ヘッドセットの両方で、Windows Mixed Reality UWP アプリとゲーム (Microsoft Store を通じて配布される) の3D アプリランチャーとロゴを作成する方法について説明します。
 author: thmignon
 ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
-keywords: 3D、ロゴ、アイコン、モデリング、ランチャー、3D ランチャー、タイル、ライブのキューブ、ディープ リンク、secondarytile、UWP、セカンダリ タイル
+keywords: 3D、ロゴ、アイコン、モデリング、ランチャー、3D ランチャー、タイル、live cube、ディープリンク、secondarytile、セカンダリタイル、UWP
 ms.openlocfilehash: 4a8d4a696ff6ef19d7332b20580f1f5ee67bf045
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604858"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516745"
 ---
-# <a name="implement-3d-app-launchers-uwp-apps"></a>3D アプリ ランチャー (UWP アプリ) の実装します。
+# <a name="implement-3d-app-launchers-uwp-apps"></a>3D アプリランチャーを実装する (UWP アプリ)
 
 > [!NOTE]
-> この機能は、イマーシブ ヘッドセットの 2017 の Fall Creators Update (RS3) の一部としてが追加され、HoloLens と Windows ではサポートされて 10 April 2018 Update。 アプリケーションには、イマーシブ ヘッドセットで 10.0.16299 以上 10.0.17125 HoloLens では、Windows SDK のバージョンが対象とすることを確認します。 最新の Windows SDK を検索する[ここ](https://developer.microsoft.com/windows/downloads/windows-10-sdk)します。
+> この機能は、イマーシブヘッドセット用の2017フォール作成者更新プログラム (RS3) の一部として追加されました。 HoloLens では、Windows 10 April 2018 更新プログラムがサポートされています。 アプリケーションが10.0.16299 のバージョンをターゲットにしていることを確認してください。これは Windows SDK、HoloLens でのイマーシブヘッドセットと10.0.17125 の以上である必要があります。 最新の Windows SDK については、[こちら](https://developer.microsoft.com/windows/downloads/windows-10-sdk)を参照してください。
 
-[Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)始めるユーザーがアプリケーションを起動する前に配置する場所です。 Windows Mixed Reality の UWP アプリケーションを作成する、既定では、そのアプリのロゴで 2D スレートとしてアプリが起動されます。 Windows Mixed Reality のエクスペリエンスを開発する際に 3D ランチャーは、アプリケーションの既定の 2D ランチャーをオーバーライドする必要に応じて定義できます。 一般に、ランチャーが 3D がインプレース アクティブ化されると、アプリは、既定の 2D ランチャーは優先のユーザーからホーム Windows Mixed Reality を取る没入型アプリケーションを起動するためお勧めします。 作成することも、 [3D ディープ リンク (secondaryTile)](#3d-deep-links-secondarytiles) 2D の UWP アプリ内のコンテンツへの 3D ランチャーとして。
+[Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)は、アプリケーションを起動する前にユーザーが移動する開始点です。 Windows Mixed Reality の UWP アプリケーションを作成する場合、既定では、アプリはアプリのロゴを使用して2D スレートとして起動されます。 Windows Mixed Reality のエクスペリエンスを開発するときに、必要に応じて3D ランチャーを定義して、アプリケーションの既定の2D ランチャーをオーバーライドできます。 一般に、Windows Mixed Reality ホームからユーザーを取得するイマーシブアプリケーションを起動するには、3D ランチャーを使用することをお勧めします。一方、アプリが適切にアクティブ化されている場合は、既定の2D ランチャーが優先されます。 [3d ディープリンク (secondaryTile)](#3d-deep-links-secondarytiles)は、2d UWP アプリ内のコンテンツへの3d ランチャーとして作成することもできます。
 
 >[!VIDEO https://www.youtube.com/embed/TxIslHsEXno]
 
-## <a name="3d-app-launcher-creation-process"></a>3D アプリ起動ツールの作成プロセス
+## <a name="3d-app-launcher-creation-process"></a>3D アプリランチャー作成プロセス
 
-3D アプリ起動ツールを作成する 3 つの手順があります。
-1. [デザインと concepting](3d-app-launcher-design-guidance.md)
+3D アプリランチャーを作成するには、次の3つの手順を実行します。
+1. [設計と concepting](3d-app-launcher-design-guidance.md)
 2. [モデリングとエクスポート](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-3. (この記事)、アプリケーションに統合します。
+3. アプリケーションへの統合 (この記事)
 
-3D アセットを使用して、アプリケーションの起動ツールを作成する必要がありますとして使用する、[ガイドラインの authoring Windows Mixed Reality](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)互換性を確保します。 このオーサリングの仕様を満たすために失敗した資産は、ホーム Windows Mixed Reality ではレンダリングされません。
+アプリケーションのランチャーとして使用する3D アセットは、互換性を確保するために、 [Windows Mixed Reality オーサリングガイドライン](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)を使用して作成する必要があります。 このオーサリング仕様に合わなかった資産は、Windows Mixed Reality ホームではレンダリングされません。
 
-## <a name="configuring-the-3d-launcher"></a>3D の起動ツールを構成します。
+## <a name="configuring-the-3d-launcher"></a>3D ランチャーの構成
 
-Visual Studio で新しいプロジェクトを作成すると、アプリの名前とロゴを表示する単純な既定のタイルが作成されます。 この 2D を置き換えるには、カスタムの 3D モデルで表現は、"MixedRealityModel"要素を既定のタイルの定義の一部として含める、アプリケーションのアプリケーション マニフェストを編集します。 だけランチャーは 2D に戻すには、マニフェストから MixedRealityModel 定義を削除します。
+Visual Studio で新しいプロジェクトを作成すると、アプリの名前とロゴを表示する単純な既定のタイルが作成されます。 この2D 表現をカスタム3D モデルに置き換えるには、アプリケーションのアプリケーションマニフェストを編集して、既定のタイル定義の一部として "MixedRealityModel" 要素を追加します。 2D ランチャーに戻すには、マニフェストから MixedRealityModel 定義を削除するだけです。
 
 ### <a name="xml"></a>XML
 
-最初に、現在のプロジェクトで、アプリ パッケージのマニフェストを見つけます。 既定では、マニフェストの Package.appxmanifest を名前されるは。 Visual Studio を使用している場合は、ソリューション エクスプ ローラーで、マニフェストを右クリックし、選択**ソースの表示**を編集するための xml を開きます。 
+最初に、現在のプロジェクトでアプリケーションパッケージマニフェストを見つけます。 既定では、マニフェストには package.appxmanifest という名前が付けられます。 Visual Studio を使用している場合は、ソリューションビューアーでマニフェストを右クリックし、 **[ソースの表示]** を選択して編集用の xml を開きます。 
 
-マニフェストの上部にある uap5 スキーマを追加し、無視できる名前空間として含めます。
+マニフェストの先頭に、uap5 スキーマを追加し、それを ignorable 名前空間として含めます。
 
 ```xml
 <Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
@@ -50,7 +50,7 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
          xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
-次に、アプリケーションの既定のタイルに"MixedRealityModel"を指定します。
+次に、アプリケーションの既定のタイルで "MixedRealityModel" を指定します。
 
 ```xml
 <Applications>
@@ -72,17 +72,17 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 </Applications>
 ```
 
-MixedRealityModel 要素は、アプリ パッケージに格納されている 3D 資産へのファイル パスを受け入れます。 のみの 3D モデルが現在 .glb ファイル形式を使用して配信され、に対して作成される、 [Windows Mixed Reality 3D アセットの作成手順については](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)はサポートされています。 資産は、アプリ パッケージに格納する必要があり、アニメーションが現在サポートされていません。 "Path"パラメーターが空白の場合、Windows は 3D ランチャーではなく 2D スレートを表示します。 **注:** .glb 資産としてマークされる必要「コンテンツ」のビルド設定でのビルドと、アプリを実行する前にします。
+MixedRealityModel 要素は、アプリケーションパッケージに格納されている3D アセットを指すファイルパスを受け入れます。 現時点では、glb ファイル形式を使用して配信され、 [Windows Mixed Reality 3d アセットオーサリング手順](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)に対して作成された3d モデルのみがサポートされています。 アセットはアプリパッケージに保存する必要があり、アニメーションは現在サポートされていません。 "Path" パラメーターが空のままの場合、ウィンドウには3D ランチャーではなく2D スレートが表示されます。 **注:** glb 資産は、アプリをビルドして実行する前に、ビルド設定で "コンテンツ" としてマークする必要があります。
 
 
-![ソリューション エクスプ ローラーで、.glb を選択し、[プロパティ] セクションを使用して、ビルド設定で"Content"としてマーク](images/buildsetting-content-300px.png)<br>
-*ソリューション エクスプ ローラーで、.glb を選択し、[プロパティ] セクションを使用して、ビルド設定で"Content"としてマーク*
+![ソリューションエクスプローラーで. glb を選択し、[プロパティ] セクションを使用して、ビルド設定で "コンテンツ" としてマークします。](images/buildsetting-content-300px.png)<br>
+*ソリューションエクスプローラーで. glb を選択し、[プロパティ] セクションを使用して、ビルド設定で "コンテンツ" としてマークします。*
 
 ### <a name="bounding-box"></a>境界ボックス
 
-必要に応じて、オブジェクトの周囲の追加のバッファー領域を追加する、境界ボックスを使用できます。 境界ボックスは、中心点と、境界ボックスの中央から各軸に沿った端までの距離を示すエクステントを使用して指定します。 境界ボックスのユニットを 1 ユニットにマップすることができます = 1 メートルです。 境界ボックスが指定されていない場合、1 つは自動的に格納オブジェクトのメッシュに。 指定された境界ボックスは、モデルよりも小さい場合は、メッシュに合わせてに変更されます。
+境界ボックスを使用すると、必要に応じて、オブジェクトの周囲に追加のバッファー領域を追加できます。 境界ボックスは、中心点と範囲を使用して指定します。これは、境界ボックスの中心から各軸に沿った端までの距離を示します。 境界ボックスの単位は、1ユニット = 1 メーターにマップできます。 境界ボックスが指定されていない場合は、オブジェクトのメッシュに自動的に収まるようになります。 指定された境界ボックスがモデルより小さい場合、メッシュに合わせてサイズが変更されます。
 
-境界ボックスの属性のサポートが付属 RS4 の Windows 更新プログラムをプロパティとして MixedRealityModel 要素。 最初に、アプリの上部にある境界ボックスを定義するマニフェストが uap6 スキーマを追加し、そのを含める無視できない名前空間として。
+境界ボックス属性のサポートには、MixedRealityModel 要素のプロパティとして Windows RS4 update が使用されます。 最初にアプリケーションマニフェストの最上部にある境界ボックスを定義するには、uap6 スキーマを追加し、それを無視できる名前空間として含めます。
 
 ```xml
 <Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
@@ -93,7 +93,7 @@ MixedRealityModel 要素は、アプリ パッケージに格納されている 
          IgnorableNamespaces="uap uap2 uap5 uap6 mp"
          xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
-次に、MixedRealityModel 上には、境界ボックスを定義する SpatialBoundingBox プロパティを設定します。 
+次に、MixedRealityModel で、SpatialBoundingBox プロパティを設定して境界ボックスを定義します。 
 
 ```xml
         <uap:DefaultTile Wide310x150Logo="Assets\WideLogo.png" >
@@ -103,29 +103,29 @@ MixedRealityModel 要素は、アプリ パッケージに格納されている 
         </uap:DefaultTile>
 ```
 
-### <a name="using-unity"></a>Unity を使用します。
+### <a name="using-unity"></a>Unity の使用
 
-Unity を使用する場合、プロジェクトのビルドし、アプリケーション マニフェストを編集する前に、Visual Studio で開く必要があります。 
+Unity を使用する場合は、アプリケーションマニフェストを編集する前に、Visual Studio でプロジェクトをビルドして開く必要があります。 
 
 >[!NOTE]
->3D の起動ツールは、ビルド、および Unity からの新しい Visual Studio ソリューションを展開するときに、マニフェストで再定義する必要があります。
+>新しい Visual Studio ソリューションをビルドして Unity からデプロイするときに、マニフェストで3D ランチャーを再定義する必要があります。
 
-## <a name="3d-deep-links-secondarytiles"></a>3D のディープ リンク (secondaryTiles)
+## <a name="3d-deep-links-secondarytiles"></a>3D ディープリンク (secondaryTiles)
 
 > [!NOTE]
-> (VR) のイマーシブ ヘッドセットの 2017 の Fall Creators Update (RS3) の一部として、2018 年 4 月の一部として、この機能は追加された HoloLens 用の更新プログラム (RS4)。 アプリケーションが (VR) のイマーシブ ヘッドセットで 10.0.16299 以上 10.0.17125 HoloLens での Windows SDK のバージョンを対象とすることを確認します。 最新の Windows SDK を検索する[ここ](https://developer.microsoft.com/windows/downloads/windows-10-sdk)します。
+> この機能は、2017秋の RS3 (イマーシブ) のヘッドセット用に、年 4 2018 月の更新プログラム (RS4) の一部として追加されました。 アプリケーションで Windows SDK のバージョンが対象になっていることを確認します。これは、HoloLens の 10.0.16299 on イマーシブ (VR) ヘッドセットと10.0.17125 以上である必要があります。 最新の Windows SDK については、[こちら](https://developer.microsoft.com/windows/downloads/windows-10-sdk)を参照してください。
 
 >[!IMPORTANT]
->3D のディープ リンク (secondaryTiles) は、2 D の UWP アプリでのみ機能します。 ただし、作成することができます、 [3D アプリ起動ツール](implementing-3d-app-launchers.md)ホーム Windows Mixed Reality から排他のアプリを起動します。
+>3D ディープリンク (secondaryTiles) は、2D UWP アプリでのみ機能します。 ただし、Windows Mixed Reality ホームから排他的なアプリを起動するための[3d アプリランチャー](implementing-3d-app-launchers.md)を作成できます。
 
-アプリからの 3D モデルを配置する機能を追加することによって Windows Mixed Reality を 2D アプリケーションを強化できる、 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)2D アプリ内のコンテンツにディープ リンクとしてと同じように[2D セカンダリタイル](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)Windows [スタート] メニュー。 たとえば、360 ° のフォト ビューアー アプリに直接リンクまたはユーザーが作成者についての詳細ページに表示された資産のコレクションから 3D コンテンツを配置できるようにする 360 ° photospheres を作成できます。 これらは、3 D コンテンツを使用して 2D のアプリケーションの機能を拡張する、いくつかの方法です。
+Windows の [開始] の[2d セカンダリタイル](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)と同じように、アプリから[windows mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)に3d モデルを追加して、2d アプリ内のコンテンツへのディープリンクとして使用できるようにすることで、windows Mixed reality 向けに2d アプリケーションを拡張できます。メニュー. たとえば、360°フォトビューアーアプリに直接リンクする360°の球体を作成したり、ユーザーが資産のコレクションから3D コンテンツを配置して、作成者に関する詳細ページを開いたりすることができます。 3D コンテンツを使用して2D アプリケーションの機能を拡張するには、次の2つの方法があります。
 
-### <a name="creating-a-3d-secondarytile"></a>3D"secondaryTile"を作成します。
+### <a name="creating-a-3d-secondarytile"></a>3D "secondaryTile" の作成
 
-作成時に、複合現実のモデルを定義することで"secondaryTiles"を使用して、アプリケーションからは、3 D コンテンツを配置できます。 複合現実のモデルは、アプリ パッケージ内の 3D アセットを参照して、必要に応じて境界ボックスを定義して作成されます。 
+作成時に mixed reality モデルを定義することで、"secondaryTiles" を使用してアプリケーションの3D コンテンツを配置できます。 混合現実モデルは、アプリケーションパッケージ内の3D アセットを参照し、必要に応じて境界ボックスを定義することによって作成されます。 
 
 > [!NOTE]
-> 排他のビュー内からの"secondaryTiles"の作成は現在サポートされていません。
+> 排他ビュー内から "secondaryTiles" を作成することは現在サポートされていません。
 
 ```cs
 using Windows.UI.StartScreen;
@@ -157,20 +157,20 @@ await tile.RequestCreateAsync();
 
 ### <a name="bounding-box"></a>境界ボックス
 
-オブジェクトの周囲、追加のバッファー領域を追加するのには、境界ボックスを使用できます。 境界ボックスは、中心点と、境界ボックスの中央から各軸に沿った端までの距離を示すエクステントを使用して指定します。 境界ボックスのユニットを 1 ユニットにマップすることができます = 1 メートルです。 境界ボックスが指定されていない場合、1 つは自動的に格納オブジェクトのメッシュに。 指定された境界ボックスは、モデルよりも小さい場合は、メッシュに合わせてに変更されます。
+境界ボックスを使用すると、オブジェクトの周囲に追加のバッファー領域を追加できます。 境界ボックスは、中心点と範囲を使用して指定します。これは、境界ボックスの中心から各軸に沿った端までの距離を示します。 境界ボックスの単位は、1ユニット = 1 メーターにマップできます。 境界ボックスが指定されていない場合は、オブジェクトのメッシュに自動的に収まるようになります。 指定された境界ボックスがモデルより小さい場合、メッシュに合わせてサイズが変更されます。
 
-### <a name="activation-behavior"></a>アクティブ化の動作
+### <a name="activation-behavior"></a>アクティベーションの動作
 
 > [!NOTE]
-> この機能はサポートされている Windows RS4 更新の時点でします。 この機能を使用する場合、アプリケーションは 10.0.17125 以上の Windows SDK のバージョンを対象とするかどうかを確認します。
+> この機能は、Windows RS4 update でサポートされる予定です。 この機能を使用する予定がある場合は Windows SDK、アプリケーションが10.0.17125 以上のバージョンを対象としていることを確認してください。
 
-ユーザーに選択するときの反応を制御する 3D secondaryTile のアクティブ化の動作を定義できます。 これは、複合現実でホーム purley 有益または装飾用である 3D オブジェクトを配置に使用できます。 次のライセンス認証の動作の種類がサポートされています。
-1. 既定:アプリがアクティブにユーザーが 3D の secondaryTile を選択
-2. None:ユーザーが何も起こりません 3D secondaryTile とアプリを選択すると、アクティブ化されません。
+3D secondaryTile のアクティベーション動作を定義して、ユーザーがそれを選択したときの反応を制御できます。 これを使用すると、purley や装飾を持つ混合現実ホームに3D オブジェクトを配置できます。 次のアクティブ化動作の種類がサポートされています。
+1. 既定値:ユーザーが 3D secondaryTile を選択すると、アプリがアクティブ化されます。
+2. None:ユーザーが 3D secondaryTile を選択すると、何も発生せず、アプリはアクティブ化されません。
 
-### <a name="obtaining-and-updating-an-existing-secondarytile"></a>取得して、既存の"secondaryTile"を更新しています
+### <a name="obtaining-and-updating-an-existing-secondarytile"></a>既存の "secondaryTile" の取得と更新
 
-開発者は、バックアップ以前に指定するプロパティが含まれる、既存のセカンダリ タイルの一覧を取得できます。 値を変更して、UpdateAsync() を呼び出すことによって、プロパティを更新することもできます。
+開発者は、既存のセカンダリタイルの一覧を取得できます。これには、前に指定したプロパティが含まれます。 また、値を変更し、UpdateAsync () を呼び出すことによって、プロパティを更新することもできます。
 
 ```cs
 // Grab the existing secondary tile
@@ -189,23 +189,23 @@ if (!tile.VisualElements.MixedRealityModel.Uri.Equals(updatedUri))
 }
 ```
 
-### <a name="checking-that-the-user-is-in-windows-mixed-reality"></a>ユーザーが、Windows Mixed Reality をチェックします。
+### <a name="checking-that-the-user-is-in-windows-mixed-reality"></a>ユーザーが Windows Mixed Reality であることを確認しています
 
-3D のディープ リンク (secondaryTiles) は、ビューは、Windows Mixed Reality ヘッドセットで表示されているときにのみ作成できます。 Windows Mixed Reality ヘッドセットされていないビューに表示されている場合は、エントリ ポイントを非表示か、エラー メッセージを表示してこれを適切に処理をお勧めします。 これを確認するにはクエリを実行して[IsCurrentViewPresentedOnHolographic()](https://docs.microsoft.com/uwp/api/windows.applicationmodel.preview.holographic.holographicapplicationpreview#Windows_ApplicationModel_Preview_Holographic_HolographicApplicationPreview_IsCurrentViewPresentedOnHolographicDisplay_)します。
+3D ディープリンク (secondaryTiles) は、ビューが Windows Mixed Reality ヘッドセットに表示されている場合にのみ作成できます。 Windows Mixed Reality ヘッドセットにビューが表示されない場合は、エントリポイントを非表示にするか、エラーメッセージを表示することで、これを適切に処理することをお勧めします。 これを確認するには、 [IsCurrentViewPresentedOnHolographic ()](https://docs.microsoft.com/uwp/api/windows.applicationmodel.preview.holographic.holographicapplicationpreview#Windows_ApplicationModel_Preview_Holographic_HolographicApplicationPreview_IsCurrentViewPresentedOnHolographicDisplay_)に対してクエリを実行します。
 
 ## <a name="tile-notifications"></a>タイル通知
 
-現在、タイル通知が 3D アセットの更新を送信するサポートしていません。 つまり、開発者は、以下を実行できません。
+タイルの通知では、3D アセットを使用した更新の送信は現在サポートされていません。 これは、開発者が次のことを行うことができないことを意味します。
 * プッシュ通知
 * 定期的なポーリング
 * スケジュールされた通知
 
-詳細については、他のタイルの機能と、属性とその 2D のタイルの使用方法を参照してください。、[ドキュメントについては UWP アプリのタイル](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)します。
+その他のタイルの特徴と属性、およびそれらを2D タイルに使用する方法の詳細については、 [UWP アプリのドキュメントのタイル](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 
-* [複合現実モデル サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MixedRealityModel)3D アプリ ランチャーを格納しています。
+* 3D アプリランチャーを含む[Mixed reality モデルサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MixedRealityModel)。
 * [3D アプリ起動ツールの設計ガイダンス](3d-app-launcher-design-guidance.md)
-* [Windows Mixed Reality 自宅で使用するための 3D モデルを作成します。](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-* [3D アプリ ランチャー (Win32 アプリ) を実装します。](implementing-3d-app-launchers-win32.md)
-* [Windows Mixed Reality ホームに移動します。](navigating-the-windows-mixed-reality-home.md)
+* [Windows Mixed Reality ホームで使用するための3D モデルの作成](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+* [3D アプリランチャーの実装 (Win32 アプリ)](implementing-3d-app-launchers-win32.md)
+* [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)

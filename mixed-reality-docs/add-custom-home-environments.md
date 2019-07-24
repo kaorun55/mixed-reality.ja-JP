@@ -1,11 +1,11 @@
 ---
-title: カスタムのホーム環境を追加します。
-description: 提供 Windows Mixed Reality ホーム環境、だけでなく、作成と使用、独自に実験できます。
+title: カスタムホーム環境の追加
+description: 提供する Windows Mixed Reality ホーム環境に加えて、独自のを作成して使用することもできます。
 author: thmignon
 ms.author: thmignon
 ms.date: 04/30/2018
 ms.topic: article
-keywords: Windows Mixed Reality、Mixed Reality、仮想現実、VR、MR、ホーム、カスタム環境、場所、cliff 家、skyloft、ユーザーの作成
+keywords: Windows Mixed Reality、Mixed Reality、Virtual Reality、VR、MR、Home、Custom Environment、地名、崖ハウス、skyloft、user、create
 ms.openlocfilehash: d0cdb878f1994cb5f898f06b98d74dee3dd4fdf1
 ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
 ms.translationtype: MT
@@ -13,14 +13,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2019
 ms.locfileid: "67024534"
 ---
-# <a name="add-custom-home-environments"></a>カスタムのホーム環境を追加します。
+# <a name="add-custom-home-environments"></a>カスタムホーム環境の追加
 
 >[!NOTE]
->これは、試験的な機能です。 試してみてくださいと、楽しみが想定どおりすべて非常にうまくいかない場合も驚かないでください。 この機能とこれを使用して、関心の有効性を評価してについてお聞かせくださいエクスペリエンス (および見つかったバグ) で、[デベロッパー フォーラム](https://forums.hololens.com/categories/custom-home-environments)します。
+>これは試験的な機能です。 試してみてください。しかし、すべてが期待どおりに動作しない場合、驚かれることはありません。 この機能の有効性を評価し、それを使用することに関心があるので、[開発者フォーラム](https://forums.hololens.com/categories/custom-home-environments)で、経験 (および発見したバグ) についてご意見をお聞かせください。
 
-以降では、 [Windows 10 April 2018 update](#release-notes-april-2018.md)、として使用するカスタム環境を ([スタート] メニューの) 場所の選択に追加することができます、試験的な機能を有効にしたこと、 [Windows Mixed Reality ホーム](#navigating-the-windows-mixed-reality-home.md). Windows Mixed Reality は、2 つの既定の環境、Cliff 家と Skyloft、自宅として選択することができます。 カスタム環境を作成すると、独自の作成とその一覧を展開できます。 弊社が使用できるようにこの初期状態の作成者と開発者が関心を評価し、世界の種類を作成、およびさまざまなオーサリング ツールを操作する方法を理解するを参照してください。
+[Windows 10 April 2018 update](#release-notes-april-2018.md)以降では、 [windows Mixed Reality ホーム](#navigating-the-windows-mixed-reality-home.md)として使用するカスタム環境を [スタート] メニューの [場所] ピッカーに追加できる実験的な機能が有効になりました。 Windows Mixed Reality には、2つの既定の環境 (崖家と Skyloft) があり、これをホームとして選択することができます。 カスタム環境を作成すると、独自の作成でそのリストを拡張できます。 これを早期の状態で使用できるようにして、作成者と開発者の関心を評価し、作成した世界の種類を確認し、さまざまな作成ツールの使用方法を理解します。
 
-その teleporting わかりますカスタム環境を使用する場合、アプリと対話して、ホログラムを配置することは、Cliff 家と Skyloft で同様は機能します。 ファンタジー ランドス ケープで web を参照するかと同じ市を塗りつぶすホログラム -、可能性は無限大です!
+カスタム環境を使用すると、Skyloft が崖家やの場合と同じように、テレ移植、アプリとの対話、およびホログラムの配置が行われます。 Web を fantasy ランドスケープで閲覧したり、ホログラムを使用して futuristic の都市を埋めることができます。可能性は無限です。
 
 ## <a name="device-support"></a>デバイスのサポート
 
@@ -36,70 +36,70 @@ ms.locfileid: "67024534"
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
      <tr>
-        <td>カスタムのホーム環境</td>
+        <td>カスタムホーム環境</td>
         <td>❌</td>
         <td>✔️</td>
     </tr>
 </table>
 
-## <a name="trying-a-sample-environment"></a>サンプル環境をしようとしてください。
+## <a name="trying-a-sample-environment"></a>サンプル環境を試す
 
-カスタム ホーム環境の創造的な可能性のいくつかを示すサンプル環境を作成しました。 試してみるにこれらの手順に従います。
-1. [このサンプルのファンタジー島環境をダウンロード](https://download.microsoft.com/download/B/2/5/B25C1AEF-40CD-4B03-A596-4BCA3D33035A/Fantasy_Island.exe)(自己解凍実行可能ファイルにリンクがポイント)。
+カスタムホーム環境の独創的な可能性を示すサンプル環境を作成しました。 次の手順に従って試してみてください。
+1. [サンプル Fantasy アイランド環境のダウンロード](https://download.microsoft.com/download/B/2/5/B25C1AEF-40CD-4B03-A596-4BCA3D33035A/Fantasy_Island.exe)(自己解凍形式の実行可能ファイルへのリンクポイント)。
 
-    ![Fantasy 島サンプル環境](images/FantasyLand.jpg)<br>
-    *Fantasy 島サンプル環境*<br>
+    ![Fantasy 島のサンプル環境](images/FantasyLand.jpg)<br>
+    *Fantasy 島のサンプル環境*<br>
 
-2. 実行、 **Fantasy_Island.exe**ダウンロードしたファイル。
+2. ダウンロードした**Fantasy_Island**ファイルを実行します。
 
     > [!NOTE]
-    > (次のような) web からダウンロードされると .exe ファイルを実行しようとすると、「Windows は、お使いの PC を保護」のポップアップが発生する可能性があります。 このポップアップから Fantasy_Island.exe を実行する選択**詳細については**し**実行**します。 これを信頼したくないファイルのダウンロードを防ぐためにこのセキュリティ設定は、ファイルのソースを信頼するときに、のみこのオプションを選択してください。
+    > Web からダウンロードした .exe ファイルを実行しようとすると (この例のように)、"Windows で保護されている PC" ポップアップが表示されることがあります。 このポップアップから Fantasy_Island を実行するには、 **[詳細情報]** を選択し、 **[実行]** をクリックします。 このセキュリティ設定は、信頼しないファイルのダウンロードを防止するためのものであるため、ファイルのソースを信頼する場合にのみ、このオプションを選択してください。
 
-3. 開いている**ファイル エクスプ ローラー** 、アドレス バーで、次を貼り付けることによって、環境フォルダーに移動します:`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`します。
-4. このフォルダーにダウンロードしたサンプル環境をコピーします。
-5. 再起動**現実ポータルを混合**します。 これにより、場所の選択で環境の一覧が更新されます。
-6. ヘッドセットに配置します。 自宅であなたを開く、 **[スタート] メニュー**コント ローラーの Windows を使用してボタンをクリックします。
-7. 選択、**場所**ホーム環境を選択してピン留めされたアプリの一覧の上のアイコン。
-8. 場所の一覧でダウンロードしたファンタジー島環境が表示されます。 選択**ファンタジー島**新しいカスタム ホーム環境を入力します。
+3. **ファイルエクスプローラー**を開き、アドレスバーに次のよう`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`に貼り付けて、[環境] フォルダーに移動します。
+4. ダウンロードしたサンプル環境をこのフォルダーにコピーします。
+5. **Mixed Reality ポータル**を再起動します。 これにより、[場所の選択] の環境の一覧が更新されます。
+6. ヘッドセットに配置します。 自宅にいる場合は、コントローラーで [Windows] ボタンを使用して [**スタート] メニュー**を開きます。
+7. ピン留めされたアプリの一覧の上にある **[場所]** アイコンを選択して、ホーム環境を選択します。
+8. ダウンロードした Fantasy アイランド環境が、場所の一覧に表示されます。 **[Fantasy 島]** を選択して、新しいカスタムホーム環境に入ります。
 
-## <a name="creating-your-own-custom-environment"></a>独自のカスタム環境を作成します。
+## <a name="creating-your-own-custom-environment"></a>独自のカスタム環境を作成する
 
-に加えて、サンプル環境を使用して、ソフトウェアの編集、お気に入りの 3D を使用して、独自のカスタム環境をエクスポートできます。 
+このサンプル環境を使用するだけでなく、お好きな3D 編集ソフトウェアを使用して、独自のカスタム環境をエクスポートすることもできます。 
 
-### <a name="modeling-guidelines"></a>モデリングのガイドライン
+### <a name="modeling-guidelines"></a>モデリングガイドライン
 
-お客様の環境をモデル化する場合は、次の推奨事項に注意してください。 ユーザーを産み落とす believably 規模の世界で正しい向きにすることができます。
+環境をモデリングする場合は、次の推奨事項を考慮してください。 これにより、ユーザーが believably サイズの世界で正しい向きで生成されるようになります。
 
-1. ユーザーは、原点の周囲の生成に必要な場所に 0,0,0 は center で生成されます。
-2. 世界規模で資産を作成できるように、メーター作業単位を設定してください。
-3. アップ軸は、"Y"に設定する必要があります。
-4. 資産は、正の Z 軸方向に"forward"に直面する必要があります。
-5. すべてのメッシュは、結合する必要はありませんが、リソースが限られたデバイスを対象としている場合をお勧めします。
+1. ユーザーは 0, 0, 0 で起動します。これにより、元の場所を中心にして目的の場所を作成できます。
+2. 資産を世界規模で作成できるように、作業単位をメーターに設定する必要があります。
+3. 上の軸を "Y" に設定する必要があります。
+4. 資産は正の Z 軸に "進む" ようになります。
+5. すべてのメッシュを結合する必要はありませんが、リソースを制限するデバイスを対象とする場合にお勧めします。
 
-### <a name="exporting-your-environment"></a>お客様の環境をエクスポートします。
+### <a name="exporting-your-environment"></a>環境のエクスポート
 
-Windows Mixed Reality は、環境の資産の配信形式としてバイナリ glTF (.glb) に依存します。 glTF は、使用料無料のオープン標準の 3D アセットの配信 Khronos グループによって管理されます。 Windows アプリおよびエクスペリエンスの間での形式については、マイクロソフトのサポートはため glTF の進化に伴って相互運用可能な 3D コンテンツの業界標準として、します。
+Windows Mixed Reality は、環境の資産配信形式としてバイナリ glTF (. glb) に依存しています。 glTF は、Khronos グループによって維持される、3D 資産配信用のロイヤリティフリーオープンスタンダードです。 GlTF は相互運用可能な3D コンテンツの業界標準として進化しているため、Microsoft は Windows アプリとエクスペリエンス全体の形式をサポートしています。
 
-カスタムのホーム環境として使用するアセットをエクスポートする最初の手順は、glTF 2.0 モデルを生成しています。 GlTF ワーキング グループの管理、[サポートされているエクスポーターとコンバーターの一覧](https://github.com/KhronosGroup/glTF/blob/master/README.md#converters-and-exporters)glTF 2.0 モデルを作成します。 最初に、このページに記載されているプログラムのいずれかを使用して作成し、glTF 2.0 モデルをエクスポートまたはサポートされているコンバーターのいずれかを使用して既存のモデルに変換します。
+カスタムホーム環境として使用するアセットをエクスポートする最初の手順として、glTF 2.0 モデルが生成されます。 GlTF 作業グループは、[サポートされているエクスポーターとコンバーターの一覧](https://github.com/KhronosGroup/glTF/blob/master/README.md#converters-and-exporters)を保持し、gltf 2.0 モデルを作成します。 開始するには、このページに記載されているいずれかのプログラムを使用して、glTF 2.0 モデルを作成してエクスポートするか、サポートされているいずれかのコンバーターを使用して既存のモデルを変換します。
 
-さらに、チェック アウト[この便利な記事](https://www.khronos.org/blog/art-pipeline-for-gltf)Blender や 3 ds から glTF モデルをエクスポートするため、アート ワークフローの概要を説明する直接 Max です。 
+また、Blender と 3DS Max から直接、glTF モデルをエクスポートするための最先端のワークフローの概要については、こちらの[役に立つ記事](https://www.khronos.org/blog/art-pipeline-for-gltf)をご覧ください。 
 
 ### <a name="environment-limits"></a>環境の制限
 
-すべての環境は、< 256 mb である必要があります。 256 mb を超える環境は、ユーザーを囲む既定スカイ ボックスだけで、空の世界にフォールバックを読み込みは失敗します。 ください、モデルを作成するときに、このファイルのサイズ制限に注意してください。 さらに、以下に示すように、WindowsMRAssetConverter を使用して環境を最適化する場合は、できなければ、オプティマイザー、大きなファイルサイズが読み込みも高速のテクスチャが作成されると、テクスチャのサイズが増加します。 
+すべての環境は 256 mbs < なければなりません。 256 mbs を超える環境では、ユーザーを囲む既定のスカイボックスのみを使用して、空の世界への読み込みとフォールバックが失敗します。 モデルの作成時には、このファイルサイズの制限に留意してください。 さらに、以下で説明するように WindowsMRAssetConverter を使用して環境を最適化する場合は、ファイルサイズが大きく、読み込みが高速になるテクスチャを作成するときにテクスチャサイズが増加することを cognizant してください。 
 
-### <a name="optimizing-your-environment"></a>お客様の環境を最適化します。
+### <a name="optimizing-your-environment"></a>環境の最適化
 
-Windows Mixed Reality は、いくつかの環境の読み込み時間が大幅に低下する省略可能な最適化をサポートします。 これは、読み込み中にタイムアウトになる場合がありますが、多くのテクスチャでは、使用環境にとって特に重要です。 一般に、すべての資産に対してこの手順をお勧め、ただし、いくつか、または低解像度のテクスチャで小規模な環境常に必要としないことです。 
+Windows Mixed Reality では、環境の読み込み時間を大幅に短縮する、いくつかのオプションの最適化がサポートされています。 これは、多くのテクスチャを持つ環境では特に重要です。読み込み中にタイムアウトすることがあります。 一般に、すべての資産に対してこの手順をお勧めします。ただし、少数または低解像度のテクスチャを使用する小規模な環境では、常に必要になるとは限りません。 
 
-このプロセスを簡単に作成しました、 [Windows Mixed Reality 資産コンバーター (GitHub で入手できます)](https://github.com/Microsoft/glTF-Toolkit/releases)最適化を実行します。 このツールは、追加のテクスチャのパッキング、圧縮および解像度のスケールを実行することによって、標準の 2.0 glTF や .glb を最適化するために、Microsoft glTF toolkit で使用可能なユーティリティのセットを使用します。 
+このプロセスを簡単にするために、 [Windows Mixed Reality 資産コンバーター (GitHub で入手できます)](https://github.com/Microsoft/glTF-Toolkit/releases)を作成し、最適化を実行しました。 このツールでは、Microsoft glTF toolkit で利用できる一連のユーティリティを使用して、追加のテクスチャパッキング、圧縮、および解像度のスケールダウンを実行することで、標準の 2.0 glTF または glb を最適化します。 
 
-コンバーターには、さまざまな最適化の正確な動作を調整するためのフラグがサポートされています。 最良の結果を次のフラグ付きの実行をお勧めします。
+現在、コンバーターでは、最適化の正確な動作を調整するための多数のフラグがサポートされています。 最良の結果を得るには、次のフラグを使用してを実行することをお勧めします。
 
-Flag|推奨値|説明
+フラグ|推奨値|説明
 ---|---|---
--max-texture-size|1024 または 2048| このテクスチャの品質を向上させるために調整、既定値は 512 x 512 します。 大きい値は、環境のファイル サイズに影響が大幅にことに注意してください。 保管しておいて、256 mb の制限に注意してください。
-最小バージョン|1803|カスタム環境は windows のバージョンでのみサポートされます > 1803 を = です。 このフラグは以前のバージョンのテクスチャを削除して、最終的な資産のファイル サイズを縮小
+-max-テクスチャ-サイズ|1024または2048| テクスチャの品質を向上させるためにこれを微調整します。既定値は512x512 です。 大きな値を指定すると、環境のファイルサイズに大きく影響するため、256 mb の制限を考慮してください。
+-最小バージョン|1803|カスタム環境は、windows > = 1803 のバージョンでのみサポートされています。 このフラグは、古いバージョンのテクスチャを削除し、最終的な資産のファイルサイズを縮小します
 
 例:
 
@@ -107,48 +107,48 @@ Flag|推奨値|説明
 WindowsMRAssetConverter FileToConvert.gltf -max-texture-size 1024 -min-version 1803
 ```
 
-### <a name="testing-your-environment"></a>環境をテストします。
+### <a name="testing-your-environment"></a>環境のテスト
 
-最終的な .glb 環境を作成したら、ヘッドセットでテストを実行する準備ができました。 手順 2. で始まり、 [「サンプル環境をしようとした」](#trying-a-sample-environment)ホーム複合現実として、カスタム環境を使用するセクション。 
+Glb 環境が完成したら、ヘッドセットでテストする準備が整います。 カスタム環境を mixed reality ホームとして使用する場合は、 [「サンプル環境を試す」](#trying-a-sample-environment)セクションの手順2から開始します。 
 
-## <a name="feedback"></a>Feedback
+## <a name="feedback"></a>フィードバック
 
-この実験的な機能を評価して、私たちは、バグが発生する可能性のカスタム環境を使用している方法に興味を持つと、機能方法を指定してください。 作成すると、カスタム ホーム環境を使用して、あらゆるフィードバックを共有してください、[デベロッパー フォーラム](https://forums.hololens.com/categories/custom-home-environments)します。
+この試験的な機能を評価していますが、ここでは、カスタム環境の使用方法、発生する可能性があるすべてのバグ、および機能の好みについて説明します。 [開発者フォーラム](https://forums.hololens.com/categories/custom-home-environments)でカスタムホーム環境を作成および使用するためのすべてのフィードバックを共有してください。
 
 ## <a name="troubleshooting-and-tips"></a>トラブルシューティングとヒント
 
-### <a name="how-do-i-change-the-name-of-the-environment"></a>環境の名前を変更する方法はありますか
+### <a name="how-do-i-change-the-name-of-the-environment"></a>環境の名前を変更操作方法には
 
-[環境] フォルダー内のファイル名は、場所の選択に適用されます。 環境の名前を変更するには、は、単に名前変更、環境は、ファイル名をし、し、Mixed Reality ポータルを再起動します。
+[環境] フォルダー内のファイル名は、[場所の選択] で使用されます。 環境の名前を変更するには、環境のファイル名の名前を変更し、Mixed Reality ポータルを再起動します。
 
-### <a name="how-do-i-remove-custom-environments-from-my-places-picker"></a>マイ プレース ピッカーからのカスタム環境を削除する方法
+### <a name="how-do-i-remove-custom-environments-from-my-places-picker"></a>マイプレースピッカーからカスタム環境を削除操作方法には
 
-カスタム環境を削除するには、お使いの PC 上のフォルダーに環境を開きます (`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`) し、環境を削除します。 Mixed Reality ポータルを再起動するとこの環境は不要になった場所ピッカーに表示されます。 
+カスタム環境を削除するには、PC (`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`) の環境フォルダーを開き、環境を削除します。 Mixed Reality ポータルを再起動すると、この環境は [場所の選択] に表示されなくなります。 
 
-### <a name="how-do-i-default-to-my-favorite-custom-environment"></a>私のお気に入りのカスタム環境を既定する方法は?
+### <a name="how-do-i-default-to-my-favorite-custom-environment"></a>お気に入りのカスタム環境に既定操作方法しますか?
 
-現在、既定の環境を変更することはできません。 混合の現実ポータルを再起動するたびに Cliff 家環境に返されるされます。 
+現在、既定の環境を変更することはできません。 Mixed Reality ポータルを再起動するたびに、崖ハウス環境に戻ります。 
 
-### <a name="i-spawn-into-a-blank-space"></a>空白の領域に生成します。
+### <a name="i-spawn-into-a-blank-space"></a>空のスペースを生成する
 
-Windows Mixed Reality [256 mb を超える環境をサポートしていない](#environment-limits)します。 環境では、この制限を超えているときに、モデルのない空のスカイ ボックスに表示されます。
+Windows Mixed Reality[では、256 mb を超える環境はサポートされていません](#environment-limits)。 環境がこの制限を超えると、モデルのない空のスカイボックスが表示されます。
 
-### <a name="it-takes-a-long-time-to-load-my-environment"></a>自分の環境を読み込みに長い時間がかかる
+### <a name="it-takes-a-long-time-to-load-my-environment"></a>環境の読み込みに時間がかかる
 
-省略可能な最適化は、読み込みも高速にする環境に追加できます。 参照してください[「環境の最適化」](#optimizing-your-environment)詳細についてはします。
+環境にオプションの最適化を追加して、読み込みを高速化することができます。 詳細については[、「環境の最適化」](#optimizing-your-environment)を参照してください。
 
-### <a name="the-scale-of-my-environment-is-incorrect"></a>自分の環境内の小数点以下桁数が正しくありません。
+### <a name="the-scale-of-my-environment-is-incorrect"></a>環境のスケールが正しくありません
 
-Windows Mixed Reality 環境の読み込み時に 1 メートルに glTF 単位の平行移動します。 環境内で、予期しないスケールを再確認することを確認する、エクスポーターが読み込まれる場合は、1 m 規模でモデル化をでしょう。 
+Windows Mixed Reality は、環境の読み込み時に glTF units を1メートルに変換します。 環境で予期しないスケールが読み込まれる場合は、エクスポーターを再確認して、1メートルのスケールでモデル化されていることを確認します。 
 
-### <a name="the-spawn-location-in-my-environment-is-incorrect"></a>私の環境での生成場所が正しくありません。
+### <a name="the-spawn-location-in-my-environment-is-incorrect"></a>環境内の生成場所が正しくありません
 
-既定の生成場所は、環境で 0,0,0 にあります。 その現在できない配信元の生成に必要なポイントに配置されると、環境をエクスポートすることによって、起動ポイントを変更する必要がありますので、この場所をカスタマイズします。
+既定の生成場所は、環境内の0、0、0にあります。 現在、この場所をカスタマイズすることはできません。そのため、必要な生成ポイントに配置された元の環境をエクスポートして、生成ポイントを変更する必要があります。
 
-### <a name="the-audio-doesnt-sound-correct-in-the-environment"></a>環境内の適切なオーディオとは言えません
+### <a name="the-audio-doesnt-sound-correct-in-the-environment"></a>環境内のオーディオが正しく聞こえない
 
-カスタム環境を作成するときに作成した物理領域に一致しない音響学のレンダリング シミュレーション使用します。 サウンドが間違った方向から取得したものし、思われるかもしれませんがこもった感じです。 
+カスタム環境を作成すると、作成した物理空間に一致しない acoustics レンダリングシミュレーションが使用されます。 サウンドが間違った方向にある可能性があり、muffled が聞こえる可能性があります。 
 
 ## <a name="see-also"></a>関連項目
-* [Windows (GitHub 上) 資産コンバーターを現実の混在](https://github.com/Microsoft/glTF-Toolkit/releases)
+* [Windows Mixed Reality 資産コンバーター (GitHub)](https://github.com/Microsoft/glTF-Toolkit/releases)
 

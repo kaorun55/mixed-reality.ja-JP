@@ -1,11 +1,11 @@
 ---
-title: MR と Azure 313 - IoT Hub サービス
-description: Ubuntu 16.4 を実行する仮想マシンを Azure IoT Hub サービスを実装する方法については、このコースを完了し、Microsoft HoloLens または没入型の (VR) ヘッドセットを使用してメッセージ データを視覚化します。
+title: MR と Azure 313-IoT Hub サービス
+description: このコースでは、Ubuntu 16.4 を実行している仮想マシンに Azure IoT Hub サービスを実装し、Microsoft HoloLens またはイマーシブ (VR) ヘッドセットを使用してメッセージデータを視覚化する方法について説明します。
 author: drneil
 ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
-keywords: azure、mixed reality、academy、edge、iot edge、チュートリアル、api、通知、関数、テーブル、没入型、hololens、vr、iot、仮想マシン、ubuntu、python
+keywords: azure, mixed reality, academy, エッジ, iot edge, チュートリアル, api, 通知, 関数, テーブル, hololens, イマーシブ, vr, iot, 仮想マシン, ubuntu, python
 ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
 ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
@@ -14,278 +14,278 @@ ms.lasthandoff: 07/09/2019
 ms.locfileid: "67694599"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
 # <a name="mr-and-azure-313-iot-hub-service"></a>MR と Azure 313:IoT Hub サービス
 
 ![コースの結果](images/AzureLabs-Lab313-00.png)
 
-このコースでは、実装する方法について説明します、 **Azure IoT Hub Service**仮想マシン上には、Ubuntu 16.4 オペレーティング システムを実行します。 **Azure Function App** 、Ubuntu VM から送信されるメッセージを使用して、内で結果を格納する**Azure Table Service**します。 使用してこのデータを表示できるが、 **Power BI** Microsoft HoloLens または没入型の (VR) ヘッドセット。
+このコースでは、Ubuntu 16.4 オペレーティングシステムを実行している仮想マシンに**Azure IoT Hub サービス**を実装する方法について説明します。 **Azure Function App**は、Ubuntu VM からメッセージを受信するために使用され、その結果を**azure Table Service**内に格納します。 その後、Microsoft HoloLens またはイマーシブ (VR) ヘッドセットの**Power BI**を使用して、このデータを表示できるようになります。
 
-このコースの内容*適用*IoT Edge デバイスにこのコースでは、目的が、フォーカスがあり、仮想マシン環境でされる物理的なエッジ デバイスへのアクセスが必要ではありません。
+このコースの内容は IoT Edge デバイスに*適用されますが*、このコースでは、物理エッジデバイスへのアクセスを必要としないように、仮想マシン環境に焦点が当てはまります。
 
-このコースを完了するを学習します。
+このコースを完了すると、次のことを学習できます。
 
-- デプロイを**IoT Edge モジュール**IoT デバイスを表す仮想マシン (Ubuntu 16 OS) にします。
-- 追加、 **Azure Custom Vision Tensorflow モデル**エッジ モジュールには、コンテナーに格納されているイメージを分析するコードにします。
-- 分析結果のメッセージを送信する、モジュールの設定に戻す、 **IoT Hub Service**します。
-- 使用して、 **Azure Function App**内でメッセージを格納する、 **Azure Table**します。
-- 設定する**Power BI**を格納されたメッセージを収集してレポートを作成します。
-- 内で IoT メッセージ データを視覚化する**Power BI**します。
+- **IoT Edge モジュール**を仮想マシン (UBUNTU 16 OS) にデプロイします。これは、IoT デバイスを表します。
+- コンテナーに格納されているイメージを分析するコードを使用して、 **Azure Custom Vision の Azure Azure の "Azure" Azure** "のモデルを Edge モジュールに追加します。
+- 分析結果メッセージを**IoT Hub サービス**に返すようにモジュールを設定します。
+- Azure **Function App**を使用して、 **azure テーブル**内にメッセージを格納します。
+- 保存されたメッセージを収集してレポートを作成するように**Power BI**を設定します。
+- **Power BI**内で IoT メッセージデータを視覚化します。
 
-使用するサービスは次のとおりです。
+使用するサービスには次のものがあります。
 
-- **Azure IoT Hub**により、接続、監視、および IoT 資産の管理、開発者が Microsoft Azure サービスです。 詳細については、次を参照してください。、 [ **Azure IoT Hub Service**ページ](https://azure.microsoft.com/en-au/services/iot-hub/)します。
+- **Azure IoT Hub**は、開発者が IoT 資産の接続、監視、管理を行うことができるようにする Microsoft Azure サービスです。 詳細については、 [ **Azure IoT Hub サービス**](https://azure.microsoft.com/en-au/services/iot-hub/)に関するページを参照してください。
 
-- **Azure Container Registry**は、開発者がさまざまな種類のコンテナーのコンテナー イメージを格納する Microsoft Azure サービスです。 詳細については、次を参照してください。、 [ **Azure コンテナー レジストリ サービス**ページ](https://azure.microsoft.com/en-au/services/container-registry/)します。
+- **Azure Container Registry**は、さまざまな種類のコンテナーについて、開発者がコンテナーイメージを格納できるようにする、Microsoft Azure サービスです。 詳細については、 [ **Azure Container Registry サービス**](https://azure.microsoft.com/en-au/services/container-registry/)に関するページを参照してください。
 
-- **Azure Function App**開発者が小規模なコードを実行する、Microsoft Azure のサービス '関数'、Azure では、します。 これは、多くのメリットを持つことができる、ローカル アプリケーションではなく、クラウドに作業を委任する方法を提供します。 **Azure Functions** C をなど、複数の開発言語をサポートしている\#、F\#Node.js、Java、および PHP します。 詳細については、次を参照してください。、 [ **Azure Functions**ページ](https://docs.microsoft.com/azure/azure-functions/functions-overview)します。
+- **Azure Function App**は Microsoft Azure サービスであり、開発者は azure で小さなコードである "functions" を実行できます。 これにより、ローカルアプリケーションではなく、クラウドに作業を委任することができます。これには多くのメリットがあります。 **Azure Functions**は、C\#、F\#、node.js、Java、PHP など、いくつかの開発言語をサポートしています。 詳細については、 [ **Azure Functions**のページ](https://docs.microsoft.com/azure/azure-functions/functions-overview)を参照してください。
 
-- **Azure Storage:テーブル**Microsoft Azure サービスで、開発者が格納する構造化、非 SQL、データ、クラウドで任意の場所で簡単にアクセスできるようにします。 サービスは、スキーマなしの設計は幅広いプラットフォーム、必要に応じて、テーブルの進化のことができます、非常に柔軟なは。 詳細については、次を参照してください、 [ **Azure Tables**ページ。](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
+- **Azure Storage:テーブル**は、開発者が構造化された SQL 以外のデータをクラウドに格納し、どこからでも簡単にアクセスできるようにする Microsoft Azure サービスです。 このサービスでは、スキーマのない設計が非常に優れているため、必要に応じてテーブルを進化させることができるため、非常に柔軟性があります。 詳細については、 [ **Azure のテーブル**に関するページを参照してください。](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
 
-このコースでは、セットアップし、IoT Hub サービスを使用し、デバイスによって提供される応答を視覚化する方法を説明します。 までにビルドしている場合カスタムの IoT Hub サービス設定でこれらの概念を適用することがあります。
+このコースでは、IoT Hub サービスを設定して使用する方法と、デバイスによって提供される応答を視覚化する方法について説明します。 これらの概念は、作成するカスタム IoT Hub サービスのセットアップに適用する必要があります。
 
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
 <tr>
-<th>コース</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
+<th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
 <td> MR と Azure 313:IoT Hub サービス</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-Microsoft HoloLens などの複合現実での開発の最新の前提条件をご覧ください、[ツールをインストールする](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)記事。
+Microsoft HoloLens など、mixed reality を使用した開発に関する最新の前提条件については、[ツールのインストール](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)に関する記事をご覧ください。
 
 > [!NOTE]
-> このチュートリアルは、Python を使用した基本的な経験を持っている開発者向けに設計されています。 また、前提条件やこのドキュメント内の書面の手順を表すテストおよび (2018 年 7 月) の書き込み時に検証されたがどのようなことに注意してください。 内に一覧表示するには自由に最新のソフトウェアを使用して、[ツールをインストールする](install-the-tools.md)記事、ただし、このコースの情報が一致は完全にするよりも下に示す新しいソフトウェアで表示されますは仮定されません。
+> このチュートリアルは、Python の基本的な経験がある開発者向けに設計されています。 また、このドキュメントに記載されている前提条件と記述に記載されている手順は、作成時にテストおよび検証された内容 (2018 年7月) を表しています。 「[ツールのインストール](install-the-tools.md)」の記事に記載されているように、最新のソフトウェアを自由に使用できます。ただし、このコースの情報は、以下に示したソフトウェアより新しいソフトウェアでは完全に一致するとは限りません。
 
 次のハードウェアとソフトウェアが必要です。
 
-- Windows 10 Fall Creators Update (またはそれ以降)**開発者モードが有効になっています。**
+- Windows 10 の作成者の更新プログラム (またはそれ以降)、**開発者モードが有効**
 
     > [!WARNING]
-    > Windows 10 Home エディションで、HYPER-V を使用して仮想マシンを実行することはできません。
+    > Windows 10 Home Edition で Hyper-v を使用して仮想マシンを実行することはできません。
 
 - Windows 10 SDK (最新バージョン)
-- HoloLens、a**開発者モードが有効になっています。**
-- Visual Studio 2017.15.4 (Azure のクラウド エクスプ ローラーへのアクセスにのみ使用)
-- Azure、および IoT Hub サービスのインターネット アクセス。 詳細についてに従ってくださいこの[IoT Hub サービスのページへのリンク](https://azure.microsoft.com/en-au/services/iot-hub/)
-- 機械学習モデル。 モデルを使用する準備がない[、このコースで提供されるモデルを使用する](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)します。
-- **HYPER-V**ソフトウェア、Windows 10 開発用コンピューターで有効にします。
-- 開発用コンピューターまたは別の方法として実行されている Ubuntu (16.4 または 18.4) を実行する仮想マシンには、Linux (Ubuntu 16.4 または 18.4) を実行している別のコンピューターを使用できます。 HYPER-V を使用して、Windows 上の VM を作成する方法の詳細についてを見つけることができます、 [「開始前の準備」の章](#before-you-start)(。 https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).  
+- HoloLens、**開発者モードが有効**
+- Visual Studio 2017.15.4 (Azure Cloud Explorer へのアクセスにのみ使用)
+- Azure および IoT Hub サービス用のインターネットアクセス。 詳細については、こちらの[IoT Hub サービスへのリンクに関するページを](https://azure.microsoft.com/en-au/services/iot-hub/)参照してください。
+- 機械学習モデル。 独自のモデルを使用する準備ができていない場合は、[このコースで提供さ](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)れているモデルを使用できます。
+- Windows 10 開発用コンピューターで**hyper-v**ソフトウェアが有効になっています。
+- Ubuntu (16.4 または 18.4) を実行している仮想マシンを開発用コンピューターで実行するか、または Linux を実行する別のコンピューター (Ubuntu 16.4 または 18.4) を使用することができます。 Hyper-v を使用して Windows 上で VM を作成する方法の詳細については、 [「開始する前に](#before-you-start)」の章を参照してください。(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).  
 
 
 
-### <a name="before-you-start"></a>開始前の作業
+### <a name="before-you-start"></a>開始前の準備
 
-1. 設定して、HoloLens をテストします。 場合は、HoloLens の設定をサポートする必要がある[HoloLens のセットアップ記事を参照してください。 確認](https://docs.microsoft.com/hololens/hololens-setup)します。
-2. 実行することをお勧め**調整**と**センサー チューニング**(も役立ちますユーザーごとにこれらのタスクを実行する) 新しい HoloLens アプリの開発を始めるときにします。
+1. HoloLens をセットアップしてテストします。 HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。
+2. 新しい HoloLens アプリの開発を開始するときは、**調整**と**センサーのチューニング**を実行することをお勧めします (ユーザーごとにこれらのタスクを実行するのに役立つ場合があります)。
 
-調整に関するヘルプを参照するに従ってくださいこの[HoloLens 調整記事へのリンク](calibration.md#hololens)します。
+調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens)参照してください。
 
-センサーの調整に関する詳細についてに従ってくださいこの[HoloLens センサー チューニング記事へのリンク](sensor-tuning.md)します。
+センサーチューニングの詳細については、 [HoloLens センサーチューニングに関する記事へのリンクを](sensor-tuning.md)参照してください。
 
-3. セットアップ、 **Ubuntu 仮想マシン**を使用して**HYPER-V**します。 次のリソースでプロセスを役立ちます。
-    1.  最初に、このリンクに従う[16.04.4 の Ubuntu LTS (Xenial Xerus) の ISO をダウンロード](http://au.releases.ubuntu.com/16.04/)します。 選択、 **64 ビット PC (AMD64) デスクトップ イメージ**します。
-    2.  確認**HYPER-V**は、Windows 10 コンピューターで有効になっています。 ガイダンスについては、このリンクをフォローできます[インストールと Windows 10 で HYPER-V を有効化](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)します。
-    3.  HYPER-V を開始し、新しい Ubuntu VM を作成します。 このリンクを利用できる、 [、HYPER-V と VM を作成する方法についてステップ バイ ステップ ガイド](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)します。 要求されると **「ブート イメージ ファイルからオペレーティング システムをインストールする」** を選択、 **Ubuntu ISO**以前ダウンロードがあります。
+3. **Hyper-v**を使用して**Ubuntu 仮想マシン**をセットアップします。 このプロセスには、次のリソースが役立ちます。
+    1.  まず、このリンクに従っ[て Ubuntu 16.04.4 LTS (Xenial Xerus) ISO をダウンロード](http://au.releases.ubuntu.com/16.04/)します。 64ビット**PC (AMD64) デスクトップイメージ**を選択します。
+    2.  Windows 10 コンピューターで**hyper-v**が有効になっていることを確認します。 [Windows 10 で hyper-v をインストールして有効](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)にする方法については、こちらのリンクを参照してください。
+    3.  Hyper-v を起動し、新しい Ubuntu VM を作成します。 [Hyper-v を使用して VM を作成する手順](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)については、こちらのリンクを参照してください。 **[起動可能なイメージファイルからオペレーティングシステムをインストール**する] に要求された場合は、前の手順でダウンロードした**Ubuntu ISO**を選択します。
 
     > [!NOTE]
-    > 使用して **、HYPER-V のクイック作成**はお勧めしません。  
+    > **Hyper-v の簡易作成**を使用することは推奨されません。  
 
-## <a name="chapter-1---retrieve-the-custom-vision-model"></a>第 1 章 - カスタム ビジョン モデルを取得します。
+## <a name="chapter-1---retrieve-the-custom-vision-model"></a>第1章: Custom Vision モデルを取得する
 
-このコースにアクセスすること、[構築済みのカスタム ビジョン モデル](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)キーボードとマウスの画像から検出します。 これを使用する場合に進みます[第 2 章](#chapter-2---the-container-registry-service)します。
+このコースでは、イメージからキーボードとマウスを検出する既成の[Custom Vision モデル](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)にアクセスできます。 これを使用する場合は、[第2章](#chapter-2---the-container-registry-service)に進みます。
 
-ただし、独自のカスタム ビジョン モデルを使用する場合は、次の手順にできます。
+ただし、独自の Custom Vision モデルを使用する場合は、次の手順に従うことができます。
 
-1. **カスタム ビジョン プロジェクト**に移動して、**パフォーマンス**タブ。
+1. **Custom Vision プロジェクト**で、 **[パフォーマンス]** タブにアクセスします。
 
     > [!WARNING]
-    > モデルを使用する必要があります、 *compact*ドメイン モデルをエクスポートします。 プロジェクトの設定でドメイン モデルを変更できます。
+    > モデルをエクスポートするには、モデルで*コンパクト*ドメインを使用する必要があります。 モデルドメインは、プロジェクトの設定で変更できます。
 
     ![[パフォーマンス] タブ](images/AzureLabs-Lab313-01.png)
 
-2. 選択、**イテレーション**エクスポートし、をクリックする**エクスポート**します。 ブレードが表示されます。
+2. エクスポートする**イテレーション**を選択し、 **[エクスポート]** をクリックします。 ブレードが表示されます。
 
-    ![ブレードをエクスポートします。](images/AzureLabs-Lab313-02.png)
+    ![ブレードのエクスポート](images/AzureLabs-Lab313-02.png)
 
-3. ブレードで、 **Docker ファイル**します。
+3. ブレードで **[Docker File]** をクリックします。
 
-    ![docker を選択します。](images/AzureLabs-Lab313-03.png)
+    ![docker の選択](images/AzureLabs-Lab313-03.png)
 
-4. クリックして**Linux**クリックしてドロップダウン メニューで**ダウンロード**します。
+4. ドロップダウンメニューの **[Linux]** をクリックし、 **[ダウンロード]** をクリックします。
 
-    ![ダウンロードをクリックします。](images/AzureLabs-Lab313-04.png)
+    ![[ダウンロード] をクリック](images/AzureLabs-Lab313-04.png)
 
-5. コンテンツを解凍します。 このコースで後ほど使用します。
+5. コンテンツを解凍します。 このコースは、このコースの後半で使用します。
 
-## <a name="chapter-2---the-container-registry-service"></a>第 2 章 - コンテナー レジストリ サービス
+## <a name="chapter-2---the-container-registry-service"></a>Chapter 2-Container Registry サービス
 
-**コンテナー レジストリ サービス**は、コンテナーをホストするために使用するリポジトリです。
+**Container Registry サービス**は、コンテナーをホストするために使用されるリポジトリです。
 
-**IoT Hub サービス**ビルドし、使用して、このコースでは参照する**コンテナー レジストリ サービス**Edge デバイスにデプロイするコンテナーを取得します。
+このコースで構築して使用する**IoT Hub サービス**は、 **Container Registry サービス**を参照して、エッジデバイスにデプロイするコンテナーを取得します。
 
-1. 最初に、これに従って[Azure ポータルへのリンク](https://portal.azure.com/)、資格情報を使用してログインします。
+1. 最初に、 [Azure Portal へのリンク](https://portal.azure.com/)に従って、資格情報でログインします。
 
-2. 移動して**リソースの作成**を探して**Container Registry**します。
+2. 「**リソースの作成**」に進んで、 **Container Registry**を探します。
 
-    ![コンテナー レジストリ](images/AzureLabs-Lab313-05.png)
+    ![コンテナーレジストリ](images/AzureLabs-Lab313-05.png)
 
-3. をクリックして**作成**です。
+3. **[作成]** をクリックします。
 
     ![](images/AzureLabs-Lab313-06.png)
 
-4. サービスのセットアップ パラメーターを設定します。
+4. サービスセットアップパラメーターを設定します。
 
-    1. この例では、プロジェクトの名前を挿入、呼び出された**IoTCRegistry**します。
+    1. プロジェクトの名前を挿入します。この例では、 **IoTCRegistry**という名前です。
 
-    2. 選択、**リソース グループ**か新規に作成します。 リソース グループは、監視、プロビジョニング、アクセスを制御および Azure の資産のコレクションの課金を管理する方法を提供します。 勧めします (例: これらのコース) などの 1 つのプロジェクトに共通のリソース グループの下の Azure サービスに関連付けられているすべて保持する)。
+    2. リソースグループを選択するか、新しい**リソースグループ**を作成します。 リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。 1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。
 
     3. サービスの場所を設定します。
 
-    4. 設定**管理者ユーザー**に**を有効にする**します。
+    4. **有効**にするには、**管理者ユーザー**を設定します。
 
-    5. 設定**SKU**に**基本的な**します。 
+    5. **SKU**を**Basic**に設定します。 
 
     ![](images/AzureLabs-Lab313-07.png)
 
-5. クリックして**作成**し、サービスを作成するまで待ちます。 
+5. **[作成]** をクリックし、サービスが作成されるまで待ちます。 
 
-6. 通知はポップアップ通知が正常に作成すると、 *Container Registry*、 をクリックして**リソースに移動**サービス ページにリダイレクトします。
+6. *Container Registry*が正常に作成されたことを知らせる通知が表示されたら、 **[リソースへのアクセス]** をクリックして、サービスページにリダイレクトします。
 
     ![](images/AzureLabs-Lab313-08.png)
 
-7. *Container Registry*サービス ページで、をクリックして**アクセス キー**します。
+7. [サービスの*Container Registry* ] ページで、 **[アクセスキー]** をクリックします。
 
-8. メモしてをおきます (、メモ帳を使用する可能性があります)、次のパラメーター。
-    1. **ログイン サーバー**
+8. 次のパラメーターのメモを控えておきます (メモ帳を使用できます)。
+    1. **ログインサーバー**
     2. **Username**
     3. **Password**
 
     ![](images/AzureLabs-Lab313-09.png)
 
-## <a name="chapter-3---the-iot-hub-service"></a>第 3 章 - IoT Hub サービス
+## <a name="chapter-3---the-iot-hub-service"></a>第3章-IoT Hub サービス
 
-作成とのセットアップを開始するようになりました、 **IoT Hub Service**します。
+次に、 **IoT Hub サービス**の作成とセットアップを開始します。
 
-1. サインインしていない場合のログイン、 [Azure Portal](https://portal.azure.com)します。
+1. まだサインインしていない場合は、 [Azure Portal](https://portal.azure.com)にログインします。
 
-2.  ログインすると、をクリックして**リソースの作成**左上隅にある検索して**IoT Hub**、 をクリック**Enter**します。
+2.  ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **IoT Hub**を検索して、 **Enter キー**を押します。
 
- ![ストレージ アカウントの検索](images/AzureLabs-Lab313-10.png)
+ ![ストレージアカウントの検索](images/AzureLabs-Lab313-10.png)
 
-3.  新しいページがの説明を入力、**ストレージ アカウント**サービス。 このダイアログ ボックスの左下にある at をクリックして、**作成**ボタンは、サービスのこのインスタンスを作成します。
+3.  新しいページには、**ストレージアカウント**サービスの説明が表示されます。 このプロンプトの左下にある **[作成]** ボタンをクリックして、このサービスのインスタンスを作成します。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-11.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-11.png)
 
-4.  クリックすると**作成**パネルが表示されます。
+4.  **[作成]** をクリックすると、パネルが表示されます。
 
-    1. 選択、**リソース グループ**か新規に作成します。 リソース グループは、監視、プロビジョニングのアクセスを制御および Azure の資産のコレクションの課金を管理する方法を提供します。 勧めします (例: これらのコース) などの 1 つのプロジェクトに共通のリソース グループの下の Azure サービスに関連付けられているすべて保持する)。
+    1. リソースグループを選択するか、新しい**リソースグループ**を作成します。 リソースグループは、Azure 資産のコレクションの課金を監視、制御する方法を提供します。 1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。
 
-        > 詳細にする場合について、Azure リソース グループに従ってくださいこの[リソース グループを管理する方法についてのリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)します。
+        > Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。
 
 
-    2. 適切な選択**場所**(同じ場所でこのコースを作成するすべてのサービスを使用して)。
+    2. 適切な**場所**を選択します (このコースで作成するすべてのサービスで同じ場所を使用します)。
 
-    3. 必要な挿入**名前**このサービス インスタンス。    
+    3. このサービスインスタンスに必要な**名前**を挿入します。    
 
-5.  ページの下部にある をクリックして**次へ。サイズとスケール**します。
+5.  ページの下部にある [次へ **] をクリックします。サイズとスケール**。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-12.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-12.png)
 
-6.  このページで、選択、**価格とスケールティア**(最初の IoT Hub サービス インスタンスの場合は、free レベルできるようにする)。  
+6.  このページで、**価格とスケールレベル**を選択します (これが初めての IoT Hub サービスインスタンスの場合は、free レベルをご利用いただけます)。  
 
-7.  をクリックして**確認および作成**です。
+7.  **[レビューと作成]** をクリックします。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-13.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-13.png)
 
-8.  設定を確認して、をクリックして**作成**です。
+8.  設定を確認し、 **[作成]** をクリックします。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-14.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-14.png)
 
-9. 通知はポップアップ通知が正常に作成すると、 *IoT Hub*サービス、 をクリックして**リソースに移動**サービス ページにリダイレクトします。
+9. *IoT Hub*サービスが正常に作成されたことを知らせる通知が表示されたら、 **[リソースへのアクセス]** をクリックして、サービスページにリダイレクトします。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-15.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-15.png)
 
-10. 左側のサイド パネルに表示されるまでスクロール*デバイスの自動管理*、 をクリック**IoT Edge**します。
+10. [*デバイスの自動管理*] が表示されるまで左側のサイドパネルをスクロールし、 **IoT Edge**をクリックします。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-16.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-16.png)
 
-11. 右側に表示されるウィンドウでクリックして**IoT Edge デバイスの追加**します。 ブレードが右側に表示されます。
+11. 右側に表示されるウィンドウで、 **[IoT Edge デバイスの追加]** をクリックします。 ブレードが右側に表示されます。
 
-12. ブレードで、新しいデバイスを提供する**デバイス ID** (好みの名前)。 をクリックし、**保存**します。 *プライマリ*と*セカンダリ キー*は自動生成があれば**の自動生成**オンします。
+12. ブレードで、新しいデバイスに**デバイス ID** (任意の名前) を入力します。 次に、 **[保存]** をクリックします。 **自動生成**が行われた場合、*プライマリ* *キーとセカンダリキー*は自動的に生成されます。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-17.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-17.png)
 
-13. 移動するが、 *IoT Edge デバイス* セクションで、新しいデバイスが表示されます。 新しいデバイスをクリックします (で赤で、イメージの下)。 
+13. 新しいデバイスが一覧表示される [ *IoT Edge デバイス*] セクションに戻ります。 新しいデバイス (下の図の赤で囲まれています) をクリックします。 
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-18.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-18.png)
 
-14. *デバイスの詳細*が表示されたら、ページのコピーを作成する、**接続文字列**(主キー)。
+14. 表示される [*デバイスの詳細*] ページで、**接続文字列**(主キー) のコピーを取得します。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-19.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-19.png)
 
-15. 、左側のパネルに戻り、をクリックして*共有アクセス ポリシー*、を開きます。 
+15. 左側のパネルに戻り、[*共有アクセスポリシー*] をクリックして開きます。 
 
-16. 表示されるページで、をクリックして**iothubowner**、し、画面の右側のブレードが表示されます。 
+16. 表示されるページで **[iothubowner]** をクリックすると、画面の右側にブレードが表示されます。 
 
-17. 書き留めて (上、メモ帳)、**接続文字列**(主キー) を設定するときに、後で使用、*接続文字列*デバイスにします。
+17. **接続**文字列 (主キー) のメモ (メモ帳) を書き留めておきます。後でデバイスに*接続文字列*を設定するときに使用します。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-20.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-20.png)
 
-## <a name="chapter-4---setting-up-the-development-environment"></a>第 4 章 - 開発環境を設定します。
+## <a name="chapter-4---setting-up-the-development-environment"></a>章 4-開発環境の設定
 
-作成、展開用モジュール*IoT Hub の Edge*、Windows 10 を実行している開発用コンピューターにインストールされている、次のコンポーネントが必要になります。
+*IoT Hub Edge*のモジュールを作成してデプロイするには、Windows 10 を実行する開発用コンピューターに次のコンポーネントがインストールされている必要があります。
 
-1.  [Windows の docker](https://store.docker.com/editions/community/docker-ce-desktop-windows)、ダウンロードできるようにするアカウントを作成するよう求められます。 
+1.  [Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)、ダウンロードできるアカウントを作成するように求められます。 
 
-    [![windows の docker をダウンロードします。](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+    [![docker for windows のダウンロード](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
     > [!IMPORTANT]
-    > Docker 必要があります*Windows 10 PRO*、 *Enterprise 14393*、または*Windows Server 2016 RTM*を実行します。 その他のバージョンの Windows 10 を実行している場合、Docker を使用してをインストールしてくださいことができます、 [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)します。
+    > Docker を実行するには、 *windows 10 PRO*、 *Enterprise 14393*、または*windows Server 2016 RTM*が必要です。 他のバージョンの Windows 10 を実行している場合は、 [Docker ツールボックス](https://docs.docker.com/toolbox/toolbox_install_windows/)を使用して docker をインストールできます。
 
-2.  [Python 3.6](https://www.python.org/downloads/)します。
+2.  [Python 3.6](https://www.python.org/downloads/)。
 
-    [![python 3.6 をダウンロードします。](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)
+    [![python 3.6 のダウンロード](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)
 
-3.  [Visual Studio Code (VS Code とも呼ばれます)](https://code.visualstudio.com/download)します。
+3.  [Visual Studio Code (VS Code とも呼ば](https://code.visualstudio.com/download)れます)。
 
-    [![VS Code をダウンロードします。](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)
+    [![ダウンロード VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)
 
-上記で説明したソフトウェアのインストール後は、コンピューターを再起動する必要があります。
+前述のソフトウェアをインストールしたら、コンピューターを再起動する必要があります。
 
-## <a name="chapter-5---setting-up-the-ubuntu-environment"></a>第 5 章 - Ubuntu 環境のセットアップ
+## <a name="chapter-5---setting-up-the-ubuntu-environment"></a>章 5-Ubuntu 環境のセットアップ
 
-デバイスのセットアップ移動できますようになりました**Ubuntu OS を実行している**します。 ボード上、コンテナーをデプロイするために必要なソフトウェアをインストールするのには、下の手順に従います。
+これで、 **UBUNTU OS を実行**しているデバイスのセットアップに進むことができます。 次の手順に従って、ボードにコンテナーをデプロイするために必要なソフトウェアをインストールします。
 
 > [!IMPORTANT]
-> ターミナル、コマンドの前に常に**sudo**管理者ユーザーとして実行します。 つまり、します。
+> 管理者ユーザーとして実行するには、ターミナルコマンドの前に常に**sudo**を使用する必要があります。 :
 > 
 >   ```bash
 >   sudo docker \<option> \<command> \<argument>
 >   ```
 
-1.  開く、 **Ubuntu のターミナル**、次のコマンドを使用してインストールして**pip**:
+1.  **Ubuntu ターミナル**を開き、次のコマンドを使用して**pip**をインストールします。
 
-    > [!ヒント] を開く*ターミナル*キーボード ショートカットを使用して非常に簡単に使用します。**Ctrl + Alt + T**します。
+    > [!ヒント] キーボードショートカットを使用すると、*ターミナル*を簡単に開くことができます。**Ctrl + Alt + T**
 
     ```bash
         sudo apt-get install python-pip
     ```
 
-2.  この章では、する必要があります、によって*ターミナル*デバイス ストレージを使用するアクセス許可、および入力するを**はい/いいえ**(はいまたは no)、型 **'y'** 、キーを押しますと、**Enter**を受け入れるためのキー。
+2.  この章では、デバイスのストレージを使用するためのアクセス許可を*ターミナル*で確認するメッセージが表示される場合があります。また、 **y/n** (yes または no) を入力するには「 **y」** と入力し、 **enter キーを**押して同意します。
 
-3.  そのコマンドが完了すると、次のコマンドを使用してをインストールする**curl**:
+3.  コマンドが完了したら、次のコマンドを使用して**curl**をインストールします。
 
     ```bash
         sudo apt install curl
     ```
 
-4.  1 回**pip**と**curl**は、次のコマンドを使用してインストールする、インストールされている、 **IoT Edge ランタイム**を展開し、ボード上のモジュールを制御するために必要になります。
+4.  **Pip**および**curl**がインストールされたら、次のコマンドを使用して**IoT Edge ランタイム**をインストールします。これは、ボードにモジュールをデプロイおよび制御するために必要です。
 
     ```bash
         curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
@@ -307,127 +307,127 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
         sudo apt-get install iotedge
     ```
 
-5. この時点で求められますを開く、*ランタイム構成ファイル*、挿入する、 **Device Connection String**、(、メモ帳で)、メモしたを作成するとき、 **IoT Hub サービス** ([第 3 章の手順 14 で](#chapter-3---the-iot-hub-service))。 そのファイルを開くターミナルで次の行を実行します。
+5. この時点で、 **IoT Hub サービス**を作成するときにメモしておいた (メモ帳でメモしておいた)**デバイス接続文字列**を挿入するために、*ランタイム構成ファイル*を開くように求められます ([手順14の章 3](#chapter-3---the-iot-hub-service))。 ターミナルで次の行を実行して、そのファイルを開きます。
 
     ```bash
         sudo nano /etc/iotedge/config.yaml
     ```
 
-6. **Config.yaml**ファイルが表示されている、編集するための準備完了になります。
+6. 次のように、**構成の yaml**ファイルが表示され、編集できるようになります。
 
     > [!WARNING]
-    > このファイルが開いたら、やや混乱を招く場合があります。 テキスト内で、このファイルを編集する必要がある、*ターミナル*自体。 
+    > このファイルが開いたときに、多少紛らわしいことがあります。 このファイルを*ターミナル*内で編集するテキストが表示されます。 
 
-    1.  キーボードの矢印キーを使用して、スクロール ダウン (少し方法下へスクロールする必要があります) を含む行に到達する"。
+    1.  キーボードの方向キーを使用して下にスクロールします (少し下にスクロールして、次の行に移動する必要があります)。
 
-        " **\<デバイス接続文字列をここでの追加 >** "。
+        「デバイス接続文字列をここに**追加>」を参照してください\<** 。
 
-    2. 行を置き換える **、中かっこも含め**で、**デバイスの接続文字列**先ほどメモします。
+    2. 前にメモした**デバイス接続文字列**を使用して、**角かっこを含め**た代替行を指定します。
 
-7. キーボードの場所に、接続文字列とキーを押して、 **CTRL + X**キー ファイルを保存します。 」と入力して確認するよう求められます**Y**します。次に、キーを押して、 **」と入力**キーを確認します。 通常に戻り、*ターミナル*します。 
+7. 接続文字列を設定した状態で、キーボードの**Ctrl + X**キーを押してファイルを保存します。 「 **Y**」と入力すると、確認を求めるメッセージが表示されます。次に、 **enter**キーを押して確認します。 通常の*ターミナル*に戻ります。 
 
-8. インストールがこれらのコマンドがすべて正常に実行すると、 **IoT Edge ランタイム**します。 初期化されると、ランタイムは、デバイスの電源が入っている独自たびに開始して、バック グラウンドでモジュールから展開するを待つ内に配置されます、 **IoT Hub Service**します。
+8. これらのコマンドがすべて正常に実行されると、 **IoT Edge ランタイム**がインストールされます。 初期化されると、デバイスの電源が入るたびにランタイムが自動的に起動し、バックグラウンドで実行され、モジュールが**IoT Hub サービス**からデプロイされるのを待ちます。
 
-9.  初期化するために次のコマンドラインの実行、 *IoT Edge ランタイム*:
+9.  次のコマンドラインを実行して、 *IoT Edge ランタイム*を初期化します。
 
     ```bash
         sudo systemctl restart iotedge
     ```
 
     > [!IMPORTANT]
-    > .Yaml ファイル、または上記の設定を変更する場合、上記の再起動の行を再度実行する必要があります。 内*ターミナル*します。
+    > Yaml ファイルまたは上記のセットアップに変更を加える場合は、*ターミナル*内で上記の再起動行をもう一度実行する必要があります。
 
-10. チェック、 *IoT Edge ランタイム*次のコマンドラインを実行している別の状態。 ランタイムが、状態で表示される必要があります**アクティブ (実行中)** を緑のテキスト。
+10. 次のコマンドラインを実行して、 *IoT Edge ランタイム*の状態を確認します。 ランタイムは、状態が [**アクティブ] (実行中)** の緑色のテキストで表示されます。
 
     ```bash
         sudo systemctl status iotedge
     ```
 
-11. キーを押して、 **Ctrl + C**キー、状態 ページを終了します。 確認することができます、 *IoT Edge ランタイム*次のコマンドを入力して、コンテナーを正しく引いています。
+11. **Ctrl + C**キーを押して、[状態] ページを終了します。 次のコマンドを入力して、 *IoT Edge ランタイム*がコンテナーを正しくプルしていることを確認できます。
 
     ```bash
         sudo docker ps
     ```
 
-12. 2 つのコンテナーの一覧が表示されます。 これらは、IoT Hub サービス (edgeAgent および edgeHub) によって自動的に作成される既定のモジュールです。 作成して、独自のモジュールを展開すると、既定の下に、この一覧に表示されます。
+12. 2つのコンテナーを含むリストが表示されます。 これらは、IoT Hub サービス (edgeAgent および edgeHub) によって自動的に作成される既定のモジュールです。 独自のモジュールを作成してデプロイすると、既定のモジュールの下にこの一覧に表示されます。
 
-## <a name="chapter-6---install-the-extensions"></a>第 6 章 - 拡張機能をインストールします。
+## <a name="chapter-6---install-the-extensions"></a>Chapter 6-拡張機能のインストール
 
 > [!IMPORTANT]
-> 次のいくつかの章 (6 ~ 9) では、Windows 10 コンピューターで実行します。
+> Windows 10 コンピューターでは、次のいくつかの章 (6-9) が実行されます。
 
-1. 開いている**VS Code**します。
+1. **VS Code**を開きます。
 
-2. をクリックして、**拡張機能**(正方形) ボタンの左側の VS、バーコードを開く、**拡張機能パネル**します。
+2. VS Code の左側のバーにある [**拡張機能**(四角)] ボタンをクリックして、[**拡張機能] パネル**を開きます。
 
-3. 検索し、インストールの場合は、(次の図に示すように)、次の拡張機能。
+3. 次の図に示すように、次の拡張機能を検索してインストールします。
 
     1. Azure IoT Edge
     2. Azure IoT Toolkit
     3. Docker   
 
-    ![コンテナーを作成します。](images/AzureLabs-Lab313-24.png)
+    ![コンテナーを作成する](images/AzureLabs-Lab313-24.png)
 
-4. 拡張機能がインストールされると、VS Code を再度開くを閉じています。
+4. 拡張機能がインストールされたら、VS Code を閉じてから開き直します。
 
-5. VS Code で、もう一度開きに移動します**ビュー** > **統合ターミナル**します。
+5. さらに VS Code 開いて、[**統合ターミナル**の**表示** > ] に移動します。
 
-6. インストールするようになりました**Cookiecutter**します。 ターミナルで次の bash コマンドを実行します。
+6. 次に、 **Cookiecutter**をインストールします。 ターミナルで、次の bash コマンドを実行します。
 
     ```bash
         pip install --upgrade --user cookiecutter
     ```
 
-    > [!ヒント] で次のコマンドに問題がある場合: 
-    >1. VS Code、および/またはコンピューターを再起動します。
-    >2. 切り替える必要があります、 **VS Code ターミナル**を使用してつまり、Python をインストールする 1 つ**Powershell** (特に場合に、Python 環境は、コンピューターに既にインストールされている)。 ターミナルを開き、端末の右側にあるメニューのドロップダウンが表示されます。
-     ![コンテナーを作成します。](images/AzureLabs-Lab313-24b.png) 
-    >3. 確認、 **Python**としてのインストール パスが追加されます**環境変数**コンピューターにします。 Cookiecutter は、同じロケーション パスの一部にする必要があります。 これに従ってください[環境変数の詳細については、リンク](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx)、 
+    > [!ヒント] このコマンドで問題が発生した場合は、次のようになります。 
+    >1. VS Code、またはコンピューターを再起動します。
+    >2. **VS Code ターミナル**を、python のインストールに使用している**もの (特**に、python 環境がコンピューターに既にインストールされている場合) に切り替える必要がある場合があります。 ターミナルを開いた状態で、ターミナルの右側にドロップダウンメニューが表示されます。
+     ![コンテナーを作成する](images/AzureLabs-Lab313-24b.png) 
+    >3. **Python**インストールパスが**環境変数**としてコンピューターに追加されていることを確認します。 Cookiecutter は同じ場所のパスの一部にする必要があります。 [環境変数の詳細につい](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx)ては、このリンクに従ってください。 
 
-7. 1 回**Cookiecutter** 、インストールが完了した、コンピューターを再起動する必要がありますように**Cookiecutter**はシステムの環境でのコマンドとして認識します。
+7. **Cookiecutter**のインストールが完了したら、コンピューターを再起動して、 **Cookiecutter**がシステムの環境内でコマンドとして認識されるようにします。
 
-## <a name="chapter-7---create-your-container-solution"></a>7 -」の章のコンテナー ソリューションを作成します。
+## <a name="chapter-7---create-your-container-solution"></a>第7章-コンテナーソリューションを作成する
 
-この時点では、モジュールにプッシュされると、コンテナーを作成する必要があります、 *Container Registry*します。 使用するコンテナーをプッシュすると、 *IoT Hub の Edge*を実行しているデバイスにデプロイするサービス、 *IoT Edge ランタイム*します。
+この時点で、モジュールを使用してコンテナーを作成し、 *Container Registry*にプッシュする必要があります。 コンテナーをプッシュしたら、 *IoT Hub Edge*サービスを使用して、 *IoT Edge ランタイム*を実行しているデバイスにデプロイします。
 
-1. VS Code からクリックして**ビュー** > **コマンド パレット**します。
+1. VS Code で、[**コマンドパレット**の**表示** > ] をクリックします。
 
-2. パレットで、検索し、実行**Azure IoT Edge:新しい Iot Edge ソリューション**します。
+2. パレットで、Azure IoT Edge を検索し**て実行します。新しい Iot Edge ソリューション**。
 
-3. ソリューションを作成する場所を参照します。 キーを押して、 **」と入力**キー、場所をそのままにします。
+3. ソリューションを作成する場所を参照します。 場所を受け入れるには、 **enter**キーを押します。
 
-4. ソリューションに名前を付けます。 キーを押して、 **Enter**キーを指定された名前を確認します。
+4. ソリューションに名前を付けます。 入力した名前を確認するには、 **enter**キーを押します。
 
-5. 今すぐ求め、ソリューション テンプレートの framework を選択します。 クリックして**Python モジュール**します。 キーを押して、 **Enter**キーは、この選択内容を確認します。
+5. これで、ソリューションのテンプレートフレームワークを選択するように求められます。 **[Python モジュール]** をクリックします。 この選択を確定するには、 **enter**キーを押します。
 
-6. モジュールの名前を付けます。 キーを押して、 **Enter**キーをモジュールの名前を確認します。 後で使用するために、モジュール名 (、メモ帳) をメモしてを実行することを確認してください。
+6. モジュールに名前を付けます。 **Enter**キーを押して、モジュールの名前を確認します。 後で使用するため、モジュール名のメモ (メモ帳を使用) を必ず実行してください。
 
-7. 構築済みわかります*Docker イメージ リポジトリ*パレットにアドレスが表示されます。 次のようになります。
+7. 作成済みの*Docker イメージリポジトリ*アドレスがパレットに表示されます。 次のようになります。
 
-    **localhost:5000/名前、モジュールの**します。 
+    **localhost: 5000/-モジュールの名前-** 。 
 
-8. 削除**localhost:5000**、およびその場所の挿入、*Container Registry* **ログイン サーバー**アドレスで、作成するときにメモしておいた、**コンテナーレジストリ サービス**([手順 8、第 2 章の](#chapter-2---the-container-registry-service))。 キーを押して、 **Enter**キー、アドレスを確認します。
+8. 削除**localhost:5000**、およびその場所の挿入、*Container Registry* **ログイン サーバー**アドレスで、作成するときにメモしておいた、**コンテナーレジストリ サービス**([手順 8、第 2 章の](#chapter-2---the-container-registry-service))。 アドレスを確認するには、 **enter**キーを押します。
 
-9. この時点で、テンプレート、Python モジュールを含むソリューションが作成され、その構造が表示されます、**探索タブ**画面の左側にある、VS Code の。 場合、**探索タブ**が開いていない場合、開くことができますが、左側のバーで、最上位のボタンをクリックしています。
+9. この時点で、Python モジュールのテンプレートを含むソリューションが作成され、その構造が画面の左側の [**探索] タブ**(VS Code) に表示されます。 [**探索] タブ**が開いていない場合は、左側のバーの一番上にあるボタンをクリックして開くことができます。
 
-    ![コンテナーを作成します。](images/AzureLabs-Lab313-25.png)
+    ![コンテナーを作成する](images/AzureLabs-Lab313-25.png)
 
-10. この章の最後の手順は、をクリックして開く、 **.env ファイル**、内から、 **タブの調査**、追加、 *Container Registry* **ユーザー名**と**パスワード**します。 このファイルは、git によって無視されますが、コンテナーでは、ビルドにへのアクセスに資格情報の設定は、**コンテナー レジストリ サービス**します。
+10. この章の最後の手順は、をクリックして開く、 **.env ファイル**、内から、 **タブの調査**、追加、 *Container Registry* **ユーザー名**と**パスワード**します。 このファイルは git によって無視されますが、コンテナーを構築すると、 **Container Registry サービス**にアクセスするための資格情報が設定されます。
 
-    ![コンテナーを作成します。](images/AzureLabs-Lab313-26.png)
+    ![コンテナーを作成する](images/AzureLabs-Lab313-26.png)
 
-## <a name="chapter-8---editing-your-container-solution"></a>第 8 章 - コンテナー ソリューションの編集
+## <a name="chapter-8---editing-your-container-solution"></a>章 8-コンテナーソリューションの編集
 
-今すぐは、次のファイルを更新することで、コンテナー ソリューションを行います。
+次のファイルを更新して、コンテナーソリューションを完成させます。
 
-- *メイン<span></span>.py* python スクリプト。
-- *requirements.txt*します。
-- *deployment.template.json*します。
-- *Dockerfile.amd64*
+- .py python スクリプト。 *<span></span>*
+- *test.txt*。
+- *配置. template. json*.
+- *Dockerfile. amd64*
 
-作成して、*イメージ*と照合するイメージを確認する python スクリプトで使用される、フォルダー、*カスタム ビジョン モデル*します。 最後に、追加、 *labels.txt* 、モデルを読み取るためのファイルと*model.pb*ファイルで、これは、モデルです。
+次に、python スクリプトによって使用される*images*フォルダーを作成し、 *Custom Vision モデル*と照合するイメージを確認します。 最後に、モデルを読みやすくするために、*ラベル .txt*ファイルを追加し、モデルとしてモデルの*pb*ファイルを追加します。
 
-1. VS Code で開き、モジュール フォルダーに移動し、という名前のスクリプトを探して**メイン<span></span>.py**します。 ダブルクリックして開きます。
+1. VS Code 開いた状態で、モジュールフォルダーに移動し、 **.py<span></span>** という名前のスクリプトを探します。 ダブルクリックして開きます。
 
 2. ファイルの内容を削除し、次のコードを挿入します。
 
@@ -662,7 +662,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
         main(PROTOCOL)
     ```
 
-3.  というファイルを開く**requirements.txt**、その内容を次に置き換えます。
+3.  「 **Test.txt**」という名前のファイルを開き、その内容を次のように置き換えます。
 
     ```
     azure-iothub-device-client==1.4.0.0b3
@@ -671,20 +671,20 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
     pillow==5.1.0
     ```
 
-4.  というファイルを開く**deployment.template.json**、その次のコンテンツを置き換えると、以下のガイドライン。
+4.  次のガイドラインに従って、 **deployment. template. json**という名前のファイルを開き、その内容を置き換えます。
 
-    1. 自分で、一意の JSON 構造を必要があります、ため (例をコピー) ではなく手動で編集する必要があります。 簡単にするを使用して、次のガイドとして画像。
-    2. 次に、さまざまな領域がある**は変更しないでくださいは黄色で強調表示**します。
-    3. **を削除する必要があるセクションでは、強調表示されている red です。**
-    4. 正しいの角かっこを削除するように注意してくださいし、も、コンマを削除します。
+    1. 独自の一意の JSON 構造があるため、(例をコピーするのではなく) 手作業で編集する必要があります。 これを簡単に行うには、次の図をガイドとして使用します。
+    2. 異なる領域が表示されますが、**変更すべきではない領域は黄色で強調表示され**ます。
+    3. **削除する必要があるセクションは、赤で強調表示されています。**
+    4. 正しい角かっこを削除し、コンマも削除するように注意してください。
 
-        ![コンテナーを作成します。](images/AzureLabs-Lab313-27.png)
+        ![コンテナーを作成する](images/AzureLabs-Lab313-27.png)
 
-    5. 完了した JSON は、次の図のようになります (一意の相違点は、サーバーでは、:*モジュール/ユーザー名/パスワード/モジュール名参照*)。
+    5. 完成した JSON は次の図のようになります (ただし、独自の違いがあります。*ユーザー名/パスワード/モジュール名/モジュール参照*)。
 
-        ![コンテナーを作成します。](images/AzureLabs-Lab313-28.png)
+        ![コンテナーを作成する](images/AzureLabs-Lab313-28.png)
 
-5.  というファイルを開く**Dockerfile.amd64**、その内容を次に置き換えます。
+5.  **Dockerfile. amd64**という名前のファイルを開き、その内容を次のように置き換えます。
 
     ```
     FROM ubuntu:xenial
@@ -731,75 +731,75 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
     ```
 
-6.  下にフォルダーを右クリックして**モジュール**(以前; 指定した名前になりますで例をそれをさらに、呼び出されます*pythonmodule*)、 をクリック**新しいフォルダー**. フォルダーの名前**イメージ**します。
+6.  **[モジュール]** の下にあるフォルダー (前の例で指定した名前が付いています。さらに下の例では、 *python モジュール*と呼ばれます) を右クリックし、 **[新しいフォルダー]** をクリックします。 フォルダーに**画像**の名前を指定します。
 
-7.  フォルダー内には、マウスまたはキーボードを含む一部のイメージを追加します。 イメージ、Tensorflow モデルによって分析されるものになります。
+7.  フォルダー内に、マウスまたはキーボードを含むいくつかのイメージを追加します。 これらの画像は、このモデルによって分析されるイメージになります。
 
     > [!WARNING]
-    > 独自のモデルを使用している場合は、独自のモデル データを反映するようにこれを変更する必要があります。
+    > 独自のモデルを使用している場合は、独自のモデルデータを反映するように変更する必要があります。
 
-8.  取得する必要がありますこれで、 **labels.txt**と**model.pb**以前ダウンロード モデル フォルダーからファイルを (または独自から作成した**Custom Vision Service**) で[第 1 章](#chapter-1---retrieve-the-custom-vision-model)します。 ファイルを作成したら、その他のファイルと共に、ソリューション内でそれらを配置します。 最終的な結果は、次の図のようになります。
+8.  次に、[第1章](#chapter-1---retrieve-the-custom-vision-model)で、以前にダウンロードした (または独自の**Custom Vision Service**から作成した) モデルフォルダーから、**ラベル .txt**および**モデルの pb**ファイルを取得する必要があります。 ファイルを作成したら、他のファイルと共にソリューション内に配置します。 最終的な結果は次の図のようになります。
 
-    ![コンテナーを作成します。](images/AzureLabs-Lab313-29.png)
+    ![コンテナーを作成する](images/AzureLabs-Lab313-29.png)
 
-## <a name="chapter-9---package-the-solution-as-a-container"></a>第 9 章 – パッケージのコンテナーとしてソリューション
+## <a name="chapter-9---package-the-solution-as-a-container"></a>第9章-ソリューションをコンテナーとしてパッケージ化する
 
-1.  コンテナーとして、ファイルを「パッケージ」し、それをプッシュする準備が整いました、 **Azure Container Registry**します。 VS Code 内で開く、*統合ターミナル*(**ビュー** > **統合ターミナル**または**Ctrl** + **\`** )、次の行へのログインを使用して、 **Docker** (の資格情報を持つコマンドの値に置き換えてください、 **Azure Container Registry (ACR)** ):
+1.  これで、ファイルをコンテナーとして "パッケージ化" し、 **Azure Container Registry**にプッシュできるようになりました。 VS Code で、*統合ターミナル*( **\`** **View** > **integrated terminal**または**Ctrl**+) を開き、次の行を使用して**Docker**にログインします (を使用して、コマンドと Azure Container Registry の資格情報 **(ACR)** ):
 
     ```bash
         docker login -u <ACR username> -p <ACR password> <ACR login server>
     ```
 
-2. ファイルを右クリックして**deployment.template.json**、 をクリック**IoT Edge ソリューションのビルド**します。 このビルド プロセス (デバイス) によってはかなり時間のかかるので、待機します。 ビルド プロセスが完了した後、 **deployment.json**という名前の新しいフォルダー内のファイルが作成されているが**config**します。
+2. ファイルの**配置テンプレート**を右クリックし、 **[ビルド IoT Edge ソリューション]** をクリックします。 このビルドプロセスは、(デバイスによっては) かなりの時間がかかります。そのため、待機する準備を整えてください。 ビルドプロセスが完了すると、 **config**という名前の新しいフォルダー内に**配置の json**ファイルが作成されます。
 
-    ![デプロイを作成します。](images/AzureLabs-Lab313-30.png)
+    ![デプロイの作成](images/AzureLabs-Lab313-30.png)
 
-3. 開く、**コマンド パレット**、もう一度検索して**Azure:サインイン**します。 Azure アカウントの資格情報以外を使用して、画面の指示をに従ってください。VS Code の提供するためのオプション*コピーして開く*、どちらの間もなくし、既定の web ブラウザーを開きますが、デバイス コードをコピーします。 メッセージが表示されたら、コンピューターの認証に、デバイス コードを貼り付けます。
+3. **コマンドパレット**をもう一度開き、Azure を**検索します。** サインインします。 Azure アカウントの資格情報を使用して、画面の指示に従います。VS Code には、*コピーして開く*オプションが用意されています。これにより、すぐに必要なデバイスコードがコピーされ、既定の web ブラウザーが開きます。 プロンプトが表示されたら、デバイスコードを貼り付けて、コンピューターを認証します。
 
-    ![コピーを開きます](images/AzureLabs-Lab313-31.png)
+    ![コピーして開く](images/AzureLabs-Lab313-31.png)
 
-4. 表示されますの下にある符号付き 1 回、*探索*パネル、という名前の新しいセクション**Azure IoT Hub デバイス**します。 展開するには、このセクションをクリックします。
+4. サインインすると、[*探索*] パネルの下部に **[Azure IoT Hub デバイス]** という新しいセクションが表示されます。 展開するには、このセクションをクリックします。
 
-    ![エッジ デバイス](images/AzureLabs-Lab313-32.png)
+    ![エッジデバイス](images/AzureLabs-Lab313-32.png)
 
-5. デバイスがここではない場合を右クリックする必要があります。 *Azure IoT Hub デバイス*、をクリックし、 **IoT Hub 接続文字列の設定**します。 表示されますが、**コマンド パレット**(VS Code の上部) にはプロンプトで入力する、*接続文字列*します。 これは、*接続文字列*の最後にメモした[第 3 章](#chapter-3---the-iot-hub-service)します。 キーを押して、 **Enter**で文字列をコピーした後、キーします。    
+5. デバイスがここではない場合を右クリックする必要があります。 *Azure IoT Hub デバイス*、をクリックし、 **IoT Hub 接続文字列の設定**します。 **コマンドパレット**(VS Code の上部) で、*接続文字列*を入力するように求められます。 これは、[章 3](#chapter-3---the-iot-hub-service)の最後にメモした*接続文字列*です。 で文字列をコピーしたら、 **enter キーを**押します。    
 
-6. デバイスは、読み込み、および表示する必要があります。 デバイス名を右クリックし、をクリック**1 つのデバイスの Create Deployment**します。
+6. デバイスが読み込まれ、表示されます。 デバイス名を右クリックし、 **[単一デバイスの展開の作成]** をクリックします。
 
-    ![デプロイを作成します。](images/AzureLabs-Lab313-33b.png)
+    ![デプロイの作成](images/AzureLabs-Lab313-33b.png)
 
-7. 表示されます、*ファイル エクスプ ローラー*プロンプトに移動することができます、 **config**フォルダー、および選択し、 **deployment.json**ファイル。 そのファイルを選択すると、クリックして、 **Edge 配置マニフェストの選択**ボタンをクリックします。
+7. *ファイルエクスプローラー*のプロンプトが表示されます。ここで、 **config**フォルダーに移動して、そのファイルを選択します。 そのファイルを選択した状態で、 **[エッジ配置マニフェストの選択]** ボタンをクリックします。
 
-    ![デプロイを作成します。](images/AzureLabs-Lab313-34.png)
+    ![デプロイの作成](images/AzureLabs-Lab313-34.png)
 
-8. この時点で指定した、 **IoT Hub Service**マニフェスト モジュールとしてから、コンテナーをデプロイするために、 **Azure Container Registry**、実質的に、デバイスに展開します。
+8. この時点で、 **Azure Container Registry**からコンテナーをモジュールとしてデプロイし、実際にデバイスにデプロイするためのマニフェストを**IoT Hub サービス**に提供しました。
 
-9. デバイスから IoT Hub に送信されるメッセージを表示するには、もう一度右クリックで、デバイス名を**Azure IoT Hub デバイス**セクションで、**エクスプ ローラー**パネルをクリックします**監視の開始D2C メッセージ**します。 VS ターミナルで、デバイスから送信されたメッセージが表示されます。 患者に、これは時間がかかります。 デバッグ、および配置が成功したかどうかにチェックの次の章を参照してください。
+9. デバイスから IoT Hub に送信されたメッセージを表示するには、 **[エクスプローラー]** パネルの **[Azure IoT Hub デバイス]** セクションでデバイス名をもう一度右クリックし、 **[監視 D2C メッセージの開始]** をクリックします。 デバイスから送信されたメッセージが VS ターミナルに表示されます。 しばらく時間がかかることがあります。 デバッグについては、次の章を参照してください。配置が成功したかどうかを確認してください。
 
-内のイメージ間でこのモジュールに処理され、今すぐ、**イメージ**フォルダーの各イテレーションで分析したりと。 これは、単なる明らかに、IoT Edge デバイスの環境で動作する基本的な機械学習モデルを取得する方法のデモンストレーションです。 
+このモジュールは、各イテレーションで**images**フォルダー内のイメージを反復処理し、それらを分析します。 これは明らかに、基本的な機械学習モデルを使用して IoT Edge デバイス環境で動作させる方法のデモにすぎません。 
 
-この例の機能を展開するには、いくつかの方法で続行する可能性があります。 デバイスに接続されていて、images フォルダーにイメージを保存します。 web カメラから写真をキャプチャすると、コンテナーで 1 つの方法をいくつかのコードなどでした。 
+この例の機能を拡張するには、いくつかの方法を実行します。 1つの方法として、コンテナーにいくつかのコードを含め、デバイスに接続されている web カメラから写真をキャプチャして、images フォルダーに保存する方法があります。 
 
-別の方法でしたするイメージのコピー、IoT デバイスからコンテナーにします。 そのための実用的な方法では、IoT デバイス (おそらく小規模なアプリがジョブを実行、プロセスを自動化する場合) のターミナルで次のコマンドを実行します。 このコマンドをテストするには、ファイルが格納されているフォルダーの場所から手動で実行します。
+別の方法として、IoT デバイスからコンテナーにイメージをコピーすることもできます。 これを行う実際の方法として、IoT デバイスターミナルで次のコマンドを実行します (たとえば、プロセスを自動化する場合は、小規模なアプリでジョブを実行できます)。 このコマンドは、ファイルが格納されているフォルダーの場所から手動で実行することでテストできます。
 
 ```bash
     sudo docker cp <filename> <modulename>:/app/images/<a name of your choice>
 ```
 
-## <a name="chapter-10---debugging-the-iot-edge-runtime"></a>第 10 章 - IoT Edge ランタイムのデバッグ
+## <a name="chapter-10---debugging-the-iot-edge-runtime"></a>第10章-IoT Edge ランタイムのデバッグ
 
-コマンドライン、および監視およびのメッセージング アクティビティをデバッグするためのヒントの一覧を次に、 *IoT Edge ランタイム*から、 **Ubuntu デバイス**します。 
+次に示すのは、 **Ubuntu デバイス**から*IoT Edge ランタイム*のメッセージングアクティビティを監視およびデバッグするのに役立つコマンドラインとヒントの一覧です。 
 
-- チェック、 *IoT Edge ランタイム*次のコマンドラインを実行している別の状態。
+- 次のコマンドラインを実行して、 *IoT Edge ランタイム*の状態を確認します。
 
     ```bash
         sudo systemctl status iotedge
     ```
 
     > [!NOTE]
-    > キーを押すように**Ctrl + C**ステータスの表示が完了する。
+    > ステータスの表示を完了するには、 **Ctrl + C**キーを押してください。
 
-- 現在展開されているコンテナーを一覧表示します。 場合、 *IoT Hub Service*コンテナーを正常にデプロイが次のコマンドラインを実行してが表示されます。
+- 現在展開されているコンテナーを一覧表示します。 *IoT Hub サービス*がコンテナーを正常にデプロイした場合は、次のコマンドラインを実行すると表示されます。
 
     ```bash
         sudo iotedge list
@@ -812,172 +812,172 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
     ```
 
     > [!NOTE]
-    > 上記の適しているかどうか、モジュールのデプロイが正常にリストに表示されるかを確認するにはそれ以外の場合は、**のみ**を参照してください、 *edgeHub*と*edgeAgent*します。
+    > 上記は、モジュールが正常にデプロイされているかどうかを確認するための優れた方法であり、一覧に表示されます。それ以外の場合は、 *edgeHub*と*edgeAgent***のみ**が表示されます。
 
-- コンテナーのコードのログを表示するには、次のコマンドラインを実行します。
+- コンテナーのコードログを表示するには、次のコマンドラインを実行します。
 
     ```bash
         journalctl -u iotedge
     ```
 
-**IoT Edge ランタイムを管理する便利なコマンド:**
+**IoT Edge ランタイムを管理するための便利なコマンド:**
 
--  ホストのすべてのコンテナーを削除します。
+-  ホスト内のすべてのコンテナーを削除するには、次のようにします。
 
     ```bash
         sudo docker rm -f $(sudo docker ps -aq)
     ```
 
--  停止する、 *IoT Edge ランタイム*:
+-  *IoT Edge ランタイム*を停止するには:
 
     ```bash
         sudo systemctl stop iotedge
     ```
 
-## <a name="chapter-11---create-table-service"></a>章 11 - Table Service を作成します。 
+## <a name="chapter-11---create-table-service"></a>第11章-Create Table Service 
 
-ストレージ リソースを作成して、Azure テーブル サービスを作成する、Azure Portal に移動します。
+Azure Portal に戻ります。ここでは、ストレージリソースを作成して、Azure Tables サービスを作成します。
 
-1. サインインしていない場合のログイン、 [Azure Portal](https://portal.azure.com)します。
+1. まだサインインしていない場合は、 [Azure Portal](https://portal.azure.com)にログインします。
 
-2. ログインすると、をクリックして**リソースの作成**、左上の検索および上隅にある**ストレージ アカウント**、キーを押すと、 **」と入力**キー、検索を開始します。
+2. ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **[ストレージアカウント]** を検索して、 **enter**キーを押して検索を開始します。
 
-3. 表示されていますとクリックして**ストレージ アカウント - blob、ファイル、テーブル、キュー**一覧から。
+3. 表示されたら、一覧から **[ストレージアカウント-blob、file、table、queue]** をクリックします。
 
-    ![ストレージ アカウントの検索](images/AzureLabs-Lab313-35.png)
+    ![ストレージアカウントの検索](images/AzureLabs-Lab313-35.png)
 
-4. 新しいページがの説明を入力、**ストレージ アカウント**サービス。 このダイアログ ボックスの左下にある at をクリックして、**作成**ボタンは、サービスのこのインスタンスを作成します。
+4. 新しいページには、**ストレージアカウント**サービスの説明が表示されます。 このプロンプトの左下にある **[作成]** ボタンをクリックして、このサービスのインスタンスを作成します。
 
-    ![ストレージのインスタンスを作成します。](images/AzureLabs-Lab313-36.png)
+    ![ストレージインスタンスの作成](images/AzureLabs-Lab313-36.png)
 
-5. クリックすると**作成**パネルが表示されます。
+5. **[作成]** をクリックすると、パネルが表示されます。
 
-    1. 必要な挿入**名前**このサービス インスタンスの (*すべて小文字である必要があります*)。
+    1. このサービスインスタンスに必要な**名前**を挿入します (*すべて小文字にする必要があり*ます)。
 
-    2. **デプロイ モデル**、 をクリックして**Resource manager**します。
+    2. **[デプロイモデル]** で、 **[リソースマネージャー]** をクリックします。
 
-    3. **アカウントの種類**、ドロップダウン メニューを使用して、クリックして**ストレージ (汎用 v1)** します。
+    3. **[アカウントの種類]** で、ドロップダウンメニューを使用して、 **[ストレージ (汎用 v1)]** をクリックします。
 
-    4. 適切なクリックして**場所**します。
+    4. 適切な**場所**をクリックします。
     
-    5. **レプリケーション**ドロップダウン メニューで、をクリックして**読み取りアクセスの geo 冗長ストレージ (RA-GRS)** します。
+    5. **[レプリケーション]** ドロップダウンメニューで、 **[読み取りアクセス-geo 冗長ストレージ (RA-GRS)]** をクリックします。
 
-    6. **パフォーマンス**、 をクリックして**標準**します。
+    6. **[パフォーマンス]** で **[標準]** をクリックします。
 
-    7. 内で、**転送が必須のセキュリティで保護された**セクションで、**無効**します。
+    7. **[安全な転送が必要]** セクションで、 **[無効]** をクリックします。
 
-    8. **サブスクリプション**ドロップダウン メニューで、適切なサブスクリプションをクリックします。
+    8. **[サブスクリプション]** ドロップダウンメニューから、適切なサブスクリプションをクリックします。
 
-    9. 選択、**リソース グループ**か新規に作成します。 リソース グループは、監視、プロビジョニング、アクセスを制御および Azure の資産のコレクションの課金を管理する方法を提供します。 勧めします (例: これらのコース) などの 1 つのプロジェクトに共通のリソース グループの下の Azure サービスに関連付けられているすべて保持する)。
+    9. リソースグループを選択するか、新しい**リソースグループ**を作成します。 リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。 1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。
 
-        > 詳細にする場合について、Azure リソース グループに従ってくださいこの[リソース グループを管理する方法についてのリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)します。
+        > Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。
 
-    10. まま**仮想ネットワーク**として**無効になっている**するためのオプションは、この場合、します。
+    10. このオプションが選択されている場合は、 **[仮想ネットワーク]** を **[無効]** のままにします。
 
     11. **[作成]** をクリックします。
 
-        ![ストレージの詳細を入力します。](images/AzureLabs-Lab313-37.png)
+        ![ストレージの詳細の入力](images/AzureLabs-Lab313-37.png)
 
-6. クリックすると**作成**サービスを作成するを待機する必要があります、これは少し時間がかかる場合があります。
+6. **[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。
 
-7. 通知は、サービス インスタンスが作成されたら、ポータルに表示されます。 新しいサービス インスタンスを探索する通知をクリックします。
+7. サービスインスタンスが作成されると、ポータルに通知が表示されます。 通知をクリックして、新しいサービスインスタンスを探索します。
 
-    ![新しい記憶域の通知](images/AzureLabs-Lab313-38.png)
+    ![新しいストレージ通知](images/AzureLabs-Lab313-38.png)
 
-8. をクリックして、**リソースに移動**通知で、[新しい記憶域のサービス インスタンスの概要] ページが表示されます。
+8. 通知の **[リソースに移動]** ボタンをクリックすると、新しいストレージサービスインスタンスの概要ページが表示されます。
 
-    ![リソースに移動します。](images/AzureLabs-Lab313-39.png)
+    ![リソースにアクセス](images/AzureLabs-Lab313-39.png)
 
-9. 概要 ページの右側にあるをクリックします。**テーブル**します。
+9. 概要 ページで、右側にある **テーブル** をクリックします。
     
-    ![テーブル](images/AzureLabs-Lab313-40.png)
+    ![tables](images/AzureLabs-Lab313-40.png)
 
-10. 右側のパネルを表示する変更は、 **Table Service**については、の新しいテーブルを追加する必要があります。 クリックして、 **+ テーブル**ボタンの左上隅をクリックします。
+10. 右側のパネルが変更され、**テーブルサービス**情報が表示されます。新しいテーブルを追加する必要があります。 これを行うには、左上隅にある **[+ テーブル]** ボタンをクリックします。
 
     ![テーブルを開く](images/AzureLabs-Lab313-41.png)
 
-11. 入力する必要があります、新しいページが表示されます、**テーブル名**します。 これは、(関数アプリ、および Power BI の作成) 以降の章で、アプリケーションでデータを指すために使用する名前です。 挿入**IoTMessages**名として (、独自に選択することができますので、このドキュメントの後半で使用する場合) をクリック**OK**します。 
+11. 新しいページが表示されます。ここには、**テーブル名**を入力する必要があります。 これは、後の章で (Function App を作成し、Power BI)、アプリケーション内のデータを参照するために使用する名前です。 名前として**Iotmessages**を挿入し (このドキュメントで後ほど使用する場合はそのままにしておきます)、[ **OK]** をクリックします。 
 
-12. 新しいテーブルが作成されたら、できなく内を確認する、 **Table Service** (下部) のページ。
+12. 新しいテーブルが作成されると、**テーブルサービス**のページ (下部) に表示されるようになります。
 
-    ![新しいテーブルの作成](images/AzureLabs-Lab313-42.png)  
+    ![新しいテーブルが作成されました](images/AzureLabs-Lab313-42.png)  
 
-13. 今すぐクリックして**アクセス キー**のコピーを作成し、**ストレージ アカウント名**と**キー** (、メモ帳を使用)、これらの値は使用、このコースの後半で作成するときに、**Azure Function App**します。
+13. 次に、 **[アクセスキー]** をクリックし、**ストレージアカウント名**と**キー**のコピーを作成します (メモ帳を使用)。 **Azure Function App**を作成するときに、このコースの後半でこれらの値を使用します。
 
-    ![新しいテーブルの作成](images/AzureLabs-Lab313-43.png) 
+    ![新しいテーブルが作成されました](images/AzureLabs-Lab313-43.png) 
 
-14. までスクロールし、左側のパネルを使用して、 *Table Service*セクションをクリックします**テーブル**(または**参照テーブル**、新しいポータル) のコピーを作成し、 **テーブルの URL** (、メモ帳を使用)。 テーブルをリンクするときに、このコースの後半でこの値が使用されます、 **Power BI**アプリケーション。
+14. 左側のパネルを再び使用して、[ *Table Service* ] \ (テーブルサービス \) セクションまでスクロールし、[ **tables** (または新しいポータルでの**テーブルの参照**)] をクリックして、テーブルの**URL** (メモ帳を使用) のコピーを作成します。 この値は、テーブルを**Power BI**アプリケーションにリンクするときに、このコースの後半で使用します。
 
-    ![新しいテーブルの作成](images/AzureLabs-Lab313-44.png)
+    ![新しいテーブルが作成されました](images/AzureLabs-Lab313-44.png)
 
-## <a name="chapter-12---completing-the-azure-table"></a>第 12 章 - Azure テーブルの完了
+## <a name="chapter-12---completing-the-azure-table"></a>第12章-Azure テーブルの完成
 
-これで、 **Table Service**ストレージ アカウントを設定したら、情報格納および取得するために使用するデータを追加する時間。 テーブルの編集を実行できます**Visual Studio**します。
+**Table Service**ストレージアカウントのセットアップが完了したので、それにデータを追加します。これは、情報の格納と取得に使用されます。 テーブルの編集は、 **Visual Studio**を使用して行うことができます。
 
-1. 開いている**Visual Studio** (**いない**Visual Studio Code)。
+1. (Visual Studio Code で**はなく**) **Visual Studio**を開きます。
 
-2. メニューから、次のようにクリックします。**ビュー** > **Cloud Explorer**します。
+2. メニューの [**Cloud Explorer**の**表示** > ] をクリックします。
 
-    ![クラウド エクスプ ローラーを開く](images/AzureLabs-Lab313-45.png)
+    ![cloud explorer を開く](images/AzureLabs-Lab313-45.png)
 
-3. **Cloud Explorer** (に患者、読み込み時間がかかる場合があります) がドッキングされている項目として開きます。
+3. **Cloud Explorer**がドッキングされたアイテムとして開きます (読み込みに時間がかかる場合があります)。
 
     > [!WARNING] 
-    > サブスクリプションの作成に使用する場合、*ストレージ アカウント*が表示されないできることを確認します。 
-    > - Azure Portal を使用したものと同じアカウントにログインします。
-    > - (アカウント設定からフィルターを適用する必要があります)、アカウントの管理ページからサブスクリプションを選択します。  
+    > *ストレージアカウント*の作成に使用したサブスクリプションが表示されない場合は、次のことを確認してください。 
+    > - Azure Portal で使用したものと同じアカウントにログインします。
+    > - [アカウント管理] ページからサブスクリプションを選択しました (アカウントの設定からフィルターを適用する必要がある場合があります)。  
     >
-    >   ![サブスクリプションが見つかりません](images/AzureLabs-Lab313-46.png)
+    >   ![サブスクリプションの検索](images/AzureLabs-Lab313-46.png)
 
-4. Azure クラウド サービスが表示されます。 検索**ストレージ アカウント**アカウントを展開するの左側にある矢印をクリックします。
+4. Azure cloud Services が表示されます。 **ストレージアカウント**を検索し、左側の矢印をクリックしてアカウントを展開します。
 
-    ![ストレージ アカウント を開きます](images/AzureLabs-Lab313-47.png)
+    ![ストレージアカウントを開く](images/AzureLabs-Lab313-47.png)
 
-5. 展開されている場合、新しく作成した後**ストレージ アカウント**できるようにします。 ストレージの左側にある矢印をクリックしを展開したら探します**テーブル**を表示する横の矢印をクリックします、**テーブル**最後の章で作成しました。 ダブルクリックして、**テーブル**します。
+5. 展開されると、新しく作成された**ストレージアカウント**を使用できるようになります。 ストレージの左側にある矢印をクリックし、展開された後、 **[テーブル]** を見つけて、その横にある矢印をクリックし、最後の章で作成した**テーブル**を表示します。 **テーブル**をダブルクリックします。
 
-6. テーブルには、Visual Studio ウィンドウの中央に開かれます。 テーブル アイコンをクリックして、 **+** には、(+)。
+6. テーブルが Visual Studio ウィンドウの中央に開きます。 [テーブル] アイコン **+** をクリックします。
 
-    ![新しいテーブルを追加します。](images/AzureLabs-Lab313-48.png)
+    ![新しいテーブルの追加](images/AzureLabs-Lab313-48.png)
 
-7. ウィンドウがするためのプロンプトを表示する表示*エンティティの追加*します。 3 つのプロパティである必要が 1 つだけのエンティティを作成します。 わかります*PartitionKey*と*RowKey*が既に提供されている、使用される場合は、テーブルでデータを検索します。 
+7. *エンティティの追加*を求めるウィンドウが表示されます。 エンティティは1つだけ作成しますが、3つのプロパティがあります。 *Partitionkey*と*RowKey*は既に提供されています。これは、テーブルがデータを検索するために使用されるためです。 
 
-    ![パーティションと行キー](images/AzureLabs-Lab313-49.png)
+    ![パーティションキーと行キー](images/AzureLabs-Lab313-49.png)
 
 8. 次の値を更新します。
 
-    - 名前:**PartitionKey**値。**PK_IoTMessages** 
+    - 名前:**Partitionkey**、値:**PK_IoTMessages** 
 
-    - 名前:**RowKey**値。**RK_1_IoTMessages** 
+    - 名前:**RowKey**、値:**RK_1_IoTMessages** 
 
-9. をクリックし、**プロパティを追加**(の左下に、*エンティティの追加*ウィンドウ) し、次のプロパティを追加します。
+9. 次に、[*エンティティの追加*] ウィンドウの左下にある **[プロパティの追加]** をクリックし、次のプロパティを追加します。
 
-    - **MessageContent**、として、*文字列*値を空のままにします。
+    - **Messagecontent***文字列*として使用する場合は、値を空のままにします。
 
-10. 次の図に、テーブルと一致する必要があります。
+10. テーブルは、次の図に示すものと一致している必要があります。
 
-    ![正しい値を追加します。](images/AzureLabs-Lab313-50.png)
+    ![正しい値の追加](images/AzureLabs-Lab313-50.png)
 
     > [!NOTE] 
-    > エンティティの数 1、行キーでがなぜ理由ためにである可能性があります、複数のメッセージを追加する実験をご希望する必要がありますこのコースでさらにします。
+    > このエンティティの行キーの番号が1である理由は、さらに多くのメッセージを追加することが必要になる可能性があるためです。このコースをさらに試してみることをお勧めします。
 
-11. クリックして**OK**は終了するとき。 テーブルには、使用する準備ができました。
+11. 完了したら [ **OK]** をクリックします。 これで、テーブルを使用する準備ができました。
 
-## <a name="chapter-13---create-an-azure-function-app"></a>章 13 - Azure Function App を作成します。 
+## <a name="chapter-13---create-an-azure-function-app"></a>第13章-Azure Function App の作成 
 
-作成に時間をここでは、 *Azure Function App*、によって呼び出される、 *IoT Hub Service*を格納する、 *IoT Edge*デバイスにメッセージが、 **テーブル**サービスは、前の章で作成しました。
+ここでは、 *Azure Function App*を作成します。これは、前の章で作成した**Table** service に*IoT Edge*デバイスメッセージを格納するために、 *IoT Hub サービス*によって呼び出されます。
 
-最初に、必要なライブラリの読み込みに、Azure 関数を許可するファイルを作成する必要があります。
+まず、必要なライブラリを Azure 関数で読み込むことができるファイルを作成する必要があります。
 
-1.  開いている**メモ帳**(キーを押して、 *Windows キー*、および種類*メモ帳*)。
+1.  **メモ帳**を開きます ( *Windows キー*を押して、*メモ帳*を入力します)。
 
     ![メモ帳を開く](images/AzureLabs-Lab313-51.png)
 
-2.  メモ帳を開く、そこに以下の JSON 構造を挿入します。 完了したら、としてデスクトップに保存**project.json**します。 このファイルは、関数を使用してライブラリを定義します。 NuGet を使用した場合は、使い慣れたが検索されます。
+2.  メモ帳を開いた状態で、次の JSON 構造を挿入します。 その作業が完了したら、それをデスクトップに**プロジェクトの json**として保存します。 このファイルは、関数が使用するライブラリを定義します。 NuGet を使用している場合は、見慣れた外観になります。
     
     > [!WARNING]
-    > 名前の付け方が正しい; 重要です。確認は **、.txt が付いていない**ファイル拡張子。 参照に以下をご覧ください。
+    > 名前が正しいことが重要です。ファイル拡張子 **.txt が付いていないことを**確認します。 参照については、以下を参照してください。
     >
-    > ![保存の JSON](images/AzureLabs-Lab313-52.png)
+    > ![JSON 保存](images/AzureLabs-Lab313-52.png)
 
     ```json
     {
@@ -993,73 +993,73 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
 3.  [Azure ポータル](https://portal.azure.com) にログインします。
 
-4.  ログインした後は、をクリックして**リソースの作成**左上隅にある検索して**Function App**、キーを押すと、 **」と入力**キーを検索します。 クリックして*Function App*結果から、新しいパネルを開きます。
+4.  ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **Function App**を検索して、 **enter**キーを押して検索します。 結果の [ *Function App* ] をクリックして、新しいパネルを開きます。
 
-    ![関数アプリの検索](images/AzureLabs-Lab313-53.png)
+    ![function app の検索](images/AzureLabs-Lab313-53.png)
 
-5.  新しいパネルがの説明を入力、 **Function App**サービス。 このパネルの下部にある左はで、をクリックして、**作成**ボタンは、この関連付けサービスを作成します。
+5.  新しいパネルには、 **Function App**サービスの説明が表示されます。 このパネルの左下にある **[作成]** ボタンをクリックして、このサービスとの関連付けを作成します。
 
-    ![関数アプリ インスタンス](images/AzureLabs-Lab313-54.png)
+    ![function app インスタンス](images/AzureLabs-Lab313-54.png)
 
-6.  クリックすると**作成**次を入力します。
+6.  **[作成]** をクリックしたら、次のように入力します。
 
-    1. **アプリ名**、このサービス インスタンスのご希望の名前を挿入します。
+    1. **[アプリ名]** に、このサービスインスタンスに必要な名前を挿入します。
 
-    2. 選択、**サブスクリプション**します。
+    2. **サブスクリプション**を選択します。
 
-    3. 作成時刻の場合、これは、最初に、適切な価格レベルを選択、 **Function App サービス**、free レベルを使用することがあります。
+    3. 適切な価格レベルを選択してください。 **Function App サービス**を初めて作成する場合は、free レベルをご利用いただけます。
 
-    4. 選択、**リソース グループ**か新規に作成します。 リソース グループは、監視、プロビジョニング、アクセスを制御および Azure の資産のコレクションの課金を管理する方法を提供します。 勧めします (例: これらのコース) などの 1 つのプロジェクトに共通のリソース グループの下の Azure サービスに関連付けられているすべて保持する)。
+    4. リソースグループを選択するか、新しい**リソースグループ**を作成します。 リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。 1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。
 
-        > 詳細にする場合について、Azure リソース グループに従ってくださいこの[リソース グループを管理する方法についてのリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)します。
+        > Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。
 
-    5. **OS**、目的のプラットフォームであるために、Windows をクリックします。
+    5. **OS**の場合は、[Windows] をクリックします。これは目的のプラットフォームです。
 
-    6. 選択、**ホスティング プラン**(このチュートリアルを使用して、**従量課金プラン**します。
+    6. **ホスティングプラン**を選択します (このチュートリアルでは、**従量課金プラン**を使用しています。
 
-    7. 選択、**場所**(前の手順で作成したストレージと同じ場所を選択)
+    7. **場所**を選択します (前の手順で作成したストレージと同じ場所を選択します)。
 
-    8. **ストレージ**セクション **、前の手順で作成したストレージ サービスを選択する必要があります**します。
+    8. **[ストレージ]** セクションでは、**前の手順で作成したストレージサービスを選択する必要があり**ます。
 
-    9. 必要はありません*Application Insights*このアプリでため、自由に**オフ**します。
+    9. このアプリで*Application Insights*は必要ありませ**ん。その**ままにしておいてもかまいません。
 
     10. **[作成]** をクリックします。
 
-        ![新しいインスタンスを作成します。](images/AzureLabs-Lab313-55.png)
+        ![新しいインスタンスの作成](images/AzureLabs-Lab313-55.png)
 
-7.  クリックすると**作成**サービスを作成するを待機する必要があります、これは少し時間がかかる場合があります。
+7.  **[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。
 
-8.  通知は、サービス インスタンスが作成されたら、ポータルに表示されます。
+8.  サービスインスタンスが作成されると、ポータルに通知が表示されます。
 
     ![新しい通知](images/AzureLabs-Lab313-56.png)
 
-9.  デプロイが成功すると、通知をクリックします (終了)。
+9.  デプロイが正常に完了したら (完了した)、通知をクリックします。
 
-10. をクリックして、**リソースに移動**通知では、新しいサービス インスタンスを表示するボタンをクリックします。 
+10. 通知の **[リソースへのジャンプ]** ボタンをクリックして、新しいサービスインスタンスを探索します。 
 
-    ![リソースに移動します。](images/AzureLabs-Lab313-57.png)
+    ![リソースにアクセス](images/AzureLabs-Lab313-57.png)
 
-11. 新しいパネルの左側にある クリックして、 **+** (隣にアイコン +)*関数*、新しい関数を作成します。
+11. 新しいパネルの左側で、[*関数*] の横 **+** にある (プラス記号) アイコンをクリックして、新しい関数を作成します。
 
-    ![新しい関数を追加します。](images/AzureLabs-Lab313-58.png)
+    ![新しい関数の追加](images/AzureLabs-Lab313-58.png)
 
-12. 中央のパネル内、**関数**作成ウィンドウが表示されます。 さらに、下にスクロールし、をクリックして**カスタム関数**します。
+12. 中央のパネル内に [**関数**の作成] ウィンドウが表示されます。 さらに下にスクロールし、 **[カスタム関数]** をクリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-59.png)
 
-13. 次のページが表示されるまで下へスクロール**IoT Hub (イベント ハブ)** の順にクリックします。
+13. 次のページを下にスクロールして、 **IoT Hub (イベントハブ)** を見つけ、クリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-60.png)
 
-14. **IoT Hub (イベント ハブ)** ブレードで、設定、**言語**に**C#** し、**新しい**します。
+14. **[IoT Hub (イベントハブ)]** ブレードで、**言語**をに**C#** 設定し、 **[新規]** をクリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-61.png)
 
-15. このウィンドウは表示されますが、ことを確認します**IoT Hub**が選択されているとの名前、 *IoT Hub*の名前を持つ対応するフィールド、 *IoT Hub サービス*必要のあります。以前に作成 ([手順 8、第 3 章の](#chapter-3---the-iot-hub-service))。 をクリックし、**選択**ボタンをクリックします。
+15. 表示されるウィンドウで、 **IoT Hub**が選択されていることを確認し、 *IoT Hub*フィールドの名前が、前に作成した*IoT Hub サービス*の名前と一致することを確認します ([手順8の第3章を](#chapter-3---the-iot-hub-service)参照)。 次に、 **[選択]** ボタンをクリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-62.png)
 
-16. 戻り、 **IoT Hub (イベント ハブ)** ブレードで、クリック**作成**です。
+16. **[IoT Hub (イベントハブ)]** ブレードに戻り、 **[作成]** をクリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-63.png)
 
@@ -1067,7 +1067,7 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
 
     ![カスタム関数](images/AzureLabs-Lab313-64.png)
 
-18. すべてのコードを削除し、次のように置き換えます。
+18. その中のすべてのコードを削除し、次のコードに置き換えます。
 
     ```csharp
     #r "Microsoft.WindowsAzure.Storage"
@@ -1132,147 +1132,147 @@ Microsoft HoloLens などの複合現実での開発の最新の前提条件を�
     }
     ```
 
-19. 適切な値に対応するように、次の変数を変更 (**テーブル**と**ストレージ**値から[11、13 をそれぞれ、第 11 章の手順](#chapter-11---create-table-service))、使用される、**ストレージ アカウント**:
+19. 次の変数を変更して、**ストレージアカウント**に含まれる適切な値 ([手順 11. および 13. の](#chapter-11---create-table-service)**テーブル**と**ストレージ**の値) に対応するようにします。
 
-    - **tableName**の名前を持つ、**テーブル**内にある、**ストレージ アカウント**します。
-    - **tableURL**の URL を使用して、**テーブル**内にある、**ストレージ アカウント**します。
-    - **storageAccountName**の名前に対応する値の名前を持つ、**ストレージ アカウント**名。
-    - **storageAccountKey**、以前に作成したストレージ サービスで取得したキーを使用します。
+    - **tableName**。**ストレージアカウント**内にある**テーブル**の名前を使用します。
+    - **tableurl**。**ストレージアカウント**内にある**テーブル**の url を使用します。
+    - **Storageaccountname**。**ストレージアカウント**名に対応する値の名前を指定します。
+    - **storageAccountKey**には、前に作成したストレージサービスで取得したキーを使用します。
 
     ![カスタム関数](images/AzureLabs-Lab313-65.png)
 
-20. コードの場所で、次のようにクリックします。**保存**します。
+20. コードを配置したら、 **[保存]** をクリックします。
 
-21. 次に、クリックして、 **\<** (矢印) アイコンをページの右側にあります。
+21. 次に、ページ **\<** の右側にある (矢印) アイコンをクリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-66.png)
 
-22. パネルは、右からにスライドします。 そのパネル で、**アップロード**、および*ファイル ブラウザー*が表示されます。
+22. パネルが右側からスライドします。 そのパネルで **[アップロード]** をクリックすると、*ファイルブラウザー*が表示されます。
 
-23. 、に移動し、クリックすると、、 **project.json**ファイルで、で作成した**メモ帳**以前は、順にクリックします、**オープン**ボタンをクリックします。 このファイルは、関数が使用するライブラリを定義します。
+23. 前の**メモ帳**で作成した**プロジェクトの json**ファイルに移動し、 **[開く]** ボタンをクリックします。 このファイルは、関数が使用するライブラリを定義します。
 
     ![カスタム関数](images/AzureLabs-Lab313-67.png)
 
-24. ファイルがアップロードされると、右側のパネルに表示されます。 内で開くをクリックすると、**関数**エディター。 表示する必要があります**まったく**次のイメージと同じです。
+24. ファイルがアップロードされると、右側のパネルに表示されます。 このボタンをクリックすると、**関数**エディター内で開かれます。 次の画像と**まったく**同じ外観にする必要があります。
 
     ![カスタム関数](images/AzureLabs-Lab313-68.png)
 
-25. この時点でものメッセージを格納する、関数の機能をテストするよいでしょう、*テーブル*します。 ウィンドウの上部右側にある、 をクリックして**テスト**します。
+25. この時点で、*テーブル*にメッセージを格納する関数の機能をテストすることをお勧めします。 ウィンドウの右上にある **[テスト]** をクリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-69.png)
 
-26. メッセージの挿入、**要求本文**で上の図に示すように、**実行**します。 
+26. 上の図に示されているように、**要求本文**にメッセージを挿入し、 **[実行]** をクリックします。 
 
-27. 関数が実行され、結果の状態を表示する (緑色で表示されます**ステータス 202 Accepted**、上記の*出力*ウィンドウで、正常な呼び出しが)。
+27. 関数が実行され、結果の状態が表示されます ([*出力*] ウィンドウの上に緑の**状態 202**が表示されます。これは成功した呼び出しであることを意味します)。
 
     ![出力結果](images/AzureLabs-Lab313-70.png)
 
-## <a name="chapter-14---view-active-messages"></a>第 14 章 – アクティブなメッセージの表示
+## <a name="chapter-14---view-active-messages"></a>第14章-アクティブなメッセージの表示
 
-今すぐ Visual Studio を開く場合 (**いない**Visual Studio Code) で保存するように、テスト メッセージの結果を視覚化できます、 *MessageContent*領域の文字列します。
+(Visual Studio Code では**なく**) Visual Studio を開いた場合、テストメッセージの結果は messagecontent 文字列領域に格納されるため、視覚化することができます。
 
 ![カスタム関数](images/AzureLabs-Lab313-71.png)
 
-Table Service で Function App と Ubuntu デバイスのメッセージが表示されます、 *IoTMessages*テーブル。 を実行していない場合、デバイスを再度起動して、Visual Studio を使用して、デバイス、および、テーブル内のモジュールから結果メッセージを表示することができます*Cloud Explorer*します。
+Table Service と Function App が配置されていると、Ubuntu デバイスのメッセージが*Iotmessages*テーブルに表示されます。 まだ実行されていない場合は、デバイスをもう一度起動すると、Visual Studio *Cloud Explorer*を使用して、デバイスとモジュールの結果メッセージをテーブル内に表示できるようになります。
 
-![データを視覚化します。](images/AzureLabs-Lab313-72.png)
+![データの視覚化](images/AzureLabs-Lab313-72.png)
 
 
-## <a name="chapter-15---power-bi-setup"></a>第 15 章「Power BI のセットアップ
+## <a name="chapter-15---power-bi-setup"></a>第15章-Power BI セットアップ
 
-セットアップは、IOT デバイスからデータを視覚化する**Power BI** (デスクトップのバージョン) からデータを収集、*テーブル*サービスで、先ほど作成しました。 *HoloLens*バージョンの Power BI を使用してそのデータを結果を視覚化します。
+IOT デバイスからデータを視覚化するには**Power BI** (デスクトップバージョン) をセットアップし、先ほど作成した*テーブル*サービスからデータを収集します。 Power BI の*HoloLens*バージョンでは、そのデータを使用して結果が視覚化されます。
 
-1.  Windows 10 の Microsoft Store を開き、検索**Power BI Desktop**します。
+1.  Windows 10 で Microsoft Store を開き、 **Power BI Desktop**を検索します。
 
     ![Power BI](images/AzureLabs-Lab313-73.png)
 
-2.  アプリケーションをダウンロードします。 これには、ダウンロードが完了したら、したら、それを開きます。
+2.  アプリケーションをダウンロードします。 ダウンロードが完了したら、それを開きます。
 
-3.  ログイン*Power BI*で、 **Microsoft 365 アカウント**します。 ブラウザー、サインアップにリダイレクトされます。 サインアップし、Power BI アプリに戻ってもう一度サインインします。
+3.  **Microsoft 365 アカウント**を使用して*Power BI*にログインします。 サインアップするには、ブラウザーにリダイレクトすることができます。 サインアップしたら、Power BI アプリに戻り、もう一度サインインします。
 
-4.  をクリックして**データの取得**し、**より.** .
+4.  **[データの取得]** をクリックし、 **[詳細]** をクリックします。
 
     ![Power BI](images/AzureLabs-Lab313-74.png)
 
-5.  クリックして**Azure**、 **Azure Table Storage**、をクリックして**Connect**します。
+5.  **[Azure]** 、 **[azure Table Storage]** の順にクリックし、 **[接続]** をクリックします。
 
     ![Power BI](images/AzureLabs-Lab313-75.png)
 
-6.  挿入を求められます、**テーブル URL**以前に収集した ([第 11 章の 13 の手順で](#chapter-11---create-table-service))、Table Service の作成中にします。 URL を挿入した後は、テーブル「サブ フォルダー」(IoTMessages は、このコースでは) を参照するパスの部分を削除します。 次の図に表示される最終的な結果があります。 をクリックして**OK**します。
+6.  テーブルサービスの作成時に、先ほど収集した**テーブル URL** ([第11章の手順 13](#chapter-11---create-table-service)) を挿入するように求められます。 URL を挿入した後、テーブル "サブフォルダー" (このコースでは IoTMessages) を参照するパスの部分を削除します。 最終的な結果は、次の図のように表示されます。 [ **OK]** をクリックします。
 
     ![Power BI](images/AzureLabs-Lab313-76.png)
 
-7.  挿入を求め、**ストレージ キー**書き留めた ([手順 11 第 11 章の](#chapter-11---create-table-service))、Table Storage を作成するときに以前。 をクリックして**Connect**します。
+7.  Table Storage の作成時に、メモした**ストレージキー** ([第11章の手順 11](#chapter-11---create-table-service)) を挿入するように求められます。 **[接続]** をクリックします。
 
     ![Power BI](images/AzureLabs-Lab313-77.png)  
 
-8. A**ナビゲーター パネル**が表示されます、テーブルの横にあるボックスをオンにしをクリックして**ロード**します。
+8. [**ナビゲーター] パネル**が表示されたら、テーブルの横にあるボックスをオンにして、 **[読み込み]** をクリックします。
 
     ![Power BI](images/AzureLabs-Lab313-78.png)  
 
-9. テーブルが Power BI に読み込まれているようになりました、クエリが値を表示する必要しますが、あります。 これを行うにあるテーブル名を右クリックし、**フィールド パネル**画面の右側にあります。 をクリックして**クエリの編集**します。
+9. 現在、テーブルは Power BI に読み込まれていますが、その値を表示するクエリが必要です。 これを行うには、画面の右側にある [**フィールド] パネル**にあるテーブル名を右クリックします。 次に、 **[クエリの編集]** をクリックします。
 
     ![Power BI](images/AzureLabs-Lab313-79.png) 
 
-10. A **Power Query エディター**として、テーブルを表示する、新しいウィンドウが開きます。 [単語] をクリックして**レコード**内、*コンテンツ*格納されているコンテンツを視覚化する、テーブルの列。
+10. 新しいウィンドウとして**Power Query エディター**が開き、テーブルが表示されます。 テーブルの [*コンテンツ*] 列の "**レコード**" をクリックして、保存されているコンテンツを視覚化します。
 
     ![Power BI](images/AzureLabs-Lab313-80.png)    
 
-11. をクリックして**Into テーブル**ウィンドウの上部左にあります。 
+11. ウィンドウの左上にある [**テーブルに**移動] をクリックします。 
 
     ![Power BI](images/AzureLabs-Lab313-81.png)
 
-12. をクリックして**閉じて適用**します。
+12. **[閉じる & 適用]** をクリックします。
 
     ![Power BI](images/AzureLabs-Lab313-82.png)
 
-13. 内で、クエリの読み込みが完了すると、**フィールド パネル**、画面の右側にある、パラメーターに対応するボックスをオンに**名前**と**値**を視覚化、 **MessageContent**列のコンテンツ。
+13. クエリの読み込みが完了したら、[**フィールド] パネル**の画面の右側で、パラメーターの**名前**と**値**に対応するボックスをオンにして、messagecontent 列の内容を視覚化します。
 
     ![Power BI](images/AzureLabs-Lab313-83.png)
 
-14. をクリックして、**青いディスク アイコン**で任意のフォルダーで作業内容を保存するには、ウィンドウの左上。
+14. ウィンドウの左上にある**青いディスクアイコン**をクリックして、選択したフォルダーに作業内容を保存します。
 
     ![Power BI](images/AzureLabs-Lab313-84.png)
 
-15. ワークスペースに、テーブルをアップロードする [発行] ボタンをクリックすることができますようになりました。 メッセージが表示されたら、 をクリックして**個人用ワークスペース** をクリック*選択*します。 送信の成功した結果を表示するには待機します。
+15. [発行] ボタンをクリックして、ワークスペースにテーブルをアップロードできるようになりました。 メッセージが表示されたら、 **[マイワークスペース]** をクリックし、[*選択*] をクリックします 送信の成功した結果が表示されるまで待ちます。
 
     ![Power BI](images/AzureLabs-Lab313-85.png)
 
     ![Power BI](images/AzureLabs-Lab313-86.png)
 
 > [!WARNING]
-> 次の章では、特定の HoloLens です。 Power BI は現在使用できません没入型アプリケーションとして Windows 混合現実ポータル (Cliff 家とも呼ばれます) で、デスクトップ バージョンを実行することができますが、デスクトップ アプリを使用します。
+> 次の章は HoloLens 固有です。 Power BI は現在イマーシブアプリケーションとして利用できませんが、デスクトップアプリを使用して Windows Mixed Reality ポータル (崖家) でデスクトップバージョンを実行することはできます。
 
-## <a name="chapter-16---display-power-bi-data-on-hololens"></a>第 16 章 – HoloLens でデータを Power BI の表示
+## <a name="chapter-16---display-power-bi-data-on-hololens"></a>Chapter 16-HoloLens で Power BI データを表示する
 
-1. HoloLens へログイン、 **Microsoft Store**アプリケーションの一覧で、アイコンをタップします。
+1. HoloLens で、アプリケーションの一覧のアイコンをタップして、 **Microsoft Store**にログインします。
 
     ![Power BI HL](images/AzureLabs-Lab313-87.png)
 
-2. 検索し、ダウンロード、 **Power BI**アプリケーション。
+2. **Power BI**アプリケーションを検索してダウンロードします。
 
     ![Power BI HL](images/AzureLabs-Lab313-88.png)
 
-3. 開始**Power BI**アプリケーションの一覧から。 
+3. アプリケーションの一覧から**Power BI**を開始します。 
 
-4. **Power BI**にログインするよう求められます可能性があります、 **Microsoft 365 アカウント**します。
+4. **Power BI**によって、 **Microsoft 365 アカウント**へのログインが要求される場合があります。
 
-5. 1 回、アプリ内次の図に示すように、ワークスペースが既定で表示します。 発生しない場合は、単にウィンドウの左側にあるワークスペース アイコンをクリックします。
+5. アプリの内部では、次の図に示すように、既定でワークスペースが表示されます。 この問題が発生しない場合は、ウィンドウの左側にあるワークスペースアイコンをクリックします。
 
     ![Power BI HL](images/AzureLabs-Lab313-89.png)
 
-## <a name="your-finished-your-iot-hub-application"></a>IoT Hub のアプリケーションが完了しました
+## <a name="your-finished-your-iot-hub-application"></a>IoT Hub アプリケーションが完成しました
 
-これで、シミュレートされた仮想マシンのエッジ デバイスで、IoT Hub サービスを作成しました。 デバイスは、machine learning のモデルを Power BI に読み取られ、Microsoft HoloLens 内で視覚化する Azure Function App によって容易になります、Azure Table Service の結果を通信できます。
+これで、シミュレートされた仮想マシンのエッジデバイスを使用して、IoT Hub サービスを正常に作成できました。 デバイスは、azure Function App によって容易に machine learning モデルの結果を Azure Table サービスに伝達できます。このサービスは、Power BI に読み込まれ、Microsoft HoloLens 内で視覚化されます。
  
 ![Power BI](images/AzureLabs-Lab313-00.png)
 
 ## <a name="bonus-exercises"></a>ボーナスの演習
 
-### <a name="exercise-1"></a>手順 1
+### <a name="exercise-1"></a>演習1
 
-テーブルに格納されているメッセージの構造を展開し、グラフとして表示します。 多くのデータを収集し、後で表示される、同じテーブルに保存する場合があります。
+テーブルに格納されているメッセージング構造を展開し、グラフとして表示します。 後で表示するために、さらに多くのデータを収集し、同じテーブルに格納することができます。
 
-### <a name="exercise-2"></a>手順 2
+### <a name="exercise-2"></a>演習2
 
-追加で作成するため、分析するカメラでイメージをキャプチャできます、IoT ボード上に展開する「カメラ キャプチャ」モジュール。
+IoT ボードにデプロイする追加の "カメラキャプチャ" モジュールを作成して、分析対象のカメラを通じてイメージをキャプチャできるようにします。

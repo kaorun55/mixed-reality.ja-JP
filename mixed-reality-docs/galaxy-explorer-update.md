@@ -1,13 +1,13 @@
-# <a name="the-making-of-galaxy-explorer-for-hololens-2"></a>HoloLens 2 の Galaxy エクスプ ローラーの作成
+# <a name="the-making-of-galaxy-explorer-for-hololens-2"></a>HoloLens 2 用 Galaxy エクスプローラーの作成
 
-HoloLens 2 Galaxy エクスプ ローラーを更新する方法の旅にようこそ。 [Galaxy エクスプ ローラー](https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer "Galaxy エクスプ ローラー") HoloLens のオープン ソース アプリケーションとして開発された最初 (第 1 世代)、お客様のアイデアを共有プログラムを通じて、多くの人が最初の複合現実エクスペリエンスの 1 つです。 これを更新していますので、 [HoloLens 2 の新しいエキサイティングな機能](https://www.microsoft.com/hololens/hardware)します。
+HoloLens 2 の Galaxy エクスプローラーの更新方法について説明します。 [Galaxy エクスプローラー](https://docs.microsoft.com/windows/mixed-reality/galaxy-explorer "Galaxy エクスプローラー")は、当初、アイデアプログラムを共有することによって HoloLens 用のオープンソースアプリケーションとして開発されており、多くの人が経験した最初の mixed reality の1つです。 ここでは、 [HoloLens 2 の新機能と魅力的な機能](https://www.microsoft.com/hololens/hardware)を更新します。
 
-Microsoft Mixed Reality Studios(1) の 1 つ、として、通常は商用グレードのソリューションを開発しは開発 (&) クリエイティブと開発プロセス全体を通じてターゲット プラットフォームでテストします。 これで固有の状況ではありませんまだ HoloLens 2 のデバイスにアクセスしますが、Galaxy エクスプ ローラーに更新プログラムを開始することを嬉しく思います。 フレームワークとツールを利用してこのプロジェクトに着手していること (など[MRTK v2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)) とコミュニティ - を使用可能になるし、乗車のに沿って表示します。
+Microsoft Mixed Reality スタジオ (1) の1つとして、通常、商用レベルのソリューションを開発し、クリエイティブおよび開発プロセスを通じて対象プラットフォームで & テストを開発しています。 私たちは、まだ HoloLens 2 デバイスにアクセスできないが、Galaxy エクスプローラーの更新プログラムを開始したいという、固有の状況になっています。 私たちは、フレームワークとツール ( [Mrtk v2](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)など) を使用してこのプロジェクトを着手しています。これは、microsoft とコミュニティで利用できるようになったためです。
 
-元の Galaxy エクスプ ローラーと同じようになります[ソーシング GitHub のプロジェクトを開く](https://github.com/Microsoft/GalaxyExplorer)コミュニティにフル アクセスができるようにします。 私たちもドキュメント化の道のりはここで MRTK v1 から MRTK v2 への移植を行いましたが、HoloLens の 2 で使用できる新しい機能に基づいて、エクスペリエンスを拡張する方法、Galaxy エクスプ ローラーが残っていることを確認した方法および方法に関する完全な透過性で、マルチプラット フォーム エクスペリエンスです。 HoloLens で Galaxy エクスプ ローラーを表示しているかにかかわらず (第 1 世代) HoloLens 2、Windows Mixed Reality ヘッドセットまたは、Windows 10 デスクトップで魅力的なエクスペリエンスがあることを確認し、体験を活用して、私たちは同じくらいにします。
+元の Galaxy エクスプローラーと同じように、コミュニティにフルアクセスがあることを確認するために、 [GitHub でプロジェクトのソーシングを開始](https://github.com/Microsoft/GalaxyExplorer)します。 ここでは、MRTK v1 から MRTK v2 への行い移植方法、HoloLens 2 で利用可能な新機能に基づいてエクスペリエンスがどのように強化されたか、および Galaxy エクスプローラーが次のようになっていることを確認する方法について、完全な透明性についても説明します。マルチプラットフォームエクスペリエンス。 これにより、HoloLens (第1世代)、HoloLens 2、Windows Mixed Reality ヘッドセット、または Windows 10 デスクトップ上で Galaxy エクスプローラーを表示している場合でも、イマーシブエクスペリエンスを使用していることを確認し、その過程を十分に体験したいと考えています。
 
-このページは、プロジェクトでは、処理の進行し、詳細な記事、コード、設計アーティファクト、MRTK v2 の他のドキュメント、プロジェクトで、内部関係者の外観を提供するためになどへのリンクを展開します。
+このページは、プロジェクトの進行に合わせて拡張され、さらに詳細な記事、コード、デザイン artefacts、追加の MRTK v2 ドキュメントなどにリンクします。これにより、insider がプロジェクトを確認できるようになります。
 
 
 
-(ある米国、ヨーロッパおよびアジア太平洋の - 1) Microsoft Mixed Reality Studio チームはユーザー エクスペリエンスのデザイン、ホログラフィック コンピューティング、AR/VR テクノロジ、および 3D 開発の専門家3D アセットの作成、DirectX、Unity と Unreal など。 必要な計画を構想、設計、構築、および顧客は、組織全体で大きな影響を及ぼすを作成するときに、ソリューションを配信を支援します。 これらのスタジオは、エンタープライズ アプリケーション統合、導入、運用およびサポートの Microsoft サービス プロフェッショナルを超える 22,000 と密接に連携します。
+(1) 米国、ヨーロッパ、およびアジア太平洋に配置されている Microsoft Mixed Reality Studio チームは、ユーザーエクスペリエンス設計、holographic computing、AR/VR テクノロジ、3D 開発の専門家です。3D アセットの作成、DirectX、Unity、Unreal など。 お客様が組織全体に大きな影響を与えることを可能にすると同時に、必要なフューチャの計画、設計、構築、および提供を支援します。 スタジオは、エンタープライズアプリケーションの統合、導入、運用、およびサポートのために、22000を超える Microsoft サービスプロフェッショナルと密接に連携しています。

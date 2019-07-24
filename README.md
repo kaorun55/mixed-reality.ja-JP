@@ -1,3 +1,3 @@
-## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft のオープン ソース倫理
-このプロジェクトを採用しています、 [Microsoft オープン ソース倫理規定](https://opensource.microsoft.com/codeofconduct/)します。
-詳細については、次を参照してください。、 [FAQ の実施コード](https://opensource.microsoft.com/codeofconduct/faq/)にお問い合わせくださいまたは[ opencode@microsoft.com ](mailto:opencode@microsoft.com)その他の質問またはコメント。
+## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープンソース倫理規定
+このプロジェクトは、 [Microsoft オープンソース](https://opensource.microsoft.com/codeofconduct/)倫理規定を採用しています。
+詳細については、[倫理](https://opensource.microsoft.com/codeofconduct/faq/)規定に関する faq [opencode@microsoft.com](mailto:opencode@microsoft.com)を参照するか、他のご質問やご意見をお寄せください。

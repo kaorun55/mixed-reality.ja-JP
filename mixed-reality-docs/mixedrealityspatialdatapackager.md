@@ -1,11 +1,11 @@
 ---
-title: 複合現実の空間データ パッケー ジャーのドキュメント
-description: Mixed Reality 空間データ Packager を使用するためのドキュメント
+title: Mixed Reality 空間データパッケージャーのドキュメント
+description: Mixed Reality 空間データパッケージャーの使用に関するドキュメント
 author: alfred-msft
 ms.author: alreynol
 ms.date: 05/16/2019
 ms.topic: article
-keywords: lbe MixedRealitySpatialDataPackager.exe、MixedRealitySpatialDataPackager
+keywords: lbe、MixedRealitySpatialDataPackager、MixedRealitySpatialDataPackager
 ms.openlocfilehash: 7ad1159af9eecd3ca3622dd25cc1f49fb0b1700a
 ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
 ms.translationtype: MT
@@ -13,45 +13,45 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/20/2019
 ms.locfileid: "65942108"
 ---
-# <a name="mixed-reality-spatial-data-packager-documentation"></a>複合現実の空間データ パッケー ジャーのドキュメント
+# <a name="mixed-reality-spatial-data-packager-documentation"></a>Mixed Reality 空間データパッケージャーのドキュメント
 
 >[!NOTE]
-> このツールと、その操作として提供されているは。 今後の Windows と互換性がない可能性があり、予告なく変更される可能性がまたは Windows Mixed Reality ッドマウントを解放します。
+> このツールとその操作は、そのとおりに提供されます。 予告なしに変更されることがあり、今後の Windows または Windows Mixed Reality のリリースと互換性がない可能性があります。
 
 ## <a name="download"></a>ダウンロード
- ダウンロード[MixedRealitySpatialDataPackager ここ](http://download.microsoft.com/download/A/1/2/A12B8A90-B3F7-4ED9-A4BB-D59DDCDAA125/MixedRealitySpatialDataPackager.zip)
+ [MixedRealitySpatialDataPackager をこちら](http://download.microsoft.com/download/A/1/2/A12B8A90-B3F7-4ED9-A4BB-D59DDCDAA125/MixedRealitySpatialDataPackager.zip)からダウンロード
 
-## <a name="quickstart"></a>クイック スタート
+## <a name="quickstart"></a>クィック
 
-Mixed Reality 空間データ Packager ツールは、2 つの手順は、別の PC のエクスポートおよびインポート プロセスのいずれかからターゲット アプリの空間データをコピーします。 このツールは、管理者特権で実行する必要があり、インポート時に既存の空間データを削除します。 エクスポートは、そのまま既存の空間データを残されます。
+Mixed Reality 空間データパッケージャーツールは、エクスポートとインポートの2つの手順を通じて、ターゲットアプリの空間データをある PC から別の PC にコピーします。 このツールは、管理者特権で実行する必要があり、インポート時に既存の空間データを削除します。 Export は、既存の空間データをそのまま残します。
 
-主な要件と制限事項:
+重要な要件と制限事項:
 
-1. ツールは、管理者特権で実行する必要があります。 
-2. ツールの実行後は Mixed Reality ポータルが安定しない場合は、PC を再起動する必要があります。
-3. 空間データのバージョンの不一致または互換性の問題が発生した場合、ツールは実行されません。
-4. インポート時に既存の空間データを消去するツール
-5. 以前にエクスポートすることによってバックアップされていない場合にデータを復元できません前にインポート プロセスが失敗した場合
-6. マップの空間データの「読み取り専用」モードで臨時のインポート機能の品質
+1. ツールは、管理者特権で実行する必要があります 
+2. ツールを実行した後に Mixed Reality ポータルが不安定な場合は、PC の再起動が必要になることがあります
+3. 空間データのバージョンの不一致または非互換性の検出時にツールが実行されない
+4. インポート時に既存の空間データが消去されます
+5. インポート処理が失敗した場合、以前のデータをエクスポートしてバックアップしていない限り、以前のデータを復元することはできません。
+6. 空間マップデータの "読み取り専用" モードでのインポート機能の品質
 ***
 
-## <a name="mapping-best-practices"></a>マッピングのベスト プラクティス
+## <a name="mapping-best-practices"></a>マッピングのベストプラクティス
 
-1. コントロール パネルから既存のマップをクリア (設定]、[Mixed Reality 環境]-> [-> オフ環境データ)
-2. 適切な追跡およびかどうかはロックされているマップ モードで動作する光源を維持するためにしてみてくださいのための十分なライティングを確認します。
-3. 可能な場合ライト ダイナミック レンジを低く抑えるため、暗い、シャドウされた領域の横に高の照明を回避します。
-4. 空白を最小限に抑える、textureless サーフェスは、白い壁のさまざまなポスターの範囲を配置する例。
-5. マップ領域でユーザーを移動するなど、シーン内の動的オブジェクトなし
-6. インポート (Insider Preview で使用可能) で、マップをロックします。
-7. マップのロックを解除し、品質の追跡が低下や (照明またはオブジェクトのレイアウトの変更) 環境で変更があるときに、環境を再スキャン
+1. コントロールパネルから既存のマップをクリアする (設定 > Mixed Reality-> Environment-環境データをクリア >)
+2. 適切な追跡に十分な照明を確保し、ロックされたマップモードを実行している場合は、同じ照明を維持します
+3. 可能な場合は、暗い領域、影付き領域の横に高い照明の領域を避けて、光源の範囲を小さくします。
+4. 空白の領域を最小化する (たとえば、異なるポスターの範囲をホワイトウォールに配置する)
+5. オブジェクトの移動など、シーンに動的オブジェクトを使用せずに領域をマップする
+6. インポート時にマップをロックする (Insider Preview 経由で利用可能)
+7. トラックの品質が低下したとき、または環境に変化があった場合に、マップのロックを解除して環境を再スキャンする (照明またはオブジェクトのレイアウトの変更)
 ***
 
-## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>コンパニオン スクリプトの実行中の Mixed Reality 空間データ パッケー ジャー
+## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>コンパニオンスクリプトを使用した Mixed Reality 空間データパッケージャーの実行
 
-マップ パッケー ジャー、ツールを実行している MRSpatialPackagerHelperScript.ps1 を用意しました。 
+マップツールを実行する MRSpatialPackagerHelperScript が用意されています。 
 
 
-以下は、スクリプトのパラメーターが定義されています。
+スクリプトのパラメーターは次のように定義されています。
 
 ```
 -AppName <String>
@@ -80,7 +80,7 @@ Mixed Reality 空間データ Packager ツールは、2 つの手順は、別の
 
 ### <a name="powershell-script-example-usage-and-output"></a>Powershell スクリプトの使用例と出力
 
-.\MRSpatialPackagerHelperScript.ps1 -AppName holoshell -UserName Administrator -Mode export -MapxPath D:\temp\ -LockMap 0
+.\MRSpatialPackagerHelperScript.ps1-AppName holoshell-UserName Administrator-Mode export-MapxPath D:\temp\-LockMap 0
 ```
 Package Family Name for holoshell: HoloShell_cw5n1h2txyewy
 User SID for Administrator: S-1-5-21-1279937937-3984375698-1043392598-499
@@ -113,36 +113,36 @@ Started SPECTRUM
 IMPORT SUCCESS
 ```
 
-### <a name="how-to-export-using-mixedrealitypackagerexe"></a>MixedRealityPackager.exe を使用してエクスポートする方法
+### <a name="how-to-export-using-mixedrealitypackagerexe"></a>MixedRealityPackager を使用してエクスポートする方法
 ```
 MixedRealitySpatialDataPackager.exe export <folderpath to mapx files> <source package family name>    
 ```
 
-デバイスの電源オフのマップをエクスポートするには、2 つの mapx ファイル、het.mapx と sa.mapx が生成されます。 エクスポート プロセス中にすべての空間アンカー (存在する) 場合、指定したアプリとユーザーが作成した境界を除く削除されます。 ソースのパッケージ ファミリ名は、既存のインストールされているアプリと一致する必要があります。 または exe は失敗します。
+デバイスからマップをエクスポートすると、het. mapx と sa. mapx という2つの mapx ファイルが生成されます。 エクスポートプロセスでは、指定されたアプリとユーザーが作成した境界 (存在する場合) を除き、すべての空間アンカーが削除されます。 ソースパッケージファミリ名は、インストールされている既存のアプリと一致する必要があります。一致しないと、exe は失敗します。
 
-### <a name="how-to-import-using-mixedrealitypackagerexe"></a>MixedRealityPackager.exe を使用してインポートする方法
+### <a name="how-to-import-using-mixedrealitypackagerexe"></a>MixedRealityPackager を使用してインポートする方法
 ```
 MixedRealitySpatialDataPackager.exe import <folderpath to mapx files> <target package family name> <user SID>
 ```
-インポートでは、既存の空間データを削除し、指定したディレクトリからデータに置き換えられます。 アプリ名の入力は、空間のアンカーを対象となるアプリのパッケージ名のためにインポートする必要があります、ターゲット ユーザーの SID は、インポートされた空間アンカーへのアクセス権をユーザーを指定を指定します。 ターゲットのパッケージ ファミリ名とユーザーの Sid が PC 上の既存の値に一致する必要があります。 または exe は失敗します。
+インポートによって既存の空間データが削除され、指定したディレクトリのデータで置き換えられます。 アプリ名の入力では、空間アンカーをインポートする対象アプリのパッケージ名を指定し、ターゲットユーザー SID で、インポートされた空間アンカーへのアクセス権を持つユーザーを指定します。 ターゲットパッケージファミリ名とユーザー Sid が PC 上の既存の値と一致している必要があります。指定しないと、exe は失敗します。
 
 
 ***
 ## <a name="error-messages"></a>エラー メッセージ
-さらに以下のエラーのエラー メッセージも伴います HRESULT
+さらに、次のエラーメッセージにも HRESULT が付随します。
 
-### <a name="if-there-was-an-error-invalid-arguments"></a>無効な引数エラーが発生した場合
+### <a name="if-there-was-an-error-invalid-arguments"></a>エラーが発生した場合は、無効な引数
 ```
 Invalid command line parameters
 ```
 
-### <a name="if-the-executable-was-not-run-in-administrator-mode"></a>管理者モードで実行可能ファイルが実行されていない場合
+### <a name="if-the-executable-was-not-run-in-administrator-mode"></a>実行可能ファイルが管理者モードで実行されなかった場合
 ```
 1. Unable to determine elevation privileges 
 2. Please run with administrator privileges 
 ```
 
-### <a name="if-there-was-an-error-enabling-or-disabling-the-driver"></a>有効にするか、ドライバーを無効にすると、エラーが発生した場合
+### <a name="if-there-was-an-error-enabling-or-disabling-the-driver"></a>ドライバーの有効化または無効化でエラーが発生した場合
 ```
 1. Could not find the specified driver with class GUID {d612553d-06b1-49ca-8938-e39ef80eb16f}
 2. Could not find the device instance ID for specified driver with class GUID {d612553d-06b1-49ca-8938-e39ef80eb16f}
@@ -150,31 +150,31 @@ Invalid command line parameters
 4. Failed to enable/disable driver
 ```
 
-### <a name="if-there-was-an-error-validating-the-spatial-database-version"></a>空間データベースのバージョンを検証中にエラーが発生した場合
+### <a name="if-there-was-an-error-validating-the-spatial-database-version"></a>空間データベースバージョンの検証中にエラーが発生した場合
 ```
 1. Could not read database version
 2. This tool is not compatible with the current driver version of Windows Mixed Reality and/or the spatial data provided to replace the existing spatial data is an invalid version.
 3. No spatial data is present on the current device please connect your Mixed Reality device to initialize spatial data. If the problem persists please restart your PC.
 ```
 
-### <a name="if-there-was-an-error-validating-the-package-family-name-provided-for-target-importexport-app"></a>インポート/エクスポートの対象のアプリのパッケージ ファミリ名を検証中にエラーが発生した場合
+### <a name="if-there-was-an-error-validating-the-package-family-name-provided-for-target-importexport-app"></a>ターゲットのインポート/エクスポートアプリに指定されたパッケージファミリ名の検証中にエラーが発生した場合
 ```
 The package family name does not correspond to an installed app
 ```
 
-### <a name="if-there-was-an-error-validating-the-user-sid"></a>ユーザーの SID を検証中にエラーが発生した場合
+### <a name="if-there-was-an-error-validating-the-user-sid"></a>ユーザー SID の検証中にエラーが発生した場合
 ```
 Failed to find local user for passed in user SID
 ```
 
-### <a name="if-there-was-an-error-related-to-the-destination-or-source-spatial-data-files"></a>移行先またはソースの空間データに関連するエラーが、ファイルを使用するがあった場合
+### <a name="if-there-was-an-error-related-to-the-destination-or-source-spatial-data-files"></a>コピー先またはコピー元の空間データファイルに関連するエラーが発生した場合
 ```
 1. Folder path to space store files doesn't exist 
 2. het.mapx or sa.mapx file doesn't exist in <PATH> for import
 3. Unable to create directory at <PATH> for export
 ```
 
-### <a name="if-there-was-an-error-related-to-starting-and-stoping-spectrumsharedrealitysvc"></a>開始および停止スペクトル/SharedRealitySvc に関連するエラーが発生しました
+### <a name="if-there-was-an-error-related-to-starting-and-stoping-spectrumsharedrealitysvc"></a>Starting と停止スペクトラム/SharedRealitySvc に関連するエラーが発生した場合
 ```
 1. Unable to open service manager <SERVICE>
 2. Timed out trying to start/stop <SERVICE>

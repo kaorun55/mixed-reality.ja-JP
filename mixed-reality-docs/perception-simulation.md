@@ -1,11 +1,11 @@
 ---
-title: Perception シミュレーション
-description: Perception シミュレーション ライブラリを使用して、シミュレートされた没入型アプリケーションの入力を自動化するためのガイド
+title: 認識シミュレーション
+description: 知覚シミュレーションライブラリを使用して、イマーシブアプリケーションのシミュレートされた入力を自動化するためのガイド
 author: pbarnettms
 ms.author: pbarnett
 ms.date: 04/26/2019
 ms.topic: article
-keywords: HoloLens、シミュレーションのテスト
+keywords: HoloLens、シミュレーション、テスト
 ms.openlocfilehash: 8152181bdbe8c83d2b706b34f1f2fb5d51f4c880
 ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
@@ -13,46 +13,46 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67414531"
 ---
-# <a name="perception-simulation"></a>Perception シミュレーション
+# <a name="perception-simulation"></a>認識シミュレーション
 
-アプリの自動テストをビルドしますか。 コンポーネント レベルの単体テストを超えるし、実際に、アプリのエンドを実行するためのテストを作成しますか。 Perception シミュレーションは、探しているものです。 Perception シミュレーション ライブラリが人間に送信し、テストを自動化できるように、世界がアプリにデータを入力します。 たとえば、人間、反復可能な特定の位置を検索およびジェスチャを実行することまたはのモーション コント ローラーを使用して入力をシミュレートできます。
+アプリの自動テストをビルドしますか? テストをコンポーネントレベルの単体テストよりも先に実行し、アプリをエンドツーエンドで実際に練習しますか。 認識シミュレーションは、探しているものです。 認識シミュレーションライブラリは、アプリに人間と世界の入力データを送信して、テストを自動化できるようにします。 たとえば、特定の反復可能な位置に対する人間の入力をシミュレートし、ジェスチャを実行したり、モーションコントローラーを使用したりすることができます。
 
-Perception シミュレーションは、物理 HoloLens、HoloLens のエミュレーターに次のように、シミュレートされた入力を送信できます (第 1 世代)、2 つのエミュレーター、または Mixed Reality ポータルを使用した PC HoloLens をインストールします。 Perception Mixed Reality デバイスでライブのセンサーをバイパスし、シミュレーションでは、デバイスで実行されているアプリケーションへの入力をシミュレートします。 アプリケーションでは、同じ api を使用して、Perception シミュレーションを実行するいると実際のセンサーを実行している間の違いを見分けることはできませんが、常にこれらの入力イベントを受信します。 Perception シミュレーションは、シミュレートされた入力、HoloLens 仮想マシンに送信するために使用、HoloLens のエミュレーターと同じテクノロジです。
+認識シミュレーションでは、このようなシミュレートされた入力を物理 HoloLens、HoloLens エミュレーター (第1世代)、HoloLens 2 エミュレーター、または Mixed Reality ポータルがインストールされている PC に送信できます。 認識シミュレーションは、混合の現実のデバイスでライブセンサーをバイパスし、デバイスで実行されているアプリケーションにシミュレートされた入力を送信します。 アプリケーションでは、これらの入力イベントを、常に使用するものと同じ Api を使用して受信します。また、実際のセンサーでの実行と知覚シミュレーションでの実行の違いを示すことはできません。 認識シミュレーションは、シミュレートされた入力を HoloLens 仮想マシンに送信するために HoloLens エミュレーターで使用されるものと同じテクノロジです。
 
-コードでシミュレーションを使用するには、まず IPerceptionSimulationManager オブジェクトを作成します。 、そのオブジェクトから、シミュレートされた「人事」、ヘッドの位置、手の形の位置、ジェスチャなどのプロパティを制御するためのコマンドを実行できると有効にし、アニメーション コント ローラーを操作できます。
+コードでのシミュレーションの使用を開始するには、まず IPerceptionSimulationManager オブジェクトを作成します。 そのオブジェクトから、コマンドを発行して、"人間" のようなシミュレートされた "ユーザー" のプロパティを制御することができます。これには、head 位置、針、ジェスチャなどがあります。また、モーションコントローラーを有効にしたり操作したりすることができます。
 
-## <a name="setting-up-a-visual-studio-project-for-perception-simulation"></a>Perception でシミュレーションするための Visual Studio プロジェクトの設定
-1. [HoloLens のエミュレーターをインストール](install-the-tools.md)開発 PC 上。 エミュレーターには、Perception シミュレーションに使用するライブラリが含まれています。
-2. 作成する新しい Visual StudioC#デスクトップのプロジェクト (コンソール プロジェクトをうまくを開始する)。
-3. 次のバイナリをプロジェクトに参照として追加 (プロジェクトに追加]-> [-> 参照)。%Programfiles (x86) %\Microsoft XDE で検索することができます\\(バージョン) など、 **%programfiles (x86) %\Microsoft XDE\\10.0.18362.0** HoloLens のエミュレーターの 2。  (注: バイナリには、HoloLens 2 エミュレーターの一部が、でも正しく動作 Windows Mixed Reality のデスクトップ)。します。 管理 - PerceptionSimulationManager.Interop.dll C# Perception シミュレーション用のラッパーです。
-    b. PerceptionSimulationRest.dll - HoloLens またはエミュレーターへの web ソケット通信チャネルを設定するためのライブラリを使用します。
-    c. SimulationStream.Interop.dll のシミュレーションを共有する型。
-4. 実装を追加するプロジェクト バイナリ PerceptionSimulationManager.dll。 まず、プロジェクトに、バイナリとして追加 (プロジェクトに追加-> -> 既存項目の)。プロジェクトのソース フォルダーにコピーしないように、リンクとして保存します。 ![PerceptionSimulationManager.dll をリンクとしてプロジェクトに追加](images/saveaslink.png)b。 確認し、ビルドの出力フォルダーにコピーすることがあるのです。 これは、バイナリのプロパティ シートです。 ![マーク PerceptionSimulationManager.dll 出力ディレクトリにコピーするには](images/copyalways.png)
-5. アクティブ ソリューション プラットフォームを x64 に設定します。  (使用の場合は、1 つは、x64 プラットフォーム エントリを作成する Configuration Manager が存在しない)
+## <a name="setting-up-a-visual-studio-project-for-perception-simulation"></a>認識シミュレーションのための Visual Studio プロジェクトの設定
+1. 開発用 PC に[HoloLens エミュレーターをインストール](install-the-tools.md)します。 エミュレーターには、認識シミュレーションに使用するライブラリが含まれています。
+2. 新しい Visual Studio C#デスクトッププロジェクトを作成します (コンソールプロジェクトは、作業を開始するのに適しています)。
+3. 次のバイナリを参照としてプロジェクトに追加します (プロジェクト > 追加 > 参照...)。これらは、HoloLens 2 エミュレーターの% **ProgramFiles (x86)% \ microsoft\\xde 10.0.18362.0**など、% ProgramFiles (x86)% \ microsoft xde\\(バージョン) で見つけることができます。  (注: バイナリは HoloLens 2 エミュレーターに含まれていますが、デスクトップ上の Windows Mixed Reality でも機能します)。ある. 認識シミュレーション用の PerceptionSimulationManager マネージC#ラッパー。
+    b. PerceptionSimulationRest-HoloLens またはエミュレーターに対する web ソケット通信チャネルを設定するためのライブラリ。
+    c. SimulationStream-シミュレーション用の共有型。
+4. 実装バイナリ PerceptionSimulationManager をプロジェクト a に追加します。 まず、これをバイナリとしてプロジェクトに追加します (プロジェクト > 追加 > 既存の項目...)。プロジェクトソースフォルダーにコピーしないように、リンクとして保存します。 ![PerceptionSimulationManager をリンク](images/saveaslink.png) b としてプロジェクトに追加します。 次に、ビルド時に出力フォルダーにコピーされていることを確認します。 これは、バイナリのプロパティシートにあります。 ![PerceptionSimulationManager を出力ディレクトリにコピーするようにマークします。](images/copyalways.png)
+5. アクティブソリューションプラットフォームを x64 に設定します。  (Configuration Manager を使用して、x64 用のプラットフォームエントリがまだ存在しない場合は作成します)。
 
-## <a name="creating-an-iperceptionsimulation-manager-object"></a>IPerceptionSimulation マネージャー オブジェクトを作成します。
+## <a name="creating-an-iperceptionsimulation-manager-object"></a>IPerceptionSimulation Manager オブジェクトの作成
 
-シミュレーションを制御するには、IPerceptionSimulationManager オブジェクトから取得したオブジェクトの更新プログラムを発行します。 最初の手順では、そのオブジェクトを取得し、ターゲット デバイスまたはエミュレーターに接続します。 デバイスのポータル をクリックして、エミュレーターの IP アドレスを取得できます、[ツールバー](using-the-hololens-emulator.md)
+シミュレーションを制御するには、IPerceptionSimulationManager オブジェクトから取得したオブジェクトに更新を発行します。 最初の手順では、そのオブジェクトを取得し、ターゲットデバイスまたはエミュレーターに接続します。 エミュレーターの IP アドレスを取得するには、[ツールバー](using-the-hololens-emulator.md)の [デバイスポータル] ボタンをクリックします。
 
-![デバイスのポータルを開く アイコン](images/emulator-deviceportal.png)**デバイス ポータルを開く**:エミュレーターで HoloLens OS の Windows デバイス ポータルを開きます。  For Windows Mixed Reality、これで取得できる"For developers"し、[更新とセキュリティ]、で、設定アプリで、"を使用して接続します""を有効にするデバイス ポータルです。"[] セクション。  必ず、IP アドレスとポートの両方に注意してください。
+![デバイスポータルを開く](images/emulator-deviceportal.png)アイコン開いている**デバイスポータル**:エミュレーターで HoloLens OS の Windows デバイス ポータルを開きます。  Windows Mixed Reality の場合、この設定は、[デバイスポータルを有効にする] の下にある [Connect & Security] (セキュリティの更新) の下にある [設定] アプリで取得できます。  IP アドレスとポートの両方に注意してください。
 
-まず、RestSimulationStreamSink.Create RestSimulationStreamSink オブジェクトを取得すると呼んでいます。 これは、対象のデバイスまたはエミュレーターを http 接続を介して制御されます。 コマンドに渡され、によって処理されますが、 [Windows Device Portal](using-the-windows-device-portal.md)デバイスまたはエミュレーターで実行されています。 オブジェクトを作成する必要があります、4 つのパラメーターは次のとおりです。
-* Uri の uri、ターゲット デバイスの IP アドレス (例:"http://123.123.123.123 「または」 http://123.123.123.123:50080")
-* System.Net.NetworkCredential 資格情報 - に接続するためには、ユーザー名/パスワード、 [Windows Device Portal](using-the-windows-device-portal.md)ターゲット デバイスまたはエミュレーターにします。 そのローカル アドレスを使用してエミュレーターに接続するかどうか (例: 168。 *。* 。 *) 同じ pc では、すべての資格情報が受け入れられます。
-* bool の通常の通常の優先順位、優先度の低いは false の場合は True。 一般にこれを設定する*true*テストのシナリオは、制御するためのテストを使用します。  エミュレーターと Windows Mixed Reality シミュレーションは、優先度の低い接続を使用します。  場合は、テストは、優先度の低い接続を使用しても、最も最近確立された接続は、コントロール内になります。
-* System.Threading.CancellationToken トークン - 非同期操作をキャンセルするトークンです。
+まず、RestSimulationStreamSink を呼び出して、RestSimulationStreamSink オブジェクトを取得します。 これは、http 接続を介して制御するターゲットデバイスまたはエミュレーターです。 コマンドは、デバイスまたはエミュレーターで実行されている[Windows デバイスポータル](using-the-windows-device-portal.md)に渡され、処理されます。 オブジェクトを作成するには、次の4つのパラメーターが必要です。
+* Uri uri-ターゲットデバイスの IP アドレス (例: "http://123.123.123.123" または "http://123.123.123.123:50080")
+* System .Net. NetworkCredential 資格情報-ターゲットデバイスまたはエミュレーターで[Windows デバイスポータル](using-the-windows-device-portal.md)に接続するためのユーザー名/パスワード。 ローカルアドレスを使用してエミュレーターに接続している場合 (例: 168. *.* *) 同じ PC で、すべての資格情報が受け入れられます。
+* bool normal-通常の優先度の場合は True、低優先度の場合は false。 テストシナリオでは、通常、これを*true*に設定して、テストで制御を行うことができます。  エミュレーターと Windows Mixed Reality のシミュレーションでは、優先度の低い接続を使用します。  テストで優先度の低い接続も使用している場合は、最後に確立された接続が制御されます。
+* CancellationToken は、非同期操作を取り消すためのトークンです。
 
-2 つ目は、IPerceptionSimulationManager を作成します。 これは、使用してシミュレーションを制御するオブジェクトです。 これをも実行することで、非同期メソッドに注意してください。
+次に、IPerceptionSimulationManager を作成します。 これは、シミュレーションの制御に使用するオブジェクトです。 これは、非同期メソッドでも実行する必要があることに注意してください。
 
-## <a name="control-the-simulated-human"></a>シミュレートされたユーザーを制御します。
+## <a name="control-the-simulated-human"></a>シミュレートされた人間を制御する
 
-IPerceptionSimulationManager には、ISimulatedHuman オブジェクトを返す人間プロパティがあります。 シミュレートされたユーザーを制御するには、このオブジェクトに対して操作を実行します。 例:
+IPerceptionSimulationManager には、ISimulatedHuman オブジェクトを返すヒューマンプロパティがあります。 シミュレートされた人間を制御するには、このオブジェクトに対して操作を実行します。 以下に例を示します。
 
 ```
 manager.Human.Move(new Vector3(0.1f, 0.0f, 0.0f))
 ```
 
-## <a name="basic-sample-c-console-application"></a>基本的なサンプルC#コンソール アプリケーション
+## <a name="basic-sample-c-console-application"></a>基本的なC#サンプルコンソールアプリケーション
 
 ```
 using System;
@@ -108,7 +108,7 @@ namespace ConsoleApplication1
 }
 ```
 
-## <a name="extended-sample-c-console-application"></a>サンプルを拡張C#コンソール アプリケーション
+## <a name="extended-sample-c-console-application"></a>拡張サンプルC#コンソールアプリケーション
 
 ```
 using System;
@@ -216,10 +216,10 @@ namespace ConsoleApplication1
 }
 ```
 
-## <a name="note-on-6-dof-controllers"></a>6-自由度のコント ローラー上に注意してください。
+## <a name="note-on-6-dof-controllers"></a>6つの自由度コントローラーに関する注意
 
-シミュレートされた 6-自由度のコント ローラーのメソッドで、任意のプロパティを呼び出す前に、コント ローラーをアクティブ化する必要があります。  そうしないと、例外が発生します。  可能性があります 2019 の更新を Windows 10 以降では、シミュレートされた 6-自由度のコント ローラーをインストールおよび SimulatedSixDofControllerStatus.Active ISimulatedSixDofController オブジェクトの Status プロパティを設定してアクティブ化されることができます。
-Windows 10 年 2018年 10 月の更新前に、インストールしてする必要がありますとは別に、シミュレートされた 6-自由度のコント ローラー最初 \Windows\System32 フォルダーにある PerceptionSimulationDevice ツールを呼び出すことによって。  このツールの使用状況は次のとおりです。
+シミュレートされた6つの自由コントローラーでメソッドのプロパティを呼び出す前に、コントローラーをアクティブにする必要があります。  そうしないと、例外が発生します。  Windows 10 2019 年5月の更新プログラムでは、ISimulatedSixDofController オブジェクトの Status プロパティを SimulatedSixDofControllerStatus に設定することにより、シミュレートされた6つの自由度コントローラーをインストールしてアクティブ化することができます。
+Windows 10 10 月2018更新プログラムおよびそれ以前のバージョンでは、\Windows\System32 フォルダーにある PerceptionSimulationDevice ツールを呼び出して、シミュレートされた6自由コントローラーを最初に個別にインストールする必要があります。  このツールの使用方法は次のとおりです。
 
 
 ```
@@ -233,26 +233,26 @@ Windows 10 年 2018年 10 月の更新前に、インストールしてする必
 ```
 
 サポートされているアクションは次のとおりです。
-* インストールを =
+* i = インストール
 * q = クエリ
 * r = 削除
 
 サポートされているインスタンスは次のとおりです。
-* 1 = の左側の 6-自由度のコント ローラー
-* 2 = 右 6-自由度のコント ローラー
+* 1 = 左6自由コントローラー
+* 2 = 右6自由コントローラー
 
-(0 は、値を返す) の成功または失敗 (0 以外の戻り値)、プロセスの終了コードを示します。  'Q' のアクションを使用して、コント ローラーがインストールされているかどうかを照会する、戻り値は必要コント ローラーがインストールされている場合はゼロ (0)、コント ローラーが既にインストールされていない場合、または 1 (1) とになります。
+プロセスの終了コードは、成功 (ゼロの戻り値) または失敗 (0 以外の戻り値) を示します。  ' Q ' アクションを使用してコントローラーがインストールされているかどうかを照会する場合、コントローラーがまだインストールされていない場合は戻り値が0になり、コントローラーがインストールされている場合は1が返されます。
 
-Windows 上のコント ローラーを削除するときに、10 年 2018年 10 月の更新または以前では、オフ、API を使用して最初に、呼び出して PerceptionSimulationDevice ツールには、その状態を設定します。
+Windows 10 10 月2018更新プログラムまたはそれ以前のバージョンでコントローラーを削除する場合は、最初に API を使用して状態を Off に設定してから、PerceptionSimulationDevice ツールを呼び出します。
 
-このツールは、管理者として実行する必要がありますに注意してください。
+このツールは管理者として実行する必要があることに注意してください。
 
 
 
 
 ## <a name="api-reference"></a>API リファレンス
 
-### <a name="microsoftperceptionsimulationsimulateddevicetype"></a>Microsoft.PerceptionSimulation.SimulatedDeviceType
+### <a name="microsoftperceptionsimulationsimulateddevicetype"></a>PerceptionSimulation. SimulatedDeviceType
 
 シミュレートされたデバイスの種類について説明します
 
@@ -263,13 +263,13 @@ public enum SimulatedDeviceType
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedDeviceType.Reference**
+**PerceptionSimulation. SimulatedDeviceType**
 
-架空の参照のデバイスでは、PerceptionSimulationManager の既定値
+架空の参照デバイス (PerceptionSimulationManager の既定値)
 
-### <a name="microsoftperceptionsimulationheadtrackermode"></a>Microsoft.PerceptionSimulation.HeadTrackerMode
+### <a name="microsoftperceptionsimulationheadtrackermode"></a>PerceptionSimulation... Trackermode
 
-ヘッド トラッカー モードについて説明します
+ヘッドトラッカーモードについて説明します。
 
 ```
 public enum HeadTrackerMode
@@ -280,21 +280,21 @@ public enum HeadTrackerMode
 }
 ```
 
-**Microsoft.PerceptionSimulation.HeadTrackerMode.Default**
+**PerceptionSimulation。既定値の場合**
 
-既定の Head が追跡します。 つまり、システムは、追跡モードの実行時の条件に基づいて最適なヘッドを選択ことがあります。
+既定のヘッド追跡。 これは、システムが実行時の状況に基づいて最適なヘッド追跡モードを選択することを意味します。
 
-**Microsoft.PerceptionSimulation.HeadTrackerMode.Orientation**
+**PerceptionSimulation のようになります。**
 
-印刷の向きのみヘッドが追跡します。 つまり、追跡対象の位置は、信頼性が高く、できない場合があります、ヘッドの位置に依存する一部の機能を利用できない可能性があります。
+方向のみのヘッド追跡。 これは、追跡される位置が信頼できない可能性があり、head 位置に依存する一部の機能が使用できない場合があることを意味します。
 
-**Microsoft.PerceptionSimulation.HeadTrackerMode.Position**
+**PerceptionSimulation を移動します。**
 
-ヘッドの位置指定の追跡。 つまり、追跡されているヘッドの位置と向きの両方がある信頼性の高い
+位置指定のヘッド追跡。 これは、追跡されるヘッドの位置と向きは両方とも信頼できることを意味します。
 
-### <a name="microsoftperceptionsimulationsimulatedgesture"></a>Microsoft.PerceptionSimulation.SimulatedGesture
+### <a name="microsoftperceptionsimulationsimulatedgesture"></a>PerceptionSimulation. SimulatedGesture
 
-シミュレートされたジェスチャを説明します。
+シミュレートされたジェスチャについて説明します
 
 ```
 public enum SimulatedGesture
@@ -307,29 +307,29 @@ public enum SimulatedGesture
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedGesture.None**
+**PerceptionSimulation. SimulatedGesture**
 
-ジェスチャがない場合に使用される sentinel 値。
+ジェスチャがないことを示すために使用される sentinel 値。
 
-**Microsoft.PerceptionSimulation.SimulatedGesture.FingerPressed**
+**PerceptionSimulation. SimulatedGesture. FingerPressed**
 
-指では、ジェスチャが押されました。
+指押下ジェスチャ。
 
-**Microsoft.PerceptionSimulation.SimulatedGesture.FingerReleased**
+**PerceptionSimulation. SimulatedGesture. FingerReleased**
 
-指では、ジェスチャがリリースされました。
+指で離されたジェスチャ。
 
-**Microsoft.PerceptionSimulation.SimulatedGesture.Home**
+**PerceptionSimulation. SimulatedGesture**
 
-ホーム/システム ジェスチャ。
+ホーム/システムジェスチャ。
 
-**Microsoft.PerceptionSimulation.SimulatedGesture.Max**
+**PerceptionSimulation. SimulatedGesture**
 
-最大の有効なジェスチャ。
+有効なジェスチャの最大数。
 
-### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerstatus"></a>Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus
+### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerstatus"></a>PerceptionSimulation. SimulatedSixDofControllerStatus
 
-シミュレートされた 6-自由度のコント ローラーの状態。
+シミュレートされた6自由コントローラーの可能性のある状態。
 
 ```
 public enum SimulatedSixDofControllerStatus
@@ -340,21 +340,21 @@ public enum SimulatedSixDofControllerStatus
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus.Off**
+**PerceptionSimulation. SimulatedSixDofControllerStatus**
 
-6-自由度のコント ローラーがオフになります。
+6自由コントローラーがオフになっています。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus.Active**
+**PerceptionSimulation. SimulatedSixDofControllerStatus**
 
-6-自由度のコント ローラーが有効になり、追跡。
+6自由コントローラーが有効になり、追跡されます。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerStatus.TrackingLost**
+**PerceptionSimulation. SimulatedSixDofControllerStatus. TrackingLost**
 
-6-自由度のコント ローラーは、有効になってが追跡することはできません。
+6自由度コントローラーはオンになっていますが、追跡することはできません。
 
-### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerbutton"></a>Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton
+### <a name="microsoftperceptionsimulationsimulatedsixdofcontrollerbutton"></a>PerceptionSimulation. SimulatedSixDofControllerButton
 
-シミュレートされた 6-自由度のコント ローラーでサポートされているボタン。
+シミュレートされた6自由コントローラーでサポートされるボタン。
 
 ```
 public enum SimulatedSixDofControllerButton
@@ -371,44 +371,44 @@ public enum SimulatedSixDofControllerButton
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.None**
+**PerceptionSimulation. SimulatedSixDofControllerButton**
 
-ボタンがない場合に使用される sentinel 値。
+ボタンを指定するために使用される sentinel 値。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Home**
+**PerceptionSimulation. SimulatedSixDofControllerButton**
 
-[ホーム] ボタンが押されました。
+[ホーム] ボタンが押された状態になります。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Menu**
+**PerceptionSimulation. SimulatedSixDofControllerButton. メニュー**
 
-メニュー ボタンが押されました。
+メニューボタンが押された状態になります。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Grip**
+**PerceptionSimulation. SimulatedSixDofControllerButton**
 
-グリップのボタンが押されました。
+グリップボタンが押された状態になります。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.TouchpadPress**
+**PerceptionSimulation. SimulatedSixDofControllerButton. TouchpadPress**
 
-タッチパッドが押されました。
+タッチパッドが押された状態になります。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Select**
+**PerceptionSimulation. SimulatedSixDofControllerButton**
 
-[選択] ボタンが押されました。
+[選択] ボタンが押された状態になります。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.TouchpadTouch**
+**PerceptionSimulation. SimulatedSixDofControllerButton. TouchpadTouch**
 
-タッチパッドをタッチするとします。
+タッチパッドがタッチされます。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Thumbstick**
+**PerceptionSimulation. SimulatedSixDofControllerButton**
 
-スティックが押されました。
+サムスティックが押されています。
 
-**Microsoft.PerceptionSimulation.SimulatedSixDofControllerButton.Max**
+**PerceptionSimulation. SimulatedSixDofControllerButton**
 
-有効なボタンの最大値。
+最大有効なボタン。
 
 
-### <a name="microsoftperceptionsimulationsimulatedeyescalibrationstate"></a>Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState
+### <a name="microsoftperceptionsimulationsimulatedeyescalibrationstate"></a>PerceptionSimulation. SimulatedEyesCalibrationState
 
 シミュレートされた目の調整状態
 
@@ -422,25 +422,25 @@ public enum SimulatedGesture
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState.Unavailable**
+**PerceptionSimulation. SimulatedEyesCalibrationState.**
 
-目の調整は、ご利用いただけません。
+目の調整は使用できません。
 
-**Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState.Ready**
+**PerceptionSimulation. SimulatedEyesCalibrationState**
 
-目が調整されています。  これが既定値です。
+目が調整されました。  これは既定値です。
 
-**Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState.Configuring**
+**PerceptionSimulation. SimulatedEyesCalibrationState**
 
 目が調整されています。
 
-**Microsoft.PerceptionSimulation.SimulatedEyesCalibrationState.UserCalibrationNeeded**
+**PerceptionSimulation. SimulatedEyesCalibrationState. UserCalibrationNeeded**
 
-目では、調整する必要があります。
+目を調整する必要があります。
 
-### <a name="microsoftperceptionsimulationsimulatedhandjointtrackingaccuracy"></a>Microsoft.PerceptionSimulation.SimulatedHandJointTrackingAccuracy
+### <a name="microsoftperceptionsimulationsimulatedhandjointtrackingaccuracy"></a>PerceptionSimulation. SimulatedHandJointTrackingAccuracy
 
-針のジョイントの追跡の精度。
+手の継手の追跡精度。
 
 ```
 public enum SimulatedHandJointTrackingAccuracy
@@ -451,21 +451,21 @@ public enum SimulatedHandJointTrackingAccuracy
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedHandJointTrackingAccuracy.Unavailable**
+**PerceptionSimulation. SimulatedHandJointTrackingAccuracy.**
 
 ジョイントは追跡されません。
 
-**Microsoft.PerceptionSimulation.SimulatedHandJointTrackingAccuracy.Approximate**
+**PerceptionSimulation. SimulatedHandJointTrackingAccuracy**
 
-共同の位置が推論されます。
+ジョイント位置が推論されます。
 
-**Microsoft.PerceptionSimulation.SimulatedHandJointTrackingAccuracy.Visible**
+**PerceptionSimulation. SimulatedHandJointTrackingAccuracy**
 
-ジョイントがすべて記録します。
+ジョイントは完全に追跡されます。
 
-### <a name="microsoftperceptionsimulationsimulatedhandpose"></a>Microsoft.PerceptionSimulation.SimulatedHandPose
+### <a name="microsoftperceptionsimulationsimulatedhandpose"></a>PerceptionSimulation. SimulatedHandPose
 
-針のジョイントの追跡の精度。
+手の継手の追跡精度。
 
 ```
 public enum SimulatedHandPose
@@ -478,30 +478,30 @@ public enum SimulatedHandPose
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedHandPose.Closed**
+**PerceptionSimulation. SimulatedHandPose**
 
-手の本の指の結合は、閉じた姿勢を反映するように構成されます。
+ハンドの指継手は、終了したポーズを反映するように構成されています。
 
-**Microsoft.PerceptionSimulation.SimulatedHandPose.Open**
+**PerceptionSimulation. SimulatedHandPose**
 
-手の本の指の結合は、オープンの姿勢を反映するように構成されます。
+手の指継手は、オープンなポーズを反映するように構成されています。
 
-**Microsoft.PerceptionSimulation.SimulatedHandPose.Point**
+**PerceptionSimulation. SimulatedHandPose**
 
-手の本の指ジョイントがポインティング姿勢を反映するように構成されます。
+ハンドの指継手は、ポイントのポーズを反映するように構成されています。
 
-**Microsoft.PerceptionSimulation.SimulatedHandPose.Pinch**
+**PerceptionSimulation. SimulatedHandPose**
 
-手の本の指の結合は、ピンチ姿勢を反映するように構成されます。
+手の指継手は、ピンチのポーズを反映するように構成されています。
 
-**Microsoft.PerceptionSimulation.SimulatedHandPose.Max**
+**PerceptionSimulation. SimulatedHandPose**
 
-SimulatedHandPose の最大の有効な値。
+SimulatedHandPose の最大有効値。
 
 
-### <a name="microsoftperceptionsimulationplaybackstate"></a>Microsoft.PerceptionSimulation.PlaybackState
+### <a name="microsoftperceptionsimulationplaybackstate"></a>PerceptionSimulation の状態
 
-再生の状態について説明します。
+再生の状態を記述します。
 
 ```
 public enum PlaybackState
@@ -513,25 +513,25 @@ public enum PlaybackState
 }
 ```
 
-**Microsoft.PerceptionSimulation.PlaybackState.Stopped**
+**PerceptionSimulation が停止しました。**
 
-記録は、現在停止と再生の準備完了です。
+記録は現在停止しており、再生の準備ができています。
 
-**Microsoft.PerceptionSimulation.PlaybackState.Playing**
+**PerceptionSimulation を再生します。**
 
-記録を再生中。
+記録は現在再生中です。
 
-**Microsoft.PerceptionSimulation.PlaybackState.Paused**
+**PerceptionSimulation が一時停止しました。**
 
-記録を一時停止されています。
+記録は現在一時停止されています。
 
-**Microsoft.PerceptionSimulation.PlaybackState.End**
+**PerceptionSimulation を終了します。**
 
-記録は、末尾に達した。
+記録が最後に達しました。
 
-### <a name="microsoftperceptionsimulationvector3"></a>Microsoft.PerceptionSimulation.Vector3
+### <a name="microsoftperceptionsimulationvector3"></a>PerceptionSimulation. Vector3
 
-点または 3D 空間でベクターを表す場合があります、3 つのコンポーネントのベクターをについて説明します。
+3D 空間の点またはベクターを表す3つのコンポーネントベクターについて説明します。
 
 ```
 public struct Vector3
@@ -543,30 +543,30 @@ public struct Vector3
 }
 ```
 
-**Microsoft.PerceptionSimulation.Vector3.X**
+**PerceptionSimulation. Vector3**
 
-ベクトルの X 成分。
+ベクターの X 成分。
 
-**Microsoft.PerceptionSimulation.Vector3.Y**
+**PerceptionSimulation. Vector3**
 
-ベクトルの Y 成分。
+ベクターの Y 成分。
 
-**Microsoft.PerceptionSimulation.Vector3.Z**
+**PerceptionSimulation. Vector3**
 
-ベクトルの Z 成分。
+ベクターの Z 成分。
 
-**Microsoft.PerceptionSimulation.Vector3.#ctor(System.Single,System.Single,System.Single)**
+**#Ctor PerceptionSimulation (system.string、system.string、system.string) を (system.string) します。**
 
 新しい Vector3 を構築します。
 
 パラメーター
-* x - ベクターの x 成分。
-* y のベクターの y 成分。
-* z のベクトルの z 成分。
+* x-ベクトルの x 成分。
+* y-ベクトルの y 成分。
+* z-ベクトルの z 成分。
 
-### <a name="microsoftperceptionsimulationrotation3"></a>Microsoft.PerceptionSimulation.Rotation3
+### <a name="microsoftperceptionsimulationrotation3"></a>PerceptionSimulation. Rotation3
 
-3 つのコンポーネントの回転について説明します。
+3つのコンポーネントのローテーションについて説明します。
 
 ```
 public struct Rotation3
@@ -578,30 +578,30 @@ public struct Rotation3
 }
 ```
 
-**Microsoft.PerceptionSimulation.Rotation3.Pitch**
+**PerceptionSimulation. Rotation3**
 
-回転のピッチ コンポーネントは、X 軸を中心にダウンします。
+X 軸を中心とする回転のピッチ成分。
 
-**Microsoft.PerceptionSimulation.Rotation3.Yaw**
+**PerceptionSimulation. Rotation3**
 
-Y 軸の周囲の回転のヨー コンポーネントです。
+Y 軸を中心とする回転のヨー要素。
 
-**Microsoft.PerceptionSimulation.Rotation3.Roll**
+**PerceptionSimulation. Rotation3**
 
-Z 軸の周囲の回転のロールのコンポーネントです。
+Z 軸を中心とする回転のロールコンポーネント。
 
-**Microsoft.PerceptionSimulation.Rotation3.#ctor(System.Single,System.Single,System.Single)**
+**#Ctor PerceptionSimulation (system.string、system.string、system.string) を (system.string) します。**
 
 新しい Rotation3 を構築します。
 
 パラメーター
-* ピッチの回転の声の高さコンポーネント。
-* ヨー、回転のヨー コンポーネント。
-* ロールの回転のロールのコンポーネント。
+* ピッチ-回転のピッチ成分。
+* ヨー-回転のヨーコンポーネント。
+* roll-回転のロールコンポーネント。
 
-### <a name="microsoftperceptionsimulationsimulatedhandjointconfiguration"></a>Microsoft.PerceptionSimulation.SimulatedHandJointConfiguration
+### <a name="microsoftperceptionsimulationsimulatedhandjointconfiguration"></a>PerceptionSimulation. SimulatedHandJointConfiguration
 
-シミュレートされた手の形で、共同の構成について説明します。
+シミュレートされたハンドでのジョイントの構成について説明します。
 
 ```
 public struct SimulatedHandJointConfiguration
@@ -612,22 +612,22 @@ public struct SimulatedHandJointConfiguration
 }
 ```
 
-**Microsoft.PerceptionSimulation.SimulatedHandJointConfiguration.Position**
+**PerceptionSimulation. SimulatedHandJointConfiguration**
 
 ジョイントの位置。
 
-**Microsoft.PerceptionSimulation.SimulatedHandJointConfiguration.Rotation**
+**PerceptionSimulation. SimulatedHandJointConfiguration**
 
 ジョイントの回転。
 
-**Microsoft.PerceptionSimulation.SimulatedHandJointConfiguration.TrackingAccuracy**
+**PerceptionSimulation. SimulatedHandJointConfiguration の精度**
 
-ジョイントの追跡の精度。
+ジョイントの追跡精度。
 
 
-### <a name="microsoftperceptionsimulationfrustum"></a>Microsoft.PerceptionSimulation.Frustum
+### <a name="microsoftperceptionsimulationfrustum"></a>PerceptionSimulation
 
-カメラで通常使用される視錐台をについて説明します。
+カメラで一般的に使用される、視錐のビューについて説明します。
 
 ```
 public struct Frustum
@@ -639,25 +639,25 @@ public struct Frustum
 }
 ```
 
-**Microsoft.PerceptionSimulation.Frustum.Near**
+**PerceptionSimulation。 Near**
 
-視錐台に含まれている最小の距離です。
+視錐に含まれる最小距離。
 
-**Microsoft.PerceptionSimulation.Frustum.Far**
+**PerceptionSimulation です。**
 
-最大距離の視錐台に含まれています。
+視錐に含まれる最大距離。
 
-**Microsoft.PerceptionSimulation.Frustum.FieldOfView**
+**PerceptionSimulation. FieldOfView**
 
-ラジアン (PI よりも小さい) 視錐台の横のフィールドの表示。
+視錐のビューの水平方向のフィールド (π未満のラジアン)。
 
-**Microsoft.PerceptionSimulation.Frustum.AspectRatio**
+**PerceptionSimulation. AspectRatio**
 
-垂直ビューのフィールドへの水平視野の比率です。
+ビューの垂直方向のフィールドから、ビューの垂直方向のフィールドまでの比率。
 
-### <a name="microsoftperceptionsimulationiperceptionsimulationmanager"></a>Microsoft.PerceptionSimulation.IPerceptionSimulationManager
+### <a name="microsoftperceptionsimulationiperceptionsimulationmanager"></a>PerceptionSimulation. IPerceptionSimulationManager
 
-デバイスの制御に使用されるパケットを生成するためのルートです。
+デバイスの制御に使用されるパケットを生成するためのルート。
 
 ```
 public interface IPerceptionSimulationManager
@@ -668,21 +668,21 @@ public interface IPerceptionSimulationManager
 }
 ```
 
-**Microsoft.PerceptionSimulation.IPerceptionSimulationManager.Device**
+**PerceptionSimulation. IPerceptionSimulationManager**
 
-シミュレートされた人と、シミュレートされた世界を解釈するシミュレートされたデバイス オブジェクトを取得します。
+シミュレートされた人間とシミュレートされた世界を解釈する、シミュレートされたデバイスオブジェクトを取得します。
 
-**Microsoft.PerceptionSimulation.IPerceptionSimulationManager.Human**
+**PerceptionSimulation. IPerceptionSimulationManager**
 
-シミュレートされたユーザーを制御するオブジェクトを取得します。
+シミュレートされた人間を制御するオブジェクトを取得します。
 
-**Microsoft.PerceptionSimulation.IPerceptionSimulationManager.Reset**
+**PerceptionSimulation. IPerceptionSimulationManager**
 
 シミュレーションを既定の状態にリセットします。
 
-### <a name="microsoftperceptionsimulationisimulateddevice"></a>Microsoft.PerceptionSimulation.ISimulatedDevice
+### <a name="microsoftperceptionsimulationisimulateddevice"></a>PerceptionSimulation. ISimulatedDevice
 
-シミュレートされた世界でシミュレートされた人間を解釈し、デバイスを記述するインターフェイスします。
+シミュレートされた世界とシミュレートされた人間を解釈するデバイスを記述するインターフェイス
 
 ```
 public interface ISimulatedDevice
@@ -693,24 +693,24 @@ public interface ISimulatedDevice
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedDevice.HeadTracker**
+**PerceptionSimulation. ISimulatedDevice Tracker**
 
-シミュレートされたデバイスから、ヘッドの追跡ツールを取得します。
+シミュレートされたデバイスからヘッドトラッカーを取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedDevice.HandTracker**
+**PerceptionSimulation. ISimulatedDevice Tracker**
 
-シミュレートされたデバイスからの手の形の追跡ツールを取得します。
+シミュレートされたデバイスからハンドトラッカーを取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedDevice.SetSimulatedDeviceType(Microsoft.PerceptionSimulation.SimulatedDeviceType)**
+**PerceptionSimulation. ISimulatedDevice. SetSimulatedDeviceType (PerceptionSimulation. SimulatedDeviceType)**
 
-指定されたデバイスの種類に一致するように、シミュレートされたデバイスのプロパティを設定します。
+シミュレートされたデバイスのプロパティを、指定したデバイスの種類に合わせて設定します。
 
 パラメーター
-* シミュレートされたデバイスの新しい種類を入力します。
+* type-シミュレートされたデバイスの新しい種類
 
-### <a name="microsoftperceptionsimulationisimulatedheadtracker"></a>Microsoft.PerceptionSimulation.ISimulatedHeadTracker
+### <a name="microsoftperceptionsimulationisimulatedheadtracker"></a>PerceptionSimulation. ISimulatedHeadTracker
 
-シミュレートされた人間の頭を追跡するシミュレートされたデバイスの部分を記述するインターフェイスします。
+シミュレートされた人間の頭を追跡する、シミュレートされたデバイスの部分を説明するインターフェイスです。
 
 ```
 public interface ISimulatedHeadTracker
@@ -719,13 +719,13 @@ public interface ISimulatedHeadTracker
 };
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHeadTracker.HeadTrackerMode**
+**PerceptionSimulation. ISimulatedHeadTracker.-Trackermode**
 
-取得し、現在のトラッカーのヘッド モードを設定します。
+現在のヘッドトラッカーモードを取得して設定します。
 
-### <a name="microsoftperceptionsimulationisimulatedhandtracker"></a>Microsoft.PerceptionSimulation.ISimulatedHandTracker
+### <a name="microsoftperceptionsimulationisimulatedhandtracker"></a>PerceptionSimulation. ISimulatedHandTracker
 
-シミュレートされた人間の手を追跡するシミュレートされたデバイスの部分を記述するインターフェイスします。
+シミュレートされた人間の手を追跡するシミュレートされたデバイスの部分を説明するインターフェイス
 
 ```
 public interface ISimulatedHandTracker
@@ -738,29 +738,29 @@ public interface ISimulatedHandTracker
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHandTracker.WorldPosition**
+**PerceptionSimulation. ISimulatedHandTracker. WorldPosition**
 
-メートル単位で、世界中とに関してノードの位置を取得します。
+世界のリレーションを使用してノードの位置をメートル単位で取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHandTracker.Position**
+**PerceptionSimulation. ISimulatedHandTracker**
 
-取得し、ヘッドの中央を基準、シミュレートされた手トラッカーの位置を設定します。
+頭の中心を基準とした、シミュレートされたハンドトラッカーの位置を取得して設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHandTracker.Pitch**
+**PerceptionSimulation. ISimulatedHandTracker**
 
-取得し、シミュレートされた手トラッカーの下向きのピッチを設定します。
+シミュレートされたハンドトラッカーの下向きのピッチを取得して設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHandTracker.FrustumIgnored**
+**PerceptionSimulation は無視されました。**
 
-取得し、シミュレートされた手トラッカーの視錐台を無視するかどうかを設定します。 無視される場合、両方の手は常に表示します。 (既定値) を無視しない場合に手は手トラッカーの視錐台内にあるときに、表示のみです。
+シミュレートされたハンドトラッカーを無視するかどうかを取得して設定します。 無視すると、両方のハンドが常に表示されます。 無視しない場合 (既定)、ハンドトラッカーの視錐の内側にいる場合にのみ表示されます。
 
-**Microsoft.PerceptionSimulation.ISimulatedHandTracker.Frustum**
+**PerceptionSimulation. ISimulatedHandTracker**
 
-取得し、手がシミュレートされた手の追跡ツールに表示されるかどうかを判断するための視錐台プロパティを設定します。
+ハンドがシミュレートされたハンドトラッカーに表示されるかどうかを判断するために使用する、視錐のプロパティを取得および設定します。
 
-### <a name="microsoftperceptionsimulationisimulatedhuman"></a>Microsoft.PerceptionSimulation.ISimulatedHuman
+### <a name="microsoftperceptionsimulationisimulatedhuman"></a>PerceptionSimulation. ISimulatedHuman
 
-シミュレートされたユーザーを制御するための最上位レベル インターフェイスです。
+シミュレートされた人間を制御する最上位のインターフェイス。
 
 ```
 public interface ISimulatedHuman 
@@ -776,47 +776,47 @@ public interface ISimulatedHuman
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman.WorldPosition**
+**PerceptionSimulation. ISimulatedHuman. WorldPosition**
 
-取得し、メートル単位で、世界中とに関してノードの位置を設定します。 位置は、人間のフィートの中央にある点に対応します。
+世界中のノードの位置をメートル単位で取得して設定します。 この位置は、人間のフィートの中央の点に対応しています。
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman.Direction**
+**PerceptionSimulation. ISimulatedHuman**
 
-取得し、世界中でシミュレートされた人の顔の方向を設定します。 負の Z 軸を 0 ラジアンに直面します。 Y 軸の正のラジアンは右回りに回転します。
+世界中のシミュレートされた人間の顔の方向を取得して設定します。 0ラジアンは負の Z 軸を中心にします。 正のラジアンは、Y 軸について時計回りに回転します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman.Height**
+**PerceptionSimulation. ISimulatedHuman**
 
-取得し、メートル単位でシミュレーションの人間の高さを設定します。
+シミュレートされた人間の高さをメートル単位で取得して設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman.LeftHand**
+**PerceptionSimulation. ISimulatedHuman. LeftHand**
 
 シミュレートされた人間の左側を取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman.RightHand**
+**PerceptionSimulation. ISimulatedHuman. 右**
 
 シミュレートされた人間の右側を取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman.Head**
+**PerceptionSimulation. ISimulatedHuman**
 
 シミュレートされた人間の先頭を取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman.Move(Microsoft.PerceptionSimulation.Vector3)**
+**PerceptionSimulation (ISimulatedHuman) (PerceptionSimulation. Vector3)**
 
-メートル単位で、現在位置を基準として、シミュレートされた人間に移動します。
-
-パラメーター
-* 翻訳に移動して、現在の位置を基準に変換します。
-
-**Microsoft.PerceptionSimulation.ISimulatedHuman.Rotate(System.Single)**
-
-Y 軸を中心に時計回りに現在方向の基準とした、シミュレートされた人間を回転します。
+シミュレートされた人間を、現在の位置を基準としてメートル単位で移動します。
 
 パラメーター
-* ラジアンの Y 軸に沿って回転する量。
+* translation-現在の位置を基準とした、移動する平行移動。
 
-### <a name="microsoftperceptionsimulationisimulatedhuman2"></a>Microsoft.PerceptionSimulation.ISimulatedHuman2
+**PerceptionSimulation. ISimulatedHuman (System. Single)**
 
-ISimulatedHuman2 に ISimulatedHuman をキャストすることによって、追加のプロパティは使用可能です
+現在の方向を基準にして、シミュレートされた人間を Y 軸に対して時計回りに回転させます
+
+パラメーター
+* ラジアン-Y 軸を中心に回転する量。
+
+### <a name="microsoftperceptionsimulationisimulatedhuman2"></a>PerceptionSimulation. ISimulatedHuman2
+
+ISimulatedHuman を ISimulatedHuman2 にキャストすると、追加のプロパティを使用できます。
 
 ```
 public interface ISimulatedHuman2
@@ -827,18 +827,18 @@ public interface ISimulatedHuman2
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman2.LeftController**
+**PerceptionSimulation. ISimulatedHuman2 Controller**
 
-左側の 6-自由度のコント ローラーを取得します。
+左6自由コントローラーを取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHuman2.RightController**
+**PerceptionSimulation. ISimulatedHuman2 コントローラー**
 
-右側の 6-自由度のコント ローラーを取得します。
+右6自由コントローラーを取得します。
 
 
-### <a name="microsoftperceptionsimulationisimulatedhand"></a>Microsoft.PerceptionSimulation.ISimulatedHand
+### <a name="microsoftperceptionsimulationisimulatedhand"></a>PerceptionSimulation. ISimulatedHand
 
-シミュレートされた人間の手の形を記述するインターフェイスします。
+シミュレートされた人間の手を記述するインターフェイス
 
 ```
 public interface ISimulatedHand
@@ -853,43 +853,43 @@ public interface ISimulatedHand
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHand.WorldPosition**
+**PerceptionSimulation. ISimulatedHand. WorldPosition**
 
-メートル単位で、世界中とに関してノードの位置を取得します。
+世界のリレーションを使用してノードの位置をメートル単位で取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHand.Position**
+**PerceptionSimulation. ISimulatedHand**
 
-取得し、メートル単位で、人間の基準とした、シミュレートされた手の形の位置を設定します。
+人間に対するシミュレートされたハンドの位置をメートル単位で取得して設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHand.Activated**
+**PerceptionSimulation. ISimulatedHand**
 
-取得し、手の形が現在アクティブかどうかを設定します。
+ハンドが現在アクティブになっているかどうかを取得して設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHand.Visible**
+**PerceptionSimulation. ISimulatedHand**
 
-手のアイコンが (つまり、かどうかは、HandTracker によって検出された位置に) SimulatedDevice に現在表示されているかどうかを取得します。
+SimulatedDevice に手が現在表示されているかどうかを取得します (この位置が、[ツール] で検出される位置にあるかどうか)。
 
-**Microsoft.PerceptionSimulation.ISimulatedHand.EnsureVisible**
+**PerceptionSimulation. ISimulatedHand. Ensurevisible\**
 
-SimulatedDevice に表示されるようにして手のアイコンに移動します。
+SimulatedDevice に見えるようにハンドを移動します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHand.Move(Microsoft.PerceptionSimulation.Vector3)**
+**PerceptionSimulation (ISimulatedHand) (PerceptionSimulation. Vector3)**
 
-メートル単位で、現在位置を基準として、シミュレートされた手の形の位置を移動します。
-
-パラメーター
-* 翻訳 - シミュレートされた手の形を平行移動量。
-
-**Microsoft.PerceptionSimulation.ISimulatedHand.PerformGesture(Microsoft.PerceptionSimulation.SimulatedGesture)**
-
-シミュレートされたして手のアイコンを使用するジェスチャを実行します。  のみ検出されます、システムによって、手が有効になっている場合。
+シミュレートされたハンドの位置を、現在の位置を基準としてメートル単位で移動します。
 
 パラメーター
-* ジェスチャのジェスチャを実行します。
+* translation-シミュレートされたハンドを変換する量。
 
-### <a name="microsoftperceptionsimulationisimulatedhand2"></a>Microsoft.PerceptionSimulation.ISimulatedHand2
+**ISimulatedHand (PerceptionSimulation) () (PerceptionSimulation)**
 
-追加のプロパティは、ISimulatedHand ISimulatedHand2 にキャストすることによって利用可能です。
+シミュレートされたハンドを使用してジェスチャを実行します。  ハンドが有効になっている場合にのみ、システムによって検出されます。
+
+パラメーター
+* ジェスチャ-実行するジェスチャ。
+
+### <a name="microsoftperceptionsimulationisimulatedhand2"></a>PerceptionSimulation. ISimulatedHand2
+
+ISimulatedHand を ISimulatedHand2 にキャストすると、追加のプロパティを使用できます。
 ```
 public interface ISimulatedHand2
 {
@@ -898,13 +898,13 @@ public interface ISimulatedHand2
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHand2.Orientation**
+**PerceptionSimulation. ISimulatedHand2**
 
-取得またはシミュレートされた針の回転を設定します。  軸に検索するときに、正のラジアンは右回りに回転します。
+シミュレートされたハンドの回転を取得または設定します。  正のラジアンは、軸に沿って表示すると時計回りに回転します。
 
-### <a name="microsoftperceptionsimulationisimulatedhand3"></a>Microsoft.PerceptionSimulation.ISimulatedHand3
+### <a name="microsoftperceptionsimulationisimulatedhand3"></a>PerceptionSimulation. ISimulatedHand3
 
-ISimulatedHand ISimulatedHand3 にキャストすることによって、追加のプロパティは使用可能です
+ISimulatedHand を ISimulatedHand3 にキャストすると、追加のプロパティを使用できます。
 ```
 public interface ISimulatedHand3
 {
@@ -915,22 +915,22 @@ public interface ISimulatedHand3
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHand3.GetJointConfiguration**
+**PerceptionSimulation. ISimulatedHand3. GetJointConfiguration**
 
-指定された共同の共同構成を取得します。
+指定されたジョイントの共同構成を取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHand3.SetJointConfiguration**
+**PerceptionSimulation. ISimulatedHand3. SetJointConfiguration**
 
-共同の指定された複合的な構成を設定します。
+指定されたジョイントの結合構成を設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHand3.SetHandPose**
+**PerceptionSimulation. ISimulatedHand3. SetHandPose**
 
-既知の姿勢をアニメーション化するオプションのフラグを使用して手のアイコンに設定します。  注: をアニメーション化力感の最終的な複合的な構成をすぐに反映されません。
+アニメーション化するオプションのフラグを持つ既知のポーズにハンドを設定します。  注: アニメーション化によって、最終的な結合構成がすぐに反映されることはありません。
 
 
-### <a name="microsoftperceptionsimulationisimulatedhead"></a>Microsoft.PerceptionSimulation.ISimulatedHead
+### <a name="microsoftperceptionsimulationisimulatedhead"></a>PerceptionSimulation. ISimulatedHead
 
-シミュレートされた人間の頭を記述するインターフェイスします。
+シミュレートされた人間の先頭を記述するインターフェイス。
 
 ```
 public interface ISimulatedHead
@@ -942,28 +942,28 @@ public interface ISimulatedHead
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHead.WorldPosition**
+**PerceptionSimulation. ISimulatedHead. WorldPosition**
 
-メートル単位で、世界中とに関してノードの位置を取得します。
+世界のリレーションを使用してノードの位置をメートル単位で取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHead.Rotation**
+**PerceptionSimulation. ISimulatedHead**
 
-シミュレートされた先頭の回転角度を取得します。 軸に検索するときに、正のラジアンは右回りに回転します。
+シミュレートされたヘッドの回転を取得します。 正のラジアンは、軸に沿って表示すると時計回りに回転します。
 
-**Microsoft.PerceptionSimulation.ISimulatedHead.Diameter**
+**PerceptionSimulation. ISimulatedHead**
 
-シミュレートされた先頭の直径を取得します。 この値は、ヘッドのセンター (回転のポイント) を確認するに使用されます。
+シミュレートされたヘッドの直径を取得します。 この値は、ヘッドの中心 (回転点) を決定するために使用されます。
 
-**Microsoft.PerceptionSimulation.ISimulatedHead.Rotate(Microsoft.PerceptionSimulation.Rotation3)**
+**PerceptionSimulation (ISimulatedHead) (PerceptionSimulation. Rotation3)**
 
-現在、回転の基準としたシミュレートされたヘッドを回転します。 軸に検索するときに、正のラジアンは右回りに回転します。
+シミュレートされた頭を現在の回転に対して回転します。 正のラジアンは、軸に沿って表示すると時計回りに回転します。
 
 パラメーター
-* 回転の回転する量。
+* rotation-回転する量。
 
-### <a name="microsoftperceptionsimulationisimulatedhead2"></a>Microsoft.PerceptionSimulation.ISimulatedHead2
+### <a name="microsoftperceptionsimulationisimulatedhead2"></a>PerceptionSimulation. ISimulatedHead2
 
-ISimulatedHead ISimulatedHead2 にキャストすることによって、追加のプロパティは使用可能です
+ISimulatedHead を ISimulatedHead2 にキャストすると、追加のプロパティを使用できます。
 
 ```
 public interface ISimulatedHead2
@@ -973,13 +973,13 @@ public interface ISimulatedHead2
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedHead2.Eyes**
+**PerceptionSimulation. ISimulatedHead2**
 
 シミュレートされた人間の目を取得します。
 
-### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller"></a>Microsoft.PerceptionSimulation.ISimulatedSixDofController
+### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller"></a>PerceptionSimulation. ISimulatedSixDofController
 
-シミュレートされたユーザーに関連付けられている 6 自由度のコント ローラーを記述するインターフェイスします。
+シミュレートされた人間に関連付けられた6自由コントローラーを記述するインターフェイス。
 
 ```
 public interface ISimulatedSixDofController
@@ -996,62 +996,62 @@ public interface ISimulatedSixDofController
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.WorldPosition**
+**PerceptionSimulation. ISimulatedSixDofController. WorldPosition**
 
-メートル単位で、世界中とに関してノードの位置を取得します。
+世界のリレーションを使用してノードの位置をメートル単位で取得します。
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.Status**
+**PerceptionSimulation. ISimulatedSixDofController**
 
-取得またはコント ローラーの現在の状態を設定します。  コント ローラーの状態は、オフ呼び出しの前に、移動、回転、またはキーを押してボタンは成功以外の値に設定する必要があります。
+コントローラーの現在の状態を取得または設定します。  移動、回転、または押すボタンの呼び出しが成功する前に、コントローラーの状態が Off 以外の値に設定されている必要があります。
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.Position**
+**PerceptionSimulation. ISimulatedSixDofController**
 
-取得またはメートル単位で、人間の基準とした、シミュレートされたコント ローラーの位置を設定します。
+ユーザーに対してシミュレートされたコントローラーの位置をメートル単位で取得または設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.Orientation**
+**PerceptionSimulation. ISimulatedSixDofController**
 
-取得またはシミュレートされたコント ローラーの向きを設定します。
+シミュレートされたコントローラーの向きを取得または設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.Move(Microsoft.PerceptionSimulation.Vector3)**
+**PerceptionSimulation (ISimulatedSixDofController) (PerceptionSimulation. Vector3)**
 
-メートル単位で、現在位置を基準として、シミュレートされたコント ローラーの位置を移動します。
-
-パラメーター
-* 翻訳 - シミュレートされたコント ローラーの平行移動量。
-
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.PressButton(SimulatedSixDofControllerButton)**
-
-シミュレートされたコント ローラー上のボタンを押します。  のみ検出されます、システムによって、コント ローラーが有効になっている場合。
+シミュレートされたコントローラーの位置を、現在の位置 (メートル単位) に相対的に移動します。
 
 パラメーター
-* ボタン - キーを押すボタンをクリックします。
+* translation-シミュレートされたコントローラーを変換する量。
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.ReleaseButton(SimulatedSixDofControllerButton)**
+**ISimulatedSixDofController (SimulatedSixDofControllerButton) () PerceptionSimulation**
 
-シミュレートされたコント ローラー上のボタンを離します。  のみ検出されます、システムによって、コント ローラーが有効になっている場合。
-
-パラメーター
-* ボタン - を解放するボタンをクリックします。
-
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.GetTouchpadPosition (out float、float を)**
-
-シミュレートされた、シミュレートされたコント ローラーのタッチパッド本の指の位置を取得します。
+シミュレートされたコントローラーでボタンを押します。  コントローラーが有効になっている場合にのみ、システムによって検出されます。
 
 パラメーター
-* x 軸の指の水平位置。
-* y の指の垂直位置。
+* button-押すボタン。
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController.SetTouchpadPosition (float, float)**
+**PerceptionSimulation (ISimulatedSixDofController) (SimulatedSixDofControllerButton)**
 
-シミュレートされたコント ローラーのタッチパッドでシミュレートされた本の指の位置を設定します。
+シミュレートされたコントローラーでボタンを離します。  コントローラーが有効になっている場合にのみ、システムによって検出されます。
 
 パラメーター
-* x 軸の指の水平位置。
-* y の指の垂直位置。
+* ボタン-リリースするボタン。
 
-### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller2"></a>Microsoft.PerceptionSimulation.ISimulatedSixDofController2
+**PerceptionSimulation. ISimulatedSixDofController. GetTouchpadPosition (out float, out float)**
 
-追加のプロパティとメソッドは、使用可能な ISimulatedSixDofController ISimulatedSixDofController2 にキャストすることによって
+シミュレートされたコントローラーのタッチパッド上でシミュレートされた指の位置を取得します。
+
+パラメーター
+* x-指の水平方向の位置。
+* y-指の垂直方向の位置。
+
+**PerceptionSimulation (float, float) の位置を ISimulatedSixDofController します。**
+
+シミュレートされたコントローラーのタッチパッドでシミュレートされた指の位置を設定します。
+
+パラメーター
+* x-指の水平方向の位置。
+* y-指の垂直方向の位置。
+
+### <a name="microsoftperceptionsimulationisimulatedsixdofcontroller2"></a>PerceptionSimulation. ISimulatedSixDofController2
+
+ISimulatedSixDofController を ISimulatedSixDofController2 にキャストすると、追加のプロパティとメソッドを使用できます。
 
 ```
 public interface ISimulatedSixDofController2
@@ -1063,30 +1063,30 @@ public interface ISimulatedSixDofController2
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController2.GetThumbstickPosition (out float、float を)**
+**PerceptionSimulation. ISimulatedSixDofController2. GetThumbstickPosition (out float, out float)**
 
-シミュレートされたコント ローラーでシミュレートされたスティックの位置を取得します。
-
-パラメーター
-* x - スティックの水平位置。
-* y スティックの垂直位置。
-
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController2.SetThumbstickPosition (float, float)**
-
-シミュレートされたコント ローラーで、シミュレートされたスティックの位置を設定します。
+シミュレートされたコントローラー上のシミュレートされたサムスティックの位置を取得します。
 
 パラメーター
-* x - スティックの水平位置。
-* y スティックの垂直位置。
+* x-サムスティックの水平方向の位置。
+* y-サムスティックの垂直方向の位置。
 
-**Microsoft.PerceptionSimulation.ISimulatedSixDofController2.BatteryLevel**
+**PerceptionSimulation. ISimulatedSixDofController2. SetThumbstickPosition (float, float)**
 
-取得またはシミュレートされたコント ローラーのバッテリ レベルを設定します。  値は 0.0 より大きくする必要があります、100.0 以下。
+シミュレートされたコントローラーのシミュレートされたサムスティックの位置を設定します。
+
+パラメーター
+* x-サムスティックの水平方向の位置。
+* y-サムスティックの垂直方向の位置。
+
+**PerceptionSimulation. ISimulatedSixDofController2. BatteryLevel**
+
+シミュレートされたコントローラーのバッテリレベルを取得または設定します。  値は0.0 より大きく、100.0 以下でなければなりません。
 
 
-### <a name="microsoftperceptionsimulationisimulatedeyes"></a>Microsoft.PerceptionSimulation.ISimulatedEyes
+### <a name="microsoftperceptionsimulationisimulatedeyes"></a>PerceptionSimulation. ISimulatedEyes
 
-シミュレートされた人間の目を記述するインターフェイスします。
+シミュレートされた人間の目を表すインターフェイス。
 
 ```
 public interface ISimulatedEyes
@@ -1098,29 +1098,29 @@ public interface ISimulatedEyes
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulatedEyes.Rotation**
+**PerceptionSimulation. ISimulatedEyes**
 
-シミュレートされた目の回転角度を取得します。 軸に検索するときに、正のラジアンは右回りに回転します。
+シミュレートされた目の回転を取得します。 正のラジアンは、軸に沿って表示すると時計回りに回転します。
 
-**Microsoft.PerceptionSimulation.ISimulatedEyes.Rotate(Microsoft.PerceptionSimulation.Rotation3)**
+**PerceptionSimulation (ISimulatedEyes) (PerceptionSimulation. Rotation3)**
 
-現在、回転の基準としたシミュレートされた目を回転します。 軸に検索するときに、正のラジアンは右回りに回転します。
+現在の回転と比較して、シミュレートされた目を回転します。 正のラジアンは、軸に沿って表示すると時計回りに回転します。
 
 パラメーター
-* 回転の回転する量。
+* rotation-回転する量。
 
-**Microsoft.PerceptionSimulation.ISimulatedEyes.CalibrationState**
+**PerceptionSimulation. ISimulatedEyes. CalibrationState**
 
-取得またはシミュレートされた目の調整状態を設定します。
+シミュレートされた目の調整状態を取得または設定します。
 
-**Microsoft.PerceptionSimulation.ISimulatedEyes.WorldPosition**
+**PerceptionSimulation. ISimulatedEyes. WorldPosition**
 
-メートル単位で、世界中とに関してノードの位置を取得します。
+世界のリレーションを使用してノードの位置をメートル単位で取得します。
 
 
-### <a name="microsoftperceptionsimulationisimulationrecording"></a>Microsoft.PerceptionSimulation.ISimulationRecording
+### <a name="microsoftperceptionsimulationisimulationrecording"></a>PerceptionSimulation. ISimulationRecording
 
-再生用に 1 つの記録と対話するためのインターフェイスが読み込まれます。
+再生用に読み込まれた単一の記録と対話するためのインターフェイス。
 
 ```
 public interface ISimulationRecording
@@ -1134,36 +1134,36 @@ public interface ISimulationRecording
 };
 ```
 
-**Microsoft.PerceptionSimulation.ISimulationRecording.DataTypes**
+**PerceptionSimulation. ISimulationRecording**
 
-記録のデータ型の一覧を取得します。
+記録内のデータ型の一覧を取得します。
 
-**Microsoft.PerceptionSimulation.ISimulationRecording.State**
+**PerceptionSimulation. ISimulationRecording**
 
 記録の現在の状態を取得します。
 
-**Microsoft.PerceptionSimulation.ISimulationRecording.Play**
+**PerceptionSimulation. ISimulationRecording**
 
-再生を開始します。 記録を一時停止すると、再生が一時停止中の場所から再開されます。停止した場合、先頭に再生が開始されます。 既に再生中の場合は、この呼び出しは無視されます。
+再生を開始します。 記録が一時停止されている場合は、一時停止した場所から再生が再開されます。停止した場合は、最初から再生が開始されます。 既に再生中の場合、この呼び出しは無視されます。
 
-**Microsoft.PerceptionSimulation.ISimulationRecording.Pause**
+**PerceptionSimulation. ISimulationRecording**
 
 現在の場所で再生を一時停止します。 記録が停止している場合、呼び出しは無視されます。
 
-**Microsoft.PerceptionSimulation.ISimulationRecording.Seek(System.UInt64)**
+**PerceptionSimulation. ISimulationRecording (System. UInt64)**
 
-(最初から 100 ナノ秒間隔) で指定された時間に、記録をシークし、その場所に一時停止します。 時間が、記録の末尾を越える場合、最後のフレームで一時停止中です。
+指定した時間 (先頭から100ナノ秒単位) に記録をシークし、その位置で一時停止します。 時刻が記録の末尾を越えている場合は、最後のフレームで一時停止します。
 
 パラメーター
-* タイマー刻みの時刻をシークします。
+* ティック-シークする時刻。
 
-**Microsoft.PerceptionSimulation.ISimulationRecording.Stop**
+**PerceptionSimulation. ISimulationRecording**
 
-再生を停止し、先頭に位置をリセットします。
+再生を停止し、位置を先頭にリセットします。
 
-### <a name="microsoftperceptionsimulationisimulationrecordingcallback"></a>Microsoft.PerceptionSimulation.ISimulationRecordingCallback
+### <a name="microsoftperceptionsimulationisimulationrecordingcallback"></a>PerceptionSimulation. ISimulationRecordingCallback
 
-再生中に状態の変更を受信するためのインターフェイスします。
+再生中に状態の変更を受信するためのインターフェイス。
 
 ```
 public interface ISimulationRecordingCallback
@@ -1172,16 +1172,16 @@ public interface ISimulationRecordingCallback
 };
 ```
 
-**Microsoft.PerceptionSimulation.ISimulationRecordingCallback.PlaybackStateChanged(Microsoft.PerceptionSimulation.PlaybackState)**
+**PerceptionSimulation. ISimulationRecordingCallback. PlaybackStateChanged (PerceptionSimulation. PlaybackState)**
 
-ISimulationRecording の再生の状態が変更されたときに呼び出されます。
+ISimulationRecording の再生状態が変更されたときに呼び出されます。
 
 パラメーター
-* newState の記録の新しい状態。
+* newState-記録の新しい状態。
 
-### <a name="microsoftperceptionsimulationperceptionsimulationmanager"></a>Microsoft.PerceptionSimulation.PerceptionSimulationManager
+### <a name="microsoftperceptionsimulationperceptionsimulationmanager"></a>PerceptionSimulation. PerceptionSimulationManager
 
-Perception シミュレーション オブジェクトを作成するためのルート オブジェクト。
+認識シミュレーションオブジェクトを作成するためのルートオブジェクト。
 
 ```
 public static class PerceptionSimulationManager
@@ -1192,56 +1192,56 @@ public static class PerceptionSimulationManager
     public static ISimulationRecording LoadPerceptionSimulationRecording(string path, ISimulationStreamSinkFactory factory, ISimulationRecordingCallback callback);
 ```
 
-**Microsoft.PerceptionSimulation.PerceptionSimulationManager.CreatePerceptionSimulationManager(Microsoft.PerceptionSimulation.ISimulationStreamSink)**
+**PerceptionSimulation. PerceptionSimulationManager. CreatePerceptionSimulationManager (PerceptionSimulation. ISimulationStreamSink)**
 
-シミュレートされたパケットを生成すると、指定されたシンクへの配信にオブジェクトを作成します。
+シミュレートされたパケットを生成し、指定したシンクに配信するために、オブジェクトでを作成します。
 
 パラメーター
-* シンクしますで生成されたすべてのパケットを受信するシンク。
+* sink-生成されたすべてのパケットを受信するシンク。
 
 戻り値
 
-作成したマネージャー。
+作成されたマネージャー。
 
-**Microsoft.PerceptionSimulation.PerceptionSimulationManager.CreatePerceptionSimulationRecording(System.String)**
+**PerceptionSimulation. PerceptionSimulationManager. CreatePerceptionSimulationRecording (System.string)**
 
-指定したパスにあるファイルのすべての受信パケットを格納するシンクを作成します。
+指定されたパスのファイルに受信したすべてのパケットを格納するシンクを作成します。
 
 パラメーター
-* パス - 作成するファイルのパス。
+* path-作成するファイルのパス。
 
 戻り値
 
-作成したシンク。
+作成されたシンク。
 
-**Microsoft.PerceptionSimulation.PerceptionSimulationManager.LoadPerceptionSimulationRecording(System.String,Microsoft.PerceptionSimulation.ISimulationStreamSinkFactory)**
+**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, PerceptionSimulation. ISimulationStreamSinkFactory)**
 
-指定したファイルから録画を読み込みます。
+指定されたファイルから記録を読み込みます。
 
 パラメーター
-* パス - 読み込むファイルのパス。
-* 工場出荷時のために必要なときに、ISimulationStreamSink を作成するため、記録することによって使用されるファクトリ。
+* path-読み込むファイルのパス。
+* factory-必要なときに ISimulationStreamSink を作成するために記録によって使用されるファクトリ。
 
 戻り値
 
-読み込まれた記録します。
+読み込まれた記録。
 
-**Microsoft.PerceptionSimulation.PerceptionSimulationManager.LoadPerceptionSimulationRecording (System.String,Microsoft.PerceptionSimulation.ISimulationStreamSinkFactory、Microsoft.PerceptionSimulation.ISimulationRecordingCallback)**
+**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, PerceptionSimulation. ISimulationStreamSinkFactory,,PerceptionSimulation. ISimulationRecordingCallback)**
 
-指定したファイルから録画を読み込みます。
+指定されたファイルから記録を読み込みます。
 
 パラメーター
-* パス - 読み込むファイルのパス。
-* 工場出荷時のために必要なときに、ISimulationStreamSink を作成するため、記録することによって使用されるファクトリ。
-* callback - コールバックを受信は、regrading 記録の状態を更新します。
+* path-読み込むファイルのパス。
+* factory-必要なときに ISimulationStreamSink を作成するために記録によって使用されるファクトリ。
+* callback-更新を受け取るコールバックで、記録の状態を再適用します。
 
 戻り値
 
-読み込まれた記録します。
+読み込まれた記録。
 
-### <a name="microsoftperceptionsimulationstreamdatatypes"></a>Microsoft.PerceptionSimulation.StreamDataTypes
+### <a name="microsoftperceptionsimulationstreamdatatypes"></a>PerceptionSimulation データ型
 
-ストリーム データのさまざまな種類をについて説明します。
+さまざまな種類のストリームデータについて説明します。
 
 ```
 public enum StreamDataTypes
@@ -1256,37 +1256,37 @@ public enum StreamDataTypes
 }
 ```
 
-**Microsoft.PerceptionSimulation.StreamDataTypes.None**
+**PerceptionSimulation のデータ型はありません。**
 
-ストリームのデータ型がない場合に使用される sentinel 値。
+ストリームデータ型がないことを示すために使用される sentinel 値。
 
-**Microsoft.PerceptionSimulation.StreamDataTypes.Head**
+**PerceptionSimulation のデータ型**
 
-Stream の位置と、先頭の向きに関するデータ。
+ヘッドの位置と向きに関するデータのストリーム。
 
-**Microsoft.PerceptionSimulation.StreamDataTypes.Hands**
+**PerceptionSimulation のデータ型**
 
-Stream の位置と手のジェスチャに関するデータ。
+ハンドの位置とジェスチャに関するデータのストリーム。
 
-**Microsoft.PerceptionSimulation.StreamDataTypes.SpatialMapping**
+**PerceptionSimulation. SpatialMapping.**
 
-Stream の環境の空間のマッピングに関するデータ。
+環境の空間マッピングに関するデータのストリーム。
 
-**Microsoft.PerceptionSimulation.StreamDataTypes.Calibration**
+**PerceptionSimulation のデータ型**
 
-デバイスの調整に関するデータの Stream。 調整のパケットは、リモート モードでのシステムでのみ受け入れられます。
+デバイスの調整に関するデータのストリーム。 調整パケットは、リモートモードのシステムでのみ受け入れられます。
 
-**Microsoft.PerceptionSimulation.StreamDataTypes.Environment**
+**PerceptionSimulation のデータ型**
 
-デバイスの環境に関するデータの Stream。
+デバイスの環境に関するデータのストリーム。
 
-**Microsoft.PerceptionSimulation.StreamDataTypes.All**
+**PerceptionSimulation のデータ型**
 
-すべて記録されたデータ型を示すために使用される sentinel 値。
+すべての記録されたデータ型を示すために使用される sentinel 値。
 
-### <a name="microsoftperceptionsimulationisimulationstreamsink"></a>Microsoft.PerceptionSimulation.ISimulationStreamSink
+### <a name="microsoftperceptionsimulationisimulationstreamsink"></a>PerceptionSimulation. ISimulationStreamSink
 
-シミュレーションのストリームからデータ パケットを受信するオブジェクト。
+シミュレーションストリームからデータパケットを受信するオブジェクト。
 
 ```
 public interface ISimulationStreamSink
@@ -1295,15 +1295,15 @@ public interface ISimulationStreamSink
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulationStreamSink.OnPacketReceived (uint の長さ、byte パケット)**
+**PerceptionSimulation. ISimulationStreamSink (uint length, byte [] パケット数)**
 
-内部的に型指定されたおよびバージョン管理は、1 つのパケットを受信します。
+内部的に型指定され、バージョン管理される1つのパケットを受信します。
 
 パラメーター
-* length - パケットの長さ。
-* パケットのパケットのデータです。
+* length-パケットの長さ。
+* パケット-パケットのデータ。
 
-### <a name="microsoftperceptionsimulationisimulationstreamsinkfactory"></a>Microsoft.PerceptionSimulation.ISimulationStreamSinkFactory
+### <a name="microsoftperceptionsimulationisimulationstreamsinkfactory"></a>PerceptionSimulation. ISimulationStreamSinkFactory
 
 ISimulationStreamSink を作成するオブジェクト。
 
@@ -1314,10 +1314,10 @@ public interface ISimulationStreamSinkFactory
 }
 ```
 
-**Microsoft.PerceptionSimulation.ISimulationStreamSinkFactory.CreateSimulationStreamSink()**
+**PerceptionSimulation. ISimulationStreamSinkFactory-Ationstreamsink ()**
 
-ISimulationStreamSink の 1 つのインスタンスを作成します。
+ISimulationStreamSink の1つのインスタンスを作成します。
 
 戻り値
 
-作成したシンク。
+作成されたシンク。

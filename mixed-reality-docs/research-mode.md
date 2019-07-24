@@ -1,11 +1,11 @@
 ---
-title: HoloLens 研究モード
-description: HoloLens の研究モードを使用して、アプリケーションは、主要なデバイス センサー ストリーム (深さ、追跡、環境および IR 反射) にアクセスできます。
+title: HoloLens Research モード
+description: HoloLens で Research モードを使用すると、アプリケーションは主要なデバイスセンサーストリーム (深さ、環境追跡、および赤外線反射) にアクセスできます。
 author: davidgedye
 ms.author: dgedye
 ms.date: 05/03/2018
 ms.topic: article
-keywords: モード、cv、rs4、コンピューター ビジョン研究、HoloLens を調査します。
+keywords: research モード, cv, rs4, コンピュータービジョン, 研究, HoloLens
 ms.openlocfilehash: e9a7683f8d582b459185066e74655e8f2b236db4
 ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
 ms.translationtype: MT
@@ -13,18 +13,18 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/11/2019
 ms.locfileid: "66829935"
 ---
-# <a name="hololens-research-mode"></a>HoloLens 研究モード
+# <a name="hololens-research-mode"></a>HoloLens Research モード
 
 > [!NOTE]
-> この機能は、の一部として追加された、 [Windows 10 April 2018 Update](release-notes-april-2018.md) HoloLens のと、以前のリリースでは使用できません。
+> この機能は、HoloLens 用の[Windows 10 April 2018 更新プログラム](release-notes-april-2018.md)の一部として追加されたものであり、以前のリリースでは使用できません。
 
-研究モードは、デバイスにアプリケーション キーのセンサーへのアクセスを提供する HoloLens の新しい機能です。 次のようなクラスがあります。
-- 4 つのマップの構築と head の追跡、システムで使用されるカメラを追跡する環境。
-- 深度カメラ データ – 高頻度 (30 FPS) 深さの近くの検知、一般的に使用される追跡と低頻度 (1 FPS) 深さまで検出用の 2 つのバージョンは、空間のマッピングによって現在使用
-- これらのイメージ、HoloLens から明るいとある程度周辺光による影響を受けるは、深さが価値ある独自の権限でのコンピューティングするために使用、HoloLens、IR 反射ストリームの 2 つのバージョン。
+Research モードは、デバイス上のキーセンサーへのアプリケーションアクセスを提供する HoloLens の新機能です。 これには次が含まれます。
+- マップの構築とヘッド追跡のためにシステムで使用される4つの環境追跡カメラ。
+- 深度カメラデータの2つのバージョン (高周波数 (30 FPS) のほぼ詳細な検出、通常は手動での追跡、および空間マッピングで現在使用されている低頻度 (1 FPS) の詳細な検出のため)
+- IR 反射反射ストリームの2つのバージョン。 HoloLens では深度を計算するために使用されますが、これらのイメージは HoloLens から照らされ、アンビエントライトによって適度に影響を受けないという利点があります。
 
-![Research モードのアプリのスクリーン ショット](images/sensor-stream-viewer.jpg)<br>
-*Research モードで使用可能な 8 つのセンサー ストリームを表示するテスト アプリケーションの複合現実のキャプチャ*
+![Research モードアプリのスクリーンショット](images/sensor-stream-viewer.jpg)<br>
+*リサーチモードで使用可能な8個のセンサーストリームを表示するテストアプリケーションの mixed reality キャプチャ*
 
 ## <a name="device-support"></a>デバイスのサポート
 
@@ -40,7 +40,7 @@ ms.locfileid: "66829935"
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
      <tr>
-        <td>研究モード</td>
+        <td>リサーチモード</td>
         <td>✔️</td>
         <td>❌</td>
     </tr>
@@ -48,38 +48,38 @@ ms.locfileid: "66829935"
 
 ## <a name="before-using-research-mode"></a>調査モードを使用する前に
 
-という名前の研究モード: コンピューター ビジョンとロボット工学のフィールドに新しいアイデアを試す学術的および産業の研究者に適しています。  研究モードは、企業全体に展開または Microsoft Store で使用できるアプリケーションのものではありません。 この理由は、研究モードは、デバイスのセキュリティを削減し、通常の操作よりもはるかに多くのバッテリ電力を消費です。 Microsoft は、将来のデバイスでこのモードをサポートしていないコミットしています。 そのため、開発し、新しいアイデアをテストに使用する推奨します。ただし、広くは引き続き将来のハードウェアで動作する任意の保証、研究モードを使用して、またはアプリケーションをデプロイすることはできません。
+リサーチモードは、"Computer Vision" と "ロボット" のフィールドの新しいアイデアを試す教育機関および産業用の研究者を対象としています。  リサーチモードは、企業全体に展開されるか、Microsoft Store で利用可能になるアプリケーションを対象としたものではありません。 その理由は、リサーチモードはデバイスのセキュリティを低下させ、通常の操作よりもはるかに多くのバッテリ電源を消費するためです。 今後のデバイスでは、このモードのサポートに対するコミットは行われません。 そのため、新しいアイデアを開発してテストするために使用することをお勧めします。ただし、リサーチモードを使用するアプリケーションを広く展開することはできません。また、将来のハードウェアでも引き続き動作することが保証されています。
 
-## <a name="enabling-research-mode"></a>調査モードを有効にします。
+## <a name="enabling-research-mode"></a>リサーチモードを有効にする
 
-研究モードは、開発者モードのサブ モードです。 まず、設定アプリで開発者モードを有効にする必要があります (**設定 > 更新とセキュリティ > 開発者向け**)。
+リサーチモードは、開発者モードのサブモードです。 まず、設定アプリで開発者モードを有効にする必要があります (**開発者向け & セキュリティ > の設定 > 更新**)。
 
-1. 「開発者向けの機能を使用して、」を設定**で**
-2. 「デバイスのポータルを有効にする」を設定**で**
+1. [開発機能の使用] を **[オン**] に設定します。
+2. [デバイスポータルを有効にする] を **[オン**] に設定します。
 
-HoloLens の IP アドレスに移動し、HoloLens と同じ Wi-fi ネットワークに接続されている web ブラウザーを使用して (経由で取得した**設定 > ネットワークとインターネット > Wi-fi > ハードウェア プロパティ**)。 これは、[デバイス ポータル](using-the-windows-device-portal.md)、およびポータルの"System"セクションでは「Research モード」ページが表示されます。
+次に、HoloLens と同じ Wi-fi ネットワークに接続されている web ブラウザーを使用して、HoloLens の IP アドレスに移動します (**設定 > network & Internet > wi-fi > ハードウェアプロパティ**)。 これは[デバイスポータル](using-the-windows-device-portal.md)であり、ポータルの [システム] セクションに "リサーチモード" ページがあります。
 
-![HoloLens デバイス ポータルの [モード] タブを調査します。](images/ResearchModeDevPortal.png)<br>
-*HoloLens デバイスのポータルでの研究モード*
+![HoloLens デバイスポータルの [リサーチモード] タブ](images/ResearchModeDevPortal.png)<br>
+*HoloLens デバイスポータルでのリサーチモード*
 
-選択した後**センサー ストリームへのアクセスを許可する**HoloLens を再起動する必要があります。 これは、ページの上部にある"Power"のメニュー項目で、デバイス ポータルから行うことができます。
+[**センサーストリームへのアクセスを許可**する] を選択した後、HoloLens を再起動する必要があります。 これを行うには、デバイスポータルのページ上部にある [Power] (電源) メニュー項目を使用します。
 
-デバイスの再起動後デバイス ポータルから読み込まれているアプリケーションは Research モードのストリームにアクセスできる必要があります。
+デバイスが再起動されると、デバイスポータルから読み込まれたアプリケーションは、リサーチモードのストリームにアクセスできるようになります。
 
-## <a name="using-sensor-data-in-your-apps"></a>アプリでのセンサー データの使用
+## <a name="using-sensor-data-in-your-apps"></a>アプリでセンサーデータを使用する
 
-アプリケーションは開くことでセンサー データのストリームにアクセスできます[メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)写真とビデオのカメラのストリームにアクセスする、まったく同じ方法でストリーム。 
+アプリケーションは、写真/ビデオカメラストリームにアクセスするのとまったく同じ方法で[メディアファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)ストリームを開くことによって、センサーストリームデータにアクセスできます。 
 
-HoloLens の開発に使用できるすべての Api も調査モードで使用できます。 具体的には、アプリケーションは正確に場所がわかっている HoloLens 6 dof 領域で各センサーのフレームのキャプチャ時にします。
+HoloLens 開発に使用できるすべての Api は、リサーチモードでも使用できます。 特に、アプリケーションは、各センサーフレームのキャプチャ時間において HoloLens が6つの領域にある場所を正確に把握できます。
 
-さまざまな調査モードのストリームにアクセスする方法、組み込みおよび extrinsics を使用する方法、およびストリームを記録する方法を示すサンプル アプリケーションが表示されます、 [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)します。
+さまざまなリサーチモードのストリームにアクセスする方法、組み込みと extrを使用する方法、およびストリームを記録する方法を示すサンプルアプリケーションは、 [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)で入手できます。
 
 ## <a name="known-issues"></a>既知の問題
 
-参照してください、 [issue トラッカー](https://github.com/Microsoft/HololensForCV/issues) HoloLensForCV リポジトリにします。
+HoloLensForCV リポジトリの[問題トラッカー](https://github.com/Microsoft/HololensForCV/issues)をご覧ください。
 
 ## <a name="see-also"></a>関連項目
 
-* [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197)
+* [Microsoft メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 * [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)
 * [Windows Device Portal を使用する](using-the-windows-device-portal.md)

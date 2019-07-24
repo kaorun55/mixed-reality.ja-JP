@@ -1,31 +1,31 @@
 ---
-title: DirectX の場所を特定できるカメラ
-description: HoloLens のアプリでのポイントからビューの (ハット スイッチ) カメラを使用する方法について説明します。
+title: DirectX でのお持ちのカメラ
+description: HoloLens アプリでのビューポイント (POV) カメラの使用方法について説明します。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: HoloLens、カメラの場所を特定できる、ポイントの表示、ハット スイッチ、unporoject、メディア ファンデーション、MF、カスタム シンク、チュートリアル、サンプル コード
+keywords: HoloLens、特定のカメラ、ポイント/視点、POV、unporoject media foundation、MF、カスタムシンク、チュートリアル、サンプルコード
 ms.openlocfilehash: 374b61e3d9bb0e97d5f0c5c8e17a5c882a4ebcd3
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59602084"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516868"
 ---
-# <a name="locatable-camera-in-directx"></a>DirectX の場所を特定できるカメラ
+# <a name="locatable-camera-in-directx"></a>DirectX でのお持ちのカメラ
 
-このトピックでは、設定する方法を説明します、[メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197(v=vs.85).aspx)パイプラインへのアクセスを[カメラ](locatable-camera.md)DirectX アプリで、イメージを配置することを許可するフレームのメタデータを含む、現実の世界で生成されました。
+このトピックでは、DirectX アプリで[カメラ](locatable-camera.md)にアクセスするための[メディアファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197(v=vs.85).aspx)パイプラインを設定する方法について説明します。これには、実際の世界で作成されたイメージを検索するためのフレームメタデータも含まれます。
 
-## <a name="windows-media-capture-and-media-foundation-development-imfattributes"></a>Windows Media のキャプチャおよび Media Foundation 開発:IMFAttributes
+## <a name="windows-media-capture-and-media-foundation-development-imfattributes"></a>Windows Media Capture とメディアファンデーションの開発:IMFAttributes
 
-各イメージ フレーム[座標システムを含む](locatable-camera.md#images-with-coordinate-systems)、2 つの重要な変換とします。 "View"は、カメラに指定された座標システムからのマップおよびイメージのピクセルにカメラからの「射影」マップを変換します。 メディア ファンデーションを使用してイメージ フレームごとに、座標系と 2 つの変換は、メタデータとして埋め込まれている[IMFAttributes](https://msdn.microsoft.com/library/windows/desktop/ms704598(v=vs.85).aspx)します。
+各イメージフレームには、座標系、および2つの重要な変換[が含まれ](locatable-camera.md#images-with-coordinate-systems)ます。 "表示" 変換は、指定された座標系からカメラにマップされ、"投影" はカメラからイメージ内のピクセルにマップされます。 座標系と2つの変換は、メディアファンデーションの[Imfattributes](https://msdn.microsoft.com/library/windows/desktop/ms704598(v=vs.85).aspx)を通じて、すべてのイメージフレームにメタデータとして埋め込まれます。
 
-### <a name="sample-usage-of-reading-attributes-with-mf-custom-sink-and-doing-projection"></a>MF カスタム シンクを持つ属性の読み取りとプロジェクションの実行の使用例
+### <a name="sample-usage-of-reading-attributes-with-mf-custom-sink-and-doing-projection"></a>MF カスタムシンクを使用して属性を読み取り、プロジェクションを実行するサンプルの使用例
 
-カスタム MF シンク ストリームで ([IMFStreamSink](https://msdn.microsoft.com/library/windows/desktop/ms705657(v=vs.85).aspx))、取得、 [IMFSample](https://msdn.microsoft.com/library/windows/desktop/ms702192(v=vs.85).aspx)サンプル属性を持つ。
+カスタム MF のシンクシンクストリーム ([Imfstreamsink](https://msdn.microsoft.com/library/windows/desktop/ms705657(v=vs.85).aspx)) では、サンプル属性を使用して[imfsample](https://msdn.microsoft.com/library/windows/desktop/ms702192(v=vs.85).aspx)を取得できます。
 
-WinRT ベースのコードの次 MediaExtensions を定義する必要があります。
+WinRT ベースのコードには、次の MediaExtensions を定義する必要があります。
 
 ```
 EXTERN_GUID(MFSampleExtension_Spatial_CameraViewTransform, 0x4e251fa4, 0x830f, 0x4770, 0x85, 0x9a, 0x4b, 0x8d, 0x99, 0xaa, 0x80, 0x9b);
@@ -33,7 +33,7 @@ EXTERN_GUID(MFSampleExtension_Spatial_CameraCoordinateSystem, 0x9d13c82f, 0x2199
 EXTERN_GUID(MFSampleExtension_Spatial_CameraProjectionTransform, 0x47f9fcb5, 0x2a02, 0x4f26, 0xa4, 0x77, 0x79, 0x2f, 0xdf, 0x95, 0x88, 0x6a);
 ```
 
-メディア拡張機能の実装が必要ですが、WinRT Api からこれらの属性にアクセスできない[IMFTransform](https://msdn.microsoft.com/library/windows/desktop/ms696260(v=vs.85).aspx) (影響) 用または[IMFMediaSink](https://msdn.microsoft.com/library/windows/desktop/ms694262(v=vs.85).aspx)と[IMFStreamSink](https://msdn.microsoft.com/library/windows/desktop/ms705657(v=vs.85).aspx) (カスタム シンク)。 いずれかのサンプルでは、この拡張機能を処理する場合に[IMFTransform::ProcessInput()](https://msdn.microsoft.com/library/windows/desktop/ms703131(v=vs.85).aspx)/[IMFTransform::ProcessOutput()](https://msdn.microsoft.com/library/windows/desktop/ms704014(v=vs.85).aspx)または[IMFStreamSink::ProcessSample()](https://msdn.microsoft.com/library/windows/desktop/ms696208(v=vs.85).aspx)、この例のように属性を照会することができます。
+これらの属性に WinRT Api からアクセスすることはできませんが、 [Imftransform](https://msdn.microsoft.com/library/windows/desktop/ms696260(v=vs.85).aspx) (有効な場合) または[Imfmediasink](https://msdn.microsoft.com/library/windows/desktop/ms694262(v=vs.85).aspx)と[Imfstreamsink](https://msdn.microsoft.com/library/windows/desktop/ms705657(v=vs.85).aspx) (カスタムシンクの場合) のメディア拡張機能の実装が必要です。 Imftransform でこの拡張機能のサンプルを処理する場合[::P roて input (](https://msdn.microsoft.com/library/windows/desktop/ms703131(v=vs.85).aspx)/)[imftransform::P roて output (](https://msdn.microsoft.com/library/windows/desktop/ms704014(v=vs.85).aspx) ) または[imfstreamsink::P roて sample ()](https://msdn.microsoft.com/library/windows/desktop/ms696208(v=vs.85).aspx)の場合は、次のサンプルのように属性をクエリできます。
 
 ```
 ComPtr<IUnknown> spUnknown;
@@ -81,7 +81,7 @@ if (SUCCEEDED(hr))
 }
 ```
 
-カメラからのテクスチャにアクセスするには、同じの D3D デバイスのカメラ枠のテクスチャを作成する必要があります。 この D3D デバイスが[IMFDXGIDeviceManager](https://msdn.microsoft.com/library/windows/desktop/hh447906(v=vs.85).aspx)キャプチャ パイプライン。 メディアのキャプチャを使用することから、DXGI デバイス マネージャーを取得する[IAdvancedMediaCapture](https://msdn.microsoft.com/library/windows/desktop/hh802709(v=vs.85).aspx)と[IAdvancedMediaCaptureSettings](https://msdn.microsoft.com/library/windows/desktop/hh802712(v=vs.85).aspx)インターフェイス。
+カメラからテクスチャにアクセスするには、カメラフレームテクスチャを作成する同じ D3D デバイスが必要です。 この D3D デバイスは、キャプチャパイプラインの[Imfdxgidevicemanager](https://msdn.microsoft.com/library/windows/desktop/hh447906(v=vs.85).aspx)にあります。 メディアキャプチャから DXGI デバイスマネージャーを取得するには、 [IAdvancedMediaCapture](https://msdn.microsoft.com/library/windows/desktop/hh802709(v=vs.85).aspx)および[Iadvanced Mediacapの設定](https://msdn.microsoft.com/library/windows/desktop/hh802712(v=vs.85).aspx)インターフェイスを使用できます。
 
 ```
 Microsoft::WRL::ComPtr<IAdvancedMediaCapture> spAdvancedMediaCapture;
@@ -97,4 +97,4 @@ if (SUCCEEDED(((IUnknown *)(mediaCapture))->QueryInterface(IID_PPV_ARGS(&spAdvan
 }
 ```
 
-マウスとキーボードの Windows Mixed Reality アプリの省略可能な入力メソッドとして入力することもできます。 これは、HoloLens などのデバイス用の優れたデバッグ機能をすることもでき、Pc に接続されている、イマーシブ ヘッドセットで実行されている複合現実アプリでのユーザー入力のことが望ましい場合があります。
+Windows Mixed Reality アプリのオプションの入力方法として、マウスおよびキーボード入力を有効にすることもできます。 これは、HoloLens などのデバイスの優れたデバッグ機能であり、Pc に接続されたイマーシブヘッドセットで実行される mixed reality アプリでのユーザー入力に適している場合もあります。

@@ -1,11 +1,11 @@
 ---
-title: HoloLens のハードウェアの詳細
-description: Microsoft HoloLens、世界最初完全無制限 holographic コンピューター Windows を実行して構成するコンポーネントの概要を説明します。
+title: HoloLens ハードウェアの詳細
+description: Windows を実行している、世界初の完全ならでは holographic コンピューターである Microsoft HoloLens を構成するコンポーネントの概要。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: HoloLens、コンポーネント、センサー、テクノロジ、テクニカル、破棄、破棄、
+keywords: HoloLens、コンポーネント、センサー、テクノロジ、技術、破棄、破棄、
 ms.openlocfilehash: 56b10fa9751c626578c697cd370347482a121b2a
 ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: MT
@@ -13,87 +13,87 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/22/2019
 ms.locfileid: "67326201"
 ---
-# <a name="hololens-1st-gen-hardware-details"></a>HoloLens (第 1 世代) ハードウェアの詳細
+# <a name="hololens-1st-gen-hardware-details"></a>HoloLens (第1世代) ハードウェアの詳細
 
 ![Microsoft HoloLens](images/see-through-400px.jpg)
 
-Microsoft HoloLens では、世界中の最初の完全無制限 holographic コンピューターです。 HoloLens では、holographic エクスペリエンスの新しい方法を強化するには、パーソナル コンピューティングを再定義します。 HoloLens 最先端の光のブレンドし、3D ホログラムを配信するセンサーが周囲の現実の世界にピン留めします。
+Microsoft HoloLens は、世界初の完全ならでは holographic コンピューターです。 HoloLens は、holographic エクスペリエンスによってパーソナルコンピューティングを再定義して、新しい方法で支援します。 HoloLens は、最先端の光やセンサーを合成して、実際の世界にピン留めされた3D ホログラムを提供します。
 
-## <a name="how-to-get-microsoft-hololens"></a>Microsoft HoloLens を取得する方法
+## <a name="how-to-get-microsoft-hololens"></a>Microsoft HoloLens を入手する方法
 
-Microsoft HoloLens は両方を開発エディションとして購入しの保証とエンタープライズ機能を含む Commercial Suite 構成は、セキュリティとデバイスの管理を追加します。 北米の場合は、パートナーを通じても HoloLens をレンタルできます。
+Microsoft HoloLens は、開発エディションと商用スイート構成の両方として購入することができます。これには、セキュリティとデバイスの管理を強化するための保証とエンタープライズ機能が含まれています。 北米にいる場合は、パートナーを通じて HoloLens をレンタルすることもできます。
 
-[購入またはレンタル Microsoft HoloLens の詳細についてはここをクリックして](https://www.microsoft.com/hololens/buy)します。
+[Microsoft HoloLens の購入またはレンタルの詳細については、ここをクリックして](https://www.microsoft.com/hololens/buy)ください。
 
 ## <a name="device-specifications"></a>デバイスの仕様
 
-### <a name="optics"></a>レンズ
+### <a name="optics"></a>光
 
-![HoloLens が透過 holographic レンズ](images/displays-400px.jpg)
-* 透過 holographic レンズ (waveguides)
-* 2 つの HD 16:9 のライト エンジン
-* Pupillary 距離を自動調整
-* Holographic の解決方法:2.3 M の総光ポイント
-* Holographic 密度です > 2.5 k radiants (ラジアン単位のライトのポイント)。
+![HoloLens には holographic レンズが表示されます](images/displays-400px.jpg)
+* 「Holographic レンズ (waveguides)」を参照してください。
+* 2 HD 16:9 ライトエンジン
+* 自動 pupillary 距離調整
+* Holographic の解決:2.3 m 合計ライトポイント
+* Holographic 密度: > 2.5 k (ラジアンあたりのライトポイント)
 
 ### <a name="sensors"></a>センサー
 
-![HoloLens がセンサーの環境の理解と人間の理解](images/sensor-bar-400px.jpg)
+![HoloLens には、環境を理解し、人間に理解するためのセンサーがあります。](images/sensor-bar-400px.jpg)
 * 1 IMU
-* 4 つの環境についてカメラ
-* 1 の深さのカメラ
-* 1 2 mp 写真/HD ビデオの読み込み
+* 4環境カメラを理解する
+* 1つの奥行カメラ
+* 1 2MP photo/HD ビデオカメラ
 * 複合現実キャプチャ
-* 4 つのマイク
-* 環境光センサーを 1
+* 4つのマイク
+* 1アンビエント光センサー
 
 ### <a name="human-understanding"></a>人間の理解
 * 立体音響
-* 視線の追跡
-* ジェスチャの入力
-* 音声のサポート
+* 見つめ追跡
+* ジェスチャ入力
+* 音声サポート
 
 ### <a name="input--output--connectivity"></a>入力/出力/接続
-* 組み込みのスピーカー
-* オーディオの 3.5 mm ジャック
-* ボリューム アップ/スケール ダウン
-* 明るさアップ/スケール ダウン
+* 内蔵スピーカー
+* オーディオ 3.5 mm ジャック
+* 音量のアップ/ダウン
+* 明るさの増減
 * 電源ボタン
-* バッテリのステータス Led
-* 802.11 ac Wi-fi
+* バッテリの状態 Led
+* Wi-fi 802.11 ac
 * マイクロ USB 2.0
 * Bluetooth 4.1 LE
 
 ### <a name="power"></a>Power
-* バッテリの寿命
-* 使用中の 2 ~ 3 時間
-* 待機時間の最大 2 週間
-* 課金と完全に機能
-* (ファンではありません) を受動冷却
+* バッテリ寿命
+* 2-3 時間のアクティブな使用
+* 最大2週間のスタンバイ時間
+* 課金時に完全に機能
+* 受動的冷却 (ファンなし)
 
 ### <a name="processors"></a>プロセッサ
 
 ![Microsoft HoloLens のマザーボード](images/motherboard-400px.jpg)
-* TPM 2.0 のサポートと Intel 32 ビットのアーキテクチャ
-* カスタム構築された Microsoft Holographic 処理装置 (HPU 1.0)
+* TPM 2.0 をサポートする Intel 32 ビットアーキテクチャ
+* カスタムビルドの Microsoft Holographic Processing Unit (HPU 1.0)
 
 ### <a name="weight"></a>太さ
 * 579 g
 
-### <a name="memory"></a>メモリ
-* 64 GB のフラッシュ
+### <a name="memory"></a>Memory
+* 64 GB フラッシュ
 * 2 GB RAM
 
-### <a name="whats-in-the-box"></a>ボックスには
-* HoloLens Development Edition
+### <a name="whats-in-the-box"></a>ボックスの内容
+* HoloLens 開発エディション
 * Clicker
-* キャリング ケース
-* 充電器とケーブル
-* マイクロファイバー布
+* キャリーケース
+* チャージャーとケーブル
+* マイクロ fiber 布
 * 鼻パッド
-* オーバーヘッドのストラップ
+* オーバーヘッドのあるストラップ
 
-### <a name="os-and-apps"></a>OS やアプリ
+### <a name="os-and-apps"></a>OS とアプリ
 * Windows 10
 * Windows ストア
 * ホログラム
@@ -101,12 +101,12 @@ Microsoft HoloLens は両方を開発エディションとして購入しの保�
 * フォト
 * 設定
 * Windows フィードバック
-* 調整
-* ジェスチャを説明します。
+* 目盛り
+* ジェスチャの学習
 
-### <a name="what-you-need-to-develop"></a>開発する必要があります。
-* [Windows 10 PC を最新の互換性のあるバージョンの Visual Studio と Unity を実行できません。](install-the-tools.md)
+### <a name="what-you-need-to-develop"></a>開発が必要なもの
+* [Windows 10 PC は、互換性のある最新バージョンの Visual Studio と Unity を実行できます](install-the-tools.md)
 
-### <a name="safety-eyewear"></a>安全性 Eyewear
+### <a name="safety-eyewear"></a>安全性の Eyewear
 
-HoloLens をテストし、ANSI Z87.1、CSA Z94.3 EN 166 の基本的な影響の保護要件に準拠しているが見つかりました
+HoloLens はテストされ、ANSI Z 87.1、CSA Z 94.3、EN 166 の基本的な影響保護要件に準拠していることが確認されました

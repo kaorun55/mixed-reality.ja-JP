@@ -1,5 +1,5 @@
 ---
-title: MR Learning ASA モジュール HoloLens 2 Azure 空間アンカー
+title: MR Learning ASA モジュール Azure 空間アンカー (HoloLens 2)
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
@@ -13,15 +13,15 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/22/2019
 ms.locfileid: "67328092"
 ---
-# <a name="photon-correct-me-if-im-wrong"></a>Photon (適切な me 私は正しくない場合)
+# <a name="photon-correct-me-if-im-wrong"></a>Photon (間違っている場合は修正)
 
-このレッスンで 
+このレッスンでは、 
 
-目標:
+事項
 
-* について説明します _ _ _ する方法
+* 詳細については、こちらを参照してください。 __ __ を参照してください。
 
-* について説明します _ _ _ する方法
+* 詳細については、こちらを参照してください。 __ を参照してください。 __ __。
 
   
 
@@ -29,12 +29,12 @@ ms.locfileid: "67328092"
 
 ### <a name="setting-up-photon"></a>Photon の設定
 
-1. セットアップ、 [Photon](https://dashboard.photonengine.com/en-US/Account/SignUp)アカウント。 これは、電子メールを置き換えると、いくつかの検証手順をで構成されます。
+1. [Photon](https://dashboard.photonengine.com/en-US/Account/SignUp)アカウントを設定します。 これを行うには、電子メールを送信し、いくつかの検証手順を実行します。
    
 
 ![Module2Chapter4step1im](images/Module2chapter4step1im.png)
 
-2. 、サインアップ後は、Sdk をクリックします。 そのページが、"server"をクリックし、書かれている、「自己ホスト型です」ことを確認します。 下へスクロールし、"server"次の 2 つ目の図に示すようにをクリックします。
+2. サインアップしたら、[Sdk] をクリックします。 このページが表示されたら、[サーバー] をクリックし、"自己ホスト型" と表示されていることを確認します。 下にスクロールし、次の2番目の図に示すように、[サーバー] をクリックします。
 
    
 
@@ -42,57 +42,57 @@ ms.locfileid: "67328092"
 
    ![Module2Chapter2step2bim](images/Module2chapter4step2bim.png)
    
-   3. 原因となるテキスト ボックスのラベルの付いた表示「お読みください」 読み取るしてみてください。 完了すると、ダウンロードするには、"downloadSDK"の横にあるリンクをクリックします。
+   3. これにより、テキストボックスに "read me" というラベルが付けられます。 こちらからお読みください。 完了したら、"downloadSDK" の横にあるリンクをクリックしてダウンロードします。
 
 
 ![Module2Chapter4step3im](images/Module2chapter4step3im.png)
 
-4. ダウンロードが完了したら、フォルダーをダブルクリックします。  エクスプ ローラーを開くと、SDK のフォルダーを公開、したら、SDK フォルダーをコピーします。
+4. ダウンロードが完了したら、フォルダーをダブルクリックします。  ファイルエクスプローラーで SDK フォルダーが表示されたら、SDK フォルダーをコピーします。
    
-   - Windows の c: ドライブに移動し、「サーバーです」と呼ばれる新しいフォルダーを作成する次の手順になります
+   - 次の手順では、windows C: ドライブにアクセスし、"server" という名前の新しいフォルダーを作成します。
    
    ![Module2Chapter4step4im](images/Module2chapter4step4aim.png)
    
-   - 今すぐ、フォルダーを開き、先ほどコピーした SDK のフォルダーを貼り付けます。
+   - ここで、フォルダーを開き、先ほどコピーした SDK フォルダーを貼り付けます。
    
    ![Module2Chapter4step4im](images/Module2chapter4step4bim.png)
    
-5. SDK フォルダーを開きますが完了すると、「展開、」"bin_Win64"しに移動し、「photon コントロール」をダブルクリックします
+5. この操作が完了したら、SDK フォルダーを開き、[deploy]、[bin_Win64] の順に選択し、[photon control] をダブルクリックします。
 
 
 ![Module2Chapter4step4im](images/Module2chapter4step5im.png)
 
-> 注:IP アドレスについてご質問またはその他同様の質問がある場合は、ツールバーで、情報の大部分を検索し、(次の図に示すように) とにします。
+> 注:IP アドレスについて質問がある場合、またはその他の同様の質問がある場合は、ツールバーでほとんどの情報を確認できます (次の図を参照)。
 >
 > ![Module2Chapter4step4im](images/Module2chapter4noteim.png)
 
-6. サーバーを設定すると、開始されたが、Photon web サイトに戻って「アプリケーションです」を選択してと (次の図でボックス化された) プロファイル アイコンをクリックします
+6. サーバーがセットアップされ、開始されたので、Photon の web サイトに戻り、プロファイルアイコン (下の図のボックス) をクリックして、[your applications] \ (アプリケーション \) を選択します。
    
 
 ![Module2Chapter3step5im](images/Module2chapter4step6im.png)
 
-7. アプリケーション ID を作成するには、「新しいアプリの作成」ボタンをクリックします。
+7. [新しいアプリの作成] ボタンをクリックして、アプリケーション ID を作成します。
 
    ![Module2Chapter3step8im](images/Module2chapter4step7aim.png)
 
-   - 「Photon の種類」の下のドロップダウン メニューから [Photon 実行] を選択します 名前を付けます、(ものするには注意してください)。 この例では、という名前に"HoloLensPhotonProject" 完了すると、クリックして「を作成します」
+   - [Photon type] の下にあるドロップダウンメニューから [Photon RUN] を選択します。 次に、名前 (覚えているもの) を指定します。 この例では、"HoloLensPhotonProject" という名前が付けられています。 完了したら、[作成] をクリックします。
 
    ![Module2Chapter3step8im](images/Module2chapter4step7bim.png)
 
-8. 完了すると、アプリケーション ページに戻るし、次の図のような画面を表示する必要があります。 アプリケーション ID をクリックし、それをコピーします。 貼り付けがどこかに簡単にアクセスすることができます。  
+8. この操作が完了すると、アプリケーションのページに戻り、次の図のような結果が表示されます。 アプリ ID をクリックしてコピーします。 貼り付けは、簡単にアクセスできる任意の場所にあります。  
    
 
 ![Module2Chapter4step9im](images/Module2chapter4step8im.png)
 
-9. 新しい unity プロジェクトを作成します。 Unity のハブを開き、"new"をクリックしてください "HLSharingProject"という名前を付けます クリックを作成します。 
+9. 新しい unity プロジェクトを作成します。 Unity Hub を開き、[new] \ (新規 \) をクリックします。 "HLSharingProject" という名前を指定します。 [作成] をクリックします。 
 
-   > 注:読み込むには、最大 2 分間、コンピューターの速度に基づいてこれかかることができます。
+   > 付箋コンピューターの速度によっては、読み込みに最大2分かかることがあります。
 
 ![Module2Chapter4step9im](images/Module2chapter4step9im.png)
 
-> 注:"location"オプションを変更することで、コンピューターで、プロジェクトを保存する場所を選択します。 記憶され、簡単にアクセスする場所に保存します。
+> 注: [場所] オプションを変更して、コンピューターにプロジェクトを保存する場所を選択します。 覚えやすい場所に保存して、簡単にアクセスできます。
 
-10. プロジェクトが読み込まれたらを「アセット ストア」をクリックします。 次に、検索ボックスに次の図に示すように、「から」を入力し、「Photon だじゃれ 2 無料」の資産を選択します。 
+10. プロジェクトが読み込まれたら、[assets ストア] をクリックします。 次に、下の画像に示されている検索ボックスに「さしあたっ」と入力し、"Photon さしあたっ-2 FREE" 資産を選択します。 
 
     ![Module2Chapter4step10im](images/Module2chapter4step10im.PNG)
     
@@ -102,77 +102,77 @@ ms.locfileid: "67328092"
 
 ### <a name="setting-up-the-unity-project"></a>**Unity プロジェクトの設定** 
 
-11. クリックすると、Unity で Photon を設定するために必要な新しい資産をダウンロード[ここです。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC1-Refresh/Microsoft.MixedReality.Toolkit.Unity.Examples-v2.0.0-RC1-Refresh.unitypackage)
+11. Unity で Photon を設定するために必要な新しい資産をダウンロードするには、ここをクリック[してください。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC1-Refresh/Microsoft.MixedReality.Toolkit.Unity.Examples-v2.0.0-RC1-Refresh.unitypackage)
 
-12. Unity では、資産 メニューと"資産、import"を選択し、カスタム アセット"をクリックしてください
+12. Unity で、[アセット] メニューをクリックし、[アセットのインポート] を選択して、[カスタムアセット] をクリックします。
 
 ![Module2Chapter4step12im](images/Module2chapter4step12im.PNG)
 
-13. 手順 1. で指定されたリンクからダウンロードした Unity パッケージを選択します。 Unity にインポート ボタンが表示されたら、それをクリックします。
+13. 手順 1. で指定したリンクからダウンロードした Unity パッケージを選択します。 Unity に [インポート] ボタンが表示されたら、それをクリックします。
 
 ![Module2Chapter4step13im](images/Module2chapter4step13im.png)
 
-> 注: 検索の場所にパッケージをダウンロードした場所になります。 上の図は、パッケージをどこを提示していません。
+> メモ: パッケージをダウンロードした場所はどこにありますか。 上の図では、パッケージを検索する場所はされるません。
 
-14. 新しいシーンを作成する (これは、コントロールを使用して元に戻す/コマンド + N または"file"をクリックすると、「新しいシーンです。」を選択して)。 シーンを付けて保存"HLSharedProjectMain"
+14. 新しいシーンを作成します (これを行うには、control/command + N を使用するか、[ファイル] をクリックして [新しいシーン] を選択します)。 シーンを "HLSharedProjectMain" として保存します。
 
-> 注: 次の図のようなポップアップが表示される可能性があります。 ここでは、クリックして"no"です。
+> 注: 次の図のようなポップアップが表示される場合があります。 ここでは、[いいえ] をクリックします。
 >
 > ![Module2Chapter4note2im](images/Module2chapter4note2im.png)
 
-15. "Mixed Reality Toolkit"クリック「シーンに追加して構成します」
+15. "Mixed Reality Toolkit" で、[シーンに追加して構成する] をクリックします。
 
 ![Module2Chapter4step15im](images/Module2chapter4step15im.png)
 
-16. 完了すると、新しい構成ファイルが表示され選択してプロファイルをカスタマイズすること。 「コピーし、カスタマイズ」をクリックします。
+16. この処理が完了すると、新しい構成ファイルが表示され、プロファイルをカスタマイズするためのオプションが表示されます。 [コピーとカスタマイズ] をクリックします。
 
 ![Module2Chapter4step16im](images/Module2chapter4step16im.png)
 
-17. 下へスクロールし、「診断システムを有効にします。」オフにします。 これは、ため、このプロジェクトをセットアップしやすく、されます。
+17. 下にスクロールし、[診断システムを有効にする] チェックボックスをオフにします。 これにより、このプロジェクトのセットアップが簡単になります。
 
 ![Module2Chapter4step17im](images/Module2chapter4step17im.png)
 
-18. ビルドの設定 (コントロール + shift + B) を開きます。 プログラムが「PC、Mac、Linux のスタンドアロン」プラットフォームで現在設定されていることを確認します。 このプロジェクトで「ユニバーサル windows プラットフォーム」を使用するプラットフォームを設定します。 選択して、「プラットフォームの切り替え」をクリックします。
+18. ビルド設定を開きます (ctrl + shift + B)。 このプログラムは、現在、"PC, Mac および Linux スタンドアロン" プラットフォームで設定されていることに注意してください。 このプロジェクトの場合は、プラットフォームを "ユニバーサル windows プラットフォーム" に設定します。 それを選択し、[switch platform] をクリックします。
 
 ![Module2Chapter4step18im](images/Module2chapter4step18im.png)
 
-19. 完了すると、「開いているシーンを追加します。」と書かれたボックスをクリックします。 Inspector パネルに移動し、(下図参照) として「サポートされている仮想現実」の右側にあるチェック ボックスを確認するようになりましたがチェックされます。 
+19. 完了したら、[open シーンの追加] というボックスをクリックします。 次に、[インスペクター] パネルにアクセスし、[virtual reality がサポートされています] の右側にあるチェックボックスがオンになっていることを確認します (下図を参照)。 
 
 ![Module2Chapter4step19im](images/Module2chapter4step19im.png)
 
-> 注:また、"シーン/HLSharedProjectMain"の横にあるチェック ボックスをチェックすることを確認します。
+> 付箋また、[シーン/HLSharedProjectMain] の横にあるチェックボックスもオンになっていることを確認します。
 
-20. [インスペクター] パネルの「発行の設定」が「機能」までスクロールし、次のチェック ボックスのみがマークされていることを確認します。
+20. [インスペクター] パネルの [発行の設定] で、[機能] まで下にスクロールし、次のチェックボックスのみがマークされていることを確認します。
 
-- インターネット クライアント
-- インターネット クライアント サーバー
-- プライベート ネットワーク クライアント サーバー
-- カメラ/web カメラ
+- インターネットクライアント
+- インターネットクライアントサーバー
+- プライベートネットワーククライアントサーバー
+- カメラ/webcam
 - マイク
 
-21. 12 の手順と同じように次の手順は [こちら] ダウンロードできます「レッスン 2」と呼ばれる別のカスタム パッケージをインポートすること[lesson2.unitypackage リンクをここに挿入]そのパッケージをインポートします。
+21. 手順12と同じように、次の手順では、"レッスン 2" という名前の別のカスタムパッケージをインポートします。このパッケージはダウンロードできます (こちらを参照)。[レッスン 2. unitypackage link here]そのパッケージをインポートします。
 
 ![Module2Chapter4step21im](images/Module2chapter4step20im.png)
 
-22. ここで、プロジェクト パネルで、フォルダーに移動「プレハブ」、いくつかのプレハブをシーンに次の手順で実装されるためです。 「プレハブ」フォルダーにをクリックし、"DebugWindow"階層に、プレハブをドラッグします。 完了すると、プロジェクトを保存します ([] をクリック ファイルを保存して、またはコントロール + S)。
+22. 次に、[プロジェクト] パネルで、"prefabs" フォルダーにアクセスします。これは、次のいくつかの手順で、いくつかの prefabs をシーンに実装するためです。 "Prefabs" フォルダーで、prefab "DebugWindow" をクリックして階層にドラッグします。 完了したら、プロジェクトを保存します ([ファイル]、[保存]、または [コントロール + S] をクリックします)。
 
 ![Module2Chapter4step22im](images/Module2chapter4step21im.PNG)
 
-> 注:TMP Essentials について質問する、プレハブをクリックすると表示されるポップアップ ウィンドウがあります。 これらが必要になります"インポート TMP Essentials をクリックします。
+> 付箋Prefab をクリックするとポップアップが表示され、TMP Essentials について質問されることがあります。 必要に応じて [Import TMP Essentials] をクリックします。
 >
 > ![Module2Chapter4note3im](images/Module2chapter4note3im.PNG)
 
-### <a name="connecting-multiple-users"></a>**複数のユーザーを接続します。**
+### <a name="connecting-multiple-users"></a>**複数のユーザーの接続**
 
-23. プロジェクト パネルで、「プレハブ」フォルダー内の 22 の手順と同様に、次の手順にドラッグ アンド ドロップ"NetworkLobby"プレハブ階層には。 
+23. 手順 22. と同じように、[プロジェクト] パネルの "prefabs" フォルダーで、次の手順では、"NetworkLobby" の事前 fab を階層にドラッグアンドドロップします。 
 
 ![Module2Chapter4step22im](images/Module2chapter4step22im.png)
 
-24. "NetworkLobby、"である親プレハブを開くときに子 prefab、"NetworkRoom"が表示されます。 選択されていると、インスペクター パネルに移動し、「コンポーネントを追加します」をクリックしてください "PhotonView"を検索し、コンポーネントを追加します。
+24. 親 prefab "NetworkLobby" を開くと、子 prefab "Networklobby" が表示されます。 選択した状態で、[インスペクター] パネルにアクセスし、[コンポーネントの追加] をクリックします。 "PhotonView" を検索し、コンポーネントを追加します。
 
 ![Module2Chapter4step23im](images/Module2chapter4step23im.png)
 
-25. 階層 (階層し、"empty"内を右クリック) で、新しい空のゲーム オブジェクトを作成します。 位置 x に設定されていることを確認 = 0、y = 0、z = 0 およびオブジェクトの名前を"PhotonUser"。
+25. 階層内に新しい空のゲームオブジェクトを作成します (階層内を右クリックし、[空] を選択します)。 位置が x = 0、y = 0、z = 0 に設定されていることを確認し、オブジェクトに "PhotonUser" という名前を指定します。
 
 ![Module2Chapter4step24im](images/Module2chapter4step24im.png)
 

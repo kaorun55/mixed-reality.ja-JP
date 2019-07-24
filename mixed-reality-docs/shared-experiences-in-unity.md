@@ -1,37 +1,37 @@
 ---
 title: Unity での共有エクスペリエンス
-description: Unity アプリケーションで複数のユーザーの間で同じホログラムを共有します。
+description: Unity アプリケーションの複数のユーザー間で同じホログラムを共有します。
 author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
-keywords: 共有、アンカー、WorldAnchor、MR WorldAnchorTransferBatch、SpatialPerception、Azure、Azure の空間アンカー、ASA は 250 の共有
+keywords: 共有、アンカー、WorldAnchor、MR 共有250、WorldAnchorTransferBatch、SpatialPerception、Azure、Azure 空間アンカー、ASA
 ms.openlocfilehash: fe755c15d942660b1e16b2335db28d3d7ce72816
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605071"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516794"
 ---
 # <a name="shared-experiences-in-unity"></a>Unity での共有エクスペリエンス
 
-共有エクスペリエンスは、複数のユーザーがそれぞれに独自の HoloLens、iOS または Android デバイスで、まとめて表示および対話が空間の固定位置に配置されている同じホログラムです。 これは、空間アンカーを共有することによって実現されます。
+共有エクスペリエンスとは、各ユーザーが独自の HoloLens、iOS、または Android デバイスを持つ複数のユーザーをまとめて表示し、空間内の固定ポイントに配置されている同じホログラムと対話することです。 これは、空間アンカーの共有によって実現されます。
 
 ## <a name="azure-spatial-anchors"></a>Azure Spatial Anchors
 
-使用することができます<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>アンカーを作成する永続的なクラウド バックアップ空間、アプリが複数の HoloLens、iOS や Android デバイスで見つけることができますし、これです。  各ユーザーは複数のデバイスで共通の空間アンカーを共有することで、同じ物理的な場所でそのアンカーの基準としたコンテンツを表示できます。  これにより、リアルタイムのエクスペリエンスを共有します。
+<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>を使用して、持続性のあるクラウドベースの空間アンカーを作成できます。これにより、アプリは複数の HoloLens、IOS、Android デバイスで検索できます。  複数のデバイスで共通の空間アンカーを共有することにより、各ユーザーは、同じ物理的な場所でそのアンカーを基準としてレンダリングされたコンテンツを表示できます。  これにより、リアルタイム共有エクスペリエンスを実現できます。
 
-使用することも<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a> HoloLens、iOS および Android デバイスの間で非同期ホログラム永続化します。  持続性のあるクラウド空間アンカーを共有することで複数のデバイスはこれらのデバイスがまとめてと同時に存在しない場合でも、時間の経過と共に同じ永続化されたホログラムを確認できます。
+<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>を使用して HoloLens、iOS および Android デバイスの間で非同期ホログラム永続化を行うこともできます。  永続的なクラウド空間アンカーを共有すると、永続化した同じホログラムを長時間にわたって複数のデバイスに表示できます。これらのデバイスが同じ時間と場所に居合わせていなくても問題ありません。
 
-5 分間試して、Unity での共有エクスペリエンスの構築を開始、<a href="https://docs.microsoft.com/azure/spatial-anchors/unity-overview" target="_blank">空間アンカー Unity の Azure クイック スタート</a>します。
+Unity で共有エクスペリエンスの構築を開始するには、5分間の<a href="https://docs.microsoft.com/azure/spatial-anchors/unity-overview" target="_blank">Azure 空間アンカー unity クイックスタート</a>をお試しください。
 
-空間のアンカーを Azure で稼働しているを開発したとして、<a href="https://docs.microsoft.com/azure/spatial-anchors/concepts/create-locate-anchors-unity" target="_blank">を作成し、Unity 内でアンカーを検索</a>します。
+Azure 空間アンカーを使用して実行した後は、 <a href="https://docs.microsoft.com/azure/spatial-anchors/concepts/create-locate-anchors-unity" target="_blank">Unity でアンカーを作成して見つける</a>ことができます。
 
-## <a name="local-anchor-transfers"></a>ローカルのアンカーの転送
+## <a name="local-anchor-transfers"></a>ローカルアンカー転送
 
-Azure の空間アンカーを使用することはできませんの状況で[ローカル アンカー転送](local-anchor-transfers-in-unity.md)2 番目の HoloLens デバイスによってインポートされるアンカーをエクスポートする 1 つの HoloLens デバイスを有効にします。  このアプローチは、Azure の空間アンカーよりも堅牢性のアンカー再現率を提供し、iOS および Android デバイスは、このアプローチではサポートされていないことに注意してください。
+Azure 空間アンカーを使用できない場合、[ローカルアンカー転送](local-anchor-transfers-in-unity.md)では、1つの hololens デバイスが2つ目の hololens デバイスによってインポートされるアンカーをエクスポートできるようにします。  このアプローチでは、Azure 空間アンカーよりも堅牢なアンカーの再呼び出しが可能であり、iOS デバイスと Android デバイスはこの方法ではサポートされていないことに注意してください。
 
 ## <a name="see-also"></a>関連項目
-* [複合現実での経験を共有](shared-experiences-in-mixed-reality.md)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure の空間アンカー</a>
-* <a href="https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors" target="_blank">Azure 空間アンカー Unity 用の SDK</a>
+* [複合現実での共有エクスペリエンス](shared-experiences-in-mixed-reality.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
+* <a href="https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors" target="_blank">Azure 空間アンカー SDK for Unity</a>

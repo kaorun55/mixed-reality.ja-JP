@@ -1,50 +1,50 @@
 ---
-title: Unity では、ローカルのアンカー転送
-description: アンカーは、Unity アプリケーションで複数の HoloLens デバイス間で転送します。
+title: Unity でのローカルアンカー転送
+description: Unity アプリケーション内の複数の HoloLens デバイス間でアンカーを転送します。
 author: fieldsJacksonG
 ms.author: jacksonf
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 共有、アンカー、WorldAnchor、MR 共有 250、WorldAnchorTransferBatch、SpatialPerception、転送、ローカルのアンカーの転送、アンカーのエクスポート、アンカーのインポート
+keywords: 共有、アンカー、WorldAnchor、MR 共有250、WorldAnchorTransferBatch、SpatialPerception、転送、ローカルアンカー転送、アンカーエクスポート、アンカーインポート
 ms.openlocfilehash: 82bcd07417fd5aa1b265ebc3c8edc939101dd783
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605058"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516137"
 ---
-# <a name="local-anchor-transfers-in-unity"></a>Unity では、ローカルのアンカー転送
+# <a name="local-anchor-transfers-in-unity"></a>Unity でのローカルアンカー転送
 
-使用できない状況で<a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間アンカー</a>、ローカルのアンカーの転送には、2 番目の HoloLens デバイスによってインポートされるアンカーをエクスポートする 1 つの HoloLens デバイスが有効にします。
+<a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間アンカー</a>を使用できない場合、ローカルアンカー転送では、1つの hololens デバイスが2つ目の hololens デバイスによってインポートされるアンカーをエクスポートできるようにします。
 
 >[!NOTE]
->ローカルのアンカー転送よりも堅牢性のアンカー再現率を提供する<a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間アンカー</a>、iOS および Android デバイスは、このアプローチではサポートされていないとします。
+>ローカルアンカー転送は、 <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure 空間アンカー</a>よりも堅牢なアンカーの再呼び出しを提供します。この方法では、iOS デバイスと Android デバイスはサポートされていません。
 
 ### <a name="setting-the-spatialperception-capability"></a>SpatialPerception 機能の設定
 
-空間のアンカーを転送するアプリのために、 *SpatialPerception*機能を有効にする必要があります。
+アプリで空間アンカーを転送するには、 *SpatialPerception*機能を有効にする必要があります。
 
-有効にする方法、 *SpatialPerception*機能。
-1. Unity エディターで開き、 **「プレーヤー設定」** ウィンドウ (編集 > プロジェクトの設定 > Player)
-2. をクリックして、 **"Windows Store"**  タブ
-3. 展開 **「発行の設定」** を確認し、 **"SpatialPerception"** 機能、 **「機能」** 一覧
+*SpatialPerception*機能を有効にする方法:
+1. Unity エディターで、 **[プレーヤーの設定**] ウィンドウを開きます (> プロジェクトの設定を編集し > player)
+2. **[Windows ストア]** タブをクリックします。
+3. [**発行の設定]** を展開し、 **[機能]** ボックスの一覧の **"SpatialPerception"** 機能を確認します。
 
 >[!NOTE]
->Visual Studio ソリューションに既に Unity プロジェクトをエクスポートした場合は、新しいフォルダーをまたは手動でいずれかのエクスポートする必要があります。 [Visual Studio で AppxManifest でこの機能を設定](local-anchor-transfers-in-directx.md#set-up-your-app-to-use-the-spatialperception-capability)します。
+>Unity プロジェクトを Visual Studio ソリューションに既にエクスポートしている場合は、新しいフォルダーにエクスポートするか、 [Visual studio の package.appxmanifest でこの機能](local-anchor-transfers-in-directx.md#set-up-your-app-to-use-the-spatialperception-capability)を手動で設定する必要があります。
 
-### <a name="anchor-transfer"></a>アンカーの転送
+### <a name="anchor-transfer"></a>アンカー転送
 
 **名前空間:**  *UnityEngine.XR.WSA.Sharing*<br>
 **種類**:*WorldAnchorTransferBatch*
 
-転送する、 [WorldAnchor](coordinate-systems-in-unity.md)、1 つの送信をアンカーを確立する必要があります。 HoloLens の 1 つのユーザーは各自の環境をスキャンし、手動またはプログラムでは、領域を共有のエクスペリエンスのアンカーでポイントを選択します。 この点を表すデータをシリアル化、およびエクスペリエンスで共有している他のデバイスに送信します。 各デバイスに、アンカーのデータをシリアル化解除し、領域内でそのポイントを検索しようとしています。 作業にアンカーを転送するためは、アンカーによって表されるポイントを識別できるように、環境を十分に各デバイスをスキャンしてする必要があります。
+[WorldAnchor](coordinate-systems-in-unity.md)を転送するには、転送するアンカーを設定する必要があります。 1つの HoloLens のユーザーが自分の環境をスキャンし、共有エクスペリエンスのアンカーとなるポイントを手動またはプログラムによって選択します。 その後、このポイントを表すデータをシリアル化し、エクスペリエンスで共有している他のデバイスに転送できます。 各デバイスは、アンカーデータを逆シリアル化し、そのポイントの位置を特定しようとします。 アンカー転送を機能させるには、各デバイスが、アンカーで表されるポイントを識別できるように、十分な環境でスキャンする必要があります。
 
 ### <a name="setup"></a>セットアップ
 
-このページのサンプル コードでは、初期化する必要のあるいくつかのフィールドがあります。
-1. *GameObject rootGameObject*は、 *GameObject*が Unity で、 *WorldAnchor*のコンポーネント。 共有のエクスペリエンスの 1 人のユーザーには、この配置は*GameObject*およびその他のユーザーにデータをエクスポートします。
-2. *WorldAnchor gameRootAnchor*は、 *UnityEngine.XR.WSA.WorldAnchor*です*rootGameObject*します。
-3. *バイト [importedData*は各クライアントがネットワーク経由で受け取るシリアル化されたアンカーのバイト配列です。
+このページのサンプルコードには、初期化する必要があるいくつかのフィールドがあります。
+1. *WorldAnchor* *オブジェクト*がある場合、このオブジェクトは Unity の*オブジェクト*です。 共有エクスペリエンスの1人のユーザーがこのユーザー*オブジェクト*を配置し、他のユーザーにデータをエクスポートします。
+2. *WorldAnchor gameRootAnchor*は、 *root オブジェクト*にある*Unityengine. XR. WorldAnchor*です。
+3. *byte [] importedData*は、各クライアントがネットワーク経由で受信するシリアル化されたアンカーのバイト配列です。
 
 ```
 public GameObject rootGameObject;
@@ -61,16 +61,16 @@ void Start ()
 }
 ```
 
-### <a name="exporting"></a>エクスポートします。
+### <a name="exporting"></a>エクスポート
 
-エクスポートするだけ、 *WorldAnchor*はいわゆるがある場合、受信側のアプリを把握するとします。 共有のエクスペリエンスで 1 つのクライアントでは、共有のアンカーをエクスポートするこれらの手順を実行します。
-1. 作成、 *WorldAnchorTransferBatch*
-2. 追加、 *WorldAnchors*を転送するには
-3. エクスポートを開始します。
-4. 処理、 *OnExportDataAvailable*データとしてイベントが使用可能になります
-5. 処理、 *OnExportComplete*イベント
+エクスポートするには、 *WorldAnchor*が必要なだけで、受信側のアプリにとって意味のある情報を知ることができます。 共有操作の1つのクライアントは、次の手順を実行して共有アンカーをエクスポートします。
+1. *WorldAnchorTransferBatch*を作成する
+2. 転送する*WorldAnchors*を追加する
+3. エクスポートを開始します
+4. データが使用可能になったときに*OnExportDataAvailable*イベントを処理する
+5. *Onexportcomplete*イベントの処理
 
-作成、 *WorldAnchorTransferBatch*何をカプセル化するには、転送してバイトにエクスポートしは。
+ここでは、転送する対象をカプセル化してからバイトにエクスポートする*WorldAnchorTransferBatch*を作成します。
 
 ```
 private void ExportGameRootAnchor()
@@ -81,7 +81,7 @@ private void ExportGameRootAnchor()
 }
 ```
 
-データが使用可能なデータのセグメントが使用可能で、クライアントまたはバッファーにバイトを送信し、必要な手段を通じて送信。
+データが使用可能になったら、データのセグメントが使用可能であり、必要な方法で送信されるので、クライアントまたはバッファーにバイトを送信します。
 
 ```
 private void OnExportDataAvailable(byte[] data)
@@ -90,7 +90,7 @@ private void OnExportDataAvailable(byte[] data)
 }
 ```
 
-エクスポートが完了すると、転送されてデータとシリアル化が失敗した場合は、データを破棄するクライアントに指示します。 シリアル化に成功した場合をクライアントに指示するすべてのデータが転送され、インポートを開始できます。
+エクスポートが完了したら、データを転送し、シリアル化に失敗した場合は、データを破棄するようにクライアントに指示します。 シリアル化が成功した場合は、すべてのデータが転送され、インポートを開始できることをクライアントに通知します。
 
 ```
 private void OnExportComplete(SerializationCompletionReason completionReason)
@@ -106,9 +106,9 @@ private void OnExportComplete(SerializationCompletionReason completionReason)
 }
 ```
 
-### <a name="importing"></a>インポートします。
+### <a name="importing"></a>込ん
 
-すべてのバイトを受信、送信側から後、にデータをインポートできます、 *WorldAnchorTransferBatch*と物理的に同じ場所に、ルートのゲーム オブジェクトをロックします。 注: インポートは一時的に場合によっては失敗し、再試行する必要があります。
+送信元からバイトをすべて受信した後、データを*WorldAnchorTransferBatch*にインポートして、ルートゲームオブジェクトを同じ物理的な場所にロックすることができます。 注: インポートに失敗する場合があり、再試行が必要になることがあります。
 
 ```
 // This byte array should have been updated over the network from TransferDataToClient
@@ -137,5 +137,5 @@ private void OnImportComplete(SerializationCompletionReason completionReason, Wo
 }
 ```
 
-後に、 *GameObject*経由でロックされている、 *LockObject*の呼び出しを*WorldAnchor*する世界では、同じ物理的な位置に維持されますが、可能性がある、Unity で別の場所は、他のユーザーよりも容量を調整します。
+*WorldAnchor* *オブジェクト*は、 *lockobject*呼び出しによってロックされた後に、世界の同じ物理的な位置に保持されますが、Unity 座標空間内の他のユーザーとは異なる場所にある可能性があります。
 

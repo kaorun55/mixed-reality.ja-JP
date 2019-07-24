@@ -1,56 +1,56 @@
 ---
 title: HoloLens のアカウント
-description: HoloLens でアカウントを設定して、ユーザーを管理する方法。
+description: HoloLens でユーザーアカウントを設定および管理する方法。
 author: ''
 ms.author: toddly
 ms.date: 03/21/2018
 ms.topic: article
-keywords: HoloLens, user, account, aad, adfs, microsoft account, msa, credentials
+keywords: HoloLens、user、account、aad、adfs、microsoft アカウント、msa、資格情報
 ms.openlocfilehash: 14f43b08b6ccb396bcf39c4082c840c65ac78cf9
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59599831"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516813"
 ---
 # <a name="accounts-on-hololens"></a>HoloLens のアカウント
 
-HoloLens の初期セットアップ中には、デバイスで使用するアカウントでサインインするユーザーが必要です。 このアカウントは、コンシューマー Microsoft アカウントまたは Azure Active Directory (AAD) または Active Directory フェデレーション サービス (ADFS) で構成されているエンタープライズ アカウントのいずれかにできます。
+初回の HoloLens セットアップ中に、ユーザーは、デバイスで使用するアカウントでサインインする必要があります。 このアカウントは、Azure Active Directory (AAD) または Active Directory フェデレーションサービス (AD FS) (ADFS) で構成されたコンシューマー Microsoft アカウントまたはエンタープライズアカウントのいずれかになります。
 
-セットアップ中にこのアカウントにサインインをユーザーが使用できるデバイスでユーザー プロファイルが作成、サインインするすべてのアプリのデータの格納とします。 この同じアカウントは、Edge、または Windows アカウント マネージャー Api を使用して、Skype などのアプリのシングル サインオンも提供します。
+セットアップ中にこのアカウントにサインインすると、ユーザーがサインインに使用できるユーザープロファイルがデバイスに作成され、すべてのアプリにそのデータが保存されます。 この同じアカウントでは、Windows アカウントマネージャー Api を使用して Edge や Skype などのアプリのシングルサインオンを行うこともできます。
 
-さらに、エンタープライズまたはデバイス上の組織のアカウントをサインインするときに可能性がありますもモバイル デバイス管理 (MDM) ポリシーを適用する、IT 管理者によって構成されている場合
+さらに、デバイスのエンタープライズアカウントまたは組織アカウントにサインインするときに、IT 管理者によって構成されている場合は、モバイルデバイス管理 (MDM) ポリシーが適用されることもあります。
 
-デバイスが再起動またはスタンバイから再開、されるたびに、このアカウントの資格情報は、もう一度サインインに使用されます。 設定で、明示的なサインインを適用するオプションが有効な場合、ユーザーが自分の資格情報をもう一度入力する必要があります。 デバイスが再起動を受信し、OS の更新プログラムを適用した後、いつでも、明示的なサインインが必要です。
+デバイスが再起動されるか、スタンバイから再開されるたびに、このアカウントの資格情報が再度サインインに使用されます。 [明示的なサインインを適用する] オプションが [設定] で有効になっている場合、ユーザーは資格情報を再度入力する必要があります。 OS 更新プログラムを受け取って適用した後、デバイスが再起動されるたびに、明示的なサインインが必要になります。
 
-## <a name="multi-user-support"></a>マルチ ユーザー サポート
+## <a name="multi-user-support"></a>マルチユーザーサポート
 
 >[!NOTE]
->これはマルチ ユーザー サポートは、商用のスイートが必要です、 [Windows Holographic for Business](https://docs.microsoft.com/hololens/hololens-upgrade-enterprise)機能します。
+>[Windows Holographic For Business の](https://docs.microsoft.com/hololens/hololens-upgrade-enterprise)機能であるため、マルチユーザーサポートには商用スイートが必要です。
 
-以降では、 [Windows 10 April 2018 Update](release-notes-april-2018.md)HoloLens、同じ AAD テナント内から複数のユーザーをサポートしています。 これを使用するには、お客様の組織に属しているアカウントを使用して最初にデバイスを設定する必要があります。 その後、同じテナントから他のユーザーは、既存のユーザーをサインアウトするサインイン画面から、または [スタート] パネルのユーザー タイルをタップして、デバイスにサインインすることになります。 
+[Windows 10 April 2018 Update](release-notes-april-2018.md)以降では、HoloLens は同じ AAD テナント内から複数のユーザーをサポートしています。 これを使用するには、最初に、組織に属するアカウントを使用してデバイスを設定する必要があります。 その後、同じテナントの他のユーザーは、サインイン画面からデバイスにサインインできます。または、[スタート] パネルのユーザータイルをタップして既存のユーザーをサインアウトさせることができます。 
 
-その他のすべてのユーザーに利用できるデバイスにインストールされているアプリしますが、それぞれ独自のアプリのデータと設定。 アプリを削除するも削除されますが他のすべてのユーザーが。 
+デバイスにインストールされているアプリは、他のすべてのユーザーが使用できるようになりますが、それぞれのアプリのデータと設定は異なります。 ただし、アプリを削除すると、他のすべてのユーザーに対しても削除されます。 
 
-デバイスのユーザーを削除するには設定に移動して領域を再利用するデバイスから > アカウント > 他のユーザー。 また、デバイスからすべての他のユーザーのアプリ データこれも削除されます。 
+デバイスからデバイスのユーザーを削除して、[設定]、[他のユーザー] > の [> アカウント] に移動して、領域を再利用することができます。 これにより、デバイスから他のユーザーのアプリデータもすべて削除されます。 
 
 ## <a name="linked-accounts"></a>リンクされたアカウント
 
-(ストア) などのアプリ内で簡単にアクセスするために、追加の web アカウントの資格情報をリンクする、1 つのデバイス アカウント内または個人と職場のリソース、Windows のデスクトップ バージョンのようなへのアクセスを結合します。 この方法で追加のアカウントにサインインは、イメージなど、デバイスで作成されたユーザー データを分離しないまたはダウンロードします。 アプリを作成できるアカウントをデバイスに接続すると、アプリごとに個別にサインインすることを削減する、アクセス許可を持つことの使用します。
+ユーザーは、1つのデバイスアカウント内で、アプリ内で簡単にアクセスできるように、追加の web アカウント資格情報をリンクしたり (ストアなど)、デスクトップバージョンの Windows と同様に、個人リソースと仕事用リソースへのアクセスを組み合わせることができます。 この方法で追加のアカウントにサインインしても、イメージやダウンロードなど、デバイス上に作成されたユーザーデータは分離されません。 1つのアカウントがデバイスに接続されると、アプリはアクセス許可を使用して、各アプリに個別にサインインする必要が少なくなります。
 
-## <a name="using-single-sign-on-within-an-app"></a>アプリ内でのシングル サインオンを使用してください。
+## <a name="using-single-sign-on-within-an-app"></a>アプリ内でのシングルサインオンの使用
 
-アプリ開発者の場合での HoloLens で接続されている id を格納する利点を行う、 [Windows アカウント マネージャー Api](https://msdn.microsoft.com/library/windows/apps/xaml/windows.security.authentication.web.core.aspx)上の他の Windows デバイスの場合と同様、します。 これらの Api のいくつかのコード サンプルは[ここ](http://go.microsoft.com/fwlink/p/?LinkId=620621)します。
+アプリ開発者は、他の Windows デバイスと同様に、 [Windows アカウントマネージャー api](https://msdn.microsoft.com/library/windows/apps/xaml/windows.security.authentication.web.core.aspx)を使用して HoloLens に接続された id を持つことができます。 これらの Api のコードサンプルについては、[こちら](http://go.microsoft.com/fwlink/p/?LinkId=620621)を参照してください。
 
-アカウント情報の要求元のユーザーなどになる可能性があるアカウント割り込みに同意するものをアプリは、認証トークンを要求すると、2 要素認証などを処理する必要があります。
+アカウント情報や2要素認証などのユーザーの同意要求など、発生する可能性のあるアカウントの割り込みは、アプリが認証トークンを要求するときに処理する必要があります。
 
-アプリでは、以前にリンクされていない特定のアカウントの種類を必要とする場合、アプリは、1 つ追加するユーザー入力を求めるシステムを要求できます。 これにより、アプリの子のモーダルとして起動されるようにアカウント設定 ウィンドウがトリガーされます。 2D アプリは、Unity アプリのアプリのセンター経由で直接このウィンドウを表示、この子ウィンドウが表示できるように、これについて簡単に holographic アプリからユーザーにかかるは。 コマンドおよびウィンドウでこの操作のカスタマイズが説明されている[ここ](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.webaccountcommand.aspx)します。
+前にリンクされていない特定の種類のアカウントがアプリに必要な場合は、アプリでユーザーにメッセージを追加するように求めるメッセージを表示することができます。 これにより、アプリのモーダル子として [アカウント設定] ウィンドウが起動されます。 2D アプリの場合、このウィンドウはアプリの中央に直接表示され、Unity アプリでは、この子ウィンドウがレンダリングされるように、holographic アプリからユーザーを簡単に移動できます。 このウィンドウでのコマンドとアクションのカスタマイズについては、[こちら](https://msdn.microsoft.com/library/windows/apps/windows.ui.applicationsettings.webaccountcommand.aspx)を参照してください。
 
-## <a name="enterprise-and-other-authentication"></a>Enterprise およびその他の認証
+## <a name="enterprise-and-other-authentication"></a>エンタープライズ認証とその他の認証
 
-アプリが行う場合の他の種類の認証を使用して、NTLM、Basic、または Kerberos などを使用できます[Windows 資格情報の UI](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.ui.aspx)を収集、処理、およびユーザーの資格情報を格納します。 これらの資格情報を収集するためのユーザー エクスペリエンスは現在アカウント割り込み駆動型の他のクラウドによく似ていますと 2D アプリ上に子アプリとして表示されます、または、UI を表示する Unity アプリを簡単に中断されます。
+アプリが NTLM、基本、Kerberos などの他の種類の認証を使用している場合は、 [Windows 資格情報 UI](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.ui.aspx)を使用して、ユーザーの資格情報を収集、処理、および保存できます。 これらの資格情報を収集するためのユーザーエクスペリエンスは、他のクラウド駆動型のアカウント割り込みと非常によく似ており、2D アプリの上部に子アプリとして表示されるか、または Unity アプリを一時的に中断して UI を表示します。
 
 ## <a name="deprecated-apis"></a>非推奨の Api
 
-デスクトップから HoloLens での開発の違いの 1 つは[OnlineIDAuthenticator](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.onlineid.onlineidauthenticator.aspx) API が完全にサポートされていません。 などの割り込み優良、プライマリのアカウントがある場合、トークンが返されますが上記で説明した、ユーザーの UI は表示されませんしは、アカウントを正しく認証に失敗します。
+HoloLens on Desktop で開発する場合の違いの1つは、 [Onlineidauthenticator](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.onlineid.onlineidauthenticator.aspx) API が完全にはサポートされていないことです。 プライマリアカウントが良好な場合はトークンを返しますが、上記のような割り込みはユーザーの UI を表示せず、アカウントを正しく認証できません。
 

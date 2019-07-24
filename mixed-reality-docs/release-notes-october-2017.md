@@ -1,101 +1,101 @@
 ---
-title: 2017 年 10 月のリリース ノート
-description: Windows Mixed Reality Windows 10 Fall Creators Update (2017 年 10 月) リリース ノートです。
+title: リリースノート-2017 年10月
+description: Windows 10 秋の作成者の更新プログラム (2017 年10月) の windows Mixed Reality リリースノート。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: リリース ノート、バージョン、windows 10、ビルド、rs3、os
+keywords: リリースノート、バージョン、windows 10、ビルド、rs3、os
 ms.openlocfilehash: 7274dcf1db449fa35981eb72192fea9873fcc90a
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59597831"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63524091"
 ---
-# <a name="release-notes---october-2017"></a>2017 年 10 月のリリース ノート
+# <a name="release-notes---october-2017"></a>リリースノート-2017 年10月
 
-複合現実 Windows へようこそ! リリース、 **[Windows 10 Fall Creators Update](https://blogs.windows.com/windowsexperience/2017/10/17/whats-new-windows-10-fall-creators-update/)** 新しいサポートを導入する[Windows Mixed Reality イマーシブ ヘッドセット](immersive-headset-hardware-details.md)と[コント ローラーの動作](motion-controllers.md)、VR ゲームの再生し、没入型のエンターテインメントに接続されているときに発生すると、新しい世界を探索を有効にする、 [Windows Mixed Reality capable PC](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)します。
+Windows Mixed Reality をご利用いただき、ありがとうございます。 Windows 10 の作成者の **[更新プログラム](https://blogs.windows.com/windowsexperience/2017/10/17/whats-new-windows-10-fall-creators-update/)** のリリースでは、新しい[windows Mixed Reality イマーシブヘッドセット](immersive-headset-hardware-details.md)と[モーションコントローラー](motion-controllers.md)のサポートが導入されました。これにより、新しいワールドの調査、VR ゲームのプレイ、およびイマーシブの体験が可能になりました。[Windows Mixed Reality 対応 PC](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)に接続されている場合のエンターテインメント。
 
-Windows Mixed Reality ヘッドセットとアニメーション コント ローラーのリリースでは、大規模なチームの取り組みとの大きな前進の頂点です、 [Windows Mixed Reality プラットフォーム](mixed-reality.md)、含む[Microsoft HoloLens](hololens-hardware-details.md). HoloLens されていない、Windows 10 Fall Creators Update のリリースで更新プログラムを受信中に HoloLens で作業していない停止したことを知る多くの学習と洞察を全体としての Windows Mixed Reality 間で最近の作業から適用があります。 実際には、Windows Mixed Reality イマーシブ ヘッドセットとコント ローラーは、優れたエントリを表すモーション ポイント HoloLens の開発にも、同じ Api、ツール、および概念の両方に適用されます。
+Windows Mixed Reality ヘッドセットとモーションコントローラーのリリースは、大規模なチーム工数の概念であり、 [Microsoft HoloLens](hololens-hardware-details.md)を含む[windows mixed reality プラットフォーム](mixed-reality.md)の主要な手順です。 HoloLens は Windows 10 のリリースの更新プログラムを受信していませんが、HoloLens での作業が停止していないことを確認してください。Windows Mixed Reality 全体にわたって最近の作業から適用できる学習と洞察が多数用意されています。 実際、Windows Mixed Reality のイマーシブヘッドセットとモーションコントローラーは、同じ Api、ツール、および概念が両方に適用されるため、HoloLens の開発にも優れたエントリポイントとなります。
 
-デバイスごとに最新のリリースに更新するには、開く、**設定**アプリに移動して**更新とセキュリティ**を選択し、**更新プログラムの確認**ボタン。 Windows 10 pc でことができますも手動でインストールする Windows 10 Fall Creators Update を使用して、 [Windows メディアの作成ツール](https://www.microsoft.com/software-download/windows10)します。
+各デバイスの最新リリースに更新するには、**設定**アプリを開き、 **[update & Security]** にアクセスして、 **[更新プログラムの確認]** ボタンを選択します。 Windows 10 PC では、windows [media 作成ツール](https://www.microsoft.com/software-download/windows10)を使用して、windows 10 の秋の作成者の更新プログラムを手動でインストールすることもできます。
 
- **デスクトップの最新リリース:** Windows 10 Desktop 2017 年 10 月 (**10.0.16299.15**、Windows 10 Fall Creators Update)<br>
- **HoloLens の最新リリース:**[Windows 10 Holographic の 2016 年 8 月](release-notes-august-2016.md)(**10.0.14393.0**、Windows 10 Anniversary Update)
+ **デスクトップの最新リリース:** Windows 10 Desktop 10 月 2017 (**10.0.16299.15**、Windows 10 フォール作成者更新)<br>
+ **HoloLens の最新リリース:** [Windows 10 Holographic 8 月 2016](release-notes-august-2016.md)(**10.0.14393.0**、Windows 10 記念日更新)
 
 >[!VIDEO https://www.youtube.com/embed/YBcLy1lkegg]
 
 ## <a name="introducing-windows-mixed-reality"></a>Windows Mixed Reality の概要
 
-Windows 10 Fall Creators Update には、Windows Mixed Reality ヘッドセットとアニメーション コント ローラーとともに、Windows 10、世界初の空間オペレーティング システムのサポートが正式に導入されています。 主な特徴を次に示します。
-* **[さまざまなヘッドセット](https://blogs.windows.com/windowsexperience/2017/10/03/how-to-pre-order-your-windows-mixed-reality-headset/)** -Windows Mixed Reality は、さまざまなアニメーション コント ローラーにバンドルされている先頭にある 399 ドル ヘッドセットを提供するパートナーを有効にします。
-* **[コント ローラーのモーション](motion-controllers.md)** -Windows Mixed Reality モーションのコント ローラーは、ワイヤレスで Bluetooth 経由で、PC とペアリングし、6-の-自由度の入力方式、および IMUs 十分な追跡機能します。
-* **[簡単なセットアップと移植性](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/recommended-adapters-for-windows-mixed-reality-capable-pcs)** 設定 - して 10 分以内で開始します。 イマーシブ ヘッドセットでは、内部の追跡を使用して、移動、および、アニメーション コント ローラー、6 つ度の自由を追跡します。 外部のカメラや灯台マーカーが必要はありません!
-* **[広い範囲の Pc のサポート](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)** -Windows Mixed Reality より多くの人がこれまでよりもデスクトップ VR エクスペリエンスにより、選択のサポートと統合グラフィックス カードと Pc で 499 米ドルを開始します。
-* **[Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)** -世界中の最初の空間オペレーティング システムの 2D アプリ、VR ゲームを起動し、アプリ、および配置の装飾的なホログラム マルチタスクの場合は、使い慣れたホーム環境を提供します。
-* **[VR ゲームや Microsoft Store でアプリを優れた](https://www.microsoft.com/store/collections/MR-All-ImmersiveContent/)** - 没入型のエンターテインメント Hulu VR およびビデオ壮大なゲームを 360 SUPERHOT VR のようなアリゾナ州陽、Microsoft Store が Windows の混合で体験するコンテンツの範囲から実際にします。
-* **[SteamVR 早期アクセス](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality)** -、Windows 10 Fall Creators Update を Windows Mixed Reality ヘッドセットで再生できる SteamVR タイトルのサポートを有効にし、コント ローラー、VR の最大のカタログが Windows 混在して使用可能なタイトル実際のユーザー。
+Windows 10 の秋の作成者の更新プログラムでは、windows Mixed Reality ヘッドセットとモーションコントローラーのサポートに加えて、世界初の空間オペレーティングシステムにも対応しています。 主な特徴を次に示します。
+* **[さまざまなヘッドセット](https://blogs.windows.com/windowsexperience/2017/10/03/how-to-pre-order-your-windows-mixed-reality-headset/)** -Windows Mixed Reality は、パートナーがさまざまなヘッドセットを提供できるようにします。これは、$399 米ドルで開始され、モーションコントローラーにバンドルされています。
+* **[モーションコントローラー](motion-controllers.md)** -Windows Mixed Reality モーションコントローラーは、Bluetooth を使用して PC とワイヤレスでペアリングされます。また、6度の自由度の追跡、豊富な入力方法、および imus 機能を利用できます。
+* **[簡単なセットアップと移植性](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/recommended-adapters-for-windows-mixed-reality-capable-pcs)** -10 分以内にセットアップして開始します。 イマーシブヘッドセットでは、クロスアウトトラッキングを使用して、6つの自由度で、移動とモーションコントローラーを追跡します。 外部カメラまたは lighthouse マーカーは不要です。
+* より **[広範な pc のサポート](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)** -Windows Mixed Reality を使用すると、より多くの人が以前よりも多くの人にデスクトップ VR を提供できるようになり、$499 米ドルからの統合グラフィックスカードと pc の選択がサポートされるようになります。
+* **[Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)** -世界初の空間オペレーティングシステムは、2d アプリを使用したマルチタスク、VR ゲームとアプリの起動、および装飾型のホログラムの配置を行うための使い慣れたホーム環境を提供します。
+* **[Microsoft Store 内のすばらしい VR ゲームとアプリ](https://www.microsoft.com/store/collections/MR-All-ImmersiveContent/)** -Hulu VR や360ビデオなどのイマーシブエンターテインメントから SUPERHOT VR やアリゾナ陽などのエピックゲームまで、Microsoft Store は Windows Mixed Reality のさまざまなコンテンツを提供しています。
+* **[Steamvr 早期アクセス](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality)** -windows 10 の秋の作成者の更新プログラムにより、Windows mixed reality ヘッドセットとコントローラーで SteamVR タイトルを再生できるようになり、Windows mixed reality ユーザーが使用できる VR タイトルの最大のカタログが作成されます。
 
 ## <a name="known-issues"></a>既知の問題
 
-優れた Windows Mixed Reality エクスペリエンスを提供する苦労しましたが、いくつかの既知の問題を管理するいるともいます。 他のユーザーが見つかったら、ください[フィードバック](give-us-feedback.md)します。
+Windows Mixed Reality エクスペリエンスの向上に努めていましたが、まだいくつかの既知の問題を追跡しています。 他のユーザーが見つかった場合は、フィードバックをお[送り](give-us-feedback.md)ください。
 
-### <a name="desktop-app-in-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームでデスクトップ アプリ
-* Snipping Tool は、デスクトップ アプリでは機能しません。
-* デスクトップ アプリでは、再起動時に設定は保持されません。
-* Windows Mixed Reality ホームで、デスクトップ アプリを開くときに、デスクトップに Mixed Reality ポータル プレビューを使用している、無限のミラーの効果のことを確認可能性があります。 
-* デスクトップ アプリを実行している可能性がありますが発生するパフォーマンスの問題で非-Ultra Windows 混合現実 Pc;その操作は推奨されません。  
-* デスクトップ アプリが自動起動デスクトップ上の非表示のウィンドウにフォーカスがあるためです。 
-* デスクトップのユーザー アカウント制御プロンプトにより、ヘッドセット、プロンプトが完了するまでに黒を表示します。
+### <a name="desktop-app-in-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームのデスクトップアプリ
+* Snipping tool はデスクトップアプリでは機能しません。
+* デスクトップアプリでは、再起動時に設定が保持されません。
+* デスクトップで Mixed Reality ポータルプレビューを使用している場合、Windows Mixed Reality ホームでデスクトップアプリを開くと、無限のミラー効果に気付くことがあります。 
+* デスクトップアプリを実行すると、非 Ultra Windows Mixed Reality Pc でパフォーマンスの問題が発生する可能性があります。推奨されません。  
+* デスクトップ上の非表示のウィンドウにフォーカスがあるため、デスクトップアプリが自動起動することがあります。 
+* デスクトップユーザーアカウント制御プロンプトでは、プロンプトが完了するまでヘッドセットが黒く表示されます。
 
 ### <a name="windows-mixed-reality-setup"></a>Windows Mixed Reality セットアップ
-* 接続されているヘッドセットで Windows を設定する場合、PC モニターが空白にします。 Windows セットアップを完了する PC のモニターに出力を有効にする、ヘッドセットを取り外します。
-* 境界を作成するには、トレースが表示される場合があります。 そうである場合は、システムは時間の経過と共に、スペースの詳細を説明ようにもう一度、やり直してください。
-* Windows Mixed Reality セットアップ中をオンまたはオフに Cortana を有効にする場合、この変更は、デスクトップの Cortana 設定に適用されます。
-* ヘッドホンを接続していない場合は、home、Windows Mixed Reality を最初にアクセスすると、その他のヒントをされない場合があります。
-* Bluetooth ヘッドホンでは、アニメーション コント ローラーへの干渉を可能性があります。 ペアリング解除または Windows Mixed Reality セッション中に Bluetooth コント ローラーの電源をお勧めします。
+* ヘッドセットが接続された状態で Windows をセットアップすると、PC モニターが空白になることがあります。 ヘッドセットを抜いて、Windows セットアップを完了するために PC モニターに出力できるようにします。
+* 境界を作成すると、トレースが失敗する場合があります。 その場合は、システムによって時間の経過に伴う領域の詳細が表示されるので、もう一度やり直してください。
+* Windows Mixed Reality のセットアップ中に Cortana をオンまたはオフにした場合、この変更はデスクトップの Cortana 設定に適用されます。
+* ヘッドホンが接続されていない場合は、Windows Mixed Reality ホームに初めてアクセスすると、追加のヒントが表示されないことがあります。
+* Bluetooth ヘッドホンでは、モーションコントローラーとの干渉が発生する可能性があります。 Windows Mixed Reality セッション中に、Bluetooth コントローラーのペアリングまたは電源切断をお勧めします。
 
-### <a name="games-and-apps-from-windows-store"></a>ゲームと Windows ストアからアプリ
-* Forza Motorsports の 6 のように、いくつかの視覚的に処理を要するゲームでは、Windows Mixed Reality 内での再生時に小さい対応の Pc で、パフォーマンスの問題を引き起こす可能性が。
+### <a name="games-and-apps-from-windows-store"></a>Windows ストアからのゲームとアプリ
+* Forza Motorsports 6 など、グラフィカルに集中しているゲームの中には、Windows Mixed Reality で再生する場合に、あまり利用できない Pc でパフォーマンスの問題が発生する可能性があります。
 
 ### <a name="audio"></a>オーディオ
-* 前述のように、オーディオの Bluetooth 周辺機器は Windows Mixed Reality 音声とサウンドの空間のエクスペリエンスでうまく機能しません。 アニメーション コント ローラーのエクスペリエンスには影響も悪影響を及ぼすことができます。 Windows Mixed Reality で Bluetooth オーディオ ヘッドセットを使用するようはお勧めできません。
-* オーディオ デバイスに接続されている (またはの一部) を使用することはできません、ヘッドセット、デバイスが装着されていない場合にオーディオを再生します。 オーディオ ヘッドセットを 1 つだけの場合、ヘッドセットではなくホスト PC にオーディオ ヘッドセットを接続する場合があります。 そのため、しする必要があります無効にした場合「ヘッドセット オーディオをスイッチ」**設定** > **Mixed Reality** > **オーディオおよび音声**します。
-* SteamVR、を通じて起動されるものの多くを含む、一部のアプリケーションでは、オーディオが失われるしたり、オーディオ デバイスが開始または Mixed Reality ポータルを停止するように変更すると、ハングすることができます。 これを修正する混合の現実のポータル アプリを開いた後、アプリを再起動します。
-* Cortana は、Windows Mixed Reality ヘッドセットを使用する前に、ホスト PC で有効にした場合は、Windows Mixed Reality ホームの周囲に配置するアプリに適用する空間サウンド シミュレーションを失う可能性があります。 回避にも、ヘッドセットに接続されているオーディオ デバイス、PC に接続されているすべてのオーディオ デバイスで「Windows Sonic のヘッドフォン」を有効にするのには。
-   1. スピーカーのアイコンをデスクトップ タスク バーでをクリックし、オーディオ デバイスの一覧から選択します。
-   2. スピーカー アイコンをデスクトップ タスク バーを右クリックし、「スピーカーの設定」メニューで「Windows Sonic のヘッドフォン」を選択します。
-   3. すべてのオーディオ デバイス (エンドポイント) には、次の手順を繰り返します。
+* 前述のように、Bluetooth オーディオ周辺機器は、Windows Mixed Reality の音声と空間サウンドエクスペリエンスでは適切に機能しません。 また、モーションコントローラーのエクスペリエンスに悪影響を及ぼすこともあります。 Windows Mixed Reality では、Bluetooth オーディオヘッドセットを使用しないことをお勧めします。
+* デバイスが装着されていない場合、オーディオ再生用にヘッドセットに接続されている (またはその一部である) オーディオデバイスを使用することはできません。 オーディオヘッドセットが1つしかない場合は、オーディオヘッドセットをヘッドセットではなくホスト PC に接続することをお勧めします。 その場合は、[**Mixed Reality** > **オーディオと音声**の**設定** > ] の [ヘッドセットオーディオに切り替える] をオフにする必要があります。
+* SteamVR を通じて起動されたアプリケーションの多くを含む一部のアプリケーションは、混合の現実のポータルを開始または停止したときにオーディオデバイスが変更されたときにオーディオを紛失したりハングしたりすることがあります。 この問題を解決するには、Mixed Reality ポータルアプリを開いた後でアプリを再起動してください。
+* Windows Mixed Reality ヘッドセットを使用する前に、ホスト PC で Cortana が有効になっている場合は、Windows Mixed Reality ホームの周囲に配置するアプリに適用される空間サウンドシミュレーションが失われる可能性があります。 回避策は、コンピューターに接続されているすべてのオーディオデバイスで、ヘッドセット接続されたオーディオデバイスでも、"ヘッドホン用の Windows Sonic" を有効にすることです。
+   1. デスクトップタスクバーのスピーカーアイコンを左クリックし、[オーディオデバイス] の一覧から選択します。
+   2. デスクトップタスクバーのスピーカーアイコンを右クリックし、[スピーカーのセットアップ] メニューの [ヘッドホン用 Windows] を選択します。
+   3. すべてのオーディオデバイス (エンドポイント) に対して、この手順を繰り返します。
 >[!NOTE]
-> - これで、Windows Mixed Reality ホームのオーディオ デバイスにこの設定を適用するデスクトップ アプリ ウィンドウ内から実行するがそれを装着している場合を除き、ヘッドホン/スピーカー、ヘッドホンを接続が表示されないため、ヘッドセットに接続されている (または統合ヘッドセット)。
-> - もう 1 つのオプションは、「Hey Cortana に Let Cortana 応答」をオフにで**設定** > **Cortana** Windows Mixed Reality を起動する前に、デスクトップ上。
+> - ヘッドセットに接続されているヘッドホン/スピーカーは、装着していないと表示されません。そのためには、Windows Mixed Reality ホームのデスクトップアプリウィンドウでこの設定を実行して、ヘッドセットに接続されているオーディオデバイス (または統合) にこの設定を適用する必要があります。を使用します。
+> - 別の方法としては、Windows Mixed Reality を起動する前に、デスクトップの**cortana**の**設定** > で "cortana が cortana に応答できるようにする" をオフにすることもできます。
 
-* (Web カメラ) などの別のマルチ メディア USB デバイスは、Windows Mixed Reality ヘッドセットと (外部またはお使いの PC 内) は、同じ USB ハブを共有する場合のまれなケースでヘッドセットのオーディオ ジャック/ヘッドホンがありますか音がかすまたは音声の入っていないすべての。 この操作は、USB ポートを他のデバイスでは、同じハブの共有またはない切断/無効にするその他の USB マルチ メディア デバイスに、ヘッドホンで修正できます。
-* 非常にまれな場合は、ホスト PC の USB ハブは、Windows Mixed Reality ヘッドセットに十分な能力を提供できないし、ヘッドセットに接続されているヘッドホンからのノイズのバーストことがわかります。
+* 別のマルチメディア USB デバイス (web cam など) が Windows Mixed Reality ヘッドセットを使用して同じ USB ハブ (外部または PC 内) を共有している場合、まれに、ヘッドセットのオーディオジャック/ヘッドホンの音が少なくなったり、音声がまったくない場合があります。 ヘッドセットでこの問題を解決するには、他のデバイスと同じハブを共有しない USB ポートを使用するか、他の USB マルチメディアデバイスを切断/無効にします。
+* まれに、ホスト PC の USB ハブが Windows Mixed Reality ヘッドセットに十分な電力を供給できず、ヘッドセットに接続されているヘッドホンからノイズが急増する場合があります。
 
 ### <a name="speech"></a>音声認識
-* Cortana は、コマンドに応答をリッスンするいると考え、オーディオのオーディオ、キューの再生に失敗します。
-* 中国、日本の市場で Cortana から正しくを表示しないテキスト Cortana 円の下の使用時にします。
-* Cortana は、初めて Mixed Reality ポータルのセッションで彼女が呼び出される遅くなることがあります。 ことを確認します"Let コルタナ Hey Cortana への応答でこの問題を回避を作業できます**設定** > **Cortana** > **Cortana との対話**は有効になります。
-* Cortana は、Windows Mixed Reality Ultra の Pc ではない Pc で実行速度が低下可能性があります。
-* システム キーボードが Windows Mixed Reality で UI 言語と異なる言語に設定されている場合は、エラー ダイアログが Wi-fi 接続がないために機能していないディクテーションに関するになります Windows Mixed Reality でキーボード ディクテーションを使用します。 解決するには、問題だけを確認システム キーボードの言語が Windows Mixed Reality UI 言語と一致します。
-* スペイン正しく認識されていない Windows Mixed Reality の音声認識が有効になっている市場とします。
+* Cortana は、コマンドに対する聞き取り/思考と音声応答のために、自分のオーディオキューを再生できない場合があります。
+* 中国および日本市場の cortana では、使用中に Cortana サークルの下にテキストが正しく表示されません。
+* Cortana は、Mixed Reality ポータルセッションで初めて呼び出されたときに、遅くなることがあります。 Cortana と cortana との > **対話**が有効になっていることを確認 > することで、この問題を回避できます。
+* Windows Mixed Reality ウルトラ Pc でない Pc では、Cortana の実行速度が低下する可能性があります。
+* システムキーボードが Windows Mixed Reality の UI 言語とは異なる言語に設定されている場合、Windows Mixed Reality でキーボードからディクテーションを使用すると、Wi-fi 接続がないためにディクテーションが動作しないというエラーダイアログが表示されます。 この問題を解決するには、システムのキーボード言語が Windows Mixed Reality UI 言語と一致していることを確認するだけです。
+* Windows Mixed Reality で音声が有効になっている市場として、スペインは正しく認識されていません。
 
 ### <a name="holograms"></a>ホログラム
-* ホログラムの数が多い home、Windows Mixed Reality で、配置されている場合はいくつか非表示になります、周りに再び表示可能性があります。 これを回避するには、Windows Mixed Reality ホーム領域に、ホログラムの一部を削除します。
+* Windows Mixed Reality ホームに多数のホログラムが配置されている場合は、表示されているように見えなくなることがあります。 これを回避するには、Windows Mixed Reality ホームのその領域にあるホログラムの一部を削除します。
 
-### <a name="motion-controllers"></a>アニメーション コント ローラー
-* 場合によっては、Edge で web ページをクリックすると、コンテンツはクリックの代わりにズームします。
-* エッジにあるリンクをクリックするときは、選択範囲は機能しません。
+### <a name="motion-controllers"></a>モーションコントローラー
+* 場合によっては、Edge の web ページをクリックすると、コンテンツがクリックではなくズームされます。
+* エッジ内のリンクをクリックすると、選択内容が機能しなくなる場合があります。
 
-## <a name="prior-release-notes"></a>以前のリリース ノート
-* [2016 年 8 月のリリース ノート](release-notes-august-2016.md)
-* [2016 年 5 月のリリース ノート](release-notes-may-2016.md)
-* [2016 年 3 月のリリース ノート](release-notes-march-2016.md)
+## <a name="prior-release-notes"></a>以前のリリースノート
+* [リリース ノート - 2016 年 8 月](release-notes-august-2016.md)
+* [リリース ノート - 2016 年 5 月](release-notes-may-2016.md)
+* [リリース ノート - 2016 年 3 月](release-notes-march-2016.md)
 
 ## <a name="see-also"></a>関連項目
-* [イマーシブ ヘッドセット サポート (外部リンク)](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality)
+* [イマーシブヘッドセットのサポート (外部リンク)](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality)
 * [HoloLens の既知の問題](hololens-known-issues.md)
-* [ツールをインストールします。](install-the-tools.md)
-* [フィードバックを提供します。](give-us-feedback.md)
+* [ツールのインストール](install-the-tools.md)
+* [フィードバックを送る](give-us-feedback.md)

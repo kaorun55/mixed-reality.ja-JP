@@ -1,87 +1,87 @@
 ---
 title: ハードウェアのアクセサリ
-description: HoloLens と Windows Mixed Reality、およびそれらを設定する方法を使用する使用可能な [アクセサリ] の種類について説明します。
+description: HoloLens および Windows Mixed Reality で使用できるアクセサリの種類と、それらを設定する方法について説明します。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 操作方法、[アクセサリ]、bluetooth、bt、コント ローラー、ゲームパッド、clicker、xbox
+keywords: 操作方法、アクセサリ、bluetooth、bt、コントローラー、ゲームパッド、clicker、xbox
 ms.openlocfilehash: c25f849cbf05a78ba2fe7118dbe160d05e0f5e3f
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604738"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63526613"
 ---
 # <a name="hardware-accessories"></a>ハードウェアのアクセサリ
 
-Windows Mixed Reality デバイスは、[アクセサリ] をサポートします。 Bluetooth を使用することもペアに USB に接続されている PC を使用して、イマーシブ ヘッドセットには、[アクセサリ] がサポートされているときに、Bluetooth を使用して HoloLens にサポートされている、アクセサリをペアリングします。
+Windows Mixed Reality デバイスでは、アクセサリがサポートしています。 Bluetooth を使用して、サポートされているアクセサリを HoloLens にペアリングします。また、Bluetooth または USB を使用して、サポートされているアクセサリを、接続されている PC を介して、イマーシブヘッドセットにペアリングすることもできます。
 
-HoloLens で、[アクセサリ] を使用するための 2 つの一般的なシナリオでは、空気の代替のジェスチャや、仮想キーボードをタップします。 これは、2 つの最も一般的な [アクセサリ]、 **HoloLens Clicker**と**Bluetooth キーボード**します。 Microsoft HoloLens 4.1 の Bluetooth 無線が含まれていて、サポート[Bluetooth HID](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Human_Interface_Device_Profile_.28HID.29)と[Bluetooth GATT](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Generic_Attribute_Profile_.28GATT.29)プロファイル。
+HoloLens でアクセサリを使用する2つの一般的なシナリオは、エアタップジェスチャと仮想キーボードの代替として使用されます。 この場合、最も一般的な2つのアクセサリは、 **HoloLens Clicker**と**Bluetooth キーボード**です。 Microsoft HoloLens には、Bluetooth 4.1 無線が搭載されており、 [BLUETOOTH HID](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Human_Interface_Device_Profile_.28HID.29)と[bluetooth GATT](https://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Generic_Attribute_Profile_.28GATT.29)のプロファイルをサポートしています。
 
-Windows Mixed Reality イマーシブ ヘッドセット アクセサリ入力を必要とを超えて[視線](gaze.md)と[音声](voice-input.md)します。 サポートされている [アクセサリ] を含める **キーボードとマウス** 、 **ゲームパッド** 、および **[コント ローラーのモーション](motion-controllers.md)** します。
+Windows Mixed Reality イマーシブヘッドセットには、[宝石](gaze.md)と[声](voice-input.md)を超えた入力のためのアクセサリが必要です。 サポートされている [アクセサリ] を含める **キーボードとマウス** 、 **ゲームパッド** 、および **[コント ローラーのモーション](motion-controllers.md)** します。
 
 ## <a name="pairing-bluetooth-accessories"></a>Bluetooth アクセサリのペアリング
 
-Microsoft HoloLens で Bluetooth 周辺機器をペアリングは、Windows 10 で Bluetooth 周辺機器のペアリングに似ていますデスクトップまたはモバイル デバイス。
-1. [スタート] メニューから開きます、**設定**アプリ
-2. 移動して**デバイス**
-3. スライダーのスイッチを使用してオフになっている場合に、Bluetooth 無線をオンに
-4. Bluetooth デバイスをペアリング モードで配置します。 これにより、デバイスからデバイスが異なります。 1 つまたは複数のボタンを押したままはこれがほとんどの Bluetooth デバイスで行われます。
-5. Bluetooth デバイスの一覧に表示するデバイスの名前を待ちます。 デバイスを選択し、選択、ときに、**ペア**ボタンをクリックします。 ある場合を近くにある多くの Bluetooth デバイスがペアリングしようとしてデバイスを表示する Bluetooth デバイスの一覧の一番下までスクロールする必要があります。
-6. 機能の Bluetooth 周辺機器をペアリング入力 (例。Bluetooth キーボードの場合)、6 桁または 8 桁の pin を表示する場合があります。 周辺機器にその pin を入力してくださいし、し、enter キーを押して、Microsoft HoloLens と完了のペアリングにします。
+Bluetooth 周辺機器と Microsoft HoloLens のペアリングは、Bluetooth 周辺機器と Windows 10 デスクトップまたはモバイルデバイスとのペアリングに似ています。
+1. スタート メニューから、**設定** アプリを開きます。
+2. **デバイス**にアクセス
+3. Bluetooth ラジオがスライダースイッチを使用してオフになっている場合はオンにする
+4. Bluetooth デバイスをペアリングモードにします。 これは、デバイスによって異なります。 ほとんどの Bluetooth デバイスでは、1つまたは複数のボタンを押したままにします。
+5. デバイスの名前が Bluetooth デバイスの一覧に表示されるまで待ちます。 その場合は、デバイスを選択し、 **[ペアリング]** ボタンを選択します。 近くの Bluetooth デバイスが多数ある場合は、[Bluetooth デバイス] 一覧の一番下までスクロールして、ペアリングしようとしているデバイスを確認する必要があります。
+6. Bluetooth 周辺機器と入力機能をペアリングする場合 (例:Bluetooth キーボード)、6桁または8桁の pin が表示される場合があります。 周辺機器に pin を入力し、enter キーを押して、Microsoft HoloLens とのペアリングを完了してください。
 
-## <a name="motion-controllers"></a>アニメーション コント ローラー
+## <a name="motion-controllers"></a>モーションコントローラー
 
-Windows Mixed Reality[コント ローラーのモーション](motion-controllers.md)イマーシブ ヘッドセットがない HoloLens でサポートされています。 これらのコント ローラーは、つまり自分のスペースでの壁面にハードウェアをインストールする必要はありません、イマーシブ ヘッドセットのセンサーを使用して、フィールドのビューでの移動の追跡を正確かつ応答性を提供します。 各コント ローラーには、入力のいくつかの方法が機能します。
+Windows Mixed Reality[モーションコントローラー](motion-controllers.md)は、HoloLens ではなく、イマーシブヘッドセットでサポートされています。 これらのコントローラーは、イマーシブヘッドセットのセンサーを使用して、ビューのフィールドの移動を正確かつ迅速に追跡できます。つまり、領域内の壁にハードウェアを取り付ける必要はありません。 各コントローラーは、いくつかの入力方法を特徴としています。
 
-![Windows Mixed Reality モーションのコント ローラー](images/winmr-ck-1080x1080-350px.jpg)
+![Windows Mixed Reality モーションコントローラー](images/winmr-ck-1080x1080-350px.jpg)
 
 ## <a name="hololens-clicker"></a>HoloLens Clicker
 
-HoloLens Clicker HoloLens 専用に構築された最初の周辺機器、HoloLens の開発エディションに含まれています。 HoloLens Clicker をクリックして、エア タップ ジェスチャの代わりに、最小限の手の動きをスクロールできます。 すべての置換が[ジェスチャ](gestures.md)します。 たとえば、[ブルーム](gestures.md#bloom)と[サイズ変更または移動](gestures.md#composite-gestures)ジェスチャが手の動きを使用します。 HoloLens clicker は、単純なボタンで方向センサー デバイスです。 これは、Bluetooth 低エネルギー (BTLE) を使用して、HoloLens に接続します。
+HoloLens Clicker は、hololens 専用に構築された最初の周辺機器であり、HoloLens Development エディションに含まれています。 HoloLens Clicker を使用すると、ユーザーは、エアタップジェスチャの代わりとして、最小のハンドモーションでクリックしてスクロールできます。 すべての[ジェスチャ](gestures.md)に代わるものではありません。 たとえば、[ブルーム](gestures.md#bloom)ジェスチャや[resize](gestures.md#composite-gestures)ジェスチャでは、ハンドモーションが使用されます。 HoloLens clicker は、単純なボタンを備えた向きセンサーデバイスです。 これは、Bluetooth 低エネルギー (BTLE) を使用して HoloLens に接続します。
 
 ![HoloLens Clicker](images/hololens-clicker-500px.jpg)
 
-選択する、[ホログラム](hologram.md)見つめますをクリックします。 この操作には、clicker の方向は関係ありません。 スクロール、パンまたはクリックし、ながらを回転させて、Clicker 上下または左右します。 スクロール時に、最も速い速度で 15 ° 手首回転の +/-わずかに到達します。 移動の詳細はしないスクロールいずれかの高速化します。
+[ホログラム](hologram.md)を選択して、をクリックします。 Clicker の向きは、この操作には関係ありません。 スクロールまたはパンするには、クリックしたままにして、Clicker を上下または左右に回転させます。 スクロール中は、手首回転の速度が +/-15 °になるので、最速の速度になります。 さらに速く移動することはできません。
 
-これには、Clicker 内の 2 つの Led があります。
-* 白の LED は、(点滅) デバイスをペアリングするかどうかを示しますまたは充電 (ソリッド)
-* アンバー色の LED は、デバイスがバッテリ (点滅) または (ソリッド) エラーが発生したことを示します
+Clicker 内に Led が2つあります。
+* 白の LED は、デバイスがペアリング (点滅) または充電 (ソリッド) であるかどうかを示します。
+* 黄色の LED は、デバイスがバッテリ低下 (点滅) しているか、エラー (ソリッド) を検出したことを示します。
 
-完全充電状態 (つまり、壁の充電器で 2 ~ 3 時間) は、2 週間以上の正規表現の使用を想定できます。 バッテリが少ない場合、オレンジの場合は、ボタンを押すか、スリープ状態から復帰させると、5 秒間に 10 回 LED が点滅します。 バッテリが著しく低下モードでは、Clicker をアンバー色のより迅速に 5 秒間の期間の場合に LED が点滅します。
+完全充電では2週間以上の通常の使用が予想されます (たとえば、壁チャージャーでは2-3 時間)。 バッテリが不足している場合は、ボタンを押すか、スリープ状態から復帰すると、オレンジの LED が5秒間に10回点滅します。 Clicker が非常に低バッテリモードの場合、オレンジの LED は5秒間でより速く点滅します。
 
 ## <a name="bluetooth-keyboards"></a>Bluetooth キーボード
 
-英語 Qwerty Bluetooth キーボードを使用して、対ことができます、holographic のキーボードを使用する任意の場所を使用します。 品質キーボードが差を取得して、これをお勧め、 [Microsoft ユニバーサルたたみ込み可能なキーボード](https://www.microsoft.com/accessories/products/keyboards/universal-foldable-keyboard/gu5-00001)または[Microsoft デザイナー Bluetooth Desktop](https://www.microsoft.com/accessories/products/keyboards/designer-bluetooth-desktop/7n9-00001)します。
+English 言語 Qwerty Bluetooth キーボードは、holographic キーボードを使用できる任意の場所でペアにして使用できます。 品質の高いキーボードを使用すると、違いがあるため、 [Microsoft Universal たたみ込みキーボード](https://www.microsoft.com/accessories/products/keyboards/universal-foldable-keyboard/gu5-00001)または[Microsoft Designer Bluetooth Desktop](https://www.microsoft.com/accessories/products/keyboards/designer-bluetooth-desktop/7n9-00001)をお勧めします。
 
 ## <a name="bluetooth-gamepads"></a>Bluetooth ゲームパッド
 
-具体的にはゲームパッド サポートを有効にするアプリおよびゲームでは、コント ローラーを使用できます。 HoloLens のユーザー インターフェイスを制御する、ゲーム パッドを使用できません。
+ゲームパッドサポートを特に有効にしたアプリやゲームでコントローラーを使用できます。 ゲームパッドは、HoloLens ユーザーインターフェイスを制御するためには使用できません。
 
-Xbox の 1 つの S または HoloLens とイマーシブ ヘッドセットで使用できるようになります、Xbox の 1 つの機能の Bluetooth 接続のアクセサリとして販売ある Xbox のワイヤレス コント ローラー Xbox のワイヤレス コント ローラー[更新する必要があります](https://support.xbox.com/xbox-one/accessories/update-controller-for-stereo-headset-adapter)前に、HoloLens のために使用できます。
+Xbox が搭載されている xbox ワイヤレスコントローラー、または xbox One のアクセサリとして販売されている xbox ワイヤレスコントローラーは、HoloLens とイマーシブヘッドセットで使用できるようにする Bluetooth 接続機能を備えています。 Xbox ワイヤレスコントローラーを HoloLens で使用するには、その前に[更新する必要があり](https://support.xbox.com/xbox-one/accessories/update-controller-for-stereo-headset-adapter)ます。
 
-Windows Mixed Reality のデバイスで Bluetooth ゲームパッドの他のブランドが動作しますが、サポートはアプリケーションによって異なります。
+Bluetooth ゲームパッドの他のブランドは、Windows Mixed Reality デバイスで動作することがありますが、サポートはアプリケーションによって異なります。
 
 ## <a name="other-bluetooth-accessories"></a>その他の Bluetooth アクセサリ
 
-周辺機器に Bluetooth HID または GATT プロファイルをサポートしている限りは、HoloLens とペアにすることはできます。 キーボード、マウス、および HoloLens Clicker だけでなく、その他の Bluetooth を非表示にし、GATT のデバイスには、完全に機能するために Microsoft HoloLens のコンパニオン アプリケーションを必要があります。
+周辺機器が Bluetooth HID または GATT のいずれかのプロファイルをサポートしている限り、HoloLens とペアリングできます。 キーボード、マウス、および HoloLens Clicker 以外の他の Bluetooth HID および GATT デバイスでは、完全に機能するためには、Microsoft HoloLens のコンパニオンアプリケーションが必要になる場合があります。
 
-サポートされていない周辺機器は次のとおりです。
-* Bluetooth のオーディオ プロファイルの周辺機器がサポートされていません。
-* Bluetooth スピーカーやヘッドセットなどのオーディオ デバイスは、設定アプリで利用可能な場合がありますが、Microsoft HoloLens でオーディオのエンドポイントとして使用することはできません。
-* ペアになっているし、ファイル転送に使用するのには、Bluetooth 対応のスマート フォンや Pc がサポートされていません。
+サポートされない周辺機器は次のとおりです。
+* Bluetooth オーディオプロファイルの周辺機器はサポートされていません。
+* Bluetooth オーディオデバイス (スピーカーやヘッドセットなど) は、設定アプリで使用できるように見える場合がありますが、オーディオエンドポイントとして Microsoft HoloLens で使用することはサポートされていません。
+* Bluetooth 対応の携帯電話および Pc は、ファイル転送にペアリングして使用することはできません。
 
-## <a name="unpairing-a-bluetooth-peripheral"></a>Bluetooth 周辺機器のペアリングを解除
-1. [スタート] メニューから開きます、**設定**アプリ
-2. 移動して**デバイス**
-3. オフになっている場合に、Bluetooth 無線をオンに
-4. 使用可能な Bluetooth デバイスの一覧で、デバイスが見つかりません
-5. 一覧から、デバイスを選択し、、**削除**ボタン
+## <a name="unpairing-a-bluetooth-peripheral"></a>Bluetooth 周辺機器のペアリングを解除する
+1. スタート メニューから、**設定** アプリを開きます。
+2. **デバイス**にアクセス
+3. Bluetooth ラジオがオフになっている場合はオンにする
+4. 利用可能な Bluetooth デバイスの一覧でデバイスを検索する
+5. 一覧からデバイスを選択し、 **[削除]** ボタンを選択します。
 
-## <a name="disabling-bluetooth-on-microsoft-hololens"></a>Microsoft HoloLens で Bluetooth を無効にします。
+## <a name="disabling-bluetooth-on-microsoft-hololens"></a>Microsoft HoloLens で Bluetooth を無効にする
 
-Bluetooth 無線の RF コンポーネントをオフにされ Microsoft HoloLens ですべての Bluetooth 機能を無効にします。
-1. [スタート] メニューから開きます、**設定**アプリ
-2. 移動して**デバイス**
-3. Bluetooth のスライダーのスイッチを OFF の位置に移動します。
+これにより、Bluetooth ラジオの RF コンポーネントがオフになり、Microsoft HoloLens のすべての Bluetooth 機能が無効になります。
+1. スタート メニューから、**設定** アプリを開きます。
+2. **デバイス**にアクセス
+3. Bluetooth のスライダースイッチを OFF の位置に移動する

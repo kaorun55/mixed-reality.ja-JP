@@ -1,6 +1,6 @@
 ---
-title: HoloLens のエミュレーターのアーカイブ
-description: Microsoft HoloLens のエミュレーターのリリース ビルドの一覧です。
+title: HoloLens エミュレーターのアーカイブ
+description: Microsoft HoloLens エミュレーターのリリース済みビルドの一覧。
 author: pbarnettms
 ms.author: pbarnett
 ms.date: 4/25/2019
@@ -13,32 +13,32 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/09/2019
 ms.locfileid: "67694425"
 ---
-HoloLens のエミュレーター (第 1 世代) と、HoloLens 2 エミュレーターのビルドのサイド バイ サイドでインストールします。 一般に、最新使用可能なビルドを使用してをお勧めしますがいる場合や、古いエミュレーターに対して、アプリケーションをテストする必要がありますの場合がある可能性があります。 このページには、リリース バージョンへのリンクが含まれています。
+HoloLens Emulator (第1世代) と HoloLens 2 エミュレーターは、サイドバイサイドでのインストールを行います。 一般に、使用可能な最新のビルドを使用することをお勧めしますが、古いエミュレーターに対してアプリをテストする必要がある場合もあります。 このページには、リリースされたバージョンへのリンクが含まれています。
 
 
-# <a name="hololens-2-emulator-archive"></a>HoloLens 2 エミュレーターのアーカイブ
-
-
-|  ビルド |  リリース日 |  メモ | 
-|----------|----------|----------|
-|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019 年 7 月 8日 | 最新の HoloLens 2 ビルドします。  DiskStream.dll に署名に関する問題を対処します。 |
-|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019 年 6 月 11日 | 管理者として実行する必要がありません。  スタート メニューのショートカットを追加します。 |
-|  [HoloLens 2 エミュレーター ビルド 10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019 年 4 月 16日 |  |
-
-
-# <a name="hololens-emulator-1st-gen-archive"></a>HoloLens のエミュレーター (第 1 世代) アーカイブ
+# <a name="hololens-2-emulator-archive"></a>HoloLens 2 エミュレーターアーカイブ
 
 
 |  ビルド |  リリース日 |  メモ | 
 |----------|----------|----------|
-|  [HoloLens のエミュレーター ビルド 10.0.17763.253](https://go.microsoft.com/fwlink/?linkid=2065980) | 2018 年 11 月 19 日 | 最新の HoloLens (第 1 世代) を構築します。 Windows 10 年 2018年 10 月 Update。 |
-|  [HoloLens のエミュレーター ビルド 10.0.17134.80](https://go.microsoft.com/fwlink/?linkid=874531) | 2018 年 5 月 21 日 | 
-|  [HoloLens のエミュレーター ビルド 10.0.14393.1358](https://go.microsoft.com/fwlink/?linkid=852626) |  2017 年 7 月 7 日 |
-|  [HoloLens のエミュレーター ビルド 10.0.14393.0](http://go.microsoft.com/fwlink/?LinkID=823018) |  2016 年 8 月 2 日 |
-|  [HoloLens のエミュレーター ビルド 10.0.14342.1018](http://go.microsoft.com/fwlink/?LinkID=823018) |  2016 年 5 月 31 日 |
-|  [HoloLens のエミュレーター ビルド 10.0.11082.1033](http://go.microsoft.com/fwlink/?LinkID=724053) |  2016 年 3 月 30 日 |
+|  [HoloLens 2 Emulator ビルド10.0.18362.1021](https://go.microsoft.com/fwlink/?linkid=2098508) | 2019年7月8日 | 最新の HoloLens 2 ビルド。  DiskStream .dll での署名の問題に対処します。 |
+|  [HoloLens 2 Emulator ビルド10.0.18362.1019](https://go.microsoft.com/fwlink/?linkid=2095316) | 2019年6月11日 | 管理者として実行する必要がなくなりました。  [スタート] メニューのショートカットが追加されました。 |
+|  [HoloLens 2 Emulator ビルド10.0.18362.1005](https://go.microsoft.com/fwlink/?linkid=2087187) | 2019年4月16日 |  |
+
+
+# <a name="hololens-emulator-1st-gen-archive"></a>HoloLens Emulator (第1世代) アーカイブ
+
+
+|  ビルド |  リリース日 |  メモ | 
+|----------|----------|----------|
+|  [HoloLens Emulator ビルド10.0.17763.253](https://go.microsoft.com/fwlink/?linkid=2065980) | 2018年11月19日 | 最新の HoloLens (第1世代) ビルド。 Windows 10 10 月2018更新プログラム。 |
+|  [HoloLens Emulator ビルド10.0.17134.80](https://go.microsoft.com/fwlink/?linkid=874531) | 2018年5月21日 | 
+|  [HoloLens Emulator ビルド10.0.14393.1358](https://go.microsoft.com/fwlink/?linkid=852626) |  2017年7月7日 |
+|  [HoloLens Emulator ビルド10.0.14393.0](http://go.microsoft.com/fwlink/?LinkID=823018) |  2016 年 8 月 2 日 |
+|  [HoloLens Emulator ビルド10.0.14342.1018](http://go.microsoft.com/fwlink/?LinkID=823018) |  2016年5月31日 |
+|  [HoloLens Emulator ビルド10.0.11082.1033](http://go.microsoft.com/fwlink/?LinkID=724053) |  2016 年 3 月 30 日 |
 
 ## <a name="see-also"></a>関連項目
 * [ツールのインストール](install-the-tools.md)
 * [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)
-* [高度な HoloLens のエミュレーターや Mixed reality シミュレーターの入力](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
+* [Advanced HoloLens emulator と Mixed reality シミュレーター入力](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)

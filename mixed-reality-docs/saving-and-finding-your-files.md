@@ -1,59 +1,59 @@
 ---
-title: 保存とファイルの検索
-description: 検索、保存、および HoloLens のファイルを共有する方法。
+title: ファイルの保存と検索
+description: HoloLens でファイルを検索、保存、および共有する方法。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 09/27/2018
 ms.topic: article
-keywords: 操作方法、ファイル ピッカー、ファイル、写真、ビデオ、画像、OneDrive、ストレージ、ファイル エクスプ ローラー
+keywords: 操作方法、ファイルピッカー、ファイル、写真、ビデオ、画像、OneDrive、ストレージ、ファイルエクスプローラー
 ms.openlocfilehash: d539af29fc94fdbde0d2cf08157ae8b5ce8ad0a1
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59602684"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63524603"
 ---
-# <a name="saving-and-finding-your-files"></a>保存とファイルの検索
+# <a name="saving-and-finding-your-files"></a>ファイルの保存と検索
 
-ファイルの保存し、その他の Windows 10 デスクトップおよびモバイル デバイスと同様の方法で管理されていることができます。
-* ファイル エクスプ ローラーのアプリを使用してローカル フォルダーにアクセスするには
-* アプリの独自の記憶域内
-* で特別な既知のフォルダー (など、ビデオや音楽ライブラリ)
-* (OneDrive など) のアプリやファイル ピッカーを含むストレージ サービスを使用します。
-* MTP (Media Transfer Protocol) のサポートを使用して、HoloLens、usb に接続されているデスクトップ PC を使用します。
+ファイルは、他の Windows 10 デスクトップおよびモバイルデバイスと同様の方法で保存および管理できます。
+* エクスプローラーアプリを使用してローカルフォルダーにアクセスする
+* アプリ独自のストレージ内
+* 特別な既知のフォルダー (ビデオや音楽ライブラリなど)
+* アプリとファイルピッカー (OneDrive など) を含むストレージサービスを使用する
+* MTP (メディア転送プロトコル) を使用して、USB 経由で HoloLens に接続されたデスクトップ PC を使用する
 
 ## <a name="file-explorer"></a>エクスプローラー
 
-エクスプ ローラーのアプリを使用するには移動および HoloLens 内からファイルを削除します。
+ファイルエクスプローラーアプリを使用して、HoloLens 内からファイルを移動したり、削除したりできます。
 
 >[!NOTE]
->ファイル エクスプ ローラー内のファイルが見つからない場合は、「最近」フィルターがアクティブな可能性があります (時計のアイコンが左側のウィンドウで強調表示されます)。 これを解決するには、選択、**このデバイスを**(下に時計アイコン) で、左側のウィンドウでアイコンのドキュメントまたはメニューを開き、選択**このデバイスを**します。
+>ファイルエクスプローラーにファイルが表示されない場合は、"最近" のフィルターがアクティブになっている可能性があります (時計のアイコンは左のウィンドウで強調表示されています)。 この問題を解決するには、左側のウィンドウ (時計のアイコンの下) で**このデバイス**ドキュメントアイコンを選択するか、メニューを開いて **[このデバイス]** を選択します。
 
 ## <a name="files-within-an-app"></a>アプリ内のファイル
 
-アプリケーションでは、デバイス上のファイルを保存する場合は、それらにアクセスするアプリケーションを使用できます。
+アプリケーションがデバイスにファイルを保存する場合、そのアプリケーションを使用してファイルにアクセスできます。
 
-### <a name="where-are-my-photosvideos"></a>自分の写真/動画の検索
+### <a name="where-are-my-photosvideos"></a>写真/ビデオはどこにありますか。
 
-[実際のキャプチャを混合](mixed-reality-capture.md)写真やビデオは、デバイスのカメラ ロール フォルダーに保存されます。 使用してアクセスするには、[写真アプリ](see-your-photos.md#photos-app)します。 写真アプリを使用すると、写真やビデオを OneDrive に同期します。 写真やビデオの混在の実際のキャプチャ ページを介してをアクセスすることも、 [Windows Device Portal](using-the-windows-device-portal.md#mixed-reality-capture)します。
+[Mixed reality capture](mixed-reality-capture.md)の写真とビデオは、デバイスのカメラロールフォルダーに保存されます。 これらには、 [Photos アプリ](see-your-photos.md#photos-app)を使用してアクセスできます。 Photos アプリを使用して、写真とビデオを OneDrive に同期することができます。 また、 [Windows デバイスポータル](using-the-windows-device-portal.md#mixed-reality-capture)の [Mixed Reality キャプチャ] ページを使用して、写真やビデオにアクセスすることもできます。
 
-### <a name="requesting-files-from-another-app"></a>別のアプリからファイルを要求します。
+### <a name="requesting-files-from-another-app"></a>別のアプリからのファイルの要求
 
-アプリケーションがファイルの保存や経由で別のアプリからファイルを開くように要求できます[ファイル ピッカー](app-model.md#file-pickers)します。
+アプリケーションは、ファイル[ピッカー](app-model.md#file-pickers)を使用して、ファイルを保存したり、別のアプリからファイルを開いたりするように要求できます。
 
 ## <a name="known-folders"></a>既知のフォルダー
 
-サポートされる、数は HoloLens[既知のフォルダー](app-model.md#known-folders)アプリへのアクセス許可を要求できるようにします。
+HoloLens では、アプリがアクセス許可を要求できる[既知のフォルダー](app-model.md#known-folders)がいくつかサポートされています。
 
 ## <a name="files-in-a-service"></a>サービス内のファイル
 
-ファイルを保存 (またはファイルからのアクセス) にインストールされるように、サービス、サービスに関連付けられているアプリが。 ファイルを保存し、OneDrive からファイルにアクセスするためにインストールする必要があります、 [OneDrive アプリ](https://www.microsoft.com/store/apps/onedrive/9wzdncrfj1p3)します。
+サービスにファイルを保存する (またはファイルにアクセスする) には、サービスに関連付けられているアプリがインストールされている必要があります。 OneDrive のファイルにファイルを保存してファイルにアクセスするには、 [onedrive アプリ](https://www.microsoft.com/store/apps/onedrive/9wzdncrfj1p3)をインストールする必要があります。
 
 ## <a name="mtp-media-transfer-protocol"></a>MTP (メディア転送プロトコル)
 
-同様に他のモバイル デバイスでは、HoloLens をデスクトップ PC に接続し、転送ツールを HoloLens ライブラリ (写真、ビデオ、ドキュメント) にアクセスする PC にファイル エクスプ ローラーを開きます。
+他のモバイルデバイスと同様に、HoloLens をデスクトップ PC に接続し、PC でファイルエクスプローラーを開き、HoloLens ライブラリ (写真、ビデオ、ドキュメント) にアクセスして転送ツールを簡単に使用できるようにします。
 
-## <a name="clarifications"></a>明確にします。
+## <a name="clarifications"></a>うち
 
-* HoloLens では、外部ハード ディスク ドライブまたは SD カードに接続することはできません。
-* [Windows 10 April 2018 HoloLens 用の更新プログラム (RS4)](release-notes-april-2018.md)HoloLens には、ファイル エクスプ ローラーには保存および管理デバイス上のファイルが含まれています。 ファイル エクスプ ローラーの追加は、(たとえば、保存、デバイスと OneDrive にファイル)、ファイル ピッカーを選択する機能も提供します。
+* HoloLens は、外部ハードドライブまたは SD カードへの接続をサポートしていません。
+* [Hololens には、Windows 10 April 2018 Update (RS4)](release-notes-april-2018.md)の時点で、デバイス上のファイルを保存および管理するためのファイルエクスプローラーが含まれています。 ファイルエクスプローラーを追加すると、ファイルピッカーを選択できるようになります (たとえば、デバイスまたは OneDrive にファイルを保存することができます)。

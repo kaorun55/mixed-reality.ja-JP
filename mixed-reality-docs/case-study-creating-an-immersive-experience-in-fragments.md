@@ -1,21 +1,21 @@
 ---
-title: ケース スタディのフラグメントで魅力的なエクスペリエンスを作成します。
-description: フラグメントは、Microsoft Hololens の場合、実際の領域で行われる疑問を解決するために、手がかりを実行するため、対話型の犯罪ドラマです。
+title: ケーススタディ-フラグメントでのイマーシブエクスペリエンスの作成
+description: フラグメントは、Microsoft Hololens の対話型犯罪ドラマです。このヒントに従って、実際の領域で行われる謎を解決します。
 author: mattzmsft
 ms.author: miharnis
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 複合現実フラグメント、HoloLens、Windows
+keywords: フラグメント、HoloLens、Windows Mixed Reality
 ms.openlocfilehash: 90879ac914a76c61cf87a70f91c204e7f7b243c2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604721"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63516782"
 ---
-# <a name="case-study---creating-an-immersive-experience-in-fragments"></a>ケース スタディのフラグメントで魅力的なエクスペリエンスを作成します。
+# <a name="case-study---creating-an-immersive-experience-in-fragments"></a>ケーススタディ-フラグメントでのイマーシブエクスペリエンスの作成
 
-フラグメントは、Microsoft Hololens の場合、実際の領域で行われる疑問を解決するために、手がかりを実行するため、対話型の犯罪ドラマです。 フラグメントの開発チームが HoloLens の独自の機能を使用すると、ストーリーの中央に直接配置アクションで、プレーヤーを利用できる方法を紹介します。
+フラグメントは、Microsoft Hololens の対話型犯罪ドラマです。このヒントに従って、実際の領域で行われる謎を解決します。 フラグメント開発チームが HoloLens の固有の機能を使用して、アクションでプレーヤーをこちらし、ストーリーの中心に直接配置する方法について説明します。
 
 
 

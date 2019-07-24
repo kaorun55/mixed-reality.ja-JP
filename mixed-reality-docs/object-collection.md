@@ -1,11 +1,11 @@
 ---
-title: オブジェクトのコレクション
-description: オブジェクトのコレクションは、定義済みの 3 次元の図形内のオブジェクトの配列をレイアウトできるレイアウト コントロールです。
+title: オブジェクトコレクション
+description: オブジェクトコレクションは、定義済みの3次元図形内のオブジェクトの配列をレイアウトするのに役立つレイアウトコントロールです。
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、コントロールのデザイン
+keywords: Windows Mixed Reality、コントロール、デザイン
 ms.openlocfilehash: 7c3bbd82ec909b5a2e3c81f122366be564934f4d
 ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
 ms.translationtype: MT
@@ -13,37 +13,37 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/07/2019
 ms.locfileid: "66813890"
 ---
-# <a name="object-collection"></a>オブジェクトのコレクション
+# <a name="object-collection"></a>オブジェクトコレクション
 
-オブジェクトのコレクションは、定義済みの 3 次元の図形内のオブジェクトの配列をレイアウトできるレイアウト コントロールです。 画面のさまざまなスタイルのサポート**平面、円柱、球体**と**放射状**します。 Radius およびオブジェクトとそれらの間の領域のサイズを調整できます。 オブジェクトのコレクションには、Unity の 2D および 3D の両方から任意のオブジェクトがサポートしています。 **[Mixed Reality Toolkit](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** 、Unity スクリプトを作成したとする際に役立つ例がオブジェクトのコレクションを作成します。
+オブジェクトコレクションは、定義済みの3次元図形内のオブジェクトの配列をレイアウトするのに役立つレイアウトコントロールです。 さまざまな表面スタイル (**平面、円柱、球**、**放射状**) をサポートしています。 オブジェクトの半径とサイズ、およびそれらの間の間隔を調整できます。 オブジェクトコレクションでは、Unity からのすべてのオブジェクト (2D と3D の両方) がサポートされています。 **[Mixed Reality Toolkit](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** では、オブジェクトコレクションの作成に役立つ Unity スクリプトと例を作成しました。
 
-![要素のアプリの定期的テーブルで使用されるオブジェクト コレクション](images/640px-objectcollection-hero-640px.jpg)<br>
-*オブジェクトのコレクションを使用する例*
+![Elements アプリの定期テーブルで使用されるオブジェクトコレクション](images/640px-objectcollection-hero-640px.jpg)<br>
+*オブジェクトコレクションの使用例*
 
-## <a name="object-collection-examples"></a>オブジェクトのコレクションの例
+## <a name="object-collection-examples"></a>オブジェクトコレクションの例
 
-[要素のテーブルを定期的](periodic-table-of-the-elements.md)オブジェクトのコレクションのしくみを示すサンプル アプリです。 3D の化学物質要素のボックスでさまざまな図形をレイアウトするオブジェクトのコレクションを使用します。
+[要素の周期](periodic-table-of-the-elements.md)的な表は、オブジェクトコレクションのしくみを示すサンプルアプリです。 オブジェクトコレクションを使用して、さまざまな形状の3D 化学要素ボックスをレイアウトします。
 
-![要素のアプリの定期的表に示したオブジェクト コレクションのサンプル](images/periodictable-collections-1000px.jpg)<br>
-*要素のサンプル アプリの定期的表に示したオブジェクト コレクションのサンプル*
+![Elements アプリの定期テーブルに表示されるオブジェクトコレクションの例](images/periodictable-collections-1000px.jpg)<br>
+*Elements サンプルアプリの定期的な表に示されているオブジェクトコレクションの例*
 
 ### <a name="3d-objects"></a>3D オブジェクト
 
-オブジェクトのコレクションを使用して、インポートされた 3D オブジェクトをレイアウトすることができます。 次の例では、平面と、3 D の椅子のオブジェクトの円柱のレイアウトを示します。
+オブジェクトコレクションを使用すると、インポートされた3D オブジェクトをレイアウトできます。 次の例では、一部の3D 椅子オブジェクトの平面および円柱レイアウトを示しています。
 
-![平面と 3D オブジェクトの円柱のレイアウトの例](images/objectcollection-3dobjects-1000px.jpg)<br>
-*平面と 3D オブジェクトの円柱のレイアウトの例*
+![3D オブジェクトの平面レイアウトと円柱レイアウトの例](images/objectcollection-3dobjects-1000px.jpg)<br>
+*3D オブジェクトの平面レイアウトと円柱レイアウトの例*
 
 ### <a name="2d-objects"></a>2D オブジェクト
 
-オブジェクトのコレクションを使用して、2 D 画像を使用することもできます。 次の例で示す方法 2 D 画像をグリッドに表示されることができます。
+オブジェクトコレクションと共に2D イメージを使用することもできます。 次の例では、グリッドに2D イメージを表示する方法を示します。
 
-![オブジェクトのコレクションを使用して、2 D 画像の例](images/640px-layout-3dobjects-3.jpg)
+![オブジェクトコレクションを含む2D イメージの例](images/640px-layout-3dobjects-3.jpg)
 
-![オブジェクトのコレクションを使用して、2 D 画像の例](images/640px-layout-2dimages.jpg)<br>
-*2D イメージ オブジェクトのコレクションの使用例*
+![オブジェクトコレクションを含む2D イメージの例](images/640px-layout-2dimages.jpg)<br>
+*2D イメージでオブジェクトコレクションを使用する例*
 
 ## <a name="see-also"></a>関連項目
-* [スクリプトと GitHub の混在の現実 toolkit オブジェクトのコレクションのプレハブ](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_ObjectCollection.md)
+* [GitHub の Mixed Reality Toolkit でのオブジェクトコレクションのためのスクリプトと prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_ObjectCollection.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックス](app-bar-and-bounding-box.md)

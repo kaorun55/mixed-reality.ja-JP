@@ -1,38 +1,38 @@
 ---
 title: DirectX での音声入力
-description: Windows Mixed Reality の DirectX アプリでの音声コマンドやフレーズと文の小規模の認識を実装する方法について説明します。
+description: Windows Mixed Reality の DirectX アプリで音声コマンドと小さなフレーズと文の認識を実装する方法について説明します。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: チュートリアル、音声コマンド、フレーズ、認識、音声認識、directx、プラットフォーム、cortana、windows の複合現実
+keywords: チュートリアル、音声コマンド、語句、認識、音声、directx、プラットフォーム、cortana、windows mixed reality
 ms.openlocfilehash: 728457a495616e5f65ec3986dfb6ac60231f9e46
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605101"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548667"
 ---
 # <a name="voice-input-in-directx"></a>DirectX での音声入力
 
-このトピックでは、実装する方法を説明します[音声コマンド](voice-input.md)、および Windows Mixed Reality の DirectX アプリで小規模のフレーズと文と認識します。
+このトピックでは、Windows Mixed Reality の DirectX アプリで[音声コマンド](voice-input.md)を実装する方法と、小さなフレーズと文の認識を実装する方法について説明します。
 
 >[!NOTE]
->この記事のコード スニペットは現在の使用を示すC++/CX ではなく c++ 17 に準拠していませんC++/WinRT で使用するため、 [ C++ holographic プロジェクト テンプレート](creating-a-holographic-directx-project.md)します。  概念は、同等のC++/WinRT のプロジェクトがコードに変換する必要があります。
+>この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。  これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。
 
-## <a name="use-a-speechrecognizer-for-continuous-recognition-of-voice-commands"></a>音声コマンドの認識を継続的なれている SpeechRecognizer で使用します。
+## <a name="use-a-speechrecognizer-for-continuous-recognition-of-voice-commands"></a>音声コマンドを継続的に認識するために SpeechRecognizer を使用する
 
-このセクションでは、継続的な音声認識を使用して、アプリに音声コマンドを有効にする方法について説明します。 このチュートリアルからコードを使用して、 [HolographicVoiceInput](http://go.microsoft.com/fwlink/p/?LinkId=844964)サンプル。 サンプルを実行しているときに、回転するキューブの色を変更する登録済みの色のコマンドのいずれかの名前を読み上げます。
+このセクションでは、音声認識を使用してアプリで音声コマンドを有効にする方法について説明します。 このチュートリアルでは、 [HolographicVoiceInput](http://go.microsoft.com/fwlink/p/?LinkId=844964)サンプルのコードを使用します。 サンプルを実行している場合は、登録されているいずれかのカラーコマンドの名前を読み上げて、回転しているキューブの色を変更します。
 
-最初に、作成、新しい**Windows::Media::SpeechRecognition::SpeechRecognizer**インスタンス。
+最初に、新しい**Windows:: Media:: SpeechRecognition:: SpeechRecognizer**インスタンスを作成します。
 
-*HolographicVoiceInputSampleMain::CreateSpeechConstraintsForCurrentState*:
+*HolographicVoiceInputSampleMain:: CreateSpeechConstraintsForCurrentState*から:
 
 ```
 m_speechRecognizer = ref new SpeechRecognizer();
 ```
 
-リッスンするように、認識エンジンの音声コマンドの一覧を作成する必要があります。 ここでは、一連のホログラムの色を変更するコマンドを構築します。 利便性を考えて、後で、コマンドを使用するデータも作成します。
+レコグナイザーがリッスンする音声コマンドのリストを作成する必要があります。 ここでは、ホログラムの色を変更するための一連のコマンドを作成します。 利便性を高めるために、後でコマンドに使用するデータも作成します。
 
 ```
 m_speechCommandList = ref new Platform::Collections::Vector<String^>();
@@ -57,14 +57,14 @@ m_speechCommandList = ref new Platform::Collections::Vector<String^>();
    m_speechCommandData.push_back(float4(1.f, 0.f, 1.f, 1.f));
 ```
 
-コマンドは、ディクショナリにできない可能性がある発音の単語を使用して指定できます。
+コマンドは、辞書に含まれていない可能性のある発音の単語を使用して指定できます。
 
 ```
 m_speechCommandList->Append(StringReference(L"SpeechRecognizer"));
    m_speechCommandData.push_back(float4(0.5f, 0.1f, 1.f, 1.f));
 ```
 
-コマンドの一覧は、音声認識エンジンの制約の一覧に読み込まれます。 これを使用する[SpeechRecognitionListConstraint](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionlistconstraint.aspx)オブジェクト。
+コマンドの一覧が、音声認識エンジンの制約の一覧に読み込まれます。 これを行うには、 [SpeechRecognitionListConstraint](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionlistconstraint.aspx)オブジェクトを使用します。
 
 ```
 SpeechRecognitionListConstraint^ spConstraint = ref new SpeechRecognitionListConstraint(m_speechCommandList);
@@ -83,7 +83,7 @@ SpeechRecognitionListConstraint^ spConstraint = ref new SpeechRecognitionListCon
    });
 ```
 
-購読、 [ResultGenerated](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated.aspx)音声認識エンジンの上のイベント[SpeechContinuousRecognitionSession](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.aspx)します。 このイベントでは、コマンドのいずれかが認識されているときに、アプリに通知します。
+音声認識エンジンの[SpeechContinuousRecognitionSession](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.aspx)で[resultgenerated](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated.aspx)イベントをサブスクライブします。 このイベントは、いずれかのコマンドが認識されたときにアプリに通知します。
 
 ```
 m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
@@ -92,9 +92,9 @@ m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
            );
 ```
 
-**OnResultGenerated**イベント ハンドラーでイベント データを受信する、 [SpeechContinuousRecognitionResultGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.aspx)インスタンス。 信頼度が定義したしきい値よりも大きい場合は、アプリは、イベントが発生したことに注意してください。 イベント データを保存できるように今後の更新プログラムのループで使用します。
+**Onresultgenerated**イベントハンドラーは、 [SpeechContinuousRecognitionResultGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.aspx)インスタンス内のイベントデータを受信します。 定義したしきい値より信頼度が高い場合、アプリはイベントが発生したことを確認する必要があります。 後続の更新ループで使用できるように、イベントデータを保存します。
 
-*HolographicVoiceInputSampleMain.cpp*:
+*HolographicVoiceInputSampleMain*から:
 
 ```
 // Change the cube color, if we get a valid result.
@@ -107,9 +107,9 @@ m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
    }
 ```
 
-作成ただし、アプリのシナリオに適用可能なデータを使用します。 このコード例では、ユーザーがコマンドに従ってスピン ホログラム キューブの色を変更します。
+アプリのシナリオに適用されるデータを使用します。 このコード例では、ユーザーのコマンドに従って、回転したホログラムキューブの色を変更します。
 
-*HolographicVoiceInputSampleMain::Update*:
+*HolographicVoiceInputSampleMain:: Update*から:
 
 ```
 // Check for new speech input since the last frame.
@@ -132,17 +132,17 @@ m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
    }
 ```
 
-## <a name="use-dictation-for-one-shot-recognition-of-speech-phrases-and-sentences"></a>ディクテーションを使用して、音声の語句や文の 1 回限りの認識
+## <a name="use-dictation-for-one-shot-recognition-of-speech-phrases-and-sentences"></a>音声語句と文をワンショットで認識するためにディクテーションを使用する
 
-語句、またはユーザーが読み上げる文章をリッスンする音声認識エンジンを構成することができます。 この場合、期待する入力の種類、音声認識エンジンに指示する SpeechRecognitionTopicConstraint を適用します。 アプリのワークフローは、この種類の使用例のとおり、です。
-1. アプリを作成、れている SpeechRecognizer UI 画面の指示を提供し、すぐに読み上げられるコマンドのリッスンを開始します。
-2. ユーザーは、語句、または文章を話します。
-3. ユーザーの音声の認識を実行すると、およびアプリに結果が返されます。 この時点では、アプリでは、認識が発生したことを示す UI プロンプトを提供する必要があります。
-4. 応答する信頼レベルと音声認識の結果の信頼レベルでは、によってアプリは、結果を処理し、適切な対応できます。
+ユーザーが読み上げる語句や文をリッスンするように音声認識エンジンを構成できます。 この例では、必要な入力の種類を音声認識エンジンに伝える SpeechRecognitionTopicConstraint を適用します。 この種類のユースケースでは、アプリのワークフローは次のようになります。
+1. アプリによって SpeechRecognizer が作成され、UI プロンプトが表示され、すぐに読み上げるコマンドのリッスンが開始されます。
+2. ユーザーは、語句または文を読み上げます。
+3. ユーザーの音声認識が実行され、結果がアプリに返されます。 この時点で、アプリは認識が発生したことを示す UI プロンプトを提供する必要があります。
+4. 応答する信頼レベルと音声認識の結果の信頼レベルに応じて、アプリは結果を処理し、必要に応じて応答することができます。
 
-このセクションには、れている SpeechRecognizer を作成し、制約をコンパイルして、音声入力をリッスンする方法について説明します。
+このセクションでは、SpeechRecognizer を作成し、制約をコンパイルして、音声入力をリッスンする方法について説明します。
 
-次のコードでは、ここで Web の検索に最適化されているトピックの「制約をコンパイルします。
+次のコードでは、トピック制約をコンパイルします。この場合、この例では Web 検索用に最適化されています。
 
 ```
 auto constraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::WebSearch, L"webSearch");
@@ -153,7 +153,7 @@ auto constraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScen
    {
 ```
 
-コンパイルが成功すると、音声認識で進むことができます。
+コンパイルが成功した場合は、音声認識を続行できます。
 
 ```
 try
@@ -168,7 +168,7 @@ try
                {
 ```
 
-結果は、アプリに返されます。 結果に十分な確信しています場合のコマンドは、処理できます。 このコード例では、少なくとも中程度の信頼度で結果を処理します。
+その後、結果がアプリに返されます。 結果に十分な確信があれば、コマンドを処理することができます。 このコード例では、少なくとも中程度の自信を持つ結果を処理します。
 
 ```
 try
@@ -209,7 +209,7 @@ try
                    }
 ```
 
-音声認識を使用するたびには、ユーザーがシステムのプライバシーの設定でマイクをオフになっていることを示す例外を監視します。 これは、初期化中に、または認識中に発生することができます。
+音声認識を使用する場合は常に、ユーザーがシステムのプライバシー設定でマイクをオフにしたことを示す例外を監視する必要があります。 これは、初期化中、または認識中に発生する可能性があります。
 
 ```
 catch (Exception^ exception)
@@ -252,37 +252,37 @@ catch (Exception^ exception)
    });
 ```
 
-**注:** 定義済みのいくつかを使用する必要がある[SpeechRecognitionScenarios](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionscenario.aspx)音声認識を最適化するために使用できます。
-* ディクテーションを最適化する場合は、ディクテーション シナリオを使用します。
+**注:** 音声認識を最適化するために、いくつかの定義済み[SpeechRecognitionScenarios](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionscenario.aspx)が用意されています。
+* ディクテーション用に最適化する場合は、ディクテーションのシナリオを使用します。
 
 ```
 // Compile the dictation topic constraint, which optimizes for speech dictation.
    auto dictationConstraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::Dictation, "dictation");
    m_speechRecognizer->Constraints->Append(dictationConstraint);
 ```
-* 音声認識を使用して、Web 検索を実行する、次のように Web に固有のシナリオの制約を使用できます。
+* 音声を使用して Web 検索を実行する場合は、次のように Web 固有のシナリオ制約を使用できます。
 
 ```
 // Add a web search topic constraint to the recognizer.
    auto webSearchConstraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::WebSearch, "webSearch");
    speechRecognizer->Constraints->Append(webSearchConstraint);
 ```
-* フォームの制約を使用すると、フォームに入力します。 この場合は、フォームの入力用に最適化された独自の文法を適用することをお勧めします。
+* フォームを入力するには、フォームの制約を使用します。 この場合は、フォームを入力するために最適化された独自の文法を適用することをお勧めします。
 
 ```
 // Add a form constraint to the recognizer.
    auto formConstraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::FormFilling, "formFilling");
    speechRecognizer->Constraints->Append(formConstraint );
 ```
-* SRGS 形式を使用して、独自の文法を行うことができます。
+* SRGS 形式を使用して独自の文法を提供できます。
 
-## <a name="use-continuous-freeform-speech-dictation"></a>Continuous、自由形式の音声認識を使用して、
+## <a name="use-continuous-freeform-speech-dictation"></a>連続した自由形式の音声ディクテーションを使用する
 
-継続的なディクテーション シナリオでは、Windows 10 UWP 音声認識のコード サンプルを参照してください。[ここです。](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cpp/Scenario_ContinuousDictation.xaml.cpp)
+連続したディクテーションのシナリオについては、「Windows 10 UWP speech のコードサンプル」を参照してください[。](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cpp/Scenario_ContinuousDictation.xaml.cpp)
 
-## <a name="handle-degradation-in-quality"></a>品質の低下を処理します。
+## <a name="handle-degradation-in-quality"></a>品質の低下を処理する
 
-環境内の条件では、作業から音声認識を妨げることがあります。 たとえば、部屋のノイズが多すぎる可能性があります。 またはユーザーが高すぎるボリュームで話す可能性があります。 音声認識 API は、可能であれば、品質が低下した原因とする状態に関する情報を提供します。
+環境内の条件によっては、音声認識の動作が妨げられることがあります。 たとえば、部屋の雑音が多すぎる場合や、ユーザーが音量を大きくしすぎる場合などです。 音声認識 API は、品質の低下の原因となった条件について、可能な限り情報を提供します。
 
 この情報は、WinRT イベントを使用してアプリにプッシュされます。 このイベントをサブスクライブする方法の例を次に示します。
 
@@ -293,7 +293,7 @@ m_speechRecognizer->RecognitionQualityDegrading +=
            );
 ```
 
-このコード サンプルの条件の情報をデバッグ コンソールに書き込むを選択します。 アプリは、UI、音声合成、およびを使用してユーザーにフィードバックを提供するまたは品質の一時的な低下によって音声を中断するときの動作が異なる必要があります。
+このコードサンプルでは、条件情報をデバッグコンソールに書き込むことを選択します。 アプリでは、UI や音声合成などを使用してユーザーにフィードバックを提供することができます。または、品質の一時的な低下によって音声が中断された場合に、動作が異なる場合があります。
 
 ```
 void HolographicSpeechPromptSampleMain::OnSpeechQualityDegraded(SpeechRecognizer^ recognizer, SpeechRecognitionQualityDegradingEventArgs^ args)
@@ -332,7 +332,7 @@ void HolographicSpeechPromptSampleMain::OnSpeechQualityDegraded(SpeechRecognizer
    }
 ```
 
-DirectX アプリを作成する ref クラスを使用していない場合は、解放や、音声認識エンジンを再作成する前に、イベントから解除する必要があります。 HolographicSpeechPromptSample の認識を停止し、イベント サブスクリプションを解除するルーチンが次のようにします。
+参照クラスを使用して DirectX アプリを作成していない場合は、音声認識エンジンを解放または再作成する前に、イベントの登録を解除する必要があります。 HolographicSpeechPromptSample には、認識を停止し、次のようなイベントのサブスクリプションを解除するルーチンがあります。
 
 ```
 Concurrency::task<void> HolographicSpeechPromptSampleMain::StopCurrentRecognizerIfExists()
@@ -359,11 +359,11 @@ Concurrency::task<void> HolographicSpeechPromptSampleMain::StopCurrentRecognizer
    }
 ```
 
-## <a name="use-speech-synthesis-to-provide-audible-voice-prompts"></a>音声合成を使用して、音が聞こえる音声要求を提供するには
+## <a name="use-speech-synthesis-to-provide-audible-voice-prompts"></a>音声合成を使用して音声入力のプロンプトを表示する
 
-Holographic の音声認識のサンプルでは、音声合成を使用して、音の指示をユーザーに提供します。 このトピックで、合成音声サンプルを作成して、HRTF オーディオ Api を使用して再生のプロセスについて説明します。
+Holographic speech のサンプルでは、音声合成を使用してユーザーに可聴命令を提供します。 このトピックでは、合成された音声サンプルを作成し、HRTF audio Api を使用して再生するプロセスについて説明します。
 
-独自の音声認識では、語句の入力を要求するときにメッセージが表示されますを指定する必要があります。 これも役に立ちますを示すための継続的な認識シナリオの音声コマンドをナレーションことができます。 音声シンセサイザー; で操作する方法の例を示します録音済み音声メモやビジュアルの UI では、何を言おう、たとえば、プロンプトが動的ではないシナリオでは、その他のインジケーターも使用できることに注意してください。
+語句入力を要求するときは、独自の音声入力プロンプトを指定する必要があります。 これは、音声コマンドをいつでも認識できるようにする場合にも役立ちます。 音声シンセサイザーを使用してこれを行う方法の例を次に示します。また、メッセージが動的でない場合などに、事前に記録された音声クリップ、ビジュアル UI、またはその他の意見を示すインジケーターを使用することもできます。
 
 まず、SpeechSynthesizer オブジェクトを作成します。
 
@@ -371,14 +371,14 @@ Holographic の音声認識のサンプルでは、音声合成を使用して�
 auto speechSynthesizer = ref new Windows::Media::SpeechSynthesis::SpeechSynthesizer();
 ```
 
-合成するテキストの文字列も必要です。
+また、合成するテキストを含む文字列が必要です。
 
 ```
 // Phrase recognition works best when requesting a phrase or sentence.
    StringReference voicePrompt = L"At the prompt: Say a phrase, asking me to change the cube to a specific color.";
 ```
 
-音声は、非同期的に SynthesizeTextToStreamAsync を使用して合成します。 ここでは、私たちは、音声合成する非同期タスクを開始します。
+音声は SynthesizeTextToStreamAsync を使用して非同期に合成されます。 ここでは、音声を合成する非同期タスクを開始します。
 
 ```
 create_task(speechSynthesizer->SynthesizeTextToStreamAsync(voicePrompt), task_continuation_context::use_current())
@@ -388,7 +388,7 @@ create_task(speechSynthesizer->SynthesizeTextToStreamAsync(voicePrompt), task_co
        {
 ```
 
-音声合成は、バイト ストリームとして送信されます。 そのバイト ストリームを使用して、XAudio2 音声を初期化できます。holographic のコード サンプルでは、私たちとして再生しない HRTF オーディオ効果。
+音声合成は、バイトストリームとして送信されます。 このバイトストリームを使用して、XAudio2 音声を初期化できます。holographic のコードサンプルでは、HRTF オーディオ効果として再生します。
 
 ```
 Windows::Media::SpeechSynthesis::SpeechSynthesisStream^ stream = synthesisStreamTask.get();
@@ -410,7 +410,7 @@ Windows::Media::SpeechSynthesis::SpeechSynthesisStream^ stream = synthesisStream
        }
 ```
 
-として音声認識と音声合成例外がスローされます、問題が発生した場合。
+音声認識と同様に、何らかの問題が発生した場合は、音声合成によって例外がスローされます。
 
 ```
 catch (Exception^ exception)
@@ -427,6 +427,6 @@ catch (Exception^ exception)
 ```
 
 ## <a name="see-also"></a>関連項目
-* [音声認識型アプリの設計](https://msdn.microsoft.com/library/dn596121.aspx)
-* [DirectX での空間のサウンド](spatial-sound-in-directx.md)
+* [音声アプリの設計](https://msdn.microsoft.com/library/dn596121.aspx)
+* [DirectX の立体音響](spatial-sound-in-directx.md)
 * [SpeechRecognitionAndSynthesis サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

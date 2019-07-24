@@ -1,12 +1,12 @@
 ---
 layout: LandingPage
-title: チュートリアルとサンプル アプリ
-description: 複合現実の開発のためのコード サンプルとチュートリアルを提供します。
+title: チュートリアルとサンプルアプリ
+description: 混合環境での開発に関するコードサンプルとチュートリアルを提供します。
 author: keveleigh
 ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
-keywords: holotoolkit, mixedrealitytoolkit、mixedrealitytoolkit unity、academy, チュートリアル
+keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、academy、チュートリアル
 ms.openlocfilehash: 4f1402cb9b91e0d0619c0516de9120302323b799
 ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
@@ -14,34 +14,34 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67415400"
 ---
-# <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
+# <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプルアプリ
 
-現在すべてのチュートリアルやサンプル アプリは Unity ベースです。  コンテンツを他のエンジンとプラットフォームを開発するとは、テーブルの内容に関連する見出しの下検索されます。
+現在、すべてのチュートリアルとサンプルアプリは Unity ベースです。  他のエンジンとプラットフォームのコンテンツを開発する際には、目次の関連する見出しの下に表示されます。
 
 ## <a name="mr-learning-modules"></a>MR 学習モジュール
 
-手法と複合現実のアプリケーションを開発するためのベスト プラクティスの両方について開発者には、MR 学習のモジュールが設計されています。  初期のモジュールは、HoloLens 2 はあり、Mixed Reality Toolkit 2.0 (MRTK 2.0) を実装します。
-* 開発者向け MRTK でそのプロジェクトを設定するだけでなく UI、空間のマッピング、および基本および詳細の両方の相互作用を実装する方法を説明するためのものがベース モジュール
+MR Learning モジュールは、開発者が混合現実アプリケーションを開発するための手法とベストプラクティスの両方を学習できるように設計されています。  最初のモジュールは HoloLens 2 用で、Mixed Reality Toolkit 2.0 (MRTK 2.0) を実装しています。
+* ベースモジュールは、MRTK でプロジェクトを設定する方法を開発者に示すと共に、UI、空間マッピング、および基本および高度な対話の両方を実装することを目的としています。
 
-## <a name="open-source-sample-apps"></a>オープン ソースのサンプル アプリ
+## <a name="open-source-sample-apps"></a>オープンソースのサンプルアプリ
 
-オープン ソースのサンプル アプリは、マイクロソフトのチームによって作成されたアプリケーションと開発者でしたから見ても、プロジェクトから学習できるように、ソース コードを用意しました。
+オープンソースのサンプルアプリは、チームによって作成されたアプリケーションであり、開発者がプロジェクトを参照して学習できるようにソースコードを提供しています。
 
 ## <a name="mixed-reality-academy-tutorials"></a>Mixed Reality Academy チュートリアル
 
-Mixed Reality Academy には、対応するプロジェクト ファイルとオンラインのステップバイ ステップ チュートリアルのセットです。 
-* チュートリアルでは、100、200、およびを 300 レベルのトピックについて説明します。レベル 100 の内部ではプロジェクトの基礎、200 レベルでは core MR ビルディング ブロック、およびクラウド サービスの統合を 300 レベルについて説明します。
-* ほとんどのコースでは、HoloLens、没入型の (VR) ヘッドセットの両方に適用できる概念について説明します。 
-* 各チュートリアルは章では、別に整理され、最も重要な概念のビデオ デモが含まれます。 
-* Windows 10 PC を正しい[ツールがインストールされて](install-the-tools.md)は各チュートリアルを完了する一般的な前提条件として。
+Mixed Reality Academy は、対応するプロジェクトファイルを含む一連のオンラインのステップバイステップチュートリアルです。 
+* このチュートリアルでは、100、200、および300レベルのトピックについて説明します。100-プロジェクトの基本について説明し、200レベルではコア MR のビルディングブロックをカバーし、300レベルではクラウドサービスの統合について説明します。
+* ほとんどのコースでは、HoloLens とイマーシブ (VR) ヘッドセットの両方に適用される概念が説明されています。 
+* 各チュートリアルは章別にまとめられており、主な概念のビデオデモが含まれています。 
+* 適切な[ツールがインストールさ](install-the-tools.md)れている WINDOWS 10 PC は、各チュートリアルを完了するための一般的な前提条件です。
 
 >[!NOTE]
->Mixed Reality Academy チュートリアルでは、HoloLens として設計された (第 1 世代) と混在の現実イマーシブ ヘッドセットに注意してください。  そのため、これらのデバイス向けの開発にガイダンスがまだ必要な開発者のための場所でこれらのチュートリアルのままにすることが重要と思われます。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスで作業を続行するが保持されます。 一連の新しい HoloLens 2 を開発する方法を示すチュートリアルは、今後投稿があります。  この通知が投稿されるときにこれらのチュートリアルへのリンクが更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
                             <li>
-                                    <a href="holograms-100.md" title="MR 基本 100" data-linktype="absolute-path">
+                                    <a href="holograms-100.md" title="MR 基本100" data-linktype="absolute-path">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -51,8 +51,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>MR 基礎 100:Unity の概要</h3>
-                                                    <p>Unity を使用した基本的な複合現実アプリを作成します。 このプロジェクトは、Unity でビルドする MR アプリ開始テンプレートとして使用できます。</p>
+                                                    <h3>MR 基本 100:Unity の概要</h3>
+                                                    <p>Unity で基本的な mixed reality アプリを作成します。 このプロジェクトは、Unity でビルドする必要のある MR アプリの開始テンプレートとして使用できます。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,7 +60,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                </a>
                             </li>
                             <li>
-                                  <a href="holograms-101.md" title="MR 基本 101" data-linktype="absolute-path">
+                                  <a href="holograms-101.md" title="MR 基本101" data-linktype="absolute-path">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -70,8 +70,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>MR 基礎 101:デバイスとの完全なプロジェクト</h3>
-                                                    <p>実際に機能 (視線、ジェスチャ、音声、空間のサウンド、および空間マッピング) が混在 core の概要の完全なプロジェクトを設定すると、HoloLens デバイスを使用します。</p>
+                                                    <h3>MR 基本 101:デバイスを含む完全なプロジェクト</h3>
+                                                    <p>完全なプロジェクトをセットアップし、HoloLens デバイスを使用して、mixed reality のコア機能 (宝石、ジェスチャ、音声、空間のサウンド、および空間マッピング) を導入します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -79,7 +79,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                </a>
                             </li>
                             <li>
-                                <a href="holograms-101e.md" title="MR 基本 101E" data-linktype="absolute-path">
+                                <a href="holograms-101e.md" title="MR 基本101E" data-linktype="absolute-path">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -89,8 +89,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>MR 基礎 101E:エミュレーターを使用した完全なプロジェクト</h3>
-                                                    <p>実際に機能 (視線、ジェスチャ、音声、空間のサウンド、および空間マッピング) が混在 core の概要の完全なプロジェクトを設定すると、HoloLens のエミュレーターを使用します。</p>
+                                                    <h3>MR 基本 101E:Emulator を使用したプロジェクトの完了</h3>
+                                                    <p>HoloLens エミュレーターを使用して、完全なプロジェクトをセットアップし、mixed reality のコア機能 (宝石、ジェスチャ、音声、空間サウンド、空間マッピング) を導入します。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,7 +98,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                   </a>
                             </li>
                             <li>
-                             <a href="holograms-210.md" title="MR 入力 210" data-linktype="absolute-path">
+                             <a href="holograms-210.md" title="MR 入力210" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -109,7 +109,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR 入力 210:視線入力</h3>
-                                              <p>視線入力、入力の最初のフォームであり、ユーザーの意図と認識が表示されます。 コンテキストの認識は、ユーザーの視線入力について知っている、アプリをフル活用する、カーソルとホログラムに追加します。</p>
+                                              <p>見つめは入力の最初の形式であり、ユーザーの意図と認識を示しています。 カーソルとホログラムに文脈を認識させることで、アプリがユーザーの宝石について認識している内容を最大限に活用することができます。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -117,7 +117,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                </a>
                             </li>
                             <li>
-                            <a href="holograms-211.md" title="MR 入力 211" data-linktype="absolute-path">
+                            <a href="holograms-211.md" title="MR 入力211" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -128,7 +128,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR 入力 211:ジェスチャ</h3>
-                                              <p>ジェスチャは、ユーザーの意図をアクションに変換します。 ジェスチャでは、ユーザーはホログラムと対話できます。 このコースでは、ユーザーの手を追跡、ユーザーの入力に応答、フィードバックをハンドの状態と位置に基づいてを学習します。</p>
+                                              <p>ジェスチャによって、ユーザーの意図が動作するようになります。 ジェスチャを使用すると、ユーザーはホログラムを操作できます。 このコースでは、ユーザーの手を追跡し、ユーザー入力に応答し、手の状態と場所に基づいてフィードバックを提供する方法を学習します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -136,7 +136,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                               </a>
                             </li>         
                             <li>
-                             <a href="holograms-212.md" title="MR 入力 212" data-linktype="absolute-path">
+                             <a href="holograms-212.md" title="MR 入力212" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -147,7 +147,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR 入力 212:音声</h3>
-                                              <p>音声を使用して、簡単かつ自然な方法で、ホログラムと対話できます。 このコースでは、このユーザーが利用可能な音声コマンドを認識させる、フィードバックを音声コマンドが耳およびディクテーションを使用して、ユーザーが感想を理解するについて説明します。</p>
+                                              <p>音声を使用すると、簡単かつ自然な方法でホログラムを操作できます。 このコースでは、ユーザーが使用可能な音声コマンドを認識し、音声コマンドが聞こえたことを通知し、ディクテーションを使用してユーザーの意見を理解する方法について学習します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -155,7 +155,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                               </a>
                             </li>
                              <li>
-                              <a href="mixed-reality-213.md" title="MR 入力 213" data-linktype="absolute-path">
+                              <a href="mixed-reality-213.md" title="MR 入力213" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -165,8 +165,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR 入力 213:アニメーション コント ローラー</h3>
-                                              <p>このコースでは、モーションのコント ローラー (VR) のイマーシブ ヘッドセットでの視覚化、入力イベントを処理およびコント ローラーへのカスタム UI 要素のアタッチの方法を説明します。</p>
+                                              <h3>MR 入力 213:モーションコントローラー</h3>
+                                              <p>このコースでは、イマーシブ (VR) ヘッドセットのモーションコントローラーを視覚化し、入力イベントを処理し、カスタム UI 要素をコントローラーにアタッチする方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -174,7 +174,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                               </a>
                             </li>   
                               <li>
-                              <a href="holograms-220.md" title="MR 空間 220" data-linktype="absolute-path">
+                              <a href="holograms-220.md" title="MR 空間220" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -185,7 +185,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR 空間 220:立体音響</h3>
-                                              <p>空間のサウンドは、ライフをホログラムに増し、プレゼンスに提供します。 このコースでは、地上ホログラム サウンドの空間を使用して周囲の世界では、フィードバックの間のやり取り中に、ホログラムを検索するオーディオを使用する学習します。</p>
+                                              <p>空間サウンドは、ホログラムに breathes、存在を示します。 このコースでは、周囲の世界では空間サウンドを使用して、相互作用中にフィードバックを提供し、オーディオを使用してホログラムを検索する方法について学習します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -193,7 +193,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                               </a>
                             </li>      
                                <li>
-                               <a href="holograms-230.md" title="MR 空間 230" data-linktype="absolute-path">
+                               <a href="holograms-230.md" title="MR 空間230" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -204,7 +204,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR 空間 230:空間マッピング</h3>
-                                              <p>空間マッピングは、現実の世界と仮想世界をまとめです。 シェーダーを調査し、それらを使用して自分のスペースを視覚化します。 単純な平面に部屋のメッシュを簡略化、フィードバックを実際のサーフェスにホログラムを配置するように、オクルー ジョン視覚効果の詳細について説明します。</p>
+                                              <p>空間マッピングによって、現実世界と仮想環境が統合されます。 シェーダーを調査し、それらを使用してスペースを視覚化します。 次に、ルームメッシュを単純な平面に単純化し、実際のサーフェイスにホログラムを配置する方法についてのフィードバックを提供し、遮蔽の視覚効果を調べる方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -212,7 +212,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                              </a>
                             </li> 
                                 <li>
-                                <a href="holograms-240.md" title="MR 240 の共有" data-linktype="absolute-path">
+                                <a href="holograms-240.md" title="MR 共有240" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -222,8 +222,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR 240 の共有:複数の HoloLens デバイス</h3>
-                                              <p>//Build 2016 プロジェクト。 共有 holographic 世界に参加できるように、HoloLens デバイス間で共有座標系を使用した完全なプロジェクトを設定します。</p>
+                                              <h3>MR 共有 240:複数の HoloLens デバイス</h3>
+                                              <p>ビルド2016プロジェクト HoloLens デバイス間で共有される座標系を持つ完全なプロジェクトを設定し、ユーザーが共有 holographic 世界に参加できるようにします。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -231,7 +231,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                              </a>
                             </li> 
                                  <li>
-                                   <a href="mixed-reality-250.md" title="MR が 250 の共有" data-linktype="absolute-path">
+                                   <a href="mixed-reality-250.md" title="MR 共有250" data-linktype="absolute-path">
                               <div class="cardSize">
                                   <div class="cardPadding">
                                       <div class="card">
@@ -241,8 +241,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR が 250 の共有:HoloLens とイマーシブ ヘッドセット</h3>
-                                              <p>この//Build 2017 プロジェクトでは、HoloLens と共有、クロス デバイス エクスペリエンス内で没入型の (VR) ヘッドセットの独自の長所を活用して、アプリの構築について説明します。</p>
+                                              <h3>MR 共有 250:HoloLens とイマーシブヘッドセット</h3>
+                                              <p>このビルド2017プロジェクトでは、共有デバイス間のエクスペリエンス内で HoloLens とイマーシブ (VR) ヘッドセットの固有の強みを活用するアプリを構築する方法を示します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -253,7 +253,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
 
 ## <a name="mixed-reality-and-azure-services-tutorials"></a>Mixed Reality および Azure サービスのチュートリアル
 
-これらのスタンドアロン チュートリアルは、Unity プロジェクトにさまざまな Azure サービスを実装する方法を学習するのに最適です。  これらのチュートリアルはすべて、HoloLens に基づく (第 1 世代)、イマーシブ ヘッドセット, が、サービスの使用に関するレッスンは、ほとんどのデバイスに譲渡する必要があります。
+これらのスタンドアロンチュートリアルは、さまざまな Azure サービスを Unity プロジェクトに実装する方法を学習するのに最適です。  これらのチュートリアルは、すべて HoloLens (第1世代) またはイマーシブヘッドセットに基づいていますが、本サービスの使用に関するレッスンは、ほとんどすべてのデバイスに譲渡する必要があります。
 
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
     <li>
@@ -268,7 +268,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 301:言語翻訳</h3>
-                                              <p>Azure の Translator Text API を使用して、mixed reality アプリは、別の言語でテキストを音声に変換できます。 学習方法についてはこのコースで!</p>
+                                              <p>Azure Translator Text API を使用すると、混合の現実アプリで、音声を別の言語のテキストに変換できます。 このコースでは、その方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -286,8 +286,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR と Azure 302:コンピューター ビジョン</h3>
-                                              <p>モデルをトレーニングすることがなく mixed reality アプリでイメージ処理と分析用の Azure の Computer Vision Api を使用します。</p>
+                                              <h3>MR と Azure 302:コンピュータービジョン</h3>
+                                              <p>Azure Computer Vision Api は、モデルをトレーニングすることなく、イメージの処理と分析を行うために、混合の現実アプリで使用できます。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -305,8 +305,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR と Azure 302b:カスタム ビジョン</h3>
-                                              <p>機械学習モデルをトレーニングする方法について説明し、イメージ処理と分析のため、トレーニング済みモデルを使用します。</p>
+                                              <h3>MR と Azure 302b:カスタムビジョン</h3>
+                                              <p>機械学習モデルをトレーニングし、トレーニング済みのモデルを使用してイメージの処理と分析を行う方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -325,7 +325,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 303:自然言語の理解</h3>
-                                              <p>このコースでは、Azure の Language Understanding (LUIS) サービスを使用して自然言語理解、mixed reality アプリに追加する方法を説明します。</p>
+                                              <p>このコースでは、Azure Language Understanding (LUIS) サービスを使用して、mixed reality アプリに自然言語の理解を追加する方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -344,7 +344,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 304:顔認識</h3>
-                                              <p>Azure の Face API を使用して、mixed reality アプリでの顔の検出と認識を実行する方法について説明します。</p>
+                                              <p>Azure Face API を使用して、mixed reality アプリで顔の検出と認識を実行する方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -363,7 +363,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 305:関数とストレージ</h3>
-                                              <p>このコースでは、作成し、Azure Functions を使用して、mixed reality アプリ内で、Azure Storage 内のデータを格納する方法を学びます。</p>
+                                              <p>このコースでは、Azure Functions を作成して使用し、Azure Storage 内にデータを格納する方法について説明します。これには、mixed reality アプリを使用します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -381,8 +381,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR と Azure 306:ビデオのストリーミング</h3>
-                                              <p>Azure Media Services を使用して、没入型 (VR) が発生する Windows Mixed Reality 内の 360 度のビデオをストリーミングする方法について説明します。</p>
+                                              <h3>MR と Azure 306:ストリーミングビデオ</h3>
+                                              <p>Azure Media Services を使用して、Windows Mixed Reality イマーシブ (VR) エクスペリエンス内で360度のビデオをストリーミングする方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -400,8 +400,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR と Azure 307 の場合:機械学習</h3>
-                                              <p>Azure Machine Learning Studio は、機械学習 (ML) アルゴリズムの数が多いを展開する、mixed reality アプリ内で活用できます。</p>
+                                              <h3>MR と Azure 307:機械学習</h3>
+                                              <p>多数の Machine Learning (ML) アルゴリズムをデプロイするには、mixed reality アプリ内で Azure Machine Learning Studio を活用します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -419,8 +419,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR と Azure 308:クロス デバイスの通知</h3>
-                                              <p>このコースで複数の Azure サービスを使用してプッシュ通知を配信する方法について説明し、シーンが PC のアプリから mixed reality アプリに変更します。</p>
+                                              <h3>MR と Azure 308:デバイス間の通知</h3>
+                                              <p>このコースでは、複数の Azure サービスを使用して、PC アプリから混合 reality アプリにプッシュ通知とシーン変更を配信する方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -439,7 +439,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 309:Application insights</h3>
-                                              <p>Azure Application Insights サービスを使用して、mixed reality アプリ内でユーザーの行動の分析情報を収集します。</p>
+                                              <p>Azure アプリケーション Insights サービスを使用して、混合 reality アプリ内でユーザーの動作に関する分析を収集します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -458,7 +458,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 310:オブジェクトの検出</h3>
-                                              <p>機械学習モデルのトレーニングし、同等のオブジェクトと、物理世界でそれらの位置を認識して、トレーニング済みモデルを使用します。</p>
+                                              <p>機械学習モデルをトレーニングし、トレーニング済みのモデルを使用して、物理的な世界で類似したオブジェクトとその位置を認識します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -477,7 +477,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 311:Microsoft Graph</h3>
-                                              <p>Mixed reality アプリ内から Microsoft Graph サービスに接続する方法について説明します。</p>
+                                              <p>Mixed reality アプリ内から Microsoft Graph services に接続する方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -495,8 +495,8 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                               </div>
                                           </div>
                                           <div class="cardText">
-                                              <h3>MR と Azure 312:ボットの統合</h3>
-                                              <p>作成し、Microsoft Bot Framework v4 を使用してボットを展開し、mixed reality アプリで通信します。</p>
+                                              <h3>MR と Azure 312:Bot の統合</h3>
+                                              <p>Microsoft Bot Framework v4 を使用して bot を作成およびデプロイし、mixed reality アプリでそれと通信します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -515,7 +515,7 @@ Mixed Reality Academy には、対応するプロジェクト ファイルとオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 313:IoT Hub サービス</h3>
-                                              <p>バーチャル マシンの場合は、Azure IoT Hub サービスを実装して、HoloLens のデータを視覚化する方法について説明します。</p>
+                                              <p>仮想マシンに Azure IoT Hub サービスを実装し、HoloLens でデータを視覚化する方法について説明します。</p>
                                           </div>
                                       </div>
                                   </div>

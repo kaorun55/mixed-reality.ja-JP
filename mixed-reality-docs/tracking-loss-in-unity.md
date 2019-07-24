@@ -1,43 +1,43 @@
 ---
-title: 損失の Unity での追跡
-description: 損失の Unity アプリ内の追跡を処理します。
+title: Unity での損失の追跡
+description: Unity アプリ内での追跡損失の処理。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Unity、損失の追跡、損失のイメージの追跡
+keywords: Unity、損失の追跡、損失の追跡の画像
 ms.openlocfilehash: eb675860d67e9cad0d1129b3a6f61343990a4179
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59602771"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63548745"
 ---
-# <a name="tracking-loss-in-unity"></a>損失の Unity での追跡
+# <a name="tracking-loss-in-unity"></a>Unity での損失の追跡
 
-デバイスは、世界で自体を見つけられない、アプリで"追跡損失"が発生します。 既定では、Unity は更新ループを一時停止し、ユーザーにロゴ イメージを表示します。 追跡を回復すると、ときに、ロゴ イメージは表示されなくなり、update ループが続行されます。
+デバイスが世界中で見つからない場合、アプリでは "損失の追跡" が発生します。 既定では、Unity は update ループを一時停止し、ユーザーにスプラッシュイメージを表示します。 追跡が再開されると、スプラッシュイメージが消え、update ループが続行します。
 
-代わりに、ユーザーはこの遷移を設定を無効にすることによって手動で処理できます。 すべてのコンテンツは、損失の場合はそれを処理するために何も実行が追跡中にロックされている本文になるようです。
+別の方法として、ユーザーは設定から除外することによって、この移行を手動で処理できます。 コンテンツを処理する処理が何も行われていない場合、追跡が失われても、すべてのコンテンツが本文でロックされているように見えます。
 
 ## <a name="default-handling"></a>既定の処理
 
-既定では、アプリだけでなく、すべてのメッセージおよびイベントの更新ループは損失の追跡の間停止します。 同時に、ユーザーにイメージが表示されます。 このイメージをカスタマイズするには、編集する]-> [設定]、[Player、ロゴのイメージをクリックし、Holographic 損失の追跡のイメージを設定します。
+既定では、アプリの更新ループとすべてのメッセージとイベントは、追跡が失われている間停止します。 同時に、画像がユーザーに表示されます。 このイメージをカスタマイズするには、[編集-> 設定-> プレーヤー] に移動し、[スプラッシュイメージ] をクリックして、Holographic Tracking ロスイメージを設定します。
 
 ## <a name="manual-handling"></a>手動処理
 
-追跡の損失を手動で処理するに移動する必要があります**編集** > **プロジェクト設定** > **Player**  >  **ユニバーサル Windows プラットフォームの設定 タブ** > **スプラッシュ イメージ** > **Windows Holographic** "の追跡が失われる一時停止し、イメージの表示をオフにします。". その後、以下で指定した Api を使用した変更の追跡を処理する必要があります。
+追跡の損失を手動で処理するには、 > [**プロジェクト設定** > の**編集** > ]、[**設定] タブ** > の **[スプラッシュ画像]** のユニバーサルWindowsプラットフォームに進む必要があります。 > **Windows Holographic**をオフにして、[トラックの損失を一時停止し、画像を表示する] をオフにします。 その後、以下で指定した Api を使用して、変更の追跡を処理する必要があります。
 
-**名前空間:** *UnityEngine.XR.WSA*<br>
+**名前空間:**  *UnityEngine.XR.WSA*<br>
 **種類:** *WorldManager*
 
-* 追跡の紛失/獲得を検出するためにイベントを公開する世界マネージャー (*WorldManager.OnPositionalLocatorStateChanged*) と現在の状態を照会するプロパティ (*WorldManager.state*)
-* 追跡の状態がアクティブでない場合、ユーザーに変換しても、仮想世界に変換する、カメラは表示されません。 つまり、オブジェクトは、物理的な場所に一致しなくなると、ロックされている本文をすべて表示されます。
+* World Manager は、紛失/獲得された追跡 (*WorldManager OnPositionalLocatorStateChanged*) を検出するイベントを公開し、プロパティを表示して現在の状態 (WorldManager) を照会し*ます。*
+* 追跡状態がアクティブでない場合、カメラは、ユーザーが変換した場合でも、仮想環境では変換されないように見えます。 これは、オブジェクトが物理的な場所に対応しなくなり、すべての本文がロックされることを意味します。
 
-各フレームまたはハンドルの state プロパティをポーリングする必要がありますか、独自の変更の追跡を処理するときに、 *OnPositionalLocatorStateChanged*イベント。
+変更の追跡を自分で処理する場合は、各フレームの状態プロパティをポーリングするか、 *OnPositionalLocatorStateChanged*イベントを処理する必要があります。
 
 ### <a name="polling"></a>ポーリング
 
-最も重要な状態が*PositionalLocatorState.Active*追跡は完全に機能することを意味します。 その他の状態が、メイン カメラに回転差分のみ発生します。 例:
+最も重要な状態は*Positionallocatorstate です。アクティブ*とは、追跡が完全に機能していることを意味します。 その他の状態では、メインカメラへの回転デルタのみが発生します。 以下に例を示します。
 
 ```cs
 void Update()
@@ -58,9 +58,9 @@ void Update()
 }
 ```
 
-### <a name="handling-the-onpositionallocatorstatechanged-event"></a>OnPositionalLocatorStateChanged イベントを処理します。
+### <a name="handling-the-onpositionallocatorstatechanged-event"></a>OnPositionalLocatorStateChanged イベントの処理
 
-サブスクライブできますもまたはしより便利な*OnPositionalLocatorStateChanged*遷移を処理するために。
+また、 *OnPositionalLocatorStateChanged*にサブスクライブして遷移を処理することもできます。
 
 ```cs
 void Start()
@@ -82,4 +82,4 @@ private void WorldManager_OnPositionalLocatorStateChanged(PositionalLocatorState
 ```
 
 ## <a name="see-also"></a>関連項目
-* [DirectX が損失する可能性の追跡を処理します。](coordinate-systems-in-directx.md#handling-tracking-loss)
+* [DirectX での追跡損失の処理](coordinate-systems-in-directx.md#handling-tracking-loss)

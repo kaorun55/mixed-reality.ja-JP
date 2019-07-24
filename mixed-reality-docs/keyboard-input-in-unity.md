@@ -1,68 +1,68 @@
 ---
-title: Unity におけるキーボード入力
-description: Unity では、使用可能な物理キーボードがない場合は、キーボード入力を受け入れるため TouchScreenKeyboard クラスを提供します。
+title: Unity でのキーボード入力
+description: Unity には、使用可能な物理キーボードがない場合にキーボード入力を受け入れるための TouchScreenKeyboard クラスが用意されています。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: キーボードの入力、unity、touchscreenkeyboard
+keywords: キーボード、入力、unity、touchscreenkeyboard
 ms.openlocfilehash: 35f6f0df993931eea35db7b167110b341ea0c0f2
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604888"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515731"
 ---
-# <a name="keyboard-input-in-unity"></a>Unity におけるキーボード入力
+# <a name="keyboard-input-in-unity"></a>Unity でのキーボード入力
 
 **名前空間:**  *UnityEngine*<br>
- **種類**:*[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)*
+ **種類**: *[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)*
 
-HoloLens などの Bluetooth キーボード入力の多くの形式がサポートされますが、ほとんどのアプリケーションがすべてのユーザーが使用可能な物理キーボードにあるを想定することはできません。 アプリケーションは、テキスト入力を必要とする場合スクリーン キーボード上の何らかの形式を指定する必要があります。
+HoloLens では、Bluetooth キーボードを含む多くの形式の入力がサポートされますが、ほとんどのアプリケーションでは、すべてのユーザーが物理キーボードを使用できると想定することはできません。 アプリケーションでテキスト入力が必要な場合は、スクリーンキーボードの何らかの形式を指定する必要があります。
 
-Unity は、 *[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)* 使用可能な物理キーボードがない場合は、キーボード入力を受け入れるためのクラス。
+Unity には、使用可能な物理キーボードがない場合にキーボード入力を受け入れるための *[TouchScreenKeyboard](http://docs.unity3d.com/ScriptReference/TouchScreenKeyboard.html)* クラスが用意されています。
 
-## <a name="hololens-system-keyboard-behavior-in-unity"></a>Unity での HoloLens システム キーボード動作
+## <a name="hololens-system-keyboard-behavior-in-unity"></a>Unity での HoloLens システムキーボード動作
 
-HoloLens、上、 *TouchScreenKeyboard*スクリーン キーボード上のシステムを活用します。 スクリーン キーボード上のシステムは、キーボードを表示し、入力が送信された後に、帯域幅消費型のビューを返す 2D セカンダリ XAML ビューを作成するため、Unity は、帯域幅消費型ビューの上部にオーバーレイにできません。 ユーザー フローでは、次のようにします。
-1. ユーザーが原因でアプリのコードを呼び出すアクションを実行*TouchScreenKeyboard*
-    * アプリの呼び出しの前に、アプリの一時停止状態の役目です*TouchScreenKeyboard*
-    * これまで帯域幅消費型のビューに切り替える前に終了することが、アプリ
-2. Unity は、世界中の自動配置は 2D XAML ビューに切り替わります
-3. ユーザーがシステム キーボードを使用してテキストを入力し、送信またはキャンセル
-4. Unity は、帯域幅消費型のビューに切り替える
-    * アプリを再開するため、アプリは、状態、 *TouchScreenKeyboard*は行われます
-5. 送信されたテキストが表示されます、 *TouchScreenKeyboard*
+HoloLens では、 *TouchScreenKeyboard*はシステムのスクリーンキーボードを活用します。 システムのスクリーンキーボードを容量ビューの上に重ねて表示することはできません。そのため、Unity では、入力が送信された後にキーボードを表示するセカンダリ 2D XAML ビューを作成してから容量ビューに戻る必要があります。 ユーザーフローは次のようになります。
+1. ユーザーがアクションを実行して、アプリコードが*TouchScreenKeyboard*を呼び出すようにします。
+    * アプリは、 *TouchScreenKeyboard*を呼び出す前にアプリの状態を一時停止します。
+    * 容量ビューに切り替える前に、アプリを終了することがあります
+2. Unity は、世界中に自動的に配置される 2D XAML ビューに切り替えます。
+3. ユーザーはシステムキーボードを使用してテキストを入力し、送信またはキャンセルします。
+4. Unity は容量ビューに戻ります。
+    * *TouchScreenKeyboard*が完了すると、アプリはアプリの状態を再開する役割を担います。
+5. 送信されたテキストは、 *TouchScreenKeyboard*で入手できます。
 
-### <a name="available-keyboard-views"></a>使用可能なキーボード ビュー
+### <a name="available-keyboard-views"></a>使用可能なキーボードビュー
 
-さまざまなキーボードの 6 つのビューを使用できます。
-* 単一行のテキスト ボックス
-* タイトルを含む単一行の textbox
-* 複数行テキスト ボックス
-* タイトルを含む複数行の textbox
-* 単一行のパスワード ボックス
-* 単一行のパスワード ボックスのタイトル
+次の6つの異なるキーボードビューを使用できます。
+* 単一行のテキストボックス
+* タイトル付きの単一行テキストボックス
+* 複数行のテキストボックス
+* タイトルを含む複数行のテキストボックス
+* 単一行パスワードボックス
+* タイトル付きの単一行パスワードボックス
 
-## <a name="how-to-enable-the-system-keyboard-in-unity"></a>Unity でシステム キーボードを有効にする方法
+## <a name="how-to-enable-the-system-keyboard-in-unity"></a>Unity でシステムキーボードを有効にする方法
 
-HoloLens システム キーボードでは、「UWP ビルドの種類」"XAML"に設定と共にエクスポートされる Unity アプリケーションで使用できるのみです。 "XAML"を「UWP ビルドの種類」として"D3D"を選択するときにすることのトレードオフがあります。 調査になる場合、これらのトレードオフに慣れていない、[ソリューションの代替入力](#alternative-keyboard-options)システム キーボードにします。
-1. 開く、**ファイル**メニュー選択し、**ビルド設定しています.**
-2. 確認、**プラットフォーム**に設定されている**Windows ストア**、 **SDK**に設定されている**ユニバーサル 10**、設定と、 **UWP ビルドの種類**に**XAML**します。
-3. **Build Settings**ダイアログ ボックスで、をクリックして、**プレーヤー設定しています.** ボタン
-4. 選択、 **Windows Store 用の設定に** タブ
-5. 展開、**その他の設定**グループ
-6. **レンダリング** セクションで、チェック、**仮想現実サポート**新しいを追加するチェック ボックスをオン**仮想現実デバイス**一覧
-7. 確認**Windows Holographic**仮想現実 Sdk の一覧に表示されます
+HoloLens システムキーボードは、"UWP ビルドの種類" を "XAML" に設定してエクスポートされた Unity アプリケーションに対してのみ使用できます。 "D3D" で "UWP ビルドの種類" として "XAML" を選択すると、トレードオフが発生します。 これらのトレードオフに慣れていない場合は、システムキーボードの[代替入力ソリューション](#alternative-keyboard-options)を調べることをお勧めします。
+1. **[ファイル]** メニューを開き、 **[ビルドの設定]** を選択します。
+2. **プラットフォーム**が**Windows ストア**に設定されていること、 **SDK**が**Universal 10**に設定されていること、 **UWP ビルドの種類**を**XAML**に設定していることを確認します。
+3. **[ビルドの設定]** ダイアログボックスで、 **[プレーヤーの設定...]** ボタンをクリックします。
+4. **[Windows ストアの設定]** タブを選択します。
+5. **[その他の設定]** グループを展開します。
+6. **[表示]** セクションで、 **[サポートされている仮想現実]** チェックボックスをオンにして、新しい**仮想現実デバイス**の一覧を追加します。
+7. Virtual Reality Sdk の一覧に **[Windows Holographic]** が表示されていることを確認します。
 
 >[!NOTE]
->HoloLens デバイスと仮想現実のサポートとして、ビルドをマークしないで、プロジェクトは 2D XAML アプリとしてエクスポートします。
+>HoloLens デバイスでサポートされている仮想現実としてビルドをマークしない場合、プロジェクトは 2D XAML アプリとしてエクスポートされます。
 
-## <a name="using-the-system-keyboard-in-your-unity-app"></a>Unity アプリでシステム キーボードの使用
+## <a name="using-the-system-keyboard-in-your-unity-app"></a>Unity アプリでのシステムキーボードの使用
 
-### <a name="declare-the-keyboard"></a>キーボードを宣言します。
+### <a name="declare-the-keyboard"></a>キーボードを宣言する
 
-クラスを格納する変数を宣言、 *TouchScreenKeyboard*し、キーボード、文字列を保持する変数を返します。
+クラスで、 *TouchScreenKeyboard*と、キーボードが返す文字列を保持する変数を格納する変数を宣言します。
 
 ```cs
 UnityEngine.TouchScreenKeyboard keyboard;
@@ -71,7 +71,7 @@ public static string keyboardText = "";
 
 ### <a name="invoke-the-keyboard"></a>キーボードを呼び出す
 
-イベントが発生するキーボード入力を要求しているときに、必要な入力の種類に応じて、これらの関数のいずれかを呼び出します。 タイトルが textPlaceholder パラメーターで指定されたことに注意してください。
+キーボード入力を要求するイベントが発生したときに、必要な入力の種類に応じて、これらの関数のいずれかを呼び出します。 タイトルは textPlaceholder パラメーターで指定されていることに注意してください。
 
 ```cs
 // Single-line textbox
@@ -93,9 +93,9 @@ keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, 
 keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, true, false, "Secure Single-line Title");
 ```
 
-### <a name="retrieve-typed-contents"></a>型指定されたコンテンツを取得します。
+### <a name="retrieve-typed-contents"></a>型指定されたコンテンツの取得
 
-Update ループでは、キーボードが新しい入力を受信するかどうか、他の場所で使用するため保存できます。
+Update ループで、キーボードが新しい入力を受け取ったかどうかを確認し、別の場所で使用するために保存します。
 
 ```cs
 if (TouchScreenKeyboard.visible == false && keyboard != null)
@@ -108,10 +108,10 @@ if (TouchScreenKeyboard.visible == false && keyboard != null)
 }
 ```
 
-## <a name="alternative-keyboard-options"></a>代替キーボード オプション
+## <a name="alternative-keyboard-options"></a>代替キーボードオプション
 
-切り替え元の帯域幅消費型のビューを 2D のビューに、ユーザーから入力されたテキストを取得するための望ましい方法ではないことを認識しています。
+容量ビューから2D ビューへの切り替えは、ユーザーからのテキスト入力を取得するのに最適な方法ではないことを理解しています。
 
-Unity からシステム キーボードを利用するための現在の代替手段は、次のとおりです。
-* 入力に対して音声認識を使用して (<b>注:</b>間違いやすく、辞書で見つからなかった単語は、多くの場合、これと、パスワードの入力には適していません)
-* アプリケーションのビューが排他的で動作するキーボードを作成します。
+Unity を通じてシステムキーボードを利用するための現在の代替手段は次のとおりです。
+* 入力に音声ディクテーションを使用する (<b>注:</b>辞書に見つからず、パスワード入力に適していない単語に対してはエラーが発生する可能性があります)
+* アプリケーションの排他ビューで動作するキーボードを作成する

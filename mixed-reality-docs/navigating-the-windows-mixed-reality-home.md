@@ -1,143 +1,143 @@
 ---
-title: Windows Mixed Reality ホームに移動します。
-description: HoloLens と Windows Mixed Reality ヘッドセットは、起動、配置すると、および (物理またはデジタル) かどうかは、アプリと、環境内の 3D モデルを操作するためのパラダイムを共有します。 両方のデバイスの種類でホーム Windows Mixed Reality を移動する方法について説明します。
+title: Windows Mixed Reality ホームの移動
+description: HoloLens と Windows Mixed Reality ヘッドセットは、環境内でアプリと3D モデルを起動、配置、操作するパラダイムを共有しています (物理的またはデジタルのどちらの場合でも)。 両方の種類のデバイスで Windows Mixed Reality ホームを移動する方法について説明します。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: シェル、os、プラットフォーム、cliff 家、家、ホーム、環境、開始、[スタート] メニューのホーム メニューの pin、アプリ、アプリの起動、テレポート、アプリを配置、移動、移動します
+keywords: シェル, os, プラットフォーム, 崖家, 家, ホーム, 環境, スタート, スタートメニュー, ホームメニュー, pin, アプリ, アプリの起動, アプリの配置, テレポート, 移動, 移動
 ms.openlocfilehash: 1ca6dd66506a64ad2e1c21870fee2725ddf20bd8
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59604898"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63525216"
 ---
-# <a name="navigating-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームに移動します。
+# <a name="navigating-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームの移動
 
-Windows PC エクスペリエンスがデスクトップで始まるよう Windows Mixed Reality ホームから始まります。 Windows Mixed Reality ホームは、本質的な機能を理解し、3 D の場所を移動を活用します。 HoloLens、自宅は、実際の場所です。 イマーシブ ヘッドセット、自宅は仮想の場所です。
+Windows PC エクスペリエンスがデスクトップで起動するのと同じように、Windows Mixed Reality はホームから開始します。 Windows Mixed Reality ホームは、innate の機能を活用して3D の場所を理解し、移動します。 HoloLens では、自宅は物理的なスペースです。 イマーシブヘッドセットを使用すると、自宅は仮想の場所になります。
 
-自宅は、[スタート] メニューを開き、アプリやコンテンツを配置に使用する場所もです。 複合現実のコンテンツを自宅に入力し、同時に複数のアプリを使用して、マルチタスクを実行できます。 自宅に配置することは、デバイスを再起動する場合でも、ままです。
+また、ホームでは、[スタート] メニューを使用してアプリとコンテンツを開いたり、配置したりすることもできます。 複数のアプリを同時に使用することで、大規模な現実のコンテンツとマルチタスクをホームにすることができます。 デバイスを再起動した場合でも、自宅に配置したものはそのままです。
 
 ## <a name="start-menu"></a>スタート メニュー
 
 ![Microsoft HoloLens の [スタート] メニュー](images/start-500px.png)
 
-[スタート] メニューから成ります。
-* システム情報 (ネットワークの状態、バッテリの残量割合、現在の時刻およびボリューム)
-* Cortana (イマーシブ ヘッドセット、スタート タイルで、開始の上部にある、HoloLens 用)
+[スタート] メニューは次のもので構成されます。
+* システム情報 (ネットワークの状態、バッテリの割合、現在の時刻、およびボリューム)
+* Cortana (最初の段階で、HoloLens ではスタートタイル、最初は HoloLens)
 * ピン留めされたアプリ
-* すべてのアプリ (プラス記号)
-* 写真とビデオのボタンを[実際のキャプチャの混在](mixed-reality-capture.md)
+* [すべてのアプリ] ボタン (プラス記号)
+* [Mixed reality キャプチャ](mixed-reality-capture.md)の写真ボタンとビデオボタン
 
-ビューを切り替えるピン留めされたアプリおよびすべてのアプリ間でプラス記号を選択するか、またはマイナス ボタン。 HoloLens で [スタート] メニューを開くには、するには、「bloom ジェスチャを使用します。 イマーシブ ヘッドセットでは、上には、コント ローラーの Windows ボタンを押します。
+プラスボタンまたはマイナスボタンを選択して、ピン留めされたアプリとすべてのアプリビューを切り替えます。 HoloLens で [スタート] メニューを開くには、ブルームジェスチャを使用します。 イマーシブヘッドセットで、コントローラーの [Windows] ボタンを押します。
 
 ## <a name="launching-apps"></a>アプリの起動
 
-アプリを起動するには、開始時に選択します。 [スタート] メニューは表示されなくなり、2D のウィンドウとしての配置モードで、アプリが開きますまたは[3D モデル](implementing-3d-app-launchers.md)します。
+アプリを起動するには、[スタート] で選択します。 [スタート] メニューが表示されなくなり、アプリは2D ウィンドウまたは[3d モデル](implementing-3d-app-launchers.md)のいずれかとして配置モードで開きます。
 
-アプリを実行するには、自宅に配置する必要があります。
-1. 使用して、[視線](gaze.md)またはコント ローラーにすることをアプリに位置します。 自動的に、(サイズと位置) に配置する領域に準拠するために調整されます。
-2. エア タップ (HoloLens) または [選択] ボタン (イマーシブ ヘッドセット) を使用してアプリを配置します。 キャンセルして、[スタート] メニューを元に戻します、ブルーム ジェスチャまたは Windows ボタンを使用します。
+アプリを実行するには、ホームに配置する必要があります。
+1. 目的の場所にアプリを配置するには、[宝石](gaze.md)またはコントローラーを使用します。 配置した領域に合わせて、自動的に (サイズと位置で) 調整されます。
+2. エアタップ (HoloLens) または [選択] ボタン (イマーシブヘッドセット) を使用してアプリを配置します。 [スタート] メニューをキャンセルして元に戻すには、ブルームジェスチャまたは Windows ボタンを使用します。
 
-[2D アプリ](building-2d-apps.md)、デスクトップ、モバイル、用に作成またはを使用して複合現実体感型アプリとして実行する Xbox を変更することができます、 [HolographicSpace API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.holographic.holographicspace.aspx)します。 没入型のアプリは、自宅外には」および「魅力的なエクスペリエンスにユーザーを受け取ります。 ユーザーは、「bloom ジェスチャ (HoloLens) または、コント ローラー (イマーシブ ヘッドセット) の Windows ボタンを押して、ホーム返すできます。
+デスクトップ、モバイル、または Xbox 用に作成された[2d アプリ](building-2d-apps.md)は、 [HolographicSpace API](https://msdn.microsoft.com/library/windows/apps/windows.graphics.holographic.holographicspace.aspx)を使用して mixed reality イマーシブアプリとして実行するように変更できます。 イマーシブアプリによって、ユーザーは家庭から、またはイマーシブエクスペリエンスを利用できます。 ユーザーは、ブルームジェスチャ (HoloLens) を使用するか、コントローラー (イマーシブヘッドセット) の Windows ボタンを押すことによって、自宅を返すことができます。
 
-アプリへの API を使用して、または Cortana 経由でアプリを起動することもできます。
+アプリはアプリ間 API または Cortana を使用して起動することもできます。
 
-![ホーム Windows Mixed Reality アプリ](images/mixed-reality-home-500px.png)
+![Windows Mixed Reality ホームのアプリ](images/mixed-reality-home-500px.png)
 
-## <a name="moving-and-adjusting-apps"></a>移動して、アプリを調整します。
+## <a name="moving-and-adjusting-apps"></a>アプリの移動と調整
 
-選択**調整**アプリでバーを表示するが、スケール、移動を制御し、混在した実際のコンテンツを回転します。 完了したら、選択**完了**します。
+アプリバーの **[調整]** を選択すると、mixed reality コンテンツの移動、拡大縮小、および回転を行うコントロールが表示されます。 終了したら、 **[完了]** を選択します。
 
-![調整モード (青色の枠) ストアへのスレートします。 アプリ バーに注意してください (上) が '完了' と 'Remove' を含むように変更がボタン。](images/adjust-500px.png)
+![調整モード (青いフレーム) の場合、ストアはスレートです。 メモアプリバー (上部) には、[完了] ボタンと [削除] ボタンが表示されるように変更されました。](images/adjust-500px.png)
 
-別のアプリ、アプリ バーで、追加のオプションがあります。 たとえば、Microsoft Edge が*スクロール*、*ドラッグ*、および*ズーム*選択肢です。 
+アプリによっては、アプリバーに他のオプションが追加される場合があります。 たとえば、Microsoft Edge には、*スクロール*、*ドラッグ*、および*ズーム*の選択肢があります。 
 
-![HoloLens で実行されている 2D アプリ用アプリ バー](images/holobar-500px.png)
+![HoloLens で実行されている2D アプリのアプリバー](images/holobar-500px.png)
 
-**戻る**ボタンが、アプリで表示されていた画面に移動します。 アプリを示した他のアプリに移動 エクスペリエンスの先頭に到達したときに停止します。
+**[戻る]** ボタンをクリックすると、アプリで以前に表示されていた画面に戻ります。 アプリに表示されているエクスペリエンスの最初に達したときに停止し、他のアプリには移動しません。
 
-## <a name="getting-around-your-home"></a>自宅の回避
+## <a name="getting-around-your-home"></a>ホームに移動する
 
-**HoloLens**自宅内を移動する物理領域間を移動します。
+**HoloLens**では、ホームに移動するために物理的な領域を移動します。
 
-**イマーシブ ヘッドセット**、同様にを取得し、仮想世界のような領域内を移動する、playspace で歩き回りできます。 距離が長い間を移動するにするまたはを使用して、スティック コント ローラーを事実上"、"を使用することができます*teleportation*距離が長いをすぐにジャンプします。
+**イマーシブヘッドセット**を使用すると、同じような方法で playspace を利用して、仮想環境内の同様の領域内で移動することもできます。 距離をさらに長くするには、コントローラーでサムスティックを使用して仮想的に "ウォーク" します。または、電話*を使用し*て、距離をすぐに長くすることができます。
 
-![Windows Mixed Reality ホームで Teleportation](images/teleportation-500px.png)
+![Windows Mixed Reality ホームの受付](images/teleportation-500px.png)
 
-**テレポート: に**
-1. Teleportation 十字線を表示します。
-   * 使用して[コント ローラーのモーション](motion-controllers.md): スティックを進むキーを押して、その位置に押したままにします。
-   * Xbox コント ローラーを使用して: 左のサムスティックを進むキーを押して、その位置に押したままにします。
-   * マウスを使用して: 右マウス ボタンを押しながら (ときに直面する方向を回転するスクロール ホイールを使用し、するテレポート)。
-2. テレポートしたい、十字線を配置します。
-   * 使用して[コント ローラーのモーション](motion-controllers.md): の十字線を移動する (いるを維持しているスティック フォワード) コント ローラーを傾けます。
-   * Xbox コント ローラーを使用して: を使用して、[視線](gaze.md)の十字線を移動します。
-   * マウスを使用して: の十字線を移動する、マウスを移動します。
-3. テレポート、目盛りが配置された場所にボタンを離します。
+**テレポートするには:**
+1. Reticle を立ち上げます。
+   * [モーションコントローラー](motion-controllers.md)の使用: サムスティックを前方に押し、その位置に保持します。
+   * Xbox コントローラーを使用する: 左スティックを前方に押し、その位置に保持します。
+   * マウスを使用して、マウスの右ボタンを押したままにします (そして、スクロールホイールを使用して、テレポート時の方向を回転させます)。
+2. テレポートする場所に reticle を配置します。
+   * [モーションコントローラー](motion-controllers.md)の使用: reticle を移動するには、(サムスティックを前方に保持している) コントローラーを傾けます。
+   * Xbox コントローラーの使用: reticle を移動するには、[宝石](gaze.md)を使用します。
+   * マウスを使用する: マウスを動かして reticle を移動します。
+3. ボタンを離して、reticle が配置された位置にテレポートします。
 
-**事実上"について説明します"。**
-* 使用して[コント ローラーのモーション](motion-controllers.md): スティックを押したままをクリックし、スティックを「について説明します。」したい方向に移動します。
-* Xbox コント ローラーを使用します。 左のサムスティックを押したまま、をクリックし、スティックを"について説明します。"したい方向に移動します。
+**実際に "ウォーク:"**
+* [モーションコントローラー](motion-controllers.md)を使用する: サムスティックを押したままにして、サムスティックを "ウォーク" する方向に移動します。
+* Xbox コントローラーを使用する: 左スティックを押したままにして、サムスティックを "ウォーク" する方向に移動します。
 
-## <a name="immersive-headset-input-support"></a>イマーシブ ヘッドセット入力のサポート
+## <a name="immersive-headset-input-support"></a>イマーシブヘッドセットの入力サポート
 
-[Windows Mixed Reality イマーシブ ヘッドセット](immersive-headset-hardware-details.md)ホーム Windows Mixed Reality を移動するための複数の入力の種類をサポートします。 HoloLens は、物理的に歩き回りし、環境参照を実行するため、アクセサリの入力をナビゲーションをサポートしません。 ただし、HoloLens が[の入力をサポート](hardware-accessories.md)アプリと対話するためです。
+[Windows Mixed reality イマーシブヘッドセット](immersive-headset-hardware-details.md)は、Windows mixed reality ホーム内を移動するための複数の入力の種類をサポートしています。 HoloLens は、ナビゲーションのためのアクセサリ入力をサポートしていません。これは、環境が物理的に移動して表示されるためです。 ただし、HoloLens は、アプリと対話するための[入力をサポート](hardware-accessories.md)しています。
 
-### <a name="motion-controllers"></a>アニメーション コント ローラー
+### <a name="motion-controllers"></a>モーションコントローラー
 
-Windows Mixed Reality で最適な Windows Mixed Reality エクスペリエンスになります[コント ローラーのモーション](motion-controllers.md)ヘッドセットのない外部のカメラまたは必要なマーカーのセンサーだけを使用してそのサポート 6 自由度の追跡。
+最適な Windows Mixed Reality エクスペリエンスは、ヘッドセットのセンサーのみを使用して6度の自由度の追跡をサポートする Windows Mixed Reality の[モーションコントローラー](motion-controllers.md)です。外部カメラやマーカーは必要ありません。
 
-近日公開予定のナビゲーション コマンド。
+ナビゲーションコマンドは近日公開予定です。
 
 ### <a name="gamepad"></a>ゲームパッド
-* **左のサムスティック:**
-  * 左のサムスティック フォワードを長押しし、 [teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)目盛り。
-  * Left、right、スティックをタップまたはバックエンドを左に移動して、右、または少しずつバックアップします。
-  * 左のサムスティックを押したままをクリックし、スティックを移動する方向で[事実上「について説明します」。](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)
-* タップして、**右スティック**左または右に 45 度直面している方向を回転します。
-* キーを押して、 **A**ボタンは、select を実行してのように動作、[エア タップ](gestures.md#air-tap)ジェスチャ。
-* キーを押して、**ガイド**ボタンが表示されます、 [[スタート] メニュー](navigating-the-windows-mixed-reality-home.md#start-menu)のように動作し、[ブルーム](gestures.md#bloom)ジェスチャ。
-* キーを押して、**左および右のトリガー**自宅で対話する 2D のデスクトップ アプリとの間に拡大することができます。
+* **左サムスティック:**
+  * 左スティックを前方に押して[、reticle を](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)表示します。
+  * 左、右、または後ろにあるサムスティックをタップして、小さい順に左または右に移動します。
+  * 左側のサムスティックを押したままにして、画面のサムスティックを任意の方向に移動し[ます。](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)
+* **右サムスティック**を左または右にタップして、表示する方向を45°回転させます。
+* **A**ボタンを押すと、選択が実行され、[エアタップ](gestures.md#air-tap)ジェスチャのように動作します。
+* **[ガイド]** ボタンを押すと、[[スタート] メニュー](navigating-the-windows-mixed-reality-home.md#start-menu)が表示され、[ブルーム](gestures.md#bloom)ジェスチャのように動作します。
+* **左トリガーと右トリガー**を押すと、自宅で対話している2d デスクトップアプリを拡大または縮小できます。
 
 ### <a name="keyboard-and-mouse"></a>キーボードとマウス
 
-**注:** 使用**Windows キーを押しながら Y**マウス、PC のデスクトップおよび Windows Mixed Reality ホームの制御との間を切り替える。
+**注:** **Windows キー + Y**を使用して、PC のデスクトップと Windows Mixed Reality ホームを制御するようにマウスを切り替えます。
 
-ホーム Windows Mixed Reality: 内
-* キーを押して、**左クリック**マウスのボタンは、select を実行してのように動作、[エア タップ](gestures.md#air-tap)ジェスチャ。
-* 保持している、**を右クリックして**マウス ボタンが表示されます、 [teleportation](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)目盛り。
-* キーを押して、 **Windows**キーボードのキーが表示されます、 [[スタート] メニュー](navigating-the-windows-mixed-reality-home.md#start-menu)のように動作し、[ブルーム](gestures.md#bloom)ジェスチャ。
-* ときに[gazing](gaze.md) 2D のデスクトップ アプリにすることができます**左クリック**を選択する**を右クリックして**コンテキスト メニューを表示して使用する、**スクロール ホイール**スクロール (PC のデスクトップで同様)。
+Windows Mixed Reality ホーム内:
+* **左クリック**でマウスボタンを押すと、選択が実行され、[エアタップ](gestures.md#air-tap)ジェスチャのように動作します。
+* **右クリック**マウスボタンを押すと[、reticle が](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)表示されます。
+* キーボードの**Windows**キーを押すと、[[スタート] メニュー](navigating-the-windows-mixed-reality-home.md#start-menu)が表示され、[ブルーム](gestures.md#bloom)ジェスチャのように動作します。
+* 2D デスクトップアプリでの[移動時に](gaze.md)は、**左クリック**して選択し、**右クリック**してコンテキストメニューを表示し、スクロール**ホイール**を使用して (PC のデスクトップと同様に) スクロールできます。
 
 ## <a name="cortana"></a>Cortana
 
-[Cortana](voice-input.md#hey-cortana) PC、電話上と同じように Windows Mixed Reality で、パーソナル アシスタントは、します。 HoloLens は、組み込みのマイクがイマーシブ ヘッドセットは追加のハードウェアを必要があります。 Cortana をアプリを開き、デバイスを再起動、ものをオンラインで検索などを使用します。 開発者は、することもできます[Cortana の統合](https://dev.windows.com/cortana)に経験します。
+[Cortana](voice-input.md#hey-cortana)は、PC や電話の場合と同じように、Windows Mixed Reality の個人用アシスタントです。 HoloLens にはマイクが内蔵されていますが、イマーシブヘッドセットには追加のハードウェアが必要になる場合があります。 Cortana を使用して、アプリを開いたり、デバイスを再起動したり、オンラインで検索することができます。 開発者は、Cortana をエクスペリエンスに[統合](https://dev.windows.com/cortana)することもできます。
 
-自宅を回避する音声コマンドを使用することもできます。 たとえば、ボタンをポイント (を使用して[視線](gaze.md)またはコント ローラーは、デバイスによって異なります) と""を選択します。 他の音声コマンドを"Go home"、「大きい」、「より小さい、」含める「閉じる」と「直面 me」。
+また、音声コマンドを使用してホームにアクセスすることもできます。 たとえば、ボタン (デバイスによっては、[宝石](gaze.md)またはコントローラーを使用) をポイントし、[選択] と言います。 その他の音声コマンドには、"外出先"、"大規模"、"小さく"、"閉じる"、"顔" などがあります。
 
-## <a name="store-settings-and-system-apps"></a>ストア、設定、およびシステム アプリ
+## <a name="store-settings-and-system-apps"></a>ストア、設定、およびシステムアプリ
 
-Windows Mixed Reality は多くの組み込みのアプリなどがあります。
-* **Microsoft Store**アプリやゲームを取得するには
-* **フィードバック Hub**システムやシステム アプリに関するフィードバックを送信するには
-* **設定**システム設定を構成する ([ネットワークを含む](connecting-to-wi-fi-on-hololens.md)とシステムの更新プログラム)
-* **Microsoft Edge** web サイトを閲覧するには
-* **写真**表示し、写真やビデオを共有するには
-* **調整**(HoloLens のみ)、HoloLens、現在のユーザー エクスペリエンスを調整します。
-* **ジェスチャを説明します**(HoloLens) または**Mixed Reality の学習**については、デバイスを使用して (イマーシブ ヘッドセット)。
-* **3D ビューアー**複合現実のコンテンツで、世界を修飾するには
-* **実際にはポータルの混合**(デスクトップ) を設定して、イマーシブ ヘッドセットを管理すると、ビューを公開するヘッドセット内のライブ プレビューをストリーミングします。
-* **映画やテレビ**360 ビデオと最新のムービーおよび tv を表示するため次のように示しています。
-* **Cortana**仮想アシスタントのすべての必要があります。
-* **デスクトップ**(イマーシブ ヘッドセット)、イマーシブ ヘッドセット中のデスクトップ モニターを表示します。
-* **ファイル エクスプ ローラー**ファイルと、デバイス上にあるフォルダーにアクセス
+Windows Mixed Reality には、次のようなさまざまな組み込みアプリがあります。
+* アプリとゲームを取得するための**Microsoft Store**
+* システムアプリとシステムアプリに関するフィードバックを送信する**フィードバックハブ**
+* システム設定を構成するための**設定**(ネットワークとシステムの更新プログラムを[含む](connecting-to-wi-fi-on-hololens.md))
+* Web サイトを参照するための**Microsoft Edge**
+* 写真とビデオを表示して共有するための**写真**
+* **調整**(HoloLens のみ) HoloLens エクスペリエンスを現在のユーザーに調整します。
+* **ジェスチャの学習**デバイスの使用方法については、(HoloLens) または**Mixed Reality** (イマーシブヘッドセット) に関するページを参照してください。
+* 混合の現実コンテンツで世界を装飾する**3D ビューアー**
+* **Mixed Reality ポータル**(デスクトップ) イマーシブヘッドセットを設定して管理し、他のユーザーが表示できるようにヘッドセット内のビューのライブプレビューをストリーミングします。
+* 360ビデオと最新の映画やテレビ番組を表示するための**ムービーとテレビ**
+* すべての仮想アシスタントのニーズに対応する**Cortana**
+* **デスクトップ**(イマーシブヘッドセット) を使用してデスクトップモニターを表示します。
+* **エクスプローラー**デバイスにあるファイルとフォルダーにアクセスする
 
 ## <a name="see-also"></a>関連項目
-* [アプリのビュー](app-views.md)
-* [アニメーション コント ローラー](motion-controllers.md)
-* [ハードウェアのアクセサリ](hardware-accessories.md)
-* [HoloLens の環境に関する考慮事項](environment-considerations-for-hololens.md)
-* [3D アプリ ランチャーを実装します。](implementing-3d-app-launchers.md)
-* [Windows Mixed Reality 自宅で使用するための 3D モデルを作成します。](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+* [アプリ ビュー](app-views.md)
+* [モーション コントローラー](motion-controllers.md)
+* [ハードウェア アクセサリ](hardware-accessories.md)
+* [HoloLens の環境への配慮](environment-considerations-for-hololens.md)
+* [3D アプリランチャーの実装](implementing-3d-app-launchers.md)
+* [Windows Mixed Reality ホームで使用するための3D モデルの作成](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)

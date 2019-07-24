@@ -1,48 +1,48 @@
 ---
-title: Unity で永続化
-description: 永続化には、ユーザー、および後で使用、アプリの多くで期待される場所を探してな場所は、個々 のホログラムまたはワークスペースをピン留めことができます。
+title: Unity での永続化
+description: 永続化を使用すると、ユーザーは必要な場所に個々のホログラムやワークスペースをピン留めし、アプリの多くの使用を想定している場所で後から検索することができます。
 author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
-keywords: HoloLens、Unity の永続化
+keywords: HoloLens、永続化、Unity
 ms.openlocfilehash: b6a67e52b3a5ce724a90eb1a479c5eda74b0c4cb
-ms.sourcegitcommit: f7fc9afdf4632dd9e59bd5493e974e4fec412fc4
-ms.translationtype: HT
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59605078"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63524784"
 ---
-# <a name="persistence-in-unity"></a>Unity で永続化
+# <a name="persistence-in-unity"></a>Unity での永続化
 
-**名前空間:** *UnityEngine.XR.WSA.Persistence*<br>
+**名前空間:** *UnityEngine. XR*<br>
 **クラス:** *WorldAnchorStore*
 
-WorldAnchorStore は、アプリケーションのインスタンス間で特定の実際の位置にホログラムまま、holographic エクスペリエンスを作成するキーです。 これにより、ユーザーは個々 のホログラムまたはワークスペースを固定後は、し、検索後で、アプリのさまざまな用途で期待される場所。
+WorldAnchorStore は、ホログラムがアプリケーションのインスタンス間で特定の実際の位置に置かれる holographic エクスペリエンスを作成するための鍵です。 これにより、ユーザーは必要に応じて個々のホログラムまたはワークスペースをピン留めし、アプリの多くの使用を想定している場所で後から検索することができます。
 
-## <a name="how-to-persist-holograms-across-sessions"></a>ホログラムをセッション間で永続化する方法
+## <a name="how-to-persist-holograms-across-sessions"></a>セッション間でホログラムを永続化する方法
 
-WorldAnchorStore はセッション間での WorldAnchor の場所を保持できます。 セッション間で保持ホログラムが実際には個別に追跡する特定の世界のアンカーを使用する、Gameobject 必要があります。 多くの場合、理にかなって world アンカーを持つ GameObject ルートを作成し、子を持つローカルの位置のオフセットによってホログラムが固定されています。
+WorldAnchorStore を使用すると、WorldAnchor の場所をセッション間で永続化することができます。 セッション間でホログラムを永続化するには、特定のワールドアンカーを使用するユーザーオブジェクトを個別に追跡する必要があります。 多くの場合、ワールドアンカーを使用して作成オブジェクトのルートを作成し、ローカル位置のオフセットを使用して子のホログラムを固定することが理にかなっています。
 
-前のセッションからホログラムを読み込めません。
-1. WorldAnchorStore を取得します。
-2. 世界のアンカーの id を提供する世界アンカーに関連するアプリ データの読み込み
-3. その id から世界アンカーを読み込む
+以前のセッションからホログラムを読み込むには:
+1. WorldAnchorStore を取得する
+2. ワールドアンカーに関連するアプリデータを読み込んで、ワールドアンカーの id を提供します
+3. Id からワールドアンカーを読み込みます
 
-今後のセッション ホログラムを保存します。
-1. WorldAnchorStore を取得します。
-2. Id を指定する世界アンカーを保存します。
-3. Id と共に世界アンカーに関連するアプリのデータを保存します。
+将来のセッションのホログラムを保存するには:
+1. WorldAnchorStore を取得する
+2. Id を指定してワールドアンカーを保存する
+3. Id と共に世界のアンカーに関連するアプリデータを保存する
 
-### <a name="getting-the-worldanchorstore"></a>WorldAnchorStore を取得します。
+### <a name="getting-the-worldanchorstore"></a>WorldAnchorStore を取得する
 
-操作を実行すると移動する準備ができましたがわかるように、周り WorldAnchorStore への参照を保持します。 呼び出すしたいので、これは、非同期呼び出し、可能性のある開始とすぐ、
+WorldAnchorStore への参照を保持して、操作を実行する準備ができていることを確認します。 これは非同期呼び出しであるため、起動直後にを呼び出す必要があります。
 
 ```
 WorldAnchorStore.GetAsync(StoreLoaded);
 ```
 
-StoreLoaded は、ここで、WorldAnchorStore の読み込みが完了すると、ハンドラーを示します。
+この場合、StoreLoaded は、WorldAnchorStore が読み込みを完了したときのハンドラーです。
 
 ```
 private void StoreLoaded(WorldAnchorStore store)
@@ -51,11 +51,11 @@ private void StoreLoaded(WorldAnchorStore store)
 }
 ```
 
-保存および特定の世界のアンカーの読み込みに使用する WorldAnchorStore への参照があるようになりました。
+ここでは、特定のワールドアンカーを保存して読み込むために使用する WorldAnchorStore への参照を取得しました。
 
-### <a name="saving-a-worldanchor"></a>WorldAnchor を保存しています
+### <a name="saving-a-worldanchor"></a>WorldAnchor の保存
 
-を保存するには、だけに保存していること確認し、保存する場合、選択する前に先ほど WorldAnchor で渡しますの名前を付ける必要があります。 注: (ストアが失敗は、同じ文字列に 2 つのアンカーを保存しようとしています。保存は false を返します)。 新しいものを保存する前に、前の保存を削除する必要があります。
+保存するには、保存する内容に名前を付け、保存する前に WorldAnchor に渡す必要があります。 注: 2 つのアンカーを同じ文字列に保存しようとすると失敗します (ストア。保存すると false が返されます)。 新しい保存を保存する前に、前の保存を削除する必要があります。
 
 ```
 private void SaveGame()
@@ -69,9 +69,9 @@ private void SaveGame()
 }
 ```
 
-### <a name="loading-a-worldanchor"></a>WorldAnchor の読み込み
+### <a name="loading-a-worldanchor"></a>WorldAnchor を読み込んでいます
 
-読み込めません。
+読み込み:
 
 ```
 private void LoadGame()
@@ -85,9 +85,9 @@ private void LoadGame()
 }
 ```
 
-さらにストアを使用できます。以前保存したアンカーを削除する Delete() とストア。Clear() 以前に保存したすべてのデータを削除します。
+また、ストアを使用することもできます。Delete () を削除して、以前に保存して保存したアンカーを削除します。以前に保存したデータをすべて削除するには、() をクリアします。
 
-### <a name="enumerating-existing-anchors"></a>既存のアンカーを列挙します。
+### <a name="enumerating-existing-anchors"></a>既存のアンカーの列挙
 
 以前に保存されたアンカーを検出するには、GetAllIds を呼び出します。
 
@@ -99,15 +99,15 @@ for (int index = 0; index < ids.Length; index++)
 }
 ```
 
-## <a name="persisting-holograms-for-multiple-devices"></a>複数のデバイスの永続化するホログラム
+## <a name="persisting-holograms-for-multiple-devices"></a>複数のデバイスのホログラムの永続化
 
-使用することができます<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>をローカル WorldAnchor、それらのデバイスが同じ一緒に存在しない場合でも、アプリが複数の HoloLens、iOS、Android デバイス間で検索しできますから永続的なクラウド アンカーを作成するには時間です。  クラウド アンカーが永続的なので、時間の経過と共に複数のデバイスできます各を参照してください同じ物理的な場所でそのアンカーに対して相対的にレンダリングされたコンテンツ。
+<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>を使用して、ローカル WorldAnchor から持続性のあるクラウドアンカーを作成できます。これにより、アプリは複数の HoloLens、iOS、および Android デバイスが同時に存在しない場合でも、そのデバイスを検索できます。  クラウドアンカーは永続的であるため、複数のデバイスが一定期間にわたって、同じ物理的な場所にあるそのアンカーを基準としてレンダリングされたコンテンツを表示できます。
 
-5 分間試して、Unity での共有エクスペリエンスの構築を開始、<a href="https://docs.microsoft.com/azure/spatial-anchors/unity-overview" target="_blank">空間アンカー Unity の Azure クイック スタート</a>します。
+Unity で共有エクスペリエンスの構築を開始するには、5分間の<a href="https://docs.microsoft.com/azure/spatial-anchors/unity-overview" target="_blank">Azure 空間アンカー unity クイックスタート</a>をお試しください。
 
-空間のアンカーを Azure で稼働しているを開発したとして、<a href="https://docs.microsoft.com/azure/spatial-anchors/concepts/create-locate-anchors-unity" target="_blank">を作成し、Unity 内でアンカーを検索</a>します。
+Azure 空間アンカーを使用して実行した後は、 <a href="https://docs.microsoft.com/azure/spatial-anchors/concepts/create-locate-anchors-unity" target="_blank">Unity でアンカーを作成して見つける</a>ことができます。
 
 ## <a name="see-also"></a>関連項目
-* [空間アンカーの永続化](coordinate-systems.md#spatial-anchor-persistence)
-* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure の空間アンカー</a>
-* <a href="https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors" target="_blank">Azure 空間アンカー Unity 用の SDK</a>
+* [空間アンカーの永続性](coordinate-systems.md#spatial-anchor-persistence)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
+* <a href="https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors" target="_blank">Azure 空間アンカー SDK for Unity</a>

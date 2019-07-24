@@ -1,11 +1,11 @@
 ---
-title: デバイス ポータル API リファレンス
-description: HoloLens で Windows Device Portal の API リファレンス
+title: デバイスポータル API リファレンス
+description: HoloLens の Windows デバイスポータルの API リファレンス
 author: JonMLyons
 ms.author: JLyons
 ms.date: 03/21/2018
 ms.topic: article
-keywords: HoloLens、Windows Device Portal の API
+keywords: HoloLens、Windows デバイスポータル、API
 ms.openlocfilehash: 4b5b48c13b1b7ec8bfdf447f42097a8448b6a0e6
 ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
 ms.translationtype: MT
@@ -13,125 +13,125 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/09/2019
 ms.locfileid: "67694430"
 ---
-# <a name="device-portal-api-reference"></a>デバイス ポータル API リファレンス
+# <a name="device-portal-api-reference"></a>デバイスポータル API リファレンス
 
-内のすべて、 [Windows Device Portal](using-the-windows-device-portal.md)データにアクセスし、デバイスの管理をプログラム的に使用できる REST API の上に構築されます。
+[Windows デバイスポータル](using-the-windows-device-portal.md)のすべての機能は REST API の上に構築されており、データにアクセスしたり、デバイスをプログラムで制御したりするために使用できます。
 
-## <a name="app-deloyment"></a>アプリの展開
+## <a name="app-deloyment"></a>アプリの撮る
 
 **/api/app/packagemanager/package (削除)**
 
-アプリをアンインストールします。
+アプリをアンインストールします
 
-Parameters
-* パッケージ:アンインストールするパッケージのファイル名。
+パラメーター
+* パックアンインストールするパッケージのファイル名。
 
 **/api/app/packagemanager/package (POST)**
 
-アプリをインストールします。
+アプリをインストールします
 
-Parameters
-* パッケージ:パッケージをインストールするのファイル名。
+パラメーター
+* パックインストールするパッケージのファイル名。
 
 ペイロード
-* 準拠したマルチパートの http 本文
+* マルチパート準拠の http 本文
 
 **/api/app/packagemanager/packages (GET)**
 
-詳細と、システムにインストールされているアプリの一覧を取得します。
+システムにインストールされているアプリの一覧を詳細と共に取得します。
 
-戻り値のデータ
-* 詳細とインストールされているパッケージの一覧
+データを返す
+* インストールされているパッケージの一覧と詳細
 
 **/api/app/packagemanager/state (GET)**
 
-アプリのインストールの進行状況での状態を取得します。
+進行中のアプリのインストールの状態を取得します
 
 ## <a name="dump-collection"></a>ダンプの収集
 
 **/api/debug/dump/usermode/crashcontrol (削除)**
 
-サイドロードされたアプリのダンプの収集がクラッシュする無効にします。
+サイドロードアプリのクラッシュダンプの収集を無効にします。
 
-Parameters
+パラメーター
 * packageFullname: パッケージ名
 
 **/api/debug/dump/usermode/crashcontrol (GET)**
 
-クラッシュ ダンプの収集にサイドロードしたアプリの設定を取得します。
+サイドロード apps のクラッシュダンプの収集の設定を取得します。
 
-Parameters
+パラメーター
 * packageFullname: パッケージ名
 
 **/api/debug/dump/usermode/crashcontrol (POST)**
 
-有効にし、サイドロードされたアプリのダンプ制御の設定の設定
+サイドロードアプリのダンプ制御設定を有効にして設定します
 
-Parameters
+パラメーター
 * packageFullname: パッケージ名
 
 **/api/debug/dump/usermode/crashdump (削除)**
 
-サイドロードされたアプリのクラッシュ ダンプを削除します。
+サイドロードアプリのクラッシュダンプを削除します。
 
-Parameters
+パラメーター
 * packageFullname: パッケージ名
-* ファイル名: ダンプ ファイルの名前
+* fileName: ダンプファイル名
 
 **/api/debug/dump/usermode/crashdump (GET)**
 
-サイドロードされたアプリのクラッシュ ダンプを取得します。
+サイドロードアプリのクラッシュダンプを取得します。
 
-Parameters
+パラメーター
 * packageFullname: パッケージ名
-* ファイル名: ダンプ ファイルの名前
+* fileName: ダンプファイル名
 
-戻り値のデータ
-* ダンプ ファイル。 WinDbg または Visual Studio での検査します。
+データを返す
+* ダンプファイル。 WinDbg または Visual Studio を使用して検査する
 
 **/api/debug/dump/usermode/dumps (GET)**
 
-サイドロードしたアプリのすべてのクラッシュ ダンプのリストを返します
+サイドロードアプリのすべてのクラッシュダンプの一覧を返します。
 
-戻り値のデータ
-* サイド ロード アプリごとの一連のクラッシュ ダンプします。
+データを返す
+* サイドロードされたアプリごとのクラッシュダンプの一覧
 
 ## <a name="etw"></a>ETW
 
 **/api/etw/providers (GET)**
 
-登録されているプロバイダーを列挙します。
+登録されたプロバイダーを列挙します
 
-戻り値のデータ
-* プロバイダー、フレンドリ名と GUID の一覧
+データを返す
+* プロバイダー、フレンドリ名、GUID の一覧
 
 **/api/etw/session/realtime (GET/WebSocket)**
 
-リアルタイムの ETW セッションを作成します。websocket 経由で管理します。
+リアルタイム ETW セッションを作成します。websocket 経由で管理されます。
 
-戻り値のデータ
-* 有効なプロバイダーから ETW イベント
+データを返す
+* 有効なプロバイダーからの ETW イベント
 
 ## <a name="holographic-os"></a>ホログラフィック OS
 
 **/api/holographic/os/etw/customproviders (GET)**
 
-システムに登録されていない HoloLens 特定 ETW プロバイダーの一覧を返します
+システムに登録されていない HoloLens 固有の ETW プロバイダーの一覧を返します。
 
 **/api/holographic/os/services (GET)**
 
-実行されているすべてのサービスの状態を返します。
+実行中のすべてのサービスの状態を返します。
 
 **/api/holographic/os/settings/ipd (GET)**
 
-ミリメートル単位ストアド IPD (Interpupillary 距離) を取得します。
+格納されている IPD (Interpupillary distance) をミリメートル単位で取得します。
 
 **/api/holographic/os/settings/ipd (POST)**
 
 IPD を設定します。
 
-Parameters
-* ipd:ミリメートル単位で設定される新しい IPD 値
+パラメーター
+* ipdミリメートル単位で設定する新しい IPD 値
 
 **/api/holographic/os/webmanagement/settings/https (GET)**
 
@@ -139,63 +139,63 @@ Device Portal の HTTPS 要件を取得する
 
 **/api/holographic/os/webmanagement/settings/https (POST)**
 
-デバイスのポータルの HTTPS 要件を設定します。
+デバイスポータルの HTTPS 要件を設定します。
 
-Parameters
-* 必須: yes、no または既定値
+パラメーター
+* 必須: はい、いいえ、または既定値
 
-## <a name="holographic-perception"></a>Holographic Perception
+## <a name="holographic-perception"></a>Holographic の認識
 
 **/api/holographic/perception/client (GET/WebSocket)**
 
-Websocket のアップグレードを受け取り、30 fps で更新プログラムを送信する perception クライアントを実行します。
+Websocket のアップグレードを受け入れ、30 fps で更新を送信する認識クライアントを実行します。
 
-Parameters
-* clientmode:"active"強制的 visual 追跡モード受動的に確立されることはできません
+パラメーター
+* clientmode: "active" は、受動的に確立できないときにビジュアル追跡モードを強制します。
 
-## <a name="holographic-thermal"></a>Holographic 温度
+## <a name="holographic-thermal"></a>Holographic Thermal
 
 **/api/holographic/thermal/stage (GET)**
 
-(通常 0、1 ウォーム、重要な 2) のデバイスの温度のステージを取得します。
+デバイスの温度ステージを取得する (通常は0、1ウォーム、2重大)
 
-## <a name="perception-simulation-control"></a>Perception シミュレーション コントロール
+## <a name="perception-simulation-control"></a>認識シミュレーションの制御
 
 **/api/holographic/simulation/control/mode (GET)**
 
-シミュレーションのモードを取得します。
+シミュレーションモードを取得する
 
 **/api/holographic/simulation/control/mode (POST)**
 
-シミュレーションのモードを設定します。
+シミュレーションモードの設定
 
-Parameters
-* モード: シミュレーション モード: 既定では、シミュレーション、リモートのレガシ
+パラメーター
+* モード: シミュレーションモード: 既定、シミュレーション、リモート、レガシ
 
 **/api/holographic/simulation/control/stream (削除)**
 
-コントロールのストリームを削除します。
+コントロールストリームを削除します。
 
 **/api/holographic/simulation/control/stream (GET/WebSocket)**
 
-コントロールのストリームの web ソケット接続を開きます。
+コントロールストリームの web ソケット接続を開きます。
 
 **/api/holographic/simulation/control/stream (POST)**
 
-コントロールのストリームを作成する (優先度が必要) または作成されたストリーム (必要な streamId) にデータをポストします。 ポストされたデータは、' アプリケーションまたはオクテット ストリーム ' 型のことが必要です。
+コントロールストリームを作成するか (優先順位が必要)、作成されたストリームにデータを post します (streamId が必要)。 ポストされたデータは ' application/オクテット-stream ' 型である必要があります。
 
-## <a name="perception-simulation-playback"></a>Perception シミュレーションの再生
+## <a name="perception-simulation-playback"></a>認識シミュレーションの再生
 
 **/api/holographic/simulation/playback/file (削除)**
 
-録画を削除します。
+記録を削除します。
 
-Parameters
-* 録音:削除する記録の名前です。
+パラメーター
+* 録音削除する記録の名前。
 
 **/api/holographic/simulation/playback/file (POST)**
 
-録画をアップロードします。
+記録をアップロードします。
 
 **/api/holographic/simulation/playback/files (GET)**
 
@@ -203,178 +203,178 @@ Parameters
 
 **/api/holographic/simulation/playback/session (GET)**
 
-録画の現在の再生状態を取得します。
+記録の現在の再生状態を取得します。
 
-Parameters
-* 録音:記録の名前です。
+パラメーター
+* 録音記録の名前。
 
 **/api/holographic/simulation/playback/session/file (削除)**
 
-録画をアンロードします。
+記録をアンロードします。
 
-Parameters
-* 録音:アンロードする記録の名前です。
+パラメーター
+* 録音アンロードする記録の名前。
 
 **/api/holographic/simulation/playback/session/file (POST)**
 
-録画を読み込みます。
+記録を読み込みます。
 
-Parameters
-* 録音:記録を読み込むの名前です。
+パラメーター
+* 録音読み込む記録の名前。
 
 **/api/holographic/simulation/playback/session/files (GET)**
 
-読み込まれたすべての記録を取得します。
+読み込まれたすべての録音を取得します。
 
 **/api/holographic/simulation/playback/session/pause (POST)**
 
 記録を一時停止します。
 
-Parameters
-* 録音:記録の名前です。
+パラメーター
+* 録音記録の名前。
 
 **/api/holographic/simulation/playback/session/play (POST)**
 
-記録を再生します。
+録音を再生します。
 
-Parameters
-* 録音:記録の名前です。
+パラメーター
+* 録音記録の名前。
 
 **/api/holographic/simulation/playback/session/stop (POST)**
 
-録画を停止します。
+記録を停止します。
 
-Parameters
-* 録音:記録の名前です。
+パラメーター
+* 録音記録の名前。
 
 **/api/holographic/simulation/playback/session/types (GET)**
 
-読み込まれた記録では、データの種類を取得します。
+読み込まれた記録のデータの種類を取得します。
 
-Parameters
-* 録音:記録の名前です。
+パラメーター
+* 録音記録の名前。
 
-## <a name="perception-simulation-recording"></a>Perception シミュレーションの記録
+## <a name="perception-simulation-recording"></a>認識のシミュレーション記録
 
 **/api/holographic/simulation/recording/start (POST)**
 
-録画を開始します。 1 つの記録のみを一度にアクティブにできます。 Head、手、spatialMapping または環境のいずれかを設定する必要があります。
+記録を開始します。 一度にアクティブにできる記録は1つだけです。 ヘッド、ハンド、spatialMapping、または環境のいずれかを設定する必要があります。
 
-Parameters
-* ヘッド:レコード ヘッド データを 1 に設定します。
-* ハンズ:1 に設定するには手の形のデータを記録します。
-* spatialMapping:空間マッピングを記録する、1 に設定します。
-* 環境:環境のデータを記録する、1 に設定します。
-* 名:記録の名前です。
-* singleSpatialMappingFrame:空間マッピングは 1 つのフレームのみを記録する、1 に設定します。
+パラメーター
+* 矢印ヘッドデータを記録するには、を1に設定します。
+* みるハンドデータを記録するには、を1に設定します。
+* spatialMapping :空間マッピングを記録するには、1に設定します。
+* environment環境データを記録するには、を1に設定します。
+* 指定記録の名前。
+* singleSpatialMappingFrame :1に設定すると、空間マッピングフレームが1つだけ記録されます。
 
 **/api/holographic/simulation/recording/status (GET)**
 
-状態の記録を取得します。
+記録の状態を取得します。
 
 **/api/holographic/simulation/recording/stop (GET)**
 
-現在の記録を停止します。 記録は、ファイルとして返されます。
+現在の記録を停止します。 記録はファイルとして返されます。
 
 ## <a name="mixed-reality-capture"></a>Mixed Reality キャプチャ
 
 **/api/holographic/mrc/file (GET)**
 
-デバイスから複合現実ファイルをダウンロードします。 使用 op ストリーミング ストリームのクエリ パラメーターを = です。
+混合の現実ファイルをデバイスからダウンロードします。 ストリーミングには op = stream クエリパラメーターを使用します。
 
-Parameters
-* ファイル名:取得するビデオ ファイルのエンコード、名前、hex64
+パラメーター
+* /db取得するビデオファイルの名前 (hex64 encoded)
 * op: ストリーム
 
 **/api/holographic/mrc/file (削除)**
 
-デバイスから録画複合現実を削除します。
+デバイスから mixed reality の記録を削除します。
 
-Parameters
-* ファイル名:削除するファイルのエンコード、名前、hex64
+パラメーター
+* /db削除するファイルの名前、hex64 encoded
 
 **/api/holographic/mrc/files (GET)**
 
-デバイスに保存された複合現実ファイルの一覧を返します
+デバイスに格納されている mixed reality ファイルの一覧を返します。
 
 **/api/holographic/mrc/photo (POST)**
 
-複合現実の写真を撮影し、デバイス上のファイルを作成します
+Mixed reality の写真を取得し、デバイスにファイルを作成します。
 
-Parameters
-* holo: キャプチャ ホログラム: true または false (既定値は false)
-* pv: キャプチャ PV カメラ: true または false (既定値は false)
-* RenderFromCamera:写真/ビデオのカメラの観点からレンダリングを (HoloLens 2 のみ): true または false (既定値は true)
+パラメーター
+* holo: キャプチャホログラム: true または false (既定値は false)
+* pv: キャプチャの PV カメラ: true または false (既定値は false)
+* RenderFromCamera:(HoloLens 2 のみ) 写真/ビデオカメラの視点からレンダー: true または false (既定値は true)
 
 **/api/holographic/mrc/settings (GET)**
 
-取得、既定値に、複合現実設定のキャプチャ
+既定の mixed reality キャプチャ設定を取得します。
 
 **/api/holographic/mrc/settings (POST)**
 
-セットの既定値に、複合現実設定のキャプチャ。  これらの設定の一部は、システムの MRC 写真とビデオのキャプチャに適用されます。
+既定の mixed reality キャプチャ設定を設定します。  これらの設定の一部は、システムの MRC の写真とビデオキャプチャに適用されます。
 
 **/api/holographic/mrc/status (GET)**
 
-記録された複合現実 (実行、停止) の状態を取得します。
+記録された mixed reality の状態を取得します (実行中、停止済み)
 
 **/api/holographic/mrc/thumbnail (GET)**
 
-指定したファイルのサムネイル画像を取得します。
+指定したファイルのサムネイルイメージを取得します。
 
-Parameters
-* ファイル名:エンコードされる場合は、サムネイルを要求する対象のファイルの名前、hex64
+パラメーター
+* /dbサムネイルが要求されているファイルの名前、hex64 encoded
 
 **/api/holographic/mrc/video/control/start (POST)**
 
-複合現実の録音を開始します。
+Mixed reality の記録を開始します
 
-Parameters
-* holo: キャプチャ ホログラム: true または false (既定値は false)
-* pv: キャプチャ PV カメラ: true または false (既定値は false)
-* mic: キャプチャ マイク: true または false (既定値は false)
-* ループバック: アプリの音声のキャプチャ: true または false (既定値は false)
-* RenderFromCamera:写真/ビデオのカメラの観点からレンダリングを (HoloLens 2 のみ): true または false (既定値は true)
-* vstab:有効にするビデオ安定化の (HoloLens 2 のみ): true または false (既定値は true)
-* vstabbuffer:ビデオ安定化バッファーの待機時間を (HoloLens 2 のみ):0 ~ 30 フレーム (既定値は 15 フレーム)
+パラメーター
+* holo: キャプチャホログラム: true または false (既定値は false)
+* pv: キャプチャの PV カメラ: true または false (既定値は false)
+* mic: キャプチャマイク: true または false (既定値は false)
+* ループバック: キャプチャアプリオーディオ: true または false (既定値は false)
+* RenderFromCamera:(HoloLens 2 のみ) 写真/ビデオカメラの視点からレンダー: true または false (既定値は true)
+* vstab :(HoloLens 2 のみ) ビデオ安定化を有効にします (true または false) (既定値は true)
+* vstabbuffer:(HoloLens 2 のみ) ビデオ安定化バッファー待機時間:0 ~ 30 フレーム (既定値は15フレーム)
 
 **/api/holographic/mrc/video/control/stop (POST)**
 
-停止現在混合現実の記録
+現在の mixed reality 記録を停止します
 
-## <a name="mixed-reality-streaming"></a>複合現実のストリーミング
+## <a name="mixed-reality-streaming"></a>Mixed Reality ストリーミング
 
-HoloLens では、フラグメント化 mp4 のチャンクのダウンロードを使用して複合現実のライブ プレビューをサポートします。
+HoloLens は、フラグメント化された mp4 のチャンクダウンロードを使用して、混合現実のライブプレビューをサポートします。
 
-複合現実のストリームは、キャプチャされるものを制御するパラメーターの同じセットを共有します。
-* holo: キャプチャ ホログラム: true または false
-* pv: キャプチャ PV カメラ: true または false
-* mic: キャプチャ マイク: true または false
-* ループバック: アプリの音声のキャプチャ: true または false
+混合現実のストリームは、キャプチャ対象を制御するために、同じパラメーターのセットを共有します。
+* holo: キャプチャホログラム: true または false
+* pv: キャプチャの PV カメラ: true または false
+* mic: マイクのキャプチャ: true または false
+* ループバック: アプリオーディオのキャプチャ: true または false
 
-指定しないと、これらの場合: ホログラム、カメラの写真とビデオ、およびアプリの音声がキャプチャします。<br>
-指定されている場合: 指定されていないパラメーターは既定で false
+これらのいずれも指定されていない場合、ホログラム、photo/video カメラ、アプリオーディオがキャプチャされます。<br>
+指定されている場合: 未指定のパラメーターは既定で false に設定されます。
 
 省略可能なパラメーター (HoloLens 2 のみ)
-* RenderFromCamera: 写真/ビデオのカメラの観点からを表示: true または false (既定値は true)
-* vstab: ビデオ安定化を有効にする: true または false (既定値は false)
-* vstabbuffer: ビデオ安定化バッファーの待機時間。0 ~ 30 フレーム (既定値は 15 フレーム)
+* RenderFromCamera: 写真/ビデオカメラから見たレンダリング: true または false (既定値は true)
+* vstab: ビデオ安定化を有効にします。 true または false (既定値は false)
+* vstabbuffer: ビデオ安定化バッファーの待機時間:0 ~ 30 フレーム (既定値は15フレーム)
 
 **/api/holographic/stream/live.mp4 (GET)**
 
-1280x720p 30 fps 5Mbit ストリーム。
+1280x720p 30 fps 5 Mbit ストリーム。
 
 **/api/holographic/stream/live_high.mp4 (GET)**
 
-1280x720p 30 fps 5Mbit ストリーム。
+1280x720p 30 fps 5 Mbit ストリーム。
 
 **/api/holographic/stream/live_med.mp4 (GET)**
 
-854x480p 30 fps 2.5Mbit ストリーム。
+854x480p 30 fps 2.5 Mbit ストリーム。
 
 **/api/holographic/stream/live_low.mp4 (GET)**
 
-428x240p 15 fps 0.6Mbit ストリーム。
+428x240p 15fps 0.6 Mbit ストリーム。
 
 ## <a name="networking"></a>ネットワーク
 
@@ -384,112 +384,112 @@ HoloLens では、フラグメント化 mp4 のチャンクのダウンロード
 
 ## <a name="os-information"></a>OS 情報
 
-**/api/os/info (GET)**
+**/api/info (GET)**
 
-オペレーティング システムの情報を取得します。
+オペレーティングシステム情報を取得します。
 
-**/api/os/machinename (GET)**
+**/api/machinename (GET)**
 
 コンピューター名を取得します。
 
-**/api/os/machinename (POST)**
+**/api/machinename (POST)**
 
-コンピューター名を設定します。
+コンピューター名を設定します
 
-Parameters
-* 名:新しいコンピューター名、hex64 エンコードされる場合に設定するには
+パラメーター
+* 指定に設定する新しいコンピューター名 (hex64 encoded)
 
 ## <a name="performance-data"></a>パフォーマンス データ
 
 **/api/resourcemanager/processes (GET)**
 
-詳細でプロセスを実行の一覧を返します
+詳細を含む実行中のプロセスの一覧を返します
 
-戻り値のデータ
-* プロセスと各プロセスの詳細の一覧が JSON
+データを返す
+* 各プロセスのプロセスと詳細の一覧を含む JSON
 
 **/api/resourcemanager/systemperf (GET)**
 
-(読み取り/書き込みの I/O、メモリの統計情報などシステム パフォーマンスの統計情報を返しますです。
+システムパフォーマンス統計情報 (i/o 読み取り/書き込み、メモリ統計など) を返します。
 
-戻り値のデータ
-* システム情報を使用して、JSON:CPU、GPU、メモリ、ネットワーク、IO
+データを返す
+* システム情報を含む JSON:CPU、GPU、メモリ、ネットワーク、IO
 
 ## <a name="power"></a>Power
 
-**/api/power/battery (GET)**
+**/api/バッテリ (GET)**
 
 現在のバッテリの状態を取得します。
 
-**/api/power/state (GET)**
+**//(GET)**
 
-システムの低電力状態を確認します
+システムが低電力状態であるかどうかを確認します
 
 ## <a name="remote-control"></a>リモート コントロール
 
 **/api/control/restart (POST)**
 
-ターゲット デバイスを再起動します。
+ターゲットデバイスを再起動します
 
 **/api/control/shutdown (POST)**
 
-ターゲット デバイスをシャット ダウン
+ターゲットデバイスをシャットダウンします
 
 ## <a name="task-manager"></a>タスク マネージャー
 
 **/api/taskmanager/app (削除)**
 
-最新のアプリを停止します。
+モダンアプリを停止します
 
-Parameters
-* パッケージ:エンコードされた hex64、アプリ パッケージの完全な名前
-* 強制:強制的にすべてのプロセスを停止する (= [はい])
+パラメーター
+* パックアプリケーションパッケージの完全名、hex64 encoded
+* forcestop:すべてのプロセスを強制的に停止する (= yes)
 
 **/api/taskmanager/app (POST)**
 
-最新のアプリを起動します。
+モダンアプリを開始します
 
-Parameters
-* appid:開始するアプリの PRAID、hex64 エンコード
-* パッケージ:エンコードされた hex64、アプリ パッケージの完全な名前
+パラメーター
+* appidアプリの開始、hex64 エンコード
+* パックアプリケーションパッケージの完全名、hex64 encoded
 
 ## <a name="wifi-management"></a>WiFi の管理
 
 **/api/wifi/interfaces (GET)**
 
-ワイヤレス ネットワーク インターフェイスを列挙します。
+ワイヤレスネットワークインターフェイスを列挙します。
 
-戻り値のデータ
-* (GUID、説明など) の詳細を含むワイヤレス インターフェイスの一覧
+データを返す
+* 詳細 (GUID、説明など) があるワイヤレスインターフェイスの一覧
 
 **/api/wifi/network (削除)**
 
-指定されたインターフェイス上のネットワークに関連付けられているプロファイルを削除します。
+指定したインターフェイスのネットワークに関連付けられているプロファイルを削除します。
 
-Parameters
-* インターフェイス: ネットワーク インターフェイスの guid
+パラメーター
+* インターフェイス: ネットワークインターフェイス guid
 * プロファイル: プロファイル名
 
 **/api/wifi/networks (GET)**
 
-指定したネットワーク インターフェイス上でワイヤレス ネットワークを列挙します。
+指定されたネットワークインターフェイスのワイヤレスネットワークを列挙します
 
-Parameters
-* インターフェイス: ネットワーク インターフェイスの guid
+パラメーター
+* インターフェイス: ネットワークインターフェイス guid
 
-戻り値のデータ
-* ネットワーク インターフェイスの詳細に検出されたワイヤレス ネットワークの一覧
+データを返す
+* ネットワークインターフェイスで検出されたワイヤレスネットワークの一覧と詳細
 
 **/api/wifi/network (POST)**
 
-接続または指定されたインターフェイス上のネットワークに接続を切断
+指定されたインターフェイスでネットワークに接続または切断します。
 
-Parameters
-* インターフェイス: ネットワーク インターフェイスの guid
-* ssid: ssid、hex64 への接続にエンコードします。
+パラメーター
+* インターフェイス: ネットワークインターフェイス guid
+* ssid: 接続先の ssid、hex64 encoded、
 * op: 接続または切断
-* createprofile: はいまたは no
-* キー: エンコードされた共有のキー、hex64
+* createprofile: はいまたはいいえ
+* キー: shared key、hex64 encoded
 
 ## <a name="windows-performance-recorder"></a>Windows パフォーマンス レコーダー
 
@@ -498,35 +498,35 @@ Parameters
 WPR プロファイルをアップロードし、アップロードされたプロファイルを使用してトレースを開始します。
 
 ペイロード
-* 準拠したマルチパートの http 本文
+* マルチパート準拠の http 本文
 
-戻り値のデータ
+データを返す
 * WPR セッションの状態を返します。
 
 **/api/wpr/status (GET)**
 
 WPR セッションの状態を取得します。
 
-戻り値のデータ
+データを返す
 * WPR セッションの状態。
 
 **/api/wpr/trace (GET)**
 
-WPR (パフォーマンス) のトレース セッションを停止します。
+WPR (パフォーマンス) トレースセッションを停止します
 
-戻り値のデータ
-* トレース ETL ファイルを返します
+データを返す
+* トレース ETL ファイルを返します。
 
 **/api/wpr/trace (POST)**
 
-セッションのトレース WPR (パフォーマンス) を開始します。
+WPR (パフォーマンス) トレースセッションを開始します
 
-Parameters
-* プロファイル:プロファイルの名前。 使用可能なプロファイル perfprofiles/profiles.json に格納されます。
+パラメーター
+* profileプロファイル名。 使用可能なプロファイルは perfprofiles/profiles. json に格納されます。
 
-戻り値のデータ
-* 起動時に、WPR セッションの状態を返します。
+データを返す
+* 開始時に、WPR セッションの状態を返します。
 
 ## <a name="see-also"></a>関連項目
 * [Windows Device Portal を使用する](using-the-windows-device-portal.md)
-* [デバイス ポータル core API リファレンス (UWP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [デバイスポータルコア API リファレンス (UWP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

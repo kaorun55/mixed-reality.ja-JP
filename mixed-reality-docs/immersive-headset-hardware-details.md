@@ -1,36 +1,36 @@
 ---
-title: イマーシブ ヘッドセット ハードウェアの詳細
-description: Windows Mixed Reality イマーシブ ヘッドセット、VR を徹底解剖 (外部セットアップに必要な) の追跡と配信の仕様について説明します。
+title: イマーシブヘッドセットハードウェアの詳細
+description: Windows Mixed Reality イマーシブヘッドセットの仕様の概要を説明します。これは、(外部セットアップは必要ありません) 内部アウト追跡と共に VR を提供します。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: vr、ハードウェア、仕様、仕様、技術、センサー、光、表示
+keywords: vr、ハードウェア、仕様、仕様、技術、センサー、光学、ディスプレイ
 ms.openlocfilehash: f68cdf130a2d19d3a4d47c71ccb19406cff3e60f
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59599311"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63515276"
 ---
-# <a name="immersive-headset-hardware-details"></a>イマーシブ ヘッドセット ハードウェアの詳細
+# <a name="immersive-headset-hardware-details"></a>イマーシブヘッドセットハードウェアの詳細
 
 ![さまざまな Windows Mixed Reality ヘッドセット](images/MR-headsets.png)
 
-開発者がグローバルに購入数の小売店でパブリックに利用可能な Windows Mixed Reality イマーシブ ヘッドセットのいずれかだけでなく[オンライン Microsoft Store](https://www.microsoft.com/store/collections/VRandMixedrealityheadsets)、複合現実の開発に使用します。 これらのイマーシブ ヘッドセットは、組み込み内部アウト追跡、つまり購入または外部トラッカーをインストールまたは壁にセンサーを配置する必要はありませんを提供します。 複雑なセットアップ、プラグ アンド プレイのだけではありません。
+開発者は、世界中の多数の小売店で一般公開されている Windows 混在環境のイマーシブヘッドセットを購入できます。また、[オンライン Microsoft Store](https://www.microsoft.com/store/collections/VRandMixedrealityheadsets)を利用し、mixed reality 開発に使用することもできます。 これらのイマーシブヘッドセットは、組み込みの内部 out 追跡を提供します。つまり、外部のトラッカーを購入またはインストールしたり、センサーを壁に配置したりする必要はありません。 複雑な設定はありません。プラグアンドプレイだけです。
 
 ## <a name="device-specifications"></a>デバイスの仕様
-* 2 つの高解像度の液晶ディスプレイで 1440 x 1440 (、Samsung ッドマウント旅機能、AMOLED が 1440 x 1,600 解像度で表示)
-* 表示の更新の評価に最大 90 Hz (ネイティブ)
-* (Samsung ッドマウントの旅 』 は、組み込みのヘッドフォンとマイクを含む) の 3.5 mm ジャックから組み込みのオーディオ出力とマイクのサポートします。
-* HDMI 2.0 (表示) と USB 3.0 (データ) の 1 本のケーブル接続
-* 内部の追跡
+* 2つの高解像度液体 crystal が 1440 x 1440 に表示されます (Samsung HMD Odyssey の機能は、1440 x 1600 解像度で AMOLED に表示されます)
+* 最大 90 Hz (ネイティブ) のリフレッシュレートを表示する
+* 3\.5 mm ジャックを介した組み込みのオーディオ出力とマイクサポート (Samsung HMD Odyssey には組み込みのヘッドホンとマイクが含まれています)
+* HDMI 2.0 (ディスプレイ) と USB 3.0 (データ) を備えたシングルケーブル (接続用)
+* 内部 out 追跡
 
-## <a name="input-support"></a>入力のサポート
-* [アニメーション コント ローラー](motion-controllers.md)
-* [UWP でサポートされているゲーム パッド](hardware-accessories.md)
+## <a name="input-support"></a>入力サポート
+* [モーション コントローラー](motion-controllers.md)
+* [UWP でサポートされているゲームパッド](hardware-accessories.md)
 * [マウスとキーボード](hardware-accessories.md)
-* [音声](voice-input.md)(接続されているヘッドセットまたはマイク) 経由
+* [音声](voice-input.md)(接続されているヘッドセットまたはマイク経由)
 
 ## <a name="see-also"></a>関連項目
-* [ツールをインストールします。](install-the-tools.md)
+* [ツールのインストール](install-the-tools.md)
