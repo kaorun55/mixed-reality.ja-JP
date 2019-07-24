@@ -1,11 +1,11 @@
 ---
-title: HoloLens の Wi-fi に接続します。
-description: HoloLens でワイヤレス インターネットに接続する方法とデバイスの IP アドレスを識別する方法について説明します。
+title: HoloLens で Wi-fi に接続する
+description: HoloLens を使用してワイヤレスインターネットに接続する方法と、デバイスの IP アドレスを識別する方法について説明します。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 09/27/2018
 ms.topic: article
-keywords: HoloLens, wifi, wireless, internet, ip, ip address
+keywords: HoloLens、wifi、ワイヤレス、インターネット、ip、ip アドレス
 ms.openlocfilehash: b064514124d861c0734ca51b3878d4a68b592fab
 ms.sourcegitcommit: f5c1dedb3b9e29f27f627025b9e7613931a7ce18
 ms.translationtype: MT
@@ -13,63 +13,63 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/28/2019
 ms.locfileid: "64670114"
 ---
-# <a name="connecting-to-wi-fi-on-hololens"></a>HoloLens の Wi-fi に接続します。
+# <a name="connecting-to-wi-fi-on-hololens"></a>HoloLens で Wi-fi に接続する
 
-HoloLens には、802.11 ac が含まれています-対応、2 倍の 2 つの Wi-fi ラジオします。 HoloLens の Wi-fi ネットワークに接続することは、Windows 10 デスクトップまたはモバイル デバイスの Wi-fi ネットワークに接続に似ています。
+HoloLens には、802.11 ac 対応、2x2 Wi-fi 無線が搭載されています。 HoloLens を Wi-fi ネットワークに接続することは、Windows 10 デスクトップまたはモバイルデバイスを Wi-fi ネットワークに接続することと似ています。
 
-![HoloLens の Wi-fi 設定](images/wifi-hololens-600px.jpg)
+![HoloLens Wi-fi 設定](images/wifi-hololens-600px.jpg)
 
-## <a name="connecting-to-a-wi-fi-network-on-hololens"></a>HoloLens の Wi-fi ネットワークに接続します。
+## <a name="connecting-to-a-wi-fi-network-on-hololens"></a>HoloLens で Wi-fi ネットワークに接続する
 
-1. [「Bloom](gestures.md#bloom)を、**開始**メニュー。
-2. 選択、**設定**または開始からアプリ、**すべてのアプリ**スタート メニューの右側の一覧。
-3. **設定**アプリは自動的に配置する前になります。
-4. 選択**ネットワークとインターネット**します。
+1. **[スタート]** メニューに[ブルーム](gestures.md#bloom)ます。
+2. スタート メニューまたは スタート メニューの右側にある **すべてのアプリ** の一覧から、**設定** アプリを選択します。
+3. **設定**アプリが自動的に前面に配置されます。
+4. **[ネットワーク & インターネット]** を選択します。
 5. Wi-Fi がオンになっていることを確認します。
-6. Wi-fi ネットワークを一覧から選択します。
-7. (必要に応じて)、Wi-fi ネットワーク パスワードを入力します。
+6. 一覧から Wi-fi ネットワークを選択します。
+7. Wi-fi ネットワークパスワードを入力します (必要な場合)。
 
-## <a name="disabling-wi-fi-on-hololens"></a>HoloLens で Wi-fi を無効にします。
+## <a name="disabling-wi-fi-on-hololens"></a>HoloLens で Wi-fi を無効にする
 
-### <a name="using-the-settings-app-on-hololens"></a>HoloLens で、設定アプリを使用します。
+### <a name="using-the-settings-app-on-hololens"></a>HoloLens で設定アプリを使用する
 
-1. [「Bloom](gestures.md#bloom)を、**開始**メニュー。
-2. 選択、**設定**または開始からアプリ、**すべてのアプリ**スタート メニューの右側の一覧。
-3. **設定**アプリは自動的に配置する前になります。
-4. 選択**ネットワークとインターネット**します。
-5. [オフ] の位置に移動する Wi-fi スライダー スイッチを選択します。 Wi-fi ラジオの RF コンポーネントをオフにされ HoloLens ですべての Wi-fi 機能を無効にします。 
+1. **[スタート]** メニューに[ブルーム](gestures.md#bloom)ます。
+2. スタート メニューまたは スタート メニューの右側にある **すべてのアプリ** の一覧から、**設定** アプリを選択します。
+3. **設定**アプリが自動的に前面に配置されます。
+4. **[ネットワーク & インターネット]** を選択します。
+5. Wi-fi スライダースイッチを選択して、"Off" の位置に移動します。 これにより、Wi-fi ラジオの RF コンポーネントがオフになり、HoloLens の Wi-fi 機能がすべて無効になります。 
 
     >[!WARNING]
-    >HoloLens を自動的にロードすることにすることはできません、[スペース](environment-considerations-for-hololens.md#WiFi fingerprint considerations)Wi-fi オプションが無効になっています。
+    >HoloLens は、Wi-fi ラジオが無効になっている場合、[スペース](environment-considerations-for-hololens.md#WiFi fingerprint considerations)を自動的に読み込むことができません。
     
-6. スライダーのスイッチを Wi-fi オプションをオンにし、Microsoft HoloLens で Wi-fi 機能を復元"On"の位置に移動します。 選択した Wi-fi ラジオ状態 (「オン」の"Off") が再起動後も保持されます。
+6. スライダースイッチを "オン" の位置に移動して Wi-fi ラジオをオンにし、Wi-fi 機能を Microsoft HoloLens に復元します。 選択した Wi-fi 無線の状態 ("オフ") は、再起動後も保持されます。
 
 ## <a name="how-to-confirm-you-are-connected-to-a-wi-fi-network"></a>Wi-fi ネットワークに接続していることを確認する方法
 
-1. [「Bloom](gestures.md#bloom)を起動、**開始**メニュー。
-2. 上部で、Wi-fi の状態の [スタート] メニューのままにします。 状態の Wi Fi と接続されたネットワークの SSID が表示されます。
+1. [ブルーム](gestures.md#bloom)を開き、 **[スタート]** メニューを表示します。
+2. Wi-fi ステータスの [スタート] メニューの左上を確認します。 Wi-fi の状態と、接続されているネットワークの SSID が表示されます。
 
-## <a name="identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network"></a>HoloLens、Wi-fi ネットワーク上の IP アドレスを識別します。
+## <a name="identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network"></a>Wi-fi ネットワーク上の HoloLens の IP アドレスを識別する
 
-### <a name="using-the-settings-app"></a>[設定] アプリを使用します。
+### <a name="using-the-settings-app"></a>設定アプリの使用
 
-1. [「Bloom](gestures.md#bloom)を、**開始**メニュー。
-2. 選択、**設定**または開始からアプリ、**すべてのアプリ**スタート メニューの右側の一覧。
-3. **設定**アプリは自動的に配置する前になります。
-4. 選択**ネットワークとインターネット**します。
-5. 使用可能な Wi-fi ネットワークの一覧の下まで下へスクロールし、選択**ハードウェア プロパティ**します。
+1. **[スタート]** メニューに[ブルーム](gestures.md#bloom)ます。
+2. スタート メニューまたは スタート メニューの右側にある **すべてのアプリ** の一覧から、**設定** アプリを選択します。
+3. **設定**アプリが自動的に前面に配置されます。
+4. **[ネットワーク & インターネット]** を選択します。
+5. 使用可能な Wi-fi ネットワークの一覧の下までスクロールし、 **[ハードウェアのプロパティ]** を選択します。
 
-    ![Wi-fi 設定のハードウェア プロパティ](images/wifi-hololens-hwdetails.jpg)
+    ![Wi-fi 設定のハードウェアプロパティ](images/wifi-hololens-hwdetails.jpg)
 
-IP アドレスが横に表示される**IPv4 アドレス**します。
+IP アドレスは**IPv4 アドレス**の横に表示されます。
 
-### <a name="using-cortana"></a>Cortana を使ってください。
+### <a name="using-cortana"></a>Cortana の使用
 
-たとえば"*Hey Cortana、自分の IP アドレスは何ですか?*" Cortana が表示され、IP アドレスを読み取る。
+「*Cortana さん、私の IP アドレスを教えてください*」と言います。 また、Cortana によって IP アドレスが表示され、読み取られます。
 
-### <a name="using-windows-device-portal"></a>Windows Device Portal を使用します。
+### <a name="using-windows-device-portal"></a>Windows デバイスポータルの使用
 
-1. 開く、[デバイス ポータル](using-the-windows-device-portal.md#networking)PC の web ブラウザーでします。
-2. 移動し、**ネットワーク**セクション。
+1. PC の web ブラウザーで[デバイスポータル](using-the-windows-device-portal.md#networking)を開きます。
+2. **[ネットワーク]** セクションに移動します。
 
-自分の IP アドレスとその他のネットワークの情報が表示されますがあります。 このメソッドは、簡単なコピーと、開発 PC 上の IP アドレスの貼り付けをできます。
+IP アドレスとその他のネットワーク情報が表示されます。 この方法では、開発用 PC に IP アドレスを簡単にコピーして貼り付けることができます。
