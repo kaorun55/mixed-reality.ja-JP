@@ -1,30 +1,47 @@
-## <a name="lesson-3"></a>レッスン 3
+---
+title: MR Learning SpeechSDK モジュール-音声認識と議事録
+description: このコースでは、mixed reality アプリケーション内で Azure Speech SDK を実装する方法について説明します。
+author: jessemcculloch
+ms.author: jemccull
+ms.date: 02/26/2019
+ms.topic: article
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: e5d0919a69c9e6b0c4233d23bf6d370f3def6576
+ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68460311"
+---
+# <a name="3----adding-the-azure-cognitive-services-speech-translation-component"></a>3.  Azure Cognitive Services speech translation コンポーネントの追加
 
-第 3 章は、Azure Cognitive Services 音声翻訳機能をプロジェクトに追加し、3 つの異なる言語に翻訳をテストします。 
+このチュートリアルでは、プロジェクトの Azure Cognitive Services Speech Translation コンポーネントについて説明し、3つの異なる言語に翻訳します。 
 
-1. 階層の Lunarcom_Base オブジェクトを選択し、inspector パネルで"コンポーネントの追加 をクリックします。 検索して選択"LunarcomTranslationRecognizer"
+1. 階層内の Lunarcom_Base オブジェクトを選択し、[インスペクター] パネルの [コンポーネントの追加] をクリックします。 LunarcomTranslationRecognizer を検索して選択します。
 
 ![Module4Chapter3step1im](images/module4chapter3step1im.PNG)
 
-> 注:オフライン モード シミュレーター オフ Speech SDK トランスレーターをテストする前に、戻るにことを確認します。 変換するためには、インターネットに接続する必要があります。 
-
-2. "LunarcomTranslationRecognizer"で、ドロップダウン リストをクリックしに翻訳する言語を選択します。
-
-![Module4Chapter3step2im](images/module4chapter3step2im.PNG)
-
-3. ここで、アプリケーションを実行およびサテライト ボタンをクリックして、変換プログラムをテストし、読み上げを開始します。 認識を停止するには、もう一度サテライト ボタンを押します。 
-
-> 注:、もう一度、テストする前に、オフライン シミュレーターを無効に、次の図に示すように。
+> 注:Speech SDK 変換プログラムをテストする前に、オフラインモードシミュレーターが無効になっていることを確認します。 を翻訳するには、インターネットに接続されている必要があります。 この設定の場所については、下の画像を参照してください。 
 >
 > ![Module4Chapter3noteim](images/module4chapter3noteim.PNG)
 
-次のように確認する必要があります、シーンの例に示します。
+2. LunarcomTranslationRecognizer のドロップダウンをクリックし、翻訳する言語を選択します。
+
+![Module4Chapter3step2im](images/module4chapter3step2im.PNG)
+
+3. 次に、アプリケーションを実行し、[サテライト] ボタンをクリックして変換をテストし、読み上げを開始します。 [サテライト] ボタンをもう一度クリックして、認識を停止します。 シーンがどのように表示されるかの例を次に示します。 [ターゲット言語] ドロップダウンの下にある言語を自由に変更し (上の図を参照)、他の言語への翻訳を調べることができます。
+
+> 注:テストする前に、次の図に示すように、オフラインシミュレーターが無効になっていることを確認します。
+>
+> ![Module4Chapter3noteim](images/module4chapter3noteim.PNG)
+
+シーンの外観の例を次に示します。
 
 ![Module4Chapter3exampleim](images/module4chapter3exampleim.PNG)
 
 ## <a name="congratulations"></a>結論
 
-これで、プロジェクトには、いくつかの異なる言語に話している単語を変換できます! 自由に、言語をいろいろし、精度をテストできます。 
+これで、お客様のプロジェクトで、話す単語を複数の異なる言語に変換できるようになりました。 自由に言語を自由に試して、翻訳の精度をテストしてください。 
 
-[次のレッスン:Speech SDK レッスン 4](placeholderlink)
+[次のチュートリアル:4。インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)
 

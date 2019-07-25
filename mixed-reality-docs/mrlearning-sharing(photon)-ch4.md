@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 3e4be00ddeab6d91dbbc8226bfa3dc543cded095
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 529a888dfa00180ca908fbc7f4c62f9a9086c661
+ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293680"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68460327"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4。オブジェクトの移動を複数のユーザーと共有する
 
@@ -50,7 +50,7 @@ ms.locfileid: "68293680"
 
 ![module3chapter4updatestep6](images/module3chapter4updatestep6.png)
 
-7. プロジェクト ビューで、資産-> Resources-> Prefabs に移動します。 まず、テーブル prefab を PhotonRoom クラスの Tableprefab スロットにドラッグアンドドロップします。 次に、LunarModule prefab を PhotonRoom クラスのモジュール Prefab スロットにドラッグアンドドロップします。
+7. プロジェクト ビューで、資産-> Resources-> Prefabs に移動します。 まず、テーブル prefab を PhotonRoom クラスの Tableprefab スロットにドラッグアンドドロップします。 次に、RocketLauncherCompleteVariantprefab を PhotonRoom クラスのモジュール Prefab スロットにドラッグアンドドロップします。
 
 ![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
 
@@ -67,10 +67,6 @@ ms.locfileid: "68293680"
 10. 階層で新しいオブジェクトを選択し、[インスペクター] パネルでオブジェクトの名前を TableAnchor に変更します。 また、[コンポーネントの追加] をクリックし、TableAnchor コンポーネントを検索します。 それを選択してオブジェクトに追加します。 
 
 ![Module3Chapter4step6im](images/module3chapter4step7im.PNG)
-
-> 注:位置を x = 1、y =-0.55、z = 2 に設定します。 また、回転を y = 90 に設定します。 
->
-> ![Module3Chapter4step6im](images/module3chapter4noteim.PNG)
 
 11. 次に、[プロジェクト] パネルの [Prefabs] フォルダーで、先ほど作成した "TableAnchor" 子オブジェクトにテーブル prefab をドラッグします。
 
