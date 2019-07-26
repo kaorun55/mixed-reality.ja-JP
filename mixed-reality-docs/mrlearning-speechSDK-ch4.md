@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 0cffb9ac8f61f77b77fc5925264b95ba57d94ece
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: b434b9c79a702067a9c3db6fb25b0f75cdc6030d
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460346"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485783"
 ---
-# <a name="speech-sdk-learning-module---intent-and-natural-language-understanding"></a>Speech SDK Learning モジュール-インテントと自然 Language Understanding
+# <a name="4-setting-up-intent-and-natural-language-understanding"></a>4。インテントの設定と自然言語の理解
 
 このレッスンでは、Azure Speech Service のインテント機能について説明します。 インテント機能を使用すると、アプリケーションに AI を使用した音声コマンドを提供できるようになります。この場合、ユーザーは特に特定できない音声コマンドを読み上げ、システムがその意図を理解することができます。 このレッスンでは、Azure LUIS Portal を設定し、インテント/エンティティ/発話を設定し、インテントリソースを発行し、Unity アプリをインテントリソースに接続して、最初のインテント API 呼び出しを行います。
 

@@ -1,4 +1,4 @@
-### <a name="getting-unity-ready-for-development"></a>Unity を開発用に準備する 
+# <a name="2-getting-unity-ready-for-development"></a>2. Unity を開発用に準備する 
 
 
 このチュートリアルでは、Mixed Reality Toolkit のインポート、ビルド設定の構成、シーンの準備など、アプリケーション開発のために Unity を準備して構成する方法について説明します。
@@ -11,7 +11,7 @@
 
 - プロジェクトシーンを準備する
 
-### <a name="instructions"></a>手順
+## <a name="instructions"></a>手順
 
 1. ここをクリックして、Mixed Reality Toolkit unity パッケージをダウンロードして保存し[ます。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)
 
@@ -76,5 +76,5 @@
 
 Unity プロジェクトは Photon の準備ができました。 今後のチュートリアルでは、このシーンと Unity プロジェクトを完全な共有エクスペリエンスに向けて構築します。
 
-[次のチュートリアル:複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)
+[次のチュートリアル:3.複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)
 

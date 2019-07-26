@@ -6,12 +6,12 @@ ms.author: shengkait
 ms.date: 04/26/2019
 ms.topic: article
 keywords: Mixed Reality、ハンズオン、motion コントローラー、対話、設計
-ms.openlocfilehash: d0e54c71ab42a09f2f9c6063a85441b98e729af1
-ms.sourcegitcommit: 8d6e5723283c03f984f1fafef81afa5aab5d04bc
+ms.openlocfilehash: b6efb0a9651cad8eee9b80bb130aa1a85b9a9941
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66039165"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507868"
 ---
 # <a name="hands-and-motion-controllers"></a>ハンドコントローラーとモーションコントローラー
 ## <a name="scenarios"></a>シナリオ
@@ -32,9 +32,11 @@ ms.locfileid: "66039165"
 このモダリティによって、ユーザーは距離内でホログラムを操作できるようになります。 これにより、ユーザーは周囲を最大限に活用できるようになります。 ユーザーは、ホログラムをどこにでも配置でき、任意の距離からそれらにアクセスできます。 2D および3D ホログラムの制御と操作を行うためのメンタルモデルとジェスチャは、直接操作のものと非常に同期されています。
 
 ### <a name="motion-controllersmotion-controllersmd"></a>[モーション コントローラー](motion-controllers.md)
-モーションコントローラーは、ユーザーの物理的な機能を拡張するツールであり、1つまたは両方のハンズを使用しながら、広範囲の距離にわたる正確な対話を実現します。 これらのハードウェアアクセサリは、一般的に使用される多くの対話へのショートカットを提供し、さまざまなアクションについて tactile フィードバックを提供します。 現在、モーションコントローラーは、WMR シナリオでのみ使用できます。 
+モーションコントローラーは、ユーザーの物理的な機能を拡張するツールであり、1つまたは両方のハンズを使用しながら、広範囲の距離にわたる正確な対話を実現します。 これらのハードウェアアクセサリは、一般的に使用される多くの対話にショートカットを提供し、さまざまなアクションに対して tactile のフィードバックを提供します。 現在、モーションコントローラーは、Windows Mixed Reality (WMR) シナリオでのみ使用できます。 
 
-![](images/Hands-and-controllers-720px.jpg)<br>
+![ハンドコントローラーとモーションコントローラーの比較感覚様相](images/Hands-and-controllers-720px.jpg)<br>
+
+*ハンドコントローラーとモーションコントローラーの比較感覚様相*
 
 ## <a name="see-also"></a>関連項目
 * [頭の視線入力とコミット](gaze-and-commit.md)

@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: c6e902710eebe205b9e944b1bf95a9ddd3bd9044
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: cfd6ac9997a8a5d962603922f473bd6fc5d708ed
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293802"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485735"
 ---
-# <a name="displaying-azure-spatial-anchor-feedback"></a>Azure 空間アンカーフィードバックの表示
+# <a name="3-displaying-azure-spatial-anchor-feedback"></a>3.Azure 空間アンカーフィードバックの表示
 
 このレッスンでは、Azure 空間アンカーを使用するときに、アンカー検出、イベント、および状態に関するフィードバックをユーザーに提供する方法について説明します。
 
-事項
+## <a name="objectives"></a>目的
 
 * 現在の ASA セッションに関する重要な情報を表示する UI パネルを設定する方法について説明します。
 

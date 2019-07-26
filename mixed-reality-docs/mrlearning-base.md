@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 3c779d731d7cf139ebcbe305c94754970e937b57
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: baf99fa313e3ab38f138078334fb1388a148d6da
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293616"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485613"
 ---
 # <a name="1-overview-and-objectives"></a>1. 概要と目標
 
@@ -47,4 +47,4 @@ ms.locfileid: "68293616"
 * 基本的なC#プログラミング機能。
 * [開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens 2 デバイス。
 
-[次のレッスン:プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)
+[次のレッスン:2. プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)

@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: e40cd50f75ca509c601d215cb865161ea3596565
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 46c32abaf45623b7ccba90f257959e4ef4f8e1b5
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293642"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485643"
 ---
-#  <a name="setting-up-photon-unity-networking"></a>Photon Unity ネットワークのセットアップ
+#  <a name="1-setting-up-photon-unity-networking"></a>1. Photon Unity ネットワークのセットアップ
 
 このチュートリアルでは、Photon Unity ネットワーク (さしあたっ) を Unity プロジェクトにインポートして、共有エクスペリエンスを作成する準備をする方法について説明します。 Photon は、混合環境の開発者が共有エクスペリエンスを作成するために使用できるいくつかのネットワークオプションの1つです。 ここでは、Photon アカウントを作成し、Photon をインポートして、オプションのローカルサーバーを作成する方法について説明します。
 
-事項
+## <a name="objectives"></a>目的
 
 * Photon アカウントを作成する方法について説明します。
 
@@ -27,7 +27,7 @@ ms.locfileid: "68293642"
 
   
 
-### <a name="setting-up-photon"></a>Photon の設定
+## <a name="setting-up-photon"></a>Photon の設定
 
 1. [Photon](https://dashboard.photonengine.com/en-US/Account/SignUp)アカウントを設定します。 [このリンク](https://dashboard.photonengine.com/en-US/Account/SignUp)をクリックして、Photon サインアップページに移動します。 サインアップページの指示に従って、アカウントを作成します。 
    
@@ -69,5 +69,5 @@ ms.locfileid: "68293642"
 
 Photon アカウントの作成、ローカル Photon サーバーの設定、Unity へのさしあたっのインポートが正常に完了しました。 次の手順では、プロジェクトを設定し、他のユーザーとの接続を許可して、複数のユーザーが自分の作業を確認できるようにします。 
 
-[次のチュートリアル:Unity の開発に向けた準備](mrlearning-sharing(photon)-ch2.md)
+[次のチュートリアル:2. Unity の開発に向けた準備](mrlearning-sharing(photon)-ch2.md)
 

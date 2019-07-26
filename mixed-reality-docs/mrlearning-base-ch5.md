@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: f9da038fe917e9e45b386de54049d6aa312ecfba
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: d7ef68d1a1e64ca85d76b11376d0916b2693e8e1
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387777"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485712"
 ---
-# <a name="6exploring-advanced-input-options"></a>6. 詳細な入力オプションを調査する
+# <a name="6-exploring-advanced-input-options"></a>6。詳細な入力オプションの調査
 
 このチュートリアルでは、HoloLens 2 の高度な入力オプションをいくつか紹介します。これには、音声コマンド、パンジェスチャ、および視線追跡の使用が含まれます。 
 
@@ -198,8 +198,9 @@ ms.locfileid: "68387777"
 6. HoloLens 2 向けにビルドする前に、視線追跡機能が適切に構成されていることを確かめます。 このドキュメントの執筆時点では、Unity には、視線追跡機能に対して、宝石入力を設定する機能がまだありません。 この機能の設定は、監視が HoloLens 2 で動作するために必要です。 次の Mixed Reality ツールキット ドキュメントにある指示に従って、視線入力機能を有効にしてください。 https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2 
 
 
-### <a name="congratulations"></a>おめでとうございます! 
+## <a name="congratulations"></a>結論
+
 アプリケーションに基本的な監視機能が正常に追加されました。 これらの操作は、視線追跡が持つ可能性のほんの一部にすぎません。 また、レッスン5では、音声コマンド、パンジェスチャ、視線追跡などの高度な入力機能について学習しました。 
 
-[次のレッスン:Lunar Module アセンブリのサンプル エクスペリエンス](mrlearning-base-ch6.md)
+[次のレッスン:7.月着陸船サンプル アプリケーションの作成](mrlearning-base-ch6.md)
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 5275e862d2dec78c98510f754162961c80e9e4b8
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 6257b5a4b42127a7f15b235dbdd6b44967684fcb
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387719"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485755"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.ユーザーインターフェイスを作成し、Mixed Reality Toolkit を構成する 
 
@@ -167,8 +167,8 @@ Grid オブジェクトコレクションコンポーネントを使用すると
 
 ![Lesson2 Chapter4 Step5](images/Lesson2_Chapter4_Step5.JPG)
 
-### <a name="congratulations"></a>結論
+## <a name="congratulations"></a>結論
 このレッスンでは、MRTK プロファイルの設定 (つまり、空間認識メッシュの可視性) をコピー、カスタマイズ、および構成する方法を学習しました。また、HoloLens 2 で追跡対象の手を使用して、イベントをトリガーするためにボタンを操作する方法も学習しました。 最後に、Unity の Text Mesh Pro (MRTK の [グリッド オブジェクト コレクション] コンポーネント) を使用して単純な UI インターフェイスを作成する方法を学習しました。
 
-[次のレッスン:ダイナミック コンテンツの配置とソルバー](mrlearning-base-ch3.md)
+[次のレッスン:4。動的なコンテンツの配置とソルバーの使用](mrlearning-base-ch3.md)
 

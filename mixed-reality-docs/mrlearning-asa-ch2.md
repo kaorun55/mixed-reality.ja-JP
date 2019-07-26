@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 80367ed818168c1d642fadbd7316d3d6481dd2a9
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: b263d30905c5a1ba81bfb59ba6a49c7710c43869
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293801"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485742"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2. Azure 空間アンカーの保存、取得、共有
 
@@ -81,5 +81,5 @@ ms.locfileid: "68293801"
 
 次のレッスンでは、リアルタイムのフィードバックをユーザーに提供する方法について説明します。 このフィードバックには、アンカーの作成、環境の理解の質、Azure セッションの状態に関する情報が含まれています。 フィードバックがないと、アンカーが Azure に正常にアップロードされたかどうか、環境の品質がアンカーの作成に十分であるか、現在の状態であるかをユーザーが認識できない可能性があります。
 
-[次のレッスン:ASA チュートリアル3](mrlearning-asa-ch3.md)
+[次のレッスン:3.Azure 空間アンカーフィードバックの表示](mrlearning-asa-ch3.md)
 

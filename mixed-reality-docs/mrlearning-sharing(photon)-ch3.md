@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 92bea1f3130f67645c10e36fe40cd4bc6f8b9151
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 53519d7bb2832fe8ce500f1ee146c91488b09366
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293665"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485657"
 ---
-# <a name="connecting-multiple-users"></a>複数のユーザーの接続
+# <a name="3-connecting-multiple-users"></a>3.複数のユーザーの接続
 
 このレッスンでは、ライブ共有エクスペリエンスの一部として複数のユーザーを接続する方法について説明します。 このレッスンを終了すると、複数のデバイスでアプリケーションを開くことができます。また、アバターは、参加する各ユーザーの球体で表現されます。 
 
@@ -23,7 +23,7 @@ ms.locfileid: "68293665"
 - プレーヤーの構成
 - 共有エクスペリエンスで複数のユーザーを接続する方法について説明します。
 
-### <a name="instructions"></a>手順
+## <a name="instructions"></a>手順
 
 1. 次の図に示すように、[アセット-> Resources-> Prefabs] フォルダーの [プロジェクト] パネルで、NetworkLobby prefab を階層にドラッグアンドドロップします。
 
@@ -72,5 +72,5 @@ ms.locfileid: "68293665"
 
 上記のすべての手順が完了し、ビルドプロセスも完了したら、[再生] ボタンをクリックして HoloLens 2 に接続します。 頭を移動すると球が動いていることがわかります。 これは、Unity プロジェクトに参加するすべてのユーザーに表示されます。
 
-[次のレッスン:共有 (Photon) レッスン4](mrlearning-sharing(photon)-ch4.md)
+[次のレッスン:4。オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch4.md)
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 690ece3a02aeefd598db18baa66de3ddabfa43eb
-ms.sourcegitcommit: 611af6ff7a2412abad80c0c7d4decfc0c3a0e8c8
+ms.openlocfilehash: 391e797ad9cc8933b057366ab47a3f453c68723e
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68293820"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485772"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. Azure 空間アンカーの概要
 
@@ -199,5 +199,5 @@ ParentAnchor prefab について理解を深めます。 現在、ParentAnchor �
 ## <a name="congratulations"></a>結論
 このチュートリアルでは、Azure 空間アンカーの基礎について学習しました。 ここでは、Azure セッションを開始および停止するために必要なさまざまな手順を説明し、1つのデバイスで azure のアンカーを作成、アップロード、ダウンロードするためのボタンをいくつか紹介しました。 次のレッスンでは、アプリケーションを再起動した後でも、Azure anchor Id を HoloLens 2 に保存して取得する方法について説明します。 このシリーズでは、空間アラインメントを実現するために複数のデバイス間でアンカー Id を転送する方法や、マルチユーザー共有セッションについて学習する方法についても説明します。
 
-[次のレッスン:ASA レッスン2](mrlearning-asa-ch2.md)
+[次のレッスン:2. Azure Spatial Anchors の保存、取得、および共有](mrlearning-asa-ch2.md)
 

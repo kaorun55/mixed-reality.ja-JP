@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 4baee7ba8643f5bb80e0456eb97d915405431654
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 401c667ef80042da9182b7f4e065dfd6884cf061
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387705"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485690"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4。動的なコンテンツの配置とソルバーの使用
 
@@ -74,8 +74,8 @@ ms.locfileid: "68387705"
 
 ![Lesson3 Chapter3 Step5im](images/Lesson3_chapter3_step5im.PNG)
 
-### <a name="congratulations"></a>結論
+## <a name="congratulations"></a>結論
 このチュートリアルでは、MRTK のソルバーを使用して、UI を直感的にユーザーに従う方法を学習しました。 また、ソルバーをゲーム オブジェクト (cube) に追加して、ユーザーの追跡対象の手を追跡させる方法についても学びました。 MRTK に含まれるこれらのソルバーや他のソルバーについて学ぶには、[MRTK ソルバーに関するドキュメント](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)を参照してください。
 
-[次のレッスン:3D オブジェクトの操作](mrlearning-base-ch4.md)
+[次のレッスン:5。  3D オブジェクトの操作](mrlearning-base-ch4.md)
 

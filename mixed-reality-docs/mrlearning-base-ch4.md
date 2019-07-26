@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: d47f2940ad741cb436322a824a67f54bb6376c55
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 314af3e1e38e1698943f07dc32f5e1e3e2f36d4f
+ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387694"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68485699"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5。3D オブジェクトとの対話
 
@@ -202,8 +202,8 @@ ms.locfileid: "68387694"
 
 ![Lesson4 Chapter4 Step3 5 Noteim](images/Lesson4_chapter4_step3-5-noteim.PNG)
 
-### <a name="congratulations"></a>結論 
+## <a name="congratulations"></a>結論 
 このチュートリアルでは、グリッドコレクション内の3D オブジェクトを整理する方法と、近くの操作 (追跡したハンドを使用した直接グラブ) と遠くの相互作用 (宝石を使用した、または光線を使用) を使用して、3D オブジェクトを操作する方法について学習しました。 また、3D オブジェクトの周囲に境界ボックスを配置する方法と、境界ボックスでギズモを使用およびカスタマイズする方法についても学習しました。 最後に、オブジェクトにタッチしたときにイベントをトリガーする方法を学習しました。
 
-[次のレッスン: 高度な入力](mrlearning-base-ch5.md)
+[次のレッスン:6。高度な入力オプションの探索](mrlearning-base-ch5.md)
 
