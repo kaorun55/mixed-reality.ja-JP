@@ -4,28 +4,36 @@ title: チュートリアルとサンプルアプリ
 description: 混合環境での開発に関するコードサンプルとチュートリアルを提供します。
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 03/26/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、academy、チュートリアル
-ms.openlocfilehash: 4f1402cb9b91e0d0619c0516de9120302323b799
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 862cf8726df6143ece0d87a135a8e9cc6101948b
+ms.sourcegitcommit: 23e172664c2ee1220fe3b4468c104b37ef3ceda9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415400"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601623"
 ---
 # <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプルアプリ
 
 現在、すべてのチュートリアルとサンプルアプリは Unity ベースです。  他のエンジンとプラットフォームのコンテンツを開発する際には、目次の関連する見出しの下に表示されます。
 
-## <a name="mr-learning-modules"></a>MR 学習モジュール
+## <a name="hololens-2-tutorials"></a>HoloLens 2 のチュートリアル
 
-MR Learning モジュールは、開発者が混合現実アプリケーションを開発するための手法とベストプラクティスの両方を学習できるように設計されています。  最初のモジュールは HoloLens 2 用で、Mixed Reality Toolkit 2.0 (MRTK 2.0) を実装しています。
-* ベースモジュールは、MRTK でプロジェクトを設定する方法を開発者に示すと共に、UI、空間マッピング、および基本および高度な対話の両方を実装することを目的としています。
+HoloLens 2 のチュートリアルは、開発者が混合現実アプリケーションを開発するための手法とベストプラクティスの両方を学習できるように設計されています。  チュートリアルは、 [Mixed Reality Toolkit 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity)に基づいています。
 
-## <a name="open-source-sample-apps"></a>オープンソースのサンプルアプリ
+* 入門チュートリアル- [7 の概要と目標](mrlearning-base.md)
+* Azure 空間アンカーチュートリアル- [Azure 空間アンカーの](mrlearning-asa-ch1.md)概要
+* Azure Speech Services チュートリアル-[音声認識と議事録の統合と使用の4件](mrlearning-speechSDK-ch1.md)
+* マルチユーザー機能のチュートリアル- [5 Of Photon Unity network のセットアップ](mrlearning-sharing(photon)-ch1.md)
+
+## <a name="open-source-sample-apps"></a>オープン ソースのサンプル アプリ
 
 オープンソースのサンプルアプリは、チームによって作成されたアプリケーションであり、開発者がプロジェクトを参照して学習できるようにソースコードを提供しています。
+
+* [元素周期表](periodic-table-of-the-elements.md)
+* [月着陸船](lunar-module.md)
+* [銀河エクスプローラー](galaxy-explorer.md)
 
 ## <a name="mixed-reality-academy-tutorials"></a>Mixed Reality Academy チュートリアル
 
