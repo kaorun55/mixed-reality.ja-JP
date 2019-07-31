@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR、Khronos、BasicXRApp、Mixed Reality OpenXR 開発者ポータル、DirectX、ネイティブ、ネイティブアプリカスタムエンジン、ミドルウェア
-ms.openlocfilehash: 057d01527163f2ffcfe10d2e105592f07ff9e9e2
-ms.sourcegitcommit: 23e172664c2ee1220fe3b4468c104b37ef3ceda9
+ms.openlocfilehash: efad0809356f969c825ef7285885fdb9431c7fce
+ms.sourcegitcommit: c0d5c19b756b8e6ff95ea26a4d8d2b3a53878c2e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601600"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671960"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -36,7 +36,7 @@ Core OpenXR 1.0 API は、HoloLens 2、Windows Mixed Reality ヘッドセット�
 * Input および haptics
 * グラフィックス API + プラットフォーム統合
 
-OpenXR API の詳細については、 [OpenXR 1.0 仕様](https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html)と[OpenXR 1.0 api リファレンス](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/)をご覧ください。  詳細については、 [Khronos OpenXR のページ](https://www.khronos.org/openxr/)を参照してください。
+OpenXR API の詳細については、 [OpenXR 1.0 仕様](https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html)と[OpenXR 1.0 api リファレンス](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html)をご覧ください。  詳細については、 [Khronos OpenXR のページ](https://www.khronos.org/openxr/)を参照してください。
 
 HoloLens 2 の全機能セットを対象にするには、クロスベンダおよびベンダー固有の OpenXR 拡張機能を使用します。これにより、OpenXR 1.0 コア以外の追加機能が可能になります。これには、トレーラーによる追跡、視線追跡、空間マッピング、空間アンカーなどがあります。  今年後半に登場する拡張機能の詳細については、後の「[ロードマップ」セクション](openxr.md#roadmap)を参照してください。
 
@@ -117,5 +117,5 @@ Mixed Reality OpenXR 開発者ポータルアプリの [インストール] ボ�
 
 * [OpenXR の詳細情報](https://www.khronos.org/openxr/)
 * [OpenXR 1.0 仕様](https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html)
-* [OpenXR 1.0 API リファレンス](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/)
+* [OpenXR 1.0 API リファレンス](https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html)
 * [OpenXR 1.0 クイックリファレンスガイド](https://www.khronos.org/registry/OpenXR/specs/1.0/refguide/OpenXR-1.0-web.pdf)
