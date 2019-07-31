@@ -46,18 +46,18 @@ PC に接続されている Windows Mixed Reality ヘッドセットを使用し
 4. **開発者モード**を有効にし、選択した設定の免責事項を読み、[はい] をクリックして変更を確定します。
 
 ## <a name="deploying-an-app-over-wi-fi---hololens-1st-gen"></a>Wi-fi 経由でのアプリの展開 (第1世代)
-1. Visual Studio でのアプリ![の x86 ビルド構成の x86 ビルド構成の選択](images/x86setting.png)
-2. Visual  Studio の [配置ターゲット] ドロップダウンメニュー ![で [リモートコンピューター] を選択します。](images/remotemachinesetting.png)
+1. Visual Studioでのアプリ![の x86 ビルド構成の x86 ビルド構成の選択](images/x86setting.png)
+2. Visual Studio の [配置ターゲット] ドロップダウンメニュー ![で [リモートコンピューター] を選択します。](images/remotemachinesetting.png)
 3. およびC++ JavaScript プロジェクトの場合は、**プロジェクト > のプロパティ > 構成プロパティ** の デバッグ > ます。 プロジェクトC#の場合、接続を構成するためのダイアログボックスが自動的にポップアップ表示されます。
   a. [**アドレス**または**コンピューター名**] フィールドに、デバイスの IP アドレスを入力します。 **[設定 > Network & Internet > 詳細オプション]** の下の HOLOLENS で ip アドレスを見つけます。または、Cortana "どのような ip アドレスがあるか" を質問することもできます。
-  b. Visual Studio で認証モードを [**ユニバーサル (暗号化**![されていないプロトコル) リモート接続] ダイアログに設定する](images/remotedeploy.png)
+  b. Visual Studio で認証モードを **ユニバーサル (暗号化**![されていないプロトコル リモート接続 ダイアログに設定する](images/remotedeploy.png)
 4. [デバッグ > デバッグの**開始**] を選択してアプリ![を配置し、デバッグを開始します。 Visual Studio でデバッグを開始しません。](images/deploynodebugging.png)
 5. PC から HoloLens にアプリを初めて展開するときに、PIN の入力を求められます。 下記の「**デバイスのペアリング**」の手順に従います。
 
 HoloLens IP アドレスが変更された場合は、 **[プロジェクト > のプロパティ > 構成プロパティ]** の順に移動して、ターゲットコンピューターの ip アドレスを変更でき > デバッグ
 
 ## <a name="deploying-an-app-over-usb---hololens-1st-gen"></a>USB HoloLens でのアプリの展開 (第1世代)
-1. Visual Studio でのアプリ![の x86 ビルド構成の x86 ビルド構成の選択](images/x86setting.png)
+1. Visual Studioでのアプリ![の x86 ビルド構成の x86 ビルド構成の選択](images/x86setting.png)
 2. Visual Studio の [配置ターゲット] ドロップダウンメニュー![で [デバイス]**を選択し**ます。](images/buildsettingsusbdeploy.png)
 3. [デバッグ > デバッグの**開始**] を選択してアプリ![を配置し、デバッグを開始します。 Visual Studio でデバッグを開始しません。](images/deploynodebugging.png)
 4. PC から HoloLens にアプリを初めて展開するときに、PIN の入力を求められます。 下記の「**デバイスのペアリング**」の手順に従います。
