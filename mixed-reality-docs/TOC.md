@@ -22,7 +22,6 @@
 #### [HoloLens のリセットまたは回復](reset-or-recover-your-hololens.md)
 #### [ファイルの保存と検索](saving-and-finding-your-files.md)
 #### [写真を表示する](see-your-photos.md)
-#### [センサーの調整](sensor-tuning.md)
 #### [HoloLens を更新する](updating-hololens.md)
 #### [デバイス共有](device-sharing.md)
 #### [HoloLens のデモ装着とクリーニングのガイド](hololens-demo-guide.md)

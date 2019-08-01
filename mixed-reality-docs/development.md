@@ -8,12 +8,12 @@ ms.date: 02/12/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 開発する, 開発, HoloLens, Unity, DirectX
-ms.openlocfilehash: 8833d2d692f2082c939bcfc3bb55e5d159e8c9ac
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: b2bd9c4d81e5c7156ad753859a299209bad70c44
+ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "65974820"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67414430"
 ---
 # <a name="development-launchpad"></a>開発スタート パッド
 
@@ -114,7 +114,7 @@ ms.locfileid: "65974820"
                             <a href="directx-development-overview.md">カスタム エンジン (DirectX)</a>
                         </p>
                         <p>
-Unreal - 近日提供予定
+                            <a href="https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access">Unreal</a>
                         </p>                
                     </div>
                 </div>
@@ -175,7 +175,7 @@ Unreal - 近日提供予定
 
 ## <a name="overview"></a>概要
 
-Mixed Reality アプリは、[ユニバーサル Windows プラットフォーム](https://dev.windows.com/getstarted)で構築します。 すべての Mixed Reality アプリは、ユニバーサル Windows アプリです。また、すべてのユニバーサル Windows アプリは、Windows Mixed Reality デバイス上で実行できるように作成可能です。 Windows 10 と、Unity などのミドルウェア ツールに関する知識があれば、今日から Mixed Reality エクスペリエンスの構築を始めることができます。
+Mixed Reality アプリケーションは、[ユニバーサル Windows プラットフォーム](https://dev.windows.com/getstarted) (UWP) で構築します。 すべての Mixed Reality アプリケーションは、UWP アプリケーションです。 すべての UWP アプリケーションは、Windows Mixed Reality デバイス上で実行するように作成可能です。 Windows 10 と、Unity などのミドルウェア ツールに関する知識があれば、今日から Mixed Reality エクスペリエンスの構築を始めることができます。
 
 <br>
 
@@ -183,7 +183,7 @@ Mixed Reality アプリは、[ユニバーサル Windows プラットフォー�
 
 ## <a name="basics-of-mixed-reality-development"></a>Mixed Reality 開発の基礎
 
-[Mixed Reality](mixed-reality.md) エクスペリエンスは、Windows の新しい環境認識機能によって実現されています。 開発者は、これを使って現実世界に[ホログラム](hologram.md)を配置できます。また、ユーザーが実際に歩くことで、デジタル世界を動き回ることができるようにもなります。 
+[Mixed Reality](mixed-reality.md) エクスペリエンスは、Windows の新しい環境認識機能によって実現されています。 開発者は、これらの機能を使用して現実世界に[ホログラム](hologram.md)を配置できます。また、ユーザーが実際に歩くことで、デジタル世界を動き回ることができます。 
 
 次に示すのは、Mixed Reality 開発のコア構成要素です。
 
@@ -219,17 +219,17 @@ Mixed Reality アプリは、[ユニバーサル Windows プラットフォー�
 
 [HoloLens](hololens-hardware-details.md) の基本的な操作モデルは、[視線入力](gaze.md)、[ジェスチャ](gestures.md)、および[音声](voice-input.md)です。これらは、*GGV* と呼ばれることもあります。 [Windows Mixed Reality イマーシブ ヘッドセット](immersive-headset-hardware-details.md)も視線入力と音声を使用しますが、ジェスチャは[モーション コントローラー](motion-controllers.md)に置き換わっています。
 
-マウス、キーボード、ゲームパッドなどの Windows が利用できる入力エコシステムは、すべての Mixed Reality デバイスで使用できます。 HoloLens では、Bluetooth 経由で[ハードウェア アクセサリ](hardware-accessories.md)を接続します。 イマーシブ ヘッドセットでは、Bluetooth、USB、およびその他のサポートされているプロトコルを使用してアクセサリーをホスト PC に接続します。
+マウス、キーボード、ゲームパッドなどの Windows で利用できる入力エコシステムは、すべての Mixed Reality デバイスで使用できます。 HoloLens では、Bluetooth 経由で[ハードウェア アクセサリ](hardware-accessories.md)を接続します。 イマーシブ ヘッドセットでは、Bluetooth、USB、およびその他のサポートされているプロトコルを使用してアクセサリーをホスト PC に接続します。
 
 [座標](coordinate-systems.md)、[立体音響](spatial-sound.md)、および[空間マッピング](spatial-mapping.md)などの環境認識機能は、Mixed Reality に必要な機能を提供します。 空間マッピングは HoloLens に固有で、ホログラムがユーザーや周辺の物理世界と相互作用できるようにしています。 座標系は、ユーザーの移動がデジタル世界に影響するようにしています。
 
-ホログラムは、ライトとサウンドでできています。これらは、[レンダリング](rendering.md)に依存します。 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md) (「シェル」とも呼ばれます) で説明されているように、配置と永続化のエクスペリエンスを理解することは、ユーザー エクスペリエンスに根ざす優れた方法です。
+ホログラムは、ライトとサウンドでできています。これらは、[レンダリング](rendering.md)に依存します。 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md) (「シェル」とも呼ばれます) で説明されているように、配置と永続化のエクスペリエンスを理解することは、ユーザー エクスペリエンスに根ざすための優れた方法です。
 
-## <a name="tools-for-developing-for-mixed-reality"></a>Mixed Reality 用の開発ツール
+## <a name="tools-for-developing-mixed-reality"></a>Mixed Reality を開発するためのツール
 
 使用するツールは、構築する[アプリのスタイル](app-views.md)によって異なります。
-* [2D 表示を使用するアプリ](building-2d-apps.md)では、Windows Phone、PC、タブレットなどの環境に最適なユニバーサル Windows プラットフォーム アプリを構築するツールを活用します。 これらのアプリは、Windows Mixed Reality ホームで 2D のプロジェクションとしてのエクスペリエンスを提供し、(スマート フォンと PC を含む) 複数の種類のデバイスで動作します。
-* イマーシブおよびホログラフィック アプリには、Windows Mixed Reality API を活用するために設計されたツールが必要です。 Mixed Reality アプリの構築には、[Unity の使用をお勧めします](unity-development-overview.md)。 独自エンジンの構築に関心がある開発者は、[DirectX などの Windows API を使用します](directx-development-overview.md)。
+* [2D 表示を使用するアプリ](building-2d-apps.md)では、Windows Phone、PC、タブレットなどの環境に最適な UWP アプリケーションを構築するツールを活用します。 これらのアプリケーションは、Windows Mixed Reality ホームで 2D のプロジェクションとしてのエクスペリエンスを提供し、スマート フォンと PC を含む複数の種類のデバイスで動作します。
+* イマーシブおよびホログラフィック アプリケーションには、Windows Mixed Reality API を活用するために設計されたツールが必要です。 Mixed Reality アプリケーションの構築には、[Unity の使用をお勧めします](unity-development-overview.md)。 独自エンジンの構築に関心がある開発者は、[DirectX などの Windows API を使用します](directx-development-overview.md)。
 
 以下のツールは、構築しているアプリの種類には関係なく、アプリ開発エクスペリエンスを向上させます。
 * [Visual Studio と Windows SDK](using-visual-studio.md)
