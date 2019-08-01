@@ -1,17 +1,17 @@
 ---
-title: MR Learning 基本モジュールの概要
+title: 入門チュートリアル-1. 概要と目標
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: baf99fa313e3ab38f138078334fb1388a148d6da
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 1ea2437920c518f15639043c667b3915373f8d67
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485613"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701924"
 ---
 # <a name="1-overview-and-objectives"></a>1. 概要と目標
 

@@ -1,17 +1,17 @@
 ---
-title: HoloLens 2 用 MR Learning 共有モジュール
+title: 複数ユーザー機能のチュートリアル-1. Photon Unity ネットワークのセットアップ
 description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法について説明します。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 46c32abaf45623b7ccba90f257959e4ef4f8e1b5
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: acb6966ace81180e95e6a0fe447d350572f7c0dd
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485643"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701972"
 ---
 #  <a name="1-setting-up-photon-unity-networking"></a>1. Photon Unity ネットワークのセットアップ
 

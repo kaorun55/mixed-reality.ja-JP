@@ -1,17 +1,17 @@
 ---
-title: MR Learning SpeechSDK モジュール-音声認識と議事録
+title: Azure Speech Services チュートリアル-4. インテントの設定と自然言語の理解
 description: このコースでは、mixed reality アプリケーション内で Azure Speech SDK を実装する方法について説明します。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b434b9c79a702067a9c3db6fb25b0f75cdc6030d
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 5ca2df56eee3ae41d97de4e8b1e88a39d4d36718
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485783"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701946"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4。インテントの設定と自然言語の理解
 

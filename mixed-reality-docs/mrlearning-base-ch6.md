@@ -1,17 +1,17 @@
 ---
-title: MR 学習ベース モジュール - 月着陸船アセンブリのサンプル エクスペリエンス
+title: 入門チュートリアル-7. 旧暦モジュールサンプルアプリケーションの作成
 description: このレッスンでは、前のレッスンから学習した複数の概念を組み合わせて固有のサンプル エクスペリエンスを作成します。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 79f2d3a4a3224533761ea2e4a7e73dc3d4d5e53e
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 97dd8fce1ebe53efc37cb48cde7dc9e207be9a42
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387685"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701993"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7.旧暦モジュールサンプルアプリケーションの作成
 

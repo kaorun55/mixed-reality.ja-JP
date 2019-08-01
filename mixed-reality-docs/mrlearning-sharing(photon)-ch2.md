@@ -1,3 +1,18 @@
+---
+title: 複数ユーザー機能のチュートリアル-2. Unity を開発用に準備する
+description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法について説明します。
+author: jessemcculloch
+ms.author: jemccull
+ms.date: 02/26/2019
+ms.topic: article
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: 9d42811157db108baad51eab3f367a06a11b7f7b
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701976"
+---
 # <a name="2-getting-unity-ready-for-development"></a>2. Unity を開発用に準備する 
 
 

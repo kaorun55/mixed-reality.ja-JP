@@ -1,17 +1,17 @@
 ---
-title: MR Learning ASA モジュール Azure 空間アンカー (HoloLens 2)
+title: Azure 空間アンカーチュートリアル-2. Azure 空間アンカーの保存、取得、共有
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b263d30905c5a1ba81bfb59ba6a49c7710c43869
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 4e60ed844e64d736c268dd3ec8453c6c2cb7ad75
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485742"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68702044"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2. Azure 空間アンカーの保存、取得、共有
 
@@ -81,5 +81,5 @@ ms.locfileid: "68485742"
 
 次のレッスンでは、リアルタイムのフィードバックをユーザーに提供する方法について説明します。 このフィードバックには、アンカーの作成、環境の理解の質、Azure セッションの状態に関する情報が含まれています。 フィードバックがないと、アンカーが Azure に正常にアップロードされたかどうか、環境の品質がアンカーの作成に十分であるか、現在の状態であるかをユーザーが認識できない可能性があります。
 
-[次のレッスン:3.Azure 空間アンカーフィードバックの表示](mrlearning-asa-ch3.md)
+[次のレッスン:3.Azure Spatial Anchors フィードバックの表示](mrlearning-asa-ch3.md)
 

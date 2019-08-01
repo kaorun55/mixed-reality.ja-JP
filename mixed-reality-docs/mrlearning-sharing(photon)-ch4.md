@@ -1,17 +1,17 @@
 ---
-title: HoloLens 2 用 MR Learning 共有モジュール
+title: 複数ユーザー機能のチュートリアル-4. オブジェクトの移動を複数のユーザーと共有する
 description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法について説明します。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 77ae779b4bb32dd66a722c9793d1b83c4a64ae2e
-ms.sourcegitcommit: b086d7a62ee0c7913aa8f66c90e9d2527f270264
+ms.openlocfilehash: 2e676d319ba7221cf9549b200b3d748f26025aa7
+ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485672"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68701898"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4。オブジェクトの移動を複数のユーザーと共有する
 
