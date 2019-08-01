@@ -8,18 +8,20 @@ ms.date: 03/21/2018
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality、設計、操作、スタイル、色、アプリ パターン、コントロール、サンプル アプリ、Mixed Reality ツールキット、MRTK
-ms.openlocfilehash: 88de9008dbea6cce3b980bbbe3d0f45b7818e7c9
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: 6601f4c2dd75e6e555dd79bc92abcccc15eb1ab4
+ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66039208"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67326189"
 ---
 # <a name="design-for-mixed-reality"></a>Mixed Reality 向けの設計
 
 ![Mixed Reality 向けの設計](images/Bicycle-Leschi10.gif)
 
-このガイダンスは、ホログラフィック デバイス (HoloLens など) やイマーシブ デバイス (Acer および HP Windows Mixed Reality ヘッドセットなど) にわたって作業しているマイクロソフトのデザイナー、開発者、プログラム マネージャー、研究者によって作成されています。 そのため、この作業を 'Windows ヘッドマウント ディスプレイ向けの設計方法' のための一連のトピックと見なしてください。
+
+このガイダンスは、ホログラフィック デバイス (HoloLens など) やイマーシブ デバイス (Acer および HP Windows Mixed Reality ヘッドセットなど) にわたって作業しているマイクロソフトのデザイナー、開発者、プログラム マネージャー、研究者によって作成されています。 そのため、この作業を Windows ヘッドマウント ディスプレイ向けの設計方法のための一連のトピックと見なしてください。
+
 
 ## <a name="article-categories"></a>記事のカテゴリ
 
@@ -166,7 +168,7 @@ ms.locfileid: "66039208"
                             <a href="progress.md">進行状況の表示</a>
                         </p>
                         <p>
-                            <a href="app-bar-and-bounding-box.md">アプリ バーと境界ボックス</a>
+                            <a href="app-bar-and-bounding-box.md">境界ボックスとアプリ バー</a>
                         </p>
                     </div>
                 </div>
@@ -213,7 +215,7 @@ ms.locfileid: "66039208"
                         </div>
                         <div class="cardText">
                             <h3>月着陸船</h3>
-                            <p>HoloLens ベースのジェスチャを両手の追跡と Xbox コントローラーの入力で拡張する方法を説明します。</p>
+                            <p>HoloLens ベースのジェスチャを両手の追跡と Xbox コントローラーの入力で拡張する方法を説明します。 input.</p>
                         </div>
                     </div>
                 </div>
@@ -232,7 +234,7 @@ ms.locfileid: "66039208"
                         </div>
                         <div class="cardText">
                             <h3>Galaxy Explorer</h3>
-                            <p>Galaxy Explorer プロジェクトの準備が完了しました。 これまではコミュニティとアイデアを共有し、アプリを選択し、チームによるその構築を見てきましたが、ソース コードを取得できるようになりました。</p>
+                            <p>Galaxy Explorer プロジェクトの準備が完了しました。 これまではコミュニティとアイデアを共有し、アプリケーションを選択し、チームによるその構築を見てきましたが、ソース コードを取得できるようになりました。</p>
                         </div>
                     </div>
                 </div>
@@ -248,7 +250,7 @@ ms.locfileid: "66039208"
 
 <ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
     <li>
-    <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" title="Mixed Reality ツールキット - Unity" data-linktype="absolute-path">
+    <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/README.html#ui-and-interaction-building-blocks" title="Mixed Reality ツールキット - Unity" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -284,26 +286,7 @@ ms.locfileid: "66039208"
             </div>
         </div>
       </a>  
-    </li>   
-        <li>
-    <a href="case-study-building-holosketch,-a-spatial-layout-and-ux-sketching-app-for-hololens.md" title="HoloSketch" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/HoloSketch.png" alt="HoloSketch">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>HoloSketch</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>   
+    </li>       
             <li>
     <a href="https://www.simplygon.com" title="Simplygon" data-linktype="absolute-path">
         <div class="cardSize">
@@ -368,7 +351,7 @@ ms.locfileid: "66039208"
       </a>  
     </li>   
         <li>
-    <a href="https://developer.microsoft.com/windows/apps/design" title="ユニバーサル Windows プラットフォーム (UWP) アプリの設計" data-linktype="absolute-path">
+    <a href="https://developer.microsoft.com/windows/apps/design" title="ユニバーサル Windows プラットフォーム (UWP) アプリケーションの設計" data-linktype="absolute-path">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
@@ -378,7 +361,7 @@ ms.locfileid: "66039208"
                         </div>
                     </div>                    
             <div class="cardText">
-                        <h3>ユニバーサル Windows プラットフォーム (UWP) アプリの設計</h3>
+                        <h3>ユニバーサル Windows プラットフォーム (UWP) アプリケーションの設計</h3>
                         <p> </p>
                     </div>
                 </div>
