@@ -134,8 +134,6 @@
 ## [開発スタート パッド](development.md)
 ## 複合現実クラウド サービス
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
-### [Holographic Remoting Player](holographic-remoting-player.md)
-### [Holographic リモート ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 ## Unity
 ### [Unity 開発の概要](unity-development-overview.md)
 ### 概要
@@ -188,7 +186,6 @@
 #### [DirectX でのキーボード、マウス、およびコントローラー入力](keyboard,-mouse,-and-controller-input-in-directx.md)
 ### 高度なトピック
 #### [XAML とホログラフィック DirectX アプリの使用](using-xaml-with-holographic-directx-apps.md)
-#### [ホログラフィック リモートの追加](add-holographic-remoting.md)
 ### [OpenXR](openxr.md)
 ## WebVR
 ### [Edge での WebVR を Windows Mixed Reality と共に使用する](using-webvr-in-edge-with-windows-mixed-reality.md)
@@ -289,7 +286,16 @@
 ## リモート ツールと調査ツール
 ### [Windows Device Portal を使用する](using-the-windows-device-portal.md)
 ### [Device Portal API リファレンス](device-portal-api-reference.md)
+## Holographic Remoting
 ### [Holographic Remoting Player](holographic-remoting-player.md)
+### [Holographic Remoting ホストアプリの記述](holographic-remoting-create-host.md)
+### [Holographic Remoting プレーヤーの記述](holographic-remoting-create-player.md)
+### [カスタムの Holographic Remoting データ チャネル](holographic-remoting-custom-data-channels.md)
+### [Holographic Remoting によりセキュリティ保護された接続](holographic-remoting-secure-connection.md)
+### [トラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
+### [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
+### HoloLens 1 用 Holographic Remoting
+#### [Holographic Remoting の追加](add-holographic-remoting.md)
 ## その他
 ### [QR コードの追跡](qr-code-tracking.md)
 ### [複合現実での共有エクスペリエンス](shared-experiences-in-mixed-reality.md)
