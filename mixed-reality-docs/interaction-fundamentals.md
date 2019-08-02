@@ -7,12 +7,12 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 視線入力, 視線入力ターゲット設定, 対話, 設計, HoloLens, MMR, マルチモーダル
-ms.openlocfilehash: 7b04141c832597be4bb58447629e0ef6e248dc2b
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 3ba1a2fc46aa88c856e4cc9531382c479b3fb17a
+ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415252"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68507894"
 ---
 # <a name="introducing-instinctual-interactions"></a>本能的な操作の概要
 
@@ -115,14 +115,14 @@ Mixed Reality (MR) では効果的、魅力的で魔法のような何千もの�
     <tr>
         <td><a href="hands-and-tools.md">手とモーション コントローラー</a></td>
         <td>手のメッシュが見える、指先アフォーダンスまたは手やコントローラーの光線が見える。</td>
-        <td>手を近づけると、グラブ可能なハンドルや境界ボックスが表示される。</td>
+        <td>オブジェクトに手を近づけると、グラブ可能なハンドルや境界ボックスが表示される。</td>
         <td>音が聞こえ、グラブやリリースのアニメーションが見える。</td>
     </tr>
     <tr>
         <td><a href="gaze-and-commit.md">頭の視線入力とコミット</a></td>
         <td>視野の中央にカーソルが見える。</td>
-        <td>特定のオブジェクトに重ねると、頭の視線入力カーソルの状態が変わる。</td>
-        <td>行動を行うと、視覚または音声でわかる。</td>
+        <td>特定のオブジェクトに重ねると、頭の視線カーソルの状態が変わる。</td>
+        <td>行動すると、視覚または音声でわかる。</td>
     </tr>   
     <tr>
         <td><a href="hands-free.md">ハンズフリー (頭の視線入力とドウェル)</a></td>
@@ -133,7 +133,7 @@ Mixed Reality (MR) では効果的、魅力的で魔法のような何千もの�
     <tr>
         <td><a href="hands-free.md">ハンズフリー (音声コマンド)</a></td>
         <td>リスニング インジケーターとシステムが聞いた音を表示するキャプションが見える。</td>
-        <td>音声プロンプトとヒントが聞こえる。 「何を言えますか?」と言うと フィードバックが得られる。</td>
+        <td>音声プロンプトとヒントが聞こえる。 次のように言います。音声操作の項目 フィードバックが得られる。</td>
         <td>コマンドを与えると、視覚または音声でわかる。必要な場合は不明瞭解消用の UX が提供される。</a></td>
     </tr>
 </table>
