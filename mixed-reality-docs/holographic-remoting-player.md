@@ -3,23 +3,26 @@ title: Holographic リモート処理プレーヤー
 description: Holographic Remoting Player は、Holographic リモート処理をサポートする PC アプリやゲームに接続するコンパニオンアプリです。 Holographic リモート処理では、Wi-fi 接続を使用して、PC から Microsoft HoloLens にコンテンツを Holographic します。
 author: JonMLyons
 ms.author: jlyons
-ms.date: 03/21/2018
+ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: b8354295f9752e73cc9b34c1769254e49808b63f
-ms.sourcegitcommit: c6b59f532a9c5818d9b25c355a174a231f5fa943
+ms.openlocfilehash: fe26092ec8f5895652d17f88bf3be15cb116e482
+ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66813722"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68712673"
 ---
 # <a name="holographic-remoting-player"></a>Holographic リモート処理プレーヤー
+
+>[!IMPORTANT]
+>HoloLens 2 の Holographic リモート処理は、メジャーバージョンの変更です。 [ **Hololens 1**用のホストアプリケーション](add-holographic-remoting.md)では、NuGet**パッケージバージョン 1.x**とホストアプリケーションを使用する必要があります。 [ **hololens 2**で](holographic-remoting-create-host.md)は**2 .x**を使用する必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens 1 と互換性がないことを意味します。
 
 Holographic Remoting Player は、Holographic リモート処理をサポートする PC アプリやゲームに接続するコンパニオンアプリです。 Holographic リモート処理では、Wi-fi 接続を使用して、PC から Microsoft HoloLens にコンテンツを Holographic します。
 
 Holographic リモート処理プレーヤーは、特に Holographic リモート処理をサポートするように設計された PC アプリでのみ使用できます。
 
-Holographic リモート処理プレーヤーは、HoloLens と HoloLens 2 の両方で使用できます。  Hololens を使用した Holographic リモート処理をサポートする PC アプリは、HoloLens 2 で Holographic Remをサポートするように更新する必要があります。  サポートされているバージョンについて不明な点がある場合は、アプリプロバイダーにお問い合わせください。
+Holographic リモート処理プレーヤーは、HoloLens と HoloLens 2 の両方で使用できます。  HoloLens で Holographic リモート処理をサポートする PC アプリは、HoloLens 2 での Holographic リモート処理をサポートするように更新する必要があります。 サポートされているバージョンについて不明な点がある場合は、アプリプロバイダーにお問い合わせください。
 
 ## <a name="connecting-to-the-holographic-remoting-player"></a>Holographic リモート処理プレーヤーに接続する
 
@@ -40,9 +43,30 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 
 ## <a name="diagnostics"></a>診断
 
-接続の品質を測定するには、Holographic リモート処理プレーヤーのメイン画面で [**診断の有効化]** を言います。 診断が有効になっている場合、アプリには次の情報が表示されます。
+接続の品質を測定するには、Holographic リモート処理プレーヤーのメイン画面で [**診断の有効化]** を言います。 診断が有効になっている場合、 **HoloLens 1**で、アプリには次の情報が表示されます。
+
 * **FPS** -リモートプレーヤーが受信して1秒間にレンダリングするレンダリングフレームの平均数。 最適なは 60 FPS です。
 * **[待機時間]** -フレームが PC から HoloLens に移動するまでにかかる平均時間。 精度が低下します。 これは、Wi-fi ネットワークに大きく依存します。
+
+**HoloLens 2**では、アプリには次のように表示されます。
+
+![Holographic リモート処理プレーヤーの診断](images/holographicremotingplayer-diag.png)
+
+* **Render** -リモートプレーヤーが最後の1秒間にレンダリングしたフレームの数。 これは、ネットワーク経由で到着したフレームの数とは関係がありません (**ビデオフレーム**を参照)。 さらに、レンダリングされたフレーム間の平均/最大レンダリングデルタ時間 (ミリ秒) が表示されます。
+
+* **ビデオフレーム**-表示される最初の数字はスキップされたビデオフレーム、2つ目はビデオフレームを再利用し、3番目はビデオフレームを受信します。 すべての数値は、最後の1秒間のカウントを表します。
+    * ```Received frames```最後の1秒間に到着したビデオフレームの数です。 通常の条件下では、これは60になりますが、これはネットワークの問題のためにフレームがドロップされたか、またはリモート/ホスト側が想定されたレートでフレームを生成しないことを示すインジケーターです。
+    * ```Reused frames```最後の1秒間に複数回使用されたビデオフレームの数です。 たとえば、ビデオフレームが遅れると、プレーヤーのレンダリングループではフレームがレンダリングされますが、前のフレームで既に使用されていたビデオフレームを*再利用*する必要があります。
+    * ```Skipped frames```プレーヤーのレンダリングループによって使用されていないビデオフレームの数です。 たとえば、ネットワークのジッターでは、到着するビデオフレームが均等に分散されないようにすることができます。つまり、遅延が発生し、他のユーザーが時間内に到着すると、60Hz で実行したときに16.66 ミリ秒のデルタがなくなります。 これにより、プレーヤーのレンダーループの2つのタイマー刻みの間に複数のフレームが到着する可能性があります。 この場合、プレーヤーは、常に最新の受信したビデオフレームを表示すると思われるため、1つ以上のフレームを*スキップ*します。
+
+    >[!NOTE]
+    >ネットワークのジッターを接続する場合、通常はスキップされ、再利用されるフレームはほぼ同じです。 これに対して、スキップされたフレームのみ表示する場合、このインジケーターは、プレーヤーがターゲットフレームレートに達していないことを示します。 この場合は、問題を診断する際の最大レンダリングデルタ時間に注意する必要があります。
+
+* **ビデオフレームのデルタ**-最後の1秒間に受信したビデオフレーム間の最小/最大デルタです。 通常、この数は、ネットワークのジッターに起因する問題が発生した場合に、スキップまたは再利用されたフレームと関連付けられます。
+* **Latency** -最後の1秒間の平均待機時間 (ミリ秒)。 このコンテキストでのターンアラウンドとは、hololens の待機/センサーデータを HoloLens からリモート/ホスト側に送信するまでの時間を意味します。
+* **破棄されるビデオフレーム**-最後の1秒間に破棄されたビデオフレームの数。接続が確立されたためです。 破棄されるビデオフレームの主な原因は、ビデオフレームが順番に到着せず、既に新しいものが存在するためにその理由を破棄する必要がある場合です。 これは破棄された*フレーム*に似ていますが、リモート処理スタックの下位のレベルにあります。 破棄されたビデオフレームは、ネットワークの状態が非常に悪い場合にのみ必要です。
+
+
 
 メイン画面では、 **[診断を無効**にする] を使用して診断を無効にすることができます。
 
@@ -52,5 +76,7 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 * ワイヤレスホップの数を減らすには、コンピューターをイーサネット経由でネットワークに接続することをお勧めします。
 
 ## <a name="see-also"></a>関連項目
-* [Holographic リモート ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
+* [HoloLens 1:Holographic リモート処理の追加](add-holographic-remoting.md)
+* [HoloLens 2:Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
+* [Holographic リモート処理ソフトウェアライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
