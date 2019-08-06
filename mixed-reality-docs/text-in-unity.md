@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、コントロール、フォント、タイポグラフィ、ui、ux
-ms.openlocfilehash: 238f99442bcc5cf02de6760f0ce52d07c9d9c567
-ms.sourcegitcommit: be3631932ea1c88ac3ad8b2390c98c5a6e8b93ed
+ms.openlocfilehash: 55c25400a061366e045398da3196db208b4ab590
+ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2019
-ms.locfileid: "68776392"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817364"
 ---
 # <a name="text-in-unity"></a>Unity のテキスト
 
@@ -51,7 +51,7 @@ UI またはキャンバスベースのテキスト要素をシーンに追加�
 
 ## <a name="working-with-text-mesh-pro"></a>Text メッシュ Pro の操作
 
-Unity のテキストメッシュ Pro を使用すると、テキストの表示品質を保護できます。 [署名済み距離フィールド (.sdf)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)手法を使用した距離に関係なく、鮮明なテキストのアウトラインがサポートされます。 上記で3D テキストメッシュと UI テキストに使用したのと同じ計算方法を使用して、通常のタイポグラフィポイントで使用する適切なスケーリング値を見つけることができます。 サイズが36の既定の3D テキストメッシュ Pro フォントは、2.5 Unity ユニット (2.5 m) の境界サイズを持つため、スケール値0.005 を使用してポイントサイズを取得できます。 UI メニューの下にあるテキストメッシュ Pro の既定の境界サイズは 25 Unity 単位 (25m) です。 これにより、0.0005 のスケーリング値が得られます。
+Unity のテキストメッシュ Pro を使用すると、テキストの表示品質を保護できます。 [署名済み距離フィールド (.sdf)](https://steamcdn-a.akamaihd.net/apps/valve/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf)手法を使用した距離に関係なく、鮮明なテキストのアウトラインがサポートされます。 上記で3D テキストメッシュと UI テキストに使用したのと同じ計算方法を使用して、通常のタイポグラフィポイントで使用する適切なスケーリング値を見つけることができます。 サイズが36の既定の3D テキストメッシュ Pro フォントのサイズは 2.5 Unity ユニット (2.5 m) であるため、スケール値0.005 を使用してポイントサイズを取得できます。 UI メニューの下にあるテキストメッシュ Pro の既定の境界サイズは 25 Unity 単位 (25m) です。 これにより、0.0005 のスケーリング値が得られます。
 
 ![フォントサイズが異なる Unity 3D テキストメッシュ](images/Text_In_Unity_Measurements2.png)<br>
 *Unity 3D テキストと UI テキストの値のスケーリング*
