@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/10/2019
 ms.topic: article
 keywords: トラブルシューティング、既知の問題、ヘルプ
-ms.openlocfilehash: 1ef9e9f411e16d2f604930f3146ede1d03d7c0f6
-ms.sourcegitcommit: c36b8c8573f51afa79504c4a17084e4f55d2f664
+ms.openlocfilehash: 9ec15957b75ca3ec51dd01f5b9b4bc7371912c5a
+ms.sourcegitcommit: a11999e92e4e87516a6dcceabc2c5ed7642f1fd9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67789490"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68887263"
 ---
 # <a name="hololens-known-issues"></a>HoloLens の既知の問題
 
@@ -20,11 +20,11 @@ ms.locfileid: "67789490"
 ## <a name="unable-to-connect-and-deploy-to-hololens-through-visual-studio"></a>Visual Studio を使用して HoloLens に接続して展開できない
 
 >[!NOTE]
->最終更新日時:7/8 @ 7: 25PM-チームは根本原因を特定し、現在修正を行っています。 回避策を以下に示します。 
+>最終更新日時:8/8 @ 5: 午後11時-Visual Studio は、この問題の修正を含む VS 2019 バージョン16.2 をリリースしました。 このエラーが発生しないように、この最新バージョンに更新することをお勧めします。
 
-この問題の根本原因を特定できました。 Visual studio 2015 または Visual Studio 2017 の初期リリースを使用して、HoloLens でアプリケーションをデプロイおよびデバッグした後、同じ HoloLens を使用した最新バージョンの Visual Studio 2017 または Visual Studio 2019 を使用したユーザーは、影響を受けます。 
+Visual Studio には、この問題の修正を含む VS 2019 バージョン16.2 がリリースされています。 このエラーが発生しないように、この最新バージョンに更新することをお勧めします。
 
-新しいリリースの Visual Studio では、新しいバージョンのコンポーネントが配置されますが、古いバージョンのファイルはデバイス上に残されるため、新しいバージョンのエラーが発生します。  これにより、次のエラーメッセージが表示されます。DEP0100:ターゲットデバイスの開発者モードが有効になっていることを確認してください。 エラー80004005が発生したため<ip> 、で開発者ライセンスを取得できませんでした。
+問題の根本原因:Visual studio 2015 または Visual Studio 2017 の初期リリースを使用して、HoloLens でアプリケーションをデプロイおよびデバッグした後、同じ HoloLens を使用した最新バージョンの Visual Studio 2017 または Visual Studio 2019 を使用したユーザーは、影響を受けます。 新しいリリースの Visual Studio では、新しいバージョンのコンポーネントが配置されますが、古いバージョンのファイルはデバイス上に残されるため、新しいバージョンのエラーが発生します。  これにより、次のエラーメッセージが表示されます。DEP0100:ターゲットデバイスの開発者モードが有効になっていることを確認してください。 エラー80004005が発生したため<ip> 、で開発者ライセンスを取得できませんでした。
  
 **対応策**: 
 

@@ -5,12 +5,12 @@ author: mattwojo
 ms.author: mattwoj
 ms.date: 03/21/2018
 ms.topic: article
-ms.openlocfilehash: c110b549603f42ec03fd6c0dc8df7bf70ba5ba9f
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: a6c2574a35ec1240c573532dabfdc6cec1696947
+ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63516230"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861717"
 ---
 # <a name="contributing-to-windows-mixed-reality-developer-documentation"></a>Windows Mixed Reality 開発者向けドキュメントへの貢献
 
@@ -57,6 +57,28 @@ GitHub アカウントを設定するときは、次のセキュリティに関�
 5. 記事の編集が完了したら、下にスクロールして **[ファイル変更の提案]** ボタンをクリックします。
 6. 次のページで、 **[プル要求の作成]** をクリックして、自動的に作成されたブランチを "マスター" にマージします。
 7. 編集する次の記事に対して上記の手順を繰り返します。
+
+## <a name="renaming-or-deleting-an-existing-article"></a>既存のアーティクルの名前の変更または削除
+
+既存のアーティクルの名前を変更または削除する場合は、必ずリダイレクトを追加してください。 こうすることで、既存の記事へのリンクを持つユーザーは、引き続き適切な場所に配置されます。 リダイレクトは、リポジトリのルートにある. openpublishing. json ファイルによって管理されます。
+
+リダイレクトを追加するには、次のようにエントリを`redirections`配列に追加します。
+
+```json
+{
+    "redirections": [
+        {
+            "source_path": "mixed-reality-docs/old-article.md",
+            "redirect_url": "new-article#section-about-old-topic",
+            "redirect_document_id": false
+        },
+```
+
+- `source_path`は、削除しようとしている古いアーティクルへの相対リポジトリパスです。 パスがで`mixed-reality-docs`始まり、で`.md`終わることを確認してください。
+- は`redirect_url` 、以前の記事から新しい記事までの相対パブリック URL です。 この url は、リポジトリパスでは`mixed-reality-docs`なく`.md`パブリック url を参照しているため、またはを含んで**いない**ことを確認してください。 を使用`#section`した新しいアーティクル内のセクションへのリンクは許可されます。 必要に応じて、ここで別のサイトへの絶対パスを使用することもできます。
+- `redirect_document_id`前のファイルのドキュメント ID を保持するかどうかを示します。 既定値は `false` です。 リダイレクト`true`されたアーティクルの`ms.documentid`属性値を保持する場合は、を使用します。 ドキュメント ID を保持している場合は、ページビューやランキングなどのデータがターゲットアーティクルに転送されます。 これは、リダイレクトが主に名前の変更であり、同じコンテンツの一部のみをカバーする別の記事へのポインターではない場合に実行します。
+
+リダイレクトを追加する場合は、古いファイルも必ず削除してください。
 
 ## <a name="creating-a-new-article"></a>新しい記事を作成しています
 

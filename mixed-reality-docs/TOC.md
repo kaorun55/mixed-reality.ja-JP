@@ -182,7 +182,6 @@
 #### [DirectX の空間マッピング](spatial-mapping-in-directx.md)
 ### その他の主な機能
 #### [DirectX での共有された空間アンカー](shared-spatial-anchors-in-directx.md)
-#### [DirectX での場所を特定できるカメラ](locatable-camera-in-directx.md)
 #### [DirectX でのキーボード、マウス、およびコントローラー入力](keyboard,-mouse,-and-controller-input-in-directx.md)
 ### 高度なトピック
 #### [XAML とホログラフィック DirectX アプリの使用](using-xaml-with-holographic-directx-apps.md)

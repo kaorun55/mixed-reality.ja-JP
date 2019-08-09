@@ -6,12 +6,12 @@ ms.author: wguyman, cdedmonds
 ms.date: 06/12/2019
 ms.topic: article
 keywords: カメラ、hololens、カラーカメラ、フロント接続、hololens 2、cv、コンピュータービジョン、基準、マーカー、qr コード、qr、写真、ビデオ
-ms.openlocfilehash: b80e201723f8f499a6d35008b9d308f93b925b1c
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 368943dd70c721a41ca7c265a19ecb7c394db312
+ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694535"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861719"
 ---
 # <a name="locatable-camera"></a>お持ちのカメラ
 
@@ -84,11 +84,13 @@ HoloLens ドキュメントの他の場所にある "カメラ" は、"仮想ゲ
 
 [Unity でのお持ちのカメラ](locatable-camera-in-unity.md):CameraToWorldMatrix は PhotoCaptureFrame クラスによって自動的に提供されます (そのため、CameraCoordinateSystem の変換について心配する必要はありません)。
 
-[DirectX でのお持ちのカメラ](locatable-camera-in-directx.md):カメラの座標系と独自のアプリケーション座標系との間の変換をクエリするための非常に簡単な方法を示します。
+[DirectX でのお持ちのカメラ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking):Holographic Face Tracking サンプルは、カメラの座標系と独自のアプリケーション座標系との間の変換をクエリするための非常に簡単な方法を示しています。
 
 ### <a name="distortion-error"></a>ディストーションエラー
 
-HoloLens では、アプリケーションでフレームを利用できるようになる前に、ビデオストリームと静止画像ストリームがシステムのイメージ処理パイプラインで undistorted されます (プレビューストリームには、元のゆがんだフレームが含まれます)。 CameraIntrinsics のみが使用可能になるため、アプリケーションはイメージフレームが完全な pinhole カメラを表すものと想定する必要がありますが、イメージプロセッサのディストーション関数では、HoloLens で最大10ピクセルのエラーが引き続き発生する場合があります (最初の生成)。フレームメタデータで CameraIntrinsics を使用する場合。 多くのユースケースでは、このエラーは問題にはなりませんが、たとえば、ホログラムを実際のポスター/マーカーに整列させている場合、< 10px オフセット (2 メートルの位置にあるホログラムの場合は約 11 mm) がある場合は、このゆがみエラーが原因である可能性があります。 
+HoloLens では、アプリケーションでフレームを利用できるようになる前に、ビデオストリームと静止画像ストリームがシステムのイメージ処理パイプラインで undistorted されます (プレビューストリームには、元のゆがんだフレームが含まれます)。 使用できるのは CameraIntrinsics だけなので、アプリケーションではイメージフレームが完全な pinhole カメラを表すものと想定する必要があります。
+
+HoloLens (最初の生成) では、イメージプロセッサのディストーション関数は、フレームメタデータで CameraIntrinsics を使用しているときに最大10ピクセルのエラーを引き続き発生させる場合があります。 多くのユースケースでは、このエラーは問題にはなりませんが、たとえば、ホログラムを実際のポスター/マーカーに整列させている場合、< 10px オフセット (2 メートルの位置にあるホログラムの場合は約 11 mm) がある場合は、このゆがみエラーが原因である可能性があります。 
 
 ## <a name="locatable-camera-usage-scenarios"></a>お持ちのカメラの使用シナリオ
 
@@ -170,7 +172,7 @@ public static Vector3 ClosestPointBetweenRays(
 * 部屋のメンバーを識別して認識します (たとえば、顔を holographic 連絡先カードを配置します)。
 
 ## <a name="see-also"></a>関連項目
-* [DirectX での場所を特定できるカメラ](locatable-camera-in-directx.md)
+* [お持ちのカメラのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
 * [Unity での場所を特定できるカメラ](locatable-camera-in-unity.md)
 * [複合現実キャプチャ](mixed-reality-capture.md)
 * [開発者向け複合現実キャプチャ](mixed-reality-capture-for-developers.md)
