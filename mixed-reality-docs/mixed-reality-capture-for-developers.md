@@ -6,16 +6,17 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、写真、ビデオ、キャプチャ、カメラ
-ms.openlocfilehash: d1675d2d6c74c6d15ca245a66719e00f2a7c2111
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 740b02dd1714679028541a888d721ae74e8e1f32
+ms.sourcegitcommit: c4c293971bb3205a82121bbfb40d1ac52b5cb38e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694362"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68937072"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>開発者向けの Mixed reality キャプチャ
 
-> [注!]HoloLens 2 の新しい MRC 機能に関するガイダンスについては、以下の[PV カメラのレンダー](#render-from-the-pv-camera-opt-in)に関する説明を参照してください。
+> [!NOTE]
+> HoloLens 2 の新しい MRC 機能に関するガイダンスについては、以下の[PV カメラのレンダー](#render-from-the-pv-camera-opt-in)に関する説明を参照してください。
 
 ユーザーは、常に[mixed reality キャプチャ](mixed-reality-capture.md)(MRC) の写真またはビデオを取得できるため、アプリケーションを開発する際には注意が必要な点がいくつかあります。 これには、MRC ビジュアル品質のベストプラクティスと、MRCs のキャプチャ中にシステムの変更に応答するためのベストプラクティスが含まれています。
 

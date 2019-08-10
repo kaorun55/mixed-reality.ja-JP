@@ -6,12 +6,12 @@ ms.author: Yoyoz
 ms.date: 05/15/19
 ms.topic: article
 keywords: Windows Mixed Reality、test、Mixed Reality Toolkit、MRTK バージョン2、MRTK、tools、SDK、HoloLens、HoloLens 2
-ms.openlocfilehash: 7eded2c766765a5ccebf741eed2f8b7fe8f65a93
-ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
+ms.openlocfilehash: c785498e1533b2117249d3b21952ff56190126c0
+ms.sourcegitcommit: c4c293971bb3205a82121bbfb40d1ac52b5cb38e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68507927"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68937085"
 ---
 # <a name="getting-started-with-mrtk-v2"></a>MRTK v2 の概要
 
@@ -185,7 +185,7 @@ Unity を使用した MRTK v2 は、mixed reality アプリケーション用の
 
 
 ## <a name="minimum-requirement-for-mrtk-v2"></a>MRTK v2 の最小要件
-* Unity 2018.3.x
+* Unity 2018.4
 * Microsoft Visual Studio 2017 以降
 * Windows SDK 18362 + 
 * Windows 10 1803 以降

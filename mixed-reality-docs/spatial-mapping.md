@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間マッピング, HoloLens, mixed reality, surface 再構築, メッシュ, sr
-ms.openlocfilehash: 31abeca624512f1d5e721dbe879ca2243cf41345
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 4914cf5b7864ecb2430a39af73729eb6dfc0e2bd
+ms.sourcegitcommit: c4c293971bb3205a82121bbfb40d1ac52b5cb38e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63550485"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68937068"
 ---
 # <a name="spatial-mapping"></a>空間マッピング
 
@@ -178,7 +178,7 @@ Surface オブザーバーによって提供される "変化したサーフェ�
 * 実際のサーフェイスによるホログラム occluded の外観を変更するには
    * 通常表示されるジオメトリは、occluded すると非表示になります。 これを実現するには、深度ステンシルの[状態](https://msdn.microsoft.com/library/windows/desktop/ff476110(v=vs.85).aspx)の depth 関数を "次の値以下" に設定します。これにより、以前にレンダリングされたすべてのジオメトリよりもカメラに**近い**場所にのみジオメトリが表示されるようになります。
    * ただし、特定のジオメトリが occluded されていても表示されないようにしたり、視覚的なフィードバックをユーザーに提供する手段として occluded したときの外観を変更したりすると便利な場合があります。 たとえば、これにより、アプリケーションは、実際の画面の背後にあることを明確にしながら、オブジェクトの場所をユーザーに表示できます。
-   * これを実現するには、必要な ' occluded ' 外観を作成する別のシェーダーを使用して、ジオメトリをもう一度描画します。 2回目のジオメトリをレンダリングする前に、[深度ステンシルの状態](https://msdn.microsoft.com/library/windows/desktop/ff476110(v=vs.85).aspx)に2つの変更を加えます。 最初に、深度関数を "以上" に設定します。これにより、ジオメトリは、**以前にレンダリング**されたすべてのジオメトリよりもカメラから見た場合にのみ表示されるようになります。 次に、DepthWriteMask を0に設定して、深度バッファーが変更されないようにします (深度バッファーは、カメラに**最も近い**ジオメトリの深さを継続して表す必要があります)。
+   * これを実現するには、必要な ' occluded ' 外観を作成する別のシェーダーを使用して、ジオメトリをもう一度描画します。 2回目のジオメトリをレンダリングする前に、[深度ステンシルの状態](https://msdn.microsoft.com/library/windows/desktop/ff476110(v=vs.85).aspx)に2つの変更を加えます。 最初に、深度関数を "以上" に設定します。これにより、ジオメトリは、以前にレンダリングされたすべてのジオメトリよりもカメラから見た場合にのみ表示されるようになります。 次に、DepthWriteMask を0に設定して、深度バッファーが変更されないようにします (深度バッファーは、カメラに**最も近い**ジオメトリの深さを継続して表す必要があります)。
 
 空間マッピングメッシュをレンダリングする場合、[パフォーマンス](understanding-performance-for-mixed-reality.md)は重要な問題です。 空間マッピングメッシュのレンダリングに固有のレンダリングパフォーマンス手法を次に示します。
 * 三角形の密度を調整する
@@ -220,4 +220,5 @@ Surface オブザーバーによって提供される "変化したサーフェ�
 * [DirectX の空間マッピング](spatial-mapping-in-directx.md)
 * [Unity の空間マッピング](spatial-mapping-in-unity.md)
 * [空間マッピングの設計](spatial-mapping-design.md)
+* [シーンの理解](scene-understanding.md)
 * [ケース スタディ - Mixed Reality で穴から覗く](case-study-looking-through-holes-in-your-reality.md)
