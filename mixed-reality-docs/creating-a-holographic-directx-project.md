@@ -1,69 +1,69 @@
 ---
-title: Holographic DirectX プロジェクトを作成します。
-description: Windows Mixed Reality アプリ テンプレートに基づく新しい holographic アプリを作成する方法について説明します。
+title: Holographic DirectX プロジェクトの作成
+description: Windows Mixed Reality アプリテンプレートに基づいて新しい holographic アプリを作成する方法について説明します。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、holographic アプリ、新しいアプリ、UWP アプリ、テンプレートのアプリ、ホログラム、新しいプロジェクト、チュートリアル、ダウンロード、サンプル コード
-ms.openlocfilehash: a7eac9d8056fe5f7bcc442d6441f71331fa96cf6
-ms.sourcegitcommit: 19c9bff21061d485821b61c9f3498daef8fa8235
+keywords: Windows Mixed Reality, holographic アプリ, 新しいアプリ, UWP アプリ, テンプレートアプリ, ホログラム, 新しいプロジェクト, チュートリアル, ダウンロード, サンプルコード
+ms.openlocfilehash: 24f217021cd448f19a744696de42f580f139f76f
+ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65828119"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68387617"
 ---
-# <a name="creating-a-holographic-directx-project"></a>Holographic DirectX プロジェクトを作成します。
+# <a name="creating-a-holographic-directx-project"></a>Holographic DirectX プロジェクトの作成
 
-HoloLens を作成する holographic アプリ、<a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide" target="_blank">ユニバーサル Windows プラットフォーム (UWP) アプリ</a>します。  デスクトップの Windows Mixed Reality ヘッドセットを対象とする場合は、UWP アプリまたは Win32 アプリを作成できます。
+HoloLens 用に作成した holographic アプリは、<a href="https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide" target="_blank">ユニバーサル Windows プラットフォーム (UWP) アプリ</a>になります。  デスクトップ Windows Mixed Reality ヘッドセットを対象とする場合は、UWP アプリまたは Win32 アプリを作成できます。
 
-DirectX 11 holographic UWP アプリ テンプレートとよく似ています、DirectX 11 の UWP アプリ テンプレートこれはプログラム ループ (または「ゲーム ループ」) が含まれます。、 **DeviceResources** Direct3D デバイスと、コンテキストを管理するクラスと簡略化されたコンテンツ レンダラー クラス。 また、 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>他の UWP アプリと同様、します。
+DirectX 11 holographic UWP アプリテンプレートは DirectX 11 UWP アプリテンプレートとよく似ています。これには、プログラムループ (または "ゲームループ")、Direct3D デバイスとコンテキストを管理するための**DeviceResources**クラス、および簡略化されたコンテンツレンダラークラスが含まれます。 他の UWP アプリと同じように、 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>もあります。
 
-Mixed reality アプリには、一般的な Direct3D 11 の UWP アプリではないいくつかの追加機能ただしがあります。 Windows Holographic のアプリ テンプレートができます。
-* Holographic カメラに関連付けられている Direct3D デバイス リソースを処理します。
-* システムからカメラのバック バッファーを取得します。
-* 処理[視線](gaze.md)入力、および単純な認識[ジェスチャ](gestures.md)します。
-* ステレオのレンダリングを全画面表示モードに移動します。
+ただし、mixed reality アプリには、一般的な Direct3D 11 UWP アプリには存在しないいくつかの追加機能があります。 Windows Holographic アプリケーションテンプレートでは、次のことができます。
+* Holographic カメラに関連付けられている Direct3D デバイスリソースを処理します。
+* システムからカメラバックバッファーを取得します。
+* [見つめ](gaze.md)入力を処理し、簡単な[ジェスチャ](gestures.md)を認識します。
+* 全画面表示のステレオレンダリングモードに切り替えます。
 
-## <a name="how-do-i-get-started"></a>どのように始めればよいですか。
+## <a name="how-do-i-get-started"></a>操作方法開始しますか?
 
-最初[ツールをインストールする](install-the-tools.md)、次の Visual Studio 2017 のダウンロードについてと Microsoft HoloLens のエミュレーター。 Microsoft HoloLens のエミュレーターと同じインストーラーには、holographic アプリ テンプレートが含まれます。 また、インストールする前に、テンプレートをインストールするオプションが選択されていることを確認します。
+まず、Visual Studio 2019 と Microsoft HoloLens emulator のダウンロードに関する説明に従って、[ツールをインストール](install-the-tools.md)します。 Holographic アプリテンプレートは、Microsoft HoloLens エミュレーターと同じインストーラーに含まれています。 また、インストールする前に、テンプレートをインストールするオプションが選択されていることを確認してください。
 
-これで、DirectX 11 Windows Mixed Reality アプリを作成する準備ができました。 ただし、サンプルの内容を削除するには、コメント アウト、 **DRAW_SAMPLE_CONTENT**プリプロセッサ ディレクティブで*pch.h*。
+これで、DirectX 11 Windows Mixed Reality アプリを作成する準備ができました。 サンプルコンテンツを削除するには、 *pch*の**DRAW_SAMPLE_CONTENT**プリプロセッサディレクティブをコメントアウトします。
 
-## <a name="creating-a-uwp-project"></a>UWP プロジェクトを作成します。
+## <a name="creating-a-uwp-project"></a>UWP プロジェクトの作成
 
-1 回、[ツールがインストールされている](install-the-tools.md)holographic DirectX UWP プロジェクトを作成することができます。
+[ツールがインストールさ](install-the-tools.md)れたら、HOLOGRAPHIC DirectX UWP プロジェクトを作成できます。
 
-新しいプロジェクトを作成するには
-1. 開始**Visual Studio**します。
-2. **ファイル**メニューで、**新規**選択**プロジェクト**コンテキスト メニュー。 **新しいプロジェクト**ダイアログ ボックスが開きます。
-3. 展開**インストール済み**左側を展開し、 **Visual C++** 言語ノード。
-4. 移動し、 **Windows ユニバーサル > Holographic**ノード**Holographic DirectX 11 アプリ (ユニバーサル Windows) (C++/WinRT)** します。
-   ![Holographic の DirectX 11 のスクリーン ショットC++Visual Studio での WinRT UWP アプリ プロジェクト テンプレート](images/holographic-directx-app-cpp-new-project.png)<br>
-   *DirectX 11 の holographic C++Visual Studio での WinRT UWP アプリ プロジェクト テンプレート*
+新しいプロジェクトを作成するには:
+1. **Visual Studio**を起動します。
+2. [**ファイル**] メニューの [**新規作成**] をポイントし、コンテキストメニューの [**プロジェクト**] をクリックします。 [**新しいプロジェクト**] ダイアログボックスが開きます。
+3. 左側にある [**インストール済み**] を展開し、[**ビジュアルC++** 言語] ノードを展開します。
+4. [ **Windows Universal > Holographic** ] ノードに移動し、[ **Holographic DirectX 11 App (Universal WindowsC++) (/WinRT)** ] を選択します。
+   ![Visual Studio の Holographic DirectX 11 C++/WinRT UWP アプリプロジェクトテンプレートのスクリーンショット](images/holographic-directx-app-cpp-new-project.png)<br>
+   *Visual Studio でC++の Holographic DirectX 11/WinRT UWP アプリプロジェクトテンプレート*
    >[!IMPORTANT]
-   >プロジェクト テンプレートの名前が含まれているかどうかを必ず"(C++/WinRT)"。  有効でない場合は、以前のバージョンのインストールされている holographic プロジェクト テンプレートがあります。  最新のプロジェクト テンプレートを取得する[最新 HoloLens のエミュレーターをインストール](using-the-hololens-emulator.md)します。
-5. 入力、**名前**と**場所**テキスト ボックス、およびクリックまたはタップします**OK**。 Holographic アプリ プロジェクトが作成されます。
-6. 開発のため、HoloLens 2 のみを対象とすることを確認、**ターゲット バージョン**と**最小バージョン**に設定されている**Windows 10、バージョンが 1903**。  HoloLens も対象とする場合 (第 1 世代) 設定するデスクトップの Windows Mixed Reality ヘッドセットまたは**最小バージョン**に**Windows 10、バージョンは 1809**代わりに、いくつかが必要ですが<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">バージョン アダプティブ チェック</a>HoloLens 2 の新機能を使用する場合、コードにします。
-   ![Windows 10 バージョン 1903 ターゲットと最小バージョンとしての設定のスクリーン ショット](images/new-uwp-project.png)<br>
-   *設定**Windows 10、バージョンが 1903**ターゲットと最小バージョンとして*
+   >プロジェクトテンプレートの名前に "(C++/WinRT)" が含まれていることを確認してください。  それ以外の場合は、古いバージョンの holographic プロジェクトテンプレートがインストールされています。  最新のプロジェクトテンプレートを入手するには、[最新の HoloLens エミュレーターをインストール](using-the-hololens-emulator.md)します。
+5. [**名前**] と [**場所**] のテキストボックスに入力し、[ **OK**] をクリックまたはタップします。 Holographic app プロジェクトが作成されます。
+6. HoloLens 2 のみを対象とする開発では、**ターゲットバージョン**と**最小バージョン**が**Windows 10 バージョン 1903**に設定されていることを確認します。  HoloLens (第1世代) またはデスクトップ Windows Mixed Reality ヘッドセットも対象としている場合は、代わりに、[**最小バージョン**] を**Windows 10 バージョン 1809**に設定できます。ただし、これには、新しいを使用するときに、コードにいくつかの<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">バージョンのアダプティブチェック</a>が必要になります。HoloLens 2 の機能。
+   ![ターゲットバージョンと最小バージョンとして Windows 10 バージョン1903を設定するスクリーンショット](images/new-uwp-project.png)<br>
+   *ターゲットバージョンと最小バージョンとして**Windows 10 バージョン1903を**設定する*
    >[!IMPORTANT]
-   >表示されない場合**Windows 10、バージョンが 1903**オプションとしてがない最新の Windows 10 SDK をインストールします。  表示するには、このオプションを取得する<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">10.0.18362.0 のバージョンをインストールまたはそれ以降、Windows 10 SDK の</a>します。
+   >オプションとして**windows 10 バージョン 1903**が表示されない場合は、最新の WINDOWS 10 SDK がインストールされていません。  このオプションを表示するに<a href="https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk" target="_blank">は、Windows 10 SDK のバージョン10.0.18362.0 以降をインストール</a>します。
 
-テンプレートを使用してプロジェクトを生成する<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>、標準に準拠した c++ 17 コンパイラをサポートする Windows ランタイム Api の c++ 17 の言語プロジェクションです。  プロジェクトでは、ユーザーからの 2 つのメーターが配置される世界ロックされているキューブを作成する方法を示します。 ユーザーは[エア タップ](gestures.md#air-tap)でユーザーの指定された別の位置に、キューブを配置するコント ローラーのボタンを押してまたは[視線](gaze.md)します。 すべての複合現実アプリを作成するには、このプロジェクトを変更できます。
+このテンプレートは、標準に準拠している c++ 17 コンパイラをサポートする Windows ランタイム api の c++ 17 言語プロジェクションである<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>を使用してプロジェクトを生成します。  このプロジェクトは、ユーザーから2メートル離れたワールドロックキューブを作成する方法を示しています。 ユーザーは、コントローラー上のボタンを使用して、ユーザーの[宝石](gaze.md)によって指定された別の位置にキューブを[配置できます](gestures.md#air-tap)。 このプロジェクトを変更して、mixed reality アプリを作成できます。
 
-使用して新しいプロジェクトを作成する代わりに、 **Visual C#**  holographic プロジェクト テンプレート、SharpDX に基づいています。  場合、holographic C# Windows Holographic のアプリ テンプレートからプロジェクトは開始されませんでした、Windows Mixed Reality から ms.fxcompile.targets ファイルをコピーする必要がありますC#HLSL をコンパイルするためにファイルで、.csproj プロジェクト テンプレートとインポートプロジェクトに追加するファイル。
+または、SharpDX に基づく**Visual C#**  holographic プロジェクトテンプレートを使用して、新しいプロジェクトを作成することもできます。  Holographic C#プロジェクトが windows holographic アプリテンプレートから開始されなかった場合は、Windows Mixed Reality C#テンプレートプロジェクトから ms. fxcompile .targets ファイルをコピーして、HLSL ファイルにインポートして HLSL をコンパイルする必要があります。プロジェクトに追加するファイル。
 
-レビュー[を配置およびデバッグ Visual Studio を使用して](using-visual-studio.md)構築し、HoloLens、PC に接続されている、没入型のデバイスまたはエミュレーターにデプロイする方法についてはします。
+[「Visual Studio を使用してデプロイとデバッグ](using-visual-studio.md)を行う」で、HoloLens、PC にデバイスが接続されている PC、またはエミュレーターにサンプルを構築してデプロイする方法について確認します。
 
-以下の手順の残りの部分を使用するいると仮定してC++アプリをビルドできます。
+次の手順の残りの部分では、を使用C++してアプリをビルドすることを前提としています。
 
-### <a name="uwp-app-entry-point"></a>UWP アプリのエントリ ポイント
+### <a name="uwp-app-entry-point"></a>UWP アプリのエントリポイント
 
-Holographic UWP アプリケーションの起動時、 **wWinMain** AppView.cpp 内の関数。 **WWinMain**関数は、アプリの作成<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>を開始し、 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication" target="_blank">CoreApplication</a>とします。
+Holographic UWP アプリは、AppView .cpp の**Wwinmain**関数で開始されます。 **Wwinmain**関数は、アプリの<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>を作成し、それを使用して<a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication" target="_blank">CoreApplication</a>を開始します。
 
-**AppView.cpp**:
+**Appview .cpp**から:
 
 ```cpp
 // The main function bootstraps into the IFrameworkView.
@@ -75,19 +75,19 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
-その時点からは、AppView クラスは、Windows の基本的な入力イベント、CoreWindow イベント メッセージング、およびなどとの対話を処理します。 アプリで使用される HolographicSpace も作成されます。
+この時点から、AppView クラスは、Windows 基本入力イベント、CoreWindow イベントとメッセージングなどとの対話を処理します。 また、アプリで使用される HolographicSpace も作成されます。
 
 ## <a name="creating-a-win32-project"></a>Win32 プロジェクトの作成
 
-適応 holographic プロジェクトは、Win32 の構築を開始する最も簡単な方法、 <a href="https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/BasicHologram" target="_blank"> *BasicHologram* Win32 サンプル</a>します。
+Win32 holographic プロジェクトの構築を開始する最も簡単な方法は、 <a href="https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/BasicHologram" target="_blank"> *basichologram* win32 サンプル</a>を調整することです。
 
-この Win32 サンプルを使用して<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>、標準に準拠した c++ 17 コンパイラをサポートする Windows ランタイム Api の c++ 17 の言語プロジェクションです。  プロジェクトでは、ユーザーからの 2 つのメーターが配置される世界ロックされているキューブを作成する方法を示します。 ユーザーがユーザーによって指定されている別の位置に、キューブを配置するコント ローラーのボタンを押す[視線](gaze.md)します。 すべての複合現実アプリを作成するには、このプロジェクトを変更できます。
+この Win32 サンプルでは、標準に準拠している c++ 17 コンパイラをサポートする Windows ランタイム api の c++ 17 言語プロジェクションである<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>を使用します。  このプロジェクトは、ユーザーから2メートル離れたワールドロックキューブを作成する方法を示しています。 ユーザーは、コントローラー上のボタンをクリックして、ユーザーの[宝石](gaze.md)によって指定された別の位置にキューブを配置できます。 このプロジェクトを変更して、mixed reality アプリを作成できます。
 
-### <a name="win32-app-entry-point"></a>Win32 アプリのエントリ ポイント
+### <a name="win32-app-entry-point"></a>Win32 アプリのエントリポイント
 
-Holographic Win32 アプリケーションの起動時、 **wWinMain** AppMain.cpp 内の関数。 **WWinMain**関数し、メッセージ ループを開始するアプリケーションの HWND を作成します。
+Holographic Win32 アプリは、AppMain の**Wwinmain**関数で開始されます。 **Wwinmain**関数は、アプリの HWND を作成し、そのメッセージループを開始します。
 
-**AppMain.cpp**:
+**Appmain .cpp**から:
 
 ```cpp
 int APIENTRY wWinMain(
@@ -119,41 +119,41 @@ int APIENTRY wWinMain(
 }
 ```
 
-その時点からは、AppMain クラスは、基本的なウィンドウのメッセージとの対話を処理します。 アプリで使用される HolographicSpace も作成されます。
+この時点から、AppMain クラスは基本的なウィンドウメッセージとの対話を処理します。 また、アプリで使用される HolographicSpace も作成されます。
 
-## <a name="render-holographic-content"></a>Holographic のコンテンツをレンダリングします。
+## <a name="render-holographic-content"></a>Holographic コンテンツのレンダリング
 
-プロジェクトの**コンテンツ**フォルダーにはでレンダリング ホログラム用のクラスが含まれています、 [holographic 領域](getting-a-holographicspace.md)します。 テンプレートの既定ホログラムは、ユーザーからの 2 つのメーターが配置される、回転するキューブです。 このキューブの描画では実装されて**SpinningCubeRenderer.cpp**がこれらの主要メソッド。
+プロジェクトの**コンテンツ**フォルダーには、 [holographic 空間](getting-a-holographicspace.md)にホログラムをレンダリングするためのクラスが含まれています。 テンプレートの既定のホログラムは、ユーザーから2メートル離れた位置にある回転する立方体です。 このキューブの描画は、次の主要なメソッドを含む SpinningCubeRenderer に実装されてい**ます**。
 
 |  メソッド  |  説明 | 
 |----------|----------|
-|  `CreateDeviceDependentResources` |  シェーダーの読み込みをキューブのメッシュを作成します。 | 
-|  `PositionHologram` |  提供されている指定された位置に、ホログラムが配置<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose" target="_blank">SpatialPointerPose</a>します。 | 
-|  `Update` |  キューブを回転し、モデルの行列を設定します。 | 
-|  `Render` |  頂点とピクセル シェーダーを使用してフレームをレンダリングします。 | 
+|  `CreateDeviceDependentResources` |  シェーダーを読み込み、キューブメッシュを作成します。 | 
+|  `PositionHologram` |  指定した<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerpose" target="_blank">SpatialPointerPose</a>によって指定された場所にホログラムを配置します。 | 
+|  `Update` |  キューブを回転させ、モデルマトリックスを設定します。 | 
+|  `Render` |  頂点シェーダーとピクセルシェーダーを使用してフレームをレンダリングします。 | 
 
-**シェーダー**サブフォルダーには、次の 4 つの既定のシェーダー実装が含まれています。
+**シェーダー**サブフォルダーには、4つの既定のシェーダー実装が含まれています。
 
 |  シェーダー  |  説明 | 
 |----------|----------|
-|  `GeometryShader.hlsl` |  変更されていないジオメトリをパススルーします。 | 
-|  `PixelShader.hlsl` |  データの色を通過します。 色のデータが補間し、ラスタライズ ステップでピクセルに割り当てられています。 | 
-|  `VertexShader.hlsl` |  GPU で頂点処理を行う単純なシェーダー。 | 
-|  `VPRTVertexShader.hlsl` |  Windows Mixed Reality ステレオ レンダリング用に最適化された GPU で頂点処理を行う単純なシェーダー。 | 
+|  `GeometryShader.hlsl` |  ジオメトリを変更せずに残すパススルー。 | 
+|  `PixelShader.hlsl` |  カラーデータを通過します。 色データが補間され、ラスタライズの手順でピクセルに割り当てられます。 | 
+|  `VertexShader.hlsl` |  GPU で頂点処理を行うための単純なシェーダー。 | 
+|  `VPRTVertexShader.hlsl` |  Windows Mixed Reality ステレオレンダリング用に最適化された、GPU で頂点処理を行うための単純なシェーダー。 | 
 
-`VertexShaderShared.hlsl` 間で共有される共通のコードを含む`VertexShader.hlsl`と`VPRTVertexShader.hlsl`します。
+`VertexShaderShared.hlsl`との間で`VertexShader.hlsl`共有される共通のコードを`VPRTVertexShader.hlsl`格納します。
 
-プロジェクトをビルドするとで読み込まれているときに、シェーダーがコンパイルされる、 **SpinningCubeRenderer::CreateDeviceDependentResources**メソッド。
+シェーダーは、プロジェクトのビルド時にコンパイルされ、 **SpinningCubeRenderer:: CreateDeviceDependentResources**メソッドに読み込まれます。
 
-## <a name="interact-with-your-holograms"></a>ホログラムとの対話します。
+## <a name="interact-with-your-holograms"></a>ホログラムを操作する
 
-ユーザー入力の処理で、 **SpatialInputHandler**クラスを取得、 <a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager" target="_blank">SpatialInteractionManager</a>インスタンスし、サブスクライブする、 <a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager.sourcepressed" target="_blank">SourcePressed</a>イベント。 これにより、エア タップ ジェスチャとその他の空間の入力イベントを検出できます。
+ユーザー入力は**SpatialInputHandler**クラスで処理されます。このクラスは<a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager" target="_blank">SpatialInteractionManager</a>インスタンスを取得し、 <a href="https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionmanager.sourcepressed" target="_blank">sourcepressed</a>イベントをサブスクライブします。 これにより、エアタップジェスチャとその他の空間入力イベントを検出できるようになります。
 
-## <a name="update-holographic-content"></a>Holographic のコンテンツを更新します。
+## <a name="update-holographic-content"></a>Holographic コンテンツの更新
 
-既定で実装されているゲームのループで、複合現実アプリの更新プログラム、 **Update**メソッド`AppMain.cpp`します。 **Update**メソッドは、回転するキューブのように、シーンのオブジェクトを更新しを返します、 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>を最新の状態の表示および投影マトリックスを取得し、スワップ チェーンを表示するに使用されるオブジェクト。
+混合 reality アプリの更新は、既定ではの`AppMain.cpp` **Update**メソッドに実装されているゲームループで更新されます。 **Update**メソッドは、回転するキューブなどのシーンオブジェクトを更新し、最新のビューおよび射影マトリックスを取得して、スワップチェーンを表示するために使用される<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>オブジェクトを返します。
 
-**レンダリング**メソッド`AppMain.cpp`は、 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>し、現在のアプリと空間配置の状態に従って各 holographic カメラの現在のフレームをレンダリングします。
+の `AppMain.cpp` Render メソッドは、現在のアプリと空間ポジショニングの状態に従って、 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>を受け取り、現在のフレームを各 holographic カメラにレンダリングします。
 
 ## <a name="see-also"></a>関連項目
 * [HolographicSpace を入手する](getting-a-holographicspace.md)

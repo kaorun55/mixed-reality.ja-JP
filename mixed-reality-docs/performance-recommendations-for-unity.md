@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: グラフィックス、cpu、gpu、レンダリング、ガベージコレクション、hololens
-ms.openlocfilehash: b0821f07184bff8630f6b6af0d0fc461f6fcd133
-ms.sourcegitcommit: 8f3ff9738397d9b9fdf4703b14b89d416f0186a5
+ms.openlocfilehash: 16a923697985e3686992dc31ea8e6fc39249c276
+ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67843334"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817348"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity のパフォーマンスに関する推奨事項
 
@@ -231,6 +231,18 @@ HoloLens 開発ではオブジェクトを*静的*としてマークするのは
 ### <a name="optimize-depth-buffer-sharing"></a>深度バッファーの共有を最適化する
 
 通常は、**プレーヤーの XR 設定**で**深度バッファーの共有**を有効にして、[ホログラムの安定性](Hologram-stability.md)を最適化することをお勧めします。 ただし、この設定で深さベースの遅延段階の再プロジェクションを有効にする場合は、 **24 ビットの深度形式**ではなく、 **16 ビットの深さ形式**を選択することをお勧めします。 16ビットの深度バッファーによって、深度バッファートラフィックに関連付けられた帯域幅 (および電力) が大幅に減少します。 これは、大きな威力を得ることができますが、 [z 戦い](https://en.wikipedia.org/wiki/Z-fighting)が24ビットより16ビットで発生する可能性が高いので、わずかな深度範囲の経験にのみ適用されます。 これらの成果物を回避するには、 [Unity カメラ](https://docs.unity3d.com/Manual/class-Camera.html)の近距離/遠クリッププレーンを変更して、精度を低くします。 HoloLens ベースのアプリケーションでは、Unity の既定の1000m ではなく、50m の遠くのクリッププレーンによって、一般に z 戦いを排除できます。
+
+### <a name="avoid-full-screen-effects"></a>全画面表示の効果を避ける
+
+全画面で動作する手法は、すべてのフレームに対して数百万の操作が行われるため、非常にコストが高くなる可能性があります。 したがって、アンチエイリアシング、ブルームなどの[処理後の効果](https://docs.unity3d.com/Manual/PostProcessingOverview.html)を避けることをお勧めします。 
+
+### <a name="optimal-lighting-settings"></a>最適な光源設定
+
+Unity で[リアルタイムのグローバルな照明](https://docs.unity3d.com/Manual/GIIntro.html)を使用すると、視覚的な結果を得ることができますが、非常にコストのかかる照明計算が含まれます。 **ウィンドウ** > **レンダリング**の光源の設定を使用して Unity シーンファイルごとにリアルタイムのグローバル照明を無効にして、リアルタイムのグローバル照明をオフにすることをお勧め >。 >  
+
+さらに、すべてのシャドウキャストを無効にすることをお勧めします。これにより、Unity シーンに負荷の高い GPU パスも追加されます。 影はライトごとに無効にすることができますが、品質設定を使用して総合的を制御することもできます。 
+ 
+ > **プロジェクト設定**を編集し、[**品質**] カテゴリを選択して、UWP プラットフォームの [**低品質**] を選択 > ます。 また、 **shadows**プロパティを設定して、**影を無効**にすることもできます。
 
 ### <a name="reduce-poly-count"></a>Poly 数を減らす
 
