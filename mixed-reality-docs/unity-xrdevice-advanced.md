@@ -45,7 +45,7 @@ Marshal.ptrtostructure メソッドを使用して HolographicFrameNativeData �
 var nativePtr = UnityEngine.XR.XRDevice.GetNativePtr();
 HolographicFrameNativeData hfd = Marshal.PtrToStructure<HolographicFrameNativeData>(nativePtr);
 ```
-***IHolographicCameraPtr**は、unmanagedtype.bool としてマーシャリングされた IntPtr の配列であり、長さは MaxNumberOfCameras と同じです。* 
+***IHolographicCameraPtr** は、unmanagedtype.bool としてマーシャリングされた IntPtr の配列であり、長さは MaxNumberOfCameras と同じです。* 
 
 
 ### <a name="using-holographicframenativedata"></a>HolographicFrameNativeData の使用
