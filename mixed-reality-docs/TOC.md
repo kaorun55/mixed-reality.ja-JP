@@ -18,7 +18,6 @@
 #### [HoloLens の既知の問題](hololens-known-issues.md)
 #### [HoloLens のトラブルシューティング](troubleshooting.md)
 #### [複合現実キャプチャ](mixed-reality-capture.md)
-#### [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)
 #### [HoloLens のリセットまたは回復](reset-or-recover-your-hololens.md)
 #### [ファイルの保存と検索](saving-and-finding-your-files.md)
 #### [写真を表示する](see-your-photos.md)
@@ -27,6 +26,7 @@
 #### [HoloLens のデモ装着とクリーニングのガイド](hololens-demo-guide.md)
 ### イマーシブ ヘッドセット
 #### [イマーシブ ヘッドセット ハードウェアの詳細](immersive-headset-hardware-details.md)
+#### [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)
 #### [技術者向けガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [ハードウェア アクセサリ](hardware-accessories.md)
 ### [HoloLens のデモ装着とクリーニングのガイド](hololens-demo-guide.md)
