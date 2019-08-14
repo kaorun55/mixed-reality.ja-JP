@@ -869,7 +869,7 @@ public interface ISimulatedHand
 
 SimulatedDevice に手が現在表示されているかどうかを取得します (この位置が、[ツール] で検出される位置にあるかどうか)。
 
-**PerceptionSimulation. ISimulatedHand. Ensurevisible\**
+**PerceptionSimulation. ISimulatedHand. Ensurevisible**
 
 SimulatedDevice に見えるようにハンドを移動します。
 

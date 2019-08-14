@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 4e60ed844e64d736c268dd3ec8453c6c2cb7ad75
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 70f84c1ec03919a15bed486ffa51fb57db39deec
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702044"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977966"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2. Azure 空間アンカーの保存、取得、共有
 
@@ -46,13 +46,13 @@ ms.locfileid: "68702044"
 
    - GetFromDisk という名前のボタンについては、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから LoadAzureAnchorIDsFromDisk () メソッドを割り当てます。
 
-3. Tutoiral 1 の指示に従って、更新されたアプリケーションをデバイスにビルドします。 前のレッスンで行ったように、[Azure アンカーの作成] ボタンを押した後、[ディスクに保存] ボタンを押して、Azure Anchor ID をディスクに保存できるようになりました。
+3. チュートリアル1の指示に従って、更新されたアプリケーションをデバイスにビルドします。 前のレッスンで行ったように、[Azure アンカーの作成] ボタンを押した後、[ディスクに保存] ボタンを押して、Azure Anchor ID をディスクに保存できるようになりました。
 
 4. アプリケーションを再起動し、Azure セッションを開始して、[Load Anchor ID] を押します。次に、[Azure アンカーの検索] をクリックして、ディスクに保存した ID に関連付けられているアンカーを探します。 これで、以前にアンカーを保存した場所で、シーン全体が位置にスナップされるようになりました。
 
 ### <a name="share-azure-anchors-between-multiple-devices"></a>複数のデバイス間で Azure アンカーを共有する
 
-このセクションでは、複数のデバイス間で Azure Anchor ID を共有する方法について説明します。 これにより、複数のデバイスが同じアンカー ID に対して Azure に対してクエリを実行できるようになり、固定されたホログラムとシーンを空間的に調整できるようになります。 空間の配置 (複数のデバイス間で同じ物理的な場所にある同じホログラムが表示されます) は、HoloLens 2 のローカル共有エクスペリエンスにとって重要です。 デバイス間で azure Id に関する情報を転送するには、さまざまな方法があります (「Azure 空間アンカーの共有エクスペリエンスチュートリアル」に記載されている方法 (TODO: add link)。この例では、単純な web サービスを使用して、デバイス間でアンカー Id をアップロードしてダウンロードします。
+このセクションでは、複数のデバイス間で Azure Anchor ID を共有する方法について説明します。 これにより、複数のデバイスが同じアンカー ID に対して Azure に対してクエリを実行できるようになり、固定されたホログラムとシーンを空間的に調整できるようになります。 空間の配置 (複数のデバイス間で同じ物理的な場所にある同じホログラムが表示されます) は、HoloLens 2 のローカル共有エクスペリエンスにとって重要です。 デバイス間で azure Id に関する情報を転送するには、さまざまな方法があります。 Azure 空間アンカー共有エクスペリエンスチュートリアルの[チュートリアル](mrlearning-sharing(photon)-ch1.md)に記載されている方法があります。 この例では、単純な web サービスを使用して、デバイス間でアンカー Id をアップロードしてダウンロードします。
 
 1. 階層に編成アンカーの事前作成を追加します。 この prefab は、シーンに2つの新しいボタンを追加します。1つはアンカー ID 情報をアップロードするためのもので、もう1つはアンカー ID 情報をダウンロードするためのものです。 
 

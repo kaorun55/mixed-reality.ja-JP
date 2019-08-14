@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 501e8bc2e70248a4ca8a79f90d74d30129830701
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: a6367a1be1bcaeab911b925641dbb3a66998c2dc
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701962"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977992"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1. 音声認識と議事録の統合と使用
 
@@ -133,18 +133,19 @@ ms.locfileid: "68701962"
 ![レッスン1から Chapter5 手順](images/Lesson1Chapter5Step1.JPG)
 
 2. [開いているシーンの追加] ボタンをクリックして、試したいシーンが [ビルド内のシーン] リストに含まれていることを確認します。
-
-3. [ビルド] ボタンを押して、ビルド プロセスを開始します。
+3. [プレーヤーの設定] ボタンをクリックし、[発行の設定] にアクセスします。 [機能] で、次を有効にします。インターネット、インターネットクライアントサーバー、プライベートネットワーククライアントサーバー、マイクと空間認識。
+4. 同じプレーヤー設定で、XR settings にアクセスして、でサポートされている仮想現実を選択します。
+5. [ビルド] ボタンを押して、ビルド プロセスを開始します。
 
 ![レッスン1から Chapter5 手順3](images/Lesson1Chapter5Step3.JPG)
 
-4. アプリケーション用の新しいフォルダーを作成して、名前を付けます。 下の図では、アプリケーションを含めるために [App] という名前のフォルダーが作成されています。 [フォルダーの選択] をクリックして、新しく作成したフォルダーへのビルドを開始します。 ビルドが完了したら、Unity の [ビルド設定] ウィンドウを閉じてもかまいません。 
+6. アプリケーション用の新しいフォルダーを作成して、名前を付けます。 下の図では、アプリケーションを含めるために [App] という名前のフォルダーが作成されています。 [フォルダーの選択] をクリックして、新しく作成したフォルダーへのビルドを開始します。 ビルドが完了したら、Unity の [ビルド設定] ウィンドウを閉じてもかまいません。 
 
 ![レッスン1から Chapter5 手順4](images/Lesson1Chapter5Step4.JPG)
 
 > 注: ビルドが失敗した場合は、もう一度構成してみるか、Unity を再起動してから再度ビルドしてください。 [エラー:CS0246 = “XX” という名前の型または名前空間が見つかりませんでした (ディレクトリの使用またはアセンブリ参照が不足しています)] のようなエラーが表示される場合は、[Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>) のインストールが必要な場合があります
 
-5. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 ".Sln" ソリューションファイルをダブルクリックして、Visual Studio でソリューションファイルを開きます。
+7. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 ".Sln" ソリューションファイルをダブルクリックして、Visual Studio でソリューションファイルを開きます。
 
 > 注:必ず、新しく作成したフォルダー (つまり、前の手順で名前付け規則に従っている場合は、[App] フォルダー) を開いてください。そのフォルダーの外部に同じような名前の .sln ファイルがあり、ビルド フォルダー内の .sln ファイルと混同してはならないためです。 
 
@@ -152,15 +153,14 @@ ms.locfileid: "68701962"
 
 > 注:Visual Studio から新しいコンポーネントをインストールするよう求められたら、少し時間を取って、[「ツールのインストール」ページ](install-the-tools.md)で示されている、前提条件となるすべてのコンポーネントがインストールされていることを確認してください
 
-6. USB ケーブルを使って HoloLens 2 を PC に接続します。 これらのレッスンの手順では、HoloLens 2 デバイスを使ってテストをデプロイすることを前提としていますが、[HoloLens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイすることも、[サイドローディング用のアプリ パッケージ](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)を作成することもできます
+8. USB ケーブルを使って HoloLens 2 を PC に接続します。 これらのレッスンの手順では、HoloLens 2 デバイスを使ってテストをデプロイすることを前提としていますが、[HoloLens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイすることも、[サイドローディング用のアプリ パッケージ](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)を作成することもできます
+9. デバイスにビルドする前に、デバイスが開発者モードであることを確認してください。 HoloLens 2 に初めてデプロイする場合は、Visual Studio により、PIN を使用して HoloLens 2 をペアリングするよう求められる場合があります。 開発者モードを有効にするか、Visual Studio とペアリングする必要がある場合は、[こちらの手順](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)に従ってください。
 
-7. デバイスにビルドする前に、デバイスが開発者モードであることを確認してください。 HoloLens 2 に初めてデプロイする場合は、Visual Studio により、PIN を使用して HoloLens 2 をペアリングするよう求められる場合があります。 開発者モードを有効にするか、Visual Studio とペアリングする必要がある場合は、[こちらの手順](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)に従ってください。
-
-8. [リリース] 構成と [ARM] アーキテクチャを選択して、HoloLens 2 へのビルド用に Visual Studio を構成します。
+10. [リリース] 構成と [ARM] アーキテクチャを選択して、HoloLens 2 へのビルド用に Visual Studio を構成します。
 
 ![レッスン1から Chapter5 Step8](images/Lesson1Chapter5Step8.JPG)
 
-9. 最後の手順は、[デバッグ] > [デバッグなしで開始] を選択して、デバイスにビルドすることです。 [デバッグなしで開始] を選択すると、ビルドが成功した時点でアプリケーションがデバイスですぐに起動しますが、Visual Studio にデバッグ情報は表示されません。 これは、アプリケーションが停止することなく HoloLens 2 上で実行されている間は、USB ケーブルを取り外すことができることも意味します。 また、[ビルド] > [ソリューションの配置] を選択することで、アプリケーションを自動的に起動せずにデバイスに配置することもできます。
+11. 最後の手順は、[デバッグ] > [デバッグなしで開始] を選択して、デバイスにビルドすることです。 [デバッグなしで開始] を選択すると、ビルドが成功した時点でアプリケーションがデバイスですぐに起動しますが、Visual Studio にデバッグ情報は表示されません。 これは、アプリケーションが停止することなく HoloLens 2 上で実行されている間は、USB ケーブルを取り外すことができることも意味します。 また、[ビルド] > [ソリューションの配置] を選択することで、アプリケーションを自動的に起動せずにデバイスに配置することもできます。
 
 ![レッスン1から Chapter5 Step9](images/Lesson1Chapter5Step9.JPG)
 

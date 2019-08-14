@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: fc65dccfcbc181af0c0b321374c721797e120e5d
-ms.sourcegitcommit: c7c7e3c836373b65e319609b4e8389dea6b081de
+ms.openlocfilehash: 43a6f02eaf09fcf43775374fae4fbe2d0bc8c346
+ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68460337"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977980"
 ---
 # <a name="speech-sdk-learning-module---rocket-launcher-control-using-speech-commands"></a>Speech SDK Learning モジュール-音声コマンドを使用したロケットランチャーコントロール
 
@@ -23,17 +23,17 @@ ms.locfileid: "68460337"
 - 音声合成の音声コマンドを、ロケットコントロール入力コマンドとして使用する方法について説明します。
 
 ## <a name="instructions"></a>手順
-1. このチュートリアルでは、"BaseModule" 資産を使用して、ロケットランチャーと音声コマンドを統合します。 そのためには、プロジェクトにアセットをインポートする必要があります。 このリンクを使用して、"ロケットランチャー" 資産をダウンロードできます (リンクを添付します)。 
+1. このチュートリアルでは、"BaseModule" 資産を使用して、ロケットランチャーと音声コマンドを統合します。 そのためには、プロジェクトにアセットをインポートする必要があります。 この[リンク](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2)を使用して、"ロケットランチャー" 資産をダウンロードできます。 
 
 2. アセットをインポートするには、[> アセット]、[パッケージのインポート]、[カスタム > パッケージ >] の順に選択し、ダウンロードしたファイルに移動して、[インポート] をクリックします。
 
 ![module4chapter5step1](images/module4chapter5step1.PNG)
 
-3. "ロケットランチャー" 資産をインポートした後、"ロケットランチャー" フォルダー内を移動します。 > Prefabs-> [ロケット Launcher_Complete] を選択し、既存のシーン階層にドラッグアンドドロップします。
+3. "Base Module Assets" 資産をインポートした後、"Base Module Assets" フォルダー内を移動し > Prefabs-> [ロケット Launcher_Complete] を選択し、既存のシーン階層にドラッグアンドドロップします。
 
 ![module4chapter5step2](images/module4chapter5step2.PNG)
 
-4. ここで、前のレッスンで作業した "ロケットランチャー" を LUIS プロジェクトと統合する必要があります (lesson4 のリンク)。 そのためには、階層の "ロケット Launcher_Complete" prefab を展開し、"LaunchRoundButton"、"ResetRoundButton"、および "Placement ヒント" の各ボタンを見つけます。
+4. 次に、前のレッスンの[レッスン](mrlearning-speechSDK-ch4.md)で扱った "ロケットランチャー" を LUIS プロジェクトと統合する必要があります。 そのためには、階層の "ロケット Launcher_Complete" prefab を展開し、"LaunchRoundButton"、"ResetRoundButton"、および "Placement ヒント" の各ボタンを見つけます。
 
 ![module4chapter5step3](images/module4chapter5step3.PNG)
 
