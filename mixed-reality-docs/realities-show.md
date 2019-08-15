@@ -6,36 +6,39 @@ ms.author: daescu
 ms.date: 04/06/2019
 ms.topic: article
 keywords: 現実、ショー、カレンダー、academy、schedule、sf、サンフランシスコ、リアクター
-ms.openlocfilehash: 462d4fbb8a6aaf1ee643a6fa1f0f4ed04c0cefed
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 0a568e5d72bb7ed502d783df2f0815f2d9c75364
+ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63524752"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020186"
 ---
-# <a name="the-realities-show"></a><span data-ttu-id="bf586-104">現実のショー</span><span class="sxs-lookup"><span data-stu-id="bf586-104">The Realities Show</span></span>
+# <a name="the-realities-show"></a><span data-ttu-id="2f22e-104">現実のショー</span><span class="sxs-lookup"><span data-stu-id="2f22e-104">The Realities Show</span></span>
 ![Mixed Reality 向けの設計](images/therealitiesshow.jpg)
 
-<span data-ttu-id="bf586-106">**現実のショーは、HoloLens 2、Mixed Reality サービス、MR テクノロジに関する30分のライブストリームです。各エピソードでは、機能、機能、テクノロジの背後にあるテクノロジ、さまざまなデバイス向けの開発方法、推奨されるベストプラクティス、および対象ユーザーからの質問への回答について説明します。サンフランシスコリアクター stage セットアップの世界中の開発者に、リビングルーム環境として (場合によっては、他のサイトからも) ストリーミングしました。**</span><span class="sxs-lookup"><span data-stu-id="bf586-106">**The Realities Show is a 30 minute livestream about HoloLens 2, Mixed Reality Services and MR technologies. In each episode we'll dive into features, capabilities, the tech behind it, how to develop for the different devices, recommend best practices and of course answer questions from our audience. Streamed to developers worldwide from our San Francisco Reactor stage setup as a living room environment (and occasionally from other sites).**</span></span>
+<span data-ttu-id="2f22e-106">**現実のショーは、HoloLens 2、Mixed Reality サービス、MR テクノロジに関する30分のライブストリームです。各エピソードでは、機能、機能、テクノロジの背後にあるテクノロジ、さまざまなデバイス向けの開発方法、推奨されるベストプラクティス、および対象ユーザーからの質問への回答について説明します。サンフランシスコリアクター stage セットアップの世界中の開発者に、リビングルーム環境として (場合によっては、他のサイトからも) ストリーミングしました。**</span><span class="sxs-lookup"><span data-stu-id="2f22e-106">**The Realities Show is a 30 minute livestream about HoloLens 2, Mixed Reality Services and MR technologies. In each episode we'll dive into features, capabilities, the tech behind it, how to develop for the different devices, recommend best practices and of course answer questions from our audience. Streamed to developers worldwide from our San Francisco Reactor stage setup as a living room environment (and occasionally from other sites).**</span></span>
 
-<a name="watch-live-and-past-episodes-herehttpakamstrs"></a><span data-ttu-id="bf586-107">**[ここでライブと過去のエピソードを見る](http://aka.ms/trs)**</span><span class="sxs-lookup"><span data-stu-id="bf586-107">**[Watch live and past episodes here](http://aka.ms/trs)**</span></span>
----
+<span data-ttu-id="2f22e-107">**[ここでライブと過去のエピソードを見る](http://aka.ms/trs)**</span><span class="sxs-lookup"><span data-stu-id="2f22e-107">**[Watch live and past episodes here](http://aka.ms/trs)**</span></span>
+___
 
-## <a name="hololens-2-and-mixed-reality-services---march-12-2019-8-am-pdt"></a><span data-ttu-id="bf586-108">**HoloLens 2 および Mixed Reality サービス**-2019 年3月12日午前8時 (PDT)</span><span class="sxs-lookup"><span data-stu-id="bf586-108">**HoloLens 2 and Mixed Reality Services** - March 12, 2019, 8 AM (PDT)</span></span>
-<span data-ttu-id="bf586-109">最初のエピソードでは、HoloLens 2 と Mixed Reality サービスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="bf586-109">The first episode of The Realities Show is all about HoloLens 2 and Mixed Reality Services.</span></span> <span data-ttu-id="bf586-110">主な機能、背後にあるビジョン、新しい相互作用モデル、クラウドのスーパーパワーについて説明します。</span><span class="sxs-lookup"><span data-stu-id="bf586-110">We'll talk about the main features, the vision behind it, the new interaction model and the cloud's superpowers!</span></span>
+## <a name="hololens-2-and-mixed-reality-services---march-12-2019-8-am-pdt"></a><span data-ttu-id="2f22e-108">**HoloLens 2 および Mixed Reality サービス**-2019 年3月12日午前8時 (PDT)</span><span class="sxs-lookup"><span data-stu-id="2f22e-108">**HoloLens 2 and Mixed Reality Services** - March 12, 2019, 8 AM (PDT)</span></span>
+<span data-ttu-id="2f22e-109">最初のエピソードでは、HoloLens 2 と Mixed Reality サービスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f22e-109">The first episode of The Realities Show is all about HoloLens 2 and Mixed Reality Services.</span></span> <span data-ttu-id="2f22e-110">主な機能、背後にあるビジョン、新しい相互作用モデル、クラウドのスーパーパワーについて説明します。</span><span class="sxs-lookup"><span data-stu-id="2f22e-110">We'll talk about the main features, the vision behind it, the new interaction model and the cloud's superpowers!</span></span>
 
----
-This episode is all about Human Understanding: 'near interactions, far interactions, eye-tracking and voice.'
----
-## <a name="world-understanding---coming-soon"></a><span data-ttu-id="bf586-111">**世界**的な理解-近日公開予定</span><span class="sxs-lookup"><span data-stu-id="bf586-111">**World Understanding** - Coming soon</span></span>
-<span data-ttu-id="bf586-112">インテリジェントエッジデバイスがクラウドのコンピューティング能力を leveredge、世界を理解します。</span><span class="sxs-lookup"><span data-stu-id="bf586-112">How intelligent edge devices leveredge the cloud's compute power to understand the world.</span></span> <span data-ttu-id="bf586-113">HoloLens 2、コンピュータービジョン、共有アンカーサービス、セマンティックラベル付け、Azure Kinect DK を含みます。</span><span class="sxs-lookup"><span data-stu-id="bf586-113">Including HoloLens 2, Computer vision, Shared Anchor Service, Semantic Labelling and Azure Kinect DK.</span></span>
+___
 
----
-## <a name="mixedrealitytoolkit---coming-soon"></a><span data-ttu-id="bf586-114">**MixedRealityToolkit** -近日公開予定</span><span class="sxs-lookup"><span data-stu-id="bf586-114">**MixedRealityToolkit** - Coming soon</span></span>
-<span data-ttu-id="bf586-115">MixedRealityToolkit (MRTK) には、MR アプリの開発を促進するための基本コンポーネントと機能のセットが用意されています。</span><span class="sxs-lookup"><span data-stu-id="bf586-115">The MixedRealityToolkit (MRTK) provides a set of foundational components and features to accelerate MR app development.</span></span> <span data-ttu-id="bf586-116">MRTK-Unity (V2) の最新リリースでは、HoloLens/HoloLens 2、Windows Mixed Reality、および OpenVR プラットフォームがサポートされています。ここでは、その背後にあるエンドとデザイナーについて詳しく見ていきましょう。</span><span class="sxs-lookup"><span data-stu-id="bf586-116">The latest Release of MRTK-Unity (V2) supports HoloLens/HoloLens 2, Windows Mixed Reality, and OpenVR platforms.Let's take a deep dive with the endineers and designers behind it.</span></span>
+## <a name="human-understanding---coming-soon"></a><span data-ttu-id="2f22e-111">**人間**による理解-近日公開予定</span><span class="sxs-lookup"><span data-stu-id="2f22e-111">**Human Understanding** - Coming soon</span></span>
+<span data-ttu-id="2f22e-112">このエピソードでは、ほぼ相互作用、遠くのやり取り、目の追跡と音声について理解しています。</span><span class="sxs-lookup"><span data-stu-id="2f22e-112">This episode is all about Human Understanding: near interactions, far interactions, eye-tracking and voice.</span></span>
 
----
-## <a name="designing-for-hololens-2---coming-soon"></a><span data-ttu-id="bf586-117">**HoloLens 2 用の設計**-近日公開予定</span><span class="sxs-lookup"><span data-stu-id="bf586-117">**Designing for HoloLens 2** - Coming soon</span></span>
-<span data-ttu-id="bf586-118">Mixed Reality 開発の最大の課題は、そのための設計です。</span><span class="sxs-lookup"><span data-stu-id="bf586-118">The biggest challenge in Mixed Reality development is designing for it.</span></span> <span data-ttu-id="bf586-119">そのため、従来の設計は必ずしも適用されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="bf586-119">It's so new, so screen-less and so real, that traditional design does not necesarily apply.</span></span> <span data-ttu-id="bf586-120">HoloLens 2 を設計する方法を見てみましょう。また、MixedRealityToolkit が提供するデザインツールを確認してください。</span><span class="sxs-lookup"><span data-stu-id="bf586-120">Let's take a look at how to design for HoloLens 2 and check out the design tools that the MixedRealityToolkit gives us.</span></span>
+___
+## <a name="world-understanding---coming-soon"></a><span data-ttu-id="2f22e-113">**世界**的な理解-近日公開予定</span><span class="sxs-lookup"><span data-stu-id="2f22e-113">**World Understanding** - Coming soon</span></span>
+<span data-ttu-id="2f22e-114">インテリジェントエッジデバイスがクラウドのコンピューティング能力を leveredge、世界を理解します。</span><span class="sxs-lookup"><span data-stu-id="2f22e-114">How intelligent edge devices leveredge the cloud's compute power to understand the world.</span></span> <span data-ttu-id="2f22e-115">HoloLens 2、コンピュータービジョン、共有アンカーサービス、セマンティックラベル付け、Azure Kinect DK を含みます。</span><span class="sxs-lookup"><span data-stu-id="2f22e-115">Including HoloLens 2, Computer vision, Shared Anchor Service, Semantic Labelling and Azure Kinect DK.</span></span>
+
+___
+## <a name="mixedrealitytoolkit---coming-soon"></a><span data-ttu-id="2f22e-116">**MixedRealityToolkit** -近日公開予定</span><span class="sxs-lookup"><span data-stu-id="2f22e-116">**MixedRealityToolkit** - Coming soon</span></span>
+<span data-ttu-id="2f22e-117">MixedRealityToolkit (MRTK) には、MR アプリの開発を促進するための基本コンポーネントと機能のセットが用意されています。</span><span class="sxs-lookup"><span data-stu-id="2f22e-117">The MixedRealityToolkit (MRTK) provides a set of foundational components and features to accelerate MR app development.</span></span> <span data-ttu-id="2f22e-118">MRTK-Unity (V2) の最新リリースでは、HoloLens/HoloLens 2、Windows Mixed Reality、および OpenVR プラットフォームがサポートされています。ここでは、その背後にあるエンドとデザイナーについて詳しく見ていきましょう。</span><span class="sxs-lookup"><span data-stu-id="2f22e-118">The latest Release of MRTK-Unity (V2) supports HoloLens/HoloLens 2, Windows Mixed Reality, and OpenVR platforms.Let's take a deep dive with the endineers and designers behind it.</span></span>
+
+___
+## <a name="designing-for-hololens-2---coming-soon"></a><span data-ttu-id="2f22e-119">**HoloLens 2 用の設計**-近日公開予定</span><span class="sxs-lookup"><span data-stu-id="2f22e-119">**Designing for HoloLens 2** - Coming soon</span></span>
+<span data-ttu-id="2f22e-120">Mixed Reality 開発の最大の課題は、そのための設計です。</span><span class="sxs-lookup"><span data-stu-id="2f22e-120">The biggest challenge in Mixed Reality development is designing for it.</span></span> <span data-ttu-id="2f22e-121">そのため、従来の設計は必ずしも適用されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="2f22e-121">It's so new, so screen-less and so real, that traditional design does not necesarily apply.</span></span> <span data-ttu-id="2f22e-122">HoloLens 2 を設計する方法を見てみましょう。また、MixedRealityToolkit が提供するデザインツールを確認してください。</span><span class="sxs-lookup"><span data-stu-id="2f22e-122">Let's take a look at how to design for HoloLens 2 and check out the design tools that the MixedRealityToolkit gives us.</span></span>
 
 
