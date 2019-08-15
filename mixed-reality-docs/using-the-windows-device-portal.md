@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows デバイスポータル、HoloLens
-ms.openlocfilehash: 79a4a1f99125028fcaf71e185eb00093aa8c742f
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 5a2440c07ade1a9c41f3c28c332748e0c97cd3ed
+ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694584"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69020228"
 ---
 # <a name="using-the-windows-device-portal"></a>Windows デバイスポータルの使用
 
@@ -36,7 +36,7 @@ HoloLens 用 Windows デバイスポータルでは、Wi-fi または USB を使
 5. **[For developers]** (開発者向け) メニュー項目を選択します。
 6. **[Developer Mode]** (開発者モード) を有効にします。
 7. [下へスクロール](gestures.md#composite-gestures)し、**デバイスポータル**を有効にします。
-8. USB または Wi-fi 経由でこの HoloLens にアプリを展開できるように Windows デバイスポータルを設定する場合は、 **[ペアリング**] をクリックして[ペアリングピンを生成](using-visual-studio.md)します。 最初のデプロイ中に Visual Studio に PIN を入力するまでは、ピンポップアップで設定アプリをそのままにしておきます。
+8. USB または Wi-fi 経由でこの HoloLens にアプリを展開できるように Windows デバイスポータルを設定する場合は、 [ペアリング] をクリックして[ペアリングピンを生成](using-visual-studio.md)します。 最初のデプロイ中に Visual Studio に PIN を入力するまでは、ピンポップアップで設定アプリをそのままにしておきます。
 
    ![Windows Holographic の設定アプリで開発者モードを有効にする](images/deviceportalsettings.png)
 
@@ -52,7 +52,7 @@ HoloLens 用 Windows デバイスポータルでは、Wi-fi または USB を使
 
 1. Windows 10 developer tools が PC にインストールされていることを確認するため[のツールをインストール](install-the-tools.md)します。 これで USB 接続が有効になります。
 2. マイクロ USB ケーブルを使って HoloLens を PC に接続します。
-3. PC 上の Web ブラウザーから、 http://127.0.0.1:10080 にアクセスします。
+3. PC の web ブラウザーからに[http://127.0.0.1:10080](http://127.0.0.1:10080)アクセスします。
 
 ## <a name="connecting-to-an-emulator"></a>エミュレーターへの接続
 
