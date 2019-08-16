@@ -1,11 +1,11 @@
 ---
-title: 複合現実の 2D の UWP アプリを更新します。
-description: この記事では、HoloLens と Windows Mixed Reality イマーシブ ヘッドセットで実行する既存 2D ユニバーサル Windows プラットフォーム アプリの更新について説明します。
+title: 混合現実向けに 2D UWP アプリを更新する
+description: この記事では、既存の2D ユニバーサル Windows プラットフォームアプリを更新して、HoloLens および Windows Mixed Reality のイマーシブヘッドセットで実行する方法について説明します。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 2D アプリ、UWP、フラットなアプリ、HoloLens、イマーシブ ヘッドセット、アプリ モデルでは、バックアップ、ボタン、アプリ バー、dpi スケールの解決
+keywords: 2D アプリ、UWP、フラットアプリ、HoloLens、イマーシブヘッドセット、アプリモデル、戻るボタン、アプリバー、dpi、解像度、スケール
 ms.openlocfilehash: f9792a7e5fd9729bf9f5f632c699c74c58c10ddf
 ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
 ms.translationtype: MT
@@ -13,167 +13,167 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 06/27/2019
 ms.locfileid: "67414220"
 ---
-# <a name="updating-2d-uwp-apps-for-mixed-reality"></a>複合現実の 2D の UWP アプリを更新します。
+# <a name="updating-2d-uwp-apps-for-mixed-reality"></a>混合現実向けに 2D UWP アプリを更新する
 
-Windows Mixed Reality により、ユーザーを物理またはデジタルの世界では、周囲に適切な場合、ホログラムを参照してください。 基本的には、HoloLens とに、イマーシブ ヘッドセット アクセサリをアタッチするデスクトップ Pc の両方が Windows 10 デバイスです。これは、2D アプリとしてストアにほぼすべてのユニバーサル Windows プラットフォーム (UWP) アプリを実行することであることを意味します。
+Windows Mixed Reality を使用すると、ユーザーは、お客様の物理的またはデジタルの世界において、ホログラムを適切なものとして表示できます。 主に、HoloLens とデスクトップ Pc の両方を Windows 10 デバイスとして接続します。これは、ストア内のほぼすべてのユニバーサル Windows プラットフォーム (UWP) アプリを2D アプリとして実行できることを意味します。
 
-## <a name="creating-a-2d-uwp-app-for-mixed-reality"></a>複合現実の 2D の UWP アプリの作成
+## <a name="creating-a-2d-uwp-app-for-mixed-reality"></a>混合現実向けの 2D UWP アプリの作成
 
-Mixed reality ヘッドセットを 2D アプリをお届けする最初の手順では、デスクトップ モニターでは、標準的な 2D アプリとして実行されているアプリを取得します。
+2D アプリを mixed reality ヘッドセットにするための最初の手順は、アプリを標準の2D アプリとしてデスクトップモニターで実行することです。
 
-### <a name="building-a-new-2d-uwp-app"></a>新しい 2D UWP アプリのビルド
+### <a name="building-a-new-2d-uwp-app"></a>新しい 2D UWP アプリを構築する
 
-複合現実用の新しい 2D アプリをビルドするには、標準的な 2D のユニバーサル Windows プラットフォーム (UWP) アプリをビルドするだけです。 その他のアプリの変更は、複合現実でスレート型として実行するには、そのアプリは必要ありません。
+混合現実向けの新しい2D アプリを構築するには、標準の2D ユニバーサル Windows プラットフォーム (UWP) アプリを構築するだけです。 他のアプリの変更は、そのアプリが混合現実のスレートとして実行するために必要ありません。
 
-2D の UWP アプリの構築を開始、チェック アウト、[最初のアプリを作成する](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)記事。
+2D UWP アプリの構築を開始するには、[最初のアプリの作成](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)に関する記事をご覧ください。
 
-### <a name="bringing-an-existing-2d-store-app-to-uwp"></a>UWP への既存の 2D ストア アプリの追加
+### <a name="bringing-an-existing-2d-store-app-to-uwp"></a>既存の2D ストアアプリを UWP に導入する
 
-ストアで 2D Windows アプリを既にがある場合、Windows 10 ユニバーサル Windows プラットフォーム (UWP) が対象とする最初ようにする必要があります。 ストア アプリで今すぐ必要がありますすべて、潜在的な開始点を次に示します。
+ストアに既に 2D Windows アプリがある場合は、最初に Windows 10 ユニバーサル Windows プラットフォーム (UWP) を対象としていることを確認する必要があります。 現在、ストアアプリで使用できる可能性があるすべての開始点を次に示します。
 <br>
 
-|  開始点  |  AppX マニフェストのプラットフォーム ターゲット  |  このユニバーサルにする方法は? | 
+|  開始点  |  AppX マニフェストプラットフォームターゲット  |  ユニバーサルにする方法 | 
 |----------|----------|----------|
-|  Windows Phone (Silverlight)  |  Silverlight アプリケーションのマニフェスト |  [WinRT に移行します。](https://msdn.microsoft.com/library/windows/apps/dn642486(v=vs.105).aspx) | 
-|  Windows Phone 8.1 ユニバーサル  |  8.1 プラットフォーム ターゲットが含まれていない AppX マニフェスト  |  [アプリをユニバーサル Windows プラットフォームに移行します。](https://msdn.microsoft.com/library/mt148501.aspx) | 
-|  Windows ストア 8  |  プラットフォーム ターゲットが含まれていない 8 AppX マニフェスト  |  [アプリをユニバーサル Windows プラットフォームに移行します。](https://msdn.microsoft.com/library/mt148501.aspx) | 
-|  Windows ストア 8.1 ユニバーサル  |  8.1 プラットフォーム ターゲットが含まれていない AppX マニフェスト  |  [アプリをユニバーサル Windows プラットフォームに移行します。](https://msdn.microsoft.com/library/mt148501.aspx) | 
+|  Windows Phone (Silverlight)  |  Silverlight アプリケーションマニフェスト |  [WinRT への移行](https://msdn.microsoft.com/library/windows/apps/dn642486(v=vs.105).aspx) | 
+|  Windows Phone 8.1 Universal  |  8.1 プラットフォームターゲットを含まない AppX マニフェスト  |  [アプリをユニバーサル Windows プラットフォームに移行する](https://msdn.microsoft.com/library/mt148501.aspx) | 
+|  Windows ストア8  |  プラットフォームターゲットを含まない 8 AppX マニフェスト  |  [アプリをユニバーサル Windows プラットフォームに移行する](https://msdn.microsoft.com/library/mt148501.aspx) | 
+|  Windows ストア 8.1 Universal  |  8.1 プラットフォームターゲットを含まない AppX マニフェスト  |  [アプリをユニバーサル Windows プラットフォームに移行する](https://msdn.microsoft.com/library/mt148501.aspx) | 
 
-今日 (「PC、Mac、Linux のスタンドアロン」ビルド ターゲット) の Win32 アプリとしてビルド 2D Unity アプリがある場合は、Unity を代わりに「ユニバーサル Windows プラットフォーム」ビルドのターゲットに切り替えることで、複合現実を対象ことができます。
+現在、Win32 アプリ ("PC, Mac & Linux スタンドアロン" ビルドターゲット) としてビルドされた 2D Unity アプリがある場合は、Unity を "ユニバーサル Windows プラットフォーム" ビルドターゲットに切り替えることによって、mixed reality をターゲットにすることができます。
 
-HoloLens Windows.Holographic のデバイス ファミリを使用して具体的には、アプリを制限することができますの方法について説明します[下](#publish-and-maintain-your-universal-app)します。
+ここでは、[以下](#publish-and-maintain-your-universal-app)の Holographic デバイスファミリを使用して、アプリを HoloLens に限定する方法について説明します。
 
-### <a name="run-your-2d-app-in-a-windows-mixed-reality-immersive-headset"></a>Windows Mixed Reality イマーシブ ヘッドセットで 2D アプリを実行します。
+### <a name="run-your-2d-app-in-a-windows-mixed-reality-immersive-headset"></a>Windows Mixed Reality のイマーシブヘッドセットで2D アプリを実行する
 
-2D アプリは、場所を開発し、モニターで試して、デスクトップ コンピューターに配置した、没入型のデスクトップ ヘッドセットで試す準備ができている既に!
+モニターで開発して試してみるデスクトップコンピューターに2D アプリをデプロイした場合は、既にイマーシブデスクトップヘッドセットで試してみることができます。
 
-Mixed reality ヘッドセット内で [スタート] メニューに移動し、そこからアプリを起動するだけです。 デスクトップ シェルおよび holographic シェルは、UWP アプリの同じセットを共有するので、アプリが既に存在している Visual Studio からデプロイすると、.
+Mixed reality ヘッドセット内の [スタート] メニューにアクセスし、そこからアプリを起動します。 デスクトップシェルと holographic シェルの両方で同じ UWP アプリのセットが共有されるため、Visual Studio からデプロイした後は、アプリが既に存在している必要があります。
 
-## <a name="targeting-both-immersive-headsets-and-hololens"></a>イマーシブ ヘッドセットと HoloLens の両方を対象とします。
+## <a name="targeting-both-immersive-headsets-and-hololens"></a>イマーシブヘッドセットと HoloLens の両方を対象とする
 
-これで終了です。 アプリは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) を使用しています。
+おめでとうございます! これで、アプリは Windows 10 ユニバーサル Windows プラットフォーム (UWP) を使用しています。
 
-アプリは、デスクトップ、モバイル、Xbox、Windows Mixed Reality イマーシブ ヘッドセット、HoloLens も、将来の Windows デバイスなど、今日の Windows デバイスで実行できるようになりました。 ただし、実際にこれらのデバイスのすべてを対象とするアプリでは Windows.Universal デバイス ファミリをターゲットとすることを確認する必要があります。
+これで、アプリは現在の windows デバイス (デスクトップ、モバイル、Xbox、Windows Mixed Reality イマーシブヘッドセット、HoloLens など) で実行できるようになり、今後の Windows デバイスでも実行できるようになりました。 ただし、これらのデバイスをすべてターゲットにするには、アプリが Windows のユニバーサルデバイスファミリを対象としていることを確認する必要があります。
 
-### <a name="change-your-device-family-to-windowsuniversal"></a>Windows.Universal をデバイス ファミリに変更します。
+### <a name="change-your-device-family-to-windowsuniversal"></a>デバイスファミリを Windows に変更します。 Universal
 
-これで、Windows 10 UWP アプリは HoloLens で実行できるようにする、AppX マニフェストに進みましょう。
-* アプリのソリューション ファイルを開く**Visual Studio**アプリ パッケージのマニフェストに移動します
-* 右クリックして、 **Package.appxmanifest**ソリューション内のファイルしに移動**コードの表示**<br>
-  ![ソリューション エクスプ ローラーで package.appxmanifest](images/openappxmanifest-500px.png)<br>
-* ターゲット プラットフォームが依存関係セクション Windows.Universal であることを確認します。
+次に、AppX マニフェストに移動して、Windows 10 UWP アプリが HoloLens で実行できることを確認します。
+* **Visual Studio**でアプリのソリューションファイルを開き、アプリのパッケージマニフェストに移動します。
+* ソリューション内の package.appxmanifest ファイルを右クリックして、 **[コードの表示]** にアクセスし**ます。**<br>
+  ![ソリューションエクスプローラーの package.appxmanifest](images/openappxmanifest-500px.png)<br>
+* [依存関係] セクションで、ターゲットプラットフォームが Windows. Universal であることを確認します。
   ```
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10240.0" MaxVersionTested="10.0.10586.0" />
   </Dependencies>
   ```
-* 保存してください。
+* 保存!
 
-開発環境 Visual Studio を使用しない場合は、開く**AppXManifest.xml**対象にしていることを確認する任意のテキスト エディターで、 **Windows.Universal** *TargetDeviceFamily*します。
+開発環境に Visual Studio を使用しない場合は、任意のテキストエディターで**package.appxmanifest**を開いて、 *TargetDeviceFamily*を対象としていることを確認できます。
 
-### <a name="run-in-the-hololens-emulator"></a>HoloLens のエミュレーターで実行します。
+### <a name="run-in-the-hololens-emulator"></a>HoloLens エミュレーターでの実行
 
-UWP アプリが"Windows.Universal"を対象となったみましょうアプリのビルドし、で実行、 [HoloLens のエミュレーター](using-the-hololens-emulator.md)します。
-* 必ず確保[HoloLens のエミュレーターがインストールされている](install-the-tools.md)します。
-* Visual Studio で、選択、 **x86**ビルド アプリの構成
+UWP アプリが "Windows. Universal" を対象とするようになったので、アプリをビルドして[HoloLens エミュレーター](using-the-hololens-emulator.md)で実行しましょう。
+* [HoloLens エミュレーターがインストールされ](install-the-tools.md)ていることを確認します。
+* Visual Studio で、アプリの**x86**ビルド構成を選択します。
 
-  ![x86 ビルドの Visual Studio での構成](images/x86setting.png)<br>
-* 選択**HoloLens のエミュレーター**で、デプロイ ターゲット ドロップダウン メニュー
+  ![Visual Studio での x86 ビルド構成](images/x86setting.png)<br>
+* [配置ターゲット] ドロップダウンメニューで **[HoloLens Emulator]** を選択します。
 
-  ![配置ターゲット リスト HoloLens のエミュレーター](images/deployemulator-500px.png)<br>
-* 選択**デバッグ > [デバッグ開始]** アプリを展開およびデバッグを開始します。
-* エミュレーターが起動し、アプリを実行します。
-* キーボード、マウス、または Xbox コント ローラーを使用して起動する世界では、アプリを配置します。
+  ![展開ターゲットリストの HoloLens エミュレーター](images/deployemulator-500px.png)<br>
+* [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始します。
+* エミュレーターが起動し、アプリが実行されます。
+* キーボード、マウス、または Xbox コントローラーで、アプリを世界中に配置して起動します。
 
-  ![HoloLens のエミュレーターが UWP サンプルの読み込み](images/hololensemulatorwithuwpsample-800px.png)<br>
+  ![UWP サンプルで読み込まれた HoloLens エミュレーター](images/hololensemulatorwithuwpsample-800px.png)<br>
 
-### <a name="next-steps"></a>次のステップ
+### <a name="next-steps"></a>次の手順
 
-この時点では、次の 2 つのいずれかが発生することができます。
-1. アプリはそのスプラッシュを表示して、エミュレーターに配置されて後の実行を開始! すごい！
-2. または、2D ホログラムの読み込みアニメーションを確認した後は読み込みを停止し、アプリのスプラッシュ スクリーンにだけ表示されます。 つまり、何らかの問題を複合現実でのアプリを実現方法を理解するのには追加の調査がかかります。
+この時点で、次の2つのいずれかが発生する可能性があります。
+1. アプリのスプラッシュが表示され、エミュレーターに配置された後に実行が開始されます。 すごい！
+2. または、2D ホログラムの読み込みアニメーションが表示されると、読み込みが停止し、スプラッシュスクリーンにアプリが表示されます。 これは、何らかの問題が発生したことを意味します。これは、アプリを Mixed Reality で利用する方法を理解するために、より多くの調査を受けます。
 
-HoloLens で開始する UWP アプリの原因の下部に取得する、デバッグする必要があります。
+UWP アプリが HoloLens で開始されない原因の概要を把握するには、デバッグする必要があります。
 
-### <a name="running-your-uwp-app-in-the-debugger"></a>デバッガーでの UWP アプリを実行します。
+### <a name="running-your-uwp-app-in-the-debugger"></a>デバッガーでの UWP アプリの実行
 
-次の手順で、Visual Studio デバッガーを使用して、UWP アプリのデバッグを説明します。
-* これをいない場合は、Visual Studio でソリューションを開きます。 ターゲットへの変更、 **HoloLens のエミュレーター**し、ビルド構成を**x86**します。
-* 選択**デバッグ > [デバッグ開始]** アプリを展開およびデバッグを開始します。
-* 世界、マウス、キーボード、または Xbox コント ローラーで、アプリを配置します。
-* ここで、アプリ コードでどこかに visual Studio が分割する必要があります。
-  - アプリのクラッシュまたはハンドルされないエラーのため、デバッガーを中断しないすぐは、すべてが実行されていることを確認および機能へのアプリのコア機能のテスト パスを移動します。 (内部例外が処理されている) 下図のようにエラーが発生する可能性があります。 アプリのエクスペリエンスに影響する内部エラーを見逃すことはないことを確認するには、すべてが期待どおりに動作を確認する単体テスト、自動テストを実行します。
+次の手順では、Visual Studio デバッガーを使用して UWP アプリをデバッグする方法について説明します。
+* まだ行っていない場合は、Visual Studio でソリューションを開きます。 ターゲットを**HoloLens エミュレーター**に変更し、ビルド構成を**x86**に変更します。
+* [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始します。
+* マウス、キーボード、または Xbox コントローラーを使用して、アプリを世界中に配置します。
+* これで、Visual Studio はアプリコード内のどこかで中断するはずです。
+  - ハンドルされないエラーが発生しても、アプリがすぐにクラッシュしたりデバッガーに侵入したりしない場合は、アプリのコア機能のテストパスを実行して、すべてが動作していて機能していることを確認してください。 次のようなエラーが表示されることがあります (処理中の内部例外)。 アプリのエクスペリエンスに影響を与える内部エラーが発生しないようにするには、自動テストと単体テストを実行して、すべてが期待どおりに動作することを確認します。
 
-![HoloLens のエミュレーターは、システムの例外を示す UWP サンプルと共に読み込まれる](images/hololensemulatorwithuwpsampleexception-800px.png)
+![システム例外を示す UWP サンプルが読み込まれた HoloLens エミュレーター](images/hololensemulatorwithuwpsampleexception-800px.png)
 
-## <a name="update-your-ui"></a>UI を更新します。
+## <a name="update-your-ui"></a>UI を更新する
 
-これで、UWP アプリは、イマーシブ ヘッドセットまたは 2D ホログラムとして HoloLens で実行されているが、次にしましょう美しい見た目を確認します。 考慮事項を次に示します。
-* 853 x 480 有効ピクセルに固定の解像度とは、相当 DPI で、Windows Mixed Reality は 2D のすべてのアプリを実行します。 設計にこのスケールの微調整が必要なかどうかを考慮し、HoloLens、イマーシブ ヘッドセットを改善するために以下の設計ガイダンスを確認します。
-* Windows Mixed Reality[はサポートしていません](app-model.md)2D のライブ タイルです。 その情報をアプリに戻すを検討してください、コア機能には、ライブ タイルに情報が表示されている場合、または探索[3D アプリ ランチャー](3d-app-launcher-design-guidance.md)します。
+UWP アプリが2D ホログラムとしてイマーシブヘッドセットや HoloLens で実行されるようになったので、次は見栄えが良いことを確認します。 次に、考慮すべき点をいくつか示します。
+* Windows Mixed Reality は、853x480 有効ピクセルに相当する固定解像度および DPI ですべての2D アプリを実行します。 このスケールで設計を改良する必要があるかどうかを検討し、以下の設計ガイダンスを確認して、HoloLens とイマーシブヘッドセットのエクスペリエンスを向上させてください。
+* Windows Mixed Reality では、2d ライブタイル[はサポートされていません](app-model.md)。 コア機能がライブタイルに関する情報を表示している場合は、その情報をアプリに戻したり、 [3d アプリランチャー](3d-app-launcher-design-guidance.md)を調べたりすることを検討してください。
 
-### <a name="2d-app-view-resolution-and-scale-factor"></a>2D アプリの表示解像度とスケール係数
+### <a name="2d-app-view-resolution-and-scale-factor"></a>2D アプリビューの解像度とスケールファクター
 
-![レスポンシブ デザインから](images/scale-500px.png)
+![応答性の高いデザインから](images/scale-500px.png)
 
-Windows 10 では、すべてのビジュアル デ ザインを移動する実際の画面のピクセルから**有効ピクセル**します。 開発者は、次の Windows 10 ヒューマン インターフェイス ガイドラインの有効ピクセルは、その UI を設計し、Windows スケーリングにより、その有効ピクセルは適切なサイズ、つまり複数のデバイス、解像度、DPI、使いやすさなどです。これを参照してください[msdn 優れた読み取り](https://msdn.microsoft.com/library/windows/apps/Dn958435.aspx)これと詳細については、[ビルド プレゼンテーション](http://video.ch9.ms/sessions/build/2015/2-63_Build_2015_Windows_Scaling.pptx)します。
+Windows 10 は、すべてのビジュアルデザインを実際の画面ピクセルから**有効なピクセル**に移動します。 つまり、開発者は、Windows 10 のヒューマンインターフェイスガイドラインに従って、有効なピクセルに対して UI を設計します。また、Windows のスケーリングにより、デバイス、解像度、DPI などにおける使いやすさに適したサイズになります。詳細につい[ては、](https://msdn.microsoft.com/library/windows/apps/Dn958435.aspx)この[ビルドプレゼンテーション](http://video.ch9.ms/sessions/build/2015/2-63_Build_2015_Windows_Scaling.pptx)をご覧ください。
 
-距離の範囲で、世界中のアプリを配置する独自の機能を使用しても、テレビのような表示距離は、最善の読みやすさと視線の先/ジェスチャとの対話を生成するためにお勧めします。 そのため、Mixed Reality 自宅で仮想スレートでフラットな UWP ビューが表示されます。
+世界中にさまざまな距離でアプリを配置する独自の機能がある場合でも、テレビと同様の距離を使用することをお勧めします。 そのため、Mixed Reality ホームの仮想スレートには、フラットな UWP ビューが次のように表示されます。
 
-**1280 x 720、150 %dpi** (853 x 480 有効ピクセル数)
+**1280x720、150% DPI**(853x480 有効ピクセル)
 
-この解決方法には、いくつかの利点があります。
-* この有効ピクセル レイアウトは、タブレットや小規模のデスクトップと同じ情報密度について必要があります。
-* これは、固定 DPI とデバイス間でシームレスなエクスペリエンスを有効にする Xbox One で実行されている UWP アプリの有効ピクセルと一致します。
-* 動作して、世界中のアプリの距離の範囲の間でスケールするとき、このサイズは大丈夫です。
+この解決策にはいくつかの利点があります。
+* この有効なピクセルレイアウトは、タブレットやスモールデスクトップと同じ情報密度を持ちます。
+* これは、Xbox One で実行されている UWP アプリの固定 DPI と有効ピクセルに一致し、デバイス間でシームレスなエクスペリエンスを実現します。
+* このサイズは、世界中のアプリのさまざまな運用距離にわたってスケーリングされた場合に適しています。
 
-### <a name="2d-app-view-interface-design-best-practices"></a>2D アプリ ビュー インターフェイス設計のベスト プラクティス
+### <a name="2d-app-view-interface-design-best-practices"></a>2D アプリビューインターフェイスの設計のベストプラクティス
 
-**操作を行います。**
-* に従って、 [Windows 10 ヒューマン インターフェイス ガイドライン (HIG)](https://dev.windows.com/design)スタイル、フォント サイズ、およびボタンのサイズ。 HoloLens では、互換性のあるアプリのパターン、判読できるテキストのサイズ、および適切なヒット ターゲットのサイズ変更、アプリを設定するために処理を行います。
-* UI 次の手順のためのベスト プラクティスを確認します[レスポンシブ デザイン](https://msdn.microsoft.com/library/windows/apps/dn958435.aspx)HoloLen の一意の解像度と DPI で最適に表示します。
-* Windows の"light"の色のテーマの推奨事項を使用します。
+**ください**
+* スタイル、フォントサイズ、およびボタンのサイズについては、 [Windows 10 ヒューマンインターフェイスガイドライン (HIG)](https://dev.windows.com/design)に従ってください。 HoloLens は、アプリが互換性のあるアプリパターン、読み取り可能なテキストサイズ、および適切なヒットターゲットのサイズを確実に持つように作業を行います。
+* UI が[応答性](https://msdn.microsoft.com/library/windows/apps/dn958435.aspx)の高い設計のベストプラクティスに従っていることを確認し、HoloLen の固有の解像度と DPI に最適であることを確認します。
+* Windows の "明るい" 色のテーマに関する推奨事項を使用します。
 
 **できません：**
-* ユーザーが使い慣れたヘッドセットとの間に、複合現実で UI をも大幅に変更します。
+* 混合現実の場合、UI が大幅に変更され、ユーザーがヘッドセットを使い慣れていることを確認できます。
 
-### <a name="understand-the-app-model"></a>アプリ モデルを理解します。
+### <a name="understand-the-app-model"></a>アプリモデルを理解する
 
-[アプリ モデル](app-model.md)の多くのアプリがまとめて live、Mixed Reality ホームを使用する複合現実は設計されています。 これと考える複合現実と同等のデスクトップで、一度にで多くの 2D アプリを実行します。 これは、アプリのライフ サイクル、タイル、およびその他のアプリの主な機能に影響を与えます。
+混合現実の[アプリモデル](app-model.md)は、多くのアプリが一緒に存在する Mixed reality ホームを使用するように設計されています。 これは、多数の2D アプリを一度に実行するデスクトップに相当する mixed reality と考えることができます。 これは、アプリのライフサイクル、タイル、およびアプリのその他の主要な機能に影響します。
 
-### <a name="app-bar-and-back-button"></a>アプリ バーと [戻る] ボタン
+### <a name="app-bar-and-back-button"></a>アプリバーと [戻る] ボタン
 
-2D のビューは、そのコンテンツの上にアプリ バーで装飾されます。 アプリ バーでは、アプリ固有のパーソナル化の 2 つの点があります。
+2D ビューは、コンテンツの上にあるアプリバーで修飾されます。 アプリバーには、アプリ固有のパーソナル化の2つの点があります。
 
-**タイトル:** が表示されます、 *displayname*のアプリ インスタンスに関連付けられたタイル
+**タイトル:** アプリインスタンスに関連付けられているタイルの*displayname*を表示します
 
-**: [戻る] ボタン**発生させる、 *[BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* 押されたときにイベント。 戻るボタンの可視性がによって制御される *[SystemNavigationManager.AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)* します。
+**戻るボタン:** 押されたときに、 *[バック要求さ](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx)* れたイベントを発生させます。 戻るボタンの可視性は、 *[Systemnavigationmanager. AppViewBackButtonVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.aspx)* によって制御されます。
 
-![アプリ バーの 2D アプリ ビューでの UI](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
-*アプリ バーの 2D アプリ ビューでの UI*
+![2D アプリビューのアプリバー UI](images/12697297-10104100857470613-1470416918759008487-o-500px.jpg)<br>
+*2D アプリビューのアプリバー UI*
 
-### <a name="test-your-2d-apps-design"></a>テストの 2D アプリの設計
+### <a name="test-your-2d-apps-design"></a>2D アプリのデザインをテストする
 
-テキストを読み取ることが、ボタンが不要、およびアプリ全体が正しく思わかどうかを確認するアプリのテストは重要です。 できます[テスト](testing-your-app-on-hololens.md)デスクトップ ヘッドセット、HoloLens、エミュレーター、または解像度が 1280 x 720 に設定を使用したタッチ デバイスで@150%。
+アプリケーションをテストして、テキストが読み取り可能であること、ボタンが targetable であること、アプリ全体が正しいことを確認することが重要です。 解像度が 1280 x 720 @150% に設定されているデスクトップヘッドセット、HoloLens、エミュレーター、またはタッチデバイスで[テスト](testing-your-app-on-hololens.md)することができます。
 
 ## <a name="new-input-possibilities"></a>新しい入力可能性
 
-HoloLens では、高度な深さセンサーを使用して、世界中のユーザーを参照しています。 これによりなどの高度な手のジェスチャ[ブルーム](gestures.md#bloom)と[エア タップ](gestures.md#air-tap)します。 強力なマイクも有効にする[エクスペリエンスを音声](voice-input.md)します。
+HoloLens は高度な深度センサーを使用して世界を見て、ユーザーを表示します。 これにより、[ブルーム](gestures.md#bloom)や[エアタップ](gestures.md#air-tap)などの高度なハンドジェスチャが可能になります。 強力なマイクも[音声エクスペリエンス](voice-input.md)を実現します。
 
-デスクトップ ヘッドセットは、ユーザーがアプリをポイントし、アクションを実行するアニメーション コント ローラーを使用できます。 自分の視線の先を持つオブジェクトを対象とする、ゲーム パッドを使用することもできます。
+デスクトップヘッドセットを使用すると、ユーザーは、モーションコントローラーを使用してアプリをポイントし、アクションを実行できます。 また、ゲームパッドを使用することもできます。
 
-変換する UWP アプリでは、このような複雑さのすべての処理は、Windows、[視線](gaze.md)、ジェスチャ、音声およびモーションをコント ローラーの入力[ポインター イベント](https://msdn.microsoft.com/library/windows/apps/mt404610#pointer_events)入力メカニズムを抽象化します。 たとえば、ユーザーが自分の手でエア タップの完了またはアニメーション コント ローラーで、トリガーのプルが 2D のアプリケーションは、入力の取得元、タッチ スクリーンでとしてを押すと、2 D touch だけ表示そこを知る必要はありません。
+Windows では、入力メカニズムを抽象化する[ポインターイベント](https://msdn.microsoft.com/library/windows/apps/mt404610#pointer_events)に対して、[宝石](gaze.md)、ジェスチャ、音声、およびモーションコントローラーの入力を変換することによって、UWP アプリのこのような複雑さをすべて処理します。 たとえば、ユーザーが手の形でエアタップを行った場合や、選択トリガーをモーションコントローラーで取得した場合、2D アプリケーションは、タッチスクリーンの場合と同様に、2D タッチの押下を認識しているだけではありません。
 
-HoloLens を UWP アプリを移行することと、入力を理解する必要が高レベルの概念やシナリオを次に示します。
-* [視線](gaze.md)ホバー イベントは、メニューのフライアウトまたはアプリの周囲 gazing するだけでポップアップ表示するその他のユーザー インターフェイス要素をトリガーできますが予期せずに変わります。
-* 視線の先が正確に表すマウス入力ではありません。 使用は、HoloLens、タッチ対応のモバイル アプリケーションと同様のヒット ターゲットを適切にサイズ。 アプリの端の小さな要素は、非常に困難と対話します。
-* ユーザーは、2 本の指のパンにドラッグするスクロールから移動する入力モードを切り替える必要があります。 アプリは、タッチ入力用に設計された、2 本の指のパンの背後にある主要な機能がロックされていないことを確認を検討してください。 そうである場合は、2 本の指のパンを開始できるボタンのような代替入力手段のことを検討します。 やなどのマップ アプリ 2 本の指のパンとズームできますが、マイナス、プラス記号がシングル クリックで同じズーム相互作用をシミュレートするためにボタンを回転します。
+UWP アプリを HoloLens に持ち込むときの入力について理解しておく必要がある概要の概念とシナリオを次に示します。
+* マウスを[ポイント](gaze.md)すると、メニュー、flyouts、またはその他のユーザーインターフェイス要素が予期せずに起動し、アプリに関する情報が表示されるようになります。
+* 宝石は、マウス入力ほど正確ではありません。 タッチ対応のモバイルアプリケーションと同様に、HoloLens に適したサイズのヒットターゲットを使用します。 アプリの端付近にある小さな要素は、特に操作が困難です。
+* ユーザーは、スクロールから2つの指パンに移動するために入力モードを切り替える必要があります。 アプリがタッチ入力用に設計されている場合は、主要な機能が2本の指パンの背後でロックされていないことを確認してください。 その場合は、2つの指パンを開始できるボタンのような別の入力機構を使用することを検討してください。 たとえば、Maps アプリでは、2つの指パンでズームできますが、1回のクリックで同じズーム操作をシミュレートするには、プラス、マイナス、および回転ボタンがあります。
 
-[音声入力](voice-input.md)複合現実エクスペリエンスの重要な部分です。 音声ヘッドセットを使用する場合は、Cortana を強化する Windows 10 では、Api を設けました。
+[音声入力](voice-input.md)は、mixed reality エクスペリエンスの重要な部分です。 ヘッドセットを使用すると、Cortana の電源をオンにしている Windows 10 のすべての speech Api が有効になりました。
 
-## <a name="publish-and-maintain-your-universal-app"></a>発行し、ユニバーサル アプリの管理
+## <a name="publish-and-maintain-your-universal-app"></a>ユニバーサルアプリの発行と管理
 
-アプリが稼働するいると、アプリのパッケージ化する[Microsoft Store に提出](submitting-an-app-to-the-microsoft-store.md)します。
+アプリが起動して実行されたら、アプリをパッケージ化して[Microsoft Store に送信](submitting-an-app-to-the-microsoft-store.md)します。
 
 ## <a name="see-also"></a>関連項目
 * [アプリ モデル](app-model.md)

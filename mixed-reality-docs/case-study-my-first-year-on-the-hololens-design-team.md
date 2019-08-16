@@ -1,11 +1,11 @@
 ---
-title: 導入事例 - マイ最初の年、HoloLens の設計チーム
-description: 2016 年 1 月で HoloLens デザイン チームに参加するときに開始、3 D ワールドに 2D flatland からへ。
+title: ケーススタディ-HoloLens 設計チームの最初の年
+description: 2016年1月に HoloLens 設計チームに参加したときに、2D flatland から3D ワールドへの旅が開始されました。
 author: designnomad
 ms.author: haejinl
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、HoloLens、設計、編集、パーソナル
+keywords: Windows Mixed Reality、HoloLens、design、刊行物、個人用
 ms.openlocfilehash: 050645e6096559a4f37b033e5ddfdc5444039c08
 ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
 ms.translationtype: MT
@@ -13,119 +13,119 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/29/2019
 ms.locfileid: "64873952"
 ---
-# <a name="case-study---my-first-year-on-the-hololens-design-team"></a>導入事例 - マイ最初の年、HoloLens の設計チーム
+# <a name="case-study---my-first-year-on-the-hololens-design-team"></a>ケーススタディ-HoloLens 設計チームの最初の年
 
-2016 年 1 月で HoloLens デザイン チームに参加するときに開始、3 D ワールドに 2D flatland からへ。 チームに参加する前に 3D の設計でごくわずかなの経験がありました。 千マイルの今回はその最初の手順が閏日点を除いて、1 つの手順を以降の旅の中国語ことわざのようなことでした。
+2016年1月に HoloLens 設計チームに参加したときに、2D flatland から3D ワールドへの旅が開始されました。 チームに参加する前に、3D デザインの経験はほとんどありませんでした。 これは、1つのステップから始まる1000マイルの旅に関する中国語 proverb に似ていました。ただし、最初の手順はうるうでした。
 
-![2D から 3D にクラウドがかかっています](images/2D_to_3D-800px.gif)<br>
-*2D から 3D にクラウドがかかっています*
+![2D から3D への移行](images/2D_to_3D-800px.gif)<br>
+*2D から3D への移行*
 
-> *"感じましたなものとして、車を導く方法を知ることがなく主導権をジャンプする必要があります。負荷がかかることが怖いまだ非常にフォーカスがあるとします"。*<br>
+> *「車を運転する方法を知らなくても、運転席に座りました。私は怖いていましたが、非常に焦点を絞っています。」*<br>
 > — Hae Jin Lee
 
-過去の年にしまいましたスキルと知識を同じですが、まだ学ぶ速度。 ここでは、4 つの観測を 2D から 3D の相互作用のデザイナーへの移行は、文書化ビデオ チュートリアルを作成しました。 私の経験を他のデザイナーを 3D に移行を実行するきっかけと思います。
+過去1年間、スキルと知識をできるだけ早く取得しましたが、まだ学んでいます。 ここでは、2D から3D への相互作用デザイナーからの移行に関するビデオチュートリアルを使用して、4つの観測を作成しました。 私の経験により、他の設計者が3D に移行してくれることを願っています。
 
-## <a name="good-bye-frame-hello-spatial--diegetic-ui"></a>終わりのフレーム。 空間こんにちは/diegetic UI
+## <a name="good-bye-frame-hello-spatial--diegetic-ui"></a>適正なフレーム。 Hello 空間/diegetic UI
 
-ポスター、雑誌、web サイト、またはアプリの画面をデザインするときに、定義済みのフレーム (通常は四角形) は、すべての問題のための定数をしました。 HoloLens、またはその他の VR デバイスでは、この投稿を読んでいる場合を除いて、 *、外部からこれを見て*2D 画面のフレーム内で保護された安全に使用します。 コンテンツは、外部にします。 ただし、Mixed Reality ヘッドセット*フレームを排除*し徹底解剖からコンテンツを追いコンテンツの領域内であるため、します。
+ポスター、雑誌、web サイト、またはアプリの画面をデザインしたときには、定義済みのフレーム (通常は四角形) はすべての問題にとって定数でした。 HoloLens またはその他の VR デバイスでこの投稿を読んでいない場合は、フレーム内で安全に保護された2D 画面を通じて *、外部からこれを参照*しています。 コンテンツは外部にあります。 ただし、Mixed Reality ヘッドセットでは*フレームが*削除されるため、コンテンツスペース内では、コンテンツを検索して内部から検索することができます。
 
-概念的には、これを理解しましたが、単に 2D の考え方を 3D 空間に転送の過ちを犯しては最初に。 明らかにしていないため、うまく動作 3D 空間がある (ユーザーのヘッドの移動に基づく) ビューの変更など、独自の一意のプロパティと[快適性の要件が異なる](https://www.youtube.com/watch?v=-606oZKLa_s/)(を使用して、人間とデバイスのプロパティに基づくその)。 たとえばを 2D の UI デザイン領域に画面の隅にある UI 要素にロックは非常に一般的なパターンがこの HUD (ヘッドをディスプレイ) スタイルの UI が MR/VR エクスペリエンスで自然に感じはありません。スペースにユーザーの immersion の妨げになってし、ユーザーの不安をによりします。 処分するたい場合は、眼鏡の面倒な場合、ほこりパーティクルをできるようになります。 時間の経過と共に、3 D 空間でコンテンツを配置して、コンテンツに従って相対の固定距離にあるユーザーは、本文ロックの動作を追加するより自然な感じることがわかりました。
+これは概念的に理解しましたが、最初に2D の考え方を3D 空間に転送するのは間違いでした。 これは明らかにうまくいきませんでした。これは、3D 空間には、(ユーザーのヘッド移動に基づいた) ビューの変更などの独自の固有のプロパティがあり、[ユーザーが快適に](https://www.youtube.com/watch?v=-606oZKLa_s/)使用するための要件 (デバイスのプロパティとそれらを使用している人間に基づく) が異なるためです。 たとえば、2D UI デザイン領域では、画面の隅に UI 要素をロックするのは非常に一般的なパターンですが、この HUD (ヘッドアップディスプレイ) スタイルの UI は MR/VR エクスペリエンスで自然には感じません。ユーザーの immersion の妨げになるため、ユーザーの不快感が発生します。 これは、起きのように見えにくい埃がメガネにあるようなものです。 時間の経過と共に、3D 空間にコンテンツを配置し、本文ロックの動作を追加して、コンテンツが相対的な固定距離でユーザーに続くようにすることを学習しました。
 
-![本文ロック](images/bodylockedtagalong.gif)<br>
-*本文ロック*
+![本文-ロック済み](images/bodylockedtagalong.gif)<br>
+*本文-ロック済み*
 
 <br>
 
 ![世界ロック](images/worldlocked.gif)<br>
 *世界ロック*
 
-### <a name="fragments-an-example-of-great-diegetic-ui"></a>フラグメント:優れた Diegetic UI の例
+### <a name="fragments-an-example-of-great-diegetic-ui"></a>後続優れた Diegetic UI の例
 
-[フラグメント](https://www.microsoft.com/p/fragments/9nblggh5ggm8)、によって開発された最初のユーザーの犯罪 thriller [Asobo Studio](http://www.asobostudio.com/)の HoloLens は優れた Diegetic UI を示します。 このゲームでは、ユーザーはメインの謎を解決しようとした探偵文字になります。 この謎を解決するために極めて重要なヒント、ユーザーの物理的なルームでのさまざまな箇所を取得、多くの場合、独自の既存のではなく、架空のオブジェクトの内部に埋め込まれたです。 UI Asobo チームが巧みに仮想の文字の視線方向、サウンド、光、およびガイド (ヒントの場所を指す矢印など) を含む多くのキューを使用するために、UI の本文がロックされているよりも見つけにくいする傾向にありますこの diegetic ユーザーの注意を取得します。
+[フラグメント](https://www.microsoft.com/p/fragments/9nblggh5ggm8)、[Asobo Studio](http://www.asobostudio.com/) for HoloLens によって開発された最初のユーザー犯罪 thriller は、優れた Diegetic UI を示しています。 このゲームでは、ユーザーが主な文字になります。これは、謎の解決を試みる検出です。 この謎を解決するための重要な手がかりは、ユーザーの物理的な部屋で sprinkled を獲得し、多くの場合、既存のものではなく架空のオブジェクトに埋め込まれることです。 この diegetic UI は、本文でロックされている UI よりも検出できない傾向があります。そのため、Asobo チーム巧妙では、仮想文字の、サウンド、ライト、ガイドなどの多くの手掛かりを使用しています (ヒントの場所を示す矢印など)。
 
-![フラグメントの Diegetic UI の例](images/fragments-game-example-1.jpg)<br>
-*フラグメントの Diegetic UI の例*
+![フラグメント-Diegetic UI の例](images/fragments-game-example-1.jpg)<br>
+*フラグメント-Diegetic UI の例*
 
-### <a name="observations-about-diegetic-ui"></a>観測 diegetic UI について
+### <a name="observations-about-diegetic-ui"></a>Diegetic UI についての所見
 
-空間の (両方本文ロックおよび世界ロック) の UI と diegetic UI は、独自の長所と短所があります。 デザイナーをできるだけ多く MR/VR アプリを試すおよびメソッドを配置するさまざまな UI の独自の理解と感情を開発することをお勧めします。
+空間 UI (本文ロックとワールドロックの両方) と diegetic UI には、独自の長所と短所があります。 デザイナーは、可能な限り多くの MR/VR アプリを試し、さまざまな UI 配置方法について独自の理解と sensibility を開発することをお勧めします。
 
-## <a name="the-return-of-skeuomorphism-and-magical-interaction"></a>恣意と魔法のような操作の戻り値
+## <a name="the-return-of-skeuomorphism-and-magical-interaction"></a>Skeuomorphism と対話式の戻り値
 
-恣意、現実世界のオブジェクトの形状を模倣したデジタル インターフェイスがありません「クール」デザイン業界での過去の 5 ~ 7 年間です。 最後に、Apple は、iOS 7 でフラット デザインする方法を指定、ときに恣意がインターフェイスのデザイン方法論として最後に停止しているように思われました。 次に、新しいメディア、MR/VR ヘッドセットが市場に到着し、恣意が再度返されるように見えます。 : )
+現実世界のオブジェクトの形を模倣したデジタルインターフェイスは、設計業界では過去 5 ~ 7 年間 "uncool" になっています。 Apple が iOS 7 でフラット設計を行うことにした場合、Skeuomorphism が、最終的にはインターフェイスの設計方法として死んだと思われます。 しかし、新しい medium, MR/VR ヘッドセットが市場に到着し、Skeuomorphism のように再び返されるように見えます。 : )
 
-### <a name="job-simulator-an-example-of-skeuomorphic-vr-design"></a>ジョブ シミュレーターの場合:Skeuomorphic VR 設計の例
+### <a name="job-simulator-an-example-of-skeuomorphic-vr-design"></a>ジョブシミュレーター:Skeuomorphic VR デザインの例
 
-[ジョブのシミュレーター](http://jobsimulatorgame.com/)、という風変わりなゲームを開発した[Owlchemy Labs](https://owlchemylabs.com/) skeuomorphic VR デザインの最も一般的な例の 1 つです。 このゲームでプレーヤーは将来、ロボットは人間を置き換えるし、人間には、1 つの異なる 4 つのジョブでの日常のタスクを実行するは、ように感じること博物館を参照してください転送します。自動整備士、グルメ Chef、ストアのクラークまたはオフィス ワーカーです。
+[ジョブシミュレーター](http://jobsimulatorgame.com/)は、 [Owlchemy Labs](https://owlchemylabs.com/)によって開発された whimsical ゲームであり、skeuomorphic VR の設計の最も一般的な例の1つです。 このゲームでは、ロボットが人間や人間を置き換えるために、次の4つの異なるジョブの1つで日常的なタスクを実行するために必要と思われることを体験するために、プレーヤーが将来のものになります。Auto 整備士、グルメ Chef、店舗クラーク、または Office Worker。
 
-恣意の利点は明らかです。 使い慣れた環境とこのゲーム内のオブジェクトより快適さと仮想空白文字であると思われる新しい VR のユーザーに役立ちます。 また、オブジェクトおよび対応する物理反応と使い慣れた知識と動作を関連付けることによってコントロールがされているように感じになります。 たとえば、コーヒーを飲み、人だけ必要がありますコーヒー マシンをボタンを押して、cup ハンドルをドラッグして現実の世界でしまうと、口に傾けます。
+Skeuomorphism の利点は明確です。 このゲーム内の使い慣れた環境とオブジェクトを使用すると、新しい VR ユーザーの操作性が向上し、仮想空間に存在することになります。 また、使い慣れた知識と動作をオブジェクトとそれに対応する物理的反応に関連付けることによって、管理されているように感じられます。 たとえば、コーヒーをコーヒーに移動するには、単にコーヒーのコンピューターに移動し、ボタンを押して、カップハンドルをつかんで、実際の世界でのように、口に傾ける必要があります。
 
-![ジョブのシミュレーター](images/job-simulator.gif)<br>
-*ジョブのシミュレーター*
+![ジョブシミュレーター](images/job-simulator.gif)<br>
+*ジョブシミュレーター*
 
-MR/VR がまだ開発中であるためは恣意度を使用して MR/VR テクノロジを説明して、世界各地のより多くのユーザーに紹介するために必要なは。 さらに、恣意または現実的な表現を使用してが手術またはフライト シミュレーションなどのアプリケーションの特定の種類な役に立ちます可能性があります。 これらのアプリの目的は、開発および現実の世界で直接適用できる特定のスキルを絞り込むであるために近ければ近いほどシミュレーションが実際には、譲渡できません。 またより知識は。
+MR/VR はまだ開発中であるため、説明 MR/VR テクノロジを使用して世界中のより多くのユーザーに導入するには、特定の程度の skeuomorphism を使用する必要があります。 また、skeuomorphism またはリアルな表現を使用すると、手術やフライトシミュレーションなどの特定の種類のアプリケーションにとって有益な場合があります。 これらのアプリの目的は、実際の世界に直接適用できる特定のスキルを開発して調整することであるため、実際のシミュレーションの方が、より多くの知識が得られます。
 
-その恣意がのみ 1 つの方法に注意してください。 MR/VR 世界中の可能性がはるかに超えて、およびデザイナーが魔法のようなハイパー自然の相互作用を作成するよう努力する必要があります: MR VR/世界で一意に可能な新しいアフォーします。 開始、として基本的な自分たちの希望を満たすためにユーザーを有効にする通常のオブジェクトへの魔法のような電源の追加を検討してください: teleportation 周到など。
+Skeuomorphism は1つのアプローチにすぎないことに注意してください。 MR/VR 世界の可能性ははるかに高く、設計者は、"MR/VR" で一意に可能な新しい affordances という、魔法のあるハイパー自然な相互作用を作成する必要があります。 最初に、通常のオブジェクトに魔法の累乗を追加して、ユーザーが自分の基本的な要望 (たとえば、omniscience と、) を達成できるようにすることを検討してください。
 
-![Doraemon の魔法のようなドア (左) と Ruby slippers(right)](images/doraemons-magical-door-and-ruby-slippers.jpg)<br>
-*Doraemon の魔法のようなドア (左) と ruby slippers(right)*
+![Doraemon の魔法のドア (左) と Ruby slippers (right)](images/doraemons-magical-door-and-ruby-slippers.jpg)<br>
+*Doraemon の魔法のドア (左) と ruby slippers (right)*
 
-### <a name="observations-about-skeuomorphism-in-vr"></a>VR で恣意の所見
+### <a name="observations-about-skeuomorphism-in-vr"></a>VR での skeuomorphism に関する観測
 
-「Anywhere ドア」Doraemon、オズのハリー ポッターで「Maurader のマップ」の「Ruby スリッパ」では、人気のある架空の魔法のような能力の通常のオブジェクトの例が数多く存在します。 これらの魔法のようなオブジェクトでは、実世界と新機能となる可能性の間、すばらしい機能間の接続を視覚化するのに役立ちます。 魔法のようなまたは surreal を設計するときに、機能、エンターテインメントのバランスを取るように 1 つのオブジェクトが必要に留意してください。 新奇のための純粋な魔法のようなものを作成するという誘惑に注意してください。
+Harry ポッターでは、Oz のウィザードの "Doraemon" の "Ruby Slippers" から "Maurader's map" まで、通常のオブジェクトの例として、一般的な架空の魔法を持つ通常のオブジェクトの例があります。 これらの魔法のオブジェクトを使用すると、現実世界とすばらしいものとの間の接続を視覚化できます。 このオブジェクトを設計する場合は、機能とエンターテインメントのバランスを取る必要があることに注意してください。 分野のために、純粋に魔法のようなものを作成することは注意してください。
 
-## <a name="understanding-different-input-methods"></a>さまざまな入力方法を理解します。
+## <a name="understanding-different-input-methods"></a>さまざまな入力方法を理解する
 
-中程度の 2D のデザイン時はタッチ、マウス、および入力のキーボードの相互作用に注目する必要があります。 MR/VR デザイン領域で、当社の本文になり、インターフェイス、ユーザーは入力方式の広範な選択を使用することが: 音声、視線、ジェスチャ、 [6 自由度のコント ローラー](https://en.wikipedia.org/wiki/Six_degrees_of_freedom)、しより直感的な直接接続に余裕がある gloves仮想オブジェクトです。
+2D メディア向けに設計された場合は、タッチ、マウス、キーボードによる入力のやり取りに焦点を当てる必要がありました。 MR/VR デザイン領域では、本文がインターフェイスになり、ユーザーはより直感的で仮想オブジェクトと直接接続できる、音声、宝石、ジェスチャ、 [6 自由型コントローラー](https://en.wikipedia.org/wiki/Six_degrees_of_freedom)、グローブなどの幅広い入力方法を使用できます。
 
-![HoloLens で使用できる入力](images/inputs.jpg)<br>
-*HoloLens で使用できる入力*
+![HoloLens で使用可能な入力](images/inputs.jpg)<br>
+*HoloLens で使用可能な入力*
 
-> *「すべてが、何かに最適と他の情報を最も不適切です。」*<br>
-> — [Bill Buxton](https://www.billbuxton.com/)
+> *"すべてのものに最適です。他のものには最悪です。"*<br>
+> -[請求書](https://www.billbuxton.com/)
 
-たとえば、ッドマウント デバイスでのベア手の形とカメラのセンサーを使用して入力ジェスチャをコント ローラーを保持または sweaty gloves、ソックスを着けずにからユーザーの手の解放が頻繁に使用される物理疲労 (別名、gorilla arm) が発生することができます。 ユーザーは、視野; 内で維持する必要があります。カメラは、手を参照してくださいことはできません、手が使用できません。
+たとえば、HMD デバイスでのベアハンドとカメラセンサーを使用したジェスチャ入力では、コントローラーまたは装着された sweaty グローブからユーザーを解放しますが、頻繁に使用すると物理的な疲労 (gorilla arm) が発生する可能性があります。 また、ユーザーは、目を見たままにしておく必要があります。カメラに手が表示されない場合は、手を使用できません。
 
-音声入力は切り抜けるには 1 つのコマンドを使用して入れ子になったメニューにユーザーを許容するために、複雑なタスクを走査 (たとえば、"Show me による Laika studio 映画") でも非常に経済的なその他のモダリティと組み合わせると (など、使用するコマンドの"直面 me"、。ホログラム ユーザーが見るユーザーの方に)。 ただし、音声入力ノイズの多い環境で正常に機能しない、または非常に非表示の領域で適切でない可能性があります。
+音声入力は複雑なタスクを走査する場合に適しています。これは、ユーザーが1つのコマンドで入れ子になったメニューを使用できるようにするためです (たとえば、"Laika studio で作成されたムービーを表示する" など)。また、他のモダリティと結合した場合 ("Face me" コマンドなど)、ユーザーがユーザーを参照しているホログラム。 ただし、音声入力は、ノイズの多い環境ではうまく機能しない場合や、非常に非表示領域に適していない場合があります。
 
-ジェスチャと音声認識、だけでなく携帯用追跡コント ローラー (、Oculus タッチなど、Vive など) に使いやすく、正確で活用してユーザーのために非常に一般的な方法で入力は[proprioception](https://en.wikipedia.org/wiki/Proprioception)、パッシブ ハプティクス的な手掛かりを提供します。ただし、これらのメリットは、ベア手にして、完全な本の指の追跡を使用することができなくての犠牲が伴います。
+ジェスチャと音声に加えて、手にかけられた追跡コントローラー (たとえば、Oculus touch、Naopak など) は、使いやすく、正確で、ユーザーの[proprioception](https://en.wikipedia.org/wiki/Proprioception)を活用し、パッシブな haptic キューを提供するため、非常に一般的な入力方法です。ただし、これらの利点は、ベアハンドで完全な指追跡を使用できないという代償を伴います。
 
-![Senso (左) と Manus VR(Right)](images/senso-and-manus-vr.jpg)<br>
-*Senso (左) と Manus VR (右)*
+![Senso (左) と Manus VR (Right)](images/senso-and-manus-vr.jpg)<br>
+*Senso (左) と Manus VR (Right)*
 
-中されません一般的なコント ローラーとして、gloves は、もう一度、MR/VR wave に協力してくれた勢いが。 ヘッドセットを EEG または採用されているのでのセンサーを統合することで仮想環境のインターフェイスとして乗れずに脳/注意入力を開始した最も最近、(たとえば、 [MindMaze VR](http://www.mindmaze.com/))。
+一般に、手袋は、MR/VR の波のおかげで、もう一度支持されています。 最近では、脳/マインドの入力を始めて、EEG または EMG センサーをヘッドセット ( [MINDMAZE VR](http://www.mindmaze.com/)など) に統合することによって、仮想環境のインターフェイスとして牽引力を獲得しました。
 
-### <a name="observations-about-input-methods"></a>入力方法の所見
+### <a name="observations-about-input-methods"></a>入力方式に関する観測
 
-これらは、単なる MR/VR の市場で使用可能な入力デバイスのサンプルです。 引き続き、業界の成熟して同意したら、ベスト プラクティスまでの急増にします。 それまでは、デザイナーは常に新しい入力デバイスの認識と、特定のプロジェクトの特定の入力方法に精通する必要があります。 デザイナーは、クリエイティブなソリューションものデバイスの長所を再生中に、制限内で検索する必要があります。
+これらは、MR/VR の市場で利用可能な入力デバイスのサンプルにすぎません。 これらは、業界が成熟し、ベストプラクティスに同意するまで継続的に続きます。 それまでは、デザイナーは新しい入力デバイスを認識し、特定のプロジェクトの特定の入力方法に精通している必要があります。 設計者は、制限の中でクリエイティブなソリューションを探す必要があります。また、デバイスの強みも試してみてください。
 
-## <a name="sketch-the-scene-and-test-in-the-headset"></a>シーンをスケッチし、ヘッドセットのテスト
+## <a name="sketch-the-scene-and-test-in-the-headset"></a>ヘッドセットでシーンとテストをスケッチする
 
-私は、2 D で作業した、ときに、コンテンツだけはスケッチほとんどの場合。 ただし、複合現実の領域で十分でした。 ユーザーと仮想オブジェクト間のリレーションシップを想像するシーン全体をスケッチする必要があります。 シーンをスケッチする開始は自分の空間的な考え方をする[シネマ 4 D](https://www.maxon.net/en/products/cinema-4d/overview/)場合がありますでプロトタイプを作成する単純な資産を作成[Maya](http://www.autodesk.com/products/maya/overview/)します。 HoloLens チームに参加する前にいずれかのプログラムを使用したことはありませんし、私もは、初心者がこれら 3D プログラムを使用する確実に役立ったなどの新しい用語、慣れてできます[シェーダー](https://en.wikipedia.org/wiki/Shader)と[IK (逆関数キネマティクス)](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-07C3BA47-32BB-477B-B6C5-1090E5C9B81C-htm.html/)します。
+2D で作業したときは、ほとんどがコンテンツのみをスケッチしました。 ただし、それほど十分ではない mixed reality 領域では、 ユーザーと仮想オブジェクト間の関係をよりよく想像するために、シーン全体をスケッチする必要がありました。 私は、空間的な考え方を支援するために、[映画 4d](https://www.maxon.net/en/products/cinema-4d/overview/)でシーンをスケッチし、 [Maya](http://www.autodesk.com/products/maya/overview/)でプロトタイプ作成用の単純なアセットを作成することがありました。 HoloLens チームに参加する前にプログラムを使用したことがなく、まだ newbie になっていますが、これらの3D プログラムを操作すると、[シェーダー](https://en.wikipedia.org/wiki/Shader)や[IK (逆のキネマティック)](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-07C3BA47-32BB-477B-B6C5-1090E5C9B81C-htm.html/)などの新しい用語を使い始めることができました。
 
-**"3d シーンをスケッチしたはどの程度近いかに関係なくヘッドセットで実際の経験がほとんどないスケッチの場合と同じです。その理由はターゲット ヘッドセットにシーンをテストすることが重要"— Hae Jin Lee**
+**「3D でシーンをどの程度正確にスケッチアウトしたかにかかわらず、ヘッドセットの実際のエクスペリエンスは、スケッチとほぼ同じではありませんでした。そのため、ターゲットヘッドセットのシーンをテストすることが重要です。 "— Hae Jin Lee**
 
-HoloLens のプロトタイプ作成にあるすべてのチュートリアルを試しました[Mixed Reality チュートリアル](tutorials.md)を開始します。 再生を開始した、 [HoloToolkit.Unity](https://github.com/Microsoft/HoloToolkit-Unity/) holographic アプリケーションの開発を加速する開発者にマイクロソフトが提供しています。 何かでスタックしたに自分の質問を投稿[HoloLens の質問と回答フォーラム](https://forums.hololens.com/categories/questions-and-answers/)します。
+HoloLens のプロトタイプを使用する場合は、「 [Mixed Reality チュートリアル](tutorials.md)」ですべてのチュートリアルを開始してみてください。 次に、Microsoft が開発者に提供する[HoloToolkit](https://github.com/Microsoft/HoloToolkit-Unity/)を使用して、holographic アプリケーションの開発を促進します。 何か行き詰まったときに、私は[HoloLens の質問 & 回答フォーラム](https://forums.hololens.com/categories/questions-and-answers/)に質問を投稿しました。
 
-HoloLens のプロトタイプ作成の基本的な理解を取得するには、後に他の非占めるを自分でプロトタイプを支援する考えました。 したがって、HoloLens を使用して単純な光線を開発する方法を示すビデオ チュートリアルがしました。 簡単に説明の基本概念をでも HoloLens の開発に 0 個の経験があれば、作業を進めるにできる必要があります。
+HoloLens のプロトタイプ作成に関する基本的な知識を取得した後、他の非占めるのプロトタイプを独自に強化する必要がありました。 ここでは、HoloLens を使用して単純な実行可能タイルを開発する方法を説明するビデオチュートリアルを作成しました。 基本的な概念について簡単に説明します。 HoloLens 開発の経験がゼロであっても、次のことを行うことができます。
 
 <br>
 
 >[!VIDEO https://www.youtube.com/embed/58612RT2CT8]
-*自分のような非プログラマのためこの簡単なチュートリアルを行いました。*
+*私は、私のようなプログラマ以外にも、この簡単なチュートリアルを行っていました。*
 
-コースを VR プロトタイプを作成しました[VR Dev 学校](http://learn.vrdev.school/)、所要時間も[仮想現実の 3D コンテンツの作成](https://www.lynda.com/Unreal-Engine-tutorials/3D-Content-Creation-Virtual-Reality/482055-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3aVirtual+Reality+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2/)Lynda.com にします。 VR Dev school には、コーディングの詳細な知識と詳細 Lynda コース提供 me VR の資産を作成する便利な概要が提供されています。
+VR プロトタイプ作成では、 [Vr Dev School](http://learn.vrdev.school/)でコースを行ったので、Lynda.com で[仮想現実向けに3D コンテンツを作成](https://www.lynda.com/Unreal-Engine-tutorials/3D-Content-Creation-Virtual-Reality/482055-2.html?srchtrk=index%3a1%0alinktypeid%3a2%0aq%3aVirtual+Reality+%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2/)しました。 「VR Dev school」では、コーディングに関する知識をさらに詳しく説明しました。 Lynda コースでは、VR 用のアセットを作成するための簡単な概要を紹介しました。
 
-## <a name="take-the-leap"></a>移行を実行します。
+## <a name="take-the-leap"></a>Leap を取る
 
-1 年前、落としたような少し反響は大変大きかったのです。 今すぐお伝えできます労力を費やす価値の 100% が。 MR/VR は子供の頃の中でも、非常に多くの興味深い可能性を実現するを待機しています。 インスピレーションと残念な気分を将来の設計に 1 つのごく一部の再生できるようにします。 3D 空間に旅に合流を願っています!
+1年前には、このようなことは少しでもあります。 これで、100% の労力が費やされたことがわかります。 MR/VR は依然として非常に若い中であり、多くの興味深い可能性があります。 将来の設計において、1つの小さな部分を再生できるようになりました。 3D 空間への旅にご協力いただければ幸いです。
 
-## <a name="about-the-author"></a>執筆者紹介
+## <a name="about-the-author"></a>作成者について
 
 <table style="border-collapse:collapse" padding-left="0px">
 <tr>
 <td style="border-style: none" width="60"><img alt="Picture of Hae Jin Lee" width="60" height="60" src="images/haejinlee.jpg"></td>
-<td style="border-style: none"><b>Hae Jin Lee</b><br>UX デザイナー @Microsoft</td>
+<td style="border-style: none"><b>Hae Jin Lee</b><br>UX デザイナー@Microsoft</td>
 </tr>
 </table>
 
