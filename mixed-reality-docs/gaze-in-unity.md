@@ -1,11 +1,11 @@
 ---
-title: これで Unity
-description: 視線の先は、複合現実でアプリを作成しますホログラムを対象とするユーザーの主な方法です。
+title: Unity での宝石
+description: アプリが混合現実で作成するホログラムをユーザーが対象にする主な方法は、宝石です。
 author: thetuvix
 ms.author: yoyoz
 ms.date: 03/21/2018
 ms.topic: article
-keywords: 複合現実、視線の先、unity、ホログラム
+keywords: 宝石、unity、ホログラム、mixed reality
 ms.openlocfilehash: b2cc86db156a1e97b013e4cd6debe3abe5ffb6dd
 ms.sourcegitcommit: 60060386305eabfac2758a2c861a43c36286b151
 ms.translationtype: MT
@@ -13,18 +13,18 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/31/2019
 ms.locfileid: "66453717"
 ---
-# <a name="head-gaze-in-unity"></a>Unity で Head 視線入力
+# <a name="head-gaze-in-unity"></a>Unity の頭を見つめます
 
-[視線](gaze.md)対象とするユーザーの主な方法は、[ホログラム](hologram.md)にアプリを作成します[Mixed Reality](mixed-reality.md)します。
+アプリが[混合現実](mixed-reality.md)で作成する[ホログラム](hologram.md)をユーザーが対象にする主な方法は、[宝石](gaze.md)です。
 
 
-## <a name="implementing-head-gaze"></a>ヘッド視線の先を実装します。
+## <a name="implementing-head-gaze"></a>ヘッド見つめの実装
 
-概念的には、[視線](gaze.md)に接続するの決定は、順方向に、ヘッドセットが、ユーザーのヘッドから光線を投影することによって実装されますと射線が競合する内容。 Unity では、ユーザーのヘッドの位置および方向が、メインの Unity を介して公開される[カメラ](camera-in-unity.md)、特に[UnityEngine.Camera.main](http://docs.unity3d.com/ScriptReference/Camera-main.html).[transform.forward](http://docs.unity3d.com/ScriptReference/Transform-forward.html)と[UnityEngine.Camera.main](http://docs.unity3d.com/ScriptReference/Camera-main.html).[transform.position](http://docs.unity3d.com/ScriptReference/Transform-position.html)します。
+概念的には、ヘッドセットが接続されているユーザーのヘッドから光を投影し、その射線がどのように衝突しているかを判断することによって、[宝石](gaze.md)を実装します。 Unity では、ユーザーの head 位置と方向は、Unity のメイン[カメラ](camera-in-unity.md)(具体的には[unityengine](http://docs.unity3d.com/ScriptReference/Camera-main.html)) を介して公開されます。[transform](http://docs.unity3d.com/ScriptReference/Transform-forward.html)と[Unityengine. Camera. main](http://docs.unity3d.com/ScriptReference/Camera-main.html)を変換します。[transform. position](http://docs.unity3d.com/ScriptReference/Transform-position.html).
 
-呼び出す[Physics.RayCast](http://docs.unity3d.com/ScriptReference/Physics.Raycast.html)で結果を[RaycastHit](http://docs.unity3d.com/ScriptReference/RaycastHit.html)衝突が発生した 3D ポイントなどの競合とその他の GameObject 注視レイに関する情報を格納する構造体競合しています。
+[Physics.RayCast](http://docs.unity3d.com/ScriptReference/Physics.Raycast.html) を呼び出すと、衝突が発生した3D ポイントや、宝石が競合ししている他のオブジェクトなど、衝突に関する情報を含む [RaycastHit](http://docs.unity3d.com/ScriptReference/RaycastHit.html) 構造体が生成されます。
 
-### <a name="example-implement-head-gaze"></a>以下に例を示します。実装ヘッド視線入力
+### <a name="example-implement-head-gaze"></a>例:ヘッド見つめを実装する
 
 ```cs
 void Update()
@@ -46,17 +46,17 @@ void Update()
 
 ### <a name="best-practices"></a>ベスト プラクティス
 
-上記の例では、視線の先のターゲットを検索する update ループに 1 つ raycast を行う方法を示します、中には、これで gazed されているオブジェクトに関心が可能性のある任意のオブジェクトでこれを行うのではなく視線の先を管理する 1 つのオブジェクトで実行することをお勧めします。 これにより、アプリのフレームごとに 1 つだけの視線の先 raycast を実行して処理を保存できます。
+上の例では、更新ループで1つの raycast を実行して、宝石のターゲットを見つける方法を示していますが、gazed するオブジェクトに関係する可能性のあるオブジェクトではなく、1つのオブジェクトでこの操作を行うことをお勧めします。 これにより、各フレームに1つの raycast を加えるだけで、アプリの処理を保存できます。
 
-## <a name="visualizing-gaze"></a>視線の先を視覚化します。
+## <a name="visualizing-gaze"></a>視覚化 (宝石を)
 
-実装する必要がありますを使用するマウス ポインターをターゲットと対話するコンテンツを含む、デスクトップと同様、[カーソル](cursors.md)ユーザーの視線の先を表します。 これにより、何で、ユーザーの信頼度と対話しようとしています。
+マウスポインターを使用してコンテンツをターゲットにして操作するデスクトップと同様に、ユーザーの宝石を表す[カーソル](cursors.md)を実装する必要があります。 これにより、ユーザーが操作しようとしている内容に自信を持っています。
 
-## <a name="gaze-in-mixed-reality-toolkit-v2"></a>これで、Mixed Reality Toolkit v2
-視線の先へのアクセス、[入力マネージャー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html) MRTK v2 でします。
+## <a name="gaze-in-mixed-reality-toolkit-v2"></a>Mixed Reality Toolkit v2 での宝石
+MRTK v2 の[入力マネージャー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)から宝石にアクセスできます。
 
 ## <a name="see-also"></a>関連項目
 * [カメラ](camera-in-unity.md)
-* [視線入力](gaze.md)
+* [見つめ入力](gaze.md)
 * [カーソル](cursors.md)
 * [視線入力ターゲット設定](gaze-targeting.md)

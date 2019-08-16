@@ -1,264 +1,264 @@
 ---
-title: アプリ モデル
-description: Windows Mixed Reality は、ユニバーサル Windows プラットフォーム、モデルおよび最新の Windows アプリ用の環境によって提供されるアプリ モデルを使用します。
+title: アプリモデル
+description: Windows Mixed Reality では、最新の Windows アプリのモデルと環境であるユニバーサル Windows プラットフォームによって提供されるアプリモデルを使用します。
 author: thetuvix
 ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
-keywords: アプリ モデル、ライフ サイクル、UWP は、中断、再開、タイル、ビュー、コントラクト
+keywords: UWP、アプリモデル、ライフサイクル、中断、再開、タイル、ビュー、コントラクト
 ms.openlocfilehash: 5dc84122e591e7d91657b6f8eadf6eb947f2d706
-ms.sourcegitcommit: 384b0087899cd835a3a965f75c6f6c607c9edd1b
+ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59602997"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63517407"
 ---
-# <a name="app-model"></a>アプリ モデル
+# <a name="app-model"></a>アプリモデル
 
-Windows Mixed Reality によって提供されるアプリ モデルを使用して、[ユニバーサル Windows プラットフォーム](https://docs.microsoft.com/windows/uwp/get-started/)(UWP) モデルと最新の Windows アプリ用の環境。 UWP アプリのモデルでは、アプリは、インストールされている、更新、バージョン管理された方法を定義し、安全かつ完全に削除します。 アプリケーションのライフ サイクル - アプリを実行、スリープ状態および終了方法、および状態を保持する方法を制御します。 統合とオペレーティング システム、ファイル、およびその他のアプリとの対話についても説明します。
+Windows Mixed Reality は、[ユニバーサル Windows プラットフォーム](https://docs.microsoft.com/windows/uwp/get-started/)(UWP) によって提供されるアプリモデルを使用します。これは、最新の windows アプリ用のモデルと環境です。 UWP アプリモデルは、アプリのインストール、更新、バージョン管理、および完全な削除の方法を定義します。 アプリケーションのライフサイクル (アプリの実行、スリープ、終了のしくみ、および状態を保持する方法) を制御します。 また、オペレーティングシステム、ファイル、およびその他のアプリとの統合と相互作用についても説明します。
 
-![2D のアプリ、Windows Mixed Reality ホーム朝食領域内での配置](images/20160112-055908-hololens-500px.jpg)<br>
-*Windows Mixed Reality ホームに配置された 2D のビューを使用したアプリ*
+![朝食領域の Windows Mixed Reality ホームに配置された2D アプリ](images/20160112-055908-hololens-500px.jpg)<br>
+*Windows Mixed Reality ホームに2D ビューが配置されているアプリ*
 
 ## <a name="app-lifecycle"></a>アプリのライフサイクル
 
-Mixed reality アプリのライフ サイクルには、配置、起動、終了、および削除などの標準的なアプリの概念が含まれます。
+混合現実アプリのライフサイクルには、配置、起動、終了、削除などの標準的なアプリの概念が含まれます。
 
-### <a name="placement-is-launch"></a>Placement が起動
+### <a name="placement-is-launch"></a>配置を開始します
 
-複合現実でアプリのタイルを配置することで、すべてのアプリを開始 (だけ、 [Windows セカンダリ タイル](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile)) で、 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)します。 これらのアプリ タイルの配置、実行が開始されますアプリ。 これらのアプリ タイルを永続化および配置場所の場所を維持するときは必ずのランチャーがアプリに取得するように動作しています。
+すべてのアプリは、 [Windows Mixed reality ホーム](navigating-the-windows-mixed-reality-home.md)にアプリタイル ( [windows セカンダリタイル](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile)のみ) を配置することによって、mixed reality で開始されます。 これらのアプリタイルは、配置時にアプリの実行を開始します。 これらのアプリタイルは、配置されている場所に保持され、いつでもアプリに戻るときのランチャーのように動作します。
 
-![配置の世界でのセカンダリ タイルを配置します。](images/slide1-600px.png)<br>
-*配置の世界でのセカンダリ タイルを配置します。*
+![配置では、セカンダリタイルを世界中に配置します](images/slide1-600px.png)<br>
+*配置では、セカンダリタイルを世界中に配置します*
 
-配置が完了するとすぐに (によって、配置が開始された場合を除き、[アプリへ](app-model.md#protocols)起動)、アプリが起動を開始します。 Windows Mixed Reality は、アプリの数に制限を同時に実行できます。 配置して、アプリを起動して、すぐ配置した場所にそのアプリのタイルをアプリの最新の状態のスクリーン ショットのまま他の作業中のアプリが中断可能性があります。 参照してください[Windows 10 UWP アプリのライフ サイクル](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)resume およびその他のアプリのライフ サイクル イベントの処理の詳細についてはします。
+配置が完了するとすぐに (アプリの起動の[ためにアプリ](app-model.md#protocols)によって配置が開始された場合を除き)、アプリの起動が開始されます。 Windows Mixed Reality では、限られた数のアプリを一度に実行できます。 アプリを配置して起動するとすぐに、他のアクティブなアプリが中断され、アプリが配置されている場所でアプリの最後の状態のスクリーンショットが残ります。 再開とその他のアプリライフサイクルイベントの処理の詳細については、「 [Windows 10 UWP アプリのライフサイクル](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)」を参照してください。
 
-![タイルを配置した後、アプリが実行を開始](images/slide2-500px.png)![実行中、中断または実行されていないアプリの状態ダイアグラム](images/ic576232-500px.png)<br>
-*Left: タイルを配置した後、アプリが実行を開始します。実行中、中断、または実行されていないアプリの右: 状態の図。*
+![タイルを配置すると、アプリの実行](images/slide2-500px.png)中、中断、または実行されていない状態の図が開始さ![れます。](images/ic576232-500px.png)<br>
+*Left: タイルを配置すると、アプリの実行が開始されます。Right: アプリの実行中、中断中、または実行されていない状態の図。*
 
-### <a name="remove-is-closeterminate-process"></a>削除がプロセスを閉じる/終了
+### <a name="remove-is-closeterminate-process"></a>終了プロセスと終了プロセスを削除する
 
-世界中から配置されたアプリのタイルを削除すると、基になるプロセスを閉じます。 アプリが終了したことを確認または問題のあるアプリの再起動のための便利なことができます。
+配置されたアプリのタイルを世界から削除すると、基になるプロセスが終了します。 これは、アプリが終了したことを確認したり、問題のあるアプリを再起動したりするのに役立ちます。
 
-### <a name="app-suspensiontermination"></a>アプリの中断または終了
+### <a name="app-suspensiontermination"></a>アプリの中断/終了
 
-[Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)ユーザーがアプリの複数のエントリ ポイントを作成できません。 このように、[スタート] メニューからアプリを起動して、世界中のアプリ タイルを配置することです。 各アプリのタイルは、異なるエントリ ポイントとして動作し、個別のタイルのインスタンスに、システム。 クエリの[SecondaryTile.FindAllAsync](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_FindAllAsync)なります、 **SecondaryTile**の各アプリ インスタンス。
+[Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)では、ユーザーはアプリに対して複数のエントリポイントを作成できます。 これを行うには、[スタート] メニューからアプリを起動し、アプリのタイルを世界中に配置します。 各アプリタイルは、異なるエントリポイントとして動作し、システムに個別のタイルインスタンスがあります。 [Secondarytile のクエリ。 FindAllAsync](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_FindAllAsync)は、各アプリインスタンスの**secondarytile**になります。
 
-UWP アプリが中断時に現在の状態のスクリーン ショットが取得されます。
+UWP アプリが中断すると、現在の状態がスクリーンショットとして取得されます。
 
-![中断されたアプリのスクリーン ショットを表示します。](images/slide9-800px.png)<br>
-*中断されたアプリのスクリーン ショットを表示します。*
+![中断されたアプリでスクリーンショットが表示される](images/slide9-800px.png)<br>
+*中断されたアプリでスクリーンショットが表示される*
 
-他の Windows 10 のシェルから 1 つの重要な違いは、アプリに通知を使用してアプリのインスタンスのアクティブ化の方法は、 [CoreApplication.Resuming](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplication#Windows_ApplicationModel_Core_CoreApplication_Resuming)と[CoreWindow.Activated](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_Activated)イベント。
+他の Windows 10 シェルとの重要な違いの1つは、アプリインスタンスのアクティベーションが[CoreApplication](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplication#Windows_ApplicationModel_Core_CoreApplication_Resuming)イベントと[corewindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_Activated)によってどのように通知されるかということです。
 
 |  シナリオ |  Resuming  |  アクティブ | 
 |----------|----------|----------|
-|  [スタート] メニューからアプリの新しいインスタンスを起動します。  |   |  **アクティブ化される**を新しい[TileId](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile#Windows_UI_StartScreen_SecondaryTile_TileId) | 
-|  [スタート] メニューからのアプリの 2 番目のインスタンスを起動します。  |   |  **アクティブ化される**を新しい**TileId** | 
-|  現在アクティブでないアプリのインスタンスを選択します。  |   |  **アクティブ化される**で、 **TileId**インスタンスに関連付けられています。 | 
-|  別のアプリを選択し、以前にアクティブなインスタンスを選択します。  |  **再開**発生します  |  | 
-|  別のアプリを選択し、以前にアクティブだったインスタンスを選択します。  |  **再開**発生します  |  **Activated**で、 **TileId**インスタンスに関連付けられています。 | 
+|  [スタート] メニューからアプリの新しいインスタンスを起動する  |   |  新しい[タイル id](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile#Windows_UI_StartScreen_SecondaryTile_TileId)で**アクティブ化**されました | 
+|  [スタート] メニューからアプリの2番目のインスタンスを起動する  |   |  新しい**タイル id**で**アクティブ化**されました | 
+|  現在アクティブでないアプリのインスタンスを選択します  |   |  インスタンスに関連付けられた**タイル id**で**アクティブ化**されます | 
+|  別のアプリを選択し、以前にアクティブなインスタンスを選択します。  |  **再開**の発生  |  | 
+|  別のアプリを選択し、以前に非アクティブだったインスタンスを選択します。  |  **再開**の発生  |  その後、インスタンスに関連付けられた**タイル id**で**アクティブ化**されます。 | 
 
 ### <a name="extended-execution"></a>拡張実行
 
-アプリがバック グラウンドでの作業やオーディオの再生を続行する必要があります。 [バック グラウンド タスク](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)HoloLens では使用できます。
+場合によっては、アプリがバックグラウンドで作業を継続したり、オーディオを再生したりする必要があります。 HoloLens では、[バックグラウンドタスク](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)を使用できます。
 
-![アプリがバック グラウンドで実行できます。](images/slide10-800px.png)<br>
-*アプリがバック グラウンドで実行できます。*
+![アプリはバックグラウンドで実行できます](images/slide10-800px.png)<br>
+*アプリはバックグラウンドで実行できます*
 
 ## <a name="app-views"></a>アプリ ビュー
 
-アプリがアクティブ化、表示するなど、ビューの種類を選択できます。 アプリの**CoreApplication**、プライマリは常に[アプリ ビュー](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView)とアプリのビューを作成するにはさらに任意の数。 デスクトップでは、ウィンドウとしてアプリのビューの考えることができます。 プライマリ アプリケーション ビューの Unity プロジェクトの作成、複合現実アプリ テンプレート[没入型](app-views.md)します。 
+アプリがアクティブになると、表示するビューの種類を選択できます。 アプリの**CoreApplication**には、常にプライマリ[アプリビュー](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView)と、作成するアプリビューがいくつかあります。 デスクトップでは、アプリビューをウィンドウと見なすことができます。 Mixed reality アプリテンプレートでは、プライマリアプリビューが[イマーシブ](app-views.md)である Unity プロジェクトが作成されます。 
 
-アプリでは、アプリ内購入などの Windows 10 の機能を使用する、XAML などのテクノロジを使用して、追加の 2D アプリ ビューを作成できます。 その他の Windows 10 デバイス用の UWP アプリとしてアプリが開始されている場合は、プライマリ ビューは、2 D がする可能性があります「点灯」複合現実で volumetrically エクスペリエンスを表示する没入型である追加のアプリ ビューを追加することで。 スライド ショー ボタンが世界とサーフェスの間で、アプリから写真を飛行する没入型のアプリ ビューに切り替え、XAML でフォト ビューアー アプリのビルドを想像してください。
+アプリ内購入などの Windows 10 機能を使用するには、XAML などのテクノロジを使用して、追加の2D アプリビューを作成できます。 アプリが他の Windows 10 デバイスの UWP アプリとして起動された場合、プライマリビューは2D になりますが、エクスペリエンスの volumetrically を表示するためのアプリビューを追加することによって、混合現実に "明るい" ことができます。 たとえば、XAML でフォトビューアーアプリをビルドし、スライドショーボタンが世界中および画面上のアプリから写真を撮影したイマーシブアプリビューに切り替わったとします。
 
-![実行中のアプリは、2 D のビューまたは没入型のビューを持つことができます。](images/slide3-800px.png)<br>
-*実行中のアプリは、2 D のビューまたは没入型のビューを持つことができます。*
+![実行中のアプリは、2D ビューまたはイマーシブビューを持つことができます。](images/slide3-800px.png)<br>
+*実行中のアプリは、2D ビューまたはイマーシブビューを持つことができます。*
 
-### <a name="creating-an-immersive-view"></a>没入型のビューを作成します。
+### <a name="creating-an-immersive-view"></a>イマーシブビューの作成
 
-複合現実アプリはにより実現されます、没入型の表示を作成する、 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace)型。
+Mixed reality アプリとは、 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace)の種類で実現されるイマーシブビューを作成するアプリです。
 
-デスクトップから起動された場合でも、起動時に没入型のビューは純粋に体感型アプリを作成することが常にあります。 没入型のビューは、常に、内から作成された場所に関係なく、ヘッドセット表示します。 没入型のビューをアクティブ化、Mixed Reality ポータルを表示し、ヘッドセットを配置するユーザーをガイドします。
+純粋にイマーシブなアプリでは、デスクトップから起動した場合でも、常に起動時にイマーシブビューを作成する必要があります。 イマーシブビューは、いつ作成されたかに関係なく、ヘッドセットに常に表示されます。 イマーシブビューをアクティブ化すると、Mixed Reality ポータルが表示され、ユーザーはヘッドセットに配置することができます。
 
-デスクトップ モニターで 2D ビューで始まるアプリには、ヘッドセットでコンテンツを表示する場合は、セカンダリ没入型ビューを作成できます。 この例は、ヘッドセットの 360 度のビデオを表示するモニターの 2D Edge ウィンドウです。
+デスクトップモニターの2D ビューから開始するアプリでは、ヘッドセット内のコンテンツを表示するための2次的なイマーシブビューを作成できます。 この例として、モニター上の 2D Edge ウィンドウで、ヘッドセットに360度のビデオが表示されています。
 
-![没入型のビューで実行されているアプリは 1 つの表示のみ](images/slide4-800px.png)<br>
-*没入型のビューで実行中のアプリが 1 つの表示のみ*
+![イマーシブビューで実行されているアプリが1つだけ表示される](images/slide4-800px.png)<br>
+*イマーシブビューで実行されているアプリが1つだけ表示される*
 
-### <a name="2d-view-in-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームで 2D のビュー
+### <a name="2d-view-in-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームの2D ビュー
 
-没入型のビュー以外は、世界では 2D のビューとしてレンダリングされます。
+イマーシブビュー以外のものは、世界中の2D ビューとしてレンダリングされます。
 
-アプリ、ヘッドセットとデスクトップの両方のモニターで 2D のビューがあります。 新しい 2D ビューが、モニターまたはヘッドセットで、作成したビューとして同じシェル内に配置することに注意してください。 現在では、アプリまたは Mixed Reality ホームとモニターの 2D のビューを移動することはできません。
+アプリでは、デスクトップモニターとヘッドセットの両方に2D ビューがある場合があります。 新しい2D ビューは、モニターまたはヘッドセットで作成したビューと同じシェルに配置されることに注意してください。 現在、アプリまたはユーザーが混合現実ホームとモニターの間で2D ビューを移動することはできません。
 
-![2D のビューで実行されているアプリでは、他のアプリと混在の世界で領域を共有します。](images/slide5-800px.png)<br>
-*2D のビューで実行されているアプリの他のアプリを使用して領域を共有します。*
+![2D ビューで実行されているアプリが混合世界の領域を他のアプリと共有する](images/slide5-800px.png)<br>
+*2D ビューで実行されているアプリが他のアプリとスペースを共有する*
 
-### <a name="placement-of-additional-app-tiles"></a>その他のアプリ タイルの配置
+### <a name="placement-of-additional-app-tiles"></a>追加のアプリタイルの配置
 
-使用すると、世界の 2D で多くのアプリを表示を配置することができます、[セカンダリ タイル Api](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/secondary-tiles)します。 これらの「固定」タイルは、ユーザーが配置する必要があり、し、後で使用できるアプリを起動することに、スプラッシュ スクリーンとして表示されます。 Windows Mixed Reality では、2 D タイル コンテンツをライブ タイルとしてレンダリングを現在はサポートしていません。
+[セカンダリタイル api](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/secondary-tiles)を使用すると、世界中に2d ビューのアプリをいくつでも配置できます。 これらの "ピン留め" タイルは、ユーザーが配置する必要があるスプラッシュスクリーンとして表示され、後でアプリを起動するために使用できます。 Windows Mixed Reality では、現在、2D タイルコンテンツをライブタイルとして表示することはサポートされていません。
 
-![アプリは、セカンダリ タイルを使用して複数の配置を持つことができます。](images/slide6-800px.png)<br>
-*アプリは、セカンダリ タイルを使用して複数の配置を持つことができます。*
+![セカンダリタイルを使用してアプリを複数配置できます。](images/slide6-800px.png)<br>
+*セカンダリタイルを使用してアプリを複数配置できます。*
 
 ### <a name="switching-views"></a>ビューの切り替え
 
-#### <a name="switching-from-the-2d-xaml-view-to-the-immersive-view"></a>2D の XAML ビューから、没入型のビューへの切り替え
+#### <a name="switching-from-the-2d-xaml-view-to-the-immersive-view"></a>2D XAML ビューからイマーシブビューへの切り替え
 
-アプリが XAML では、その後、XAML を使用する場合[IFrameworkViewSource](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkviewsource)アプリの最初のビューを制御します。 アプリをアクティブ化する前に、没入型のビューに切り替える必要があります、 **CoreWindow**没入型エクスペリエンスに直接、アプリが起動するようにしてください。
+アプリで XAML が使用されている場合、XAML [Iframeworkviewsource](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkviewsource)はアプリの最初のビューを制御します。 アプリは、 **Corewindow**をアクティブ化する前に、イマーシブビューに切り替える必要があります。これにより、アプリがイマーシブエクスペリエンスに直接起動します。
 
-使用[CoreApplication.CreateNewView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplication#Windows_ApplicationModel_Core_CoreApplication_CreateNewView_Windows_ApplicationModel_Core_IFrameworkViewSource_)と[ApplicationViewSwitcher.SwitchAsync](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher#Windows_UI_ViewManagement_ApplicationViewSwitcher_SwitchAsync_System_Int32_)アクティブなビューを変更します。
+[CoreApplication.CreateNewView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplication#Windows_ApplicationModel_Core_CoreApplication_CreateNewView_Windows_ApplicationModel_Core_IFrameworkViewSource_) と [ApplicationViewSwitcher.SwitchAsync](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher#Windows_UI_ViewManagement_ApplicationViewSwitcher_SwitchAsync_System_Int32_) を使用して、アクティブなビューにします。
 
 > [!NOTE]
->* 指定しない、 [ApplicationViewSwitchingOptions.ConsolidateViews](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitchingoptions)フラグを**SwitchAsync**と XAML ビューから、没入型のビュー、またはアプリを起動しスレートへの切り替えは削除されます世界です。
->* **SwitchAsync**を使用して呼び出す必要があります、[ディスパッチャー](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_Dispatcher)に切り替えるビューに関連付けられています。
->* 必要があります**SwitchAsync**を仮想キーボードを起動するか、別のアプリをアクティブ化する必要がある場合は、XAML ビューに戻ります。
+>* XAML ビューからイマーシブビューへの切り替え時に[Applicationviewswitchingoptions](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewswitchingoptions)フラグを**switchasync**に指定しないでください。そうしないと、アプリを起動したスレートが世界から削除されます。
+>* **Switchasync**は、切り替え先のビューに関連付けられている[ディスパッチャー](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_Dispatcher)を使用して呼び出す必要があります。
+>* 仮想キーボードを起動する必要がある場合、または別のアプリをアクティブ化する必要がある場合は、XAML ビュー**に戻る必要**があります。
 
-![アプリは 2D のビューとビューの没入型の間で切り替えることができます](images/slide7-600px.png)![混合の世界と他のアプリが非表示には、アプリは、没入型のビューになったら、](images/slide8-600px.png)<br>
-*[左]: アプリは 2D のビューとビューの没入型の間で切り替えることができます。右: 没入型の表示になると、アプリ、Windows Mixed Reality ホームおよびその他のアプリが消えます。*
+![アプリがイマーシブビューに移動したとき](images/slide7-600px.png)に、アプリが2d ビューとイマーシブビュー ![を切り替えることができ、混合世界とその他のアプリが非表示になる](images/slide8-600px.png)<br>
+*Left: アプリは、2D ビューとイマーシブビューを切り替えることができます。Right: アプリがイマーシブビューに移動すると、Windows Mixed Reality ホームとその他のアプリが非表示になります。*
 
-#### <a name="switching-from-the-immersive-view-back-to-a-keyboard-xaml-view"></a>キーボードの XAML ビューに戻る没入型のビューからの切り替え
+#### <a name="switching-from-the-immersive-view-back-to-a-keyboard-xaml-view"></a>イマーシブビューからキーボードの XAML ビューへの切り替え
 
-ビューの切り替えの前後の 1 つの一般的な理由は、mixed reality アプリで、キーボードに表示されています。 シェルでは、アプリには、2 D のビューが表示されている場合、システムのキーボードを表示するだけです。 を、アプリがテキスト入力を取得する必要がある場合は、テキスト入力フィールドにカスタム XAML ビューを提供に切り替えてし、し、切り替えが完了すると、入力後に、可能性があります。
+ビュー間を切り替える一般的な理由の1つは、混合の現実のアプリにキーボードを表示することです。 シェルでは、アプリに2D ビューが表示されている場合にのみ、システムキーボードを表示できます。 アプリがテキスト入力を取得する必要がある場合、テキスト入力フィールドを含むカスタム XAML ビューを提供し、それに切り替えて、入力の完了後に切り替えます。
 
-同様に使用することができます、前のセクションで**ApplicationViewSwitcher.SwitchAsync**没入型のビューから XAML ビューに移行します。
+前のセクションと同様に、 **Applicationviewswitch. SwitchAsync**を使用して、イマーシブビューから XAML ビューに戻すことができます。
 
 ## <a name="app-size"></a>アプリのサイズ
 
-2D アプリ ビューは、固定仮想スレートで常に表示されます。 これにより、すべての 2D ビューがコンテンツの正確な同じ金額を表示します。 アプリの 2D ビューのサイズに関する詳細を次に示します。
-* アプリの縦横比がサイズ変更中に保持されます。
-* アプリ[解像度とスケール ファクター](building-2d-apps.md#2d-app-view-resolution-and-scale-factor)サイズを変更しては変更されません。
-* アプリは、世界中の実際のサイズを照会できません。
+2D アプリビューは、常に固定の仮想スレートに表示されます。 これにより、すべての2D ビューでまったく同じ量のコンテンツが表示されるようになります。 アプリの2D ビューのサイズの詳細を次に示します。
+* サイズ変更中は、アプリの縦横比が維持されます。
+* アプリの[解像度とスケールファクター](building-2d-apps.md#2d-app-view-resolution-and-scale-factor)は、サイズ変更によって変更されることはありません。
+* アプリでは、世界中の実際のサイズに対してクエリを実行することはできません。
 
-![2D アプリケーションは、固定ウィンドウ サイズが表示されます。](images/12493521-10104043956964683-6118765685995662420-o-500px.jpg)<br>
-*2D のビューを使用したアプリは固定ウィンドウ サイズで表示されます。*
+![固定ウィンドウサイズで2D アプリが表示される](images/12493521-10104043956964683-6118765685995662420-o-500px.jpg)<br>
+*2D ビューのアプリが固定ウィンドウサイズで表示される*
 
 ## <a name="app-tiles"></a>アプリのタイル
 
-[スタート] メニューは標準の小さなタイルと中程度のタイルのピンを使用し、**すべてのアプリ**複合現実での一覧。 
+スタート メニューでは、標準の小さいタイルと、pin の 中 タイルと **すべてのアプリ** の一覧が混在しています。 
 
-![Windows Mixed Reality [スタート] メニュー](images/start-500px.png)<br>
-*Windows Mixed Reality [スタート] メニュー*
+![Windows Mixed Reality の [スタート] メニュー](images/start-500px.png)<br>
+*Windows Mixed Reality の [スタート] メニュー*
 
-## <a name="app-to-app-interactions"></a>アプリの相互作用するアプリ
+## <a name="app-to-app-interactions"></a>アプリ間の対話
 
-アプリを作成すると、Windows 10 で使用できる豊富なアプリへの通信メカニズムへのアクセスがあります。 プロトコルの新しい Api やファイルの登録の多くは、HoloLens アプリの起動との通信を有効にするに完璧に動作します。 
+アプリを構築すると、Windows 10 で利用可能なアプリ間通信の機能豊富なメカニズムにアクセスできます。 新しいプロトコル Api とファイル登録の多くは、アプリの起動と通信を可能にするために HoloLens で完全に動作します。 
 
-デスクトップ ヘッドセットは、指定したファイル拡張子に関連付けられているアプリまたはあるプロトコルの Win32 アプリまたはデスクトップのスレートのデスクトップ モニターでのみ表示される可能性がありますに注意してください。
+デスクトップヘッドセットの場合、特定のファイル拡張子またはプロトコルに関連付けられているアプリは、デスクトップモニターまたはデスクトップスレートにのみ表示できる Win32 アプリである可能性があることに注意してください。
 
 ### <a name="protocols"></a>プロトコル
 
-HoloLens のサポートを使用してアプリにアプリを起動する、 [Windows.System.Launcher Api](https://docs.microsoft.com/uwp/api/Windows.System.Launcher)します。
+HoloLens は、Windows の system.servicemodel [api](https://docs.microsoft.com/uwp/api/Windows.System.Launcher)を介してアプリを起動するアプリをサポートしています。
 
-これには別のアプリケーションを起動するときに考慮事項があります。
+別のアプリケーションを起動する場合は、次の点を考慮する必要があります。
 
-* 非モーダル起動を実行する場合など、 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)ユーザーは対話する前に、アプリを配置する必要があります。
+* [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_)などの非モーダル起動を実行する場合は、ユーザーがアプリを操作する前に配置する必要があります。
 
-* などをモーダルの起動を実行する場合[LaunchUriForResultsAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_)、モーダルのアプリは、ウィンドウの上に配置されます。
+* [Launchuriforの async](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_)などを使用してモーダル起動を実行すると、モーダルアプリがウィンドウの上部に配置されます。
 
-* Windows Mixed Reality は、排他ビュー上でアプリケーションを重ね合わせることはできません。 起動したアプリを表示するには Windows バックアップ アプリケーションを表示する、世界中にユーザーを移動します。
+* Windows Mixed Reality では、排他ビューの上にアプリケーションを重ね合わせることはできません。 起動したアプリを表示するために、Windows はユーザーを世界に戻し、アプリケーションを表示します。
 
-### <a name="file-pickers"></a>ファイル ピッカー
+### <a name="file-pickers"></a>ファイルピッカー
 
-HoloLens は両方ともサポート[FileOpenPicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)と[FileSavePicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker)コントラクト。 ただし、アプリにないプレインストールされている、ファイル ピッカー コントラクトと一致します。 これらのアプリ - OneDrive の例では、Microsoft Store からインストールできます。
+HoloLens では、 [Fileopenpicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker)と[FileSavePicker](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker)コントラクトの両方がサポートされています。 ただし、ファイルピッカーコントラクトを満たすアプリは事前にインストールされていません。 これらのアプリ (たとえば、) は Microsoft Store からインストールできます。
 
-ピッカーの 1 つ以上のアプリをインストールした場合は表示されませんあいまいさを排除 UI を起動します。 どのアプリを選択するため代わりに、インストールされている最初のファイル ピッカーが選択されます。 ファイルを保存するときに、タイムスタンプを含むファイル名が生成されます。 これは、ユーザーによって変更ことはできません。
+複数のファイルピッカーアプリがインストールされている場合は、どのアプリを起動するかを選択するための不明瞭な UI は表示されません。代わりに、最初にインストールされたファイルピッカーが選択されます。 ファイルを保存するときに、タイムスタンプを含むファイル名が生成されます。 これは、ユーザーが変更することはできません。
 
-既定では、次の拡張機能はローカルでサポートされます。
+既定では、次の拡張機能がローカルでサポートされています。
 
-|  App  |  拡張機能 | 
+|  アプリ  |  拡張機能 | 
 |----------|----------|
-|  フォト  |  bmp, gif, jpg, png, avi, mov, mp4, wmv | 
-|  Microsoft Edge  |  htm, html, pdf, svg, xml | 
+|  フォト  |  bmp、gif、jpg、png、avi、mov、mp4、wmv | 
+|  Microsoft Edge  |  htm、html、pdf、svg、xml | 
 
-### <a name="app-contracts-and-windows-mixed-reality-extensions"></a>アプリ コントラクトと Windows Mixed Reality 拡張機能
+### <a name="app-contracts-and-windows-mixed-reality-extensions"></a>アプリコントラクトと Windows Mixed Reality 拡張機能
 
-アプリ コントラクトと拡張ポイントを使用すると、ファイル拡張子を処理またはバック グラウンド タスクを使用するように、オペレーティング システムのより深い機能を活用するためにアプリを登録できます。 これは、サポートされているとサポート非対象のコントラクトと HoloLens の拡張ポイントの一覧です。
+アプリコントラクトと拡張ポイントを使用すると、ファイル拡張子の処理やバックグラウンドタスクの使用など、より詳細なオペレーティングシステム機能を利用できるようにアプリを登録できます。 これは、HoloLens でサポートされている、サポートされていないコントラクトと拡張ポイントの一覧です。
 
-|  コントラクトまたは拡張機能  |  サポートされていますか。 | 
+|  コントラクトまたは拡張機能  |  さ? | 
 |----------|----------|
-| [アカウントの画像プロバイダー (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#account_picture_provider) | サポートされません | 
-| [アラーム](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#alarm) | サポートされません | 
-| [アプリ サービス](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#app_service) | サポートされているが完全に機能していません。 | 
-| [予定プロバイダー](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#appointmnets_provider) | サポートされません | 
-| [自動再生 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#autoplay) | サポートされません | 
-| [バック グラウンド タスク (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#background_tasts) | (すべてのトリガー作業) を部分的にサポート | 
-| [更新タスク (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#update_task) | サポートされている | 
-| [キャッシュ ファイル更新ツール コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#cached_file_updater) | サポートされている | 
-| [カメラ設定 (拡張)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#camera_settings) | サポートされません | 
-| [ダイヤル プロトコル](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#dial_protocol) | サポートされません | 
-| [ファイルのアクティブ化 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#file_activation) | サポートされている | 
-| [ファイル オープン ピッカー コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#file_open_picker_contract) | サポートされている | 
-| [ファイル保存ピッカー コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#file_save_picker_contract) | サポートされている | 
-| [ロック画面の呼び出し](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#lock_screen_call) | サポートされません | 
-| [メディア再生](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#media_playback) | サポートされません | 
-| [リモート再生コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#playto_contract) | サポートされません | 
-| [プレインストールされている構成タスク](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#preinstalled_config_task) | サポートされません | 
-| [プリント 3D ワークフロー](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#print_3d_workflow) | サポートされている | 
-| [印刷タスク設定 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#print_task_settings) | サポートされません | 
-| [URI のアクティブ化 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#protocol_activation) | サポートされている | 
-| [制限された起動](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#restricted_launch) | サポートされません | 
-| [検索コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#search_contract) | サポートされません | 
-| [設定コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#settings_contract) | サポートされません | 
-| [共有コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#share_contract) | サポートされません | 
-| [(拡張子) を SSL 証明書.](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#ssl_certificates) | サポートされている | 
-| [Web アカウント プロバイダー](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#web_account_provider) | サポートされている | 
+| [アカウント画像プロバイダー (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#account_picture_provider) | サポートされていない | 
+| [知ら](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#alarm) | サポートされていない | 
+| [App service](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#app_service) | サポートされていますが完全に機能していません | 
+| [予定のプロバイダー](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#appointmnets_provider) | サポートされていない | 
+| [自動再生 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#autoplay) | サポートされていない | 
+| [バックグラウンドタスク (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#background_tasts) | 部分的にサポートされている (すべてのトリガーが動作するわけではない) | 
+| [タスクの更新 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#update_task) | Supported | 
+| [キャッシュされたファイルアップデーターコントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#cached_file_updater) | Supported | 
+| [カメラの設定 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#camera_settings) | サポートされていない | 
+| [ダイヤルプロトコル](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#dial_protocol) | サポートされていない | 
+| [ファイルのアクティブ化 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#file_activation) | Supported | 
+| [ファイルオープンピッカーコントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#file_open_picker_contract) | Supported | 
+| [ファイル保存ピッカーコントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#file_save_picker_contract) | Supported | 
+| [ロック画面の呼び出し](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#lock_screen_call) | サポートされていない | 
+| [メディア再生](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#media_playback) | サポートされていない | 
+| [コントラクトに再生](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#playto_contract) | サポートされていない | 
+| [プレインストールした構成タスク](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#preinstalled_config_task) | サポートされていない | 
+| [印刷3D ワークフロー](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#print_3d_workflow) | Supported | 
+| [印刷タスクの設定 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#print_task_settings) | サポートされていない | 
+| [URI のアクティブ化 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#protocol_activation) | Supported | 
+| [制限付き起動](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#restricted_launch) | サポートされていない | 
+| [検索コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#search_contract) | サポートされていない | 
+| [設定のコントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#settings_contract) | サポートされていない | 
+| [共有コントラクト](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#share_contract) | サポートされていない | 
+| [SSL/証明書 (拡張機能)](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#ssl_certificates) | Supported | 
+| [Web アカウントプロバイダー](https://msdn.microsoft.com/library/windows/desktop/hh464906.aspx#web_account_provider) | Supported | 
 
-## <a name="app-file-storage"></a>アプリのファイル ストレージ
+## <a name="app-file-storage"></a>アプリファイルストレージ
 
-すべての記憶域は、 [Windows.Storage 名前空間](https://docs.microsoft.com/uwp/api/Windows.Storage)します。 詳細については、次のドキュメントを参照してください。 HoloLens では、アプリケーション ストレージ同期/ローミングすることはできません。
+すべてのストレージは、 [Windows のストレージの名前空間](https://docs.microsoft.com/uwp/api/Windows.Storage)を使用します。 詳細については、次のドキュメントを参照してください。 HoloLens では、アプリストレージの同期/ローミングはサポートされていません。
 
 * [ファイル、フォルダー、およびライブラリ](https://docs.microsoft.com/windows/uwp/files/index)
 * [設定と他のアプリ データを保存して取得する](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)
 
 ### <a name="known-folders"></a>既知のフォルダー
 
-参照してください[KnownFolders](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders)の UWP アプリの完全な詳細情報。
+UWP アプリの詳細については、「 [Knownfolders](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) 」を参照してください。
 
 <table>
 <tr>
-<th> プロパティ</th><th> HoloLens でサポートされています</th><th> イマーシブ ヘッドセットでサポートされています</th><th> 説明</th>
+<th> プロパティ</th><th> HoloLens でサポートされています</th><th> イマーシブヘッドセットでサポートされています</th><th> 説明</th>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_AppCaptures">AppCaptures</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>アプリはフォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_AppCaptures">AppCaptures</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>アプリのキャプチャフォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_CameraRoll">CameraRoll</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>カメラ ロール フォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_CameraRoll">CameraRoll</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>カメラロールフォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_DocumentsLibrary">DocumentsLibrary</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>ドキュメント ライブラリを取得します。 ドキュメント ライブラリは、一般的な使用するためのものではありません。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_DocumentsLibrary">ドキュメントライブラリ</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>ドキュメントライブラリを取得します。 ドキュメントライブラリは、一般に使用するためのものではありません。</td>
 </tr><tr>
 <td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_MusicLibrary">MusicLibrary</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>音楽ライブラリを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_Objects3D">Objects3D</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>オブジェクト 3D フォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_Objects3D">Objects3D</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>Objects 3D フォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_PicturesLibrary">PicturesLibrary</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>画像ライブラリを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_PicturesLibrary">PicturesLibrary</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>ピクチャライブラリを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_Playlists">再生リスト</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>再生リスト フォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_Playlists">再生リスト</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>再生リストフォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_SavedPictures">SavedPictures</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>画像の保存フォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_SavedPictures">SavedPictures</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>保存されているピクチャフォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_VideosLibrary">VideosLibrary</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>ビデオ ライブラリを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_VideosLibrary">VideosLibrary</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td>ビデオライブラリを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_HomeGroup">ホーム グループ</a></td><td></td><td style="text-align: center;">✔️</td><td>ホーム グループ フォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_HomeGroup">ホームグループ</a></td><td></td><td style="text-align: center;">✔️</td><td>ホームグループフォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_MediaServerDevices">MediaServerDevices</a></td><td></td><td style="text-align: center;">✔️</td><td>サーバー (Digital Living Network Alliance (DLNA)) デバイスのメディアのフォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_MediaServerDevices">MediaServerDevices</a></td><td></td><td style="text-align: center;">✔️</td><td>メディアサーバー (デジタル生活ネットワークアライアンス (DLNA) デバイス) のフォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_RecordedCalls">RecordedCalls</a></td><td></td><td style="text-align: center;">✔️</td><td>録音された通話フォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_RecordedCalls">RecordedCalls</a></td><td></td><td style="text-align: center;">✔️</td><td>記録された呼び出しフォルダーを取得します。</td>
 </tr><tr>
-<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_RemovableDevices">RemovableDevices</a></td><td></td><td style="text-align: center;">✔️</td><td>リムーバブル デバイス フォルダーを取得します。</td>
+<td><a href="https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders#Windows_Storage_KnownFolders_RemovableDevices">RemovableDevices</a></td><td></td><td style="text-align: center;">✔️</td><td>リムーバブルデバイスのフォルダーを取得します。</td>
 </tr>
 </table>
 
 ## <a name="app-package"></a>アプリ パッケージ
 
-Windows 10 では不要になった対象オペレーティング システムが代わりに[アプリの対象に 1 つまたは複数のデバイス ファミリ](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)します。 デバイス ファミリに基づいて、デバイス ファミリのデバイス全体で想定できる API、システム特性、動作を特定します。 一連のデバイスにアプリをインストールしてからも決定、 [Microsoft Store](submitting-an-app-to-the-microsoft-store.md#specifying-target-device-families)します。
+Windows 10 では、オペレーティングシステムを対象にするのではなく、[アプリを1つ以上のデバイスファミリに対象](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)とします。 デバイス ファミリに基づいて、デバイス ファミリのデバイス全体で想定できる API、システム特性、動作を特定します。 また、 [Microsoft Store](submitting-an-app-to-the-microsoft-store.md#specifying-target-device-families)からアプリをインストールできるデバイスのセットも決定されます。
 
-* ヘッドセットのデスクトップ、HoloLens の両方を対象とするアプリの対象に、 **Windows.Universal**デバイス ファミリ。
-* デスクトップだけヘッドセットを対象とするアプリの対象、 **Windows.Desktop**デバイス ファミリ。
-* HoloLens だけを対象とするアプリの対象、 **Windows.Holographic**デバイス ファミリ。
+* デスクトップヘッドセットと HoloLens の両方を対象にするには、アプリを**Windows ユニバーサル**デバイスファミリに対象とします。
+* デスクトップヘッドセットだけを対象にするには、アプリを**Windows デスクトップ**デバイスファミリに対象とします。
+* HoloLens だけを対象にするには、アプリを**Holographic**デバイスファミリに対象とします。
 
 ## <a name="see-also"></a>関連項目
 
-* [アプリのビュー](app-views.md)
-* [複合現実の 2D の UWP アプリを更新します。](building-2d-apps.md)
+* [アプリ ビュー](app-views.md)
+* [複合現実の 2D UWP アプリを更新する](building-2d-apps.md)
 * [3D アプリ起動ツールの設計ガイダンス](3d-app-launcher-design-guidance.md)
-* [3D アプリ ランチャーを実装します。](implementing-3d-app-launchers.md)
+* [3D アプリランチャーの実装](implementing-3d-app-launchers.md)

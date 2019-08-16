@@ -1,11 +1,11 @@
 ---
-title: DirectX の座標系
-description: Windows Mixed Reality 空間ロケーター、参照フレーム、空間的なアンカーは、座標系を使用する方法、SpatialStage を使用する方法、追跡の損失を処理する方法、保存し、表現のアンカーを読み込む方法、および画像安定化する方法について説明します。
+title: DirectX でのシステムの調整
+description: Windows Mixed Reality の空間ロケーター、参照フレーム、空間アンカー、および座標系の使用方法、SpatialStage の使用方法、追跡の損失を処理する方法、アンカーの保存と読み込みの方法、およびイメージの安定化を実行する方法について説明します。
 author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
-keywords: 空間ロケーター、空間参照フレーム、空間座標系、空間ステージでは、実際には、混合コード、イメージの安定化、空間アンカー、空間アンカー ストア、追跡の損失、チュートリアルをサンプルします。
+keywords: 混合現実、空間ロケーター、空間参照フレーム、空間座標系、空間ステージ、サンプルコード、イメージの安定化、空間アンカー、空間アンカーストア、追跡の損失、チュートリアル
 ms.openlocfilehash: 5a48e0a829ba8647718e28ec20760d8a764b13fe
 ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
 ms.translationtype: MT
@@ -13,42 +13,42 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/15/2019
 ms.locfileid: "65628973"
 ---
-# <a name="coordinate-systems-in-directx"></a>DirectX の座標系
+# <a name="coordinate-systems-in-directx"></a>DirectX でのシステムの調整
 
-[座標系](coordinate-systems.md)空間については、Windows Mixed Reality Api によって提供されるは、基礎を形成します。
+[座標系](coordinate-systems.md)は、Windows Mixed Reality api によって提供される空間を理解するための基礎となります。
 
-今日の取り付け VR または、単一ルーム VR デバイスは、追跡対象のスペースを表す 1 つのプライマリ座標システムを確立します。 Windows Mixed Reality デバイスなど、HoloLens が定義されていない大規模な環境で使用するために設計されたデバイスを検出して、ユーザーとしてその周囲のものについて学習について説明しますの周り。 これにより、継続的に向上に合わせて、デバイス、ユーザーのルームが互いに、アプリの有効期間の関係を変更する座標システムでの結果に関する知識。 Windows Mixed Reality は、幅広いデバイス、イマーシブ ヘッドセットが取り付けられていないから世界に接続された参照フレームまでをサポートします。
+現在の装着済みの VR または単一の部屋の VR デバイスは、追跡領域を表す1つの主軸座標系を確立します。 HoloLens などの Windows Mixed Reality デバイスは、大規模な未定義の環境全体で使用するように設計されています。デバイスを検出し、ユーザーが説明するように、その周囲について学習します。 これにより、デバイスはユーザーの部屋に関する知識を継続的に向上させることができますが、アプリケーションの有効期間を通じて相互に関係を変更する座標系が得られます。 Windows Mixed Reality では、世界中に接続されている参照フレームによって組み込まれたイマーシブヘッドセットから、さまざまなデバイスをサポートしています。
 
 >[!NOTE]
->この記事のコード スニペットは現在の使用を示すC++/CX ではなく c++ 17 に準拠していませんC++/WinRT で使用するため、 [ C++ holographic プロジェクト テンプレート](creating-a-holographic-directx-project.md)します。  概念は、同等のC++/WinRT のプロジェクトがコードに変換する必要があります。
+>この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。  これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。
 
-## <a name="spatial-coordinate-systems-in-windows"></a>Windows では、空間座標系
+## <a name="spatial-coordinate-systems-in-windows"></a>Windows の空間座標系
 
-Windows では、実際の座標系を判断するために使用する主要なタイプは、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialcoordinatesystem" target="_blank">SpatialCoordinateSystem</a>します。 この型のインスタンスは、任意の座標系を表し、それぞれの詳細を理解することがなく 2 つの座標システム間で変換に使用できる変換行列を取得するメソッドを提供します。
+Windows での実際の座標系の理由として使用されるコア型は<a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialcoordinatesystem" target="_blank">SpatialCoordinateSystem</a>です。 この型のインスタンスは任意の座標系を表し、2つの座標系の間の変換に使用できる変換行列を取得するためのメソッドを提供します。これは、それぞれの詳細を理解する必要がありません。
 
-ポイント、線などで、またはユーザーの環境でボリュームとして表される空間の情報を返すメソッドが返されるこれらの座標に最も役立つ座標系を決定できるように SpatialCoordinateSystem パラメーターを受け入れます。 これらの座標の単位がメートル単位で常になります。
+空間情報を返すメソッド。ユーザーの周囲にポイント、線、またはボリュームとして表されます。 SpatialCoordinateSystem パラメーターを使用すると、これらの座標が返されるときに最も役に立つ座標系を決定できます。 これらの座標の単位は、常にメートル単位になります。
 
-SpatialCoordinateSystem には、デバイスの位置を表すものも含め、他の座標システムと動的な関係があります。 任意の時点で、デバイスは一部の座標システムなどを検索することにあります。 ほとんどの座標システムでは、アプリを配置できません期間を処理できる必要があります。
+SpatialCoordinateSystem には、デバイスの位置を表すものを含む、他の座標系との動的な関係があります。 どの時点でも、デバイスは他の座標系を検出できない場合があります。 ほとんどの座標系では、アプリは特定の期間内に配置できない期間を処理する準備ができている必要があります。
 
-アプリケーションを作成しないでください SpatialCoordinateSystems 直接 - ではなく認識 Api を使用して使用する必要があります。 認識 Api で座標システムの 3 つのプライマリ ソースがあるで説明されている概念へのマップの各、[座標系](coordinate-systems.md)ページ。
-* 静止した基準枠を取得するには、作成、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstationaryframeofreference" target="_blank">SpatialStationaryFrameOfReference</a>現在から 1 つを取得または<a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference" target="_blank">SpatialStageFrameOfReference</a>します。
-* 空間のアンカーを取得するには、作成、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchor" target="_blank">SpatialAnchor</a>します。
-* 添付のフレームの参照を取得するには、作成、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocatorattachedframeofreference" target="_blank">SpatialLocatorAttachedFrameOfReference</a>します。
+アプリケーションでは、SpatialCoordinateSystems を直接作成するのではなく、認識 Api を介して使用する必要があります。 認識 Api には3つの主要なソースがあり、それぞれが [[座標系](coordinate-systems.md)] ページで説明されている概念に対応しています。
+* 参照の静止フレームを取得するには、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstationaryframeofreference" target="_blank">SpatialStationaryFrameOfReference</a>を作成するか、現在の<a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference" target="_blank">SpatialStageFrameOfReference</a>から取得します。
+* 空間アンカーを取得するには、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialanchor" target="_blank">SpatialAnchor</a>を作成します。
+* アタッチされた参照のフレームを取得するには、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocatorattachedframeofreference" target="_blank">SpatialLocatorAttachedFrameOfReference</a>を作成します。
 
-これらのオブジェクトによって返される座標システムのすべてが右利きで、+ 右に、+ x、y と + z 内を後方に向かってします。 方向正の x 方向の左側または右側のいずれかの本の指をポイントし、それらを正の y 方向に curling の正の z 軸点に注意することができます。 親指が指している方向は、自身に向かうかまたは離れる方向のいずれかとなり、その座標系の z 軸の正の向きが指す方向となります。 次の図は、これらの 2 つの座標系を示しています。
+これらのオブジェクトによって返されるすべての座標系は、右ききで、+ y が上、+ x が右、+ z の後方になります。 正の x 方向の左側または右側の指をポイントし、正の y 方向に curling することによって、正の z 軸の方向を思い出すことができます。 親指が指している方向は、自身に向かうかまたは離れる方向のいずれかとなり、その座標系の z 軸の正の向きが指す方向となります。 次の図は、これらの 2 つの座標系を示しています。
 
-![左辺と右辺座標系](images/left-hand-right-hand.gif)<br>
-*左辺と右辺座標系*
+![左側および右側の座標系](images/left-hand-right-hand.gif)<br>
+*左側および右側の座標系*
 
-HoloLens の位置に基づいて SpatialCoordinateSystem にブートス トラップを使用して、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocator" target="_blank">SpatialLocator</a>以下のセクションで説明されているか、添付または静止フレームの参照を作成するクラス。
+HoloLens の位置に基づいて SpatialCoordinateSystem にブートストラップするには、次のセクションで説明するように、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocator" target="_blank">SpatialLocator</a>クラスを使用して、関連付けられた、または静止した参照フレームを作成します。
 
-## <a name="place-holograms-in-the-world-using-a-spatial-stage"></a>空間のステージを使用して、世界中の配置ホログラム
+## <a name="place-holograms-in-the-world-using-a-spatial-stage"></a>空間ステージを使用して、世界中にホログラムを配置する
 
-Windows Mixed Reality イマーシブ ヘッドセットを非透過の座標系は、静的なを使用してアクセス<a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.current" target="_blank">SpatialStageFrameOfReference::Current</a>プロパティ。 この API には、座標系、については、プレーヤーが取り付けられているかどうかについてや、モバイル、安全な領域の境界の場合は、プレーヤーは、モバイル、歩き回るとかどうかを示す値、ヘッドセットは方向。 空間のステージに更新プログラムのイベント ハンドラーもあります。
+不透明な Windows Mixed Reality イマーシブヘッドセットの座標系には、static <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.current" target="_blank">SpatialStageFrameOfReference:: Current</a>プロパティを使用してアクセスします。 この API には、座標系、windows media player が装着されているかモバイルであるかに関する情報、プレーヤーがモバイルであるかどうかを示す安全領域の境界、ヘッドセットが指向性であるかどうかが示されます。 また、空間ステージを更新するためのイベントハンドラーもあります。
 
-最初に、空間のステージを取得し、更新プログラムの定期受信します。 
+まず、空間ステージを取得し、それに対する更新をサブスクライブします。 
 
-コードを**空間ステージの初期化**
+**空間ステージの初期化**のコード
 
 ```
 SpatialStageManager::SpatialStageManager(
@@ -65,10 +65,10 @@ SpatialStageManager::SpatialStageManager(
 }
 ```
 
-OnCurrentChanged メソッドでは、アプリは空間段階の検査し、プレーヤーのエクスペリエンスを適宜更新する必要があります。 この例では、ユーザーとビューのステージの範囲と移動プロパティの範囲で指定された開始位置と同様に、ステージの境界の視覚エフェクトを提供します。 私たちも場合にフォールバック独自静止座標系ステージを指定することはできません。
+OnCurrentChanged メソッドでは、アプリは空間ステージを検査し、それに応じてプレーヤーのエクスペリエンスを更新する必要があります。 この例では、ステージの境界の視覚化と、ユーザーによって指定された開始位置、およびステージのビューの範囲と移動プロパティの範囲を提供します。 また、ステージを提供できない場合は、独自の静止座標系にフォールバックします。
 
 
-コードを**空間段階の更新**
+**空間ステージの更新**のコード
 
 ```
 void SpatialStageManager::OnCurrentChanged(Object^ /*o*/)
@@ -172,10 +172,10 @@ void SpatialStageManager::OnCurrentChanged(Object^ /*o*/)
 }
 ```
 
-時計回りの頂点のステージの境界を定義するセットが提供されます。 Windows Mixed Reality シェルでは、ユーザーがそれに近づくと、境界にフェンスを描画します。ウォークの領域を目的に合わせて triangularize たい場合があります。 Triangularize ステージには、次のアルゴリズムを使用できます。
+ステージの境界を定義する頂点のセットは、時計回りの順序で提供されます。 Windows Mixed Reality シェルは、ユーザーがアプローチするときに、境界にフェンスを描画します。お客様自身の目的に応じて、triangularize の領域を作成することもできます。 次のアルゴリズムを使用して、ステージを triangularize できます。
 
 
-コードを**空間ステージ triangularization**
+**空間ステージ triangularization**のコード
 
 ```
 std::vector<unsigned short> SpatialStageManager::TriangulatePoints(std::vector<float3> const& vertices)
@@ -278,13 +278,13 @@ std::vector<unsigned short> SpatialStageManager::TriangulatePoints(std::vector<f
 }
 ```
 
-## <a name="place-holograms-in-the-world-using-a-stationary-frame-of-reference"></a>静止した基準枠を使用して、世界中の配置ホログラム
+## <a name="place-holograms-in-the-world-using-a-stationary-frame-of-reference"></a>静止した参照フレームを使用して、世界中にホログラムを配置する
 
-[SpatialStationaryFrameOfReference](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialstationaryframeofreference.aspx)クラスのフレームを表しますが参照する[静止](coordinate-systems.md#stationary-frame-of-reference)周りを基準として、ユーザー、ユーザーの環境と移動します。 このフレームの参照では、デバイスの近くに安定したままの状態の座標で優先されます。 ホログラムを表示するときに、レンダリング エンジン内で基になるワールド座標系として機能すること、SpatialStationaryFrameOfReference の 1 つのキーの使用です。
+[SpatialStationaryFrameOfReference](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialstationaryframeofreference.aspx)クラスは、ユーザーが移動するときに、ユーザーの周囲を基準にして静止した[まま](coordinate-systems.md#stationary-frame-of-reference)になる参照のフレームを表します。 この参照フレームでは、デバイスの近くで座標が安定していることが優先されます。 SpatialStationaryFrameOfReference の主な用途は、ホログラムをレンダリングするときに、レンダリングエンジン内で基になるワールド座標系として機能することです。
 
-SpatialStationaryFrameOfReference を取得する、 [SpatialLocator](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.aspx)クラスと呼び出し[CreateStationaryFrameOfReferenceAtCurrentLocation](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.createstationaryframeofreferenceatcurrentlocation.aspx)します。
+SpatialStationaryFrameOfReference を取得するには、[SpatialLocator](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.aspx) クラスを使用して、[CreateStationaryFrameOfReferenceAtCurrentLocation](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.createstationaryframeofreferenceatcurrentlocation.aspx) を呼び出します。
 
-Windows Holographic のアプリのテンプレート コード: から
+Windows Holographic アプリテンプレートのコードから:
 
 ```
            // The simplest way to render world-locked holograms is to create a stationary reference frame
@@ -292,42 +292,42 @@ Windows Holographic のアプリのテンプレート コード: から
            // with the origin placed at the device's position as the app is launched.
            referenceFrame = locator.CreateStationaryFrameOfReferenceAtCurrentLocation();
 ```
-* 静止した基準枠は、領域全体の基準とした最適位置を提供する設計されています。 その参照フレーム内の個々 の位置は、ユーザーが少しのずれが許可されます。 これは、普通は、デバイスは環境についての詳細を学習します。
-* ホログラムの個々 の正確な配置が必要な場合、SpatialAnchor を使用して、個々 のホログラム現実の世界での位置に固定する必要がある-たとえば、ポイントをユーザーことを示します特別な関心のあります。 アンカーの位置はないユーザーずれが修正できます。アンカー以降、次のフレームでは、修正が行われた後修正された位置が使用されます。
+* 静止参照フレームは、全体の領域を基準とした最適な位置を提供するように設計されています。 その参照フレーム内の個々の位置は、少しずつ移動できます。 これは、デバイスが環境に関する詳細を学習するため、正常です。
+* 個々のホログラムが正確に配置されている必要がある場合は、SpatialAnchor を使用して、個々のホログラムを実際の世界の位置に固定する必要があります。たとえば、ユーザーが特別な関心を持っていることを示すポイントなどです。 アンカー位置はずれませんが、修正することができます。アンカーは、修正が発生した後、次のフレームから始まる修正された位置を使用します。
 
-## <a name="place-holograms-in-the-world-using-spatial-anchors"></a>空間のアンカーを使用して、世界中の配置ホログラム
+## <a name="place-holograms-in-the-world-using-spatial-anchors"></a>空間アンカーを使用して、世界中にホログラムを配置する
 
-[空間アンカー](coordinate-systems.md#spatial-anchors)ホログラムを現実の世界での特定の場所に配置する優れた方法は、システム アンカーのことを確認する時間の経過と共にのままにします。 このトピックでは、アンカーのデータを操作する方法と作成して、アンカーを使用する方法について説明します。
+[空間アンカー](coordinate-systems.md#spatial-anchors)は、実際の世界の特定の場所にホログラムを配置するための優れた方法であり、システムによって、アンカーが時間の経過と共に維持されるようにします。 このトピックでは、アンカーを作成して使用する方法と、アンカーデータを操作する方法について説明します。
 
-任意の位置と、選択、SpatialCoordinateSystem 内向き、SpatialAnchor を作成できます。 デバイスは、現時点では、その座標系を検索できる必要があり、システムが空間アンカーの制限に達しましたのないでする必要がありますがします。
+選択した SpatialCoordinateSystem 内の任意の位置と向きで、SpatialAnchor を作成できます。 デバイスはその時点でその座標系を特定できる必要があり、空間アンカーの限界に達していないことが必要です。
 
-定義した後、SpatialAnchor の座標系は、正確な位置と向きの初期位置を保持する継続的に調整します。 この SpatialAnchor は、その正確な場所で、ユーザーの環境に固定表示されるホログラムを表示するために使用できます。
+定義が完了すると、SpatialAnchor の座標系は、初期位置の正確な位置と向きを維持するために継続的に調整されます。 その後、この SpatialAnchor を使用して、ユーザーの環境で固定されている、その正確な場所で固定されているホログラムをレンダリングできます。
 
-アンカーを維持する調整の効果を拡大するには、アンカーが増加からの距離として。 そのため、そのアンカーの配信元から複数の約 3 メートル アンカーの基準とした内容の表示を避ける必要があります。
+アンカーの位置を維持する調整の効果は、アンカーからの距離に合わせて拡大されます。 したがって、アンカーの原点から約3メートルを超えるアンカーに対しては、コンテンツを表示しないようにする必要があります。
 
-[CoordinateSystem](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.coordinatesystem.aspx)プロパティが、デバイス、アンカーの正確な場所を調整するときに適用されるイージングを使用する、アンカー ポイントからコンテンツを配置することができます、座標系を取得します。
+[CoordinateSystem](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.coordinatesystem.aspx)プロパティは、アンカーに相対的にコンテンツを配置できる座標系を取得します。これにより、デバイスがアンカーの正確な位置を調整するときにイージングが適用されます。
 
-使用して、 [RawCoordinateSystem](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.rawcoordinatesystem.aspx)プロパティと、対応する[RawCoordinateSystemAdjusted](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.rawcoordinatesystemadjusted.aspx)自分でこれらの調整を管理するイベントです。
+[RawCoordinateSystem](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.rawcoordinatesystem.aspx)プロパティとそれに対応する[RawCoordinateSystemAdjusted](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.rawcoordinatesystemadjusted.aspx)イベントを使用して、これらの調整を自分で管理します。
 
-### <a name="persist-and-share-spatial-anchors"></a>保存や共有空間アンカー
+### <a name="persist-and-share-spatial-anchors"></a>空間アンカーを保持および共有する
 
-使用してローカル SpatialAnchor を永続化できる、 [SpatialAnchorStore](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchorstore.aspx)クラスし、同じ HoloLens デバイスに将来のアプリのセッションに戻りを取得します。
+[SpatialAnchorStore](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchorstore.aspx)クラスを使用してローカルで SpatialAnchor を永続化し、同じ HoloLens デバイスで今後のアプリセッションに戻すことができます。
 
-使用して<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>から、ローカルな SpatialAnchor は、アプリが複数の HoloLens、iOS や Android デバイスで見つけることができますし、持続性のあるクラウド アンカーを作成できます。  各ユーザーは複数のデバイスで共通の空間アンカーを共有することで、同じ物理的な場所でそのアンカーの基準としたコンテンツを表示できます。  これにより、リアルタイムのエクスペリエンスを共有します。
+<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>を使用すると、ローカル SpatialAnchor から持続性のあるクラウドアンカーを作成できます。これにより、アプリは複数の HoloLens、IOS、Android デバイスで検索できます。  複数のデバイスで共通の空間アンカーを共有することにより、各ユーザーは、同じ物理的な場所でそのアンカーを基準としてレンダリングされたコンテンツを表示できます。  これにより、リアルタイム共有エクスペリエンスを実現できます。
 
-使用することも<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a> HoloLens、iOS および Android デバイスの間で非同期ホログラム永続化します。  持続性のあるクラウド空間アンカーを共有することで複数のデバイスはこれらのデバイスがまとめてと同時に存在しない場合でも、時間の経過と共に同じ永続化されたホログラムを確認できます。
+<a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure 空間アンカー</a>を使用して HoloLens、iOS および Android デバイスの間で非同期ホログラム永続化を行うこともできます。  永続的なクラウド空間アンカーを共有すると、永続化した同じホログラムを長時間にわたって複数のデバイスに表示できます。これらのデバイスが同じ時間と場所に居合わせていなくても問題ありません。
 
-5 分間試して、HoloLens のアプリで共有のエクスペリエンスの構築を開始する、<a href="https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-hololens" target="_blank">空間アンカー HoloLens の Azure クイック スタート</a>します。
+HoloLens アプリでの共有エクスペリエンスの構築を開始するには、5分間の<a href="https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-hololens" target="_blank">Azure 空間アンカー HoloLens クイックスタート</a>をお試しください。
 
-空間のアンカーを Azure で稼働しているを開発したとして、<a href="https://docs.microsoft.com/azure/spatial-anchors/concepts/create-locate-anchors-cpp-winrt" target="_blank">を作成し、HoloLens でアンカーを見つける</a>します。  チュートリアルに利用<a href="https://docs.microsoft.com/azure/spatial-anchors/create-locate-anchors-overview" target="_blank">Android および iOS</a>同様に、すべてのデバイスで同じアンカーを共有できるようにすることです。
+Azure 空間アンカーを使用して実行すると、 <a href="https://docs.microsoft.com/azure/spatial-anchors/concepts/create-locate-anchors-cpp-winrt" target="_blank">HoloLens でアンカーを作成して検索</a>できます。  チュートリアルは<a href="https://docs.microsoft.com/azure/spatial-anchors/create-locate-anchors-overview" target="_blank">Android と iOS</a>でも使用できます。これにより、すべてのデバイスで同じアンカーを共有できるようになります。
 
-### <a name="create-spatialanchors-for-holographic-content"></a>SpatialAnchors を holographic のコンテンツを作成します。
+### <a name="create-spatialanchors-for-holographic-content"></a>Holographic コンテンツの SpatialAnchors を作成する
 
-このコード サンプルでは、変更後の Windows Holographic アプリ テンプレートの作成に固定する場合に、 **Pressed**ジェスチャが検出されました。 キューブは、レンダリング パス中に、アンカーに格納されます。
+このコードサンプルでは、**押さ**れたジェスチャが検出されたときにアンカーを作成するように Windows Holographic アプリテンプレートを変更しました。 次に、レンダーパス中にキューブがアンカーに配置されます。
 
-ヘルパー クラスでは、複数のアンカーがサポートされている、このコード サンプルを使用すると同数のキューブを配置できます。
+ヘルパークラスでは複数のアンカーがサポートされているため、このコードサンプルを使用して必要な数のキューブを配置できます。
 
-アンカーの Id は、何か、アプリを制御することに注意してください。 この例では順次アンカーのアプリのコレクションに格納されているアンカーの数に基づく名前付けスキームを作成しました。
+アンカーの Id は、アプリで制御するものであることに注意してください。 この例では、アプリのアンカーのコレクションに現在格納されているアンカーの数に基づいて、シーケンシャルな名前付けスキームを作成しました。
 
 ```
    // Check for new input state since the last frame.
@@ -365,16 +365,16 @@ Windows Holographic のアプリのテンプレート コード: から
    }
 ```
 
-### <a name="asynchronously-load-and-cache-the-spatialanchorstore"></a>非同期的に読み込まれ、SpatialAnchorStore をキャッシュします。
+### <a name="asynchronously-load-and-cache-the-spatialanchorstore"></a>SpatialAnchorStore を非同期に読み込み、キャッシュします。
 
-この永続化、処理に役立つ SampleSpatialAnchorHelper クラスを作成する方法について説明を含みます。
-* Platform::string キーによってインデックスが作成、メモリ内表現のアンカーのコレクションを格納します。
-* アンカーは、システムの SpatialAnchorStore から読み込み、これは分離されますローカル メモリ内コレクションから。
-* そのためには、アプリが選択したときに、SpatialAnchorStore にアンカーのローカル メモリ内コレクションを保存しています。
+次のような、この永続化の処理に役立つ SampleSpatialAnchorHelper クラスを記述する方法を見てみましょう。
+* Platform:: String キーによってインデックス付けされたインメモリアンカーのコレクションを格納します。
+* システムの SpatialAnchorStore からアンカーを読み込んでいます。これは、ローカルのメモリ内コレクションとは別に保持されます。
+* アプリによって選択されたときに、アンカーのローカルメモリ内コレクションを SpatialAnchorStore に保存します。
 
-保存する方法を次に示します[SpatialAnchor](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.aspx)内のオブジェクト、 [SpatialAnchorStore](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchorstore.aspx)します。
+[SpatialAnchor](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchor.aspx)オブジェクトを[SpatialAnchorStore](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchorstore.aspx)に保存する方法を次に示します。
 
-クラスは、起動時に、SpatialAnchorStore を非同期的に要求します。 システム I/O API は、アンカー ストアを読み込むし、I/O は非ブロッキングようにこの API は非同期されるようになります。
+クラスが起動すると、SpatialAnchorStore が非同期に要求されます。 これには、API がアンカーストアを読み込むときのシステム i/o が含まれます。 i/o がブロックされないように、この API は非同期になります。
 
 ```
    // Request the spatial anchor store, which is the WinRT object that will accept the imported anchor data.
@@ -409,7 +409,7 @@ Windows Holographic のアプリのテンプレート コード: から
    });
 ```
 
-アンカーの保存に使用できる SpatialAnchorStore が与えられます。 これは、IMapView を関連付ける SpatialAnchors いるデータ値では文字列であるキーの値です。 サンプル コードで保存すれば、ヘルパー クラスのパブリック関数を通じてアクセスできるプライベート クラス メンバー変数にします。
+アンカーを保存するために使用できる SpatialAnchorStore が与えられます。 これは、文字列であるキー値と SpatialAnchors のデータ値を関連付ける IMapView です。 このサンプルコードでは、ヘルパークラスのパブリック関数を介してアクセスできるプライベートクラスメンバー変数にこれを格納します。
 
 ```
    SampleSpatialAnchorHelper::SampleSpatialAnchorHelper(SpatialAnchorStore^ anchorStore)
@@ -420,7 +420,7 @@ Windows Holographic のアプリのテンプレート コード: から
 ```
 
 >[!NOTE]
->忘れずに保存および読み込みアンカー ストア保留/再開イベントをフックします。
+>忘れずに suspend/resume イベントをフックして、アンカーストアを保存して読み込みます。
 
 ```
    void HolographicSpatialAnchorStoreSampleMain::SaveAppState()
@@ -441,11 +441,11 @@ Windows Holographic のアプリのテンプレート コード: から
    }
 ```
 
-### <a name="save-content-to-the-anchor-store"></a>コンテンツをアンカー ストアに保存します。
+### <a name="save-content-to-the-anchor-store"></a>コンテンツをアンカーストアに保存する
 
-システムでは、アプリが中断、ときに、空間、アンカーをアンカー ストアに保存する必要があります。 アプリの実装に必要であることを検索するには、アンカーのストアにその他の時間は、アンカーを保存することもできます。
+システムによってアプリが中断された場合は、空間アンカーをアンカーストアに保存する必要があります。 また、アプリの実装に必要であると考えられるように、アンカーストアにアンカーを他のタイミングで保存することもできます。
 
-SpatialAnchorStore をメモリ内のアンカーを保存してください準備ができたらは、コレクションをループ処理し、それぞれを保存しようとしています。
+インメモリアンカーを SpatialAnchorStore に保存する準備ができたら、コレクションをループ処理して、各コレクションを保存してみてください。
 
 ```
    // TrySaveToAnchorStore: Stores all anchors from memory into the app's anchor store.
@@ -481,13 +481,13 @@ SpatialAnchorStore をメモリ内のアンカーを保存してください準�
    }
 ```
 
-### <a name="load-content-from-the-anchor-store-when-the-app-resumes"></a>アンカー ストアからアプリを再開したときにコンテンツを読み込む
+### <a name="load-content-from-the-anchor-store-when-the-app-resumes"></a>アプリの再開時にアンカーストアからコンテンツを読み込む
 
-アプリの再開時、または implementaiton のアプリのために必要な他の任意の時点で、アンカー ストアの IMapView から SpatialAnchors の独自のメモリ内データベースに転送することによって、AnchorStore に以前に保存されたアンカーを戻すことができます。
+アプリが再開された場合、またはアプリの実装に必要なその他の時間が経過した場合は、以前に AnchorStore に保存したアンカーを、アンカーストアの IMapView から SpatialAnchors のメモリ内データベースに転送することで復元できます。
 
-SpatialAnchorStore から表現のアンカーを復元するには、互いをメモリ内コレクションに興味があるを復元します。
+SpatialAnchorStore からアンカーを復元するには、必要なものをそれぞれメモリ内コレクションに復元します。
 
-SpatialAnchors; の独自のメモリ内データベースを作成する必要があります。何らかの方法に文字列を作成する SpatialAnchors に関連付けます。 サンプル コードで選択、Windows::Foundation::Collections::IMap を使用して、アンカーを格納するしやすく、SpatialAnchorStore に同じキーとデータの値を使用します。
+SpatialAnchors の独自のメモリ内データベースが必要です。作成した SpatialAnchors に文字列を関連付ける方法があります。 このサンプルコードでは、Windows:: Foundation:: Collections:: IMap を使用してアンカーを格納することを選択します。これにより、SpatialAnchorStore で同じキーとデータ値を簡単に使用できるようになります。
 
 ```
    // This is an in-memory anchor list that is separate from the anchor store.
@@ -496,12 +496,12 @@ SpatialAnchors; の独自のメモリ内データベースを作成する必要�
 ```
 
 >[!NOTE]
->復元されるアンカーできない可能性があります場所を特定できるでしょうか。 たとえば、別の部屋にまたは、別の構築に完全にアンカーがあります。 使用する前に locatability、AnchorStore から取得したアンカーをテストする必要があります。
+>復元されるアンカーは、すぐには見つからない場合があります。 たとえば、アンカーが別の部屋にある場合や、別の建物に配置される場合があります。 AnchorStore から取得したアンカーは、使用前に locatability をテストする必要があります。
 
 <br>
 
 >[!NOTE]
->このコード例では、AnchorStore からすべてのアンカーを取得します。 これは要件ではありません。アプリと同様を選択アンカーの特定のサブセットを実装に意味のある文字列キー値を使用しています。
+>このコード例では、AnchorStore からすべてのアンカーを取得します。 これは必須ではありません。アプリでは、実装にとって意味のある文字列キー値を使用して、アンカーの特定のサブセットを選択して選択することもできます。
 
 ```
    // LoadFromAnchorStore: Loads all anchors from the app's anchor store into memory.
@@ -527,11 +527,11 @@ SpatialAnchors; の独自のメモリ内データベースを作成する必要�
    }
 ```
 
-### <a name="clear-the-anchor-store-when-needed"></a>必要なときに、アンカー ストアをクリアします。
+### <a name="clear-the-anchor-store-when-needed"></a>必要に応じてアンカーストアをクリアする
 
-場合によっては、アプリの状態をオフにして新しいデータを書き込む必要があります。 その方法を次に示します、 [SpatialAnchorStore](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchorstore.aspx)します。
+場合によっては、アプリの状態をクリアして新しいデータを書き込む必要があります。 [SpatialAnchorStore](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchorstore.aspx)を使用してこれを行う方法を次に示します。
 
-ヘルパー クラスを使用する必要はありませんほぼをラップする関数をクリアします。 このヘルパー クラスが SpatialAnchorStore インスタンスを所有しているの役割を与えられているため、サンプルの実装では、そのために選択します。
+ヘルパークラスを使用すると、Clear 関数をラップする必要がほとんどありません。 このサンプル実装では、ヘルパークラスに SpatialAnchorStore インスタンスを所有する役割が与えられているため、このようにします。
 
 ```
    // ClearAnchorStore: Clears the AnchorStore for the app.
@@ -549,9 +549,9 @@ SpatialAnchors; の独自のメモリ内データベースを作成する必要�
    }
 ```
 
-### <a name="example-relating-anchor-coordinate-systems-to-stationary-reference-frame-coordinate-systems"></a>以下に例を示します。アンカーの座標系に関連する静止した基準枠座標系
+### <a name="example-relating-anchor-coordinate-systems-to-stationary-reference-frame-coordinate-systems"></a>例:アンカー座標系を静止参照フレーム座標系に関連付ける
 
-たとえば、アンカーがあり、その大部分の他のコンテンツを既に使用している SpatialStationaryReferenceFrame に関連するアンカーの座標システムで何かにするとします。 使用することができます[TryGetTransformTo](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialcoordinatesystem.trygettransformto.aspx)静止した基準枠のアンカーの座標系から変換を取得します。
+アンカーがあるとします。アンカーの座標系にあるものを、他のほとんどのコンテンツに対して既に使用している SpatialStationaryReferenceFrame に関連付ける必要があります。 [Trygettransformto を](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialcoordinatesystem.trygettransformto.aspx)使用すると、アンカーの座標系から、固定の参照フレームの変換を取得できます。
 
 ```
    // In this code snippet, someAnchor is a SpatialAnchor^ that has been initialized and is valid in the current environment.
@@ -564,47 +564,47 @@ SpatialAnchors; の独自のメモリ内データベースを作成する必要�
    }
 ```
 
-このプロセスは、2 つの方法に便利です。
-1. 2 つのフレームを参照する場合、相互に関連した認識できるように指示し、;
-2. そのためが提供されている場合にもう 1 つの座標システムから直接移動する変換。
+このプロセスは、次の2つの方法で役に立ちます。
+1. 2つの参照フレームが互いに相対的に認識されるかどうかを示します。
+2. 含まれている場合は、ある座標系から別の座標系に直接進む変換を提供します。
 
-この情報は、2 つの参照フレーム間でオブジェクトの空間関係の理解しています。
+この情報を使用すると、2つの参照フレーム間のオブジェクト間の空間リレーションシップについて理解できます。
 
-レンダリングには、元の参照フレームまたはアンカーに従ってオブジェクトをグループ化して多くの場合より良い結果を取得できます。 グループごとに別個の描画パスを実行します。 View 行列は、最初に同一の座標系を使用して作成されるモデルの変換でオブジェクトをより正確なです。
+レンダリングのために、多くの場合、元の参照フレームまたはアンカーに従ってオブジェクトをグループ化することで、より良い結果を得ることができます。 グループごとに個別の描画パスを実行します。 ビュー行列は、同じ座標系を使用して最初に作成されたモデル変換を持つオブジェクトに対してより正確です。
 
-## <a name="create-holograms-using-a-device-attached-frame-of-reference"></a>デバイス接続の参照を使用してホログラムを作成します。
+## <a name="create-holograms-using-a-device-attached-frame-of-reference"></a>デバイスに接続された参照のフレームを使用してホログラムを作成する
 
-ホログラムを表示するために必要な場合があるを[がアタッチされたまま](coordinate-systems.md#attached-frame-of-reference)デバイスの場所、デバイスがその向きを決定することのみのときに、情報メッセージまたは情報メッセージをデバッグなどのパネルに、いない領域の位置。 これを行うには、接続されている基準を使用します。
+デバイスの場所に[まだアタッチさ](coordinate-systems.md#attached-frame-of-reference)れているホログラムをレンダリングする必要がある場合があります。たとえば、デバッグ情報を含むパネルや、デバイスが向きを特定でき、その位置ではない場合に情報メッセージが表示されます。行間. これを実現するには、関連付けられている参照のフレームを使用します。
 
-SpatialLocatorAttachedFrameOfReference クラスは、現実世界ではなく、デバイスに対して相対的である座標系を定義します。 このフレームは、方向、ユーザーのポイントは、参照フレームが作成されたときに直面していましたが、ユーザーの環境の基準とした固定の見出しが。 このフレームのリファレンス内のすべての向きは、ユーザー、デバイスを回転しても、その固定の見出しを基準とは。
+SpatialLocatorAttachedFrameOfReference クラスは、実際の環境ではなく、デバイスに対して相対的な座標系を定義します。 このフレームには、参照フレームの作成時にユーザーが直面していた方向を示す、ユーザーの周囲を基準とした固定の見出しがあります。 その後、ユーザーがデバイスを回転させる場合でも、この参照フレーム内のすべての向きは、その固定の見出しに対して相対的になります。
 
-HoloLens、このフレームの座標系の原点は配置されているユーザーの頭の回転の中心に回転、ヘッドの位置が受けないようにします。 アプリには、このポイント ホログラムも、ユーザーの位置を基準としたオフセットを指定できます。
+HoloLens の場合、このフレームの座標系の原点は、ユーザーの頭の回転の中心にあります。そのため、その位置はヘッドローテーションの影響を受けません。 アプリでは、この点を基準としたオフセットを指定して、ユーザーの前にホログラムを配置できます。
 
-SpatialLocatorAttachedFrameOfReference を取得するには、SpatialLocator クラスを使用し、CreateAttachedFrameOfReferenceAtCurrentHeading を呼び出します。
+SpatialLocatorAttachedFrameOfReference を取得するには、SpatialLocator クラスを使用して CreateAttachedFrameOfReferenceAtCurrentHeading を呼び出します。
 
-これが全体の範囲の Windows Mixed Reality デバイスに適用されることに注意してください。
+これは、Windows Mixed Reality デバイスの範囲全体に適用されることに注意してください。
 
-### <a name="use-a-reference-frame-attached-to-the-device"></a>デバイスに接続されている参照フレームを使用して、
+### <a name="use-a-reference-frame-attached-to-the-device"></a>デバイスにアタッチされている参照フレームを使用する
 
-これらのセクションでは、この API を使用してデバイスに接続されたフレームの参照を有効にする、Windows Holographic のアプリケーション テンプレートで変更点について説明します。 この「添付」ホログラムが固定または固定のホログラムに連動し、デバイスは、世界中でその位置を検索する一時的にできない場合にも使用される可能性がありますに注意してください。
+これらのセクションでは、この API を使用してデバイスに接続された参照のフレームを有効にするために、Windows Holographic アプリテンプレートで変更された内容について説明します。 この "接続済み" ホログラムは、固定または固定されたホログラムと並行して動作し、デバイスが世界での位置を一時的に見つけることができないときにも使用できます。
 
-最初に、SpatialStationaryFrameOfReference ではなく、SpatialLocatorAttachedFrameOfReference を格納するテンプレートを変更します。
+まず、SpatialStationaryFrameOfReference の代わりに SpatialLocatorAttachedFrameOfReference を格納するようにテンプレートを変更しました。
 
-**HolographicTagAlongSampleMain.h**:
+**HolographicTagAlongSampleMain**から:
 
 ```
    // A reference frame attached to the holographic camera.
    Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference^   m_referenceFrame;
 ```
 
-**HolographicTagAlongSampleMain.cpp**:
+**HolographicTagAlongSampleMain**から:
 
 ```
    // In this example, we create a reference frame attached to the device.
    m_referenceFrame = m_locator->CreateAttachedFrameOfReferenceAtCurrentHeading();
 ```
 
-更新中に今すぐフレーム予測使用から取得されたタイムスタンプの座標系を取得します。
+更新中に、フレーム予測を使用してから取得したタイムスタンプで座標系を取得できるようになりました。
 
 ```
    // Next, we get a coordinate system from the attached frame of reference that is
@@ -614,19 +614,19 @@ SpatialLocatorAttachedFrameOfReference を取得するには、SpatialLocator �
        m_referenceFrame->GetStationaryCoordinateSystemAtTimestamp(prediction->Timestamp);
 ```
 
-### <a name="get-a-spatial-pointer-pose-and-follow-the-users-gaze"></a>空間ポインター姿勢を取得し、次のユーザーの視線入力
+### <a name="get-a-spatial-pointer-pose-and-follow-the-users-gaze"></a>空間ポインターのポーズを取得し、ユーザーの宝石に従います。
 
-ユーザーのフォローを例ホログラムする[視線](gaze.md)と同様に、holographic シェルが、ユーザーの視線の先に従います。 これは、同じタイムスタンプから、SpatialPointerPose を取得する必要があります。
+この例では、holographic シェルがユーザーの見つめに従う方法と同様に、ユーザーの[宝石](gaze.md)に従うように、ホログラムの例を使用します。 そのためには、同じタイムスタンプから SpatialPointerPose を取得する必要があります。
 
 ```
 SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordinateSystem, prediction->Timestamp);
 ```
 
-この SpatialPointerPose がに従ってホログラムを配置するための情報、[ユーザーの現在の針路](gaze-in-directx.md)します。
+この SpatialPointerPose には、[ユーザーの現在の見出し](gaze-in-directx.md)に従ってホログラムを配置するために必要な情報が含まれています。
 
-快適性の理由から、時間の期間にわたって実行されるように、位置の変更を滑らかにするのに線形補間 ("lerp") を使用します。 これは、視線の先にホログラムのロックよりも、ユーザーに快適です。 Lerping tag-along ホログラムの位置では移動; をダンプしてホログラムを安定化することもできます。このダンプ私たちは、ユーザーに通常とは、ユーザーの頭の見えない動きと見なされますためジッター ホログラムと表示されます。
+ユーザーの快適さを確保するために、線形補間 ("lerp") を使用して、一定期間内に発生するように変化を滑らかにします。 これは、ホログラムを見つめにロックするよりも、ユーザーにとってより使いやすくなります。 タグに沿ったホログラムの位置を Lerping することで、動きをダンパーすることで、ホログラムを安定化させることもできます。このダンパーを実行しなかった場合、ユーザーは通常、ユーザーの頭のなるべくな動きと見なされるため、ホログラムのジッターが表示されます。
 
-**StationaryQuadRenderer::PositionHologram**:
+From **StationaryQuadRenderer::P ositionhologram**:
 
 ```
    const float& dtime = static_cast<float>(timer.GetElapsedSeconds());
@@ -651,9 +651,9 @@ SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordina
 ```
 
 >[!NOTE]
->デバッグのパネルの場合、ビューが隠されることができるように、少し側にオフ ホログラム位置を変更することもできます。 次を行う方法の例に示します。
+>デバッグパネルの場合は、表示が妨げされないように、ホログラムを少し左に移動することを選択できます。 その方法の例を次に示します。
 
-**StationaryQuadRenderer::PositionHologram**:
+StationaryQuadRenderer の場合 **::P ositionhologram**:
 
 ```
        // If you're making a debug view, you might not want the tag-along to be directly in the
@@ -666,11 +666,11 @@ SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordina
        */
 ```
 
-### <a name="rotate-the-hologram-to-face-the-camera"></a>カメラに直面するホログラムを回転させる
+### <a name="rotate-the-hologram-to-face-the-camera"></a>ホログラムを回転してカメラに面します
 
-単にクワッド; をこの例では、ホログラムを配置するには不十分です。ユーザーが直面するオブジェクトを回転する必要がありますもできます。 ビルボード処理のこの型では、ユーザーの環境の一部を維持するホログラムのため、ワールド空間で回転が発生することに注意してください。 ビュー空間ビルボード処理やわらげるできないためはホログラムが画面の向きをロックその場合は、ステレオのレンダリングが妨害しないビュー空間ビルボードのトランス フォームを取得するには左右の view 行列間を補間も必要があります。 ここでは、ユーザーが直面する X、Z 軸に回転させます。
+単にホログラムを配置するだけでは十分ではありません。この例では、クワッドです。また、ユーザーに対してオブジェクトを回転させる必要があります。 この種類の billboarding では、ホログラムをユーザーの環境に残しておくことができるため、このローテーションはワールド空間で行われることに注意してください。 ホログラムが画面の向きにロックされるため、ビュースペースの billboarding は快適ではありません。その場合は、ステレオレンダリングを中断しないビュー領域のビルボード変換を取得するために、左右のビュー行列を補間する必要もあります。 ここでは、X 軸と Z 軸を回転させてユーザーを中心にしています。
 
-**StationaryQuadRenderer::Update**:
+**StationaryQuadRenderer:: Update**から:
 
 ```
    // Seconds elapsed since previous frame.
@@ -713,11 +713,11 @@ SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordina
    XMStoreFloat4x4(&m_modelConstantBufferData.model, XMMatrixTranspose(rotationMatrix * modelTranslation));
 ```
 
-### <a name="render-the-attached-hologram"></a>アタッチされたホログラムをレンダリングします。
+### <a name="render-the-attached-hologram"></a>添付されたホログラムをレンダリングします
 
-この例では、ホログラムを配置する場所は、SpatialLocatorAttachedReferenceFrame の座標システムでホログラムを表示するために選択もできます。 (別の座標系を使用して表示することにしましたが場合は、必要がありますをその座標系をデバイスに接続された参照フレームの座標システムからの変換を取得します。)
+この例では、ホログラムを SpatialLocatorAttachedReferenceFrame の座標系でレンダリングすることも選択しています。これは、ホログラムを配置した場所です。 (別の座標系を使用してレンダリングすることにした場合は、デバイスに接続されている参照フレームの座標系から、その座標系に変換を取得する必要があります)。
 
-**HolographicTagAlongSampleMain::Render**:
+**HolographicTagAlongSampleMain:: Render**から:
 
 ```
    // The view and projection matrices for each holographic camera will change
@@ -730,16 +730,16 @@ SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordina
        );
 ```
 
-以上で作業は終了です。 ホログラムはようになりました「追跡」ユーザーの視線入力方向の前に 2 つのメーターの位置。
+これで完了です。 ホログラムは、ユーザーの見つめ方向の前に2メートルの位置を "追跡" するようになります。
 
 >[!NOTE]
->この例は、またその他のコンテンツを読み込みます - StationaryQuadRenderer.cpp を参照してください。
+>この例では、追加のコンテンツも読み込まれます。 StationaryQuadRenderer を参照してください。
 
-## <a name="handling-tracking-loss"></a>処理の追跡が失われる
+## <a name="handling-tracking-loss"></a>追跡損失の処理
 
-デバイスは、世界で自体を見つけられない、アプリで"追跡損失"が発生します。 Windows Mixed Reality アプリでは、位置指定の追跡システムには、このような中断を処理できる必要があります。 これらの中断が見られることと既定 SpatialLocator LocatabilityChanged イベントを使用して、応答を作成します。
+デバイスが世界中で見つからない場合、アプリでは "損失の追跡" が発生します。 Windows Mixed Reality アプリは、位置指定追跡システムの中断を処理できる必要があります。 既定の SpatialLocator で Locatの変更イベントを使用することにより、これらの中断を監視し、応答を作成できます。
 
-**AppMain::SetHolographicSpace:**
+**Appmain:: SetHolographicSpace から:**
 
 ```
    // Be able to respond to changes in the positional tracking state.
@@ -750,11 +750,11 @@ SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordina
                );
 ```
 
-アプリが LocatabilityChanged イベントを受け取るときに、必要に応じて、動作を変更できます。 など PositionalTrackingInhibited 状態でアプリは通常の操作を一時停止し、レンダリング、 [tag-along ホログラム](coordinate-systems-in-directx.md#create-holograms-using-a-device-attached-frame-of-reference)警告メッセージを表示します。
+アプリが Locat信頼性変更イベントを受け取ると、必要に応じて動作を変更できます。 たとえば、PositionalTrackingInhibited 状態では、アプリは通常の操作を一時停止し、警告メッセージを表示する[タグに沿ったホログラム](coordinate-systems-in-directx.md#create-holograms-using-a-device-attached-frame-of-reference)をレンダリングすることができます。
 
-Windows Holographic のアプリ テンプレートが付属 LocatabilityChanged ハンドラーが既に自動的に作成します。 既定では、その警告が表示されます、デバッグ コンソールで位置指定の追跡が使用できない場合。 必要に応じて、アプリからの応答を提供するには、このハンドラーにコードを追加することができます。
+Windows Holographic アプリケーションテンプレートには、既に作成されている Locat信頼性変更ハンドラーが付属しています。 既定では、位置追跡が使用できない場合、デバッグコンソールに警告が表示されます。 このハンドラーにコードを追加して、アプリから必要な応答を提供できます。
 
-**AppMain.cpp:**
+**Appmain .cpp から:**
 
 ```
    void HolographicApp1Main::OnLocatabilityChanged(SpatialLocator^ sender, Object^ args)
@@ -792,12 +792,12 @@ Windows Holographic のアプリ テンプレートが付属 LocatabilityChanged
 
 ## <a name="spatial-mapping"></a>空間マッピング
 
-[空間マッピング](spatial-mapping-in-directx.md)Api を使用する画面のメッシュのモデルの変換を取得する座標系を使用します。
+[空間マッピング](spatial-mapping-in-directx.md)api は、座標系を使用して、サーフェスメッシュのモデル変換を取得します。
 
 ## <a name="see-also"></a>関連項目
 * [座標系](coordinate-systems.md)
 * [空間アンカー](spatial-anchors.md)
 * <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
-* [DirectX で Head、目の視線入力](gaze-in-directx.md)
-* [手および DirectX でモーション コント ローラー](hands-and-motion-controllers-in-directx.md)
+* [DirectX でのヘッド視線入力とアイ視線入力](gaze-in-directx.md)
+* [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 * [DirectX の空間マッピング](spatial-mapping-in-directx.md)
