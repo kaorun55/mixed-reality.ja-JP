@@ -1,263 +1,167 @@
 ---
 title: QR コードの追跡
-description: Windows Mixed Reality イマーシブ (VR) ヘッドセットの QR コード追跡をオンにして、その機能を VR アプリに実装する方法について説明します。
-author: yoyozilla
-ms.author: yoyoz
-ms.date: 11/06/2018
+description: HoloLens 2 で QR コードを検出する方法について説明します。
+author: dorreneb
+ms.author: dobrown
+ms.date: 05/15/2019
 ms.topic: article
-keywords: vr、lbe、位置情報ベースのエンターテインメント、vr アーケード、アーケード、イマーシブ、qr、qr コード
-ms.openlocfilehash: 465056cf645a8b9dc9e0e2d3f9dacf887df67c52
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+keywords: vr, lbe, 位置情報ベースのエンターテインメント, vr アーケード, アーケード, イマーシブ, qr, qr コード, hololens2
+ms.openlocfilehash: d51da88aa7bff1dc5c6d3068cb31793891c71e61
+ms.sourcegitcommit: 60f73ca23023c17c1da833c83d2a02f4dcc4d17b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829982"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566001"
 ---
 # <a name="qr-code-tracking"></a>QR コードの追跡
 
-QR コードの追跡は、Windows Mixed Reality driver for イマーシブ (VR) ヘッドセットに実装されています。 ヘッドセットドライバーで QR コードトラッカーを有効にすることで、ヘッドセットは QR コードをスキャンし、関心のあるアプリに報告します。 この機能は、 [Windows 10 10 月2018更新プログラム (RS5 とも呼ば](release-notes-october-2018.md)れます) の時点でのみ使用できます。
-
->[!NOTE]
->この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。  これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。
+HoloLens 2 では、ヘッドセット周辺の環境内の QR コードを検出し、各コードの実際の場所で座標系を確立します。
 
 ## <a name="device-support"></a>デバイスのサポート
 
 <table>
-    <colgroup>
-    <col width="33%" />
-    <col width="33%" />
-    <col width="33%" />
-    </colgroup>
-    <tr>
-        <td><strong>機能</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
-    </tr>
-     <tr>
-        <td>QR コードの追跡</td>
-        <td>❌</td>
-        <td>✔️</td>
-    </tr>
+<tr>
+<th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
+</tr><tr>
+<td> QR コードの検出</td><td style="text-align: center;">️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">注を参照</td>
+</tr>
 </table>
 
-## <a name="enabling-and-disabling-qr-code-tracking-for-your-headset"></a>ヘッドセットの QR コード追跡の有効化と無効化
-注:このセクションは、 [Windows 10 10 月2018更新プログラム (RS5 とも呼ば](release-notes-october-2018.md)れます) に対してのみ有効です。 19h1 ビルド以降、これを行う必要はありません。
-QR コード追跡を活用する mixed reality アプリを開発している場合でも、これらのアプリのいずれかのお客様の場合も、ヘッドセットのドライバーで QR コードの追跡を手動で有効にする必要があります。
+>[!NOTE]
+>デスクトップ Pc でのイマーシブ Windows Mixed Reality ヘッドセットのサポートは、現在、次の NuGet パッケージではサポートされていません。  デスクトップサポートで更新プログラムを引き続きご利用ください。
 
-イマーシブ (VR) ヘッドセットの**QR コード追跡を有効**にするには、次のようにします。
+## <a name="getting-the-qr-package"></a>QR パッケージの取得
+QR コード検出用の NuGet パッケージは[こちら](https://github.com/dorreneb/mixed-reality/releases)からダウンロードできます。
 
-1. PC で Mixed Reality ポータルアプリを閉じます。
-2. PC からヘッドセットを取り外します。
-3. コマンドプロンプトで次のスクリプトを実行します。<br>
-    `reg add "HKLM\SOFTWARE\Microsoft\HoloLensSensors" /v  EnableQRTrackerDefault /t REG_DWORD /d 1 /F`
-4. ヘッドセットを PC に再接続します。
+このパッケージの将来のバージョンは、パブリック NuGet パッケージリポジトリから入手できます。
 
-イマーシブ (VR) ヘッドセットの**QR コード追跡を無効**にするには、次のようにします。
+## <a name="detecting-qr-codes"></a>QR コードの検出
 
-1. PC で Mixed Reality ポータルアプリを閉じます。
-2. PC からヘッドセットを取り外します。
-3. コマンドプロンプトで次のスクリプトを実行します。<br>
-    `reg add "HKLM\SOFTWARE\Microsoft\HoloLensSensors" /v  EnableQRTrackerDefault /t REG_DWORD /d 0 /F`
-4. ヘッドセットを PC に再接続します。 これにより、検出された QR コードが "検出不可能" になります。
+### <a name="adding-the-webcam-capability"></a>Web カメラ機能の追加
+QR コードを検出するには`webcam` 、マニフェストに機能を追加する必要があります。 この機能は、ユーザーの環境で検出されたコード内のデータに機密情報が含まれている場合に必要です。
 
-## <a name="printing-codes"></a>印刷コード
+アクセス許可を要求するに`QRCodeWatcher.RequestAccessAsync()`は、次のように呼び出します。
 
-まず、 [qr コードの仕様](https://www.qrcode.com/en/howto/code.html)によれば、qr コードの仕様には、使用するための余白または "quiet ゾーン" が必要です。 余白は、何も印刷されないシンボルの周りの明確な領域です。 QR コードでは、記号の両側に4つのモジュールのワイドマージンが必要です。 " これは、モジュールのサイズの4倍の幅を持つ必要があります。コードの1つの黒い四角形です。 [仕様] ページには、QR コードを印刷する方法に関するアドバイスと、特定のサイズの QR コードを作成するために必要な領域が表示されます。
-
-現在 QR コード検出の品質は、さまざまな照明と背景に影響を受けます。 これに対処するには、照明をメモして、適切なコードを出力します。 特に明るい照明を持つシーンでは、グレーの背景に黒のコードを印刷します。 低光のシーンでは、黒の白で動作します。 同様に、コードの背景が特に暗い場合は、検出率が低い場合はグレーのコードでブラックを試します。 それ以外の場合、背景が薄い場合は、通常のコードが正常に動作します。
-
-## <a name="qrtracking-api"></a>QRTracking API
-
-QRTracking プラグインは、QR コード追跡用の Api を公開します。 プラグインを使用するには、 *Qrcodestrackerplugin*名前空間の次の型を使用する必要があります。
-
+_C#:_
 ```cs
- // QRTracker plugin namespace
- namespace QRCodesTrackerPlugin
- {
-    // Encapsulates information about a labeled QR code element.
-    public class QRCode
-    {        
-        // Unique id that identifies this QR code for this session.
-        public Guid Id { get; private set; }
-           
-        // Version of this QR code.
-        public Int32 Version { get; private set; }
-        
-        // PhysicalSizeMeters of this QR code.
-        public float PhysicalSizeMeters { get; private set; }
-        
-        // QR code Data.
-        public string Code { get; private set; }
-        
-        // QR code DataStream this is the error corrected data stream
-        public Byte[] CodeStream { get; private set; }
-        
-        // QR code last detected QPC ticks.
-        public Int64 LastDetectedQPCTicks { get; private set; }
-    };
-    
-    // The type of a QR Code added event.
-    public class QRCodeAddedEventArgs
-    {   
-        // Gets the QR Code that was added
-        public QRCode Code { get; private set; }
-    };
-    
-    // The type of a QR Code removed event.
-    public class QRCodeRemovedEventArgs
-    {
-        // Gets the QR Code that was removed.
-        public QRCode Code { get; private set; }
-    };
-    
-    // The type of a QR Code updated event.
-    public class QRCodeUpdatedEventArgs
-    {
-        // Gets the QR Code that was updated.
-        public QRCode Code { get; private set; }
-    };
-    
-    // A callback for handling the QR Code added event.
-    public delegate void QRCodeAddedHandler(QRCodeAddedEventArgs args);
-    
-    // A callback for handling the QR Code removed event.
-    public delegate void QRCodeRemovedHandler(QRCodeRemovedEventArgs args);
-    
-    // A callback for handling the QR Code updated event.
-    public delegate void QRCodeUpdatedHandler(QRCodeUpdatedEventArgs args);
-    
-    // Enumerates the possible results of a start of QRTracker.
-    public enum QRTrackerStartResult
-    {
-        // The start has succeeded.
-        Success = 0,
-        
-        //  The currently no device is connected.
-        DeviceNotConnected = 1,
-        
-        // The QRTracking Feature is not supported by the current HMD driver
-        // systems
-        FeatureNotSupported = 2,
-        
-        // The access is denide. Administrator needs to enable QR tracker feature.
-        AccessDenied = 3,
-    };
-    
-    // QRTracker
-    public class QRTracker
-    {
-        // Constructs a new QRTracker.
-        public QRTracker(){}
-        
-        // Gets the QRTracker.
-        public static QRTracker Get()
-        {
-            return new QRTracker();
-        }
-        
-        // Start the QRTracker. Returns QRTrackerStartResult.
-        public QRTrackerStartResult Start()
-        {
-            throw new NotImplementedException();
-        }
-        
-        // Stops tracking QR codes.
-        public void Stop() {}
-
-        // Not Implemented
-        Windows.Foundation.Collections.IVector<QRCode> GetList() { throw new NotImplementedException(); }
-        
-        // Event representing the addition of a QR Code.
-        public event QRCodeAddedHandler Added = delegate { };
-        
-        // Event representing the removal of a QR Code.
-        public event QRCodeRemovedHandler Removed = delegate { };
-        
-        // Event representing the update of a QR Code.
-        public event QRCodeUpdatedHandler Updated = delegate { };
-    };
-}
+await QRCodeWatcher.RequestAccessAsync();
 ```
 
-## <a name="implementing-qr-code-tracking-in-unity"></a>Unity で QR コード追跡を実装する
-
-### <a name="sample-unity-scenes-in-mrtk-mixed-reality-toolkit"></a>MRTK の Unity シーンのサンプル (Mixed Reality ツールキット)
-
-QR 追跡 API の使用方法の例については、「Mixed Reality Toolkit [GitHub サイト](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker)」を参照してください。
-
-MRTK には、QR 追跡の使用状況を簡略化するために必要なスクリプトが実装されています。 QR 追跡アプリの開発に必要なすべての資産は、"QRTracker" フォルダーにあります。 2つのシーンがあります。1つ目は、検出された QR コードの詳細を表示するサンプルです。2つ目は、QR コードにアタッチされた座標系を使用してホログラムを表示する方法を示しています。
-Prefab "QRScanner" を使用すると、必要なすべてのスクリプトをバックグラウンドに追加して Qrscanner を使用できます。 スクリプト QRCodeManager は、QRCode API を実装するシングルトンクラスです。 これはシーンに追加する必要があります。 スクリプト "AttachToQRCode" は、ホログラムを QR コードの座標系に接続するために使用されます。このスクリプトは、どのホログラムにでも追加できます。 "SpatialGraphCoordinateSystem" は、QRCode 座標系の使用方法を示しています。 これらのスクリプトは、プロジェクトシーンでそのまま使用することも、前に説明したように、プラグインを使用して直接作成することもできます。
-
-### <a name="implementing-qr-code-tracking-in-unity-without-mrtk"></a>MRTK を使用せずに Unity で QR コード追跡を実装する
-
-MRTK に依存せずに、Unity で QR 追跡 API を使用することもできます。 API を使用するには、次の指示に従ってプロジェクトを準備する必要があります。
-
-1. Unity プロジェクトの assets フォルダーに、次の名前で新しいフォルダーを作成します。"プラグイン"。
-2. [このフォルダー](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins)のすべての必要なファイルを、先ほど作成したローカルの "プラグイン" フォルダーにコピーします。
-3. [Mrtk scripts フォルダー](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Scripts)内の QR 追跡スクリプトを使用することも、独自に作成することもできます。
-注:これらのプラグインは、 [Windows 10 10 月2018更新プログラム (RS5 とも呼ば](release-notes-october-2018.md)れます) のビルドに対してのみ使用できます。 プラグインは、次の windows リリースで更新されます。 現在のプラグインは試験段階であり、今後のバージョンの windows では機能しません。 新しいプラグインは発行されます。このプラグインは、次の windows リリースから使用でき、後方互換性ではなく、RS5 では動作しません)。
-
-## <a name="implementing-qr-code-tracking-in-directx"></a>DirectX での QR コード追跡の実装
-
-Visual Studio で QRTrackingPlugin を使用するには、winmd に QRTrackingPlugin の参照を追加する必要があります。 [サポートされているプラットフォームに必要なファイルについ](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins/WSA)ては、こちらを参照してください。
-
+_C++:_
 ```cpp
-// MyClass.h
-public ref class MyClass
-{
+co_await QRCodeWatcher.RequestAccessAsync();
+```
+
+QRCodeWatcher オブジェクトを構築する前に、アクセス許可を要求する必要があります。
+
+QR コードの検出には`webcam`機能が必要ですが、検出はデバイスの追跡カメラを使用して行われます。 これにより、デバイスの写真/ビデオ (PV) カメラとの検出と比較して、より広範な検出とバッテリ寿命が提供されます。
+
+### <a name="detecting-qr-codes-in-unity"></a>Unity での QR コードの検出
+
+Unity の QR コード検出 API は、MRTK に依存せずに使用できます。 これを行うには、次の操作を行う必要があります。
+
+1. 名前が*プラグイン*の unity プロジェクトの assets フォルダーに新しいフォルダーを作成します。
+2. このフォルダーのすべての必要なファイルを、先ほど作成したローカルの "プラグイン" フォルダーにコピーします。
+
+サンプル Unity アプリには、QR コードに holographic 二乗と、関連するデータ (GUID、物理サイズ、タイムスタンプ、デコードされたデータなど) が表示されます。 このアプリは、に https://github.com/chgatla-microsoft/QRTracking/tree/master/SampleQRCodes あります。
+
+### <a name="detecting-qr-codes-in-c"></a>検出 (QR コードを)C++
+
+>[!NOTE]
+>このC++記事のコードスニペットでは、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用される C + c++ 17 準拠C++の/WinRT ではなく、/cx を使用することを現在説明しています。 これらの概念は、コードC++を変換する必要がある場合でも、1つのプロジェクトに相当します。
+
+```
+using namespace Microsoft.MixedReality.QR;
+
+    public ref class QRListHelper sealed
+    {
+    public:
+        QRListHelper()
+        {
+
+        }
+
+        void setApp(SpatialStageManager* pStage)
+        {
+            m_pStage = pStage;
+        }
+
+        void SetUpQRCodes()
+        {
+            if (QRCodeWatcher::IsSupported())
+            {
+                auto operation = QRCodeWatcher::RequestAccessAsync();
+
+                WeakReference weakThis(this);
+
+                operation->Completed = ref new AsyncOperationCompletedHandler<QRCodeWatcherAccessStatus>(
+                    [weakThis](IAsyncOperation< QRCodeWatcherAccessStatus>^ operaion, AsyncStatus status)
+                {
+                    QRListHelper^ QRListHelper = weakThis.Resolve<QRListHelper>();
+                    if (status == AsyncStatus::Completed)
+                    {
+                        QRListHelper->InitializeQR( operaion->GetResults());
+                    }
+                }
+                );
+            }
+        }
+
     private:
-      QRCodesTrackerPlugin::QRTracker^ m_qrtracker;
-      // Handlers
-      void OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args);
-      void OnUpdatedQRCode(QRCodesTrackerPlugin::QRCodeUpdatedEventArgs ^args);
-      void OnRemovedQRCode(QRCodesTrackerPlugin::QRCodeRemovedEventArgs ^args);
-    ..
-};
+        void OnAddedQRCode(Object^, QRCodeAddedEventArgs ^args)
+        {
+            m_pStage->OnAddedQRCode(args);
+        }
+        void OnUpdatedQRCode(Object^, QRCodeUpdatedEventArgs ^args)
+        {
+            m_pStage->OnUpdatedQRCode(args);
+        }
+        void OnEnumerationComplete(Object^, Object^)
+        {
+            m_pStage->OnEnumerationComplete();
+        }
+
+        SpatialStageManager* m_pStage;
+        QRCodeWatcher^ m_qrWatcher;
+
+
+
+        void InitializeQR(QRCodeWatcherAccessStatus status)
+        {
+            if (status == QRCodeWatcherAccessStatus::Allowed)
+            {
+                m_qrWatcher = ref new QRCodeWatcher();
+
+                m_qrWatcher->Added += ref new EventHandler<Object^, QRCodeAddedEventArgs^>(this, &QRListHelper::OnAddedQRCode);
+                m_qrWatcher->Updated += ref new EventHandler<Object^, QRCodeUpdatedEventArgs^>(this, &QRListHelper::OnUpdatedQRCode);
+                m_qrWatcher->EnumerationCompleted += ref new EventHandler<Object^, Object^>(this, &QRListHelper::OnEnumerationComplete);
+                try
+                {
+                    m_qrWatcher->Start();
+                }
+                catch (...)
+                {
+
+                }
+            }
+            else
+            {
+                // Permission denied by system or user
+                // Handle the failures
+            }
+        }
+    }; 
 ```
 
-```cpp
-// MyClass.cpp
-MyClass::MyClass()
-{
-    // Create the tracker and register the callbacks
-    m_qrtracker = ref new QRCodesTrackerPlugin::QRTracker();
-    m_qrtracker->Added += ref new QRCodesTrackerPlugin::QRCodeAddedHandler(this, &OnAddedQRCode);
-    m_qrtracker->Updated += ref new QRCodesTrackerPlugin::QRCodeUpdatedHandler(this, &OnUpdatedQRCode);
-    m_qrtracker->Removed += ref new QRCodesTrackerPlugin::QRCodeRemovedHandler(this, &QOnRemovedQRCode);
+## <a name="getting-the-coordinate-system-for-a-qr-code"></a>QR コードの座標系を取得する
 
-    // Start the tracker
-    if (m_qrtracker->Start() != QRCodesTrackerPlugin::QRTrackerStartResult::Success)
-    {
-      // Handle the failure
-      // It can fail for multiple reasons and can be handled properly 
-    }
-}
+検出された各 QR コードは、次に示すように、左上の高速検出四角形の左上隅にある QR コードに一致する[空間座標システム](coordinate-systems.md)を公開します。  QR SDK を直接使用している場合、Z 軸は用紙を指しています (図には示されていません)。 Unity 座標に変換されると、Z 軸は用紙から外れ、左手で示されます。
 
-void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
-{
-    // use args->Code add to own list  
-}
-
-void MyClass::OnUpdatedQRCode(QRCodesTrackerPlugin::QRCodeUpdatedEventArgs ^args)
-{
-    // use args->Code update the existing one with the new one in own list 
-}
-
-void MyClass::OnRemovedQRCode(QRCodesTrackerPlugin::QRCodeRemovedEventArgs ^args)
-{
-    // use args->Code remove from own list.
-}
-```
-
-## <a name="getting-a-coordinate-system"></a>座標系を取得する
-
-上の左にある高速検出の四角形の左上隅にある QR コードに合わせて、右側の座標系を定義します。 座標系は次のようになります。 Z 軸は用紙を指しています (図には示されていません) が、Unity では、z 軸は紙でも左手でもありません。
-
-SpatialCoordinateSystem は、示されているように定義されています。 この座標系は、API *Windows::P erception:: 空間::P review:: SpatialGraphInteropPreview:: CreateCoordinateSystemForNode*を使用してプラットフォームから取得できます。
+QR コードの SpatialCoordinateSystem が表示されます。 この座標系は、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview.createcoordinatesystemfornode" target="_blank">SpatialGraphInteropPreview:: CreateCoordinateSystemForNode</a>を呼び出し、コードの SpatialGraphNodeId を渡すことによって、プラットフォームから取得できます。
 
 ![QR コードの座標系](images/Qr-coordinatesystem.png) 
 
-QRCode ^ Code オブジェクトから、次のコードは、四角形を作成して QR 座標系に配置する方法を示しています。
+QRCode オブジェクトの場合、次C++の/cx コードは、QR コードの座標系を使用して四角形を作成して配置する方法を示しています。
 
 ```cpp
 // Creates a 2D rectangle in the x-y plane, with the specified properties.
@@ -265,10 +169,10 @@ std::vector<float3> SpatialStageManager::CreateRectangle(float width, float heig
 {
     std::vector<float3> vertices(4);
 
-    vertices[0] = { 0,  0, 0 };
-    vertices[1] = { width,  0, 0 };
-    vertices[2] = { width,  height, 0 };
-    vertices[3] = { 0,  height, 0 };
+    vertices[0] = { 0, 0, 0 };
+    vertices[1] = { width, 0, 0 };
+    vertices[2] = { width, height, 0 };
+    vertices[3] = { 0, height, 0 };
 
     return vertices;
 }
@@ -283,19 +187,19 @@ std::vector<float3> qrVertices = CreateRectangle(Code->PhysicalSizeMeters, Code-
 座標系は、QR コードを描画したり、場所にホログラムをアタッチしたりするために使用できます。
 
 ```cpp
-Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem = Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(Code->Id);
+Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem = Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(Code->SpatialGraphNodeId);
 ```
 
-*Qrcodestrackerplugin:: QRCodeAddedHandler*は次のようになります。
+*Qrcodewatcher:: QRCodeAddedHandler*は、次のようになります。
 
 ```cpp
-void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
+void MyClass::OnAddedQRCode(Object ^sender, QRCodeWatcher::QRCodeAddedEventArgs ^args)
 {
     std::vector<float3> qrVertices = CreateRectangle(args->Code->PhysicalSizeMeters, args->Code->PhysicalSizeMeters);
     std::vector<unsigned short> qrCodeIndices = TriangulatePoints(qrVertices);
     XMFLOAT3 qrAreaColor = XMFLOAT3(DirectX::Colors::Aqua);
 
-    Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem =  Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(args->Code->Id);
+    Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem =  Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(args->Code->SpatialGraphNodeId);
     std::shared_ptr<SceneObject> m_qrShape =
         std::make_shared<SceneObject>(
             m_deviceResources,
@@ -308,26 +212,277 @@ void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
 }
 ```
 
-## <a name="troubleshooting-and-faq"></a>トラブルシューティングと FAQ
+## <a name="best-practices-for-qr-code-detection"></a>QR コードの検出のベストプラクティス
 
-**一般的なトラブルシューティング**
+### <a name="quiet-zones-around-qr-codes"></a>QR コードに関する非表示のゾーン
 
-* PC は2018年10月の更新プログラムを実行していますか?
-* Reg キーを設定していますか? その後、デバイスを再起動しましたか?
-* QR コードのバージョンはサポートされているバージョンですか。 現在の API では、最大 QR コードバージョン20がサポートされています。 一般的な使用には、バージョン5を使用することをお勧めします。 
-* QR コードに十分に近づいていますか? カメラが QR コードに近いほど、API がサポートできる QR コードバージョンが大きくなります。  
+QR コードを正しく読み取るには、コードのすべての辺の周りに余白が必要です。 この余白には、印刷されたコンテンツを含めることはできません。また、4つのモジュール (コード内の1つの黒い四角形) にする必要があります。 
 
-**それを検出するには、QR コードにとってどのようにする必要がありますか。**
+[QR 仕様](https://www.qrcode.com/en/howto/code.html)には、非表示ゾーンに関する詳細情報が含まれています。
 
-これは、QR コードのサイズと、そのバージョンによって異なります。 5 cm の辺から 25 cm の辺まで、バージョン1の QR コードの場合、最小検出距離は0.15 メートルから0.5 メートルの範囲内です。 最も遠いものは、より小さい QR コードターゲットの場合は約0.3 メートルから、それより大きい場合は1.4 メートルまでとなります。 これよりも大きな QR コードの場合、を推定することができます。サイズの検出距離は直線的に増加します。 トラッカーは、5 cm よりも小さい側の QR コードでは機能しません。
+### <a name="lighting-and-backdrop"></a>照明と背景
+QR コード検出の品質は、さまざまな照明と背景に影響します。 
 
-**ロゴ付きの QR コードを使用しますか?**
+特に明るい照明を持つシーンでは、グレーの背景に黒のコードを印刷します。 それ以外の場合は、黒の QR コードを白い背景に印刷します。
 
+コードの背景が特に暗い場合は、検出率が低い場合はグレーのコードで黒を試してみてください。 背景が比較的薄い場合は、通常のコードが正常に動作します。
+
+### <a name="size-of-qr-codes"></a>QR コードのサイズ
+Windows Mixed Reality デバイスは、それぞれ 5 cm 未満の QR コードでは機能しません。
+
+5から 10 cm の長さの辺までの QR コードの場合、コードを検出するには非常に近い必要があります。 また、このサイズでコードを検出するのにも時間がかかります。 
+
+コードを正確に検出するための正確な時間は、QR コードのサイズだけでなく、コードから離れた場所までの距離に依存します。 コードに近づけると、サイズの問題を相殺するのに役立ちます。
+
+### <a name="distance-and-angular-position-from-the-qr-code"></a>QR コードからの距離と角度の位置
+追跡カメラは、特定のレベルの詳細のみを検出できます。 実際に小さいコードの場合は、< 10cm を横に配置する必要があります。 バージョン1の QR コードが 10 ~ 25 cm 幅を超える場合、最小検出距離は0.15 メートルから0.5 メートルの範囲内です。 
+
+サイズの検出距離は直線的に増加します。 
+
+QR 検出は、角度の範囲 (+ = 45deg) で動作します。 これは、コードを検出するための適切な解決策があることを確認するためのものです。
+
+### <a name="qr-codes-with-logos"></a>ロゴ付き QR コード
 ロゴ付きの QR コードはテストされていないため、現在サポートされていません。
 
-**アプリから QR コードを消去して永続化操作方法には、**
+### <a name="managing-qr-code-data"></a>QR コードデータの管理
+Windows Mixed Reality デバイスは、ドライバーのシステムレベルで QR コードを検出します。 デバイスが再起動されると、検出された QR コードは失われ、次に新しいオブジェクトとして再検出されます。
 
-* QR コードは、ブートセッションでのみ保持されます。 再起動 (またはドライバーの再起動) が完了すると、次に新しいオブジェクトとして検出されます。
-* QR コードの履歴は、ドライバーセッションのシステムレベルで保存されますが、必要に応じて、特定のタイムスタンプよりも古い QR コードを無視するようにアプリを構成することができます。 現在、API では、複数のアプリがデータに関心を持っている可能性があるため、QR コードの履歴のクリアをサポートしています。
+特定のタイムスタンプよりも古い QR コードを無視するようにアプリを構成することをお勧めします。 現時点では、API は QR コード履歴のクリアをサポートしていません。
 
-**RS5 および将来のバージョンのプラグインは互換性ません**。RS5 バージョンのプラグインは RS5 に対してのみ機能し、今後のバージョンでは機能しません。 Expermental プラグインは実際のプラグインに置き換えられ、今後のバージョンの windows で使用できるようになります。
+## <a name="qr-api-reference"></a>QR API リファレンス
+
+```cs
+namespace Microsoft.MixedReality.QR
+{
+    /// <summary>
+    /// Represents a detected QR code.
+    /// </remarks>
+    public class QRCode
+    {
+        /// <summary>
+        /// Unique id that identifies this QR code for this session.
+        /// </summary>
+        public Guid Id { get; }
+
+        /// <summary>
+        /// Spatial graph node id for this QR code to create a coordinate system.
+        /// </summary>
+        public Guid SpatialGraphNodeId { get; }
+
+        /// <summary>
+        /// Version of this QR code. Version 1-40 are regular QR codes and 41-44 are Micro QR code formats 1-4.
+        /// </summary>
+        public VersionInfo Version { get; }
+
+        /// <summary>
+        /// Physical width and height of this QR code in meters.
+        /// </summary>
+        public float PhysicalSideLength { get; }
+
+        /// <summary>
+        /// Decoded QR code data.
+        /// </summary>
+        public String Data { get; }
+
+        /// <summary>
+        /// Size of the RawData of this QR code.
+        /// </summary>
+        public UInt32 RawDataSize { get; }
+
+        /// <summary>
+        /// Gets the error-corrected raw data bytes.
+        /// Used when the platform is unable to decode the code's format,
+        /// allowing your app to decode as needed.
+        /// </summary>
+        public void GetRawData(byte[] buffer);
+
+        /// <summary>
+        /// The last detected time in 100ns QPC ticks.
+        /// </summary>
+        public System.TimeSpan SystemRelativeLastDetectedTime { get; }
+
+        /// <summary>
+        /// The last detected time.
+        /// </summary>
+        public System.DateTimeOffset LastDetectedTime { get; }
+    }
+
+    /// <summary>
+    /// Event arguments for a QRCodeWatcher's Added event.
+    /// </summary>
+    public class QRCodeAddedEventArgs
+    {
+        /// <summary>
+        /// Gets the QR Code that was added
+        /// </summary>
+        public QRCode Code { get; }
+    }
+
+    /// <summary>
+    /// Event arguments for a QRCodeWatcher's Removed event.
+    /// </summary>
+    public class QRCodeRemovedEventArgs
+    {
+        /// <summary>
+        /// Gets the QR Code that was removed.
+        /// </summary>
+        public QRCode Code { get; }
+    }
+
+    /// <summary>
+    /// Event arguments for a QRCodeWatcher's Updated event.
+    /// </summary>
+    public class QRCodeUpdatedEventArgs
+    {
+        /// <summary>
+        /// Gets the QR Code that was updated.
+        /// </summary>
+        public QRCode Code { get; }
+    }
+
+    /// <summary>
+    /// Represents the status of an access request for QR code detection.
+    /// </summary>
+    public enum QRCodeWatcherAccessStatus
+    {
+        /// <summary>
+        /// The system has denied permission for the app to detect QR codes.
+        /// </summary>
+        DeniedBySystem = 0,
+        /// <summary>
+        /// The app has not declared the webcam capability in its manifest.
+        /// </summary>
+        NotDeclaredByApp = 1,
+        /// <summary>
+        /// The user has denied permission for the app to detect QR codes.
+        /// </summary>
+        DeniedByUser = 2,
+        /// <summary>
+        /// A user prompt is required to get permission to detect QR codes.
+        /// </summary>
+        UserPromptRequired = 3,
+        /// <summary>
+        /// The user has given permission to detect QR codes.
+        /// </summary>
+        Allowed = 4,
+    }
+
+    /// <summary>
+    /// Detects QR codes in the user's environment.
+    /// </summary>
+    public class QRCodeWatcher
+    {
+        /// <summary>
+        /// Gets whether QR code detection is supported on the current device.
+        /// </summary>
+        public static bool IsSupported();
+
+        /// <summary>
+        /// Request user consent before using QR code detection.
+        /// </summary>
+        public static IAsyncOperation<QRCodeWatcherAccessStatus> RequestAccessAsync();
+
+        /// <summary>
+        /// Constructs a new QRCodeWatcher.
+        /// </summary>
+        public QRCodeWatcher();
+
+        /// <summary>
+        /// Starts detecting QR codes.
+        /// </summary>
+        /// <remarks>
+        /// Start should only be called once RequestAccessAsync has succeeded.
+        /// Start should not be called if QR code detection is not supported.
+        /// Check that IsSupported returns true before calling Start.
+        /// </remarks>
+        public void Start();
+
+        /// <summary>
+        /// Stops detecting QR codes.
+        /// </summary>
+        public void Stop();
+
+        /// <summary>
+        /// Get the list of QR codes detected.
+        /// </summary>
+        /// <remarks>
+        /// </remarks>
+        public IList<QRCode> GetList();
+
+        /// <summary>
+        /// Event representing the addition of a QR Code.
+        /// </summary>
+        public event EventHandler<QRCodeAddedEventArgs> Added;
+
+        /// <summary>
+        /// Event representing the removal of a QR Code.
+        /// </summary>
+        public event EventHandler<QRCodeRemovedEventArgs> Removed;
+
+        /// <summary>
+        /// Event representing the update of a QR Code.
+        /// </summary>
+        public event EventHandler<QRCodeUpdatedEventArgs> Updated;
+
+        /// <summary>
+        /// Event representing the enumeration of QR Codes completing after a Start call.
+        /// </summary>
+        public event EventHandler<Object> EnumerationCompleted;
+    }
+
+    /// <summary>
+    /// Version info for QR codes, including Micro QR codes.
+    /// </summary>
+    public enum VersionInfo
+    {
+        QR1 = 1,
+        QR2 = 2,
+        QR3 = 3,
+        QR4 = 4,
+        QR5 = 5,
+        QR6 = 6,
+        QR7 = 7,
+        QR8 = 8,
+        QR9 = 9,
+        QR10 = 10,
+        QR11 = 11,
+        QR12 = 12,
+        QR13 = 13,
+        QR14 = 14,
+        QR15 = 15,
+        QR16 = 16,
+        QR17 = 17,
+        QR18 = 18,
+        QR19 = 19,
+        QR20 = 20,
+        QR21 = 21,
+        QR22 = 22,
+        QR23 = 23,
+        QR24 = 24,
+        QR25 = 25,
+        QR26 = 26,
+        QR27 = 27,
+        QR28 = 28,
+        QR29 = 29,
+        QR30 = 30,
+        QR31 = 31,
+        QR32 = 32,
+        QR33 = 33,
+        QR34 = 34,
+        QR35 = 35,
+        QR36 = 36,
+        QR37 = 37,
+        QR38 = 38,
+        QR39 = 39,
+        QR40 = 40,
+        MicroQRM1 = 41,
+        MicroQRM2 = 42,
+        MicroQRM3 = 43,
+        MicroQRM4 = 44,
+    }
+}
+```
+
+## <a name="see-also"></a>関連項目
+* [座標系](coordinate-systems.md)
+* <a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure Spatial Anchors</a>

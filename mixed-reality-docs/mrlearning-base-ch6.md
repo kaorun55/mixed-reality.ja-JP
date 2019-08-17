@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 97dd8fce1ebe53efc37cb48cde7dc9e207be9a42
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: f45aa7e2f07a8a67cd56f0aae140de3a68afc918
+ms.sourcegitcommit: e9a55528965048ce34f8247ef6e544f9f432ee37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701993"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559893"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7.旧暦モジュールサンプルアプリケーションの作成
 
@@ -51,7 +51,7 @@ ms.locfileid: "68701993"
 
 > 注:基本のシーン階層に表示されるゲームオブジェクト名は、シーン内のオブジェクトの名前に対応していません。
 
-手順 2:月着陸船にオーディオ ソースを追加します。 基本のシーン階層で旧暦モジュールが選択されていることを確認し、[コンポーネントの追加] をクリックします。 オーディオソースを検索し、それをオブジェクトに追加します。 今は空白のままにします。 これは、後で発射音を再生するために使用します。
+手順 2:月着陸船にオーディオ ソースを追加します。 基本のシーン階層で旧暦モジュールが選択されていることを確認し、[コンポーネントの追加] をクリックします。 オーディオソースを検索し、それをオブジェクトに追加します。 ここでは空白のままにしておいてください。ただし、[Spatialize] チェックボックスをオンにして、空間オーディオを有効にしてください。 これは、後で発射音を再生するために使用します。
 
  ![Lesson6 Chapter1.txt Step2im](images/Lesson6_Chapter1_step2im.PNG)  
 手順 3:スクリプトを追加し、配置ヒントを切り替えます。 [コンポーネントの追加] をクリックし、[配置ヒントの切り替え] を検索します。 これは、前に説明した半透明なヒント (x 線を持つオブジェクト) のオンとオフを切り替えることができるカスタムスクリプトです。  
