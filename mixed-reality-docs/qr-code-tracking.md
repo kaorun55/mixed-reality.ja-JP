@@ -1,263 +1,167 @@
 ---
 title: QR コードの追跡
-description: Windows Mixed Reality イマーシブ (VR) ヘッドセットの QR コード追跡をオンにして、その機能を VR アプリに実装する方法について説明します。
-author: yoyozilla
-ms.author: yoyoz
-ms.date: 11/06/2018
+description: HoloLens 2 で QR コードを検出する方法について説明します。
+author: dorreneb
+ms.author: dobrown
+ms.date: 05/15/2019
 ms.topic: article
-keywords: vr、lbe、位置情報ベースのエンターテインメント、vr アーケード、アーケード、イマーシブ、qr、qr コード
-ms.openlocfilehash: 465056cf645a8b9dc9e0e2d3f9dacf887df67c52
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+keywords: vr, lbe, 位置情報ベースのエンターテインメント, vr アーケード, アーケード, イマーシブ, qr, qr コード, hololens2
+ms.openlocfilehash: d51da88aa7bff1dc5c6d3068cb31793891c71e61
+ms.sourcegitcommit: 60f73ca23023c17c1da833c83d2a02f4dcc4d17b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829982"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566001"
 ---
-# <a name="qr-code-tracking"></a><span data-ttu-id="40d58-104">QR コードの追跡</span><span class="sxs-lookup"><span data-stu-id="40d58-104">QR code tracking</span></span>
+# <a name="qr-code-tracking"></a><span data-ttu-id="61aec-104">QR コードの追跡</span><span class="sxs-lookup"><span data-stu-id="61aec-104">QR code tracking</span></span>
 
-<span data-ttu-id="40d58-105">QR コードの追跡は、Windows Mixed Reality driver for イマーシブ (VR) ヘッドセットに実装されています。</span><span class="sxs-lookup"><span data-stu-id="40d58-105">QR code tracking is implemented in the Windows Mixed Reality driver for immersive (VR) headsets.</span></span> <span data-ttu-id="40d58-106">ヘッドセットドライバーで QR コードトラッカーを有効にすることで、ヘッドセットは QR コードをスキャンし、関心のあるアプリに報告します。</span><span class="sxs-lookup"><span data-stu-id="40d58-106">By enabling the QR code tracker in the headset driver, the headset scans for QR codes and they are reported to interested apps.</span></span> <span data-ttu-id="40d58-107">この機能は、 [Windows 10 10 月2018更新プログラム (RS5 とも呼ば](release-notes-october-2018.md)れます) の時点でのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="40d58-107">This feature is only available as of the [Windows 10 October 2018 Update (also known as RS5)](release-notes-october-2018.md).</span></span>
+<span data-ttu-id="61aec-105">HoloLens 2 では、ヘッドセット周辺の環境内の QR コードを検出し、各コードの実際の場所で座標系を確立します。</span><span class="sxs-lookup"><span data-stu-id="61aec-105">HoloLens 2 can detect QR codes in the environment around the headset, establishing a coordinate system at each code's real-world location.</span></span>
 
->[!NOTE]
-><span data-ttu-id="40d58-108">この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="40d58-108">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="40d58-109">これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="40d58-109">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
-
-## <a name="device-support"></a><span data-ttu-id="40d58-110">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="40d58-110">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="61aec-106">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="61aec-106">Device support</span></span>
 
 <table>
-    <colgroup>
-    <col width="33%" />
-    <col width="33%" />
-    <col width="33%" />
-    </colgroup>
-    <tr>
-        <td><span data-ttu-id="40d58-111"><strong>機能</strong></span><span class="sxs-lookup"><span data-stu-id="40d58-111"><strong>Feature</strong></span></span></td>
-        <td><span data-ttu-id="40d58-112"><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></span><span class="sxs-lookup"><span data-stu-id="40d58-112"><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></span></span></td>
-        <td><span data-ttu-id="40d58-113"><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></span><span class="sxs-lookup"><span data-stu-id="40d58-113"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
-    </tr>
-     <tr>
-        <td><span data-ttu-id="40d58-114">QR コードの追跡</span><span class="sxs-lookup"><span data-stu-id="40d58-114">QR code tracking</span></span></td>
-        <td><span data-ttu-id="40d58-115">❌</span><span class="sxs-lookup"><span data-stu-id="40d58-115">❌</span></span></td>
-        <td><span data-ttu-id="40d58-116">✔️</span><span class="sxs-lookup"><span data-stu-id="40d58-116">✔️</span></span></td>
-    </tr>
+<tr>
+<th><span data-ttu-id="61aec-107">機能</span><span class="sxs-lookup"><span data-stu-id="61aec-107">Feature</span></span></th><th style="width:150px"> <span data-ttu-id="61aec-108"><a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></span><span class="sxs-lookup"><span data-stu-id="61aec-108"><a href="hololens-hardware-details.md">HoloLens (1st gen)</a></span></span></th><th style="width:150px"><span data-ttu-id="61aec-109">HoloLens 2</span><span class="sxs-lookup"><span data-stu-id="61aec-109">HoloLens 2</span></span></th><th style="width:150px"> <span data-ttu-id="61aec-110"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="61aec-110"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+</tr><tr>
+<td> <span data-ttu-id="61aec-111">QR コードの検出</span><span class="sxs-lookup"><span data-stu-id="61aec-111">QR code detection</span></span></td><td style="text-align: center;"><span data-ttu-id="61aec-112">️</span><span class="sxs-lookup"><span data-stu-id="61aec-112">️</span></span></td><td style="text-align: center;"> <span data-ttu-id="61aec-113">✔️</span><span class="sxs-lookup"><span data-stu-id="61aec-113">✔️</span></span></td><td style="text-align: center;"><span data-ttu-id="61aec-114">注を参照</span><span class="sxs-lookup"><span data-stu-id="61aec-114">See note</span></span></td>
+</tr>
 </table>
 
-## <a name="enabling-and-disabling-qr-code-tracking-for-your-headset"></a><span data-ttu-id="40d58-117">ヘッドセットの QR コード追跡の有効化と無効化</span><span class="sxs-lookup"><span data-stu-id="40d58-117">Enabling and disabling QR code tracking for your headset</span></span>
-<span data-ttu-id="40d58-118">注:このセクションは、 [Windows 10 10 月2018更新プログラム (RS5 とも呼ば](release-notes-october-2018.md)れます) に対してのみ有効です。</span><span class="sxs-lookup"><span data-stu-id="40d58-118">Note: This section is only valid for [Windows 10 October 2018 Update (also known as RS5)](release-notes-october-2018.md).</span></span> <span data-ttu-id="40d58-119">19h1 ビルド以降、これを行う必要はありません。</span><span class="sxs-lookup"><span data-stu-id="40d58-119">From 19h1 builds onwards you will not have to do this.</span></span>
-<span data-ttu-id="40d58-120">QR コード追跡を活用する mixed reality アプリを開発している場合でも、これらのアプリのいずれかのお客様の場合も、ヘッドセットのドライバーで QR コードの追跡を手動で有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="40d58-120">Whether you're developing a mixed reality app that will leverage QR code tracking, or you're a customer of one of these apps, you'll need to manually turn on QR code tracking in your headset's driver.</span></span>
+>[!NOTE]
+><span data-ttu-id="61aec-115">デスクトップ Pc でのイマーシブ Windows Mixed Reality ヘッドセットのサポートは、現在、次の NuGet パッケージではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="61aec-115">Support for immersive Windows Mixed Reality headsets on desktop PCs is not currently supported with the NuGet package below.</span></span>  <span data-ttu-id="61aec-116">デスクトップサポートで更新プログラムを引き続きご利用ください。</span><span class="sxs-lookup"><span data-stu-id="61aec-116">Stay tuned for further updates on desktop support.</span></span>
 
-<span data-ttu-id="40d58-121">イマーシブ (VR) ヘッドセットの**QR コード追跡を有効**にするには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="40d58-121">In order to **turn on QR code tracking** for your immersive (VR) headset:</span></span>
+## <a name="getting-the-qr-package"></a><span data-ttu-id="61aec-117">QR パッケージの取得</span><span class="sxs-lookup"><span data-stu-id="61aec-117">Getting the QR package</span></span>
+<span data-ttu-id="61aec-118">QR コード検出用の NuGet パッケージは[こちら](https://github.com/dorreneb/mixed-reality/releases)からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="61aec-118">You can download a NuGet package for QR code detection [here](https://github.com/dorreneb/mixed-reality/releases).</span></span>
 
-1. <span data-ttu-id="40d58-122">PC で Mixed Reality ポータルアプリを閉じます。</span><span class="sxs-lookup"><span data-stu-id="40d58-122">Close the Mixed Reality Portal app on your PC.</span></span>
-2. <span data-ttu-id="40d58-123">PC からヘッドセットを取り外します。</span><span class="sxs-lookup"><span data-stu-id="40d58-123">Unplug the headset from your PC.</span></span>
-3. <span data-ttu-id="40d58-124">コマンドプロンプトで次のスクリプトを実行します。</span><span class="sxs-lookup"><span data-stu-id="40d58-124">Run the following script in the Command Prompt:</span></span><br>
-    `reg add "HKLM\SOFTWARE\Microsoft\HoloLensSensors" /v  EnableQRTrackerDefault /t REG_DWORD /d 1 /F`
-4. <span data-ttu-id="40d58-125">ヘッドセットを PC に再接続します。</span><span class="sxs-lookup"><span data-stu-id="40d58-125">Reconnect your headset to your PC.</span></span>
+<span data-ttu-id="61aec-119">このパッケージの将来のバージョンは、パブリック NuGet パッケージリポジトリから入手できます。</span><span class="sxs-lookup"><span data-stu-id="61aec-119">Future versions of this package will be available through the public NuGet package repository.</span></span>
 
-<span data-ttu-id="40d58-126">イマーシブ (VR) ヘッドセットの**QR コード追跡を無効**にするには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="40d58-126">In order to **turn off QR code tracking** for your immersive (VR) headset:</span></span>
+## <a name="detecting-qr-codes"></a><span data-ttu-id="61aec-120">QR コードの検出</span><span class="sxs-lookup"><span data-stu-id="61aec-120">Detecting QR codes</span></span>
 
-1. <span data-ttu-id="40d58-127">PC で Mixed Reality ポータルアプリを閉じます。</span><span class="sxs-lookup"><span data-stu-id="40d58-127">Close the Mixed Reality Portal app on your PC.</span></span>
-2. <span data-ttu-id="40d58-128">PC からヘッドセットを取り外します。</span><span class="sxs-lookup"><span data-stu-id="40d58-128">Unplug the headset from your PC.</span></span>
-3. <span data-ttu-id="40d58-129">コマンドプロンプトで次のスクリプトを実行します。</span><span class="sxs-lookup"><span data-stu-id="40d58-129">Run the following script in the Command Prompt:</span></span><br>
-    `reg add "HKLM\SOFTWARE\Microsoft\HoloLensSensors" /v  EnableQRTrackerDefault /t REG_DWORD /d 0 /F`
-4. <span data-ttu-id="40d58-130">ヘッドセットを PC に再接続します。</span><span class="sxs-lookup"><span data-stu-id="40d58-130">Reconnect your headset to your PC.</span></span> <span data-ttu-id="40d58-131">これにより、検出された QR コードが "検出不可能" になります。</span><span class="sxs-lookup"><span data-stu-id="40d58-131">This will make any discovered QR codes "non-locatable."</span></span>
+### <a name="adding-the-webcam-capability"></a><span data-ttu-id="61aec-121">Web カメラ機能の追加</span><span class="sxs-lookup"><span data-stu-id="61aec-121">Adding the webcam capability</span></span>
+<span data-ttu-id="61aec-122">QR コードを検出するには`webcam` 、マニフェストに機能を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="61aec-122">You will need to add the capability `webcam` to your manifest to detect QR codes.</span></span> <span data-ttu-id="61aec-123">この機能は、ユーザーの環境で検出されたコード内のデータに機密情報が含まれている場合に必要です。</span><span class="sxs-lookup"><span data-stu-id="61aec-123">This capability is required as the data within detected codes in the user's environment may contain sensitive information.</span></span>
 
-## <a name="printing-codes"></a><span data-ttu-id="40d58-132">印刷コード</span><span class="sxs-lookup"><span data-stu-id="40d58-132">Printing codes</span></span>
+<span data-ttu-id="61aec-124">アクセス許可を要求するに`QRCodeWatcher.RequestAccessAsync()`は、次のように呼び出します。</span><span class="sxs-lookup"><span data-stu-id="61aec-124">Permission can be requested by calling `QRCodeWatcher.RequestAccessAsync()`:</span></span>
 
-<span data-ttu-id="40d58-133">まず、 [qr コードの仕様](https://www.qrcode.com/en/howto/code.html)によれば、qr コードの仕様には、使用するための余白または "quiet ゾーン" が必要です。</span><span class="sxs-lookup"><span data-stu-id="40d58-133">First and foremost, the [spec for QR codes](https://www.qrcode.com/en/howto/code.html) says "The QR Code symbol area requires a margin or "quiet zone" around it to be used.</span></span> <span data-ttu-id="40d58-134">余白は、何も印刷されないシンボルの周りの明確な領域です。</span><span class="sxs-lookup"><span data-stu-id="40d58-134">The margin is a clear area around a symbol where nothing is printed.</span></span> <span data-ttu-id="40d58-135">QR コードでは、記号の両側に4つのモジュールのワイドマージンが必要です。 "</span><span class="sxs-lookup"><span data-stu-id="40d58-135">QR Code requires a four-module wide margin at all sides of a symbol."</span></span> <span data-ttu-id="40d58-136">これは、モジュールのサイズの4倍の幅を持つ必要があります。コードの1つの黒い四角形です。</span><span class="sxs-lookup"><span data-stu-id="40d58-136">This needs to have a width, on every side, of four times the size of a module - a single black square in the code.</span></span> <span data-ttu-id="40d58-137">[仕様] ページには、QR コードを印刷する方法に関するアドバイスと、特定のサイズの QR コードを作成するために必要な領域が表示されます。</span><span class="sxs-lookup"><span data-stu-id="40d58-137">The spec page contains advice on how to print QR codes and figure out the area required to make a certain sized QR code.</span></span>
-
-<span data-ttu-id="40d58-138">現在 QR コード検出の品質は、さまざまな照明と背景に影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="40d58-138">Currently QR code detection quality is susceptible to varying illumination and backdrop.</span></span> <span data-ttu-id="40d58-139">これに対処するには、照明をメモして、適切なコードを出力します。</span><span class="sxs-lookup"><span data-stu-id="40d58-139">To combat this, note your illumination and print the appropriate code.</span></span> <span data-ttu-id="40d58-140">特に明るい照明を持つシーンでは、グレーの背景に黒のコードを印刷します。</span><span class="sxs-lookup"><span data-stu-id="40d58-140">In a scene with particularly bright lighting, print a code that is black on a gray background.</span></span> <span data-ttu-id="40d58-141">低光のシーンでは、黒の白で動作します。</span><span class="sxs-lookup"><span data-stu-id="40d58-141">Under a low-light scene, black on white works.</span></span> <span data-ttu-id="40d58-142">同様に、コードの背景が特に暗い場合は、検出率が低い場合はグレーのコードでブラックを試します。</span><span class="sxs-lookup"><span data-stu-id="40d58-142">Likewise, if the backdrop to the code is particularly dark, try a black on gray code if your detection rate is low.</span></span> <span data-ttu-id="40d58-143">それ以外の場合、背景が薄い場合は、通常のコードが正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="40d58-143">Otherwise, if the backdrop is lighter, a regular code should work fine.</span></span>
-
-## <a name="qrtracking-api"></a><span data-ttu-id="40d58-144">QRTracking API</span><span class="sxs-lookup"><span data-stu-id="40d58-144">QRTracking API</span></span>
-
-<span data-ttu-id="40d58-145">QRTracking プラグインは、QR コード追跡用の Api を公開します。</span><span class="sxs-lookup"><span data-stu-id="40d58-145">The QRTracking plugin exposes the APIs for QR code tracking.</span></span> <span data-ttu-id="40d58-146">プラグインを使用するには、 *Qrcodestrackerplugin*名前空間の次の型を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="40d58-146">To use the plugin, you will need to use the following types from the *QRCodesTrackerPlugin* namespace.</span></span>
-
+<span data-ttu-id="61aec-125">_C#:_</span><span class="sxs-lookup"><span data-stu-id="61aec-125">_C#:_</span></span>
 ```cs
- // QRTracker plugin namespace
- namespace QRCodesTrackerPlugin
- {
-    // Encapsulates information about a labeled QR code element.
-    public class QRCode
-    {        
-        // Unique id that identifies this QR code for this session.
-        public Guid Id { get; private set; }
-           
-        // Version of this QR code.
-        public Int32 Version { get; private set; }
-        
-        // PhysicalSizeMeters of this QR code.
-        public float PhysicalSizeMeters { get; private set; }
-        
-        // QR code Data.
-        public string Code { get; private set; }
-        
-        // QR code DataStream this is the error corrected data stream
-        public Byte[] CodeStream { get; private set; }
-        
-        // QR code last detected QPC ticks.
-        public Int64 LastDetectedQPCTicks { get; private set; }
-    };
-    
-    // The type of a QR Code added event.
-    public class QRCodeAddedEventArgs
-    {   
-        // Gets the QR Code that was added
-        public QRCode Code { get; private set; }
-    };
-    
-    // The type of a QR Code removed event.
-    public class QRCodeRemovedEventArgs
-    {
-        // Gets the QR Code that was removed.
-        public QRCode Code { get; private set; }
-    };
-    
-    // The type of a QR Code updated event.
-    public class QRCodeUpdatedEventArgs
-    {
-        // Gets the QR Code that was updated.
-        public QRCode Code { get; private set; }
-    };
-    
-    // A callback for handling the QR Code added event.
-    public delegate void QRCodeAddedHandler(QRCodeAddedEventArgs args);
-    
-    // A callback for handling the QR Code removed event.
-    public delegate void QRCodeRemovedHandler(QRCodeRemovedEventArgs args);
-    
-    // A callback for handling the QR Code updated event.
-    public delegate void QRCodeUpdatedHandler(QRCodeUpdatedEventArgs args);
-    
-    // Enumerates the possible results of a start of QRTracker.
-    public enum QRTrackerStartResult
-    {
-        // The start has succeeded.
-        Success = 0,
-        
-        //  The currently no device is connected.
-        DeviceNotConnected = 1,
-        
-        // The QRTracking Feature is not supported by the current HMD driver
-        // systems
-        FeatureNotSupported = 2,
-        
-        // The access is denide. Administrator needs to enable QR tracker feature.
-        AccessDenied = 3,
-    };
-    
-    // QRTracker
-    public class QRTracker
-    {
-        // Constructs a new QRTracker.
-        public QRTracker(){}
-        
-        // Gets the QRTracker.
-        public static QRTracker Get()
-        {
-            return new QRTracker();
-        }
-        
-        // Start the QRTracker. Returns QRTrackerStartResult.
-        public QRTrackerStartResult Start()
-        {
-            throw new NotImplementedException();
-        }
-        
-        // Stops tracking QR codes.
-        public void Stop() {}
-
-        // Not Implemented
-        Windows.Foundation.Collections.IVector<QRCode> GetList() { throw new NotImplementedException(); }
-        
-        // Event representing the addition of a QR Code.
-        public event QRCodeAddedHandler Added = delegate { };
-        
-        // Event representing the removal of a QR Code.
-        public event QRCodeRemovedHandler Removed = delegate { };
-        
-        // Event representing the update of a QR Code.
-        public event QRCodeUpdatedHandler Updated = delegate { };
-    };
-}
+await QRCodeWatcher.RequestAccessAsync();
 ```
 
-## <a name="implementing-qr-code-tracking-in-unity"></a><span data-ttu-id="40d58-147">Unity で QR コード追跡を実装する</span><span class="sxs-lookup"><span data-stu-id="40d58-147">Implementing QR code tracking in Unity</span></span>
-
-### <a name="sample-unity-scenes-in-mrtk-mixed-reality-toolkit"></a><span data-ttu-id="40d58-148">MRTK の Unity シーンのサンプル (Mixed Reality ツールキット)</span><span class="sxs-lookup"><span data-stu-id="40d58-148">Sample Unity scenes in MRTK (Mixed Reality Toolkit)</span></span>
-
-<span data-ttu-id="40d58-149">QR 追跡 API の使用方法の例については、「Mixed Reality Toolkit [GitHub サイト](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="40d58-149">You can find an example for how to use the QR Tracking API in the Mixed Reality Toolkit [GitHub site](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker).</span></span>
-
-<span data-ttu-id="40d58-150">MRTK には、QR 追跡の使用状況を簡略化するために必要なスクリプトが実装されています。</span><span class="sxs-lookup"><span data-stu-id="40d58-150">MRTK has implemented the needed scripts to simpilify the QR tracking usage.</span></span> <span data-ttu-id="40d58-151">QR 追跡アプリの開発に必要なすべての資産は、"QRTracker" フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="40d58-151">All necessary assets to develop QR tracking apps are in the "QRTracker" folder.</span></span> <span data-ttu-id="40d58-152">2つのシーンがあります。1つ目は、検出された QR コードの詳細を表示するサンプルです。2つ目は、QR コードにアタッチされた座標系を使用してホログラムを表示する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="40d58-152">There are two scenes: the first is a sample to simply show details of the QR codes as they are detected, and the second demonstrates how to use the coordinate system attached to the QR code to display holograms.</span></span>
-<span data-ttu-id="40d58-153">Prefab "QRScanner" を使用すると、必要なすべてのスクリプトをバックグラウンドに追加して Qrscanner を使用できます。</span><span class="sxs-lookup"><span data-stu-id="40d58-153">There is a prefab "QRScanner" which added all the necessary scripts to the scenes to use QRCodes.</span></span> <span data-ttu-id="40d58-154">スクリプト QRCodeManager は、QRCode API を実装するシングルトンクラスです。</span><span class="sxs-lookup"><span data-stu-id="40d58-154">The script QRCodeManager is a singleton class that implements the QRCode API.</span></span> <span data-ttu-id="40d58-155">これはシーンに追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="40d58-155">This needs to be added to your scene.</span></span> <span data-ttu-id="40d58-156">スクリプト "AttachToQRCode" は、ホログラムを QR コードの座標系に接続するために使用されます。このスクリプトは、どのホログラムにでも追加できます。</span><span class="sxs-lookup"><span data-stu-id="40d58-156">The script "AttachToQRCode" is used to attach holograms to the QR Code coordinate systems, this script can be added to any of your holograms.</span></span> <span data-ttu-id="40d58-157">"SpatialGraphCoordinateSystem" は、QRCode 座標系の使用方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="40d58-157">The "SpatialGraphCoordinateSystem" shows how to use the QRCode coordinate system.</span></span> <span data-ttu-id="40d58-158">これらのスクリプトは、プロジェクトシーンでそのまま使用することも、前に説明したように、プラグインを使用して直接作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="40d58-158">These scripts can be used as-is in your project scenes or you can write your own directly using the plugin as described above.</span></span>
-
-### <a name="implementing-qr-code-tracking-in-unity-without-mrtk"></a><span data-ttu-id="40d58-159">MRTK を使用せずに Unity で QR コード追跡を実装する</span><span class="sxs-lookup"><span data-stu-id="40d58-159">Implementing QR code tracking in Unity without MRTK</span></span>
-
-<span data-ttu-id="40d58-160">MRTK に依存せずに、Unity で QR 追跡 API を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="40d58-160">You can also use the QR Tracking API in Unity without taking a dependency on MRTK.</span></span> <span data-ttu-id="40d58-161">API を使用するには、次の指示に従ってプロジェクトを準備する必要があります。</span><span class="sxs-lookup"><span data-stu-id="40d58-161">In order to use the API, you will need to prepare your project with the following instruction:</span></span>
-
-1. <span data-ttu-id="40d58-162">Unity プロジェクトの assets フォルダーに、次の名前で新しいフォルダーを作成します。"プラグイン"。</span><span class="sxs-lookup"><span data-stu-id="40d58-162">Create a new folder in the assets folder of your unity project with the name: "Plugins".</span></span>
-2. <span data-ttu-id="40d58-163">[このフォルダー](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins)のすべての必要なファイルを、先ほど作成したローカルの "プラグイン" フォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="40d58-163">Copy all the required files from [this folder](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins) into the local "Plugins" folder you just created.</span></span>
-3. <span data-ttu-id="40d58-164">[Mrtk scripts フォルダー](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Scripts)内の QR 追跡スクリプトを使用することも、独自に作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="40d58-164">You can use the QR tracking scripts in the [MRTK scripts folder](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Scripts) or write your own.</span></span>
-<span data-ttu-id="40d58-165">注:これらのプラグインは、 [Windows 10 10 月2018更新プログラム (RS5 とも呼ば](release-notes-october-2018.md)れます) のビルドに対してのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="40d58-165">Note: These plugins are only for [Windows 10 October 2018 Update (also known as RS5)](release-notes-october-2018.md) builds.</span></span> <span data-ttu-id="40d58-166">プラグインは、次の windows リリースで更新されます。</span><span class="sxs-lookup"><span data-stu-id="40d58-166">The plugins will be updated with the next windows release.</span></span> <span data-ttu-id="40d58-167">現在のプラグインは試験段階であり、今後のバージョンの windows では機能しません。</span><span class="sxs-lookup"><span data-stu-id="40d58-167">The current plugins were experimental and will not work for future version of the windows.</span></span> <span data-ttu-id="40d58-168">新しいプラグインは発行されます。このプラグインは、次の windows リリースから使用でき、後方互換性ではなく、RS5 では動作しません)。</span><span class="sxs-lookup"><span data-stu-id="40d58-168">New plugins will be published which can be used from next windows release and they will not be backwards compatable and will not work with RS5).</span></span>
-
-## <a name="implementing-qr-code-tracking-in-directx"></a><span data-ttu-id="40d58-169">DirectX での QR コード追跡の実装</span><span class="sxs-lookup"><span data-stu-id="40d58-169">Implementing QR code tracking in DirectX</span></span>
-
-<span data-ttu-id="40d58-170">Visual Studio で QRTrackingPlugin を使用するには、winmd に QRTrackingPlugin の参照を追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="40d58-170">To use the QRTrackingPlugin in Visual Studio, you will need to add reference of the QRTrackingPlugin to the .winmd.</span></span> <span data-ttu-id="40d58-171">[サポートされているプラットフォームに必要なファイルについ](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins/WSA)ては、こちらを参照してください。</span><span class="sxs-lookup"><span data-stu-id="40d58-171">You can find the [required files for supported platforms here](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Preview/QRTracker/Plugins/WSA).</span></span>
-
+<span data-ttu-id="61aec-126">_C++:_</span><span class="sxs-lookup"><span data-stu-id="61aec-126">_C++:_</span></span>
 ```cpp
-// MyClass.h
-public ref class MyClass
-{
+co_await QRCodeWatcher.RequestAccessAsync();
+```
+
+<span data-ttu-id="61aec-127">QRCodeWatcher オブジェクトを構築する前に、アクセス許可を要求する必要があります。</span><span class="sxs-lookup"><span data-stu-id="61aec-127">Permission should be requested before you construct a QRCodeWatcher object.</span></span>
+
+<span data-ttu-id="61aec-128">QR コードの検出には`webcam`機能が必要ですが、検出はデバイスの追跡カメラを使用して行われます。</span><span class="sxs-lookup"><span data-stu-id="61aec-128">While QR code detection requires the `webcam` capability, the detection occurs using the device's tracking cameras.</span></span> <span data-ttu-id="61aec-129">これにより、デバイスの写真/ビデオ (PV) カメラとの検出と比較して、より広範な検出とバッテリ寿命が提供されます。</span><span class="sxs-lookup"><span data-stu-id="61aec-129">This provides a wider detection FOV and better battery life compared to detection with the device's photo/video (PV) camera.</span></span>
+
+### <a name="detecting-qr-codes-in-unity"></a><span data-ttu-id="61aec-130">Unity での QR コードの検出</span><span class="sxs-lookup"><span data-stu-id="61aec-130">Detecting QR codes in Unity</span></span>
+
+<span data-ttu-id="61aec-131">Unity の QR コード検出 API は、MRTK に依存せずに使用できます。</span><span class="sxs-lookup"><span data-stu-id="61aec-131">You can use the QR code detection API in Unity without taking a dependency on MRTK.</span></span> <span data-ttu-id="61aec-132">これを行うには、次の操作を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="61aec-132">To do so, you must:</span></span>
+
+1. <span data-ttu-id="61aec-133">名前が*プラグイン*の unity プロジェクトの assets フォルダーに新しいフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="61aec-133">Create a new folder in the assets folder of your unity project with the name *Plugins*.</span></span>
+2. <span data-ttu-id="61aec-134">このフォルダーのすべての必要なファイルを、先ほど作成したローカルの "プラグイン" フォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="61aec-134">Copy all the required files from this folder into the local "Plugins" folder you just created.</span></span>
+
+<span data-ttu-id="61aec-135">サンプル Unity アプリには、QR コードに holographic 二乗と、関連するデータ (GUID、物理サイズ、タイムスタンプ、デコードされたデータなど) が表示されます。</span><span class="sxs-lookup"><span data-stu-id="61aec-135">There is a sample Unity app that displays a holographic square over QR codes, along with the associated data such as GUID, physical size, timestamp, and decoded data.</span></span> <span data-ttu-id="61aec-136">このアプリは、に https://github.com/chgatla-microsoft/QRTracking/tree/master/SampleQRCodes あります。</span><span class="sxs-lookup"><span data-stu-id="61aec-136">This app can be located at https://github.com/chgatla-microsoft/QRTracking/tree/master/SampleQRCodes.</span></span>
+
+### <a name="detecting-qr-codes-in-c"></a><span data-ttu-id="61aec-137">検出 (QR コードを)C++</span><span class="sxs-lookup"><span data-stu-id="61aec-137">Detecting QR codes in C++</span></span>
+
+>[!NOTE]
+><span data-ttu-id="61aec-138">このC++記事のコードスニペットでは、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用される C + c++ 17 準拠C++の/WinRT ではなく、/cx を使用することを現在説明しています。</span><span class="sxs-lookup"><span data-stu-id="61aec-138">The C++ code snippets in this article currently demonstrate the use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span> <span data-ttu-id="61aec-139">これらの概念は、コードC++を変換する必要がある場合でも、1つのプロジェクトに相当します。</span><span class="sxs-lookup"><span data-stu-id="61aec-139">The concepts are equivalent for a C++/WinRT project, though you need to translate the code.</span></span>
+
+```
+using namespace Microsoft.MixedReality.QR;
+
+    public ref class QRListHelper sealed
+    {
+    public:
+        QRListHelper()
+        {
+
+        }
+
+        void setApp(SpatialStageManager* pStage)
+        {
+            m_pStage = pStage;
+        }
+
+        void SetUpQRCodes()
+        {
+            if (QRCodeWatcher::IsSupported())
+            {
+                auto operation = QRCodeWatcher::RequestAccessAsync();
+
+                WeakReference weakThis(this);
+
+                operation->Completed = ref new AsyncOperationCompletedHandler<QRCodeWatcherAccessStatus>(
+                    [weakThis](IAsyncOperation< QRCodeWatcherAccessStatus>^ operaion, AsyncStatus status)
+                {
+                    QRListHelper^ QRListHelper = weakThis.Resolve<QRListHelper>();
+                    if (status == AsyncStatus::Completed)
+                    {
+                        QRListHelper->InitializeQR( operaion->GetResults());
+                    }
+                }
+                );
+            }
+        }
+
     private:
-      QRCodesTrackerPlugin::QRTracker^ m_qrtracker;
-      // Handlers
-      void OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args);
-      void OnUpdatedQRCode(QRCodesTrackerPlugin::QRCodeUpdatedEventArgs ^args);
-      void OnRemovedQRCode(QRCodesTrackerPlugin::QRCodeRemovedEventArgs ^args);
-    ..
-};
+        void OnAddedQRCode(Object^, QRCodeAddedEventArgs ^args)
+        {
+            m_pStage->OnAddedQRCode(args);
+        }
+        void OnUpdatedQRCode(Object^, QRCodeUpdatedEventArgs ^args)
+        {
+            m_pStage->OnUpdatedQRCode(args);
+        }
+        void OnEnumerationComplete(Object^, Object^)
+        {
+            m_pStage->OnEnumerationComplete();
+        }
+
+        SpatialStageManager* m_pStage;
+        QRCodeWatcher^ m_qrWatcher;
+
+
+
+        void InitializeQR(QRCodeWatcherAccessStatus status)
+        {
+            if (status == QRCodeWatcherAccessStatus::Allowed)
+            {
+                m_qrWatcher = ref new QRCodeWatcher();
+
+                m_qrWatcher->Added += ref new EventHandler<Object^, QRCodeAddedEventArgs^>(this, &QRListHelper::OnAddedQRCode);
+                m_qrWatcher->Updated += ref new EventHandler<Object^, QRCodeUpdatedEventArgs^>(this, &QRListHelper::OnUpdatedQRCode);
+                m_qrWatcher->EnumerationCompleted += ref new EventHandler<Object^, Object^>(this, &QRListHelper::OnEnumerationComplete);
+                try
+                {
+                    m_qrWatcher->Start();
+                }
+                catch (...)
+                {
+
+                }
+            }
+            else
+            {
+                // Permission denied by system or user
+                // Handle the failures
+            }
+        }
+    }; 
 ```
 
-```cpp
-// MyClass.cpp
-MyClass::MyClass()
-{
-    // Create the tracker and register the callbacks
-    m_qrtracker = ref new QRCodesTrackerPlugin::QRTracker();
-    m_qrtracker->Added += ref new QRCodesTrackerPlugin::QRCodeAddedHandler(this, &OnAddedQRCode);
-    m_qrtracker->Updated += ref new QRCodesTrackerPlugin::QRCodeUpdatedHandler(this, &OnUpdatedQRCode);
-    m_qrtracker->Removed += ref new QRCodesTrackerPlugin::QRCodeRemovedHandler(this, &QOnRemovedQRCode);
+## <a name="getting-the-coordinate-system-for-a-qr-code"></a><span data-ttu-id="61aec-140">QR コードの座標系を取得する</span><span class="sxs-lookup"><span data-stu-id="61aec-140">Getting the coordinate system for a QR code</span></span>
 
-    // Start the tracker
-    if (m_qrtracker->Start() != QRCodesTrackerPlugin::QRTrackerStartResult::Success)
-    {
-      // Handle the failure
-      // It can fail for multiple reasons and can be handled properly 
-    }
-}
+<span data-ttu-id="61aec-141">検出された各 QR コードは、次に示すように、左上の高速検出四角形の左上隅にある QR コードに一致する[空間座標システム](coordinate-systems.md)を公開します。</span><span class="sxs-lookup"><span data-stu-id="61aec-141">Each detected QR code exposes a [spatial coordinate system](coordinate-systems.md) aligned with the QR code at the top left corner of the fast detection square in the top left as seen below.</span></span>  <span data-ttu-id="61aec-142">QR SDK を直接使用している場合、Z 軸は用紙を指しています (図には示されていません)。 Unity 座標に変換されると、Z 軸は用紙から外れ、左手で示されます。</span><span class="sxs-lookup"><span data-stu-id="61aec-142">When directly using the QR SDK, the Z-axis is pointing into the paper (not shown) - when converted into Unity coordinates, the Z-axis points out of the paper and is left-handed.</span></span>
 
-void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
-{
-    // use args->Code add to own list  
-}
-
-void MyClass::OnUpdatedQRCode(QRCodesTrackerPlugin::QRCodeUpdatedEventArgs ^args)
-{
-    // use args->Code update the existing one with the new one in own list 
-}
-
-void MyClass::OnRemovedQRCode(QRCodesTrackerPlugin::QRCodeRemovedEventArgs ^args)
-{
-    // use args->Code remove from own list.
-}
-```
-
-## <a name="getting-a-coordinate-system"></a><span data-ttu-id="40d58-172">座標系を取得する</span><span class="sxs-lookup"><span data-stu-id="40d58-172">Getting a coordinate system</span></span>
-
-<span data-ttu-id="40d58-173">上の左にある高速検出の四角形の左上隅にある QR コードに合わせて、右側の座標系を定義します。</span><span class="sxs-lookup"><span data-stu-id="40d58-173">We define a right-hand coordinate system aligned with the QR code at the top left corner of the fast detection square in the top left.</span></span> <span data-ttu-id="40d58-174">座標系は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="40d58-174">The coordinate system is shown below.</span></span> <span data-ttu-id="40d58-175">Z 軸は用紙を指しています (図には示されていません) が、Unity では、z 軸は紙でも左手でもありません。</span><span class="sxs-lookup"><span data-stu-id="40d58-175">The Z-axis is pointing into the paper (not shown), but in Unity the z-axis is out of the paper and left-handed.</span></span>
-
-<span data-ttu-id="40d58-176">SpatialCoordinateSystem は、示されているように定義されています。</span><span class="sxs-lookup"><span data-stu-id="40d58-176">A SpatialCoordinateSystem is defined that is aligned as shown.</span></span> <span data-ttu-id="40d58-177">この座標系は、API *Windows::P erception:: 空間::P review:: SpatialGraphInteropPreview:: CreateCoordinateSystemForNode*を使用してプラットフォームから取得できます。</span><span class="sxs-lookup"><span data-stu-id="40d58-177">This coordinate system can be obtained from the platform using the API *Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode*.</span></span>
+<span data-ttu-id="61aec-143">QR コードの SpatialCoordinateSystem が表示されます。</span><span class="sxs-lookup"><span data-stu-id="61aec-143">A QR code's SpatialCoordinateSystem aligns shown.</span></span> <span data-ttu-id="61aec-144">この座標系は、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview.createcoordinatesystemfornode" target="_blank">SpatialGraphInteropPreview:: CreateCoordinateSystemForNode</a>を呼び出し、コードの SpatialGraphNodeId を渡すことによって、プラットフォームから取得できます。</span><span class="sxs-lookup"><span data-stu-id="61aec-144">This coordinate system can be obtained from the platform by calling <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview.createcoordinatesystemfornode" target="_blank">SpatialGraphInteropPreview::CreateCoordinateSystemForNode</a> and passing in the code's SpatialGraphNodeId.</span></span>
 
 ![QR コードの座標系](images/Qr-coordinatesystem.png) 
 
-<span data-ttu-id="40d58-179">QRCode ^ Code オブジェクトから、次のコードは、四角形を作成して QR 座標系に配置する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="40d58-179">From QRCode^ Code object, the following code shows how to create a rectangle and put it in QR coordinate system:</span></span>
+<span data-ttu-id="61aec-146">QRCode オブジェクトの場合、次C++の/cx コードは、QR コードの座標系を使用して四角形を作成して配置する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="61aec-146">For a QRCode object, the following C++/CX code shows how to create a rectangle and place it using the QR code's coordinate system:</span></span>
 
 ```cpp
 // Creates a 2D rectangle in the x-y plane, with the specified properties.
@@ -265,37 +169,37 @@ std::vector<float3> SpatialStageManager::CreateRectangle(float width, float heig
 {
     std::vector<float3> vertices(4);
 
-    vertices[0] = { 0,  0, 0 };
-    vertices[1] = { width,  0, 0 };
-    vertices[2] = { width,  height, 0 };
-    vertices[3] = { 0,  height, 0 };
+    vertices[0] = { 0, 0, 0 };
+    vertices[1] = { width, 0, 0 };
+    vertices[2] = { width, height, 0 };
+    vertices[3] = { 0, height, 0 };
 
     return vertices;
 }
 ```
 
-<span data-ttu-id="40d58-180">次のように、物理的なサイズを使用して QR 四角形を作成できます。</span><span class="sxs-lookup"><span data-stu-id="40d58-180">You can use the physical size to create the QR rectangle:</span></span>
+<span data-ttu-id="61aec-147">次のように、物理的なサイズを使用して QR 四角形を作成できます。</span><span class="sxs-lookup"><span data-stu-id="61aec-147">You can use the physical size to create the QR rectangle:</span></span>
 
 ```cpp
 std::vector<float3> qrVertices = CreateRectangle(Code->PhysicalSizeMeters, Code->PhysicalSizeMeters); 
 ```
 
-<span data-ttu-id="40d58-181">座標系は、QR コードを描画したり、場所にホログラムをアタッチしたりするために使用できます。</span><span class="sxs-lookup"><span data-stu-id="40d58-181">The coordinate system can be used to draw the QR code or attach holograms to the location:</span></span>
+<span data-ttu-id="61aec-148">座標系は、QR コードを描画したり、場所にホログラムをアタッチしたりするために使用できます。</span><span class="sxs-lookup"><span data-stu-id="61aec-148">The coordinate system can be used to draw the QR code or attach holograms to the location:</span></span>
 
 ```cpp
-Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem = Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(Code->Id);
+Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem = Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(Code->SpatialGraphNodeId);
 ```
 
-<span data-ttu-id="40d58-182">*Qrcodestrackerplugin:: QRCodeAddedHandler*は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="40d58-182">Altogether, your *QRCodesTrackerPlugin::QRCodeAddedHandler* may look something like this:</span></span>
+<span data-ttu-id="61aec-149">*Qrcodewatcher:: QRCodeAddedHandler*は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="61aec-149">Altogether, your *QRCodeWatcher::QRCodeAddedHandler* may look something like this:</span></span>
 
 ```cpp
-void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
+void MyClass::OnAddedQRCode(Object ^sender, QRCodeWatcher::QRCodeAddedEventArgs ^args)
 {
     std::vector<float3> qrVertices = CreateRectangle(args->Code->PhysicalSizeMeters, args->Code->PhysicalSizeMeters);
     std::vector<unsigned short> qrCodeIndices = TriangulatePoints(qrVertices);
     XMFLOAT3 qrAreaColor = XMFLOAT3(DirectX::Colors::Aqua);
 
-    Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem =  Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(args->Code->Id);
+    Windows::Perception::Spatial::SpatialCoordinateSystem^ qrCoordinateSystem =  Windows::Perception::Spatial::Preview::SpatialGraphInteropPreview::CreateCoordinateSystemForNode(args->Code->SpatialGraphNodeId);
     std::shared_ptr<SceneObject> m_qrShape =
         std::make_shared<SceneObject>(
             m_deviceResources,
@@ -308,26 +212,277 @@ void MyClass::OnAddedQRCode(QRCodesTrackerPlugin::QRCodeAddedEventArgs ^args)
 }
 ```
 
-## <a name="troubleshooting-and-faq"></a><span data-ttu-id="40d58-183">トラブルシューティングと FAQ</span><span class="sxs-lookup"><span data-stu-id="40d58-183">Troubleshooting and FAQ</span></span>
+## <a name="best-practices-for-qr-code-detection"></a><span data-ttu-id="61aec-150">QR コードの検出のベストプラクティス</span><span class="sxs-lookup"><span data-stu-id="61aec-150">Best practices for QR code detection</span></span>
 
-<span data-ttu-id="40d58-184">**一般的なトラブルシューティング**</span><span class="sxs-lookup"><span data-stu-id="40d58-184">**General troubleshooting**</span></span>
+### <a name="quiet-zones-around-qr-codes"></a><span data-ttu-id="61aec-151">QR コードに関する非表示のゾーン</span><span class="sxs-lookup"><span data-stu-id="61aec-151">Quiet zones around QR Codes</span></span>
 
-* <span data-ttu-id="40d58-185">PC は2018年10月の更新プログラムを実行していますか?</span><span class="sxs-lookup"><span data-stu-id="40d58-185">Is your PC running the Windows 10 October 2018 Update?</span></span>
-* <span data-ttu-id="40d58-186">Reg キーを設定していますか?</span><span class="sxs-lookup"><span data-stu-id="40d58-186">Have you set the reg key?</span></span> <span data-ttu-id="40d58-187">その後、デバイスを再起動しましたか?</span><span class="sxs-lookup"><span data-stu-id="40d58-187">Restarted the device afterwards?</span></span>
-* <span data-ttu-id="40d58-188">QR コードのバージョンはサポートされているバージョンですか。</span><span class="sxs-lookup"><span data-stu-id="40d58-188">Is the QR code version a supported version?</span></span> <span data-ttu-id="40d58-189">現在の API では、最大 QR コードバージョン20がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="40d58-189">Current API supports up to QR Code Version 20.</span></span> <span data-ttu-id="40d58-190">一般的な使用には、バージョン5を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="40d58-190">We recommend using version 5 for general usage.</span></span> 
-* <span data-ttu-id="40d58-191">QR コードに十分に近づいていますか?</span><span class="sxs-lookup"><span data-stu-id="40d58-191">Are you close enough to the QR code?</span></span> <span data-ttu-id="40d58-192">カメラが QR コードに近いほど、API がサポートできる QR コードバージョンが大きくなります。</span><span class="sxs-lookup"><span data-stu-id="40d58-192">The closer the camera is to the QR code, the higher the QR code version the API can support.</span></span>  
+<span data-ttu-id="61aec-152">QR コードを正しく読み取るには、コードのすべての辺の周りに余白が必要です。</span><span class="sxs-lookup"><span data-stu-id="61aec-152">To be read correctly, QR codes require a margin around all sides of the code.</span></span> <span data-ttu-id="61aec-153">この余白には、印刷されたコンテンツを含めることはできません。また、4つのモジュール (コード内の1つの黒い四角形) にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="61aec-153">This margin must not contain any printed content and should be four modules (a single black square in the code) wide.</span></span> 
 
-<span data-ttu-id="40d58-193">**それを検出するには、QR コードにとってどのようにする必要がありますか。**</span><span class="sxs-lookup"><span data-stu-id="40d58-193">**How close do I need to be to the QR code to detect it?**</span></span>
+<span data-ttu-id="61aec-154">[QR 仕様](https://www.qrcode.com/en/howto/code.html)には、非表示ゾーンに関する詳細情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="61aec-154">The [QR spec](https://www.qrcode.com/en/howto/code.html) contains more information about quiet zones.</span></span>
 
-<span data-ttu-id="40d58-194">これは、QR コードのサイズと、そのバージョンによって異なります。</span><span class="sxs-lookup"><span data-stu-id="40d58-194">This will depend on the size of the QR code, and also what version it is.</span></span> <span data-ttu-id="40d58-195">5 cm の辺から 25 cm の辺まで、バージョン1の QR コードの場合、最小検出距離は0.15 メートルから0.5 メートルの範囲内です。</span><span class="sxs-lookup"><span data-stu-id="40d58-195">For a version 1 QR code varying from 5 cm sides to 25 cm sides, the minimum detection distance ranges from 0.15 meters to 0.5 meters.</span></span> <span data-ttu-id="40d58-196">最も遠いものは、より小さい QR コードターゲットの場合は約0.3 メートルから、それより大きい場合は1.4 メートルまでとなります。</span><span class="sxs-lookup"><span data-stu-id="40d58-196">The farthest away these can be detected from goes from about 0.3 meters for the smaller QR code targets to 1.4 meters for the bigger.</span></span> <span data-ttu-id="40d58-197">これよりも大きな QR コードの場合、を推定することができます。サイズの検出距離は直線的に増加します。</span><span class="sxs-lookup"><span data-stu-id="40d58-197">For QR codes bigger than that, you can estimate; the detection distance for size increases linearly.</span></span> <span data-ttu-id="40d58-198">トラッカーは、5 cm よりも小さい側の QR コードでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="40d58-198">Our tracker does not work with QR codes with sides smaller than 5 cm.</span></span>
+### <a name="lighting-and-backdrop"></a><span data-ttu-id="61aec-155">照明と背景</span><span class="sxs-lookup"><span data-stu-id="61aec-155">Lighting and backdrop</span></span>
+<span data-ttu-id="61aec-156">QR コード検出の品質は、さまざまな照明と背景に影響します。</span><span class="sxs-lookup"><span data-stu-id="61aec-156">QR code detection quality is susceptible to varying illumination and backdrop.</span></span> 
 
-<span data-ttu-id="40d58-199">**ロゴ付きの QR コードを使用しますか?**</span><span class="sxs-lookup"><span data-stu-id="40d58-199">**Do QR codes with logos work?**</span></span>
+<span data-ttu-id="61aec-157">特に明るい照明を持つシーンでは、グレーの背景に黒のコードを印刷します。</span><span class="sxs-lookup"><span data-stu-id="61aec-157">In a scene with particularly bright lighting, print a code that is black on a gray background.</span></span> <span data-ttu-id="61aec-158">それ以外の場合は、黒の QR コードを白い背景に印刷します。</span><span class="sxs-lookup"><span data-stu-id="61aec-158">Otherwise, print a black QR code on a white background.</span></span>
 
-<span data-ttu-id="40d58-200">ロゴ付きの QR コードはテストされていないため、現在サポートされていません。</span><span class="sxs-lookup"><span data-stu-id="40d58-200">QR codes with logos have not been tested and are currently unsupported.</span></span>
+<span data-ttu-id="61aec-159">コードの背景が特に暗い場合は、検出率が低い場合はグレーのコードで黒を試してみてください。</span><span class="sxs-lookup"><span data-stu-id="61aec-159">If the backdrop to the code is particularly dark, try a black on gray code if your detection rate is low.</span></span> <span data-ttu-id="61aec-160">背景が比較的薄い場合は、通常のコードが正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="61aec-160">If the backdrop is relatively light, a regular code should work fine.</span></span>
 
-<span data-ttu-id="40d58-201">**アプリから QR コードを消去して永続化操作方法には、**</span><span class="sxs-lookup"><span data-stu-id="40d58-201">**How do I clear QR codes from my app so they don't persist?**</span></span>
+### <a name="size-of-qr-codes"></a><span data-ttu-id="61aec-161">QR コードのサイズ</span><span class="sxs-lookup"><span data-stu-id="61aec-161">Size of QR codes</span></span>
+<span data-ttu-id="61aec-162">Windows Mixed Reality デバイスは、それぞれ 5 cm 未満の QR コードでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="61aec-162">Windows Mixed Reality devices do not work with QR codes with sides smaller than 5 cm each.</span></span>
 
-* <span data-ttu-id="40d58-202">QR コードは、ブートセッションでのみ保持されます。</span><span class="sxs-lookup"><span data-stu-id="40d58-202">QR codes are only persisted in the boot session.</span></span> <span data-ttu-id="40d58-203">再起動 (またはドライバーの再起動) が完了すると、次に新しいオブジェクトとして検出されます。</span><span class="sxs-lookup"><span data-stu-id="40d58-203">Once you reboot (or restart the driver), they will be gone and detected as new objects next time.</span></span>
-* <span data-ttu-id="40d58-204">QR コードの履歴は、ドライバーセッションのシステムレベルで保存されますが、必要に応じて、特定のタイムスタンプよりも古い QR コードを無視するようにアプリを構成することができます。</span><span class="sxs-lookup"><span data-stu-id="40d58-204">QR code history is saved at the system level in the driver session, but you can configure your app to ignore QR codes older than a specific timestamp if you want.</span></span> <span data-ttu-id="40d58-205">現在、API では、複数のアプリがデータに関心を持っている可能性があるため、QR コードの履歴のクリアをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="40d58-205">Currently the API does support clearing QR code history, as multiple apps might be interested in the data.</span></span>
+<span data-ttu-id="61aec-163">5から 10 cm の長さの辺までの QR コードの場合、コードを検出するには非常に近い必要があります。</span><span class="sxs-lookup"><span data-stu-id="61aec-163">For QR codes between 5 and 10 cm length sides, you must be fairly close to detect the code.</span></span> <span data-ttu-id="61aec-164">また、このサイズでコードを検出するのにも時間がかかります。</span><span class="sxs-lookup"><span data-stu-id="61aec-164">It will also take longer to detect codes at this size.</span></span> 
 
-<span data-ttu-id="40d58-206">**RS5 および将来のバージョンのプラグインは互換性ません**。RS5 バージョンのプラグインは RS5 に対してのみ機能し、今後のバージョンでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="40d58-206">**The plugins for RS5 and future versions are not compatable** RS5 version of the plugin only works for RS5 and will not work for future versions.</span></span> <span data-ttu-id="40d58-207">Expermental プラグインは実際のプラグインに置き換えられ、今後のバージョンの windows で使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="40d58-207">The expermental plugin will be replaced with the real plugin and should be the one that we can use in future versions of the windows.</span></span>
+<span data-ttu-id="61aec-165">コードを正確に検出するための正確な時間は、QR コードのサイズだけでなく、コードから離れた場所までの距離に依存します。</span><span class="sxs-lookup"><span data-stu-id="61aec-165">The exact time to detect codes depends not only on the size of the QR codes, but how far you are away from the code.</span></span> <span data-ttu-id="61aec-166">コードに近づけると、サイズの問題を相殺するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="61aec-166">Moving closer to the code will help offset issues with size.</span></span>
+
+### <a name="distance-and-angular-position-from-the-qr-code"></a><span data-ttu-id="61aec-167">QR コードからの距離と角度の位置</span><span class="sxs-lookup"><span data-stu-id="61aec-167">Distance and angular position from the QR code</span></span>
+<span data-ttu-id="61aec-168">追跡カメラは、特定のレベルの詳細のみを検出できます。</span><span class="sxs-lookup"><span data-stu-id="61aec-168">The tracking cameras can only detect a certain level of detail.</span></span> <span data-ttu-id="61aec-169">実際に小さいコードの場合は、< 10cm を横に配置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="61aec-169">For really small codes - < 10cm along the sides - you must be fairly close.</span></span> <span data-ttu-id="61aec-170">バージョン1の QR コードが 10 ~ 25 cm 幅を超える場合、最小検出距離は0.15 メートルから0.5 メートルの範囲内です。</span><span class="sxs-lookup"><span data-stu-id="61aec-170">For a version 1 QR code varying from 10 to 25 cm wide, the minimum detection distance ranges from 0.15 meters to 0.5 meters.</span></span> 
+
+<span data-ttu-id="61aec-171">サイズの検出距離は直線的に増加します。</span><span class="sxs-lookup"><span data-stu-id="61aec-171">The detection distance for size increases linearly.</span></span> 
+
+<span data-ttu-id="61aec-172">QR 検出は、角度の範囲 (+ = 45deg) で動作します。</span><span class="sxs-lookup"><span data-stu-id="61aec-172">QR detection works with a range of angles += 45deg.</span></span> <span data-ttu-id="61aec-173">これは、コードを検出するための適切な解決策があることを確認するためのものです。</span><span class="sxs-lookup"><span data-stu-id="61aec-173">This is to ensure we have proper resolution to detect the code.</span></span>
+
+### <a name="qr-codes-with-logos"></a><span data-ttu-id="61aec-174">ロゴ付き QR コード</span><span class="sxs-lookup"><span data-stu-id="61aec-174">QR codes with logos</span></span>
+<span data-ttu-id="61aec-175">ロゴ付きの QR コードはテストされていないため、現在サポートされていません。</span><span class="sxs-lookup"><span data-stu-id="61aec-175">QR codes with logos have not been tested and are currently unsupported.</span></span>
+
+### <a name="managing-qr-code-data"></a><span data-ttu-id="61aec-176">QR コードデータの管理</span><span class="sxs-lookup"><span data-stu-id="61aec-176">Managing QR code data</span></span>
+<span data-ttu-id="61aec-177">Windows Mixed Reality デバイスは、ドライバーのシステムレベルで QR コードを検出します。</span><span class="sxs-lookup"><span data-stu-id="61aec-177">Windows Mixed Reality devices detect QR codes at the system level in the driver.</span></span> <span data-ttu-id="61aec-178">デバイスが再起動されると、検出された QR コードは失われ、次に新しいオブジェクトとして再検出されます。</span><span class="sxs-lookup"><span data-stu-id="61aec-178">When the device is rebooted, the detected QR codes are gone and will be re-detected as new objects next time.</span></span>
+
+<span data-ttu-id="61aec-179">特定のタイムスタンプよりも古い QR コードを無視するようにアプリを構成することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="61aec-179">It is recommended to configure your app to ignore QR codes older than a specific timestamp.</span></span> <span data-ttu-id="61aec-180">現時点では、API は QR コード履歴のクリアをサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="61aec-180">Currently, the API does not support clearing QR code history.</span></span>
+
+## <a name="qr-api-reference"></a><span data-ttu-id="61aec-181">QR API リファレンス</span><span class="sxs-lookup"><span data-stu-id="61aec-181">QR API reference</span></span>
+
+```cs
+namespace Microsoft.MixedReality.QR
+{
+    /// <summary>
+    /// Represents a detected QR code.
+    /// </remarks>
+    public class QRCode
+    {
+        /// <summary>
+        /// Unique id that identifies this QR code for this session.
+        /// </summary>
+        public Guid Id { get; }
+
+        /// <summary>
+        /// Spatial graph node id for this QR code to create a coordinate system.
+        /// </summary>
+        public Guid SpatialGraphNodeId { get; }
+
+        /// <summary>
+        /// Version of this QR code. Version 1-40 are regular QR codes and 41-44 are Micro QR code formats 1-4.
+        /// </summary>
+        public VersionInfo Version { get; }
+
+        /// <summary>
+        /// Physical width and height of this QR code in meters.
+        /// </summary>
+        public float PhysicalSideLength { get; }
+
+        /// <summary>
+        /// Decoded QR code data.
+        /// </summary>
+        public String Data { get; }
+
+        /// <summary>
+        /// Size of the RawData of this QR code.
+        /// </summary>
+        public UInt32 RawDataSize { get; }
+
+        /// <summary>
+        /// Gets the error-corrected raw data bytes.
+        /// Used when the platform is unable to decode the code's format,
+        /// allowing your app to decode as needed.
+        /// </summary>
+        public void GetRawData(byte[] buffer);
+
+        /// <summary>
+        /// The last detected time in 100ns QPC ticks.
+        /// </summary>
+        public System.TimeSpan SystemRelativeLastDetectedTime { get; }
+
+        /// <summary>
+        /// The last detected time.
+        /// </summary>
+        public System.DateTimeOffset LastDetectedTime { get; }
+    }
+
+    /// <summary>
+    /// Event arguments for a QRCodeWatcher's Added event.
+    /// </summary>
+    public class QRCodeAddedEventArgs
+    {
+        /// <summary>
+        /// Gets the QR Code that was added
+        /// </summary>
+        public QRCode Code { get; }
+    }
+
+    /// <summary>
+    /// Event arguments for a QRCodeWatcher's Removed event.
+    /// </summary>
+    public class QRCodeRemovedEventArgs
+    {
+        /// <summary>
+        /// Gets the QR Code that was removed.
+        /// </summary>
+        public QRCode Code { get; }
+    }
+
+    /// <summary>
+    /// Event arguments for a QRCodeWatcher's Updated event.
+    /// </summary>
+    public class QRCodeUpdatedEventArgs
+    {
+        /// <summary>
+        /// Gets the QR Code that was updated.
+        /// </summary>
+        public QRCode Code { get; }
+    }
+
+    /// <summary>
+    /// Represents the status of an access request for QR code detection.
+    /// </summary>
+    public enum QRCodeWatcherAccessStatus
+    {
+        /// <summary>
+        /// The system has denied permission for the app to detect QR codes.
+        /// </summary>
+        DeniedBySystem = 0,
+        /// <summary>
+        /// The app has not declared the webcam capability in its manifest.
+        /// </summary>
+        NotDeclaredByApp = 1,
+        /// <summary>
+        /// The user has denied permission for the app to detect QR codes.
+        /// </summary>
+        DeniedByUser = 2,
+        /// <summary>
+        /// A user prompt is required to get permission to detect QR codes.
+        /// </summary>
+        UserPromptRequired = 3,
+        /// <summary>
+        /// The user has given permission to detect QR codes.
+        /// </summary>
+        Allowed = 4,
+    }
+
+    /// <summary>
+    /// Detects QR codes in the user's environment.
+    /// </summary>
+    public class QRCodeWatcher
+    {
+        /// <summary>
+        /// Gets whether QR code detection is supported on the current device.
+        /// </summary>
+        public static bool IsSupported();
+
+        /// <summary>
+        /// Request user consent before using QR code detection.
+        /// </summary>
+        public static IAsyncOperation<QRCodeWatcherAccessStatus> RequestAccessAsync();
+
+        /// <summary>
+        /// Constructs a new QRCodeWatcher.
+        /// </summary>
+        public QRCodeWatcher();
+
+        /// <summary>
+        /// Starts detecting QR codes.
+        /// </summary>
+        /// <remarks>
+        /// Start should only be called once RequestAccessAsync has succeeded.
+        /// Start should not be called if QR code detection is not supported.
+        /// Check that IsSupported returns true before calling Start.
+        /// </remarks>
+        public void Start();
+
+        /// <summary>
+        /// Stops detecting QR codes.
+        /// </summary>
+        public void Stop();
+
+        /// <summary>
+        /// Get the list of QR codes detected.
+        /// </summary>
+        /// <remarks>
+        /// </remarks>
+        public IList<QRCode> GetList();
+
+        /// <summary>
+        /// Event representing the addition of a QR Code.
+        /// </summary>
+        public event EventHandler<QRCodeAddedEventArgs> Added;
+
+        /// <summary>
+        /// Event representing the removal of a QR Code.
+        /// </summary>
+        public event EventHandler<QRCodeRemovedEventArgs> Removed;
+
+        /// <summary>
+        /// Event representing the update of a QR Code.
+        /// </summary>
+        public event EventHandler<QRCodeUpdatedEventArgs> Updated;
+
+        /// <summary>
+        /// Event representing the enumeration of QR Codes completing after a Start call.
+        /// </summary>
+        public event EventHandler<Object> EnumerationCompleted;
+    }
+
+    /// <summary>
+    /// Version info for QR codes, including Micro QR codes.
+    /// </summary>
+    public enum VersionInfo
+    {
+        QR1 = 1,
+        QR2 = 2,
+        QR3 = 3,
+        QR4 = 4,
+        QR5 = 5,
+        QR6 = 6,
+        QR7 = 7,
+        QR8 = 8,
+        QR9 = 9,
+        QR10 = 10,
+        QR11 = 11,
+        QR12 = 12,
+        QR13 = 13,
+        QR14 = 14,
+        QR15 = 15,
+        QR16 = 16,
+        QR17 = 17,
+        QR18 = 18,
+        QR19 = 19,
+        QR20 = 20,
+        QR21 = 21,
+        QR22 = 22,
+        QR23 = 23,
+        QR24 = 24,
+        QR25 = 25,
+        QR26 = 26,
+        QR27 = 27,
+        QR28 = 28,
+        QR29 = 29,
+        QR30 = 30,
+        QR31 = 31,
+        QR32 = 32,
+        QR33 = 33,
+        QR34 = 34,
+        QR35 = 35,
+        QR36 = 36,
+        QR37 = 37,
+        QR38 = 38,
+        QR39 = 39,
+        QR40 = 40,
+        MicroQRM1 = 41,
+        MicroQRM2 = 42,
+        MicroQRM3 = 43,
+        MicroQRM4 = 44,
+    }
+}
+```
+
+## <a name="see-also"></a><span data-ttu-id="61aec-182">関連項目</span><span class="sxs-lookup"><span data-stu-id="61aec-182">See also</span></span>
+* [<span data-ttu-id="61aec-183">座標系</span><span class="sxs-lookup"><span data-stu-id="61aec-183">Coordinate systems</span></span>](coordinate-systems.md)
+* <span data-ttu-id="61aec-184"><a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure Spatial Anchors</a></span><span class="sxs-lookup"><span data-stu-id="61aec-184"><a href="https://docs.microsoft.com/azure/spatial-anchors/overview" target="_blank">Azure Spatial Anchors</a></span></span>
