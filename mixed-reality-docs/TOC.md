@@ -22,6 +22,7 @@
 #### [ファイルの保存と検索](saving-and-finding-your-files.md)
 #### [写真を表示する](see-your-photos.md)
 #### [HoloLens を更新する](updating-hololens.md)
+#### [新しい空間で HoloLens を使用する](use-hololens-in-new-spaces.md)
 #### [デバイス共有](device-sharing.md)
 #### [HoloLens のデモ装着とクリーニングのガイド](hololens-demo-guide.md)
 ### イマーシブ ヘッドセット
