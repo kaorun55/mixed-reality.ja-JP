@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 03/21/2018
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、academy、チュートリアル、ジェスチャ
-ms.openlocfilehash: 76d2b4c0ac3d0a3783b091f7dc8c39548a18b548
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 694f51f1b56588e100d6d2676a8194d7e9936133
+ms.sourcegitcommit: e9a55528965048ce34f8247ef6e544f9f432ee37
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522464"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559878"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
@@ -46,7 +46,7 @@ ms.locfileid: "63522464"
 
 ## <a name="before-you-start"></a>開始前の準備
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 * 適切な[ツールがインストール](install-the-tools.md)された WINDOWS 10 PC。
 * 基本的なC#プログラミング機能。
@@ -120,6 +120,9 @@ HoloLens に展開する場合:
 
 * ハンドトラッキングイベントをサブスクライブします。
 * カーソルのフィードバックを使用して、ユーザーを追跡しているときにユーザーを表示します。
+
+>[!NOTE]
+>HoloLens 2 では、両手が表示されると (指が指されているときだけではなく)、ハンド検出が発生します。
 
 ### <a name="instructions"></a>手順
 
@@ -315,7 +318,7 @@ public class GestureAction : MonoBehaviour, INavigationHandler, IManipulationHan
 
 1. [**階層**] パネルで、[**カーソルとフィードバック**] オブジェクトを選択します。
 2. [**インスペクター** ] パネルで、[**コンポーネントの追加**] ボタンをクリックします。
-3. メニューの [検索] ボックスに「」と入力し**ます。** 検索結果を選択します。
+3. メニューの [検索] ボックスに「」と入力します。 検索結果を選択します。
 4. [**プロジェクト**] パネルの [**ホログラム**] フォルダーで、[ファイル] [ **guidguid] [フィードバック**] 資産を見つけます。
 5. [**インスペクター** ] パネルの [**ハンドガイダンスインジケーター** ] プロパティに、[ハンドラー] の [配布の**フィードバック**] 資産をドラッグアンドドロップします。
 
