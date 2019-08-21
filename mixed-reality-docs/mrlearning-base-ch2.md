@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 925ab825c2716a847726ac763dc6800914d87c6b
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 45833ba22305acedb45bfdc9752c0b278a693190
+ms.sourcegitcommit: 9636573eabdc78db6875e831a9c894a2ff173a99
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702036"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629179"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3.ユーザーインターフェイスを作成し、Mixed Reality Toolkit を構成する 
 
@@ -34,7 +34,7 @@ ms.locfileid: "68702036"
 
 >注:既定では、MRTK プロファイルは編集できません。 これらは既定のプロファイルテンプレートで、コピーしてカスタマイズすることができます。 カスタマイズとプロファイルには、いくつかのレイヤーがあります。 そのため、1つまたは複数の設定を構成するときに、いくつかのプロファイルをコピーしてカスタマイズするのは標準的な方法です。
 >
->MRTK プロファイルとそのアーキテクチャの詳細については、 [Mrtk のドキュメント](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Architecture/SpatialAwareness/SpatialAwarenessSystemArchitecture.html>)を参照してください。
+>MRTK プロファイルとそのアーキテクチャの詳細については、 [Mrtk のドキュメント](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html>)を参照してください。
 
 2. 既定のプロファイルのコピーを作成し、それをカスタマイズします。 既定のプロファイルをコピーするには、[コピー & カスタマイズ] をクリックします (イメージを参照)。 これにより、MRTK プロファイルのコピーが作成されます。 MRTK プロファイルの独自のコピーが取得できたので、このプロファイル内の任意の設定をカスタマイズできるようになりました。 また、後の手順で説明するように、このプロファイルの下に入れ子になっている追加のプロファイルについても、[コピーとカスタマイズ] ステップを繰り返す必要があります。
 
