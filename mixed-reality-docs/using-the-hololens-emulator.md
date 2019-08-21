@@ -3,16 +3,16 @@ title: HoloLens のエミュレーターを使用する
 description: HoloLens のエミュレーターを使用すると、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストできます。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 04/25/2019
+ms.date: 08/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: e675911e661ad6a4b1f05f2ecb3aa77994c3815c
-ms.sourcegitcommit: 36601a19306a05c826b91dea191b020f634912bf
+ms.openlocfilehash: 6c112b7706f1dfff7c4affbdb4ee7326f0e15c8a
+ms.sourcegitcommit: 06c27acdac24c845952f9c1d3611770756f25820
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650830"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69030171"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens のエミュレーターを使用する
 
@@ -22,10 +22,10 @@ HoloLens のエミュレーターを使用すると、物理的な HoloLens を�
 
 
 ## <a name="installing-the-hololens-emulator"></a>HoloLens のエミュレーターをインストールする
-HoloLens のエミュレーターおよびホログラフィック プロジェクト テンプレートをダウンロードします。
+HoloLens のエミュレーターをダウンロードします。
 
 バージョン: 
-* [HoloLens 2 エミュレーターおよびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2098508)。
+* [HoloLens 2 エミュレーター](https://go.microsoft.com/fwlink/?linkid=2101019).
 * [HoloLens エミュレーター (第 1 世代) およびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 HoloLens のエミュレーターの以前のビルドは、「[HoloLens のエミュレーターのアーカイブ](hololens-emulator-archive.md)」ページをご覧ください。
