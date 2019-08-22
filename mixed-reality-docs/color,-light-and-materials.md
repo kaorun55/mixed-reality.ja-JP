@@ -6,12 +6,12 @@ ms.author: pinkb
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、カラー、ライト、素材
-ms.openlocfilehash: 3f8ee8edfe4cbbaf8a55b3c4a9125f752823be9c
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: bef0c8b63c109baa536e4192ce94919eb888faf2
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63526516"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896518"
 ---
 # <a name="color-light-and-materials"></a>色、光、マテリアル
 
@@ -28,7 +28,7 @@ Holographic ヘッドセットで holographic エクスペリエンスをテス�
 ## <a name="fundamentals-of-rendering-on-holographic-devices"></a>Holographic デバイスでのレンダリングの基礎
 * Holographic のデバイスには追加の**ディスプレイがあり**ます。実際の世界から光に光を追加することによって、ホログラムが作成されます。白は明るいと表示され、黒は透明に見えます。
 * **色の影響はユーザーの環境によって異なり**ます。ユーザーの部屋にはさまざまな照明条件があります。 わかりやすくするために、適切なコントラストレベルでコンテンツを作成します。
-* **動的な照明を避ける**– holographic エクスペリエンスで一様に点灯するホログラムは最も効率的です。 Advanced を使用すると、動的な光源がモバイルシェーダーの機能を超える可能性があります。
+* **動的な照明を避ける**– holographic エクスペリエンスで一様に点灯するホログラムは最も効率的です。 高度な機能を使用すると、モバイルデバイスの機能を超える可能性があります。 動的ライティングが必要な場合は、 [Mixed Reality Toolkit の標準シェーダー](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)を使用することをお勧めします。 
 
 ## <a name="designing-with-color"></a>色を使用したデザイン
 

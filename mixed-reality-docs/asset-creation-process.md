@@ -1,17 +1,17 @@
 ---
 title: 資産の作成プロセス
 description: Mixed reality エクスペリエンスのアセットを作成するためのガイダンスです。
-author: paseb
-ms.author: paseb
+author: shengkait
+ms.author: shentan
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 資産、作成、処理、予算、多角形、テクスチャ、シェーダー、パフォーマンス
-ms.openlocfilehash: 513a9856ac35e4229cfb7bc8bcb92d9d6a152980
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: f7bee55249764af37453ea0fab01730b43907569
+ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692294"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896504"
 ---
 # <a name="asset-creation-process"></a>資産の作成プロセス
 
@@ -60,7 +60,7 @@ Windows Mixed Reality は、Microsoft が DirectX に加えた数十年の投資
 
 **資産の複雑さ**
 * 三角形/多角形の数
-* シェーダーはどのように複雑になりますか。
+* シェーダーはどのように複雑になりますか。 混合 Reality ツールキットを使用する場合は、[混合 Reality toolkit の標準シェーダー](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_MRTKStandardShader.md)を使用してシェーダーの複雑さを軽減することをお勧めします。
 
 開発者とアーティストはどちらも、デバイスとグラフィックスエンジンの機能を考慮する必要があります。 Microsoft HoloLens は、デバイスに組み込まれているすべての計算とグラフィックスを備えています。 開発者がモバイルプラットフォームで見つけた機能を共有します。
 
