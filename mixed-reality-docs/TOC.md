@@ -31,6 +31,7 @@
 #### [技術者向けガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [ハードウェア アクセサリ](hardware-accessories.md)
 ### [HoloLens のデモ装着とクリーニングのガイド](hololens-demo-guide.md)
+### [Windows Mixed Reality による場所に基づいたエンターテイメント](location-based-experiences.md)
 ## コア構成要素
 ### [視線入力](gaze.md)
 ### [ジェスチャ](gestures.md)
