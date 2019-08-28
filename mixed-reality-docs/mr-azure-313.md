@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, エッジ, iot edge, チュートリアル, api, 通知, 関数, テーブル, hololens, イマーシブ, vr, iot, 仮想マシン, ubuntu, python
-ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: ec669b799e7c46a9a4ed87674ed78e50f816c9e9
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694599"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047242"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
@@ -55,7 +55,7 @@ ms.locfileid: "67694599"
 </tr>
 </table>
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 
 Microsoft HoloLens など、mixed reality を使用した開発に関する最新の前提条件については、[ツールのインストール](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)に関する記事をご覧ください。
 
@@ -84,7 +84,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 1. HoloLens をセットアップしてテストします。 HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。
 2. 新しい HoloLens アプリの開発を開始するときは、**調整**と**センサーのチューニング**を実行することをお勧めします (ユーザーごとにこれらのタスクを実行するのに役立つ場合があります)。
 
-調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens)参照してください。
+調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens-2)参照してください。
 
 センサーチューニングの詳細については、 [HoloLens センサーチューニングに関する記事へのリンクを](sensor-tuning.md)参照してください。
 
@@ -277,7 +277,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
         sudo apt-get install python-pip
     ```
 
-2.  この章では、デバイスのストレージを使用するためのアクセス許可を*ターミナル*で確認するメッセージが表示される場合があります。また、 **y/n** (yes または no) を入力するには「 **y」** と入力し、 **enter キーを**押して同意します。
+2.  この章では、デバイスのストレージを使用するためのアクセス許可を *ターミナル*で確認するメッセージが表示される場合があります。また、 **y/n** (yes または no) を入力するには「 **y」** と入力し、enter キーを押して同意します。
 
 3.  コマンドが完了したら、次のコマンドを使用して**curl**をインストールします。
 
@@ -380,7 +380,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     > [!ヒント] このコマンドで問題が発生した場合は、次のようになります。 
     >1. VS Code、またはコンピューターを再起動します。
-    >2. **VS Code ターミナル**を、python のインストールに使用している**もの (特**に、python 環境がコンピューターに既にインストールされている場合) に切り替える必要がある場合があります。 ターミナルを開いた状態で、ターミナルの右側にドロップダウンメニューが表示されます。
+    >2. **VS Code ターミナル**を、python のインストールに使用しているもの (特に、python 環境がコンピューターに既にインストールされている場合) に切り替える必要がある場合があります。 ターミナルを開いた状態で、ターミナルの右側にドロップダウンメニューが表示されます。
      ![コンテナーを作成する](images/AzureLabs-Lab313-24b.png) 
     >3. **Python**インストールパスが**環境変数**としてコンピューターに追加されていることを確認します。 Cookiecutter は同じ場所のパスの一部にする必要があります。 [環境変数の詳細につい](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx)ては、このリンクに従ってください。 
 
@@ -762,7 +762,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     ![エッジデバイス](images/AzureLabs-Lab313-32.png)
 
-5. デバイスがここではない場合を右クリックする必要があります。 *Azure IoT Hub デバイス*、をクリックし、 **IoT Hub 接続文字列の設定**します。 **コマンドパレット**(VS Code の上部) で、*接続文字列*を入力するように求められます。 これは、[章 3](#chapter-3---the-iot-hub-service)の最後にメモした*接続文字列*です。 で文字列をコピーしたら、 **enter キーを**押します。    
+5. デバイスがここではない場合を右クリックする必要があります。 *Azure IoT Hub デバイス*、をクリックし、 **IoT Hub 接続文字列の設定**します。 **コマンドパレット**(VS Code の上部) で、*接続文字列*を入力するように求められます。 これは、[章 3](#chapter-3---the-iot-hub-service)の最後にメモした*接続文字列*です。 で文字列をコピーしたら、enter キーを押します。    
 
 6. デバイスが読み込まれ、表示されます。 デバイス名を右クリックし、 **[単一デバイスの展開の作成]** をクリックします。
 
@@ -1021,7 +1021,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
     8. **[ストレージ]** セクションでは、**前の手順で作成したストレージサービスを選択する必要があり**ます。
 
-    9. このアプリで*Application Insights*は必要ありませ**ん。その**ままにしておいてもかまいません。
+    9. このアプリで*Application Insights*は必要ありません。そのままにしておいてもかまいません。
 
     10. **[作成]** をクリックします。
 

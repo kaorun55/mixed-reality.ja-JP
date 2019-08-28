@@ -6,15 +6,15 @@ ms.author: xerxesb
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 調整、快適、ビジュアル、品質、ipd
-ms.openlocfilehash: 354d7eb74666471f24a6b5774e5772260b1e3570
-ms.sourcegitcommit: 5d3be2d7569d912011ea114c0a283bc3c635d5df
+ms.openlocfilehash: 1fc3904f4b3e441a967616f20e4287dbc7f08835
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69979481"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047053"
 ---
 # <a name="improve-visual-quality-and-comfort"></a>視覚の品質と快適さを向上させる
-HoloLens、HoloLens 2、および Windows Mixed Reality のイマーシブヘッドセットは、ビジュアルエクスペリエンスの品質向上のためにさまざまな方法を提供します。 
+HoloLens、HoloLens 2、および Windows Mixed Reality のイマーシブヘッドセットは、ビジュアルエクスペリエンスの品質を向上させるためのさまざまな方法を提供します。 
 
 ## <a name="hololens-2"></a>Hololens 2
 
@@ -52,12 +52,12 @@ HoloLens 2 では、デバイスのセットアップ中にビジュアルを調
 3. 起動**設定**。
 4. [**システム** > **調整**の視点] に移動し、[目の調整を実行] を選択します。 > 
 
-### <a name="calibration-when-sharing-a-device--session"></a>デバイス/セッションを共有する場合の調整
+### <a name="calibration-when-sharing-a-devicesession"></a>デバイス/セッションを共有する場合の調整
 
 Hololens 2 は、デバイスのセットアップを実行する必要がないように、ユーザー間で共有できます。 Hololens 2 では、ユーザーがデバイスに新しい場合にデバイスがヘッドに配置されると、ユーザーに対して視覚エフェクトを調整するように求めるメッセージが表示されます。 ユーザーがデバイスで以前にビジュアルを調整している場合は、ユーザーがデバイスをヘッドに置いたときに、品質と快適な表示エクスペリエンスのために、表示がシームレスに調整されます。 
 
 
-## <a name="hololens"></a>HoloLens
+## <a name="hololens-v1"></a>Hololens (v1)
 
 IPD (interpupillary distance) を調整することで、ビジュアルの品質を向上させることができます。
 

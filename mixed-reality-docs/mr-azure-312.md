@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, コンピュータービジョン, hololens, イマーシブ, vr, microsoft bot framework v4, web アプリボット, bot フレームワーク, microsoft bot
-ms.openlocfilehash: b828aa4415103d280459bd2c666004c994b3e59d
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 481693b5af8c946e1cb45dda5144e78a175fa771
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63542489"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047230"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
@@ -45,7 +45,7 @@ ms.locfileid: "63542489"
 > [!NOTE]
 > このコースでは主に HoloLens に焦点を当てていますが、このコースで学習する内容を Windows Mixed Reality イマーシブ (VR) ヘッドセットにも適用できます。 イマーシブ (VR) ヘッドセットにはアクセス可能なカメラがないため、外部カメラが PC に接続されている必要があります。 コースを進めると、イマーシブ (VR) ヘッドセットをサポートするために必要な変更についての注意事項が表示されます。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 
 > [!NOTE]
 > このチュートリアルは、Unity とC#の基本的な経験を持つ開発者向けに設計されています。 また、このドキュメントに記載されている前提条件と記述に記載されている手順は、作成時にテストおよび検証された内容 (2018 年7月) を表しています。 「[ツールのインストール](install-the-tools.md)」の記事に記載されているように、最新のソフトウェアを自由に使用できます。ただし、このコースの情報は、以下に記載されているものより新しいソフトウェアの内容と完全に一致するとは限りません。
@@ -66,7 +66,7 @@ ms.locfileid: "63542489"
 2.  HoloLens をセットアップしてテストします。 HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。 
 3.  新しい HoloLens アプリの開発を開始するときは、調整とセンサーのチューニングを実行することをお勧めします (ユーザーごとにこれらのタスクを実行するのに役立つ場合があります)。 
 
-調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens)参照してください。
+調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens-2)参照してください。
 
 センサーチューニングの詳細については、 [HoloLens センサーチューニングに関する記事へのリンクを](sensor-tuning.md)参照してください。
 
@@ -417,7 +417,7 @@ Bot 用のコードを作成したので、Azure Portal で*Web アプリボッ�
 ## <a name="chapter-5--camera-setup"></a>第5章–カメラの設定
 
 > [!IMPORTANT]
-> このコースの*Unity セットアップ*コンポーネントをスキップしてコードに直接進む場合は、 [unitypackage を 312](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage)ダウンロードして、[**カスタムパッケージ**](https://docs.unity3d.com/Manual/AssetPackages.html)としてプロジェクトにインポートしてから、次の[手順に進んでください。第7章](#chapter-7-–-create-the-botobjects-class)
+> このコースの*Unity セットアップ*コンポーネントをスキップしてコードに直接進む場合は、 [unitypackage を 312](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20312%20-%20Bot%20integration/Azure-MR-312.unitypackage)ダウンロードして、[**カスタムパッケージ**](https://docs.unity3d.com/Manual/AssetPackages.html)としてプロジェクトにインポートしてから、次の[手順に進んでください。第7章](#chapter-8--create-the-botobjects-class)
 
 1.  [*階層] パネル*で、**メインカメラ**を選択します。 
 2.  選択すると、**メインカメラ**のすべてのコンポーネントが [*インスペクター] パネル*に表示されます。
@@ -437,7 +437,7 @@ Bot 用のコードを作成したので、Azure Portal で*Web アプリボッ�
 
 Newtonsoft ライブラリをプロジェクトにインポートするには、このコースに付属している Unity パッケージを使用します。
 
-1.  [ アセット > **インポートパッケージ**  の > **カスタムパッケージ**] メニューオプションを使用して、unitypackage を Unity に追加します。
+1.  [アセット > **インポートパッケージ** の > **カスタムパッケージ**] メニューオプションを使用して、unitypackage を Unity に追加します。
 
     ![Newtonsoft ライブラリをインポートする](images/AzureLabs-Lab312-34.png)
 
@@ -1229,7 +1229,7 @@ Bot サービスにメッセージを送信するために、 **Sendmessagetobot
 アプリケーションの徹底的なテストを実行するには、アプリケーションを HoloLens にサイドロードする必要があります。
 これを行う前に、次のことを確認してください。
 
--   [**章 4**](#Chapter-4-–-Set-up-the-unity-project)で説明したすべての設定が正しく設定されています。 
+-   [**章 4**](#chapter-4--set-up-the-unity-project)で説明したすべての設定が正しく設定されています。 
 -   スクリプト**SceneOrganiser**は、**メインカメラ**オブジェクトにアタッチされます。 
 -   **Bot**クラスで、 **bot シークレットキー**が**botSecret**変数に挿入されていることを確認します。
 

@@ -6,12 +6,12 @@ ms.author: dobrown
 ms.date: 05/15/2019
 ms.topic: article
 keywords: vr, lbe, 位置情報ベースのエンターテインメント, vr アーケード, アーケード, イマーシブ, qr, qr コード, hololens2
-ms.openlocfilehash: d51da88aa7bff1dc5c6d3068cb31793891c71e61
-ms.sourcegitcommit: 60f73ca23023c17c1da833c83d2a02f4dcc4d17b
+ms.openlocfilehash: 736ab265db2145dd784c435e525059ed3a2fcbbb
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566001"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047167"
 ---
 # <a name="qr-code-tracking"></a>QR コードの追跡
 
@@ -248,6 +248,9 @@ QR 検出は、角度の範囲 (+ = 45deg) で動作します。 これは、コ
 Windows Mixed Reality デバイスは、ドライバーのシステムレベルで QR コードを検出します。 デバイスが再起動されると、検出された QR コードは失われ、次に新しいオブジェクトとして再検出されます。
 
 特定のタイムスタンプよりも古い QR コードを無視するようにアプリを構成することをお勧めします。 現時点では、API は QR コード履歴のクリアをサポートしていません。
+
+### <a name="qr-code-placement-in-a-space"></a>スペースでの QR コードの配置
+QR コードを配置する場所と方法に関する推奨事項については、「 [HoloLens の環境に関する考慮事項](environment-considerations-for-hololens.md)」を参照してください。
 
 ## <a name="qr-api-reference"></a>QR API リファレンス
 
