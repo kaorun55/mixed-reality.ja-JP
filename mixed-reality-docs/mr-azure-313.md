@@ -6,286 +6,286 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, エッジ, iot edge, チュートリアル, api, 通知, 関数, テーブル, hololens, イマーシブ, vr, iot, 仮想マシン, ubuntu, python
-ms.openlocfilehash: 93f7dc64426360d2e02b0ee0a9b1796fc8f2b469
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: ec669b799e7c46a9a4ed87674ed78e50f816c9e9
+ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694599"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047242"
 ---
 >[!NOTE]
-><span data-ttu-id="9db05-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="9db05-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="9db05-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="9db05-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="9db05-106">これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="9db05-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="9db05-108">今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。</span><span class="sxs-lookup"><span data-stu-id="9db05-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="9db05-109">この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
+><span data-ttu-id="df35b-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="df35b-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="df35b-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="df35b-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="df35b-106">これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="df35b-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="df35b-108">今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。</span><span class="sxs-lookup"><span data-stu-id="df35b-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="df35b-109">この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
 
-# <a name="mr-and-azure-313-iot-hub-service"></a><span data-ttu-id="9db05-110">MR と Azure 313:IoT Hub サービス</span><span class="sxs-lookup"><span data-stu-id="9db05-110">MR and Azure 313: IoT Hub Service</span></span>
+# <a name="mr-and-azure-313-iot-hub-service"></a><span data-ttu-id="df35b-110">MR と Azure 313:IoT Hub サービス</span><span class="sxs-lookup"><span data-stu-id="df35b-110">MR and Azure 313: IoT Hub Service</span></span>
 
 ![コースの結果](images/AzureLabs-Lab313-00.png)
 
-<span data-ttu-id="9db05-112">このコースでは、Ubuntu 16.4 オペレーティングシステムを実行している仮想マシンに**Azure IoT Hub サービス**を実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9db05-112">In this course, you will learn how to implement an **Azure IoT Hub Service** on a virtual machine running the Ubuntu 16.4 operating system.</span></span> <span data-ttu-id="9db05-113">**Azure Function App**は、Ubuntu VM からメッセージを受信するために使用され、その結果を**azure Table Service**内に格納します。</span><span class="sxs-lookup"><span data-stu-id="9db05-113">An **Azure Function App** will then be used to receive messages from your Ubuntu VM, and store the result within an **Azure Table Service**.</span></span> <span data-ttu-id="9db05-114">その後、Microsoft HoloLens またはイマーシブ (VR) ヘッドセットの**Power BI**を使用して、このデータを表示できるようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-114">You will then be able to view this data using **Power BI** on Microsoft HoloLens or immersive (VR) headset.</span></span>
+<span data-ttu-id="df35b-112">このコースでは、Ubuntu 16.4 オペレーティングシステムを実行している仮想マシンに**Azure IoT Hub サービス**を実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="df35b-112">In this course, you will learn how to implement an **Azure IoT Hub Service** on a virtual machine running the Ubuntu 16.4 operating system.</span></span> <span data-ttu-id="df35b-113">**Azure Function App**は、Ubuntu VM からメッセージを受信するために使用され、その結果を**azure Table Service**内に格納します。</span><span class="sxs-lookup"><span data-stu-id="df35b-113">An **Azure Function App** will then be used to receive messages from your Ubuntu VM, and store the result within an **Azure Table Service**.</span></span> <span data-ttu-id="df35b-114">その後、Microsoft HoloLens またはイマーシブ (VR) ヘッドセットの**Power BI**を使用して、このデータを表示できるようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-114">You will then be able to view this data using **Power BI** on Microsoft HoloLens or immersive (VR) headset.</span></span>
 
-<span data-ttu-id="9db05-115">このコースの内容は IoT Edge デバイスに*適用されますが*、このコースでは、物理エッジデバイスへのアクセスを必要としないように、仮想マシン環境に焦点が当てはまります。</span><span class="sxs-lookup"><span data-stu-id="9db05-115">The content of this course *is applicable* to IoT Edge devices, though for the purpose of this course, the focus will be on a virtual machine environment, so that access to a physical Edge device is not necessary.</span></span>
+<span data-ttu-id="df35b-115">このコースの内容は IoT Edge デバイスに*適用されますが*、このコースでは、物理エッジデバイスへのアクセスを必要としないように、仮想マシン環境に焦点が当てはまります。</span><span class="sxs-lookup"><span data-stu-id="df35b-115">The content of this course *is applicable* to IoT Edge devices, though for the purpose of this course, the focus will be on a virtual machine environment, so that access to a physical Edge device is not necessary.</span></span>
 
-<span data-ttu-id="9db05-116">このコースを完了すると、次のことを学習できます。</span><span class="sxs-lookup"><span data-stu-id="9db05-116">By completing this course, you will learn to:</span></span>
+<span data-ttu-id="df35b-116">このコースを完了すると、次のことを学習できます。</span><span class="sxs-lookup"><span data-stu-id="df35b-116">By completing this course, you will learn to:</span></span>
 
-- <span data-ttu-id="9db05-117">**IoT Edge モジュール**を仮想マシン (UBUNTU 16 OS) にデプロイします。これは、IoT デバイスを表します。</span><span class="sxs-lookup"><span data-stu-id="9db05-117">Deploy an **IoT Edge module** to a Virtual Machine (Ubuntu 16 OS), which will represent your IoT device.</span></span>
-- <span data-ttu-id="9db05-118">コンテナーに格納されているイメージを分析するコードを使用して、 **Azure Custom Vision の Azure Azure の "Azure" Azure** "のモデルを Edge モジュールに追加します。</span><span class="sxs-lookup"><span data-stu-id="9db05-118">Add an **Azure Custom Vision Tensorflow Model** to the Edge module, with code that will analyze images stored in the container.</span></span>
-- <span data-ttu-id="9db05-119">分析結果メッセージを**IoT Hub サービス**に返すようにモジュールを設定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-119">Set up the module to send the analysis result message back to your **IoT Hub Service**.</span></span>
-- <span data-ttu-id="9db05-120">Azure **Function App**を使用して、 **azure テーブル**内にメッセージを格納します。</span><span class="sxs-lookup"><span data-stu-id="9db05-120">Use an **Azure Function App** to store the message within an **Azure Table**.</span></span>
-- <span data-ttu-id="9db05-121">保存されたメッセージを収集してレポートを作成するように**Power BI**を設定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-121">Set up **Power BI** to collect the stored message and create a report.</span></span>
-- <span data-ttu-id="9db05-122">**Power BI**内で IoT メッセージデータを視覚化します。</span><span class="sxs-lookup"><span data-stu-id="9db05-122">Visualize your IoT message data within **Power BI**.</span></span>
+- <span data-ttu-id="df35b-117">**IoT Edge モジュール**を仮想マシン (UBUNTU 16 OS) にデプロイします。これは、IoT デバイスを表します。</span><span class="sxs-lookup"><span data-stu-id="df35b-117">Deploy an **IoT Edge module** to a Virtual Machine (Ubuntu 16 OS), which will represent your IoT device.</span></span>
+- <span data-ttu-id="df35b-118">コンテナーに格納されているイメージを分析するコードを使用して、 **Azure Custom Vision の Azure Azure の "Azure" Azure** "のモデルを Edge モジュールに追加します。</span><span class="sxs-lookup"><span data-stu-id="df35b-118">Add an **Azure Custom Vision Tensorflow Model** to the Edge module, with code that will analyze images stored in the container.</span></span>
+- <span data-ttu-id="df35b-119">分析結果メッセージを**IoT Hub サービス**に返すようにモジュールを設定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-119">Set up the module to send the analysis result message back to your **IoT Hub Service**.</span></span>
+- <span data-ttu-id="df35b-120">Azure **Function App**を使用して、 **azure テーブル**内にメッセージを格納します。</span><span class="sxs-lookup"><span data-stu-id="df35b-120">Use an **Azure Function App** to store the message within an **Azure Table**.</span></span>
+- <span data-ttu-id="df35b-121">保存されたメッセージを収集してレポートを作成するように**Power BI**を設定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-121">Set up **Power BI** to collect the stored message and create a report.</span></span>
+- <span data-ttu-id="df35b-122">**Power BI**内で IoT メッセージデータを視覚化します。</span><span class="sxs-lookup"><span data-stu-id="df35b-122">Visualize your IoT message data within **Power BI**.</span></span>
 
-<span data-ttu-id="9db05-123">使用するサービスには次のものがあります。</span><span class="sxs-lookup"><span data-stu-id="9db05-123">The Services you will use include:</span></span>
+<span data-ttu-id="df35b-123">使用するサービスには次のものがあります。</span><span class="sxs-lookup"><span data-stu-id="df35b-123">The Services you will use include:</span></span>
 
-- <span data-ttu-id="9db05-124">**Azure IoT Hub**は、開発者が IoT 資産の接続、監視、管理を行うことができるようにする Microsoft Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="9db05-124">**Azure IoT Hub** is a Microsoft Azure Service which allows developers to connect, monitor, and manage, IoT assets.</span></span> <span data-ttu-id="9db05-125">詳細については、 [ **Azure IoT Hub サービス**](https://azure.microsoft.com/en-au/services/iot-hub/)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-125">For more information, visit the [**Azure IoT Hub Service** page](https://azure.microsoft.com/en-au/services/iot-hub/).</span></span>
+- <span data-ttu-id="df35b-124">**Azure IoT Hub**は、開発者が IoT 資産の接続、監視、管理を行うことができるようにする Microsoft Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="df35b-124">**Azure IoT Hub** is a Microsoft Azure Service which allows developers to connect, monitor, and manage, IoT assets.</span></span> <span data-ttu-id="df35b-125">詳細については、 [ **Azure IoT Hub サービス**](https://azure.microsoft.com/en-au/services/iot-hub/)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-125">For more information, visit the [**Azure IoT Hub Service** page](https://azure.microsoft.com/en-au/services/iot-hub/).</span></span>
 
-- <span data-ttu-id="9db05-126">**Azure Container Registry**は、さまざまな種類のコンテナーについて、開発者がコンテナーイメージを格納できるようにする、Microsoft Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="9db05-126">**Azure Container Registry** is a Microsoft Azure Service which allows developers to store container images, for various types of containers.</span></span> <span data-ttu-id="9db05-127">詳細については、 [ **Azure Container Registry サービス**](https://azure.microsoft.com/en-au/services/container-registry/)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-127">For more information, visit the [**Azure Container Registry Service** page](https://azure.microsoft.com/en-au/services/container-registry/).</span></span>
+- <span data-ttu-id="df35b-126">**Azure Container Registry**は、さまざまな種類のコンテナーについて、開発者がコンテナーイメージを格納できるようにする、Microsoft Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="df35b-126">**Azure Container Registry** is a Microsoft Azure Service which allows developers to store container images, for various types of containers.</span></span> <span data-ttu-id="df35b-127">詳細については、 [ **Azure Container Registry サービス**](https://azure.microsoft.com/en-au/services/container-registry/)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-127">For more information, visit the [**Azure Container Registry Service** page](https://azure.microsoft.com/en-au/services/container-registry/).</span></span>
 
-- <span data-ttu-id="9db05-128">**Azure Function App**は Microsoft Azure サービスであり、開発者は azure で小さなコードである "functions" を実行できます。</span><span class="sxs-lookup"><span data-stu-id="9db05-128">**Azure Function App** is a Microsoft Azure Service, which allows developers to run small pieces of code, 'functions', in Azure.</span></span> <span data-ttu-id="9db05-129">これにより、ローカルアプリケーションではなく、クラウドに作業を委任することができます。これには多くのメリットがあります。</span><span class="sxs-lookup"><span data-stu-id="9db05-129">This provides a way to delegate work to the cloud, rather than your local application, which can have many benefits.</span></span> <span data-ttu-id="9db05-130">**Azure Functions**は、C\#、F\#、node.js、Java、PHP など、いくつかの開発言語をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="9db05-130">**Azure Functions** supports several development languages, including C\#, F\#, Node.js, Java, and PHP.</span></span> <span data-ttu-id="9db05-131">詳細については、 [ **Azure Functions**のページ](https://docs.microsoft.com/azure/azure-functions/functions-overview)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-131">For more information, visit the [**Azure Functions** page](https://docs.microsoft.com/azure/azure-functions/functions-overview).</span></span>
+- <span data-ttu-id="df35b-128">**Azure Function App**は Microsoft Azure サービスであり、開発者は azure で小さなコードである "functions" を実行できます。</span><span class="sxs-lookup"><span data-stu-id="df35b-128">**Azure Function App** is a Microsoft Azure Service, which allows developers to run small pieces of code, 'functions', in Azure.</span></span> <span data-ttu-id="df35b-129">これにより、ローカルアプリケーションではなく、クラウドに作業を委任することができます。これには多くのメリットがあります。</span><span class="sxs-lookup"><span data-stu-id="df35b-129">This provides a way to delegate work to the cloud, rather than your local application, which can have many benefits.</span></span> <span data-ttu-id="df35b-130">**Azure Functions**は、C\#、F\#、node.js、Java、PHP など、いくつかの開発言語をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="df35b-130">**Azure Functions** supports several development languages, including C\#, F\#, Node.js, Java, and PHP.</span></span> <span data-ttu-id="df35b-131">詳細については、 [ **Azure Functions**のページ](https://docs.microsoft.com/azure/azure-functions/functions-overview)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-131">For more information, visit the [**Azure Functions** page](https://docs.microsoft.com/azure/azure-functions/functions-overview).</span></span>
 
-- <span data-ttu-id="9db05-132">**Azure Storage:テーブル**は、開発者が構造化された SQL 以外のデータをクラウドに格納し、どこからでも簡単にアクセスできるようにする Microsoft Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="9db05-132">**Azure Storage: Tables** is a Microsoft Azure Service, which allows developers to store structured, non-SQL, data in the cloud, making it easily accessible anywhere.</span></span> <span data-ttu-id="9db05-133">このサービスでは、スキーマのない設計が非常に優れているため、必要に応じてテーブルを進化させることができるため、非常に柔軟性があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-133">The Service boasts a schema-less design, allowing for the evolution of tables as needed, and thus is very flexible.</span></span> <span data-ttu-id="9db05-134">詳細については、 [ **Azure のテーブル**に関するページを参照してください。](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)</span><span class="sxs-lookup"><span data-stu-id="9db05-134">For more information, visit the [**Azure Tables** page](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)</span></span>
+- <span data-ttu-id="df35b-132">**Azure Storage:テーブル**は、開発者が構造化された SQL 以外のデータをクラウドに格納し、どこからでも簡単にアクセスできるようにする Microsoft Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="df35b-132">**Azure Storage: Tables** is a Microsoft Azure Service, which allows developers to store structured, non-SQL, data in the cloud, making it easily accessible anywhere.</span></span> <span data-ttu-id="df35b-133">このサービスでは、スキーマのない設計が非常に優れているため、必要に応じてテーブルを進化させることができるため、非常に柔軟性があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-133">The Service boasts a schema-less design, allowing for the evolution of tables as needed, and thus is very flexible.</span></span> <span data-ttu-id="df35b-134">詳細については、 [ **Azure のテーブル**に関するページを参照してください。](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)</span><span class="sxs-lookup"><span data-stu-id="df35b-134">For more information, visit the [**Azure Tables** page](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)</span></span>
 
-<span data-ttu-id="9db05-135">このコースでは、IoT Hub サービスを設定して使用する方法と、デバイスによって提供される応答を視覚化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="9db05-135">This course will teach you how to setup and use the IoT Hub Service, and then visualize a response provided by a device.</span></span> <span data-ttu-id="9db05-136">これらの概念は、作成するカスタム IoT Hub サービスのセットアップに適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-136">It will be up to you to apply these concepts to a custom IoT Hub Service setup, which you might be building.</span></span>
+<span data-ttu-id="df35b-135">このコースでは、IoT Hub サービスを設定して使用する方法と、デバイスによって提供される応答を視覚化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="df35b-135">This course will teach you how to setup and use the IoT Hub Service, and then visualize a response provided by a device.</span></span> <span data-ttu-id="df35b-136">これらの概念は、作成するカスタム IoT Hub サービスのセットアップに適用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-136">It will be up to you to apply these concepts to a custom IoT Hub Service setup, which you might be building.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="9db05-137">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="9db05-137">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="df35b-137">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="df35b-137">Device support</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="9db05-138">まで</span><span class="sxs-lookup"><span data-stu-id="9db05-138">Course</span></span></th><th style="width:150px"> <span data-ttu-id="9db05-139"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="9db05-139"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="9db05-140"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="9db05-140"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+<th><span data-ttu-id="df35b-138">まで</span><span class="sxs-lookup"><span data-stu-id="df35b-138">Course</span></span></th><th style="width:150px"> <span data-ttu-id="df35b-139"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="df35b-139"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="df35b-140"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="df35b-140"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
 </tr><tr>
-<td> <span data-ttu-id="9db05-141">MR と Azure 313:IoT Hub サービス</span><span class="sxs-lookup"><span data-stu-id="9db05-141">MR and Azure 313: IoT Hub Service</span></span></td><td style="text-align: center;"> <span data-ttu-id="9db05-142">✔️</span><span class="sxs-lookup"><span data-stu-id="9db05-142">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="9db05-143">✔️</span><span class="sxs-lookup"><span data-stu-id="9db05-143">✔️</span></span></td>
+<td> <span data-ttu-id="df35b-141">MR と Azure 313:IoT Hub サービス</span><span class="sxs-lookup"><span data-stu-id="df35b-141">MR and Azure 313: IoT Hub Service</span></span></td><td style="text-align: center;"> <span data-ttu-id="df35b-142">✔️</span><span class="sxs-lookup"><span data-stu-id="df35b-142">✔️</span></span></td><td style="text-align: center;"> <span data-ttu-id="df35b-143">✔️</span><span class="sxs-lookup"><span data-stu-id="df35b-143">✔️</span></span></td>
 </tr>
 </table>
 
-## <a name="prerequisites"></a><span data-ttu-id="9db05-144">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="9db05-144">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="df35b-144">前提条件</span><span class="sxs-lookup"><span data-stu-id="df35b-144">Prerequisites</span></span>
 
-<span data-ttu-id="9db05-145">Microsoft HoloLens など、mixed reality を使用した開発に関する最新の前提条件については、[ツールのインストール](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)に関する記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9db05-145">For the most up-to-date prerequisites for developing with mixed reality, including with the Microsoft HoloLens, visit the [Install the tools](https://docs.microsoft.com/windows/mixed-reality/install-the-tools) article.</span></span>
+<span data-ttu-id="df35b-145">Microsoft HoloLens など、mixed reality を使用した開発に関する最新の前提条件については、[ツールのインストール](https://docs.microsoft.com/windows/mixed-reality/install-the-tools)に関する記事をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="df35b-145">For the most up-to-date prerequisites for developing with mixed reality, including with the Microsoft HoloLens, visit the [Install the tools](https://docs.microsoft.com/windows/mixed-reality/install-the-tools) article.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="9db05-146">このチュートリアルは、Python の基本的な経験がある開発者向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="9db05-146">This tutorial is designed for developers who have basic experience with Python.</span></span> <span data-ttu-id="9db05-147">また、このドキュメントに記載されている前提条件と記述に記載されている手順は、作成時にテストおよび検証された内容 (2018 年7月) を表しています。</span><span class="sxs-lookup"><span data-stu-id="9db05-147">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (July 2018).</span></span> <span data-ttu-id="9db05-148">「[ツールのインストール](install-the-tools.md)」の記事に記載されているように、最新のソフトウェアを自由に使用できます。ただし、このコースの情報は、以下に示したソフトウェアより新しいソフトウェアでは完全に一致するとは限りません。</span><span class="sxs-lookup"><span data-stu-id="9db05-148">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you will find in newer software than that listed below.</span></span>
+> <span data-ttu-id="df35b-146">このチュートリアルは、Python の基本的な経験がある開発者向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="df35b-146">This tutorial is designed for developers who have basic experience with Python.</span></span> <span data-ttu-id="df35b-147">また、このドキュメントに記載されている前提条件と記述に記載されている手順は、作成時にテストおよび検証された内容 (2018 年7月) を表しています。</span><span class="sxs-lookup"><span data-stu-id="df35b-147">Please also be aware that the prerequisites and written instructions within this document represent what has been tested and verified at the time of writing (July 2018).</span></span> <span data-ttu-id="df35b-148">「[ツールのインストール](install-the-tools.md)」の記事に記載されているように、最新のソフトウェアを自由に使用できます。ただし、このコースの情報は、以下に示したソフトウェアより新しいソフトウェアでは完全に一致するとは限りません。</span><span class="sxs-lookup"><span data-stu-id="df35b-148">You are free to use the latest software, as listed within the [install the tools](install-the-tools.md) article, though it should not be assumed that the information in this course will perfectly match what you will find in newer software than that listed below.</span></span>
 
-<span data-ttu-id="9db05-149">次のハードウェアとソフトウェアが必要です。</span><span class="sxs-lookup"><span data-stu-id="9db05-149">The following hardware and software is required:</span></span>
+<span data-ttu-id="df35b-149">次のハードウェアとソフトウェアが必要です。</span><span class="sxs-lookup"><span data-stu-id="df35b-149">The following hardware and software is required:</span></span>
 
-- <span data-ttu-id="9db05-150">Windows 10 の作成者の更新プログラム (またはそれ以降)、**開発者モードが有効**</span><span class="sxs-lookup"><span data-stu-id="9db05-150">Windows 10 Fall Creators Update (or later), **Developer Mode enabled**</span></span>
+- <span data-ttu-id="df35b-150">Windows 10 の作成者の更新プログラム (またはそれ以降)、**開発者モードが有効**</span><span class="sxs-lookup"><span data-stu-id="df35b-150">Windows 10 Fall Creators Update (or later), **Developer Mode enabled**</span></span>
 
     > [!WARNING]
-    > <span data-ttu-id="9db05-151">Windows 10 Home Edition で Hyper-v を使用して仮想マシンを実行することはできません。</span><span class="sxs-lookup"><span data-stu-id="9db05-151">You cannot run a Virtual Machine using Hyper-V on Windows 10 Home Edition.</span></span>
+    > <span data-ttu-id="df35b-151">Windows 10 Home Edition で Hyper-v を使用して仮想マシンを実行することはできません。</span><span class="sxs-lookup"><span data-stu-id="df35b-151">You cannot run a Virtual Machine using Hyper-V on Windows 10 Home Edition.</span></span>
 
-- <span data-ttu-id="9db05-152">Windows 10 SDK (最新バージョン)</span><span class="sxs-lookup"><span data-stu-id="9db05-152">Windows 10 SDK (latest version)</span></span>
-- <span data-ttu-id="9db05-153">HoloLens、**開発者モードが有効**</span><span class="sxs-lookup"><span data-stu-id="9db05-153">A HoloLens, **Developer Mode enabled**</span></span>
-- <span data-ttu-id="9db05-154">Visual Studio 2017.15.4 (Azure Cloud Explorer へのアクセスにのみ使用)</span><span class="sxs-lookup"><span data-stu-id="9db05-154">Visual Studio 2017.15.4 (Only used to access the Azure Cloud Explorer)</span></span>
-- <span data-ttu-id="9db05-155">Azure および IoT Hub サービス用のインターネットアクセス。</span><span class="sxs-lookup"><span data-stu-id="9db05-155">Internet Access for Azure, and for IoT Hub Service.</span></span> <span data-ttu-id="9db05-156">詳細については、こちらの[IoT Hub サービスへのリンクに関するページを](https://azure.microsoft.com/en-au/services/iot-hub/)参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-156">For more information, please follow this [link to IoT Hub Service page](https://azure.microsoft.com/en-au/services/iot-hub/)</span></span>
-- <span data-ttu-id="9db05-157">機械学習モデル。</span><span class="sxs-lookup"><span data-stu-id="9db05-157">A machine learning model.</span></span> <span data-ttu-id="9db05-158">独自のモデルを使用する準備ができていない場合は、[このコースで提供さ](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)れているモデルを使用できます。</span><span class="sxs-lookup"><span data-stu-id="9db05-158">If you do not have your own ready to use model, [you can use the model provided with this course](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip).</span></span>
-- <span data-ttu-id="9db05-159">Windows 10 開発用コンピューターで**hyper-v**ソフトウェアが有効になっています。</span><span class="sxs-lookup"><span data-stu-id="9db05-159">**Hyper-V** software enabled on your Windows 10 development machine.</span></span>
-- <span data-ttu-id="9db05-160">Ubuntu (16.4 または 18.4) を実行している仮想マシンを開発用コンピューターで実行するか、または Linux を実行する別のコンピューター (Ubuntu 16.4 または 18.4) を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-160">A Virtual Machine running Ubuntu (16.4 or 18.4), running on your development machine or alternatively you can use a separate computer running Linux (Ubuntu 16.4 or 18.4).</span></span> <span data-ttu-id="9db05-161">Hyper-v を使用して Windows 上で VM を作成する方法の詳細については、 [「開始する前に](#before-you-start)」の章を参照してください。(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).</span><span class="sxs-lookup"><span data-stu-id="9db05-161">You can find more information on how to create a VM on Windows using Hyper-V in the ["Before you Start" chapter](#before-you-start).(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).</span></span>  
+- <span data-ttu-id="df35b-152">Windows 10 SDK (最新バージョン)</span><span class="sxs-lookup"><span data-stu-id="df35b-152">Windows 10 SDK (latest version)</span></span>
+- <span data-ttu-id="df35b-153">HoloLens、**開発者モードが有効**</span><span class="sxs-lookup"><span data-stu-id="df35b-153">A HoloLens, **Developer Mode enabled**</span></span>
+- <span data-ttu-id="df35b-154">Visual Studio 2017.15.4 (Azure Cloud Explorer へのアクセスにのみ使用)</span><span class="sxs-lookup"><span data-stu-id="df35b-154">Visual Studio 2017.15.4 (Only used to access the Azure Cloud Explorer)</span></span>
+- <span data-ttu-id="df35b-155">Azure および IoT Hub サービス用のインターネットアクセス。</span><span class="sxs-lookup"><span data-stu-id="df35b-155">Internet Access for Azure, and for IoT Hub Service.</span></span> <span data-ttu-id="df35b-156">詳細については、こちらの[IoT Hub サービスへのリンクに関するページを](https://azure.microsoft.com/en-au/services/iot-hub/)参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-156">For more information, please follow this [link to IoT Hub Service page](https://azure.microsoft.com/en-au/services/iot-hub/)</span></span>
+- <span data-ttu-id="df35b-157">機械学習モデル。</span><span class="sxs-lookup"><span data-stu-id="df35b-157">A machine learning model.</span></span> <span data-ttu-id="df35b-158">独自のモデルを使用する準備ができていない場合は、[このコースで提供さ](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)れているモデルを使用できます。</span><span class="sxs-lookup"><span data-stu-id="df35b-158">If you do not have your own ready to use model, [you can use the model provided with this course](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip).</span></span>
+- <span data-ttu-id="df35b-159">Windows 10 開発用コンピューターで**hyper-v**ソフトウェアが有効になっています。</span><span class="sxs-lookup"><span data-stu-id="df35b-159">**Hyper-V** software enabled on your Windows 10 development machine.</span></span>
+- <span data-ttu-id="df35b-160">Ubuntu (16.4 または 18.4) を実行している仮想マシンを開発用コンピューターで実行するか、または Linux を実行する別のコンピューター (Ubuntu 16.4 または 18.4) を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-160">A Virtual Machine running Ubuntu (16.4 or 18.4), running on your development machine or alternatively you can use a separate computer running Linux (Ubuntu 16.4 or 18.4).</span></span> <span data-ttu-id="df35b-161">Hyper-v を使用して Windows 上で VM を作成する方法の詳細については、 [「開始する前に](#before-you-start)」の章を参照してください。(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).</span><span class="sxs-lookup"><span data-stu-id="df35b-161">You can find more information on how to create a VM on Windows using Hyper-V in the ["Before you Start" chapter](#before-you-start).(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).</span></span>  
 
 
 
-### <a name="before-you-start"></a><span data-ttu-id="9db05-162">開始前の準備</span><span class="sxs-lookup"><span data-stu-id="9db05-162">Before you start</span></span>
+### <a name="before-you-start"></a><span data-ttu-id="df35b-162">開始前の準備</span><span class="sxs-lookup"><span data-stu-id="df35b-162">Before you start</span></span>
 
-1. <span data-ttu-id="9db05-163">HoloLens をセットアップしてテストします。</span><span class="sxs-lookup"><span data-stu-id="9db05-163">Set up and test your HoloLens.</span></span> <span data-ttu-id="9db05-164">HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。</span><span class="sxs-lookup"><span data-stu-id="9db05-164">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span>
-2. <span data-ttu-id="9db05-165">新しい HoloLens アプリの開発を開始するときは、**調整**と**センサーのチューニング**を実行することをお勧めします (ユーザーごとにこれらのタスクを実行するのに役立つ場合があります)。</span><span class="sxs-lookup"><span data-stu-id="9db05-165">It is a good idea to perform **Calibration** and **Sensor Tuning** when beginning developing a new HoloLens app (sometimes it can help to perform those tasks for each user).</span></span>
+1. <span data-ttu-id="df35b-163">HoloLens をセットアップしてテストします。</span><span class="sxs-lookup"><span data-stu-id="df35b-163">Set up and test your HoloLens.</span></span> <span data-ttu-id="df35b-164">HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。</span><span class="sxs-lookup"><span data-stu-id="df35b-164">If you need support setting up your HoloLens, [make sure to visit the HoloLens setup article](https://docs.microsoft.com/hololens/hololens-setup).</span></span>
+2. <span data-ttu-id="df35b-165">新しい HoloLens アプリの開発を開始するときは、**調整**と**センサーのチューニング**を実行することをお勧めします (ユーザーごとにこれらのタスクを実行するのに役立つ場合があります)。</span><span class="sxs-lookup"><span data-stu-id="df35b-165">It is a good idea to perform **Calibration** and **Sensor Tuning** when beginning developing a new HoloLens app (sometimes it can help to perform those tasks for each user).</span></span>
 
-<span data-ttu-id="9db05-166">調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens)参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-166">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens).</span></span>
+<span data-ttu-id="df35b-166">調整の詳細については、 [「HoloLens の調整に関する記事へのリンク」を](calibration.md#hololens-2)参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-166">For help on Calibration, please follow this [link to the HoloLens Calibration article](calibration.md#hololens-2).</span></span>
 
-<span data-ttu-id="9db05-167">センサーチューニングの詳細については、 [HoloLens センサーチューニングに関する記事へのリンクを](sensor-tuning.md)参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-167">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
+<span data-ttu-id="df35b-167">センサーチューニングの詳細については、 [HoloLens センサーチューニングに関する記事へのリンクを](sensor-tuning.md)参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-167">For help on Sensor Tuning, please follow this [link to the HoloLens Sensor Tuning article](sensor-tuning.md).</span></span>
 
-3. <span data-ttu-id="9db05-168">**Hyper-v**を使用して**Ubuntu 仮想マシン**をセットアップします。</span><span class="sxs-lookup"><span data-stu-id="9db05-168">Set up your **Ubuntu Virtual Machine** using **Hyper-V**.</span></span> <span data-ttu-id="9db05-169">このプロセスには、次のリソースが役立ちます。</span><span class="sxs-lookup"><span data-stu-id="9db05-169">The following resources will help you with the process.</span></span>
-    1.  <span data-ttu-id="9db05-170">まず、このリンクに従っ[て Ubuntu 16.04.4 LTS (Xenial Xerus) ISO をダウンロード](http://au.releases.ubuntu.com/16.04/)します。</span><span class="sxs-lookup"><span data-stu-id="9db05-170">First, follow this link to [download the Ubuntu 16.04.4 LTS (Xenial Xerus) ISO](http://au.releases.ubuntu.com/16.04/).</span></span> <span data-ttu-id="9db05-171">64ビット**PC (AMD64) デスクトップイメージ**を選択します。</span><span class="sxs-lookup"><span data-stu-id="9db05-171">Select the **64-bit PC (AMD64) desktop image**.</span></span>
-    2.  <span data-ttu-id="9db05-172">Windows 10 コンピューターで**hyper-v**が有効になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-172">Make sure **Hyper-V** is enabled on your Windows 10 machine.</span></span> <span data-ttu-id="9db05-173">[Windows 10 で hyper-v をインストールして有効](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)にする方法については、こちらのリンクを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-173">You can follow this link for guidance on [installing and enabling Hyper-V on Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).</span></span>
-    3.  <span data-ttu-id="9db05-174">Hyper-v を起動し、新しい Ubuntu VM を作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-174">Start Hyper-V and create a new Ubuntu VM.</span></span> <span data-ttu-id="9db05-175">[Hyper-v を使用して VM を作成する手順](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)については、こちらのリンクを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-175">You can follow this link for a [step by step guide on how to create a VM with Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine).</span></span> <span data-ttu-id="9db05-176">**[起動可能なイメージファイルからオペレーティングシステムをインストール**する] に要求された場合は、前の手順でダウンロードした**Ubuntu ISO**を選択します。</span><span class="sxs-lookup"><span data-stu-id="9db05-176">When requested to **"Install an operating system from a bootable image file"**, select the **Ubuntu ISO** you have download earlier.</span></span>
+3. <span data-ttu-id="df35b-168">**Hyper-v**を使用して**Ubuntu 仮想マシン**をセットアップします。</span><span class="sxs-lookup"><span data-stu-id="df35b-168">Set up your **Ubuntu Virtual Machine** using **Hyper-V**.</span></span> <span data-ttu-id="df35b-169">このプロセスには、次のリソースが役立ちます。</span><span class="sxs-lookup"><span data-stu-id="df35b-169">The following resources will help you with the process.</span></span>
+    1.  <span data-ttu-id="df35b-170">まず、このリンクに従っ[て Ubuntu 16.04.4 LTS (Xenial Xerus) ISO をダウンロード](http://au.releases.ubuntu.com/16.04/)します。</span><span class="sxs-lookup"><span data-stu-id="df35b-170">First, follow this link to [download the Ubuntu 16.04.4 LTS (Xenial Xerus) ISO](http://au.releases.ubuntu.com/16.04/).</span></span> <span data-ttu-id="df35b-171">64ビット**PC (AMD64) デスクトップイメージ**を選択します。</span><span class="sxs-lookup"><span data-stu-id="df35b-171">Select the **64-bit PC (AMD64) desktop image**.</span></span>
+    2.  <span data-ttu-id="df35b-172">Windows 10 コンピューターで**hyper-v**が有効になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-172">Make sure **Hyper-V** is enabled on your Windows 10 machine.</span></span> <span data-ttu-id="df35b-173">[Windows 10 で hyper-v をインストールして有効](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)にする方法については、こちらのリンクを参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-173">You can follow this link for guidance on [installing and enabling Hyper-V on Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).</span></span>
+    3.  <span data-ttu-id="df35b-174">Hyper-v を起動し、新しい Ubuntu VM を作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-174">Start Hyper-V and create a new Ubuntu VM.</span></span> <span data-ttu-id="df35b-175">[Hyper-v を使用して VM を作成する手順](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)については、こちらのリンクを参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-175">You can follow this link for a [step by step guide on how to create a VM with Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine).</span></span> <span data-ttu-id="df35b-176">**[起動可能なイメージファイルからオペレーティングシステムをインストール**する] に要求された場合は、前の手順でダウンロードした**Ubuntu ISO**を選択します。</span><span class="sxs-lookup"><span data-stu-id="df35b-176">When requested to **"Install an operating system from a bootable image file"**, select the **Ubuntu ISO** you have download earlier.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="9db05-177">**Hyper-v の簡易作成**を使用することは推奨されません。</span><span class="sxs-lookup"><span data-stu-id="9db05-177">Using **Hyper-V Quick Create** is not suggested.</span></span>  
+    > <span data-ttu-id="df35b-177">**Hyper-v の簡易作成**を使用することは推奨されません。</span><span class="sxs-lookup"><span data-stu-id="df35b-177">Using **Hyper-V Quick Create** is not suggested.</span></span>  
 
-## <a name="chapter-1---retrieve-the-custom-vision-model"></a><span data-ttu-id="9db05-178">第1章: Custom Vision モデルを取得する</span><span class="sxs-lookup"><span data-stu-id="9db05-178">Chapter 1 - Retrieve the Custom Vision model</span></span>
+## <a name="chapter-1---retrieve-the-custom-vision-model"></a><span data-ttu-id="df35b-178">第1章: Custom Vision モデルを取得する</span><span class="sxs-lookup"><span data-stu-id="df35b-178">Chapter 1 - Retrieve the Custom Vision model</span></span>
 
-<span data-ttu-id="9db05-179">このコースでは、イメージからキーボードとマウスを検出する既成の[Custom Vision モデル](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="9db05-179">With this course you will have access to a [pre-built Custom Vision model](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip) that detects keyboards and mice from images.</span></span> <span data-ttu-id="9db05-180">これを使用する場合は、[第2章](#chapter-2---the-container-registry-service)に進みます。</span><span class="sxs-lookup"><span data-stu-id="9db05-180">If you use this, proceed to [Chapter 2](#chapter-2---the-container-registry-service).</span></span>
+<span data-ttu-id="df35b-179">このコースでは、イメージからキーボードとマウスを検出する既成の[Custom Vision モデル](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="df35b-179">With this course you will have access to a [pre-built Custom Vision model](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip) that detects keyboards and mice from images.</span></span> <span data-ttu-id="df35b-180">これを使用する場合は、[第2章](#chapter-2---the-container-registry-service)に進みます。</span><span class="sxs-lookup"><span data-stu-id="df35b-180">If you use this, proceed to [Chapter 2](#chapter-2---the-container-registry-service).</span></span>
 
-<span data-ttu-id="9db05-181">ただし、独自の Custom Vision モデルを使用する場合は、次の手順に従うことができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-181">However, you can follow these steps if you wish to use your own Custom Vision model:</span></span>
+<span data-ttu-id="df35b-181">ただし、独自の Custom Vision モデルを使用する場合は、次の手順に従うことができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-181">However, you can follow these steps if you wish to use your own Custom Vision model:</span></span>
 
-1. <span data-ttu-id="9db05-182">**Custom Vision プロジェクト**で、 **[パフォーマンス]** タブにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="9db05-182">In your **Custom Vision Project** go to the **Performance** tab.</span></span>
+1. <span data-ttu-id="df35b-182">**Custom Vision プロジェクト**で、 **[パフォーマンス]** タブにアクセスします。</span><span class="sxs-lookup"><span data-stu-id="df35b-182">In your **Custom Vision Project** go to the **Performance** tab.</span></span>
 
     > [!WARNING]
-    > <span data-ttu-id="9db05-183">モデルをエクスポートするには、モデルで*コンパクト*ドメインを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-183">Your model must use a *compact* domain, to export the model.</span></span> <span data-ttu-id="9db05-184">モデルドメインは、プロジェクトの設定で変更できます。</span><span class="sxs-lookup"><span data-stu-id="9db05-184">You can change your models domain in the settings for your project.</span></span>
+    > <span data-ttu-id="df35b-183">モデルをエクスポートするには、モデルで*コンパクト*ドメインを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-183">Your model must use a *compact* domain, to export the model.</span></span> <span data-ttu-id="df35b-184">モデルドメインは、プロジェクトの設定で変更できます。</span><span class="sxs-lookup"><span data-stu-id="df35b-184">You can change your models domain in the settings for your project.</span></span>
 
     ![[パフォーマンス] タブ](images/AzureLabs-Lab313-01.png)
 
-2. <span data-ttu-id="9db05-186">エクスポートする**イテレーション**を選択し、 **[エクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-186">Select the **Iteration** you want to export and click on **Export**.</span></span> <span data-ttu-id="9db05-187">ブレードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-187">A blade will appear.</span></span>
+2. <span data-ttu-id="df35b-186">エクスポートする**イテレーション**を選択し、 **[エクスポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-186">Select the **Iteration** you want to export and click on **Export**.</span></span> <span data-ttu-id="df35b-187">ブレードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-187">A blade will appear.</span></span>
 
     ![ブレードのエクスポート](images/AzureLabs-Lab313-02.png)
 
-3. <span data-ttu-id="9db05-189">ブレードで **[Docker File]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-189">In the blade click **Docker File**.</span></span>
+3. <span data-ttu-id="df35b-189">ブレードで **[Docker File]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-189">In the blade click **Docker File**.</span></span>
 
     ![docker の選択](images/AzureLabs-Lab313-03.png)
 
-4. <span data-ttu-id="9db05-191">ドロップダウンメニューの **[Linux]** をクリックし、 **[ダウンロード]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-191">Click **Linux** in the drop-down menu and then click on **Download**.</span></span>
+4. <span data-ttu-id="df35b-191">ドロップダウンメニューの **[Linux]** をクリックし、 **[ダウンロード]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-191">Click **Linux** in the drop-down menu and then click on **Download**.</span></span>
 
     ![[ダウンロード] をクリック](images/AzureLabs-Lab313-04.png)
 
-5. <span data-ttu-id="9db05-193">コンテンツを解凍します。</span><span class="sxs-lookup"><span data-stu-id="9db05-193">Unzip the content.</span></span> <span data-ttu-id="9db05-194">このコースは、このコースの後半で使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-194">You will use it later in this course.</span></span>
+5. <span data-ttu-id="df35b-193">コンテンツを解凍します。</span><span class="sxs-lookup"><span data-stu-id="df35b-193">Unzip the content.</span></span> <span data-ttu-id="df35b-194">このコースは、このコースの後半で使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-194">You will use it later in this course.</span></span>
 
-## <a name="chapter-2---the-container-registry-service"></a><span data-ttu-id="9db05-195">Chapter 2-Container Registry サービス</span><span class="sxs-lookup"><span data-stu-id="9db05-195">Chapter 2 - The Container Registry Service</span></span>
+## <a name="chapter-2---the-container-registry-service"></a><span data-ttu-id="df35b-195">Chapter 2-Container Registry サービス</span><span class="sxs-lookup"><span data-stu-id="df35b-195">Chapter 2 - The Container Registry Service</span></span>
 
-<span data-ttu-id="9db05-196">**Container Registry サービス**は、コンテナーをホストするために使用されるリポジトリです。</span><span class="sxs-lookup"><span data-stu-id="9db05-196">The **Container Registry Service** is the repository used to host your containers.</span></span>
+<span data-ttu-id="df35b-196">**Container Registry サービス**は、コンテナーをホストするために使用されるリポジトリです。</span><span class="sxs-lookup"><span data-stu-id="df35b-196">The **Container Registry Service** is the repository used to host your containers.</span></span>
 
-<span data-ttu-id="9db05-197">このコースで構築して使用する**IoT Hub サービス**は、 **Container Registry サービス**を参照して、エッジデバイスにデプロイするコンテナーを取得します。</span><span class="sxs-lookup"><span data-stu-id="9db05-197">The **IoT Hub Service** that you will build and use in this course, refers to **Container Registry Service** to obtain the containers to deploy in your Edge Device.</span></span>
+<span data-ttu-id="df35b-197">このコースで構築して使用する**IoT Hub サービス**は、 **Container Registry サービス**を参照して、エッジデバイスにデプロイするコンテナーを取得します。</span><span class="sxs-lookup"><span data-stu-id="df35b-197">The **IoT Hub Service** that you will build and use in this course, refers to **Container Registry Service** to obtain the containers to deploy in your Edge Device.</span></span>
 
-1. <span data-ttu-id="9db05-198">最初に、 [Azure Portal へのリンク](https://portal.azure.com/)に従って、資格情報でログインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-198">First, follow this [link to the Azure Portal](https://portal.azure.com/), and login with your credentials.</span></span>
+1. <span data-ttu-id="df35b-198">最初に、 [Azure Portal へのリンク](https://portal.azure.com/)に従って、資格情報でログインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-198">First, follow this [link to the Azure Portal](https://portal.azure.com/), and login with your credentials.</span></span>
 
-2. <span data-ttu-id="9db05-199">「**リソースの作成**」に進んで、 **Container Registry**を探します。</span><span class="sxs-lookup"><span data-stu-id="9db05-199">Go to **Create a resource** and look for **Container Registry**.</span></span>
+2. <span data-ttu-id="df35b-199">「**リソースの作成**」に進んで、 **Container Registry**を探します。</span><span class="sxs-lookup"><span data-stu-id="df35b-199">Go to **Create a resource** and look for **Container Registry**.</span></span>
 
     ![コンテナーレジストリ](images/AzureLabs-Lab313-05.png)
 
-3. <span data-ttu-id="9db05-201">**[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-201">Click on **Create**.</span></span>
+3. <span data-ttu-id="df35b-201">**[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-201">Click on **Create**.</span></span>
 
     ![](images/AzureLabs-Lab313-06.png)
 
-4. <span data-ttu-id="9db05-202">サービスセットアップパラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-202">Set the Service setup parameters:</span></span>
+4. <span data-ttu-id="df35b-202">サービスセットアップパラメーターを設定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-202">Set the Service setup parameters:</span></span>
 
-    1. <span data-ttu-id="9db05-203">プロジェクトの名前を挿入します。この例では、 **IoTCRegistry**という名前です。</span><span class="sxs-lookup"><span data-stu-id="9db05-203">Insert a name for your project, In this example its called **IoTCRegistry**.</span></span>
+    1. <span data-ttu-id="df35b-203">プロジェクトの名前を挿入します。この例では、 **IoTCRegistry**という名前です。</span><span class="sxs-lookup"><span data-stu-id="df35b-203">Insert a name for your project, In this example its called **IoTCRegistry**.</span></span>
 
-    2. <span data-ttu-id="9db05-204">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-204">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="9db05-205">リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-205">A resource group provides a way to monitor, control access, provision, and manage, billing for a collection of Azure assets.</span></span> <span data-ttu-id="9db05-206">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9db05-206">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
+    2. <span data-ttu-id="df35b-204">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-204">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="df35b-205">リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-205">A resource group provides a way to monitor, control access, provision, and manage, billing for a collection of Azure assets.</span></span> <span data-ttu-id="df35b-206">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df35b-206">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
 
-    3. <span data-ttu-id="9db05-207">サービスの場所を設定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-207">Set the location of the Service.</span></span>
+    3. <span data-ttu-id="df35b-207">サービスの場所を設定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-207">Set the location of the Service.</span></span>
 
-    4. <span data-ttu-id="9db05-208">**有効**にするには、**管理者ユーザー**を設定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-208">Set **Admin user** to **Enable**.</span></span>
+    4. <span data-ttu-id="df35b-208">**有効**にするには、**管理者ユーザー**を設定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-208">Set **Admin user** to **Enable**.</span></span>
 
-    5. <span data-ttu-id="9db05-209">**SKU**を**Basic**に設定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-209">Set **SKU** to **Basic**.</span></span> 
+    5. <span data-ttu-id="df35b-209">**SKU**を**Basic**に設定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-209">Set **SKU** to **Basic**.</span></span> 
 
     ![](images/AzureLabs-Lab313-07.png)
 
-5. <span data-ttu-id="9db05-210">**[作成]** をクリックし、サービスが作成されるまで待ちます。</span><span class="sxs-lookup"><span data-stu-id="9db05-210">Click **Create** and wait for the Services to be created.</span></span> 
+5. <span data-ttu-id="df35b-210">**[作成]** をクリックし、サービスが作成されるまで待ちます。</span><span class="sxs-lookup"><span data-stu-id="df35b-210">Click **Create** and wait for the Services to be created.</span></span> 
 
-6. <span data-ttu-id="9db05-211">*Container Registry*が正常に作成されたことを知らせる通知が表示されたら、 **[リソースへのアクセス]** をクリックして、サービスページにリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="9db05-211">Once the notification pops up informing you of the successful creation of the *Container Registry*, click on **Go to resource** to be redirected to your Service page.</span></span>
+6. <span data-ttu-id="df35b-211">*Container Registry*が正常に作成されたことを知らせる通知が表示されたら、 **[リソースへのアクセス]** をクリックして、サービスページにリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="df35b-211">Once the notification pops up informing you of the successful creation of the *Container Registry*, click on **Go to resource** to be redirected to your Service page.</span></span>
 
     ![](images/AzureLabs-Lab313-08.png)
 
-7. <span data-ttu-id="9db05-212">[サービスの*Container Registry* ] ページで、 **[アクセスキー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-212">In the *Container Registry* Service page, click on **Access keys**.</span></span>
+7. <span data-ttu-id="df35b-212">[サービスの*Container Registry* ] ページで、 **[アクセスキー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-212">In the *Container Registry* Service page, click on **Access keys**.</span></span>
 
-8. <span data-ttu-id="9db05-213">次のパラメーターのメモを控えておきます (メモ帳を使用できます)。</span><span class="sxs-lookup"><span data-stu-id="9db05-213">Take note (you could use your Notepad) of the following parameters:</span></span>
-    1. <span data-ttu-id="9db05-214">**ログインサーバー**</span><span class="sxs-lookup"><span data-stu-id="9db05-214">**Login Server**</span></span>
-    2. <span data-ttu-id="9db05-215">**Username**</span><span class="sxs-lookup"><span data-stu-id="9db05-215">**Username**</span></span>
-    3. <span data-ttu-id="9db05-216">**Password**</span><span class="sxs-lookup"><span data-stu-id="9db05-216">**Password**</span></span>
+8. <span data-ttu-id="df35b-213">次のパラメーターのメモを控えておきます (メモ帳を使用できます)。</span><span class="sxs-lookup"><span data-stu-id="df35b-213">Take note (you could use your Notepad) of the following parameters:</span></span>
+    1. <span data-ttu-id="df35b-214">**ログインサーバー**</span><span class="sxs-lookup"><span data-stu-id="df35b-214">**Login Server**</span></span>
+    2. <span data-ttu-id="df35b-215">**Username**</span><span class="sxs-lookup"><span data-stu-id="df35b-215">**Username**</span></span>
+    3. <span data-ttu-id="df35b-216">**Password**</span><span class="sxs-lookup"><span data-stu-id="df35b-216">**Password**</span></span>
 
     ![](images/AzureLabs-Lab313-09.png)
 
-## <a name="chapter-3---the-iot-hub-service"></a><span data-ttu-id="9db05-217">第3章-IoT Hub サービス</span><span class="sxs-lookup"><span data-stu-id="9db05-217">Chapter 3 - The IoT Hub Service</span></span>
+## <a name="chapter-3---the-iot-hub-service"></a><span data-ttu-id="df35b-217">第3章-IoT Hub サービス</span><span class="sxs-lookup"><span data-stu-id="df35b-217">Chapter 3 - The IoT Hub Service</span></span>
 
-<span data-ttu-id="9db05-218">次に、 **IoT Hub サービス**の作成とセットアップを開始します。</span><span class="sxs-lookup"><span data-stu-id="9db05-218">Now you will begin the creation and setup of your **IoT Hub Service**.</span></span>
+<span data-ttu-id="df35b-218">次に、 **IoT Hub サービス**の作成とセットアップを開始します。</span><span class="sxs-lookup"><span data-stu-id="df35b-218">Now you will begin the creation and setup of your **IoT Hub Service**.</span></span>
 
-1. <span data-ttu-id="9db05-219">まだサインインしていない場合は、 [Azure Portal](https://portal.azure.com)にログインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-219">If not already signed in, log into the [Azure Portal](https://portal.azure.com).</span></span>
+1. <span data-ttu-id="df35b-219">まだサインインしていない場合は、 [Azure Portal](https://portal.azure.com)にログインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-219">If not already signed in, log into the [Azure Portal](https://portal.azure.com).</span></span>
 
-2.  <span data-ttu-id="9db05-220">ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **IoT Hub**を検索して、 **Enter キー**を押します。</span><span class="sxs-lookup"><span data-stu-id="9db05-220">Once logged in, click on **Create a resource** in the top left corner, and search for **IoT Hub**, and click **Enter**.</span></span>
+2.  <span data-ttu-id="df35b-220">ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **IoT Hub**を検索して、 **Enter キー**を押します。</span><span class="sxs-lookup"><span data-stu-id="df35b-220">Once logged in, click on **Create a resource** in the top left corner, and search for **IoT Hub**, and click **Enter**.</span></span>
 
  ![ストレージアカウントの検索](images/AzureLabs-Lab313-10.png)
 
-3.  <span data-ttu-id="9db05-222">新しいページには、**ストレージアカウント**サービスの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-222">The new page will provide a description of the **Storage account** Service.</span></span> <span data-ttu-id="9db05-223">このプロンプトの左下にある **[作成]** ボタンをクリックして、このサービスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-223">At the bottom left of this prompt, click the **Create** button, to create an instance of this Service.</span></span>
+3.  <span data-ttu-id="df35b-222">新しいページには、**ストレージアカウント**サービスの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-222">The new page will provide a description of the **Storage account** Service.</span></span> <span data-ttu-id="df35b-223">このプロンプトの左下にある **[作成]** ボタンをクリックして、このサービスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-223">At the bottom left of this prompt, click the **Create** button, to create an instance of this Service.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-11.png)
 
-4.  <span data-ttu-id="9db05-225">**[作成]** をクリックすると、パネルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-225">Once you have clicked on **Create**, a panel will appear:</span></span>
+4.  <span data-ttu-id="df35b-225">**[作成]** をクリックすると、パネルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-225">Once you have clicked on **Create**, a panel will appear:</span></span>
 
-    1. <span data-ttu-id="9db05-226">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-226">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="9db05-227">リソースグループは、Azure 資産のコレクションの課金を監視、制御する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="9db05-227">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="9db05-228">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9db05-228">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
+    1. <span data-ttu-id="df35b-226">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-226">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="df35b-227">リソースグループは、Azure 資産のコレクションの課金を監視、制御する方法を提供します。</span><span class="sxs-lookup"><span data-stu-id="df35b-227">A resource group provides a way to monitor, control access, provision and manage billing for a collection of Azure assets.</span></span> <span data-ttu-id="df35b-228">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df35b-228">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
 
-        > <span data-ttu-id="9db05-229">Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-229">If you wish to read more about Azure Resource Groups, please follow this [link on how to manage a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
+        > <span data-ttu-id="df35b-229">Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-229">If you wish to read more about Azure Resource Groups, please follow this [link on how to manage a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
 
 
-    2. <span data-ttu-id="9db05-230">適切な**場所**を選択します (このコースで作成するすべてのサービスで同じ場所を使用します)。</span><span class="sxs-lookup"><span data-stu-id="9db05-230">Select an appropriate **Location** (Use the same location across all the Services you create in this course).</span></span>
+    2. <span data-ttu-id="df35b-230">適切な**場所**を選択します (このコースで作成するすべてのサービスで同じ場所を使用します)。</span><span class="sxs-lookup"><span data-stu-id="df35b-230">Select an appropriate **Location** (Use the same location across all the Services you create in this course).</span></span>
 
-    3. <span data-ttu-id="9db05-231">このサービスインスタンスに必要な**名前**を挿入します。</span><span class="sxs-lookup"><span data-stu-id="9db05-231">Insert your desired **Name** for this Service instance.</span></span>    
+    3. <span data-ttu-id="df35b-231">このサービスインスタンスに必要な**名前**を挿入します。</span><span class="sxs-lookup"><span data-stu-id="df35b-231">Insert your desired **Name** for this Service instance.</span></span>    
 
-5.  <span data-ttu-id="9db05-232">ページの下部にある [次へ **] をクリックします。サイズとスケール**。</span><span class="sxs-lookup"><span data-stu-id="9db05-232">On the bottom of the page click on **Next: Size and scale**.</span></span>
+5.  <span data-ttu-id="df35b-232">ページの下部にある [次へ **] をクリックします。サイズとスケール**。</span><span class="sxs-lookup"><span data-stu-id="df35b-232">On the bottom of the page click on **Next: Size and scale**.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-12.png)
 
-6.  <span data-ttu-id="9db05-234">このページで、**価格とスケールレベル**を選択します (これが初めての IoT Hub サービスインスタンスの場合は、free レベルをご利用いただけます)。</span><span class="sxs-lookup"><span data-stu-id="9db05-234">In this page, select your **Pricing and scale tier** (if this is your first IoT Hub Service instance, a free tier should be available to you).</span></span>  
+6.  <span data-ttu-id="df35b-234">このページで、**価格とスケールレベル**を選択します (これが初めての IoT Hub サービスインスタンスの場合は、free レベルをご利用いただけます)。</span><span class="sxs-lookup"><span data-stu-id="df35b-234">In this page, select your **Pricing and scale tier** (if this is your first IoT Hub Service instance, a free tier should be available to you).</span></span>  
 
-7.  <span data-ttu-id="9db05-235">**[レビューと作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-235">Click on **Review + Create**.</span></span>
+7.  <span data-ttu-id="df35b-235">**[レビューと作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-235">Click on **Review + Create**.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-13.png)
 
-8.  <span data-ttu-id="9db05-237">設定を確認し、 **[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-237">Review your settings and click on **Create**.</span></span>
+8.  <span data-ttu-id="df35b-237">設定を確認し、 **[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-237">Review your settings and click on **Create**.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-14.png)
 
-9. <span data-ttu-id="9db05-239">*IoT Hub*サービスが正常に作成されたことを知らせる通知が表示されたら、 **[リソースへのアクセス]** をクリックして、サービスページにリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="9db05-239">Once the notification pops up informing you of the successful creation of the *IoT Hub* Service, click on **Go to resource** to be redirected to your Service page.</span></span>
+9. <span data-ttu-id="df35b-239">*IoT Hub*サービスが正常に作成されたことを知らせる通知が表示されたら、 **[リソースへのアクセス]** をクリックして、サービスページにリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="df35b-239">Once the notification pops up informing you of the successful creation of the *IoT Hub* Service, click on **Go to resource** to be redirected to your Service page.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-15.png)
 
-10. <span data-ttu-id="9db05-241">[*デバイスの自動管理*] が表示されるまで左側のサイドパネルをスクロールし、 **IoT Edge**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-241">Scroll the side panel on the left until you see *Automatic Device Management*, the click on **IoT Edge**.</span></span>
+10. <span data-ttu-id="df35b-241">[*デバイスの自動管理*] が表示されるまで左側のサイドパネルをスクロールし、 **IoT Edge**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-241">Scroll the side panel on the left until you see *Automatic Device Management*, the click on **IoT Edge**.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-16.png)
 
-11. <span data-ttu-id="9db05-243">右側に表示されるウィンドウで、 **[IoT Edge デバイスの追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-243">In the window that appears to the right, click on **Add IoT Edge Device**.</span></span> <span data-ttu-id="9db05-244">ブレードが右側に表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-244">A blade will appear to the right.</span></span>
+11. <span data-ttu-id="df35b-243">右側に表示されるウィンドウで、 **[IoT Edge デバイスの追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-243">In the window that appears to the right, click on **Add IoT Edge Device**.</span></span> <span data-ttu-id="df35b-244">ブレードが右側に表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-244">A blade will appear to the right.</span></span>
 
-12. <span data-ttu-id="9db05-245">ブレードで、新しいデバイスに**デバイス ID** (任意の名前) を入力します。</span><span class="sxs-lookup"><span data-stu-id="9db05-245">In the blade, provide your new device a **Device ID** (a name of your choice).</span></span> <span data-ttu-id="9db05-246">次に、 **[保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-246">Then, click **Save**.</span></span> <span data-ttu-id="9db05-247">**自動生成**が行われた場合、*プライマリ* *キーとセカンダリキー*は自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-247">The *Primary* and *Secondary Keys* will auto generate, if you have **Auto Generate** ticked.</span></span>
+12. <span data-ttu-id="df35b-245">ブレードで、新しいデバイスに**デバイス ID** (任意の名前) を入力します。</span><span class="sxs-lookup"><span data-stu-id="df35b-245">In the blade, provide your new device a **Device ID** (a name of your choice).</span></span> <span data-ttu-id="df35b-246">次に、 **[保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-246">Then, click **Save**.</span></span> <span data-ttu-id="df35b-247">**自動生成**が行われた場合、*プライマリ* *キーとセカンダリキー*は自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-247">The *Primary* and *Secondary Keys* will auto generate, if you have **Auto Generate** ticked.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-17.png)
 
-13. <span data-ttu-id="9db05-249">新しいデバイスが一覧表示される [ *IoT Edge デバイス*] セクションに戻ります。</span><span class="sxs-lookup"><span data-stu-id="9db05-249">You will navigate back to the *IoT Edge Devices* section, where your new device will be listed.</span></span> <span data-ttu-id="9db05-250">新しいデバイス (下の図の赤で囲まれています) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-250">Click on your new device (outlined in red in the below image).</span></span> 
+13. <span data-ttu-id="df35b-249">新しいデバイスが一覧表示される [ *IoT Edge デバイス*] セクションに戻ります。</span><span class="sxs-lookup"><span data-stu-id="df35b-249">You will navigate back to the *IoT Edge Devices* section, where your new device will be listed.</span></span> <span data-ttu-id="df35b-250">新しいデバイス (下の図の赤で囲まれています) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-250">Click on your new device (outlined in red in the below image).</span></span> 
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-18.png)
 
-14. <span data-ttu-id="9db05-252">表示される [*デバイスの詳細*] ページで、**接続文字列**(主キー) のコピーを取得します。</span><span class="sxs-lookup"><span data-stu-id="9db05-252">On the *Device Details* page that appears, take a copy of the **Connection String** (primary key).</span></span>
+14. <span data-ttu-id="df35b-252">表示される [*デバイスの詳細*] ページで、**接続文字列**(主キー) のコピーを取得します。</span><span class="sxs-lookup"><span data-stu-id="df35b-252">On the *Device Details* page that appears, take a copy of the **Connection String** (primary key).</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-19.png)
 
-15. <span data-ttu-id="9db05-254">左側のパネルに戻り、[*共有アクセスポリシー*] をクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-254">Go back to the panel on the left, and click *Shared access policies*, to open it.</span></span> 
+15. <span data-ttu-id="df35b-254">左側のパネルに戻り、[*共有アクセスポリシー*] をクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-254">Go back to the panel on the left, and click *Shared access policies*, to open it.</span></span> 
 
-16. <span data-ttu-id="9db05-255">表示されるページで **[iothubowner]** をクリックすると、画面の右側にブレードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-255">On the page that appears, click **iothubowner**, and a blade will appear to the right of the screen.</span></span> 
+16. <span data-ttu-id="df35b-255">表示されるページで **[iothubowner]** をクリックすると、画面の右側にブレードが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-255">On the page that appears, click **iothubowner**, and a blade will appear to the right of the screen.</span></span> 
 
-17. <span data-ttu-id="9db05-256">**接続**文字列 (主キー) のメモ (メモ帳) を書き留めておきます。後でデバイスに*接続文字列*を設定するときに使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-256">Take note (on your Notepad) of the **Connection string** (primary key), for later use when setting the *Connection String* to your device.</span></span>
+17. <span data-ttu-id="df35b-256">**接続**文字列 (主キー) のメモ (メモ帳) を書き留めておきます。後でデバイスに*接続文字列*を設定するときに使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-256">Take note (on your Notepad) of the **Connection string** (primary key), for later use when setting the *Connection String* to your device.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-20.png)
 
-## <a name="chapter-4---setting-up-the-development-environment"></a><span data-ttu-id="9db05-258">章 4-開発環境の設定</span><span class="sxs-lookup"><span data-stu-id="9db05-258">Chapter 4 - Setting up the development environment</span></span>
+## <a name="chapter-4---setting-up-the-development-environment"></a><span data-ttu-id="df35b-258">章 4-開発環境の設定</span><span class="sxs-lookup"><span data-stu-id="df35b-258">Chapter 4 - Setting up the development environment</span></span>
 
-<span data-ttu-id="9db05-259">*IoT Hub Edge*のモジュールを作成してデプロイするには、Windows 10 を実行する開発用コンピューターに次のコンポーネントがインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-259">In order to create and deploy modules for *IoT Hub Edge*, you will require the following components installed on your development machine running Windows 10:</span></span>
+<span data-ttu-id="df35b-259">*IoT Hub Edge*のモジュールを作成してデプロイするには、Windows 10 を実行する開発用コンピューターに次のコンポーネントがインストールされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-259">In order to create and deploy modules for *IoT Hub Edge*, you will require the following components installed on your development machine running Windows 10:</span></span>
 
-1.  <span data-ttu-id="9db05-260">[Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)、ダウンロードできるアカウントを作成するように求められます。</span><span class="sxs-lookup"><span data-stu-id="9db05-260">[Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows), it will ask you to create an account to be able to download.</span></span> 
+1.  <span data-ttu-id="df35b-260">[Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)、ダウンロードできるアカウントを作成するように求められます。</span><span class="sxs-lookup"><span data-stu-id="df35b-260">[Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows), it will ask you to create an account to be able to download.</span></span> 
 
-    <span data-ttu-id="9db05-261">[![docker for windows のダウンロード](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)</span><span class="sxs-lookup"><span data-stu-id="9db05-261">[![download docker for windows](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)</span></span>
+    <span data-ttu-id="df35b-261">[![docker for windows のダウンロード](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)</span><span class="sxs-lookup"><span data-stu-id="df35b-261">[![download docker for windows](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)</span></span>
 
     > [!IMPORTANT]
-    > <span data-ttu-id="9db05-262">Docker を実行するには、 *windows 10 PRO*、 *Enterprise 14393*、または*windows Server 2016 RTM*が必要です。</span><span class="sxs-lookup"><span data-stu-id="9db05-262">Docker requires *Windows 10 PRO*, *Enterprise 14393*, or *Windows Server 2016 RTM*, to run.</span></span> <span data-ttu-id="9db05-263">他のバージョンの Windows 10 を実行している場合は、 [Docker ツールボックス](https://docs.docker.com/toolbox/toolbox_install_windows/)を使用して docker をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="9db05-263">If you are running other versions of Windows 10, you can try installing Docker using the [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/).</span></span>
+    > <span data-ttu-id="df35b-262">Docker を実行するには、 *windows 10 PRO*、 *Enterprise 14393*、または*windows Server 2016 RTM*が必要です。</span><span class="sxs-lookup"><span data-stu-id="df35b-262">Docker requires *Windows 10 PRO*, *Enterprise 14393*, or *Windows Server 2016 RTM*, to run.</span></span> <span data-ttu-id="df35b-263">他のバージョンの Windows 10 を実行している場合は、 [Docker ツールボックス](https://docs.docker.com/toolbox/toolbox_install_windows/)を使用して docker をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="df35b-263">If you are running other versions of Windows 10, you can try installing Docker using the [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/).</span></span>
 
-2.  <span data-ttu-id="9db05-264">[Python 3.6](https://www.python.org/downloads/)。</span><span class="sxs-lookup"><span data-stu-id="9db05-264">[Python 3.6](https://www.python.org/downloads/).</span></span>
+2.  <span data-ttu-id="df35b-264">[Python 3.6](https://www.python.org/downloads/)。</span><span class="sxs-lookup"><span data-stu-id="df35b-264">[Python 3.6](https://www.python.org/downloads/).</span></span>
 
-    <span data-ttu-id="9db05-265">[![python 3.6 のダウンロード](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)</span><span class="sxs-lookup"><span data-stu-id="9db05-265">[![download python 3.6](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)</span></span>
+    <span data-ttu-id="df35b-265">[![python 3.6 のダウンロード](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)</span><span class="sxs-lookup"><span data-stu-id="df35b-265">[![download python 3.6](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)</span></span>
 
-3.  <span data-ttu-id="9db05-266">[Visual Studio Code (VS Code とも呼ば](https://code.visualstudio.com/download)れます)。</span><span class="sxs-lookup"><span data-stu-id="9db05-266">[Visual Studio Code (also known as VS Code)](https://code.visualstudio.com/download).</span></span>
+3.  <span data-ttu-id="df35b-266">[Visual Studio Code (VS Code とも呼ば](https://code.visualstudio.com/download)れます)。</span><span class="sxs-lookup"><span data-stu-id="df35b-266">[Visual Studio Code (also known as VS Code)](https://code.visualstudio.com/download).</span></span>
 
-    <span data-ttu-id="9db05-267">[![ダウンロード VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)</span><span class="sxs-lookup"><span data-stu-id="9db05-267">[![download VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)</span></span>
+    <span data-ttu-id="df35b-267">[![ダウンロード VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)</span><span class="sxs-lookup"><span data-stu-id="df35b-267">[![download VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)</span></span>
 
-<span data-ttu-id="9db05-268">前述のソフトウェアをインストールしたら、コンピューターを再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-268">After installing the software mentioned above, you will need to restart your machine.</span></span>
+<span data-ttu-id="df35b-268">前述のソフトウェアをインストールしたら、コンピューターを再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-268">After installing the software mentioned above, you will need to restart your machine.</span></span>
 
-## <a name="chapter-5---setting-up-the-ubuntu-environment"></a><span data-ttu-id="9db05-269">章 5-Ubuntu 環境のセットアップ</span><span class="sxs-lookup"><span data-stu-id="9db05-269">Chapter 5 - Setting up the Ubuntu environment</span></span>
+## <a name="chapter-5---setting-up-the-ubuntu-environment"></a><span data-ttu-id="df35b-269">章 5-Ubuntu 環境のセットアップ</span><span class="sxs-lookup"><span data-stu-id="df35b-269">Chapter 5 - Setting up the Ubuntu environment</span></span>
 
-<span data-ttu-id="9db05-270">これで、 **UBUNTU OS を実行**しているデバイスのセットアップに進むことができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-270">Now you can move on to setting up your device **running Ubuntu OS**.</span></span> <span data-ttu-id="9db05-271">次の手順に従って、ボードにコンテナーをデプロイするために必要なソフトウェアをインストールします。</span><span class="sxs-lookup"><span data-stu-id="9db05-271">Follow the steps below, to install the necessary software, to deploy your containers on your board:</span></span>
+<span data-ttu-id="df35b-270">これで、 **UBUNTU OS を実行**しているデバイスのセットアップに進むことができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-270">Now you can move on to setting up your device **running Ubuntu OS**.</span></span> <span data-ttu-id="df35b-271">次の手順に従って、ボードにコンテナーをデプロイするために必要なソフトウェアをインストールします。</span><span class="sxs-lookup"><span data-stu-id="df35b-271">Follow the steps below, to install the necessary software, to deploy your containers on your board:</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="9db05-272">管理者ユーザーとして実行するには、ターミナルコマンドの前に常に**sudo**を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-272">You should always precede the terminal commands with **sudo** to run as admin user.</span></span> <span data-ttu-id="9db05-273">:</span><span class="sxs-lookup"><span data-stu-id="9db05-273">i.e:</span></span>
+> <span data-ttu-id="df35b-272">管理者ユーザーとして実行するには、ターミナルコマンドの前に常に**sudo**を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-272">You should always precede the terminal commands with **sudo** to run as admin user.</span></span> <span data-ttu-id="df35b-273">:</span><span class="sxs-lookup"><span data-stu-id="df35b-273">i.e:</span></span>
 > 
 >   ```bash
 >   sudo docker \<option> \<command> \<argument>
 >   ```
 
-1.  <span data-ttu-id="9db05-274">**Ubuntu ターミナル**を開き、次のコマンドを使用して**pip**をインストールします。</span><span class="sxs-lookup"><span data-stu-id="9db05-274">Open the **Ubuntu Terminal**, and use the following command to install **pip**:</span></span>
+1.  <span data-ttu-id="df35b-274">**Ubuntu ターミナル**を開き、次のコマンドを使用して**pip**をインストールします。</span><span class="sxs-lookup"><span data-stu-id="df35b-274">Open the **Ubuntu Terminal**, and use the following command to install **pip**:</span></span>
 
-    > [!ヒント]<span data-ttu-id="9db05-275"> キーボードショートカットを使用すると、*ターミナル*を簡単に開くことができます。**Ctrl + Alt + T**</span><span class="sxs-lookup"><span data-stu-id="9db05-275"> You can open *Terminal* very easily through using the keyboard shortcut: **Ctrl + Alt + T**.</span></span>
+    > [!ヒント]<span data-ttu-id="df35b-275"> キーボードショートカットを使用すると、*ターミナル*を簡単に開くことができます。**Ctrl + Alt + T**</span><span class="sxs-lookup"><span data-stu-id="df35b-275"> You can open *Terminal* very easily through using the keyboard shortcut: **Ctrl + Alt + T**.</span></span>
 
     ```bash
         sudo apt-get install python-pip
     ```
 
-2.  <span data-ttu-id="9db05-276">この章では、デバイスのストレージを使用するためのアクセス許可を*ターミナル*で確認するメッセージが表示される場合があります。また、 **y/n** (yes または no) を入力するには「 **y」** と入力し、 **enter キーを**押して同意します。</span><span class="sxs-lookup"><span data-stu-id="9db05-276">Throughout this Chapter, you may be prompted, by *Terminal*, for permission to use your device storage, and for you to input **y/n** (yes or no), type **'y'**, and then press the **Enter** key, to accept.</span></span>
+2.  <span data-ttu-id="df35b-276">この章では、デバイスのストレージを使用するためのアクセス許可を *ターミナル*で確認するメッセージが表示される場合があります。また、 **y/n** (yes または no) を入力するには「 **y」** と入力し、enter キーを押して同意します。</span><span class="sxs-lookup"><span data-stu-id="df35b-276">Throughout this Chapter, you may be prompted, by *Terminal*, for permission to use your device storage, and for you to input **y/n** (yes or no), type **'y'**, and then press the **Enter** key, to accept.</span></span>
 
-3.  <span data-ttu-id="9db05-277">コマンドが完了したら、次のコマンドを使用して**curl**をインストールします。</span><span class="sxs-lookup"><span data-stu-id="9db05-277">Once that command has completed, use the following command to install **curl**:</span></span>
+3.  <span data-ttu-id="df35b-277">コマンドが完了したら、次のコマンドを使用して**curl**をインストールします。</span><span class="sxs-lookup"><span data-stu-id="df35b-277">Once that command has completed, use the following command to install **curl**:</span></span>
 
     ```bash
         sudo apt install curl
     ```
 
-4.  <span data-ttu-id="9db05-278">**Pip**および**curl**がインストールされたら、次のコマンドを使用して**IoT Edge ランタイム**をインストールします。これは、ボードにモジュールをデプロイおよび制御するために必要です。</span><span class="sxs-lookup"><span data-stu-id="9db05-278">Once **pip** and **curl** are installed, use the following command to install the **IoT Edge runtime**, this is necessary to deploy and control the modules on your board:</span></span>
+4.  <span data-ttu-id="df35b-278">**Pip**および**curl**がインストールされたら、次のコマンドを使用して**IoT Edge ランタイム**をインストールします。これは、ボードにモジュールをデプロイおよび制御するために必要です。</span><span class="sxs-lookup"><span data-stu-id="df35b-278">Once **pip** and **curl** are installed, use the following command to install the **IoT Edge runtime**, this is necessary to deploy and control the modules on your board:</span></span>
 
     ```bash
         curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
@@ -307,129 +307,129 @@ ms.locfileid: "67694599"
         sudo apt-get install iotedge
     ```
 
-5. <span data-ttu-id="9db05-279">この時点で、 **IoT Hub サービス**を作成するときにメモしておいた (メモ帳でメモしておいた)**デバイス接続文字列**を挿入するために、*ランタイム構成ファイル*を開くように求められます ([手順14の章 3](#chapter-3---the-iot-hub-service))。</span><span class="sxs-lookup"><span data-stu-id="9db05-279">At this point you will be prompted to open up the *runtime config file*, to insert the **Device Connection String**, that you noted down (in your Notepad), when creating the **IoT Hub Service** ([at step 14, of Chapter 3](#chapter-3---the-iot-hub-service)).</span></span> <span data-ttu-id="9db05-280">ターミナルで次の行を実行して、そのファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-280">Run the following line on the terminal to open that file:</span></span>
+5. <span data-ttu-id="df35b-279">この時点で、 **IoT Hub サービス**を作成するときにメモしておいた (メモ帳でメモしておいた)**デバイス接続文字列**を挿入するために、*ランタイム構成ファイル*を開くように求められます ([手順14の章 3](#chapter-3---the-iot-hub-service))。</span><span class="sxs-lookup"><span data-stu-id="df35b-279">At this point you will be prompted to open up the *runtime config file*, to insert the **Device Connection String**, that you noted down (in your Notepad), when creating the **IoT Hub Service** ([at step 14, of Chapter 3](#chapter-3---the-iot-hub-service)).</span></span> <span data-ttu-id="df35b-280">ターミナルで次の行を実行して、そのファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-280">Run the following line on the terminal to open that file:</span></span>
 
     ```bash
         sudo nano /etc/iotedge/config.yaml
     ```
 
-6. <span data-ttu-id="9db05-281">次のように、**構成の yaml**ファイルが表示され、編集できるようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-281">The **config.yaml** file will be displayed, ready for you to edit:</span></span>
+6. <span data-ttu-id="df35b-281">次のように、**構成の yaml**ファイルが表示され、編集できるようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-281">The **config.yaml** file will be displayed, ready for you to edit:</span></span>
 
     > [!WARNING]
-    > <span data-ttu-id="9db05-282">このファイルが開いたときに、多少紛らわしいことがあります。</span><span class="sxs-lookup"><span data-stu-id="9db05-282">When this file opens, it may be somewhat confusing.</span></span> <span data-ttu-id="9db05-283">このファイルを*ターミナル*内で編集するテキストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-283">You will be text editing this file, within the *Terminal* itself.</span></span> 
+    > <span data-ttu-id="df35b-282">このファイルが開いたときに、多少紛らわしいことがあります。</span><span class="sxs-lookup"><span data-stu-id="df35b-282">When this file opens, it may be somewhat confusing.</span></span> <span data-ttu-id="df35b-283">このファイルを*ターミナル*内で編集するテキストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-283">You will be text editing this file, within the *Terminal* itself.</span></span> 
 
-    1.  <span data-ttu-id="9db05-284">キーボードの方向キーを使用して下にスクロールします (少し下にスクロールして、次の行に移動する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="9db05-284">Use the arrow keys on your keyboard to scroll down (you will need to scroll down a little way), to reach the line containing":</span></span>
+    1.  <span data-ttu-id="df35b-284">キーボードの方向キーを使用して下にスクロールします (少し下にスクロールして、次の行に移動する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="df35b-284">Use the arrow keys on your keyboard to scroll down (you will need to scroll down a little way), to reach the line containing":</span></span>
 
-        <span data-ttu-id="9db05-285">「デバイス接続文字列をここに**追加>」を参照してください\<** 。</span><span class="sxs-lookup"><span data-stu-id="9db05-285">"**\<ADD DEVICE CONNECTION STRING HERE>**".</span></span>
+        <span data-ttu-id="df35b-285">「デバイス接続文字列をここに**追加>」を参照してください\<** 。</span><span class="sxs-lookup"><span data-stu-id="df35b-285">"**\<ADD DEVICE CONNECTION STRING HERE>**".</span></span>
 
-    2. <span data-ttu-id="9db05-286">前にメモした**デバイス接続文字列**を使用して、**角かっこを含め**た代替行を指定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-286">Substitute line, **including the brackets**, with the **Device Connection String** you have noted earlier.</span></span>
+    2. <span data-ttu-id="df35b-286">前にメモした**デバイス接続文字列**を使用して、**角かっこを含め**た代替行を指定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-286">Substitute line, **including the brackets**, with the **Device Connection String** you have noted earlier.</span></span>
 
-7. <span data-ttu-id="9db05-287">接続文字列を設定した状態で、キーボードの**Ctrl + X**キーを押してファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="9db05-287">With your Connection String in place, on your keyboard, press the **Ctrl-X** keys to save the file.</span></span> <span data-ttu-id="9db05-288">「 **Y**」と入力すると、確認を求めるメッセージが表示されます。次に、 **enter**キーを押して確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-288">It will ask you to confirm by typing **Y**. Then, press the **Enter** key, to confirm.</span></span> <span data-ttu-id="9db05-289">通常の*ターミナル*に戻ります。</span><span class="sxs-lookup"><span data-stu-id="9db05-289">You will go back to the regular *Terminal*.</span></span> 
+7. <span data-ttu-id="df35b-287">接続文字列を設定した状態で、キーボードの**Ctrl + X**キーを押してファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="df35b-287">With your Connection String in place, on your keyboard, press the **Ctrl-X** keys to save the file.</span></span> <span data-ttu-id="df35b-288">「 **Y**」と入力すると、確認を求めるメッセージが表示されます。次に、 **enter**キーを押して確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-288">It will ask you to confirm by typing **Y**. Then, press the **Enter** key, to confirm.</span></span> <span data-ttu-id="df35b-289">通常の*ターミナル*に戻ります。</span><span class="sxs-lookup"><span data-stu-id="df35b-289">You will go back to the regular *Terminal*.</span></span> 
 
-8. <span data-ttu-id="9db05-290">これらのコマンドがすべて正常に実行されると、 **IoT Edge ランタイム**がインストールされます。</span><span class="sxs-lookup"><span data-stu-id="9db05-290">Once these commands have all run successfully, you will have installed the **IoT Edge Runtime**.</span></span> <span data-ttu-id="9db05-291">初期化されると、デバイスの電源が入るたびにランタイムが自動的に起動し、バックグラウンドで実行され、モジュールが**IoT Hub サービス**からデプロイされるのを待ちます。</span><span class="sxs-lookup"><span data-stu-id="9db05-291">Once initialized, the runtime will start on its own every time the device is powered up, and will sit in the background, waiting for modules to be deployed from the **IoT Hub Service**.</span></span>
+8. <span data-ttu-id="df35b-290">これらのコマンドがすべて正常に実行されると、 **IoT Edge ランタイム**がインストールされます。</span><span class="sxs-lookup"><span data-stu-id="df35b-290">Once these commands have all run successfully, you will have installed the **IoT Edge Runtime**.</span></span> <span data-ttu-id="df35b-291">初期化されると、デバイスの電源が入るたびにランタイムが自動的に起動し、バックグラウンドで実行され、モジュールが**IoT Hub サービス**からデプロイされるのを待ちます。</span><span class="sxs-lookup"><span data-stu-id="df35b-291">Once initialized, the runtime will start on its own every time the device is powered up, and will sit in the background, waiting for modules to be deployed from the **IoT Hub Service**.</span></span>
 
-9.  <span data-ttu-id="9db05-292">次のコマンドラインを実行して、 *IoT Edge ランタイム*を初期化します。</span><span class="sxs-lookup"><span data-stu-id="9db05-292">Run the following command line to initialize the *IoT Edge Runtime*:</span></span>
+9.  <span data-ttu-id="df35b-292">次のコマンドラインを実行して、 *IoT Edge ランタイム*を初期化します。</span><span class="sxs-lookup"><span data-stu-id="df35b-292">Run the following command line to initialize the *IoT Edge Runtime*:</span></span>
 
     ```bash
         sudo systemctl restart iotedge
     ```
 
     > [!IMPORTANT]
-    > <span data-ttu-id="9db05-293">Yaml ファイルまたは上記のセットアップに変更を加える場合は、*ターミナル*内で上記の再起動行をもう一度実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-293">If you make changes to your .yaml file, or the above setup, you will need to run the above restart line again, within *Terminal*.</span></span>
+    > <span data-ttu-id="df35b-293">Yaml ファイルまたは上記のセットアップに変更を加える場合は、*ターミナル*内で上記の再起動行をもう一度実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-293">If you make changes to your .yaml file, or the above setup, you will need to run the above restart line again, within *Terminal*.</span></span>
 
-10. <span data-ttu-id="9db05-294">次のコマンドラインを実行して、 *IoT Edge ランタイム*の状態を確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-294">Check the *IoT Edge Runtime* status by running the following command line.</span></span> <span data-ttu-id="9db05-295">ランタイムは、状態が [**アクティブ] (実行中)** の緑色のテキストで表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-295">The runtime should appear with the status **active (running)** in green text.</span></span>
+10. <span data-ttu-id="df35b-294">次のコマンドラインを実行して、 *IoT Edge ランタイム*の状態を確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-294">Check the *IoT Edge Runtime* status by running the following command line.</span></span> <span data-ttu-id="df35b-295">ランタイムは、状態が [**アクティブ] (実行中)** の緑色のテキストで表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-295">The runtime should appear with the status **active (running)** in green text.</span></span>
 
     ```bash
         sudo systemctl status iotedge
     ```
 
-11. <span data-ttu-id="9db05-296">**Ctrl + C**キーを押して、[状態] ページを終了します。</span><span class="sxs-lookup"><span data-stu-id="9db05-296">Press the **Ctrl-C** keys, to exit the status page.</span></span> <span data-ttu-id="9db05-297">次のコマンドを入力して、 *IoT Edge ランタイム*がコンテナーを正しくプルしていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="9db05-297">You can verify that the *IoT Edge Runtime* is pulling the containers correctly by typing the following command:</span></span>
+11. <span data-ttu-id="df35b-296">**Ctrl + C**キーを押して、[状態] ページを終了します。</span><span class="sxs-lookup"><span data-stu-id="df35b-296">Press the **Ctrl-C** keys, to exit the status page.</span></span> <span data-ttu-id="df35b-297">次のコマンドを入力して、 *IoT Edge ランタイム*がコンテナーを正しくプルしていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="df35b-297">You can verify that the *IoT Edge Runtime* is pulling the containers correctly by typing the following command:</span></span>
 
     ```bash
         sudo docker ps
     ```
 
-12. <span data-ttu-id="9db05-298">2つのコンテナーを含むリストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-298">A list with two (2) containers should appear.</span></span> <span data-ttu-id="9db05-299">これらは、IoT Hub サービス (edgeAgent および edgeHub) によって自動的に作成される既定のモジュールです。</span><span class="sxs-lookup"><span data-stu-id="9db05-299">These are the default modules that are automatically created by the IoT Hub Service (edgeAgent and edgeHub).</span></span> <span data-ttu-id="9db05-300">独自のモジュールを作成してデプロイすると、既定のモジュールの下にこの一覧に表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-300">Once you create and deploy your own modules, they will appear in this list, underneath the default ones.</span></span>
+12. <span data-ttu-id="df35b-298">2つのコンテナーを含むリストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-298">A list with two (2) containers should appear.</span></span> <span data-ttu-id="df35b-299">これらは、IoT Hub サービス (edgeAgent および edgeHub) によって自動的に作成される既定のモジュールです。</span><span class="sxs-lookup"><span data-stu-id="df35b-299">These are the default modules that are automatically created by the IoT Hub Service (edgeAgent and edgeHub).</span></span> <span data-ttu-id="df35b-300">独自のモジュールを作成してデプロイすると、既定のモジュールの下にこの一覧に表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-300">Once you create and deploy your own modules, they will appear in this list, underneath the default ones.</span></span>
 
-## <a name="chapter-6---install-the-extensions"></a><span data-ttu-id="9db05-301">Chapter 6-拡張機能のインストール</span><span class="sxs-lookup"><span data-stu-id="9db05-301">Chapter 6 - Install the extensions</span></span>
+## <a name="chapter-6---install-the-extensions"></a><span data-ttu-id="df35b-301">Chapter 6-拡張機能のインストール</span><span class="sxs-lookup"><span data-stu-id="df35b-301">Chapter 6 - Install the extensions</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="9db05-302">Windows 10 コンピューターでは、次のいくつかの章 (6-9) が実行されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-302">The next few Chapters (6-9) are to be performed on your Windows 10 machine.</span></span>
+> <span data-ttu-id="df35b-302">Windows 10 コンピューターでは、次のいくつかの章 (6-9) が実行されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-302">The next few Chapters (6-9) are to be performed on your Windows 10 machine.</span></span>
 
-1. <span data-ttu-id="9db05-303">**VS Code**を開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-303">Open **VS Code**.</span></span>
+1. <span data-ttu-id="df35b-303">**VS Code**を開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-303">Open **VS Code**.</span></span>
 
-2. <span data-ttu-id="9db05-304">VS Code の左側のバーにある [**拡張機能**(四角)] ボタンをクリックして、[**拡張機能] パネル**を開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-304">Click on the **Extensions** (square) button on the left bar of VS Code, to open the **Extensions panel**.</span></span>
+2. <span data-ttu-id="df35b-304">VS Code の左側のバーにある [**拡張機能**(四角)] ボタンをクリックして、[**拡張機能] パネル**を開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-304">Click on the **Extensions** (square) button on the left bar of VS Code, to open the **Extensions panel**.</span></span>
 
-3. <span data-ttu-id="9db05-305">次の図に示すように、次の拡張機能を検索してインストールします。</span><span class="sxs-lookup"><span data-stu-id="9db05-305">Search for, and install, the following extensions (as shown in the image below):</span></span>
+3. <span data-ttu-id="df35b-305">次の図に示すように、次の拡張機能を検索してインストールします。</span><span class="sxs-lookup"><span data-stu-id="df35b-305">Search for, and install, the following extensions (as shown in the image below):</span></span>
 
-    1. <span data-ttu-id="9db05-306">Azure IoT Edge</span><span class="sxs-lookup"><span data-stu-id="9db05-306">Azure IoT Edge</span></span>
-    2. <span data-ttu-id="9db05-307">Azure IoT Toolkit</span><span class="sxs-lookup"><span data-stu-id="9db05-307">Azure IoT Toolkit</span></span>
-    3. <span data-ttu-id="9db05-308">Docker</span><span class="sxs-lookup"><span data-stu-id="9db05-308">Docker</span></span>   
+    1. <span data-ttu-id="df35b-306">Azure IoT Edge</span><span class="sxs-lookup"><span data-stu-id="df35b-306">Azure IoT Edge</span></span>
+    2. <span data-ttu-id="df35b-307">Azure IoT Toolkit</span><span class="sxs-lookup"><span data-stu-id="df35b-307">Azure IoT Toolkit</span></span>
+    3. <span data-ttu-id="df35b-308">Docker</span><span class="sxs-lookup"><span data-stu-id="df35b-308">Docker</span></span>   
 
     ![コンテナーを作成する](images/AzureLabs-Lab313-24.png)
 
-4. <span data-ttu-id="9db05-310">拡張機能がインストールされたら、VS Code を閉じてから開き直します。</span><span class="sxs-lookup"><span data-stu-id="9db05-310">Once the extensions are installed, close and re-open VS Code.</span></span>
+4. <span data-ttu-id="df35b-310">拡張機能がインストールされたら、VS Code を閉じてから開き直します。</span><span class="sxs-lookup"><span data-stu-id="df35b-310">Once the extensions are installed, close and re-open VS Code.</span></span>
 
-5. <span data-ttu-id="9db05-311">さらに VS Code 開いて、[**統合ターミナル**の**表示** > ] に移動します。</span><span class="sxs-lookup"><span data-stu-id="9db05-311">With VS Code open once more, navigate to **View** > **Integrated terminal**.</span></span>
+5. <span data-ttu-id="df35b-311">さらに VS Code 開いて、[**統合ターミナル**の**表示** > ] に移動します。</span><span class="sxs-lookup"><span data-stu-id="df35b-311">With VS Code open once more, navigate to **View** > **Integrated terminal**.</span></span>
 
-6. <span data-ttu-id="9db05-312">次に、 **Cookiecutter**をインストールします。</span><span class="sxs-lookup"><span data-stu-id="9db05-312">You will now install **Cookiecutter**.</span></span> <span data-ttu-id="9db05-313">ターミナルで、次の bash コマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="9db05-313">In the terminal run the following bash command:</span></span>
+6. <span data-ttu-id="df35b-312">次に、 **Cookiecutter**をインストールします。</span><span class="sxs-lookup"><span data-stu-id="df35b-312">You will now install **Cookiecutter**.</span></span> <span data-ttu-id="df35b-313">ターミナルで、次の bash コマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="df35b-313">In the terminal run the following bash command:</span></span>
 
     ```bash
         pip install --upgrade --user cookiecutter
     ```
 
-    > [!ヒント]<span data-ttu-id="9db05-314"> このコマンドで問題が発生した場合は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-314"> If you have trouble with this command:</span></span> 
-    >1. <span data-ttu-id="9db05-315">VS Code、またはコンピューターを再起動します。</span><span class="sxs-lookup"><span data-stu-id="9db05-315">Restart VS Code, and/ or your computer.</span></span>
-    >2. <span data-ttu-id="9db05-316">**VS Code ターミナル**を、python のインストールに使用している**もの (特**に、python 環境がコンピューターに既にインストールされている場合) に切り替える必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-316">It might be necessary to switch the **VS Code Terminal** to the one you have been using to install Python, i.e. **Powershell** (especially in case the Python environment was already installed on your machine).</span></span> <span data-ttu-id="9db05-317">ターミナルを開いた状態で、ターミナルの右側にドロップダウンメニューが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-317">With the Terminal open, you will find the drop down menu on the right side of the Terminal.</span></span>
-     <span data-ttu-id="9db05-318">![コンテナーを作成する](images/AzureLabs-Lab313-24b.png)</span><span class="sxs-lookup"><span data-stu-id="9db05-318">![Create your container](images/AzureLabs-Lab313-24b.png)</span></span> 
-    >3. <span data-ttu-id="9db05-319">**Python**インストールパスが**環境変数**としてコンピューターに追加されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-319">Make sure the **Python** installation path is added as **Environment Variable** on your machine.</span></span> <span data-ttu-id="9db05-320">Cookiecutter は同じ場所のパスの一部にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-320">Cookiecutter should be part of the same location path.</span></span> <span data-ttu-id="9db05-321">[環境変数の詳細につい](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx)ては、このリンクに従ってください。</span><span class="sxs-lookup"><span data-stu-id="9db05-321">Please follow this [link for more information on Environment Variables](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx),</span></span> 
+    > [!ヒント]<span data-ttu-id="df35b-314"> このコマンドで問題が発生した場合は、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-314"> If you have trouble with this command:</span></span> 
+    >1. <span data-ttu-id="df35b-315">VS Code、またはコンピューターを再起動します。</span><span class="sxs-lookup"><span data-stu-id="df35b-315">Restart VS Code, and/ or your computer.</span></span>
+    >2. <span data-ttu-id="df35b-316">**VS Code ターミナル**を、python のインストールに使用しているもの (特に、python 環境がコンピューターに既にインストールされている場合) に切り替える必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-316">It might be necessary to switch the **VS Code Terminal** to the one you have been using to install Python, i.e. **Powershell** (especially in case the Python environment was already installed on your machine).</span></span> <span data-ttu-id="df35b-317">ターミナルを開いた状態で、ターミナルの右側にドロップダウンメニューが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-317">With the Terminal open, you will find the drop down menu on the right side of the Terminal.</span></span>
+     <span data-ttu-id="df35b-318">![コンテナーを作成する](images/AzureLabs-Lab313-24b.png)</span><span class="sxs-lookup"><span data-stu-id="df35b-318">![Create your container](images/AzureLabs-Lab313-24b.png)</span></span> 
+    >3. <span data-ttu-id="df35b-319">**Python**インストールパスが**環境変数**としてコンピューターに追加されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-319">Make sure the **Python** installation path is added as **Environment Variable** on your machine.</span></span> <span data-ttu-id="df35b-320">Cookiecutter は同じ場所のパスの一部にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-320">Cookiecutter should be part of the same location path.</span></span> <span data-ttu-id="df35b-321">[環境変数の詳細につい](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx)ては、このリンクに従ってください。</span><span class="sxs-lookup"><span data-stu-id="df35b-321">Please follow this [link for more information on Environment Variables](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx),</span></span> 
 
-7. <span data-ttu-id="9db05-322">**Cookiecutter**のインストールが完了したら、コンピューターを再起動して、 **Cookiecutter**がシステムの環境内でコマンドとして認識されるようにします。</span><span class="sxs-lookup"><span data-stu-id="9db05-322">Once **Cookiecutter** has finished installing, you should restart your machine, so that **Cookiecutter** is recognized as a command, within your System's environment.</span></span>
+7. <span data-ttu-id="df35b-322">**Cookiecutter**のインストールが完了したら、コンピューターを再起動して、 **Cookiecutter**がシステムの環境内でコマンドとして認識されるようにします。</span><span class="sxs-lookup"><span data-stu-id="df35b-322">Once **Cookiecutter** has finished installing, you should restart your machine, so that **Cookiecutter** is recognized as a command, within your System's environment.</span></span>
 
-## <a name="chapter-7---create-your-container-solution"></a><span data-ttu-id="9db05-323">第7章-コンテナーソリューションを作成する</span><span class="sxs-lookup"><span data-stu-id="9db05-323">Chapter 7 - Create your container solution</span></span>
+## <a name="chapter-7---create-your-container-solution"></a><span data-ttu-id="df35b-323">第7章-コンテナーソリューションを作成する</span><span class="sxs-lookup"><span data-stu-id="df35b-323">Chapter 7 - Create your container solution</span></span>
 
-<span data-ttu-id="9db05-324">この時点で、モジュールを使用してコンテナーを作成し、 *Container Registry*にプッシュする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-324">At this point, you need to create the container, with the module, to be pushed into the *Container Registry*.</span></span> <span data-ttu-id="9db05-325">コンテナーをプッシュしたら、 *IoT Hub Edge*サービスを使用して、 *IoT Edge ランタイム*を実行しているデバイスにデプロイします。</span><span class="sxs-lookup"><span data-stu-id="9db05-325">Once you have pushed your container, you will use the *IoT Hub Edge* Service to deploy it to your device, which is running the *IoT Edge runtime*.</span></span>
+<span data-ttu-id="df35b-324">この時点で、モジュールを使用してコンテナーを作成し、 *Container Registry*にプッシュする必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-324">At this point, you need to create the container, with the module, to be pushed into the *Container Registry*.</span></span> <span data-ttu-id="df35b-325">コンテナーをプッシュしたら、 *IoT Hub Edge*サービスを使用して、 *IoT Edge ランタイム*を実行しているデバイスにデプロイします。</span><span class="sxs-lookup"><span data-stu-id="df35b-325">Once you have pushed your container, you will use the *IoT Hub Edge* Service to deploy it to your device, which is running the *IoT Edge runtime*.</span></span>
 
-1. <span data-ttu-id="9db05-326">VS Code で、[**コマンドパレット**の**表示** > ] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-326">From VS Code, click **View** > **Command palette**.</span></span>
+1. <span data-ttu-id="df35b-326">VS Code で、[**コマンドパレット**の**表示** > ] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-326">From VS Code, click **View** > **Command palette**.</span></span>
 
-2. <span data-ttu-id="9db05-327">パレットで、Azure IoT Edge を検索し**て実行します。新しい Iot Edge ソリューション**。</span><span class="sxs-lookup"><span data-stu-id="9db05-327">In the palette, search and run **Azure IoT Edge: New Iot Edge Solution**.</span></span>
+2. <span data-ttu-id="df35b-327">パレットで、Azure IoT Edge を検索し**て実行します。新しい Iot Edge ソリューション**。</span><span class="sxs-lookup"><span data-stu-id="df35b-327">In the palette, search and run **Azure IoT Edge: New Iot Edge Solution**.</span></span>
 
-3. <span data-ttu-id="9db05-328">ソリューションを作成する場所を参照します。</span><span class="sxs-lookup"><span data-stu-id="9db05-328">Browse into a location where you want to create your solution.</span></span> <span data-ttu-id="9db05-329">場所を受け入れるには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="9db05-329">Press the **Enter** key, to accept the location.</span></span>
+3. <span data-ttu-id="df35b-328">ソリューションを作成する場所を参照します。</span><span class="sxs-lookup"><span data-stu-id="df35b-328">Browse into a location where you want to create your solution.</span></span> <span data-ttu-id="df35b-329">場所を受け入れるには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="df35b-329">Press the **Enter** key, to accept the location.</span></span>
 
-4. <span data-ttu-id="9db05-330">ソリューションに名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="9db05-330">Give a name to your solution.</span></span> <span data-ttu-id="9db05-331">入力した名前を確認するには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="9db05-331">Press the **Enter** key, to confirm your provided name.</span></span>
+4. <span data-ttu-id="df35b-330">ソリューションに名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="df35b-330">Give a name to your solution.</span></span> <span data-ttu-id="df35b-331">入力した名前を確認するには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="df35b-331">Press the **Enter** key, to confirm your provided name.</span></span>
 
-5. <span data-ttu-id="9db05-332">これで、ソリューションのテンプレートフレームワークを選択するように求められます。</span><span class="sxs-lookup"><span data-stu-id="9db05-332">Now you will be prompted to choose the template framework for your solution.</span></span> <span data-ttu-id="9db05-333">**[Python モジュール]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-333">Click **Python Module**.</span></span> <span data-ttu-id="9db05-334">この選択を確定するには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="9db05-334">Press the **Enter** key, to confirm this choice.</span></span>
+5. <span data-ttu-id="df35b-332">これで、ソリューションのテンプレートフレームワークを選択するように求められます。</span><span class="sxs-lookup"><span data-stu-id="df35b-332">Now you will be prompted to choose the template framework for your solution.</span></span> <span data-ttu-id="df35b-333">**[Python モジュール]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-333">Click **Python Module**.</span></span> <span data-ttu-id="df35b-334">この選択を確定するには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="df35b-334">Press the **Enter** key, to confirm this choice.</span></span>
 
-6. <span data-ttu-id="9db05-335">モジュールに名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="9db05-335">Give a name to your module.</span></span> <span data-ttu-id="9db05-336">**Enter**キーを押して、モジュールの名前を確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-336">Press the **Enter** key, to confirm the name of your module.</span></span> <span data-ttu-id="9db05-337">後で使用するため、モジュール名のメモ (メモ帳を使用) を必ず実行してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-337">Make sure to take a note (with your Notepad) of the module name, as it is used later.</span></span>
+6. <span data-ttu-id="df35b-335">モジュールに名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="df35b-335">Give a name to your module.</span></span> <span data-ttu-id="df35b-336">**Enter**キーを押して、モジュールの名前を確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-336">Press the **Enter** key, to confirm the name of your module.</span></span> <span data-ttu-id="df35b-337">後で使用するため、モジュール名のメモ (メモ帳を使用) を必ず実行してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-337">Make sure to take a note (with your Notepad) of the module name, as it is used later.</span></span>
 
-7. <span data-ttu-id="9db05-338">作成済みの*Docker イメージリポジトリ*アドレスがパレットに表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-338">You will notice a pre-built *Docker Image Repository* address will appear on the palette.</span></span> <span data-ttu-id="9db05-339">次のようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-339">It will look like:</span></span>
+7. <span data-ttu-id="df35b-338">作成済みの*Docker イメージリポジトリ*アドレスがパレットに表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-338">You will notice a pre-built *Docker Image Repository* address will appear on the palette.</span></span> <span data-ttu-id="df35b-339">次のようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-339">It will look like:</span></span>
 
-    <span data-ttu-id="9db05-340">**localhost: 5000/-モジュールの名前-** 。</span><span class="sxs-lookup"><span data-stu-id="9db05-340">**localhost:5000/-THE NAME OF YOUR MODULE-**.</span></span> 
+    <span data-ttu-id="df35b-340">**localhost: 5000/-モジュールの名前-** 。</span><span class="sxs-lookup"><span data-stu-id="df35b-340">**localhost:5000/-THE NAME OF YOUR MODULE-**.</span></span> 
 
-8. <span data-ttu-id="9db05-341">削除**localhost:5000**、およびその場所の挿入、*Container Registry* **ログイン サーバー**アドレスで、作成するときにメモしておいた、**コンテナーレジストリ サービス**([手順 8、第 2 章の](#chapter-2---the-container-registry-service))。</span><span class="sxs-lookup"><span data-stu-id="9db05-341">Delete **localhost:5000**, and in its place insert the *Container Registry* **Login Server** address, which you noted when creating the **Container Registry Service** ([in step 8, of Chapter 2](#chapter-2---the-container-registry-service)).</span></span> <span data-ttu-id="9db05-342">アドレスを確認するには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="9db05-342">Press the **Enter** key, to confirm the address.</span></span>
+8. <span data-ttu-id="df35b-341">削除**localhost:5000**、およびその場所の挿入、*Container Registry* **ログイン サーバー**アドレスで、作成するときにメモしておいた、**コンテナーレジストリ サービス**([手順 8、第 2 章の](#chapter-2---the-container-registry-service))。</span><span class="sxs-lookup"><span data-stu-id="df35b-341">Delete **localhost:5000**, and in its place insert the *Container Registry* **Login Server** address, which you noted when creating the **Container Registry Service** ([in step 8, of Chapter 2](#chapter-2---the-container-registry-service)).</span></span> <span data-ttu-id="df35b-342">アドレスを確認するには、 **enter**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="df35b-342">Press the **Enter** key, to confirm the address.</span></span>
 
-9. <span data-ttu-id="9db05-343">この時点で、Python モジュールのテンプレートを含むソリューションが作成され、その構造が画面の左側の [**探索] タブ**(VS Code) に表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-343">At this point, the solution containing the template for your Python module will be created and its structure will be displayed in the **Explore Tab**, of VS Code, on the left side of the screen.</span></span> <span data-ttu-id="9db05-344">[**探索] タブ**が開いていない場合は、左側のバーの一番上にあるボタンをクリックして開くことができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-344">If the **Explore Tab** is not open, you can open it by clicking the top-most button, in the bar on the left.</span></span>
+9. <span data-ttu-id="df35b-343">この時点で、Python モジュールのテンプレートを含むソリューションが作成され、その構造が画面の左側の [**探索] タブ**(VS Code) に表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-343">At this point, the solution containing the template for your Python module will be created and its structure will be displayed in the **Explore Tab**, of VS Code, on the left side of the screen.</span></span> <span data-ttu-id="df35b-344">[**探索] タブ**が開いていない場合は、左側のバーの一番上にあるボタンをクリックして開くことができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-344">If the **Explore Tab** is not open, you can open it by clicking the top-most button, in the bar on the left.</span></span>
 
     ![コンテナーを作成する](images/AzureLabs-Lab313-25.png)
 
-10. <span data-ttu-id="9db05-346">この章の最後の手順は、をクリックして開く、 **.env ファイル**、内から、 **タブの調査**、追加、 *Container Registry* **ユーザー名**と**パスワード**します。</span><span class="sxs-lookup"><span data-stu-id="9db05-346">The last step for this Chapter, is to click and open the **.env file**, from within the **Explore Tab**, and add your *Container Registry* **username** and **password**.</span></span> <span data-ttu-id="9db05-347">このファイルは git によって無視されますが、コンテナーを構築すると、 **Container Registry サービス**にアクセスするための資格情報が設定されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-347">This file is ignored by git, but on building the container, will set the credentials to access the **Container Registry Service**.</span></span>
+10. <span data-ttu-id="df35b-346">この章の最後の手順は、をクリックして開く、 **.env ファイル**、内から、 **タブの調査**、追加、 *Container Registry* **ユーザー名**と**パスワード**します。</span><span class="sxs-lookup"><span data-stu-id="df35b-346">The last step for this Chapter, is to click and open the **.env file**, from within the **Explore Tab**, and add your *Container Registry* **username** and **password**.</span></span> <span data-ttu-id="df35b-347">このファイルは git によって無視されますが、コンテナーを構築すると、 **Container Registry サービス**にアクセスするための資格情報が設定されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-347">This file is ignored by git, but on building the container, will set the credentials to access the **Container Registry Service**.</span></span>
 
     ![コンテナーを作成する](images/AzureLabs-Lab313-26.png)
 
-## <a name="chapter-8---editing-your-container-solution"></a><span data-ttu-id="9db05-349">章 8-コンテナーソリューションの編集</span><span class="sxs-lookup"><span data-stu-id="9db05-349">Chapter 8 - Editing your container solution</span></span>
+## <a name="chapter-8---editing-your-container-solution"></a><span data-ttu-id="df35b-349">章 8-コンテナーソリューションの編集</span><span class="sxs-lookup"><span data-stu-id="df35b-349">Chapter 8 - Editing your container solution</span></span>
 
-<span data-ttu-id="9db05-350">次のファイルを更新して、コンテナーソリューションを完成させます。</span><span class="sxs-lookup"><span data-stu-id="9db05-350">You will now complete the container solution, by updating the following files:</span></span>
+<span data-ttu-id="df35b-350">次のファイルを更新して、コンテナーソリューションを完成させます。</span><span class="sxs-lookup"><span data-stu-id="df35b-350">You will now complete the container solution, by updating the following files:</span></span>
 
-- <span data-ttu-id="9db05-351">.py python スクリプト。 *<span></span>*</span><span class="sxs-lookup"><span data-stu-id="9db05-351">*main<span></span>.py* python script.</span></span>
-- <span data-ttu-id="9db05-352">*test.txt*。</span><span class="sxs-lookup"><span data-stu-id="9db05-352">*requirements.txt*.</span></span>
-- <span data-ttu-id="9db05-353">*配置. template. json*.</span><span class="sxs-lookup"><span data-stu-id="9db05-353">*deployment.template.json*.</span></span>
-- <span data-ttu-id="9db05-354">*Dockerfile. amd64*</span><span class="sxs-lookup"><span data-stu-id="9db05-354">*Dockerfile.amd64*</span></span>
+- <span data-ttu-id="df35b-351">.py python スクリプト。 *<span></span>*</span><span class="sxs-lookup"><span data-stu-id="df35b-351">*main<span></span>.py* python script.</span></span>
+- <span data-ttu-id="df35b-352">*test.txt*。</span><span class="sxs-lookup"><span data-stu-id="df35b-352">*requirements.txt*.</span></span>
+- <span data-ttu-id="df35b-353">*配置. template. json*.</span><span class="sxs-lookup"><span data-stu-id="df35b-353">*deployment.template.json*.</span></span>
+- <span data-ttu-id="df35b-354">*Dockerfile. amd64*</span><span class="sxs-lookup"><span data-stu-id="df35b-354">*Dockerfile.amd64*</span></span>
 
-<span data-ttu-id="9db05-355">次に、python スクリプトによって使用される*images*フォルダーを作成し、 *Custom Vision モデル*と照合するイメージを確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-355">You will then create the *images* folder, used by the python script to check for images to match against your *Custom Vision model*.</span></span> <span data-ttu-id="9db05-356">最後に、モデルを読みやすくするために、*ラベル .txt*ファイルを追加し、モデルとしてモデルの*pb*ファイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="9db05-356">Lastly, you will add the *labels.txt* file, to help read your model, and the *model.pb* file, which is your model.</span></span>
+<span data-ttu-id="df35b-355">次に、python スクリプトによって使用される*images*フォルダーを作成し、 *Custom Vision モデル*と照合するイメージを確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-355">You will then create the *images* folder, used by the python script to check for images to match against your *Custom Vision model*.</span></span> <span data-ttu-id="df35b-356">最後に、モデルを読みやすくするために、*ラベル .txt*ファイルを追加し、モデルとしてモデルの*pb*ファイルを追加します。</span><span class="sxs-lookup"><span data-stu-id="df35b-356">Lastly, you will add the *labels.txt* file, to help read your model, and the *model.pb* file, which is your model.</span></span>
 
-1. <span data-ttu-id="9db05-357">VS Code 開いた状態で、モジュールフォルダーに移動し、 **.py<span></span>** という名前のスクリプトを探します。</span><span class="sxs-lookup"><span data-stu-id="9db05-357">With VS Code open, navigate to your module folder, and look for the script called **main<span></span>.py**.</span></span> <span data-ttu-id="9db05-358">ダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-358">Double-click to open it.</span></span>
+1. <span data-ttu-id="df35b-357">VS Code 開いた状態で、モジュールフォルダーに移動し、 **.py<span></span>** という名前のスクリプトを探します。</span><span class="sxs-lookup"><span data-stu-id="df35b-357">With VS Code open, navigate to your module folder, and look for the script called **main<span></span>.py**.</span></span> <span data-ttu-id="df35b-358">ダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-358">Double-click to open it.</span></span>
 
-2. <span data-ttu-id="9db05-359">ファイルの内容を削除し、次のコードを挿入します。</span><span class="sxs-lookup"><span data-stu-id="9db05-359">Delete the content of the file and insert the following code:</span></span>
+2. <span data-ttu-id="df35b-359">ファイルの内容を削除し、次のコードを挿入します。</span><span class="sxs-lookup"><span data-stu-id="df35b-359">Delete the content of the file and insert the following code:</span></span>
 
     ```python
     # Copyright (c) Microsoft. All rights reserved.
@@ -662,7 +662,7 @@ ms.locfileid: "67694599"
         main(PROTOCOL)
     ```
 
-3.  <span data-ttu-id="9db05-360">「 **Test.txt**」という名前のファイルを開き、その内容を次のように置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9db05-360">Open the file called **requirements.txt**, and substitute its content with the following:</span></span>
+3.  <span data-ttu-id="df35b-360">「 **Test.txt**」という名前のファイルを開き、その内容を次のように置き換えます。</span><span class="sxs-lookup"><span data-stu-id="df35b-360">Open the file called **requirements.txt**, and substitute its content with the following:</span></span>
 
     ```
     azure-iothub-device-client==1.4.0.0b3
@@ -671,20 +671,20 @@ ms.locfileid: "67694599"
     pillow==5.1.0
     ```
 
-4.  <span data-ttu-id="9db05-361">次のガイドラインに従って、 **deployment. template. json**という名前のファイルを開き、その内容を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9db05-361">Open the file called **deployment.template.json**, and substitute its content following the below guideline:</span></span>
+4.  <span data-ttu-id="df35b-361">次のガイドラインに従って、 **deployment. template. json**という名前のファイルを開き、その内容を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="df35b-361">Open the file called **deployment.template.json**, and substitute its content following the below guideline:</span></span>
 
-    1. <span data-ttu-id="9db05-362">独自の一意の JSON 構造があるため、(例をコピーするのではなく) 手作業で編集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-362">Because you will have your own, unique, JSON structure, you will need to edit it by hand (rather than copying an example).</span></span> <span data-ttu-id="9db05-363">これを簡単に行うには、次の図をガイドとして使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-363">To make this easy, use the below image as a guide.</span></span>
-    2. <span data-ttu-id="9db05-364">異なる領域が表示されますが、**変更すべきではない領域は黄色で強調表示され**ます。</span><span class="sxs-lookup"><span data-stu-id="9db05-364">Areas which will look different to yours, but which you **should NOT change are highlighted yellow**.</span></span>
-    3. <span data-ttu-id="9db05-365">**削除する必要があるセクションは、赤で強調表示されています。**</span><span class="sxs-lookup"><span data-stu-id="9db05-365">**Sections which you need to delete, are a highlighted red.**</span></span>
-    4. <span data-ttu-id="9db05-366">正しい角かっこを削除し、コンマも削除するように注意してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-366">Be careful to delete the correct brackets, and also remove the commas.</span></span>
+    1. <span data-ttu-id="df35b-362">独自の一意の JSON 構造があるため、(例をコピーするのではなく) 手作業で編集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-362">Because you will have your own, unique, JSON structure, you will need to edit it by hand (rather than copying an example).</span></span> <span data-ttu-id="df35b-363">これを簡単に行うには、次の図をガイドとして使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-363">To make this easy, use the below image as a guide.</span></span>
+    2. <span data-ttu-id="df35b-364">異なる領域が表示されますが、**変更すべきではない領域は黄色で強調表示され**ます。</span><span class="sxs-lookup"><span data-stu-id="df35b-364">Areas which will look different to yours, but which you **should NOT change are highlighted yellow**.</span></span>
+    3. <span data-ttu-id="df35b-365">**削除する必要があるセクションは、赤で強調表示されています。**</span><span class="sxs-lookup"><span data-stu-id="df35b-365">**Sections which you need to delete, are a highlighted red.**</span></span>
+    4. <span data-ttu-id="df35b-366">正しい角かっこを削除し、コンマも削除するように注意してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-366">Be careful to delete the correct brackets, and also remove the commas.</span></span>
 
         ![コンテナーを作成する](images/AzureLabs-Lab313-27.png)
 
-    5. <span data-ttu-id="9db05-368">完成した JSON は次の図のようになります (ただし、独自の違いがあります。*ユーザー名/パスワード/モジュール名/モジュール参照*)。</span><span class="sxs-lookup"><span data-stu-id="9db05-368">The completed JSON should look like the following image (though, with your unique differences: *username/password/module name/module references*):</span></span>
+    5. <span data-ttu-id="df35b-368">完成した JSON は次の図のようになります (ただし、独自の違いがあります。*ユーザー名/パスワード/モジュール名/モジュール参照*)。</span><span class="sxs-lookup"><span data-stu-id="df35b-368">The completed JSON should look like the following image (though, with your unique differences: *username/password/module name/module references*):</span></span>
 
         ![コンテナーを作成する](images/AzureLabs-Lab313-28.png)
 
-5.  <span data-ttu-id="9db05-370">**Dockerfile. amd64**という名前のファイルを開き、その内容を次のように置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9db05-370">Open the file called **Dockerfile.amd64**, and substitute its content with the following:</span></span>
+5.  <span data-ttu-id="df35b-370">**Dockerfile. amd64**という名前のファイルを開き、その内容を次のように置き換えます。</span><span class="sxs-lookup"><span data-stu-id="df35b-370">Open the file called **Dockerfile.amd64**, and substitute its content with the following:</span></span>
 
     ```
     FROM ubuntu:xenial
@@ -731,251 +731,251 @@ ms.locfileid: "67694599"
 
     ```
 
-6.  <span data-ttu-id="9db05-371">**[モジュール]** の下にあるフォルダー (前の例で指定した名前が付いています。さらに下の例では、 *python モジュール*と呼ばれます) を右クリックし、 **[新しいフォルダー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-371">Right-click on the folder beneath **modules** (it will have the name you provided previously; in the example further down, it is called *pythonmodule*), and click on **New Folder**.</span></span> <span data-ttu-id="9db05-372">フォルダーに**画像**の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-372">Name the folder **images**.</span></span>
+6.  <span data-ttu-id="df35b-371">**[モジュール]** の下にあるフォルダー (前の例で指定した名前が付いています。さらに下の例では、 *python モジュール*と呼ばれます) を右クリックし、 **[新しいフォルダー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-371">Right-click on the folder beneath **modules** (it will have the name you provided previously; in the example further down, it is called *pythonmodule*), and click on **New Folder**.</span></span> <span data-ttu-id="df35b-372">フォルダーに**画像**の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-372">Name the folder **images**.</span></span>
 
-7.  <span data-ttu-id="9db05-373">フォルダー内に、マウスまたはキーボードを含むいくつかのイメージを追加します。</span><span class="sxs-lookup"><span data-stu-id="9db05-373">Inside the folder, add some images containing mouse or keyboard.</span></span> <span data-ttu-id="9db05-374">これらの画像は、このモデルによって分析されるイメージになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-374">Those will be the images that will be analyzed by the Tensorflow model.</span></span>
+7.  <span data-ttu-id="df35b-373">フォルダー内に、マウスまたはキーボードを含むいくつかのイメージを追加します。</span><span class="sxs-lookup"><span data-stu-id="df35b-373">Inside the folder, add some images containing mouse or keyboard.</span></span> <span data-ttu-id="df35b-374">これらの画像は、このモデルによって分析されるイメージになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-374">Those will be the images that will be analyzed by the Tensorflow model.</span></span>
 
     > [!WARNING]
-    > <span data-ttu-id="9db05-375">独自のモデルを使用している場合は、独自のモデルデータを反映するように変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-375">If you are using your own model, you will need to change this to reflect your own models data.</span></span>
+    > <span data-ttu-id="df35b-375">独自のモデルを使用している場合は、独自のモデルデータを反映するように変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-375">If you are using your own model, you will need to change this to reflect your own models data.</span></span>
 
-8.  <span data-ttu-id="9db05-376">次に、[第1章](#chapter-1---retrieve-the-custom-vision-model)で、以前にダウンロードした (または独自の**Custom Vision Service**から作成した) モデルフォルダーから、**ラベル .txt**および**モデルの pb**ファイルを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-376">You will now need to retrieve the **labels.txt** and **model.pb** files from the model folder, which you previous downloaded (or created from your own **Custom Vision Service**), in [Chapter 1](#chapter-1---retrieve-the-custom-vision-model).</span></span> <span data-ttu-id="9db05-377">ファイルを作成したら、他のファイルと共にソリューション内に配置します。</span><span class="sxs-lookup"><span data-stu-id="9db05-377">Once you have the files, place them within your solution, alongside the other files.</span></span> <span data-ttu-id="9db05-378">最終的な結果は次の図のようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-378">The final result should look like the image below:</span></span>
+8.  <span data-ttu-id="df35b-376">次に、[第1章](#chapter-1---retrieve-the-custom-vision-model)で、以前にダウンロードした (または独自の**Custom Vision Service**から作成した) モデルフォルダーから、**ラベル .txt**および**モデルの pb**ファイルを取得する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-376">You will now need to retrieve the **labels.txt** and **model.pb** files from the model folder, which you previous downloaded (or created from your own **Custom Vision Service**), in [Chapter 1](#chapter-1---retrieve-the-custom-vision-model).</span></span> <span data-ttu-id="df35b-377">ファイルを作成したら、他のファイルと共にソリューション内に配置します。</span><span class="sxs-lookup"><span data-stu-id="df35b-377">Once you have the files, place them within your solution, alongside the other files.</span></span> <span data-ttu-id="df35b-378">最終的な結果は次の図のようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-378">The final result should look like the image below:</span></span>
 
     ![コンテナーを作成する](images/AzureLabs-Lab313-29.png)
 
-## <a name="chapter-9---package-the-solution-as-a-container"></a><span data-ttu-id="9db05-380">第9章-ソリューションをコンテナーとしてパッケージ化する</span><span class="sxs-lookup"><span data-stu-id="9db05-380">Chapter 9 - Package the solution as a container</span></span>
+## <a name="chapter-9---package-the-solution-as-a-container"></a><span data-ttu-id="df35b-380">第9章-ソリューションをコンテナーとしてパッケージ化する</span><span class="sxs-lookup"><span data-stu-id="df35b-380">Chapter 9 - Package the solution as a container</span></span>
 
-1.  <span data-ttu-id="9db05-381">これで、ファイルをコンテナーとして "パッケージ化" し、 **Azure Container Registry**にプッシュできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="9db05-381">You are now ready to "package" your files as a container and push it to your **Azure Container Registry**.</span></span> <span data-ttu-id="9db05-382">VS Code で、*統合ターミナル*( **\`** **View** > **integrated terminal**または**Ctrl**+) を開き、次の行を使用して**Docker**にログインします (を使用して、コマンドと Azure Container Registry の資格情報 **(ACR)** ):</span><span class="sxs-lookup"><span data-stu-id="9db05-382">Within VS Code, open the *Integrated Terminal* (**View** > **Integrated Terminal** or **Ctrl**+**\`**), and use the following line to login to **Docker** (substitute the values of the command with the credentials of your **Azure Container Registry (ACR)**):</span></span>
+1.  <span data-ttu-id="df35b-381">これで、ファイルをコンテナーとして "パッケージ化" し、 **Azure Container Registry**にプッシュできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="df35b-381">You are now ready to "package" your files as a container and push it to your **Azure Container Registry**.</span></span> <span data-ttu-id="df35b-382">VS Code で、*統合ターミナル*( **\`** **View** > **integrated terminal**または**Ctrl**+) を開き、次の行を使用して**Docker**にログインします (を使用して、コマンドと Azure Container Registry の資格情報 **(ACR)** ):</span><span class="sxs-lookup"><span data-stu-id="df35b-382">Within VS Code, open the *Integrated Terminal* (**View** > **Integrated Terminal** or **Ctrl**+**\`**), and use the following line to login to **Docker** (substitute the values of the command with the credentials of your **Azure Container Registry (ACR)**):</span></span>
 
     ```bash
         docker login -u <ACR username> -p <ACR password> <ACR login server>
     ```
 
-2. <span data-ttu-id="9db05-383">ファイルの**配置テンプレート**を右クリックし、 **[ビルド IoT Edge ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-383">Right-click on the file **deployment.template.json**, and click **Build IoT Edge Solution**.</span></span> <span data-ttu-id="9db05-384">このビルドプロセスは、(デバイスによっては) かなりの時間がかかります。そのため、待機する準備を整えてください。</span><span class="sxs-lookup"><span data-stu-id="9db05-384">This build process takes quite some time (depending on your device), so be prepared to wait.</span></span> <span data-ttu-id="9db05-385">ビルドプロセスが完了すると、 **config**という名前の新しいフォルダー内に**配置の json**ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-385">After the build process finishes, a **deployment.json** file will have been created inside a new folder called **config**.</span></span>
+2. <span data-ttu-id="df35b-383">ファイルの**配置テンプレート**を右クリックし、 **[ビルド IoT Edge ソリューション]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-383">Right-click on the file **deployment.template.json**, and click **Build IoT Edge Solution**.</span></span> <span data-ttu-id="df35b-384">このビルドプロセスは、(デバイスによっては) かなりの時間がかかります。そのため、待機する準備を整えてください。</span><span class="sxs-lookup"><span data-stu-id="df35b-384">This build process takes quite some time (depending on your device), so be prepared to wait.</span></span> <span data-ttu-id="df35b-385">ビルドプロセスが完了すると、 **config**という名前の新しいフォルダー内に**配置の json**ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-385">After the build process finishes, a **deployment.json** file will have been created inside a new folder called **config**.</span></span>
 
     ![デプロイの作成](images/AzureLabs-Lab313-30.png)
 
-3. <span data-ttu-id="9db05-387">**コマンドパレット**をもう一度開き、Azure を**検索します。** サインインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-387">Open the **Command Palette** again, and search for **Azure: Sign In**.</span></span> <span data-ttu-id="9db05-388">Azure アカウントの資格情報を使用して、画面の指示に従います。VS Code には、*コピーして開く*オプションが用意されています。これにより、すぐに必要なデバイスコードがコピーされ、既定の web ブラウザーが開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-388">Follow the prompts using your Azure Account credentials; VS Code will provide you with an option to *Copy and Open*, which will copy the device code you will soon need, and open your default web browser.</span></span> <span data-ttu-id="9db05-389">プロンプトが表示されたら、デバイスコードを貼り付けて、コンピューターを認証します。</span><span class="sxs-lookup"><span data-stu-id="9db05-389">When asked, paste the device code, to authenticate your machine.</span></span>
+3. <span data-ttu-id="df35b-387">**コマンドパレット**をもう一度開き、Azure を**検索します。** サインインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-387">Open the **Command Palette** again, and search for **Azure: Sign In**.</span></span> <span data-ttu-id="df35b-388">Azure アカウントの資格情報を使用して、画面の指示に従います。VS Code には、*コピーして開く*オプションが用意されています。これにより、すぐに必要なデバイスコードがコピーされ、既定の web ブラウザーが開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-388">Follow the prompts using your Azure Account credentials; VS Code will provide you with an option to *Copy and Open*, which will copy the device code you will soon need, and open your default web browser.</span></span> <span data-ttu-id="df35b-389">プロンプトが表示されたら、デバイスコードを貼り付けて、コンピューターを認証します。</span><span class="sxs-lookup"><span data-stu-id="df35b-389">When asked, paste the device code, to authenticate your machine.</span></span>
 
     ![コピーして開く](images/AzureLabs-Lab313-31.png)
 
-4. <span data-ttu-id="9db05-391">サインインすると、[*探索*] パネルの下部に **[Azure IoT Hub デバイス]** という新しいセクションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-391">Once signed in you will notice, on the bottom side of the *Explore* panel, a new section called **Azure IoT Hub Devices**.</span></span> <span data-ttu-id="9db05-392">展開するには、このセクションをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-392">Click this section to expand it.</span></span>
+4. <span data-ttu-id="df35b-391">サインインすると、[*探索*] パネルの下部に **[Azure IoT Hub デバイス]** という新しいセクションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-391">Once signed in you will notice, on the bottom side of the *Explore* panel, a new section called **Azure IoT Hub Devices**.</span></span> <span data-ttu-id="df35b-392">展開するには、このセクションをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-392">Click this section to expand it.</span></span>
 
     ![エッジデバイス](images/AzureLabs-Lab313-32.png)
 
-5. <span data-ttu-id="9db05-394">デバイスがここではない場合を右クリックする必要があります。 *Azure IoT Hub デバイス*、をクリックし、 **IoT Hub 接続文字列の設定**します。</span><span class="sxs-lookup"><span data-stu-id="9db05-394">If your device is not here, you will need to right-click *Azure IoT Hub Devices*, and then click **Set IoT Hub Connection String**.</span></span> <span data-ttu-id="9db05-395">**コマンドパレット**(VS Code の上部) で、*接続文字列*を入力するように求められます。</span><span class="sxs-lookup"><span data-stu-id="9db05-395">You will then see that the **Command Palette** (at the top of VS Code), will prompt you to input your *Connection String*.</span></span> <span data-ttu-id="9db05-396">これは、[章 3](#chapter-3---the-iot-hub-service)の最後にメモした*接続文字列*です。</span><span class="sxs-lookup"><span data-stu-id="9db05-396">This is the *Connection String* you noted down at the end of [Chapter 3](#chapter-3---the-iot-hub-service).</span></span> <span data-ttu-id="9db05-397">で文字列をコピーしたら、 **enter キーを**押します。</span><span class="sxs-lookup"><span data-stu-id="9db05-397">Press the **Enter** key, once you have copied the string in.</span></span>    
+5. <span data-ttu-id="df35b-394">デバイスがここではない場合を右クリックする必要があります。 *Azure IoT Hub デバイス*、をクリックし、 **IoT Hub 接続文字列の設定**します。</span><span class="sxs-lookup"><span data-stu-id="df35b-394">If your device is not here, you will need to right-click *Azure IoT Hub Devices*, and then click **Set IoT Hub Connection String**.</span></span> <span data-ttu-id="df35b-395">**コマンドパレット**(VS Code の上部) で、*接続文字列*を入力するように求められます。</span><span class="sxs-lookup"><span data-stu-id="df35b-395">You will then see that the **Command Palette** (at the top of VS Code), will prompt you to input your *Connection String*.</span></span> <span data-ttu-id="df35b-396">これは、[章 3](#chapter-3---the-iot-hub-service)の最後にメモした*接続文字列*です。</span><span class="sxs-lookup"><span data-stu-id="df35b-396">This is the *Connection String* you noted down at the end of [Chapter 3](#chapter-3---the-iot-hub-service).</span></span> <span data-ttu-id="df35b-397">で文字列をコピーしたら、enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="df35b-397">Press the **Enter** key, once you have copied the string in.</span></span>    
 
-6. <span data-ttu-id="9db05-398">デバイスが読み込まれ、表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-398">Your device should load, and appear.</span></span> <span data-ttu-id="9db05-399">デバイス名を右クリックし、 **[単一デバイスの展開の作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-399">Right-click on the device name, and then click, **Create Deployment for Single Device**.</span></span>
+6. <span data-ttu-id="df35b-398">デバイスが読み込まれ、表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-398">Your device should load, and appear.</span></span> <span data-ttu-id="df35b-399">デバイス名を右クリックし、 **[単一デバイスの展開の作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-399">Right-click on the device name, and then click, **Create Deployment for Single Device**.</span></span>
 
     ![デプロイの作成](images/AzureLabs-Lab313-33b.png)
 
-7. <span data-ttu-id="9db05-401">*ファイルエクスプローラー*のプロンプトが表示されます。ここで、 **config**フォルダーに移動して、そのファイルを選択します。</span><span class="sxs-lookup"><span data-stu-id="9db05-401">You will get a *File Explorer* prompt, where you can navigate to the **config** folder, and then select the **deployment.json** file.</span></span> <span data-ttu-id="9db05-402">そのファイルを選択した状態で、 **[エッジ配置マニフェストの選択]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-402">With that file selected, click the **Select Edge Deployment Manifest** button.</span></span>
+7. <span data-ttu-id="df35b-401">*ファイルエクスプローラー*のプロンプトが表示されます。ここで、 **config**フォルダーに移動して、そのファイルを選択します。</span><span class="sxs-lookup"><span data-stu-id="df35b-401">You will get a *File Explorer* prompt, where you can navigate to the **config** folder, and then select the **deployment.json** file.</span></span> <span data-ttu-id="df35b-402">そのファイルを選択した状態で、 **[エッジ配置マニフェストの選択]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-402">With that file selected, click the **Select Edge Deployment Manifest** button.</span></span>
 
     ![デプロイの作成](images/AzureLabs-Lab313-34.png)
 
-8. <span data-ttu-id="9db05-404">この時点で、 **Azure Container Registry**からコンテナーをモジュールとしてデプロイし、実際にデバイスにデプロイするためのマニフェストを**IoT Hub サービス**に提供しました。</span><span class="sxs-lookup"><span data-stu-id="9db05-404">At this point you have provided your **IoT Hub Service** with the manifest for it to deploy your container, as a module, from your **Azure Container Registry**, effectively deploying it to your device.</span></span>
+8. <span data-ttu-id="df35b-404">この時点で、 **Azure Container Registry**からコンテナーをモジュールとしてデプロイし、実際にデバイスにデプロイするためのマニフェストを**IoT Hub サービス**に提供しました。</span><span class="sxs-lookup"><span data-stu-id="df35b-404">At this point you have provided your **IoT Hub Service** with the manifest for it to deploy your container, as a module, from your **Azure Container Registry**, effectively deploying it to your device.</span></span>
 
-9. <span data-ttu-id="9db05-405">デバイスから IoT Hub に送信されたメッセージを表示するには、 **[エクスプローラー]** パネルの **[Azure IoT Hub デバイス]** セクションでデバイス名をもう一度右クリックし、 **[監視 D2C メッセージの開始]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-405">To view the messages sent from your device to the IoT Hub, right-click again on your device name in the **Azure IoT Hub Devices** section, in the **Explorer** panel, and click on **Start Monitoring D2C Message**.</span></span> <span data-ttu-id="9db05-406">デバイスから送信されたメッセージが VS ターミナルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-406">The messages sent from your device should appear in the VS Terminal.</span></span> <span data-ttu-id="9db05-407">しばらく時間がかかることがあります。</span><span class="sxs-lookup"><span data-stu-id="9db05-407">Be patient, as this may take some time.</span></span> <span data-ttu-id="9db05-408">デバッグについては、次の章を参照してください。配置が成功したかどうかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-408">See the next Chapter for debugging, and checking if deployment was successful.</span></span>
+9. <span data-ttu-id="df35b-405">デバイスから IoT Hub に送信されたメッセージを表示するには、 **[エクスプローラー]** パネルの **[Azure IoT Hub デバイス]** セクションでデバイス名をもう一度右クリックし、 **[監視 D2C メッセージの開始]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-405">To view the messages sent from your device to the IoT Hub, right-click again on your device name in the **Azure IoT Hub Devices** section, in the **Explorer** panel, and click on **Start Monitoring D2C Message**.</span></span> <span data-ttu-id="df35b-406">デバイスから送信されたメッセージが VS ターミナルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-406">The messages sent from your device should appear in the VS Terminal.</span></span> <span data-ttu-id="df35b-407">しばらく時間がかかることがあります。</span><span class="sxs-lookup"><span data-stu-id="df35b-407">Be patient, as this may take some time.</span></span> <span data-ttu-id="df35b-408">デバッグについては、次の章を参照してください。配置が成功したかどうかを確認してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-408">See the next Chapter for debugging, and checking if deployment was successful.</span></span>
 
-<span data-ttu-id="9db05-409">このモジュールは、各イテレーションで**images**フォルダー内のイメージを反復処理し、それらを分析します。</span><span class="sxs-lookup"><span data-stu-id="9db05-409">This module will now iterate between the images in the **images** folder and analyze them, with each iteration.</span></span> <span data-ttu-id="9db05-410">これは明らかに、基本的な機械学習モデルを使用して IoT Edge デバイス環境で動作させる方法のデモにすぎません。</span><span class="sxs-lookup"><span data-stu-id="9db05-410">This is obviously just a demonstration of how to get the basic machine learning model to work in an IoT Edge device environment.</span></span> 
+<span data-ttu-id="df35b-409">このモジュールは、各イテレーションで**images**フォルダー内のイメージを反復処理し、それらを分析します。</span><span class="sxs-lookup"><span data-stu-id="df35b-409">This module will now iterate between the images in the **images** folder and analyze them, with each iteration.</span></span> <span data-ttu-id="df35b-410">これは明らかに、基本的な機械学習モデルを使用して IoT Edge デバイス環境で動作させる方法のデモにすぎません。</span><span class="sxs-lookup"><span data-stu-id="df35b-410">This is obviously just a demonstration of how to get the basic machine learning model to work in an IoT Edge device environment.</span></span> 
 
-<span data-ttu-id="9db05-411">この例の機能を拡張するには、いくつかの方法を実行します。</span><span class="sxs-lookup"><span data-stu-id="9db05-411">To expand the functionality of this example, you could proceed in several ways.</span></span> <span data-ttu-id="9db05-412">1つの方法として、コンテナーにいくつかのコードを含め、デバイスに接続されている web カメラから写真をキャプチャして、images フォルダーに保存する方法があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-412">One way could be including some code in the container, that captures photos from a webcam that is connected to the device, and saves the images in the images folder.</span></span> 
+<span data-ttu-id="df35b-411">この例の機能を拡張するには、いくつかの方法を実行します。</span><span class="sxs-lookup"><span data-stu-id="df35b-411">To expand the functionality of this example, you could proceed in several ways.</span></span> <span data-ttu-id="df35b-412">1つの方法として、コンテナーにいくつかのコードを含め、デバイスに接続されている web カメラから写真をキャプチャして、images フォルダーに保存する方法があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-412">One way could be including some code in the container, that captures photos from a webcam that is connected to the device, and saves the images in the images folder.</span></span> 
 
-<span data-ttu-id="9db05-413">別の方法として、IoT デバイスからコンテナーにイメージをコピーすることもできます。</span><span class="sxs-lookup"><span data-stu-id="9db05-413">Another way could be copying the images from the IoT device into the container.</span></span> <span data-ttu-id="9db05-414">これを行う実際の方法として、IoT デバイスターミナルで次のコマンドを実行します (たとえば、プロセスを自動化する場合は、小規模なアプリでジョブを実行できます)。</span><span class="sxs-lookup"><span data-stu-id="9db05-414">A practical way to do that is to run the following command in the IoT device Terminal (perhaps a small app could do the job, if you wished to automate the process).</span></span> <span data-ttu-id="9db05-415">このコマンドは、ファイルが格納されているフォルダーの場所から手動で実行することでテストできます。</span><span class="sxs-lookup"><span data-stu-id="9db05-415">You can test this command by running it manually from the folder location where your files are stored:</span></span>
+<span data-ttu-id="df35b-413">別の方法として、IoT デバイスからコンテナーにイメージをコピーすることもできます。</span><span class="sxs-lookup"><span data-stu-id="df35b-413">Another way could be copying the images from the IoT device into the container.</span></span> <span data-ttu-id="df35b-414">これを行う実際の方法として、IoT デバイスターミナルで次のコマンドを実行します (たとえば、プロセスを自動化する場合は、小規模なアプリでジョブを実行できます)。</span><span class="sxs-lookup"><span data-stu-id="df35b-414">A practical way to do that is to run the following command in the IoT device Terminal (perhaps a small app could do the job, if you wished to automate the process).</span></span> <span data-ttu-id="df35b-415">このコマンドは、ファイルが格納されているフォルダーの場所から手動で実行することでテストできます。</span><span class="sxs-lookup"><span data-stu-id="df35b-415">You can test this command by running it manually from the folder location where your files are stored:</span></span>
 
 ```bash
     sudo docker cp <filename> <modulename>:/app/images/<a name of your choice>
 ```
 
-## <a name="chapter-10---debugging-the-iot-edge-runtime"></a><span data-ttu-id="9db05-416">第10章-IoT Edge ランタイムのデバッグ</span><span class="sxs-lookup"><span data-stu-id="9db05-416">Chapter 10 - Debugging the IoT Edge Runtime</span></span>
+## <a name="chapter-10---debugging-the-iot-edge-runtime"></a><span data-ttu-id="df35b-416">第10章-IoT Edge ランタイムのデバッグ</span><span class="sxs-lookup"><span data-stu-id="df35b-416">Chapter 10 - Debugging the IoT Edge Runtime</span></span>
 
-<span data-ttu-id="9db05-417">次に示すのは、 **Ubuntu デバイス**から*IoT Edge ランタイム*のメッセージングアクティビティを監視およびデバッグするのに役立つコマンドラインとヒントの一覧です。</span><span class="sxs-lookup"><span data-stu-id="9db05-417">The following are a list of command lines, and tips, to help you monitor and debug the messaging activity of the *IoT Edge Runtime*, from your **Ubuntu device**.</span></span> 
+<span data-ttu-id="df35b-417">次に示すのは、 **Ubuntu デバイス**から*IoT Edge ランタイム*のメッセージングアクティビティを監視およびデバッグするのに役立つコマンドラインとヒントの一覧です。</span><span class="sxs-lookup"><span data-stu-id="df35b-417">The following are a list of command lines, and tips, to help you monitor and debug the messaging activity of the *IoT Edge Runtime*, from your **Ubuntu device**.</span></span> 
 
-- <span data-ttu-id="9db05-418">次のコマンドラインを実行して、 *IoT Edge ランタイム*の状態を確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-418">Check the *IoT Edge Runtime* status by running the following command line:</span></span>
+- <span data-ttu-id="df35b-418">次のコマンドラインを実行して、 *IoT Edge ランタイム*の状態を確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-418">Check the *IoT Edge Runtime* status by running the following command line:</span></span>
 
     ```bash
         sudo systemctl status iotedge
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="9db05-419">ステータスの表示を完了するには、 **Ctrl + C**キーを押してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-419">Remember to press **Ctrl + C**, to finish viewing the status.</span></span>
+    > <span data-ttu-id="df35b-419">ステータスの表示を完了するには、 **Ctrl + C**キーを押してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-419">Remember to press **Ctrl + C**, to finish viewing the status.</span></span>
 
-- <span data-ttu-id="9db05-420">現在展開されているコンテナーを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="9db05-420">List the containers that are currently deployed.</span></span> <span data-ttu-id="9db05-421">*IoT Hub サービス*がコンテナーを正常にデプロイした場合は、次のコマンドラインを実行すると表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-421">If the *IoT Hub Service* has deployed the containers successfully, they will be displayed by running the following command line:</span></span>
+- <span data-ttu-id="df35b-420">現在展開されているコンテナーを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="df35b-420">List the containers that are currently deployed.</span></span> <span data-ttu-id="df35b-421">*IoT Hub サービス*がコンテナーを正常にデプロイした場合は、次のコマンドラインを実行すると表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-421">If the *IoT Hub Service* has deployed the containers successfully, they will be displayed by running the following command line:</span></span>
 
     ```bash
         sudo iotedge list
     ```
 
-    <span data-ttu-id="9db05-422">または</span><span class="sxs-lookup"><span data-stu-id="9db05-422">Or</span></span>
+    <span data-ttu-id="df35b-422">または</span><span class="sxs-lookup"><span data-stu-id="df35b-422">Or</span></span>
 
     ```bash
         sudo docker ps
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="9db05-423">上記は、モジュールが正常にデプロイされているかどうかを確認するための優れた方法であり、一覧に表示されます。それ以外の場合は、 *edgeHub* と *edgeAgent* **のみ** が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-423">The above is a good way to check whether your module has been deployed successfully, as it will appear in the list; you will otherwise **only** see the *edgeHub* and *edgeAgent*.</span></span>
+    > <span data-ttu-id="df35b-423">上記は、モジュールが正常にデプロイされているかどうかを確認するための優れた方法であり、一覧に表示されます。それ以外の場合は、 *edgeHub* と *edgeAgent* **のみ** が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-423">The above is a good way to check whether your module has been deployed successfully, as it will appear in the list; you will otherwise **only** see the *edgeHub* and *edgeAgent*.</span></span>
 
-- <span data-ttu-id="9db05-424">コンテナーのコードログを表示するには、次のコマンドラインを実行します。</span><span class="sxs-lookup"><span data-stu-id="9db05-424">To display the code logs of a container, run the following command line:</span></span>
+- <span data-ttu-id="df35b-424">コンテナーのコードログを表示するには、次のコマンドラインを実行します。</span><span class="sxs-lookup"><span data-stu-id="df35b-424">To display the code logs of a container, run the following command line:</span></span>
 
     ```bash
         journalctl -u iotedge
     ```
 
-<span data-ttu-id="9db05-425">**IoT Edge ランタイムを管理するための便利なコマンド:**</span><span class="sxs-lookup"><span data-stu-id="9db05-425">**Useful commands to manage the IoT Edge Runtime:**</span></span>
+<span data-ttu-id="df35b-425">**IoT Edge ランタイムを管理するための便利なコマンド:**</span><span class="sxs-lookup"><span data-stu-id="df35b-425">**Useful commands to manage the IoT Edge Runtime:**</span></span>
 
--  <span data-ttu-id="9db05-426">ホスト内のすべてのコンテナーを削除するには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="9db05-426">To delete all containers in the host:</span></span>
+-  <span data-ttu-id="df35b-426">ホスト内のすべてのコンテナーを削除するには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="df35b-426">To delete all containers in the host:</span></span>
 
     ```bash
         sudo docker rm -f $(sudo docker ps -aq)
     ```
 
--  <span data-ttu-id="9db05-427">*IoT Edge ランタイム*を停止するには:</span><span class="sxs-lookup"><span data-stu-id="9db05-427">To stop the *IoT Edge Runtime*:</span></span>
+-  <span data-ttu-id="df35b-427">*IoT Edge ランタイム*を停止するには:</span><span class="sxs-lookup"><span data-stu-id="df35b-427">To stop the *IoT Edge Runtime*:</span></span>
 
     ```bash
         sudo systemctl stop iotedge
     ```
 
-## <a name="chapter-11---create-table-service"></a><span data-ttu-id="9db05-428">第11章-Create Table Service</span><span class="sxs-lookup"><span data-stu-id="9db05-428">Chapter 11 - Create Table Service</span></span> 
+## <a name="chapter-11---create-table-service"></a><span data-ttu-id="df35b-428">第11章-Create Table Service</span><span class="sxs-lookup"><span data-stu-id="df35b-428">Chapter 11 - Create Table Service</span></span> 
 
-<span data-ttu-id="9db05-429">Azure Portal に戻ります。ここでは、ストレージリソースを作成して、Azure Tables サービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-429">Navigate back to your Azure Portal, where you will create an Azure Tables Service, by creating a Storage resource.</span></span>
+<span data-ttu-id="df35b-429">Azure Portal に戻ります。ここでは、ストレージリソースを作成して、Azure Tables サービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-429">Navigate back to your Azure Portal, where you will create an Azure Tables Service, by creating a Storage resource.</span></span>
 
-1. <span data-ttu-id="9db05-430">まだサインインしていない場合は、 [Azure Portal](https://portal.azure.com)にログインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-430">If not already signed in, log into the [Azure Portal](https://portal.azure.com).</span></span>
+1. <span data-ttu-id="df35b-430">まだサインインしていない場合は、 [Azure Portal](https://portal.azure.com)にログインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-430">If not already signed in, log into the [Azure Portal](https://portal.azure.com).</span></span>
 
-2. <span data-ttu-id="9db05-431">ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **[ストレージアカウント]** を検索して、 **enter**キーを押して検索を開始します。</span><span class="sxs-lookup"><span data-stu-id="9db05-431">Once logged in, click on **Create a resource**, in the top left corner, and search for **Storage account**, and press the **Enter** key, to start the search.</span></span>
+2. <span data-ttu-id="df35b-431">ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **[ストレージアカウント]** を検索して、 **enter**キーを押して検索を開始します。</span><span class="sxs-lookup"><span data-stu-id="df35b-431">Once logged in, click on **Create a resource**, in the top left corner, and search for **Storage account**, and press the **Enter** key, to start the search.</span></span>
 
-3. <span data-ttu-id="9db05-432">表示されたら、一覧から **[ストレージアカウント-blob、file、table、queue]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-432">Once it has appeared, click **Storage account - blob, file, table, queue** from the list.</span></span>
+3. <span data-ttu-id="df35b-432">表示されたら、一覧から **[ストレージアカウント-blob、file、table、queue]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-432">Once it has appeared, click **Storage account - blob, file, table, queue** from the list.</span></span>
 
     ![ストレージアカウントの検索](images/AzureLabs-Lab313-35.png)
 
-4. <span data-ttu-id="9db05-434">新しいページには、**ストレージアカウント**サービスの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-434">The new page will provide a description of the **Storage account** Service.</span></span> <span data-ttu-id="9db05-435">このプロンプトの左下にある **[作成]** ボタンをクリックして、このサービスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-435">At the bottom left of this prompt, click the **Create** button, to create an instance of this Service.</span></span>
+4. <span data-ttu-id="df35b-434">新しいページには、**ストレージアカウント**サービスの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-434">The new page will provide a description of the **Storage account** Service.</span></span> <span data-ttu-id="df35b-435">このプロンプトの左下にある **[作成]** ボタンをクリックして、このサービスのインスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-435">At the bottom left of this prompt, click the **Create** button, to create an instance of this Service.</span></span>
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-36.png)
 
-5. <span data-ttu-id="9db05-437">**[作成]** をクリックすると、パネルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-437">Once you have clicked on **Create**, a panel will appear:</span></span>
+5. <span data-ttu-id="df35b-437">**[作成]** をクリックすると、パネルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-437">Once you have clicked on **Create**, a panel will appear:</span></span>
 
-    1. <span data-ttu-id="9db05-438">このサービスインスタンスに必要な**名前**を挿入します (*すべて小文字にする必要があり*ます)。</span><span class="sxs-lookup"><span data-stu-id="9db05-438">Insert your desired **Name** for this Service instance (*must be all lowercase*).</span></span>
+    1. <span data-ttu-id="df35b-438">このサービスインスタンスに必要な**名前**を挿入します (*すべて小文字にする必要があり*ます)。</span><span class="sxs-lookup"><span data-stu-id="df35b-438">Insert your desired **Name** for this Service instance (*must be all lowercase*).</span></span>
 
-    2. <span data-ttu-id="9db05-439">**[デプロイモデル]** で、 **[リソースマネージャー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-439">For **Deployment model**, click **Resource manager**.</span></span>
+    2. <span data-ttu-id="df35b-439">**[デプロイモデル]** で、 **[リソースマネージャー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-439">For **Deployment model**, click **Resource manager**.</span></span>
 
-    3. <span data-ttu-id="9db05-440">**[アカウントの種類]** で、ドロップダウンメニューを使用して、 **[ストレージ (汎用 v1)]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-440">For **Account kind**, using the dropdown menu, click **Storage (general purpose v1)**.</span></span>
+    3. <span data-ttu-id="df35b-440">**[アカウントの種類]** で、ドロップダウンメニューを使用して、 **[ストレージ (汎用 v1)]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-440">For **Account kind**, using the dropdown menu, click **Storage (general purpose v1)**.</span></span>
 
-    4. <span data-ttu-id="9db05-441">適切な**場所**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-441">Click an appropriate **Location**.</span></span>
+    4. <span data-ttu-id="df35b-441">適切な**場所**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-441">Click an appropriate **Location**.</span></span>
     
-    5. <span data-ttu-id="9db05-442">**[レプリケーション]** ドロップダウンメニューで、 **[読み取りアクセス-geo 冗長ストレージ (RA-GRS)]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-442">For the **Replication** dropdown menu, click **Read-access-geo-redundant storage (RA-GRS)**.</span></span>
+    5. <span data-ttu-id="df35b-442">**[レプリケーション]** ドロップダウンメニューで、 **[読み取りアクセス-geo 冗長ストレージ (RA-GRS)]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-442">For the **Replication** dropdown menu, click **Read-access-geo-redundant storage (RA-GRS)**.</span></span>
 
-    6. <span data-ttu-id="9db05-443">**[パフォーマンス]** で **[標準]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-443">For **Performance**, click **Standard**.</span></span>
+    6. <span data-ttu-id="df35b-443">**[パフォーマンス]** で **[標準]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-443">For **Performance**, click **Standard**.</span></span>
 
-    7. <span data-ttu-id="9db05-444">**[安全な転送が必要]** セクションで、 **[無効]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-444">Within the **Secure transfer required** section, click **Disabled**.</span></span>
+    7. <span data-ttu-id="df35b-444">**[安全な転送が必要]** セクションで、 **[無効]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-444">Within the **Secure transfer required** section, click **Disabled**.</span></span>
 
-    8. <span data-ttu-id="9db05-445">**[サブスクリプション]** ドロップダウンメニューから、適切なサブスクリプションをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-445">From the **Subscription** dropdown menu, click an appropriate subscription.</span></span>
+    8. <span data-ttu-id="df35b-445">**[サブスクリプション]** ドロップダウンメニューから、適切なサブスクリプションをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-445">From the **Subscription** dropdown menu, click an appropriate subscription.</span></span>
 
-    9. <span data-ttu-id="9db05-446">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-446">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="9db05-447">リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-447">A resource group provides a way to monitor, control access, provision, and manage, billing for a collection of Azure assets.</span></span> <span data-ttu-id="9db05-448">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9db05-448">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
+    9. <span data-ttu-id="df35b-446">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-446">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="df35b-447">リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-447">A resource group provides a way to monitor, control access, provision, and manage, billing for a collection of Azure assets.</span></span> <span data-ttu-id="df35b-448">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df35b-448">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
 
-        > <span data-ttu-id="9db05-449">Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-449">If you wish to read more about Azure Resource Groups, please follow this [link on how to manage a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
+        > <span data-ttu-id="df35b-449">Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-449">If you wish to read more about Azure Resource Groups, please follow this [link on how to manage a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
 
-    10. <span data-ttu-id="9db05-450">このオプションが選択されている場合は、 **[仮想ネットワーク]** を **[無効]** のままにします。</span><span class="sxs-lookup"><span data-stu-id="9db05-450">Leave **Virtual networks** as **Disabled**, if this is an option for you.</span></span>
+    10. <span data-ttu-id="df35b-450">このオプションが選択されている場合は、 **[仮想ネットワーク]** を **[無効]** のままにします。</span><span class="sxs-lookup"><span data-stu-id="df35b-450">Leave **Virtual networks** as **Disabled**, if this is an option for you.</span></span>
 
-    11. <span data-ttu-id="9db05-451">**[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-451">Click **Create**.</span></span>
+    11. <span data-ttu-id="df35b-451">**[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-451">Click **Create**.</span></span>
 
         ![ストレージの詳細の入力](images/AzureLabs-Lab313-37.png)
 
-6. <span data-ttu-id="9db05-453">**[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="9db05-453">Once you have clicked on **Create**, you will have to wait for the Service to be created, this might take a minute.</span></span>
+6. <span data-ttu-id="df35b-453">**[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="df35b-453">Once you have clicked on **Create**, you will have to wait for the Service to be created, this might take a minute.</span></span>
 
-7. <span data-ttu-id="9db05-454">サービスインスタンスが作成されると、ポータルに通知が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-454">A notification will appear in the Portal once the Service instance is created.</span></span> <span data-ttu-id="9db05-455">通知をクリックして、新しいサービスインスタンスを探索します。</span><span class="sxs-lookup"><span data-stu-id="9db05-455">Click on the notifications to explore your new Service instance.</span></span>
+7. <span data-ttu-id="df35b-454">サービスインスタンスが作成されると、ポータルに通知が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-454">A notification will appear in the Portal once the Service instance is created.</span></span> <span data-ttu-id="df35b-455">通知をクリックして、新しいサービスインスタンスを探索します。</span><span class="sxs-lookup"><span data-stu-id="df35b-455">Click on the notifications to explore your new Service instance.</span></span>
 
     ![新しいストレージ通知](images/AzureLabs-Lab313-38.png)
 
-8. <span data-ttu-id="9db05-457">通知の **[リソースに移動]** ボタンをクリックすると、新しいストレージサービスインスタンスの概要ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-457">Click the **Go to resource** button in the notification, and you will be taken to your new Storage Service instance overview page.</span></span>
+8. <span data-ttu-id="df35b-457">通知の **[リソースに移動]** ボタンをクリックすると、新しいストレージサービスインスタンスの概要ページが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-457">Click the **Go to resource** button in the notification, and you will be taken to your new Storage Service instance overview page.</span></span>
 
     ![リソースにアクセス](images/AzureLabs-Lab313-39.png)
 
-9. <span data-ttu-id="9db05-459">概要 ページで、右側にある **テーブル** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-459">From the overview page, to the right-hand side, click **Tables**.</span></span>
+9. <span data-ttu-id="df35b-459">概要 ページで、右側にある **テーブル** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-459">From the overview page, to the right-hand side, click **Tables**.</span></span>
     
     ![tables](images/AzureLabs-Lab313-40.png)
 
-10. <span data-ttu-id="9db05-461">右側のパネルが変更され、**テーブルサービス**情報が表示されます。新しいテーブルを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-461">The panel on the right will change to show the **Table Service** information, wherein you need to add a new table.</span></span> <span data-ttu-id="9db05-462">これを行うには、左上隅にある **[+ テーブル]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-462">Do this by clicking the **+ Table** button to the top-left corner.</span></span>
+10. <span data-ttu-id="df35b-461">右側のパネルが変更され、**テーブルサービス**情報が表示されます。新しいテーブルを追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-461">The panel on the right will change to show the **Table Service** information, wherein you need to add a new table.</span></span> <span data-ttu-id="df35b-462">これを行うには、左上隅にある **[+ テーブル]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-462">Do this by clicking the **+ Table** button to the top-left corner.</span></span>
 
     ![テーブルを開く](images/AzureLabs-Lab313-41.png)
 
-11. <span data-ttu-id="9db05-464">新しいページが表示されます。ここには、**テーブル名**を入力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-464">A new page will be shown, wherein you need to enter a **Table name**.</span></span> <span data-ttu-id="9db05-465">これは、後の章で (Function App を作成し、Power BI)、アプリケーション内のデータを参照するために使用する名前です。</span><span class="sxs-lookup"><span data-stu-id="9db05-465">This is the name you will use to refer to the data in your application in later Chapters (creating Function App, and Power BI).</span></span> <span data-ttu-id="9db05-466">名前として**Iotmessages**を挿入し (このドキュメントで後ほど使用する場合はそのままにしておきます)、[ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-466">Insert **IoTMessages** as the name (you can choose your own, just remember it when used later in this document) and click **OK**.</span></span> 
+11. <span data-ttu-id="df35b-464">新しいページが表示されます。ここには、**テーブル名**を入力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-464">A new page will be shown, wherein you need to enter a **Table name**.</span></span> <span data-ttu-id="df35b-465">これは、後の章で (Function App を作成し、Power BI)、アプリケーション内のデータを参照するために使用する名前です。</span><span class="sxs-lookup"><span data-stu-id="df35b-465">This is the name you will use to refer to the data in your application in later Chapters (creating Function App, and Power BI).</span></span> <span data-ttu-id="df35b-466">名前として**Iotmessages**を挿入し (このドキュメントで後ほど使用する場合はそのままにしておきます)、[ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-466">Insert **IoTMessages** as the name (you can choose your own, just remember it when used later in this document) and click **OK**.</span></span> 
 
-12. <span data-ttu-id="9db05-467">新しいテーブルが作成されると、**テーブルサービス**のページ (下部) に表示されるようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-467">Once the new table has been created, you will be able to see it within the **Table Service** page (at the bottom).</span></span>
+12. <span data-ttu-id="df35b-467">新しいテーブルが作成されると、**テーブルサービス**のページ (下部) に表示されるようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-467">Once the new table has been created, you will be able to see it within the **Table Service** page (at the bottom).</span></span>
 
     ![新しいテーブルが作成されました](images/AzureLabs-Lab313-42.png)  
 
-13. <span data-ttu-id="9db05-469">次に、 **[アクセスキー]** をクリックし、**ストレージアカウント名**と**キー**のコピーを作成します (メモ帳を使用)。 **Azure Function App**を作成するときに、このコースの後半でこれらの値を使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-469">Now click on **Access keys** and take a copy of the **Storage account name** and **Key** (using your Notepad), you will use these values later in this course, when creating the **Azure Function App**.</span></span>
+13. <span data-ttu-id="df35b-469">次に、 **[アクセスキー]** をクリックし、**ストレージアカウント名**と**キー**のコピーを作成します (メモ帳を使用)。 **Azure Function App**を作成するときに、このコースの後半でこれらの値を使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-469">Now click on **Access keys** and take a copy of the **Storage account name** and **Key** (using your Notepad), you will use these values later in this course, when creating the **Azure Function App**.</span></span>
 
     ![新しいテーブルが作成されました](images/AzureLabs-Lab313-43.png) 
 
-14. <span data-ttu-id="9db05-471">左側のパネルを再び使用して、[ *Table Service* ] \ (テーブルサービス \) セクションまでスクロールし、[ **tables** (または新しいポータルでの**テーブルの参照**)] をクリックして、テーブルの**URL** (メモ帳を使用) のコピーを作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-471">Using the panel on the left again, scroll to the *Table Service* section, and click **Tables** (or **Browse Tables**, in newer Portals) and take a copy of the **Table URL** (using your Notepad).</span></span> <span data-ttu-id="9db05-472">この値は、テーブルを**Power BI**アプリケーションにリンクするときに、このコースの後半で使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-472">You will use this value later in this course, when linking your table to your **Power BI** application.</span></span>
+14. <span data-ttu-id="df35b-471">左側のパネルを再び使用して、[ *Table Service* ] \ (テーブルサービス \) セクションまでスクロールし、[ **tables** (または新しいポータルでの**テーブルの参照**)] をクリックして、テーブルの**URL** (メモ帳を使用) のコピーを作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-471">Using the panel on the left again, scroll to the *Table Service* section, and click **Tables** (or **Browse Tables**, in newer Portals) and take a copy of the **Table URL** (using your Notepad).</span></span> <span data-ttu-id="df35b-472">この値は、テーブルを**Power BI**アプリケーションにリンクするときに、このコースの後半で使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-472">You will use this value later in this course, when linking your table to your **Power BI** application.</span></span>
 
     ![新しいテーブルが作成されました](images/AzureLabs-Lab313-44.png)
 
-## <a name="chapter-12---completing-the-azure-table"></a><span data-ttu-id="9db05-474">第12章-Azure テーブルの完成</span><span class="sxs-lookup"><span data-stu-id="9db05-474">Chapter 12 - Completing the Azure Table</span></span>
+## <a name="chapter-12---completing-the-azure-table"></a><span data-ttu-id="df35b-474">第12章-Azure テーブルの完成</span><span class="sxs-lookup"><span data-stu-id="df35b-474">Chapter 12 - Completing the Azure Table</span></span>
 
-<span data-ttu-id="9db05-475">**Table Service**ストレージアカウントのセットアップが完了したので、それにデータを追加します。これは、情報の格納と取得に使用されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-475">Now that your **Table Service** storage account has been setup, it is time to add data to it, which will be used to store and retrieve information.</span></span> <span data-ttu-id="9db05-476">テーブルの編集は、 **Visual Studio**を使用して行うことができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-476">The editing of your Tables can be done through **Visual Studio**.</span></span>
+<span data-ttu-id="df35b-475">**Table Service**ストレージアカウントのセットアップが完了したので、それにデータを追加します。これは、情報の格納と取得に使用されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-475">Now that your **Table Service** storage account has been setup, it is time to add data to it, which will be used to store and retrieve information.</span></span> <span data-ttu-id="df35b-476">テーブルの編集は、 **Visual Studio**を使用して行うことができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-476">The editing of your Tables can be done through **Visual Studio**.</span></span>
 
-1. <span data-ttu-id="9db05-477">(Visual Studio Code で**はなく**) **Visual Studio**を開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-477">Open **Visual Studio** (**not** Visual Studio Code).</span></span>
+1. <span data-ttu-id="df35b-477">(Visual Studio Code で**はなく**) **Visual Studio**を開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-477">Open **Visual Studio** (**not** Visual Studio Code).</span></span>
 
-2. <span data-ttu-id="9db05-478">メニューの [**Cloud Explorer**の**表示** > ] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-478">From the menu, click **View** > **Cloud Explorer**.</span></span>
+2. <span data-ttu-id="df35b-478">メニューの [**Cloud Explorer**の**表示** > ] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-478">From the menu, click **View** > **Cloud Explorer**.</span></span>
 
     ![cloud explorer を開く](images/AzureLabs-Lab313-45.png)
 
-3. <span data-ttu-id="9db05-480">**Cloud Explorer**がドッキングされたアイテムとして開きます (読み込みに時間がかかる場合があります)。</span><span class="sxs-lookup"><span data-stu-id="9db05-480">The **Cloud Explorer** will open as a docked item (be patient, as loading may take time).</span></span>
+3. <span data-ttu-id="df35b-480">**Cloud Explorer**がドッキングされたアイテムとして開きます (読み込みに時間がかかる場合があります)。</span><span class="sxs-lookup"><span data-stu-id="df35b-480">The **Cloud Explorer** will open as a docked item (be patient, as loading may take time).</span></span>
 
     > [!WARNING] 
-    > <span data-ttu-id="9db05-481">*ストレージアカウント*の作成に使用したサブスクリプションが表示されない場合は、次のことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-481">If the subscription you used to create your *Storage Accounts* is not visible, ensure that you have:</span></span> 
-    > - <span data-ttu-id="9db05-482">Azure Portal で使用したものと同じアカウントにログインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-482">Logged in to the same account as the one you used for the Azure Portal.</span></span>
-    > - <span data-ttu-id="9db05-483">[アカウント管理] ページからサブスクリプションを選択しました (アカウントの設定からフィルターを適用する必要がある場合があります)。</span><span class="sxs-lookup"><span data-stu-id="9db05-483">Selected your subscription from the Account Management page (you may need to apply a filter from your account settings):</span></span>  
+    > <span data-ttu-id="df35b-481">*ストレージアカウント*の作成に使用したサブスクリプションが表示されない場合は、次のことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-481">If the subscription you used to create your *Storage Accounts* is not visible, ensure that you have:</span></span> 
+    > - <span data-ttu-id="df35b-482">Azure Portal で使用したものと同じアカウントにログインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-482">Logged in to the same account as the one you used for the Azure Portal.</span></span>
+    > - <span data-ttu-id="df35b-483">[アカウント管理] ページからサブスクリプションを選択しました (アカウントの設定からフィルターを適用する必要がある場合があります)。</span><span class="sxs-lookup"><span data-stu-id="df35b-483">Selected your subscription from the Account Management page (you may need to apply a filter from your account settings):</span></span>  
     >
     >   ![サブスクリプションの検索](images/AzureLabs-Lab313-46.png)
 
-4. <span data-ttu-id="9db05-485">Azure cloud Services が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-485">Your Azure cloud Services will be shown.</span></span> <span data-ttu-id="9db05-486">**ストレージアカウント**を検索し、左側の矢印をクリックしてアカウントを展開します。</span><span class="sxs-lookup"><span data-stu-id="9db05-486">Find **Storage Accounts** and click the arrow to the left of that to expand your accounts.</span></span>
+4. <span data-ttu-id="df35b-485">Azure cloud Services が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-485">Your Azure cloud Services will be shown.</span></span> <span data-ttu-id="df35b-486">**ストレージアカウント**を検索し、左側の矢印をクリックしてアカウントを展開します。</span><span class="sxs-lookup"><span data-stu-id="df35b-486">Find **Storage Accounts** and click the arrow to the left of that to expand your accounts.</span></span>
 
     ![ストレージアカウントを開く](images/AzureLabs-Lab313-47.png)
 
-5. <span data-ttu-id="9db05-488">展開されると、新しく作成された**ストレージアカウント**を使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-488">Once expanded, your newly created **Storage account** should be available.</span></span> <span data-ttu-id="9db05-489">ストレージの左側にある矢印をクリックし、展開された後、 **[テーブル]** を見つけて、その横にある矢印をクリックし、最後の章で作成した**テーブル**を表示します。</span><span class="sxs-lookup"><span data-stu-id="9db05-489">Click the arrow to the left of your storage, and then once that is expanded, find **Tables** and click the arrow next to that, to reveal the **Table** you created in the last Chapter.</span></span> <span data-ttu-id="9db05-490">**テーブル**をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-490">Double-click your **Table**.</span></span>
+5. <span data-ttu-id="df35b-488">展開されると、新しく作成された**ストレージアカウント**を使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-488">Once expanded, your newly created **Storage account** should be available.</span></span> <span data-ttu-id="df35b-489">ストレージの左側にある矢印をクリックし、展開された後、 **[テーブル]** を見つけて、その横にある矢印をクリックし、最後の章で作成した**テーブル**を表示します。</span><span class="sxs-lookup"><span data-stu-id="df35b-489">Click the arrow to the left of your storage, and then once that is expanded, find **Tables** and click the arrow next to that, to reveal the **Table** you created in the last Chapter.</span></span> <span data-ttu-id="df35b-490">**テーブル**をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-490">Double-click your **Table**.</span></span>
 
-6. <span data-ttu-id="9db05-491">テーブルが Visual Studio ウィンドウの中央に開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-491">Your table will be opened in the center of your Visual Studio window.</span></span> <span data-ttu-id="9db05-492">[テーブル] アイコン **+** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-492">Click the table icon with the **+** (plus) on it.</span></span>
+6. <span data-ttu-id="df35b-491">テーブルが Visual Studio ウィンドウの中央に開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-491">Your table will be opened in the center of your Visual Studio window.</span></span> <span data-ttu-id="df35b-492">[テーブル] アイコン **+** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-492">Click the table icon with the **+** (plus) on it.</span></span>
 
     ![新しいテーブルの追加](images/AzureLabs-Lab313-48.png)
 
-7. <span data-ttu-id="9db05-494">*エンティティの追加*を求めるウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-494">A window will appear prompting for you to *Add Entity*.</span></span> <span data-ttu-id="9db05-495">エンティティは1つだけ作成しますが、3つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="9db05-495">You will create only one entity, though it will have three properties.</span></span> <span data-ttu-id="9db05-496">*Partitionkey*と*RowKey*は既に提供されています。これは、テーブルがデータを検索するために使用されるためです。</span><span class="sxs-lookup"><span data-stu-id="9db05-496">You will notice that *PartitionKey* and *RowKey* are already provided, as these are used by the table to find your data.</span></span> 
+7. <span data-ttu-id="df35b-494">*エンティティの追加*を求めるウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-494">A window will appear prompting for you to *Add Entity*.</span></span> <span data-ttu-id="df35b-495">エンティティは1つだけ作成しますが、3つのプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="df35b-495">You will create only one entity, though it will have three properties.</span></span> <span data-ttu-id="df35b-496">*Partitionkey*と*RowKey*は既に提供されています。これは、テーブルがデータを検索するために使用されるためです。</span><span class="sxs-lookup"><span data-stu-id="df35b-496">You will notice that *PartitionKey* and *RowKey* are already provided, as these are used by the table to find your data.</span></span> 
 
     ![パーティションキーと行キー](images/AzureLabs-Lab313-49.png)
 
-8. <span data-ttu-id="9db05-498">次の値を更新します。</span><span class="sxs-lookup"><span data-stu-id="9db05-498">Update the following values:</span></span>
+8. <span data-ttu-id="df35b-498">次の値を更新します。</span><span class="sxs-lookup"><span data-stu-id="df35b-498">Update the following values:</span></span>
 
-    - <span data-ttu-id="9db05-499">名前:**Partitionkey**、値:**PK_IoTMessages**</span><span class="sxs-lookup"><span data-stu-id="9db05-499">Name: **PartitionKey**, Value: **PK_IoTMessages**</span></span> 
+    - <span data-ttu-id="df35b-499">名前:**Partitionkey**、値:**PK_IoTMessages**</span><span class="sxs-lookup"><span data-stu-id="df35b-499">Name: **PartitionKey**, Value: **PK_IoTMessages**</span></span> 
 
-    - <span data-ttu-id="9db05-500">名前:**RowKey**、値:**RK_1_IoTMessages**</span><span class="sxs-lookup"><span data-stu-id="9db05-500">Name: **RowKey**, Value: **RK_1_IoTMessages**</span></span> 
+    - <span data-ttu-id="df35b-500">名前:**RowKey**、値:**RK_1_IoTMessages**</span><span class="sxs-lookup"><span data-stu-id="df35b-500">Name: **RowKey**, Value: **RK_1_IoTMessages**</span></span> 
 
-9. <span data-ttu-id="9db05-501">次に、[*エンティティの追加*] ウィンドウの左下にある **[プロパティの追加]** をクリックし、次のプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="9db05-501">Then, click **Add property** (to the lower left of the *Add Entity* window) and add the following property:</span></span>
+9. <span data-ttu-id="df35b-501">次に、[*エンティティの追加*] ウィンドウの左下にある **[プロパティの追加]** をクリックし、次のプロパティを追加します。</span><span class="sxs-lookup"><span data-stu-id="df35b-501">Then, click **Add property** (to the lower left of the *Add Entity* window) and add the following property:</span></span>
 
-    - <span data-ttu-id="9db05-502">**Messagecontent** *文字列* として使用する場合は、値を空のままにします。</span><span class="sxs-lookup"><span data-stu-id="9db05-502">**MessageContent**, as a *string*, leave the Value empty.</span></span>
+    - <span data-ttu-id="df35b-502">**Messagecontent** *文字列* として使用する場合は、値を空のままにします。</span><span class="sxs-lookup"><span data-stu-id="df35b-502">**MessageContent**, as a *string*, leave the Value empty.</span></span>
 
-10. <span data-ttu-id="9db05-503">テーブルは、次の図に示すものと一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-503">Your table should match the one in the image below:</span></span>
+10. <span data-ttu-id="df35b-503">テーブルは、次の図に示すものと一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-503">Your table should match the one in the image below:</span></span>
 
     ![正しい値の追加](images/AzureLabs-Lab313-50.png)
 
     > [!NOTE] 
-    > <span data-ttu-id="9db05-505">このエンティティの行キーの番号が1である理由は、さらに多くのメッセージを追加することが必要になる可能性があるためです。このコースをさらに試してみることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9db05-505">The reason why the entity has the number 1 in the row key, is because you might want to add more messages, should you desire to experiment further with this course.</span></span>
+    > <span data-ttu-id="df35b-505">このエンティティの行キーの番号が1である理由は、さらに多くのメッセージを追加することが必要になる可能性があるためです。このコースをさらに試してみることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df35b-505">The reason why the entity has the number 1 in the row key, is because you might want to add more messages, should you desire to experiment further with this course.</span></span>
 
-11. <span data-ttu-id="9db05-506">完了したら [ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-506">Click **OK** when you are finished.</span></span> <span data-ttu-id="9db05-507">これで、テーブルを使用する準備ができました。</span><span class="sxs-lookup"><span data-stu-id="9db05-507">Your table is now ready to be used.</span></span>
+11. <span data-ttu-id="df35b-506">完了したら [ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-506">Click **OK** when you are finished.</span></span> <span data-ttu-id="df35b-507">これで、テーブルを使用する準備ができました。</span><span class="sxs-lookup"><span data-stu-id="df35b-507">Your table is now ready to be used.</span></span>
 
-## <a name="chapter-13---create-an-azure-function-app"></a><span data-ttu-id="9db05-508">第13章-Azure Function App の作成</span><span class="sxs-lookup"><span data-stu-id="9db05-508">Chapter 13 - Create an Azure Function App</span></span> 
+## <a name="chapter-13---create-an-azure-function-app"></a><span data-ttu-id="df35b-508">第13章-Azure Function App の作成</span><span class="sxs-lookup"><span data-stu-id="df35b-508">Chapter 13 - Create an Azure Function App</span></span> 
 
-<span data-ttu-id="9db05-509">ここでは、 *Azure Function App*を作成します。これは、前の章で作成した**Table** service に*IoT Edge*デバイスメッセージを格納するために、 *IoT Hub サービス*によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-509">It is now time to create an *Azure Function App*, which will be called by the *IoT Hub Service* to store the *IoT Edge* device messages in the **Table** Service, which you created in the previous Chapter.</span></span>
+<span data-ttu-id="df35b-509">ここでは、 *Azure Function App*を作成します。これは、前の章で作成した**Table** service に*IoT Edge*デバイスメッセージを格納するために、 *IoT Hub サービス*によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-509">It is now time to create an *Azure Function App*, which will be called by the *IoT Hub Service* to store the *IoT Edge* device messages in the **Table** Service, which you created in the previous Chapter.</span></span>
 
-<span data-ttu-id="9db05-510">まず、必要なライブラリを Azure 関数で読み込むことができるファイルを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-510">First, you need to create a file that will allow your Azure Function to load the libraries you need.</span></span>
+<span data-ttu-id="df35b-510">まず、必要なライブラリを Azure 関数で読み込むことができるファイルを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-510">First, you need to create a file that will allow your Azure Function to load the libraries you need.</span></span>
 
-1.  <span data-ttu-id="9db05-511">**メモ帳**を開きます ( *Windows キー*を押して、*メモ帳*を入力します)。</span><span class="sxs-lookup"><span data-stu-id="9db05-511">Open **Notepad** (press the *Windows Key*, and type *notepad*).</span></span>
+1.  <span data-ttu-id="df35b-511">**メモ帳**を開きます ( *Windows キー*を押して、*メモ帳*を入力します)。</span><span class="sxs-lookup"><span data-stu-id="df35b-511">Open **Notepad** (press the *Windows Key*, and type *notepad*).</span></span>
 
     ![メモ帳を開く](images/AzureLabs-Lab313-51.png)
 
-2.  <span data-ttu-id="9db05-513">メモ帳を開いた状態で、次の JSON 構造を挿入します。</span><span class="sxs-lookup"><span data-stu-id="9db05-513">With Notepad open, insert the JSON structure below into it.</span></span> <span data-ttu-id="9db05-514">その作業が完了したら、それをデスクトップに**プロジェクトの json**として保存します。</span><span class="sxs-lookup"><span data-stu-id="9db05-514">Once you have done that, save it on your desktop as **project.json**.</span></span> <span data-ttu-id="9db05-515">このファイルは、関数が使用するライブラリを定義します。</span><span class="sxs-lookup"><span data-stu-id="9db05-515">This file defines the libraries your function will use.</span></span> <span data-ttu-id="9db05-516">NuGet を使用している場合は、見慣れた外観になります。</span><span class="sxs-lookup"><span data-stu-id="9db05-516">If you have used NuGet, it will look familiar.</span></span>
+2.  <span data-ttu-id="df35b-513">メモ帳を開いた状態で、次の JSON 構造を挿入します。</span><span class="sxs-lookup"><span data-stu-id="df35b-513">With Notepad open, insert the JSON structure below into it.</span></span> <span data-ttu-id="df35b-514">その作業が完了したら、それをデスクトップに**プロジェクトの json**として保存します。</span><span class="sxs-lookup"><span data-stu-id="df35b-514">Once you have done that, save it on your desktop as **project.json**.</span></span> <span data-ttu-id="df35b-515">このファイルは、関数が使用するライブラリを定義します。</span><span class="sxs-lookup"><span data-stu-id="df35b-515">This file defines the libraries your function will use.</span></span> <span data-ttu-id="df35b-516">NuGet を使用している場合は、見慣れた外観になります。</span><span class="sxs-lookup"><span data-stu-id="df35b-516">If you have used NuGet, it will look familiar.</span></span>
     
     > [!WARNING]
-    > <span data-ttu-id="9db05-517">名前が正しいことが重要です。ファイル拡張子 **.txt が付いていないことを**確認します。</span><span class="sxs-lookup"><span data-stu-id="9db05-517">It is important that the naming is correct; ensure it does **NOT have a .txt** file extension.</span></span> <span data-ttu-id="9db05-518">参照については、以下を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-518">See below for reference:</span></span>
+    > <span data-ttu-id="df35b-517">名前が正しいことが重要です。ファイル拡張子 **.txt が付いていないことを**確認します。</span><span class="sxs-lookup"><span data-stu-id="df35b-517">It is important that the naming is correct; ensure it does **NOT have a .txt** file extension.</span></span> <span data-ttu-id="df35b-518">参照については、以下を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-518">See below for reference:</span></span>
     >
     > ![JSON 保存](images/AzureLabs-Lab313-52.png)
 
@@ -991,83 +991,83 @@ ms.locfileid: "67694599"
     }
     ```
 
-3.  <span data-ttu-id="9db05-520">[Azure ポータル](https://portal.azure.com) にログインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-520">Log in to the [Azure Portal](https://portal.azure.com).</span></span>
+3.  <span data-ttu-id="df35b-520">[Azure ポータル](https://portal.azure.com) にログインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-520">Log in to the [Azure Portal](https://portal.azure.com).</span></span>
 
-4.  <span data-ttu-id="9db05-521">ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **Function App**を検索して、 **enter**キーを押して検索します。</span><span class="sxs-lookup"><span data-stu-id="9db05-521">Once you are logged in, click on **Create a resource** in the top left corner, and search for **Function App**, and press the **Enter** key, to search.</span></span> <span data-ttu-id="9db05-522">結果の [ *Function App* ] をクリックして、新しいパネルを開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-522">Click *Function App* from the results, to open a new panel.</span></span>
+4.  <span data-ttu-id="df35b-521">ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **Function App**を検索して、 **enter**キーを押して検索します。</span><span class="sxs-lookup"><span data-stu-id="df35b-521">Once you are logged in, click on **Create a resource** in the top left corner, and search for **Function App**, and press the **Enter** key, to search.</span></span> <span data-ttu-id="df35b-522">結果の [ *Function App* ] をクリックして、新しいパネルを開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-522">Click *Function App* from the results, to open a new panel.</span></span>
 
     ![function app の検索](images/AzureLabs-Lab313-53.png)
 
-5.  <span data-ttu-id="9db05-524">新しいパネルには、 **Function App**サービスの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-524">The new panel will provide a description of the **Function App** Service.</span></span> <span data-ttu-id="9db05-525">このパネルの左下にある **[作成]** ボタンをクリックして、このサービスとの関連付けを作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-525">At the bottom left of this panel, click the **Create** button, to create an association with this Service.</span></span>
+5.  <span data-ttu-id="df35b-524">新しいパネルには、 **Function App**サービスの説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-524">The new panel will provide a description of the **Function App** Service.</span></span> <span data-ttu-id="df35b-525">このパネルの左下にある **[作成]** ボタンをクリックして、このサービスとの関連付けを作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-525">At the bottom left of this panel, click the **Create** button, to create an association with this Service.</span></span>
 
     ![function app インスタンス](images/AzureLabs-Lab313-54.png)
 
-6.  <span data-ttu-id="9db05-527">**[作成]** をクリックしたら、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="9db05-527">Once you have clicked on **Create**, fill in the following:</span></span>
+6.  <span data-ttu-id="df35b-527">**[作成]** をクリックしたら、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="df35b-527">Once you have clicked on **Create**, fill in the following:</span></span>
 
-    1. <span data-ttu-id="9db05-528">**[アプリ名]** に、このサービスインスタンスに必要な名前を挿入します。</span><span class="sxs-lookup"><span data-stu-id="9db05-528">For **App name**, insert your desired name for this Service instance.</span></span>
+    1. <span data-ttu-id="df35b-528">**[アプリ名]** に、このサービスインスタンスに必要な名前を挿入します。</span><span class="sxs-lookup"><span data-stu-id="df35b-528">For **App name**, insert your desired name for this Service instance.</span></span>
 
-    2. <span data-ttu-id="9db05-529">**サブスクリプション**を選択します。</span><span class="sxs-lookup"><span data-stu-id="9db05-529">Select a **Subscription**.</span></span>
+    2. <span data-ttu-id="df35b-529">**サブスクリプション**を選択します。</span><span class="sxs-lookup"><span data-stu-id="df35b-529">Select a **Subscription**.</span></span>
 
-    3. <span data-ttu-id="9db05-530">適切な価格レベルを選択してください。 **Function App サービス**を初めて作成する場合は、free レベルをご利用いただけます。</span><span class="sxs-lookup"><span data-stu-id="9db05-530">Select the pricing tier appropriate for you, if this is the first time creating a **Function App Service**, a free tier should be available to you.</span></span>
+    3. <span data-ttu-id="df35b-530">適切な価格レベルを選択してください。 **Function App サービス**を初めて作成する場合は、free レベルをご利用いただけます。</span><span class="sxs-lookup"><span data-stu-id="df35b-530">Select the pricing tier appropriate for you, if this is the first time creating a **Function App Service**, a free tier should be available to you.</span></span>
 
-    4. <span data-ttu-id="9db05-531">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-531">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="9db05-532">リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-532">A resource group provides a way to monitor, control access, provision, and manage, billing for a collection of Azure assets.</span></span> <span data-ttu-id="9db05-533">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9db05-533">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
+    4. <span data-ttu-id="df35b-531">リソースグループを選択するか、新しい**リソースグループ**を作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-531">Choose a **Resource Group** or create a new one.</span></span> <span data-ttu-id="df35b-532">リソースグループを使用すると、Azure 資産のコレクションの監視、アクセスの制御、プロビジョニング、管理を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-532">A resource group provides a way to monitor, control access, provision, and manage, billing for a collection of Azure assets.</span></span> <span data-ttu-id="df35b-533">1つのプロジェクトに関連付けられているすべての Azure サービス (たとえば、これらのコースなど) を共通のリソースグループに保持することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df35b-533">It is recommended to keep all the Azure Services associated with a single project (e.g. such as these courses) under a common resource group).</span></span>
 
-        > <span data-ttu-id="9db05-534">Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9db05-534">If you wish to read more about Azure Resource Groups, please follow this [link on how to manage a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
+        > <span data-ttu-id="df35b-534">Azure リソースグループの詳細については、[リソースグループの管理方法に関するリンク](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df35b-534">If you wish to read more about Azure Resource Groups, please follow this [link on how to manage a Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).</span></span>
 
-    5. <span data-ttu-id="9db05-535">**OS**の場合は、[Windows] をクリックします。これは目的のプラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="9db05-535">For **OS**, click Windows, as that is the intended platform.</span></span>
+    5. <span data-ttu-id="df35b-535">**OS**の場合は、[Windows] をクリックします。これは目的のプラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="df35b-535">For **OS**, click Windows, as that is the intended platform.</span></span>
 
-    6. <span data-ttu-id="9db05-536">**ホスティングプラン**を選択します (このチュートリアルでは、**従量課金プラン**を使用しています。</span><span class="sxs-lookup"><span data-stu-id="9db05-536">Select a **Hosting Plan** (this tutorial is using a **Consumption Plan**.</span></span>
+    6. <span data-ttu-id="df35b-536">**ホスティングプラン**を選択します (このチュートリアルでは、**従量課金プラン**を使用しています。</span><span class="sxs-lookup"><span data-stu-id="df35b-536">Select a **Hosting Plan** (this tutorial is using a **Consumption Plan**.</span></span>
 
-    7. <span data-ttu-id="9db05-537">**場所**を選択します (前の手順で作成したストレージと同じ場所を選択します)。</span><span class="sxs-lookup"><span data-stu-id="9db05-537">Select a **Location** (choose the same location as the storage you have built in the previous step)</span></span>
+    7. <span data-ttu-id="df35b-537">**場所**を選択します (前の手順で作成したストレージと同じ場所を選択します)。</span><span class="sxs-lookup"><span data-stu-id="df35b-537">Select a **Location** (choose the same location as the storage you have built in the previous step)</span></span>
 
-    8. <span data-ttu-id="9db05-538">**[ストレージ]** セクションでは、**前の手順で作成したストレージサービスを選択する必要があり**ます。</span><span class="sxs-lookup"><span data-stu-id="9db05-538">For the **Storage** section, **you must select the Storage Service you created in the previous step**.</span></span>
+    8. <span data-ttu-id="df35b-538">**[ストレージ]** セクションでは、**前の手順で作成したストレージサービスを選択する必要があり**ます。</span><span class="sxs-lookup"><span data-stu-id="df35b-538">For the **Storage** section, **you must select the Storage Service you created in the previous step**.</span></span>
 
-    9. <span data-ttu-id="9db05-539">このアプリで*Application Insights*は必要ありませ**ん。その**ままにしておいてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="9db05-539">You will not need *Application Insights* in this app, so feel free to leave it **Off**.</span></span>
+    9. <span data-ttu-id="df35b-539">このアプリで*Application Insights*は必要ありません。そのままにしておいてもかまいません。</span><span class="sxs-lookup"><span data-stu-id="df35b-539">You will not need *Application Insights* in this app, so feel free to leave it **Off**.</span></span>
 
-    10. <span data-ttu-id="9db05-540">**[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-540">Click **Create**.</span></span>
+    10. <span data-ttu-id="df35b-540">**[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-540">Click **Create**.</span></span>
 
         ![新しいインスタンスの作成](images/AzureLabs-Lab313-55.png)
 
-7.  <span data-ttu-id="9db05-542">**[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="9db05-542">Once you have clicked on **Create**, you will have to wait for the Service to be created, this might take a minute.</span></span>
+7.  <span data-ttu-id="df35b-542">**[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="df35b-542">Once you have clicked on **Create**, you will have to wait for the Service to be created, this might take a minute.</span></span>
 
-8.  <span data-ttu-id="9db05-543">サービスインスタンスが作成されると、ポータルに通知が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-543">A notification will appear in the Portal once the Service instance is created.</span></span>
+8.  <span data-ttu-id="df35b-543">サービスインスタンスが作成されると、ポータルに通知が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-543">A notification will appear in the Portal once the Service instance is created.</span></span>
 
     ![新しい通知](images/AzureLabs-Lab313-56.png)
 
-9.  <span data-ttu-id="9db05-545">デプロイが正常に完了したら (完了した)、通知をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-545">Click on the notification, once deployment is successful (has finished).</span></span>
+9.  <span data-ttu-id="df35b-545">デプロイが正常に完了したら (完了した)、通知をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-545">Click on the notification, once deployment is successful (has finished).</span></span>
 
-10. <span data-ttu-id="9db05-546">通知の **[リソースへのジャンプ]** ボタンをクリックして、新しいサービスインスタンスを探索します。</span><span class="sxs-lookup"><span data-stu-id="9db05-546">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> 
+10. <span data-ttu-id="df35b-546">通知の **[リソースへのジャンプ]** ボタンをクリックして、新しいサービスインスタンスを探索します。</span><span class="sxs-lookup"><span data-stu-id="df35b-546">Click the **Go to resource** button in the notification to explore your new Service instance.</span></span> 
 
     ![リソースにアクセス](images/AzureLabs-Lab313-57.png)
 
-11. <span data-ttu-id="9db05-548">新しいパネルの左側で、[*関数*] の横 **+** にある (プラス記号) アイコンをクリックして、新しい関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="9db05-548">In the left side of the new panel, click the **+** (plus) icon next to *Functions*, to create a new function.</span></span>
+11. <span data-ttu-id="df35b-548">新しいパネルの左側で、[*関数*] の横 **+** にある (プラス記号) アイコンをクリックして、新しい関数を作成します。</span><span class="sxs-lookup"><span data-stu-id="df35b-548">In the left side of the new panel, click the **+** (plus) icon next to *Functions*, to create a new function.</span></span>
 
     ![新しい関数の追加](images/AzureLabs-Lab313-58.png)
 
-12. <span data-ttu-id="9db05-550">中央のパネル内に [**関数**の作成] ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-550">Within the central panel, the **Function** creation window will appear.</span></span> <span data-ttu-id="9db05-551">さらに下にスクロールし、 **[カスタム関数]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-551">Scroll down further, and click on **Custom function**.</span></span>
+12. <span data-ttu-id="df35b-550">中央のパネル内に [**関数**の作成] ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-550">Within the central panel, the **Function** creation window will appear.</span></span> <span data-ttu-id="df35b-551">さらに下にスクロールし、 **[カスタム関数]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-551">Scroll down further, and click on **Custom function**.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-59.png)
 
-13. <span data-ttu-id="9db05-553">次のページを下にスクロールして、 **IoT Hub (イベントハブ)** を見つけ、クリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-553">Scroll down the next page, until you find **IoT Hub (Event Hub)**, then click on it.</span></span>
+13. <span data-ttu-id="df35b-553">次のページを下にスクロールして、 **IoT Hub (イベントハブ)** を見つけ、クリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-553">Scroll down the next page, until you find **IoT Hub (Event Hub)**, then click on it.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-60.png)
 
-14. <span data-ttu-id="9db05-555">**[IoT Hub (イベントハブ)]** ブレードで、**言語**をに**C#** 設定し、 **[新規]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-555">In the **IoT Hub (Event Hub)** blade, set the **Language** to **C#** and then click on **new**.</span></span>
+14. <span data-ttu-id="df35b-555">**[IoT Hub (イベントハブ)]** ブレードで、**言語**をに**C#** 設定し、 **[新規]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-555">In the **IoT Hub (Event Hub)** blade, set the **Language** to **C#** and then click on **new**.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-61.png)
 
-15. <span data-ttu-id="9db05-557">表示されるウィンドウで、 **IoT Hub**が選択されていることを確認し、 *IoT Hub*フィールドの名前が、前に作成した*IoT Hub サービス*の名前と一致することを確認します ([手順8の第3章を](#chapter-3---the-iot-hub-service)参照)。</span><span class="sxs-lookup"><span data-stu-id="9db05-557">In the window that will appear, make sure that **IoT Hub** is selected and the name of the *IoT Hub* field corresponds with the name of your *IoT Hub Service* that you have created previously ([in step 8, of Chapter 3](#chapter-3---the-iot-hub-service)).</span></span> <span data-ttu-id="9db05-558">次に、 **[選択]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-558">Then click the **Select** button.</span></span>
+15. <span data-ttu-id="df35b-557">表示されるウィンドウで、 **IoT Hub**が選択されていることを確認し、 *IoT Hub*フィールドの名前が、前に作成した*IoT Hub サービス*の名前と一致することを確認します ([手順8の第3章を](#chapter-3---the-iot-hub-service)参照)。</span><span class="sxs-lookup"><span data-stu-id="df35b-557">In the window that will appear, make sure that **IoT Hub** is selected and the name of the *IoT Hub* field corresponds with the name of your *IoT Hub Service* that you have created previously ([in step 8, of Chapter 3](#chapter-3---the-iot-hub-service)).</span></span> <span data-ttu-id="df35b-558">次に、 **[選択]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-558">Then click the **Select** button.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-62.png)
 
-16. <span data-ttu-id="9db05-560">**[IoT Hub (イベントハブ)]** ブレードに戻り、 **[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-560">Back on the **IoT Hub (Event Hub)** blade, click on **Create**.</span></span>
+16. <span data-ttu-id="df35b-560">**[IoT Hub (イベントハブ)]** ブレードに戻り、 **[作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-560">Back on the **IoT Hub (Event Hub)** blade, click on **Create**.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-63.png)
 
-17. <span data-ttu-id="9db05-562">関数エディターにリダイレクトされます。</span><span class="sxs-lookup"><span data-stu-id="9db05-562">You will be redirected to the function editor.</span></span>
+17. <span data-ttu-id="df35b-562">関数エディターにリダイレクトされます。</span><span class="sxs-lookup"><span data-stu-id="df35b-562">You will be redirected to the function editor.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-64.png)
 
-18. <span data-ttu-id="9db05-564">その中のすべてのコードを削除し、次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="9db05-564">Delete all the code in it and replace it with the following:</span></span>
+18. <span data-ttu-id="df35b-564">その中のすべてのコードを削除し、次のコードに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="df35b-564">Delete all the code in it and replace it with the following:</span></span>
 
     ```csharp
     #r "Microsoft.WindowsAzure.Storage"
@@ -1132,147 +1132,147 @@ ms.locfileid: "67694599"
     }
     ```
 
-19. <span data-ttu-id="9db05-565">次の変数を変更して、**ストレージアカウント**に含まれる適切な値 ([手順 11. および 13. の](#chapter-11---create-table-service)**テーブル**と**ストレージ**の値) に対応するようにします。</span><span class="sxs-lookup"><span data-stu-id="9db05-565">Change the following variables, so that they correspond to the appropriate values (**Table** and **Storage** values, from [step 11 and 13, respectively, of Chapter 11](#chapter-11---create-table-service)), that you will find in your **Storage Account**:</span></span>
+19. <span data-ttu-id="df35b-565">次の変数を変更して、**ストレージアカウント**に含まれる適切な値 ([手順 11. および 13. の](#chapter-11---create-table-service)**テーブル**と**ストレージ**の値) に対応するようにします。</span><span class="sxs-lookup"><span data-stu-id="df35b-565">Change the following variables, so that they correspond to the appropriate values (**Table** and **Storage** values, from [step 11 and 13, respectively, of Chapter 11](#chapter-11---create-table-service)), that you will find in your **Storage Account**:</span></span>
 
-    - <span data-ttu-id="9db05-566">**tableName**。**ストレージアカウント**内にある**テーブル**の名前を使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-566">**tableName**, with the name of your **Table** located in your **Storage Account**.</span></span>
-    - <span data-ttu-id="9db05-567">**tableurl**。**ストレージアカウント**内にある**テーブル**の url を使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-567">**tableURL**, with the URL of your **Table** located in your **Storage Account**.</span></span>
-    - <span data-ttu-id="9db05-568">**Storageaccountname**。**ストレージアカウント**名に対応する値の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="9db05-568">**storageAccountName**, with the name of the value corresponding with the name of your **Storage Account** name.</span></span>
-    - <span data-ttu-id="9db05-569">**storageAccountKey**には、前に作成したストレージサービスで取得したキーを使用します。</span><span class="sxs-lookup"><span data-stu-id="9db05-569">**storageAccountKey**, with the Key you have obtained in the Storage Service you have created previously.</span></span>
+    - <span data-ttu-id="df35b-566">**tableName**。**ストレージアカウント**内にある**テーブル**の名前を使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-566">**tableName**, with the name of your **Table** located in your **Storage Account**.</span></span>
+    - <span data-ttu-id="df35b-567">**tableurl**。**ストレージアカウント**内にある**テーブル**の url を使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-567">**tableURL**, with the URL of your **Table** located in your **Storage Account**.</span></span>
+    - <span data-ttu-id="df35b-568">**Storageaccountname**。**ストレージアカウント**名に対応する値の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="df35b-568">**storageAccountName**, with the name of the value corresponding with the name of your **Storage Account** name.</span></span>
+    - <span data-ttu-id="df35b-569">**storageAccountKey**には、前に作成したストレージサービスで取得したキーを使用します。</span><span class="sxs-lookup"><span data-stu-id="df35b-569">**storageAccountKey**, with the Key you have obtained in the Storage Service you have created previously.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-65.png)
 
-20. <span data-ttu-id="9db05-571">コードを配置したら、 **[保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-571">With the code in place, click **Save**.</span></span>
+20. <span data-ttu-id="df35b-571">コードを配置したら、 **[保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-571">With the code in place, click **Save**.</span></span>
 
-21. <span data-ttu-id="9db05-572">次に、ページ **\<** の右側にある (矢印) アイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-572">Next, click the **\<** (arrow) icon, on the right-hand side of the page.</span></span>
+21. <span data-ttu-id="df35b-572">次に、ページ **\<** の右側にある (矢印) アイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-572">Next, click the **\<** (arrow) icon, on the right-hand side of the page.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-66.png)
 
-22. <span data-ttu-id="9db05-574">パネルが右側からスライドします。</span><span class="sxs-lookup"><span data-stu-id="9db05-574">A panel will slide in from the right.</span></span> <span data-ttu-id="9db05-575">そのパネルで **[アップロード]** をクリックすると、*ファイルブラウザー*が表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-575">In that panel, click **Upload**, and a *File Browser* will appear.</span></span>
+22. <span data-ttu-id="df35b-574">パネルが右側からスライドします。</span><span class="sxs-lookup"><span data-stu-id="df35b-574">A panel will slide in from the right.</span></span> <span data-ttu-id="df35b-575">そのパネルで **[アップロード]** をクリックすると、*ファイルブラウザー*が表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-575">In that panel, click **Upload**, and a *File Browser* will appear.</span></span>
 
-23. <span data-ttu-id="9db05-576">前の**メモ帳**で作成した**プロジェクトの json**ファイルに移動し、 **[開く]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-576">Navigate to, and click, the **project.json** file, which you created in **Notepad** previously, and then click the **Open** button.</span></span> <span data-ttu-id="9db05-577">このファイルは、関数が使用するライブラリを定義します。</span><span class="sxs-lookup"><span data-stu-id="9db05-577">This file defines the libraries that your function will use.</span></span>
+23. <span data-ttu-id="df35b-576">前の**メモ帳**で作成した**プロジェクトの json**ファイルに移動し、 **[開く]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-576">Navigate to, and click, the **project.json** file, which you created in **Notepad** previously, and then click the **Open** button.</span></span> <span data-ttu-id="df35b-577">このファイルは、関数が使用するライブラリを定義します。</span><span class="sxs-lookup"><span data-stu-id="df35b-577">This file defines the libraries that your function will use.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-67.png)
 
-24. <span data-ttu-id="9db05-579">ファイルがアップロードされると、右側のパネルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-579">When the file has uploaded, it will appear in the panel on the right.</span></span> <span data-ttu-id="9db05-580">このボタンをクリックすると、**関数**エディター内で開かれます。</span><span class="sxs-lookup"><span data-stu-id="9db05-580">Clicking it will open it within the **Function** editor.</span></span> <span data-ttu-id="9db05-581">次の画像と**まったく**同じ外観にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-581">It must look **exactly** the same as the next image.</span></span>
+24. <span data-ttu-id="df35b-579">ファイルがアップロードされると、右側のパネルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-579">When the file has uploaded, it will appear in the panel on the right.</span></span> <span data-ttu-id="df35b-580">このボタンをクリックすると、**関数**エディター内で開かれます。</span><span class="sxs-lookup"><span data-stu-id="df35b-580">Clicking it will open it within the **Function** editor.</span></span> <span data-ttu-id="df35b-581">次の画像と**まったく**同じ外観にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-581">It must look **exactly** the same as the next image.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-68.png)
 
-25. <span data-ttu-id="9db05-583">この時点で、*テーブル*にメッセージを格納する関数の機能をテストすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9db05-583">At this point it would be good to test the capability of your Function to store the message on your *Table*.</span></span> <span data-ttu-id="9db05-584">ウィンドウの右上にある **[テスト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-584">On the top right side of the window, click on **Test**.</span></span>
+25. <span data-ttu-id="df35b-583">この時点で、*テーブル*にメッセージを格納する関数の機能をテストすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df35b-583">At this point it would be good to test the capability of your Function to store the message on your *Table*.</span></span> <span data-ttu-id="df35b-584">ウィンドウの右上にある **[テスト]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-584">On the top right side of the window, click on **Test**.</span></span>
 
     ![カスタム関数](images/AzureLabs-Lab313-69.png)
 
-26. <span data-ttu-id="9db05-586">上の図に示されているように、**要求本文**にメッセージを挿入し、 **[実行]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-586">Insert a message on the **Request body**, as shown in the image above, and click on **Run**.</span></span> 
+26. <span data-ttu-id="df35b-586">上の図に示されているように、**要求本文**にメッセージを挿入し、 **[実行]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-586">Insert a message on the **Request body**, as shown in the image above, and click on **Run**.</span></span> 
 
-27. <span data-ttu-id="9db05-587">関数が実行され、結果の状態が表示されます ([*出力*] ウィンドウの上に緑の**状態 202**が表示されます。これは成功した呼び出しであることを意味します)。</span><span class="sxs-lookup"><span data-stu-id="9db05-587">The function will run, displaying the result status (you will notice the green **Status 202 Accepted**, above the *Output* window, which means it was a successful call):</span></span>
+27. <span data-ttu-id="df35b-587">関数が実行され、結果の状態が表示されます ([*出力*] ウィンドウの上に緑の**状態 202**が表示されます。これは成功した呼び出しであることを意味します)。</span><span class="sxs-lookup"><span data-stu-id="df35b-587">The function will run, displaying the result status (you will notice the green **Status 202 Accepted**, above the *Output* window, which means it was a successful call):</span></span>
 
     ![出力結果](images/AzureLabs-Lab313-70.png)
 
-## <a name="chapter-14---view-active-messages"></a><span data-ttu-id="9db05-589">第14章-アクティブなメッセージの表示</span><span class="sxs-lookup"><span data-stu-id="9db05-589">Chapter 14 - View active messages</span></span>
+## <a name="chapter-14---view-active-messages"></a><span data-ttu-id="df35b-589">第14章-アクティブなメッセージの表示</span><span class="sxs-lookup"><span data-stu-id="df35b-589">Chapter 14 - View active messages</span></span>
 
-<span data-ttu-id="9db05-590">(Visual Studio Code では**なく**) Visual Studio を開いた場合、テストメッセージの結果は messagecontent 文字列領域に格納されるため、視覚化することができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-590">If you now open Visual Studio (**not** Visual Studio Code), you can visualize your test message result, as it will be stored in the *MessageContent* string area.</span></span>
+<span data-ttu-id="df35b-590">(Visual Studio Code では**なく**) Visual Studio を開いた場合、テストメッセージの結果は messagecontent 文字列領域に格納されるため、視覚化することができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-590">If you now open Visual Studio (**not** Visual Studio Code), you can visualize your test message result, as it will be stored in the *MessageContent* string area.</span></span>
 
 ![カスタム関数](images/AzureLabs-Lab313-71.png)
 
-<span data-ttu-id="9db05-592">Table Service と Function App が配置されていると、Ubuntu デバイスのメッセージが*Iotmessages*テーブルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-592">With the Table Service and Function App in place, your Ubuntu device messages will appear in your *IoTMessages* Table.</span></span> <span data-ttu-id="9db05-593">まだ実行されていない場合は、デバイスをもう一度起動すると、Visual Studio *Cloud Explorer*を使用して、デバイスとモジュールの結果メッセージをテーブル内に表示できるようになります。</span><span class="sxs-lookup"><span data-stu-id="9db05-593">If not already running, start your device again, and you will be able to see the result messages from your device, and module, within your Table, through using Visual Studio *Cloud Explorer*.</span></span>
+<span data-ttu-id="df35b-592">Table Service と Function App が配置されていると、Ubuntu デバイスのメッセージが*Iotmessages*テーブルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-592">With the Table Service and Function App in place, your Ubuntu device messages will appear in your *IoTMessages* Table.</span></span> <span data-ttu-id="df35b-593">まだ実行されていない場合は、デバイスをもう一度起動すると、Visual Studio *Cloud Explorer*を使用して、デバイスとモジュールの結果メッセージをテーブル内に表示できるようになります。</span><span class="sxs-lookup"><span data-stu-id="df35b-593">If not already running, start your device again, and you will be able to see the result messages from your device, and module, within your Table, through using Visual Studio *Cloud Explorer*.</span></span>
 
 ![データの視覚化](images/AzureLabs-Lab313-72.png)
 
 
-## <a name="chapter-15---power-bi-setup"></a><span data-ttu-id="9db05-595">第15章-Power BI セットアップ</span><span class="sxs-lookup"><span data-stu-id="9db05-595">Chapter 15 - Power BI Setup</span></span>
+## <a name="chapter-15---power-bi-setup"></a><span data-ttu-id="df35b-595">第15章-Power BI セットアップ</span><span class="sxs-lookup"><span data-stu-id="df35b-595">Chapter 15 - Power BI Setup</span></span>
 
-<span data-ttu-id="9db05-596">IOT デバイスからデータを視覚化するには**Power BI** (デスクトップバージョン) をセットアップし、先ほど作成した*テーブル*サービスからデータを収集します。</span><span class="sxs-lookup"><span data-stu-id="9db05-596">To visualize the data from your IOT device you will setup **Power BI** (desktop version), to collect the data from the *Table* Service, which you just created.</span></span> <span data-ttu-id="9db05-597">Power BI の*HoloLens*バージョンでは、そのデータを使用して結果が視覚化されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-597">The *HoloLens* version of Power BI will then use that data to visualize the result.</span></span>
+<span data-ttu-id="df35b-596">IOT デバイスからデータを視覚化するには**Power BI** (デスクトップバージョン) をセットアップし、先ほど作成した*テーブル*サービスからデータを収集します。</span><span class="sxs-lookup"><span data-stu-id="df35b-596">To visualize the data from your IOT device you will setup **Power BI** (desktop version), to collect the data from the *Table* Service, which you just created.</span></span> <span data-ttu-id="df35b-597">Power BI の*HoloLens*バージョンでは、そのデータを使用して結果が視覚化されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-597">The *HoloLens* version of Power BI will then use that data to visualize the result.</span></span>
 
-1.  <span data-ttu-id="9db05-598">Windows 10 で Microsoft Store を開き、 **Power BI Desktop**を検索します。</span><span class="sxs-lookup"><span data-stu-id="9db05-598">Open the Microsoft Store on Windows 10 and search for **Power BI Desktop**.</span></span>
+1.  <span data-ttu-id="df35b-598">Windows 10 で Microsoft Store を開き、 **Power BI Desktop**を検索します。</span><span class="sxs-lookup"><span data-stu-id="df35b-598">Open the Microsoft Store on Windows 10 and search for **Power BI Desktop**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-73.png)
 
-2.  <span data-ttu-id="9db05-600">アプリケーションをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="9db05-600">Download the application.</span></span> <span data-ttu-id="9db05-601">ダウンロードが完了したら、それを開きます。</span><span class="sxs-lookup"><span data-stu-id="9db05-601">Once it has finished downloading, open it.</span></span>
+2.  <span data-ttu-id="df35b-600">アプリケーションをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="df35b-600">Download the application.</span></span> <span data-ttu-id="df35b-601">ダウンロードが完了したら、それを開きます。</span><span class="sxs-lookup"><span data-stu-id="df35b-601">Once it has finished downloading, open it.</span></span>
 
-3.  <span data-ttu-id="9db05-602">**Microsoft 365 アカウント**を使用して*Power BI*にログインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-602">Log into *Power BI* with your **Microsoft 365 account**.</span></span> <span data-ttu-id="9db05-603">サインアップするには、ブラウザーにリダイレクトすることができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-603">You may be redirected to a browser, to sign up.</span></span> <span data-ttu-id="9db05-604">サインアップしたら、Power BI アプリに戻り、もう一度サインインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-604">Once you are signed up, go back to the Power BI app, and sign in again.</span></span>
+3.  <span data-ttu-id="df35b-602">**Microsoft 365 アカウント**を使用して*Power BI*にログインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-602">Log into *Power BI* with your **Microsoft 365 account**.</span></span> <span data-ttu-id="df35b-603">サインアップするには、ブラウザーにリダイレクトすることができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-603">You may be redirected to a browser, to sign up.</span></span> <span data-ttu-id="df35b-604">サインアップしたら、Power BI アプリに戻り、もう一度サインインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-604">Once you are signed up, go back to the Power BI app, and sign in again.</span></span>
 
-4.  <span data-ttu-id="9db05-605">**[データの取得]** をクリックし、 **[詳細]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-605">Click on **Get Data** and then click on **More...**.</span></span>
+4.  <span data-ttu-id="df35b-605">**[データの取得]** をクリックし、 **[詳細]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-605">Click on **Get Data** and then click on **More...**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-74.png)
 
-5.  <span data-ttu-id="9db05-607">**[Azure]** 、 **[azure Table Storage]** の順にクリックし、 **[接続]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-607">Click **Azure**, **Azure Table Storage**, then click on **Connect**.</span></span>
+5.  <span data-ttu-id="df35b-607">**[Azure]** 、 **[azure Table Storage]** の順にクリックし、 **[接続]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-607">Click **Azure**, **Azure Table Storage**, then click on **Connect**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-75.png)
 
-6.  <span data-ttu-id="9db05-609">テーブルサービスの作成時に、先ほど収集した**テーブル URL** ([第11章の手順 13](#chapter-11---create-table-service)) を挿入するように求められます。</span><span class="sxs-lookup"><span data-stu-id="9db05-609">You will be prompted to insert the **Table URL** that you collected earlier ([in step 13 of Chapter 11](#chapter-11---create-table-service)), while creating your Table Service.</span></span> <span data-ttu-id="9db05-610">URL を挿入した後、テーブル "サブフォルダー" (このコースでは IoTMessages) を参照するパスの部分を削除します。</span><span class="sxs-lookup"><span data-stu-id="9db05-610">After inserting the URL, delete the portion of the path referring to the Table "sub-folder" (which was IoTMessages, in this course).</span></span> <span data-ttu-id="9db05-611">最終的な結果は、次の図のように表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-611">The final result should be as displayed in the image below.</span></span> <span data-ttu-id="9db05-612">[ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-612">Then click on **OK**.</span></span>
+6.  <span data-ttu-id="df35b-609">テーブルサービスの作成時に、先ほど収集した**テーブル URL** ([第11章の手順 13](#chapter-11---create-table-service)) を挿入するように求められます。</span><span class="sxs-lookup"><span data-stu-id="df35b-609">You will be prompted to insert the **Table URL** that you collected earlier ([in step 13 of Chapter 11](#chapter-11---create-table-service)), while creating your Table Service.</span></span> <span data-ttu-id="df35b-610">URL を挿入した後、テーブル "サブフォルダー" (このコースでは IoTMessages) を参照するパスの部分を削除します。</span><span class="sxs-lookup"><span data-stu-id="df35b-610">After inserting the URL, delete the portion of the path referring to the Table "sub-folder" (which was IoTMessages, in this course).</span></span> <span data-ttu-id="df35b-611">最終的な結果は、次の図のように表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-611">The final result should be as displayed in the image below.</span></span> <span data-ttu-id="df35b-612">[ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-612">Then click on **OK**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-76.png)
 
-7.  <span data-ttu-id="9db05-614">Table Storage の作成時に、メモした**ストレージキー** ([第11章の手順 11](#chapter-11---create-table-service)) を挿入するように求められます。</span><span class="sxs-lookup"><span data-stu-id="9db05-614">You will be prompted to insert the **Storage Key** that you noted ([in step 11 of Chapter 11](#chapter-11---create-table-service)) earlier while creating your Table Storage.</span></span> <span data-ttu-id="9db05-615">**[接続]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-615">Then click on **Connect**.</span></span>
+7.  <span data-ttu-id="df35b-614">Table Storage の作成時に、メモした**ストレージキー** ([第11章の手順 11](#chapter-11---create-table-service)) を挿入するように求められます。</span><span class="sxs-lookup"><span data-stu-id="df35b-614">You will be prompted to insert the **Storage Key** that you noted ([in step 11 of Chapter 11](#chapter-11---create-table-service)) earlier while creating your Table Storage.</span></span> <span data-ttu-id="df35b-615">**[接続]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-615">Then click on **Connect**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-77.png)  
 
-8. <span data-ttu-id="9db05-617">[**ナビゲーター] パネル**が表示されたら、テーブルの横にあるボックスをオンにして、 **[読み込み]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-617">A **Navigator Panel** will be displayed, tick the box next to your Table and click on **Load**.</span></span>
+8. <span data-ttu-id="df35b-617">[**ナビゲーター] パネル**が表示されたら、テーブルの横にあるボックスをオンにして、 **[読み込み]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-617">A **Navigator Panel** will be displayed, tick the box next to your Table and click on **Load**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-78.png)  
 
-9. <span data-ttu-id="9db05-619">現在、テーブルは Power BI に読み込まれていますが、その値を表示するクエリが必要です。</span><span class="sxs-lookup"><span data-stu-id="9db05-619">Your table has now been loaded on Power BI, but it requires a query to display the values in it.</span></span> <span data-ttu-id="9db05-620">これを行うには、画面の右側にある [**フィールド] パネル**にあるテーブル名を右クリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-620">To do so, right-click on the table name located in the **FIELDS panel** at the right side of the screen.</span></span> <span data-ttu-id="9db05-621">次に、 **[クエリの編集]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-621">Then click on **Edit Query**.</span></span>
+9. <span data-ttu-id="df35b-619">現在、テーブルは Power BI に読み込まれていますが、その値を表示するクエリが必要です。</span><span class="sxs-lookup"><span data-stu-id="df35b-619">Your table has now been loaded on Power BI, but it requires a query to display the values in it.</span></span> <span data-ttu-id="df35b-620">これを行うには、画面の右側にある [**フィールド] パネル**にあるテーブル名を右クリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-620">To do so, right-click on the table name located in the **FIELDS panel** at the right side of the screen.</span></span> <span data-ttu-id="df35b-621">次に、 **[クエリの編集]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-621">Then click on **Edit Query**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-79.png) 
 
-10. <span data-ttu-id="9db05-623">新しいウィンドウとして**Power Query エディター**が開き、テーブルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-623">A **Power Query Editor**  will open up as a new window, displaying your table.</span></span> <span data-ttu-id="9db05-624">テーブルの [*コンテンツ*] 列の "**レコード**" をクリックして、保存されているコンテンツを視覚化します。</span><span class="sxs-lookup"><span data-stu-id="9db05-624">Click on the word **Record** within the *Content* column of the table, to visualize your stored content.</span></span>
+10. <span data-ttu-id="df35b-623">新しいウィンドウとして**Power Query エディター**が開き、テーブルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-623">A **Power Query Editor**  will open up as a new window, displaying your table.</span></span> <span data-ttu-id="df35b-624">テーブルの [*コンテンツ*] 列の "**レコード**" をクリックして、保存されているコンテンツを視覚化します。</span><span class="sxs-lookup"><span data-stu-id="df35b-624">Click on the word **Record** within the *Content* column of the table, to visualize your stored content.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-80.png)    
 
-11. <span data-ttu-id="9db05-626">ウィンドウの左上にある [**テーブルに**移動] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-626">Click on **Into Table**, at the top-left of the window.</span></span> 
+11. <span data-ttu-id="df35b-626">ウィンドウの左上にある [**テーブルに**移動] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-626">Click on **Into Table**, at the top-left of the window.</span></span> 
 
     ![Power BI](images/AzureLabs-Lab313-81.png)
 
-12. <span data-ttu-id="9db05-628">**[閉じる & 適用]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-628">Click on **Close & Apply**.</span></span>
+12. <span data-ttu-id="df35b-628">**[閉じる & 適用]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-628">Click on **Close & Apply**.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-82.png)
 
-13. <span data-ttu-id="9db05-630">クエリの読み込みが完了したら、[**フィールド] パネル**の画面の右側で、パラメーターの**名前**と**値**に対応するボックスをオンにして、messagecontent列の内容を視覚化します。</span><span class="sxs-lookup"><span data-stu-id="9db05-630">Once it has finished loading the query, within the **FIELDS panel**, on the right side of the screen, tick the boxes corresponding to the parameters **Name** and **Value**, to visualize the **MessageContent** column content.</span></span>
+13. <span data-ttu-id="df35b-630">クエリの読み込みが完了したら、[**フィールド] パネル**の画面の右側で、パラメーターの**名前**と**値**に対応するボックスをオンにして、messagecontent列の内容を視覚化します。</span><span class="sxs-lookup"><span data-stu-id="df35b-630">Once it has finished loading the query, within the **FIELDS panel**, on the right side of the screen, tick the boxes corresponding to the parameters **Name** and **Value**, to visualize the **MessageContent** column content.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-83.png)
 
-14. <span data-ttu-id="9db05-632">ウィンドウの左上にある**青いディスクアイコン**をクリックして、選択したフォルダーに作業内容を保存します。</span><span class="sxs-lookup"><span data-stu-id="9db05-632">Click on the **blue disk icon** at the top left of the window to save your work in a folder of your choice.</span></span>
+14. <span data-ttu-id="df35b-632">ウィンドウの左上にある**青いディスクアイコン**をクリックして、選択したフォルダーに作業内容を保存します。</span><span class="sxs-lookup"><span data-stu-id="df35b-632">Click on the **blue disk icon** at the top left of the window to save your work in a folder of your choice.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-84.png)
 
-15. <span data-ttu-id="9db05-634">[発行] ボタンをクリックして、ワークスペースにテーブルをアップロードできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="9db05-634">You can now click on the Publish button to upload your table to your Workspace.</span></span> <span data-ttu-id="9db05-635">メッセージが表示されたら、 **[マイワークスペース]** をクリックし、[*選択*] をクリックします</span><span class="sxs-lookup"><span data-stu-id="9db05-635">When prompted, click **My workspace** and click *Select*.</span></span> <span data-ttu-id="9db05-636">送信の成功した結果が表示されるまで待ちます。</span><span class="sxs-lookup"><span data-stu-id="9db05-636">Wait for it to display the successful result of the submission.</span></span>
+15. <span data-ttu-id="df35b-634">[発行] ボタンをクリックして、ワークスペースにテーブルをアップロードできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="df35b-634">You can now click on the Publish button to upload your table to your Workspace.</span></span> <span data-ttu-id="df35b-635">メッセージが表示されたら、 **[マイワークスペース]** をクリックし、[*選択*] をクリックします</span><span class="sxs-lookup"><span data-stu-id="df35b-635">When prompted, click **My workspace** and click *Select*.</span></span> <span data-ttu-id="df35b-636">送信の成功した結果が表示されるまで待ちます。</span><span class="sxs-lookup"><span data-stu-id="df35b-636">Wait for it to display the successful result of the submission.</span></span>
 
     ![Power BI](images/AzureLabs-Lab313-85.png)
 
     ![Power BI](images/AzureLabs-Lab313-86.png)
 
 > [!WARNING]
-> <span data-ttu-id="9db05-639">次の章は HoloLens 固有です。</span><span class="sxs-lookup"><span data-stu-id="9db05-639">The following Chapter is HoloLens specific.</span></span> <span data-ttu-id="9db05-640">Power BI は現在イマーシブアプリケーションとして利用できませんが、デスクトップアプリを使用して Windows Mixed Reality ポータル (崖家) でデスクトップバージョンを実行することはできます。</span><span class="sxs-lookup"><span data-stu-id="9db05-640">Power BI is not currently availble as an immersive application, however you can run the desktop version in the Windows Mixed Reality Portal (aka Cliff House), through the Desktop app.</span></span>
+> <span data-ttu-id="df35b-639">次の章は HoloLens 固有です。</span><span class="sxs-lookup"><span data-stu-id="df35b-639">The following Chapter is HoloLens specific.</span></span> <span data-ttu-id="df35b-640">Power BI は現在イマーシブアプリケーションとして利用できませんが、デスクトップアプリを使用して Windows Mixed Reality ポータル (崖家) でデスクトップバージョンを実行することはできます。</span><span class="sxs-lookup"><span data-stu-id="df35b-640">Power BI is not currently availble as an immersive application, however you can run the desktop version in the Windows Mixed Reality Portal (aka Cliff House), through the Desktop app.</span></span>
 
-## <a name="chapter-16---display-power-bi-data-on-hololens"></a><span data-ttu-id="9db05-641">Chapter 16-HoloLens で Power BI データを表示する</span><span class="sxs-lookup"><span data-stu-id="9db05-641">Chapter 16 - Display Power BI data on HoloLens</span></span>
+## <a name="chapter-16---display-power-bi-data-on-hololens"></a><span data-ttu-id="df35b-641">Chapter 16-HoloLens で Power BI データを表示する</span><span class="sxs-lookup"><span data-stu-id="df35b-641">Chapter 16 - Display Power BI data on HoloLens</span></span>
 
-1. <span data-ttu-id="9db05-642">HoloLens で、アプリケーションの一覧のアイコンをタップして、 **Microsoft Store**にログインします。</span><span class="sxs-lookup"><span data-stu-id="9db05-642">On your HoloLens, log in to the **Microsoft Store**, by tapping on its icon in the applications list.</span></span>
+1. <span data-ttu-id="df35b-642">HoloLens で、アプリケーションの一覧のアイコンをタップして、 **Microsoft Store**にログインします。</span><span class="sxs-lookup"><span data-stu-id="df35b-642">On your HoloLens, log in to the **Microsoft Store**, by tapping on its icon in the applications list.</span></span>
 
     ![Power BI HL](images/AzureLabs-Lab313-87.png)
 
-2. <span data-ttu-id="9db05-644">**Power BI**アプリケーションを検索してダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="9db05-644">Search and then download the **Power BI** application.</span></span>
+2. <span data-ttu-id="df35b-644">**Power BI**アプリケーションを検索してダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="df35b-644">Search and then download the **Power BI** application.</span></span>
 
     ![Power BI HL](images/AzureLabs-Lab313-88.png)
 
-3. <span data-ttu-id="9db05-646">アプリケーションの一覧から**Power BI**を開始します。</span><span class="sxs-lookup"><span data-stu-id="9db05-646">Start **Power BI** from your applications list.</span></span> 
+3. <span data-ttu-id="df35b-646">アプリケーションの一覧から**Power BI**を開始します。</span><span class="sxs-lookup"><span data-stu-id="df35b-646">Start **Power BI** from your applications list.</span></span> 
 
-4. <span data-ttu-id="9db05-647">**Power BI**によって、 **Microsoft 365 アカウント**へのログインが要求される場合があります。</span><span class="sxs-lookup"><span data-stu-id="9db05-647">**Power BI** might ask you to login to your **Microsoft 365 account**.</span></span>
+4. <span data-ttu-id="df35b-647">**Power BI**によって、 **Microsoft 365 アカウント**へのログインが要求される場合があります。</span><span class="sxs-lookup"><span data-stu-id="df35b-647">**Power BI** might ask you to login to your **Microsoft 365 account**.</span></span>
 
-5. <span data-ttu-id="9db05-648">アプリの内部では、次の図に示すように、既定でワークスペースが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-648">Once inside the app, the workspace should display by default as shown in the image below.</span></span> <span data-ttu-id="9db05-649">この問題が発生しない場合は、ウィンドウの左側にあるワークスペースアイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9db05-649">If that does not happen, simply click on the workspace icon on the left side of the window.</span></span>
+5. <span data-ttu-id="df35b-648">アプリの内部では、次の図に示すように、既定でワークスペースが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-648">Once inside the app, the workspace should display by default as shown in the image below.</span></span> <span data-ttu-id="df35b-649">この問題が発生しない場合は、ウィンドウの左側にあるワークスペースアイコンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="df35b-649">If that does not happen, simply click on the workspace icon on the left side of the window.</span></span>
 
     ![Power BI HL](images/AzureLabs-Lab313-89.png)
 
-## <a name="your-finished-your-iot-hub-application"></a><span data-ttu-id="9db05-651">IoT Hub アプリケーションが完成しました</span><span class="sxs-lookup"><span data-stu-id="9db05-651">Your finished your IoT Hub application</span></span>
+## <a name="your-finished-your-iot-hub-application"></a><span data-ttu-id="df35b-651">IoT Hub アプリケーションが完成しました</span><span class="sxs-lookup"><span data-stu-id="df35b-651">Your finished your IoT Hub application</span></span>
 
-<span data-ttu-id="9db05-652">これで、シミュレートされた仮想マシンのエッジデバイスを使用して、IoT Hub サービスを正常に作成できました。</span><span class="sxs-lookup"><span data-stu-id="9db05-652">Congratulations, you have successfully created an IoT Hub Service, with a simulated Virtual Machine Edge device.</span></span> <span data-ttu-id="9db05-653">デバイスは、azure Function App によって容易に machine learning モデルの結果を Azure Table サービスに伝達できます。このサービスは、Power BI に読み込まれ、Microsoft HoloLens 内で視覚化されます。</span><span class="sxs-lookup"><span data-stu-id="9db05-653">Your device can  communicate the results of a machine learning model to an Azure Table Service, facilitated by an Azure Function App, which is read into Power BI, and visualized within a Microsoft HoloLens.</span></span>
+<span data-ttu-id="df35b-652">これで、シミュレートされた仮想マシンのエッジデバイスを使用して、IoT Hub サービスを正常に作成できました。</span><span class="sxs-lookup"><span data-stu-id="df35b-652">Congratulations, you have successfully created an IoT Hub Service, with a simulated Virtual Machine Edge device.</span></span> <span data-ttu-id="df35b-653">デバイスは、azure Function App によって容易に machine learning モデルの結果を Azure Table サービスに伝達できます。このサービスは、Power BI に読み込まれ、Microsoft HoloLens 内で視覚化されます。</span><span class="sxs-lookup"><span data-stu-id="df35b-653">Your device can  communicate the results of a machine learning model to an Azure Table Service, facilitated by an Azure Function App, which is read into Power BI, and visualized within a Microsoft HoloLens.</span></span>
  
 ![Power BI](images/AzureLabs-Lab313-00.png)
 
-## <a name="bonus-exercises"></a><span data-ttu-id="9db05-655">ボーナスの演習</span><span class="sxs-lookup"><span data-stu-id="9db05-655">Bonus exercises</span></span>
+## <a name="bonus-exercises"></a><span data-ttu-id="df35b-655">ボーナスの演習</span><span class="sxs-lookup"><span data-stu-id="df35b-655">Bonus exercises</span></span>
 
-### <a name="exercise-1"></a><span data-ttu-id="9db05-656">演習1</span><span class="sxs-lookup"><span data-stu-id="9db05-656">Exercise 1</span></span>
+### <a name="exercise-1"></a><span data-ttu-id="df35b-656">演習1</span><span class="sxs-lookup"><span data-stu-id="df35b-656">Exercise 1</span></span>
 
-<span data-ttu-id="9db05-657">テーブルに格納されているメッセージング構造を展開し、グラフとして表示します。</span><span class="sxs-lookup"><span data-stu-id="9db05-657">Expand the messaging structure stored in the table and display it as a graph.</span></span> <span data-ttu-id="9db05-658">後で表示するために、さらに多くのデータを収集し、同じテーブルに格納することができます。</span><span class="sxs-lookup"><span data-stu-id="9db05-658">You might want to collect more data and store it in the same table, to be later displayed.</span></span>
+<span data-ttu-id="df35b-657">テーブルに格納されているメッセージング構造を展開し、グラフとして表示します。</span><span class="sxs-lookup"><span data-stu-id="df35b-657">Expand the messaging structure stored in the table and display it as a graph.</span></span> <span data-ttu-id="df35b-658">後で表示するために、さらに多くのデータを収集し、同じテーブルに格納することができます。</span><span class="sxs-lookup"><span data-stu-id="df35b-658">You might want to collect more data and store it in the same table, to be later displayed.</span></span>
 
-### <a name="exercise-2"></a><span data-ttu-id="9db05-659">演習2</span><span class="sxs-lookup"><span data-stu-id="9db05-659">Exercise 2</span></span>
+### <a name="exercise-2"></a><span data-ttu-id="df35b-659">演習2</span><span class="sxs-lookup"><span data-stu-id="df35b-659">Exercise 2</span></span>
 
-<span data-ttu-id="9db05-660">IoT ボードにデプロイする追加の "カメラキャプチャ" モジュールを作成して、分析対象のカメラを通じてイメージをキャプチャできるようにします。</span><span class="sxs-lookup"><span data-stu-id="9db05-660">Create an additional "camera capture" module to be deployed on the IoT board, so that it can capture images through the camera to be analyzed.</span></span>
+<span data-ttu-id="df35b-660">IoT ボードにデプロイする追加の "カメラキャプチャ" モジュールを作成して、分析対象のカメラを通じてイメージをキャプチャできるようにします。</span><span class="sxs-lookup"><span data-stu-id="df35b-660">Create an additional "camera capture" module to be deployed on the IoT board, so that it can capture images through the camera to be analyzed.</span></span>
