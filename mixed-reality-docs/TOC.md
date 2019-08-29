@@ -104,8 +104,7 @@
 #### [音声コマンド](Voice-design.md)
 #### [ヘッド視線入力とドウェル](Gaze-and-dwell.md)
 ### [頭の視線入力とコミット](gaze-and-commit.md)
-### 補助操作
-#### [アイ視線入力](eye-tracking.md)
+### [アイ視線入力](eye-tracking.md)
 ## スタイル
 ### [色、ライト、マテリアル](color,-light-and-materials.md)
 ### [立体音響の設計](spatial-sound-design.md)
@@ -288,16 +287,16 @@
 ## リモート ツールと調査ツール
 ### [Windows Device Portal を使用する](using-the-windows-device-portal.md)
 ### [Device Portal API リファレンス](device-portal-api-reference.md)
-## Holographic Remoting
+## ホログラフィック リモート
 ### [Holographic Remoting Player](holographic-remoting-player.md)
 ### [Holographic Remoting ホストアプリの記述](holographic-remoting-create-host.md)
 ### [Holographic Remoting プレーヤーの記述](holographic-remoting-create-player.md)
 ### [カスタムの Holographic Remoting データ チャネル](holographic-remoting-custom-data-channels.md)
-### [Holographic Remoting によりセキュリティ保護された接続](holographic-remoting-secure-connection.md)
+### [ホログラフィック リモートによりセキュリティ保護された接続](holographic-remoting-secure-connection.md)
 ### [トラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
 ### [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
-### HoloLens 1 用 Holographic Remoting
-#### [Holographic Remoting の追加](add-holographic-remoting.md)
+### HoloLens (第 1 世代) 用ホログラフィック リモート
+#### [ホログラフィック リモートの追加](add-holographic-remoting.md)
 ## その他
 ### [QR コードの追跡](qr-code-tracking.md)
 ### [複合現実での共有エクスペリエンス](shared-experiences-in-mixed-reality.md)
