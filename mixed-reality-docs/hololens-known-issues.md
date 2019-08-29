@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/10/2019
 ms.topic: article
 keywords: トラブルシューティング、既知の問題、ヘルプ
-ms.openlocfilehash: f043164f21f20925a78b59057e14ac4607d0d3f1
-ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
+ms.openlocfilehash: 80bd7499c0075399e516648dd92b7515fdba753a
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896545"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122131"
 ---
 # <a name="hololens-known-issues"></a>HoloLens の既知の問題
 
@@ -28,7 +28,7 @@ Visual Studio には、この問題の修正を含む VS 2019 バージョン16.
  
 **対応策**: 
 
-現在、チームは修正を行っています。 それまでの間は、次の手順を使用して問題を回避し、デプロイとデバッグのブロックを解除できます。  
+この問題は Visual Studio 2019 16.2 で修正されていますが、以前のバージョンの Visual Studio を使用している開発者は、次の手順に従って問題を回避し、デプロイとデバッグのブロックを解除することができます。  
 1. Visual Studio を開く
 2. ファイル > の新しい > プロジェクト
 3. Visual C# > Windows デスクトップ-> コンソールアプリ (.NET Framework)
@@ -74,7 +74,6 @@ Visual Studio には、この問題の修正を含む VS 2019 バージョン16.
  
 15. ツールがメッセージなしで終了すると (これには数秒しかかかりません)、Visual Studio 2017 以降からデプロイおよびデバッグできるようになります。  ツールを引き続き使用する必要はありません。
 
-利用可能になると、さらに更新プログラムを提供します。
 
 ## <a name="issues-launching-the-microsoft-store-and-apps-on-hololens"></a>HoloLens での Microsoft Store とアプリの起動に関する問題
 

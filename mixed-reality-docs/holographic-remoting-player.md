@@ -6,17 +6,17 @@ ms.author: jlyons
 ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: fe26092ec8f5895652d17f88bf3be15cb116e482
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: c3e31cdb5acf35ecc3101d3cf359e40771cc8cbd
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712673"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122077"
 ---
 # <a name="holographic-remoting-player"></a>Holographic リモート処理プレーヤー
 
 >[!IMPORTANT]
->HoloLens 2 の Holographic リモート処理は、メジャーバージョンの変更です。 [ **Hololens 1**用のホストアプリケーション](add-holographic-remoting.md)では、NuGet**パッケージバージョン 1.x**とホストアプリケーションを使用する必要があります。 [ **hololens 2**で](holographic-remoting-create-host.md)は**2 .x**を使用する必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens 1 と互換性がないことを意味します。
+>HoloLens 2 の Holographic リモート処理は、メジャーバージョンの変更です。 [Hololens のホストアプリケーション **(1 つ目の世代)** ](add-holographic-remoting.md)では 、NuGet パッケージバージョン1.x とホストアプリケーションを使用する必要があります。 [ **hololens 2**で](holographic-remoting-create-host.md)は2.x を使用する必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens 1 と互換性がないことを意味します。
 
 Holographic Remoting Player は、Holographic リモート処理をサポートする PC アプリやゲームに接続するコンパニオンアプリです。 Holographic リモート処理では、Wi-fi 接続を使用して、PC から Microsoft HoloLens にコンテンツを Holographic します。
 
@@ -43,7 +43,7 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 
 ## <a name="diagnostics"></a>診断
 
-接続の品質を測定するには、Holographic リモート処理プレーヤーのメイン画面で [**診断の有効化]** を言います。 診断が有効になっている場合、 **HoloLens 1**で、アプリには次の情報が表示されます。
+接続の品質を測定するには、Holographic リモート処理プレーヤーのメイン画面で [**診断の有効化]** を言います。 診断が有効になっている場合、 **HoloLens (第1世代)** で、アプリには次の情報が表示されます。
 
 * **FPS** -リモートプレーヤーが受信して1秒間にレンダリングするレンダリングフレームの平均数。 最適なは 60 FPS です。
 * **[待機時間]** -フレームが PC から HoloLens に移動するまでにかかる平均時間。 精度が低下します。 これは、Wi-fi ネットワークに大きく依存します。
@@ -76,7 +76,7 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 * ワイヤレスホップの数を減らすには、コンピューターをイーサネット経由でネットワークに接続することをお勧めします。
 
 ## <a name="see-also"></a>関連項目
-* [HoloLens 1:Holographic リモート処理の追加](add-holographic-remoting.md)
+* [HoloLens (第1世代):Holographic リモート処理の追加](add-holographic-remoting.md)
 * [HoloLens 2:Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
-* [Holographic リモート処理ソフトウェアライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
+* [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)

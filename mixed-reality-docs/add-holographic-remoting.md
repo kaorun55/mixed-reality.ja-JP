@@ -6,17 +6,17 @@ ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality, ホログラム, holographic リモート処理, リモートレンダリング, ネットワークレンダリング, HoloLens, リモートホログラム
-ms.openlocfilehash: 71a763b0660867bf910c0dcecb5fba921f19d068
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: 523486c26c03bd4b3d5ed8e8cafd994f12678e3b
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68712427"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122045"
 ---
-# <a name="add-holographic-remoting-hololens-1"></a>Holographic Remoting (HoloLens 1) の追加
+# <a name="add-holographic-remoting-hololens-1st-gen"></a>Holographic リモート処理 (HoloLens (第1世代)) の追加
 
 >[!IMPORTANT]
->このドキュメントでは、HoloLens 1 用のホストアプリケーションの作成について説明します。 **HoloLens 1**用のホストアプリケーションでは、NuGet**パッケージバージョン 1.x**を使用する必要があります。 これは、HoloLens 1 用に作成されたホストアプリケーションが HoloLens 2 との互換性がないことを意味します。
+>このドキュメントでは、HoloLens 1 用のホストアプリケーションの作成について説明します。 HoloLens のホストアプリケーション **(第1世代)** では、NuGetパッケージバージョン1.x を使用する必要があります。 これは、HoloLens 1 用に作成されたホストアプリケーションが HoloLens 2 との互換性がないことを意味します。
 
 ## <a name="hololens-2"></a>HoloLens 2
 

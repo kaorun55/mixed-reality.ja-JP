@@ -6,17 +6,17 @@ ms.author: bethau
 ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 95cf98504f26e2362b3c4fd38e7d9228350798f3
-ms.sourcegitcommit: ca949efe0279995a376750d89e23d7123eb44846
+ms.openlocfilehash: 6b0f92fce1099ec98d87100e015de9442bff6bd2
+ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68718066"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122031"
 ---
 # <a name="writing-a-holographic-remoting-host-app"></a>Holographic Remoting ホストアプリの作成
 
 >[!IMPORTANT]
->このドキュメントでは、HoloLens 2 用のホストアプリケーションの作成について説明します。 **HoloLens 1**用のホストアプリケーションでは、NuGet**パッケージバージョン 1.x**を使用する必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens 1 と互換性がないことを意味します。 HoloLens 1 のドキュメントについては、[こちら](add-holographic-remoting.md)を参照してください。
+>このドキュメントでは、HoloLens 2 用のホストアプリケーションの作成について説明します。 HoloLens のホストアプリケーション **(第1世代)** では、NuGetパッケージバージョン1.x を使用する必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens 1 と互換性がないことを意味します。 HoloLens 1 のドキュメントについては、[こちら](add-holographic-remoting.md)を参照してください。
 
 Holographic リモート処理ホストアプリケーションを作成することにより、リモートコンピューター上にレンダリングされるリモートコンテンツを HoloLens 2 にストリーミングできます。 この記事では、これを実現する方法について説明します。 このページのすべてのコードと作業中のプロジェクトは、 [Holographic リモート処理のサンプル github リポジトリ](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)にあります。
 
@@ -24,7 +24,7 @@ Holographic リモート処理を使用すると、アプリは、デスクト�
 
 一般的なリモート処理接続では、待機時間が50ミリ秒に抑えられます。 プレーヤーアプリは、リアルタイムで待機時間を報告できます。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 
 開始点として、Windows Mixed Reality API を対象とする、動作する DirectX ベースのデスクトップまたは UWP アプリを使用することをお勧めします。 詳細については、「 [DirectX 開発の概要](directx-development-overview.md)」を参照してください。 [ C++ Holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)は、出発点として適しています。
 
@@ -39,12 +39,12 @@ Visual Studio で NuGet パッケージをプロジェクトに追加するに�
 1. Visual Studio でプロジェクトを開きます。
 2. プロジェクトノードを右クリックし、 **[NuGet パッケージの管理...]** を選択します。
 3. 表示されるパネルで、 **[参照]** をクリックし、"Holographic Remoting" を検索します。
-4. **[Holographic]** を選択し **、最新の**2.x バージョンを選択して **[インストール]** をクリックします。
+4. **[Holographic]** を選択し、最新の2.x バージョンを選択して **[インストール]** をクリックします。
 5. **[プレビュー]** ダイアログが表示されたら、 **[OK]** をクリックします。
 6. 次に表示されるダイアログは、使用許諾契約書です。 [**同意**する] をクリックして、使用許諾契約書に同意します。
 
 >[!NOTE]
->HoloLens 1 を対象とする開発者は、NuGet パッケージ**のバージョン 1.x**を引き続き利用できます。 詳細については、「 [Add Holographic Remoting (HoloLens 1)](add-holographic-remoting.md)」を参照してください。
+>HoloLens 1 を対象とする開発者は、NuGet パッケージのバージョン1.x を引き続き利用できます。 詳細については、「 [Add Holographic Remoting (HoloLens (第1世代))](add-holographic-remoting.md)」を参照してください。
 
 ## <a name="create-the-remote-context"></a>リモートコンテキストを作成する
 
@@ -297,8 +297,8 @@ m_onSendFrameEventRevoker = m_remoteContext.OnSendFrame(
 
 ## <a name="see-also"></a>関連項目
 * [カスタム Holographic リモート処理プレーヤーアプリの作成](holographic-remoting-create-player.md)
-* [カスタム Holographic リモート処理データチャネル](holographic-remoting-custom-data-channels.md)
+* [カスタムの Holographic Remoting データ チャネル](holographic-remoting-custom-data-channels.md)
 * [Holographic Remoting を使用したセキュリティで保護された接続の確立](holographic-remoting-secure-connection.md)
 * [Holographic リモート処理のトラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
-* [Holographic リモート処理ソフトウェアライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
+* [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
