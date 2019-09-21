@@ -1,6 +1,6 @@
 ---
-title: HoloLens のエミュレーターを使用する
-description: HoloLens のエミュレーターを使用すると、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストできます。
+title: HoloLens エミュレーターを使用する
+description: HoloLens エミュレーターを使用すると、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストできます。
 author: pbarnettms
 ms.author: pbarnett
 ms.date: 08/14/2019
@@ -14,25 +14,25 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/15/2019
 ms.locfileid: "69030171"
 ---
-# <a name="using-the-hololens-emulator"></a>HoloLens のエミュレーターを使用する
+# <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
-HoloLens のエミュレーターを使用すると、物理的な HoloLens を使用せずに、PC でホログラフィック アプリケーションをテストできます。 これには、HoloLens 開発ツールセットも含まれています。 エミュレーターは、Hyper-V 仮想マシンを使用します。 HoloLens のセンサーによって通常読み取られる人間と環境の入力は、キーボード、マウス、または Xbox コントローラーからシミュレートされます。 アプリケーションは、変更しなくてもエミュレーターで実行でき、実際の HoloLens で実行されていないことも認識しません。
+HoloLens のエミュレーターを使用すると、物理的な HoloLens を使用せずに、PC でホログラフィック アプリケーションをテストできます。 これには、HoloLens 開発ツールセットも含まれています。 このエミュレーターには、Hyper-V 仮想マシンを使用します。 HoloLens のセンサーによって通常読み取られる人間と環境の入力は、キーボード、マウス、または Xbox コントローラーからシミュレートされます。 アプリケーションは、変更しなくてもエミュレーターで実行でき、実際の HoloLens で実行されていないことも認識しません。
 
 デスクトップ PC 用の Windows Mixed Reality イマーシブ (VR) ヘッドセット アプリケーションまたはゲームを開発したい場合は、[Windows Mixed Reality シミュレーター](using-the-windows-mixed-reality-simulator.md)についてのページをご覧ください。デスクトップ ヘッドセットをシミュレートできます。
 
 
-## <a name="installing-the-hololens-emulator"></a>HoloLens のエミュレーターをインストールする
+## <a name="installing-the-hololens-emulator"></a>HoloLens エミュレーターをインストールする
 HoloLens のエミュレーターをダウンロードします。
 
 バージョン: 
 * [HoloLens 2 エミュレーター](https://go.microsoft.com/fwlink/?linkid=2101019).
 * [HoloLens エミュレーター (第 1 世代) およびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
-HoloLens のエミュレーターの以前のビルドは、「[HoloLens のエミュレーターのアーカイブ](hololens-emulator-archive.md)」ページをご覧ください。
+HoloLens エミュレーターの以前のビルドは、[HoloLens エミュレーターのアーカイブ](hololens-emulator-archive.md)に関するページにあります。
 
-### <a name="hololens-emulator-system-requirements"></a>HoloLens のエミュレーターのシステム要件
+### <a name="hololens-emulator-system-requirements"></a>HoloLens エミュレーターのシステム要件
 
-HoloLens のエミュレーターは、RemoteFx 対応の Hyper-V (第 1 世代エミュレーター) または GPU PV (HoloLens 2 エミュレーター) を使用してハードウェアのグラフィックスを加速します。 エミュレーターを使用するには、PC が次のハードウェア要件を満たしていることを確認します。
+HoloLens エミュレーターでは、ハードウェア アクセラレータによるグラフィックスのため、RemoteFx 対応の Hyper-V (第 1 世代エミュレーター) または GPU PV (HoloLens 2 エミュレーター) を使用します。 エミュレーターを使用するには、PC が次のハードウェア要件を満たしていることを確認します。
 * 64 ビットの Windows 10 Pro、Enterprise、または Education 
     >[!NOTE]
     >Windows 10 Home エディションは、Hyper-V または HoloLens のエミュレーターをサポートしていません。  
@@ -48,24 +48,24 @@ HoloLens のエミュレーターは、RemoteFx 対応の Hyper-V (第 1 世代�
    * DirectX 11.0 以降
    * WDDM 1.2 グラフィックス ドライバー以降 (第 1 世代)
    * WDDM 2.5 グラフィックス ドライバー (HoloLens 2 エミュレーター)
-   * エミュレーターは、サポートされていない GPU で動作する可能性がありますが、大幅に遅くなります。
+   * このエミュレーターは、サポートされていない GPU で動作する可能性がありますが、大幅に遅くなります。
 
 システムが上記の要件を満たしている場合、エミュレーターのインストールが成功するように、[コントロール パネル] > [プログラム] > [プログラムと機能] > [Windows の機能の有効化または無効化] で [Hyper-V] が選択されていることを確認し、**システムで「Hyper-V」機能が有効になっていることを確認してください**。
 
-## <a name="deploying-apps-to-the-hololens-emulator"></a>HoloLens のエミュレーターにアプリを展開する
+## <a name="deploying-apps-to-the-hololens-emulator"></a>HoloLens エミュレーターにアプリを展開する
 
 1. Visual Studio にアプリケーション ソリューションを読み込みます。
     >[!NOTE]
     >Unity を使用する場合は、Unity からプロジェクトをビルドし、ビルドされたソリューションを通常どおりに Visual Studio に読み込みます。
 2. HoloLens エミュレーター (第 1 世代) では、プラットフォームが **x86** に設定されていることを確認します。 HoloLens 2 エミュレーターでは、プラットフォームが **x86** または **x64** に設定されていることを確認します。
-3. デバッグのターゲット デバイスとして、目的の **HoloLens のエミュレーター**のバージョンを選択します。
+3. デバッグのターゲット デバイスとして、目的の **HoloLens エミュレーター**のバージョンを選択します。
 4. **[デバッグ] > [デバッグの開始]** に移動するか **F5** キーを押してエミュレーターを起動し、アプリケーションをデバッグ用にデプロイします。
 
 最初にエミュレーターを起動する場合は、1 分以上かかる場合があります。 エミュレーターにすばやくアプリケーションをデプロイできるように、デバッグ セッションの間はエミュレーターを開いたままにしておくことをお勧めします。
 
 ## <a name="basic-emulator-input"></a>基本的なエミュレーターの入力
 
-エミュレーターの制御は、多くの一般的な 3D ビデオ ゲームによく似ています。 入力オプションは、キーボード、マウス、または Xbox コントローラーで使用できます。 エミュレーターを制御するには、HoloLens を付けることで疑似ユーザーの動作を指示します。 動作により、疑似ユーザーが環境周辺を移動します。 エミュレーターで実行されるアプリケーションは、実際のデバイスで応答するのと同様に応答します。
+このエミュレーターの制御は、多くの一般的な 3D ビデオ ゲームによく似ています。 入力オプションは、キーボード、マウス、または Xbox コントローラーで使用できます。 エミュレーターを制御するには、HoloLens を付けることで疑似ユーザーの動作を指示します。 動作により、疑似ユーザーが環境周辺を移動します。 エミュレーターで実行されるアプリケーションは、実際のデバイスで応答するのと同様に応答します。
 
 HoloLens (第 1 世代) のカーソルは、頭の移動と回転に追従します。 HoloLens 2 エミュレーターでは、カーソルは手の動きと向きに追従します。
 
@@ -87,7 +87,7 @@ HoloLens (第 1 世代) のカーソルは、頭の移動と回転に追従し�
 メイン ウィンドウの右側には、エミュレーター ツールバーが表示されます。 ツールバーには、次のボタンが含まれています。
 * ![閉じるアイコン](images/emulator-close.png) **閉じる**:エミュレーターを閉じます。
 * ![最小化アイコン](images/emulator-minimize.png) **最小化**:エミュレーターのウィンドウを最小化します。
-* ![シミュレーション アイコン](images/emulator-simulation-panel.png) **シミュレーション コントロール パネル**:[エミュレーターへの入力](#basic-emulator-input)の設定と制御を行う[シミュレーション コントロール パネル](#simulation-control-panel)を表示または非表示します。
+* ![シミュレーション アイコン](images/emulator-simulation-panel.png) **シミュレーション コントロール パネル**:[エミュレーターへの入力](#basic-emulator-input)の構成と制御を行う[シミュレーション コントロール パネル](#simulation-control-panel)を表示または非表示にします。
 * ![画面のサイズに合わせるアイコン](images/emulator-fit.png) **画面のサイズに合わせる**:エミュレーターが画面に収まるようにします。
 * ![ズーム アイコン](images/emulator-zoom.png) **ズーム**:エミュレーターを大きくしたり小さくしたりします。
 * ![ヘルプ アイコン](images/emulator-help.png) **ヘルプ**:エミュレーターのヘルプを開きます。
@@ -190,13 +190,13 @@ Pro/Enterprise/Education SKU でない Windows 、または Hyper-V 機能が有
 * すべての要件については、上記の「[システム要件](#hololens-emulator-system-requirements)」セクションを参照してください。
 * また、システムで Hyper-V 機能が有効になっていることを確認してください。
 
-インストールが正常に完了したにもかかわらず、展開やデバッグのオプションに HoloLens のエミュレーターが表示されない場合は、次の点を確認してください。
+インストールが正常に完了したにもかかわらず、展開やデバッグのオプションに HoloLens エミュレーターが表示されない場合は、次の点を確認してください。
 * Visual Studio のプロジェクト構成が x86 (HoloLens 第 1 世代) または x86 または x64 (HoloLens 2 エミュレーター) に設定されている。
 * Visual Studio 2019 を使用しており、プロジェクト構成のプラットフォーム ツールセットが v142 に設定されている。
 
-インストールが正常に完了したにもかかわらず、HoloLens のエミュレーターを起動しようとしたときに Visual Studio にエラーが表示され場合は、次をやり直してください。
+インストールが正常に完了したにもかかわらず、HoloLens エミュレーターを起動しようとしたときに Visual Studio にエラーが表示され場合は、次をやり直してください。
 * Visual Studio を管理者として実行します。
-* Visual Studio 2019 しかインストールしたことがない場合は、HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Kits\Installed Roots のレジストリ値「KitsRoot10」が 32 ビットの Program Files フォルダーを指していることを確認します (例: "C:\Program Files (x86)\Windows Kits\10")。  そうでない場合は、HoloLens のエミュレーターをアンインストールし、レジストリ値を 32 ビットの Program Files フォルダーに変更してから、HoloLens のエミュレーターを再インストールします。  この問題は、Visual Studio 2019 16.0.3 で対処されます。
+* Visual Studio 2019 しかインストールしたことがない場合は、HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Kits\Installed Roots のレジストリ値「KitsRoot10」が 32 ビットの Program Files フォルダーを指していることを確認します (例: "C:\Program Files (x86)\Windows Kits\10")。  そうでない場合は、HoloLens エミュレーターをアンインストールし、レジストリ値を 32 ビットの Program Files フォルダーに変更してから、HoloLens エミュレーターを再インストールします。  この問題は、Visual Studio 2019 16.0.3 で対処されます。
 
 エミュレーターの起動時に [無効なバイト エンコード] エラー ダイアログが表示される場合は、次のようにします。
 * %localappdata%\Microsoft\XDE\HCS 内のすべてのファイルを削除してからやり直します。
@@ -209,6 +209,6 @@ Visual Studio のデバッグ ターゲット リストが空 (たとえば、[�
 
 ## <a name="see-also"></a>関連項目
 * [高度な HoloLens エミュレーターと Mixed Reality Simulator の入力](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
-* [HoloLens のエミュレーターのソフトウェアの歴史](hololens-emulator-archive.md)
+* [HoloLens エミュレーターのソフトウェアの歴史](hololens-emulator-archive.md)
 * [Unity の空間マッピング](spatial-mapping-in-unity.md)
 * [DirectX の空間マッピング](spatial-mapping-in-directx.md)
