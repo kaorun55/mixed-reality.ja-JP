@@ -1,32 +1,46 @@
 ---
-title: HoloLens 用 Unity アプリでの Windows 名前空間の使用
-description: HoloLens の Unity プロジェクトで WinRT Api を使用する方法について説明します。
+title: HoloLens 用 Unity を使用した WinRT Api
+description: HoloLens の Unity プロジェクトで WinRT Api (Windows 名前空間) を使用する方法について説明します。
 author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity、WinRT、windows mixed reality、API、チュートリアル
-ms.openlocfilehash: fd25548de8eeb3c8157a3f9de283dc5004ed1180
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 73764d191813f6dcae750e74ce3181af987c9e0e
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63548735"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437235"
 ---
-# <a name="using-the-windows-namespace-with-unity-apps-for-hololens"></a><span data-ttu-id="d1e3e-104">HoloLens 用 Unity アプリでの Windows 名前空間の使用</span><span class="sxs-lookup"><span data-stu-id="d1e3e-104">Using the Windows namespace with Unity apps for HoloLens</span></span>
+# <a name="winrt-apis-with-unity-for-hololens"></a><span data-ttu-id="c2170-104">HoloLens 用 Unity を使用した WinRT Api</span><span class="sxs-lookup"><span data-stu-id="c2170-104">WinRT APIs with Unity for HoloLens</span></span>
 
-<span data-ttu-id="d1e3e-105">このページでは、HoloLens の Unity プロジェクトで WinRT Api を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-105">This page describes how to make use of WinRT APIs in your Unity project for HoloLens.</span></span>
+<span data-ttu-id="c2170-105">このページでは、HoloLens の Unity プロジェクトで WinRT Api を使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c2170-105">This page describes how to make use of WinRT APIs in your Unity project for HoloLens.</span></span>
 
-## <a name="conditionally-include-winrt-api-calls"></a><span data-ttu-id="d1e3e-106">条件付きで WinRT API 呼び出しを含める</span><span class="sxs-lookup"><span data-stu-id="d1e3e-106">Conditionally include WinRT API calls</span></span>
+## <a name="mixed-reality-apis"></a><span data-ttu-id="c2170-106">Mixed Reality Api</span><span class="sxs-lookup"><span data-stu-id="c2170-106">Mixed Reality APIs</span></span>
 
-<span data-ttu-id="d1e3e-107">WinRT Api は、ユニバーサル Windows プラットフォームと Xbox One プラットフォーム用に構築された Unity プロジェクトに利用できます。WinRT Api を対象とする Unity スクリプトで作成するすべてのコードは、それらのビルドに対して条件付きで含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-107">WinRT APIs can be leveraged for Unity projects built for the Universal Windows Platform and Xbox One platform; any code that you write in Unity scripts that target WinRT APIs must be conditionally included for only those builds.</span></span> 
+<span data-ttu-id="c2170-107">Windows SDK のサブセットが混在している .NET Standard 2.0 互換性のある投影で使用できるようになりました。これは、プリプロセッサディレクティブなしでプロジェクトで使用できます。</span><span class="sxs-lookup"><span data-stu-id="c2170-107">A Mixed Reality focused subset of the Windows SDK has been made available in a .NET Standard 2.0 compatible projection, which you can use in your project without preprocessor directives.</span></span> <span data-ttu-id="c2170-108">これには、ほとんどの Api が含まれています。このような名前空間には、後で追加の Api を含めるために拡張されることがあります。</span><span class="sxs-lookup"><span data-stu-id="c2170-108">This includes most APIs in the Windows.Perception and Windows.UI.Input.Spatial namespaces, and may expand to include additional APIs in the future.</span></span> <span data-ttu-id="c2170-109">予測された Api は、エディターでの実行中に使用できます。これにより、[再生モード](https://docs.microsoft.com//windows/mixed-reality/unity-play-mode)を使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="c2170-109">The projected APIs can be used while running in the Editor, which enables the use of [Play Mode](https://docs.microsoft.com//windows/mixed-reality/unity-play-mode).</span></span> <span data-ttu-id="c2170-110">この投影法を使用するには、プロジェクトに次の変更を加えます。</span><span class="sxs-lookup"><span data-stu-id="c2170-110">To use this projection, make the following modifications to your project:</span></span>
 
-<span data-ttu-id="d1e3e-108">これは、Unity の2つの手順で行うことができます。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-108">This can be done via two steps in Unity:</span></span>
-1) <span data-ttu-id="d1e3e-109">プレーヤーの設定で、API 互換性レベルを **.net 4.6**または **.NET Standard 2.0**に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-109">API compatibility level must be set to **.NET 4.6** or **.NET Standard 2.0** in the player settings</span></span>
-    - <span data-ttu-id="d1e3e-110"> > **プロジェクト設定**   プレーヤー構成 Api の互換性レベルを .net 4.6 または .NET Standard 2.0 に編集する >  >  > </span><span class="sxs-lookup"><span data-stu-id="d1e3e-110">**Edit** > **Project Settings** > **Player** > **Configuration** > **Api Compatibility Level** to **.NET 4.6** or **.NET Standard 2.0**</span></span>
-2) <span data-ttu-id="d1e3e-111">プリプロセッサディレクティブ**ENABLE_WINMD_SUPPORT**は、WinRT を利用したコードをラップする必要があります</span><span class="sxs-lookup"><span data-stu-id="d1e3e-111">The preprocessor directive **ENABLE_WINMD_SUPPORT** must be wrapped around any WinRT-leveraged code</span></span>
+1) <span data-ttu-id="c2170-111">[Unity 用の nuget](https://github.com/GlitchEnzo/NuGetForUnity)を使用して、 [MixedReality](https://www.nuget.org/packages/Microsoft.Windows.MixedReality.DotNetWinRT)の nuget パッケージへの参照を追加します。</span><span class="sxs-lookup"><span data-stu-id="c2170-111">Add a reference to the [Microsoft.Windows.MixedReality.DotNetWinRT](https://www.nuget.org/packages/Microsoft.Windows.MixedReality.DotNetWinRT) NuGet package using [NuGet for Unity](https://github.com/GlitchEnzo/NuGetForUnity).</span></span>
+2) <span data-ttu-id="c2170-112">`Microsoft.`を使用した `Windows` 名前空間へのプレフィックス参照:</span><span class="sxs-lookup"><span data-stu-id="c2170-112">Prefix references to the `Windows` namespace with `Microsoft.`:</span></span>
+```cs
+using namespace Microsoft.Windows.Perception.Spatial;
+```
+3) <span data-ttu-id="c2170-113">ネイティブポインターキャストを `FromNativePtr`に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="c2170-113">Replace native pointer casts with `FromNativePtr`:</span></span>
+```cs
+var worldOrigin = SpatialCoordinateSystem.FromNativePtr(unityWorldOriginPtr);
+```
 
-<span data-ttu-id="d1e3e-112">次のコードスニペットは、ユニバーサル Windows プラットフォームの[Unity の手動ページから抜粋したものです。スクリプト](http://docs.unity3d.com/Manual/windowsstore-scripts.html)内のC# WinRT API。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-112">The following code snippet is from the Unity manual page for [Universal Windows Platform: WinRT API in C# scripts](http://docs.unity3d.com/Manual/windowsstore-scripts.html).</span></span> <span data-ttu-id="d1e3e-113">この例では、広告 ID が返されますが、UWP と Xbox One のみがビルドされます。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-113">In this example, an advertising ID is returned, but only on UWP and Xbox One builds:</span></span>
+## <a name="conditionally-include-winrt-api-calls"></a><span data-ttu-id="c2170-114">条件付きで WinRT API 呼び出しを含める</span><span class="sxs-lookup"><span data-stu-id="c2170-114">Conditionally include WinRT API calls</span></span>
+
+<span data-ttu-id="c2170-115">また、プリプロセッサディレクティブを使用して、ユニバーサル Windows プラットフォームと Xbox One プラットフォーム用に構築された Unity プロジェクトに対して WinRT Api を活用することもできます。WinRT Api を対象とする Unity スクリプトで作成するすべてのコードは、それらのビルドに対して条件付きで含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2170-115">Alternatively, WinRT APIs can be leveraged for Unity projects built for the Universal Windows Platform and Xbox One platform by using preprocessor directives; any code that you write in Unity scripts that target WinRT APIs must be conditionally included for only those builds.</span></span> 
+
+<span data-ttu-id="c2170-116">これは、Unity の2つの手順で行うことができます。</span><span class="sxs-lookup"><span data-stu-id="c2170-116">This can be done via two steps in Unity:</span></span>
+1) <span data-ttu-id="c2170-117">プレーヤーの設定で、API 互換性レベルを **.net 4.6**または **.NET Standard 2.0**に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2170-117">API compatibility level must be set to **.NET 4.6** or **.NET Standard 2.0** in the player settings</span></span>
+    - <span data-ttu-id="c2170-118"> > **Player** > **Configuration** > **Api の互換性レベル**を **.net 4.6**または **.NET Standard 2.0**に > **プロジェクト設定**を**編集**する</span><span class="sxs-lookup"><span data-stu-id="c2170-118">**Edit** > **Project Settings** > **Player** > **Configuration** > **Api Compatibility Level** to **.NET 4.6** or **.NET Standard 2.0**</span></span>
+2) <span data-ttu-id="c2170-119">プリプロセッサディレクティブ**ENABLE_WINMD_SUPPORT**は、WinRT を利用したコードをラップする必要があります</span><span class="sxs-lookup"><span data-stu-id="c2170-119">The preprocessor directive **ENABLE_WINMD_SUPPORT** must be wrapped around any WinRT-leveraged code</span></span>
+
+<span data-ttu-id="c2170-120">次のコードスニペットは、[スクリプトのC#ユニバーサル WINDOWS プラットフォーム: WinRT API](https://docs.unity3d.com/Manual/windowsstore-scripts.html)の Unity 手動ページから抜粋したものです。</span><span class="sxs-lookup"><span data-stu-id="c2170-120">The following code snippet is from the Unity manual page for [Universal Windows Platform: WinRT API in C# scripts](https://docs.unity3d.com/Manual/windowsstore-scripts.html).</span></span> <span data-ttu-id="c2170-121">この例では、広告 ID が返されますが、UWP と Xbox One のみがビルドされます。</span><span class="sxs-lookup"><span data-stu-id="c2170-121">In this example, an advertising ID is returned, but only on UWP and Xbox One builds:</span></span>
 
 ```
 using UnityEngine;
@@ -46,10 +60,10 @@ public class WinRTAPI : MonoBehaviour {
 }
 ```
 
-## <a name="edit-your-scripts-in-a-unity-c-project"></a><span data-ttu-id="d1e3e-114">Unity C#プロジェクトでスクリプトを編集する</span><span class="sxs-lookup"><span data-stu-id="d1e3e-114">Edit your scripts in a Unity C# project</span></span>
+## <a name="edit-your-scripts-in-a-unity-c-project"></a><span data-ttu-id="c2170-122">Unity C#プロジェクトでスクリプトを編集する</span><span class="sxs-lookup"><span data-stu-id="c2170-122">Edit your scripts in a Unity C# project</span></span>
 
-<span data-ttu-id="d1e3e-115">Unity エディターでスクリプトをダブルクリックすると、既定ではエディタープロジェクトでスクリプトが起動されます。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-115">When you double-click a script in the Unity editor, it will by default launch your script in an editor project.</span></span> <span data-ttu-id="d1e3e-116">Visual Studio プロジェクトで Windows ランタイムが参照されていないため、WinRT Api は不明であるように見えます。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-116">The WinRT APIs will appear to be unknown because the Visual Studio project does not reference the Windows Runtime.</span></span> <span data-ttu-id="d1e3e-117">さらに、 **ENALBE_WINMD_SUPPORT**ディレクティブは未定義になり、ラップされたコード *#if*は、プロジェクトを UWP Visual Studio ソリューションにビルドするまで無視されます。</span><span class="sxs-lookup"><span data-stu-id="d1e3e-117">Further, the **ENALBE_WINMD_SUPPORT** directive will be undefined and any *#if* wrapped code will be ignored until you build your project into a UWP Visual Studio solution.</span></span>
+<span data-ttu-id="c2170-123">Unity エディターでスクリプトをダブルクリックすると、既定ではエディタープロジェクトでスクリプトが起動されます。</span><span class="sxs-lookup"><span data-stu-id="c2170-123">When you double-click a script in the Unity editor, it will by default launch your script in an editor project.</span></span> <span data-ttu-id="c2170-124">Visual Studio プロジェクトで Windows ランタイムが参照されていないため、WinRT Api は不明であるように見えます。</span><span class="sxs-lookup"><span data-stu-id="c2170-124">The WinRT APIs will appear to be unknown because the Visual Studio project does not reference the Windows Runtime.</span></span> <span data-ttu-id="c2170-125">さらに、 **ENABLE_WINMD_SUPPORT**ディレクティブは未定義になり、ラップされたコード *#if*は、プロジェクトを UWP Visual Studio ソリューションにビルドするまで無視されます。</span><span class="sxs-lookup"><span data-stu-id="c2170-125">Further, the **ENABLE_WINMD_SUPPORT** directive will be undefined and any *#if* wrapped code will be ignored until you build your project into a UWP Visual Studio solution.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d1e3e-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="d1e3e-118">See also</span></span>
-* [<span data-ttu-id="d1e3e-119">Unity Visual Studio ソリューションのエクスポートとビルド</span><span class="sxs-lookup"><span data-stu-id="d1e3e-119">Exporting and building a Unity Visual Studio solution</span></span>](exporting-and-building-a-unity-visual-studio-solution.md)
-* [<span data-ttu-id="d1e3e-120">Unity のサポート Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="d1e3e-120">Windows Runtime Support Unity</span></span>](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)
+## <a name="see-also"></a><span data-ttu-id="c2170-126">関連項目</span><span class="sxs-lookup"><span data-stu-id="c2170-126">See also</span></span>
+* [<span data-ttu-id="c2170-127">Unity Visual Studio ソリューションのエクスポートとビルド</span><span class="sxs-lookup"><span data-stu-id="c2170-127">Exporting and building a Unity Visual Studio solution</span></span>](exporting-and-building-a-unity-visual-studio-solution.md)
+* [<span data-ttu-id="c2170-128">Unity のサポート Windows ランタイム</span><span class="sxs-lookup"><span data-stu-id="c2170-128">Windows Runtime Support Unity</span></span>](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)

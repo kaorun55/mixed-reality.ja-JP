@@ -3,241 +3,253 @@ title: MR 空間 230-空間マッピング
 description: Unity、Visual Studio、および HoloLens を使用したこのコーディングのチュートリアルに従って、空間マッピングの概念の詳細を確認してください。
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、academy、チュートリアル、空間マッピング、surface 再構築、メッシュ
-ms.openlocfilehash: ed58676a0fda660cc6b4c197239aeb53166baa4d
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: cf4a2dd3e5eb74c0aaf849442e5f5e404d7cb661
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993559"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73434574"
 ---
 >[!NOTE]
-><span data-ttu-id="768c6-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="768c6-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="768c6-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="768c6-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="768c6-106">これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="768c6-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="768c6-108">今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。</span><span class="sxs-lookup"><span data-stu-id="768c6-108">There will be a new series of tutorials that will be posted in the future that will demonstrate how to develop for HoloLens 2.</span></span>  <span data-ttu-id="768c6-109">この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-109">This notice will be updated with a link to those tutorials when they are posted.</span></span>
+><span data-ttu-id="021ae-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="021ae-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="021ae-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="021ae-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="021ae-106">これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。</span><span class="sxs-lookup"><span data-stu-id="021ae-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="021ae-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="021ae-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="021ae-108">HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。</span><span class="sxs-lookup"><span data-stu-id="021ae-108">[A new series of tutorials](mrlearning-base.md) has been posted for HoloLens 2.</span></span>
 
 <br>
 
-# <a name="mr-spatial-230-spatial-mapping"></a><span data-ttu-id="768c6-110">MR 空間 230:空間マッピング</span><span class="sxs-lookup"><span data-stu-id="768c6-110">MR Spatial 230: Spatial mapping</span></span>
+# <a name="mr-spatial-230-spatial-mapping"></a><span data-ttu-id="021ae-109">MR 空間 230: 空間マッピング</span><span class="sxs-lookup"><span data-stu-id="021ae-109">MR Spatial 230: Spatial mapping</span></span>
 
-<span data-ttu-id="768c6-111">[空間マッピング](spatial-mapping.md)は、環境に関するホログラムを教えることによって、現実世界と仮想世界を組み合わせたものです。</span><span class="sxs-lookup"><span data-stu-id="768c6-111">[Spatial mapping](spatial-mapping.md) combines the real world and virtual world together by teaching holograms about the environment.</span></span> <span data-ttu-id="768c6-112">MR 空間 230 (Project Planetarium) では、次の方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="768c6-112">In MR Spatial 230 (Project Planetarium) we'll learn how to:</span></span>
+<span data-ttu-id="021ae-110">[空間マッピング](spatial-mapping.md)は、環境に関するホログラムを教えることによって、現実世界と仮想世界を組み合わせたものです。</span><span class="sxs-lookup"><span data-stu-id="021ae-110">[Spatial mapping](spatial-mapping.md) combines the real world and virtual world together by teaching holograms about the environment.</span></span> <span data-ttu-id="021ae-111">MR 空間 230 (Project Planetarium) では、次の方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="021ae-111">In MR Spatial 230 (Project Planetarium) we'll learn how to:</span></span>
 
-* <span data-ttu-id="768c6-113">環境をスキャンし、HoloLens から開発用コンピューターにデータを転送します。</span><span class="sxs-lookup"><span data-stu-id="768c6-113">Scan the environment and transfer data from the HoloLens to your development machine.</span></span>
-* <span data-ttu-id="768c6-114">シェーダーを調査し、それらを使用してスペースを視覚化する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="768c6-114">Explore shaders and learn how to use them for visualizing your space.</span></span>
-* <span data-ttu-id="768c6-115">メッシュ処理を使用して、ルームメッシュを単純な平面に分割します。</span><span class="sxs-lookup"><span data-stu-id="768c6-115">Break down the room mesh into simple planes using mesh processing.</span></span>
-* <span data-ttu-id="768c6-116">[MR の基本 101](holograms-101.md)で学習した配置手法を超えて、その環境にホログラムを配置できる場所についてのフィードバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="768c6-116">Go beyond the placement techniques we learned in [MR Basics 101](holograms-101.md), and provide feedback about where a hologram can be placed in the environment.</span></span>
-* <span data-ttu-id="768c6-117">遮蔽効果を調べると、ホログラムが実際のオブジェクトの背後にある場合でも、x 光線による視覚エフェクトを見ることができます。</span><span class="sxs-lookup"><span data-stu-id="768c6-117">Explore occlusion effects, so when your hologram is behind a real-world object, you can still see it with x-ray vision!</span></span>
+* <span data-ttu-id="021ae-112">環境をスキャンし、HoloLens から開発用コンピューターにデータを転送します。</span><span class="sxs-lookup"><span data-stu-id="021ae-112">Scan the environment and transfer data from the HoloLens to your development machine.</span></span>
+* <span data-ttu-id="021ae-113">シェーダーを調査し、それらを使用してスペースを視覚化する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="021ae-113">Explore shaders and learn how to use them for visualizing your space.</span></span>
+* <span data-ttu-id="021ae-114">メッシュ処理を使用して、ルームメッシュを単純な平面に分割します。</span><span class="sxs-lookup"><span data-stu-id="021ae-114">Break down the room mesh into simple planes using mesh processing.</span></span>
+* <span data-ttu-id="021ae-115">[MR の基本 101](holograms-101.md)で学習した配置手法を超えて、その環境にホログラムを配置できる場所についてのフィードバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="021ae-115">Go beyond the placement techniques we learned in [MR Basics 101](holograms-101.md), and provide feedback about where a hologram can be placed in the environment.</span></span>
+* <span data-ttu-id="021ae-116">遮蔽効果を調べると、ホログラムが実際のオブジェクトの背後にある場合でも、x 光線による視覚エフェクトを見ることができます。</span><span class="sxs-lookup"><span data-stu-id="021ae-116">Explore occlusion effects, so when your hologram is behind a real-world object, you can still see it with x-ray vision!</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/NSNYRkUX6Mw]
 
-## <a name="device-support"></a><span data-ttu-id="768c6-118">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="768c6-118">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="021ae-117">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="021ae-117">Device support</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="768c6-119">まで</span><span class="sxs-lookup"><span data-stu-id="768c6-119">Course</span></span></th><th style="width:150px"> <span data-ttu-id="768c6-120"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="768c6-120"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="768c6-121"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="768c6-121"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+<th><span data-ttu-id="021ae-118">まで</span><span class="sxs-lookup"><span data-stu-id="021ae-118">Course</span></span></th><th style="width:150px"> <span data-ttu-id="021ae-119"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="021ae-119"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="021ae-120"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="021ae-120"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
 </tr><tr>
-<td><span data-ttu-id="768c6-122">MR 空間 230:空間マッピング</span><span class="sxs-lookup"><span data-stu-id="768c6-122">MR Spatial 230: Spatial mapping</span></span></td><td style="text-align: center;"> <span data-ttu-id="768c6-123">✔️</span><span class="sxs-lookup"><span data-stu-id="768c6-123">✔️</span></span></td><td style="text-align: center;"> </td>
+<td><span data-ttu-id="021ae-121">MR 空間 230: 空間マッピング</span><span class="sxs-lookup"><span data-stu-id="021ae-121">MR Spatial 230: Spatial mapping</span></span></td><td style="text-align: center;"> <span data-ttu-id="021ae-122">✔️</span><span class="sxs-lookup"><span data-stu-id="021ae-122">✔️</span></span></td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
-## <a name="before-you-start"></a><span data-ttu-id="768c6-124">開始前の準備</span><span class="sxs-lookup"><span data-stu-id="768c6-124">Before you start</span></span>
+## <a name="before-you-start"></a><span data-ttu-id="021ae-123">開始前の作業</span><span class="sxs-lookup"><span data-stu-id="021ae-123">Before you start</span></span>
 
-### <a name="prerequisites"></a><span data-ttu-id="768c6-125">必須コンポーネント</span><span class="sxs-lookup"><span data-stu-id="768c6-125">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="021ae-124">前提条件</span><span class="sxs-lookup"><span data-stu-id="021ae-124">Prerequisites</span></span>
 
-* <span data-ttu-id="768c6-126">適切な[ツールがインストール](install-the-tools.md)された WINDOWS 10 PC。</span><span class="sxs-lookup"><span data-stu-id="768c6-126">A Windows 10 PC configured with the correct [tools installed](install-the-tools.md).</span></span>
-* <span data-ttu-id="768c6-127">基本的なC#プログラミング機能。</span><span class="sxs-lookup"><span data-stu-id="768c6-127">Some basic C# programming ability.</span></span>
-* <span data-ttu-id="768c6-128">[MR の基本 101](holograms-101.md)を完了している必要があります。</span><span class="sxs-lookup"><span data-stu-id="768c6-128">You should have completed [MR Basics 101](holograms-101.md).</span></span>
-* <span data-ttu-id="768c6-129">[開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens デバイス。</span><span class="sxs-lookup"><span data-stu-id="768c6-129">A HoloLens device [configured for development](using-visual-studio.md#enabling-developer-mode).</span></span>
+* <span data-ttu-id="021ae-125">適切な[ツールがインストール](install-the-tools.md)された WINDOWS 10 PC。</span><span class="sxs-lookup"><span data-stu-id="021ae-125">A Windows 10 PC configured with the correct [tools installed](install-the-tools.md).</span></span>
+* <span data-ttu-id="021ae-126">基本的なC#プログラミング機能。</span><span class="sxs-lookup"><span data-stu-id="021ae-126">Some basic C# programming ability.</span></span>
+* <span data-ttu-id="021ae-127">[MR の基本 101](holograms-101.md)を完了している必要があります。</span><span class="sxs-lookup"><span data-stu-id="021ae-127">You should have completed [MR Basics 101](holograms-101.md).</span></span>
+* <span data-ttu-id="021ae-128">[開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens デバイス。</span><span class="sxs-lookup"><span data-stu-id="021ae-128">A HoloLens device [configured for development](using-visual-studio.md#enabling-developer-mode).</span></span>
 
-### <a name="project-files"></a><span data-ttu-id="768c6-130">プロジェクトファイル</span><span class="sxs-lookup"><span data-stu-id="768c6-130">Project files</span></span>
+### <a name="project-files"></a><span data-ttu-id="021ae-129">プロジェクトファイル</span><span class="sxs-lookup"><span data-stu-id="021ae-129">Project files</span></span>
 
-* <span data-ttu-id="768c6-131">プロジェクトに必要な[ファイル](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-230-SpatialMapping.zip)をダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="768c6-131">Download the [files](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-230-SpatialMapping.zip) required by the project.</span></span><span data-ttu-id="768c6-132"> Unity 2017.2 以降が必要です。</span><span class="sxs-lookup"><span data-stu-id="768c6-132"> Requires Unity 2017.2 or later.</span></span>
-  * <span data-ttu-id="768c6-133">引き続き Unity 5.6 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-230.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="768c6-133">If you still need Unity 5.6 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-230.zip).</span></span>
-  * <span data-ttu-id="768c6-134">引き続き Unity 5.5 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-230.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="768c6-134">If you still need Unity 5.5 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-230.zip).</span></span>
-  * <span data-ttu-id="768c6-135">引き続き Unity 5.4 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-230.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="768c6-135">If you still need Unity 5.4 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-230.zip).</span></span>
-* <span data-ttu-id="768c6-136">ファイルをデスクトップまたはその他の簡単な場所に保管します。</span><span class="sxs-lookup"><span data-stu-id="768c6-136">Un-archive the files to your desktop or other easy to reach location.</span></span>
+* <span data-ttu-id="021ae-130">プロジェクトに必要な[ファイル](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-230-SpatialMapping.zip)をダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="021ae-130">Download the [files](https://github.com/Microsoft/HolographicAcademy/archive/Holograms-230-SpatialMapping.zip) required by the project.</span></span><span data-ttu-id="021ae-131"> Unity 2017.2 以降が必要です。</span><span class="sxs-lookup"><span data-stu-id="021ae-131"> Requires Unity 2017.2 or later.</span></span>
+  * <span data-ttu-id="021ae-132">引き続き Unity 5.6 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-230.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="021ae-132">If you still need Unity 5.6 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.6-230.zip).</span></span>
+  * <span data-ttu-id="021ae-133">引き続き Unity 5.5 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-230.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="021ae-133">If you still need Unity 5.5 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.5-230.zip).</span></span>
+  * <span data-ttu-id="021ae-134">引き続き Unity 5.4 のサポートが必要な場合は、[このリリース](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-230.zip)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="021ae-134">If you still need Unity 5.4 support, please use [this release](https://github.com/Microsoft/HolographicAcademy/archive/v1.5.4-230.zip).</span></span>
+* <span data-ttu-id="021ae-135">ファイルをデスクトップまたはその他の簡単な場所に保管します。</span><span class="sxs-lookup"><span data-stu-id="021ae-135">Un-archive the files to your desktop or other easy to reach location.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="768c6-137">ダウンロードする前にソースコードを確認する場合は、GitHub から[入手でき](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-230-SpatialMapping)ます。</span><span class="sxs-lookup"><span data-stu-id="768c6-137">If you want to look through the source code before downloading, it's [available on GitHub](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-230-SpatialMapping).</span></span>
+><span data-ttu-id="021ae-136">ダウンロードする前にソースコードを確認する場合は、GitHub から[入手でき](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-230-SpatialMapping)ます。</span><span class="sxs-lookup"><span data-stu-id="021ae-136">If you want to look through the source code before downloading, it's [available on GitHub](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-230-SpatialMapping).</span></span>
 
-### <a name="notes"></a><span data-ttu-id="768c6-138">メモ</span><span class="sxs-lookup"><span data-stu-id="768c6-138">Notes</span></span>
+### <a name="notes"></a><span data-ttu-id="021ae-137">注意</span><span class="sxs-lookup"><span data-stu-id="021ae-137">Notes</span></span>
 
-* <span data-ttu-id="768c6-139">コード内のブレークポイントにヒットするには、Visual Studio の [マイコードのみの有効化] を無効 (*オフ*> >) にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="768c6-139">"Enable Just My Code" in Visual Studio needs to be disabled (*unchecked*) under Tools > Options > Debugging in order to hit breakpoints in your code.</span></span>
+* <span data-ttu-id="021ae-138">コード内のブレークポイントにヒットするには、Visual Studio の [マイコードのみの有効化] を無効 (*オフ*> >) にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="021ae-138">"Enable Just My Code" in Visual Studio needs to be disabled (*unchecked*) under Tools > Options > Debugging in order to hit breakpoints in your code.</span></span>
 
-## <a name="unity-setup"></a><span data-ttu-id="768c6-140">Unity のセットアップ</span><span class="sxs-lookup"><span data-stu-id="768c6-140">Unity setup</span></span>
+## <a name="unity-setup"></a><span data-ttu-id="021ae-139">Unity のセットアップ</span><span class="sxs-lookup"><span data-stu-id="021ae-139">Unity setup</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/y2Y4LhK6TEM]
 
-* <span data-ttu-id="768c6-141">**Unity**を起動します。</span><span class="sxs-lookup"><span data-stu-id="768c6-141">Start **Unity**.</span></span>
-* <span data-ttu-id="768c6-142">[**新規**] を選択して、新しいプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="768c6-142">Select **New** to create a new project.</span></span>
-* <span data-ttu-id="768c6-143">プロジェクトに**Planetarium**という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="768c6-143">Name the project **Planetarium**.</span></span>
-* <span data-ttu-id="768c6-144">**3d**の設定が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-144">Verify that the **3D** setting is selected.</span></span>
-* <span data-ttu-id="768c6-145">**[プロジェクトの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-145">Click **Create Project**.</span></span>
-* <span data-ttu-id="768c6-146">Unity が起動したら、[ **Edit > Project Settings > Player**] を開きます。</span><span class="sxs-lookup"><span data-stu-id="768c6-146">Once Unity launches, go to **Edit > Project Settings > Player**.</span></span>
-* <span data-ttu-id="768c6-147">[**インスペクター** ] パネルで、緑色の**Windows ストア**アイコンを見つけて選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-147">In the **Inspector** panel, find and select the green **Windows Store** icon.</span></span>
-* <span data-ttu-id="768c6-148">[**その他の設定**] を展開します。</span><span class="sxs-lookup"><span data-stu-id="768c6-148">Expand **Other Settings**.</span></span>
-* <span data-ttu-id="768c6-149">[**レンダリング**] セクションで、[ **Virtual Reality サポート**] オプションをオンにします。</span><span class="sxs-lookup"><span data-stu-id="768c6-149">In the **Rendering** section, check the **Virtual Reality Supported** option.</span></span>
-* <span data-ttu-id="768c6-150">**Virtual Reality sdk**の一覧に [ **Windows Holographic** ] が表示されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-150">Verify that **Windows Holographic** appears in the list of **Virtual Reality SDKs**.</span></span> <span data-ttu-id="768c6-151">表示されてい **+** ない場合は、一覧の下部にあるボタンを選択し、[ **Windows Holographic**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-151">If not, select the **+** button at the bottom of the list and choose **Windows Holographic**.</span></span>
-* <span data-ttu-id="768c6-152">[**発行の設定**] を展開します。</span><span class="sxs-lookup"><span data-stu-id="768c6-152">Expand **Publishing Settings**.</span></span>
-* <span data-ttu-id="768c6-153">[**機能**] セクションで、次の設定を確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-153">In the **Capabilities** section, check the following settings:</span></span>
-    * <span data-ttu-id="768c6-154">InternetClientServer</span><span class="sxs-lookup"><span data-stu-id="768c6-154">InternetClientServer</span></span>
-    * <span data-ttu-id="768c6-155">PrivateNetworkClientServer</span><span class="sxs-lookup"><span data-stu-id="768c6-155">PrivateNetworkClientServer</span></span>
-    * <span data-ttu-id="768c6-156">マイク</span><span class="sxs-lookup"><span data-stu-id="768c6-156">Microphone</span></span>
-    * <span data-ttu-id="768c6-157">SpatialPerception</span><span class="sxs-lookup"><span data-stu-id="768c6-157">SpatialPerception</span></span>
-* <span data-ttu-id="768c6-158">**プロジェクト設定の編集 > > 品質**に進む</span><span class="sxs-lookup"><span data-stu-id="768c6-158">Go to **Edit > Project Settings > Quality**</span></span>
-* <span data-ttu-id="768c6-159">[**インスペクター** ] パネルの [Windows ストア] アイコンで、[既定] 行の下にある黒のドロップダウン矢印を選択し、既定の設定を [**非常に低い**] に変更します。</span><span class="sxs-lookup"><span data-stu-id="768c6-159">In the **Inspector** panel, under the Windows Store icon, select the black drop-down arrow under the 'Default' row and change the default setting to **Very Low**.</span></span>
-* <span data-ttu-id="768c6-160">[アセット] [ **> カスタムパッケージ**] の [パッケージのインポート >] にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="768c6-160">Go to **Assets > Import Package > Custom Package**.</span></span>
-* <span data-ttu-id="768c6-161">**..\Holographicacademy-holograms-230-SpatialMapping\Starting**フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="768c6-161">Navigate to the **...\HolographicAcademy-Holograms-230-SpatialMapping\Starting** folder.</span></span>
-* <span data-ttu-id="768c6-162">**Planetarium unitypackage**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-162">Click on **Planetarium.unitypackage**.</span></span>
-* <span data-ttu-id="768c6-163">**[開く]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-163">Click **Open**.</span></span>
-* <span data-ttu-id="768c6-164">[ **Unity パッケージのインポート**] ウィンドウが表示されたら、[**インポート**] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-164">An **Import Unity Package** window should appear, click on the **Import** button.</span></span>
-* <span data-ttu-id="768c6-165">Unity によって、このプロジェクトを完了するために必要なすべての資産がインポートされるのを待ちます。</span><span class="sxs-lookup"><span data-stu-id="768c6-165">Wait for Unity to import all of the assets that we will need to complete this project.</span></span>
-* <span data-ttu-id="768c6-166">[**階層**] パネルで、**メインカメラ**を削除します。</span><span class="sxs-lookup"><span data-stu-id="768c6-166">In the **Hierarchy** panel, delete the **Main Camera**.</span></span>
-* <span data-ttu-id="768c6-167">[**プロジェクト**] パネルの [ **HoloToolkit-SpatialMapping-230\Utilities\Prefabs** ] フォルダーで、**メインカメラ**オブジェクトを見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-167">In the **Project** panel, **HoloToolkit-SpatialMapping-230\Utilities\Prefabs** folder, find the **Main Camera** object.</span></span>
-* <span data-ttu-id="768c6-168">**メインカメラ**prefab を [**階層**] パネルにドラッグアンドドロップします。</span><span class="sxs-lookup"><span data-stu-id="768c6-168">Drag and drop the **Main Camera** prefab into the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="768c6-169">[**階層**] パネルで、**指向性ライト**オブジェクトを削除します。</span><span class="sxs-lookup"><span data-stu-id="768c6-169">In the **Hierarchy** panel, delete the **Directional Light** object.</span></span>
-* <span data-ttu-id="768c6-170">[**プロジェクト**] パネルの [**ホログラム**] フォルダーで、 **Cursor**オブジェクトを探します。</span><span class="sxs-lookup"><span data-stu-id="768c6-170">In the **Project** panel, **Holograms** folder, locate the **Cursor** object.</span></span>
-* <span data-ttu-id="768c6-171">**カーソル**をドラッグして**階層**に & ドロップします。</span><span class="sxs-lookup"><span data-stu-id="768c6-171">Drag & drop the **Cursor** prefab into the **Hierarchy**.</span></span>
-* <span data-ttu-id="768c6-172">[**階層**] パネルで、**カーソル**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-172">In the **Hierarchy** panel, select the **Cursor** object.</span></span>
-* <span data-ttu-id="768c6-173">[**インスペクター** ] パネルで、[**レイヤー** ] ドロップダウンをクリックし、[**レイヤーの編集...** ] を選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-173">In the **Inspector** panel, click the **Layer** drop-down and select **Edit Layers...**.</span></span>
-* <span data-ttu-id="768c6-174">**ユーザーレイヤー 31**を "**SpatialMapping**" として指定します。</span><span class="sxs-lookup"><span data-stu-id="768c6-174">Name **User Layer 31** as "**SpatialMapping**".</span></span>
-* <span data-ttu-id="768c6-175">新しいシーンを保存します。**ファイル > シーンに名前を付けて保存...**</span><span class="sxs-lookup"><span data-stu-id="768c6-175">Save the new scene: **File > Save Scene As...**</span></span>
-* <span data-ttu-id="768c6-176">[**新しいフォルダー** ] をクリックし、フォルダーに「**シーン**」という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="768c6-176">Click **New Folder** and name the folder **Scenes**.</span></span>
-* <span data-ttu-id="768c6-177">ファイルに "**Planetarium**" という名前を付けて、[**シーン**] フォルダーに保存します。</span><span class="sxs-lookup"><span data-stu-id="768c6-177">Name the file "**Planetarium**" and save it in the **Scenes** folder.</span></span>
+* <span data-ttu-id="021ae-140">**Unity**を起動します。</span><span class="sxs-lookup"><span data-stu-id="021ae-140">Start **Unity**.</span></span>
+* <span data-ttu-id="021ae-141">**[新規]** を選択して、新しいプロジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="021ae-141">Select **New** to create a new project.</span></span>
+* <span data-ttu-id="021ae-142">プロジェクトに**Planetarium**という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="021ae-142">Name the project **Planetarium**.</span></span>
+* <span data-ttu-id="021ae-143">**3d**の設定が選択されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-143">Verify that the **3D** setting is selected.</span></span>
+* <span data-ttu-id="021ae-144">**[プロジェクトの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-144">Click **Create Project**.</span></span>
+* <span data-ttu-id="021ae-145">Unity が起動したら、 **[Edit > Project Settings > Player]** を開きます。</span><span class="sxs-lookup"><span data-stu-id="021ae-145">Once Unity launches, go to **Edit > Project Settings > Player**.</span></span>
+* <span data-ttu-id="021ae-146">**[インスペクター]** パネルで、緑色の**Windows ストア**アイコンを見つけて選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-146">In the **Inspector** panel, find and select the green **Windows Store** icon.</span></span>
+* <span data-ttu-id="021ae-147">**[その他の設定]** を展開します。</span><span class="sxs-lookup"><span data-stu-id="021ae-147">Expand **Other Settings**.</span></span>
+* <span data-ttu-id="021ae-148">**[レンダリング]** セクションで、 **[Virtual Reality サポート]** オプションをオンにします。</span><span class="sxs-lookup"><span data-stu-id="021ae-148">In the **Rendering** section, check the **Virtual Reality Supported** option.</span></span>
+* <span data-ttu-id="021ae-149">**Virtual Reality sdk**の一覧に **[Windows Holographic]** が表示されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-149">Verify that **Windows Holographic** appears in the list of **Virtual Reality SDKs**.</span></span> <span data-ttu-id="021ae-150">表示されていない場合は、一覧の下部にある [ **+** ] ボタンを選択し、 **[Windows Holographic]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-150">If not, select the **+** button at the bottom of the list and choose **Windows Holographic**.</span></span>
+* <span data-ttu-id="021ae-151">**[発行の設定]** を展開します。</span><span class="sxs-lookup"><span data-stu-id="021ae-151">Expand **Publishing Settings**.</span></span>
+* <span data-ttu-id="021ae-152">**[機能]** セクションで、次の設定を確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-152">In the **Capabilities** section, check the following settings:</span></span>
+    * <span data-ttu-id="021ae-153">InternetClientServer</span><span class="sxs-lookup"><span data-stu-id="021ae-153">InternetClientServer</span></span>
+    * <span data-ttu-id="021ae-154">PrivateNetworkClientServer</span><span class="sxs-lookup"><span data-stu-id="021ae-154">PrivateNetworkClientServer</span></span>
+    * <span data-ttu-id="021ae-155">マイク</span><span class="sxs-lookup"><span data-stu-id="021ae-155">Microphone</span></span>
+    * <span data-ttu-id="021ae-156">SpatialPerception</span><span class="sxs-lookup"><span data-stu-id="021ae-156">SpatialPerception</span></span>
+* <span data-ttu-id="021ae-157">**プロジェクト設定の編集 > > 品質**に進む</span><span class="sxs-lookup"><span data-stu-id="021ae-157">Go to **Edit > Project Settings > Quality**</span></span>
+* <span data-ttu-id="021ae-158">**インスペクター** パネルの Windows ストア アイコンで、既定 行の下にある黒のドロップダウン矢印を選択し、既定の設定を **非常に低い** に変更します。</span><span class="sxs-lookup"><span data-stu-id="021ae-158">In the **Inspector** panel, under the Windows Store icon, select the black drop-down arrow under the 'Default' row and change the default setting to **Very Low**.</span></span>
+* <span data-ttu-id="021ae-159">アセット]  **[> カスタムパッケージ]** の [パッケージのインポート > にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="021ae-159">Go to **Assets > Import Package > Custom Package**.</span></span>
+* <span data-ttu-id="021ae-160">**..\Holographicacademy-holograms-230-SpatialMapping\Starting**フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="021ae-160">Navigate to the **...\HolographicAcademy-Holograms-230-SpatialMapping\Starting** folder.</span></span>
+* <span data-ttu-id="021ae-161">**Planetarium unitypackage**をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-161">Click on **Planetarium.unitypackage**.</span></span>
+* <span data-ttu-id="021ae-162">**[開く]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-162">Click **Open**.</span></span>
+* <span data-ttu-id="021ae-163">**[Unity パッケージのインポート]** ウィンドウが表示されたら、 **[インポート]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-163">An **Import Unity Package** window should appear, click on the **Import** button.</span></span>
+* <span data-ttu-id="021ae-164">Unity によって、このプロジェクトを完了するために必要なすべての資産がインポートされるのを待ちます。</span><span class="sxs-lookup"><span data-stu-id="021ae-164">Wait for Unity to import all of the assets that we will need to complete this project.</span></span>
+* <span data-ttu-id="021ae-165">**[階層]** パネルで、**メインカメラ**を削除します。</span><span class="sxs-lookup"><span data-stu-id="021ae-165">In the **Hierarchy** panel, delete the **Main Camera**.</span></span>
+* <span data-ttu-id="021ae-166">**[プロジェクト]** パネルの **[HoloToolkit-SpatialMapping-230\Utilities\Prefabs]** フォルダーで、**メインカメラ**オブジェクトを見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-166">In the **Project** panel, **HoloToolkit-SpatialMapping-230\Utilities\Prefabs** folder, find the **Main Camera** object.</span></span>
+* <span data-ttu-id="021ae-167">**メインカメラ**prefab を **[階層]** パネルにドラッグアンドドロップします。</span><span class="sxs-lookup"><span data-stu-id="021ae-167">Drag and drop the **Main Camera** prefab into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="021ae-168">**[階層]** パネルで、**指向性ライト**オブジェクトを削除します。</span><span class="sxs-lookup"><span data-stu-id="021ae-168">In the **Hierarchy** panel, delete the **Directional Light** object.</span></span>
+* <span data-ttu-id="021ae-169">**[プロジェクト]** パネルの **[ホログラム]** フォルダーで、 **Cursor**オブジェクトを探します。</span><span class="sxs-lookup"><span data-stu-id="021ae-169">In the **Project** panel, **Holograms** folder, locate the **Cursor** object.</span></span>
+* <span data-ttu-id="021ae-170">**カーソル**をドラッグして**階層**に & ドロップします。</span><span class="sxs-lookup"><span data-stu-id="021ae-170">Drag & drop the **Cursor** prefab into the **Hierarchy**.</span></span>
+* <span data-ttu-id="021ae-171">**[階層]** パネルで、**カーソル**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-171">In the **Hierarchy** panel, select the **Cursor** object.</span></span>
+* <span data-ttu-id="021ae-172">**[インスペクター]** パネルで、 **[レイヤー]** ドロップダウンをクリックし、 **[レイヤーの編集...]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-172">In the **Inspector** panel, click the **Layer** drop-down and select **Edit Layers...**.</span></span>
+* <span data-ttu-id="021ae-173">**ユーザーレイヤー 31**を "**SpatialMapping**" として指定します。</span><span class="sxs-lookup"><span data-stu-id="021ae-173">Name **User Layer 31** as "**SpatialMapping**".</span></span>
+* <span data-ttu-id="021ae-174">新しいシーンを保存する:**ファイル > シーン名を付けて保存...**</span><span class="sxs-lookup"><span data-stu-id="021ae-174">Save the new scene: **File > Save Scene As...**</span></span>
+* <span data-ttu-id="021ae-175">**[新しいフォルダー]** をクリックし、フォルダーに「**シーン**」という名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="021ae-175">Click **New Folder** and name the folder **Scenes**.</span></span>
+* <span data-ttu-id="021ae-176">ファイルに "**Planetarium**" という名前を付けて、 **[シーン]** フォルダーに保存します。</span><span class="sxs-lookup"><span data-stu-id="021ae-176">Name the file "**Planetarium**" and save it in the **Scenes** folder.</span></span>
 
-## <a name="chapter-1---scanning"></a><span data-ttu-id="768c6-178">第1章-スキャン</span><span class="sxs-lookup"><span data-stu-id="768c6-178">Chapter 1 - Scanning</span></span>
+## <a name="chapter-1---scanning"></a><span data-ttu-id="021ae-177">第1章-スキャン</span><span class="sxs-lookup"><span data-stu-id="021ae-177">Chapter 1 - Scanning</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/888oW51z_cE]
 
-<span data-ttu-id="768c6-179">**事項**</span><span class="sxs-lookup"><span data-stu-id="768c6-179">**Objectives**</span></span>
-* <span data-ttu-id="768c6-180">SurfaceObserver とその設定がエクスペリエンスとパフォーマンスに与える影響について説明します。</span><span class="sxs-lookup"><span data-stu-id="768c6-180">Learn about the SurfaceObserver and how its settings impact experience and performance.</span></span>
-* <span data-ttu-id="768c6-181">部屋のメッシュを収集するためのルームスキャンエクスペリエンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="768c6-181">Create a room scanning experience to collect the meshes of your room.</span></span>
+<span data-ttu-id="021ae-178">**事項**</span><span class="sxs-lookup"><span data-stu-id="021ae-178">**Objectives**</span></span>
 
-<span data-ttu-id="768c6-182">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="768c6-182">**Instructions**</span></span>
-* <span data-ttu-id="768c6-183">[**プロジェクト**] パネルの**HoloToolkit-SpatialMapping-230\SpatialMapping\Prefabs**フォルダーで、 **SpatialMapping** prefab を見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-183">In the **Project** panel **HoloToolkit-SpatialMapping-230\SpatialMapping\Prefabs** folder, find the **SpatialMapping** prefab.</span></span>
-* <span data-ttu-id="768c6-184">**SpatialMapping** prefab を [**階層**] パネルにドラッグ & ドロップします。</span><span class="sxs-lookup"><span data-stu-id="768c6-184">Drag & drop the **SpatialMapping** prefab into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="021ae-179">SurfaceObserver とその設定がエクスペリエンスとパフォーマンスに与える影響について説明します。</span><span class="sxs-lookup"><span data-stu-id="021ae-179">Learn about the SurfaceObserver and how its settings impact experience and performance.</span></span>
+* <span data-ttu-id="021ae-180">部屋のメッシュを収集するためのルームスキャンエクスペリエンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="021ae-180">Create a room scanning experience to collect the meshes of your room.</span></span>
 
-<span data-ttu-id="768c6-185">**ビルドと配置 (パート 1)**</span><span class="sxs-lookup"><span data-stu-id="768c6-185">**Build and Deploy (part 1)**</span></span>
-* <span data-ttu-id="768c6-186">Unity で、[**ファイル > ビルド設定**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-186">In Unity, select **File > Build Settings**.</span></span>
-* <span data-ttu-id="768c6-187">[**開い**ているシーンの追加] をクリックして、 **Planetarium**シーンをビルドに追加します。</span><span class="sxs-lookup"><span data-stu-id="768c6-187">Click **Add Open Scenes** to add the **Planetarium** scene to the build.</span></span>
-* <span data-ttu-id="768c6-188">[**プラットフォーム**] ボックスの一覧の [**ユニバーサル Windows プラットフォーム**] を選択し、[**プラットフォームの切り替え**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-188">Select **Universal Windows Platform** in the **Platform** list and click **Switch Platform**.</span></span>
-* <span data-ttu-id="768c6-189">**SDK**を**Universal 10**に設定し、 **UWP ビルドの種類**を**D3D**に設定します。</span><span class="sxs-lookup"><span data-stu-id="768c6-189">Set **SDK** to **Universal 10** and **UWP Build Type** to **D3D**.</span></span>
-* <span data-ttu-id="768c6-190">**Unity C#プロジェクト**を確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-190">Check **Unity C# Projects**.</span></span>
-* <span data-ttu-id="768c6-191">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-191">Click **Build**.</span></span>
-* <span data-ttu-id="768c6-192">"App" という名前の**新しいフォルダー**を作成します。</span><span class="sxs-lookup"><span data-stu-id="768c6-192">Create a **New Folder** named "App".</span></span>
-* <span data-ttu-id="768c6-193">**アプリ**フォルダーをシングルクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-193">Single click the **App** folder.</span></span>
-* <span data-ttu-id="768c6-194">**[フォルダーの選択**] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-194">Press the **Select Folder** button.</span></span>
-* <span data-ttu-id="768c6-195">Unity のビルドが完了すると、エクスプローラーウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-195">When Unity is done building, a File Explorer window will appear.</span></span>
-* <span data-ttu-id="768c6-196">**アプリ**フォルダーをダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="768c6-196">Double-click on the **App** folder to open it.</span></span>
-* <span data-ttu-id="768c6-197">**Planetarium**をダブルクリックして、Visual Studio でプロジェクトを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="768c6-197">Double-click on **Planetarium.sln** to load the project in Visual Studio.</span></span>
-* <span data-ttu-id="768c6-198">Visual Studio で、上部のツールバーを使用して、構成を [**リリース**] に変更します。</span><span class="sxs-lookup"><span data-stu-id="768c6-198">In Visual Studio, use the top toolbar to change the Configuration to **Release**.</span></span>
-* <span data-ttu-id="768c6-199">プラットフォームを**x86**に変更します。</span><span class="sxs-lookup"><span data-stu-id="768c6-199">Change the Platform to **x86**.</span></span>
-* <span data-ttu-id="768c6-200">[ローカルコンピューター] の右側にあるドロップダウン矢印をクリックし、[**リモートコンピューター**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-200">Click on the drop-down arrow to the right of 'Local Machine', and select **Remote Machine**.</span></span>
-* <span data-ttu-id="768c6-201">[アドレス] フィールドに[デバイスの IP アドレス](connecting-to-wi-fi-on-hololens.md#identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network)を入力し、[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に変更します。</span><span class="sxs-lookup"><span data-stu-id="768c6-201">Enter [your device's IP address](connecting-to-wi-fi-on-hololens.md#identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network) in the Address field and change Authentication Mode to **Universal (Unencrypted Protocol)**.</span></span>
-* <span data-ttu-id="768c6-202">[**デバッグ]、[デバッグなしで開始] の順にクリック >** 、Ctrl キーを押し**ながら F5**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="768c6-202">Click **Debug -> Start Without debugging** or press **Ctrl + F5**.</span></span>
-* <span data-ttu-id="768c6-203">ビルドと配置の状態については、Visual Studio の [**出力**] パネルをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="768c6-203">Watch the **Output** panel in Visual Studio for build and deploy status.</span></span>
-* <span data-ttu-id="768c6-204">アプリがデプロイされたら、ルームを案内します。</span><span class="sxs-lookup"><span data-stu-id="768c6-204">Once your app has deployed, walk around the room.</span></span> <span data-ttu-id="768c6-205">周囲のサーフェスが黒と白のワイヤーフレームメッシュで覆われていることがわかります。</span><span class="sxs-lookup"><span data-stu-id="768c6-205">You will see the surrounding surfaces covered by black and white wireframe meshes.</span></span>
-* <span data-ttu-id="768c6-206">周囲をスキャンします。</span><span class="sxs-lookup"><span data-stu-id="768c6-206">Scan your surroundings.</span></span> <span data-ttu-id="768c6-207">壁、雲、床を見てください。</span><span class="sxs-lookup"><span data-stu-id="768c6-207">Be sure to look at walls, ceilings, and floors.</span></span>
+<span data-ttu-id="021ae-181">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="021ae-181">**Instructions**</span></span>
 
-<span data-ttu-id="768c6-208">**ビルドと配置 (パート 2)**</span><span class="sxs-lookup"><span data-stu-id="768c6-208">**Build and Deploy (part 2)**</span></span>
+* <span data-ttu-id="021ae-182">**[プロジェクト]** パネルの**HoloToolkit-SpatialMapping-230\SpatialMapping\Prefabs**フォルダーで、 **SpatialMapping** prefab を見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-182">In the **Project** panel **HoloToolkit-SpatialMapping-230\SpatialMapping\Prefabs** folder, find the **SpatialMapping** prefab.</span></span>
+* <span data-ttu-id="021ae-183">**SpatialMapping** prefab を **[階層]** パネルにドラッグ & ドロップします。</span><span class="sxs-lookup"><span data-stu-id="021ae-183">Drag & drop the **SpatialMapping** prefab into the **Hierarchy** panel.</span></span>
 
-<span data-ttu-id="768c6-209">次に、空間マッピングがパフォーマンスに与える影響について説明します。</span><span class="sxs-lookup"><span data-stu-id="768c6-209">Now let's explore how Spatial Mapping can affect performance.</span></span>
-* <span data-ttu-id="768c6-210">Unity で、[**ウィンドウ > プロファイラー**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-210">In Unity, select **Window > Profiler**.</span></span>
-* <span data-ttu-id="768c6-211">[**プロファイラーの追加 > GPU**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-211">Click **Add Profiler > GPU**.</span></span>
-* <span data-ttu-id="768c6-212">[**アクティブなプロファイラー <Enter IP>の >** ] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-212">Click **Active Profiler > <Enter IP>**.</span></span>
-* <span data-ttu-id="768c6-213">HoloLens の**IP アドレス**を入力します。</span><span class="sxs-lookup"><span data-stu-id="768c6-213">Enter the **IP address** of your HoloLens.</span></span>
-* <span data-ttu-id="768c6-214">**[接続]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-214">Click **Connect**.</span></span>
-* <span data-ttu-id="768c6-215">GPU がフレームをレンダリングするためにかかる時間 (ミリ秒単位) を観察します。</span><span class="sxs-lookup"><span data-stu-id="768c6-215">Observe the number of milliseconds it takes for the GPU to render a frame.</span></span>
-* <span data-ttu-id="768c6-216">デバイスでアプリケーションの実行を停止します。</span><span class="sxs-lookup"><span data-stu-id="768c6-216">Stop the application from running on the device.</span></span>
-* <span data-ttu-id="768c6-217">Visual Studio に戻り、 **SpatialMappingObserver.cs**を開きます。</span><span class="sxs-lookup"><span data-stu-id="768c6-217">Return to Visual Studio and open **SpatialMappingObserver.cs**.</span></span> <span data-ttu-id="768c6-218">これは、HoloToolkit\SpatialMapping (ユニバーサル Windows) プロジェクトの [] フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="768c6-218">You will find it in the HoloToolkit\SpatialMapping folder of the Assembly-CSharp (Universal Windows) project.</span></span>
-* <span data-ttu-id="768c6-219">起動中 **()** 関数を見つけて、次のコード行を追加します。**TrianglesPerCubicMeter = 1200;**</span><span class="sxs-lookup"><span data-stu-id="768c6-219">Find the **Awake()** function, and add the following line of code: **TrianglesPerCubicMeter = 1200;**</span></span>
-* <span data-ttu-id="768c6-220">プロジェクトをデバイスに再配置してから、**プロファイラーを再接続**します。</span><span class="sxs-lookup"><span data-stu-id="768c6-220">Re-deploy the project to your device, and then **reconnect the profiler**.</span></span> <span data-ttu-id="768c6-221">フレームをレンダリングするミリ秒数の変化を確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-221">Observe the change in the number of milliseconds to render a frame.</span></span>
-* <span data-ttu-id="768c6-222">デバイスでアプリケーションの実行を停止します。</span><span class="sxs-lookup"><span data-stu-id="768c6-222">Stop the application from running on the device.</span></span>
+<span data-ttu-id="021ae-184">**ビルドと配置 (パート 1)**</span><span class="sxs-lookup"><span data-stu-id="021ae-184">**Build and Deploy (part 1)**</span></span>
 
-<span data-ttu-id="768c6-223">**Unity での保存と読み込み**</span><span class="sxs-lookup"><span data-stu-id="768c6-223">**Save and load in Unity**</span></span>
+* <span data-ttu-id="021ae-185">Unity で、 **[ファイル > ビルド設定]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-185">In Unity, select **File > Build Settings**.</span></span>
+* <span data-ttu-id="021ae-186">[**開い**ているシーンの追加] をクリックして、 **Planetarium**シーンをビルドに追加します。</span><span class="sxs-lookup"><span data-stu-id="021ae-186">Click **Add Open Scenes** to add the **Planetarium** scene to the build.</span></span>
+* <span data-ttu-id="021ae-187">**[プラットフォーム]** ボックスの一覧の **[ユニバーサル Windows プラットフォーム]** を選択し、 **[プラットフォームの切り替え]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-187">Select **Universal Windows Platform** in the **Platform** list and click **Switch Platform**.</span></span>
+* <span data-ttu-id="021ae-188">**SDK**を**Universal 10**に設定し、 **UWP ビルドの種類**を**D3D**に設定します。</span><span class="sxs-lookup"><span data-stu-id="021ae-188">Set **SDK** to **Universal 10** and **UWP Build Type** to **D3D**.</span></span>
+* <span data-ttu-id="021ae-189">**Unity C#プロジェクト**を確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-189">Check **Unity C# Projects**.</span></span>
+* <span data-ttu-id="021ae-190">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-190">Click **Build**.</span></span>
+* <span data-ttu-id="021ae-191">"App" という名前の**新しいフォルダー**を作成します。</span><span class="sxs-lookup"><span data-stu-id="021ae-191">Create a **New Folder** named "App".</span></span>
+* <span data-ttu-id="021ae-192">**アプリ**フォルダーをシングルクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-192">Single click the **App** folder.</span></span>
+* <span data-ttu-id="021ae-193">**[フォルダーの選択**] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-193">Press the **Select Folder** button.</span></span>
+* <span data-ttu-id="021ae-194">Unity のビルドが完了すると、エクスプローラーウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="021ae-194">When Unity is done building, a File Explorer window will appear.</span></span>
+* <span data-ttu-id="021ae-195">**アプリ**フォルダーをダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="021ae-195">Double-click on the **App** folder to open it.</span></span>
+* <span data-ttu-id="021ae-196">**Planetarium**をダブルクリックして、Visual Studio でプロジェクトを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="021ae-196">Double-click on **Planetarium.sln** to load the project in Visual Studio.</span></span>
+* <span data-ttu-id="021ae-197">Visual Studio で、上部のツールバーを使用して、構成を **[リリース]** に変更します。</span><span class="sxs-lookup"><span data-stu-id="021ae-197">In Visual Studio, use the top toolbar to change the Configuration to **Release**.</span></span>
+* <span data-ttu-id="021ae-198">プラットフォームを**x86**に変更します。</span><span class="sxs-lookup"><span data-stu-id="021ae-198">Change the Platform to **x86**.</span></span>
+* <span data-ttu-id="021ae-199">ローカルコンピューター の右側にあるドロップダウン矢印をクリックし、**リモートコンピューター** を選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-199">Click on the drop-down arrow to the right of 'Local Machine', and select **Remote Machine**.</span></span>
+* <span data-ttu-id="021ae-200">[アドレス] フィールドに[デバイスの IP アドレス](connecting-to-wi-fi-on-hololens.md#identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network)を入力し、[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に変更します。</span><span class="sxs-lookup"><span data-stu-id="021ae-200">Enter [your device's IP address](connecting-to-wi-fi-on-hololens.md#identifying-the-ip-address-of-your-hololens-on-the-wi-fi-network) in the Address field and change Authentication Mode to **Universal (Unencrypted Protocol)**.</span></span>
+* <span data-ttu-id="021ae-201">[**デバッグ]、[デバッグなしで開始] の順にクリック >** 、Ctrl キーを押し**ながら F5**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="021ae-201">Click **Debug -> Start Without debugging** or press **Ctrl + F5**.</span></span>
+* <span data-ttu-id="021ae-202">ビルドと配置の状態については、Visual Studio の **[出力]** パネルをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="021ae-202">Watch the **Output** panel in Visual Studio for build and deploy status.</span></span>
+* <span data-ttu-id="021ae-203">アプリがデプロイされたら、ルームを案内します。</span><span class="sxs-lookup"><span data-stu-id="021ae-203">Once your app has deployed, walk around the room.</span></span> <span data-ttu-id="021ae-204">周囲のサーフェスが黒と白のワイヤーフレームメッシュで覆われていることがわかります。</span><span class="sxs-lookup"><span data-stu-id="021ae-204">You will see the surrounding surfaces covered by black and white wireframe meshes.</span></span>
+* <span data-ttu-id="021ae-205">周囲をスキャンします。</span><span class="sxs-lookup"><span data-stu-id="021ae-205">Scan your surroundings.</span></span> <span data-ttu-id="021ae-206">壁、雲、床を見てください。</span><span class="sxs-lookup"><span data-stu-id="021ae-206">Be sure to look at walls, ceilings, and floors.</span></span>
 
-<span data-ttu-id="768c6-224">最後に、部屋のメッシュを保存し、Unity に読み込んでみましょう。</span><span class="sxs-lookup"><span data-stu-id="768c6-224">Finally, let's save our room mesh and load it into Unity.</span></span>
-* <span data-ttu-id="768c6-225">Visual Studio に戻り、前のセクションで**TrianglesPerCubicMeter** **()** 関数に追加した行を削除します。</span><span class="sxs-lookup"><span data-stu-id="768c6-225">Return to Visual Studio and remove the **TrianglesPerCubicMeter** line that you added in the **Awake()** function during the previous section.</span></span>
-* <span data-ttu-id="768c6-226">プロジェクトをデバイスに再デプロイします。</span><span class="sxs-lookup"><span data-stu-id="768c6-226">Redeploy the project to your device.</span></span> <span data-ttu-id="768c6-227">ここでは、3つ**500**の3つのトライアングルメーターで実行されるようになりました。</span><span class="sxs-lookup"><span data-stu-id="768c6-227">We should now be running with **500** triangles per cubic meter.</span></span>
-* <span data-ttu-id="768c6-228">ブラウザーを開き、HoloLens IPAddress に「」と入力して、 **Windows デバイスポータル**に移動します。</span><span class="sxs-lookup"><span data-stu-id="768c6-228">Open a browser and enter in your HoloLens IPAddress to navigate to the **Windows Device Portal**.</span></span>
-* <span data-ttu-id="768c6-229">左側のパネルで [ **3D 表示**] オプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-229">Select the **3D View** option in the left panel.</span></span>
-* <span data-ttu-id="768c6-230">[ **Surface 再構築**] で、[**更新**] ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-230">Under **Surface reconstruction** select the **Update** button.</span></span>
-* <span data-ttu-id="768c6-231">HoloLens でスキャンした領域が表示ウィンドウに表示されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-231">Watch as the areas that you have scanned on your HoloLens appear in the display window.</span></span>
-* <span data-ttu-id="768c6-232">部屋のスキャンを保存するには、[**保存**] ボタンを押します。</span><span class="sxs-lookup"><span data-stu-id="768c6-232">To save your room scan, press the **Save** button.</span></span>
-* <span data-ttu-id="768c6-233">**ダウンロード**フォルダーを開いて、保存されているルームモデル**srmesh. .obj**を見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-233">Open your **Downloads** folder to find the saved room model **SRMesh.obj**.</span></span>
-* <span data-ttu-id="768c6-234">Unity プロジェクトの**Assets**フォルダーに**srmesh. .obj**をコピーします。</span><span class="sxs-lookup"><span data-stu-id="768c6-234">Copy **SRMesh.obj** to the **Assets** folder of your Unity project.</span></span>
-* <span data-ttu-id="768c6-235">Unity で、[**階層**] パネルの [ **SpatialMapping** ] オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-235">In Unity, select the **SpatialMapping** object in the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="768c6-236">**オブジェクトサーフェイスのオブザーバー (スクリプト)** コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-236">Locate the **Object Surface Observer (Script)** component.</span></span>
-* <span data-ttu-id="768c6-237">[**ルームモデル**] プロパティの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-237">Click the circle to the right of the **Room Model** property.</span></span>
-* <span data-ttu-id="768c6-238">**Srmesh**オブジェクトを探して選択し、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="768c6-238">Find and select the **SRMesh** object and then close the window.</span></span>
-* <span data-ttu-id="768c6-239">[**インスペクター** ] パネルの [**ルームモデル**] プロパティが [ **srmesh**] に設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-239">Verify that the **Room Model** property in the **Inspector** panel is now set to **SRMesh**.</span></span>
-* <span data-ttu-id="768c6-240">[**再生**] ボタンを押して Unity のプレビューモードに入ります。</span><span class="sxs-lookup"><span data-stu-id="768c6-240">Press the **Play** button to enter Unity's preview mode.</span></span>
-* <span data-ttu-id="768c6-241">SpatialMapping コンポーネントは、保存された部屋モデルからメッシュを読み込み、Unity で使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="768c6-241">The SpatialMapping component will load the meshes from the saved room model so you can use them in Unity.</span></span>
-* <span data-ttu-id="768c6-242">[**シーン**] ビューに切り替えて、ワイヤーフレームシェーダーで表示されているすべての部屋モデルを表示します。</span><span class="sxs-lookup"><span data-stu-id="768c6-242">Switch to **Scene** view to see all of your room model displayed with the wireframe shader.</span></span>
-* <span data-ttu-id="768c6-243">プレビューモードを終了するには、もう一度 [**再生**] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-243">Press the **Play** button again to exit preview mode.</span></span>
+<span data-ttu-id="021ae-207">**ビルドと配置 (パート 2)**</span><span class="sxs-lookup"><span data-stu-id="021ae-207">**Build and Deploy (part 2)**</span></span>
 
-<span data-ttu-id="768c6-244">**注:** Unity で次にプレビューモードに入ると、既定で保存されているルームメッシュが読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="768c6-244">**NOTE:** The next time that you enter preview mode in Unity, it will load the saved room mesh by default.</span></span>
+<span data-ttu-id="021ae-208">次に、空間マッピングがパフォーマンスに与える影響について説明します。</span><span class="sxs-lookup"><span data-stu-id="021ae-208">Now let's explore how Spatial Mapping can affect performance.</span></span>
 
-## <a name="chapter-2---visualization"></a><span data-ttu-id="768c6-245">第2章-視覚化</span><span class="sxs-lookup"><span data-stu-id="768c6-245">Chapter 2 - Visualization</span></span>
+* <span data-ttu-id="021ae-209">Unity で、 **[ウィンドウ > プロファイラー]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-209">In Unity, select **Window > Profiler**.</span></span>
+* <span data-ttu-id="021ae-210">**[プロファイラーの追加 > GPU]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-210">Click **Add Profiler > GPU**.</span></span>
+* <span data-ttu-id="021ae-211">**アクティブなプロファイラー > <Enter IP>** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-211">Click **Active Profiler > <Enter IP>**.</span></span>
+* <span data-ttu-id="021ae-212">HoloLens の**IP アドレス**を入力します。</span><span class="sxs-lookup"><span data-stu-id="021ae-212">Enter the **IP address** of your HoloLens.</span></span>
+* <span data-ttu-id="021ae-213">**[接続]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-213">Click **Connect**.</span></span>
+* <span data-ttu-id="021ae-214">GPU がフレームをレンダリングするためにかかる時間 (ミリ秒単位) を観察します。</span><span class="sxs-lookup"><span data-stu-id="021ae-214">Observe the number of milliseconds it takes for the GPU to render a frame.</span></span>
+* <span data-ttu-id="021ae-215">デバイスでアプリケーションの実行を停止します。</span><span class="sxs-lookup"><span data-stu-id="021ae-215">Stop the application from running on the device.</span></span>
+* <span data-ttu-id="021ae-216">Visual Studio に戻り、 **SpatialMappingObserver.cs**を開きます。</span><span class="sxs-lookup"><span data-stu-id="021ae-216">Return to Visual Studio and open **SpatialMappingObserver.cs**.</span></span> <span data-ttu-id="021ae-217">これは、HoloToolkit\SpatialMapping (ユニバーサル Windows) プロジェクトの [] フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="021ae-217">You will find it in the HoloToolkit\SpatialMapping folder of the Assembly-CSharp (Universal Windows) project.</span></span>
+* <span data-ttu-id="021ae-218">起動 **()** 関数を見つけ、次のコード行を追加します: **TrianglesPerCubicMeter = 1200;**</span><span class="sxs-lookup"><span data-stu-id="021ae-218">Find the **Awake()** function, and add the following line of code: **TrianglesPerCubicMeter = 1200;**</span></span>
+* <span data-ttu-id="021ae-219">プロジェクトをデバイスに再配置してから、**プロファイラーを再接続**します。</span><span class="sxs-lookup"><span data-stu-id="021ae-219">Re-deploy the project to your device, and then **reconnect the profiler**.</span></span> <span data-ttu-id="021ae-220">フレームをレンダリングするミリ秒数の変化を確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-220">Observe the change in the number of milliseconds to render a frame.</span></span>
+* <span data-ttu-id="021ae-221">デバイスでアプリケーションの実行を停止します。</span><span class="sxs-lookup"><span data-stu-id="021ae-221">Stop the application from running on the device.</span></span>
+
+<span data-ttu-id="021ae-222">**Unity での保存と読み込み**</span><span class="sxs-lookup"><span data-stu-id="021ae-222">**Save and load in Unity**</span></span>
+
+<span data-ttu-id="021ae-223">最後に、部屋のメッシュを保存し、Unity に読み込んでみましょう。</span><span class="sxs-lookup"><span data-stu-id="021ae-223">Finally, let's save our room mesh and load it into Unity.</span></span>
+
+* <span data-ttu-id="021ae-224">Visual Studio に戻り、前のセクションで**TrianglesPerCubicMeter** **()** 関数に追加した行を削除します。</span><span class="sxs-lookup"><span data-stu-id="021ae-224">Return to Visual Studio and remove the **TrianglesPerCubicMeter** line that you added in the **Awake()** function during the previous section.</span></span>
+* <span data-ttu-id="021ae-225">プロジェクトをデバイスに再デプロイします。</span><span class="sxs-lookup"><span data-stu-id="021ae-225">Redeploy the project to your device.</span></span> <span data-ttu-id="021ae-226">ここでは、3つ**500**の3つのトライアングルメーターで実行されるようになりました。</span><span class="sxs-lookup"><span data-stu-id="021ae-226">We should now be running with **500** triangles per cubic meter.</span></span>
+* <span data-ttu-id="021ae-227">ブラウザーを開き、HoloLens IPAddress に「」と入力して、 **Windows デバイスポータル**に移動します。</span><span class="sxs-lookup"><span data-stu-id="021ae-227">Open a browser and enter in your HoloLens IPAddress to navigate to the **Windows Device Portal**.</span></span>
+* <span data-ttu-id="021ae-228">左側のパネルで **[3D 表示]** オプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-228">Select the **3D View** option in the left panel.</span></span>
+* <span data-ttu-id="021ae-229">**[Surface 再構築]** で、 **[更新]** ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-229">Under **Surface reconstruction** select the **Update** button.</span></span>
+* <span data-ttu-id="021ae-230">HoloLens でスキャンした領域が表示ウィンドウに表示されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-230">Watch as the areas that you have scanned on your HoloLens appear in the display window.</span></span>
+* <span data-ttu-id="021ae-231">部屋のスキャンを保存するには、 **[保存]** ボタンを押します。</span><span class="sxs-lookup"><span data-stu-id="021ae-231">To save your room scan, press the **Save** button.</span></span>
+* <span data-ttu-id="021ae-232">**ダウンロード**フォルダーを開いて、保存されているルームモデル**srmesh. .obj**を見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-232">Open your **Downloads** folder to find the saved room model **SRMesh.obj**.</span></span>
+* <span data-ttu-id="021ae-233">Unity プロジェクトの**Assets**フォルダーに**srmesh. .obj**をコピーします。</span><span class="sxs-lookup"><span data-stu-id="021ae-233">Copy **SRMesh.obj** to the **Assets** folder of your Unity project.</span></span>
+* <span data-ttu-id="021ae-234">Unity で、 **[階層]** パネルの **[SpatialMapping]** オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-234">In Unity, select the **SpatialMapping** object in the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="021ae-235">**オブジェクトサーフェイスのオブザーバー (スクリプト)** コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-235">Locate the **Object Surface Observer (Script)** component.</span></span>
+* <span data-ttu-id="021ae-236">**[ルームモデル]** プロパティの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-236">Click the circle to the right of the **Room Model** property.</span></span>
+* <span data-ttu-id="021ae-237">**Srmesh**オブジェクトを探して選択し、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="021ae-237">Find and select the **SRMesh** object and then close the window.</span></span>
+* <span data-ttu-id="021ae-238">**[インスペクター]** パネルの **[ルームモデル]** プロパティが **[srmesh]** に設定されていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-238">Verify that the **Room Model** property in the **Inspector** panel is now set to **SRMesh**.</span></span>
+* <span data-ttu-id="021ae-239">**[再生]** ボタンを押して Unity のプレビューモードに入ります。</span><span class="sxs-lookup"><span data-stu-id="021ae-239">Press the **Play** button to enter Unity's preview mode.</span></span>
+* <span data-ttu-id="021ae-240">SpatialMapping コンポーネントは、保存された部屋モデルからメッシュを読み込み、Unity で使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="021ae-240">The SpatialMapping component will load the meshes from the saved room model so you can use them in Unity.</span></span>
+* <span data-ttu-id="021ae-241">**[シーン]** ビューに切り替えて、ワイヤーフレームシェーダーで表示されているすべての部屋モデルを表示します。</span><span class="sxs-lookup"><span data-stu-id="021ae-241">Switch to **Scene** view to see all of your room model displayed with the wireframe shader.</span></span>
+* <span data-ttu-id="021ae-242">プレビューモードを終了するには、もう一度 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-242">Press the **Play** button again to exit preview mode.</span></span>
+
+<span data-ttu-id="021ae-243">**注:** Unity で次にプレビューモードに入ると、既定で保存されているルームメッシュが読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="021ae-243">**NOTE:** The next time that you enter preview mode in Unity, it will load the saved room mesh by default.</span></span>
+
+## <a name="chapter-2---visualization"></a><span data-ttu-id="021ae-244">第2章-視覚化</span><span class="sxs-lookup"><span data-stu-id="021ae-244">Chapter 2 - Visualization</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/RnkvXl-aXD4]
 
-<span data-ttu-id="768c6-246">**事項**</span><span class="sxs-lookup"><span data-stu-id="768c6-246">**Objectives**</span></span>
-* <span data-ttu-id="768c6-247">シェーダーの基本について説明します。</span><span class="sxs-lookup"><span data-stu-id="768c6-247">Learn the basics of shaders.</span></span>
-* <span data-ttu-id="768c6-248">周囲を視覚化します。</span><span class="sxs-lookup"><span data-stu-id="768c6-248">Visualize your surroundings.</span></span>
+<span data-ttu-id="021ae-245">**事項**</span><span class="sxs-lookup"><span data-stu-id="021ae-245">**Objectives**</span></span>
 
-<span data-ttu-id="768c6-249">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="768c6-249">**Instructions**</span></span>
-* <span data-ttu-id="768c6-250">Unity の [**階層**] パネルで、 **SpatialMapping**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-250">In Unity's **Hierarchy** panel, select the **SpatialMapping** object.</span></span>
-* <span data-ttu-id="768c6-251">[**インスペクター** ] パネルで、[**空間マッピングマネージャー (スクリプト)** ] コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-251">In the **Inspector** panel, find the **Spatial Mapping Manager (Script)** component.</span></span>
-* <span data-ttu-id="768c6-252">[ **Surface Material** ] プロパティの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-252">Click the circle to the right of the **Surface Material** property.</span></span>
-* <span data-ttu-id="768c6-253">**BlueLinesOnWalls**素材を検索して選択し、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="768c6-253">Find and select the **BlueLinesOnWalls** material and close the window.</span></span>
-* <span data-ttu-id="768c6-254">[**プロジェクト**パネル**シェーダー** ] フォルダーで、 **BlueLinesOnWalls**をダブルクリックして、Visual Studio でシェーダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="768c6-254">In the **Project** panel **Shaders** folder, double-click on **BlueLinesOnWalls** to open the shader in Visual Studio.</span></span>
-* <span data-ttu-id="768c6-255">これは単純なピクセル (頂点からフラグメント) シェーダーで、次のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="768c6-255">This is a simple pixel (vertex to fragment) shader, which accomplishes the following tasks:</span></span>
-    1. <span data-ttu-id="768c6-256">頂点の位置をワールド空間に変換します。</span><span class="sxs-lookup"><span data-stu-id="768c6-256">Converts a vertex's location to world space.</span></span>
-    2. <span data-ttu-id="768c6-257">ピクセルが垂直かどうかを判断するために、頂点の法線をチェックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-257">Checks the vertex's normal to determine if a pixel is vertical.</span></span>
-    3. <span data-ttu-id="768c6-258">表示するピクセルの色を設定します。</span><span class="sxs-lookup"><span data-stu-id="768c6-258">Sets the color of the pixel for rendering.</span></span>
+* <span data-ttu-id="021ae-246">シェーダーの基本について説明します。</span><span class="sxs-lookup"><span data-stu-id="021ae-246">Learn the basics of shaders.</span></span>
+* <span data-ttu-id="021ae-247">周囲を視覚化します。</span><span class="sxs-lookup"><span data-stu-id="021ae-247">Visualize your surroundings.</span></span>
 
-<span data-ttu-id="768c6-259">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="768c6-259">**Build and Deploy**</span></span>
-* <span data-ttu-id="768c6-260">Unity に戻り、[ **Play** ] を押してプレビューモードに入ります。</span><span class="sxs-lookup"><span data-stu-id="768c6-260">Return to Unity and press **Play** to enter preview mode.</span></span>
-* <span data-ttu-id="768c6-261">青色の線は、保存されているスキャンデータから自動的に読み込まれる、部屋メッシュのすべての垂直サーフェイスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-261">Blue lines will be rendered on all vertical surfaces of the room mesh (which automatically loaded from our saved scanning data).</span></span>
-* <span data-ttu-id="768c6-262">[**シーン**] タブに切り替えて、部屋の表示を調整し、Unity でのルームメッシュ全体の表示方法を確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-262">Switch to the **Scene** tab to adjust your view of the room and see how the entire room mesh appears in Unity.</span></span>
-* <span data-ttu-id="768c6-263">[**プロジェクト**] パネルで、[**素材**] フォルダーを見つけて、 **BlueLinesOnWalls**の素材を選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-263">In the **Project** panel, find the **Materials** folder and select the **BlueLinesOnWalls** material.</span></span>
-* <span data-ttu-id="768c6-264">一部のプロパティを変更し、Unity エディターで変更がどのように表示されるかを確認します。</span><span class="sxs-lookup"><span data-stu-id="768c6-264">Modify some properties and see how the changes appear in the Unity editor.</span></span>
-    * <span data-ttu-id="768c6-265">[**インスペクター** ] パネルで、 **LineScale**の値を調整して、線が太くまたは細くなるようにします。</span><span class="sxs-lookup"><span data-stu-id="768c6-265">In the **Inspector** panel, adjust the **LineScale** value to make the lines appear thicker or thinner.</span></span>
-    * <span data-ttu-id="768c6-266">[**インスペクター** ] パネルで、[行**perメーター** ] の値を調整して、各壁面に表示される線の数を変更します。</span><span class="sxs-lookup"><span data-stu-id="768c6-266">In the **Inspector** panel, adjust the **LinesPerMeter** value to change how many lines appear on each wall.</span></span>
-* <span data-ttu-id="768c6-267">[**再生**] をもう一度クリックして、プレビューモードを終了します。</span><span class="sxs-lookup"><span data-stu-id="768c6-267">Click **Play** again to exit preview mode.</span></span>
-* <span data-ttu-id="768c6-268">HoloLens にビルドして展開し、シェーダーのレンダリングが実際のサーフェイスにどのように表示されるかを観察します。</span><span class="sxs-lookup"><span data-stu-id="768c6-268">Build and deploy to the HoloLens and observe how the shader rendering appears on real surfaces.</span></span>
+<span data-ttu-id="021ae-248">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="021ae-248">**Instructions**</span></span>
 
-<span data-ttu-id="768c6-269">Unity は、素材をプレビューするための優れたジョブを行いますが、常にデバイスでのレンダリングをチェックアウトすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="768c6-269">Unity does a great job of previewing materials, but it's always a good idea to check-out rendering in the device.</span></span>
+* <span data-ttu-id="021ae-249">Unity の **[階層]** パネルで、 **SpatialMapping**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-249">In Unity's **Hierarchy** panel, select the **SpatialMapping** object.</span></span>
+* <span data-ttu-id="021ae-250">**[インスペクター]** パネルで、 **[空間マッピングマネージャー (スクリプト)]** コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-250">In the **Inspector** panel, find the **Spatial Mapping Manager (Script)** component.</span></span>
+* <span data-ttu-id="021ae-251">**[Surface Material]** プロパティの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-251">Click the circle to the right of the **Surface Material** property.</span></span>
+* <span data-ttu-id="021ae-252">**BlueLinesOnWalls**素材を検索して選択し、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="021ae-252">Find and select the **BlueLinesOnWalls** material and close the window.</span></span>
+* <span data-ttu-id="021ae-253">[**プロジェクト**パネル**シェーダー** ] フォルダーで、 **BlueLinesOnWalls**をダブルクリックして、Visual Studio でシェーダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="021ae-253">In the **Project** panel **Shaders** folder, double-click on **BlueLinesOnWalls** to open the shader in Visual Studio.</span></span>
+* <span data-ttu-id="021ae-254">これは単純なピクセル (頂点からフラグメント) シェーダーで、次のタスクを実行します。</span><span class="sxs-lookup"><span data-stu-id="021ae-254">This is a simple pixel (vertex to fragment) shader, which accomplishes the following tasks:</span></span>
+    1. <span data-ttu-id="021ae-255">頂点の位置をワールド空間に変換します。</span><span class="sxs-lookup"><span data-stu-id="021ae-255">Converts a vertex's location to world space.</span></span>
+    2. <span data-ttu-id="021ae-256">ピクセルが垂直かどうかを判断するために、頂点の法線をチェックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-256">Checks the vertex's normal to determine if a pixel is vertical.</span></span>
+    3. <span data-ttu-id="021ae-257">表示するピクセルの色を設定します。</span><span class="sxs-lookup"><span data-stu-id="021ae-257">Sets the color of the pixel for rendering.</span></span>
 
-## <a name="chapter-3---processing"></a><span data-ttu-id="768c6-270">第3章: 処理</span><span class="sxs-lookup"><span data-stu-id="768c6-270">Chapter 3 - Processing</span></span>
+<span data-ttu-id="021ae-258">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="021ae-258">**Build and Deploy**</span></span>
+
+* <span data-ttu-id="021ae-259">Unity に戻り、 **[Play]** を押してプレビューモードに入ります。</span><span class="sxs-lookup"><span data-stu-id="021ae-259">Return to Unity and press **Play** to enter preview mode.</span></span>
+* <span data-ttu-id="021ae-260">青色の線は、保存されているスキャンデータから自動的に読み込まれる、部屋メッシュのすべての垂直サーフェイスに表示されます。</span><span class="sxs-lookup"><span data-stu-id="021ae-260">Blue lines will be rendered on all vertical surfaces of the room mesh (which automatically loaded from our saved scanning data).</span></span>
+* <span data-ttu-id="021ae-261">**[シーン]** タブに切り替えて、部屋の表示を調整し、Unity でのルームメッシュ全体の表示方法を確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-261">Switch to the **Scene** tab to adjust your view of the room and see how the entire room mesh appears in Unity.</span></span>
+* <span data-ttu-id="021ae-262">**[プロジェクト]** パネルで、 **[素材]** フォルダーを見つけて、 **BlueLinesOnWalls**の素材を選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-262">In the **Project** panel, find the **Materials** folder and select the **BlueLinesOnWalls** material.</span></span>
+* <span data-ttu-id="021ae-263">一部のプロパティを変更し、Unity エディターで変更がどのように表示されるかを確認します。</span><span class="sxs-lookup"><span data-stu-id="021ae-263">Modify some properties and see how the changes appear in the Unity editor.</span></span>
+    * <span data-ttu-id="021ae-264">**[インスペクター]** パネルで、 **LineScale**の値を調整して、線が太くまたは細くなるようにします。</span><span class="sxs-lookup"><span data-stu-id="021ae-264">In the **Inspector** panel, adjust the **LineScale** value to make the lines appear thicker or thinner.</span></span>
+    * <span data-ttu-id="021ae-265">**[インスペクター]** パネルで、行 **[perメーター]** の値を調整して、各壁面に表示される線の数を変更します。</span><span class="sxs-lookup"><span data-stu-id="021ae-265">In the **Inspector** panel, adjust the **LinesPerMeter** value to change how many lines appear on each wall.</span></span>
+* <span data-ttu-id="021ae-266">**[再生]** をもう一度クリックして、プレビューモードを終了します。</span><span class="sxs-lookup"><span data-stu-id="021ae-266">Click **Play** again to exit preview mode.</span></span>
+* <span data-ttu-id="021ae-267">HoloLens にビルドして展開し、シェーダーのレンダリングが実際のサーフェイスにどのように表示されるかを観察します。</span><span class="sxs-lookup"><span data-stu-id="021ae-267">Build and deploy to the HoloLens and observe how the shader rendering appears on real surfaces.</span></span>
+
+<span data-ttu-id="021ae-268">Unity は、素材をプレビューするための優れたジョブを行いますが、常にデバイスでのレンダリングをチェックアウトすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="021ae-268">Unity does a great job of previewing materials, but it's always a good idea to check-out rendering in the device.</span></span>
+
+## <a name="chapter-3---processing"></a><span data-ttu-id="021ae-269">第3章: 処理</span><span class="sxs-lookup"><span data-stu-id="021ae-269">Chapter 3 - Processing</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/kaUKiNiDxwY]
 
-<span data-ttu-id="768c6-271">**事項**</span><span class="sxs-lookup"><span data-stu-id="768c6-271">**Objectives**</span></span>
-* <span data-ttu-id="768c6-272">アプリケーションで使用するために空間マッピングデータを処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="768c6-272">Learn techniques to process spatial mapping data for use in your application.</span></span>
-* <span data-ttu-id="768c6-273">空間マッピングデータを分析してプレーンを検索し、三角形を削除します。</span><span class="sxs-lookup"><span data-stu-id="768c6-273">Analyze spatial mapping data to find planes and remove triangles.</span></span>
-* <span data-ttu-id="768c6-274">ホログラムの配置に平面を使用します。</span><span class="sxs-lookup"><span data-stu-id="768c6-274">Use planes for hologram placement.</span></span>
+<span data-ttu-id="021ae-270">**事項**</span><span class="sxs-lookup"><span data-stu-id="021ae-270">**Objectives**</span></span>
 
-<span data-ttu-id="768c6-275">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="768c6-275">**Instructions**</span></span>
-* <span data-ttu-id="768c6-276">Unity の [**プロジェクト**] パネルの [**ホログラム**] フォルダーで、 **SpatialProcessing**オブジェクトを見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-276">In Unity's **Project** panel, **Holograms** folder, find the **SpatialProcessing** object.</span></span>
-* <span data-ttu-id="768c6-277">**SpatialProcessing**オブジェクトを [**階層**] パネルにドラッグ & ドロップします。</span><span class="sxs-lookup"><span data-stu-id="768c6-277">Drag & drop the **SpatialProcessing** object into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="021ae-271">アプリケーションで使用するために空間マッピングデータを処理する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="021ae-271">Learn techniques to process spatial mapping data for use in your application.</span></span>
+* <span data-ttu-id="021ae-272">空間マッピングデータを分析してプレーンを検索し、三角形を削除します。</span><span class="sxs-lookup"><span data-stu-id="021ae-272">Analyze spatial mapping data to find planes and remove triangles.</span></span>
+* <span data-ttu-id="021ae-273">ホログラムの配置に平面を使用します。</span><span class="sxs-lookup"><span data-stu-id="021ae-273">Use planes for hologram placement.</span></span>
 
-<span data-ttu-id="768c6-278">SpatialProcessing prefab には、空間マッピングデータを処理するためのコンポーネントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="768c6-278">The SpatialProcessing prefab includes components for processing the spatial mapping data.</span></span> <span data-ttu-id="768c6-279">**SurfaceMeshesToPlanes.cs**は、空間マッピングのデータに基づいてプレーンを検索して生成します。</span><span class="sxs-lookup"><span data-stu-id="768c6-279">**SurfaceMeshesToPlanes.cs** will find and generate planes based on the spatial mapping data.</span></span> <span data-ttu-id="768c6-280">このアプリケーションでは、壁、床、および雲を表す平面を使用します。</span><span class="sxs-lookup"><span data-stu-id="768c6-280">We will use planes in our application to represent walls, floors and ceilings.</span></span> <span data-ttu-id="768c6-281">この事前 fab には、空間マッピングメッシュから頂点を削除できる**RemoveSurfaceVertices.cs**も含まれています。</span><span class="sxs-lookup"><span data-stu-id="768c6-281">This prefab also includes **RemoveSurfaceVertices.cs** which can remove vertices from the spatial mapping mesh.</span></span> <span data-ttu-id="768c6-282">これを使用すると、メッシュに穴を作成したり、不要になった余分な三角形を削除したりできます (プレーンを代わりに使用できるため)。</span><span class="sxs-lookup"><span data-stu-id="768c6-282">This can be used to create holes in the mesh, or to remove excess triangles that are no longer needed (because planes can be used instead).</span></span>
-* <span data-ttu-id="768c6-283">Unity の [**プロジェクト**] パネルの [**ホログラム**] フォルダーで、[場所 **] オブジェクトを**見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-283">In Unity's **Project** panel, **Holograms** folder, find the **SpaceCollection** object.</span></span>
-* <span data-ttu-id="768c6-284">[移動 **] オブジェクトを**[**階層**] パネルにドラッグアンドドロップします。</span><span class="sxs-lookup"><span data-stu-id="768c6-284">Drag and drop the **SpaceCollection** object into the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="768c6-285">[**階層**] パネルで、 **SpatialProcessing**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-285">In the **Hierarchy** panel, select the **SpatialProcessing** object.</span></span>
-* <span data-ttu-id="768c6-286">[**インスペクター** ] パネルで、[ **Play Space Manager (スクリプト)** ] コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-286">In the **Inspector** panel, find the **Play Space Manager (Script)** component.</span></span>
-* <span data-ttu-id="768c6-287">**PlaySpaceManager.cs**をダブルクリックして、Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="768c6-287">Double-click on **PlaySpaceManager.cs** to open it in Visual Studio.</span></span>
+<span data-ttu-id="021ae-274">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="021ae-274">**Instructions**</span></span>
 
-<span data-ttu-id="768c6-288">PlaySpaceManager.cs には、アプリケーション固有のコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="768c6-288">PlaySpaceManager.cs contains application-specific code.</span></span> <span data-ttu-id="768c6-289">このスクリプトに機能を追加して、次の動作を有効にします。</span><span class="sxs-lookup"><span data-stu-id="768c6-289">We will add functionality to this script to enable the following behavior:</span></span>
-1. <span data-ttu-id="768c6-290">スキャンの制限時間 (10 秒) を超えた後に、空間マッピングデータの収集を停止します。</span><span class="sxs-lookup"><span data-stu-id="768c6-290">Stop collecting spatial mapping data after we exceed the scanning time limit (10 seconds).</span></span>
-2. <span data-ttu-id="768c6-291">空間マッピングデータを処理します。</span><span class="sxs-lookup"><span data-stu-id="768c6-291">Process the spatial mapping data:</span></span>
-    1. <span data-ttu-id="768c6-292">SurfaceMeshesToPlanes を使用して、ワールドの表現を平面 (壁面、床、雲など) として簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="768c6-292">Use SurfaceMeshesToPlanes to create a simpler representation of the world as planes (walls, floors, ceilings, etc).</span></span>
-    2. <span data-ttu-id="768c6-293">平面の境界内にある表面の三角形を削除するには、RemoveSurfaceVertices を使用します。</span><span class="sxs-lookup"><span data-stu-id="768c6-293">Use RemoveSurfaceVertices to remove surface triangles that fall within plane boundaries.</span></span>
-3. <span data-ttu-id="768c6-294">世界中にホログラムのコレクションを生成し、ユーザーの近くにある壁と床面に配置します。</span><span class="sxs-lookup"><span data-stu-id="768c6-294">Generate a collection of holograms in the world and place them on wall and floor planes near the user.</span></span>
+* <span data-ttu-id="021ae-275">Unity の **[プロジェクト]** パネルの **[ホログラム]** フォルダーで、 **SpatialProcessing**オブジェクトを見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-275">In Unity's **Project** panel, **Holograms** folder, find the **SpatialProcessing** object.</span></span>
+* <span data-ttu-id="021ae-276">**SpatialProcessing**オブジェクトを **[階層]** パネルにドラッグ & ドロップします。</span><span class="sxs-lookup"><span data-stu-id="021ae-276">Drag & drop the **SpatialProcessing** object into the **Hierarchy** panel.</span></span>
 
-<span data-ttu-id="768c6-295">PlaySpaceManager.cs でマークされたコーディング演習を完了するか、次のスクリプトを完成したソリューションに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="768c6-295">Complete the coding exercises marked in PlaySpaceManager.cs, or replace the script with the finished solution from below:</span></span>
+<span data-ttu-id="021ae-277">SpatialProcessing prefab には、空間マッピングデータを処理するためのコンポーネントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="021ae-277">The SpatialProcessing prefab includes components for processing the spatial mapping data.</span></span> <span data-ttu-id="021ae-278">**SurfaceMeshesToPlanes.cs**は、空間マッピングのデータに基づいてプレーンを検索して生成します。</span><span class="sxs-lookup"><span data-stu-id="021ae-278">**SurfaceMeshesToPlanes.cs** will find and generate planes based on the spatial mapping data.</span></span> <span data-ttu-id="021ae-279">このアプリケーションでは、壁、床、および雲を表す平面を使用します。</span><span class="sxs-lookup"><span data-stu-id="021ae-279">We will use planes in our application to represent walls, floors and ceilings.</span></span> <span data-ttu-id="021ae-280">この事前 fab には、空間マッピングメッシュから頂点を削除できる**RemoveSurfaceVertices.cs**も含まれています。</span><span class="sxs-lookup"><span data-stu-id="021ae-280">This prefab also includes **RemoveSurfaceVertices.cs** which can remove vertices from the spatial mapping mesh.</span></span> <span data-ttu-id="021ae-281">これを使用すると、メッシュに穴を作成したり、不要になった余分な三角形を削除したりできます (プレーンを代わりに使用できるため)。</span><span class="sxs-lookup"><span data-stu-id="021ae-281">This can be used to create holes in the mesh, or to remove excess triangles that are no longer needed (because planes can be used instead).</span></span>
+
+* <span data-ttu-id="021ae-282">Unity の **[プロジェクト]** パネルの **[ホログラム]** フォルダーで **、[場所] オブジェクトを**見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-282">In Unity's **Project** panel, **Holograms** folder, find the **SpaceCollection** object.</span></span>
+* <span data-ttu-id="021ae-283">移動 オブジェクトを **階層** パネルにドラッグアンド**ドロップします**。</span><span class="sxs-lookup"><span data-stu-id="021ae-283">Drag and drop the **SpaceCollection** object into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="021ae-284">**[階層]** パネルで、 **SpatialProcessing**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-284">In the **Hierarchy** panel, select the **SpatialProcessing** object.</span></span>
+* <span data-ttu-id="021ae-285">**[インスペクター]** パネルで、 **[Play Space Manager (スクリプト)]** コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-285">In the **Inspector** panel, find the **Play Space Manager (Script)** component.</span></span>
+* <span data-ttu-id="021ae-286">**PlaySpaceManager.cs**をダブルクリックして、Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="021ae-286">Double-click on **PlaySpaceManager.cs** to open it in Visual Studio.</span></span>
+
+<span data-ttu-id="021ae-287">PlaySpaceManager.cs には、アプリケーション固有のコードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="021ae-287">PlaySpaceManager.cs contains application-specific code.</span></span> <span data-ttu-id="021ae-288">このスクリプトに機能を追加して、次の動作を有効にします。</span><span class="sxs-lookup"><span data-stu-id="021ae-288">We will add functionality to this script to enable the following behavior:</span></span>
+
+1. <span data-ttu-id="021ae-289">スキャンの制限時間 (10 秒) を超えた後に、空間マッピングデータの収集を停止します。</span><span class="sxs-lookup"><span data-stu-id="021ae-289">Stop collecting spatial mapping data after we exceed the scanning time limit (10 seconds).</span></span>
+2. <span data-ttu-id="021ae-290">空間マッピングデータを処理します。</span><span class="sxs-lookup"><span data-stu-id="021ae-290">Process the spatial mapping data:</span></span>
+    1. <span data-ttu-id="021ae-291">SurfaceMeshesToPlanes を使用して、ワールドの表現を平面 (壁面、床、雲など) として簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="021ae-291">Use SurfaceMeshesToPlanes to create a simpler representation of the world as planes (walls, floors, ceilings, etc).</span></span>
+    2. <span data-ttu-id="021ae-292">平面の境界内にある表面の三角形を削除するには、RemoveSurfaceVertices を使用します。</span><span class="sxs-lookup"><span data-stu-id="021ae-292">Use RemoveSurfaceVertices to remove surface triangles that fall within plane boundaries.</span></span>
+3. <span data-ttu-id="021ae-293">世界中にホログラムのコレクションを生成し、ユーザーの近くにある壁と床面に配置します。</span><span class="sxs-lookup"><span data-stu-id="021ae-293">Generate a collection of holograms in the world and place them on wall and floor planes near the user.</span></span>
+
+<span data-ttu-id="021ae-294">PlaySpaceManager.cs でマークされたコーディング演習を完了するか、次のスクリプトを完成したソリューションに置き換えます。</span><span class="sxs-lookup"><span data-stu-id="021ae-294">Complete the coding exercises marked in PlaySpaceManager.cs, or replace the script with the finished solution from below:</span></span>
 
 ```cs
 using System.Collections.Generic;
@@ -384,7 +396,7 @@ public class PlaySpaceManager : Singleton<PlaySpaceManager>
         {
             // We do not have enough floors/walls to place our holograms on...
 
-            // 3.a: Re-enter scanning mode so the user can find more surfaces by 
+            // 3.a: Re-enter scanning mode so the user can find more surfaces by
             // calling StartObserver() on the SpatialMappingManager.Instance.
             SpatialMappingManager.Instance.StartObserver();
 
@@ -433,42 +445,46 @@ public class PlaySpaceManager : Singleton<PlaySpaceManager>
 }
 ```
 
-<span data-ttu-id="768c6-296">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="768c6-296">**Build and Deploy**</span></span>
-* <span data-ttu-id="768c6-297">HoloLens に展開する前に、Unity の [**再生**] ボタンを押して、再生モードにします。</span><span class="sxs-lookup"><span data-stu-id="768c6-297">Before deploying to the HoloLens, press the **Play** button in Unity to enter play mode.</span></span>
-* <span data-ttu-id="768c6-298">ファイルからルームメッシュが読み込まれたら、空間マッピングメッシュで処理が開始されるまで10秒間待機します。</span><span class="sxs-lookup"><span data-stu-id="768c6-298">After the room mesh is loaded from file, wait for 10 seconds before processing starts on the spatial mapping mesh.</span></span>
-* <span data-ttu-id="768c6-299">処理が完了すると、平面は床、壁面、天井などを表すように見えます。</span><span class="sxs-lookup"><span data-stu-id="768c6-299">When processing is complete, planes will appear to represent the floor, walls, ceiling, etc.</span></span>
-* <span data-ttu-id="768c6-300">すべての面が見つかったら、カメラの近くにあるフロアのテーブルに太陽のシステムが表示されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-300">After all of the planes have been found, you should see a solar system appear on a table of floor near the camera.</span></span>
-* <span data-ttu-id="768c6-301">2つのポスターは、カメラの近くの壁にも表示されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-301">Two posters should appear on walls near the camera too.</span></span> <span data-ttu-id="768c6-302">**ゲーム**モードで表示できない場合は、[**シーン**] タブに切り替えます。</span><span class="sxs-lookup"><span data-stu-id="768c6-302">Switch to the **Scene** tab if you cannot see them in **Game** mode.</span></span>
-* <span data-ttu-id="768c6-303">再生モードを終了するには、もう一度 [**再生**] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-303">Press the **Play** button again to exit play mode.</span></span>
-* <span data-ttu-id="768c6-304">通常どおり HoloLens にビルドしてデプロイします。</span><span class="sxs-lookup"><span data-stu-id="768c6-304">Build and deploy to the HoloLens, as usual.</span></span>
-* <span data-ttu-id="768c6-305">空間マッピングデータのスキャンと処理が完了するまで待機します。</span><span class="sxs-lookup"><span data-stu-id="768c6-305">Wait for scanning and processing of the spatial mapping data to complete.</span></span>
-* <span data-ttu-id="768c6-306">プレーンが表示されたら、太陽のシステムとポスターを検索してみてください。</span><span class="sxs-lookup"><span data-stu-id="768c6-306">Once you see planes, try to find the solar system and posters in your world.</span></span>
+<span data-ttu-id="021ae-295">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="021ae-295">**Build and Deploy**</span></span>
 
-## <a name="chapter-4---placement"></a><span data-ttu-id="768c6-307">章 4-配置</span><span class="sxs-lookup"><span data-stu-id="768c6-307">Chapter 4 - Placement</span></span>
+* <span data-ttu-id="021ae-296">HoloLens に展開する前に、Unity の **[再生]** ボタンを押して、再生モードにします。</span><span class="sxs-lookup"><span data-stu-id="021ae-296">Before deploying to the HoloLens, press the **Play** button in Unity to enter play mode.</span></span>
+* <span data-ttu-id="021ae-297">ファイルからルームメッシュが読み込まれたら、空間マッピングメッシュで処理が開始されるまで10秒間待機します。</span><span class="sxs-lookup"><span data-stu-id="021ae-297">After the room mesh is loaded from file, wait for 10 seconds before processing starts on the spatial mapping mesh.</span></span>
+* <span data-ttu-id="021ae-298">処理が完了すると、平面は床、壁面、天井などを表すように見えます。</span><span class="sxs-lookup"><span data-stu-id="021ae-298">When processing is complete, planes will appear to represent the floor, walls, ceiling, etc.</span></span>
+* <span data-ttu-id="021ae-299">すべての面が見つかったら、カメラの近くにあるフロアのテーブルに太陽のシステムが表示されます。</span><span class="sxs-lookup"><span data-stu-id="021ae-299">After all of the planes have been found, you should see a solar system appear on a table of floor near the camera.</span></span>
+* <span data-ttu-id="021ae-300">2つのポスターは、カメラの近くの壁にも表示されます。</span><span class="sxs-lookup"><span data-stu-id="021ae-300">Two posters should appear on walls near the camera too.</span></span> <span data-ttu-id="021ae-301">**ゲーム**モードで表示できない場合は、 **[シーン]** タブに切り替えます。</span><span class="sxs-lookup"><span data-stu-id="021ae-301">Switch to the **Scene** tab if you cannot see them in **Game** mode.</span></span>
+* <span data-ttu-id="021ae-302">再生モードを終了するには、もう一度 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-302">Press the **Play** button again to exit play mode.</span></span>
+* <span data-ttu-id="021ae-303">通常どおり HoloLens にビルドしてデプロイします。</span><span class="sxs-lookup"><span data-stu-id="021ae-303">Build and deploy to the HoloLens, as usual.</span></span>
+* <span data-ttu-id="021ae-304">空間マッピングデータのスキャンと処理が完了するまで待機します。</span><span class="sxs-lookup"><span data-stu-id="021ae-304">Wait for scanning and processing of the spatial mapping data to complete.</span></span>
+* <span data-ttu-id="021ae-305">プレーンが表示されたら、太陽のシステムとポスターを検索してみてください。</span><span class="sxs-lookup"><span data-stu-id="021ae-305">Once you see planes, try to find the solar system and posters in your world.</span></span>
+
+## <a name="chapter-4---placement"></a><span data-ttu-id="021ae-306">章 4-配置</span><span class="sxs-lookup"><span data-stu-id="021ae-306">Chapter 4 - Placement</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/Srhtpid1uZc]
 
-<span data-ttu-id="768c6-308">**事項**</span><span class="sxs-lookup"><span data-stu-id="768c6-308">**Objectives**</span></span>
-* <span data-ttu-id="768c6-309">ホログラムがサーフェイスに適合するかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="768c6-309">Determine if a hologram will fit on a surface.</span></span>
-* <span data-ttu-id="768c6-310">ホログラムがサーフェイスに適合しない場合にユーザーにフィードバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="768c6-310">Provide feedback to the user when a hologram can/cannot fit on a surface.</span></span>
+<span data-ttu-id="021ae-307">**事項**</span><span class="sxs-lookup"><span data-stu-id="021ae-307">**Objectives**</span></span>
 
-<span data-ttu-id="768c6-311">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="768c6-311">**Instructions**</span></span>
-* <span data-ttu-id="768c6-312">Unity の [**階層**] パネルで、 **SpatialProcessing**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-312">In Unity's **Hierarchy** panel, select the **SpatialProcessing** object.</span></span>
-* <span data-ttu-id="768c6-313">[**インスペクター** ] パネルで、[**平面 (スクリプト)] コンポーネントの表面メッシュを**見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-313">In the **Inspector** panel, find the **Surface Meshes To Planes (Script)** component.</span></span>
-* <span data-ttu-id="768c6-314">[**描画平面**] プロパティを [**なし**] に変更して選択範囲をクリアします。</span><span class="sxs-lookup"><span data-stu-id="768c6-314">Change the **Draw Planes** property to **Nothing** to clear the selection.</span></span>
-* <span data-ttu-id="768c6-315">"**描画平面**" プロパティを "**壁**" に変更して、壁面平面だけがレンダリングされるようにします。</span><span class="sxs-lookup"><span data-stu-id="768c6-315">Change the **Draw Planes** property to **Wall**, so that only wall planes will be rendered.</span></span>
-* <span data-ttu-id="768c6-316">[**プロジェクト**] パネルの**Scripts**フォルダーで、 **Placeable.cs**をダブルクリックして Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="768c6-316">In the **Project** panel, **Scripts** folder, double-click on **Placeable.cs** to open it in Visual Studio.</span></span>
+* <span data-ttu-id="021ae-308">ホログラムがサーフェイスに適合するかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="021ae-308">Determine if a hologram will fit on a surface.</span></span>
+* <span data-ttu-id="021ae-309">ホログラムがサーフェイスに適合しない場合にユーザーにフィードバックを提供します。</span><span class="sxs-lookup"><span data-stu-id="021ae-309">Provide feedback to the user when a hologram can/cannot fit on a surface.</span></span>
 
-<span data-ttu-id="768c6-317">配置可能**なスクリプトは**、平面検索が完了した後に作成されたポスターとプロジェクションボックスに既にアタッチされています。</span><span class="sxs-lookup"><span data-stu-id="768c6-317">The **Placeable** script is already attached to the posters and projection box that are created after plane finding completes.</span></span> <span data-ttu-id="768c6-318">いくつかのコードをコメント解除するだけで、次のことが実現されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-318">All we need to do is uncomment some code, and this script will achieve the following:</span></span>
-1. <span data-ttu-id="768c6-319">Raycasting が境界キューブの中心と4つのコーナーから表面にホログラムを収めるかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="768c6-319">Determine if a hologram will fit on a surface by raycasting from the center and four corners of the bounding cube.</span></span>
-2. <span data-ttu-id="768c6-320">表面の法線を調べて、ホログラムをフラッシュするのに十分な滑らかさがあるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="768c6-320">Check the surface normal to determine if it is smooth enough for the hologram to sit flush on.</span></span>
-3. <span data-ttu-id="768c6-321">ホログラムの周りに境界キューブをレンダリングして、配置中の実際のサイズを示します。</span><span class="sxs-lookup"><span data-stu-id="768c6-321">Render a bounding cube around the hologram to show its actual size while being placed.</span></span>
-4. <span data-ttu-id="768c6-322">ホログラムの下または後ろに影をキャストして、床と壁のどこに配置されるかを示します。</span><span class="sxs-lookup"><span data-stu-id="768c6-322">Cast a shadow under/behind the hologram to show where it will be placed on the floor/wall.</span></span>
-5. <span data-ttu-id="768c6-323">ホログラムを表面に配置できない場合、または緑の場合は、影を赤で表示します。</span><span class="sxs-lookup"><span data-stu-id="768c6-323">Render the shadow as red, if the hologram cannot be placed on the surface, or green, if it can.</span></span>
-6. <span data-ttu-id="768c6-324">関係がある表面の種類 (垂直方向または水平方向) に合わせてホログラムを再配置します。</span><span class="sxs-lookup"><span data-stu-id="768c6-324">Re-orient the hologram to align with the surface type (vertical or horizontal) that it has affinity to.</span></span>
-7. <span data-ttu-id="768c6-325">選択したサーフェイスにホログラムをスムーズに配置して、ジャンプやスナップ動作を回避します。</span><span class="sxs-lookup"><span data-stu-id="768c6-325">Smoothly place the hologram on the selected surface to avoid jumping or snapping behavior.</span></span>
+<span data-ttu-id="021ae-310">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="021ae-310">**Instructions**</span></span>
 
-<span data-ttu-id="768c6-326">以下のコーディング演習ですべてのコードのコメントを解除するか、 **Placeable.cs**でこの完成したソリューションを使用します。</span><span class="sxs-lookup"><span data-stu-id="768c6-326">Uncomment all code in the coding exercise below, or use this completed solution in **Placeable.cs**:</span></span>
+* <span data-ttu-id="021ae-311">Unity の **[階層]** パネルで、 **SpatialProcessing**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-311">In Unity's **Hierarchy** panel, select the **SpatialProcessing** object.</span></span>
+* <span data-ttu-id="021ae-312">**[インスペクター]** パネルで、[**平面 (スクリプト)] コンポーネントの表面メッシュを**見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-312">In the **Inspector** panel, find the **Surface Meshes To Planes (Script)** component.</span></span>
+* <span data-ttu-id="021ae-313">**[描画平面]** プロパティを **[なし]** に変更して選択範囲をクリアします。</span><span class="sxs-lookup"><span data-stu-id="021ae-313">Change the **Draw Planes** property to **Nothing** to clear the selection.</span></span>
+* <span data-ttu-id="021ae-314">"**描画平面**" プロパティを "**壁**" に変更して、壁面平面だけがレンダリングされるようにします。</span><span class="sxs-lookup"><span data-stu-id="021ae-314">Change the **Draw Planes** property to **Wall**, so that only wall planes will be rendered.</span></span>
+* <span data-ttu-id="021ae-315">**[プロジェクト]** パネルの**Scripts**フォルダーで、 **Placeable.cs**をダブルクリックして Visual Studio で開きます。</span><span class="sxs-lookup"><span data-stu-id="021ae-315">In the **Project** panel, **Scripts** folder, double-click on **Placeable.cs** to open it in Visual Studio.</span></span>
+
+<span data-ttu-id="021ae-316">配置可能**なスクリプトは、平面**検索が完了した後に作成されたポスターとプロジェクションボックスに既にアタッチされています。</span><span class="sxs-lookup"><span data-stu-id="021ae-316">The **Placeable** script is already attached to the posters and projection box that are created after plane finding completes.</span></span> <span data-ttu-id="021ae-317">いくつかのコードをコメント解除するだけで、次のことが実現されます。</span><span class="sxs-lookup"><span data-stu-id="021ae-317">All we need to do is uncomment some code, and this script will achieve the following:</span></span>
+
+1. <span data-ttu-id="021ae-318">Raycasting が境界キューブの中心と4つのコーナーから表面にホログラムを収めるかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="021ae-318">Determine if a hologram will fit on a surface by raycasting from the center and four corners of the bounding cube.</span></span>
+2. <span data-ttu-id="021ae-319">表面の法線を調べて、ホログラムをフラッシュするのに十分な滑らかさがあるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="021ae-319">Check the surface normal to determine if it is smooth enough for the hologram to sit flush on.</span></span>
+3. <span data-ttu-id="021ae-320">ホログラムの周りに境界キューブをレンダリングして、配置中の実際のサイズを示します。</span><span class="sxs-lookup"><span data-stu-id="021ae-320">Render a bounding cube around the hologram to show its actual size while being placed.</span></span>
+4. <span data-ttu-id="021ae-321">ホログラムの下または後ろに影をキャストして、床と壁のどこに配置されるかを示します。</span><span class="sxs-lookup"><span data-stu-id="021ae-321">Cast a shadow under/behind the hologram to show where it will be placed on the floor/wall.</span></span>
+5. <span data-ttu-id="021ae-322">ホログラムを表面に配置できない場合、または緑の場合は、影を赤で表示します。</span><span class="sxs-lookup"><span data-stu-id="021ae-322">Render the shadow as red, if the hologram cannot be placed on the surface, or green, if it can.</span></span>
+6. <span data-ttu-id="021ae-323">関係がある表面の種類 (垂直方向または水平方向) に合わせてホログラムを再配置します。</span><span class="sxs-lookup"><span data-stu-id="021ae-323">Re-orient the hologram to align with the surface type (vertical or horizontal) that it has affinity to.</span></span>
+7. <span data-ttu-id="021ae-324">選択したサーフェイスにホログラムをスムーズに配置して、ジャンプやスナップ動作を回避します。</span><span class="sxs-lookup"><span data-stu-id="021ae-324">Smoothly place the hologram on the selected surface to avoid jumping or snapping behavior.</span></span>
+
+<span data-ttu-id="021ae-325">以下のコーディング演習ですべてのコードのコメントを解除するか、 **Placeable.cs**でこの完成したソリューションを使用します。</span><span class="sxs-lookup"><span data-stu-id="021ae-325">Uncomment all code in the coding exercise below, or use this completed solution in **Placeable.cs**:</span></span>
 
 ```cs
 using System.Collections.Generic;
@@ -482,7 +498,7 @@ using Academy.HoloToolkit.Unity;
 /// </summary>
 public enum PlacementSurfaces
 {
-    // Horizontal surface with an upward pointing normal.    
+    // Horizontal surface with an upward pointing normal.
     Horizontal = 1,
 
     // Vertical surface with a normal facing the user.
@@ -909,7 +925,7 @@ public class Placeable : MonoBehaviour
     /// The target surface's normal vector.
     /// </param>
     /// <remarks>
-    /// The aligntoVerticalSurface parameter is ignored if the object
+    /// The alignToVerticalSurface parameter is ignored if the object
     /// is to be placed on a horizontalSurface
     /// </remarks>
     private void OrientObject(bool alignToVerticalSurface, Vector3 surfaceNormal)
@@ -1006,7 +1022,7 @@ public class Placeable : MonoBehaviour
             shadowAsset.GetComponent<Renderer>().sharedMaterial = NotPlaceableShadowMaterial;
         }
 
-        // Show the shadow asset as appropriate.        
+        // Show the shadow asset as appropriate.
         if (position != Vector3.zero)
         {
             // Position the shadow a small distance from the target surface, along the normal.
@@ -1051,41 +1067,46 @@ public class Placeable : MonoBehaviour
 }
 ```
 
-<span data-ttu-id="768c6-327">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="768c6-327">**Build and Deploy**</span></span>
-* <span data-ttu-id="768c6-328">前と同様に、プロジェクトをビルドし、HoloLens にデプロイします。</span><span class="sxs-lookup"><span data-stu-id="768c6-328">As before, build the project and deploy to the HoloLens.</span></span>
-* <span data-ttu-id="768c6-329">空間マッピングデータのスキャンと処理が完了するまで待機します。</span><span class="sxs-lookup"><span data-stu-id="768c6-329">Wait for scanning and processing of the spatial mapping data to complete.</span></span>
-* <span data-ttu-id="768c6-330">太陽のシステムが表示されたら、下の投影ボックスを見つめ、選択ジェスチャを実行して移動します。</span><span class="sxs-lookup"><span data-stu-id="768c6-330">When you see the solar system, gaze at the projection box below and perform a select gesture to move it around.</span></span> <span data-ttu-id="768c6-331">[プロジェクション] ボックスを選択すると、[プロジェクション] ボックスの周囲に境界キューブが表示されます。</span><span class="sxs-lookup"><span data-stu-id="768c6-331">While the projection box is selected, a bounding cube will be visible around the projection box.</span></span>
-* <span data-ttu-id="768c6-332">部屋の別の場所に移動します。</span><span class="sxs-lookup"><span data-stu-id="768c6-332">Move you head to gaze at a different location in the room.</span></span> <span data-ttu-id="768c6-333">プロジェクションボックスは、お使いの宝石に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="768c6-333">The projection box should follow your gaze.</span></span> <span data-ttu-id="768c6-334">投影ボックスの下の影が赤に変わったら、その表面にホログラムを配置することはできません。</span><span class="sxs-lookup"><span data-stu-id="768c6-334">When the shadow below the projection box turns red, you cannot place the hologram on that surface.</span></span> <span data-ttu-id="768c6-335">投影ボックスの下の影が緑色に変わったら、別の選択ジェスチャを実行してホログラムを配置できます。</span><span class="sxs-lookup"><span data-stu-id="768c6-335">When the shadow below the projection box turns green, you can place the hologram by performing another select gesture.</span></span>
-* <span data-ttu-id="768c6-336">壁の holographic ポスターの1つを探して選択し、新しい場所に移動します。</span><span class="sxs-lookup"><span data-stu-id="768c6-336">Find and select one of the holographic posters on a wall to move it to a new location.</span></span> <span data-ttu-id="768c6-337">フロアまたはシーリングにポスターを配置することはできません。また、移動するたびに各壁面に合わせて正しい向きに保たれることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="768c6-337">Notice that you cannot place the poster on the floor or ceiling, and that it stays correctly oriented to each wall as you move around.</span></span>
+<span data-ttu-id="021ae-326">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="021ae-326">**Build and Deploy**</span></span>
 
-## <a name="chapter-5---occlusion"></a><span data-ttu-id="768c6-338">第5章-オクルージョン</span><span class="sxs-lookup"><span data-stu-id="768c6-338">Chapter 5 - Occlusion</span></span>
+* <span data-ttu-id="021ae-327">前と同様に、プロジェクトをビルドし、HoloLens にデプロイします。</span><span class="sxs-lookup"><span data-stu-id="021ae-327">As before, build the project and deploy to the HoloLens.</span></span>
+* <span data-ttu-id="021ae-328">空間マッピングデータのスキャンと処理が完了するまで待機します。</span><span class="sxs-lookup"><span data-stu-id="021ae-328">Wait for scanning and processing of the spatial mapping data to complete.</span></span>
+* <span data-ttu-id="021ae-329">太陽のシステムが表示されたら、下の投影ボックスを見つめ、選択ジェスチャを実行して移動します。</span><span class="sxs-lookup"><span data-stu-id="021ae-329">When you see the solar system, gaze at the projection box below and perform a select gesture to move it around.</span></span> <span data-ttu-id="021ae-330">[プロジェクション] ボックスを選択すると、[プロジェクション] ボックスの周囲に境界キューブが表示されます。</span><span class="sxs-lookup"><span data-stu-id="021ae-330">While the projection box is selected, a bounding cube will be visible around the projection box.</span></span>
+* <span data-ttu-id="021ae-331">部屋の別の場所に移動します。</span><span class="sxs-lookup"><span data-stu-id="021ae-331">Move you head to gaze at a different location in the room.</span></span> <span data-ttu-id="021ae-332">プロジェクションボックスは、お使いの宝石に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="021ae-332">The projection box should follow your gaze.</span></span> <span data-ttu-id="021ae-333">投影ボックスの下の影が赤に変わったら、その表面にホログラムを配置することはできません。</span><span class="sxs-lookup"><span data-stu-id="021ae-333">When the shadow below the projection box turns red, you cannot place the hologram on that surface.</span></span> <span data-ttu-id="021ae-334">投影ボックスの下の影が緑色に変わったら、別の選択ジェスチャを実行してホログラムを配置できます。</span><span class="sxs-lookup"><span data-stu-id="021ae-334">When the shadow below the projection box turns green, you can place the hologram by performing another select gesture.</span></span>
+* <span data-ttu-id="021ae-335">壁の holographic ポスターの1つを探して選択し、新しい場所に移動します。</span><span class="sxs-lookup"><span data-stu-id="021ae-335">Find and select one of the holographic posters on a wall to move it to a new location.</span></span> <span data-ttu-id="021ae-336">フロアまたはシーリングにポスターを配置することはできません。また、移動するたびに各壁面に合わせて正しい向きに保たれることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="021ae-336">Notice that you cannot place the poster on the floor or ceiling, and that it stays correctly oriented to each wall as you move around.</span></span>
+
+## <a name="chapter-5---occlusion"></a><span data-ttu-id="021ae-337">第5章-オクルージョン</span><span class="sxs-lookup"><span data-stu-id="021ae-337">Chapter 5 - Occlusion</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/6Xrzh_w-7SE]
 
-<span data-ttu-id="768c6-339">**事項**</span><span class="sxs-lookup"><span data-stu-id="768c6-339">**Objectives**</span></span>
-* <span data-ttu-id="768c6-340">ホログラムが空間マッピングメッシュによって occluded されているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="768c6-340">Determine if a hologram is occluded by the spatial mapping mesh.</span></span>
-* <span data-ttu-id="768c6-341">さまざまな遮蔽手法を適用して、楽しい効果を実現します。</span><span class="sxs-lookup"><span data-stu-id="768c6-341">Apply different occlusion techniques to achieve a fun effect.</span></span>
+<span data-ttu-id="021ae-338">**事項**</span><span class="sxs-lookup"><span data-stu-id="021ae-338">**Objectives**</span></span>
 
-<span data-ttu-id="768c6-342">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="768c6-342">**Instructions**</span></span>
+* <span data-ttu-id="021ae-339">ホログラムが空間マッピングメッシュによって occluded されているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="021ae-339">Determine if a hologram is occluded by the spatial mapping mesh.</span></span>
+* <span data-ttu-id="021ae-340">さまざまな遮蔽手法を適用して、楽しい効果を実現します。</span><span class="sxs-lookup"><span data-stu-id="021ae-340">Apply different occlusion techniques to achieve a fun effect.</span></span>
 
-<span data-ttu-id="768c6-343">まず、空間マッピングメッシュで、occluding を使用せずに他のホログラムを occlude できるようにします。</span><span class="sxs-lookup"><span data-stu-id="768c6-343">First, we are going to allow the spatial mapping mesh to occlude other holograms without occluding the real world:</span></span>
-* <span data-ttu-id="768c6-344">[**階層**] パネルで、 **SpatialProcessing**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="768c6-344">In the **Hierarchy** panel, select the **SpatialProcessing** object.</span></span>
-* <span data-ttu-id="768c6-345">[**インスペクター** ] パネルで、[ **Play Space Manager (スクリプト)** ] コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-345">In the **Inspector** panel, find the **Play Space Manager (Script)** component.</span></span>
-* <span data-ttu-id="768c6-346">[**セカンダリマテリアル**] プロパティの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-346">Click the circle to the right of the **Secondary Material** property.</span></span>
-* <span data-ttu-id="768c6-347">**オクルージョン**を検索して選択し、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="768c6-347">Find and select the **Occlusion** material and close the window.</span></span>
+<span data-ttu-id="021ae-341">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="021ae-341">**Instructions**</span></span>
 
-<span data-ttu-id="768c6-348">次に、地球に特別な動作を追加します。これにより、(太陽などの) 別のホログラムによって occluded されたとき、または空間マッピングメッシュによって、青の強調表示になります。</span><span class="sxs-lookup"><span data-stu-id="768c6-348">Next, we are going to add a special behavior to Earth, so that it has a blue highlight whenever it becomes occluded by another hologram (like the sun), or by the spatial mapping mesh:</span></span>
-* <span data-ttu-id="768c6-349">[**プロジェクト**] パネルの [**ホログラム**] フォルダーで、[ **] オブジェクトを**展開します。</span><span class="sxs-lookup"><span data-stu-id="768c6-349">In the **Project** panel, in the **Holograms** folder, expand the **SolarSystem** object.</span></span>
-* <span data-ttu-id="768c6-350">[**地球**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="768c6-350">Click on **Earth**.</span></span>
-* <span data-ttu-id="768c6-351">[**インスペクター** ] パネルで、地球の素材 (下部コンポーネント) を見つけます。</span><span class="sxs-lookup"><span data-stu-id="768c6-351">In the **Inspector** panel, find the Earth's material (bottom component).</span></span>
-* <span data-ttu-id="768c6-352">シェーダーの**ドロップダウン**で、シェーダーを**カスタム > OcclusionRim**に変更します。</span><span class="sxs-lookup"><span data-stu-id="768c6-352">In the **Shader drop-down**, change the shader to **Custom > OcclusionRim**.</span></span> <span data-ttu-id="768c6-353">これは、別のオブジェクトによって occluded されたときに、地球を中心とした青い強調表示になります。</span><span class="sxs-lookup"><span data-stu-id="768c6-353">This will render a blue highlight around Earth whenever it is occluded by another object.</span></span>
+<span data-ttu-id="021ae-342">まず、空間マッピングメッシュで、occluding を使用せずに他のホログラムを occlude できるようにします。</span><span class="sxs-lookup"><span data-stu-id="021ae-342">First, we are going to allow the spatial mapping mesh to occlude other holograms without occluding the real world:</span></span>
 
-<span data-ttu-id="768c6-354">最後に、太陽のシステムで惑星に対して x 線の視覚効果を有効にします。</span><span class="sxs-lookup"><span data-stu-id="768c6-354">Finally, we are going to enable an x-ray vision effect for planets in our solar system.</span></span> <span data-ttu-id="768c6-355">次のことを実現するために、 **PlanetOcclusion.cs** (スクリプト \ システムフォルダーにあります) を編集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="768c6-355">We will need to edit **PlanetOcclusion.cs** (found in the Scripts\SolarSystem folder) in order to achieve the following:</span></span>
-1. <span data-ttu-id="768c6-356">地球が SpatialMapping レイヤーによって occluded されているかどうかを判断します (部屋メッシュと平面)。</span><span class="sxs-lookup"><span data-stu-id="768c6-356">Determine if a planet is occluded by the SpatialMapping layer (room meshes and planes).</span></span>
-2. <span data-ttu-id="768c6-357">SpatialMapping レイヤーによって occluded されるたびに、地球のワイヤーフレーム表現を表示します。</span><span class="sxs-lookup"><span data-stu-id="768c6-357">Show the wireframe representation of a planet whenever it is occluded by the SpatialMapping layer.</span></span>
-3. <span data-ttu-id="768c6-358">地球のワイヤーフレーム表現が SpatialMapping レイヤーによってブロックされていない場合は非表示にします。</span><span class="sxs-lookup"><span data-stu-id="768c6-358">Hide the wireframe representation of a planet when it is not blocked by the SpatialMapping layer.</span></span>
+* <span data-ttu-id="021ae-343">**[階層]** パネルで、 **SpatialProcessing**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="021ae-343">In the **Hierarchy** panel, select the **SpatialProcessing** object.</span></span>
+* <span data-ttu-id="021ae-344">**[インスペクター]** パネルで、 **[Play Space Manager (スクリプト)]** コンポーネントを見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-344">In the **Inspector** panel, find the **Play Space Manager (Script)** component.</span></span>
+* <span data-ttu-id="021ae-345">**[セカンダリマテリアル]** プロパティの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-345">Click the circle to the right of the **Secondary Material** property.</span></span>
+* <span data-ttu-id="021ae-346">**オクルージョン**を検索して選択し、ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="021ae-346">Find and select the **Occlusion** material and close the window.</span></span>
 
-<span data-ttu-id="768c6-359">PlanetOcclusion.cs のコーディングの演習に従うか、次の解決策を使用します。</span><span class="sxs-lookup"><span data-stu-id="768c6-359">Follow the coding exercise in PlanetOcclusion.cs, or use the following solution:</span></span>
+<span data-ttu-id="021ae-347">次に、地球に特別な動作を追加します。これにより、(太陽などの) 別のホログラムによって occluded されたとき、または空間マッピングメッシュによって、青の強調表示になります。</span><span class="sxs-lookup"><span data-stu-id="021ae-347">Next, we are going to add a special behavior to Earth, so that it has a blue highlight whenever it becomes occluded by another hologram (like the sun), or by the spatial mapping mesh:</span></span>
+
+* <span data-ttu-id="021ae-348">**[プロジェクト]** パネルの **[ホログラム]** フォルダーで **、[] オブジェクトを**展開します。</span><span class="sxs-lookup"><span data-stu-id="021ae-348">In the **Project** panel, in the **Holograms** folder, expand the **SolarSystem** object.</span></span>
+* <span data-ttu-id="021ae-349">**[地球]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="021ae-349">Click on **Earth**.</span></span>
+* <span data-ttu-id="021ae-350">**[インスペクター]** パネルで、地球の素材 (下部コンポーネント) を見つけます。</span><span class="sxs-lookup"><span data-stu-id="021ae-350">In the **Inspector** panel, find the Earth's material (bottom component).</span></span>
+* <span data-ttu-id="021ae-351">シェーダーの**ドロップダウン**で、シェーダーを**カスタム > OcclusionRim**に変更します。</span><span class="sxs-lookup"><span data-stu-id="021ae-351">In the **Shader drop-down**, change the shader to **Custom > OcclusionRim**.</span></span> <span data-ttu-id="021ae-352">これは、別のオブジェクトによって occluded されたときに、地球を中心とした青い強調表示になります。</span><span class="sxs-lookup"><span data-stu-id="021ae-352">This will render a blue highlight around Earth whenever it is occluded by another object.</span></span>
+
+<span data-ttu-id="021ae-353">最後に、太陽のシステムで惑星に対して x 線の視覚効果を有効にします。</span><span class="sxs-lookup"><span data-stu-id="021ae-353">Finally, we are going to enable an x-ray vision effect for planets in our solar system.</span></span> <span data-ttu-id="021ae-354">次のことを実現するために、 **PlanetOcclusion.cs** (スクリプト \ システムフォルダーにあります) を編集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="021ae-354">We will need to edit **PlanetOcclusion.cs** (found in the Scripts\SolarSystem folder) in order to achieve the following:</span></span>
+
+1. <span data-ttu-id="021ae-355">地球が SpatialMapping レイヤーによって occluded されているかどうかを判断します (部屋メッシュと平面)。</span><span class="sxs-lookup"><span data-stu-id="021ae-355">Determine if a planet is occluded by the SpatialMapping layer (room meshes and planes).</span></span>
+2. <span data-ttu-id="021ae-356">SpatialMapping レイヤーによって occluded されるたびに、地球のワイヤーフレーム表現を表示します。</span><span class="sxs-lookup"><span data-stu-id="021ae-356">Show the wireframe representation of a planet whenever it is occluded by the SpatialMapping layer.</span></span>
+3. <span data-ttu-id="021ae-357">地球のワイヤーフレーム表現が SpatialMapping レイヤーによってブロックされていない場合は非表示にします。</span><span class="sxs-lookup"><span data-stu-id="021ae-357">Hide the wireframe representation of a planet when it is not blocked by the SpatialMapping layer.</span></span>
+
+<span data-ttu-id="021ae-358">PlanetOcclusion.cs のコーディングの演習に従うか、次の解決策を使用します。</span><span class="sxs-lookup"><span data-stu-id="021ae-358">Follow the coding exercise in PlanetOcclusion.cs, or use the following solution:</span></span>
 
 ```cs
 using UnityEngine;
@@ -1178,19 +1199,21 @@ public class PlanetOcclusion : MonoBehaviour
 }
 ```
 
-<span data-ttu-id="768c6-360">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="768c6-360">**Build and Deploy**</span></span>
-* <span data-ttu-id="768c6-361">通常どおり、アプリケーションを HoloLens に構築してデプロイします。</span><span class="sxs-lookup"><span data-stu-id="768c6-361">Build and deploy the application to HoloLens, as usual.</span></span>
-* <span data-ttu-id="768c6-362">空間マッピングデータのスキャンと処理が完了するまで待ちます (壁に青い線が表示されます)。</span><span class="sxs-lookup"><span data-stu-id="768c6-362">Wait for scanning and processing of the spatial mapping data to be complete (you should see blue lines appear on walls).</span></span>
-* <span data-ttu-id="768c6-363">[太陽システムの投影] ボックスを探して選択し、壁の横またはカウンターの背後にあるボックスを設定します。</span><span class="sxs-lookup"><span data-stu-id="768c6-363">Find and select the solar system's projection box and then set the box next to a wall or behind a counter.</span></span>
-* <span data-ttu-id="768c6-364">[ポスター] ボックスまたは [投影] ボックスで、ピアに対する表面の背後を非表示にすることで、基本的なオクルージョンを表示できます。</span><span class="sxs-lookup"><span data-stu-id="768c6-364">You can view basic occlusion by hiding behind surfaces to peer at the poster or projection box.</span></span>
-* <span data-ttu-id="768c6-365">地球を探すには、別のホログラムや表面にいるときは常に青いハイライト効果があるはずです。</span><span class="sxs-lookup"><span data-stu-id="768c6-365">Look for the Earth, there should be a blue highlight effect whenever it goes behind another hologram or surface.</span></span>
-* <span data-ttu-id="768c6-366">惑星が部屋の壁またはその他の表面の内側に移動するのを監視します。</span><span class="sxs-lookup"><span data-stu-id="768c6-366">Watch as the planets move behind the wall or other surfaces in the room.</span></span> <span data-ttu-id="768c6-367">X 線によるビジョンが可能になり、ワイヤーフレームスケルトンを見ることができるようになりました。</span><span class="sxs-lookup"><span data-stu-id="768c6-367">You now have x-ray vision and can see their wireframe skeletons!</span></span>
+<span data-ttu-id="021ae-359">**ビルドと配置**</span><span class="sxs-lookup"><span data-stu-id="021ae-359">**Build and Deploy**</span></span>
 
-## <a name="the-end"></a><span data-ttu-id="768c6-368">最後です</span><span class="sxs-lookup"><span data-stu-id="768c6-368">The End</span></span>
+* <span data-ttu-id="021ae-360">通常どおり、アプリケーションを HoloLens に構築してデプロイします。</span><span class="sxs-lookup"><span data-stu-id="021ae-360">Build and deploy the application to HoloLens, as usual.</span></span>
+* <span data-ttu-id="021ae-361">空間マッピングデータのスキャンと処理が完了するまで待ちます (壁に青い線が表示されます)。</span><span class="sxs-lookup"><span data-stu-id="021ae-361">Wait for scanning and processing of the spatial mapping data to be complete (you should see blue lines appear on walls).</span></span>
+* <span data-ttu-id="021ae-362">[太陽システムの投影] ボックスを探して選択し、壁の横またはカウンターの背後にあるボックスを設定します。</span><span class="sxs-lookup"><span data-stu-id="021ae-362">Find and select the solar system's projection box and then set the box next to a wall or behind a counter.</span></span>
+* <span data-ttu-id="021ae-363">[ポスター] ボックスまたは [投影] ボックスで、ピアに対する表面の背後を非表示にすることで、基本的なオクルージョンを表示できます。</span><span class="sxs-lookup"><span data-stu-id="021ae-363">You can view basic occlusion by hiding behind surfaces to peer at the poster or projection box.</span></span>
+* <span data-ttu-id="021ae-364">地球を探すには、別のホログラムや表面にいるときは常に青いハイライト効果があるはずです。</span><span class="sxs-lookup"><span data-stu-id="021ae-364">Look for the Earth, there should be a blue highlight effect whenever it goes behind another hologram or surface.</span></span>
+* <span data-ttu-id="021ae-365">惑星が部屋の壁またはその他の表面の内側に移動するのを監視します。</span><span class="sxs-lookup"><span data-stu-id="021ae-365">Watch as the planets move behind the wall or other surfaces in the room.</span></span> <span data-ttu-id="021ae-366">X 線によるビジョンが可能になり、ワイヤーフレームスケルトンを見ることができるようになりました。</span><span class="sxs-lookup"><span data-stu-id="021ae-366">You now have x-ray vision and can see their wireframe skeletons!</span></span>
 
-<span data-ttu-id="768c6-369">おめでとうございます!</span><span class="sxs-lookup"><span data-stu-id="768c6-369">Congratulations!</span></span> <span data-ttu-id="768c6-370">これで MR 空間**230 が完成しました。空間マッピング**。</span><span class="sxs-lookup"><span data-stu-id="768c6-370">You have now completed **MR Spatial 230: Spatial mapping**.</span></span>
-* <span data-ttu-id="768c6-371">環境をスキャンして、Unity に空間マッピングデータを読み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="768c6-371">You know how to scan your environment and load spatial mapping data to Unity.</span></span>
-* <span data-ttu-id="768c6-372">シェーダーの基本と、マテリアルを使用して世界を再視覚化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="768c6-372">You understand the basics of shaders and how materials can be used to re-visualize the world.</span></span>
-* <span data-ttu-id="768c6-373">平面を検索し、メッシュから三角形を削除するための新しい処理手法について学習しました。</span><span class="sxs-lookup"><span data-stu-id="768c6-373">You learned of new processing techniques for finding planes and removing triangles from a mesh.</span></span>
-* <span data-ttu-id="768c6-374">意味のあるサーフェイスにホログラムを移動して配置することができました。</span><span class="sxs-lookup"><span data-stu-id="768c6-374">You were able to move and place holograms on surfaces that made sense.</span></span>
-* <span data-ttu-id="768c6-375">さまざまな遮蔽手法を経験し、開花の力を活用しました。</span><span class="sxs-lookup"><span data-stu-id="768c6-375">You experienced different occlusion techniques and harnessed the power of x-ray vision!</span></span>
+## <a name="the-end"></a><span data-ttu-id="021ae-367">最後です</span><span class="sxs-lookup"><span data-stu-id="021ae-367">The End</span></span>
+
+<span data-ttu-id="021ae-368">これで終了です。</span><span class="sxs-lookup"><span data-stu-id="021ae-368">Congratulations!</span></span> <span data-ttu-id="021ae-369">これで、 **MR 空間 230: 空間マッピング**が完了しました。</span><span class="sxs-lookup"><span data-stu-id="021ae-369">You have now completed **MR Spatial 230: Spatial mapping**.</span></span>
+
+* <span data-ttu-id="021ae-370">環境をスキャンして、Unity に空間マッピングデータを読み込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="021ae-370">You know how to scan your environment and load spatial mapping data to Unity.</span></span>
+* <span data-ttu-id="021ae-371">シェーダーの基本と、マテリアルを使用して世界を再視覚化する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="021ae-371">You understand the basics of shaders and how materials can be used to re-visualize the world.</span></span>
+* <span data-ttu-id="021ae-372">平面を検索し、メッシュから三角形を削除するための新しい処理手法について学習しました。</span><span class="sxs-lookup"><span data-stu-id="021ae-372">You learned of new processing techniques for finding planes and removing triangles from a mesh.</span></span>
+* <span data-ttu-id="021ae-373">意味のあるサーフェイスにホログラムを移動して配置することができました。</span><span class="sxs-lookup"><span data-stu-id="021ae-373">You were able to move and place holograms on surfaces that made sense.</span></span>
+* <span data-ttu-id="021ae-374">さまざまな遮蔽手法を経験し、開花の力を活用しました。</span><span class="sxs-lookup"><span data-stu-id="021ae-374">You experienced different occlusion techniques and harnessed the power of x-ray vision!</span></span>

@@ -5,26 +5,26 @@ author: mattzmsft
 ms.author: alexpf
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、アプリパターン、設計、HoloLens、ルームスキャン、空間マッピング、surface 再構築、メッシュ
-ms.openlocfilehash: 09df4464ea4dac01dfad637886b07b861f468d4d
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+keywords: Windows Mixed Reality、アプリパターン、設計、HoloLens、ルームスキャン、空間マッピング、メッシュ
+ms.openlocfilehash: bdb070407f27d04046bd022894c7a8a01b9658d1
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829916"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437516"
 ---
-# <a name="room-scan-visualization"></a><span data-ttu-id="b9f61-104">ルームスキャンの視覚化</span><span class="sxs-lookup"><span data-stu-id="b9f61-104">Room scan visualization</span></span>
+# <a name="room-scan-visualization"></a><span data-ttu-id="c94ad-104">ルームスキャンの視覚化</span><span class="sxs-lookup"><span data-stu-id="c94ad-104">Room scan visualization</span></span>
 
-<span data-ttu-id="b9f61-105">空間マッピングデータを必要とするアプリケーションでは、ユーザーがデバイスをアクティブにして環境を探索するときに、このデータが時間の経過と共に自動的に収集されるように、デバイスに依存します。</span><span class="sxs-lookup"><span data-stu-id="b9f61-105">Applications that require spatial mapping data rely on the device to automatically collect this data over time and across sessions as the user explores their environment with the device active.</span></span> <span data-ttu-id="b9f61-106">このデータの完全性と品質は、ユーザーが実行した探索の量、探索から経過した時間、家具やドアなどのオブジェクトが領域をスキャンした後に移動されたかどうかなど、さまざまな要因によって異なります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-106">The completeness and quality of this data depends on a number of factors including the amount of exploration the user has done, how much time has passed since the exploration and whether objects such as furniture and doors have moved since the device scanned the area.</span></span>
+<span data-ttu-id="c94ad-105">空間マッピングデータを必要とするアプリケーションでは、ユーザーがデバイスをアクティブにして環境を探索するときに、このデータが時間の経過と共に自動的に収集されるように、デバイスに依存します。</span><span class="sxs-lookup"><span data-stu-id="c94ad-105">Applications that require spatial mapping data rely on the device to automatically collect this data over time and across sessions as the user explores their environment with the device active.</span></span> <span data-ttu-id="c94ad-106">このデータの完全性と品質は、ユーザーが実行した探索の量、探索から経過した時間、家具やドアなどのオブジェクトが領域をスキャンした後に移動されたかどうかなど、さまざまな要因によって異なります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-106">The completeness and quality of this data depends on a number of factors including the amount of exploration the user has done, how much time has passed since the exploration and whether objects such as furniture and doors have moved since the device scanned the area.</span></span>
 
-<span data-ttu-id="b9f61-107">便利な空間マッピングデータを確保するために、アプリケーション開発者にはいくつかのオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-107">To ensure useful spatial mapping data, applications developers have several options:</span></span>
-* <span data-ttu-id="b9f61-108">既に収集されている可能性があるものに依存します。</span><span class="sxs-lookup"><span data-stu-id="b9f61-108">Rely on what may have already been collected.</span></span> <span data-ttu-id="b9f61-109">このデータは、最初は不完全である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-109">This data may be incomplete initially.</span></span>
-* <span data-ttu-id="b9f61-110">ブルームジェスチャを使用して Windows Mixed Reality ホームにアクセスし、エクスペリエンスに使用する領域を調べるようにユーザーに依頼します。</span><span class="sxs-lookup"><span data-stu-id="b9f61-110">Ask the user to use the bloom gesture to get to the Windows Mixed Reality home and then explore the area they wish to use for the experience.</span></span> <span data-ttu-id="b9f61-111">これらのユーザーは、すべての必要な領域がデバイスに認識されていることを、エアタップを使用して確認できます。</span><span class="sxs-lookup"><span data-stu-id="b9f61-111">They can use air-tap to confirm that all the necessary area is known to the device.</span></span>
-* <span data-ttu-id="b9f61-112">独自のアプリケーションでカスタム探索エクスペリエンスを構築します。</span><span class="sxs-lookup"><span data-stu-id="b9f61-112">Build a custom exploration experience in their own application.</span></span>
+<span data-ttu-id="c94ad-107">便利な空間マッピングデータを確保するために、アプリケーション開発者にはいくつかのオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-107">To ensure useful spatial mapping data, applications developers have several options:</span></span>
+* <span data-ttu-id="c94ad-108">既に収集されている可能性があるものに依存します。</span><span class="sxs-lookup"><span data-stu-id="c94ad-108">Rely on what may have already been collected.</span></span> <span data-ttu-id="c94ad-109">このデータは、最初は不完全である可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-109">This data may be incomplete initially.</span></span>
+* <span data-ttu-id="c94ad-110">ブルームジェスチャを使用して Windows Mixed Reality ホームにアクセスし、エクスペリエンスに使用する領域を調べるようにユーザーに依頼します。</span><span class="sxs-lookup"><span data-stu-id="c94ad-110">Ask the user to use the bloom gesture to get to the Windows Mixed Reality home and then explore the area they wish to use for the experience.</span></span> <span data-ttu-id="c94ad-111">これらのユーザーは、すべての必要な領域がデバイスに認識されていることを、エアタップを使用して確認できます。</span><span class="sxs-lookup"><span data-stu-id="c94ad-111">They can use air-tap to confirm that all the necessary area is known to the device.</span></span>
+* <span data-ttu-id="c94ad-112">独自のアプリケーションでカスタム探索エクスペリエンスを構築します。</span><span class="sxs-lookup"><span data-stu-id="c94ad-112">Build a custom exploration experience in their own application.</span></span>
 
-<span data-ttu-id="b9f61-113">これらのすべてのケースでは、探索中に収集された実際のデータがシステムによって格納されるため、アプリケーションでこれを行う必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b9f61-113">Note that in all these cases the actual data gathered during the exploration is stored by the system and the application does not need to do this.</span></span>
+<span data-ttu-id="c94ad-113">これらのすべてのケースでは、探索中に収集された実際のデータがシステムによって格納されるため、アプリケーションでこれを行う必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c94ad-113">Note that in all these cases the actual data gathered during the exploration is stored by the system and the application does not need to do this.</span></span>
 
-## <a name="device-support"></a><span data-ttu-id="b9f61-114">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="b9f61-114">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="c94ad-114">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="c94ad-114">Device support</span></span>
 
 <table>
     <colgroup>
@@ -33,66 +33,66 @@ ms.locfileid: "66829916"
     <col width="33%" />
     </colgroup>
     <tr>
-        <td><span data-ttu-id="b9f61-115"><strong>機能</strong></span><span class="sxs-lookup"><span data-stu-id="b9f61-115"><strong>Feature</strong></span></span></td>
-        <td><span data-ttu-id="b9f61-116"><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></span><span class="sxs-lookup"><span data-stu-id="b9f61-116"><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></span></span></td>
-        <td><span data-ttu-id="b9f61-117"><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></span><span class="sxs-lookup"><span data-stu-id="b9f61-117"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
+        <td><span data-ttu-id="c94ad-115"><strong>機能</strong></span><span class="sxs-lookup"><span data-stu-id="c94ad-115"><strong>Feature</strong></span></span></td>
+        <td><span data-ttu-id="c94ad-116"><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></span><span class="sxs-lookup"><span data-stu-id="c94ad-116"><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></span></span></td>
+        <td><span data-ttu-id="c94ad-117"><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></span><span class="sxs-lookup"><span data-stu-id="c94ad-117"><a href="immersive-headset-hardware-details.md"><strong>Immersive headsets</strong></a></span></span></td>
     </tr>
      <tr>
-        <td><span data-ttu-id="b9f61-118">ルームスキャンの視覚化</span><span class="sxs-lookup"><span data-stu-id="b9f61-118">Room scan visualization</span></span></td>
-        <td><span data-ttu-id="b9f61-119">✔️</span><span class="sxs-lookup"><span data-stu-id="b9f61-119">✔️</span></span></td>
-        <td><span data-ttu-id="b9f61-120">❌</span><span class="sxs-lookup"><span data-stu-id="b9f61-120">❌</span></span></td>
+        <td><span data-ttu-id="c94ad-118">ルームスキャンの視覚化</span><span class="sxs-lookup"><span data-stu-id="c94ad-118">Room scan visualization</span></span></td>
+        <td><span data-ttu-id="c94ad-119">✔️</span><span class="sxs-lookup"><span data-stu-id="c94ad-119">✔️</span></span></td>
+        <td>❌</td>
     </tr>
 </table>
 
 
 
-## <a name="building-a-custom-scanning-experience"></a><span data-ttu-id="b9f61-121">カスタムスキャンエクスペリエンスの構築</span><span class="sxs-lookup"><span data-stu-id="b9f61-121">Building a custom scanning experience</span></span>
+## <a name="building-a-custom-scanning-experience"></a><span data-ttu-id="c94ad-120">カスタムスキャンエクスペリエンスの構築</span><span class="sxs-lookup"><span data-stu-id="c94ad-120">Building a custom scanning experience</span></span>
 
-<span data-ttu-id="b9f61-122">アプリケーションでは、エクスペリエンスの開始時に空間マッピングデータを分析して、その完全性と品質を向上させるために追加の手順を実行する必要があるかどうかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="b9f61-122">Applications may decide to analyze the spatial mapping data at the start of the experience to judge whether they want the user to perform additional steps to improve its completeness and quality.</span></span> <span data-ttu-id="b9f61-123">分析によって品質を向上させる必要がある場合は、開発者が視覚エフェクトを使用して、次のことを示す必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-123">If analysis indicates quality should be improved, developers should provide a visualization to overlay on the world to indicate:</span></span>
-* <span data-ttu-id="b9f61-124">ユーザーの近くにあるユーザーの合計ボリュームのうち、エクスペリエンスの一部として必要な量</span><span class="sxs-lookup"><span data-stu-id="b9f61-124">How much of the total volume in the users vicinity needs to be part of the experience</span></span>
-* <span data-ttu-id="b9f61-125">データを改善するためにユーザーが行う必要がある場所</span><span class="sxs-lookup"><span data-stu-id="b9f61-125">Where the user should go to improve data</span></span>
+<span data-ttu-id="c94ad-121">アプリケーションでは、エクスペリエンスの開始時に空間マッピングデータを分析して、その完全性と品質を向上させるために追加の手順を実行する必要があるかどうかを判断できます。</span><span class="sxs-lookup"><span data-stu-id="c94ad-121">Applications may decide to analyze the spatial mapping data at the start of the experience to judge whether they want the user to perform additional steps to improve its completeness and quality.</span></span> <span data-ttu-id="c94ad-122">分析によって品質を向上させる必要がある場合は、開発者が視覚エフェクトを使用して、次のことを示す必要があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-122">If analysis indicates quality should be improved, developers should provide a visualization to overlay on the world to indicate:</span></span>
+* <span data-ttu-id="c94ad-123">ユーザーの近くにあるユーザーの合計ボリュームのうち、エクスペリエンスの一部として必要な量</span><span class="sxs-lookup"><span data-stu-id="c94ad-123">How much of the total volume in the users vicinity needs to be part of the experience</span></span>
+* <span data-ttu-id="c94ad-124">データを改善するためにユーザーが行う必要がある場所</span><span class="sxs-lookup"><span data-stu-id="c94ad-124">Where the user should go to improve data</span></span>
 
-<span data-ttu-id="b9f61-126">"良い" スキャンが行われていることをユーザーが認識していません。</span><span class="sxs-lookup"><span data-stu-id="b9f61-126">Users do not know what makes a "good" scan.</span></span> <span data-ttu-id="b9f61-127">スキャンを評価するよう求められた場合は、それらを表示または指定する必要があります。開発者は、スキャンまたは探索フェーズでの空間マッピングデータの更新を含むフィードバックループを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-127">They need to be shown or told what to look for if they’re asked to evaluate a scan – flatness, distance from actual walls, etc. The developer should implement a feedback loop that includes refreshing the spatial mapping data during the scanning or exploration phase.</span></span>
+<span data-ttu-id="c94ad-125">"良い" スキャンが行われていることをユーザーが認識していません。</span><span class="sxs-lookup"><span data-stu-id="c94ad-125">Users do not know what makes a "good" scan.</span></span> <span data-ttu-id="c94ad-126">スキャンを評価するよう求められた場合は、それらを表示または指定する必要があります。開発者は、スキャンまたは探索フェーズでの空間マッピングデータの更新を含むフィードバックループを実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-126">They need to be shown or told what to look for if they’re asked to evaluate a scan – flatness, distance from actual walls, etc. The developer should implement a feedback loop that includes refreshing the spatial mapping data during the scanning or exploration phase.</span></span>
 
-<span data-ttu-id="b9f61-128">多くの場合、必要なスキャン品質を得るために、ユーザーに対して実行する必要があること (たとえば、天井、家具を見てみてください) を伝えることが最適な場合があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-128">In many cases, it may be best to tell the user what they need to do (e.g. look at the ceiling, look behind furniture), in order to get the necessary scan quality.</span></span>
+<span data-ttu-id="c94ad-127">多くの場合、必要なスキャン品質を得るために、ユーザーに対して実行する必要があること (たとえば、天井、家具を見てみてください) を伝えることが最適な場合があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-127">In many cases, it may be best to tell the user what they need to do (e.g. look at the ceiling, look behind furniture), in order to get the necessary scan quality.</span></span>
 
-## <a name="cached-versus-continuous-spatial-mapping"></a><span data-ttu-id="b9f61-129">キャッシュと連続空間マッピング</span><span class="sxs-lookup"><span data-stu-id="b9f61-129">Cached versus continuous spatial mapping</span></span>
+## <a name="cached-versus-continuous-spatial-mapping"></a><span data-ttu-id="c94ad-128">キャッシュと連続空間マッピング</span><span class="sxs-lookup"><span data-stu-id="c94ad-128">Cached versus continuous spatial mapping</span></span>
 
-<span data-ttu-id="b9f61-130">空間マッピングデータは、アプリケーションが使用できる最も負荷の高いデータソースです。</span><span class="sxs-lookup"><span data-stu-id="b9f61-130">The spatial mapping data is the most heavy weight data source applications can consume.</span></span> <span data-ttu-id="b9f61-131">フレームの破棄や途切れなどのパフォーマンスの問題を回避するには、このデータの消費を慎重に行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-131">To avoid performance issues such as dropped frames or stuttering, consumption of this data should be done carefully.</span></span>
+<span data-ttu-id="c94ad-129">空間マッピングデータは、アプリケーションが使用できる最も負荷の高いデータソースです。</span><span class="sxs-lookup"><span data-stu-id="c94ad-129">The spatial mapping data is the most heavy weight data source applications can consume.</span></span> <span data-ttu-id="c94ad-130">フレームの破棄や途切れなどのパフォーマンスの問題を回避するには、このデータの消費を慎重に行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-130">To avoid performance issues such as dropped frames or stuttering, consumption of this data should be done carefully.</span></span>
 
-<span data-ttu-id="b9f61-132">エクスペリエンス中のアクティブなスキャンは、利点と弊害の両方になる可能性があり、開発者はエクスペリエンスに基づいてどの方法を使用するかを決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-132">Active scanning during an experience can be both beneficial or detrimental and the developer will need to decide which method to use based on the experience.</span></span>
+<span data-ttu-id="c94ad-131">エクスペリエンス中のアクティブなスキャンは、利点と弊害の両方になる可能性があり、開発者はエクスペリエンスに基づいてどの方法を使用するかを決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-131">Active scanning during an experience can be both beneficial or detrimental and the developer will need to decide which method to use based on the experience.</span></span>
 
-### <a name="cached-spatial-mapping"></a><span data-ttu-id="b9f61-133">キャッシュされた空間マッピング</span><span class="sxs-lookup"><span data-stu-id="b9f61-133">Cached spatial mapping</span></span>
+### <a name="cached-spatial-mapping"></a><span data-ttu-id="c94ad-132">キャッシュされた空間マッピング</span><span class="sxs-lookup"><span data-stu-id="c94ad-132">Cached spatial mapping</span></span>
 
-<span data-ttu-id="b9f61-134">キャッシュされた空間マッピングの場合、アプリケーションは通常、空間マッピングデータのスナップショットを取得し、エクスペリエンスの間、このスナップショットを使用します。</span><span class="sxs-lookup"><span data-stu-id="b9f61-134">In the case of cached spatial mapping, the application typically takes a snapshot of the spatial mapping data and uses this snapshot for the duration of the experience.</span></span>
+<span data-ttu-id="c94ad-133">キャッシュされた空間マッピングの場合、アプリケーションは通常、空間マッピングデータのスナップショットを取得し、エクスペリエンスの間、このスナップショットを使用します。</span><span class="sxs-lookup"><span data-stu-id="c94ad-133">In the case of cached spatial mapping, the application typically takes a snapshot of the spatial mapping data and uses this snapshot for the duration of the experience.</span></span>
 
-<span data-ttu-id="b9f61-135">**利点**</span><span class="sxs-lookup"><span data-stu-id="b9f61-135">**Benefits**</span></span>
-* <span data-ttu-id="b9f61-136">エクスペリエンスの実行中にシステムのオーバーヘッドを削減し、電力、温度、および cpu のパフォーマンスを大幅に向上させます。</span><span class="sxs-lookup"><span data-stu-id="b9f61-136">Reduced overhead on the system while the experience is running leading to dramatic power, thermal and cpu performance gains.</span></span>
-* <span data-ttu-id="b9f61-137">空間データ内の変更によって中断されないため、メインエクスペリエンスをより簡単に実装できます。</span><span class="sxs-lookup"><span data-stu-id="b9f61-137">A simpler implementation of the main experience since it is not interrupted by changes in the spatial data.</span></span>
-* <span data-ttu-id="b9f61-138">物理、グラフィックス、およびその他の目的で空間データの後処理を行う1回限りのコスト。</span><span class="sxs-lookup"><span data-stu-id="b9f61-138">A single one time cost on any post processing of the spatial data for physics, graphics and other purposes.</span></span>
+<span data-ttu-id="c94ad-134">**利点**</span><span class="sxs-lookup"><span data-stu-id="c94ad-134">**Benefits**</span></span>
+* <span data-ttu-id="c94ad-135">エクスペリエンスの実行中にシステムのオーバーヘッドを削減し、電力、温度、および cpu のパフォーマンスを大幅に向上させます。</span><span class="sxs-lookup"><span data-stu-id="c94ad-135">Reduced overhead on the system while the experience is running leading to dramatic power, thermal and cpu performance gains.</span></span>
+* <span data-ttu-id="c94ad-136">空間データ内の変更によって中断されないため、メインエクスペリエンスをより簡単に実装できます。</span><span class="sxs-lookup"><span data-stu-id="c94ad-136">A simpler implementation of the main experience since it is not interrupted by changes in the spatial data.</span></span>
+* <span data-ttu-id="c94ad-137">物理、グラフィックス、およびその他の目的で空間データの後処理を行う1回限りのコスト。</span><span class="sxs-lookup"><span data-stu-id="c94ad-137">A single one time cost on any post processing of the spatial data for physics, graphics and other purposes.</span></span>
 
-<span data-ttu-id="b9f61-139">**デメリット**</span><span class="sxs-lookup"><span data-stu-id="b9f61-139">**Drawbacks**</span></span>
-* <span data-ttu-id="b9f61-140">実際のオブジェクトまたはオブジェクトの移動は、キャッシュされたデータに反映されません。</span><span class="sxs-lookup"><span data-stu-id="b9f61-140">The movement of real world objects or people is not reflected by the cached data.</span></span> <span data-ttu-id="b9f61-141">例:</span><span class="sxs-lookup"><span data-stu-id="b9f61-141">E.g.</span></span> <span data-ttu-id="b9f61-142">アプリケーションでは、実際に閉じられたときにドアが開いていると考えられる場合があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-142">the application might consider a door open when it is actually closed now.</span></span>
-* <span data-ttu-id="b9f61-143">キャッシュされたバージョンのデータを維持するために、アプリケーションメモリが増える可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-143">Potentially more application memory to maintain the cached version of the data.</span></span>
+<span data-ttu-id="c94ad-138">**デメリット**</span><span class="sxs-lookup"><span data-stu-id="c94ad-138">**Drawbacks**</span></span>
+* <span data-ttu-id="c94ad-139">実際のオブジェクトまたはオブジェクトの移動は、キャッシュされたデータに反映されません。</span><span class="sxs-lookup"><span data-stu-id="c94ad-139">The movement of real world objects or people is not reflected by the cached data.</span></span> <span data-ttu-id="c94ad-140">例:</span><span class="sxs-lookup"><span data-stu-id="c94ad-140">E.g.</span></span> <span data-ttu-id="c94ad-141">アプリケーションでは、実際に閉じられたときにドアが開いていると考えられる場合があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-141">the application might consider a door open when it is actually closed now.</span></span>
+* <span data-ttu-id="c94ad-142">キャッシュされたバージョンのデータを維持するために、アプリケーションメモリが増える可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-142">Potentially more application memory to maintain the cached version of the data.</span></span>
 
-<span data-ttu-id="b9f61-144">この方法の良いケースは、制御された環境またはテーブルトップのゲームです。</span><span class="sxs-lookup"><span data-stu-id="b9f61-144">A good case for this method is a controlled environment or a table top game.</span></span>
+<span data-ttu-id="c94ad-143">この方法の良いケースは、制御された環境またはテーブルトップのゲームです。</span><span class="sxs-lookup"><span data-stu-id="c94ad-143">A good case for this method is a controlled environment or a table top game.</span></span>
 
-### <a name="continuous-spatial-mapping"></a><span data-ttu-id="b9f61-145">連続空間マッピング</span><span class="sxs-lookup"><span data-stu-id="b9f61-145">Continuous spatial mapping</span></span>
+### <a name="continuous-spatial-mapping"></a><span data-ttu-id="c94ad-144">連続空間マッピング</span><span class="sxs-lookup"><span data-stu-id="c94ad-144">Continuous spatial mapping</span></span>
 
-<span data-ttu-id="b9f61-146">特定のアプリケーションは、スキャンを続行して空間マッピングデータを更新することがあります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-146">Certain applications may rely on continues scanning to refresh spatial mapping data.</span></span>
+<span data-ttu-id="c94ad-145">特定のアプリケーションは、スキャンを続行して空間マッピングデータを更新することがあります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-145">Certain applications may rely on continues scanning to refresh spatial mapping data.</span></span>
 
-<span data-ttu-id="b9f61-147">**利点**</span><span class="sxs-lookup"><span data-stu-id="b9f61-147">**Benefits**</span></span>
-* <span data-ttu-id="b9f61-148">アプリケーションでは、個別にスキャンや探索を行う必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b9f61-148">You don't need to build in a separate scanning or exploration experience upfront in your application.</span></span>
-* <span data-ttu-id="b9f61-149">実際のオブジェクトの動きはゲームによって反映されますが、少し時間がかかることがあります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-149">The movement of real world objects can be reflected by the game, although with some delay.</span></span>
+<span data-ttu-id="c94ad-146">**利点**</span><span class="sxs-lookup"><span data-stu-id="c94ad-146">**Benefits**</span></span>
+* <span data-ttu-id="c94ad-147">アプリケーションでは、個別にスキャンや探索を行う必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c94ad-147">You don't need to build in a separate scanning or exploration experience upfront in your application.</span></span>
+* <span data-ttu-id="c94ad-148">実際のオブジェクトの動きはゲームによって反映されますが、少し時間がかかることがあります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-148">The movement of real world objects can be reflected by the game, although with some delay.</span></span>
 
-<span data-ttu-id="b9f61-150">**デメリット**</span><span class="sxs-lookup"><span data-stu-id="b9f61-150">**Drawbacks**</span></span>
-* <span data-ttu-id="b9f61-151">メインエクスペリエンスの実装がより複雑になります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-151">Higher complexity in the implementation of the main experience.</span></span>
-* <span data-ttu-id="b9f61-152">変化に応じてグラフィックまたは物理の追加処理のオーバーヘッドが発生する可能性があるため、これらのシステムによって段階的に取り込まれたを行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-152">Potential overhead of the additional processing for graphic or physics as changes need to be incrementally ingested by these systems.</span></span>
-* <span data-ttu-id="b9f61-153">電力、温度、および CPU の影響力が高くなります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-153">Higher power, thermal and CPU impact.</span></span>
+<span data-ttu-id="c94ad-149">**デメリット**</span><span class="sxs-lookup"><span data-stu-id="c94ad-149">**Drawbacks**</span></span>
+* <span data-ttu-id="c94ad-150">メインエクスペリエンスの実装がより複雑になります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-150">Higher complexity in the implementation of the main experience.</span></span>
+* <span data-ttu-id="c94ad-151">変化に応じてグラフィックまたは物理の追加処理のオーバーヘッドが発生する可能性があるため、これらのシステムによって段階的に取り込まれたを行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-151">Potential overhead of the additional processing for graphic or physics as changes need to be incrementally ingested by these systems.</span></span>
+* <span data-ttu-id="c94ad-152">電力、温度、および CPU の影響力が高くなります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-152">Higher power, thermal and CPU impact.</span></span>
 
-<span data-ttu-id="b9f61-154">このメソッドの優れたケースは、ホログラムがオブジェクトの移動と対話することが予想される場合です。たとえば、holographic 自動車では、床の上のドライブが、開いているか閉じているかに応じて、ドアに正しく入る必要があります。</span><span class="sxs-lookup"><span data-stu-id="b9f61-154">A good case for this method is one where holograms are expected to interact with moving objects, e.g. a holographic car that drives on the floor may want to correctly bump into a door depending on whether it is open or closed.</span></span>
+<span data-ttu-id="c94ad-153">このメソッドの優れたケースは、ホログラムがオブジェクトの移動と対話することが予想される場合です。たとえば、holographic 自動車では、床の上のドライブが、開いているか閉じているかに応じて、ドアに正しく入る必要があります。</span><span class="sxs-lookup"><span data-stu-id="c94ad-153">A good case for this method is one where holograms are expected to interact with moving objects, e.g. a holographic car that drives on the floor may want to correctly bump into a door depending on whether it is open or closed.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="b9f61-155">関連項目</span><span class="sxs-lookup"><span data-stu-id="b9f61-155">See also</span></span>
-* [<span data-ttu-id="b9f61-156">空間マッピングの設計</span><span class="sxs-lookup"><span data-stu-id="b9f61-156">Spatial mapping design</span></span>](spatial-mapping-design.md)
-* [<span data-ttu-id="b9f61-157">座標系</span><span class="sxs-lookup"><span data-stu-id="b9f61-157">Coordinate systems</span></span>](coordinate-systems.md)
-* [<span data-ttu-id="b9f61-158">立体音響の設計</span><span class="sxs-lookup"><span data-stu-id="b9f61-158">Spatial sound design</span></span>](spatial-sound-design.md)
+## <a name="see-also"></a><span data-ttu-id="c94ad-154">関連項目</span><span class="sxs-lookup"><span data-stu-id="c94ad-154">See also</span></span>
+* [<span data-ttu-id="c94ad-155">空間マッピング</span><span class="sxs-lookup"><span data-stu-id="c94ad-155">Spatial mapping</span></span>](spatial-mapping.md)
+* [<span data-ttu-id="c94ad-156">座標系</span><span class="sxs-lookup"><span data-stu-id="c94ad-156">Coordinate systems</span></span>](coordinate-systems.md)
+* [<span data-ttu-id="c94ad-157">立体音響の設計</span><span class="sxs-lookup"><span data-stu-id="c94ad-157">Spatial sound design</span></span>](spatial-sound-design.md)

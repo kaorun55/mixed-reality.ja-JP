@@ -6,33 +6,33 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: チュートリアル、音声コマンド、語句、認識、音声、directx、プラットフォーム、cortana、windows mixed reality
-ms.openlocfilehash: 728457a495616e5f65ec3986dfb6ac60231f9e46
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: be8c0e570a0e112e01b580ad571c06fe3482ff9f
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63548667"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437192"
 ---
-# <a name="voice-input-in-directx"></a><span data-ttu-id="c78f6-104">DirectX での音声入力</span><span class="sxs-lookup"><span data-stu-id="c78f6-104">Voice input in DirectX</span></span>
+# <a name="voice-input-in-directx"></a><span data-ttu-id="ad89d-104">DirectX での音声入力</span><span class="sxs-lookup"><span data-stu-id="ad89d-104">Voice input in DirectX</span></span>
 
-<span data-ttu-id="c78f6-105">このトピックでは、Windows Mixed Reality の DirectX アプリで[音声コマンド](voice-input.md)を実装する方法と、小さなフレーズと文の認識を実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-105">This topic explains how to implement [voice commands](voice-input.md), and small phrase and sentence recognition in a DirectX app for Windows Mixed Reality.</span></span>
+<span data-ttu-id="ad89d-105">このトピックでは、Windows Mixed Reality の DirectX アプリで[音声コマンド](voice-input.md)を実装する方法と、小さなフレーズと文の認識を実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-105">This topic explains how to implement [voice commands](voice-input.md), and small phrase and sentence recognition in a DirectX app for Windows Mixed Reality.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="c78f6-106">この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="c78f6-106">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="c78f6-107">これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-107">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
+><span data-ttu-id="ad89d-106">この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="ad89d-106">The code snippets in this article currently demonstrate use of C++/CX rather than C++17-compliant C++/WinRT as used in the [C++ holographic project template](creating-a-holographic-directx-project.md).</span></span>  <span data-ttu-id="ad89d-107">これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-107">The concepts are equivalent for a C++/WinRT project, though you will need to translate the code.</span></span>
 
-## <a name="use-a-speechrecognizer-for-continuous-recognition-of-voice-commands"></a><span data-ttu-id="c78f6-108">音声コマンドを継続的に認識するために SpeechRecognizer を使用する</span><span class="sxs-lookup"><span data-stu-id="c78f6-108">Use a SpeechRecognizer for continuous recognition of voice commands</span></span>
+## <a name="use-a-speechrecognizer-for-continuous-recognition-of-voice-commands"></a><span data-ttu-id="ad89d-108">音声コマンドを継続的に認識するために SpeechRecognizer を使用する</span><span class="sxs-lookup"><span data-stu-id="ad89d-108">Use a SpeechRecognizer for continuous recognition of voice commands</span></span>
 
-<span data-ttu-id="c78f6-109">このセクションでは、音声認識を使用してアプリで音声コマンドを有効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-109">In this section, we describe how to use continuous speech recognition to enable voice commands in your app.</span></span> <span data-ttu-id="c78f6-110">このチュートリアルでは、 [HolographicVoiceInput](http://go.microsoft.com/fwlink/p/?LinkId=844964)サンプルのコードを使用します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-110">This walkthrough uses code from the [HolographicVoiceInput](http://go.microsoft.com/fwlink/p/?LinkId=844964) Sample.</span></span> <span data-ttu-id="c78f6-111">サンプルを実行している場合は、登録されているいずれかのカラーコマンドの名前を読み上げて、回転しているキューブの色を変更します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-111">When the sample is running, speak the name of one of the registered color commands to change the color of the spinning cube.</span></span>
+<span data-ttu-id="ad89d-109">このセクションでは、音声認識を使用してアプリで音声コマンドを有効にする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-109">In this section, we describe how to use continuous speech recognition to enable voice commands in your app.</span></span> <span data-ttu-id="ad89d-110">このチュートリアルでは、 [HolographicVoiceInput](https://go.microsoft.com/fwlink/p/?LinkId=844964)サンプルのコードを使用します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-110">This walkthrough uses code from the [HolographicVoiceInput](https://go.microsoft.com/fwlink/p/?LinkId=844964) Sample.</span></span> <span data-ttu-id="ad89d-111">サンプルを実行している場合は、登録されているいずれかのカラーコマンドの名前を読み上げて、回転しているキューブの色を変更します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-111">When the sample is running, speak the name of one of the registered color commands to change the color of the spinning cube.</span></span>
 
-<span data-ttu-id="c78f6-112">最初に、新しい**Windows:: Media:: SpeechRecognition:: SpeechRecognizer**インスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-112">First, create a new **Windows::Media::SpeechRecognition::SpeechRecognizer** instance.</span></span>
+<span data-ttu-id="ad89d-112">最初に、新しい**Windows:: Media:: SpeechRecognition:: SpeechRecognizer**インスタンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-112">First, create a new **Windows::Media::SpeechRecognition::SpeechRecognizer** instance.</span></span>
 
-<span data-ttu-id="c78f6-113">*HolographicVoiceInputSampleMain:: CreateSpeechConstraintsForCurrentState*から:</span><span class="sxs-lookup"><span data-stu-id="c78f6-113">From *HolographicVoiceInputSampleMain::CreateSpeechConstraintsForCurrentState*:</span></span>
+<span data-ttu-id="ad89d-113">*HolographicVoiceInputSampleMain:: CreateSpeechConstraintsForCurrentState*から:</span><span class="sxs-lookup"><span data-stu-id="ad89d-113">From *HolographicVoiceInputSampleMain::CreateSpeechConstraintsForCurrentState*:</span></span>
 
 ```
 m_speechRecognizer = ref new SpeechRecognizer();
 ```
 
-<span data-ttu-id="c78f6-114">レコグナイザーがリッスンする音声コマンドのリストを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-114">You'll need to create a list of speech commands for the recognizer to listen for.</span></span> <span data-ttu-id="c78f6-115">ここでは、ホログラムの色を変更するための一連のコマンドを作成します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-115">Here, we construct a set of commands to change the color of a hologram.</span></span> <span data-ttu-id="c78f6-116">利便性を高めるために、後でコマンドに使用するデータも作成します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-116">For the sake of convenience, we also create the data that we'll use for the commands later on.</span></span>
+<span data-ttu-id="ad89d-114">レコグナイザーがリッスンする音声コマンドのリストを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-114">You'll need to create a list of speech commands for the recognizer to listen for.</span></span> <span data-ttu-id="ad89d-115">ここでは、ホログラムの色を変更するための一連のコマンドを作成します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-115">Here, we construct a set of commands to change the color of a hologram.</span></span> <span data-ttu-id="ad89d-116">利便性を高めるために、後でコマンドに使用するデータも作成します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-116">For the sake of convenience, we also create the data that we'll use for the commands later on.</span></span>
 
 ```
 m_speechCommandList = ref new Platform::Collections::Vector<String^>();
@@ -57,14 +57,14 @@ m_speechCommandList = ref new Platform::Collections::Vector<String^>();
    m_speechCommandData.push_back(float4(1.f, 0.f, 1.f, 1.f));
 ```
 
-<span data-ttu-id="c78f6-117">コマンドは、辞書に含まれていない可能性のある発音の単語を使用して指定できます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-117">Commands can be specified using phonetic words that might not be in a dictionary:</span></span>
+<span data-ttu-id="ad89d-117">コマンドは、辞書に含まれていない可能性のある発音の単語を使用して指定できます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-117">Commands can be specified using phonetic words that might not be in a dictionary:</span></span>
 
 ```
 m_speechCommandList->Append(StringReference(L"SpeechRecognizer"));
    m_speechCommandData.push_back(float4(0.5f, 0.1f, 1.f, 1.f));
 ```
 
-<span data-ttu-id="c78f6-118">コマンドの一覧が、音声認識エンジンの制約の一覧に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-118">The list of commands is loaded into the list of constraints for the speech recognizer.</span></span> <span data-ttu-id="c78f6-119">これを行うには、 [SpeechRecognitionListConstraint](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionlistconstraint.aspx)オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-119">This is done by using a [SpeechRecognitionListConstraint](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionlistconstraint.aspx) object.</span></span>
+<span data-ttu-id="ad89d-118">コマンドの一覧が、音声認識エンジンの制約の一覧に読み込まれます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-118">The list of commands is loaded into the list of constraints for the speech recognizer.</span></span> <span data-ttu-id="ad89d-119">これを行うには、 [SpeechRecognitionListConstraint](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionlistconstraint.aspx)オブジェクトを使用します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-119">This is done by using a [SpeechRecognitionListConstraint](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionlistconstraint.aspx) object.</span></span>
 
 ```
 SpeechRecognitionListConstraint^ spConstraint = ref new SpeechRecognitionListConstraint(m_speechCommandList);
@@ -83,7 +83,7 @@ SpeechRecognitionListConstraint^ spConstraint = ref new SpeechRecognitionListCon
    });
 ```
 
-<span data-ttu-id="c78f6-120">音声認識エンジンの[SpeechContinuousRecognitionSession](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.aspx)で[resultgenerated](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated.aspx)イベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="c78f6-120">Subscribe to the [ResultGenerated](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated.aspx) event on the speech recognizer's [SpeechContinuousRecognitionSession](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.aspx).</span></span> <span data-ttu-id="c78f6-121">このイベントは、いずれかのコマンドが認識されたときにアプリに通知します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-121">This event notifies your app when one of your commands has been recognized.</span></span>
+<span data-ttu-id="ad89d-120">音声認識エンジンの[SpeechContinuousRecognitionSession](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.aspx)で[resultgenerated](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated.aspx)イベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="ad89d-120">Subscribe to the [ResultGenerated](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated.aspx) event on the speech recognizer's [SpeechContinuousRecognitionSession](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionsession.aspx).</span></span> <span data-ttu-id="ad89d-121">このイベントは、いずれかのコマンドが認識されたときにアプリに通知します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-121">This event notifies your app when one of your commands has been recognized.</span></span>
 
 ```
 m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
@@ -92,9 +92,9 @@ m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
            );
 ```
 
-<span data-ttu-id="c78f6-122">**Onresultgenerated**イベントハンドラーは、 [SpeechContinuousRecognitionResultGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.aspx)インスタンス内のイベントデータを受信します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-122">Your **OnResultGenerated** event handler receives event data in a [SpeechContinuousRecognitionResultGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.aspx) instance.</span></span> <span data-ttu-id="c78f6-123">定義したしきい値より信頼度が高い場合、アプリはイベントが発生したことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-123">If the confidence is greater than the threshold you have defined, your app should note that the event happened.</span></span> <span data-ttu-id="c78f6-124">後続の更新ループで使用できるように、イベントデータを保存します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-124">Save the event data so that you can make use of it in a subsequent update loop.</span></span>
+<span data-ttu-id="ad89d-122">**Onresultgenerated**イベントハンドラーは、 [SpeechContinuousRecognitionResultGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.aspx)インスタンス内のイベントデータを受信します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-122">Your **OnResultGenerated** event handler receives event data in a [SpeechContinuousRecognitionResultGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.aspx) instance.</span></span> <span data-ttu-id="ad89d-123">定義したしきい値より信頼度が高い場合、アプリはイベントが発生したことを確認する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-123">If the confidence is greater than the threshold you have defined, your app should note that the event happened.</span></span> <span data-ttu-id="ad89d-124">後続の更新ループで使用できるように、イベントデータを保存します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-124">Save the event data so that you can make use of it in a subsequent update loop.</span></span>
 
-<span data-ttu-id="c78f6-125">*HolographicVoiceInputSampleMain*から:</span><span class="sxs-lookup"><span data-stu-id="c78f6-125">From *HolographicVoiceInputSampleMain.cpp*:</span></span>
+<span data-ttu-id="ad89d-125">*HolographicVoiceInputSampleMain*から:</span><span class="sxs-lookup"><span data-stu-id="ad89d-125">From *HolographicVoiceInputSampleMain.cpp*:</span></span>
 
 ```
 // Change the cube color, if we get a valid result.
@@ -107,9 +107,9 @@ m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
    }
 ```
 
-<span data-ttu-id="c78f6-126">アプリのシナリオに適用されるデータを使用します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-126">Make use of the data however applicable to your app scenario.</span></span> <span data-ttu-id="c78f6-127">このコード例では、ユーザーのコマンドに従って、回転したホログラムキューブの色を変更します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-127">In our example code, we change the color of the spinning hologram cube according to the user's command.</span></span>
+<span data-ttu-id="ad89d-126">アプリのシナリオに適用されるデータを使用します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-126">Make use of the data however applicable to your app scenario.</span></span> <span data-ttu-id="ad89d-127">このコード例では、ユーザーのコマンドに従って、回転したホログラムキューブの色を変更します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-127">In our example code, we change the color of the spinning hologram cube according to the user's command.</span></span>
 
-<span data-ttu-id="c78f6-128">*HolographicVoiceInputSampleMain:: Update*から:</span><span class="sxs-lookup"><span data-stu-id="c78f6-128">From *HolographicVoiceInputSampleMain::Update*:</span></span>
+<span data-ttu-id="ad89d-128">*HolographicVoiceInputSampleMain:: Update*から:</span><span class="sxs-lookup"><span data-stu-id="ad89d-128">From *HolographicVoiceInputSampleMain::Update*:</span></span>
 
 ```
 // Check for new speech input since the last frame.
@@ -132,17 +132,17 @@ m_speechRecognizer->ContinuousRecognitionSession->ResultGenerated +=
    }
 ```
 
-## <a name="use-dictation-for-one-shot-recognition-of-speech-phrases-and-sentences"></a><span data-ttu-id="c78f6-129">音声語句と文をワンショットで認識するためにディクテーションを使用する</span><span class="sxs-lookup"><span data-stu-id="c78f6-129">Use dictation for one-shot recognition of speech phrases and sentences</span></span>
+## <a name="use-dictation-for-one-shot-recognition-of-speech-phrases-and-sentences"></a><span data-ttu-id="ad89d-129">音声語句と文をワンショットで認識するためにディクテーションを使用する</span><span class="sxs-lookup"><span data-stu-id="ad89d-129">Use dictation for one-shot recognition of speech phrases and sentences</span></span>
 
-<span data-ttu-id="c78f6-130">ユーザーが読み上げる語句や文をリッスンするように音声認識エンジンを構成できます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-130">You can configure a speech recognizer to listen for phrases or sentences spoken by the user.</span></span> <span data-ttu-id="c78f6-131">この例では、必要な入力の種類を音声認識エンジンに伝える SpeechRecognitionTopicConstraint を適用します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-131">In this case, we apply a SpeechRecognitionTopicConstraint that tells the speech recognizer what type of input to expect.</span></span> <span data-ttu-id="c78f6-132">この種類のユースケースでは、アプリのワークフローは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-132">The app workflow is as follows, for this type of use case:</span></span>
-1. <span data-ttu-id="c78f6-133">アプリによって SpeechRecognizer が作成され、UI プロンプトが表示され、すぐに読み上げるコマンドのリッスンが開始されます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-133">Your app creates the SpeechRecognizer, provides UI prompts, and starts listening for a command to be spoken immediately.</span></span>
-2. <span data-ttu-id="c78f6-134">ユーザーは、語句または文を読み上げます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-134">The user speaks a phrase, or sentence.</span></span>
-3. <span data-ttu-id="c78f6-135">ユーザーの音声認識が実行され、結果がアプリに返されます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-135">Recognition of the user's speech is performed, and a result is returned to the app.</span></span> <span data-ttu-id="c78f6-136">この時点で、アプリは認識が発生したことを示す UI プロンプトを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-136">At this point, your app should provide a UI prompt indicating that recognition has occurred.</span></span>
-4. <span data-ttu-id="c78f6-137">応答する信頼レベルと音声認識の結果の信頼レベルに応じて、アプリは結果を処理し、必要に応じて応答することができます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-137">Depending on the confidence level you want to respond to and the confidence level of the speech recognition result, your app can process the result and respond as appropriate.</span></span>
+<span data-ttu-id="ad89d-130">ユーザーが読み上げる語句や文をリッスンするように音声認識エンジンを構成できます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-130">You can configure a speech recognizer to listen for phrases or sentences spoken by the user.</span></span> <span data-ttu-id="ad89d-131">この例では、必要な入力の種類を音声認識エンジンに伝える SpeechRecognitionTopicConstraint を適用します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-131">In this case, we apply a SpeechRecognitionTopicConstraint that tells the speech recognizer what type of input to expect.</span></span> <span data-ttu-id="ad89d-132">この種類のユースケースでは、アプリのワークフローは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-132">The app workflow is as follows, for this type of use case:</span></span>
+1. <span data-ttu-id="ad89d-133">アプリによって SpeechRecognizer が作成され、UI プロンプトが表示され、すぐに読み上げるコマンドのリッスンが開始されます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-133">Your app creates the SpeechRecognizer, provides UI prompts, and starts listening for a command to be spoken immediately.</span></span>
+2. <span data-ttu-id="ad89d-134">ユーザーは、語句または文を読み上げます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-134">The user speaks a phrase, or sentence.</span></span>
+3. <span data-ttu-id="ad89d-135">ユーザーの音声認識が実行され、結果がアプリに返されます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-135">Recognition of the user's speech is performed, and a result is returned to the app.</span></span> <span data-ttu-id="ad89d-136">この時点で、アプリは認識が発生したことを示す UI プロンプトを提供する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-136">At this point, your app should provide a UI prompt indicating that recognition has occurred.</span></span>
+4. <span data-ttu-id="ad89d-137">応答する信頼レベルと音声認識の結果の信頼レベルに応じて、アプリは結果を処理し、必要に応じて応答することができます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-137">Depending on the confidence level you want to respond to and the confidence level of the speech recognition result, your app can process the result and respond as appropriate.</span></span>
 
-<span data-ttu-id="c78f6-138">このセクションでは、SpeechRecognizer を作成し、制約をコンパイルして、音声入力をリッスンする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-138">This section describes how to create a SpeechRecognizer, compile the constraint, and listen for speech input.</span></span>
+<span data-ttu-id="ad89d-138">このセクションでは、SpeechRecognizer を作成し、制約をコンパイルして、音声入力をリッスンする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-138">This section describes how to create a SpeechRecognizer, compile the constraint, and listen for speech input.</span></span>
 
-<span data-ttu-id="c78f6-139">次のコードでは、トピック制約をコンパイルします。この場合、この例では Web 検索用に最適化されています。</span><span class="sxs-lookup"><span data-stu-id="c78f6-139">The following code compiles the topic constraint, which in this case is optimized for Web search.</span></span>
+<span data-ttu-id="ad89d-139">次のコードでは、トピック制約をコンパイルします。この場合、この例では Web 検索用に最適化されています。</span><span class="sxs-lookup"><span data-stu-id="ad89d-139">The following code compiles the topic constraint, which in this case is optimized for Web search.</span></span>
 
 ```
 auto constraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::WebSearch, L"webSearch");
@@ -153,7 +153,7 @@ auto constraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScen
    {
 ```
 
-<span data-ttu-id="c78f6-140">コンパイルが成功した場合は、音声認識を続行できます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-140">If compilation succeeds, we can proceed with speech recognition.</span></span>
+<span data-ttu-id="ad89d-140">コンパイルが成功した場合は、音声認識を続行できます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-140">If compilation succeeds, we can proceed with speech recognition.</span></span>
 
 ```
 try
@@ -168,7 +168,7 @@ try
                {
 ```
 
-<span data-ttu-id="c78f6-141">その後、結果がアプリに返されます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-141">The result is then returned to the app.</span></span> <span data-ttu-id="c78f6-142">結果に十分な確信があれば、コマンドを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-142">If we are confident enough in the result, we can process the command.</span></span> <span data-ttu-id="c78f6-143">このコード例では、少なくとも中程度の自信を持つ結果を処理します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-143">This code example processes results with at least Medium confidence.</span></span>
+<span data-ttu-id="ad89d-141">その後、結果がアプリに返されます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-141">The result is then returned to the app.</span></span> <span data-ttu-id="ad89d-142">結果に十分な確信があれば、コマンドを処理することができます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-142">If we are confident enough in the result, we can process the command.</span></span> <span data-ttu-id="ad89d-143">このコード例では、少なくとも中程度の自信を持つ結果を処理します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-143">This code example processes results with at least Medium confidence.</span></span>
 
 ```
 try
@@ -209,7 +209,7 @@ try
                    }
 ```
 
-<span data-ttu-id="c78f6-144">音声認識を使用する場合は常に、ユーザーがシステムのプライバシー設定でマイクをオフにしたことを示す例外を監視する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-144">Whenever you use speech recognition, you should watch for exceptions that could indicate the user has turned off the microphone in the system privacy settings.</span></span> <span data-ttu-id="c78f6-145">これは、初期化中、または認識中に発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-145">This can happen during initialization, or during recognition.</span></span>
+<span data-ttu-id="ad89d-144">音声認識を使用する場合は常に、ユーザーがシステムのプライバシー設定でマイクをオフにしたことを示す例外を監視する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-144">Whenever you use speech recognition, you should watch for exceptions that could indicate the user has turned off the microphone in the system privacy settings.</span></span> <span data-ttu-id="ad89d-145">これは、初期化中、または認識中に発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-145">This can happen during initialization, or during recognition.</span></span>
 
 ```
 catch (Exception^ exception)
@@ -252,39 +252,39 @@ catch (Exception^ exception)
    });
 ```
 
-<span data-ttu-id="c78f6-146">**注:** 音声認識を最適化するために、いくつかの定義済み[SpeechRecognitionScenarios](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionscenario.aspx)が用意されています。</span><span class="sxs-lookup"><span data-stu-id="c78f6-146">**NOTE:** There are several predefined [SpeechRecognitionScenarios](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionscenario.aspx) available for optimizing speech recognition.</span></span>
-* <span data-ttu-id="c78f6-147">ディクテーション用に最適化する場合は、ディクテーションのシナリオを使用します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-147">If you want to optimize for dictation, use the Dictation scenario:</span></span>
+<span data-ttu-id="ad89d-146">**注:** 音声認識を最適化するために、いくつかの定義済み[SpeechRecognitionScenarios](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionscenario.aspx)が用意されています。</span><span class="sxs-lookup"><span data-stu-id="ad89d-146">**NOTE:** There are several predefined [SpeechRecognitionScenarios](https://msdn.microsoft.com/library/windows/apps/windows.media.speechrecognition.speechrecognitionscenario.aspx) available for optimizing speech recognition.</span></span>
+* <span data-ttu-id="ad89d-147">ディクテーション用に最適化する場合は、ディクテーションのシナリオを使用します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-147">If you want to optimize for dictation, use the Dictation scenario:</span></span>
 
 ```
 // Compile the dictation topic constraint, which optimizes for speech dictation.
    auto dictationConstraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::Dictation, "dictation");
    m_speechRecognizer->Constraints->Append(dictationConstraint);
 ```
-* <span data-ttu-id="c78f6-148">音声を使用して Web 検索を実行する場合は、次のように Web 固有のシナリオ制約を使用できます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-148">When using speech to perform a Web search, you can use a Web-specific scenario constraint as follows:</span></span>
+* <span data-ttu-id="ad89d-148">音声を使用して Web 検索を実行する場合は、次のように Web 固有のシナリオ制約を使用できます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-148">When using speech to perform a Web search, you can use a Web-specific scenario constraint as follows:</span></span>
 
 ```
 // Add a web search topic constraint to the recognizer.
    auto webSearchConstraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::WebSearch, "webSearch");
    speechRecognizer->Constraints->Append(webSearchConstraint);
 ```
-* <span data-ttu-id="c78f6-149">フォームを入力するには、フォームの制約を使用します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-149">Use the form constraint to fill out forms.</span></span> <span data-ttu-id="c78f6-150">この場合は、フォームを入力するために最適化された独自の文法を適用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c78f6-150">In this case, it is best to apply your own grammar that is optimized for filling out your form.</span></span>
+* <span data-ttu-id="ad89d-149">フォームを入力するには、フォームの制約を使用します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-149">Use the form constraint to fill out forms.</span></span> <span data-ttu-id="ad89d-150">この場合は、フォームを入力するために最適化された独自の文法を適用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ad89d-150">In this case, it is best to apply your own grammar that is optimized for filling out your form.</span></span>
 
 ```
 // Add a form constraint to the recognizer.
    auto formConstraint = ref new SpeechRecognitionTopicConstraint(SpeechRecognitionScenario::FormFilling, "formFilling");
    speechRecognizer->Constraints->Append(formConstraint );
 ```
-* <span data-ttu-id="c78f6-151">SRGS 形式を使用して独自の文法を提供できます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-151">You can provide your own grammar using the SRGS format.</span></span>
+* <span data-ttu-id="ad89d-151">SRGS 形式を使用して独自の文法を提供できます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-151">You can provide your own grammar using the SRGS format.</span></span>
 
-## <a name="use-continuous-freeform-speech-dictation"></a><span data-ttu-id="c78f6-152">連続した自由形式の音声ディクテーションを使用する</span><span class="sxs-lookup"><span data-stu-id="c78f6-152">Use continuous, freeform speech dictation</span></span>
+## <a name="use-continuous-freeform-speech-dictation"></a><span data-ttu-id="ad89d-152">連続した自由形式の音声ディクテーションを使用する</span><span class="sxs-lookup"><span data-stu-id="ad89d-152">Use continuous, freeform speech dictation</span></span>
 
-<span data-ttu-id="c78f6-153">連続したディクテーションのシナリオについては、「Windows 10 UWP speech のコードサンプル」を参照してください[。](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cpp/Scenario_ContinuousDictation.xaml.cpp)</span><span class="sxs-lookup"><span data-stu-id="c78f6-153">See the Windows 10 UWP speech code sample for the continuous dictation scenario [here.](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cpp/Scenario_ContinuousDictation.xaml.cpp)</span></span>
+<span data-ttu-id="ad89d-153">連続したディクテーションのシナリオについては、「Windows 10 UWP speech のコードサンプル」を参照してください[。](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cpp/Scenario_ContinuousDictation.xaml.cpp)</span><span class="sxs-lookup"><span data-stu-id="ad89d-153">See the Windows 10 UWP speech code sample for the continuous dictation scenario [here.](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cpp/Scenario_ContinuousDictation.xaml.cpp)</span></span>
 
-## <a name="handle-degradation-in-quality"></a><span data-ttu-id="c78f6-154">品質の低下を処理する</span><span class="sxs-lookup"><span data-stu-id="c78f6-154">Handle degradation in quality</span></span>
+## <a name="handle-degradation-in-quality"></a><span data-ttu-id="ad89d-154">品質の低下を処理する</span><span class="sxs-lookup"><span data-stu-id="ad89d-154">Handle degradation in quality</span></span>
 
-<span data-ttu-id="c78f6-155">環境内の条件によっては、音声認識の動作が妨げられることがあります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-155">Conditions in the environment can sometimes prevent speech recognition from working.</span></span> <span data-ttu-id="c78f6-156">たとえば、部屋の雑音が多すぎる場合や、ユーザーが音量を大きくしすぎる場合などです。</span><span class="sxs-lookup"><span data-stu-id="c78f6-156">For example, the room might be too noisy or the user might speak at too high a volume.</span></span> <span data-ttu-id="c78f6-157">音声認識 API は、品質の低下の原因となった条件について、可能な限り情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-157">The speech recognition API provides info, where possible, about conditions that have caused a degradation in quality.</span></span>
+<span data-ttu-id="ad89d-155">環境内の条件によっては、音声認識の動作が妨げられることがあります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-155">Conditions in the environment can sometimes prevent speech recognition from working.</span></span> <span data-ttu-id="ad89d-156">たとえば、部屋の雑音が多すぎる場合や、ユーザーが音量を大きくしすぎる場合などです。</span><span class="sxs-lookup"><span data-stu-id="ad89d-156">For example, the room might be too noisy or the user might speak at too high a volume.</span></span> <span data-ttu-id="ad89d-157">音声認識 API は、品質の低下の原因となった条件について、可能な限り情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-157">The speech recognition API provides info, where possible, about conditions that have caused a degradation in quality.</span></span>
 
-<span data-ttu-id="c78f6-158">この情報は、WinRT イベントを使用してアプリにプッシュされます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-158">This information is pushed to your app using a WinRT event.</span></span> <span data-ttu-id="c78f6-159">このイベントをサブスクライブする方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-159">Here is an example of how to subscribe to this event.</span></span>
+<span data-ttu-id="ad89d-158">この情報は、WinRT イベントを使用してアプリにプッシュされます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-158">This information is pushed to your app using a WinRT event.</span></span> <span data-ttu-id="ad89d-159">このイベントをサブスクライブする方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-159">Here is an example of how to subscribe to this event.</span></span>
 
 ```
 m_speechRecognizer->RecognitionQualityDegrading +=
@@ -293,7 +293,7 @@ m_speechRecognizer->RecognitionQualityDegrading +=
            );
 ```
 
-<span data-ttu-id="c78f6-160">このコードサンプルでは、条件情報をデバッグコンソールに書き込むことを選択します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-160">In our code sample, we choose to write the conditions info to the debug console.</span></span> <span data-ttu-id="c78f6-161">アプリでは、UI や音声合成などを使用してユーザーにフィードバックを提供することができます。または、品質の一時的な低下によって音声が中断された場合に、動作が異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-161">An app might want to provide feedback to the user via UI, speech synthesis, and so on, or it might need to behave differently when speech is interrupted by a temporary reduction in quality.</span></span>
+<span data-ttu-id="ad89d-160">このコードサンプルでは、条件情報をデバッグコンソールに書き込むことを選択します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-160">In our code sample, we choose to write the conditions info to the debug console.</span></span> <span data-ttu-id="ad89d-161">アプリでは、UI や音声合成などを使用してユーザーにフィードバックを提供することができます。または、品質の一時的な低下によって音声が中断された場合に、動作が異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-161">An app might want to provide feedback to the user via UI, speech synthesis, and so on, or it might need to behave differently when speech is interrupted by a temporary reduction in quality.</span></span>
 
 ```
 void HolographicSpeechPromptSampleMain::OnSpeechQualityDegraded(SpeechRecognizer^ recognizer, SpeechRecognitionQualityDegradingEventArgs^ args)
@@ -332,7 +332,7 @@ void HolographicSpeechPromptSampleMain::OnSpeechQualityDegraded(SpeechRecognizer
    }
 ```
 
-<span data-ttu-id="c78f6-162">参照クラスを使用して DirectX アプリを作成していない場合は、音声認識エンジンを解放または再作成する前に、イベントの登録を解除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-162">If you are not using ref classes to create your DirectX app, you must unsubscribe from the event before releasing or recreating your speech recognizer.</span></span> <span data-ttu-id="c78f6-163">HolographicSpeechPromptSample には、認識を停止し、次のようなイベントのサブスクリプションを解除するルーチンがあります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-163">The HolographicSpeechPromptSample has a routine to stop recognition, and unsubscribe from events like so:</span></span>
+<span data-ttu-id="ad89d-162">参照クラスを使用して DirectX アプリを作成していない場合は、音声認識エンジンを解放または再作成する前に、イベントの登録を解除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-162">If you are not using ref classes to create your DirectX app, you must unsubscribe from the event before releasing or recreating your speech recognizer.</span></span> <span data-ttu-id="ad89d-163">HolographicSpeechPromptSample には、認識を停止し、次のようなイベントのサブスクリプションを解除するルーチンがあります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-163">The HolographicSpeechPromptSample has a routine to stop recognition, and unsubscribe from events like so:</span></span>
 
 ```
 Concurrency::task<void> HolographicSpeechPromptSampleMain::StopCurrentRecognizerIfExists()
@@ -359,26 +359,26 @@ Concurrency::task<void> HolographicSpeechPromptSampleMain::StopCurrentRecognizer
    }
 ```
 
-## <a name="use-speech-synthesis-to-provide-audible-voice-prompts"></a><span data-ttu-id="c78f6-164">音声合成を使用して音声入力のプロンプトを表示する</span><span class="sxs-lookup"><span data-stu-id="c78f6-164">Use speech synthesis to provide audible voice prompts</span></span>
+## <a name="use-speech-synthesis-to-provide-audible-voice-prompts"></a><span data-ttu-id="ad89d-164">音声合成を使用して音声入力のプロンプトを表示する</span><span class="sxs-lookup"><span data-stu-id="ad89d-164">Use speech synthesis to provide audible voice prompts</span></span>
 
-<span data-ttu-id="c78f6-165">Holographic speech のサンプルでは、音声合成を使用してユーザーに可聴命令を提供します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-165">The holographic speech samples use speech synthesis to provide audible instructions to the user.</span></span> <span data-ttu-id="c78f6-166">このトピックでは、合成された音声サンプルを作成し、HRTF audio Api を使用して再生するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-166">This topic walks through the process of creating a synthesized voice sample, and playing it back using the HRTF audio APIs.</span></span>
+<span data-ttu-id="ad89d-165">Holographic speech のサンプルでは、音声合成を使用してユーザーに可聴命令を提供します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-165">The holographic speech samples use speech synthesis to provide audible instructions to the user.</span></span> <span data-ttu-id="ad89d-166">このトピックでは、合成された音声サンプルを作成し、HRTF audio Api を使用して再生するプロセスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-166">This topic walks through the process of creating a synthesized voice sample, and playing it back using the HRTF audio APIs.</span></span>
 
-<span data-ttu-id="c78f6-167">語句入力を要求するときは、独自の音声入力プロンプトを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c78f6-167">You should provide your own speech prompts when requesting phrase input.</span></span> <span data-ttu-id="c78f6-168">これは、音声コマンドをいつでも認識できるようにする場合にも役立ちます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-168">This can also be helpful for indicating when speech commands can be spoken, for a continuous recognition scenario.</span></span> <span data-ttu-id="c78f6-169">音声シンセサイザーを使用してこれを行う方法の例を次に示します。また、メッセージが動的でない場合などに、事前に記録された音声クリップ、ビジュアル UI、またはその他の意見を示すインジケーターを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-169">Here is an example of how to do that with a speech synthesizer; note that you could also use a pre-recorded voice clip, a visual UI, or other indicator of what to say, for example in scenarios where the prompt is not dynamic.</span></span>
+<span data-ttu-id="ad89d-167">語句入力を要求するときは、独自の音声入力プロンプトを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ad89d-167">You should provide your own speech prompts when requesting phrase input.</span></span> <span data-ttu-id="ad89d-168">これは、音声コマンドをいつでも認識できるようにする場合にも役立ちます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-168">This can also be helpful for indicating when speech commands can be spoken, for a continuous recognition scenario.</span></span> <span data-ttu-id="ad89d-169">音声シンセサイザーを使用してこれを行う方法の例を次に示します。また、メッセージが動的でない場合などに、事前に記録された音声クリップ、ビジュアル UI、またはその他の意見を示すインジケーターを使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-169">Here is an example of how to do that with a speech synthesizer; note that you could also use a pre-recorded voice clip, a visual UI, or other indicator of what to say, for example in scenarios where the prompt is not dynamic.</span></span>
 
-<span data-ttu-id="c78f6-170">まず、SpeechSynthesizer オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-170">First, create the SpeechSynthesizer object:</span></span>
+<span data-ttu-id="ad89d-170">まず、SpeechSynthesizer オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-170">First, create the SpeechSynthesizer object:</span></span>
 
 ```
 auto speechSynthesizer = ref new Windows::Media::SpeechSynthesis::SpeechSynthesizer();
 ```
 
-<span data-ttu-id="c78f6-171">また、合成するテキストを含む文字列が必要です。</span><span class="sxs-lookup"><span data-stu-id="c78f6-171">You also need a string with the text to be synthesized:</span></span>
+<span data-ttu-id="ad89d-171">また、合成するテキストを含む文字列が必要です。</span><span class="sxs-lookup"><span data-stu-id="ad89d-171">You also need a string with the text to be synthesized:</span></span>
 
 ```
 // Phrase recognition works best when requesting a phrase or sentence.
    StringReference voicePrompt = L"At the prompt: Say a phrase, asking me to change the cube to a specific color.";
 ```
 
-<span data-ttu-id="c78f6-172">音声は SynthesizeTextToStreamAsync を使用して非同期に合成されます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-172">Speech is synthesized asynchronously using SynthesizeTextToStreamAsync.</span></span> <span data-ttu-id="c78f6-173">ここでは、音声を合成する非同期タスクを開始します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-173">Here, we kick off an async task to synthesize the speech.</span></span>
+<span data-ttu-id="ad89d-172">音声は SynthesizeTextToStreamAsync を使用して非同期に合成されます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-172">Speech is synthesized asynchronously using SynthesizeTextToStreamAsync.</span></span> <span data-ttu-id="ad89d-173">ここでは、音声を合成する非同期タスクを開始します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-173">Here, we kick off an async task to synthesize the speech.</span></span>
 
 ```
 create_task(speechSynthesizer->SynthesizeTextToStreamAsync(voicePrompt), task_continuation_context::use_current())
@@ -388,7 +388,7 @@ create_task(speechSynthesizer->SynthesizeTextToStreamAsync(voicePrompt), task_co
        {
 ```
 
-<span data-ttu-id="c78f6-174">音声合成は、バイトストリームとして送信されます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-174">The speech synthesis is sent as a byte stream.</span></span> <span data-ttu-id="c78f6-175">このバイトストリームを使用して、XAudio2 音声を初期化できます。holographic のコードサンプルでは、HRTF オーディオ効果として再生します。</span><span class="sxs-lookup"><span data-stu-id="c78f6-175">We can initialize an XAudio2 voice using that byte stream; for our holographic code samples, we play it back as an HRTF audio effect.</span></span>
+<span data-ttu-id="ad89d-174">音声合成は、バイトストリームとして送信されます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-174">The speech synthesis is sent as a byte stream.</span></span> <span data-ttu-id="ad89d-175">このバイトストリームを使用して、XAudio2 音声を初期化できます。holographic のコードサンプルでは、HRTF オーディオ効果として再生します。</span><span class="sxs-lookup"><span data-stu-id="ad89d-175">We can initialize an XAudio2 voice using that byte stream; for our holographic code samples, we play it back as an HRTF audio effect.</span></span>
 
 ```
 Windows::Media::SpeechSynthesis::SpeechSynthesisStream^ stream = synthesisStreamTask.get();
@@ -410,7 +410,7 @@ Windows::Media::SpeechSynthesis::SpeechSynthesisStream^ stream = synthesisStream
        }
 ```
 
-<span data-ttu-id="c78f6-176">音声認識と同様に、何らかの問題が発生した場合は、音声合成によって例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="c78f6-176">As with speech recognition, speech synthesis will throw an exception if something goes wrong.</span></span>
+<span data-ttu-id="ad89d-176">音声認識と同様に、何らかの問題が発生した場合は、音声合成によって例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="ad89d-176">As with speech recognition, speech synthesis will throw an exception if something goes wrong.</span></span>
 
 ```
 catch (Exception^ exception)
@@ -426,7 +426,7 @@ catch (Exception^ exception)
    });
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c78f6-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="c78f6-177">See also</span></span>
-* [<span data-ttu-id="c78f6-178">音声アプリの設計</span><span class="sxs-lookup"><span data-stu-id="c78f6-178">Speech app design</span></span>](https://msdn.microsoft.com/library/dn596121.aspx)
-* [<span data-ttu-id="c78f6-179">DirectX の立体音響</span><span class="sxs-lookup"><span data-stu-id="c78f6-179">Spatial sound in DirectX</span></span>](spatial-sound-in-directx.md)
-* [<span data-ttu-id="c78f6-180">SpeechRecognitionAndSynthesis サンプル</span><span class="sxs-lookup"><span data-stu-id="c78f6-180">SpeechRecognitionAndSynthesis sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
+## <a name="see-also"></a><span data-ttu-id="ad89d-177">関連項目</span><span class="sxs-lookup"><span data-stu-id="ad89d-177">See also</span></span>
+* [<span data-ttu-id="ad89d-178">音声アプリの設計</span><span class="sxs-lookup"><span data-stu-id="ad89d-178">Speech app design</span></span>](https://msdn.microsoft.com/library/dn596121.aspx)
+* [<span data-ttu-id="ad89d-179">DirectX の立体音響</span><span class="sxs-lookup"><span data-stu-id="ad89d-179">Spatial sound in DirectX</span></span>](spatial-sound-in-directx.md)
+* [<span data-ttu-id="ad89d-180">SpeechRecognitionAndSynthesis サンプル</span><span class="sxs-lookup"><span data-stu-id="ad89d-180">SpeechRecognitionAndSynthesis sample</span></span>](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
