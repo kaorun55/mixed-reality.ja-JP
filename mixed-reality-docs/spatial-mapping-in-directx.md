@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows mixed reality, 空間マッピング, 環境, 相互作用, directx, winrt, api, サンプルコード, UWP, SDK, チュートリアル
-ms.openlocfilehash: db3f1464158c04127e456cadd5fb633336909344
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 456fcf1c00e23a287a741673e94b3f8d2d2d346c
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63550693"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437446"
 ---
 # <a name="spatial-mapping-in-directx"></a>DirectX での空間マッピング
 
@@ -21,6 +21,29 @@ ms.locfileid: "63550693"
 
 >[!NOTE]
 >この記事のコードスニペットでは、現在、 C++ [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)で使用されてC++いる C + c++ 17 準拠の/WinRT ではなく、/cx の使用方法を示しています。  これらの概念は、プロジェクトC++の場合と同じですが、コードを変換する必要があります。
+
+## <a name="device-support"></a>デバイスのサポート
+
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>空間マッピング</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
+</table>
 
 ## <a name="directx-development-overview"></a>DirectX 開発の概要
 
@@ -51,7 +74,7 @@ ms.locfileid: "63550693"
   - ここから、アプリケーションでメッシュデータの分析または[処理](spatial-mapping.md#mesh-processing)を必要に応じて実行し、[レンダリング](spatial-mapping.md#rendering)や物理的な[raycasting と競合](spatial-mapping.md#raycasting-and-collision)に使用することができます。
   - 注意すべき重要な点の1つは、メッシュの頂点位置 (メッシュのレンダリングに使用される頂点シェーダーなど) にスケールを適用して、バッファーに格納されている最適化された整数単位からメーターに変換する必要があることです。 このスケールを取得するには、 [Vertexpositionscale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)を呼び出します。
 
-### <a name="troubleshooting"></a>トラブルシューティング
+### <a name="troubleshooting"></a>[トラブルシューティング]
 * [SpatialSurfaceMesh スケール](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)によって返されるスケールを使用して、頂点シェーダー内のメッシュ頂点の位置を必ずスケーリングしてください。
 
 ## <a name="spatial-mapping-code-sample-walkthrough"></a>空間マッピングコードサンプルのチュートリアル
@@ -62,7 +85,7 @@ ms.locfileid: "63550693"
 
 ### <a name="set-up-your-app-to-use-the-spatialperception-capability"></a>SpatialPerception 機能を使用するようにアプリを設定する
 
-アプリで空間マッピング機能を使用できる必要があります。 これが必要になるのは、空間メッシュがユーザーの環境を表しているためです。これは、プライベートデータと見なされる場合があります。 この機能をアプリの package.appxmanifest ファイルで宣言します。 次に例を示します。
+アプリで空間マッピング機能を使用できる必要があります。 これが必要になるのは、空間メッシュがユーザーの環境を表しているためです。これは、プライベートデータと見なされる場合があります。 この機能をアプリの package.appxmanifest ファイルで宣言します。 以下に例を示します。
 
 ```xml
 <Capabilities>
@@ -70,14 +93,14 @@ ms.locfileid: "63550693"
 </Capabilities>
 ```
 
-この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、 &lt;パッケージの > 要素に*xlmns*属性として含めます。 次に例を示します。
+この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、&lt;Package > 要素に*xlmns*属性として追加します。 以下に例を示します。
 
 ```xml
 <Package
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+    xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10"
+    xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest"
+    xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10"
+    xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2"
     IgnorableNamespaces="uap uap2 mp"
     >
 ```
@@ -367,7 +390,7 @@ CreateDirectXBuffer(device, D3D11_BIND_VERTEX_BUFFER, positions, m_vertexPositio
 }
 ```
 
-**注:** 前のスニペットで使用した CreateDirectXBuffer ヘルパー関数については、「Surface Mapping のコードサンプル」を参照してください。SurfaceMesh、GetDataFromIBuffer. h. これで、デバイスリソースの作成が完了し、メッシュが読み込まれ、更新とレンダリングの準備が整っていると見なされます。
+**注:** 前のスニペットで使用した CreateDirectXBuffer ヘルパー関数については、「Surface Mapping のコードサンプル: SurfaceMesh, GetDataFromIBuffer. h」を参照してください。 これで、デバイスリソースの作成が完了し、メッシュが読み込まれ、更新とレンダリングの準備が整っていると見なされます。
 
 ### <a name="update-and-render-surface-meshes"></a>サーフェイスメッシュの更新とレンダリング
 
@@ -629,7 +652,7 @@ else
 }
 ```
 
-**注:** **GatherDepthLess**ルーチンについては、「Surface Mapping のコードサンプル:SpecialEffectPixelShader。
+**注:** **GatherDepthLess**ルーチンについては、「Surface Mapping のコードサンプル: SpecialEffectPixelShader」を参照してください。
 
 **画面にサーフェイスメッシュデータをレンダリングする**
 
@@ -638,7 +661,7 @@ else
 ここでは、このコードサンプルでは、コレクションを描画するようにメッシュレンダラーに指示しています。 今回は、深度のみのパスを指定していないので、ピクセルシェーダーをアタッチし、現在の仮想カメラに指定したターゲットを使用してレンダリングパイプラインを完成させます。
 
 ```cpp
-// SR mesh rendering pass: Draw SR mesh over the world.
+// Spatial Mapping mesh rendering pass: Draw Spatial Mapping mesh over the world.
 context->ClearDepthStencilView(pCameraResources->GetSurfaceOcclusionDepthStencilView(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
 // Set the render target to the current holographic camera's back buffer, and set the depth buffer.

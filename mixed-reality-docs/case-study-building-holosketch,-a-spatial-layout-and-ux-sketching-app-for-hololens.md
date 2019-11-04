@@ -6,21 +6,21 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloSketch, HoloLens, Windows Mixed Reality, スケッチ, アプリ
-ms.openlocfilehash: d7f94a09bf4a8a16000c2345adf1a046dab4bd15
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: d6d22aae7709bcc1a33b142a100d1a0f9645d3cc
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63524390"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436945"
 ---
 # <a name="case-study---building-holosketch-a-spatial-layout-and-ux-sketching-app-for-hololens"></a>ケーススタディ-HoloSketch の構築、空間レイアウト、および HoloLens 用の UX スケッチアプリ
 
 HoloSketch は、holographic エクスペリエンスの構築に役立つ HoloLens 用のデバイス上の空間レイアウトおよび UX スケッチツールです。 HoloSketch は、ペアになっている Bluetooth キーボードとマウス、およびジェスチャと音声コマンドで動作します。 HoloSketch の目的は、簡単な視覚エフェクトとイテレーションのための簡単な UX レイアウトツールを提供することです。
 
-![HoloSketch:HoloLens 用の空間レイアウトと UX スケッチアプリ。](images/holosketch-image-01-640px.png)<br>
+![HoloSketch: HoloLens 用の空間レイアウトと UX スケッチアプリ。](images/holosketch-image-01-640px.png)<br>
 *HoloSketch: HoloLens 用の空間レイアウトと UX スケッチアプリ*
 
-![シンプルな UX レイアウトツールで、視覚化とイテレーションを簡単に行うことができます。](images/holosketch-image-02.png)<br>
+シンプルな UX レイアウトツールを ![して、簡単に視覚化とイテレーションを行うことができます。](images/holosketch-image-02.png)<br>
 *シンプルな UX レイアウトツールで簡単に視覚化とイテレーションを行う*
 
 ## <a name="features"></a>機能
@@ -49,7 +49,7 @@ PNG/JPG イメージまたは 3D FBX オブジェクト (Unity でパッケー�
 
 HoloSketch では、Bluetooth マウス/キーボード、ジェスチャ、音声コマンドがサポートされています。
 
-## <a name="background"></a>背景情報
+## <a name="background"></a>背景
 
 ### <a name="importance-of-experiencing-your-design-in-the-device"></a>デバイスで設計が発生する重要性
 
@@ -63,28 +63,28 @@ UX フローとシナリオを効果的に他のユーザーに伝達するた�
 
 Mixed reality は新しいキャンバスであるため、さまざまな設計イテレーションと評価と、その性質によるエラーが含まれます。 Unity や Visual Studio などのツールに慣れていないデザイナーの場合、HoloLens で簡単にまとめることはできません。 通常は、次の手順に従って、デバイス内の 2D/3D アートワークを表示する必要があります。 これは、設計者がアイデアやシナリオを迅速に反復処理するための大きな障壁でした。
 
-![複雑な展開プロセス](images/holosketch-image-03-1000px.png)<br>
+複雑な展開プロセスの ![](images/holosketch-image-03-1000px.png)<br>
 *展開プロセス*
 
 ### <a name="simplified-process-with-holosketch"></a>HoloSketch を使用した簡素化されたプロセス
 
 HoloSketch では、開発ツールとデバイスポータルのペアリングを使用しなくても、このプロセスを簡略化する必要がありました。 OneDrive を使用すると、ユーザーは簡単に 2D/3D アセットを HoloLens に入れることができます。
 
-![HoloSketch を使用した簡素化されたプロセス](images/holosketch-image-04-1000px.png)<br>
+HoloSketch](images/holosketch-image-04-1000px.png) を使用した ![単純化されたプロセス<br>
 *HoloSketch を使用した簡素化されたプロセス*
 
 ### <a name="encouraging-three-dimensional-design-thinking-and-solutions"></a>3次元設計の考え方と解決策を奨励する
 
-このツールを使用すると、デザイナーは、真の3次元空間でソリューションを調査できるようになり、2D では動かなくなります。 Hololens の場合、バックグラウンドは実際の世界であるため、UI の背景を作成することを考える必要はありません。 HoloSketch を使用すると、デザイナーは Hololens での3D デザインを簡単に調べることができます。
+このツールを使用すると、デザイナーは、真の3次元空間でソリューションを調査できるようになり、2D では動かなくなります。 HoloLens の場合、バックグラウンドは実際の世界であるため、UI の背景を作成することを考える必要はありません。 HoloSketch を使用すると、デザイナーは HoloLens での3D デザインを簡単に調べることができます。
 
-## <a name="get-started"></a>はじめに
+## <a name="get-started"></a>[開始する]
 
 ### <a name="how-to-import-2d-images-jpgpng-into-holosketch"></a>HoloSketch に2D イメージ (JPG/PNG) をインポートする方法
 
 * JPG/PNG イメージを OneDrive フォルダー ' Documents/HoloSketch ' にアップロードします。
 * HoloSketch の OneDrive メニューから、環境内にイメージを選択して配置することができます。
 
-![2D イメージのインポート](images/import-2d-images-1000px.jpg)<br>
+2D イメージのインポート ![](images/import-2d-images-1000px.jpg)<br>
 *OneDrive を使用してイメージと3D オブジェクトをインポートする*
 
 ### <a name="how-to-import-3d-objects-into-holosketch"></a>HoloSketch に3D オブジェクトをインポートする方法
@@ -118,17 +118,17 @@ OneDrive フォルダーにアップロードする前に、次の手順に従�
    ![[インスペクター] パネルの下部にあるドロップダウンをクリックし、新しい一意の名前を割り当てます。](images/holosketch-14-assetbundles-1000px.png)
 
 10. モデルオブジェクトのサムネイル画像を準備します。 
-   ![イメージを [プロジェクト] パネルにドラッグし、オブジェクトに使用する名前を割り当てます。](images/holosketch-15-assetbundles-1000px.png)
+   イメージを [プロジェクト] パネルにドラッグ ![、オブジェクトに使用する名前を割り当てます。](images/holosketch-15-assetbundles-1000px.png)
 
 11. Unity プロジェクトの ' Asset ' フォルダーの下に ' Assetbundles ' という名前のフォルダーを作成します。
 
 12. [アセット] メニューの [Build AssetBundles] を選択して、ファイルを生成します。 
-   ![[資産] メニューからファイルを生成する ' AssetBundles のビルド を選択します。](images/holosketch-15a-assetbundles.png)
+   [アセット] メニューから ![[Build AssetBundles] を選択して、ファイルを生成します。](images/holosketch-15a-assetbundles.png)
 
 
 13. **生成されたファイルを OneDrive の/Files/Documents/HoloSketch フォルダーにアップロードします。** Asset_unique_name ファイルのみをアップロードします。 マニフェストファイルまたは AssetBundles ファイルをアップロードする必要はありません。 <br>
-![ファイル/ドキュメント/HoloSketch/フォルダー](images/holosketch-onedriveupload-1000px.png)
-![にファイルを追加すると、HoloSketch の OneDrive メニューに追加された3d オブジェクトが表示されます](images/holosketch-14-onedriveexample-1000px.jpg)
+ファイル/ドキュメント/HoloSketch/フォルダー ![](images/holosketch-onedriveupload-1000px.png)
+にファイルを追加 ![には、HoloSketch の OneDrive メニューに [3D オブジェクトの追加] が表示され](images/holosketch-14-onedriveexample-1000px.jpg)
 
 ## <a name="how-to-manipulate-the-objects"></a>オブジェクトを操作する方法
 
@@ -136,7 +136,7 @@ HoloSketch は、3D ソフトウェアで広く使用されている従来のイ
 
 ### <a name="object-manipulation-modes"></a>オブジェクトの操作モード
 
-![オブジェクトを操作する方法](images/holosketch-image-06-1000px.png)<br>
+オブジェクトを操作する方法 ![](images/holosketch-image-06-1000px.png)<br>
 *オブジェクトを操作する方法*
 
 ### <a name="contextual-and-tool-belt-menus"></a>コンテキストとツールのベルトメニュー
@@ -147,9 +147,9 @@ HoloSketch は、3D ソフトウェアで広く使用されている従来のイ
 
 メニュー項目:
 * **レイアウト画面:** これは 3D grid システムで、複数のオブジェクトをレイアウトし、グループとして管理できます。 レイアウト画面をダブルエアタップして、オブジェクトを追加します。
-* **プリミティブ**Massing の研究には、キューブ、球体、円柱、およびコーンを使用します。
-* **保存**OneDrive メニューを開き、オブジェクトをインポートします。
-* **ヘルプ：** ヘルプ画面を表示します。
+* **プリミティブ:** Massing の研究には、キューブ、球体、円柱、およびコーンを使用します。
+* **OneDrive:** OneDrive メニューを開き、オブジェクトをインポートします。
+* **ヘルプ:** ヘルプ画面を表示します。
 
 ![コンテキストメニュー](images/holosketch-image-07.png)<br>
 *コンテキストメニュー*
@@ -160,7 +160,7 @@ HoloSketch は、3D ソフトウェアで広く使用されている従来のイ
 
 ## <a name="using-keyboard-gestures-and-voice-commands"></a>キーボード、ジェスチャ、音声コマンドの使用
 
-![キーボード、ジェスチャ、音声コマンド](images/holosketch-image-08-1000px.png)<br>
+キーボード、ジェスチャ、音声コマンドの ![](images/holosketch-image-08-1000px.png)<br>
 *キーボード、ジェスチャ、音声コマンド*
 
 ## <a name="download-the-app"></a>アプリをダウンロードする
@@ -169,7 +169,7 @@ HoloSketch は、3D ソフトウェアで広く使用されている従来のイ
 <tr>
 <td style="border-style: none" width="60px"><img alt="HoloSketch app icon" width="60" height="60" src="images/holosketch-app-icon.png">
 </td>
-<td style="border-style: none"><a href="https://www.microsoft.com/store/p/holosketch/9p3br4t5m4tv">Microsoft Store から無料で HoloSketch アプリをダウンロードしてインストールする</a>
+<td style="border-style: none"><a href="https://www.microsoft.com/store/p/holosketch/9p3br4t5m4tv">Microsoft Store から無料で HoloSketch アプリをダウンロードしてインストール</a>
 </td>
 </tr>
 </table>
@@ -190,10 +190,10 @@ HoloLens でビデオ記録機能を使用するには、「Cortana、Start/Stop
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Dong Yoon Park" width="60" height="60" src="images/dongyoonpark.jpg"></td>
-<td style="border-style: none"><b>駐車中</b><br>UX デザイナー@Microsoft</td>
+<td style="border-style: none"><b>駐車中</b><br>UX デザイナーの @Microsoft</td>
 </tr>
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Patrick Sebring" width="60" height="60" src="images/paseb-60px.jpg"></td>
-<td style="border-style: none"><b>パトリック Sebring</b><br>向け@Microsoft</td>
+<td style="border-style: none"><b>パトリック Sebring</b><br>開発者 @Microsoft</td>
 </tr>
 </table> 

@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: d3068a1ebbbc2b6db8b563be8bf8c6e488e9491a
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: a6d1a269f45b4aaf7cbd8fea948ddcbdf0bf18e2
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701941"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437736"
 ---
-# <a name="3-connecting-multiple-users"></a>3.複数のユーザーの接続
+# <a name="3-connecting-multiple-users"></a>3. 複数のユーザーを接続する
 
-このレッスンでは、ライブ共有エクスペリエンスの一部として複数のユーザーを接続する方法について説明します。 このレッスンを終了すると、複数のデバイスでアプリケーションを開くことができます。また、アバターは、参加する各ユーザーの球体で表現されます。 
+このレッスンでは、ライブ共有エクスペリエンスの一部として複数のユーザーを接続する方法について説明します。 このレッスンを終了すると、複数のデバイスでアプリケーションを開き、参加している各ユーザーの球体で表されるアバターを確認できるようになります。 
 
 事項
 
@@ -37,7 +37,7 @@ ms.locfileid: "68701941"
 
 ![Module3Chapter3step3im](images/module3chapter3step3im.PNG)
 
-4. [コンポーネントの追加] をクリックし、「Generic Net Sync」と入力します。汎用 Net Sync クラスを選択します。 クラスが表示されたら、[ユーザー] チェックボックスをクリックしてオンにします。 
+4. [コンポーネントの追加] をクリックし、「汎用 Net Sync」と入力します。汎用 Net Sync クラスを選択します。 クラスが表示されたら、[ユーザー] チェックボックスをオンにしてオンにします。 
 
 ![module3chapter3updateStep4im](images/module3chapter3updateStep4im.png)
 
@@ -63,14 +63,14 @@ ms.locfileid: "68701941"
 
 > 注: Prefabs フォルダーを階層から削除する前に、game オブジェクトが正常にコピーされていることを確認してください。
 
-10. 手順 3. の指示に従って、階層内に新しいオブジェクトを作成し、SharedPlayground グラウンドという名前を指定します。 次に、[コンポーネントの追加] をクリックし、[汎用ネットワークマネージャー] を検索して、それをクリックして汎用ネットワークマネージャーコンポーネントを追加します。 オブジェクトの位置を x = 0、y = 0、z = 0 に変更します。
+10. 手順 3. の指示に従って、階層内に新しいオブジェクトを作成し、「SharedPlayground グラウンド」という名前を指定します。 次に、[コンポーネントの追加] をクリックし、汎用ネットワークマネージャーを検索します。  もう一度クリックして、一般的なネットワークマネージャーコンポーネントを追加します。 オブジェクトの位置を x = 0、y = 0、z = 0 に変更します。
 
 ![Module3Chapter3step7im](images/module3chapter3step7im.PNG)
 
 
 ## <a name="congratulations"></a>結論
 
-上記のすべての手順が完了し、ビルドプロセスも完了したら、[再生] ボタンをクリックして HoloLens 2 に接続します。 頭を移動すると球が動いていることがわかります。 これは、Unity プロジェクトに参加するすべてのユーザーに表示されます。
+上記のすべての手順が完了し、ビルドプロセスも完了したら、[Play] \ (再生 \) ボタンを押して HoloLens 2 に接続します。 頭を移動すると球が動いていることがわかります。 これは、Unity プロジェクトに参加するすべてのユーザーに表示されます。
 
-[次のレッスン:4。オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch4.md)
+[次のレッスン: 4. オブジェクトの移動を複数のユーザーと共有する](mrlearning-sharing(photon)-ch4.md)
 

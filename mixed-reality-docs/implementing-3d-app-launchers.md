@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D、ロゴ、アイコン、モデリング、ランチャー、3D ランチャー、タイル、live cube、ディープリンク、secondarytile、セカンダリタイル、UWP
-ms.openlocfilehash: 4a8d4a696ff6ef19d7332b20580f1f5ee67bf045
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: be47b590e4fd1a847ac47d9cfbcbe824c544dd59
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63516745"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438018"
 ---
 # <a name="implement-3d-app-launchers-uwp-apps"></a>3D アプリランチャーを実装する (UWP アプリ)
 
@@ -42,12 +42,12 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 マニフェストの先頭に、uap5 スキーマを追加し、それを ignorable 名前空間として含めます。
 
 ```xml
-<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
          IgnorableNamespaces="uap uap2 uap5 mp"
-         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
 次に、アプリケーションの既定のタイルで "MixedRealityModel" を指定します。
@@ -75,7 +75,7 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 MixedRealityModel 要素は、アプリケーションパッケージに格納されている3D アセットを指すファイルパスを受け入れます。 現時点では、glb ファイル形式を使用して配信され、 [Windows Mixed Reality 3d アセットオーサリング手順](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)に対して作成された3d モデルのみがサポートされています。 アセットはアプリパッケージに保存する必要があり、アニメーションは現在サポートされていません。 "Path" パラメーターが空のままの場合、ウィンドウには3D ランチャーではなく2D スレートが表示されます。 **注:** glb 資産は、アプリをビルドして実行する前に、ビルド設定で "コンテンツ" としてマークする必要があります。
 
 
-![ソリューションエクスプローラーで. glb を選択し、[プロパティ] セクションを使用して、ビルド設定で "コンテンツ" としてマークします。](images/buildsetting-content-300px.png)<br>
+ソリューションエクスプローラーで glb を選択し、[プロパティ] セクションを使用して、ビルド設定で "コンテンツ" としてマークし](images/buildsetting-content-300px.png) ![<br>
 *ソリューションエクスプローラーで. glb を選択し、[プロパティ] セクションを使用して、ビルド設定で "コンテンツ" としてマークします。*
 
 ### <a name="bounding-box"></a>境界ボックス
@@ -85,13 +85,13 @@ MixedRealityModel 要素は、アプリケーションパッケージに格納�
 境界ボックス属性のサポートには、MixedRealityModel 要素のプロパティとして Windows RS4 update が使用されます。 最初にアプリケーションマニフェストの最上部にある境界ボックスを定義するには、uap6 スキーマを追加し、それを無視できる名前空間として含めます。
 
 ```xml
-<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
-         xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+         xmlns:uap6="https://schemas.microsoft.com/appx/manifest/uap/windows10/6"
          IgnorableNamespaces="uap uap2 uap5 uap6 mp"
-         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 次に、MixedRealityModel で、SpatialBoundingBox プロパティを設定して境界ボックスを定義します。 
 
@@ -165,8 +165,8 @@ await tile.RequestCreateAsync();
 > この機能は、Windows RS4 update でサポートされる予定です。 この機能を使用する予定がある場合は Windows SDK、アプリケーションが10.0.17125 以上のバージョンを対象としていることを確認してください。
 
 3D secondaryTile のアクティベーション動作を定義して、ユーザーがそれを選択したときの反応を制御できます。 これを使用すると、purley や装飾を持つ混合現実ホームに3D オブジェクトを配置できます。 次のアクティブ化動作の種類がサポートされています。
-1. 既定値:ユーザーが 3D secondaryTile を選択すると、アプリがアクティブ化されます。
-2. None:ユーザーが 3D secondaryTile を選択すると、何も発生せず、アプリはアクティブ化されません。
+1. 既定: ユーザーが 3D secondaryTile を選択すると、アプリがアクティブ化されます
+2. None: ユーザーが 3D secondaryTile を選択しても何も起こりません。アプリはアクティブ化されません。
 
 ### <a name="obtaining-and-updating-an-existing-secondarytile"></a>既存の "secondaryTile" の取得と更新
 

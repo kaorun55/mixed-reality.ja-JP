@@ -6,16 +6,16 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、RoboRaid、空間サウンド
-ms.openlocfilehash: 4bb050b4a4051c121c488ea38e150a8973bd7c04
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 9be5c461c1546d241e559f6b2f874656a29b019a
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63524153"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436500"
 ---
 # <a name="case-study---using-spatial-sound-in-roboraid"></a>ケーススタディ-RoboRaid での空間サウンドの使用
 
-Microsoft HoloLens エクスペリエンスチームのオーディオリーダーであるチャールズ Sinex は、 [RoboRaid](https://www.microsoft.com/en-us/p/roboraid/9nblggh5fv3j)のオーディオを作成するときに発生した固有の課題について話しています。これは、mixed reality first person shooter です。
+Microsoft HoloLens エクスペリエンスチームのオーディオリーダーであるチャールズ Sinex は、 [RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)のオーディオを作成するときに発生した固有の課題について話しています。これは、mixed reality first person shooter です。
 
 ## <a name="the-tech"></a>技術
 
@@ -35,9 +35,9 @@ HoloLens アプリ用の空間サウンドを作成するプロセスは、新�
 
 Dodging 整備士は、RoboRaid のゲームプレイの最も重要な側面の1つであり、さらに HoloLens のエクスペリエンスに対して真に固有のものです。 このように、dodges を成功させるには、windows media player を使用する必要がありました。 開発の早い段階では、"whizz by" が非常に優れています。 最初の計画では、ループを使用し、ボリューム、ピッチ、フィルターを使用してリアルタイムで操作しました。 この実装は非常に複雑になります。したがって、実際にビルドするためにリソースをコミットする前に、アセットを使用して安価なプロトタイプを作成しました。これは、その意味を理解するためだけに組み込まれています。 非常に優れた開発者が、このようにしています。これは、選手がプレーヤーの耳によって完成するまでの時間がちょうど0.7 秒前に再生されるようにしました。結果は本当にすばらしいものでした。 言うまでもありませんが、より複雑なソリューションを刷新、プロトタイプを実装しています。
 
-\* * (組み込みのドップラー効果を使用してオーディオ資産を作成する方法の詳細については、サウンドデザイナーの記事「 [2 分で 100 Whooshes](http://designingsound.org/2010/02/charles-deenen-special-100-whooshes-in-2-minutes/)と呼ばれます)」を参照してください。*
+\* * (組み込みのドップラー効果を使用してオーディオ資産を作成する方法の詳細については、サウンドデザイナーの記事「 [2 分で 100 Whooshes](https://designingsound.org/2010/02/charles-deenen-special-100-whooshes-in-2-minutes/)と呼ばれます)」を参照してください。*
 <br>
-![敵の dodging タイルが正常に表示されると、プレーヤーはゲームに満足しています。](images/successful-dodge-roboraid-500px.jpg)
+![、敵の dodging が正常に完了したら、プレーヤーはゲームに満足しています。](images/successful-dodge-roboraid-500px.jpg)
 
 ### <a name="ditching-ineffective-sounds"></a>決別効果のないサウンド
 
@@ -49,7 +49,7 @@ Dodging 整備士は、RoboRaid のゲームプレイの最も重要な側面の
 
 選手は、ヒットしたときに何も感じられないので、問題が発生したことをプレーヤーに納得させる方法を happed 必要がありました。 従来のゲームでは、文字がヒットしたことを知らせるアニメーションが表示されたり、画面が赤で点滅したり、文字が少し grunt したりする可能性があります。 これらの種類のキューは、mixed reality エクスペリエンスでは動作しないため、ビジュアルキューと、破損が発生したことを示す非常に誇張されたサウンドを組み合わせることにしました。 大きなサウンドを作成しました。このようにして、すべてをまとめたミックスで目立つようにしました。 さらに、さらに多くのことを実現するために、核となる部分がシンクだったかのような短い警告音を追加しました。 
 <br>
-![プレーヤーが RoboRaid でヒットしたときに、視覚的な合図が表示されますが、破損していることを示す、誇張されたオーディオキューを取得することもできます。](images/player-hit-roboraid-500px.jpg)
+RoboRaid でプレーヤーがヒットしたときには、視覚的な合図が表示されますが、破損していることを示す、誇張されたオーディオキューをます。 ![](images/player-hit-roboraid-500px.jpg)
 
 ### <a name="getting-big-sound-from-small-speakers"></a>小さいスピーカーからの大きな音の取得
 
@@ -88,10 +88,10 @@ RoboRaid サウンドをデバイス上で可能な限り大きくするには�
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Charles Sinex" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>チャールズ Sinex</b><br>オーディオエンジニア@Microsoft</td>
+<td style="border-style: none"><b>チャールズ Sinex</b><br>オーディオエンジニア @Microsoft</td>
 </tr>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [立体音響](spatial-sound.md)
-* [Microsoft HoloLens 用 RoboRaid](https://www.microsoft.com/en-us/p/roboraid/9nblggh5fv3j)
+* [Microsoft HoloLens 用 RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)

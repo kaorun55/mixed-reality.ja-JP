@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: グラフィックス、cpu、gpu、レンダリング、ガベージコレクション、hololens
-ms.openlocfilehash: 16a923697985e3686992dc31ea8e6fc39249c276
-ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
+ms.openlocfilehash: 724ec24408e70360fda07c59a4ca2ffc30b49c1f
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817348"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438131"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity のパフォーマンスに関する推奨事項
 
@@ -38,7 +38,7 @@ Unity は、次のことに関する優れたドキュメントを提供しま�
 
 #### <a name="cache-references"></a>キャッシュ参照
 
-初期化時に、関連するすべてのコンポーネントとオブジェクトへの参照をキャッシュすることをお勧めします。 これは、 *[getcomponent\<T > ()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* などの繰り返し関数呼び出しの方が、ポインターを格納するためのメモリコストに比べてかなりコストが高くなるためです。 これは、非常に頻繁に使用される[カメラ](https://docs.unity3d.com/ScriptReference/Camera-main.html)にも適用されます。 *Camera. main は、* 実際には findexpensively を使用します。この *[タグ](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* は、 *"maincamera"* タグを持つカメラオブジェクトのシーングラフを検索します。
+初期化時に、関連するすべてのコンポーネントとオブジェクトへの参照をキャッシュすることをお勧めします。 これは、 *[Getcomponent\<t > ()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* などの繰り返し関数呼び出しの方が、ポインターを格納するためのメモリコストと比べてかなりコストがかかるためです。 これは、非常に頻繁に使用される[カメラ](https://docs.unity3d.com/ScriptReference/Camera-main.html)にも適用されます。 *Camera. main は、* 実際には *[findexpensively](https://docs.unity3d.com/ScriptReference/GameObject.FindGameObjectsWithTag.html)* を使用します。このタグは、 *"maincamera"* タグを持つカメラオブジェクトのシーングラフを検索します。
 
 ```CS
 using UnityEngine;
@@ -76,7 +76,7 @@ public class ExampleClass : MonoBehaviour
 > GetComponent (string) を避けます。 <br/>
 > *[Getcomponent ()](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html)* を使用する場合、いくつかの異なるオーバーロードがあります。 常に型ベースの実装を使用し、文字列ベースの検索オーバーロードは使用しないことが重要です。 シーンでの文字列による検索は、型での検索よりもかなりコストがかかります。 <br/>
 > 正常コンポーネント GetComponent (型の型) <br/>
-> 正常T getcomponent\<t > () <br/>
+> 正常T GetComponent\<T > () <br/>
 > 不良コンポーネント GetComponent (文字列) > <br/>
 
 #### <a name="avoid-expensive-operations"></a>コストのかかる操作を避ける
@@ -117,6 +117,31 @@ public class ExampleClass : MonoBehaviour
 
     [ボックス](https://docs.microsoft.com/dotnet/csharp/programming-guide/types/boxing-and-unboxing)化は、 C#言語とランタイムの中核となる概念です。 これは、char、int、bool などの値で型指定された変数を参照型の変数にラップするプロセスです。 値型の変数が "ボックス化" されている場合は、マネージヒープに格納されている System.object の内部にラップされます。 したがって、ガベージコレクターによって破棄される必要がある場合は、メモリが割り当てられ、最終的にはメモリが割り当てられます。 これらの割り当てと割り当て解除には、パフォーマンスコストが発生します。また、多くのシナリオでは不要であるか、低コストの代替手段で簡単に置き換えることができます。
 
+    開発でのボックス化の最も一般的な形式の1つは、 [null 許容値型](https://docs.microsoft.com//dotnet/csharp/programming-guide/nullable-types/)の使用です。 特に、値を取得しようとするときに操作が失敗する可能性がある場合は、関数の値型に対して null を返すことができます。 この方法で発生する可能性のある問題は、ヒープで割り当てが行われ、その結果、後でガベージコレクションを行う必要があることです。
+
+    **のボックス化の例C#**
+
+    ```csharp
+    // boolean value type is boxed into object boxedMyVar on the heap
+    bool myVar = true;
+    object boxedMyVar = myVar;
+    ```
+
+    **Null 許容値型を使用した問題のあるボックス化の例**
+
+    このコードは、Unity プロジェクトで作成できるダミーのパーティクルクラスを示しています。 `TryGetSpeed()` を呼び出すと、ヒープ上でオブジェクトが割り当てられ、後でガベージコレクションが必要になります。 この例は、シーンに1000以上のパーティクルがあり、それぞれが現在の速度を求めているため、特に問題になります。 したがって、1000のオブジェクトが割り当てられ、その結果、パフォーマンスが大幅に低下するすべてのフレームが割り当て解除されます。 エラーが発生したことを示す-1 などの負の値を返すように関数を再記述すると、この問題は回避され、メモリがスタックに保持されます。
+
+    ```csharp
+        public class MyParticle
+        {
+            // Example of function returning nullable value type
+            public int? TryGetSpeed()
+            {
+                // Returns current speed int value or null if fails
+            }
+        }
+    ```
+
 #### <a name="repeating-code-paths"></a>繰り返しコードパス
 
 すべての繰り返し Unity コールバック関数 ( 更新) 1 秒間に何度も実行されるか、またはフレームが非常に慎重に書き込まれる必要があります。 ここで高価な操作を行うと、パフォーマンスに大きな影響を与えます。
@@ -132,7 +157,7 @@ public class ExampleClass : MonoBehaviour
     ```
 
 >[!NOTE]
-> Update () は、このパフォーマンスの問題の最も一般的な取り組みですが、次のようなその他の反復的な Unity コールバックは、悪くない場合にも同様の問題になることがあります。FixedUpdate ()、Behaviour ()、OnPostRender "、OnPreRender ()、OnRenderImage () など。 
+> Update () は、このパフォーマンスの問題の最も一般的な取り組みですが、次のようなその他の繰り返し Unity コールバックは、FixedUpdate ()、Behaviour ()、OnPostRender "、OnPreRender ()、OnRenderImage () などの問題がある場合にも同様に問題が発生する可能性があります。 
 
 2) **フレームごとに1回実行を優先する操作**
 
@@ -153,7 +178,9 @@ public class ExampleClass : MonoBehaviour
 
 3) **インターフェイスと仮想コンストラクトを避ける**
 
-    インターフェイスと直接のオブジェクトまたは呼び出し元の仮想関数を使用した関数呼び出しの呼び出しは、直接コンストラクトや直接関数呼び出しを利用するよりもはるかにコストがかかることがあります。 仮想関数またはインターフェイスが不要な場合は、削除する必要があります。 ただし、これらのアプローチを利用すると、開発コラボレーション、コードの読みやすさ、およびコードの保守性が簡単になるため、一般に、これらの方法のパフォーマンスが低下します。 
+    インターフェイスと直接のオブジェクトまたは呼び出し元の仮想関数を使用した関数呼び出しの呼び出しは、直接コンストラクトや直接関数呼び出しを利用するよりもはるかにコストがかかることがあります。 仮想関数またはインターフェイスが不要な場合は、削除する必要があります。 ただし、これらのアプローチを利用すると、開発コラボレーション、コードの読みやすさ、およびコードの保守性が簡単になるため、一般に、これらの方法のパフォーマンスが低下します。
+
+    一般に、このメンバーを上書きする必要があることを明確に見込んでいない限り、フィールドと関数を仮想としてマークしないことをお勧めします。 多くの場合、フレームごとに何回呼び出されるか、またはフレームごとに1回 (`UpdateUI()` メソッドなど) に呼び出される、高頻度のコードパスを特に注意する必要があります。
 
 4) **構造体を値で渡さないようにする**
 
@@ -191,8 +218,8 @@ Unity には、概要を説明し、そのプラットフォームの描画呼�
 Unity での単一パスのインスタンスレンダリングでは、各視点の描画呼び出しを1つのインスタンス化描画呼び出しに減らすことができます。 2つの描画呼び出しの間のキャッシュの一貫性により、GPU にもパフォーマンスが向上しています。
 
 Unity プロジェクトでこの機能を有効にするには
-1)  **プレーヤーの XR の設定**を開く ([**プロジェクト設定** > の**編集** > ] にアクセスして、**プレーヤー** > **XR 設定**を編集)
-2) [**ステレオレンダリングメソッド**] ドロップダウンメニューから [**シングルパスインスタンス**] を選択します ([**Virtual Reality がサポートさ**れる] チェックボックスをオンにする必要があります)
+1)  **プレーヤーの XR の設定**を開きます ( **[編集]**  > **プロジェクトの設定** > **player** > **XR 設定**)
+2) **[ステレオレンダリングメソッド]** ドロップダウンメニューから **[シングルパスインスタンス]** を選択します ( **[Virtual Reality がサポートさ]** れる チェックボックスをオンにする必要があります)
 
 この表示方法の詳細については、Unity から次の記事をお読みください。
 - [高度なステレオレンダリングを使用して AR と VR のパフォーマンスを最大化する方法](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
@@ -217,32 +244,40 @@ HoloLens 開発ではオブジェクトを*静的*としてマークするのは
 
 #### <a name="other-techniques"></a>その他の方法
 
-バッチ処理は、複数のオブジェクトが同じ素材を共有できる場合にのみ発生します。 通常、これはブロックされます。これは、作成オブジェクトがそれぞれのマテリアルに対して一意のテクスチャを持つ必要があるためです。 テクスチャを1つの大きなテクスチャ ([テクスチャ](https://en.wikipedia.org/wiki/Texture_atlas)の atlasing 呼ばれるメソッド) にまとめるのが一般的です。
+バッチ処理は、複数のオブジェクトが同じ素材を共有できる場合にのみ発生します。 通常、これはブロックされます。これは、作成オブジェクトがそれぞれのマテリアルに対して一意のテクスチャを持つ必要があるためです。 テクスチャを1つの大きなテクスチャ ([テクスチャの atlasing](https://en.wikipedia.org/wiki/Texture_atlas)呼ばれるメソッド) にまとめるのが一般的です。
 
-さらに、一般に、可能であれば、メッシュを1つのオブジェクトに結合することをお勧めします。 Unity の各レンダラーには、関連付けられた描画呼び出しと、1つのレンダラーの下で結合メッシュが送信されます。 
+さらに、一般に、可能であれば、メッシュを1つのオブジェクトに結合することをお勧めします。 Unity の各レンダラーには、関連付けられた描画呼び出しと、1つのレンダラーの下で結合メッシュが送信されます。
 
 >[!NOTE]
 > 実行時にレンダラーのプロパティを変更すると、マテリアルのコピーが作成されるため、バッチ処理が中断される可能性があります。 オブジェクト間で共有マテリアルのプロパティを変更するには、Renderer を使用します。
 
 ## <a name="gpu-performance-recommendations"></a>GPU のパフォーマンスに関する推奨事項
 
-[Unity でのグラフィックスレンダリングの最適化](https://unity3d.com/learn/tutorials/temas/performance-optimization/optimizing-graphics-rendering-unity-games)についての詳細情報 
+[Unity でのグラフィックスレンダリングの最適化](https://unity3d.com/learn/tutorials/temas/performance-optimization/optimizing-graphics-rendering-unity-games)についての詳細情報
 
 ### <a name="optimize-depth-buffer-sharing"></a>深度バッファーの共有を最適化する
 
-通常は、**プレーヤーの XR 設定**で**深度バッファーの共有**を有効にして、[ホログラムの安定性](Hologram-stability.md)を最適化することをお勧めします。 ただし、この設定で深さベースの遅延段階の再プロジェクションを有効にする場合は、 **24 ビットの深度形式**ではなく、 **16 ビットの深さ形式**を選択することをお勧めします。 16ビットの深度バッファーによって、深度バッファートラフィックに関連付けられた帯域幅 (および電力) が大幅に減少します。 これは、大きな威力を得ることができますが、 [z 戦い](https://en.wikipedia.org/wiki/Z-fighting)が24ビットより16ビットで発生する可能性が高いので、わずかな深度範囲の経験にのみ適用されます。 これらの成果物を回避するには、 [Unity カメラ](https://docs.unity3d.com/Manual/class-Camera.html)の近距離/遠クリッププレーンを変更して、精度を低くします。 HoloLens ベースのアプリケーションでは、Unity の既定の1000m ではなく、50m の遠くのクリッププレーンによって、一般に z 戦いを排除できます。
+通常は、**プレーヤーの XR 設定**で**深度バッファーの共有**を有効にして、[ホログラムの安定性](Hologram-stability.md)を最適化することをお勧めします。 ただし、この設定で深さベースの遅延段階の再プロジェクションを有効にする場合は、 **24 ビットの深度形式**ではなく、 **16 ビットの深さ形式**を選択することをお勧めします。 16ビットの深度バッファーによって、深度バッファートラフィックに関連付けられた帯域幅 (および電力) が大幅に減少します。 これは、電力の削減とパフォーマンスの向上の両方に大きなメリットがあります。 ただし、 *16 ビット深度形式*を使用すると、2つの結果が得られる可能性があります。
+
+**Z 戦い**
+
+深度範囲の忠実性を低くすると、 [z の戦い](https://en.wikipedia.org/wiki/Z-fighting)が、16ビットの24ビットで発生する可能性が高くなります。 これらの成果物を回避するには、 [Unity カメラ](https://docs.unity3d.com/Manual/class-Camera.html)の近距離/遠クリッププレーンを変更して、精度を低くします。 HoloLens ベースのアプリケーションでは、Unity の既定の1000m ではなく、50m の遠くのクリッププレーンによって、一般に z 戦いを排除できます。
+
+**無効なステンシルバッファー**
+
+Unity が[16 ビット深度でレンダリングテクスチャ](https://docs.unity3d.com/ScriptReference/RenderTexture-depth.html)を作成する場合、ステンシルバッファーは作成されません。 各 Unity ドキュメントに対して24ビットの深さ形式を選択すると、24ビットの z バッファーと[8 ビットのステンシルバッファー](https://docs.unity3d.com/Manual/SL-Stencil.html)が作成されます (デバイスに32ビットが適用されている場合は、通常は HoloLens など)。
 
 ### <a name="avoid-full-screen-effects"></a>全画面表示の効果を避ける
 
-全画面で動作する手法は、すべてのフレームに対して数百万の操作が行われるため、非常にコストが高くなる可能性があります。 したがって、アンチエイリアシング、ブルームなどの[処理後の効果](https://docs.unity3d.com/Manual/PostProcessingOverview.html)を避けることをお勧めします。 
+全画面で動作する手法は、すべてのフレームに対して数百万の操作が行われるため、非常にコストが高くなる可能性があります。 したがって、アンチエイリアシング、ブルームなどの[処理後の効果](https://docs.unity3d.com/Manual/PostProcessingOverview.html)を避けることをお勧めします。
 
 ### <a name="optimal-lighting-settings"></a>最適な光源設定
 
-Unity で[リアルタイムのグローバルな照明](https://docs.unity3d.com/Manual/GIIntro.html)を使用すると、視覚的な結果を得ることができますが、非常にコストのかかる照明計算が含まれます。 **ウィンドウ** > **レンダリング**の光源の設定を使用して Unity シーンファイルごとにリアルタイムのグローバル照明を無効にして、リアルタイムのグローバル照明をオフにすることをお勧め >。 >  
+Unity で[リアルタイムのグローバルな照明](https://docs.unity3d.com/Manual/GIIntro.html)を使用すると、視覚的な結果を得ることができますが、非常にコストのかかる照明計算が含まれます。 **ウィンドウ** > 使用してすべての Unity シーンファイルのリアルタイムグローバル照明を無効にすることをお勧めします。これに**より、リアルタイムのグローバルな照明**> オフにして > 光源の**設定**が**表示**されます。
 
-さらに、すべてのシャドウキャストを無効にすることをお勧めします。これにより、Unity シーンに負荷の高い GPU パスも追加されます。 影はライトごとに無効にすることができますが、品質設定を使用して総合的を制御することもできます。 
- 
- > **プロジェクト設定**を編集し、[**品質**] カテゴリを選択して、UWP プラットフォームの [**低品質**] を選択 > ます。 また、 **shadows**プロパティを設定して、**影を無効**にすることもできます。
+さらに、すべてのシャドウキャストを無効にすることをお勧めします。これにより、Unity シーンに負荷の高い GPU パスも追加されます。 影はライトごとに無効にすることができますが、品質設定を使用して総合的を制御することもできます。
+
+ > **プロジェクトの設定**を**編集**し、 **[品質]** カテゴリを選択 > UWP プラットフォームの **[低品質]** を選択します。 また、 **shadows**プロパティを設定して、**影を無効**にすることもできます。
 
 ### <a name="reduce-poly-count"></a>Poly 数を減らす
 
@@ -258,7 +293,7 @@ Unity で[リアルタイムのグローバルな照明](https://docs.unity3d.co
 1) シェーダー資産を選択するか、素材を選択します。次に、[インスペクター] ウィンドウの右上隅にある歯車アイコンを選択し、[**シェーダーの選択]** をクリックします。
 
     ![Unity でシェーダーを選択する](images/Select-shader-unity.png)
-2) シェーダー資産を選択した状態で、[インスペクター] ウィンドウの下にある [**コードのコンパイルと表示**] ボタンをクリックします。
+2) シェーダー資産を選択した状態で、インスペクター ウィンドウの下にある **コードのコンパイルと表示** ボタンをクリックします。
 
     ![Unity でシェーダーコードをコンパイルする](images/compile-shader-code-unity.PNG)
 
@@ -282,11 +317,11 @@ Unity では、Unity 標準シェーダーと比較して、unlit、頂点の li
 
 #### <a name="shader-preloading"></a>シェーダーのプリロード
 
-シェーダーの[読み込み時間](http://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)を最適化するには、*シェーダーのプリ*ロードやその他のテクニックを使用します。 特に、シェーダーのプリロードは、ランタイムシェーダーのコンパイルによって hitches が表示されないことを意味します。
+シェーダーの[読み込み時間](https://docs.unity3d.com/Manual/OptimizingShaderLoadTime.html)を最適化するには、*シェーダーのプリ*ロードやその他のテクニックを使用します。 特に、シェーダーのプリロードは、ランタイムシェーダーのコンパイルによって hitches が表示されないことを意味します。
 
 ### <a name="limit-overdraw"></a>オーバードローを制限する
 
-Unity では、**シーンビュー**の左上隅にある [[**描画モード] メニュー**](https://docs.unity3d.com/Manual/ViewModes.html)を切り替えて、[**オーバードロー**] を選択すると、シーンのオーバードローを表示できます。
+Unity では、**シーンビュー**の左上隅にある [[**描画モード] メニュー**](https://docs.unity3d.com/Manual/ViewModes.html)を切り替えて、 **[オーバードロー]** を選択すると、シーンのオーバードローを表示できます。
 
 一般に、GPU に送信される前にオブジェクトを事前にカリングすることで、オーバードローを軽減できます。 Unity は、エンジンに対して[遮蔽カリング](https://docs.unity3d.com/Manual/OcclusionCulling.html)を実装する方法について詳しく説明します。
 

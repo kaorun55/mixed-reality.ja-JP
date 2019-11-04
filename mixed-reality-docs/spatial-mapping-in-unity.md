@@ -6,12 +6,12 @@ ms.author: davidkl
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity、空間マッピング、レンダラー、collider、メッシュ、スキャン、コンポーネント
-ms.openlocfilehash: 8f7bad1651ab31b2e83ad9d9c8f465547fbbdc5a
-ms.sourcegitcommit: 2f600e5ad00cd447b180b0f89192b4b9d86bbc7e
+ms.openlocfilehash: 452e629a877df585ffbc0a6466ffeb2588b66ecf
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67148648"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438036"
 ---
 # <a name="spatial-mapping-in-unity"></a>Unity での空間マッピング
 
@@ -22,6 +22,29 @@ Unity には、次の方法で開発者に公開される空間マッピング�
 2. フルコントロールを提供し、より高度なアプリケーション固有のカスタマイズを可能にする、下位レベルの空間マッピング Api
 
 アプリで空間マッピングを使用するには、Package.appxmanifest で spatialPerception 機能を設定する必要があります。
+
+## <a name="device-support"></a>デバイスのサポート
+
+<table>
+    <colgroup>
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    <col width="25%" />
+    </colgroup>
+    <tr>
+        <td><strong>機能</strong></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
+        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+    </tr>
+     <tr>
+        <td>空間マッピング</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
+</table>
 
 ## <a name="setting-the-spatialperception-capability"></a>SpatialPerception 機能の設定
 
@@ -61,7 +84,7 @@ Unity には、アプリに空間マッピングを簡単に追加するため�
 
 Unity アプリでこれらの2つのコンポーネントを使用するには、次の手順を実行します。
 1. 空間サーフェスメッシュを検出する領域の中央にある [ユーザー] オブジェクトを選択します。
-2. [インスペクター] ウィンドウで、**コンポーネント** > **XR** > **空間マッピング Collider** または**空間マッピングレンダラー**を追加します。
+2. [インスペクター] ウィンドウで、コンポーネント > **XR** > **空間マッピング Collider** または**空間マッピングレンダラー**を**追加**します。
 
 これらのコンポーネントの使用方法の詳細については、 <a href="https://docs.unity3d.com/Manual/SpatialMappingComponents.html" target="_blank">Unity ドキュメントサイト</a>を参照してください。
 
@@ -75,8 +98,8 @@ Unity アプリでこれらの2つのコンポーネントを使用するには�
 
 空間マッピングレンダラーコンポーネントと空間マッピング Collider コンポーネントから取得するよりも制御が必要な場合は、低レベルの空間マッピングスクリプト Api を使用できます。
 
-**名前空間:**  *UnityEngine.XR.WSA*<br>
-**型**:*SurfaceObserver*、 *SurfaceChange*、 *SurfaceData*、 *SurfaceId*
+**名前空間:** *UNITYENGINE. XR*<br>
+**型**: *SurfaceObserver*、 *SurfaceChange*、 *SurfaceData*、 *SurfaceId*
 
 空間マッピング Api を使用するアプリケーションで推奨されるフローの概要を次に示します。
 
@@ -189,7 +212,7 @@ void Start () {
     }
 ```
 
-## <a name="higher-level-mesh-analysis-spatialunderstanding"></a>高レベルのメッシュ分析:SpatialUnderstanding
+## <a name="higher-level-mesh-analysis-spatialunderstanding"></a>高レベルのメッシュ分析: SpatialUnderstanding
 
 <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" target="_blank">MixedRealityToolkit</a>は、Holographic Unity api に基づいて構築された holographic 開発用の便利なユーティリティコードを集めたものです。
 
@@ -239,7 +262,7 @@ struct RaycastResult
 
 Unity のサンプルでは、カーソルは各フレームに射線をキャストします。 まず、Unity の colliders に対して行います。 2つ目は、モジュールのワールド表現を理解することです。 最後に、UI 要素を繰り返します。 このアプリケーションでは、UI の優先順位を取得し、結果を理解した後、Unity の colliders を取得します。 SurfaceType は、カーソルの横にテキストとして報告されます。
 
-![Surface の種類がカーソルの横に表示される](images/su-raycastresults-300px.jpg)<br>
+![Surface の種類は、カーソルの横にラベルが付けられ](images/su-raycastresults-300px.jpg)<br>
 *Surface の種類がカーソルの横に表示される*
 
 ### <a name="topology-queries"></a>トポロジクエリ
@@ -324,7 +347,7 @@ shapeConstraints = new List<ShapeConstraint>()
 
 カスタム図形の定義を簡単に作成するために、Unity モジュールにラッパー関数が用意されています。 コンポーネントとシェイプの制約の完全な一覧は、"ShapeComponentConstraint" 構造と "ShapeConstraint" 構造内の "SpatialUnderstandingDll.cs" にあります。
 
-![四角形の形状がこの画面にあります](images/su-shapequery-300px.jpg)<br>
+四角形の図形がこの画面にあり ![](images/su-shapequery-300px.jpg)<br>
 *四角形の形状がこの画面にあります*
 
 ### <a name="object-placement-solver"></a>オブジェクト配置のソルバー
@@ -395,8 +418,8 @@ Solver_PlaceObject(
 
 成功した場合、配置位置、次元、および向きを含む "Objectplacement Ementresult" 構造体が返されます。 また、配置は、配置されたオブジェクトの dll の内部リストに追加されます。 後続の配置クエリでは、このオブジェクトが考慮されます。 Unity サンプルの "LevelSolver.cs" ファイルには、クエリの例が多数含まれています。
 
-![オブジェクトの配置の結果](images/su-objectplacement-1000px.jpg)<br>
-*図 3:青色のボックスは、カメラの位置ルールから離れた場所にある3つのフロアクエリの結果を示すものです。*
+オブジェクトの配置の結果を ![](images/su-objectplacement-1000px.jpg)<br>
+*図 3: 青色のボックスを使用して、カメラの位置ルールから離れた場所にあるフロアクエリの結果を確認する*
 
 レベルまたはアプリケーションのシナリオで必要とされる複数のオブジェクトの配置場所を解決する場合、は、領域が見つかる確率を最大化するために、最初に不可欠なオブジェクトとラージオブジェクトを解決します。 配置順序は重要です。 オブジェクトの配置が見つからない場合は、制限の少ない構成を試してください。 一連のフォールバック構成を設定することは、多くの部屋構成で機能をサポートするために不可欠です。
 
@@ -444,10 +467,10 @@ Import_UnderstandingMesh –
 
 Dll を理解すると、内部的に再生スペースが8cm サイズの voxel キューブのグリッドとして格納されます。 スキャンの初期部分では、主要なコンポーネント分析が完了して、部屋の軸が決定されます。 内部的には、これらの軸に合わせて voxel 領域を格納します。 メッシュは、voxel ボリュームから isosurface を抽出することによって、約1秒ごとに生成されます。 
 
-![Voxel ボリュームから生成されたメッシュを生成しました](images/su-custommesh.jpg)<br>
+voxel ボリュームから生成された ![生成されたメッシュ](images/su-custommesh.jpg)<br>
 *Voxel ボリュームから生成されたメッシュを生成しました*
 
-## <a name="troubleshooting"></a>トラブルシューティング
+## <a name="troubleshooting"></a>[トラブルシューティング]
 * [SpatialPerception](#setting-the-spatialperception-capability)機能が設定されていることを確認します。
 * 追跡が失われると、次の OnSurfaceChanged イベントによってすべてのメッシュが削除されます。
 
@@ -455,10 +478,10 @@ Dll を理解すると、内部的に再生スペースが8cm サイズの voxel
 混合 Reality Toolkit v2 での空間マッピングの使用の詳細については、MRTK ドキュメントの「<a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/SpatialAwareness/SpatialAwarenessGettingStarted.html" target="_blank">空間認識」セクション</a>を参照してください。
 
 ## <a name="see-also"></a>関連項目
-* [MR 空間 230:空間マッピング](holograms-230.md)
+* [MR 空間 230: 空間マッピング](holograms-230.md)
 * [座標系](coordinate-systems.md)
 * [Unity の座標系](coordinate-systems-in-unity.md)
 * <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity" target="_blank">MixedRealityToolkit</a>
-* <a href="http://docs.unity3d.com/ScriptReference/MeshFilter.html" target="_blank">UnityEngine. MeshFilter</a>
-* <a href="http://docs.unity3d.com/ScriptReference/MeshCollider.html" target="_blank">UnityEngine. MeshCollider</a>
-* <a href="http://docs.unity3d.com/ScriptReference/Bounds.html" target="_blank">UnityEngine。境界</a>
+* <a href="https://docs.unity3d.com/ScriptReference/MeshFilter.html" target="_blank">UnityEngine. MeshFilter</a>
+* <a href="https://docs.unity3d.com/ScriptReference/MeshCollider.html" target="_blank">UnityEngine. MeshCollider</a>
+* <a href="https://docs.unity3d.com/ScriptReference/Bounds.html" target="_blank">UnityEngine。境界</a>

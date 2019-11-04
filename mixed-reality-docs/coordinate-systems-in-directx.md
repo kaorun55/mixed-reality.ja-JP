@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合現実、空間ロケーター、空間参照フレーム、空間座標系、空間ステージ、サンプルコード、イメージの安定化、空間アンカー、空間アンカーストア、追跡の損失、チュートリアル
-ms.openlocfilehash: 5a48e0a829ba8647718e28ec20760d8a764b13fe
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+ms.openlocfilehash: a0bce897c1982715af24f0bf7c398cdee10f017f
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65628973"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436227"
 ---
 # <a name="coordinate-systems-in-directx"></a>DirectX でのシステムの調整
 
@@ -37,7 +37,7 @@ SpatialCoordinateSystem には、デバイスの位置を表すものを含む�
 
 これらのオブジェクトによって返されるすべての座標系は、右ききで、+ y が上、+ x が右、+ z の後方になります。 正の x 方向の左側または右側の指をポイントし、正の y 方向に curling することによって、正の z 軸の方向を思い出すことができます。 親指が指している方向は、自身に向かうかまたは離れる方向のいずれかとなり、その座標系の z 軸の正の向きが指す方向となります。 次の図は、これらの 2 つの座標系を示しています。
 
-![左側および右側の座標系](images/left-hand-right-hand.gif)<br>
+![左辺と右辺座標系](images/left-hand-right-hand.gif)<br>
 *左側および右側の座標系*
 
 HoloLens の位置に基づいて SpatialCoordinateSystem にブートストラップするには、次のセクションで説明するように、 <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatiallocator" target="_blank">SpatialLocator</a>クラスを使用して、関連付けられた、または静止した参照フレームを作成します。
@@ -282,7 +282,7 @@ std::vector<unsigned short> SpatialStageManager::TriangulatePoints(std::vector<f
 
 [SpatialStationaryFrameOfReference](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialstationaryframeofreference.aspx)クラスは、ユーザーが移動するときに、ユーザーの周囲を基準にして静止した[まま](coordinate-systems.md#stationary-frame-of-reference)になる参照のフレームを表します。 この参照フレームでは、デバイスの近くで座標が安定していることが優先されます。 SpatialStationaryFrameOfReference の主な用途は、ホログラムをレンダリングするときに、レンダリングエンジン内で基になるワールド座標系として機能することです。
 
-SpatialStationaryFrameOfReference を取得するには、[SpatialLocator](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.aspx) クラスを使用して、[CreateStationaryFrameOfReferenceAtCurrentLocation](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.createstationaryframeofreferenceatcurrentlocation.aspx) を呼び出します。
+SpatialStationaryFrameOfReference を取得するには、 [SpatialLocator](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.aspx)クラスを使用して、 [createokary](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatiallocator.createstationaryframeofreferenceatcurrentlocation.aspx)を呼び出します。
 
 Windows Holographic アプリテンプレートのコードから:
 
@@ -549,7 +549,7 @@ SpatialAnchors の独自のメモリ内データベースが必要です。作�
    }
 ```
 
-### <a name="example-relating-anchor-coordinate-systems-to-stationary-reference-frame-coordinate-systems"></a>例:アンカー座標系を静止参照フレーム座標系に関連付ける
+### <a name="example-relating-anchor-coordinate-systems-to-stationary-reference-frame-coordinate-systems"></a>例: アンカー座標系を静止参照フレーム座標系に関連付ける
 
 アンカーがあるとします。アンカーの座標系にあるものを、他のほとんどのコンテンツに対して既に使用している SpatialStationaryReferenceFrame に関連付ける必要があります。 [Trygettransformto を](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialcoordinatesystem.trygettransformto.aspx)使用すると、アンカーの座標系から、固定の参照フレームの変換を取得できます。
 
@@ -616,7 +616,7 @@ SpatialLocatorAttachedFrameOfReference を取得するには、SpatialLocator �
 
 ### <a name="get-a-spatial-pointer-pose-and-follow-the-users-gaze"></a>空間ポインターのポーズを取得し、ユーザーの宝石に従います。
 
-この例では、holographic シェルがユーザーの見つめに従う方法と同様に、ユーザーの[宝石](gaze.md)に従うように、ホログラムの例を使用します。 そのためには、同じタイムスタンプから SpatialPointerPose を取得する必要があります。
+この例では、holographic シェルがユーザーの見つめに従う方法と同様に、ユーザーの[宝石](gaze-and-commit.md)に従うように、ホログラムの例を使用します。 そのためには、同じタイムスタンプから SpatialPointerPose を取得する必要があります。
 
 ```
 SpatialPointerPose^ pose = SpatialPointerPose::TryGetAtTimestamp(currentCoordinateSystem, prediction->Timestamp);
@@ -730,7 +730,7 @@ StationaryQuadRenderer の場合 **::P ositionhologram**:
        );
 ```
 
-これで完了です。 ホログラムは、ユーザーの見つめ方向の前に2メートルの位置を "追跡" するようになります。
+以上で作業は終了です。 ホログラムは、ユーザーの見つめ方向の前に2メートルの位置を "追跡" するようになります。
 
 >[!NOTE]
 >この例では、追加のコンテンツも読み込まれます。 StationaryQuadRenderer を参照してください。

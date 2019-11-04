@@ -6,19 +6,29 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6自由コントローラー、モーションコントローラー
-ms.openlocfilehash: fc6b0dcf7f338224af9ea9bc59e07187c33adda2
-ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
+ms.openlocfilehash: 84ebc6c0d7c63e58346b6ee9e565811bc40571b5
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67024555"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437861"
 ---
 # <a name="motion-controllers"></a>モーションコントローラー
 
-モーションコントローラーは、ユーザーが mixed reality でアクションを実行できるようにする[ハードウェアアクセサリ](hardware-accessories.md)です。 [ジェスチャ](gestures.md)を使用したモーションコントローラーの利点は、コントローラーが領域内に正確な位置を持ち、デジタルオブジェクトと詳細に対話できることです。 Windows Mixed Reality イマーシブヘッドセットの場合、モーションコントローラーは、ユーザーが世界中でアクションを実行する主な方法です。
+:::row:::
+    :::column:::
+        モーションコントローラーは、ユーザーが mixed reality でアクションを実行できるようにする[ハードウェアアクセサリ](hardware-accessories.md)です。 [ジェスチャ](gaze-and-commit.md#composite-gestures)を使用したモーションコントローラーの利点は、コントローラーが領域内に正確な位置を持ち、デジタルオブジェクトと詳細に対話できることです。 Windows Mixed Reality イマーシブヘッドセットの場合、モーションコントローラーは、ユーザーが世界中でアクションを実行する主な方法です。<br>
+        <br>
+        *イメージ: Windows Mixed Reality モーションコントローラー*
+    :::column-end:::
+        :::column:::
+       ![Windows Mixed Reality モーションコントローラー](images/winmr-ck-1080x1080-350px.jpg)<br> 
+    :::column-end:::
+:::row-end:::
 
-![Windows Mixed Reality モーションコントローラー](images/winmr-ck-1080x1080-350px.jpg)
+<br>
 
+---
 
 ## <a name="device-support"></a>デバイスのサポート
 
@@ -32,7 +42,7 @@ ms.locfileid: "67024555"
 <tr>
      <td><strong>機能</strong></td>
      <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
-     <td><strong>HoloLens 2</strong></td>
+     <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
      <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
 </tr>
 <tr>
@@ -45,23 +55,23 @@ ms.locfileid: "67024555"
 
 ## <a name="hardware-details"></a>ハードウェアの詳細
 
->[!VIDEO https://www.youtube.com/embed/1nlcdDNOdm8]
+<iframe width="940" height="530" src="https://www.youtube.com/embed/1nlcdDNOdm8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Windows Mixed Reality モーションコントローラーは、イマーシブヘッドセットのセンサーを使用して、ビューのフィールド内の移動を正確かつ迅速に追跡できます。つまり、領域内の壁にハードウェアを取り付ける必要はありません。 これらのモーションコントローラーは、Windows Mixed Reality のイマーシブヘッドセットと同じように簡単なセットアップと移植性を提供します。 デバイスパートナーは、この休日を利用して、これらのコントローラーを小売店で販売し、販売する予定です。
 
-![コントローラーを知る](images/controllerimage-750px.png)<br>
+コントローラーを知り ![には](images/controllerimage-750px.png)<br>
 *コントローラーを知る*
 
 **機能**
 * 光学式の追跡
-* トリガー
+* きっかけ
 * グラブボタン
 * スティック
 * タッチパッド
 
-## <a name="setup"></a>セットアップ
+## <a name="setup"></a>[セットアップ]
 
-### <a name="before-you-begin"></a>アンインストールの準備
+### <a name="before-you-begin"></a>始める前に
 
 **次のものが必要です。**
 * 2つのモーションコントローラーのセット。
@@ -78,33 +88,57 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
 
 1. 2つの AA 乾電池をコントローラーの背面に挿入します。 ここではバッテリカバーをオフのままにします。
 2. 組み込みの Bluetooth ラジオではなく外部 USB Bluetooth アダプターを使用している場合は、先に進む前に、 [bluetooth のベストプラクティス](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)を確認してください。 組み込みのラジオを使用したデスクトップ構成の場合は、アンテナが接続されていることを確認してください。
-3. [ **Windows 設定** -> ] [**デバイス** -> ] を開き、**bluetooth またはその他のデバイス** -> **bluetooth**を追加し、以前の "motion controller – Right" と "motion controller – Left" のインスタンスをすべて削除します。 一覧の下部にある [その他のデバイス] カテゴリも確認します。
+3. [ **Windows**の -> 設定] を開き、bluetooth**またはその他のデバイス** -> **bluetooth**を追加 ** -> 、** "motion controller – Right" と "motion controller – Left" の以前のインスタンスをすべて削除します。 一覧の下部にある [その他のデバイス] カテゴリも確認します。
 4. **[Bluetooth またはその他のデバイスの追加]** を選択すると、bluetooth デバイスの検出が開始されます。
 5. コントローラーの [Windows] ボタンを押してコントローラーをオンにすると、buzzes すると解放されます。
 6. Led の発するが開始されるまで、ペアリングボタン (バッテリコンパートメントのタブ) を押したままにします。
-7. リストの一番下に "Motion controller-Left" または "Motion controller-Right" が表示されるまで待ちます。 ペアにする場合に選択します。 接続されると、コントローラーは1回バイブレーションされます。
 
-   ![ペアにするモーションコントローラーを選択します。複数のインスタンスがある場合は、一覧の下部に表示されます。](images/450px-bluetooth-add-a-device-300px.png)<br>
-   *ペアリングする "モーションコントローラー" を選択します。複数のインスタンスがある場合は、一覧の一番下から1つを選択します。*
+:::row:::
+    :::column:::
+7. リストの一番下に "Motion controller-Left" または "Motion controller-Right" が表示されるまで待ちます。 ペアにする場合に選択します。 接続されると、コントローラーは1回バイブレーションされます。<br>
+        <br>
+        *イメージ: ペアにする "モーションコントローラー" を選択します。複数のインスタンスがある場合は、一覧の一番下から1つを選択します。*
+    :::column-end:::
+        :::column:::
+       ![ペアにするモーションコントローラーを選択します。複数のインスタンスがある場合は、一覧の下部に表示されます。](images/450px-bluetooth-add-a-device-300px.png)<br> 
+    :::column-end:::
+:::row-end:::
    
-8. [**マウス、キーボード、& ペン] カテゴリ**の [Bluetooth 設定] にコントローラーが表示されます **。** この時点で、ファームウェアの更新プログラムを入手できます。[次のセクション](motion-controllers.md#updating-controller-firmware)を参照してください。
+8. [**マウス、キーボード、& ペン] カテゴリ**の [Bluetooth 設定] にコントローラーが表示**されます。** この時点で、ファームウェアの更新プログラムを入手できます。[次のセクション](motion-controllers.md#updating-controller-firmware)を参照してください。
 9. バッテリカバーを再接続します。
 10. 2番目のコントローラーに対して手順1-9 を繰り返します。
 
-両方のコントローラーを正常にペアリングした後、設定は [**マウス、キーボード、& ペン] カテゴリ**の下のようになります。 
+<br>
 
-   ![接続コントローラー](images/450px-motion-controller-connected-300px.png)<br>
-   *接続コントローラー*
+:::row:::
+    :::column:::
+        両方のコントローラーを正常にペアリングした後、設定は [**マウス、キーボード、& ペン] カテゴリ**の下のようになります。 <br>
+        <br>
+        *画像: モーションコントローラーが接続されました*
+    :::column-end:::
+        :::column:::
+       ![接続コントローラー](images/450px-motion-controller-connected-300px.png)<br>
+    :::column-end:::
+:::row-end:::
 
 ペアリング後にコントローラーがオフになっている場合、それらの状態はペアとして表示されます。 コントローラーが "その他のデバイス" のままになっている場合は、カテゴリのペアリングが部分的に完了していて、コントローラーを機能させるためにもう一度実行する必要があります。
 
 ### <a name="updating-controller-firmware"></a>コントローラーのファームウェアを更新しています
 
 * イマーシブヘッドセットが PC に接続されていて、新しいコントローラーファームウェアが利用可能な場合、次に電源がオンになったときに、そのファームウェアが自動的にモーションコントローラーにプッシュされます。 コントローラーファームウェアの更新プログラムは、円形の動きにおける LED のある領域を照明するパターンによって示され、1-2 分かかります。
-* ファームウェアの更新が完了すると、コントローラーが再起動して再接続されます。 両方のコントローラーがすぐに接続されている必要があります。 
-    
-    ![接続されたコントローラー](images/cyk-connected-300px.jpg)<br>
-    *Bluetooth 設定で接続されているコントローラー*
+
+
+:::row:::
+    :::column:::
+* ファームウェアの更新が完了すると、コントローラーが再起動して再接続されます。 両方のコントローラーがすぐに接続されている必要があります。 <br>
+        <br>
+        *イメージ: Bluetooth 設定で接続されているコントローラー*
+    :::column-end:::
+        :::column:::
+       ![接続されたコントローラー](images/cyk-connected-300px.jpg)<br>
+    :::column-end:::
+:::row-end:::
+
 
 * コントローラーが正常に動作することを確認します。
     1. **Mixed Reality ポータル**を起動し、Mixed reality ホームを入力します。
@@ -113,7 +147,7 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
 ## <a name="gazing-and-pointing"></a>ガスとポイント
 
 Windows Mixed Reality では、対話、宝石、**コミット**、**ポイントとコミット**の2つの主要なモデルがサポートされています。
-* ユーザーは、**宝石とコミット**を使用して、オブジェクトを[宝石](gaze.md)として選択し、ハンドタップ、ゲームパッド、clicker、または音声を使用してオブジェクトを選択します。
+* ユーザーは、**宝石とコミット**を使用して、オブジェクトを[宝石](gaze-and-commit.md)として選択し、ハンドタップ、ゲームパッド、clicker、または音声を使用してオブジェクトを選択します。
 * **ポイントとコミット**を使用すると、ユーザーは、ポイント対応のモーションコントローラーをターゲットオブジェクトでターゲットにして、コントローラーのトリガーを持つオブジェクトを選択できます。
 
 また、モーションコントローラーを使用したポイントをサポートするアプリでは、可能な場合は、使用する入力デバイスをユーザーが選択できるようにすることもできます。
@@ -122,7 +156,7 @@ Windows Mixed Reality では、対話、宝石、**コミット**、**ポイン�
 
 モーションコントローラーを使用してポイントアンドコミットする場合、ユーザーはコントローラーを使用してターゲットを指定し、トリガーをプルすることによってアクションを実行します。 トリガーの vigorously を取得したユーザーは、意図したものよりも、トリガーをプルした時点よりも先にコントローラーの位置を上げる可能性があります。
 
-ユーザーがトリガーをプルしたときに発生する可能性のある recoil を管理するために、トリガーのアナログ軸の値が0.0 を超えたときに、アプリでターゲットの射線をスナップできます。 その後、最後の押しが短い時間枠で実行される限り、後で、トリガー値が1.0 になると、そのターゲットを使用してアクションを実行できます。 高レベルの[複合タップジェスチャ](gestures.md#composite-gestures)を使用すると、このターゲット設定を制御することになります。
+ユーザーがトリガーをプルしたときに発生する可能性のある recoil を管理するために、トリガーのアナログ軸の値が0.0 を超えたときに、アプリでターゲットの射線をスナップできます。 その後、最後の押しが短い時間枠で実行される限り、後で、トリガー値が1.0 になると、そのターゲットを使用してアクションを実行できます。 高レベルの[複合タップジェスチャ](gaze-and-commit.md#composite-gestures)を使用すると、このターゲット設定を制御することになります。
 
 ## <a name="grip-pose-vs-pointing-pose"></a>グリップポーズとポインティングポーズ
 
@@ -137,10 +171,10 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 イマーシブヘッドセットでは、グリップは、**ユーザーの手**や、剣や銃など、**ユーザーの手に保持**されているオブジェクトをレンダリングするために最適です。 また、このグリップは、モーションコントローラーを視覚化するときにも使用されます。これは、モーションコントローラー用に Windows によって提供される**描画モデル**が、グリップを原点と回転の中心として使用するためです。
 
 グリップは、次のように明確に定義されます。
-* **グリップの位置**:コントローラーを自然に保持すると、パーム重心が調整され、グリップ内の位置を中心として左右に調整されます。 Windows Mixed Reality モーションコントローラーでは、通常、この位置はボタンをつかみに揃えて配置されます。
-* **グリップの向きの右軸**:ハンドを完全に開いて、5つの指が平らになるようにするには、(左側のパームから、右のパームから後方に)、パームに通常ある光線を使用します。
-* **グリップの向きの前方軸**:(コントローラーを保持している場合と同様に) 手を部分的に閉じた場合、非表示の指で形成されたチューブによって "前方" を指します。
-* **グリップの方向の上位軸**:右および順方向の定義によって暗黙的に示される上位軸。
+* **グリップの位置**: コントローラーを自然に保持するときのパーム重心。グリップ内の位置を中央に配置するように左右に調整されます。 Windows Mixed Reality モーションコントローラーでは、通常、この位置はボタンをつかみに揃えて配置されます。
+* **グリップの向きの右軸**: 手を完全に開いて平らな5本の指を作成した場合 (左側のパームから前方、右側のパームから後方)、
+* **グリップの向きの前方軸**: ハンドを部分的に閉じた場合 (コントローラーを保持している場合と同様)、非表示の指で形成されたチューブを通過する光線。
+* **グリップの向きの上位軸**: 右および順方向の定義によって暗黙的に示される上位軸。
 
 ### <a name="pointer-pose"></a>ポインターのポーズ
 
@@ -156,9 +190,10 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 
 この時点で、システムはコントローラーをユーザーにボディロックし、ユーザーが移動したときの位置を追跡しながら、内部方向センサーを使用してコントローラーの真向きを公開します。 UI 要素をポイントしてアクティブ化するためにコントローラーを使用する多くのアプリは、ユーザーに気付かなくても、おおよその精度で正常に動作できます。
 
-&nbsp;
+<br>
 
->[!VIDEO https://www.youtube.com/embed/rkDpRllbLII]
+<iframe width="940" height="530" src="https://www.youtube.com/embed/rkDpRllbLII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### <a name="reasoning-about-tracking-state-explicitly"></a>状態の明示的な追跡に関する推論
 
@@ -168,13 +203,13 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 <tr>
 <th> 状態の追跡 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt;1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt; 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精度 (消失のリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度 (失われるリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>おおよその精度</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>位置なし</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: orange"> False</td>
+<td>  <b>位置がありません</b></td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: orange"> false</td>
 </tr>
 </table>
 
@@ -183,10 +218,10 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 これらのモーションコントローラーの追跡状態は、次のように定義されています。
 * **高精度:** モーションコントローラーは、ヘッドセットのビューに含まれていますが、通常、ビジュアルの追跡に基づいて高精度の位置を提供します。 一時的にビューのフィールドから離れるか、ヘッドセットセンサーから瞬間的に見えなくなっている移動コントローラー (ユーザーなど) は、コントローラーの慣性追跡に基づいて、短時間で高精度のポーズを返します。自分自身.
 * **高精度 (損失のリスク):** ユーザーが、ヘッドセットのビューの端を越えてモーションコントローラーを動かすと、ヘッドセットはすぐにコントローラーの位置を視覚的に追跡できなくなります。 アプリでは、 **SourceLossRisk**が1.0 に到達して、コントローラーがこの視界の境界に達したことを認識します。 その時点で、アプリは、非常に高品質なポーズの安定したストリームを必要とするコントローラージェスチャを一時停止することを選択できます。
-* **おおよその精度:** コントローラーのビジュアル追跡が十分に失われた場合、コントローラーの位置はおおよその精度の位置にドロップします。 この時点で、システムはコントローラーをユーザーにボディロックし、ユーザーが移動したときの位置を追跡しながら、内部方向センサーを使用してコントローラーの真向きを公開します。 UI 要素をポイントしてアクティブ化するためにコントローラーを使用する多くのアプリは、ユーザーに気付かずに正確な精度で、通常どおりに動作できます。 入力要件が重いアプリでは、 **positionaccuracy**プロパティを調べることによって、**精度が** **高い**ことを意味します。たとえば、オフスクリーンのターゲットでユーザーにより多くのヒットボックスを与えることができます。この期間中。
+* **おおよその精度:** コントローラーのビジュアル追跡が十分に失われた場合、コントローラーの位置はおおよその精度の位置にドロップします。 この時点で、システムはコントローラーをユーザーにボディロックし、ユーザーが移動したときの位置を追跡しながら、内部方向センサーを使用してコントローラーの真向きを公開します。 UI 要素をポイントしてアクティブ化するためにコントローラーを使用する多くのアプリは、ユーザーに気付かずに正確な精度で、通常どおりに動作できます。 入力要件が重いアプリでは、 **positionaccuracy**プロパティを調べることによって、精度が**高い**ことを**意味します**。たとえば、オフスクリーンのターゲットでユーザーにより多くのヒットボックスを与えることができます。この期間中。
 * **位置なし:** コントローラーは長時間の精度で実行できますが、本体でロックされている位置が現時点では意味を持たないことをシステムが認識している場合があります。 たとえば、電源が入っていたコントローラーが視覚的に観察されていない場合や、ユーザーがコントローラーを停止した後に他のユーザーが選択した場合などです。 これらのタイミングでは、システムはアプリに位置を提供せず、 **TryGetPosition**は false を返します。
 
-## <a name="interactions-low-level-spatial-input"></a>作用低いレベルの空間入力
+## <a name="interactions-low-level-spatial-input"></a>相互作用: 低レベルの空間入力
 
 ハンズオンコントローラーとモーションコントローラーの間の主要な相互作用は、**選択**、**メニュー**、**つかみ**、**タッチパッド**、**サムスティック**、および**ホーム**です。
 * **選択**は、ホログラムをアクティブにするための主要な相互作用です。これは、プレスとその後のリリースで構成されます。 モーションコントローラーの場合は、コントローラーのトリガーを使用して、選択したプレスを実行します。 選択を実行する他の方法として、[音声コマンド](voice-input.md)"Select" を読み上げます。 同じ選択操作を任意のアプリ内で使用できます。 Select は、マウスクリックと同等のものと考えることができます。これは、1回学習するユニバーサルアクションであり、すべてのアプリに適用されます。
@@ -196,9 +231,9 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 * **サムスティック**を使用すると、ユーザーは、モーションコントローラーのサムスティックを円形の範囲内に移動することで、2つのディメンションのアクションを調整できます。これにより、サムスティック上で [下へ] をクリックしてアクションをコミットできます。 Thumbsticks は、押された状態と正規化された XY 座標も提供します。 X と Y の範囲は、円形のタッチパッドの範囲で、中央は (0, 0) です。 X の場合、-1 は左に、1は右側にあります。 Y の場合、-1 が一番下にあり、1が一番上にあります。
 * **Home**は、[スタート] メニューに戻るために使用される特殊なシステムアクションです。 これは、キーボード上で Windows キーを押すか、Xbox コントローラーの Xbox ボタンを押すことと似ています。 モーションコントローラーの Windows ボタンを押すと、ホームに進むことができます。 "Cortana, 帰宅してください" と言うと、いつでも最初に戻ることができます。 アプリは、システムによって処理されるため、特にホームアクションに対応することはできません。
 
-## <a name="composite-gestures-high-level-spatial-input"></a>複合ジェスチャ:高レベル空間入力
+## <a name="composite-gestures-high-level-spatial-input"></a>複合ジェスチャ: 高度な空間入力
 
-両方[ジェスチャを渡す](gestures.md)モーションのコント ローラーは、高レベルの共通セットを検出するために時間の経過と共に追跡できますと **[複合ジェスチャ](gestures.md#composite-gestures)** します。 これにより、アプリは、ユーザーがハンドまたはコントローラーを使用するかどうかにかかわらず、高レベルの**タップ**、**保持**、**操作**、および**ナビゲーション**ジェスチャを検出できます。
+[ハンドジェスチャ](gaze-and-commit.md#composite-gestures)とモーションコントローラーはどちらも、高レベルの **[複合ジェスチャ](gaze-and-commit.md#composite-gestures)** の共通セットを検出するために、時間の経過と共に追跡できます。 これにより、アプリは、ユーザーがハンドまたはコントローラーを使用するかどうかにかかわらず、高レベルの**タップ**、**保持**、**操作**、および**ナビゲーション**ジェスチャを検出できます。
 
 ## <a name="rendering-the-motion-controller-model"></a>モーションコントローラーモデルのレンダリング
 
@@ -212,9 +247,9 @@ Unity でコントローラーモデルを動的に読み込む方法の詳細�
 
 ![モーションコントローラーのラインアートのプレビュー](images/motioncontrollers-black-preview-300px.png)
 
- [' ' ' 白 ' ' ' の完全解像度のモーションコントローラーのラインアート](images/motioncontrollers-white.png)
+[' ' ' 白 ' ' ' の完全解像度のモーションコントローラーのラインアート](images/motioncontrollers-white.png)
  
- [' ' ' Black ' ' ' の完全解像度のモーションコントローラーのラインアート](images/motioncontrollers-black.png)
+[' ' ' Black ' ' ' の完全解像度のモーションコントローラーのラインアート](images/motioncontrollers-black.png)
 
 ## <a name="faq"></a>FAQ
 
@@ -234,7 +269,7 @@ Unity でコントローラーモデルを動的に読み込む方法の詳細�
 
 ユニバーサル Windows アプリケーションでは使用できません。
 
-## <a name="troubleshooting"></a>トラブルシューティング
+## <a name="troubleshooting"></a>[トラブルシューティング]
 
 ファンガイドの「[モーションコントローラーのトラブルシューティング](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#motion-controllers)」を参照してください。
 
@@ -245,8 +280,8 @@ Unity でコントローラーモデルを動的に読み込む方法の詳細�
 ## <a name="see-also"></a>関連項目
 * [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
 * [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
-* [ジェスチャ](gestures.md)
-* [MR 入力 213:モーション コントローラー](mixed-reality-213.md)
-* [ファンガイド:Windows Mixed Reality ホーム](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)
-* [ファンガイド:Windows Mixed Reality でのゲーム & アプリの使用](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-games-and-apps-in-windows-mixed-reality)
+* [ジェスチャ](gaze-and-commit.md#composite-gestures)
+* [MR 入力 213: モーションコントローラー](mixed-reality-213.md)
+* [愛好家ガイド: Windows Mixed Reality ホーム](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)
+* [愛好家ガイド: Windows Mixed Reality でのゲーム & アプリの使用](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-games-and-apps-in-windows-mixed-reality)
 * [内部 out 追跡のしくみ](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/tracking-system)

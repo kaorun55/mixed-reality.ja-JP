@@ -3,22 +3,22 @@ title: MR 共有 250-HoloLens とイマーシブヘッドセット
 description: Unity、Visual Studio、HoloLens、および Windows Mixed Reality ヘッドセットを使用したこのコーディングチュートリアルに従って、mixed reality デバイス間でのホログラムの共有の詳細を確認してください。
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、イマーシブ、motion controller、共有、xbox コントローラー、ネットワーク、クロスデバイス
-ms.openlocfilehash: 9e1cb0d168b8bf830b4477190516cd19caef7972
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: c8d341f75424887ca1b0994c8a4d16a0bded671e
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63506116"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437865"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。
 
 <br>
 
-# <a name="mr-sharing-250-hololens-and-immersive-headsets"></a>MR 共有 250:HoloLens とイマーシブヘッドセット
+# <a name="mr-sharing-250-hololens-and-immersive-headsets"></a>MR 共有 250: HoloLens とイマーシブヘッドセット
 
 ユニバーサル Windows プラットフォーム (UWP) の柔軟性により、複数のデバイスにまたがるアプリケーションを簡単に作成できます。 この柔軟性により、各デバイスの強みを活用するエクスペリエンスを作成できます。 このチュートリアルでは、HoloLens と Windows Mixed Reality の両方のイマーシブヘッドセットで実行される基本的な共有エクスペリエンスについて説明します。 このコンテンツはもともと、ワシントン州シアトルの Microsoft Build 2017 カンファレンスで配信されました。
 
@@ -35,13 +35,13 @@ ms.locfileid: "63506116"
 <tr>
 <th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td>MR 共有 250:HoloLens とイマーシブヘッドセット</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td>MR 共有 250: HoloLens とイマーシブヘッドセット</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
-## <a name="before-you-start"></a>開始前の準備
+## <a name="before-you-start"></a>開始前の作業
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 * Windows 10 PC。[必要な開発ツール](install-the-tools.md)があり、 [windows Mixed Reality のイマーシブヘッドセットをサポートするように構成され](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)ています。
 * PC で動作する Xbox コントローラー。
@@ -60,7 +60,7 @@ ms.locfileid: "63506116"
 
 >[!VIDEO https://www.youtube.com/embed/IC0rp6rLiEc]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 開発環境が簡単なプロジェクトで準備できることを確認します。
 
@@ -69,6 +69,7 @@ ms.locfileid: "63506116"
 HoloLens または Windows Mixed Reality イマーシブヘッドセットのホログラムを表示するアプリケーション。
 
 ### <a name="steps"></a>手順
+
 * Unity を開きます。
     * **[開く]** を選択します。
     * プロジェクトファイルを抽出した場所に移動します。
@@ -76,17 +77,17 @@ HoloLens または Windows Mixed Reality イマーシブヘッドセットのホ
     * *Unity が初めてプロジェクトを処理するのに少し時間がかかります。*
 * Unity で Mixed Reality が有効になっていることを確認します。
     * [ビルドの設定] ダイアログを開きます (ctrl **+ Shift + B**または**ファイル > ビルド設定...** )。
-    * [**ユニバーサル Windows プラットフォーム**] を選択し、[**プラットフォームの切り替え**] をクリックします。
-    * [ **> プレーヤー設定の編集**] を選択します。
-    * 右側の [**インスペクター** ] パネルで、[ **XR Settings**] を展開します。
-    * [**サポートされている仮想現実**] ボックスをオンにします。
+    * **[ユニバーサル Windows プラットフォーム]** を選択し、 **[プラットフォームの切り替え]** をクリックします。
+    * **[> プレーヤー設定の編集]** を選択します。
+    * 右側の **[インスペクター]** パネルで、 **[XR Settings]** を展開します。
+    * **[サポートされている仮想現実]** ボックスをオンにします。
     * *Windows Mixed Reality は、Virtual Reality SDK である必要があります。*
 * シーンを作成します。
-    * **階層**で、[**メインカメラ**] を右クリックし、[**削除**] を選択します。
+    * **階層**で、 **[メインカメラ]** を右クリックし、 **[削除]** を選択します。
     * **HoloToolkit > 入力 >** から、 **MixedRealityCameraParent**を**階層**にドラッグします。
 * ホログラムをシーンに追加する
     * **AppPrefabs**から [**スカイ**ボックス] を [**シーン] ビュー**にドラッグします。
-    * **AppPrefabs** **をドラッグし**て、**階層**に移動します。
+    * **AppPrefabs**をドラッグして、**階層**に**移動します**。
     * **AppPrefabs**を**階層構造** **にドラッグし**ます。
 * 保存とビルド
     * 保存 (**コントロール + S**または**ファイル > シーンの保存**)
@@ -104,15 +105,15 @@ HoloLens または Windows Mixed Reality イマーシブヘッドセットのホ
     * SharedMixedReality をダブルクリックして Visual Studio を起動し**ます。**
 * Visual Studio からビルドする
     * 上部のツールバーを使用して、target を**Release**および**x86**に変更します。
-    * [**ローカルコンピューター** ] の横にある矢印をクリックし、[**デバイス**] を選択して HoloLens に展開します。
-    * [**デバイス**] の横にある矢印をクリックし、mixed reality ヘッドセット用にデプロイする [**ローカルコンピューター** ] を選択します。
+    * **[ローカルコンピューター]** の横にある矢印をクリックし、 **[デバイス]** を選択して HoloLens に展開します。
+    * **[デバイス]** の横にある矢印をクリックし、mixed reality ヘッドセット用にデプロイする **[ローカルコンピューター]** を選択します。
     * [**デバッグ]、[デバッグなしで開始**] の順にクリック >、 **F5 キーを押し**てアプリケーションを起動します。
 
 ### <a name="digging-into-the-code"></a>コードの調査
 
-[プロジェクト] パネルで、 **Assets\HoloToolkit\Input\Scripts\Utilities**に移動し、[ **MixedRealityCameraManager.cs** ] をダブルクリックして開きます。
+[プロジェクト] パネルで、 **Assets\HoloToolkit\Input\Scripts\Utilities**に移動し、 **[MixedRealityCameraManager.cs]** をダブルクリックして開きます。
 
-**概要**MixedRealityCameraManager.cs は、デバイスに基づいて品質レベルと背景の設定を調整する単純なスクリプトです。 ここで重要なのは HolographicSettings です。これにより、デバイスが HoloLens (IsDisplayOpaque 返し false) であるかイマーシブヘッドセット (IsDisplayOpaque 返し) であるかをスクリプトで検出できます。
+**概要:** MixedRealityCameraManager.cs は、デバイスに基づいて品質レベルと背景の設定を調整する単純なスクリプトです。 ここで重要なのは HolographicSettings です。これにより、デバイスが HoloLens (IsDisplayOpaque 返し false) であるかイマーシブヘッドセット (IsDisplayOpaque 返し) であるかをスクリプトで検出できます。
 
 ### <a name="enjoy-your-progress"></a>進捗を楽しんでください
 
@@ -122,7 +123,7 @@ HoloLens または Windows Mixed Reality イマーシブヘッドセットのホ
 
 >[!VIDEO https://www.youtube.com/embed/Lrb1y4sQRvI]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 Windows Mixed Reality アプリケーションの入力を処理する方法について説明します。
 
@@ -130,27 +131,28 @@ Windows Mixed Reality アプリケーションの入力を処理する方法に�
 
 第1章のアプリケーションを基にして、ユーザーがホログラムを選択して、アプリを HoloLens またはイマーシブヘッドセットの仮想テーブルに配置できるようにする機能を追加します。
 
-**入力リフレッシャー:** HoloLens では、選択ジェスチャは**エアタップ**です。 イマーシブヘッドセットでは、Xbox コントローラーの**A**ボタンを使用します。 入力の詳細について[は、こちら](gestures.md)を参照してください。
+**入力リフレッシャー:** HoloLens では、選択ジェスチャは**エアタップ**です。 イマーシブヘッドセットでは、Xbox コントローラーの**A**ボタンを使用します。 詳細については、 [「相互作用モデルの概要」](interaction-fundamentals.md)を参照してください。
 
 ### <a name="steps"></a>手順
+
 * 入力マネージャーの追加
     * **HoloToolkit > 入力 >** から、**管理者**の子として**inputmanager**を**階層**にドラッグします。
-    * **HoloToolkit > 入力 > Prefabs > カーソル**を階層**に**ドラッグします。
+    * **HoloToolkit > 入力 > Prefabs > カーソル**を**階層** **にドラッグします**。
 * 空間マッピングの追加
-    * **HoloToolkit > SpatialMapping から >** に**SpatialMapping**をドラッグします。
+    * **HoloToolkit > SpatialMapping から >** に**SpatialMapping**を**ドラッグし**ます。
 * 仮想再生空間の追加
     * **階層**内で**MixedRealityCameraParent**を**展開**します。
-    * [**インスペクター** ] パネルで、[**境界**を有効にする] チェックボックスをオンにします。
+    * **[インスペクター]** パネルで、 **[境界]** を有効にする チェックボックスをオンにします。
     * **AppPrefabs**から、 **Vrroom**を**階層**にドラッグします。
 * WorldAnchorManager の追加
-    * [**階層**] で、[**マネージャー**] を選択します。
-    * [**インスペクター**] で、[**コンポーネントの追加**] をクリックします。
+    * **[階層]** で、 **[マネージャー]** を選択します。
+    * **[インスペクター]** で、 **[コンポーネントの追加]** をクリックします。
     * 「**ワールドアンカーマネージャー**」と入力します。
-    * [ **World Anchor Manager** ] を選択して追加します。
+    * **[World Anchor Manager]** を選択して追加します。
 * TapToPlace を島に追加する
-    * [**階層**] で [**アイランド**] を展開します。
-    * [ **MixedRealityLand**] を選択します。
-    * [**インスペクター**] で、[**コンポーネントの追加**] をクリックします。
+    * **[階層]** で **[アイランド]** を展開します。
+    * **[MixedRealityLand]** を選択します。
+    * **[インスペクター]** で、 **[コンポーネントの追加]** をクリックします。
     * 「 **Tap** 」と入力して選択します。
     * **タップ時に親を**確認します。
     * **配置オフセット**を **(0, 0.1, 0)** に設定します。
@@ -160,7 +162,7 @@ Windows Mixed Reality アプリケーションの入力を処理する方法に�
 
 **スクリプト 1-GamepadInput.cs**
 
-[プロジェクト] パネルで**Assets\HoloToolkit\Input\Scripts\InputSources**に移動し、[ **GamepadInput.cs** ] をダブルクリックして開きます。 [プロジェクト] パネルの同じパスで、[ **InteractionSourceInputSource.cs**] をダブルクリックします。
+[プロジェクト] パネルで**Assets\HoloToolkit\Input\Scripts\InputSources**に移動し、 **[GamepadInput.cs]** をダブルクリックして開きます。 プロジェクト パネルの同じパスで、 **InteractionSourceInputSource.cs** をダブルクリックします。
 
 両方のスクリプトに共通の基本クラス BaseInputSource があることに注意してください。
 
@@ -168,7 +170,7 @@ BaseInputSource は、InputManager への参照を保持します。これによ
 
 **スクリプト 2-TapToPlace.cs**
 
-[プロジェクト] パネルで**Assets\HoloToolkit\SpatialMapping\Scripts**に移動し、[ **TapToPlace.cs** ] をダブルクリックして開きます。
+[プロジェクト] パネルで**Assets\HoloToolkit\SpatialMapping\Scripts**に移動し、 **[TapToPlace.cs]** をダブルクリックして開きます。
 
 Holographic アプリケーションを作成するときに、多くの開発者が実装する必要のある最初の作業は、ジェスチャ入力を使用したホログラムの移動です。 このように、このスクリプトを十分にコメントすることを endeavored しました。 このチュートリアルでは、いくつかの点に注目してください。
 
@@ -184,7 +186,7 @@ Holographic アプリケーションを作成するときに、多くの開発�
 
 >[!VIDEO https://www.youtube.com/embed/1diycJvxfDc]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 ネットワークが正しく構成されていること、およびデバイス間で空間アンカーがどのように共有されているかを確認します。
 
@@ -193,9 +195,10 @@ Holographic アプリケーションを作成するときに、多くの開発�
 ここでは、プロジェクトをマルチプレイヤープロジェクトに変換します。 セッションをホストまたは参加させるための UI とロジックを追加します。 HoloLens ユーザーは、セッション内で、ヘッド上のクラウドと相互に表示されます。また、イマーシブヘッドセットユーザーは、アンカーがある場所の近くにクラウドを持っています。 イマーシブヘッドセットのユーザーには、シーンの発信元を基準とする HoloLens ユーザーが表示されます。 HoloLens ユーザーには、島のホログラムがすべて同じ場所に表示されます。 この章では、イマーシブヘッドセットのユーザーは島上にないことに注意してくださいが、HoloLens と非常によく似ていますが、島の目に見ていきます。
 
 ### <a name="steps"></a>手順
+
 * 島と VRRoom の削除
-    * **階層**内で**島**を右クリックし、[**削除**] を選択します。
-    * **階層**で、[ **vrroom** ] を右クリックし、[**削除**] を選択します。
+    * **階層**内で**島**を右クリックし、 **[削除]** を選択します。
+    * **階層**で、 **[vrroom]** を右クリックし、 **[削除]** を選択します。
 * Usland の追加
     * **AppPrefabs**から、**階層**に**usland**をドラッグします。
 * **AppPrefabs**から、次の各を**階層**にドラッグします。
@@ -233,7 +236,7 @@ HoloLens がセッションに参加する場合は、アンカーをインポ�
 
 ### <a name="enjoy-your-progress"></a>進捗を楽しんでください
 
-この時点で、HoloLens を使用するユーザーは、UI の [**セッションの開始**] ボタンを使用してセッションをホストします。 HoloLens またはイマーシブヘッドセットの両方で他のユーザーがセッションを選択し、UI の [**セッションに参加**] ボタンを選択します。 複数のユーザーが HoloLens デバイスを使用している場合は、そのヘッドに赤い雲があります。 また、イマーシブヘッドセットごとに青いクラウドもありますが、ヘッドホンが HoloLens デバイスと同じワールド座標空間を見つけようとしていないため、青い雲はヘッドセットの上にありません。
+この時点で、HoloLens を使用するユーザーは、UI の **[セッションの開始]** ボタンを使用してセッションをホストします。 HoloLens またはイマーシブヘッドセットの両方で他のユーザーがセッションを選択し、UI の **[セッションに参加]** ボタンを選択します。 複数のユーザーが HoloLens デバイスを使用している場合は、そのヘッドに赤い雲があります。 また、イマーシブヘッドセットごとに青いクラウドもありますが、ヘッドホンが HoloLens デバイスと同じワールド座標空間を見つけようとしていないため、青い雲はヘッドセットの上にありません。
 
 プロジェクト内のこのポイントは、含まれている共有アプリケーションです。それほど多くはありません。ベースラインとして機能する可能性があります。 次の章では、お客様にご利用いただけるエクスペリエンスの構築を開始します。 共有エクスペリエンスの設計に関する詳細なガイダンスについては、こちらを参照してください。
 
@@ -241,7 +244,7 @@ HoloLens がセッションに参加する場合は、アンカーをインポ�
 
 >[!VIDEO https://www.youtube.com/embed/kUHZ5tCOfvY]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 さまざまな種類の mixed reality デバイスにエクスペリエンスを提供します。
 
@@ -250,15 +253,17 @@ HoloLens がセッションに参加する場合は、アンカーをインポ�
 アプリケーションを更新して、イマーシブビューを使用して、イマーシブヘッドセットユーザーを島に配置します。 HoloLens ユーザーには、島の概観が表示されます。 各デバイスの種類のユーザーは、世界中に表示されている他のユーザーを見ることができます。 たとえば、イマーシブヘッドセットユーザーは、島の他のパスで他のアバターを見ることができ、その島の上にジャイアントクラウドとして HoloLens ユーザーが表示されます。 イマーシブヘッドセットユーザーは、HoloLens ユーザーが島を見ている場合に、HoloLens ユーザーの宝石のカーソルも表示されます。 HoloLens ユーザーには、各イマーシブヘッドセットユーザーを表すアバターが島上に表示されます。
 
 **イマーシブデバイスの入力が更新されました:**
+
 * Xbox コントローラーの左バンパーボタンと右バンパーボタンは、プレーヤーを回転させます。
 * Xbox コントローラーの Y ボタンを押すと、[テレポート](navigating-the-windows-mixed-reality-home.md#getting-around-your-home)カーソルが有効になります。 Y ボタンを離したときにカーソルの矢印インジケーターが回転している場合は、カーソルの位置に移動します。
 
 ### <a name="steps"></a>手順
+
 * MixedRealityTeleport を MixedRealityCameraParent に追加する
-    * [**階層**] で [ **usland**] を選択します。
+    * **[階層]** で **[usland]** を選択します。
     * **インスペクター**で、**レベルの制御**を有効にします。
-    * [**階層**] で [ **MixedRealityCameraParent**] を選択します。
-    * [**インスペクター**] で、[**コンポーネントの追加**] をクリックします。
+    * **[階層]** で **[MixedRealityCameraParent]** を選択します。
+    * **[インスペクター]** で、 **[コンポーネントの追加]** をクリックします。
     * 「 **Mixed Reality テレポート**」と入力して選択します。
 
 ### <a name="digging-into-the-code"></a>コードの調査
@@ -288,6 +293,7 @@ MixedRealityTeleport の2番目のジョブは、 **dolly**の移動を処理し
 この場合も、HoloLens を使用するユーザーはセッションをホストします。 他のユーザーがセッションに参加します。 このアプリケーションでは、最初の3人のユーザーを、島の3つのパスのいずれかにあるイマーシブヘッドセットから結合するように配置します。 このセクションでは、島を自由に調べることができます。
 
 注意事項:
+
 1. クラウド内の顔を見ることができます。これにより、専念ユーザーは、HoloLens ユーザーが見ている方向を見ることができます。
 2. 島のアバターには、回転する necks があります。 ユーザーが行っていることは、実際にはありませんが (この情報はありません)、快適なエクスペリエンスを実現します。
 3. HoloLens ユーザーが島を見ている場合、専念ユーザーはカーソルを見ることができます。
@@ -297,7 +303,7 @@ MixedRealityTeleport の2番目のジョブは、 **dolly**の移動を処理し
 
 >[!VIDEO https://www.youtube.com/embed/n_HDWJbfpNg]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 2つのデバイスの種類の間にコラボレーションによる対話型エクスペリエンスを作成します。
 
@@ -306,8 +312,9 @@ MixedRealityTeleport の2番目のジョブは、 **dolly**の移動を処理し
 第4章では、イマーシブヘッドセットを使用しているユーザーが島のパズルの近くにいる場合、HoloLens ユーザーには、パズルの手掛かりとなるツールヒントが表示されます。 すべてのイマーシブヘッドセットユーザーがパズルを越えて、ロケット部屋の "ready pad" に戻ると、ロケットが起動します。
 
 ### <a name="steps"></a>手順
-* [**階層**] で [ **usland**] を選択します。
-* **インスペクター**の**レベルコントロール**で、[**コラボレーションを有効にする**] チェックボックスをオンにします。
+
+* **[階層]** で **[usland]** を選択します。
+* **インスペクター**の**レベルコントロール**で、 **[コラボレーションを有効にする]** チェックボックスをオンにします。
 
 ### <a name="digging-into-the-code"></a>コードの調査
 
@@ -323,20 +330,20 @@ CheckGoal では、パッドの表示が大きくなっているか少ないか�
 
 ```cs
 private void CmdSendAtGoal(int GoalIndex)
-       {
-           levelState.SetGoalIndex(GoalIndex);
-       }
+{
+    levelState.SetGoalIndex(GoalIndex);
+}
 ```
 
 ```cs
 public void SendAtGoal(int GoalIndex)
-       {
-           if (isLocalPlayer)
-           {
-               Debug.Log("sending at goal " + GoalIndex);
-               CmdSendAtGoal(GoalIndex);
-           }
-       }
+{
+    if (isLocalPlayer)
+    {
+        Debug.Log("sending at goal " + GoalIndex);
+        CmdSendAtGoal(GoalIndex);
+    }
+}
 ```
 
 Sendatゴールメッセージは CmdSendAtGoal を呼び出します。これは LevelControl.cs に戻された levelState. Setゴール Index を呼び出します。 一見すると、これは奇妙なように見えます。 ここでは、プレーヤーコントローラーを介したこの奇妙なルーティングではなく、SetGoalIndex を呼び出すことができないのはなぜですか。 これは、データの同期を維持するために UNET が使用するデータモデルに準拠しているためです。不正行為とスラッシングを防ぐため、UNET では、同期された変数を変更する権限を持つユーザーを各オブジェクトが持っている必要があります。 さらに、ホスト (セッションを開始したユーザー) のみがデータを直接変更できます。 ホストではないが権限を持っているユーザーは、ホストに "コマンド" を送信して変数を変更する必要があります。 既定では、ホストには、ユーザーを表すために生成されたオブジェクトを除き、すべてのオブジェクトに対する権限があります。 この例では、このオブジェクトには playercontroller スクリプトが含まれています。 オブジェクトの権限を要求してから変更を加える方法はありますが、プレーヤーコントローラーが自己権限を持ち、プレーヤーコントローラーを介してコマンドをルーティングするという事実を活用することを選択します。
@@ -350,4 +357,5 @@ LevelControl.cs を参照してください。 ここでは、synclist (AtGoal) 
 前の章では、前と同じようにセッションを開始します。 今回は、イマーシブヘッドセットのユーザーがパスの "ドア" に到達すると、HoloLens ユーザーのみが表示できるツールヒントが表示されます。 HoloLens ユーザーは、この手掛かりをイマーシブヘッドセット内のユーザーに伝える役割を担います。 各アバターが火山内の対応するブラウンパッドにステップインすると、ロケットがスペースで起動します。 シーンは60秒後にリセットされるので、再度行うことができます。
 
 ## <a name="see-also"></a>関連項目
-* [MR 入力 213:モーション コントローラー](mixed-reality-213.md)
+
+* [MR 入力 213: モーションコントローラー](mixed-reality-213.md)

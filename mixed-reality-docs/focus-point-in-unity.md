@@ -6,19 +6,19 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity, フォーカスポイント, フォーカスプレーン, 安定化平面, 安定化ポイント, reprojection, LSR, 深度バッファー
-ms.openlocfilehash: 0f43c37df66ecada86dcb309fcd58d822f0f3481
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: d48f6f1878a68a17be263f10b809229dc2705c58
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63525462"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435417"
 ---
 # <a name="focus-point-in-unity"></a>Unity のフォーカスポイント
 
-**名前空間:**  *UnityEngine.XR.WSA*<br>
-**種類**:*HolographicSettings*
+**名前空間:** *UNITYENGINE. XR*<br>
+**型**: *HolographicSettings*
 
-[フォーカスポイント](hologram-stability.md#stabilization-plane)は、現在表示されているホログラムに対して安定化を最適に実行する方法について、HoloLens にヒントを提供するように設定できます。
+[フォーカスポイント](hologram-stability.md#reprojection)は、現在表示されているホログラムに対して安定化を最適に実行する方法について、HoloLens にヒントを提供するように設定できます。
 
 Unity でフォーカスポイントを設定する場合は、 *HolographicSettings. SetFocusPointForFrame ()* を使用してすべてのフレームを設定する必要があります。 フレームにフォーカスポイントが設定されていない場合は、既定の安定化平面が使用されます。
 
@@ -51,4 +51,4 @@ void Update()
 上の単純なコードでは、フォーカスがあるオブジェクトがユーザーの背後にある場合に、ホログラムの安定性が低下する可能性があることに注意してください。  このため、通常は、フォーカスポイントを手動で指定するのではなく、"深度バッファーの共有を有効にする" を設定する必要があります。
 
 ### <a name="see-also"></a>関連項目
-* [安定化平面](hologram-stability.md#stabilization-plane)
+* [安定化平面](hologram-stability.md#reprojection)

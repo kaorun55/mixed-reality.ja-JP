@@ -3,22 +3,22 @@ title: MR 入力 210-宝石
 description: Unity、Visual Studio、および HoloLens を使用したこのコーディングのチュートリアルに従って、宝石の概念の詳細を学習してください。
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、academy、チュートリアル、宝石
-ms.openlocfilehash: 076314389ec5ed70347c26d50c6a993f55da0758
-ms.sourcegitcommit: aa88f6b42aa8d83e43104b78964afb506a368fb4
+ms.openlocfilehash: 8608701a1dd0a9a20aede1737d16d5af2e715f6b
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64993552"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73434685"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。
 
-# <a name="mr-input-210-gaze"></a>MR 入力 210:視線入力
+# <a name="mr-input-210-gaze"></a>MR 入力 210: 宝石
 
-[見つめ](gaze.md)は入力の最初の形式であり、ユーザーの意図と認識を明らかにします。 MR 入力 210 (プロジェクトエクスプローラーとも呼ばれます) は、Windows Mixed Reality 向けの、宝石に関連する概念について詳しく説明しています。 私たちは、カーソルとホログラムにコンテキスト認識を追加し、アプリがユーザーの宝石について認識していることを最大限に活用します。
+[見つめ](gaze-and-commit.md)は入力の最初の形式であり、ユーザーの意図と認識を明らかにします。 MR 入力 210 (プロジェクトエクスプローラーとも呼ばれます) は、Windows Mixed Reality 向けの、宝石に関連する概念について詳しく説明しています。 私たちは、カーソルとホログラムにコンテキスト認識を追加し、アプリがユーザーの宝石について認識していることを最大限に活用します。
 
 >[!VIDEO https://www.youtube.com/embed/yKAttGduVp0]
 
@@ -39,13 +39,13 @@ ms.locfileid: "64993552"
 <tr>
 <th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td>MR 入力 210:視線入力</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td>MR 入力 210: 宝石</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
-## <a name="before-you-start"></a>開始前の準備
+## <a name="before-you-start"></a>開始前の作業
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 * 適切な[ツールがインストール](install-the-tools.md)された WINDOWS 10 PC。
 * 基本的なC#プログラミング機能。
@@ -68,7 +68,7 @@ ms.locfileid: "64993552"
 
 >[!VIDEO https://www.youtube.com/embed/_Ccn6riQ6vU]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * HoloLens 用 Unity の開発を最適化する。
 * アセットをインポートし、シーンをセットアップする。
@@ -91,7 +91,7 @@ ms.locfileid: "64993552"
 2. [プレーヤー設定] の [**インスペクター] パネル**で、 **[Windows ストア]** アイコンを選択します。
 3. **[XR Settings]** グループを展開します。
 4. **[表示]** セクションで、 **[サポートされている仮想現実]** チェックボックスをオンにして、新しい**仮想現実の sdk**リストを追加します。
-5. **[Windows Mixed Reality]** が一覧に表示されていることを確認します。 表示されてい **+** ない場合は、一覧の下部にあるボタンを選択し、 **[Windows Holographic]** を選択します。
+5. **[Windows Mixed Reality]** が一覧に表示されていることを確認します。 表示されていない場合は、一覧の下部にある [ **+** ] ボタンを選択し、 **[Windows Holographic]** を選択します。
 
 次に、スクリプトバックエンドを .NET に設定する必要があります。
 
@@ -101,7 +101,7 @@ ms.locfileid: "64993552"
 
 最後に、HoloLens で高速なパフォーマンスを実現するために品質設定を更新します。
 
-1. 編集 **> プロジェクトの設定** 品質 > にアクセスします。
+1. 編集]  **[> プロジェクトの設定]** [品質 > にアクセスします。
 2. Windows ストアアイコンの下の**既定**の行で、下向き矢印をクリックします。
 3. **Windows ストアアプリ**の場合は **[低]** を選択します。
 
@@ -132,7 +132,7 @@ ms.locfileid: "64993552"
 
 ### <a name="save-the-project"></a>プロジェクトを保存する
 
-1. 新しいシーンを保存します。**ファイル > シーンを名前を付けて保存**します。
+1. 新しいシーンを保存します。 **ファイル > シーンを名前を付けて保存**します。
 2. **[新しいフォルダー]** をクリックし、フォルダーに「**シーン**」という名前を指定します。
 3. ファイルに "**Modelexplorer**" という名前を付け、 **[シーン]** フォルダーに保存します。
 
@@ -157,8 +157,8 @@ HoloLens に展開する場合:
 
 1. Visual Studio の上部のツールバーを使用して、ターゲットをデバッグから**リリース**に変更し、ARM から**x86**に変更します。
 2. ローカルコンピューター ボタンの横にあるドロップダウン矢印をクリックし、**リモートコンピューター** を選択します。
-3. **HoloLens デバイスの IP アドレス**を入力し、[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に設定します。 **[選択]** をクリックします。 デバイスの IP アドレスがわからない場合は、**設定 Network & Internet > 詳細オプション >** 確認してください。
-4. 上部のメニューバーで、デバッグ、**デバッグなしで開始** の順にクリック >、Ctrl キーを押し**ながら F5**キーを押します。 初めてデバイスをデプロイする場合は、 [Visual Studio とペアリング](using-visual-studio.md#pairing-your-device-hololens)する必要があります。
+3. **HoloLens デバイスの IP アドレス**を入力し、[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に設定します。 [**選択] を**クリックします。 デバイスの IP アドレスがわからない場合は、**設定 Network & Internet > 詳細オプション >** 確認してください。
+4. 上部のメニューバーで、デバッグ、**デバッグなしで開始** の順にクリック >、Ctrl キーを押し**ながら F5**キーを押します。 初めてデバイスをデプロイする場合は、 [Visual Studio とペアリング](using-visual-studio.md#pairing-your-device)する必要があります。
 5. アプリが展開されたら、 **select ジェスチャ**を使用して、 **[fitbox]** を閉じます。
 
 イマーシブヘッドセットに展開する場合:
@@ -172,7 +172,7 @@ HoloLens に展開する場合:
 
 >[!VIDEO https://www.youtube.com/embed/S24u0V_T7ZI]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * カーソルの視覚的なデザインと動作。
 * 見つめ based のカーソルフィードバック。
@@ -191,7 +191,7 @@ HoloLens に展開する場合:
 3. **HoloToolkit\Input\Prefabs**フォルダーで、**カーソル**アセットを見つけます。
 4. **カーソル**を**階層**にドラッグアンドドロップします。
 5. **階層**内の**inputmanager**オブジェクトを選択します。
-6. **インスペクター**の下部にある**カーソルオブジェクトを**、**階層**から Inputmanager の**simplesingleポインタセレクター**の**cursor**フィールドにドラッグします。
+6. **インスペクター**の下部にあるカーソルオブジェクトを、**階層**から Inputmanager の**Simplesingleポインタセレクター**の**cursor**フィールドに**ドラッグします**。
 
 ![単純な単一ポインターセレクターの設定](images/holograms210-ssps.png)
 
@@ -232,7 +232,7 @@ void IFocusable.OnFocusExit()
 ```
 
 >[!NOTE]
->以上を`EnableKeyword`使用`DisableKeyword`しています。 ツールキットの標準シェーダーを使用して独自のアプリでこれらを使用するには、スクリプトを使用して[マテリアルにアクセスするための Unity ガイドライン](https://docs.unity3d.com/Manual/MaterialsAccessingViaScript.html)に従う必要があります。 この例では、リソースフォルダーに必要な、強調表示された[3 つの素材](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-210-Gaze/Completed/ModelExplorer/Assets/Resources/Models/AstroMan/Materials)が既に含まれています (名前に強調表示された3つの素材を探します)。
+>上記の `EnableKeyword` と `DisableKeyword` を使用します。 ツールキットの標準シェーダーを使用して独自のアプリでこれらを使用するには、スクリプトを使用して[マテリアルにアクセスするための Unity ガイドライン](https://docs.unity3d.com/Manual/MaterialsAccessingViaScript.html)に従う必要があります。 この例では、リソースフォルダーに必要な、強調表示された[3 つの素材](https://github.com/Microsoft/HolographicAcademy/tree/Holograms-210-Gaze/Completed/ModelExplorer/Assets/Resources/Models/AstroMan/Materials)が既に含まれています (名前に強調表示された3つの素材を探します)。
 
 ### <a name="build-and-deploy"></a>ビルドと配置
 
@@ -243,7 +243,7 @@ void IFocusable.OnFocusExit()
 
 >[!VIDEO https://www.youtube.com/embed/TFnuLva4VJ0]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * ホログラムを簡単にターゲット設定できるようにします。
 * 自然な移動を安定化します。
@@ -259,7 +259,7 @@ void IFocusable.OnFocusExit()
 
 >[!VIDEO https://www.youtube.com/embed/htVbJCMlj64]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * ホログラムの検索に役立つように、カーソルに方向インジケーターを追加します。
 
@@ -271,10 +271,10 @@ void IFocusable.OnFocusExit()
 2. ユーザーがホログラムでの表示を切り替えている場合は、方向インジケーターを非表示にします。
 3. ホログラムをポイントするように方向インジケーターを更新します。
 
-では、始めましょう。
+それでは始めましょう。
 
 1. **階層**パネルで**AstroMan**オブジェクトをクリックし、**矢印をクリック**して展開します。
-2. **[階層]** パネルで、[ **AstroMan**] の [方向] を選択します。
+2. **[階層]** パネルで、[ **AstroMan** **] の [** 方向] を選択します。
 3. **[インスペクター]** パネルで、 **[コンポーネントの追加]** ボタンをクリックします。
 4. メニューで、検索ボックスの**方向インジケーター**を入力します。 検索結果を選択します。
 5. **[階層]** パネルで、 **Cursor**オブジェクトを**インスペクター**の**cursor**プロパティにドラッグアンドドロップします。
@@ -286,7 +286,7 @@ void IFocusable.OnFocusExit()
 
 >[!VIDEO https://www.youtube.com/embed/qFiLr_LUACE]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * Billboarding を使用して、ホログラムが常に直面するようにします。
 
@@ -304,7 +304,7 @@ void IFocusable.OnFocusExit()
 
 >[!VIDEO https://www.youtube.com/embed/Ct8ORZAX5JU]
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * タグを使用して、ホログラムが部屋の周りをたどるようにします。
 
@@ -345,7 +345,7 @@ if (interactibleAction != null)
   * **[インスペクター]** パネルで、 **[コンポーネントの追加]** ボタンをクリックします。
   * メニューの [検索 **] ボックスに**、「」と入力します。 検索結果を選択します。
   * [**ホログラム**フォルダー] で、資産の**タグ**を検索します。
-  * **階層**内の**ChestButton_Center**オブジェクトを選択します。 **プロジェクト** パネルの  **tagalong**オブジェクトを、プロパティ  にある **オブジェクト** にドラッグアンドドロップします。
+  * **階層**内の**ChestButton_Center**オブジェクトを選択します。 **プロジェクト** パネルの **tagalong**オブジェクトを、プロパティ にある **オブジェクト**  **にドラッグ**アンドドロップします。
   * **インスペクター**の**tagalong アクション**オブジェクトを、 **Interactible**スクリプトの**Interactible action**フィールドにドラッグします。
 * **TagalongAction**スクリプトをダブルクリックして、Visual Studio で開きます。
 

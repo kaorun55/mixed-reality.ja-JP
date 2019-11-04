@@ -6,19 +6,20 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、billboarding、タグ
-ms.openlocfilehash: e33ab0121398742b2e48553c9cbf2c1debdc6abf
-ms.sourcegitcommit: c20563b8195c0c374a927b96708d958b127ffc8f
+ms.openlocfilehash: 032e665d94a73b94b59f693e452874af0b45f021
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65974785"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437000"
 ---
 # <a name="billboarding-and-tag-along"></a>Billboarding とタグに沿って
 
-Billboarding は、混合現実のオブジェクトに適用できる動作の概念です。 Billboarding を使用するオブジェクトは、常にユーザーに顔を合わせて向きます。 これは、ユーザーが移動した場合に、ユーザーの環境に配置されている静的オブジェクト (ワールドロック) が隠されたり、読み取り不可能になったりするテキストおよび menuing システムに特に役立ちます。
+<br>
 
-![常にユーザーに接しているメニューシステムの HoloLens の観点](images/billboarding-fragments.gif)<br>
-*常にユーザーに接しているメニューシステムの HoloLens の観点*
+<img src="images/billboarding-fragments.gif" alt="HoloLens perspective of a menu system that always faces the user" width="940px">
+
+Billboarding は、混合現実のオブジェクトに適用できる動作の概念です。 Billboarding を使用するオブジェクトは、常にユーザーに顔を合わせて向きます。 これは、ユーザーが移動した場合に、ユーザーの環境に配置されている静的オブジェクト (ワールドロック) が隠されたり、読み取り不可能になったりするテキストおよび menuing システムに特に役立ちます。
 
 Billboarding が有効になっているオブジェクトは、ユーザーの環境で自由に回転できます。 また、設計上の考慮事項に応じて、1つの軸に制限することもできます。 Billboarded オブジェクトは、他のオブジェクトに近すぎるか、または HoloLens によってスキャンされたサーフェイスが終了した場合に、自身をクリップまたは occlude することができます。 これを回避するには、billboarding に対して有効にした軸で回転したときにオブジェクトが生成する総フットプリントを考えてください。
 
@@ -26,7 +27,7 @@ Billboarding が有効になっているオブジェクトは、ユーザーの�
 
 タグに加えて、billboarded オブジェクトを含むホログラムに追加できる動作の概念を示します。 この相互作用は、ヘッドロックされたコンテンツの効果を実現するためのより自然でわかりやすい方法です。 タグに沿ったオブジェクトは、ユーザーのビューを離れることはありません。 これにより、ユーザーは、その前にあるものを自由に操作できるだけでなく、直接のビューの外部にあるホログラムも見ることができます。
 
-![HoloLens のピンパネルは、タグに沿った動作の優れた例です。](images/tagalong-1000px.jpg)<br>
+![HoloLens の pin パネルは、タグに沿って動作するしくみの好例](images/tagalong-1000px.jpg)<br>
 *HoloLens の [スタート] メニューは、タグに沿った動作の優れた例です。*
 
 タグに沿ったオブジェクトには、動作を微調整できるパラメーターがあります。 コンテンツは、ユーザーの環境内を移動しながら、必要に応じてユーザーの視野を越えることができます。 ユーザーが移動すると、コンテンツは、ユーザーの移動速度によって、コンテンツが一時的に非表示になる可能性があることによって、ユーザーの周囲の内側に置かれます。 ユーザーがタグに沿って gazes すると、より完全に表示されます。 コンテンツは常に "一目でわかる" と考えられるので、ユーザーがコンテンツの方向を忘れないようにします。

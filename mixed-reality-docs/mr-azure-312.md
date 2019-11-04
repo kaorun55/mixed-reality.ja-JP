@@ -6,17 +6,17 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, コンピュータービジョン, hololens, イマーシブ, vr, microsoft bot framework v4, web アプリボット, bot フレームワーク, microsoft bot
-ms.openlocfilehash: 481693b5af8c946e1cb45dda5144e78a175fa771
-ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
+ms.openlocfilehash: dc428f01a8333bf812fe03c59a46b7a2fa20df83
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047230"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438487"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
-# <a name="mr-and-azure-312-bot-integration"></a>MR と Azure 312:Bot の統合
+# <a name="mr-and-azure-312-bot-integration"></a>MR と Azure 312: Bot 統合
 
 このコースでは、Microsoft Bot Framework V4 を使用して bot を作成およびデプロイし、Windows Mixed Reality アプリケーションを介してそれと通信する方法について説明します。 
 
@@ -38,7 +38,7 @@ ms.locfileid: "70047230"
 <tr>
 <th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td> MR と Azure 312:Bot の統合</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td> MR と Azure 312: Bot 統合</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
@@ -60,7 +60,7 @@ ms.locfileid: "70047230"
 - [Windows Mixed Reality イマーシブ (VR) ヘッドセット](immersive-headset-hardware-details.md)または開発者モードを有効にした[Microsoft HoloLens](hololens-hardware-details.md)
 - Azure および Azure Bot の取得のためのインターネットアクセス。 詳細については、こちらのリンクを参照し[てください](https://dev.botframework.com/)。
 
-### <a name="before-you-start"></a>開始前の準備
+### <a name="before-you-start"></a>開始前の作業
 
 1.  このプロジェクトのビルドで問題が発生しないように、このチュートリアルで説明されているプロジェクトをルートまたはほぼルートフォルダーに作成することを強くお勧めします (長いフォルダーパスはビルド時に問題を引き起こす可能性があります)。
 2.  HoloLens をセットアップしてテストします。 HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。 
@@ -88,7 +88,7 @@ ms.locfileid: "70047230"
 
     ![Bot アプリケーションを作成する](images/AzureLabs-Lab312-03.png)
 
-5.  右クリックし、*プロジェクト*、 **MyBot**の**ソリューション エクスプ ローラー** をクリック **追加** **|** **クラス**します。
+5.  **ソリューションエクスプローラー**で*プロジェクト*の**mybot**を右クリックし、[ **|** **クラス**の**追加**] をクリックします。
 
     ![Bot アプリケーションを作成する](images/AzureLabs-Lab312-04.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "70047230"
 
 7.  前の点を繰り返して、 **ConversationContext**という名前の別のクラスを作成します。 
 
-8.  **ソリューションエクスプローラー**で**wwwroot**を右クリックし、[**新しい項目**の**追加** **|** ] をクリックします。 **HTML ページ**を選択します (サブセクション Web の下にあります)。 ファイルに「 **default .html**」という名前を指定します。 **[追加]** をクリックします。
+8.  **ソリューションエクスプローラー**で**wwwroot**を右クリックし、[ **|** **新しい項目**の**追加**] をクリックします。 **HTML ページ**を選択します (サブセクション Web の下にあります)。 ファイルに「 **default .html**」という名前を指定します。 **[追加]** をクリックします。
 
     ![Bot アプリケーションを作成する](images/AzureLabs-Lab312-06.png)
 
@@ -249,13 +249,13 @@ ms.locfileid: "70047230"
     }
     ```
 
-14. 変更内容を保存してください。そのためには、Visual Studio の上部にあるツールバーから [**ファイル** > ] **[すべてを保存]** の順に開きます。
+14. 変更内容を保存してください。そのためには、Visual Studio の上部にあるツールバーから **[ファイル]**  >  **[すべて保存]** にアクセスしてください。
 
 ## <a name="chapter-2---create-the-azure-bot-service"></a>第2章-Azure Bot Service の作成
 
 Bot 用のコードを作成したので、Azure Portal で*Web アプリボット*サービスのインスタンスに発行する必要があります。 この章では、Azure でボットサービスを作成および構成し、そのサービスにコードを発行する方法について説明します。
 
-1.  まず、Azure ポータル (https://portal.azure.com) ) にログインします。 
+1.  まず、Azure Portal (https://portal.azure.com) にログインします。 
 
     1. まだ Azure アカウントを持っていない場合は、アカウントを作成する必要があります。 このチュートリアルを教室またはラボの状況で行っている場合は、新しいアカウントの設定について、インストラクターまたはそのいずれかの対処を依頼してください。
 
@@ -342,11 +342,11 @@ Bot 用のコードを作成したので、Azure Portal で*Web アプリボッ�
 
     ![Unity プロジェクトを設定する](images/AzureLabs-Lab312-20.png)
 
-2.  ここで、Unity プロジェクト名を指定する必要があります。 **Hololens Bot**を挿入します。 プロジェクトテンプレートが**3d**に設定されていることを確認します。 場所を適切な**場所**に設定します (ルートディレクトリの方が適していることに注意してください)。 次に、 **[プロジェクトの作成]** をクリックします。
+2.  ここで、Unity プロジェクト名を指定する必要があります。 **HoloLens Bot**を挿入します。 プロジェクトテンプレートが**3d**に設定されていることを確認します。 場所を適切な**場所**に設定します (ルートディレクトリの方が適していることに注意してください)。 次に、 **[プロジェクトの作成]** をクリックします。
 
     ![Unity プロジェクトを設定する](images/AzureLabs-Lab312-21.png)
 
-3.  既定値を確認する必要が開いている Unity、 **スクリプト エディター** に設定されている **Visual Studio** します。 **[> の設定の編集]** に移動し、新しいウィンドウで **[外部ツール]** に移動します。 変更 **External Script Editor** に **Visual Studio 2017** します。 **[基本設定]** ウィンドウを閉じます。
+3.  Unity を開いている場合は、[既定の**スクリプトエディター** ] が**Visual Studio**に設定されていることを確認する必要があります。 **[> の設定の編集]** に移動し、新しいウィンドウで **[外部ツール]** に移動します。 **外部スクリプトエディター**を**Visual Studio 2017**に変更します。 **[基本設定]** ウィンドウを閉じます。
 
     ![Unity プロジェクトを設定する](images/AzureLabs-Lab312-22.png)
 
@@ -356,7 +356,7 @@ Bot 用のコードを作成したので、Azure Portal で*Web アプリボッ�
 
 5.  それでも**ファイル > ビルド設定**を行い、次のことを確認します。
 
-    1.  **ターゲットデバイス**が**Hololens**に設定されています
+    1.  **ターゲットデバイス**が**HoloLens**に設定されています
 
         > イマーシブヘッドセットの場合は、**ターゲットデバイス**を*任意のデバイス*に設定します。
 
@@ -437,7 +437,7 @@ Bot 用のコードを作成したので、Azure Portal で*Web アプリボッ�
 
 Newtonsoft ライブラリをプロジェクトにインポートするには、このコースに付属している Unity パッケージを使用します。
 
-1.  [アセット > **インポートパッケージ** の > **カスタムパッケージ**] メニューオプションを使用して、unitypackage を Unity に追加します。
+1.  [**アセット** > **インポートパッケージ** > **カスタムパッケージ**] メニューオプションを使用して、Unity に *. unitypackage*を追加します。
 
     ![Newtonsoft ライブラリをインポートする](images/AzureLabs-Lab312-34.png)
 
@@ -460,7 +460,7 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
 
 6.  次に、 **Newtonsoft**フォルダー内の**WSA**フォルダーを開く必要があります。 先ほど構成したものと同じファイルのコピーが表示されます。 ファイルを選択し、インスペクターで次のことを確認します。
     -   **すべてのプラットフォーム**が**オフ**になっています 
-    -   **のみ** **Wsaplayer**が**オン**になっています
+    -   **wsaplayer**のみが**チェック**されます
     -   **処理**されないかどうかを**確認**します
 
     ![](images/AzureLabs-Lab312-35d.png)
@@ -471,7 +471,7 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
 
     ![カメラの設定](images/AzureLabs-Lab312-32.png)
  
-2.  **+** シンボルをクリックします。 新しい**タグ**に**BotTag**という名前を*付けて保存*します。
+2.  **+** 記号をクリックします。 新しい**タグ**に**BotTag**という名前を*付けて保存*します。
 
     ![カメラの設定](images/AzureLabs-Lab312-33.png)
 
@@ -836,7 +836,7 @@ Bot サービスにメッセージを送信するために、 **Sendmessagetobot
     ```
 
     > [!NOTE] 
-    > **Bot シークレットキー**を**botSecret**変数に挿入していることを確認します。 メモは、 **ボットのシークレット キー** のこのコースでは、先頭に **[第 2 章](#chapter-2---create-the-azure-bot-service)、手順 10** 。
+    > **Bot シークレットキー**を**botSecret**変数に挿入していることを確認します。 **Bot の秘密鍵**は、このコースの最初に、 **[第2章](#chapter-2---create-the-azure-bot-service)の手順 10**で説明しました。
 
 7. 起動可能な **()** と**Start ()** のコードを追加する必要があります。 
 
@@ -1251,7 +1251,7 @@ Bot サービスにメッセージを送信するために、 **Sendmessagetobot
 
 HoloLens に展開するには:
 
-1.  Hololens が**開発者モード**になっていることを確認するには、HOLOLENS の IP アドレス (リモートデプロイ用) が必要です。 これを行うには :
+1.  Hololens が**開発者モード**になっていることを確認するには、HOLOLENS の IP アドレス (リモートデプロイ用) が必要です。 これには、次の手順を実行します。
 
     1. HoloLens を装着した後、**設定**を開きます。
     2. **[ネットワーク & インターネット > wi-fi > 詳細オプション]** にアクセス

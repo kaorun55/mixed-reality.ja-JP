@@ -1,17 +1,17 @@
 ---
 title: Unity での Vuforia の使用
 description: Unity で Vuforia を活用して、Windows Mixed Reality アプリケーションを構築します。
-author: ailyadis
-ms.author: ''
+author: thetuvix
+ms.author: alexturn
 ms.date: 01/28/2019
 ms.topic: article
 keywords: Vuforia、マーカー、座標、参照のフレーム、追跡
-ms.openlocfilehash: c0d2f6d0707e1ddd3ee00d3eb80af9fb459f252b
-ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
+ms.openlocfilehash: 0ab87a6262cbe74fd116fdc0a7045961bf8695d9
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66750345"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437139"
 ---
 # <a name="using-vuforia-engine-with-unity"></a>Unity での Vuforia Engine の使用
 
@@ -52,7 +52,7 @@ HoloLens 用の Vuforia Engine アプリの開発は、他のデバイス用の 
    * ビルドして実行する = ローカルコンピューター
 6.  HoloLens にインストールするときにアプリの名前として機能する一意の**製品名**を **[プレーヤーの設定]** で定義します。
 7.  **プレーヤー設定 > XR 設定**で**サポートされている** **Vuforia 拡張現実**と仮想現実を確認する
-8.  また、**XR の設定** で、Windows Mixed reality が **Virtual Reality sdk** の一覧に追加されていることを確認します。
+8.  また、 **[XR の設定]** で、Windows Mixed reality が  **[Virtual Reality sdk]** の一覧に追加されていることを確認します。
 9.  プレーヤーの設定 > 発行設定で次の機能を確認します。 
    * InternetClient
    * WebCam
@@ -60,7 +60,7 @@ HoloLens 用の Vuforia Engine アプリの開発は、他のデバイス用の 
 10. [ビルド] を選択して Visual Studio プロジェクトを生成します
 11. Visual Studio から実行可能ファイルをビルドし、HoloLens にインストールする
 
-注:バージョン7.2 以降、HoloLens の Vuforia Engine サンプルには、モデルターゲットの使用例を含むサンプルシーンが含まれています。
+注: バージョン7.2 以降、HoloLens の Vuforia Engine サンプルには、モデルターゲットの使用例を含むサンプルシーンが含まれています。
 
 ## <a name="the-vuforia-developer-portal"></a>Vuforia 開発者ポータル
 
@@ -70,12 +70,12 @@ Vuforia Engine と HoloLens で独自の AR エクスペリエンスを作成し
 
 [拡張追跡](https://library.vuforia.com/articles/Training/Extended-Tracking)は、ターゲットがビューに存在しなくなった場合でも、追跡を維持する環境のマップを作成します。 Vuforia エンジンは、HoloLens によって実行される空間マッピングに相当します。 ターゲットで拡張追跡を有効にすると、そのターゲットが空間マッピングシステムに渡されるようにすることができます。 このようにして、Vuforia Engine システムと HoloLens 空間座標系の両方にターゲットを同時に配置することはできません。
 
-![Unity の設定ウィンドウ](images/vuforia-extendedtracking.png)<br>
+![Unity の設定 ウィンドウ](images/vuforia-extendedtracking.png)<br>
 *Unity の設定ウィンドウ*
 
 **ターゲットでの拡張追跡の有効化**
 
-Vuforia Engine は、拡張追跡を使用するターゲットのポーズを HoloLens 空間座標系に自動的に変換します。 これにより、HoloLens は追跡を引き継ぎ、コンテンツの補強をターゲットの環境の空間マップに統合することができます。 このプロセスは、Unity の Vuforia Engine と mixed reality Api の間で発生し、開発者によるプログラミングは必要ありません。自動的に処理されます。
+Vuforia Engine は、拡張追跡を使用するターゲットのポーズを HoloLens 空間座標系に自動的に変換します。 これにより、HoloLens は追跡を引き継ぎ、コンテンツの補強をターゲットの環境の空間マッピングに統合できます。 このプロセスは、Unity の Vuforia Engine と mixed reality Api の間で発生し、開発者によるプログラミングは必要ありません。自動的に処理されます。
 
 **次のような処理が行われます。**
 1. Vuforia のターゲットトラッカーはターゲットを認識します
@@ -95,7 +95,7 @@ Vuforia Engine は、拡張追跡を使用するターゲットのポーズを H
 * [空間マッピング](spatial-mapping.md)
 * [Unity のカメラ](camera-in-unity.md)
 * [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)
-* [Vuforia のドキュメント:Unity での Windows 10 向けの開発](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
-* [Vuforia のドキュメント:Vuforia Unity 拡張機能をインストールする方法](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
-* [Vuforia のドキュメント:Unity での HoloLens サンプルの使用](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)
-* [Vuforia のドキュメント:Vuforia の拡張追跡](https://library.vuforia.com/articles/Training/Extended-Tracking)
+* [Vuforia のドキュメント: Unity での Windows 10 向けの開発](https://library.vuforia.com/articles/Solution/Developing-for-Windows-10-in-Unity)
+* [Vuforia のドキュメント: Vuforia Unity 拡張機能のインストール方法](https://library.vuforia.com/articles/Solution/Installing-the-Unity-Extension)
+* [Vuforia のドキュメント: Unity での HoloLens サンプルの使用](https://library.vuforia.com/articles/Solution/Working-with-the-HoloLens-sample-in-Unity)
+* [Vuforia のドキュメント: Vuforia の拡張追跡](https://library.vuforia.com/articles/Training/Extended-Tracking)

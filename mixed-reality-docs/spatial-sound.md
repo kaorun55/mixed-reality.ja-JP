@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間サウンド、サラウンドサウンド、3d オーディオ、3d サウンド、空間オーディオ
-ms.openlocfilehash: a30a484c4e47593556fbd1786158262551e11d22
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 31ec8f88a060127daab9bf3afc970457ec7c90a3
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829918"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437393"
 ---
 # <a name="spatial-sound"></a>立体音響
 
@@ -21,7 +21,7 @@ ms.locfileid: "66829918"
 
 <br>
 
->[!VIDEO https://www.youtube.com/embed/PTPvx7mDon4]
+<iframe width="940" height="530" src="https://www.youtube.com/embed/PTPvx7mDon4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## <a name="device-support"></a>デバイスのサポート
 
@@ -35,7 +35,7 @@ ms.locfileid: "66829918"
     <tr>
         <td><strong>機能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
-        <td><strong>HoloLens 2</strong></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
      <tr>
@@ -52,7 +52,7 @@ ms.locfileid: "66829918"
 
 <br>
 
->[!VIDEO https://www.youtube.com/embed/aB3TDjYklmo]
+<iframe width="940" height="530" src="https://www.youtube.com/embed/aB3TDjYklmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 左または右のオーディオ (azimuth) のキューは、各 ear でサウンドが到着したときの違いに起因します。 上下のキューは、外側の ear 図形 (pinnae) によって生成されたスペクトル変化から発生します。 オーディオの発信元を指定することにより、システムは、耳に異なる時刻に到着したサウンドのエクスペリエンスをシミュレートできます。 HoloLens では、azimuth spatialization はパーソナル化されていますが、昇格のシミュレーションは平均 anthropometrics のセットに基づいていることに注意してください。 したがって、昇格の精度は azimuth の精度よりも正確ではない可能性があります。
 
@@ -60,7 +60,7 @@ ms.locfileid: "66829918"
 
 ## <a name="integrating-spatial-sound"></a>空間サウンドの統合
 
-混合現実の一般的な原則は、ユーザーの物理的な世界または仮想環境での最先端の[ホログラム](hologram.md)であるため、ホログラムからのほとんどのサウンドは spatialized にする必要があります。 HoloLens では、自然に CPU とメモリの予算に関する考慮事項がありますが、CPU の使用率が 12% 未満 (4 つのコアのうちの 70%) を使用して、10-12 の空間サウンド音声を使用できます。 空間サウンドの音声の推奨される用途は次のとおりです。
+混合現実の一般的な原則は、ユーザーの物理的な世界または仮想環境での最先端の[ホログラム](hologram.md)であるため、ホログラムからのほとんどのサウンドは spatialized にする必要があります。 HoloLens では、自然に CPU とメモリの予算に関する考慮事項がありますが、CPU の使用率が12% 未満 (4 つのコアのうちの 70%) を使用して、10-12 の空間サウンド音声を使用できます。 空間サウンドの音声の推奨される用途は次のとおりです。
 * (特にビュー外の) オブジェクトを見つめています。 ホログラムにユーザーの注意が必要な場合は、そのホログラムでサウンドを再生します (例: 仮想 dog ほえ)。 これにより、ユーザーは、表示されていないホログラムを見つけることができます。
 * Audio Haptics (touchless 相互作用のためのリアクティブオーディオ)。 たとえば、ユーザーの手や運動コントローラーがジェスチャフレームを入力して終了したときに音を鳴らします。 または、ユーザーがホログラムを選択したときに音を鳴らします。
 * Immersion (ユーザーを囲むアンビエントサウンド)。

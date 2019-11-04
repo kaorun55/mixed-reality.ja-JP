@@ -6,17 +6,17 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, エッジ, iot edge, チュートリアル, api, 通知, 関数, テーブル, hololens, イマーシブ, vr, iot, 仮想マシン, ubuntu, python
-ms.openlocfilehash: ec669b799e7c46a9a4ed87674ed78e50f816c9e9
-ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
+ms.openlocfilehash: 7f56c7931bb036d14ab3aa9156706b1f6247195c
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047242"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437966"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
-# <a name="mr-and-azure-313-iot-hub-service"></a>MR と Azure 313:IoT Hub サービス
+# <a name="mr-and-azure-313-iot-hub-service"></a>MR と Azure 313: IoT Hub サービス
 
 ![コースの結果](images/AzureLabs-Lab313-00.png)
 
@@ -35,13 +35,13 @@ ms.locfileid: "70047242"
 
 使用するサービスには次のものがあります。
 
-- **Azure IoT Hub**は、開発者が IoT 資産の接続、監視、管理を行うことができるようにする Microsoft Azure サービスです。 詳細については、 [ **Azure IoT Hub サービス**](https://azure.microsoft.com/en-au/services/iot-hub/)に関するページを参照してください。
+- **Azure IoT Hub**は、開発者が IoT 資産の接続、監視、管理を行うことができるようにする Microsoft Azure サービスです。 詳細については、 [ **Azure IoT Hub サービス**](https://azure.microsoft.com/services/iot-hub/)に関するページを参照してください。
 
-- **Azure Container Registry**は、さまざまな種類のコンテナーについて、開発者がコンテナーイメージを格納できるようにする、Microsoft Azure サービスです。 詳細については、 [ **Azure Container Registry サービス**](https://azure.microsoft.com/en-au/services/container-registry/)に関するページを参照してください。
+- **Azure Container Registry**は、さまざまな種類のコンテナーについて、開発者がコンテナーイメージを格納できるようにする、Microsoft Azure サービスです。 詳細については、 [ **Azure Container Registry サービス**](https://azure.microsoft.com/services/container-registry/)に関するページを参照してください。
 
-- **Azure Function App**は Microsoft Azure サービスであり、開発者は azure で小さなコードである "functions" を実行できます。 これにより、ローカルアプリケーションではなく、クラウドに作業を委任することができます。これには多くのメリットがあります。 **Azure Functions**は、C\#、F\#、node.js、Java、PHP など、いくつかの開発言語をサポートしています。 詳細については、 [ **Azure Functions**のページ](https://docs.microsoft.com/azure/azure-functions/functions-overview)を参照してください。
+- **Azure Function App**は Microsoft Azure サービスであり、開発者は azure で小さなコードである "functions" を実行できます。 これにより、ローカルアプリケーションではなく、クラウドに作業を委任することができます。これには多くのメリットがあります。 **Azure Functions**は、C\#、F\#、Node.js、JAVA、PHP など、いくつかの開発言語をサポートしています。 詳細については、 [ **Azure Functions**のページ](https://docs.microsoft.com/azure/azure-functions/functions-overview)を参照してください。
 
-- **Azure Storage:テーブル**は、開発者が構造化された SQL 以外のデータをクラウドに格納し、どこからでも簡単にアクセスできるようにする Microsoft Azure サービスです。 このサービスでは、スキーマのない設計が非常に優れているため、必要に応じてテーブルを進化させることができるため、非常に柔軟性があります。 詳細については、 [ **Azure のテーブル**に関するページを参照してください。](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
+- **Azure Storage: テーブル**は Microsoft Azure サービスです。これにより、開発者は構造化された SQL 以外のデータをクラウドに格納し、どこからでも簡単にアクセスできるようになります。 このサービスでは、スキーマのない設計が非常に優れているため、必要に応じてテーブルを進化させることができるため、非常に柔軟性があります。 詳細については、 [ **Azure のテーブル**に関するページを参照してください。](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview)
 
 このコースでは、IoT Hub サービスを設定して使用する方法と、デバイスによって提供される応答を視覚化する方法について説明します。 これらの概念は、作成するカスタム IoT Hub サービスのセットアップに適用する必要があります。
 
@@ -51,7 +51,7 @@ ms.locfileid: "70047242"
 <tr>
 <th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td> MR と Azure 313:IoT Hub サービス</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td> MR と Azure 313: IoT Hub サービス</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
@@ -72,14 +72,14 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 - Windows 10 SDK (最新バージョン)
 - HoloLens、**開発者モードが有効**
 - Visual Studio 2017.15.4 (Azure Cloud Explorer へのアクセスにのみ使用)
-- Azure および IoT Hub サービス用のインターネットアクセス。 詳細については、こちらの[IoT Hub サービスへのリンクに関するページを](https://azure.microsoft.com/en-au/services/iot-hub/)参照してください。
+- Azure および IoT Hub サービス用のインターネットアクセス。 詳細については、こちらの[IoT Hub サービスへのリンクに関するページを](https://azure.microsoft.com/services/iot-hub/)参照してください。
 - 機械学習モデル。 独自のモデルを使用する準備ができていない場合は、[このコースで提供さ](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20313%20-%20IoT%20Hub%20Service/Custom%20Vision%20Model.zip)れているモデルを使用できます。
 - Windows 10 開発用コンピューターで**hyper-v**ソフトウェアが有効になっています。
-- Ubuntu (16.4 または 18.4) を実行している仮想マシンを開発用コンピューターで実行するか、または Linux を実行する別のコンピューター (Ubuntu 16.4 または 18.4) を使用することができます。 Hyper-v を使用して Windows 上で VM を作成する方法の詳細については、 [「開始する前に](#before-you-start)」の章を参照してください。(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine).  
+- Ubuntu (16.4 または 18.4) を実行している仮想マシンを開発用コンピューターで実行するか、または Linux を実行する別のコンピューター (Ubuntu 16.4 または 18.4) を使用することができます。 Hyper-v を使用して Windows 上で VM を作成する方法の詳細については、 [「開始する前に](#before-you-start)」の章を参照してください。(https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) 。  
 
 
 
-### <a name="before-you-start"></a>開始前の準備
+### <a name="before-you-start"></a>開始前の作業
 
 1. HoloLens をセットアップしてテストします。 HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。
 2. 新しい HoloLens アプリの開発を開始するときは、**調整**と**センサーのチューニング**を実行することをお勧めします (ユーザーごとにこれらのタスクを実行するのに役立つ場合があります)。
@@ -89,7 +89,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 センサーチューニングの詳細については、 [HoloLens センサーチューニングに関する記事へのリンクを](sensor-tuning.md)参照してください。
 
 3. **Hyper-v**を使用して**Ubuntu 仮想マシン**をセットアップします。 このプロセスには、次のリソースが役立ちます。
-    1.  まず、このリンクに従っ[て Ubuntu 16.04.4 LTS (Xenial Xerus) ISO をダウンロード](http://au.releases.ubuntu.com/16.04/)します。 64ビット**PC (AMD64) デスクトップイメージ**を選択します。
+    1.  まず、このリンクに従っ[て Ubuntu 16.04.4 LTS (Xenial Xerus) ISO をダウンロード](https://au.releases.ubuntu.com/16.04/)します。 64ビット**PC (AMD64) デスクトップイメージ**を選択します。
     2.  Windows 10 コンピューターで**hyper-v**が有効になっていることを確認します。 [Windows 10 で hyper-v をインストールして有効](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)にする方法については、こちらのリンクを参照してください。
     3.  Hyper-v を起動し、新しい Ubuntu VM を作成します。 [Hyper-v を使用して VM を作成する手順](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine)については、こちらのリンクを参照してください。 **[起動可能なイメージファイルからオペレーティングシステムをインストール**する] に要求された場合は、前の手順でダウンロードした**Ubuntu ISO**を選択します。
 
@@ -193,7 +193,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     3. このサービスインスタンスに必要な**名前**を挿入します。    
 
-5.  ページの下部にある [次へ **] をクリックします。サイズとスケール**。
+5.  ページの下部にある [次の**サイズとスケール**] をクリックします。
 
     ![ストレージインスタンスの作成](images/AzureLabs-Lab313-12.png)
 
@@ -243,18 +243,18 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
 1.  [Docker for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)、ダウンロードできるアカウントを作成するように求められます。 
 
-    [![docker for windows のダウンロード](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+    [docker for windows をダウンロード ![には](images/AzureLabs-Lab313-21.png)](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
     > [!IMPORTANT]
     > Docker を実行するには、 *windows 10 PRO*、 *Enterprise 14393*、または*windows Server 2016 RTM*が必要です。 他のバージョンの Windows 10 を実行している場合は、 [Docker ツールボックス](https://docs.docker.com/toolbox/toolbox_install_windows/)を使用して docker をインストールできます。
 
 2.  [Python 3.6](https://www.python.org/downloads/)。
 
-    [![python 3.6 のダウンロード](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)
+    [python 3.6 をダウンロード ![には](images/AzureLabs-Lab313-22.png)](https://www.python.org/downloads/)
 
 3.  [Visual Studio Code (VS Code とも呼ば](https://code.visualstudio.com/download)れます)。
 
-    [![ダウンロード VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)
+    [![のダウンロード VS Code](images/AzureLabs-Lab313-23.png)](https://code.visualstudio.com/download)
 
 前述のソフトウェアをインストールしたら、コンピューターを再起動する必要があります。
 
@@ -271,13 +271,13 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
 1.  **Ubuntu ターミナル**を開き、次のコマンドを使用して**pip**をインストールします。
 
-    > [!ヒント] キーボードショートカットを使用すると、*ターミナル*を簡単に開くことができます。**Ctrl + Alt + T**
+    > [!ヒント] キーボードショートカット ( **Ctrl + Alt + T**) を使用して、*ターミナル*を非常に簡単に開くことができます。
 
     ```bash
         sudo apt-get install python-pip
     ```
 
-2.  この章では、デバイスのストレージを使用するためのアクセス許可を *ターミナル*で確認するメッセージが表示される場合があります。また、 **y/n** (yes または no) を入力するには「 **y」** と入力し、enter キーを押して同意します。
+2.  この章では、デバイスのストレージを使用するためのアクセス許可を*ターミナル*で確認するメッセージが表示される場合があります。また、 **y/n** (yes または no) を入力するには「 **y」** と入力し、 **enter キーを押して同意**します。
 
 3.  コマンドが完了したら、次のコマンドを使用して**curl**をインストールします。
 
@@ -320,7 +320,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     1.  キーボードの方向キーを使用して下にスクロールします (少し下にスクロールして、次の行に移動する必要があります)。
 
-        「デバイス接続文字列をここに**追加>」を参照してください\<** 。
+        " **\<デバイス接続文字列をここに追加 >** "
 
     2. 前にメモした**デバイス接続文字列**を使用して、**角かっこを含め**た代替行を指定します。
 
@@ -370,7 +370,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
 4. 拡張機能がインストールされたら、VS Code を閉じてから開き直します。
 
-5. さらに VS Code 開いて、[**統合ターミナル**の**表示** > ] に移動します。
+5. さらに VS Code 開いたら、[ **View** > **Integrated terminal**] に移動します。
 
 6. 次に、 **Cookiecutter**をインストールします。 ターミナルで、次の bash コマンドを実行します。
 
@@ -380,8 +380,8 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     > [!ヒント] このコマンドで問題が発生した場合は、次のようになります。 
     >1. VS Code、またはコンピューターを再起動します。
-    >2. **VS Code ターミナル**を、python のインストールに使用しているもの (特に、python 環境がコンピューターに既にインストールされている場合) に切り替える必要がある場合があります。 ターミナルを開いた状態で、ターミナルの右側にドロップダウンメニューが表示されます。
-     ![コンテナーを作成する](images/AzureLabs-Lab313-24b.png) 
+    >2. **VS Code ターミナル**を、python のインストールに使用している**もの (特**に、python 環境がコンピューターに既にインストールされている場合) に切り替える必要がある場合があります。 ターミナルを開いた状態で、ターミナルの右側にドロップダウンメニューが表示されます。
+     コンテナー](images/AzureLabs-Lab313-24b.png) を作成 ![には 
     >3. **Python**インストールパスが**環境変数**としてコンピューターに追加されていることを確認します。 Cookiecutter は同じ場所のパスの一部にする必要があります。 [環境変数の詳細につい](https://msdn.microsoft.com/library/windows/desktop/ms682653(v=vs.85).aspx)ては、このリンクに従ってください。 
 
 7. **Cookiecutter**のインストールが完了したら、コンピューターを再起動して、 **Cookiecutter**がシステムの環境内でコマンドとして認識されるようにします。
@@ -390,9 +390,9 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
 この時点で、モジュールを使用してコンテナーを作成し、 *Container Registry*にプッシュする必要があります。 コンテナーをプッシュしたら、 *IoT Hub Edge*サービスを使用して、 *IoT Edge ランタイム*を実行しているデバイスにデプロイします。
 
-1. VS Code で、[**コマンドパレット**の**表示** > ] をクリックします。
+1. VS Code から、 **[表示]** [ > **コマンドパレット**] の順にクリックします。
 
-2. パレットで、Azure IoT Edge を検索し**て実行します。新しい Iot Edge ソリューション**。
+2. パレットで、 **[Azure IoT Edge の新しい IoT Edge ソリューション]** を検索して実行します。
 
 3. ソリューションを作成する場所を参照します。 場所を受け入れるには、 **enter**キーを押します。
 
@@ -406,13 +406,13 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     **localhost: 5000/-モジュールの名前-** 。 
 
-8. 削除**localhost:5000**、およびその場所の挿入、*Container Registry* **ログイン サーバー**アドレスで、作成するときにメモしておいた、**コンテナーレジストリ サービス**([手順 8、第 2 章の](#chapter-2---the-container-registry-service))。 アドレスを確認するには、 **enter**キーを押します。
+8. **Localhost: 5000**を削除し、その場所で、 **Container Registry サービス**を作成するときにメモした*Container Registry* **Login サーバー**のアドレスを挿入します ([手順8では、第2章を](#chapter-2---the-container-registry-service)参照してください)。 アドレスを確認するには、 **enter**キーを押します。
 
 9. この時点で、Python モジュールのテンプレートを含むソリューションが作成され、その構造が画面の左側の [**探索] タブ**(VS Code) に表示されます。 [**探索] タブ**が開いていない場合は、左側のバーの一番上にあるボタンをクリックして開くことができます。
 
     ![コンテナーを作成する](images/AzureLabs-Lab313-25.png)
 
-10. この章の最後の手順は、をクリックして開く、 **.env ファイル**、内から、 **タブの調査**、追加、 *Container Registry* **ユーザー名**と**パスワード**します。 このファイルは git によって無視されますが、コンテナーを構築すると、 **Container Registry サービス**にアクセスするための資格情報が設定されます。
+10. この章の最後の手順では、[**探索] タブ**内から、 **env ファイル**をクリックして開き、 *Container Registry* **ユーザー名**と**パスワード**を追加します。 このファイルは git によって無視されますが、コンテナーを構築すると、 **Container Registry サービス**にアクセスするための資格情報が設定されます。
 
     ![コンテナーを作成する](images/AzureLabs-Lab313-26.png)
 
@@ -744,7 +744,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
 ## <a name="chapter-9---package-the-solution-as-a-container"></a>第9章-ソリューションをコンテナーとしてパッケージ化する
 
-1.  これで、ファイルをコンテナーとして "パッケージ化" し、 **Azure Container Registry**にプッシュできるようになりました。 VS Code で、*統合ターミナル*( **\`** **View** > **integrated terminal**または**Ctrl**+) を開き、次の行を使用して**Docker**にログインします (を使用して、コマンドと Azure Container Registry の資格情報 **(ACR)** ):
+1.  これで、ファイルをコンテナーとして "パッケージ化" し、 **Azure Container Registry**にプッシュできるようになりました。 VS Code で、*統合ターミナル*(**ビュー** > **統合ターミナル**または**Ctrl**+ **\`** ) を開き、次の行を使用して**Docker**にログインします (コマンドの値をで置き換えます)。Azure Container Registry の資格情報 **(ACR)** :
 
     ```bash
         docker login -u <ACR username> -p <ACR password> <ACR login server>
@@ -754,7 +754,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     ![デプロイの作成](images/AzureLabs-Lab313-30.png)
 
-3. **コマンドパレット**をもう一度開き、Azure を**検索します。** サインインします。 Azure アカウントの資格情報を使用して、画面の指示に従います。VS Code には、*コピーして開く*オプションが用意されています。これにより、すぐに必要なデバイスコードがコピーされ、既定の web ブラウザーが開きます。 プロンプトが表示されたら、デバイスコードを貼り付けて、コンピューターを認証します。
+3. もう一度**コマンドパレット**を開き、「 **Azure: Sign In**」を検索します。 Azure アカウントの資格情報を使用して、画面の指示に従います。VS Code には、*コピーして開く*オプションが用意されています。これにより、すぐに必要なデバイスコードがコピーされ、既定の web ブラウザーが開きます。 プロンプトが表示されたら、デバイスコードを貼り付けて、コンピューターを認証します。
 
     ![コピーして開く](images/AzureLabs-Lab313-31.png)
 
@@ -762,13 +762,13 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
 
     ![エッジデバイス](images/AzureLabs-Lab313-32.png)
 
-5. デバイスがここではない場合を右クリックする必要があります。 *Azure IoT Hub デバイス*、をクリックし、 **IoT Hub 接続文字列の設定**します。 **コマンドパレット**(VS Code の上部) で、*接続文字列*を入力するように求められます。 これは、[章 3](#chapter-3---the-iot-hub-service)の最後にメモした*接続文字列*です。 で文字列をコピーしたら、enter キーを押します。    
+5. デバイスがここにない場合は、[ *Azure IoT Hub デバイス*] を右クリックし、 **[IoT Hub 接続文字列の設定]** をクリックする必要があります。 **コマンドパレット**(VS Code の上部) で、*接続文字列*を入力するように求められます。 これは、[章 3](#chapter-3---the-iot-hub-service)の最後にメモした*接続文字列*です。 で文字列を**コピーしたら、enter キーを**押します。    
 
 6. デバイスが読み込まれ、表示されます。 デバイス名を右クリックし、 **[単一デバイスの展開の作成]** をクリックします。
 
     ![デプロイの作成](images/AzureLabs-Lab313-33b.png)
 
-7. *ファイルエクスプローラー*のプロンプトが表示されます。ここで、 **config**フォルダーに移動して、そのファイルを選択します。 そのファイルを選択した状態で、 **[エッジ配置マニフェストの選択]** ボタンをクリックします。
+7. *ファイルエクスプローラー*のプロンプトが表示されます。ここで、 **config**フォルダーに移動して、その**ファイルを**選択します。 そのファイルを選択した状態で、 **[エッジ配置マニフェストの選択]** ボタンをクリックします。
 
     ![デプロイの作成](images/AzureLabs-Lab313-34.png)
 
@@ -812,7 +812,7 @@ Microsoft HoloLens など、mixed reality を使用した開発に関する最�
     ```
 
     > [!NOTE]
-    > 上記は、モジュールが正常にデプロイされているかどうかを確認するための優れた方法であり、一覧に表示されます。それ以外の場合は、 *edgeHub* と *edgeAgent* **のみ** が表示されます。
+    > 上記は、モジュールが正常にデプロイされているかどうかを確認するための優れた方法であり、一覧に表示されます。それ以外の場合は、 *edgeHub*と*edgeAgent***のみ**が表示されます。
 
 - コンテナーのコードログを表示するには、次のコマンドラインを実行します。
 
@@ -890,7 +890,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
 9. 概要 ページで、右側にある **テーブル** をクリックします。
     
-    ![tables](images/AzureLabs-Lab313-40.png)
+    ![テーブル](images/AzureLabs-Lab313-40.png)
 
 10. 右側のパネルが変更され、**テーブルサービス**情報が表示されます。新しいテーブルを追加する必要があります。 これを行うには、左上隅にある **[+ テーブル]** ボタンをクリックします。
 
@@ -916,7 +916,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
 1. (Visual Studio Code で**はなく**) **Visual Studio**を開きます。
 
-2. メニューの [**Cloud Explorer**の**表示** > ] をクリックします。
+2. メニューの [ > の**表示**] **Cloud Explorer**をクリックします。
 
     ![cloud explorer を開く](images/AzureLabs-Lab313-45.png)
 
@@ -935,7 +935,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
 5. 展開されると、新しく作成された**ストレージアカウント**を使用できるようになります。 ストレージの左側にある矢印をクリックし、展開された後、 **[テーブル]** を見つけて、その横にある矢印をクリックし、最後の章で作成した**テーブル**を表示します。 **テーブル**をダブルクリックします。
 
-6. テーブルが Visual Studio ウィンドウの中央に開きます。 [テーブル] アイコン **+** をクリックします。
+6. テーブルが Visual Studio ウィンドウの中央に開きます。 テーブルアイコンをクリックし、 **+** (を含む) をクリックします。
 
     ![新しいテーブルの追加](images/AzureLabs-Lab313-48.png)
 
@@ -945,13 +945,13 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
 8. 次の値を更新します。
 
-    - 名前:**Partitionkey**、値:**PK_IoTMessages** 
+    - 名前: **Partitionkey**、値: **PK_IoTMessages** 
 
-    - 名前:**RowKey**、値:**RK_1_IoTMessages** 
+    - 名前: **RowKey**、値: **RK_1_IoTMessages** 
 
 9. 次に、[*エンティティの追加*] ウィンドウの左下にある **[プロパティの追加]** をクリックし、次のプロパティを追加します。
 
-    - **Messagecontent** *文字列* として使用する場合は、値を空のままにします。
+    - **Messagecontent***文字列*として使用する場合は、値を空のままにします。
 
 10. テーブルは、次の図に示すものと一致している必要があります。
 
@@ -991,7 +991,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
     }
     ```
 
-3.  [Azure ポータル](https://portal.azure.com) にログインします。
+3.  [Azure Portal](https://portal.azure.com)にログインします。
 
 4.  ログインしたら、左上隅にある **[リソースの作成]** をクリックし、 **Function App**を検索して、 **enter**キーを押して検索します。 結果の [ *Function App* ] をクリックして、新しいパネルを開きます。
 
@@ -1021,7 +1021,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
     8. **[ストレージ]** セクションでは、**前の手順で作成したストレージサービスを選択する必要があり**ます。
 
-    9. このアプリで*Application Insights*は必要ありません。そのままにしておいてもかまいません。
+    9. このアプリで*Application Insights*は必要ありませ**ん。そのままにして**おいてもかまいません。
 
     10. **[作成]** をクリックします。
 
@@ -1039,7 +1039,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
     ![リソースにアクセス](images/AzureLabs-Lab313-57.png)
 
-11. 新しいパネルの左側で、[*関数*] の横 **+** にある (プラス記号) アイコンをクリックして、新しい関数を作成します。
+11. 新しいパネルの左側で、[*関数*] の横にある [ **+** ] (プラス記号) アイコンをクリックして、新しい関数を作成します。
 
     ![新しい関数の追加](images/AzureLabs-Lab313-58.png)
 
@@ -1143,7 +1143,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
 20. コードを配置したら、 **[保存]** をクリックします。
 
-21. 次に、ページ **\<** の右側にある (矢印) アイコンをクリックします。
+21. 次に、ページの右側にある [ **\<** ] (矢印) アイコンをクリックします。
 
     ![カスタム関数](images/AzureLabs-Lab313-66.png)
 
@@ -1169,7 +1169,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
 ## <a name="chapter-14---view-active-messages"></a>第14章-アクティブなメッセージの表示
 
-(Visual Studio Code では**なく**) Visual Studio を開いた場合、テストメッセージの結果は messagecontent 文字列領域に格納されるため、視覚化することができます。
+(Visual Studio Code では**なく**) Visual Studio を開いた場合、テストメッセージの結果は*messagecontent*文字列領域に格納されるため、視覚化することができます。
 
 ![カスタム関数](images/AzureLabs-Lab313-71.png)
 
@@ -1226,7 +1226,7 @@ IOT デバイスからデータを視覚化するには**Power BI** (デスク�
 
     ![Power BI](images/AzureLabs-Lab313-82.png)
 
-13. クエリの読み込みが完了したら、[**フィールド] パネル**の画面の右側で、パラメーターの**名前**と**値**に対応するボックスをオンにして、messagecontent列の内容を視覚化します。
+13. クエリの読み込みが完了したら、[**フィールド] パネル**の画面の右側で、パラメーターの**名前**と**値**に対応するボックスをオンにして、 **messagecontent**列の内容を視覚化します。
 
     ![Power BI](images/AzureLabs-Lab313-83.png)
 

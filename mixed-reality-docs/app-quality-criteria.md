@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: アプリ品質基準、mixed reality、mixed reality アプリ
-ms.openlocfilehash: 8e635585c0981d81bf71fb5577232af28f2a0fdd
-ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
+ms.openlocfilehash: f98111ebe9aacc30778e86501be41e6ac5f6d165
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67024496"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437047"
 ---
 # <a name="app-quality-criteria"></a>アプリの品質基準
 
@@ -51,7 +51,7 @@ ms.locfileid: "67024496"
 
 |  合っ  |  あっ |  オーバー |
 --- | --- | ---
-| アプリは、ターゲットデバイスの1秒あたりのフレーム数 (FPS) の目標を一貫して満たしています。HoloLens の60fpsウルトラ Pc 上の90fpsメインストリーム Pc では60fps。 | アプリは、コアエクスペリエンスを妨げるすることなく、断続的にフレームを削除します。または FPS は、必要な目標よりも一貫して低くなりますが、アプリのエクスペリエンスを妨げることはありません。 | アプリでは、平均で10秒以内にフレームレートのドロップが発生しています。 |
+| アプリは、ターゲットデバイスの1秒あたりのフレーム数 (FPS) の目標を一貫して満たしています: HoloLens の60fpsウルトラ Pc 上の90fpsメインストリーム Pc では60fps。 | アプリは、コアエクスペリエンスを妨げるすることなく、断続的にフレームを削除します。または FPS は、必要な目標よりも一貫して低くなりますが、アプリのエクスペリエンスを妨げることはありません。 | アプリでは、平均で10秒以内にフレームレートのドロップが発生しています。 |
 
 ### <a name="how-to-measure"></a>測定する方法
 
@@ -64,7 +64,7 @@ ms.locfileid: "67024496"
 * 開発作業の開始時にフレームレートカウンターを追加します。
 * フレームレートが低下した変更は、パフォーマンスバグとして評価され、適切に解決される必要があります。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
@@ -88,7 +88,7 @@ ms.locfileid: "67024496"
 
 * 安定化平面の使用
 * 空間アンカーへの距離
-* Tracking
+* 追跡
 
 ### <a name="device-impact"></a>デバイスへの影響
 
@@ -132,7 +132,7 @@ ms.locfileid: "67024496"
 * 環境が適切に追跡できるようにセットアップされていることを確認します。
 * フレーム内のさまざまな焦点深度レベルでホログラムを使用しないように、エクスペリエンスを設計します。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
@@ -176,7 +176,7 @@ ms.locfileid: "67024496"
 
 |  合っ  |  あっ |  オーバー |
 --- | --- | ---
-| ホログラムは、通常、センチメートル ~ インチの範囲内のサーフェイスに配置されます。 より正確な要件が必要な場合は、アプリが目的のアプリ仕様内でコラボレーションのための効率的な手段を提供する必要があります。 | NA | サーフェイスを分割するか、表面から離れた場所に表示することによって、ホログラムが物理的なターゲットオブジェクトと共に配置されていないことを認識します。 精度が必要な場合は、ホログラムがシナリオの近接仕様を満たしている必要があります。 | 
+| ホログラムは、通常、センチメートル ~ インチの範囲内のサーフェイスに配置されます。 より正確な要件が必要な場合は、アプリが目的のアプリ仕様内でコラボレーションのための効率的な手段を提供する必要があります。 | 該当なし | サーフェイスを分割するか、表面から離れた場所に表示することによって、ホログラムが物理的なターゲットオブジェクトと共に配置されていないことを認識します。 精度が必要な場合は、ホログラムがシナリオの近接仕様を満たしている必要があります。 | 
 
 ### <a name="how-to-measure"></a>測定する方法
 
@@ -190,7 +190,7 @@ ms.locfileid: "67024496"
 * 特大の大きなホログラムを論理部分に分割し、各部分をサーフェイスに配置することを検討してください。
 * 不適切に設定した interpupilary distance (IPD) は、ホログラムのアラインメントにも影響を与えることがあります。 常に HoloLens をユーザーの IPD に構成します。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
@@ -203,7 +203,7 @@ ms.locfileid: "67024496"
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
-* [MR 空間 230:空間マッピング](holograms-230.md)
+* [MR 空間 230: 空間マッピング](holograms-230.md)
 * [MR ツールキット, 空間マッピングライブラリ](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/SpatialMapping/README.md)
 * [MR コンパニオンキット、ポスター調整のサンプル](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/PosterCalibrationSample)
 * [MR コンパニオンキット、Kinect IPD](https://github.com/Microsoft/MixedRealityCompanionKit/tree/master/KinectIPD)
@@ -246,7 +246,7 @@ ms.locfileid: "67024496"
 </tr><tr>
 <td> あっ</td><td> コンテンツは、表示およびモーションのガイダンスに含まれていますが、不適切な使用またはクリッピング平面の使用はありません。</td>
 </tr><tr>
-<td> オーバー </td><td> コンテンツが非常に近い場所に&lt;表示されます&lt;(通常は 1.25 m、またはより詳細な監視が必要な固定のホログラムの場合は 50cm)。</td>
+<td> オーバー </td><td> コンテンツがあまりに表示されない (通常は 1.25 m &lt;、またはより詳細な監視を必要とする静止したホログラムの場合は 50cm &lt;ます)。</td>
 </tr>
 </table>
 
@@ -262,7 +262,7 @@ ms.locfileid: "67024496"
 * 1m からのコンテンツの fadeout を使用して、クリッピングレンダリング距離を85cm に設定します。
 * 近くに表示する必要がある固定のホログラムの場合、クリッピングプレーンは30cm 以下で、fadeout はクリッピング平面から少なくとも10cm 離れた位置にある必要があります。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 * [レンダリング距離](hologram-stability.md#hologram-render-distances)
 * [Unity でのフォーカス ポイント](focus-point-in-unity.md)
@@ -307,7 +307,7 @@ ms.locfileid: "67024496"
 
 * 一貫した中心面でプライマリコンテンツを保持し、安定化平面が焦点平面と一致していることを確認します。 これにより、oculomotor の疲労と予期しないホログラムの動きが軽減されます。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 * [レンダリング距離](hologram-stability.md#hologram-render-distances)
 * [Unity でのフォーカス ポイント](focus-point-in-unity.md)
@@ -356,7 +356,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * 空間マスクは避けてください。
 * すべてのサウンドを正規化します。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
@@ -368,7 +368,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
-* [MR 空間 220:立体音響](holograms-220.md)
+* [MR 空間 220: 空間サウンド](holograms-220.md)
 * [MRToolkit、空間オーディオ](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/SpatialSound/README.md)
 
 ## <a name="focus-on-holographic-frame-fov-boundaries"></a>Holographic frame (視界) の境界にフォーカス
@@ -414,7 +414,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * 可能な限り、視界を垂直方向にクリップするホログラムは避けてください。
 * ユーザーにアプリ内のガイダンスを提供して、最適な表示場所を指定します。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
@@ -476,7 +476,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * テキストと menuing システムの billboarding を検討してください。これは、ユーザーが移動した場合に、ワールドロックまたは非表示になります。
 * ユーザーが前に何をしているかをユーザーが確認できるようにしながら、ユーザーに従う必要があるコンテンツにはタグを使用します。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
@@ -488,7 +488,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
-* [MR 入力 210:視線入力](holograms-210.md)
+* [MR 入力 210: 宝石](holograms-210.md)
 
 ## <a name="input-interaction-clarity"></a>入力の相互作用のわかりやすさ
 
@@ -526,7 +526,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * アプリになる入力がある場合は、次の方法で明確に伝達されます。
 * 最初の実行エクスペリエンス
 * 入門画面
-* ツールヒント
+* ヒント
 * 手コーチ
 * ヘルプセクション
 * ボイスオーバー
@@ -537,7 +537,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * 標準以外の入力方法については、デモ、チュートリアル、およびツールヒントを提供します。
 * アプリ全体で一貫した相互作用モデルを使用します。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
@@ -546,9 +546,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * [ヘッド視線入力とドウェル](gaze-and-dwell.md)
 * [カーソル](cursors.md)
 * [快適で見つめ](comfort.md#gaze-direction)
-* [ジェスチャ](gestures.md)
 * [音声入力](voice-input.md)
-* [音声コマンド](voice-design.md)
 * [モーション コントローラー](motion-controllers.md)
 * [Unity 用入力移植ガイド](input-porting-guide-for-unity.md)
 * [Unity でのキーボード入力](keyboard-input-in-unity.md)
@@ -562,13 +560,13 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
-* [ケーススタディ:よりパーソナルコンピューティングの追求](case-study-the-pursuit-of-more-personal-computing.md#less-interface-in-your-face)
-* [キャストスタディ:HoloStudio UI と相互作用設計学習](case-study-3-holostudio-ui-and-interaction-design-learnings.md)
-* [サンプルアプリ:要素の周期テーブル](periodic-table-of-the-elements.md)
-* [サンプルアプリ:旧暦モジュール](lunar-module.md)
-* [MR 入力 210:視線入力](holograms-210.md)
-* [MR 入力 211:ジェスチャ](holograms-211.md)
-* [MR 入力 212:音声](holograms-212.md)
+* [ケーススタディ: よりパーソナルコンピューティングの追求](case-study-the-pursuit-of-more-personal-computing.md#less-interface-in-your-face)
+* [キャストスタディ: HoloStudio UI と相互作用設計学習](case-study-3-holostudio-ui-and-interaction-design-learnings.md)
+* [サンプルアプリ: 要素の周期テーブル](periodic-table-of-the-elements.md)
+* [サンプルアプリ: 旧暦モジュール](lunar-module.md)
+* [MR 入力 210: 宝石](holograms-210.md)
+* [MR 入力 211: ジェスチャ](holograms-211.md)
+* [MR 入力 212: 音声](holograms-212.md)
 
 ## <a name="interactable-objects"></a>対話型オブジェクト
 
@@ -612,14 +610,14 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * グループ化された対話型オブジェクト (メニューバーやリストなど) には、ターゲットを設定するための適切なスペースが必要です。
 * 音声コマンドをサポートするボタンとメニューでは、command キーワードにテキストラベルを指定する必要があります (「参照してください」と言います)。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
 * [対話可能なオブジェクト](interactable-object.md)
 * [Unity のテキスト](text-in-unity.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [音声コマンド](voice-design.md)
+* [音声入力](voice-input.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
@@ -667,14 +665,14 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 * ユーザーが部屋を見たり、移動したりすることを奨励するために、ビジュアルとオーディオの手掛かりを提供します。
 * データを改善するための場所をユーザーに通知します。 多くの場合、必要なスキャン品質を得るために、ユーザーに対して実行する必要があること (たとえば、天井、家具を見てみてください) を伝えることが最適な場合があります。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 #### <a name="documentation"></a>ドキュメント
 
 * [部屋のスキャンの可視化](room-scan-visualization.md)
-* [ケーススタディ:HoloLens の空間マッピング機能の拡張](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
-* [ケーススタディ:HoloTour の空間サウンドのデザイン](case-study-spatial-sound-design-for-holotour.md)
-* [ケーススタディ:フラグメントでのイマーシブエクスペリエンスの作成](case-study-creating-an-immersive-experience-in-fragments.md)
+* [ケーススタディ: HoloLens の空間マッピング機能の拡張](case-study-expanding-the-spatial-mapping-capabilities-of-hololens.md)
+* [ケーススタディ: HoloTour の空間サウンド設計](case-study-spatial-sound-design-for-holotour.md)
+* [ケーススタディ: フラグメントでのイマーシブエクスペリエンスの作成](case-study-creating-an-immersive-experience-in-fragments.md)
 
 #### <a name="tools-and-tutorials"></a>ツールとチュートリアル
 
@@ -719,7 +717,7 @@ Mixed reality アプリでは、コンテンツは、実際のオブジェクト
 * 関連するコンテンツがユーザーのビューの外部にある場合は、方向インジケーターとオーディオキューを使用して、ユーザーをコンテンツに案内します。 多くの場合、方向性のある矢印よりも直接の視覚的なガイドをお勧めします。
 * 方向インジケーターをカーソルに組み込むことはできません。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 * [ホログラフィック フレーム](holographic-frame.md)
 
@@ -761,6 +759,6 @@ Mixed reality アプリでは、コンテンツは、実際のオブジェクト
 
 * ユーザーがこのアプリを停止またはクラッシュしていると認識した場合に、進行状況を示すデータ読み込みのアニメーターを提供します。 目安として合理的なのは、5秒以上かかる可能性のある "読み込み" アクティビティです。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 * [進行状況を表示する](progress.md)

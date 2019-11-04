@@ -6,14 +6,14 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: cb4645d197238d8712719625bf11eac0650a8246
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: b83c7ac39d522fc2b799591fa02608d5fc5cc930
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701868"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437569"
 ---
-# <a name="5-integrating-azure-spatial-anchors-into-a-shared-experience"></a>5。Azure 空間アンカーを共有エクスペリエンスに統合する
+# <a name="5-integrating-azure-spatial-anchors-into-a-shared-experience"></a>5. Azure 空間アンカーを共有エクスペリエンスに統合する
 
 このレッスンでは、Azure 空間アンカー (ASA) を共有エクスペリエンスに統合する方法について説明します。 ASA を使用すると、複数の併置されたデバイスは、物理環境で仮想エクスペリエンスを固定して、すべての参加者が同じ物理的な場所にオブジェクトを表示するようにすることができます。
 
@@ -41,17 +41,19 @@ ms.locfileid: "68701868"
 
 ![Module3hapter5step6im](images/module3chapter5step6im.PNG)
 
-5. [GetAzureAnchorButton] (手順4を参照) を選択し、[インスペクター] パネルに注意を移動します。 下の画像に表示されているドロップダウンメニューまで下にスクロールし、[AnchorModuleScript] を選択し、[GetSharedAnchorNetwork ()] をクリックして保存します。
+5. [GetAzureAnchorButton] (手順4を参照) を選択して、注意をインスペクターパネルに移動します。 下の画像に表示されているドロップダウンメニューまで下にスクロールし、[AnchorModuleScript] を選択し、[GetSharedAnchorNetwork ()] をクリックして保存します。
 
 ![Module3hapter5step7im](images/module3chapter5step7im.PNG)
 
-6. 共有モジュールをテストするには、[Azure ASA セッションの開始] ボタンをクリックして azure 空間アンカーセッションを開始し、[Azure アンカーの作成] ボタンをクリックして azure アンカーを作成します。 azure アンカーが作成されるまでしばらく待ちます。 Azure アンカーが作成されたら、[Azure Anchor を共有する] ボタンをクリックして、作成した azure アンカーを HoloLens から共有します。
+6. 共有モジュールをテストするには、[Azure ASA セッションの開始] ボタンをクリックして azure 空間アンカーセッションを開始し、[Azure アンカーの作成] ボタンをクリックして azure アンカーを作成します。 Azure アンカーが作成されるまで待ちます。 Azure アンカーが作成されたら、[Azure アンカーを共有する] ボタンをクリックして、作成した azure アンカーを HoloLens から共有します。
 
-7. 別の HoloLens で共有 azure アンカーを受信するには、[Azure ASA セッションの開始] をクリックして、現在の ASA セッションを開始し、[Azure アンカーの取得] ボタンをクリックして、他の HoloLens から共有 azure アンカーを取得します。
+7. 別の HoloLens で共有 azure アンカーを受信するには、[Azure ASA セッションを開始します] をクリックして開始し、現在の ASA セッションにアクセスします。
 
-   > 注:[デバッグ] ウィンドウには、個々のボタンに対応するアクションの詳細がすべて表示されます。
+8. [Get Azure Anchor] \ (Azure アンカーの取得 \) ボタンをクリックして、他の HoloLens から共有 azure アンカーを取得します。
+
+   > 注: [デバッグ] ウィンドウには、個々のボタンに対応するアクションの詳細がすべて表示されます。
 
 ## <a name="congratulations"></a>結論
 
-このレッスンでは、Azure の強力な新しい空間アンカーを統合して、共有された環境に併置されたデバイスを配置する方法について学習しました。 このレッスンでは、共有モジュールについても説明します。 新しい Photon アカウントを設定し、Photon とさしあたっを新しい Unity アプリケーションに統合し、アバターと共有オブジェクトを構成し、最後に ASA を使用して複数の参加要素を整列する方法を学習しました。 
+このレッスンでは、Azure の強力な新しい空間アンカーを統合して、共有された環境に併置されたデバイスを配置する方法について学習しました。 これにより、共有モジュールも終了します。 新しい Photon アカウントを設定し、Photon とさしあたっを新しい Unity アプリケーションに統合し、アバターと共有オブジェクトを構成し、最後に ASA を使用して複数の参加者を配置する方法を学習しました。 
 

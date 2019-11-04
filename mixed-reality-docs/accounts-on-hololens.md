@@ -1,17 +1,17 @@
 ---
 title: HoloLens のアカウント
 description: HoloLens でユーザーアカウントを設定および管理する方法。
-author: ''
+author: tmlyon
 ms.author: toddly
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、user、account、aad、adfs、microsoft アカウント、msa、資格情報
-ms.openlocfilehash: 14f43b08b6ccb396bcf39c4082c840c65ac78cf9
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 5579cf53948b8bdbd4b41973dde7b8fc70a5aa31
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63516813"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437086"
 ---
 # <a name="accounts-on-hololens"></a>HoloLens のアカウント
 
@@ -40,7 +40,7 @@ ms.locfileid: "63516813"
 
 ## <a name="using-single-sign-on-within-an-app"></a>アプリ内でのシングルサインオンの使用
 
-アプリ開発者は、他の Windows デバイスと同様に、 [Windows アカウントマネージャー api](https://msdn.microsoft.com/library/windows/apps/xaml/windows.security.authentication.web.core.aspx)を使用して HoloLens に接続された id を持つことができます。 これらの Api のコードサンプルについては、[こちら](http://go.microsoft.com/fwlink/p/?LinkId=620621)を参照してください。
+アプリ開発者は、他の Windows デバイスと同様に、 [Windows アカウントマネージャー api](https://msdn.microsoft.com/library/windows/apps/xaml/windows.security.authentication.web.core.aspx)を使用して HoloLens に接続された id を持つことができます。 これらの Api のコードサンプルについては、[こちら](https://go.microsoft.com/fwlink/p/?LinkId=620621)を参照してください。
 
 アカウント情報や2要素認証などのユーザーの同意要求など、発生する可能性のあるアカウントの割り込みは、アプリが認証トークンを要求するときに処理する必要があります。
 

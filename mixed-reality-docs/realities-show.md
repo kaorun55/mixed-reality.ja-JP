@@ -6,19 +6,19 @@ ms.author: daescu
 ms.date: 04/06/2019
 ms.topic: article
 keywords: 現実、ショー、カレンダー、academy、schedule、sf、サンフランシスコ、リアクター
-ms.openlocfilehash: 0a568e5d72bb7ed502d783df2f0815f2d9c75364
-ms.sourcegitcommit: e5b677f92ac4b1dff9aad6c329345a5aca4fcef5
+ms.openlocfilehash: ebecfa59d1c1b60ba7f3bf546816ed33b4910ad7
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69020186"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438324"
 ---
 # <a name="the-realities-show"></a>現実のショー
 ![Mixed Reality 向けの設計](images/therealitiesshow.jpg)
 
 **現実のショーは、HoloLens 2、Mixed Reality サービス、MR テクノロジに関する30分のライブストリームです。各エピソードでは、機能、機能、テクノロジの背後にあるテクノロジ、さまざまなデバイス向けの開発方法、推奨されるベストプラクティス、および対象ユーザーからの質問への回答について説明します。サンフランシスコリアクター stage セットアップの世界中の開発者に、リビングルーム環境として (場合によっては、他のサイトからも) ストリーミングしました。**
 
-**[ここでライブと過去のエピソードを見る](http://aka.ms/trs)**
+**[ここでライブと過去のエピソードを見る](https://aka.ms/trs)**
 ___
 
 ## <a name="hololens-2-and-mixed-reality-services---march-12-2019-8-am-pdt"></a>**HoloLens 2 および Mixed Reality サービス**-2019 年3月12日午前8時 (PDT)

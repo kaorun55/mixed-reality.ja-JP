@@ -1,21 +1,21 @@
 ---
 title: 色、光、マテリアル
-description: 混合現実のコンテンツをデザインするには、エクスペリエンスで使用される各ビジュアル資産の色、照明、マテリアルを慎重に検討する必要があります。
+description: Mixed Reality のコンテンツの設計では、エクスペリエンスで使用される各ビジュアル資産の色、ライト、マテリアルを慎重に検討する必要があります。
 author: mavitazk
 ms.author: pinkb
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、カラー、ライト、素材
-ms.openlocfilehash: bef0c8b63c109baa536e4192ce94919eb888faf2
-ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
+ms.openlocfilehash: c49d88c2bb53c07adcb77e8dbb0e3cd77e1e78ae
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896518"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436407"
 ---
 # <a name="color-light-and-materials"></a>色、光、マテリアル
 
-混合現実のコンテンツをデザインするには、エクスペリエンスで使用される各ビジュアル資産の色、照明、マテリアルを慎重に検討する必要があります。 これらの決定は、明るい色や素材を使用したイマーシブ環境の雰囲気の設定、機能の目的 (たとえば、よりよくある行動をユーザーに警告するための照明色の使用など) の両方に適しています。 これらの各決定は、エクスペリエンスのターゲットデバイスの機会と制約に照らし合わせて検討する必要があります。
+Mixed Reality のコンテンツの設計では、エクスペリエンスで使用される各ビジュアル資産の色、ライト、マテリアルを慎重に検討する必要があります。 これらの決定は、明るい色や素材を使用したイマーシブ環境の雰囲気の設定、機能の目的 (たとえば、よりよくある行動をユーザーに警告するための照明色の使用など) の両方に適しています。 これらの各決定は、エクスペリエンスのターゲットデバイスの機会と制約に照らし合わせて検討する必要があります。
 
 次に示すのは、イマーシブと holographic ヘッドセットの両方でのアセットのレンダリングに固有のガイドラインです。 これらの多くは、他の技術領域に密接に関連しており、関連する項目の一覧に[ついて](color,-light-and-materials.md#see-also)は、この記事の最後にある「関連項目」セクションを参照してください。
 
@@ -43,7 +43,7 @@ Holographic ヘッドセットで holographic エクスペリエンスをテス�
 
 加法表示の性質により、暗い色は透明に見えます。 純色の黒のオブジェクトは、実際の世界とは異なるものとして表示されます。 下記の「アルファチャネル」を参照してください。 "Black" のように見えるようにするには、16、16、16のような非常に濃い灰色の RGB 値を試してみてください。
 
-![標準またはワイド色域](images/640px-widegamut.png)<br>
+![標準とワイド色域](images/640px-widegamut.png)<br>
 *標準またはワイド色域*
 
 ## <a name="technical-considerations"></a>技術的な考慮事項
@@ -54,11 +54,23 @@ Holographic ヘッドセットで holographic エクスペリエンスをテス�
 ## <a name="storytelling-with-light-and-color"></a>薄いと color を使用したストーリーテリング
 
 色と色を使用すると、ユーザーの環境でのホログラムの表示がより自然になり、ユーザーのためのガイダンスやヘルプが提供されます。 Holographic エクスペリエンスについては、照明と色を調べる際に、次の要因を考慮してください。
-* **Vignetting** -マテリアルを暗くするための ' vignette ' 効果は、ビューのフィールドの中央にユーザーの注意を集中するのに役立ちます。 この効果により、ユーザーの見つめベクターから、ある程度の半径でホログラムのマテリアルが暗くなります。 これは、ユーザーのビューが斜投影または glancing 角度からホログラムを持つ場合にも有効であることに注意してください。
-* **強調**描画: 色、明るさ、および光源を比較して、オブジェクトまたは相互作用のポイントに注目します。 ストーリーテリングの照明メソッドの詳細については、「[ピクセル Cinematography-コンピューターグラフィックスの照明アプローチ](http://media.siggraph.org/education/cgsource/Archive/ConfereceCourses/S96/course30.pdf)」を参照してください。
 
-![色を使用して、ストーリーテリング要素の強調を表示します。ここでは、フラグメントからのシーンに示します。](images/640px-fragments.jpg)<br>
-*色を使用して、ストーリーテリング要素の強調を表示します。ここでは、[フラグメント](https://www.microsoft.com/p/fragments/9nblggh5ggm8)からのシーンに示します。*
+:::row:::
+    :::column:::
+* **Vignetting** -マテリアルを暗くするための ' vignette ' 効果は、ビューのフィールドの中央にユーザーの注意を集中するのに役立ちます。 この効果により、ユーザーの見つめベクターから、ある程度の半径でホログラムのマテリアルが暗くなります。 これは、ユーザーのビューが斜投影または glancing 角度からホログラムを持つ場合にも有効であることに注意してください。<br>
+* **強調**描画: 色、明るさ、および光源を比較して、オブジェクトまたは相互作用のポイントに注目します。 ストーリーテリングの照明メソッドの詳細については、「[ピクセル Cinematography-コンピューターグラフィックスの照明アプローチ](https://media.siggraph.org/education/cgsource/Archive/ConfereceCourses/S96/course30.pdf)」を参照してください。<br>
+        <br>
+        *Image: 色を使用してストーリーテリング要素の強調を表示します。ここでは、[フラグメント](https://www.microsoft.com/p/fragments/9nblggh5ggm8)からのシーンに示します。*
+    :::column-end:::
+        :::column:::
+        ![色を使用して、ストーリーテリング要素の強調を表示します。ここでは、フラグメントからのシーンに示します。](images/640px-fragments.jpg)<br>
+    :::column-end:::
+:::row-end:::
+
+
+<br>
+
+---
 
 ## <a name="see-also"></a>関連項目
 * [色の分離](hologram-stability.md#color-separation)

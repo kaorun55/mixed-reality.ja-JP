@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: acb6966ace81180e95e6a0fe447d350572f7c0dd
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: c6a2bea3d50669000e81cad7c83ae6a69b8a847f
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701972"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437749"
 ---
-#  <a name="1-setting-up-photon-unity-networking"></a>1. Photon Unity ネットワークのセットアップ
+#  <a name="1-setting-up-photon-unity-networking"></a>1. Photon Unity ネットワークを設定する
 
-このチュートリアルでは、Photon Unity ネットワーク (さしあたっ) を Unity プロジェクトにインポートして、共有エクスペリエンスを作成する準備をする方法について説明します。 Photon は、混合環境の開発者が共有エクスペリエンスを作成するために使用できるいくつかのネットワークオプションの1つです。 ここでは、Photon アカウントを作成し、Photon をインポートして、オプションのローカルサーバーを作成する方法について説明します。
+このチュートリアルでは、Photon Unity ネットワーク (さしあたっ) を Unity プロジェクトにインポートして、共有エクスペリエンスを作成するための準備方法を学習します。 Photon は、混合環境の開発者が共有エクスペリエンスを作成するために使用できるいくつかのネットワークオプションの1つです。 Photon アカウントを作成し、Photon をインポートして、オプションのローカルサーバーを作成する方法について説明します。
 
-## <a name="objectives"></a>目的
+## <a name="objectives"></a>目標
 
 * Photon アカウントを作成する方法について説明します。
 
@@ -29,7 +29,7 @@ ms.locfileid: "68701972"
 
 ## <a name="setting-up-photon"></a>Photon の設定
 
-1. [Photon](https://dashboard.photonengine.com/en-US/Account/SignUp)アカウントを設定します。 [このリンク](https://dashboard.photonengine.com/en-US/Account/SignUp)をクリックして、Photon サインアップページに移動します。 サインアップページの指示に従って、アカウントを作成します。 
+1. [Photon](https://dashboard.photonengine.com//Account/SignUp)アカウントを設定します。 [このリンク](https://dashboard.photonengine.com//Account/SignUp)をクリックして、Photon サインアップページに移動します。 サインアップページの指示に従って、アカウントを作成します。 
    
 
 ![Module3Chapter1step1im](images/module3chapter1step1im.PNG)
@@ -44,11 +44,11 @@ ms.locfileid: "68701972"
 
 ![Module3Chapter1step7bim](images/module3chapter1step7bim.PNG)
 
-4. この操作が完了すると、アプリケーションのページに戻り、次の図のような結果が表示されます。 アプリケーション ID をクリックしてコピーします。 簡単にアクセスできる場所に貼り付けます。  
+4. アプリケーションのページに戻ると、次の図のような内容が表示されます。 アプリケーション ID をクリックしてコピーします。 簡単にアクセスできる場所に貼り付けます。  
 
 ![Module3Chapter1step8im](images/module3chapter1step8im.PNG)
 
-5. 新しい unity プロジェクトを作成し、HLSharingProject という名前を指定します。 新しい Unity プロジェクトを作成する方法については、[ベースモジュール「Unity プロジェクトの作成」セクション](https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base-ch1#create-new-unity-project)を参照してください。 
+5. 新しい unity プロジェクトを作成し、HLSharingProject という名前を指定します。 新しい Unity プロジェクトを作成する方法については、[ベースモジュール「Unity プロジェクトの作成」セクション](https://docs.microsoft.com//windows/mixed-reality/mrlearning-base-ch1#create-new-unity-project)を参照してください。 
 
 6. プロジェクトが読み込まれたら、次の図に示すように、[アセットストア] タブをクリックします。 次に、下の画像で強調表示されている検索ボックスで、「さしあたっ」と入力し、検索結果から Photon さしあたっ 2 FREE "資産を選択します。 
 
@@ -58,7 +58,7 @@ ms.locfileid: "68701972"
 
 ![Module3Chapter1step11im](images/module3chapter1step11im.PNG)
 
-8. Photon がインポートプロセスを完了すると、さしあたっウィザードが表示されます。 手順 4. のアプリケーション ID (クリップボード内にある必要があります) を取得し、[AppID] ボックスに貼り付けて、[Setup Project] ボタンを押します。 
+8. Photon がインポートプロセスを完了すると、さしあたっウィザードが表示されます。 手順 4. のアプリケーション ID (クリップボードにあるはずです) を取得し、[AppID] ボックスに貼り付けて、[Setup Project] ボタンを押します。 
 ![module3chapter1step12im](images/module3chapter1step12im.PNG)
 
 9. AppID が正常に追加されたら、Photon-> PhotonUnityNetworking-> Resources-> PhotonServerSettings in Assets に移動します。 [ネームサーバーを使用する] オプションを選択し、[固定] リージョンを [US] または [photon service region] に設定します。
@@ -67,7 +67,7 @@ ms.locfileid: "68701972"
 
 ## <a name="congratulations"></a>結論
 
-Photon アカウントの作成、ローカル Photon サーバーの設定、Unity へのさしあたっのインポートが正常に完了しました。 次の手順では、プロジェクトを設定し、他のユーザーとの接続を許可して、複数のユーザーが自分の作業を確認できるようにします。 
+Photon アカウントの作成、ローカル Photon サーバーの設定、Unity へのさしあたっのインポートが正常に完了しました。 次の手順では、複数のユーザーが作業を確認できるように、プロジェクトを設定し、他のユーザーとの接続を許可します。 
 
-[次のチュートリアル:2. Unity の開発に向けた準備](mrlearning-sharing(photon)-ch2.md)
+[次のチュートリアル: 2. Unity を開発用に準備する](mrlearning-sharing(photon)-ch2.md)
 

@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens, 同期, 空間アンカー, 転送, マルチプレイヤー, ビュー, シナリオ, チュートリアル, サンプルコード, 転送, ローカルアンカー転送, アンカーエクスポート, アンカーインポート
-ms.openlocfilehash: 5d03f4bfa764b9948ec4718bce86127cfcc3e303
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: f961862c3c49872484683e264fb9c62b5d0b60ee
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63515436"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437955"
 ---
 # <a name="local-anchor-transfers-in-directx"></a>DirectX でのローカルアンカー転送
 
@@ -33,7 +33,7 @@ ms.locfileid: "63515436"
 
 [SpatialAnchorTransferManager](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.aspx)を使用するには、アプリに spatialPerception 機能を使用するためのアクセス許可が付与されている必要があります。 これは、空間アンカーを転送する場合に必要です。これは、そのアンカーの近くで、時間の経過と共に収集されるセンサーイメージを共有することです。
 
-この機能をアプリの package.appxmanifest ファイルで宣言します。 次に例を示します。
+この機能をアプリの package.appxmanifest ファイルで宣言します。 以下に例を示します。
 
 ```
 <Capabilities>
@@ -41,14 +41,14 @@ ms.locfileid: "63515436"
 </Capabilities>
 ```
 
-この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、 &lt;パッケージの > 要素に*xlmns*属性として含めます。 次に例を示します。
+この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、&lt;Package > 要素に*xlmns*属性として追加します。 以下に例を示します。
 
 ```
 <Package
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+    xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10"
+    xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest"
+    xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10"
+    xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2"
     IgnorableNamespaces="uap mp"
     >
 ```
@@ -72,7 +72,7 @@ task<bool> SpatialAnchorImportExportHelper::ExportAnchorDataAsync(
 {
 ```
 
-まず、データストリームを設定する必要があります。 これにより、1を使用できるようになります)。TryExportAnchorsAsync を使用して、アプリによって所有されているバッファーにデータを配置します。 2.)エクスポートされたバイトバッファーストリームからデータを読み取ります。これは、WinRT データストリームで、独自のメモリバッファー (std::&lt;vector byte >) に格納されます。
+まず、データストリームを設定する必要があります。 これにより、1を使用できるようになります)。TryExportAnchorsAsync を使用して、アプリによって所有されているバッファーにデータを配置します。 2.)エクスポートされたバイトバッファーストリームからデータを読み取ります。これは、WinRT データストリームであり、独自のメモリバッファーに格納されます。これは、std:: vector&lt;byte > です。
 
 ```
 // Create a random access stream to process the anchor byte data.
@@ -288,7 +288,7 @@ Blob には、SpatialAnchor をインポートするデバイスで環境を認�
 
 ![1つの TryExportAnchorsAsync 呼び出しを使用してエクスポートされた複数のアンカー](images/multipleanchors.png) ![アンカーごとに個別の TryExportAnchorsAsync 呼び出しを使用してエクスポートされた複数のアンカー](images/separateanchors.png)
 
-## <a name="example-send-anchor-data-using-a-windowsnetworkingstreamsocket"></a>例:Windows:: Network:: StreamSocket を使用してアンカーデータを送信する
+## <a name="example-send-anchor-data-using-a-windowsnetworkingstreamsocket"></a>例: Windows:: Network:: StreamSocket を使用してアンカーデータを送信する
 
 ここでは、エクスポートされたアンカーデータを TCP ネットワーク経由で送信することによって使用する方法の例を示します。 これは、HolographicSpatialAnchorTransferSample からのものです。
 
@@ -559,7 +559,7 @@ void SampleAnchorTcpClient::WaitForAnchorDataStream()
         }
 ```
 
-[...]
+...
 
 ```
 task<size_t> SampleAnchorTcpClient::ReceiveAnchorDataLengthMessage()
@@ -672,9 +672,9 @@ void SampleAnchorTcpClient::HandleException(Exception^ exception)
 }
 ```
 
-これで完了です。 これで、ネットワーク経由で受信したアンカーを特定するための十分な情報が得られます。 ここでも、クライアントがアンカーを正常に見つけるために十分な数のビジュアル追跡データが必要であることに注意してください。すぐに機能しない場合は、しばらく試してみてください。 それでもうまくいかない場合は、サーバーがより多くのアンカーを送信するようにし、ネットワーク通信を使用してクライアントに対して機能するものに同意してください。 これを試すには、HolographicSpatialAnchorTransferSample をダウンロードし、クライアントとサーバーの Ip アドレスを構成して、クライアントとサーバーの HoloLens デバイスに展開します。
+以上で作業は終了です。 これで、ネットワーク経由で受信したアンカーを特定するための十分な情報が得られます。 ここでも、クライアントがアンカーを正常に見つけるために十分な数のビジュアル追跡データが必要であることに注意してください。すぐに機能しない場合は、しばらく試してみてください。 それでもうまくいかない場合は、サーバーがより多くのアンカーを送信するようにし、ネットワーク通信を使用してクライアントに対して機能するものに同意してください。 これを試すには、HolographicSpatialAnchorTransferSample をダウンロードし、クライアントとサーバーの Ip アドレスを構成して、クライアントとサーバーの HoloLens デバイスに展開します。
 
 ## <a name="see-also"></a>関連項目
-* [並列パターン ライブラリ (PPL)](https://msdn.microsoft.com/library/dd492418.aspx)
+* [並列パターンライブラリ (PPL)](https://msdn.microsoft.com/library/dd492418.aspx)
 * [Windows. ネットワーク. StreamSocket](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocket.aspx)
 * [Windows. ネットワーク. StreamSocketListener](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocketlistener.aspx)

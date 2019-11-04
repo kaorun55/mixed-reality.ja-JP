@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: チュートリアル、音声コマンド、語句、認識、音声、directx、プラットフォーム、cortana、windows mixed reality
-ms.openlocfilehash: 728457a495616e5f65ec3986dfb6ac60231f9e46
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: be8c0e570a0e112e01b580ad571c06fe3482ff9f
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63548667"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437192"
 ---
 # <a name="voice-input-in-directx"></a>DirectX での音声入力
 
@@ -22,7 +22,7 @@ ms.locfileid: "63548667"
 
 ## <a name="use-a-speechrecognizer-for-continuous-recognition-of-voice-commands"></a>音声コマンドを継続的に認識するために SpeechRecognizer を使用する
 
-このセクションでは、音声認識を使用してアプリで音声コマンドを有効にする方法について説明します。 このチュートリアルでは、 [HolographicVoiceInput](http://go.microsoft.com/fwlink/p/?LinkId=844964)サンプルのコードを使用します。 サンプルを実行している場合は、登録されているいずれかのカラーコマンドの名前を読み上げて、回転しているキューブの色を変更します。
+このセクションでは、音声認識を使用してアプリで音声コマンドを有効にする方法について説明します。 このチュートリアルでは、 [HolographicVoiceInput](https://go.microsoft.com/fwlink/p/?LinkId=844964)サンプルのコードを使用します。 サンプルを実行している場合は、登録されているいずれかのカラーコマンドの名前を読み上げて、回転しているキューブの色を変更します。
 
 最初に、新しい**Windows:: Media:: SpeechRecognition:: SpeechRecognizer**インスタンスを作成します。
 

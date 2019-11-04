@@ -1,17 +1,17 @@
 ---
 title: Windows Mixed Reality 用の新しい Unity プロジェクトを構成する
 description: MRTK を使用せずに Unity プロジェクトを構成する
-author: yoyoz
-ms.author: Yoyoz
+author: thetuvix
+ms.author: alexturn
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity, mixed reality, 開発, 作業の開始, 新しいプロジェクト
-ms.openlocfilehash: 68dded9d0fc9e861bdda56c4954d72ddafafa686
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+ms.openlocfilehash: af30cf91eda1b654bea6048c34f63c61238626c7
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67326090"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437112"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>Windows Mixed Reality 用の新しい Unity プロジェクトを構成する 
 
@@ -30,20 +30,20 @@ Windows Mixed Reality をターゲットにするには、最初に Unity プロ
 6. **UWP SDK**を**最新のインストール**に設定する
 
 次に、エクスポートしようとしているアプリが2D ビューではなく[イマーシブビュー](app-views.md)を作成する必要があることを Unity に知らせる必要があります。 これを行うには、"Virtual Reality がサポートされている" を有効にします。
-1. [**ビルドの設定...** ] ウィンドウで、[プレーヤーの**設定**] を開きます。
+1. **[ビルドの設定...]** ウィンドウで、プレーヤーの **[設定]** を開きます。
 2. [ユニバーサル Windows プラットフォーム] タブ**の設定**を選択します。
-3. [ **XR Settings** ] グループを展開します。
-4. [ **XR の設定**] セクションで、[**仮想現実のサポート**] チェックボックスをオンにして、[**仮想現実のデバイス**] の一覧を追加します。
-5. [ **XR 設定**] グループで、 **"Windows Mixed Reality"** がサポートされているデバイスとして表示されていることを確認します。 (以前のバージョンの Unity では、"Windows Holographic" として表示される場合があります)
+3. **[XR Settings]** グループを展開します。
+4. **[XR の設定]** セクションで、 **[仮想現実のサポート]** チェックボックスをオンにして、 **[仮想現実のデバイス]** の一覧を追加します。
+5. **[XR 設定]** グループで、 **"Windows Mixed Reality"** がサポートされているデバイスとして表示されていることを確認します。 (以前のバージョンの Unity では、"Windows Holographic" として表示される場合があります)
 
-![Unity の品質設定](images/getting-started-unity-quality-settings.jpg)<br>
+![Unity 品質設定](images/getting-started-unity-quality-settings.jpg)<br>
 *Unity xr の設定*
 
 これで、アプリで基本的な holographic のレンダリングと空間入力を行うことができるようになりました。 特定の機能を利用するには、アプリでマニフェスト内の適切な機能を宣言する必要があります。 マニフェスト宣言は Unity で作成できるため、後続のすべてのプロジェクトエクスポートに含まれます。 この設定は**ユニバーサル Windows プラットフォーム > の発行設定 > 機能の [プレーヤーの設定 > 設定**] にあります。 一般的に使用される Unity Api を混合現実に対して有効にするための適用可能な機能は次のとおりです。
 
 |  機能  |  機能を必要とする Api | 
 |----------|----------|
-|  SpatialPerception  |  SurfaceObserver (HoloLens 上の[空間マッピング](spatial-mapping.md)メッシュへの&mdash;アクセス)*ヘッドセットの一般的な空間追跡に必要な機能はありません* | 
+|  SpatialPerception  |  SurfaceObserver (HoloLens の[空間マッピング](spatial-mapping.md)メッシュへのアクセス)&mdash;*ヘッドセットの一般的な空間追跡に必要な機能はありません* | 
 |  WebCam  |  PhotoCapture と VideoCapture | 
 |  PicturesLibrary / VideosLibrary  |  PhotoCapture または VideoCapture (キャプチャされたコンテンツを格納する場合) | 
 |  マイク  |  VideoCapture (オーディオをキャプチャする場合)、DictationRecognizer、GrammarRecognizer、および KeywordRecognizer | 
@@ -51,12 +51,12 @@ Windows Mixed Reality をターゲットにするには、最初に Unity プロ
 
 **Unity の品質設定**
 
-![Unity の品質設定](images/getting-started-unity-quality-settings.jpg)<br>
+![Unity 品質設定](images/getting-started-unity-quality-settings.jpg)<br>
 *Unity の品質設定*
 
 HoloLens には、モバイルクラスの GPU があります。 アプリが HoloLens を対象としている場合は、完全なフレームレートを維持するために、品質設定のパフォーマンスを最速に調整することをお勧めします。
-1. [**プロジェクト設定の編集 > の > 品質**] を選択します。
-2. **Windows ストア**のロゴの下にある**ドロップダウン**を選択し、[**非常に低い**] を選択します。 Windows ストアの列のボックスと**非常に少ない**行が緑色になっている場合は、設定が正しく適用されていることがわかります。
+1. **[プロジェクト設定の編集 > の > 品質]** を選択します。
+2. **Windows ストア**のロゴの下にある**ドロップダウン**を選択し、 **[非常に低い]** を選択します。 Windows ストアの列のボックスと**非常に少ない**行が緑色になっている場合は、設定が正しく適用されていることがわかります。
 
 ## <a name="per-scene-settings"></a>シーンごとの設定
 
@@ -69,7 +69,7 @@ HoloLens には、モバイルクラスの GPU があります。 アプリが H
 
 アプリが HoloLens を対象としている場合は、デバイスの透明なディスプレイを最適化するために変更する必要がある設定がいくつかあります。そのため、アプリは物理的な世界に表示されます。
 1. **階層**で、**メインカメラ**を選択します。
-2. [**インスペクター** ] パネルで、[変換**位置**] を**0、0、0**に設定します。これにより、ユーザーの位置が Unity の元の場所で開始されます。
+2. **[インスペクター]** パネルで、変換 **[位置]** を**0、0、0**に設定します。これにより、ユーザーの位置が Unity の元の場所で開始されます。
 3. **クリアフラグ**を**純色**に変更します。
 4. **背景**色を**RGBA 0、0、0、0**に変更します。 ブラックは HoloLens では透明としてレンダリングされます。
 5. **クリッププレーン**を[HoloLens の推奨](camera-in-unity.md#clip-planes)0.85 (メーター) に近い場所に変更します。

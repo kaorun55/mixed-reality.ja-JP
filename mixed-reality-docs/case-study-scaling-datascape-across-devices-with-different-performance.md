@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: イマーシブヘッドセット、パフォーマンスの最適化、VR、ケーススタディ
-ms.openlocfilehash: 990a5ee6de07b6416e3150a7885220409a9c8d93
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 05f97188c81d85685540be998111ecfc47d9ef9c
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63523397"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436505"
 ---
 # <a name="case-study---scaling-datascape-across-devices-with-different-performance"></a>ケーススタディ-パフォーマンスが異なるデバイス間での Datascape スケーリング
 
@@ -43,7 +43,7 @@ UI とマップを、ハードウェアに応じて変更する必要がない�
 
 ## <a name="background-on-cloud-data"></a>クラウドデータの背景
 
-私たちのクラウドデータは、noaa サーバー http://nomads.ncep.noaa.gov/) からダウンロードされたもので、3つの異なる2d レイヤー (それぞれがクラウドの最上位および下位の高さを備えています) と、グリッドの各セルのクラウドの密度です。 データは、GPU に簡単にアクセスできるように、各コンポーネントがテクスチャの赤、緑、および青のコンポーネントに格納されているクラウド情報テクスチャに処理されました。
+Microsoft のクラウドデータは、NOAA サーバー (https://nomads.ncep.noaa.gov/) からダウンロードされ、3つの異なる2D レイヤーになりました。それぞれの2D レイヤーには、クラウドの上下の高さと、グリッドの各セルのクラウドの密度があります。 データは、GPU に簡単にアクセスできるように、各コンポーネントがテクスチャの赤、緑、および青のコンポーネントに格納されているクラウド情報テクスチャに処理されました。
 
 ## <a name="geometry-clouds"></a>ジオメトリクラウド
 
@@ -306,11 +306,11 @@ protected void Update()
 <table style="border:0">
 <tr>
 <td style="border:0" width="60px"><img alt="Picture of Robert Ferrese" width="60" height="60" src="images/robert-ferrese-60px.jpg"></td>
-<td style="border:0"><b>Robert は、</b><br>ソフトウェアエンジニア@Microsoft</td>
+<td style="border:0"><b>Robert は、</b><br>ソフトウェアエンジニア @Microsoft</td>
 </tr>
 <tr>
 <td style="border:0" width="60px"><img alt="Picture of Dan Andersson" width="60" height="60" src="images/dan-andersson-60px.jpg"></td>
-<td style="border:0"><b>Dan Andersson</b><br>ソフトウェアエンジニア@Microsoft</td>
+<td style="border:0"><b>Dan Andersson</b><br>ソフトウェアエンジニア @Microsoft</td>
 </tr>
 </table>
 

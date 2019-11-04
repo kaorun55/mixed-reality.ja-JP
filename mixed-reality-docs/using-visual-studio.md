@@ -1,17 +1,17 @@
 ---
 title: Visual Studio を使用した配置とデバッグ
 description: Visual Studio を使用して、HoloLens および Windows Mixed Reality 用のアプリをビルド、デバッグ、展開する方法について説明します。
-author: JonMLyons
-ms.author: jlyons
-ms.date: 03/21/2018
+author: pbarnettms
+ms.author: pbarnett
+ms.date: 10/24/2019
 ms.topic: article
 keywords: Visual Studio, HoloLens, Mixed Reality, デバッグ, 配置
-ms.openlocfilehash: 36ed428d69802084c3b953ac2fdce46844dfdc88
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 2b84183417a1bd4eaa90eef58bebe2b65966b933
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387727"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437310"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>Visual Studio を使用した配置とデバッグ
 
@@ -20,9 +20,9 @@ DirectX と Unity のどちらを使用して mixed reality アプリを開発�
 * Visual Studio に組み込まれている HoloLens エミュレーターを使用する方法。
 * Mixed reality アプリをデバッグする方法。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 1. インストール手順について[は、「ツールのインストール](install-the-tools.md)」を参照してください。
-2. Visual Studio 2015 Update 1、Visual Studio 2017、または Visual Studio 2019 で、新しいユニバーサル Windows アプリプロジェクトを作成します。 C#、 C++、および JavaScript プロジェクトはすべてサポートされています。 (または、「 [Unity でアプリを作成する」](holograms-100.md)の手順に従ってください)。
+2. Visual Studio で新しいユニバーサル Windows アプリプロジェクトを作成します。  HoloLens (第1世代) の場合は、Visual Studio 2017 以降を使用します。  Hololens 2 の場合は、Visual Studio 2019 16.2 以降を使用します。 C#とC++がサポートされています。 (または、「 [Unity でアプリを作成する」](holograms-100.md)の手順に従ってください)。
 
 ## <a name="enabling-developer-mode"></a>開発者モードを有効にする
 
@@ -30,8 +30,8 @@ DirectX と Unity のどちらを使用して mixed reality アプリを開発�
 
 ### <a name="hololens"></a>HoloLens
 1. HoloLens をオンにして、デバイスに配置します。
-2. [ブルーム](gestures.md#bloom) ジェスチャを実行して、メイン メニューを開きます。
-3. **[設定]** タイルを見つめ、[エアタップ](gestures.md#air-tap)ジェスチャを実行します。 2 回目のエア タップを実行して、アプリを環境内に配置します。 配置すると、設定アプリが起動します。
+2. [ブルーム](system-gesture.md#bloom) ジェスチャを実行して、メイン メニューを開きます。
+3. **[設定]** タイルを見つめ、[エアタップ](gaze-and-commit.md#composite-gestures)ジェスチャを実行します。 2 回目のエア タップを実行して、アプリを環境内に配置します。 配置すると、設定アプリが起動します。
 4. **[Update]** (更新) メニュー項目を選択します。
 5. **[For developers]** (開発者向け) メニュー項目を選択します。
 6. **[Developer Mode]** (開発者モード) を有効にします。 これにより、 [Visual Studio から](using-visual-studio.md)HoloLens にアプリをデプロイできるようになります。
@@ -46,20 +46,35 @@ PC に接続されている Windows Mixed Reality ヘッドセットを使用し
 4. **開発者モード**を有効にし、選択した設定の免責事項を読み、[はい] をクリックして変更を確定します。
 
 ## <a name="deploying-an-app-over-wi-fi---hololens-1st-gen"></a>Wi-fi 経由でのアプリの展開 (第1世代)
-1. Visual Studioでのアプリ![の x86 ビルド構成の x86 ビルド構成の選択](images/x86setting.png)
-2. Visual Studio の [配置ターゲット] ドロップダウンメニュー ![で [リモートコンピューター] を選択します。](images/remotemachinesetting.png)
+1. Visual Studio で x86 ビルド構成 ![、アプリの**x86**ビルド構成を選択し](images/x86setting.png)
+2. 配置ターゲット ドロップダウンメニューで **[リモートコンピューター]** を選択して、Visual Studio でリモートコンピューターの配置ターゲットを ![](images/remotemachinesetting.png)
 3. およびC++ JavaScript プロジェクトの場合は、**プロジェクト > のプロパティ > 構成プロパティ** の デバッグ > ます。 プロジェクトC#の場合、接続を構成するためのダイアログボックスが自動的にポップアップ表示されます。
-  a. [**アドレス**または**コンピューター名**] フィールドに、デバイスの IP アドレスを入力します。 **[設定 > Network & Internet > 詳細オプション]** の下の HOLOLENS で ip アドレスを見つけます。または、Cortana "どのような ip アドレスがあるか" を質問することもできます。
-  b. Visual Studio で認証モードを **ユニバーサル (暗号化**![されていないプロトコル リモート接続 ダイアログに設定する](images/remotedeploy.png)
-4. [デバッグ > デバッグの**開始**] を選択してアプリ![を配置し、デバッグを開始します。 Visual Studio でデバッグを開始しません。](images/deploynodebugging.png)
+  」を参照します。 [**アドレス**または**コンピューター名**] フィールドに、デバイスの IP アドレスを入力します。 **[設定 > Network & Internet > 詳細オプション]** の下の HOLOLENS で ip アドレスを見つけます。または、Cortana "どのような ip アドレスがあるか" を質問することもできます。
+  b. Visual Studio の [リモート接続] ダイアログ![[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に設定し](images/remotedeploy.png)
+4. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
+5. PC から HoloLens にアプリを初めて展開するときに、PIN の入力を求められます。 下記の「**デバイスのペアリング**」の手順に従います。
+
+## <a name="deploying-an-app-over-wi-fi---hololens-2"></a>Wi-fi-HoloLens 2 でのアプリの展開
+1. アプリの**ARM**または**ARM64**のビルド構成を選択してください。 Visual Studio の ARM64 ビルド構成 ![](images/arm64setting.png)
+2. 配置ターゲット ドロップダウンメニューで **[リモートコンピューター]** を選択して、Visual Studio でリモートコンピューターの配置ターゲットを ![](images/remotemachinesetting_arm64.png)
+3. およびC++ JavaScript プロジェクトの場合は、**プロジェクト > のプロパティ > 構成プロパティ** の デバッグ > ます。 プロジェクトC#の場合、接続を構成するためのダイアログボックスが自動的にポップアップ表示されます。
+  」を参照します。 [**アドレス**または**コンピューター名**] フィールドに、デバイスの IP アドレスを入力します。 **[設定 > Network & Internet > 詳細オプション]** の下の HOLOLENS で ip アドレスを見つけます。または、Cortana "どのような ip アドレスがあるか" を質問することもできます。
+  b. Visual Studio の [リモート接続] ダイアログ![[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に設定し](images/remotedeploy.png)
+4. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
 5. PC から HoloLens にアプリを初めて展開するときに、PIN の入力を求められます。 下記の「**デバイスのペアリング**」の手順に従います。
 
 HoloLens IP アドレスが変更された場合は、 **[プロジェクト > のプロパティ > 構成プロパティ]** の順に移動して、ターゲットコンピューターの ip アドレスを変更でき > デバッグ
 
 ## <a name="deploying-an-app-over-usb---hololens-1st-gen"></a>USB HoloLens でのアプリの展開 (第1世代)
-1. Visual Studioでのアプリ![の x86 ビルド構成の x86 ビルド構成の選択](images/x86setting.png)
-2. Visual Studio の [配置ターゲット] ドロップダウンメニュー![で [デバイス]**を選択し**ます。](images/buildsettingsusbdeploy.png)
-3. [デバッグ > デバッグの**開始**] を選択してアプリ![を配置し、デバッグを開始します。 Visual Studio でデバッグを開始しません。](images/deploynodebugging.png)
+1. Visual Studio で x86 ビルド構成 ![、アプリの**x86**ビルド構成を選択し](images/x86setting.png)
+2. 配置ターゲット ドロップダウンメニューで **[デバイス]** を選択して、Visual Studio で![デバイスをデプロイ](images/buildsettingsusbdeploy.png)
+3. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
+4. PC から HoloLens にアプリを初めて展開するときに、PIN の入力を求められます。 下記の「**デバイスのペアリング**」の手順に従います。
+
+## <a name="deploying-an-app-over-usb---hololens-2"></a>USB でのアプリの展開-HoloLens 2
+1. アプリの**ARM**または**ARM64**のビルド構成を選択してください。 Visual Studio の ARM64 ビルド構成 ![](images/arm64setting.png)
+2. 配置ターゲット ドロップダウンメニューで **[デバイス]** を選択して、Visual Studio で![デバイスをデプロイ](images/buildsettingsusbdeploy_arm64.png)
+3. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
 4. PC から HoloLens にアプリを初めて展開するときに、PIN の入力を求められます。 下記の「**デバイスのペアリング**」の手順に従います。
 
 ## <a name="deploying-an-app-to-your-local-pc---immersive-headset"></a>ローカル PC にアプリを展開する-イマーシブヘッドセット
@@ -69,7 +84,7 @@ PC または[Mixed reality シミュレーター](using-the-windows-mixed-realit
 2. 配置ターゲット ドロップダウンメニューで **ローカルコンピューター** を選択します。
 3. [デバッグ] > を選択して**デバッグを開始**し、アプリをデプロイしてデバッグを開始します。
 
-## <a name="pairing-your-device---hololens-1st-gen"></a>デバイスをペアリングする-HoloLens (第1世代)
+## <a name="pairing-your-device"></a>デバイスをペアリングする
 
 Visual Studio から HoloLens に初めてアプリをデプロイするときに、PIN の入力を求められます。 HoloLens で、設定アプリを起動して PIN を生成し、**開発者向けの [Update >** ] にアクセスして、 **[ペアリング]** をタップします。 HoloLens に PIN が表示されます。Visual Studio でこの PIN を入力します。 ペアリングが完了したら、HoloLens で **[完了]** をタップしてダイアログを閉じます。 この PC は HoloLens とペアリングされているので、アプリを自動的に展開できます。 HoloLens にアプリを展開するために使用されるすべての後続 PC に対して、これらの手順を繰り返します。
 
@@ -78,11 +93,18 @@ HoloLens とペアリングされているすべてのコンピューターの�
 ## <a name="deploying-an-app-to-the-hololens-1st-gen-emulator"></a>HoloLens (第1世代) エミュレーターへのアプリのデプロイ
 1. **[HoloLens エミュレーターがインストールされ](install-the-tools.md)** ていることを確認します。
 2. アプリの**x86**ビルド構成を選択します。
-![Visual Studio での x86 ビルド構成](images/x86setting.png)
-3. Visual Studio の [配置ターゲット] ドロップダウンメニュー![エミュレーターターゲットで **[HoloLens Emulator]** を選択します。](images/deployemulator.png)
-4. [デバッグ > デバッグの**開始**] を選択してアプリ![を配置し、デバッグを開始します。 Visual Studio でデバッグを開始しません。](images/deploynodebugging.png)
+Visual Studio での x86 ビルド構成の ![](images/x86setting.png)
+3. 配置ターゲット ドロップダウンメニューで  **[HoloLens Emulator]** を選択し、Visual Studio の [エミュレーターターゲット] を![](images/deployemulator.png)
+4. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
 
-## <a name="graphics-debugger"></a>グラフィックスデバッガー
+## <a name="deploying-an-app-to-the-hololens-2-emulator"></a>HoloLens 2 エミュレーターへのアプリのデプロイ
+1. **[HoloLens エミュレーターがインストールされ](install-the-tools.md)** ていることを確認します。
+2. アプリの**x86**または**x64**のビルド構成を選択します。
+Visual Studio での x86 ビルド構成の ![](images/x86setting.png)
+3. 配置ターゲット ドロップダウンメニューで  **[HoloLens 2 emulator]** を選択し、Visual Studio の [emulator target]![](images/deployemulator2.png)
+4. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
+
+## <a name="graphics-debugger-for-hololens-1st-gen"></a>HoloLens 用グラフィックスデバッガー (第1世代)
 
 Visual Studio グラフィックス診断ツールは、Holographic アプリを作成して最適化するときに非常に役立ちます。 詳細については、 [MSDN の「Visual Studio グラフィックス診断](https://msdn.microsoft.com/library/hh315751.aspx)」を参照してください。
 

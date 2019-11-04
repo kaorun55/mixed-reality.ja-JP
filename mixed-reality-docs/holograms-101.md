@@ -3,28 +3,28 @@ title: MR 基本 101-デバイスを含む完全なプロジェクト
 description: Unity、Visual Studio、および HoloLens を使用したこのコーディングのチュートリアルに従って、Windows Mixed Reality の基本を学習してください。
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 10/22/2019
 ms.topic: article
 keywords: mixed reality、Windows Mixed Reality、HoloLens、ホログラム、academy、チュートリアル
-ms.openlocfilehash: 043ffac8f30a4e29586478b5dca6ecccc2b5afd3
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 456aeea88b0d7f51acb52156d8139ec2df06883a
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63524026"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73434720"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。
 
 <br>
 
-# <a name="mr-basics-101-complete-project-with-device"></a>MR 基本 101:デバイスを含む完全なプロジェクト
+# <a name="mr-basics-101-complete-project-with-device"></a>MR 基本 101: デバイスを含むプロジェクトを完了する
 
 <br>
 
 >[!VIDEO https://www.youtube.com/embed/XKIIEC5BMWg]
 
-このチュートリアルでは、Unity でビルドされた完全なプロジェクトについて説明します。これは、[宝石](gaze.md)、[ジェスチャ](gestures.md)、[音声入力](voice-input.md)、[空間サウンド](spatial-sound.md)、[空間マッピング](spatial-mapping.md)など、HoloLens のコア Windows Mixed Reality 機能を示しています.
+このチュートリアルでは、Unity でビルドされた完全なプロジェクトについて説明します。これは、[宝石](gaze-and-commit.md)、[ジェスチャ](gaze-and-commit.md#composite-gestures)、[音声入力](voice-input.md)、[空間サウンド](spatial-sound.md)、[空間マッピング](spatial-mapping.md)など、HoloLens のコア Windows Mixed Reality 機能を示しています.
 
 このチュートリアルの完了には約1時間かかります。
 
@@ -34,13 +34,13 @@ ms.locfileid: "63524026"
 <tr>
 <th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td>MR 基本 101:デバイスを含む完全なプロジェクト</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
+<td>MR 基本 101: デバイスを含むプロジェクトを完了する</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> </td>
 </tr>
 </table>
 
-## <a name="before-you-start"></a>開始前の準備
+## <a name="before-you-start"></a>開始前の作業
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 * 適切な[ツールがインストール](install-the-tools.md)された WINDOWS 10 PC。
 * [開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens デバイス。
@@ -62,7 +62,7 @@ ms.locfileid: "63524026"
 
 この章では、最初の Unity プロジェクトをセットアップし、ビルドとデプロイのプロセスをステップ実行します。
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * Holographic 開発用に Unity を設定します。
 * ホログラムを作成します。
@@ -74,7 +74,7 @@ ms.locfileid: "63524026"
 * **[開く]** を選択します。
 * 前にアーカイブしていない**Origami**フォルダーとして場所を入力します。
 * **[Origami]** を選択し、 **[フォルダーの選択]** をクリックします。
-* **Origami**プロジェクトにはシーンが含まれていないため、次を使用して空の既定のシーンを新しいファイルに保存します。ファイル / **を名前を付けて保存**します。
+* **Origami**プロジェクトにはシーンが含まれていないため、次のように使用して、空の既定のシーンを新しいファイルに保存します。 **[ファイル]**  / シーンに **[名前を付けて保存]** 。
 * 新しいシーンに**Origami**という名前を**付け**、[保存] ボタンを押します。
 
 #### <a name="setup-the-main-virtual-camera"></a>メインの仮想カメラをセットアップする
@@ -122,7 +122,7 @@ ms.locfileid: "63524026"
   * **認証モード**(**ユニバーサル**) に設定したままにします。
   * [**選択] を**クリック
 
-* デバッグ をクリックして **デバッグなしで開始** を >、Ctrl キーを押し**ながら F5**キーを押します。 初めてデバイスをデプロイする場合は、 [Visual Studio とペアリング](using-visual-studio.md#pairing-your-device-hololens-(1st-gen))する必要があります。
+* デバッグ をクリックして **デバッグなしで開始** を >、Ctrl キーを押し**ながら F5**キーを押します。 初めてデバイスをデプロイする場合は、 [Visual Studio とペアリング](using-visual-studio.md#pairing-your-device)する必要があります。
 
 * これで、Origami プロジェクトが作成され、HoloLens にデプロイされた後、が実行されます。
 * HoloLens に移動し、新しいホログラムを見てみてください。
@@ -131,9 +131,9 @@ ms.locfileid: "63524026"
 
 >[!VIDEO https://www.youtube.com/embed/MSO2BoFSQbM]
 
-この章では、最初に3つの方法を使用して、ホログラムと対話する方法を紹介[します。](gaze.md)
+この章では、最初に3つの方法を使用して、ホログラムと対話する方法を紹介[します。](gaze-and-commit.md)
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * 世界でロックされているカーソルを使用して、宝石を視覚化します。
 
@@ -143,10 +143,10 @@ ms.locfileid: "63524026"
 * [**プロジェクト] パネル**で **[ホログラム]** フォルダーを選択します。
 * **カーソル**オブジェクトをルートレベルの [**階層] パネル**にドラッグします。
 * **カーソル**オブジェクトをダブルクリックすると、詳細が表示されます。
-* [プロジェクト] パネルの **[Scripts]** フォルダーを右クリックします。
+* プロジェクト パネルの  **Scripts** フォルダーを右クリックします。
 * **[作成]** サブメニューをクリックします。
 * **[ C#スクリプト]** を選択します。
-* スクリプトに**WorldCursor**という名前を指定します。 注:この名前では、大文字と小文字を区別します。 .Cs 拡張子を追加する必要はありません。
+* スクリプトに**WorldCursor**という名前を指定します。 注: 名前は大文字と小文字が区別されます。 .Cs 拡張子を追加する必要はありません。
 * [**階層] パネル**で**カーソル**オブジェクトを選択します。
 * **WorldCursor**スクリプトを [**インスペクター] パネル**にドラッグアンドドロップします。
 * **WorldCursor**スクリプトをダブルクリックして、Visual Studio で開きます。
@@ -207,9 +207,9 @@ public class WorldCursor : MonoBehaviour
 
 >[!VIDEO https://www.youtube.com/embed/kW3ThJ2MbvQ]
 
-この章では、[ジェスチャ](gestures.md)のサポートを追加します。 ユーザーがペーパー球を選択すると、Unity の物理エンジンを使用して重力をオンにすることで、球がフォールされるようになります。
+この章では、[ジェスチャ](gaze-and-commit.md#composite-gestures)のサポートを追加します。 ユーザーがペーパー球を選択すると、Unity の物理エンジンを使用して重力をオンにすることで、球がフォールされるようになります。
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * 選択ジェスチャでホログラムを制御します。
 
@@ -287,9 +287,9 @@ public class GazeGestureManager : MonoBehaviour
 ```
 
 * Scripts フォルダーに、今度は**SphereCommands**という名前の別のスクリプトを作成します。
-* [階層] ビューで **[OrigamiCollection]** オブジェクトを展開します。
-* **SphereCommands**スクリプトを、[階層] パネルの **[Sphere1]** オブジェクトにドラッグします。
-* **SphereCommands**スクリプトを、[階層] パネルの **[Sphere2]** オブジェクトにドラッグします。
+* 階層 ビューで  **OrigamiCollection** オブジェクトを展開します。
+* **SphereCommands**スクリプトを、階層 パネルの  **Sphere1** オブジェクトにドラッグします。
+* **SphereCommands**スクリプトを、階層 パネルの  **Sphere2** オブジェクトにドラッグします。
 * 編集するために Visual Studio でスクリプトを開き、既定のコードを次のコードに置き換えます。
 
 ```cs
@@ -318,9 +318,9 @@ public class SphereCommands : MonoBehaviour
 
 >[!VIDEO https://www.youtube.com/embed/1-Aq0VVtHM8]
 
-この章では、次の2つの[音声コマンド](voice-input.md)のサポートを追加します。"ワールドのリセット" を使用して、ドロップされた球体を元の場所に返し、"球を落下する" ようにします。
+この章では、2つの[音声コマンド](voice-input.md)のサポートを追加します。 "リセットワールド" は、ドロップされた球体を元の場所に返し、"球を落下させる" と球を作成します。
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * 常にバックグラウンドで待機する音声コマンドを追加します。
 * 音声コマンドに反応するホログラムを作成します。
@@ -443,7 +443,7 @@ public class SphereCommands : MonoBehaviour
 
 この章では、アプリに音楽を追加し、特定のアクションに対してサウンド効果をトリガーします。 [空間サウンド](spatial-sound.md)を使用して、3d 空間内の特定の位置にサウンドを与えます。
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * 世界中のホログラムを聞くことができます。
 
@@ -552,7 +552,7 @@ public class SphereSounds : MonoBehaviour
 
 ここでは、[空間マッピング](spatial-mapping.md)を使用して、ゲームボードを現実世界の実際のオブジェクトに配置します。
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * 実際の世界を仮想環境に移します。
 * 自分にとって最も重要な場所にホログラムを配置します。
@@ -637,7 +637,7 @@ public class TapToPlaceParent : MonoBehaviour
 
 ## <a name="chapter-7---holographic-fun"></a>第7章-Holographic 楽しい
 
-### <a name="objectives"></a>目的
+### <a name="objectives"></a>目標
 
 * Holographic 黄泉の入口を公開します。
 
@@ -697,9 +697,9 @@ public class HitTarget : MonoBehaviour
 
 ## <a name="see-also"></a>関連項目
 
-* [MR の基本 101E:エミュレーターを使用した完全なプロジェクト](holograms-101e.md)
-* [視線入力](gaze.md)
-* [ジェスチャ](gestures.md)
+* [MR 基本 101E: エミュレーターを使用したプロジェクトの完了](holograms-101e.md)
+* [視線入力](gaze-and-commit.md)
+* [頭の視線入力とコミット](gaze-and-commit.md)
 * [音声入力](voice-input.md)
 * [立体音響](spatial-sound.md)
 * [空間マッピング](spatial-mapping.md)

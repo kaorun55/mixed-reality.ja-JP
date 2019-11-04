@@ -1,19 +1,19 @@
 ---
-title: 表示
+title: レンダリング
 description: Holographic のレンダリングを使用すると、アプリは、物理的な世界に配置されている場合でも、作成した仮想領域内にある場合でも、ユーザーを周囲に世界中の正確な場所に置くことができます。
 author: thetuvix
 ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: レンダリング、ホログラム
-ms.openlocfilehash: 45713fd7a30fc55a799da7e89ef52aff8f7eec46
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: a974b9d8a00713c28c27963a9f96379693db9b60
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67415411"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437529"
 ---
-# <a name="rendering"></a>表示
+# <a name="rendering"></a>レンダリング
 
 Holographic のレンダリングを使用すると、アプリケーションは、物理的に物理的に配置されているか、または作成した仮想領域内にあるかにかかわらず、ユーザーの周囲の正確な場所にホログラムを描画できます。 [ホログラム](hologram.md)は、サウンドとライトで構成されるオブジェクトです。 レンダリングにより、applicaition はライトを追加できます。
 
@@ -29,11 +29,11 @@ Holographic のレンダリングを使用すると、アプリケーション�
     <tr>
         <td><strong>機能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
-        <td><strong>HoloLens 2</strong></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
      <tr>
-        <td>表示</td>
+        <td>レンダリング</td>
         <td>✔️</td>
         <td>✔️</td>
         <td>✔️</td>
@@ -87,13 +87,13 @@ Windows Mixed Reality では、 **holographic カメラ**の概念が導入さ�
 > 今後、さらに多くの更新が予定されています。 [更新リストを表示する](release-notes-april-2018.md)
 
 * 現在とサポートされている最大解像度は、[ビュー構成](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)のプロパティです。 HoloLens は、既定では、最大解像度 (720p (1268x720)) に設定されています。
-* サポートされている最も低いビューポートのサイズは720p の 50% です。これは 360p (634x360) です。 HoloLens では、これは0.5 の ViewportScaleFactor です。
+* サポートされている最も低いビューポートのサイズは720p の50% です。これは 360p (634x360) です。 HoloLens では、これは0.5 の ViewportScaleFactor です。
 * 視覚の劣化によって540p よりも低いものは推奨され**ません**が、necks がピクセルフィルレートでボトルを識別するために使用できます。
 
 ## <a name="supported-resolutions-on-hololens-2"></a>HoloLens 2 でサポートされている解像度
 
 > [!NOTE]
-> HoloLens 2 に固有のその他のガイダンスは[近日対応予定](index.md#news-and-notes)です。
+> HoloLens 2 に固有のその他のガイダンスは[近日対応予定](news.md)です。
 
 
 ## <a name="see-also"></a>関連項目

@@ -6,12 +6,12 @@ ms.author: bestruku
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、ホログラム、安定化、ケーススタディ
-ms.openlocfilehash: a084ede5f9bf3d5f058cc81ec75840e2c2e75af2
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: d31f3128ba10d6fc7bd57f3068db3dd16b23f901
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63526261"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436432"
 ---
 # <a name="case-study---using-the-stabilization-plane-to-reduce-holographic-turbulence"></a>ケーススタディ-安定化平面を使用して holographic 乱気流を減らす
 
@@ -19,7 +19,7 @@ ms.locfileid: "63526261"
 
 ## <a name="the-tech"></a>技術
 
-ホログラムを実際にスペースを共有しているかのように見えるようにするには、色を分離せずに、適切にレンダリングする必要があります。 これは、一部のテクノロジに組み込まれている、HoloLens ハードウェアに組み込まれているテクノロジによって実現されます。これにより、[安定化平面](hologram-stability.md#stabilization-plane)と呼ばれるものにホログラムが固定されます。
+ホログラムを実際にスペースを共有しているかのように見えるようにするには、色を分離せずに、適切にレンダリングする必要があります。 これは、一部のテクノロジに組み込まれている、HoloLens ハードウェアに組み込まれているテクノロジによって実現されます。これにより、[安定化平面](hologram-stability.md#reprojection)と呼ばれるものにホログラムが固定されます。
 
 平面はポイントと法線によって定義されますが、平面は常にカメラに接続する必要があるため、ここでは平面のポイントの設定についてのみ説明します。 HoloLens は、その処理に焦点を当てることをポイントし、すべての要素が固定され安定した状態を維持するように指示できますが、このフォーカスポイントを設定する方法はアプリに固有であり、コンテンツに応じてアプリを作成または中断することができます。
 
@@ -29,21 +29,21 @@ ms.locfileid: "63526261"
 
 次のアプリを開発するときに、プレーンを使用していない場合、オブジェクトは、ヘッドを移動したときにオブジェクトを sway にし、クイックヘッドまたはホログラムの移動によって色を分離することに気付きました。 開発期間中は、安定化平面を最適に使用する方法と、修正できない問題を回避するためにアプリを設計する方法について、試用とエラーについて学習しました。
 
-### <a name="galaxy-explorer-stationary-content-3d-interactivity"></a>Galaxy エクスプローラー:静止コンテンツ、3D インタラクティビティ
+### <a name="galaxy-explorer-stationary-content-3d-interactivity"></a>Galaxy エクスプローラー: 静止コンテンツ、3D インタラクティビティ
 
-[Galaxy エクスプローラー](galaxy-explorer.md)には、シーンに2つの主要な要素があります。宇宙コンテンツのメインビューと、宝石に続く小さな UI ツールバー。 安定化ロジックでは、各フレームで現在の宝石ベクトルと交差しているものを調べて、指定された衝突レイヤーでヒットしたかどうかを判断します。 この場合、関心のあるレイヤーは惑星であるため、宝石が地球に当たると、安定化平面が配置されます。 ターゲット競合レイヤー内のどのオブジェクトもヒットしなかった場合、アプリはセカンダリの "plan B" レイヤーを使用します。 何も gazed ない場合、安定化平面は、コンテンツでの処理時と同じ距離に保持されます。 UI ツールはプレーンターゲットとして残されています。これは、ほぼすべてのシーンの安定性を低く抑えることができるという点です。
+[Galaxy エクスプローラー](galaxy-explorer.md)には、シーンに2つの主要な要素があります。宇宙コンテンツのメインビューと、宝石に続く小さい UI ツールバーです。 安定化ロジックでは、各フレームで現在の宝石ベクトルと交差しているものを調べて、指定された衝突レイヤーでヒットしたかどうかを判断します。 この場合、関心のあるレイヤーは惑星であるため、宝石が地球に当たると、安定化平面が配置されます。 ターゲット競合レイヤー内のどのオブジェクトもヒットしなかった場合、アプリはセカンダリの "plan B" レイヤーを使用します。 何も gazed ない場合、安定化平面は、コンテンツでの処理時と同じ距離に保持されます。 UI ツールはプレーンターゲットとして残されています。これは、ほぼすべてのシーンの安定性を低く抑えることができるという点です。
 
 Galaxy エクスプローラーのデザインは、安定した状態を維持し、色の分離の効果を減らすためにも役立ちます。 ユーザーは、このコンテンツを左右に移動するのではなく、その内容を移動して軌道で進めることをお勧めします。また、惑星の orbiting は、色の分離が目立たないほど遅くなります。 また、定数 60 FPS が維持されます。これは、色の分離が行われないようにするための長い方法です。
 
 これを自分で確認するには、 [GitHub の Galaxy エクスプローラーコード](https://github.com/Microsoft/GalaxyExplorer/tree/master/Assets/Scripts/Utilities)で LSRPlaneModifier.cs という名前のファイルを探します。
 
-### <a name="holostudio-stationary-content-with-a-ui-focus"></a>HoloStudio:UI フォーカスを持つ静止コンテンツ
+### <a name="holostudio-stationary-content-with-a-ui-focus"></a>HoloStudio: UI フォーカスを持つ静止コンテンツ
 
 HoloStudio では、ほとんどの時間を使用して、作業しているのと同じモデルを調べることができます。 新しいツールを選択した場合や、UI 内を移動する場合を除き、お客様の宝石は大きくなりません。そのため、プレーンの設定ロジックを単純にしておくことができます。 UI を見ると、航空機は、宝石のある UI 要素に設定されます。 モデルを見るとき、平面は、ユーザーとモデルの間の既定の距離に対応する設定距離を設定します。
 
 ![[ホーム] ボタンのユーザー gazes として HoloStudio で視覚化された安定化面](images/holostudio-stabilization-plane-500px.png)
 
-### <a name="holotour-and-3d-viewer-stationary-content-with-animation-and-movies"></a>HoloTour と3D ビューアー:アニメーションとムービーを使用した静止コンテンツ
+### <a name="holotour-and-3d-viewer-stationary-content-with-animation-and-movies"></a>HoloTour と3D ビューアー: アニメーションとムービーを使用した静止コンテンツ
 
 HoloTour と3D ビューアーでは、3D 効果が上に追加された、単独でアニメーション化されたオブジェクトまたはムービーを見ています。 これらのアプリの安定化は、現在表示している任意のものに設定されます。
 
@@ -51,13 +51,13 @@ HoloTour と3D ビューアーでは、3D 効果が上に追加された、単�
 
 ![この例では、HoloTour から、安定化平面が Hadrian の Pantheon のこの映画に設定されています。](images/holotour-stabilization-plane-500px.jpg)
 
-### <a name="roboraid-dynamic-content-and-environmental-interactions"></a>RoboRaid:動的なコンテンツと環境の相互作用
+### <a name="roboraid-dynamic-content-and-environmental-interactions"></a>RoboRaid: 動的なコンテンツと環境の相互作用
 
 RoboRaid での安定化面の設定は驚くほど簡単ですが、最も突然の動きを必要とするアプリでもあります。 平面は、壁または周囲のオブジェクトに隣接するように調整されており、遠く離れた場所から離れた位置に固定された距離でフローティングします。
 
 RoboRaid は、安定化面を念頭に置いて設計されています。 Reticle はヘッドロックされているため最も多くを移動するため、赤と青だけを使用して色のにじみを最小限に抑えることができます。 また、これらの部分の間には少しの深さが含まれているので、既に予想されている視差効果を使用してマスクすることによって発生するすべてのカラー裁ち落としを最小化できます。 ロボットは、ごく短時間では移動せず、一定の間隔でのみ移動します。 これらは、既定で安定化が設定されている前に2メートル前後にある傾向があります。
 
-### <a name="fragments-and-young-conker-dynamic-content-with-environmental-interaction"></a>フラグメントと Young Conker:環境との対話による動的コンテンツ
+### <a name="fragments-and-young-conker-dynamic-content-with-environmental-interaction"></a>フラグメントと Young Conker: 環境との対話による動的コンテンツ
 
 でC++は Asobo Studio によって作成され、フラグメントと Young conker は、安定化平面を設定するための別のアプローチを採用しています。 関心のあるポイント (POI) は、コードで定義され、優先度に基づいて順序付けされます。 Poi は、Young Conker の Conker モデル、メニュー、照準 reticle、ロゴなどのゲーム内のコンテンツです。 Poi はユーザーの宝石によって交差し、平面は最も優先順位の高いオブジェクトの中心に設定されます。 積集合がない場合、平面は既定の距離に設定されます。
 
@@ -93,11 +93,11 @@ HoloLens を所有していて、先ほど説明した概念を試したい場�
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Ben Strukus" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>Ben Strukus</b><br>ソフトウェアエンジニア@Microsoft</td>
+<td style="border-style: none"><b>Ben Strukus</b><br>ソフトウェアエンジニア @Microsoft</td>
 </tr>
 </table>
 
 ## <a name="see-also"></a>関連項目
-* [MR の基本 100:Unity の概要](holograms-100.md)
+* [MR 基本 100: Unity の概要](holograms-100.md)
 * [Unity でのフォーカス ポイント](focus-point-in-unity.md)
 * [ホログラムの安定性](hologram-stability.md)

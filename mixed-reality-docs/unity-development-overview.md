@@ -2,26 +2,26 @@
 title: Unity 開発の概要
 description: Unity での mixed reality アプリの構築の概要。
 author: thetuvix
-ms.author: Yoyoz
-ms.date: 04/15/2018
+ms.author: kurtie
+ms.date: 10/25/2018
 ms.topic: article
 keywords: Unity, mixed reality, 開発, 作業の開始, 新しいプロジェクト, 移植, 機能, カメラ, シミュレーション, エミュレーション, ドキュメント
-ms.openlocfilehash: b1384e886a2b4d0b3ed9f8008fca6af6ad4b78d5
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: b78afb0cf6557ec9b61a029e2d557debbd0b6b46
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701790"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437375"
 ---
 # <a name="unity-development-overview"></a>Unity 開発の概要
 
-[Mixed reality アプリ](app-views.md)を構築する最速のパスは、 [Unity](http://aka.ms/HoloLensUnity)を使用することです。 [Unity のチュートリアル](https://unity3d.com/learn/tutorials)をご覧になることをお勧めします。 資産が必要な場合、Unity には包括的な[資産ストア](https://www.assetstore.unity3d.com/)があります。 Unity についての基本的な理解を構築したら、[チュートリアル](tutorials.md)にアクセスして unity を使用した mixed reality 開発の詳細を学習できます。 Unity で mixed reality アプリを構築するその他のコミュニティと連携するには、 [Unity Mixed reality フォーラム](http://forum.unity3d.com/forums/hololens.102/)にアクセスし、発生する可能性のある問題の解決策を見つけてください。
+[Mixed reality アプリ](app-views.md)を構築する最速のパスは、 [Unity](https://unity.com)を使用することです。 [Unity のチュートリアル](https://unity3d.com/learn/tutorials)をご覧になることをお勧めします。 資産が必要な場合、Unity には包括的な[資産ストア](https://www.assetstore.unity3d.com/)があります。 Unity についての基本的な理解を構築したら、[チュートリアル](tutorials.md)にアクセスして unity を使用した mixed reality 開発の詳細を学習できます。 Unity で mixed reality アプリを構築するその他のコミュニティと連携するには、 [Unity Mixed reality フォーラム](https://forum.unity3d.com/forums/hololens.102/)にアクセスし、発生する可能性のある問題の解決策を見つけてください。
 
 Unity を使用した mixed reality アプリの構築を開始するには、まず[ツールをインストール](install-the-tools.md)します。 
 
 ## <a name="new-unity-project-with-mixed-reality-toolkit"></a>Mixed Reality Toolkit を使用した新しい Unity プロジェクト 
 
-Unity で開発する最も簡単な方法は、Mixed Reality Toolkit を使用することです。 これは、プロジェクトを自動的に設定し、開発を加速させる一連の mixed reality 機能を提供するのに役立ちます。 詳細については、「 [Mixed Reality Toolkit v2](mrtk-getting-started.md) 」をご覧ください。 
+Unity で開発する最も簡単な方法は、Mixed Reality Toolkit を使用することです。 これにより、プロジェクトを自動的に設定し、開発を加速させる一連の mixed reality 機能を提供できます。 詳細については、「 [Mixed Reality Toolkit v2](mrtk-getting-started.md) 」をご覧ください。 
 
 ## <a name="porting-an-existing-unity-app-to-windows-mixed-reality"></a>既存の Unity アプリを Windows Mixed Reality に移植する
 
@@ -33,7 +33,7 @@ Windows Mixed Reality に移植している既存の Unity プロジェクトが
 
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>Mixed reality 機能と入力の追加
 
-プロジェクトで MRTK V2 を設定した後、または前述のようにプロジェクトを構成した後、標準 Unity ゲームオブジェクト (カメラなど) は、挿入された**スケールエクスペリエンス**のためにすぐに点灯します。カメラの位置は、ユーザーは、世界中を移動します。
+プロジェクトで MRTK V2 を設定するか、前述のようにプロジェクトを構成すると、標準の Unity ゲームオブジェクト (カメラなど) が、取り付けられている**スケールエクスペリエンス**のためにすぐに点灯します。カメラの位置は、ユーザーは、世界中を移動します。
 
 [空間ステージ](coordinate-systems.md#spatial-coordinate-systems)、[ジェスチャ、モーションコントローラー](gestures-and-motion-controllers-in-unity.md) 、[音声入力](voice-input-in-unity.md)など、Windows Mixed Reality 機能のサポートを追加するには、Unity に直接組み込まれている api を使用します。 
 
@@ -48,7 +48,7 @@ Mixed reality アプリケーションのすべてのコア構成要素は、他
 * [視線入力](gaze-in-unity.md)
 * [ジェスチャとモーションコントローラー](gestures-and-motion-controllers-in-unity.md)
 * [音声入力](voice-input-in-unity.md)
-* [永続性](persistence-in-unity.md)
+* [永続化](persistence-in-unity.md)
 * [立体音響](spatial-sound-in-unity.md)
 * [空間マッピング](spatial-mapping-in-unity.md)
 
@@ -57,7 +57,7 @@ Unity アプリにも公開されている多くの mixed reality アプリケ�
 * [場所を特定できるカメラ](locatable-camera-in-unity.md)
 * [フォーカスポイント](focus-point-in-unity.md)
 * [損失の追跡](tracking-loss-in-unity.md)
-* [[キーボード]](keyboard-input-in-unity.md)
+* [キーボード](keyboard-input-in-unity.md)
 
 ## <a name="running-your-unity-project-on-a-real-or-simulated-device"></a>実際のデバイスまたはシミュレートされたデバイスで Unity プロジェクトを実行する
 
@@ -80,7 +80,7 @@ Unity では、docs.microsoft.com で提供されているこのドキュメン�
 
 ## <a name="see-also"></a>関連項目
 * [Mixed Reality Toolkit v2](mrtk-getting-started.md)
-* [MR の基本 100:Unity の概要](holograms-100.md)
+* [MR 基本 100: Unity の概要](holograms-100.md)
 * [Unity で推奨される設定](recommended-settings-for-unity.md)
 * [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)
 * [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)

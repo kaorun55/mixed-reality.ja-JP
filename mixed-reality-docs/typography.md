@@ -1,24 +1,24 @@
 ---
-title: タイポグラフィ
+title: 文字体裁
 description: テキストは、アプリのエクスペリエンスに情報を提供するための重要な要素です。
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、スタイル、フォント、タイポグラフィ、ui、ux
-ms.openlocfilehash: cc8e25e9cd7ba41bed179328fe7198e935e65d76
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 9664d355e941d800ac1ac862860fc5889b6b7686
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66830012"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437404"
 ---
-# <a name="typography"></a>タイポグラフィ
-
-テキストは、アプリのエクスペリエンスに情報を提供するための重要な要素です。 2D 画面のタイポグラフィと同じように、目標は明確で読みやすくすることです。 混合現実の3次元の側面により、テキストと全体的なユーザーエクスペリエンスをさらに大きくすることができます。
+# <a name="typography"></a>文字体裁
 
 ![HoloLens でのタイポグラフィの例](images/typography-cover.png)<br>
-*HoloLens でのタイポグラフィの例*
+
+
+テキストは、アプリのエクスペリエンスに情報を提供するための重要な要素です。 2D 画面の文字体裁と同じように、明確で読みやすくすることを目指します。 Mixed Reality の 3 次元の側面により、テキストと全体的なユーザー エクスペリエンスをいっそう優れたものにする機会があります。
 
 3D で型について話をするときは、押し出し、容量の3D テキストを考えてみる傾向があります。 一部ののロゴデザインやその他の限られたアプリケーションを除き、押し出しテキストはテキストの読みやすさを低下させる傾向があります。 3D のエクスペリエンスを設計する場合でも、読みやすく、読みやすくなるため、型に2D を使用します。
 
@@ -45,25 +45,33 @@ HoloLens では、加法色システムに基づいた光を使用したホロ�
 
 細い垂直線はバイブレーションになり、読みにくくなるため、42 pt 未満の型サイズに対しては薄いまたは semilight のフォントの重みを使用しないようにします。 ストロークの太さが十分にある最新のフォントがうまく機能します。 たとえば、Helvetica, と Arial は、標準または太字の重みを使用して HoloLens で非常に読みやすくなっています。
 
-### <a name="color"></a>色
+### <a name="color"></a>Color
 
 HoloLens では、ホログラムは加法の光源システムを使用して構築されるため、白のテキストは非常に読みやすくなります。 ホワイトテキストの例については、[スタート] メニューとアプリバーを参照してください。 HoloLens でバックプレートを使用しなくても白のテキストは適切に機能しますが、複雑な物理的背景によって型が読みづらくなる可能性があります。 ユーザーのフォーカスを改善し、物理的な背景からの邪魔を最小限に抑えるには、濃い色または色付きの背景色で白いテキストを使用することをお勧めします。
 
 <br>
 
 
-![ダークカラーまたは色付きの背景プレートでは、白いテキストを使用することをお勧めします。*ダークカラーまたは色付きの背景プレートの白いテキストの例。* ](images/typography-whiteonblack2-1000px.jpg)
-
+![、濃いまたは色付きの背景色で白いテキストを使用することをお勧めします。*ダークカラーまたは色付きの背景プレートの白いテキストの](images/typography-whiteonblack2-1000px.jpg)
+例。*
 <br>
 
 ダークテキストを使用するには、明るい背景プレートを使用して読み取り可能にする必要があります。 加法色のシステムでは、黒は透明として表示されます。 これは、色付きの背景プレートを使用せずに黒のテキストを表示できないことを意味します。
 
-![黒のテキストの例](images/typography-whiteonblack.png)
-<br>*白の場合の白の例と白のテキストの黒*
+:::row:::
+    :::column:::
+        ![の黒のテキストの例](images/typography-whiteonblack.png)<br>
+        *黒と黒の白いテキストの例*<br>
+    :::column-end:::
+    :::column:::
+        ![の黒のテキストの例](images/640px-typography-blackonwhite.jpg)<br>
+        *システムアプリの黒いテキストの例-ストアと設定*<br>
+    :::column-end:::
+:::row-end:::
 
+<br>
 
-![黒のテキストの例](images/640px-typography-blackonwhite.jpg)
-<br>*システムアプリの黒いテキストの例-ストアと設定*
+---
 
 ## <a name="recommended-font-size"></a>推奨されるフォントサイズ
 
@@ -71,7 +79,7 @@ HoloLens では、ホログラムは加法の光源システムを使用して�
 
 0\.45 m (45cm) でのほぼ相互作用の場合、フォントの表示角度と高さの最小値は0.4 °-0.5 °/3.14 – 3.9 mm です。 これは、 [Unity のテキスト](text-in-unity.md)で導入されたスケールファクターを使用した12ポイントです。
 
-![近距離および遠くの相互作用範囲*のコンテンツとほぼの相互作用範囲*](images/typography-distance-1000px.jpg)
+ほぼおよび遠くの相互作用範囲を ![、*ほぼかつ遠くの相互作用範囲でコンテンツ*を](images/typography-distance-1000px.jpg)
 
 
 ### <a name="the-minimum-legible-font-size"></a>最小のフォントサイズの最小値
@@ -90,17 +98,36 @@ HoloLens では、ホログラムは加法の光源システムを使用して�
 
 Segoe UI (Windows の既定のフォント) は、ほとんどの場合に適しています。 ただし、薄い垂直方向のストロークはバイブレーションので、読みやすさが低下するので、小さいサイズの明るいフォントや半明るいフォントファミリは使用しないようにしてください。 ストロークの太さが十分にある最新のフォントがうまく機能します。 たとえば、Helvetica, と Arial は、通常または太字の重みを使用して HoloLens で非常に読みやすくなります。
 
-\* * Unity でのテキストサイズの計算の詳細については、 [unity のページテキスト](text-in-unity.md)を参照してください。
+**Unity でのテキストサイズの計算の詳細については、「 [unity のテキスト](text-in-unity.md)」を参照してください。**
 
-![角度](images/Text_In_Unity_ViewingAngle.jpg)
-*表示距離、角度、およびテキストの高さ*を表示する
+*距離、角度、およびテキストの高さ*](images/Text_In_Unity_ViewingAngle.jpg)
+表示角度を ![
 
-## <a name="resources"></a>リソース
-* [Yu gothic フォント](http://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe%20fonts%20v1705.zip)
-* [HoloLens フォント](http://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens%20font.zip)
+<br>
 
-![HoloLens フォントは、Windows Mixed Reality で使用される記号のグリフを提供します。](images/300px-hololensmdl2symbols.jpg)
-<br>*HoloLens フォントは、Windows Mixed Reality で使用される記号のグリフを提供します。*
+---
+
+## <a name="resources"></a>参考資料
+
+:::row:::
+    :::column:::
+    ### <a name="segoe-fontshttpsdownloadmicrosoftcomdownload1bc1bcf071a-78ee-4968-acbe-15461c274b61segoe20fonts20v1705zipbr"></a>[Yu gothic フォント](https://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe%20fonts%20v1705.zip)<br>
+    (Zip ファイル)<br>
+    ### <a name="hololens-fonthttpsdownloadmicrosoftcomdownload38d38d659e2-4b9c-413a-b2e7-1956181dc427hololens20fontzipbr"></a>[HoloLens フォント](https://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens%20font.zip)<br>
+    (Zip ファイル)<br>
+    <br>
+    *Image: HoloLens フォントは、Windows Mixed Reality で使用される記号のグリフを提供します。*
+    :::column-end:::
+        :::column:::
+        ![HoloLens フォントは、Windows Mixed Reality で使用される記号のグリフを提供します。](images/hololensmdl2symbols.jpg)<br>
+    :::column-end:::
+:::row-end:::
+
+
+<br>
+
+---
+
 
 ## <a name="see-also"></a>関連項目
 * [Unity のテキスト](text-in-unity.md)

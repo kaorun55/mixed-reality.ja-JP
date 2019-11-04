@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens, テスト
-ms.openlocfilehash: b8c8e7ea8f90633cbb3b2aa01764398ef9a5c12a
-ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
+ms.openlocfilehash: 9a189bf139c97fc13034d94f05aa8f5974cc19b9
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68507907"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437385"
 ---
 # <a name="testing-your-app-on-hololens"></a>HoloLens でのアプリのテスト
 
@@ -42,18 +42,16 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 3. **ホログラムの品質ガイドラインに従います。** [ホログラム品質ガイダンス](hologram-stability.md)を実装する高性能アプリでは、ユーザー不快感が発生する可能性が低くなります。
 4. **ホログラムを垂直方向ではなく水平方向に分散します。** ユーザーが長時間にわたって長い期間を使用するように強制すると、ネックの疲労につながる可能性があります。
 
+
 ## <a name="input"></a>入力
 
-### <a name="gaze-and-gestures"></a>宝石とジェスチャ
+### <a name="interaction-models"></a>相互作用モデル
 
-[宝石](gaze.md)は HoloLens での基本的な入力形式であり、ユーザーはホログラムと環境を目指すことができます。 カーソル位置に基づいて、宝石がターゲットとしている場所を視覚的に確認できます。 通常は、見つめカーソルをマウスカーソルに関連付けます。
-
-[ジェスチャ](gestures.md)は、マウスクリックなどのホログラムを操作する方法です。 ほとんどの場合、マウスとタッチ動作は同じですが、違いがあるかどうかを理解し、検証することが重要です。
+ホログラムの相互作用が、選択した[相互作用モデル](interaction-fundamentals.md)と連携していることを確認します。
+また、ユーザー補助機能をサポートするためにこれらのアクセサリが必要な場合は、マウスやキーボードなどのさまざまなアクセサリで検証することをお勧めします。
 
 **アプリの動作がマウスとタッチで異なる場合に検証します。** これにより、不整合が特定され、ユーザーにより自然なエクスペリエンスを実現するための設計上の決定に役立ちます。 たとえば、ホバーに基づいてアクションをトリガーします。
 
-> [!NOTE]
-> HoloLens 2 に固有のその他のガイダンスは[近日対応予定](index.md#news-and-notes)です。
 
 ### <a name="custom-voice-commands"></a>カスタム音声コマンド
 
@@ -69,7 +67,7 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 
 ## <a name="system-integration"></a>システム統合
 
-### <a name="battery"></a>バッテリー
+### <a name="battery"></a>[バッテリー]
 
 電源が接続されていない状態でアプリケーションをテストし、バッテリの消費速度を把握します。 電源 LED の測定を見ることで、バッテリの状態を簡単に把握できます。 
 
@@ -87,7 +85,7 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 
 特にバックグラウンドタスクが実装されている場合は、アプリ間を切り替えるときにアプリのコア機能を検証します。 コピー/貼り付けと Cortana 統合は、該当する場合にも確認する価値があります。
 
-## <a name="telemetry"></a>製品利用統計情報
+## <a name="telemetry"></a>利用統計情報
 
 テレメトリと分析を使用してガイドを作成できます。 Analytics をアプリに統合することで、ベータテスターやエンドユーザーからアプリに関する洞察を得ることができます。 このデータを使用して、ストアに送信する前にアプリを最適化したり、将来の更新に使用したりできます。 分析オプションは多数あります。 どこから始めるかわからない場合は、「 [App Insights](https://www.visualstudio.com/products/application-insights-vs.aspx)」をご覧ください。
 

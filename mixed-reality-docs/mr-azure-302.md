@@ -6,19 +6,19 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, コンピュータービジョン, hololens, イマーシブ, vr
-ms.openlocfilehash: 9cc526afdc36b8056afd61948fea5cf98015bb35
-ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
+ms.openlocfilehash: d6f792a67adfd1038ca4cdbc44b2ef1bf12a1173
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047191"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437945"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
+>Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
 <br>
 
-# <a name="mr-and-azure-302-computer-vision"></a>MR と Azure 302:コンピュータービジョン
+# <a name="mr-and-azure-302-computer-vision"></a>MR と Azure 302: コンピュータービジョン
 
 このコースでは、混合現実アプリケーションで Azure Computer Vision 機能を使用して、提供されたイメージ内のビジュアルコンテンツを認識する方法を学習します。
 
@@ -42,7 +42,7 @@ Microsoft Computer Vision は、開発者がクラウドから高度なアルゴ
 <tr>
 <th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td> MR と Azure 302:コンピュータービジョン</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td> MR と Azure 302: コンピュータービジョン</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
@@ -65,7 +65,7 @@ Microsoft Computer Vision は、開発者がクラウドから高度なアルゴ
 - PC に接続されているカメラ (イマーシブヘッドセット開発用)
 - Azure のセットアップと Computer Vision API の取得のためのインターネットアクセス
 
-## <a name="before-you-start"></a>開始前の準備
+## <a name="before-you-start"></a>開始前の作業
 
 1.  このプロジェクトのビルドで問題が発生しないように、このチュートリアルで説明されているプロジェクトをルートまたはほぼルートフォルダーに作成することを強くお勧めします (長いフォルダーパスはビルド時に問題を引き起こす可能性があります)。
 2.  HoloLens をセットアップしてテストします。 HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。 
@@ -147,7 +147,7 @@ Azure で*Computer Vision API*サービスを使用するには、アプリケ�
 
     ![新しい Unity プロジェクトの詳細を指定します。](images/AzureLabs-Lab2-07.png)
 
-3.  既定値を確認する必要が開いている Unity、 **スクリプト エディター** に設定されている **Visual Studio** します。 **[> の設定の編集]** に移動し、新しいウィンドウで **[外部ツール]** に移動します。 変更 **External Script Editor** に **Visual Studio 2017** します。 **[基本設定]** ウィンドウを閉じます。
+3.  Unity を開いている場合は、[既定の**スクリプトエディター** ] が**Visual Studio**に設定されていることを確認する必要があります。 **[> の設定の編集]** に移動し、新しいウィンドウで **[外部ツール]** に移動します。 **外部スクリプトエディター**を**Visual Studio 2017**に変更します。 **[基本設定]** ウィンドウを閉じます。
 
     ![スクリプトエディターの設定を更新します。](images/AzureLabs-Lab2-08.png)
 
@@ -299,7 +299,7 @@ HoloLens のカメラを使用してイメージをキャプチャすると、�
 
 3.  新しいスクリプト*ラベル*スクリプトをダブルクリックして、 **Visual Studio**で開きます。
 
-4.  クラス内で、次のコードを入力します。
+4.  クラス内で、次のコードを入力*します*。
 
     ```csharp
         using System.Collections.Generic;
@@ -358,12 +358,12 @@ HoloLens のカメラを使用してイメージをキャプチャすると、�
     ```
 
 6.  *Unity*に戻る前に、変更内容を*Visual Studio*に保存してください。
-7.  *Unity エディター*に戻り、 **[スクリプト]** フォルダーの [の履歴] クラスをクリックして、[*階層] パネル*の **[メインカメラ]** オブジェクトにドラッグします。
+7.  *Unity エディター*に戻り、**スクリプト** フォルダーの の履歴 クラスをクリックし*て、* *階層 パネル*の **メインカメラ** オブジェクトにドラッグします。
 8.  **メインカメラ**をクリックし、[*インスペクター] パネル*を確認します。
 
-カメラにドラッグしたスクリプトから、次の2つのフィールドがあることがわかります。**カーソル**と**ラベルの prefab**。
+カメラにドラッグしたスクリプトから、 **Cursor**と**Label prefab**の2つのフィールドがあることがわかります。
 
-9.  次の図に示すように、[*階層] パネル* **から [** カーソル] というオブジェクトを **[カーソル]** という名前のスロットにドラッグします。
+9.  次の図に示すように、[*階層] パネル***から [カーソル]** というオブジェクトを **[カーソル]** という名前のスロットにドラッグします。
 10. 次の図に示すように、[*プロジェクト] パネル*の [*アセット] フォルダー*から**labeltext**という名前のオブジェクトを**label prefab**という名前のスロットにドラッグします。 
 
     ![Unity 内で参照ターゲットを設定します。](images/AzureLabs-Lab2-25.png)
@@ -413,7 +413,7 @@ HoloLens のカメラを使用してイメージをキャプチャすると、�
 
         void Start()
         {
-            // subscribing to the Hololens API gesture recognizer to track user gestures
+            // subscribing to the HoloLens API gesture recognizer to track user gestures
             recognizer = new GestureRecognizer();
             recognizer.SetRecognizableGestures(GestureSettings.Tap);
             recognizer.Tapped += TapHandler;
@@ -526,7 +526,7 @@ HoloLens のカメラを使用してイメージをキャプチャすると、�
 -   バイト配列としてキャプチャされた最新のイメージを読み込んでいます。
 -   分析のために、バイト配列を*Azure Computer Vision API*サービスインスタンスに送信しています。
 -   JSON 文字列として応答を受信しています。
--   応答を逆シリアル化し、結果として得られるタグを結果のタグに渡します。
+-   応答を逆シリアル化*し、結果*として得られるタグを結果のタグに渡します。
  
 このクラスを作成するには:
 
@@ -586,9 +586,9 @@ HoloLens のカメラを使用してイメージをキャプチャすると、�
 
     > [!WARNING] 
     > **VisionAnalysisEndpoint**変数は、この例で指定したものとは異なる場合があります。 **米国西部**は、米国西部リージョン用に作成されたサービスインスタンスを厳密に参照します。 これを[エンドポイント URL](https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739/operations/56f91f2e778daf14a499e1fa)で更新します。次に例をいくつか示します。
-    > - 西ヨーロッパ:`https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
-    > - 東南アジア:`https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
-    > - オーストラリア東部:`https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
+    > - 西ヨーロッパ: `https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
+    > - 東南アジア: `https://southeastasia.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
+    > - オーストラリア東部: `https://australiaeast.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Tags`
 
 7.  起動するためのコードを追加する必要があります。 
 
@@ -688,12 +688,12 @@ HoloLens のカメラを使用してイメージをキャプチャすると、�
 -   すべてのスクリプトが**メインカメラ**オブジェクトにアタッチされます。 
 -   *メインカメラインスペクターパネル*のすべてのフィールドが適切に割り当てられます。
 -   **認証キー**が**authorizationkey**変数に挿入されていることを確認します。
--   *VisionManager*スクリプトでエンドポイントも確認し、地域に合わせて配置されていることを確認します (このドキュメントでは、既定で*米国西部*が使用されています)。
+-   *VisionManager*スクリプトでエンドポイントも確認し、地域に合わせて配置されていることを確認します (このドキュメントで*は、既定*で*米国西部*が使用されています)。
 
 ## <a name="chapter-9--build-the-uwp-solution-and-sideload-the-application"></a>第9章– UWP ソリューションをビルドし、アプリケーションをサイドロードする
 このプロジェクトの Unity セクションに必要なものはすべて完了したので、Unity から構築します。
 
-1.  ビルド設定 - **ファイル > ビルド設定**に移動します...
+1.  ビルド*設定* - **ファイル > ビルド設定**に移動します...
 2.  [*ビルドの設定*] ウィンドウで、 **[ビルド]** をクリックします。
 
     ![Unity からアプリをビルドする](images/AzureLabs-Lab2-26.png)
@@ -707,7 +707,7 @@ HoloLens のカメラを使用してイメージをキャプチャすると、�
 
 HoloLens に展開するには:
 
-1.  Hololens が**開発者モード**になっていることを確認するには、HOLOLENS の IP アドレス (リモートデプロイ用) が必要です。 これを行うには :
+1.  Hololens が**開発者モード**になっていることを確認するには、HOLOLENS の IP アドレス (リモートデプロイ用) が必要です。 これには、次の手順を実行します。
 
     1. HoloLens を装着した後、**設定**を開きます。
     2. **[ネットワーク & インターネット > wi-fi > 詳細オプション]** にアクセス

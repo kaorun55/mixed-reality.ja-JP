@@ -1,25 +1,24 @@
 ---
-title: Windows Mixed Reality 用の SteamVR アプリケーションの更新
+title: SteamVR アプリケーションを更新しています
 description: Windows Mixed Reality ヘッドセットとの互換性を最大化するために SteamVR アプリケーションを更新するためのベストプラクティス。
 author: thmignon
 ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
 keywords: SteamVR、互換性
-ms.openlocfilehash: db21651df8e586edf500f0d05def4b1ea5474284
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 6479130b14b8b50828ebecd3a648fd8a425aec15
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63548668"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438209"
 ---
-# <a name="updating-your-steamvr-application-for-windows-mixed-reality"></a>Windows Mixed Reality 用の SteamVR アプリケーションの更新
-
+# <a name="updating-your-steamvr-application"></a>SteamVR アプリケーションを更新しています
 Windows Mixed Reality ヘッドセットで実行するために、開発者は SteamVR エクスペリエンスをテストして最適化することをお勧めします。 このドキュメントでは、開発者が Windows Mixed Reality でエクスペリエンスを確実に実行できるようにするための一般的な機能強化について説明します。
 
 ## <a name="initial-setup-instructions"></a>初期セットアップの手順
 
-Windows Mixed Reality でゲームやアプリのテストを開始するには、まず、[ファーストステップガイド](http://aka.ms/WindowsMixedRealitySteamVR)に従ってください。
+Windows Mixed Reality でゲームやアプリのテストを開始するには、まず、[ファーストステップガイド](https://aka.ms/WindowsMixedRealitySteamVR)に従ってください。
 
 ## <a name="controller-models"></a>コントローラーモデル
 1. アプリがコントローラーモデルをレンダリングする場合:
@@ -59,7 +58,7 @@ Windows Mixed Reality モーションコントローラーは、他の SteamVR �
 
 Windows Mixed Reality SteamVR エクスペリエンスを向上させるために、お客様のフィードバックは非常に重要です。 すべてのフィードバックとバグを[Windows フィードバックハブ](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/filing-feedback)から送信してください。 ここでは[、SteamVR フィードバックを可能な限り活用するためのヒント](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality#sharing-feedback-on-steamvr)を紹介します。
 
-共有する質問やコメントがある場合は、[ストリームフォーラム](http://steamcommunity.com/app/719950/discussions/)からもご連絡いただけます。
+共有する質問やコメントがある場合は、[ストリームフォーラム](https://steamcommunity.com/app/719950/discussions/)からもご連絡いただけます。
 
 ## <a name="faqs-and-troubleshooting"></a>FAQ とトラブルシューティング
 

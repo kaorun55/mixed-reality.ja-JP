@@ -2,20 +2,20 @@
 title: ケーススタディ-混合現実の人間を表す
 description: すばらしい要素を作成できるだけでなく、混合現実の環境、オブジェクト、および人間の最も現実的なキャプチャを利用する場合、どのような種類の営業案件が浮上しますか。
 author: mavitazk
-ms.author: mavitazk
+ms.author: jemccull
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、人間、アバター、mixed reality capture、容量ビデオ
-ms.openlocfilehash: 35dced220d4e76cfc92ec17c0b88c1576eced403
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 9826a55428c093f887531b20083c4bdc3d2bcb53
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63527098"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436536"
 ---
 # <a name="case-study---representing-humans-in-mixed-reality"></a>ケーススタディ-混合現実の人間を表す
 
-ライトを使用した James Turrell 設計。 作業にステップインすると、1つの深さと焦点がわかります。 壁面は、接近と無限の両方に見えるので、影が付けられます。 ライトの色と拡散を慎重に調整することによって設計された未知の見識。 [Turrell は、このような sensations](http://www.sculpture.org/documents/scmag02/nov02/turrell/turrell.shtml)を *"目で*見ています" として説明します。これは、現実を理解するための1つの方法です。 1 Turrell imagines のようなすばらしい世界は、現在、mixed reality のイマーシブ環境とは異なり、このようにして、感知を利用するための強力なツールです。
+ライトを使用した James Turrell 設計。 作業にステップインすると、1つの深さと焦点がわかります。 壁面は、接近と無限の両方に見えるので、影が付けられます。 ライトの色と拡散を慎重に調整することによって設計された未知の見識。 [Turrell は、このような sensations](https://www.sculpture.org/documents/scmag02/nov02/turrell/turrell.shtml)を *"目で*見ています" として説明します。これは、現実を理解するための1つの方法です。 1 Turrell imagines のようなすばらしい世界は、現在、mixed reality のイマーシブ環境とは異なり、このようにして、感知を利用するための強力なツールです。
 
 ![横長-James Turrell (1998)](images/wide-out-james-turrell.jpg)
 
@@ -27,9 +27,9 @@ Turrell の stark、minimalism は彼の仕事の特徴ですが、混合現実�
 
 ![感嘆符-Ai Weiwei (2013)](images/bang-ai-weiwie.jpg)
 
-2013では、アーティスト Ai Weiwei 公開は、ベニス Biennale で886アンティーク stools[を使用して、tangling 作品を](http://www.designboom.com/art/ai-weiwei-bang-installation-at-venice-art-biennale-2013/)しています。 各木製腰掛けは、中国語職人気質が非常に重要であり、これらの stools が世代間で渡された時代 (年号) から来ています。 Stools 自体は、木の複雑さ、ピースの精度、慎重な配置など、現代の文化に関する Ai のコメントに不可欠です。
+2013では、アーティスト Ai Weiwei 公開は、ベニス Biennale で886アンティーク stools[を使用して、tangling 作品を](https://www.designboom.com/art/ai-weiwei-bang-installation-at-venice-art-biennale-2013/)しています。 各木製腰掛けは、中国語職人気質が非常に重要であり、これらの stools が世代間で渡された時代 (年号) から来ています。 Stools 自体は、木の複雑さ、ピースの精度、慎重な配置など、現代の文化に関する Ai のコメントに不可欠です。
 
-アンティーク stools は、アーティストのメッセージを信頼性の高い方法で配信します。 現実的な表現は、経験に不可欠であり、技術的な課題が生じます。各 886 stools Sculpting は、非常に包括的で高価なものになります。 モデルと配置にはどのくらいの時間がかかりますか。 マテリアルの信頼性を維持するにはどうすればよいでしょうか。 これらのオブジェクトを最初から再作成すると、多くの点で、アートワーク自体の解釈が変わります。 アーティストの意図を維持するにはどうすればよいですか。
+アンティーク stools は、アーティストのメッセージを信頼性の高い方法で配信します。 現実的な表現は、このエクスペリエンスにとって非常に重要であり、技術上の課題を作成することが重要です。つまり、Sculpting stools の各886は、非常に包括的で高価なものになります。 モデルと配置にはどのくらいの時間がかかりますか。 マテリアルの信頼性を維持するにはどうすればよいでしょうか。 これらのオブジェクトを最初から再作成すると、多くの点で、アートワーク自体の解釈が変わります。 アーティストの意図を維持するにはどうすればよいですか。
 
 ## <a name="methods-of-capturing-mixed-reality-assets"></a>Mixed reality 資産をキャプチャする方法
 
@@ -43,7 +43,7 @@ Turrell の stark、minimalism は彼の仕事の特徴ですが、混合現実�
 
 環境とオブジェクトの場合、360°のイメージングソフトウェアは photogrammetry の要素を含むように進化しています。 深度情報をシーンから分離することによって、高度な360°のビデオでは、仮想シーンを見ているときに fishbowl で頭が動かなくなるという感じを軽減できます。
 
-モーションキャプチャとスキャンを組み合わせて拡張する新しいメソッドが新たに追加されています。モーションキャプチャは、視覚効果や画像に対して詳細な人間移動を行うための基礎となっています。また、スキャンは、顔や手などの詳細な人の視覚エフェクトを取得するために高度な機能を備えています。 レンダリングテクノロジの進歩により、容量ビデオと呼ばれる新しいメソッドによってこれらの手法が構築され、ビジュアルと深度情報が組み合わされて、次世代の3D ヒューマンキャプチャが作成されます。
+モーションキャプチャとスキャンを組み合わせて拡張する新しいメソッドが新たに導入されました。モーションキャプチャは、視覚効果や動画文字への詳細な人間移動を実現するための基本であり、スキャンは詳細な人間を取り込むための高度な機能を備えています。顔や手などのビジュアル。 レンダリングテクノロジの進歩により、容量ビデオと呼ばれる新しいメソッドによってこれらの手法が構築され、ビジュアルと深度情報が組み合わされて、次世代の3D ヒューマンキャプチャが作成されます。
 
 ## <a name="volumetric-video-and-the-pursuit-of-authentic-human-capture"></a>容量ビデオと、本物の人間によるキャプチャの追求
 
@@ -51,7 +51,7 @@ Turrell の stark、minimalism は彼の仕事の特徴ですが、混合現実�
 
 ![VR の Mindshow](images/mindshow-in-vr-640px.jpg)
 
-イマーシブエクスペリエンスのアバターは、ストーリーテリングで新しい種類の具現化を有効にします。 最新のアプリは、仮想ボディの所有権の概念を再考と共に、人間との間の距離を排除する世代の飛躍を設定します。 [Mindshow](http://mindshow.com/)のような企業は、アバターを活用するクリエイティブツールを開発しています。これは、ユーザーがまったく新しいペルソナと文字を利用できるようにするためのものです。 他の人は、人間[の](https://en.wikipedia.org/wiki/Uncanny_valley)ような属性の性質 (および必要な場合) を調べることができます。 今日、このリアリティがないことは、日常的な開発者にとっての技術的な問題のホストと共に、[人間の likeness の](https://en.wikipedia.org/wiki/Uncanny_valley)欠如を回避するのに役立ちます。 これらの理由 (およびその他) については、近い将来、現実的ではないアバターが既定のものになる可能性が非常に高くなります。 しかし、現実には、現実には mixed reality に大きな課題がありますが、 *3d 空間で人間を正規表現する必要がある主なシナリオがあり*ます。
+イマーシブエクスペリエンスのアバターは、ストーリーテリングで新しい種類の具現化を有効にします。 最新のアプリは、仮想ボディの所有権の概念を再考と共に、人間との間の距離を排除する世代の飛躍を設定します。 [Mindshow](https://mindshow.com/)のような企業は、アバターを活用するクリエイティブツールを開発しています。これは、ユーザーがまったく新しいペルソナと文字を利用できるようにするためのものです。 他の人は、人間[の](https://en.wikipedia.org/wiki/Uncanny_valley)ような属性の性質 (および必要な場合) を調べることができます。 今日、このリアリティがないことは、日常的な開発者にとっての技術的な問題のホストと共に、[人間の likeness の](https://en.wikipedia.org/wiki/Uncanny_valley)欠如を回避するのに役立ちます。 これらの理由 (およびその他) については、近い将来、現実的ではないアバターが既定のものになる可能性が非常に高くなります。 しかし、現実には、現実には mixed reality に大きな課題がありますが、 *3d 空間で人間を正規表現する必要がある主なシナリオがあり*ます。
 
 Microsoft では、Microsoft Research からの小規模なチームが、容量ビデオの形式で人間をキャプチャする方法を開発してきました。 今日のプロセスはビデオ運用に似ています。 sculpted 資産に移動を適用するのではなく、完全な3D 記録です。 パフォーマンスとイメージはリアルタイムでキャプチャされます。アーティストの仕事ではなく、本物の表現です。 また、テクノロジは商用アプリケーションを拡張することから始まりますが、容量ビデオの影響は、[マイクロソフトのパーソナルコンピューティングのビジョン](https://www.youtube.com/watch?v=tcyj-_IEWt8)に不可欠です。
 
@@ -59,17 +59,17 @@ Microsoft では、Microsoft Research からの小規模なチームが、容量
 
 信頼性の高い人間によるキャプチャでは、複雑な現実のエクスペリエンスの新しい一意のカテゴリをロック解除します。 デジタルメディアでは、著名人、同僚、またはお好きな人がいるかどうかを確認することで、親密性を作成することができます。 彼らの顔、式、動きの中での微妙な部分は、だれがそのようなものであるかということです。 これらの人間の品質を3D 空間でキャプチャできるようになると、どのようなチャンスがありますか。
 
-現在、チームは、エンターテイメントや教育などの部門に焦点を当てることによって、容量ビデオの範囲をプッシュしています。[Actiongram](https://www.microsoft.com/p/actiongram/9nblggh5ftmt)はクリエイティブな文字と[有名人](https://www.youtube.com/watch?v=BwWueXlsOrA)を特徴として、混合の現実事例を作成します。 [インストール](https://www.jpl.nasa.gov/news/news.php?feature=6220)Mars は、現在、NASA のケネディ宇宙センターで、伝説 astronaut の容量ビデオを特徴としています。 このエクスペリエンスにより、訪問者は、mars で人間の colonization を追求することによって、Mars の表面を説明できます。
+現在、チームは、エンターテインメントや教育などのセクターに焦点を当てることによって、容量ビデオの範囲をプッシュしています。 [Actiongram](https://www.microsoft.com/p/actiongram/9nblggh5ftmt)は、[有名人](https://www.youtube.com/watch?v=BwWueXlsOrA)のような現実のストーリーを作成します。 [宛先: Mars](https://www.jpl.nasa.gov/news/news.php?feature=6220)は、現在、NASA のケネディ宇宙センターで、伝説 astronaut の容量ビデオを特徴としています。 このエクスペリエンスにより、訪問者は、mars で人間の colonization を追求することによって、Mars の表面を説明できます。
 
 ## <a name="humans-are-fundamental-to-mixed-reality"></a>人間は mixed reality の基礎になります。
 
 これらのビデオを作成する方法を設計することは困難であるように思えますが、1つはチームが大きな可能性を認識していることです。 また、テクノロジがよりアクセスしやすくなり、記録からリアルタイムのキャプチャに移動するため、これらの機会が拡張されます。
 
-[Holoportation](https://www.microsoft.com/en-us/research/project/holoportation-3/)は、同じ基本テクノロジを基盤とする研究作業であり、視覚的および深度情報を authentically し、結果をリアルタイムで表示します。 チームでは、会話や共有エクスペリエンスの未来における現実的な人間表現の力を調べることにしています。 世界中のどこからでも3次元のキャプチャを環境に追加できるとどうなるでしょうか。
+[Holoportation](https://www.microsoft.com/research/project/holoportation-3/)は、同じ基本テクノロジを基盤とする研究作業であり、視覚的および深度情報を authentically し、結果をリアルタイムで表示します。 チームでは、会話や共有エクスペリエンスの未来における現実的な人間表現の力を調べることにしています。 世界中のどこからでも3次元のキャプチャを環境に追加できるとどうなるでしょうか。
 
 ![メッセージ交換の未来](images/girl-with-dress.jpg)
 
-新しいレベルの immersion を Skype などの日常のアプリに重ねて、デジタル会議とビジネス旅行の概念を大幅に調整するために、容量ビデオでは、次のような独自のシナリオを実現しています。専門家は、リビングルームの couches といすに座っている、遠く離れた大陸やデジタルの友人に、医師を仮想的にトレーニングしています。 Mixed reality エクスペリエンスに正規の人間表現を追加すると、デジタル会議とビジネス旅行の概念が大幅に変形します。
+新しいレベルの immersion を Skype などの日常のアプリに重ねて、デジタル会議やビジネス旅行の概念を大幅に調整するために、容量ビデオでは独自のシナリオをオープンしています。これは、専門家が、遠く離れた大陸やデジタルで医師を仮想的にトレーニングしています。リビングルームの couches といすに座っています。 Mixed reality エクスペリエンスに正規の人間表現を追加すると、デジタル会議とビジネス旅行の概念が大幅に変形します。
 
 James Turrell の抽象図と Ai Weiwei の重要なリアリティによって、独自の技術的な課題が生じます。そのため、人間をクリエイティブなアバターや現実的なキャプチャとして表す方法を用意してください。 もう一方のライトでは無視することはできません。また、の可能性を調べることで、この新しいスペースでの人間との対話を理解するのに役立ちます。
 
@@ -78,6 +78,6 @@ James Turrell の抽象図と Ai Weiwei の重要なリアリティによって�
 <table style="border-collapse:collapse" padding-left="0px">
 <tr>
 <td style="border-style: none" width="60"><img alt="Picture of Mark Vitazko" width="60" height="60" src="images/mark-vitazko.jpg"></td>
-<td style="border-style: none"><b>マーク Vitazko</b><br>UX デザイナー@Microsoft</td>
+<td style="border-style: none"><b>マーク Vitazko</b><br>UX デザイナーの @Microsoft</td>
 </tr>
 </table>

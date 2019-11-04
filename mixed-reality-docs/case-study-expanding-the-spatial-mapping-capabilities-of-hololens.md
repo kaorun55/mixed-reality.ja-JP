@@ -2,20 +2,23 @@
 title: ケーススタディ-HoloLens の空間マッピング機能の拡張
 description: Microsoft HoloLens 用の最初のアプリを作成する際には、デバイスでの空間マッピングの境界をどれだけまでにプッシュできるかについても説明しました。
 author: jevertt
-ms.author: jevertt
+ms.author: jemccull
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、空間マッピング
-ms.openlocfilehash: 602b629afa5900ff34c28b3a3a32725af06590b7
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 5142cb383d4408b29eb17eb5ede84d19b2533dc4
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522711"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436722"
 ---
 # <a name="case-study---expanding-the-spatial-mapping-capabilities-of-hololens"></a>ケーススタディ-HoloLens の空間マッピング機能の拡張
 
 Microsoft HoloLens 用の最初のアプリを作成する際には、デバイスでの空間マッピングの境界をどれだけまでにプッシュできるかについても説明しました。 Microsoft スタジオのソフトウェアエンジニアである Jeff Evertt は、新しいテクノロジがどのように開発され、ユーザーの実際の環境でのホログラムの配置方法をより細かく制御する必要がないかについて説明しています。
+
+> [!NOTE]
+> HoloLens 2 では、開発者向けの新しい[シーンランタイム](scene-understanding.md)が実装されています。これは、環境を認識するアプリケーションの開発を直感的に行うように設計された、構造化された高レベルの環境表現を使用して、混合の現実開発 
 
 ## <a name="watch-the-video"></a>ビデオを見る
 
@@ -23,9 +26,9 @@ Microsoft HoloLens 用の最初のアプリを作成する際には、デバイ�
 
 ## <a name="beyond-spatial-mapping"></a>空間マッピング以外
 
-私たちは [フラグメント](https://www.microsoft.com/p/fragments/9nblggh5ggm8) と [Young Conker](https://www.microsoft.com/p/young-conker/9nblggh5ggk1)、1 つの HoloLens のうち2つ目のゲームに取り組んでいましたが、ここでは、世界中のホログラムの手順を実行してきたときに、ユーザーに関するより高いレベルの理解が必要でした。environment. 各ゲームには、独自の配置ニーズがありました。たとえば、フラグメントでは、フロアやテーブルなどのさまざまなサーフェスを区別して、関連する場所に手掛かりを配置する必要がありました。 また、ソファや椅子など、holographic 文字が見られる可能性のある表面を特定できるようにする必要がありました。 Young Conker では、プレーヤーの部屋の中で、生成された画面をプラットフォームとして使用できるようにしたいと考えていました。
+私たちは、1つの HoloLens のうち2つ目の[ゲームに取り組ん](https://www.microsoft.com/p/fragments/9nblggh5ggm8)でいましたが、ここで[は、世界](https://www.microsoft.com/p/young-conker/9nblggh5ggk1)中のホログラムの手順を実行してきたときに、ユーザーに関するより高いレベルの理解が必要でした。environment. 各ゲームには独自の配置ニーズがありました。たとえば、フラグメントでは、フロアやテーブルなどのさまざまなサーフェスを区別して、関連する場所に手掛かりを配置する必要がありました。 また、ソファや椅子など、holographic 文字が見られる可能性のある表面を特定できるようにする必要がありました。 Young Conker では、プレーヤーの部屋の中で、生成された画面をプラットフォームとして使用できるようにしたいと考えていました。
 
-これらのゲームの開発パートナーである[Asobo スタジオ](http://www.asobostudio.com/index.html)は、この問題に直面し、HoloLens の空間マッピング機能を拡張するテクノロジを作成しました。 これを使用すると、プレーヤーの部屋を分析し、壁、テーブル、椅子、床などの表面を特定できます。 また、holographic オブジェクトの最適な配置を決定するために、一連の制約に対して最適化する機能が用意されています。
+これらのゲームの開発パートナーである[Asobo スタジオ](https://www.asobostudio.com/index.html)は、この問題に直面し、HoloLens の空間マッピング機能を拡張するテクノロジを作成しました。 これを使用すると、プレーヤーの部屋を分析し、壁、テーブル、椅子、床などの表面を特定できます。 また、holographic オブジェクトの最適な配置を決定するために、一連の制約に対して最適化する機能が用意されています。
 
 ## <a name="the-spatial-understanding-code"></a>空間を理解するコード
 
@@ -34,10 +37,10 @@ Asobo の元のコードを取って、このテクノロジをカプセル化�
 Unity サンプルには多くの便利なクエリが含まれています。これを使用すると、壁上の空のスペースを検索したり、オブジェクトを天井に配置したり、床上の大きなスペースに配置したり、文字の位置を識別したり、その他のさまざまな空間を理解するクエリを実行したりできます。
 
 HoloLens によって提供される空間マッピングソリューションは、問題のある領域全体のニーズに対応できるように設計されていますが、空間を認識するモジュールは、2つの特定のゲームのニーズをサポートするように構築されています。 そのため、そのソリューションは、特定のプロセスと一連の前提を中心に構築されています。
-* **固定サイズの playspace**:ユーザーは、init 呼び出しの最大 playspace サイズを指定します。
-* **1 回限りのスキャンプロセス**:このプロセスには、ユーザーが再生スペースを定義するための個別のスキャンフェーズが必要です。 クエリ関数は、スキャンが完了するまで機能しません。
-* **ユーザー駆動型の playspace "描画"** :スキャンフェーズ中に、ユーザーは playspace を移動して表示し、含める必要がある領域を効果的に描画します。 生成されたメッシュは、このフェーズでユーザーからのフィードバックを提供するために重要です。
-* **屋内でホームまたは office セットアップ**:クエリ関数は、フラットなサーフェイスと壁面を中心に設計されています。 これは、ソフトな制限です。 ただし、スキャンフェーズでは、主要軸と補助軸に沿ってメッシュテセレーションを最適化するために、主軸分析が完了します。
+* **固定サイズの playspace**: ユーザーは、init 呼び出しの最大 playspace サイズを指定します。
+* **1 回限りのスキャンプロセス**: このプロセスには、ユーザーが再生領域を定義するための個別のスキャンフェーズが必要です。 クエリ関数は、スキャンが完了するまで機能しません。
+* **ユーザー駆動型の playspace "描画"** : スキャンフェーズ中に、ユーザーが playspace を移動して表示し、含める必要がある領域を効果的に描画します。 生成されたメッシュは、このフェーズでユーザーからのフィードバックを提供するために重要です。
+* **屋内で home または office セットアップ**: クエリ関数は、フラットなサーフェイスと壁面を中心に設計されています。 これは、ソフトな制限です。 ただし、スキャンフェーズでは、主要軸と補助軸に沿ってメッシュテセレーションを最適化するために、主軸分析が完了します。
 
 ### <a name="room-scanning-process"></a>ルームスキャンプロセス
 
@@ -52,20 +55,20 @@ HoloLens によって提供される空間マッピングソリューション�
 
 
 含まれている SpatialUnderstanding.cs ファイルは、スキャンフェーズプロセスを管理します。 次の関数を呼び出します。
-* **SpatialUnderstanding_Init**:開始時に1回呼び出されます。
-* **GeneratePlayspace_InitScan**:スキャンフェーズを開始する必要があることを示します。
-* **GeneratePlayspace_UpdateScan_DynamicScan**:各フレームを呼び出して、スキャンプロセスを更新します。 カメラの位置と向きは、前に説明した playspace の描画プロセスに使用されます。
-* **GeneratePlayspace_RequestFinish**:Playspace を終了するために呼び出されます。 これは、スキャンフェーズ中に "描画された" 領域を使用して、playspace を定義およびロックします。 アプリケーションでは、スキャンフェーズ中に統計のクエリを実行したり、ユーザーフィードバックを提供するためにカスタムメッシュを照会したりすることができます。
-* **Import_UnderstandingMesh**:スキャン中に、モジュールによって提供された**SpatialUnderstandingCustomMesh**の動作を理解するために、プロセスによって生成されたカスタムメッシュが定期的に照会されます。 さらに、この処理は、スキャンが完了した後に実行されます。
+* **SpatialUnderstanding_Init**: 開始時に1回呼び出されます。
+* **GeneratePlayspace_InitScan**: スキャンフェーズを開始する必要があることを示します。
+* **GeneratePlayspace_UpdateScan_DynamicScan**: 各フレームを呼び出して、スキャンプロセスを更新します。 カメラの位置と向きは、前に説明した playspace の描画プロセスに使用されます。
+* **GeneratePlayspace_RequestFinish**: playspace を終了するために呼び出されます。 これは、スキャンフェーズ中に "描画された" 領域を使用して、playspace を定義およびロックします。 アプリケーションでは、スキャンフェーズ中に統計のクエリを実行したり、ユーザーフィードバックを提供するためにカスタムメッシュを照会したりすることができます。
+* **Import_UnderstandingMesh**: スキャン中、モジュールによって提供され、prefab を理解するための**SpatialUnderstandingCustomMesh**動作が、プロセスによって生成されたカスタムメッシュを定期的に照会します。 さらに、この処理は、スキャンが完了した後に実行されます。
 
 **SpatialUnderstanding**動作によって実行されるスキャンフローは、 **initscan**を呼び出し、その後、各フレームに対して**アップデートを実行**します。 統計クエリによって適切なカバレッジが報告されると、ユーザーは、 **[Requestfinish]** を呼び出して、スキャンフェーズの終了を示すことができます。 戻り値が DLL の処理を完了したことを示すまで、アップデートを引き続き呼び出す**ことができ**ます。
 
 ## <a name="the-queries"></a>クエリ
 
 スキャンが完了すると、インターフェイスで次の3種類のクエリにアクセスできるようになります。
-* **トポロジクエリ**:スキャンされたルームのトポロジに基づく高速クエリです。
-* **シェイプクエリ**:これらは、トポロジクエリの結果を使用して、定義したカスタム図形に適した水平サーフェスを検索します。
-* **オブジェクト配置クエリ**:これらは、オブジェクトの一連のルールと制約に基づいて最適な場所を検索する、より複雑なクエリです。
+* **トポロジクエリ**: スキャンされたルームのトポロジに基づく高速クエリです。
+* **Shape クエリ**: トポロジクエリの結果を使用して、定義したカスタム図形に適した水平方向のサーフェイスを検索します。
+* **オブジェクト配置クエリ**: オブジェクトの一連のルールと制約に基づいて最適な場所を検索する、より複雑なクエリです。
 
 3つの主要なクエリに加えて、raycasting インターフェイスを使用して、タグ付きサーフェスの種類を取得し、カスタムの watertight ルームメッシュをコピーすることができます。
 
@@ -320,7 +323,7 @@ Raycast 結果レポートを床と交差させることができます。
 
 ## <a name="see-also"></a>関連項目
 * [空間マッピング](spatial-mapping.md)
-* [空間マッピングの設計](spatial-mapping-design.md)
+* [シーンの理解](scene-understanding.md)
 * [部屋のスキャンの可視化](room-scan-visualization.md)
 * [MixedRealityToolkit-Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)
-* [Asobo Studio:HoloLens 開発の最前線からの教訓](http://www.gamesindustry.biz/articles/2016-05-12-asobo-lessons-from-the-frontline-of-ar-development)
+* [Asobo Studio: HoloLens 開発の最前線からの教訓](https://www.gamesindustry.biz/articles/2016-05-12-asobo-lessons-from-the-frontline-of-ar-development)

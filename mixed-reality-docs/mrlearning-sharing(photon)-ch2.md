@@ -6,19 +6,19 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 9d42811157db108baad51eab3f367a06a11b7f7b
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 5d8194e9a51bdb0ce32f345b4adfbfaf408c5396
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701976"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438382"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. Unity を開発用に準備する 
 
 
 このチュートリアルでは、Mixed Reality Toolkit のインポート、ビルド設定の構成、シーンの準備など、アプリケーション開発のために Unity を準備して構成する方法について説明します。
 
-## <a name="objectives"></a>目的
+## <a name="objectives"></a>目標
 
 - アプリケーション開発のための Unity の構成
 
@@ -34,13 +34,13 @@ ms.locfileid: "68701976"
 
 ![Module3Chapter2step2im](images/module3chapter2step2im.PNG)
 
-3. 手順 1. で指定したリンクからダウンロードした Unity パッケージを選択します。 [インポート] ポップアップウィンドウが Unity に表示されたら、[インポート] ボタンをクリックしてインポートを開始します。 MRTK のインポートには数分かかる場合があります。
+3. 手順 1. で指定したリンクからダウンロードした Unity パッケージを選択します。 [インポート] ポップアップウィンドウが Unity に表示されたら、[インポート] ボタンをクリックして MRTK のインポートを開始します。 この処理には数分かかることがあります。
 
 ![Module3Chapter2step3im](images/module3chapter2step3im.PNG)
 
-> 注:ダウンロードしたパッケージは、ファイルを保存したローカルフォルダーにあります。 上の図では、パッケージを検索する場所はされるません。
+> メモ: ダウンロードしたパッケージは、ファイルを保存したローカルフォルダーにあります。 上の図では、パッケージを検索する場所はされるません。
 
-4. 新しいシーンを作成します。 これを行うには、[ファイル] をクリックし、[新しいシーン] を選択します)。 シーンを HLSharedProjectMain として保存します。
+4. 新しいシーンを作成します。 これを行うには、[ファイル] をクリックし、[新しいシーン] を選択します。 HLSharedProjectMain として保存します。
 
 > 注: 次の図のようなポップアップが表示される場合があります。 ここでは、[いいえ] をクリックします。
 >
@@ -58,7 +58,7 @@ ms.locfileid: "68701976"
 
 ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
 
-7. [診断] ウィンドウを非表示にする場合は、下にスクロールし、[診断システムを有効にする] チェックボックスをオフにします。 アプリケーションの開発中に、パフォーマンスを監視し、運用またはアプリケーションのデモンストレーション中に無効にすることをお勧めします。 
+7. [診断] ウィンドウを非表示にする場合は、下にスクロールし、[診断システムを有効にする] チェックボックスをオフにします。 アプリケーションの開発中は、パフォーマンスを監視し、運用またはアプリケーションのデモンストレーション中に無効にすることをお勧めします。 
 
 ![Module3Chapter2step7ima](images/module3chapter2step7ima.PNG)
 
@@ -74,15 +74,15 @@ ms.locfileid: "68701976"
 
 ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
 
-11. ここでダウンロードできる SharingAssetCollection というカスタムパッケージをインポートし[ます。](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)
+11. SharingAssetCollection というカスタムパッケージをインポートし[ます。この](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)パッケージはここからダウンロードできます。
 
 ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 
-12. [プロジェクト] パネルで、Prefabs フォルダーにアクセスします。 次のいくつかの手順では、いくつかの prefabs をシーンに実装します。 Prefabs フォルダーで、[prefab]、[デバッグ] ウィンドウをクリックし、階層にドラッグします。 完了したら、[ファイル] をクリックし、[保存] をクリックしてプロジェクトを保存するか、ctrl + S キーを押します。
+12. [プロジェクト] パネルで、Prefabs フォルダーにアクセスします。 次の手順では、いくつかの prefabs をシーンに実装します。 Prefabs フォルダーで、[prefab]、[デバッグ] ウィンドウをクリックし、階層にドラッグします。 完了したら、[ファイル] をクリックし、[保存] をクリックしてプロジェクトを保存するか、ctrl + S キーを押します。
 
 ![Module3Chapter2step12im](images/module3chapter2step12im.PNG)
 
-   > 注:Prefab をクリックするとポップアップが表示され、TMP Essentials について質問されることがあります。 必要に応じて、[TMP Essentials のインポート] をクリックします。 このポップアップが表示された場合は、テキスト関連のエラーが発生しないように、階層から prefab を削除し、階層に再ドラッグする必要がある場合があります。
+   > 注: prefab をクリックするとポップアップが表示され、TMP Essentials について質問されることがあります。 必要に応じて、[TMP Essentials のインポート] をクリックします。 このポップアップが表示された場合は、テキスト関連のエラーが発生しないように、階層から prefab を削除し、階層に再ドラッグする必要がある場合があります。
    >
 >![Module3Chapter2note2im](images/module3chapter2note2im.PNG)
 
@@ -91,5 +91,5 @@ ms.locfileid: "68701976"
 
 Unity プロジェクトは Photon の準備ができました。 今後のチュートリアルでは、このシーンと Unity プロジェクトを完全な共有エクスペリエンスに向けて構築します。
 
-[次のチュートリアル:3.複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)
+[次のチュートリアル: 3. 複数のユーザーを接続する](mrlearning-sharing(photon)-ch3.md)
 

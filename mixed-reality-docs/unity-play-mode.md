@@ -6,16 +6,16 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity, リモート処理, holographic リモート処理, holographic リモート処理プレーヤー
-ms.openlocfilehash: c118c4af61c6eb2706ef851a6654c18ff7313453
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 6164d7ae1bc2d9ac13135f17132aca089e63ecdf
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63548734"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438225"
 ---
 # <a name="unity-play-mode"></a>Unity Play モード
 
-Unity プロジェクトですばやく作業を行うには、"Play Mode" を使用します。 これにより、PC の Unity エディターでアプリがローカルで実行されます。 Unity では、Holographic Remoting を使用して、実際の HoloLens デバイスでコンテンツをすばやくプレビューすることができます。
+Unity プロジェクトですばやく作業を行うには、"Play Mode" を使用します。 これにより、PC の Unity エディターでアプリがローカルで実行されます。 Unity では、Holographic Remoting を使用して、実際の HoloLens デバイスでコンテンツをすばやくプレビューすることができます。 再生モードは、開発用 PC に接続されている Windows Mixed Reality ヘッドセットでも使用できます。
 
 ## <a name="unity-play-mode-with-holographic-remoting"></a>Holographic リモート処理を使用した Unity Play モード
 
@@ -32,5 +32,5 @@ Holographic リモート処理には、高速 PC と Wi-fi 接続が必要です
 
 最適な結果を得るには、アプリが[フォーカスポイント](focus-point-in-unity.md)を正しく設定していることを確認します。 これにより、Holographic リモート処理によって、ワイヤレス接続の待機時間にシーンを最適に適応させることができます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [Holographic Remoting Player](holographic-remoting-player.md)

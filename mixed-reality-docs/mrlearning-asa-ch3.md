@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 45a71cada97dff4a2fb32f2eaf7700816f2e0d42
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: 77d639a88d8b4c71dc5fbe1c78565c4c3f91d36c
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68702030"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438416"
 ---
-# <a name="3-displaying-azure-spatial-anchor-feedback"></a>3.Azure 空間アンカーフィードバックの表示
+# <a name="3-displaying-azure-spatial-anchor-feedback"></a>3. Azure 空間アンカーのフィードバックを表示する
 
-このレッスンでは、Azure 空間アンカーを使用するときに、アンカー検出、イベント、および状態に関するフィードバックをユーザーに提供する方法について説明します。
+このレッスンでは、Azure 空間アンカーを使用する場合のアンカー検出、イベント、および状態に関するフィードバックをユーザーに提供する方法について説明します。
 
-## <a name="objectives"></a>目的
+## <a name="objectives"></a>目標
 
 * 現在の ASA セッションに関する重要な情報を表示する UI パネルを設定する方法について説明します。
 
@@ -27,16 +27,16 @@ ms.locfileid: "68702030"
 
 ### <a name="set-up-asa-feedback-ui-panel"></a>ASA フィードバック UI パネルを設定する
 
-1. このレッスンでは、"SaveAnchorToDisk" と "" ボタンを使用していないので、これらのボタンを非表示にするには、両方のボタンを選択し、[インスペクター] パネルのチェックボックスをオフにします (次の図を参照)。
+1. このレッスンでは、"SaveAnchorToDisk" と "" ボタンを使用していないので、両方のボタンを選択し、次に示すようにインスペクターパネルのチェックボックスをオフにして、これらのボタンを非表示にします。
    
 
 ![module2chapter3step1im](images/module2chapter3step1im.PNG)
 
-2. 次に、命令パネルを作成します。 まず、[命令] ボタンを右クリックし、[3D オブジェクト] の上にマウスポインターを移動して、[textmeshpro-text] を選択します。
+2. 命令パネルを作成します。 まず、[命令] ボタンを右クリックし、[3D オブジェクト] の上にマウスポインターを移動して、[textmeshpro-text] を選択します。
 
 ![module2chapter3step2im](images/module2chapter3step2im.PNG)
 
-3. シーンの指示と一致するように、スケールとテキストの配置を調整します。 また、すべてのテキストの配置が中央揃えになっていることを確認します。 次の図に示すように、テキストエディターからサンプルテキストを削除します。
+3. シーン内の指示と一致するように、テキストのスケールと配置を調整します。 また、すべてのテキストの配置が中央揃えになっていることを確認します。 次の図に示すように、テキストエディターからサンプルテキストを削除します。
 
 ![module2chapter3step3im](images/module2chapter3step3im.PNG)
 
@@ -50,15 +50,15 @@ ms.locfileid: "68702030"
 
 ![module2chapter3step4im](images/module2chapter3step5im.PNG)
 
-ここで、[ここ](https://onedrive.live.com/?authkey=%21ABXEC8PvyQu8Qd8&id=5B7335C4342BCB0E%21395636&cid=5B7335C4342BCB0E)をクリックして、次のいくつかの手順で必要なファイルをダウンロードします。
+次のいくつかの手順で必要なファイルをダウンロードするには、[ここ](https://onedrive.live.com/?authkey=%21ABXEC8PvyQu8Qd8&id=5B7335C4342BCB0E%21395636&cid=5B7335C4342BCB0E)をクリックしてください。
 
-6. エクスプローラーが開いたら、assets フォルダー、"ASAmodulesAssets" フォルダーの順に選択し、アンカーフィードバックスクリプトとアンカーモジュールスクリプトファイルをフォルダーにコピーします。 
+6. エクスプローラーが開いたら、Assets フォルダーを選択し、"ASAmodulesAssets" フォルダーを選択して、アンカーフィードバックスクリプトとアンカーモジュールスクリプトファイルをフォルダーにコピーします。 
 
 ![module2chapter3step5im](images/module2chapter3step6im.PNG)
 
-> 注: 古いものを上書きするか、古いものを保持するかを確認するポップアップが表示された場合は、[上書き] を選択してください。
+> 注: 古いものを上書きするか古いままにするかを確認するポップアップメッセージが表示された場合は、[上書き] を選択します。
 
-7. 次に、Assets フォルダーに戻ります。 次に、"AzureSpatialAnchorsPlugin" フォルダーにアクセスし、[例] フォルダーをクリックし、最後に scripts フォルダーを選択して、Azure 空間アンカーデモラッパーをそのフォルダーにコピーします。 
+7. Assets フォルダーに戻ります。 次に、"AzureSpatialAnchorsPlugin" フォルダーにアクセスし、[例] フォルダーを選択して、最後に Scripts フォルダーを入力します。 次に、Azure 空間アンカーデモラッパーをそのフォルダーにコピーします。 
 
 ![module2chapter3step8im](images/module2chapter3step7im.PNG)
 
@@ -72,6 +72,6 @@ ms.locfileid: "68702030"
 
 ## <a name="congratulations"></a>結論
 
-このレッスンでは、ユーザーにリアルタイムのフィードバックを提供するための Azure 空間アンカーエクスペリエンスの現在の状態を表示する UI パネルを作成する方法について学習しました。
+このレッスンでは、リアルタイムのフィードバックをユーザーに提供するために、Azure 空間アンカーエクスペリエンスの現在の状態を表示する UI パネルを作成する方法を学習しました。
 
 

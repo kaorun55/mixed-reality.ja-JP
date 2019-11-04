@@ -2,16 +2,16 @@
 title: ケーススタディ-実際の穴を見る
 description: このケーススタディでは、HoloLens に "マジックウィンドウ" 効果を実装する方法について説明します。これにより、ユーザーは、壁の背後、床の下、および実際の環境内の仮想化について確認できます。
 author: EricRehmeyer
-ms.author: ericrehm
-ms.date: 03/21/2018
+ms.author: bestruku
+ms.date: 10/18/2019
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、マジックウィンドウ、視差
-ms.openlocfilehash: 945a09614fbc77400825b524f4e0b591bf7b1f6b
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
+ms.openlocfilehash: a1b9f0b2e576379846a867f3d3bffef7d8ec277e
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873935"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436668"
 ---
 # <a name="case-study---looking-through-holes-in-your-reality"></a>ケーススタディ-実際の穴を見る
 
@@ -19,7 +19,7 @@ ms.locfileid: "64873935"
 
 ## <a name="the-tech"></a>技術
 
-壁面を克服するように、エイリアンした試合かどうか **[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)** 、壁に安全にロックを解除 **[フラグメント](case-study-creating-an-immersive-experience-in-fragments.md)** 、運が発生しました。UNSC 無限大格納庫を表示する、 **[E3 2015 で Halo 5 経験](https://www.youtube.com/watch?v=QDw5QjDtFy8)** 、話の内容を見ています。 想像に応じて、この視覚的なトリックを使用して、drywall に一時的な穴を置いたり、疎 floorboard でワールドを隠したりすることができます。
+**[RoboRaid](https://www.youtube.com/watch?v=Hf9qkURqtbM)** 内の壁を異星人、fought で壁を突破した **[場合、また](case-study-creating-an-immersive-experience-in-fragments.md)** は **[2015 の E3 でハロー5エクスペリエンス](https://www.youtube.com/watch?v=QDw5QjDtFy8)** の unsc 無限大の hangar を確認するのに十分な経験がある場合は、私が話していることを見てきました。 想像に応じて、この視覚的なトリックを使用して、drywall に一時的な穴を置いたり、疎 floorboard でワールドを隠したりすることができます。
 
 ![RoboRaid は、3次元パイプと、壁の背後にあるその他の構造を追加します。これは、侵入の中断として作成された穴によってのみ表示されます。](images/roboraid-640px.png)
 
@@ -67,7 +67,7 @@ HoloLens を通じて表示するもの:
 ( Reality * ( 1 - hologram_alpha ) ) + Holograms * hologram_alpha
 ```
 
-英語:HoloLens を通じて表示される内容は、(サングラスを通じてのように) 暗くなった現実と、アプリが表示しようとしているホログラムの単純な組み合わせです。 しかし、スクリーンショットを撮ると、ピクセルごとの透明度の値に応じて、カメラのイメージがアプリのホログラムとブレンドされます。
+英語の場合: HoloLens を通じて表示されるものは、(サングラスを通じてのように) 暗い現実の単純な組み合わせで、アプリが表示する必要のあるホログラムです。 しかし、スクリーンショットを撮ると、ピクセルごとの透明度の値に応じて、カメラのイメージがアプリのホログラムとブレンドされます。
 
 この問題を回避する方法の1つとして、"ブラックボックス" の素材を変更して、深度バッファーに書き込むだけで、他の不透明な素材をすべて使用して並べ替えることができます。 この例については、GitHub の[MixedRealityToolkit ファイル](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/htk_release/Assets/HoloToolkit/Common/Shaders/WindowOcclusion.shader)を確認してください。 関連する行がここにコピーされます。
 
@@ -104,12 +104,12 @@ Unity エディターでこのモデルを表示すると、flowerpot の周り�
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Eric Rehmeyer" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>Eric Rehmeyer</b><br>シニアソフトウェアエンジニア@Microsoft</td>
+<td style="border-style: none"><b>Eric Rehmeyer</b><br>シニアソフトウェアエンジニア @Microsoft</td>
 </tr>
 </table>
 
 ## <a name="see-also"></a>関連項目
-* [MR の基本 101:デバイスを使用した完全なプロジェクト](holograms-101.md)
+* [MR 基本 101: デバイスを含むプロジェクトを完了する](holograms-101.md)
 * [座標系](coordinate-systems.md)
 * [空間アンカー](spatial-anchors.md)
 * [空間マッピング](spatial-mapping.md)

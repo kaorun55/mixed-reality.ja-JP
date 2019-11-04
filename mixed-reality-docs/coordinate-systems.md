@@ -6,20 +6,20 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: 座標系、空間座標システム、方向専用、取り付けられているスケール、拡大/縮小、室内スケール、ワールドスケール、360度、取り付けられた、室内、部屋、ワールド、スケール、位置、向き、固定、取り付け、ステージ、アンカー、空間アンカー、ワールドロック、ワールドロック、本体ロック、ボディロック、境界、永続化、共有、追跡損失、クラウド空間アンカー
-ms.openlocfilehash: f4b945a3ffb83b9ac0a94e0d793a19939aece3bb
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 228f46f1962c39012571234da47ccec07aa67118
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829861"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436146"
 ---
 # <a name="coordinate-systems"></a>座標系
 
-基本的には、mixed reality アプリは、実際のオブジェクトのように見えるように、世界中に[ホログラム](hologram.md)を配置します。 これには、ユーザーにとって意味のある、世界中の場所でそれらのホログラムを正確に配置し、回転させる必要があります。 ホログラムの位置と向き、または、[宝石](gaze.md)や[手](gestures.md)の位置などのその他のジオメトリについての決定については、Windows には、ジオメトリを表現できるさまざまな現実世界の座標系が用意されて**います。空間座標系**。
+基本的には、mixed reality アプリは、実際のオブジェクトのように見えるように、世界中に[ホログラム](hologram.md)を配置します。 これには、ユーザーにとって意味のある、世界中の場所でそれらのホログラムを正確に配置し、回転させる必要があります。 ホログラムの位置と向き、または、[宝石](gaze-and-commit.md)や[手](hands-and-tools.md)の位置などのその他のジオメトリについての決定については、Windows には、ジオメトリを表現できるさまざまな現実世界の座標系が用意されて**います。空間座標系**。
 
 <br>
 
->[!VIDEO https://www.youtube.com/embed/TneGSeqVAXQ]
+<iframe width="940" height="530" src="https://www.youtube.com/embed/TneGSeqVAXQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## <a name="device-support"></a>デバイスのサポート
 
@@ -33,7 +33,7 @@ ms.locfileid: "66829861"
     <tr>
         <td><strong>機能</strong></td>
         <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
-        <td><strong>HoloLens 2</strong></td>
+        <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
      <tr>
@@ -66,6 +66,12 @@ ms.locfileid: "66829861"
         <td>✔️</td>
         <td>❌</td>
     </tr>
+    <tr>
+        <td><a href="scene-understanding.md">シーンの理解</a></td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>❌</td>
+    </tr>
 </table>
 
 ## <a name="mixed-reality-experience-scales"></a>Mixed reality エクスペリエンススケール
@@ -73,27 +79,27 @@ ms.locfileid: "66829861"
 Mixed reality アプリは、ヘッドセットの向きだけを必要とする360度のビデオビューアーから、空間マッピングと空間アンカーを必要とする完全な世界規模のアプリとゲームまで、さまざまなユーザーエクスペリエンスを設計できます。
 <br>
 
-| エクスペリエンススケール | 必要条件 | エクスペリエンスの例 | 
+| エクスペリエンススケール | 要件 | エクスペリエンスの例 | 
 |----------|----------|----------|
 |  **方向のみ** |  **ヘッドセットの向き**(重力固定) |  360°ビデオビューアー | 
 |  **固定-スケール** |  上、0位置に対する**ヘッドセット位置** |  レースゲームまたは宇宙シミュレーター | 
 |  **継続的なスケール** |  上、さらに**ステージフロアの原点** |  アヒルと覆い焼きを行うアクションゲーム  | 
 |  **部屋-スケール** |  上、さらに**ステージの境界多角形** |  パズルゲームでパズルを見てみましょう | 
-|  **世界規模** |  **空間アンカー**(通常は[空間マッピング](spatial-mapping.md)) |  [RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)などの実際の壁から来た敵のゲーム | 
+|  **世界規模** |  **空間アンカー** (および通常は[空間マッピング](spatial-mapping.md)) |  [RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)などの実際の壁から来た敵のゲーム | 
 
 これらのエクスペリエンススケールは、"入れ子の人形" モデルに従います。 Windows Mixed Reality の主な設計原則は、特定のヘッドセットで、ターゲットエクスペリエンススケール用に構築されたアプリと、それ以外のすべてのスケールをサポートすることです。
 <br>
 
 | 6自由度追跡 | 定義されたフロア | 360°の追跡 | 定義された境界 | 空間アンカー | 最大エクスペリエンス | 
 |----------|----------|----------|----------|----------|----------|
-|  いいえ |  - |  - |  - |  - |  **方向のみ** | 
-|  **はい** |  いいえ |  - |  - |  - |  **固定** | 
-|  **はい** |  **はい** |  いいえ |  - |  - |  **今後** | 
-|  **はい** |  **はい** |  **はい** |  いいえ |  - |  **360°** | 
-|  **はい** |  **はい** |  **はい** |  **はい** |  いいえ |  **将来** | 
+|  必須ではない |  - |  - |  - |  - |  **方向のみ** | 
+|  **はい** |  必須ではない |  - |  - |  - |  **固定** | 
+|  **はい** |  **はい** |  必須ではない |  - |  - |  **今後** | 
+|  **はい** |  **はい** |  **はい** |  必須ではない |  - |  **360°** | 
+|  **はい** |  **はい** |  **はい** |  **はい** |  必須ではない |  **将来** | 
 |  **はい** |  **はい** |  **はい** |  **はい** |  **はい** |  **現実的** | 
 
-参照のステージフレームは、HoloLens ではまだサポートされていないことに注意してください。 現在、HoloLens の部屋規模のアプリでは、[空間マッピング](spatial-mapping.md)を使用してユーザーのフロアと壁面を見つける必要があります。
+参照のステージフレームは、HoloLens ではまだサポートされていないことに注意してください。 現在、HoloLens の部屋規模のアプリでは、[空間マッピング](spatial-mapping.md)または[シーンの理解](scene-understanding.md)を使用して、ユーザーのフロアと壁面を見つける必要があります。
 
 ## <a name="spatial-coordinate-systems"></a>空間座標系
 

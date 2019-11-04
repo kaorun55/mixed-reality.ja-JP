@@ -5,22 +5,22 @@ author: mattwojo
 ms.author: mattwoj
 ms.date: 03/21/2018
 ms.topic: article
-ms.openlocfilehash: a6c2574a35ec1240c573532dabfdc6cec1696947
-ms.sourcegitcommit: 4ac761fed7a9570977f6d031ba4f870585d6630a
+ms.openlocfilehash: 934171f26571b3219bbe390aff44349fb6908f74
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861717"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437125"
 ---
 # <a name="contributing-to-windows-mixed-reality-developer-documentation"></a>Windows Mixed Reality 開発者向けドキュメントへの貢献
 
 [Windows Mixed Reality 開発者向けドキュメントの公開リポジトリ](https://github.com/MicrosoftDocs/mixed-reality/tree/master/mixed-reality-docs)へようこそ。 このリポジトリで作成または編集した記事**は、パブリックに表示されます。** 
 
-Windows Mixed Reality ドキュメントは現在、docs.microsoft.com プラットフォームにあります。このプラットフォームでは、flavored Markdown (Markdig 機能) が使用されています。 基本的に、このリポジトリで編集するコンテンツは、に https://docs.microsoft.com/windows/mixed-reality 表示される書式設定されたページになります。 
+Windows Mixed Reality ドキュメントは現在、docs.microsoft.com プラットフォームにあります。このプラットフォームでは、flavored Markdown (Markdig 機能) が使用されています。 基本的に、このリポジトリで編集するコンテンツは、 https://docs.microsoft.com/windows/mixed-reality に表示される書式設定されたページになります。 
 
 このページでは、貢献するための基本的な手順とガイドライン、および Markdown の基礎へのリンクについて説明します。 投稿にご協力いただき、ありがとうございます。
 
-## <a name="before-you-start"></a>開始前の準備
+## <a name="before-you-start"></a>開始前の作業
 
 まだお持ちでない場合は、 [GitHub アカウントを作成](https://github.com/join)する必要があります。
 
@@ -48,12 +48,12 @@ GitHub アカウントを設定するときは、次のセキュリティに関�
    ![記事を編集します。](images/editpage.png)
 3. 記事の内容を編集します (ガイダンスについては、以下の[「Markdown の基礎」](#markdown-basics)を参照してください)。
 4. 各記事の上部にある該当するメタデータを更新します。
-   * 題これは、記事を表示しているときに [ブラウザー] タブに表示されるページタイトルです。 これは SEO とインデックス作成に使用されるため、必要な場合を除き、タイトルを変更することはできません (ただし、ドキュメントが公開される前には重要度が低くなります)。
-   * description:記事の内容の簡単な説明を記述します。 これは、SEO と検出に役立ちます。
-   * 作者ページのプライマリ所有者である場合は、ここに GitHub エイリアスを追加します。
-   * ms. 作成者:ページのプライマリ所有者である場合は、ここに Microsoft エイリアスを追加します ( @microsoft.com必要なのはエイリアスではありません)。
-   * ms. 日付:ページに主要なコンテンツを追加する場合は、日付を更新します。ただし、明確、書式設定、文法、スペルなどの修正には使用しません。
-   * keywordsキーワードは、SEO (検索エンジンの最適化) に役立ちます。 コンマとスペースで区切られたキーワードを追加します。これは、記事に固有のものです (リスト内の最後のキーワードの後に区切り記号はありません)。すべての記事に適用するグローバルキーワードを追加する必要はありません。他の場所で管理されているためです。 
+   * title: これは、記事が表示されているときに [ブラウザー] タブに表示されるページタイトルです。 これは SEO とインデックス作成に使用されるため、必要な場合を除き、タイトルを変更することはできません (ただし、ドキュメントが公開される前には重要度が低くなります)。
+   * 説明: 記事の内容の簡単な説明を記述します。 これは、SEO と検出に役立ちます。
+   * author: ページのプライマリ所有者である場合は、ここに GitHub エイリアスを追加します。
+   * ms. author: ページのプライマリ所有者である場合は、ここに Microsoft エイリアスを追加します (@microsoft.comは必要ありません。エイリアスだけが必要です)。
+   * ms. date: ページに主要なコンテンツを追加する場合は日付を更新します。ただし、明確、書式設定、文法、スペルなどの修正には使用しません。
+   * キーワード: キーワードは、SEO (検索エンジンの最適化) に役立ちます。 コンマとスペースで区切られたキーワードを追加します。これは、記事に固有のものです (リスト内の最後のキーワードの後に区切り記号はありません)。すべての記事に適用するグローバルキーワードを追加する必要はありません。他の場所で管理されているためです。 
 5. 記事の編集が完了したら、下にスクロールして **[ファイル変更の提案]** ボタンをクリックします。
 6. 次のページで、 **[プル要求の作成]** をクリックして、自動的に作成されたブランチを "マスター" にマージします。
 7. 編集する次の記事に対して上記の手順を繰り返します。
@@ -62,7 +62,7 @@ GitHub アカウントを設定するときは、次のセキュリティに関�
 
 既存のアーティクルの名前を変更または削除する場合は、必ずリダイレクトを追加してください。 こうすることで、既存の記事へのリンクを持つユーザーは、引き続き適切な場所に配置されます。 リダイレクトは、リポジトリのルートにある. openpublishing. json ファイルによって管理されます。
 
-リダイレクトを追加するには、次のようにエントリを`redirections`配列に追加します。
+Openpublishing. json にリダイレクトを追加するには、`redirections` 配列にエントリを追加します。
 
 ```json
 {
@@ -74,9 +74,9 @@ GitHub アカウントを設定するときは、次のセキュリティに関�
         },
 ```
 
-- `source_path`は、削除しようとしている古いアーティクルへの相対リポジトリパスです。 パスがで`mixed-reality-docs`始まり、で`.md`終わることを確認してください。
-- は`redirect_url` 、以前の記事から新しい記事までの相対パブリック URL です。 この url は、リポジトリパスでは`mixed-reality-docs`なく`.md`パブリック url を参照しているため、またはを含んで**いない**ことを確認してください。 を使用`#section`した新しいアーティクル内のセクションへのリンクは許可されます。 必要に応じて、ここで別のサイトへの絶対パスを使用することもできます。
-- `redirect_document_id`前のファイルのドキュメント ID を保持するかどうかを示します。 既定値は `false` です。 リダイレクト`true`されたアーティクルの`ms.documentid`属性値を保持する場合は、を使用します。 ドキュメント ID を保持している場合は、ページビューやランキングなどのデータがターゲットアーティクルに転送されます。 これは、リダイレクトが主に名前の変更であり、同じコンテンツの一部のみをカバーする別の記事へのポインターではない場合に実行します。
+- `source_path` は、削除しようとしている古いアーティクルへの相対リポジトリパスです。 パスが `mixed-reality-docs` で始まり、`.md`で終わることを確認してください。
+- `redirect_url` は、古い記事から新しい記事までの相対パブリック URL です。 この URL には `mixed-reality-docs` または `.md`が含まれて**いない**ことを確認してください。これは、リポジトリのパスではなく、パブリック url を参照しているためです。 `#section` を使用した新しいアーティクル内のセクションへのリンクは許可されます。 必要に応じて、ここで別のサイトへの絶対パスを使用することもできます。
+- `redirect_document_id` は、前のファイルのドキュメント ID を保持するかどうかを示します。 既定値は `false` です。 リダイレクトされたアーティクルの `ms.documentid` 属性値を保持する場合は、`true` を使用します。 ドキュメント ID を保持している場合は、ページビューやランキングなどのデータがターゲットアーティクルに転送されます。 これは、リダイレクトが主に名前の変更であり、同じコンテンツの一部のみをカバーする別の記事へのポインターではない場合に実行します。
 
 リダイレクトを追加する場合は、古いファイルも必ず削除してください。
 
@@ -111,7 +111,7 @@ GitHub アカウントを設定するときは、次のセキュリティに関�
 
 5. [上記のセクション](#editing-an-existing-article)の手順に従って、関連するメタデータフィールドを入力します。
 6. [Markdown の基礎](#markdown-basics)を使用して、記事の内容を記述します。
-7. 記事の`## See also`下部に、関連するその他の記事へのリンクが記載されたセクションを追加します。
+7. 記事の下部にある `## See also` セクションを追加して、関連するその他の記事へのリンクを追加します。
 8. 完了したら、 **[新しいファイルのコミット]** をクリックします。
 9. **[新しいプル要求]** をクリックし、フォークの ' master ' ブランチを microsoft docs/mixed reality ' マスター ' にマージします (矢印が正しい方法を指していることを確認してください)。
 
@@ -127,7 +127,7 @@ Markdown 言語を使用してドキュメントを編集する方法につい�
 
 ### <a name="adding-tables"></a>テーブルの追加
 
-Docs.microsoft.com スタイルの表では、インライン CSS を試す場合でも、罫線やカスタムスタイルはありません。 これは短時間は機能しているように見えますが、最終的には、プラットフォームによってテーブルからスタイルが除去されます。 そのため、事前に計画し、テーブルを単純にしておきます。 [Markdown テーブルを簡単に作成できるサイトは次のように](http://www.tablesgenerator.com/markdown_tables)なります。
+Docs.microsoft.com スタイルの表では、インライン CSS を試す場合でも、罫線やカスタムスタイルはありません。 これは短時間は機能しているように見えますが、最終的には、プラットフォームによってテーブルからスタイルが除去されます。 そのため、事前に計画し、テーブルを単純にしておきます。 [Markdown テーブルを簡単に作成できるサイトは次のように](https://www.tablesgenerator.com/markdown_tables)なります。
 
 [Visual Studio Code の Docs Markdown 拡張機能](https://docs.microsoft.com/teamblog/docs-extension)では、 [Visual Studio Code (下記参照)](#using-visual-studio-code)を使用してドキュメントを編集する場合にも、テーブルの生成を簡単に行うことができます。
 
@@ -152,7 +152,7 @@ Web ブラウザーを使用して GitHub で編集しているときに、ペ�
 >[!NOTE]
 >Review.docs.microsoft.com での変更のプレビューは、Microsoft の従業員のみが利用できます。
 
-Microsoft の従業員: 投稿物が "master" ブランチにマージされると、ドキュメントが公開 https://review.docs.microsoft.com/windows/mixed-reality?branch=master される前にどのように表示されるかを確認できます (左側の列の目次を使用して記事を検索します)。
+Microsoft の従業員: 投稿物が "master" ブランチにマージされると、 https://review.docs.microsoft.com/windows/mixed-reality?branch=master で公開される前に、どのようなドキュメントが表示されるかを確認できます (左側の列の目次を使用して記事を検索してください)。
 
 ## <a name="editing-in-the-browser-vs-editing-with-a-desktop-client"></a>ブラウザーでの編集とデスクトップクライアントを使用した編集
 
@@ -168,7 +168,7 @@ Microsoft の従業員: 投稿物が "master" ブランチにマージされる�
 
 [上記](#editing-in-the-browser-vs-editing-with-a-desktop-client)の理由から、デスクトップクライアントを使用して、web ブラウザーではなくドキュメントを編集することをお勧めします。 [Visual Studio Code](https://code.visualstudio.com/)を使用することをお勧めします。
 
-### <a name="setup"></a>セットアップ
+### <a name="setup"></a>[セットアップ]
 
 このリポジトリを使用するように Visual Studio Code を構成するには、次の手順に従います。
 
@@ -219,7 +219,7 @@ Microsoft の従業員: 投稿物が "master" ブランチにマージされる�
 
 - [Docs Markdown Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=docsmsft.docs-authoring-pack) - **Alt + M キー**を使用して、次のような docs 作成オプションのメニューを表示します。
    - アップロードしたイメージを検索して参照します。
-   - など`>[!NOTE]`、リスト、テーブル、ドキュメント固有の呼び出しなどの書式設定を追加します。
+   - リスト、テーブル、`>[!NOTE]`などのドキュメント固有の呼び出しなどの書式設定を追加します。
    - 内部リンクとブックマーク (ページ内の特定のセクションへのリンク) を検索して参照します。
    - 書式設定エラーが強調表示されます (詳細については、エラーの上にマウスポインターを置きます)。
 - [コードスペルチェッカー](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) -スペルミスの単語に下線が引かれます。スペルミスの単語を右クリックして変更するか、辞書に保存します。

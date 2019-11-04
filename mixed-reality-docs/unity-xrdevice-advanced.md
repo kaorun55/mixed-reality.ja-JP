@@ -6,12 +6,12 @@ ms.author: vladkol
 ms.date: 05/20/2018
 ms.topic: article
 keywords: unity、mixed reality、native、xrdevice、spatialcoordinatesystem、holographicframe、holographiccamera、ispatialcoordinatesystem、iholographicframe、iholographiccamera、get ptr
-ms.openlocfilehash: 76073f5b2adfdf27cfbb153f95bb3a533d02e196
-ms.sourcegitcommit: d565a69a9320e736304372b3f010af1a4d286a62
+ms.openlocfilehash: 975775f64a19fe5fff4bc395a3e954cbf529dfa9
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65942098"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437338"
 ---
 # <a name="mixed-reality-native-objects-in-unity"></a>Unity の Mixed Reality ネイティブオブジェクト
 
@@ -21,8 +21,8 @@ ms.locfileid: "65942098"
 
 ## <a name="xrdevice"></a>XRDevice 
 
-**名前空間:** *UnityEngine.XR*<br>
-**種類:** *XRDevice*
+**名前空間:** *unityengine. XR*<br>
+**型:** *XRDevice*
 
 *XRDevice*型を使用すると、<a href="https://docs.unity3d.com/ScriptReference/XR.XRDevice.GetNativePtr.html" target="_blank">表示 ptr</a>メソッドを使用して、基になるネイティブオブジェクトにアクセスできます。 Getによって返される値は、プラットフォームによって異なります。 ユニバーサル Windows プラットフォームで、Windows Mixed Reality XR SDK を対象とする場合、XRDevice は次の構造にポインター (IntPtr) を返します。 
 
@@ -45,10 +45,53 @@ Marshal.ptrtostructure メソッドを使用して HolographicFrameNativeData �
 var nativePtr = UnityEngine.XR.XRDevice.GetNativePtr();
 HolographicFrameNativeData hfd = Marshal.PtrToStructure<HolographicFrameNativeData>(nativePtr);
 ```
-***IHolographicCameraPtr** は、unmanagedtype.bool としてマーシャリングされた IntPtr の配列であり、長さは MaxNumberOfCameras と同じです。* 
+***IHolographicCameraPtr**は、unmanagedtype.bool としてマーシャリングされた IntPtr の配列であり、長さは MaxNumberOfCameras と同じです。* 
 
+### <a name="unmarshaling-native-pointers"></a>マーシャリング (ネイティブポインターを)
 
-### <a name="using-holographicframenativedata"></a>HolographicFrameNativeData の使用
+[MixedReality](https://www.nuget.org/packages/Microsoft.Windows.MixedReality.DotNetWinRT)を使用している場合は、`FromNativePtr()` メソッドを使用してネイティブポインターからマネージオブジェクトを構築できます。
+
+```cs
+var worldOrigin = Microsoft.Windows.Perception.Spatial.SpatialCoordinateSystem.FromNativePtr(hfd.ISpatialCoordinateSystemPtr);
+```
+
+それ以外の場合は、`Marshal.GetObjectForIUnknown()` を使用し、目的の型にキャストします。
+
+```cs
+#if ENABLE_WINMD_SUPPORT
+var worldOrigin = (Windows.Perception.Spatial.SpatialCoordinateSystem)Marshal.GetObjectForIUnknown(hfd.ISpatialCoordinateSystemPtr);
+#endif
+```
+
+### <a name="converting-between-coordinate-systems"></a>座標系の変換
+
+Unity は、左手座標系を使用します。一方、Windows 認識 Api は、右手座標系を使用します。 これらの2つの規則間で変換を行うには、次のヘルパーを使用します。
+
+```cs
+namespace NumericsConversion
+{
+    public static class NumericsConversionExtensions
+    {
+        public static UnityEngine.Vector3 ToUnity(this System.Numerics.Vector3 v) => new UnityEngine.Vector3(v.X, v.Y, -v.Z);
+        public static UnityEngine.Quaternion ToUnity(this System.Numerics.Quaternion q) => new UnityEngine.Quaternion(-q.X, -q.Y, q.Z, q.W);
+        public static UnityEngine.Matrix4x4 ToUnity(this System.Numerics.Matrix4x4 m) => new UnityEngine.Matrix4x4(
+            new Vector4( m.M11,  m.M12, -m.M13,  m.M14),
+            new Vector4( m.M21,  m.M22, -m.M23,  m.M24),
+            new Vector4(-m.M31, -m.M32,  m.M33, -m.M34),
+            new Vector4( m.M41,  m.M42, -m.M43,  m.M44));
+
+        public static System.Numerics.Vector3 ToSystem(this UnityEngine.Vector3 v) => new System.Numerics.Vector3(v.x, v.y, -v.z);
+        public static System.Numerics.Quaternion ToSystem(this UnityEngine.Quaternion q) => new System.Numerics.Quaternion(-q.x, -q.y, q.z, q.w);
+        public static System.Numerics.Matrix4x4 ToSystem(this UnityEngine.Matrix4x4 m) => new System.Numerics.Matrix4x4(
+            m.m00,  m.m10, -m.m20,  m.m30,
+            m.m01,  m.m11, -m.m21,  m.m31,
+           -m.m02, -m.m12,  m.m22, -m.m32,
+            m.m03,  m.m13, -m.m23,  m.m33);
+    }
+}
+```
+
+### <a name="using-holographicframe-native-data"></a>HolographicFrame ネイティブデータの使用
 
 > [!NOTE]
 > HolographicFrameNativeData を使用して受信したネイティブオブジェクトの状態を変更すると、予期しない動作やレンダリングアーティファクトが発生する可能性があります。また、Unity でも同じ状態が理由である場合は特にそうです  たとえば、HolographicFrame を呼び出さないでください。そうしないと、Unity がそのフレームでレンダリングする原因が、Windows が期待するようなものと同期しなくなります。これにより、[ホログラムの安定性](hologram-stability.md)が低下します。
@@ -85,7 +128,8 @@ public static bool GetCurrentFrameDateTime(out DateTime frameDateTime)
 
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
+* [Windows 名前空間と HoloLens 用 Unity アプリの使用](using-the-windows-namespace-with-unity-apps-for-hololens.md)
 * <a href="https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialcoordinatesystem" target="_blank">SpatialCoordinateSystem</a>
 * <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>
 * <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera" target="_blank">HolographicCamera</a>

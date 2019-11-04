@@ -7,12 +7,12 @@ ms.author: jemccull
 ms.date: 02/25/2019
 ms.topic: article
 keywords: Mixed Reality、カンファレンス、サミット、developer、HoloLens、HoloLens 2、Kinect
-ms.openlocfilehash: 8d38d121ab76281497ab8d8ec11c096f9bc7cc71
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: f9f68962229bfc66bf07040b79ea07345dfd5378
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63526645"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438423"
 ---
 # <a name="mixed-reality-dev-days-faq"></a>Mixed Reality Dev Days FAQ
 
@@ -32,7 +32,7 @@ ms.locfileid: "63526645"
 
     このイベントには関心が高く、イベントの最大容量があります。 このため、すべての開発者に対して、この[アプリケーション](https://aka.ms/MRDevDayApplication)を完了するように求めているので、作業内容や関心のある理由に関する詳細を確認してください。
 
-* **私は、ぜひご参加ください。操作方法適用しますか?**
+* **私は、ぜひご参加ください。 操作方法適用しますか?**
 
     この[アプリケーション](https://aka.ms/MRDevDayApplication)は、2019年4月の正午太平洋標準時 (PST) で完了してください。
 
@@ -40,7 +40,7 @@ ms.locfileid: "63526645"
 
     混合現実の専門家であると共に、コンピュータービジョンからホログラムの作成まで、it に付属するクラウドおよび AI テクノロジの多くの側面を専門として設計しました。 開発者のプラットフォーム、ツール、サービス、およびデバイスについてトレーニングを受けたいと考えている mixed reality 開発者は、Mixed Reality の開発日が非常に適しています。 
 
-    [Microsoft Build](https://www.microsoft.com/en-us/build)では、開発者と専門家が製品チームを対象としています。 幅広いテクノロジとアプリケーションパターンについて説明します。 このイベントはビルドに代わるものではなく、それが紙詰まりになると、そのようにすることをお勧めします。 
+    [Microsoft Build](https://www.microsoft.com//build)では、開発者と専門家が製品チームを対象としています。 幅広いテクノロジとアプリケーションパターンについて説明します。 このイベントはビルドに代わるものではなく、それが紙詰まりになると、そのようにすることをお勧めします。 
 
 * **イベントの料金はいくらですか?**
 
@@ -52,7 +52,7 @@ ms.locfileid: "63526645"
 
 * **どうすればよいでしょうか。**
 
-    混合現実の開発日には、開発者の関心が高い (約 75%)ビジネス開発と戦略的な洞察によって補完されます (約 25%)。  開発者と並行してコードを作成し、ポートフォリオ内の最新情報をデモし、技術の背後にあるサイエンスと、長年にわたって学んだベストプラクティスと教訓について学ぶことができます。
+    混合現実の開発日には、開発者の関心が高い (約75%)ビジネス開発と戦略的な洞察によって補完されます (約25%)。  開発者と並行してコードを作成し、ポートフォリオ内の最新情報をデモし、技術の背後にあるサイエンスと、長年にわたって学んだベストプラクティスと教訓について学ぶことができます。
 
 * **自分の開発者用コンピューターを持ち込む必要がありますか。**
 
@@ -64,4 +64,4 @@ ms.locfileid: "63526645"
 
 * **詳細については、こちらからお問い合わせください。**
 
-    詳細については、電子メールDevEvent@microsoft.com
+    詳細については、電子メール DevEvent@microsoft.com

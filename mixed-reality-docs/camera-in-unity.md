@@ -3,19 +3,19 @@ title: Unity のカメラ
 description: Windows Mixed Reality 開発に Unity のメインカメラを使用して holographic のレンダリングを実行する方法
 author: keveleigh
 ms.author: kurtie
-ms.date: 03/21/2018
+ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、holographic レンダリング、holographic、イマーシブ、フォーカスポイント、深度バッファー、方向専用、位置指定、不透明、透明、クリップ
-ms.openlocfilehash: 3a9846242dd1709bcaf927d8ffae33862e96ecc8
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 1a2e66d5c028109a58ea8682668521f50158add9
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522377"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436960"
 ---
 # <a name="camera-in-unity"></a>Unity のカメラ
 
-Mixed reality ヘッドセットを使用すると、holographic 世界の中心になります。 Unity[カメラ](http://docs.unity3d.com/Manual/class-Camera.html)コンポーネントは、ステレオスコピックレンダリングを自動的に処理します。プロジェクトで "Windows Mixed reality" がデバイスとして選択されている場合 (他の設定の場合)、ヘッドの移動とローテーションに従います。」を参照してください。 以前のバージョンの Unity では、"Windows Holographic" として表示される場合があります。
+Mixed reality ヘッドセットを使用すると、holographic 世界の中心になります。 Unity[カメラ](https://docs.unity3d.com/Manual/class-Camera.html)コンポーネントは、ステレオスコピックレンダリングを自動的に処理します。プロジェクトで "Windows Mixed reality" がデバイスとして選択されている場合 (他の設定の場合)、ヘッドの移動とローテーションに従います。」を参照してください。 以前のバージョンの Unity では、"Windows Holographic" として表示される場合があります。
 
 ただし、ビジュアルの品質とホログラムの[安定性](hologram-stability.md)を完全に最適化するには、以下で説明するカメラの設定を設定する必要があります。
 
@@ -24,15 +24,16 @@ Mixed reality ヘッドセットを使用すると、holographic 世界の中心
 >
 >既定では、Unity で新しいシーンを作成すると、カメラコンポーネントを含むメインのカメラのユーザーオブジェクトが階層に含まれますが、次の設定は適切に適用されません。
 
-## <a name="automatic-scene-and-camera-setup-with-mixed-reality-toolkit-v2"></a>混合 Reality Toolkit v2 を使用した自動シーンおよびカメラ設定。 
+## <a name="automatic-scene-and-camera-setup-with-mixed-reality-toolkit-v2"></a>混合 Reality Toolkit v2 を使用した自動シーンおよびカメラ設定
 
 ステップ[バイステップ](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)ガイドに従って Unity プロジェクトに Mixed Reality Toolkit v2 を追加すると、プロジェクトが自動的に構成されます。
 
-また、次のセクションのガイドを使用して、MRTK なしでプロジェクトを手動で構成することもできます。 
+また、次のセクションのガイドを使用して、MRTK なしでプロジェクトを手動で構成することもできます。
 
 ## <a name="holographic-vs-immersive-headsets"></a>Holographic とイマーシブヘッドセット
 
 Unity カメラコンポーネントの既定の設定は、従来の3D アプリケーション用であり、実際の環境がないため、スカイボックスのような背景が必要です。
+
 * **[イマーシブヘッドセット](immersive-headset-hardware-details.md)** で実行すると、ユーザーに表示されるすべてのものが表示されるため、スカイボックスを保持することをお勧めします。
 * ただし、 [HoloLens](hololens-hardware-details.md)などの**holographic ヘッドセット**で実行する場合、カメラがレンダリングするすべての要素の背後に実際の世界が表示されます。 これを行うには、スカイボックステクスチャではなく、カメラの背景を透明に設定します (HoloLens では、黒は透明としてレンダリングされます)。
     1. [階層] パネルでメインカメラを選択します。
@@ -41,19 +42,20 @@ Unity カメラコンポーネントの既定の設定は、従来の3D アプ�
 
 スクリプトコードを使用して、HolographicSettings をチェックすることによって、ヘッドセットがイマーシブであるか holographic であるかを実行時に判断することができ[ます。](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.IsDisplayOpaque.html)
 
-
 ## <a name="positioning-the-camera"></a>カメラの配置
 
-ユーザーの開始位置を想定している場合、アプリのレイアウトが簡単になります (X:0、Y:0、Z:0)。 メインカメラはユーザーのヘッドの移動を追跡しているため、ユーザーの開始位置を設定することによって、メインカメラの開始位置を設定できます。
-1. [階層] パネルの [メインカメラ] を選択します。
-2. [インスペクター] パネルで変換コンポーネントを見つけて、位置を (X:0、Y:1、Z:-10) から (X:0、Y:0、Z:0
+ユーザーの開始位置を (X: 0, Y: 0, Z: 0) と考えると、アプリのレイアウトが簡単になります。 メインカメラはユーザーのヘッドの移動を追跡しているため、ユーザーの開始位置を設定することによって、メインカメラの開始位置を設定できます。
 
-   ![Unity の [インスペクター] ウィンドウの [カメラ]](images/maincamera-350px.png)<br>
+1. [階層] パネルの [メインカメラ] を選択します。
+2. [インスペクター] パネルで変換コンポーネントを見つけ、位置を (X: 0, Y: 1, Z:-10) から (X: 0, Y: 0, Z: 0) に変更します。
+
+   Unity の [インスペクター] ウィンドウの ![カメラ](images/maincamera-350px.png)  
    *Unity の [インスペクター] ウィンドウの [カメラ]*
 
 ## <a name="clip-planes"></a>クリッププレーン
 
 ユーザーに近いコンテンツのレンダリングは、mixed reality で不快に感じられる可能性があります。 カメラコンポーネントでは、[近距離と遠くのクリップ平面](hologram-stability.md#hologram-render-distances)を調整できます。
+
 1. [階層] パネルでメインカメラを選択します。
 2. [インスペクター] パネルでカメラコンポーネントのクリッピング平面を見つけ、[Near] ボックスを0.3 から. 85 に変更します。 さらに近いコンテンツは、ユーザーの不快感につながる可能性があります。[レンダリング距離のガイドライン](hologram-stability.md#hologram-render-distances)に従って回避する必要があります。
 
@@ -79,17 +81,19 @@ HoloLens とイマーシブヘッドセットはどちらも、photons が出力
 ## <a name="sharing-your-depth-buffers-with-windows"></a>Windows での深度バッファーの共有
 
 アプリの深度バッファーを Windows に共有すると、アプリは、レンダリングするヘッドセットの種類に基づいて、ホログラムの安定性の2つのブーストのうちの1つを提供します。
+
 * **イマーシブヘッドセット**は、深度バッファーが指定されている場合に位置指定再投影を実行でき、位置と向きの両方で misprediction のホログラムを調整します。
-* Holographic のような**ヘッドセット**は、深度バッファーが指定されると自動的に[フォーカスポイント](focus-point-in-unity.md)を選択します。これにより、ほとんどのコンテンツと交差する平面に沿ったホログラムの安定性が最適化されます。
+* **Holographic ヘッドセット**には、いくつかの異なる方法があります。 HoloLens 1 は、深度バッファーが指定されると自動的に[フォーカスポイント](focus-point-in-unity.md)を選択し、ほとんどのコンテンツと交差する平面に沿ったホログラムの安定性を最適化します。 HoloLens 2 は、Depth LSR を使用してコンテンツを安定化します[(「解説」を参照してください)](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.setfocuspoint)。
 
 Unity アプリで Windows に深度バッファーを提供するかどうかを設定するには、次のようにします。
-1. **Edit** > **Project settings** > PlayerユニバーサルWindowsプラットフォームtabXRsettingsにアクセスします > 。 > 
+
+1. [ **Edit** > **Project settings** > **Player** > **ユニバーサル Windows プラットフォーム tab** > **XR settings**] にアクセスします。
 2. **[Windows Mixed REALITY SDK]** 項目を展開します。
 3. **[深度バッファーの共有を有効にする]** チェックボックスをオンまたはオフにします。  この機能は Unity に追加された後に作成された新しいプロジェクトでは既定でチェックされ、アップグレードされた以前のプロジェクトでは既定でオフになります。
 
 Windows に深度バッファーを指定すると、Windows がメインカメラで Unity に設定した近距離および遠方を使用して、深度バッファー内の正規化されたピクセルごとの深度値をメートル単位の距離に正確にマップできる限り、視覚品質が向上します。  通常の方法でレンダリングがハンドルの深さの値を渡す場合は、通常、ここで問題ありません。ただし、既存のカラーピクセルに対してを使用している間に深度バッファーに書き込む半透明のレンダリングパスは、再プロジェクションを混乱させる可能性があります。  レンダリングパスによって、最終的な深度ピクセルの多くが正確でない深さの値になることがわかっている場合は、[深度バッファーの共有を有効にする] をオフにすると、表示品質が向上する可能性があります。
 
-
 ## <a name="see-also"></a>関連項目
+
 * [ホログラムの安定性](hologram-stability.md)
 * [MixedRealityToolkit メインカメラ。 prefab](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/Input/Prefabs)

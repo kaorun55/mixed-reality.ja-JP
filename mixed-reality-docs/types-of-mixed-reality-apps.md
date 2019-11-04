@@ -6,22 +6,22 @@ ms.author: willyang
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、設計、アプリパターン
-ms.openlocfilehash: 97f8039dcd9bbf8ee3d6c7be926db16b60a76b97
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 62a0b76ba7853262a46b34466a6d3b0567bc137d
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63549111"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438262"
 ---
 # <a name="types-of-mixed-reality-apps"></a>Mixed reality アプリの種類
 
-Windows Mixed Reality のアプリを開発する利点の1つは、プラットフォームがサポートできるさまざまなエクスペリエンスです。 Windows Mixed Reality は、完全なイマーシブ、仮想環境、ユーザーの現在の環境における明るい情報のレイヤー化から、エクスペリエンスを実現するための堅牢な一連のツールを提供します。 アプリ作成者は、開発プロセスの早い段階で、経験がある場所について理解しておくことが重要です。 この決定は、最終的にアプリのデザインの構造と開発のための技術的なパスの両方に影響します。
+Windows Mixed Reality 用アプリを開発する利点の 1 つは、プラットフォームでサポートできるエクスペリエンスの広さです。 完全にイマーシブな仮想環境から、ユーザーの現在の環境に重ねて表示されるちょっとした情報まで、Windows Mixed Reality では、エクスペリエンスを実現するための堅牢な一連のツールが提供されています。 アプリ作成者は、開発プロセスの早い段階で、経験がある場所について理解しておくことが重要です。 この決定は、最終的にアプリのデザインの構造と開発のための技術的なパスの両方に影響します。
 
 ## <a name="enhanced-environment-apps-hololens-only"></a>拡張された環境アプリ (HoloLens のみ)
 
 混合現実がユーザーに価値をもたらす最も強力な方法の1つは、ユーザーの現在の環境でデジタル情報またはコンテンツの配置を容易にすることです。 これは、拡張された環境アプリです。 このアプローチは、実際の世界におけるデジタルコンテンツの文脈による配置が最優先されるアプリや、ユーザーのエクスペリエンス中にユーザーの実際の環境 "present" を維持することが重要です。 また、このアプローチでは、ユーザーが実際のタスクからデジタルタスクに簡単に移動し、簡単に戻すことができます。また、ユーザーが見ることができる mixed reality アプリが実際の環境の一部であることを容易さからことを保証することもできます。
 
-![拡張された環境アプリ](images/enhancedenvironmentapps-640px.jpg)<br>
+![強化された環境アプリ](images/enhancedenvironmentapps-640px.jpg)<br>
 *拡張された環境アプリ*
 
 **使用例**
@@ -53,7 +53,7 @@ Windows Mixed Reality がユーザーの環境を認識してマップする機�
 
 イマーシブ環境アプリは、ユーザーの世界を完全に変更し、別の時間とスペースで配置できる環境を中心としています。 これらの環境では、アプリ作成者の想像によってのみ制限されているイマーシブエクスペリエンスと thrilling エクスペリエンスを作成するのが非常に現実的です。 混合環境アプリとは異なり、Windows Mixed Reality によってユーザーの領域が識別されると、イマーシブ環境アプリはユーザーの現在の環境を完全に無視し、その在庫全体をそれ自体の1つに置き換えることができます。 これらの経験によって、時間とスペースが完全に区別される場合もあります。つまり、ユーザーは、世界的な空間を比較的離れたまま、イマーシブエクスペリエンスのローマの通りを調べることができます。 実際の環境のコンテキストは、イマーシブ環境アプリにとって重要でない場合があります。
 
-![イマーシブ環境アプリ](images/windows-mixed-reality-640px.jpg)<br>
+イマーシブ環境アプリの ![](images/windows-mixed-reality-640px.jpg)<br>
 *イマーシブ環境アプリ*
 
 **使用例**
@@ -61,6 +61,6 @@ Windows Mixed Reality がユーザーの環境を認識してマップする機�
 * ユーザーの周囲のイベントまたはシナリオ (戦いやパフォーマンスなど) を調整するイマーシブアプリ
 
 ## <a name="see-also"></a>関連項目
-* [開発の概要](development-overview.md)
+* [開発の概要](development.md)
 * [アプリ モデル](app-model.md)
 * [アプリ ビュー](app-views.md)

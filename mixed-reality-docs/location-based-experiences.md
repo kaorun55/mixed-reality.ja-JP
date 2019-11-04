@@ -6,12 +6,12 @@ ms.author: ishitak
 ms.date: 08/22/2019
 ms.topic: article
 keywords: mixed reality、vr、lbe、場所
-ms.openlocfilehash: e23d17ff2b07c636c98a9f19a5dd20f4dc558bf7
-ms.sourcegitcommit: 5d3be2d7569d912011ea114c0a283bc3c635d5df
+ms.openlocfilehash: de9cfdaca77574bbbbec96c2e94fddeaa2712c33
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983400"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437935"
 ---
 # <a name="location-based-entertainment-with-windows-mixed-reality"></a>Windows Mixed Reality を使用した場所ベースのエンターテインメント
 
@@ -23,35 +23,35 @@ ms.locfileid: "69983400"
 
 ### <a name="hardware"></a>ハードウェア
 
-**Q.Microsoft とそのパートナーがセットアップで使用できるハードウェアはどのようなものですか。**
+**Q: Microsoft とそのパートナーがセットアップで使用できるハードウェアはどのようなものですか。**
 
-A:Microsoft とその OEM パートナーは、ニーズに応じて選択する、魅力的なデバイスのポートフォリオを提供します。  
+A: Microsoft とその OEM パートナーは、ニーズに応じて選択する、説得力のあるデバイスのポートフォリオを提供します。  
 
 お客様に提供しているエクスペリエンスで仮想現実のヘッドセットが必要な場合は、HP、Samsung、および Acer の次の市場にあるヘッドセットが非常に適しています。 各ヘッドセットには独自の区別された属性があります。 詳細については、以下を参照してください。
 
 HP リバーブ:[詳細](https://hp.com/go/Reverbpro)
 
-Samsung Odyssey +:[詳細](https://www.samsung.com/us/computing/hmd/windows-mixed-reality/hmd-odyssey-windows-mixed-reality-headset-xe800zba-hc1us/)
+Samsung Odyssey +: [Details](https://www.samsung.com/us/computing/hmd/windows-mixed-reality/hmd-odyssey-windows-mixed-reality-headset-xe800zba-hc1us/)
 
-社[詳細](https://www.acer.com/ac/en/US/content/model/VD.R05AP.002)
+Acer:[詳細](https://www.acer.com/ac/en/US/content/model/VD.R05AP.002)
 
 お客様の場所が、表示ヘッドセットの使用を必要とする、混合または拡張された現実のエクスペリエンスを専門としている場合は、Microsoft HoloLens 2 を調達することができます。  
 
-HoloLens 2:[注文前の関心](https://www.microsoft.com/en-us/hololens/buy)
+HoloLens 2:[注文前の関心](https://www.microsoft.com//hololens/buy)
 
 高度なコンピュータービジョン、音声、および本文の追跡を必要とするエクスペリエンスを試している場合、ニーズに合わせて Azure Kinect DK を見つけることができます。  
 
-Azure Kinect:[詳細](https://azure.microsoft.com/en-us/services/kinect-dk/)
+Azure Kinect:[詳細](https://azure.microsoft.com//services/kinect-dk/)
 
-**Q.PC-テザリングさ VR エクスペリエンスを実行するために使用できる backpack Pc のポートフォリオは何ですか。**
+**Q: PC-テザリングさ VR エクスペリエンスを実行するために使用できる backpack Pc のポートフォリオは何ですか。**
 
 PC-テザリングさ VR エクスペリエンスの場合、Oem は、ニーズに応じて正確に構築された backpack Pc を非常に優れた選択肢として提供しています。
 
-HP は HP VR backpack G2 を起動しました。これは、無料ローミングエクスペリエンスのために最適化された、現在のところ、RTX 2080 GPU では 30% 向上しています。 [詳細](https://www8.hp.com/us/en/vr/vr-backpack.html)
+HP は HP VR backpack G2 を起動しました。これは、無料ローミングエクスペリエンスのために最適化された、現在のところ、RTX 2080 GPU では30% 向上しています。 [詳細](https://www8.hp.com/us/en/vr/vr-backpack.html)
 
-### <a name="setup"></a>セットアップ
+### <a name="setup"></a>[セットアップ]
 
-**Q.セットアップを簡単に構成し、LBE 用に Mixed Reality ポータルをカスタマイズするにはどうすればよいですか。**
+**Q: セットアップを簡単に構成し、LBE 用に Mixed Reality ポータルをカスタマイズするにはどうすればよいですか。**
 
 >[!NOTE]
 >この機能には、バージョン2000.19061.1011.0 以上が必要です。  
@@ -72,9 +72,9 @@ HP は HP VR backpack G2 を起動しました。これは、無料ローミン�
 
 #### <a name="how-to-configure"></a>構成方法:  
 
-これらの構成のいずれかを設定するには、次のディレクトリに LOCALAPPDATA\Packages\Microsoft.MixedReality.Portal_8wekyb3d8bbwe\LocalState という名前のファイルを作成する必要があります。 _$env:\\_
+これらの構成のいずれかを設定するには、次のディレクトリに LOCALAPPDATA\Packages\Microsoft.MixedReality.Portal_8wekyb3d8bbwe\LocalState という名前のファイルを作成する必要が_あります:_ _$env:\\_
 
-ほとんどのユーザーにとって、これは_C:\Users\<username\\ > \AppData\Local\Packages\microsoft.mixedreality.portal_8wekyb3d8bbwe\LocalState_のようになります。
+ほとんどのユーザーにとって、これは_C:\Users\<username > \AppData\Local\Packages\microsoft.mixedreality.portal_8wekyb3d8bbwe\LocalState_のようになり\\
 
 JSON ファイルの内容は、有効にする上記の設定のいずれかに対して "true" が設定されている必要があります。  
 
@@ -96,50 +96,60 @@ JSON ファイルの内容は、有効にする上記の設定のいずれかに
 }
 ```
  
-**Q.Playspace の構成についてのガイダンスはありますか。**
+**Q: playspace の構成についてのガイダンスはありますか。**
 
-A:再生スペースの構成は、コンシューマーのセットアップエクスペリエンスと同じように行う必要があります。 ルームのセットアッププロセスでは、部屋の境界を定義することもできます。 ルーム境界の構成の詳細については、[こちら](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/set-up-windows-mixed-reality#set-up-your-room-boundary)を参照してください。
+A: playspace の構成は、コンシューマーのセットアップエクスペリエンスの場合と同じように行う必要があります。 ルームのセットアッププロセスでは、部屋の境界を定義することもできます。 ルーム境界の構成の詳細については、[こちら](https://docs.microsoft.com//windows/mixed-reality/enthusiast-guide/set-up-windows-mixed-reality#set-up-your-room-boundary)を参照してください。
 
 上のドキュメントで説明したように、最大の適正な1座標の再生領域は5mx5m を中心にしています。 より大きな領域を作成する場合は、Windows Holographic API スタックで空間アンカー機能を使用できます。 この API を使用するには、生成するエクスペリエンスにカスタムエンジニアリングが必要です。  
 
-さまざまな領域サイズに合わせてコンテンツを最適化する方法の詳細については、[こちら](https://docs.microsoft.com/en-us/windows/mixed-reality/coordinate-systems)を参照してください。
+さまざまな領域サイズに合わせてコンテンツを最適化する方法の詳細については、[こちら](https://docs.microsoft.com//windows/mixed-reality/coordinate-systems)を参照してください。
  
 
-**Q.領域が大きすぎて、境界を使用して継続的なエクスペリエンスを設定しようとしたときにエラーが発生しています。大規模な無料のローミングエクスペリエンスを設定するにはどうすればよいですか。**
+**Q: 空間が大きすぎて、境界を使用して継続的なエクスペリエンスを設定しようとしたときにエラーが発生しています。大規模な無料のローミングエクスペリエンスを設定するにはどうすればよいですか。**
 
-A:~ 18xft を超える領域をセットアップする場合、システムによって提供される境界を使用することはできません。  境界システムは、1つの固定座標 "アンカー" を利用することに依存しています。これは、中央のステージアンカーから離れすぎていると不安定になる可能性があります。 
+A: ~ 18xft を超える領域をセットアップする場合、システムによって提供される境界を使用することはできません。  境界システムは、1つの固定座標 "アンカー" を利用することに依存しています。これは、中央のステージアンカーから離れすぎていると不安定になる可能性があります。 
 
 代わりに、"固定" モードを設定できます。このモードでは、境界が表示されず、ステージの境界や再生スペースも構成されません。  次に、物理的な境界領域を参照するように、アプリ内に複数の空間アンカーを構成する必要があります。 
 
 アプリケーション開発者は、ユーザーが物理的な環境と競合しないように、必要なセーフガードを表示する責任があります。  これらは、エクスペリエンス内のデジタル壁面や、カスタマイズされたゲームの境界ビジュアルです。 
 
-WMR を使用したルーム境界の設定に関するガイダンスについては、[こちら](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/set-up-windows-mixed-reality#set-up-your-room-boundary)を参照してください。
+WMR を使用したルーム境界の設定に関するガイダンスについては、[こちら](https://docs.microsoft.com//windows/mixed-reality/enthusiast-guide/set-up-windows-mixed-reality#set-up-your-room-boundary)を参照してください。
 
-**Q.Playspace の起点はどこですか。**
+**Q: playspace の起点はどこですか。**
 
-A:Playspace の原点は、セットアップ時に中央のボタンが押されたときに、ルームのセットアップエクスペリエンスによって決まります。 
+A: playspace の原点は、セットアップ中にセンターボタンが押されたときに、ルームのセットアップエクスペリエンスによって決定されます。 
 
 ### <a name="multi-player-setup"></a>マルチプレーヤーセットアップ
 
-**Q.ここでは、でマルチプレーヤーエクスペリエンスをデプロイしています。Windows Mixed Reality ではサポートされていますか。**
+**Q: 自分の会場で、マルチプレーヤーエクスペリエンスをデプロイしています。Windows Mixed Reality ではサポートされていますか。**
 
-A:Mixed Reality 空間データパッケージャーツールは、1台の PC から別の PC への空間データの移植を可能にすることで、同じ領域内で複数のプレーヤーをローカライズできるようにするベータ機能です。 ツールにアクセスして、その詳細については、[こちら](mixedrealityspatialdatapackager.md)を参照してください。
+A: Mixed Reality 空間データパッケージャーツールは、1台の PC から別の PC への空間データの移植を可能にすることで、同じ領域内で複数のプレーヤーをローカライズできるようにするベータ機能です。 ツールにアクセスして、その詳細については、[こちら](mixedrealityspatialdatapackager.md)を参照してください。
 
+( [Insider](https://docs.microsoft.com//windows-insider/at-home/get-started)プログラムを使用して) Windows 20H1 以降のビルドを選択すると、マップ共有用の新しいインターフェイスにアクセスできるようになります。 この新しい機能は、Windows デバイスポータルのマップマネージャーインターフェイスを使用して入手できます。 このツールを使用するには、次の手順を実行します。
+- 20H1 以降を選択していることを確認します (2019 年9月の時点では、Insider プログラムを使用しています)。
+- Windows デバイスポータル (WDP) を有効にします。手順については、[こちらをご覧ください](https://docs.microsoft.com//windows/uwp/debug-test-perf/device-portal-desktop)。
+- 既存のマップをダウンロードするか、新しいマップをインポートする Windows Mixed Reality HMD をプラグインします。
+- [設定] 画面で指定した URL を使用して、選択したブラウザーの WDP に移動します。 
+  - その後、"Mixed Reality" セクションに移動し、[マップマネージャー] を選択します。 
+  - [ダウンロード] ボタンを使用して、コンピューターから既存のマップをエクスポートできるようになりました。 
+  - [マップファイルのアップロード] ボタンを使用すると、以前のエクスポートからマップをインポートできます (おそらく、別のコンピューターにあります)。 
+  - "Import" を使用して、システムがこのコンピューター上のこの HMD に対してこのマップを使用できるようにすることができます。
+  
 ### <a name="tracking"></a>追跡
 
-Q:Windows Mixed Reality ヘッドセットの追跡テクノロジはどのように動作しますか。  
+Q: Windows Mixed Reality ヘッドセットの追跡テクノロジはどのように動作しますか。  
 
-Mixed Reality は、HoloLens と同じ追跡テクノロジを共有します。 内部アウト追跡システムの詳細については、[こちら](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/tracking-system)のドキュメントを参照してください。
+Mixed Reality は、HoloLens と同じ追跡テクノロジを共有します。 内部アウト追跡システムの詳細については、[こちら](https://docs.microsoft.com//windows/mixed-reality/enthusiast-guide/tracking-system)のドキュメントを参照してください。
 
-上位レベルの空間マッピングシステムの動作の詳細については、[こちらで](spatial-mapping-design.md)説明を参照してください。
+上位レベルの空間マッピングシステムの動作の詳細については、[こちらで](spatial-mapping.md)説明を参照してください。
 
-**Q.Reliable tracking ボリュームを取得するためのベストプラクティスはありますか。**
+**Q: reliable tracking ボリュームを取得するためのベストプラクティスはありますか。**
 
 成功を追跡するために環境を最適に構成するには、この[投稿](environment-considerations-for-hololens.md)のベストプラクティスを読むことができます。
 
-**Q.ウェアハウスでの追跡には特定の差異がありますか? スケールスペースまたは最適化を検討してください。**
+**Q: ウェアハウスでの追跡には特定の差異がありますか? スケールスペースや最適化を検討してください。**
 
-A:次のプラクティスは、より信頼性の高い追跡ボリュームを取得するのに役立ちます。  
+A: 次のプラクティスは、より信頼性の高い追跡ボリュームを取得するのに役立ちます。  
 
 複数の位置で重なり合ったさまざまな機能を部屋に用意することで、追跡システムの堅牢なロックを得ることができます。 単色の輪郭スタイルの線を使用するのではなく、ランダムな描画の splatters と陰影を考えてみましょう。 
 
@@ -149,9 +159,9 @@ A:次のプラクティスは、より信頼性の高い追跡ボリュームを
 
 ### <a name="mixed-reality-cloud-services-and-azure"></a>MIXED REALITY クラウドサービスと AZURE 
 
-**Q.ビジネスの規模を拡大 Microsoft Azure にはどうすればよいですか。**
+**Q: どのようにしてビジネススケールを Microsoft Azure できますか。**
 
-A:Azure ベースのオンサイトおよびリモート管理を使用すると、ビジネスをデータ主導にすることができ、運用コストを削減し、既存の場所と新しい場所にデプロイすることができます。 Azure Storage、Azure Functions、App Service、Azure ネットワーク、IOT Hub などの azure クラウドサービスは、次のユースケースに役立ちます。  
+A: Azure ベースのオンサイトおよびリモート管理を使用すると、ビジネスをデータ主導にすることができ、運用コストが削減され、既存の場所と新しい場所でのデプロイをスケーリングできます。 Azure Storage、Azure Functions、App Service、Azure ネットワーク、IOT Hub などの azure クラウドサービスは、次のユースケースに役立ちます。  
 
 リモートデバイス展開 & 管理 
 
@@ -165,30 +175,30 @@ LBE プレーヤーの基本設定ヒートマップ
 
 LBE 予約と予約システム 
 
-**Q.大量のフットプリントをデプロイする空間 MMOG を開発しています。コンテンツとオブジェクトの永続化を管理するのに役立つすべてのサービス**
+**Q: 空間 MMOG を開発して、大規模なフットプリントをデプロイしています。コンテンツとオブジェクトの永続化を管理するのに役立つすべてのサービス**
 
-A:Azure 空間アンカーは、HoloLens、iOS、および Android デバイスで、複数のユーザーに対応し、空間的に対応した mixed reality エクスペリエンスを可能にする新しい Mixed Reality サービスです。 Azure 空間アンカーの詳細については、[こちら](https://azure.microsoft.com/en-us/services/spatial-anchors/)を参照してください。
+A: Azure 空間アンカーは、HoloLens、iOS、および Android デバイスで、複数のユーザーに対応し、空間的に対応した mixed reality エクスペリエンスを可能にする新しい Mixed Reality サービスです。 Azure 空間アンカーの詳細については、[こちら](https://azure.microsoft.com//services/spatial-anchors/)を参照してください。
 
-**Q..この会場では、マルチプレーヤーエクスペリエンスを専門としており、開発時間をコンテンツやフロントエンド開発に専念させたいと考えています。バックエンド開発をブートストラップまたはオフロードするのに役立つサービスはありますか。**
+**Q. この会場では、マルチプレーヤーエクスペリエンスを専門としており、開発時間をコンテンツやフロントエンド開発に専念させたいと考えています。バックエンド開発をブートストラップまたはオフロードするのに役立つサービスはありますか。**
 
-A:Azure PlayFab は、ライブゲーム用の完全なバックエンドプラットフォームです。 詳細については、[こちら](https://playfab.com/)を参照してください。
+A: Azure PlayFab は、ライブゲーム用の完全なバックエンドプラットフォームです。 詳細については、[こちら](https://playfab.com/)を参照してください。
 
 ### <a name="misc"></a>その他
 
-**Q.私は SteamVR を使って自分のエクスペリエンスをデプロイしています。Windows Mixed Reality は SteamVR と連携しますか。**
+**Q: SteamVR を使用して自分のエクスペリエンスをデプロイします。Windows Mixed Reality は SteamVR と連携しますか。**
 
-A:Windows mixed Reality for SteamVR では、ユーザーは Windows Mixed Reality のイマーシブヘッドセットで SteamVR エクスペリエンスを実行できます。 SteamVR と WMR の詳細について[は、こちら](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality)を参照してください。
+A: SteamVR の Windows Mixed Reality では、ユーザーは Windows Mixed Reality のイマーシブヘッドセットで SteamVR エクスペリエンスを実行できます。 SteamVR と WMR の詳細について[は、こちら](https://docs.microsoft.com//windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality)を参照してください。
 
 ### <a name="support-and-community"></a>サポートとコミュニティ  
 
 以下は、チームの分野の専門家と連携し、トラブルシューティングのサポートを受け、より広範な mixed reality 開発コミュニティに貢献するうえで役立つリソースです。  
 
-公開されているすべての機能で問題が発生した場合は、フィードバックハブを使用してバグを報告してください。ガイダンスについては、この[ページ](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/filing-feedback)を参照してください。
+公開されているすべての機能で問題が発生した場合は、フィードバックハブを使用してバグを報告してください。ガイダンスについては、この[ページ](https://docs.microsoft.com//windows/mixed-reality/enthusiast-guide/filing-feedback)を参照してください。
 
-WMR のトラブルシューティングの詳細については、[サポート要求](https://support.microsoft.com/en-us/supportforbusiness/productselection?sapId=96bfb202-bc79-741b-bf7a-774d8b767782)を提出して、カスタマーサポートチームにご連絡ください。
+WMR のトラブルシューティングの詳細については、[サポート要求](https://support.microsoft.com//supportforbusiness/productselection?sapId=96bfb202-bc79-741b-bf7a-774d8b767782)を提出して、カスタマーサポートチームにご連絡ください。
 
 HoloDevelopers の余裕期間チャネルに参加して、チームによる混合現実と分野の専門家に取り組んでいる開発者と提携してください。 [aka.ms/holodevelopers](https://aka.ms/holodevelopers)
 
-Twitterさまざまな開発者関係チームによるニュース、イベント、および更新について@MxdRealityDev 
+Twitter: ニュース、イベント、および更新については、Mixed Reality 開発者関係チームにご協力ください @MxdRealityDev 
 
-サンフランシスコにいる場合、Microsoft リアクターでは常に何かが行われています。 イベントのカレンダーを[ここ](https://developer.microsoft.com/en-us/reactor/Location/San%20Francisco)に表示できます。
+サンフランシスコにいる場合、Microsoft リアクターでは常に何かが行われています。 イベントのカレンダーを[ここ](https://developer.microsoft.com//reactor/Location/San%20Francisco)に表示できます。

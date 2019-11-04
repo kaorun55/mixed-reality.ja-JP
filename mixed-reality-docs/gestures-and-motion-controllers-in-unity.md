@@ -2,20 +2,20 @@
 title: Unity のジェスチャとモーションコントローラー
 description: Unity、ハンドジェスチャ、およびモーションコントローラーでのアクションを実行するには、2つの主要な方法があります。
 author: thetuvix
-ms.author: yoyoz
+ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: ジェスチャ、モーションコントローラー、unity、宝石、入力
-ms.openlocfilehash: f0d2835a08ef534af1310db35ccb81888e49aeb8
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: a7ca5a895015ba0458f0f64f1422612e797f5067
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63525763"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435228"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity のジェスチャとモーションコントローラー
 
-[Unity](gaze-in-unity.md)での操作を実行するには、2つの主要な方法があります。 HoloLens では[ハンドジェスチャ](gestures.md)と、HoloLens では[アニメーションコントローラー](motion-controllers.md)を使用します。 Unity の同じ Api を使用して、空間入力の両方のソースのデータにアクセスします。
+[Unity](gaze-in-unity.md)での操作を実行するには、2つの主要な方法があります。 HoloLens では[ハンドジェスチャ](gaze-and-commit.md#composite-gestures)と、HoloLens では[アニメーションコントローラー](motion-controllers.md)を使用します。 Unity の同じ Api を使用して、空間入力の両方のソースのデータにアクセスします。
 
 Unity には、Windows Mixed Reality の空間入力データにアクセスする主な方法が2つあります。複数の Unity XR Sdk で動作する common *input. GetButton/GetAxis* api と、に固有の*Interactionmanager/GestureRecognizer* api です。使用可能な空間入力データの完全なセットを公開する Windows Mixed Reality。
 
@@ -45,23 +45,23 @@ Windows Mixed Reality のボタン/軸 ID マッピングは、次の2つの方�
 </tr><tr>
 <td> 押されたグリップボタン </td><td> 軸 11 = 1.0 (アナログ値なし)<br />ボタン 4 <i>(ゲームパッド互換)</i> </td><td> 軸 12 = 1.0 (アナログ値なし)<br />ボタン 5 <i>(ゲームパッド互換)</i> </td><td> grasped</td>
 </tr><tr>
-<td> スティック X <i>(左:-1.0、右:1.0)</i> </td><td> 軸1 </td><td> 軸4 </td><td> thumbstickPosition</td>
+<td> スティック X <i>(左:-1.0、右: 1.0)</i> </td><td> 軸1 </td><td> 軸4 </td><td> thumbstickPosition</td>
 </tr><tr>
-<td> サムスティック<i>Y (上:-1.0、下:1.0)</i> </td><td> 軸2 </td><td> 軸5 </td><td> thumbstickPosition</td>
+<td> サムスティック Y <i>(上:-1.0、下: 1.0)</i> </td><td> 軸2 </td><td> 軸5 </td><td> thumbstickPosition</td>
 </tr><tr>
 <td> 押したサムスティック </td><td> ボタン8 </td><td> ボタン9 </td><td> thumbstickPressed</td>
 </tr><tr>
-<td> タッチパッド<i>X (左:-1.0、右:1.0)</i> </td><td> 軸 17 * </td><td> 軸 19 * </td><td> touchpadPosition</td>
+<td> タッチパッド X <i>(左:-1.0、右: 1.0)</i> </td><td> 軸 17 * </td><td> 軸 19 * </td><td> touchpadPosition</td>
 </tr><tr>
-<td> タッチパッド<i>Y (上:-1.0、下:1.0)</i> </td><td> 軸 18 * </td><td> 軸 20 * </td><td> touchpadPosition</td>
+<td> タッチパッド Y <i>(上:-1.0、下: 1.0)</i> </td><td> 軸 18 * </td><td> 軸 20 * </td><td> touchpadPosition</td>
 </tr><tr>
 <td> タッチパッドにタッチ </td><td> ボタン 18 * </td><td> ボタン 19 * </td><td> touchpadTouched</td>
 </tr><tr>
 <td> タッチパッドが押されました </td><td> ボタン 16 * </td><td> ボタン 17 * </td><td> touchpadPressed</td>
 </tr><tr>
-<td> 6自由度グリップまたはポインターのポーズ </td><td colspan="2"> <i>グリップ</i>の発生のみ:<a href="https://docs.unity3d.com/ScriptReference/XR.InputTracking.GetLocalPosition.html">XR.InputTracking。 GetLocalPosition</a><br /><a href="https://docs.unity3d.com/ScriptReference/XR.InputTracking.GetLocalRotation.html">XR.InputTracking。 GetLocalRotation</a></td><td> <i>グリップ</i>または<i>ポインター</i>を引数として渡す: sourcestate<br />sourceState。 TryGetRotation<br /></td>
+<td> 6自由度グリップまたはポインターのポーズ </td><td colspan="2"> <i>グリップ</i>の発生のみ: <a href="https://docs.unity3d.com/ScriptReference/XR.InputTracking.GetLocalPosition.html">XR。InputTracking。 GetLocalPosition</a><br /><a href="https://docs.unity3d.com/ScriptReference/XR.InputTracking.GetLocalRotation.html">XR.InputTracking。 GetLocalRotation</a></td><td> <i>グリップ</i>または<i>ポインター</i>を引数として渡す: sourcestate<br />sourceState。 TryGetRotation<br /></td>
 </tr><tr>
-<td> 状態の追跡 </td><td colspan="2"> <i>位置の精度とソース損失リスクは MR 固有の API を介してのみ利用可能</i> </td><td> <a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Input.InteractionSourcePose-positionAccuracy.html">sourceState. Sourcestate の精度</a><br /><a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Input.InteractionSourceProperties-sourceLossRisk.html">sourceState. sourceLossRisk</a></td>
+<td> 状態の追跡 </td><td colspan="2"> <i>位置の精度とソース損失のリスクは、MR 固有の API でのみ使用でき</i> </td><td> <a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Input.InteractionSourcePose-positionAccuracy.html">sourceState. Sourcestate の精度</a><br /><a href="https://docs.unity3d.com/ScriptReference/XR.WSA.Input.InteractionSourceProperties-sourceLossRisk.html">sourceState. sourceLossRisk</a></td>
 </tr>
 </table>
 
@@ -81,10 +81,10 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 イマーシブヘッドセットでは、グリップは、**ユーザーの手**や、剣や銃など、**ユーザーの手に保持**されているオブジェクトをレンダリングするために最適です。 また、このグリップは、モーションコントローラーを視覚化するときにも使用されます。これは、モーションコントローラー用に Windows によって提供される**描画モデル**が、グリップを原点と回転の中心として使用するためです。
 
 グリップは、次のように明確に定義されます。
-* **グリップの位置**:コントローラーを自然に保持すると、パーム重心が調整され、グリップ内の位置を中心として左右に調整されます。 Windows Mixed Reality モーションコントローラーでは、通常、この位置はボタンをつかみに揃えて配置されます。
-* **グリップの向きの右軸**:ハンドを完全に開いて、5つの指が平らになるようにするには、(左側のパームから、右のパームから後方に)、パームに通常ある光線を使用します。
-* **グリップの向きの前方軸**:(コントローラーを保持している場合と同様に) 手を部分的に閉じた場合、非表示の指で形成されたチューブによって "前方" を指します。
-* **グリップの方向の上位軸**:右および順方向の定義によって暗黙的に示される上位軸。
+* **グリップの位置**: コントローラーを自然に保持するときのパーム重心。グリップ内の位置を中央に配置するように左右に調整されます。 Windows Mixed Reality モーションコントローラーでは、通常、この位置はボタンをつかみに揃えて配置されます。
+* **グリップの向きの右軸**: 手を完全に開いて平らな5本の指を作成した場合 (左側のパームから前方、右側のパームから後方)、
+* **グリップの向きの前方軸**: ハンドを部分的に閉じた場合 (コントローラーを保持している場合と同様)、非表示の指で形成されたチューブを通過する光線。
+* **グリップの向きの上位軸**: 右および順方向の定義によって暗黙的に示される上位軸。
 
 このグリップには、Unity のクロスベンダ入力 API (XR) を使用してアクセスでき *[ます。InputTracking](https://docs.unity3d.com/ScriptReference/XR.InputTracking.html)。GetLocalPosition/Rotation*) または WINDOWS MR 固有の API (*TryGetPosition/rotation*) を使用して、**グリップ**ノードのポーズデータを要求します。
 
@@ -118,26 +118,26 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 <tr>
 <th> 状態の追跡 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt;1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt; 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精度 (消失のリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度 (失われるリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>おおよその精度</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>位置なし</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: orange"> False</td>
+<td>  <b>位置がありません</b></td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: orange"> false</td>
 </tr>
 </table>
 
 これらのモーションコントローラーの追跡状態は、次のように定義されています。
 * **高精度:** モーションコントローラーは、ヘッドセットのビューに含まれていますが、通常、ビジュアルの追跡に基づいて高精度の位置を提供します。 一時的にビューのフィールドから離れるか、ヘッドセットセンサーから瞬間的に見えなくなっている移動コントローラー (ユーザーなど) は、コントローラーの慣性追跡に基づいて、短時間で高精度のポーズを返します。自分自身.
 * **高精度 (損失のリスク):** ユーザーが、ヘッドセットのビューの端を越えてモーションコントローラーを動かすと、ヘッドセットはすぐにコントローラーの位置を視覚的に追跡できなくなります。 アプリでは、 **SourceLossRisk**が1.0 に到達して、コントローラーがこの視界の境界に達したことを認識します。 その時点で、アプリは、非常に高品質なポーズの安定したストリームを必要とするコントローラージェスチャを一時停止することを選択できます。
-* **おおよその精度:** コントローラーのビジュアル追跡が十分に失われた場合、コントローラーの位置はおおよその精度の位置にドロップします。 この時点で、システムはコントローラーをユーザーにボディロックし、ユーザーが移動したときの位置を追跡しながら、内部方向センサーを使用してコントローラーの真向きを公開します。 UI 要素をポイントしてアクティブ化するためにコントローラーを使用する多くのアプリは、ユーザーに気付かずに正確な精度で、通常どおりに動作できます。 入力要件が重いアプリでは、 **positionaccuracy**プロパティを調べることによって、**精度が** **高い**ことを意味します。たとえば、オフスクリーンのターゲットでユーザーにより多くのヒットボックスを与えることができます。この期間中。
+* **おおよその精度:** コントローラーのビジュアル追跡が十分に失われた場合、コントローラーの位置はおおよその精度の位置にドロップします。 この時点で、システムはコントローラーをユーザーにボディロックし、ユーザーが移動したときの位置を追跡しながら、内部方向センサーを使用してコントローラーの真向きを公開します。 UI 要素をポイントしてアクティブ化するためにコントローラーを使用する多くのアプリは、ユーザーに気付かずに正確な精度で、通常どおりに動作できます。 入力要件が重いアプリでは、 **positionaccuracy**プロパティを調べることによって、精度が**高い**ことを**意味します**。たとえば、オフスクリーンのターゲットでユーザーにより多くのヒットボックスを与えることができます。この期間中。
 * **位置なし:** コントローラーは長時間の精度で実行できますが、本体でロックされている位置が現時点では意味を持たないことをシステムが認識している場合があります。 たとえば、電源が入っていたコントローラーが視覚的に観察されていない場合や、ユーザーがコントローラーを停止した後に他のユーザーが選択した場合などです。 これらのタイミングでは、システムはアプリに位置を提供せず、 *TryGetPosition*は false を返します。
 
 ## <a name="common-unity-apis-inputgetbuttongetaxis"></a>共通 Unity Api (Input. GetButton/GetAxis)
 
-**名前空間:** *Unityengine*、 *unityengine. XR*<br>
-**型**:*Input*、 *XR。InputTracking*
+**名前空間:** *unityengine*、 *unityengine XR*<br>
+**型**: *Input*、 *XR。InputTracking*
 
 Unity では、現在、一般的な*入力. GetButton/GetAxis* api を使用して、 [Oculus Sdk](https://docs.unity3d.com/Manual/OculusControllers.html)、 [Openvr SDK](https://docs.unity3d.com/Manual/OpenVRControllers.html) 、および Windows Mixed Reality の入力を公開しています。これには、ハンドアンドモーションコントローラーも含まれます。 アプリがこれらの Api を入力に使用する場合、Windows Mixed Reality を含む複数の XR Sdk 間で、モーションコントローラーを簡単にサポートできます。
 
@@ -186,8 +186,8 @@ Quaternion leftRotation = InputTracking.GetLocalRotation(XRNode.LeftHand);
 
 ## <a name="windows-specific-apis-xrwsainput"></a>Windows 固有の Api (XR。付い.代入
 
-**名前空間:** *UnityEngine. XR*<br>
-**型**:*Interactionmanager*、 *interactionsourcestate*、 *interactionmanager*、 *interactionsourceproperties*、 *interactionsourcekind*、 *interactionmanager*
+**名前空間:** *UNITYENGINE. XR*<br>
+**型**: *interactionmanager*、 *interactionsourcestate*、 *interactionmanager*、 *interactionsourceproperties*、 *interactionsourcekind*、 *interactionmanager*
 
 Windows Mixed Reality の入力 (HoloLens) とモーションコントローラーの詳細情報を取得するには、 *XR*名前空間で windows 固有の空間入力 api を使用することを選択できます。 これにより、位置の精度やソースの種類などの追加情報にアクセスして、ハンドとコントローラーを区別できます。
 
@@ -289,10 +289,10 @@ InteractionManager.InteractionSourcePressed -= InteractionManager_InteractionSou
 
 使用可能な相互作用ソースイベントは次のとおりです。
 * *Interactionsourcedetected 検出されました*(ソースがアクティブになります)
-* *Interactionsourcelost*(非アクティブになります)
-* *Interactionsourcepressed*れた状態(tap、button press、または "Select" 発音)
-* *InteractionSourceReleased*(tap の終了、ボタンが離された、または "Select" 発音の最後)
-* *Interactionsourceupdated*(一部の状態を移動または変更した場合)
+* *Interactionsourcelost* (非アクティブになります)
+* *Interactionsourcepressed*れた (tap、button press、または "Select" 発音)
+* *InteractionSourceReleased* (tap の終了、ボタンの解放、または "Select" 発音の最後)
+* *Interactionsourceupdated* (移動またはその他の状態の変更)
 
 ### <a name="events-for-historical-targeting-poses-that-most-accurately-match-a-press-or-release"></a>プレスまたはリリースと最も正確に一致する履歴ターゲットのイベント
 
@@ -305,7 +305,7 @@ InteractionManager.InteractionSourcePressed -= InteractionManager_InteractionSou
 ユーザーが手やコントローラーを押したときの本来の目的に基づいて正確にターゲットを指定するには、その*Interactionsourcepressed*れたイベントまたは*InteractionSourceReleased*入力イベントからの履歴ソースの発生元またはヘッドポーズを使用する必要があります。
 
 ユーザーのヘッドまたはコントローラーの履歴リーダーデータを使用して、プレスまたはリリースを対象にすることができます。
-* ジェスチャまたはコントローラーの押下が発生した時点で、ユーザーが[どのように](gaze.md)しているかを**判断する**ために使用できます。
+* ジェスチャまたはコントローラーの押下が発生した時点で、[ユーザーがどの](gaze-and-commit.md)ようにしているかを**判断するため**に使用できます。
 
    ```cs
    void InteractionManager_InteractionSourcePressed(InteractionSourcePressedEventArgs args) {
@@ -319,7 +319,7 @@ InteractionManager.InteractionSourcePressed -= InteractionManager_InteractionSou
    }
    ```
 
-* モーションコントローラーの押下が発生した時点のソースは、ユーザーがコントローラーを指していた対象を**判別するため**に使用できます。  これは、押下を経験したコントローラーの状態になります。  コントローラー自体をレンダリングする場合は、グリップの原因ではなくポインターのポーズを要求できます。これにより、レンダリングされたコントローラーの自然なヒントをユーザーが考慮しているものからターゲットの射線にシュートすることができます。
+* モーションコントローラーの押下が発生した時点のソースは、ユーザーがコントローラーを指していた**対象を判別するため**に使用できます。  これは、押下を経験したコントローラーの状態になります。  コントローラー自体をレンダリングする場合は、グリップの原因ではなくポインターのポーズを要求できます。これにより、レンダリングされたコントローラーの自然なヒントをユーザーが考慮しているものからターゲットの射線にシュートすることができます。
 
    ```cs
    void InteractionManager_InteractionSourcePressed(InteractionSourcePressedEventArgs args)
@@ -398,10 +398,10 @@ void InteractionManager_InteractionSourceUpdated(InteractionSourceUpdatedEventAr
 
 ## <a name="high-level-composite-gesture-apis-gesturerecognizer"></a>高レベル複合ジェスチャ Api (GestureRecognizer)
 
-**名前空間:** *UnityEngine. XR*<br>
-**型**:*GestureRecognizer*、 *GestureSettings*、 *interactionsourcekind*
+**名前空間:** *UNITYENGINE. XR*<br>
+**型**: *GestureRecognizer*、 *GestureSettings*、 *interactionsourcekind*
 
-アプリでは、空間入力ソース、タップ、ホールド、操作、およびナビゲーションジェスチャに対する高レベルの複合ジェスチャを認識することもできます。 GestureRecognizer を使用して、[ハンド](gestures.md)[コントローラーとモーションコントローラー](motion-controllers.md)の両方でこれらの複合ジェスチャを認識できます。
+アプリでは、空間入力ソース、タップ、ホールド、操作、およびナビゲーションジェスチャに対する高レベルの複合ジェスチャを認識することもできます。 GestureRecognizer を使用して、[ハンド](gaze-and-commit.md#composite-gestures)[コントローラーとモーションコントローラー](motion-controllers.md)の両方でこれらの複合ジェスチャを認識できます。
 
 GestureRecognizer の各ジェスチャイベントは、イベントの発生時に、入力とターゲットのヘッドレイを提供します。 一部のイベントは、追加のコンテキスト固有の情報を提供します。
 
@@ -446,7 +446,7 @@ void Start()
 
 ### <a name="start-capturing-gestures"></a>ジェスチャのキャプチャを開始する
 
-既定では、 *GestureRecognizer*は、 *Startcapturinggestures ()* が呼び出されるまで、入力を監視しません。 Stopcapturinggestures () が*処理され*たフレームの前に入力が実行された場合、 *Stopcapturinggestures ()* が呼び出された後にジェスチャイベントが生成される可能性があります。 *GestureRecognizer*は、ジェスチャが実際に発生した previou フレーム中にオンまたはオフになったかどうかを記憶します。そのため、このフレームのターゲット設定に基づいてジェスチャの監視を開始および停止することができます。
+既定では、 *GestureRecognizer*は、 *Startcapturinggestures ()* が呼び出されるまで、入力を監視しません。 Stopcapturinggestures () が*処理されたフレーム*の前に入力が実行された場合、 *Stopcapturinggestures ()* が呼び出された後にジェスチャイベントが生成される可能性があります。 *GestureRecognizer*は、ジェスチャが実際に発生した previou フレーム中にオンまたはオフになったかどうかを記憶します。そのため、このフレームのターゲット設定に基づいてジェスチャの監視を開始および停止することができます。
 
 ```cs
 recognizer.StartCapturingGestures();
@@ -490,8 +490,8 @@ void OnDestroy()
 
 スローを実装する方法の例については、[こちら](https://github.com/keluecke/MixedRealityToolkit-Unity/blob/master/External/Unitypackages/ThrowingStarter.unitypackage)を参照してください。 このサンプルは、次の4つのガイドラインに従います。
 * **位置ではなく、コントローラーの*ベロシティ*を使用**します。 Windows の11月の更新プログラムでは、 [' ' 概算 ' ' 位置追跡状態](motion-controllers.md#controller-tracking-state)での動作の変更が導入されました。 この状態になっている場合、コントローラーに関する速度情報は、高い精度であると考えられている限り、継続的に報告されます。これは、位置が高精度のままである場合もあります。
-* **コントローラーの*角速度*を組み込み**ます。 このロジックはすべて、上記の`throwing.cs`リンクされ`GetThrownObjectVelAngVel`たパッケージ内の静的メソッドのファイルに含まれています。
-   1. 角速度が節約であるため、スローされたオブジェクトは、スローの時点と同じ角度速度を維持する必要があります。`objectAngularVelocity = throwingControllerAngularVelocity;`
+* **コントローラーの*角速度*を組み込み**ます。 このロジックはすべて、上記のリンクされたパッケージ内の `GetThrownObjectVelAngVel` 静的メソッドの `throwing.cs` ファイルに含まれています。
+   1. 角速度が節約の場合、スローされたオブジェクトは、スローの時点と同じ角度速度を維持する必要があります `objectAngularVelocity = throwingControllerAngularVelocity;`。
    2. スローされたオブジェクトの質量の中心がグリップの原因ではない可能性があるため、ユーザーの参照フレーム内のコントローラーの速度が異なる場合があります。 この方法で発生したオブジェクトのベロシティの部分は、コントローラーの原点を中心としてスローされたオブジェクトの質量の中心となる瞬間流速度です。 この接線速度は、コントローラーの原点と、スローされたオブジェクトの質量の中心との距離を表すベクトルを使用して、コントローラーの角速度のクロス積です。
     
       ```cs
@@ -499,7 +499,7 @@ void OnDestroy()
       Vector3 tangentialVelocity = Vector3.Cross(throwingControllerAngularVelocity, radialVec);
       ```
    
-   3. したがって、スローされたオブジェクトの合計速度は、コントローラーのベロシティとこの接線速度の合計になります。`objectVelocity = throwingControllerVelocity + tangentialVelocity;`
+   3. したがって、スローされたオブジェクトの合計速度は、コントローラーのベロシティとこの接線流速度の合計になります。 `objectVelocity = throwingControllerVelocity + tangentialVelocity;`
 
 * **速度を適用する*時間*に細心の注意を**払ってください。 ボタンが押されると、そのイベントが Bluetooth 経由でオペレーティングシステムに20ミリ秒になるまでに最大の時間がかかることがあります。 これは、コントローラーの状態の変化をポーリングしたときに、押されていない状態や押されていない状態の変化をポーリングした場合に、そのコントローラーの状態が変更される前に発生します。 さらに、ポーリング API によって提示されるコントローラーは、フレームが表示されるときに発生する可能性があることを反映するためにフォワード予測が行われます。これは、今後20ミリ秒される可能性があります。 これは、保持されたオブジェクトを*レンダリング*する場合に適していますが、ユーザーがスローをリリースした瞬間の軌道を計算するときに、オブジェクトを*ターゲット*にするための時間の問題が複雑になります。 幸いにも、11月の更新プログラムでは、 *Interactionsourcepressed*または*InteractionSourceReleased*のような Unity イベントが送信されたときに、ボタンが実際に押されたとき、または解放されたときの履歴の表示データが状態に含まれています。  スロー中に正確なコントローラーレンダリングとコントローラーターゲットを取得するには、必要に応じて、ポーリングとイベントを正しく使用する必要があります。
    * コントローラーが各フレームを**レンダリング**する場合、アプリは、現在のフレームの photon 時間に合わせて、コントローラーの*オブジェクト*を前方予測コントローラーに配置する必要があります。  このデータは、XR のような Unity ポーリング Api から取得し *[ます。InputTracking。 GetLocalPosition](https://docs.unity3d.com/ScriptReference/XR.InputTracking.GetLocalPosition.html)* または *[XR。付い.GetCurrentReading を入力し](https://docs.unity3d.com/ScriptReference/XR.WSA.Input.InteractionManager.GetCurrentReading.html)* ます。
@@ -519,15 +519,15 @@ void OnDestroy()
 
 詳細なカスタマイズ例が記載されたステップバイステップのチュートリアルは、Mixed Reality Academy でご利用いただけます。
 
-- [MR 入力 211:ジェスチャ](holograms-211.md)
-- [MR 入力 213:モーション コントローラー](mixed-reality-213.md)
+- [MR 入力 211: ジェスチャ](holograms-211.md)
+- [MR 入力 213: モーションコントローラー](mixed-reality-213.md)
 
-[![MR 入力 213-モーションコントローラー](images/mr213-main-600px.jpg)](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-213)<br>
+[![MR 入力 213-Motion controller](images/mr213-main-600px.jpg)](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-213)<br>
 *MR 入力 213-モーションコントローラー*
 
 ## <a name="see-also"></a>関連項目
 
-* [ジェスチャ](gestures.md)
+* [頭の視線入力とコミット](gaze-and-commit.md)
 * [モーション コントローラー](motion-controllers.md)
 
 

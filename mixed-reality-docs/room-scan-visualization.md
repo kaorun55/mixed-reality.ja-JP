@@ -5,13 +5,13 @@ author: mattzmsft
 ms.author: alexpf
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality、アプリパターン、設計、HoloLens、ルームスキャン、空間マッピング、surface 再構築、メッシュ
-ms.openlocfilehash: 09df4464ea4dac01dfad637886b07b861f468d4d
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+keywords: Windows Mixed Reality、アプリパターン、設計、HoloLens、ルームスキャン、空間マッピング、メッシュ
+ms.openlocfilehash: bdb070407f27d04046bd022894c7a8a01b9658d1
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829916"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437516"
 ---
 # <a name="room-scan-visualization"></a>ルームスキャンの視覚化
 
@@ -93,6 +93,6 @@ ms.locfileid: "66829916"
 このメソッドの優れたケースは、ホログラムがオブジェクトの移動と対話することが予想される場合です。たとえば、holographic 自動車では、床の上のドライブが、開いているか閉じているかに応じて、ドアに正しく入る必要があります。
 
 ## <a name="see-also"></a>関連項目
-* [空間マッピングの設計](spatial-mapping-design.md)
+* [空間マッピング](spatial-mapping.md)
 * [座標系](coordinate-systems.md)
 * [立体音響の設計](spatial-sound-design.md)

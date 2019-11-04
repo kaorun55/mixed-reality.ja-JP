@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: デプロイ、unity、visual studio、HoloLens、HoloLens 2、イマーシブヘッドセット
-ms.openlocfilehash: b2c345a8cc9bddcbc447531eb5f6cdacc62f2e98
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: f897c9280505b1e84f8e6342729f1598d4b2f559
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522313"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436966"
 ---
 # <a name="best-practices-for-working-with-unity-and-visual-studio"></a>Unity と Visual Studio を使用するためのベストプラクティス
 
@@ -35,7 +35,7 @@ Unity での .NET スクリプティングバックエンドのサポートは�
 
 ## <a name="visual-studio-tools-for-unity"></a>Visual Studio Tools for Unity
 
-ダウンロード[Visual Studio Tools for Unity](https://docs.microsoft.com/en-us/visualstudio/cross-platform/getting-started-with-visual-studio-tools-for-unity?view=vs-2019)
+ダウンロード[Visual Studio Tools for Unity](https://docs.microsoft.com/visualstudio/cross-platform/getting-started-with-visual-studio-tools-for-unity?view=vs-2019)
 
 **Visual Studio Tools for Unity の利点**
 * ブレークポイントを配置し、変数や複雑な式を評価することで、Visual Studio から Unity のエディター内再生モードをデバッグします。

@@ -1,17 +1,17 @@
 ---
 title: Unity Visual Studio ソリューションのエクスポートとビルド
 description: この記事では、Visual Studio でビルドおよびデプロイできるように、Unity からの mixed reality プロジェクトをエクスポートする方法について説明します。
-author: ''
+author: mattzmsft
 ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: unity、visual studio、エクスポート、ビルド、配置
-ms.openlocfilehash: 68c86fdfe0e589536dafe2bf53c7d4e5dffcc514
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 752a9dd002d27d24d9b80a1a97cb07a44237b9e0
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63525833"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435566"
 ---
 # <a name="exporting-and-building-a-unity-visual-studio-solution"></a>Unity Visual Studio ソリューションのエクスポートとビルド
 
@@ -19,30 +19,30 @@ ms.locfileid: "63525833"
 
 ## <a name="how-to-export-from-unity"></a>Unity からエクスポートする方法
 
-![Unity のビルド設定](images/unitybuildsettings-300px.png)<br>
+Unity ビルド設定を ![](images/unitybuildsettings-300px.png)<br>
 *Unity のビルド設定*
 
-1. Unity からプロジェクトをエクスポートする準備ができたら、[**ファイル**] メニューを開き、[**ビルドの設定**] を選択します。
+1. Unity からプロジェクトをエクスポートする準備ができたら、 **[ファイル]** メニューを開き、 **[ビルドの設定]** を選択します。
 2. [**開い**ているシーンの追加] をクリックして、ビルドにシーンを追加します。
-3. [**ビルドの設定**] ダイアログで、HoloLens をエクスポートする次のオプションを選択します。
-   * **プラットフォーム:**  *ユニバーサル Windows プラットフォーム* を必ず選択して **スイッチ プラットフォーム** 選択を有効にします。
-   * **SDK:**  *ユニバーサル 10*します。
-   * **UWP のビルドの種類:**  *D3D*します。
-4. **省略可能**:**Unity C#プロジェクト:** た.
+3. **[ビルドの設定]** ダイアログで、HoloLens をエクスポートする次のオプションを選択します。
+   * **Platform:** *ユニバーサル Windows プラットフォーム*、選択した内容を有効にするには、 **[プラットフォームの切り替え]** を選択してください。
+   * **SDK:** *Universal 10*。
+   * **UWP ビルドの種類:** *D3D*。
+4. **省略可能**: **Unity C#プロジェクト:** オン。
 
 >[!NOTE]
 >このチェックボックスをオンにすると、次のことができます。
 >* Visual Studio リモートデバッガーでアプリをデバッグします。
 >* WinRT Api に IntelliSense をC#使用しながら、Unity プロジェクトのスクリプトを編集します。
 
-5. [**ビルドの設定...** ] ウィンドウで、[プレーヤーの**設定**] を開きます。
+5. **[ビルドの設定...]** ウィンドウで、プレーヤーの **[設定]** を開きます。
 6. [ユニバーサル Windows プラットフォーム] タブ**の設定**を選択します。
-7. [ **XR Settings** ] グループを展開します。
-8. [ **XR の設定**] セクションで、[**サポートさ**れている仮想 reality] チェックボックスをオンにして、新しい**仮想デバイス**の一覧を追加し、 **"Windows Mixed reality"** がサポートされているデバイスとして表示されていることを確認します。
+7. **[XR Settings]** グループを展開します。
+8. **[XR の設定]** セクションで、 **[サポートさ]** れている仮想 reality チェックボックスをオンにして、新しい**仮想デバイス**の一覧を追加し、 **"Windows Mixed reality"** がサポートされているデバイスとして表示されていることを確認します。
 9. [ビルドの**設定**] ダイアログに戻ります。
-10. [**ビルド**] を選択します。
+10. **[ビルド]** を選択します。
 11. 表示された [エクスプローラー] ダイアログボックスで、Unity のビルド出力を保持する新しいフォルダーを作成します。 一般に、"App" というフォルダーに名前を指定します。
-12. 新しく作成したフォルダーを選択し、[**フォルダーの選択**] をクリックします。
+12. 新しく作成したフォルダーを選択し、 **[フォルダーの選択]** をクリックします。
 13. Unity のビルドが完了すると、Windows エクスプローラーウィンドウが開き、プロジェクトのルートディレクトリが表示されます。 新しく作成したフォルダーに移動します。
 14. このフォルダー内にある生成された Visual Studio ソリューションファイルを開きます。
 
@@ -66,6 +66,6 @@ Unity からアプリC#をエクスポートするときに [プロジェクト]
 
 上記の一覧は、Visual Studio プロジェクトを生成する必要がある一般的なトリガーのサブセットです。 一般に、Visual Studio 内から .cs ファイルを編集する場合、Unity 内からプロジェクトを再生成する必要はありません。
 
-## <a name="troubleshooting"></a>トラブルシューティング
+## <a name="troubleshooting"></a>[トラブルシューティング]
 
 .Cs ファイルの編集が Visual Studio プロジェクトで認識されていない場合は、Unity の [ビルド] メニュー C#から VS プロジェクトを生成するときに、"unity プロジェクト" がオンになっていることを確認してください。

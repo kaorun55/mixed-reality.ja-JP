@@ -6,12 +6,12 @@ ms.author: yabahman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: WebVR, WebXR, WinMR, WebAR, web vr, web xr, web mr, web ar, 360, 360 ビデオ, 360 ビデオ, 360 写真, 360 写真, 360 コンテンツ, イマーシブ web, immersiveweb, IW
-ms.openlocfilehash: fab17f4dcecc34d8f1ca4836dce6de90522899cd
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 87805d2c40e9e63cdf3e432189b9deb7d575a380
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63548760"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437203"
 ---
 # <a name="using-webvr-in-microsoft-edge-with-windows-mixed-reality"></a>Microsoft Edge での WebVR と Windows Mixed Reality の使用
 
@@ -25,14 +25,14 @@ WebVR API は、HMD のデータをページに提供します。これを使用
 
 イマーシブヘッドセットの WebVR コンテンツにアクセスする手順については、「[ユーザーズガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/webvr)」を参照してください。
 
-## <a name="see-also"></a>関連項目
-* [WebVR 情報](http://webvr.info)
+## <a name="see-also"></a>参照
+* [WebVR 情報](https://webvr.info)
 * [WebVR 仕様](https://w3c.github.io/webvr/)
 * [WebVR API](https://msdn.microsoft.com/library/mt806281(v=vs.85).aspx)
 * [WebGL API](https://msdn.microsoft.com/library/bg182648(v=vs.85).aspx)
 * [ゲームパッド API](https://msdn.microsoft.com/library/dn743630(v=vs.85).aspx)と[ゲームパッド拡張機能](https://w3c.github.io/gamepad/extensions.html)
 * [WebGL での失われたコンテキストの処理](https://www.khronos.org/webgl/wiki/HandlingContextLost)
-* [Pointerlock ロック](http://www.w3.org/TR/pointerlock/)
+* [Pointerlock ロック](https://www.w3.org/TR/pointerlock/)
 * [glTF](https://www.khronos.org/gltf)
 * [Babylon を使用して WebVR を有効にする](https://docs.microsoft.com/windows/uwp/get-started/adding-webvr-to-a-babylonjs-game)
 

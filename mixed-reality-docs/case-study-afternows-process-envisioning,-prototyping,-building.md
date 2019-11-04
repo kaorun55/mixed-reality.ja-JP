@@ -1,19 +1,19 @@
 ---
-title: ケーススタディ-現在のプロセス構想、プロトタイプ作成、ビルド
+title: ケーススタディ-AfterNow のプロセス
 description: AfterNow のプロセス構想、プロトタイプ作成、ビルド
 author: rwinj
 ms.author: randyw
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、AfterNow、構想、プロトタイプ作成、ビルド
-ms.openlocfilehash: 778ce2ff8ff69a5cdff1cc22b192100a9ab33347
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: d555c61c5c8ba917c99a94da594551658a717e70
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63523482"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436938"
 ---
-# <a name="case-study---afternows-process---envisioning-prototyping-building"></a>ケーススタディ-現在のプロセス構想、プロトタイプ作成、ビルド
+# <a name="case-study---afternows-process"></a>ケーススタディ-AfterNow のプロセス
 
 [ここ](https://www.afternow.io/)では、お客様と協力して、お客様のアイデアと aspirations を、市場に向けた完全に運用可能な具体的な製品とエクスペリエンスに変えることができます。 しかし、1行のコードを記述する前に、構想と呼ばれるプロセスを使用してブループリントを作成します。
 
@@ -104,7 +104,7 @@ ms.locfileid: "63523482"
 
 ストーリーボードは30分かかります。 ここでは、8からのアイデアを最適なものにして、3つのパネルのストーリーボードを作成します。
 
-![ストーリーボードのスケッチ](images/sketching-storyboards-640px.png)<br>
+ストーリーボードの ![スケッチ](images/sketching-storyboards-640px.png)<br>
 *ストーリーボードのスケッチ*
 
 ## <a name="day-3---decide"></a>日 3-決定

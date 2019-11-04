@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b29f27284c352d27fb1d4d4de701a1ebc2a7cd1c
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+ms.openlocfilehash: 141aa90f2bf5d90527a0fe1e6a812c1ce56bd0eb
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67328092"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437793"
 ---
 # <a name="photon-correct-me-if-im-wrong"></a>Photon (間違っている場合は修正)
 
@@ -29,7 +29,7 @@ ms.locfileid: "67328092"
 
 ### <a name="setting-up-photon"></a>Photon の設定
 
-1. [Photon](https://dashboard.photonengine.com/en-US/Account/SignUp)アカウントを設定します。 これを行うには、電子メールを送信し、いくつかの検証手順を実行します。
+1. [Photon](https://dashboard.photonengine.com//Account/SignUp)アカウントを設定します。 これを行うには、電子メールを送信し、いくつかの検証手順を実行します。
    
 
 ![Module2Chapter4step1im](images/Module2chapter4step1im.png)
@@ -62,7 +62,7 @@ ms.locfileid: "67328092"
 
 ![Module2Chapter4step4im](images/Module2chapter4step5im.png)
 
-> 注:IP アドレスについて質問がある場合、またはその他の同様の質問がある場合は、ツールバーでほとんどの情報を確認できます (次の図を参照)。
+> 注: IP アドレスについて質問がある場合、またはその他の同様の質問がある場合は、ツールバーでほとんどの情報を確認できます (次の図を参照)。
 >
 > ![Module2Chapter4step4im](images/Module2chapter4noteim.png)
 
@@ -86,7 +86,7 @@ ms.locfileid: "67328092"
 
 9. 新しい unity プロジェクトを作成します。 Unity Hub を開き、[new] \ (新規 \) をクリックします。 "HLSharingProject" という名前を指定します。 [作成] をクリックします。 
 
-   > 付箋コンピューターの速度によっては、読み込みに最大2分かかることがあります。
+   > 注: コンピューターの速度によっては、読み込みに最大2分かかることがあります。
 
 ![Module2Chapter4step9im](images/Module2chapter4step9im.png)
 
@@ -140,7 +140,7 @@ ms.locfileid: "67328092"
 
 ![Module2Chapter4step19im](images/Module2chapter4step19im.png)
 
-> 付箋また、[シーン/HLSharedProjectMain] の横にあるチェックボックスもオンになっていることを確認します。
+> 注: [シーン/HLSharedProjectMain] の横にあるチェックボックスもオンになっていることを確認します。
 
 20. [インスペクター] パネルの [発行の設定] で、[機能] まで下にスクロールし、次のチェックボックスのみがマークされていることを確認します。
 
@@ -158,7 +158,7 @@ ms.locfileid: "67328092"
 
 ![Module2Chapter4step22im](images/Module2chapter4step21im.PNG)
 
-> 付箋Prefab をクリックするとポップアップが表示され、TMP Essentials について質問されることがあります。 必要に応じて [Import TMP Essentials] をクリックします。
+> 注: prefab をクリックするとポップアップが表示され、TMP Essentials について質問されることがあります。 必要に応じて [Import TMP Essentials] をクリックします。
 >
 > ![Module2Chapter4note3im](images/Module2chapter4note3im.PNG)
 

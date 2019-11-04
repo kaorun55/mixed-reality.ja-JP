@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: galaxy エクスプローラー、ケーススタディ、プロジェクト、サンプル
-ms.openlocfilehash: a33a1541ef97298facfa9b0ef2d126654dd02f51
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 11cb2ad17f42fe49d84a61480dc8d43698386a1c
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63526537"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435403"
 ---
 # <a name="galaxy-explorer"></a>Galaxy Explorer
 
@@ -41,43 +41,43 @@ Microsoft HoloLens コミュニティは、holographic computing が世界を変
 
 24時間の Twitter ポーリングの後、Galaxy エクスプローラーは受賞したアイデアでした。 設計者、アーティスト、開発者の HoloLens 開発チームは、Galaxy エクスプローラーを構築し、すべてのお客様にこの旅に参加するよう招待しています。 次のビデオでは、開発プロセスに従うことができます。
 
-## <a name="ep-1-trust-the-process"></a>Ep 1:プロセスを信頼する
+## <a name="ep-1-trust-the-process"></a>Ep 1: プロセスを信頼します
 
 >[!VIDEO https://www.youtube.com/embed/rIX2XrRQgDg]
 
 エピソード1では、開発チームがクリエイティブなプロセス (ブレインストーミング、concepting、プロトタイプ作成の決定) を開始します。
 
-## <a name="ep-2-lets-do-this"></a>Ep 2:こうしましょう
+## <a name="ep-2-lets-do-this"></a>Ep 2: 次の操作を行います。
 
 >[!VIDEO https://www.youtube.com/embed/q1ee8a-84Ro]
 
 エピソード2では、開発チームは、ハードな問題を解決し、さらに追求するアイデアを特定するために、プロトタイプ作成フェーズを完了します。
 
-## <a name="ep-3-laying-foundations"></a>Ep 3:基礎
+## <a name="ep-3-laying-foundations"></a>Ep 3: 基礎をレイアウトする
 
 >[!VIDEO https://www.youtube.com/embed/fUqni6C4nmo]
 
 エピソード3では、チームは開発の最初の週を開始します。プランの作成、運用コードの記述、アートアセットの作成、およびユーザーインターフェイスの作成を行います。
 
-## <a name="ep-4-make-it-real"></a>Ep 4:実際に作成する
+## <a name="ep-4-make-it-real"></a>Ep 4: 実際に作成する
 
 >[!VIDEO https://www.youtube.com/embed/ePA6hcaqoug]
 
 エピソード4では、チームが開発に深くダイブをもたらし、科学的なデータを取り込んで、レンダリングプロセスを最適化し、空間マッピングを組み込むことができます。
 
-## <a name="ep-5-see-what-happens"></a>Ep 5:動作を確認する
+## <a name="ep-5-see-what-happens"></a>Ep 5: 何が起こるかを確認する
 
 >[!VIDEO https://www.youtube.com/embed/Up1EDRrCrho]
 
 エピソード5では、開発チームはアプリをテストし、修正する必要があるバグを検索して、エクスペリエンスを向上させる必要があります。
 
-## <a name="ep-6-coming-to-life"></a>Ep 6:有効期間中
+## <a name="ep-6-coming-to-life"></a>Ep 6: 有効期間中
 
 >[!VIDEO https://www.youtube.com/embed/sMuJFKbylY4]
 
 エピソード6では、チームは開発の最終週を終了し、2週間のポーランドの作業を準備し、実行した進行状況を反映しています。
 
-## <a name="ep-7-the-final-product"></a>Ep 7:最終的な製品
+## <a name="ep-7-the-final-product"></a>Ep 7: 最終的な製品
 
 >[!VIDEO https://www.youtube.com/embed/HsnH2Q7HxOA]
 
@@ -89,10 +89,10 @@ Microsoft HoloLens コミュニティは、holographic computing が世界を変
 
 ## <a name="meet-the-team"></a>チームを満たす
 
-![Galaxy エクスプローラー開発チーム](images/syiteampic.jpg)<br>
+![Galaxy Explorer 開発チーム](images/syiteampic.jpg)<br>
 *Galaxy エクスプローラー開発チーム*
 
-適切なチームを構築することは、可能な最も重要な投資の1つです。 この開発モデルに慣れている方は、game studio と同じように整理することにしました。 範囲を制御するには、11コアチームのメンバーを選択しました。 (3 月30日にビルドする前にクールを作成する)、期間が決まっています。
+適切なチームを構築することは、可能な最も重要な投資の1つです。 この開発モデルに慣れている方は、game studio と同じように整理することにしました。 範囲を制御するために、11のコアチームメンバーを選択しました (2016 年3月30日にビルドする前にクールを作成する)。
 
 このプロジェクトでは、プロデューサー、Jessica が計画を実施し、進行状況を確認して、日常業務を維持しています。 ピンク色の髪の人です。 デザインディレクター (Jon) と上級デザイナー (Peter) がありました。 Galaxy エクスプローラーのクリエイティブビジョンが保持されています。 一番上の行にある [Jon] は、右から2番目の列です。
 

@@ -6,27 +6,27 @@ ms.author: jlyons
 ms.date: 08/01/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: c3e31cdb5acf35ecc3101d3cf359e40771cc8cbd
-ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
+ms.openlocfilehash: 2827676ee95daf6a24ad11fceaade839f579cff4
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122077"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73434339"
 ---
 # <a name="holographic-remoting-player"></a>Holographic リモート処理プレーヤー
 
 >[!IMPORTANT]
->HoloLens 2 の Holographic リモート処理は、メジャーバージョンの変更です。 [Hololens のホストアプリケーション **(1 つ目の世代)** ](add-holographic-remoting.md)では 、NuGet パッケージバージョン1.x とホストアプリケーションを使用する必要があります。 [ **hololens 2**で](holographic-remoting-create-host.md)は2.x を使用する必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens 1 と互換性がないことを意味します。
+>HoloLens 2 の Holographic リモート処理は、メジャーバージョンの変更です。 [Hololens のホストアプリケーション **(1 つ目の世代)** ](add-holographic-remoting.md)では 、NuGet パッケージバージョン1.x とホストアプリケーションを使用する必要があります。 [ **hololens 2**で](holographic-remoting-create-host.md)は 2.x**を使用する**必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens (第1世代) と互換性がないことを意味します。
 
 Holographic Remoting Player は、Holographic リモート処理をサポートする PC アプリやゲームに接続するコンパニオンアプリです。 Holographic リモート処理では、Wi-fi 接続を使用して、PC から Microsoft HoloLens にコンテンツを Holographic します。
 
 Holographic リモート処理プレーヤーは、特に Holographic リモート処理をサポートするように設計された PC アプリでのみ使用できます。
 
-Holographic リモート処理プレーヤーは、HoloLens と HoloLens 2 の両方で使用できます。  HoloLens で Holographic リモート処理をサポートする PC アプリは、HoloLens 2 での Holographic リモート処理をサポートするように更新する必要があります。 サポートされているバージョンについて不明な点がある場合は、アプリプロバイダーにお問い合わせください。
+Holographic リモート処理プレーヤーは、HoloLens (第1世代) と HoloLens 2 の両方で使用できます。  HoloLens で Holographic リモート処理をサポートする PC アプリは、HoloLens 2 での Holographic リモート処理をサポートするように更新する必要があります。 サポートされているバージョンについて不明な点がある場合は、アプリプロバイダーにお問い合わせください。
 
 ## <a name="connecting-to-the-holographic-remoting-player"></a>Holographic リモート処理プレーヤーに接続する
 
-アプリの指示に従って、Holographic リモート処理プレーヤーに接続します。 HoloLens デバイスの IP アドレスを入力する必要があります。これは、次のように、リモート処理プレーヤーのメイン画面で確認できます。
+アプリの指示に従って、Holographic リモート処理プレーヤーに接続します。 次のように、HoloLens デバイスの IP アドレスを入力する必要があります。これは、リモート処理プレーヤーのメイン画面で確認できます。
 
 ![Holographic リモート処理プレーヤー](images/holographicremotingplayer.png)
 
@@ -55,12 +55,12 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 * **Render** -リモートプレーヤーが最後の1秒間にレンダリングしたフレームの数。 これは、ネットワーク経由で到着したフレームの数とは関係がありません (**ビデオフレーム**を参照)。 さらに、レンダリングされたフレーム間の平均/最大レンダリングデルタ時間 (ミリ秒) が表示されます。
 
 * **ビデオフレーム**-表示される最初の数字はスキップされたビデオフレーム、2つ目はビデオフレームを再利用し、3番目はビデオフレームを受信します。 すべての数値は、最後の1秒間のカウントを表します。
-    * ```Received frames```最後の1秒間に到着したビデオフレームの数です。 通常の条件下では、これは60になりますが、これはネットワークの問題のためにフレームがドロップされたか、またはリモート/ホスト側が想定されたレートでフレームを生成しないことを示すインジケーターです。
-    * ```Reused frames```最後の1秒間に複数回使用されたビデオフレームの数です。 たとえば、ビデオフレームが遅れると、プレーヤーのレンダリングループではフレームがレンダリングされますが、前のフレームで既に使用されていたビデオフレームを*再利用*する必要があります。
-    * ```Skipped frames```プレーヤーのレンダリングループによって使用されていないビデオフレームの数です。 たとえば、ネットワークのジッターでは、到着するビデオフレームが均等に分散されないようにすることができます。つまり、遅延が発生し、他のユーザーが時間内に到着すると、60Hz で実行したときに16.66 ミリ秒のデルタがなくなります。 これにより、プレーヤーのレンダーループの2つのタイマー刻みの間に複数のフレームが到着する可能性があります。 この場合、プレーヤーは、常に最新の受信したビデオフレームを表示すると思われるため、1つ以上のフレームを*スキップ*します。
+    * ```Received frames``` は、最後の1秒間に到着したビデオフレームの数です。 通常の条件下では、これは60になりますが、これはネットワークの問題のためにフレームがドロップされたか、またはリモート/ホスト側が想定されたレートでフレームを生成しないことを示すインジケーターです。
+    * ```Reused frames``` は、最後の1秒間に複数回使用されたビデオフレームの数です。 たとえば、ビデオフレームが遅れて到着した場合でも、プレーヤーのレンダリングループはフレームをレンダリングしますが、前のフレームで既に使用されていたビデオフレームを*再利用*する必要があります。
+    * ```Skipped frames``` は、プレーヤーのレンダリングループによって使用されていないビデオフレームの数です。 たとえば、ネットワークのジッターでは、受信するビデオフレームが均等に分散されないようにすることができます。 たとえば、何らかの遅延が発生し、他のユーザーが時間内に到着した場合、60Hz で実行したときに16.66 ミリ秒のデルタが得られなくなります。 プレーヤーのレンダーループの2つのタイマー刻みの間に複数のフレームが到着する可能性があります。 この場合、プレーヤーは、常に最新の受信したビデオフレームを常に表示することが想定されているため、1つ以上のフレームを*スキップ*します。
 
     >[!NOTE]
-    >ネットワークのジッターを接続する場合、通常はスキップされ、再利用されるフレームはほぼ同じです。 これに対して、スキップされたフレームのみ表示する場合、このインジケーターは、プレーヤーがターゲットフレームレートに達していないことを示します。 この場合は、問題を診断する際の最大レンダリングデルタ時間に注意する必要があります。
+    >ネットワークのジッターを使用する場合、スキップされたフレームと再利用されるフレームは通常、ほぼ同じです。 これに対して、[スキップされたフレーム] のみが表示される場合は、プレーヤーがターゲットフレームレートにヒットしないことを示すインジケーターです。 この場合は、問題を診断するときに、レンダーデルタの最大時間を監視する必要があります。
 
 * **ビデオフレームのデルタ**-最後の1秒間に受信したビデオフレーム間の最小/最大デルタです。 通常、この数は、ネットワークのジッターに起因する問題が発生した場合に、スキップまたは再利用されたフレームと関連付けられます。
 * **Latency** -最後の1秒間の平均待機時間 (ミリ秒)。 このコンテキストでのターンアラウンドとは、hololens の待機/センサーデータを HoloLens からリモート/ホスト側に送信するまでの時間を意味します。
@@ -75,8 +75,8 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 * GeForce GTX 970 または AMD Radeon R9 290 以上のグラフィックスカードをお勧めします。
 * ワイヤレスホップの数を減らすには、コンピューターをイーサネット経由でネットワークに接続することをお勧めします。
 
-## <a name="see-also"></a>関連項目
-* [HoloLens (第1世代):Holographic リモート処理の追加](add-holographic-remoting.md)
-* [HoloLens 2:Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
-* [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/en-us/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
+## <a name="see-also"></a>参照
+* [HoloLens (第1世代): Holographic リモート処理の追加](add-holographic-remoting.md)
+* [HoloLens 2: Holographic リモート処理ホストアプリの作成](holographic-remoting-create-host.md)
+* [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)

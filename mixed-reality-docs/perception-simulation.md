@@ -6,12 +6,12 @@ ms.author: pbarnett
 ms.date: 04/26/2019
 ms.topic: article
 keywords: HoloLens、シミュレーション、テスト
-ms.openlocfilehash: 8152181bdbe8c83d2b706b34f1f2fb5d51f4c880
-ms.sourcegitcommit: d8700260f349a09c53948e519bd6d8ed6f9bc4b4
+ms.openlocfilehash: 503533bc5a2e9307b7c5217632d42670285aac0a
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67414531"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437548"
 ---
 # <a name="perception-simulation"></a>認識シミュレーション
 
@@ -24,21 +24,21 @@ ms.locfileid: "67414531"
 ## <a name="setting-up-a-visual-studio-project-for-perception-simulation"></a>認識シミュレーションのための Visual Studio プロジェクトの設定
 1. 開発用 PC に[HoloLens エミュレーターをインストール](install-the-tools.md)します。 エミュレーターには、認識シミュレーションに使用するライブラリが含まれています。
 2. 新しい Visual Studio C#デスクトッププロジェクトを作成します (コンソールプロジェクトは、作業を開始するのに適しています)。
-3. 次のバイナリを参照としてプロジェクトに追加します (プロジェクト > 追加 > 参照...)。これらは、HoloLens 2 エミュレーターの% **ProgramFiles (x86)% \ microsoft\\xde 10.0.18362.0**など、% ProgramFiles (x86)% \ microsoft xde\\(バージョン) で見つけることができます。  (注: バイナリは HoloLens 2 エミュレーターに含まれていますが、デスクトップ上の Windows Mixed Reality でも機能します)。ある. 認識シミュレーション用の PerceptionSimulationManager マネージC#ラッパー。
+3. 次のバイナリを参照としてプロジェクトに追加します (プロジェクト > 追加 > 参照...)。これらは、HoloLens 2 エミュレーターの% **ProgramFiles (x86)% \ microsoft xde\\10.0.18362.0**などの% ProgramFiles (x86)% \ microsoft xde\\(バージョン) で見つけることができます。  (注: バイナリは HoloLens 2 エミュレーターに含まれていますが、デスクトップ上の Windows Mixed Reality でも機能します)。ある. 認識シミュレーション用の PerceptionSimulationManager マネージC#ラッパー。
     b. PerceptionSimulationRest-HoloLens またはエミュレーターに対する web ソケット通信チャネルを設定するためのライブラリ。
     c. SimulationStream-シミュレーション用の共有型。
-4. 実装バイナリ PerceptionSimulationManager をプロジェクト a に追加します。 まず、これをバイナリとしてプロジェクトに追加します (プロジェクト > 追加 > 既存の項目...)。プロジェクトソースフォルダーにコピーしないように、リンクとして保存します。 ![PerceptionSimulationManager をリンク](images/saveaslink.png) b としてプロジェクトに追加します。 次に、ビルド時に出力フォルダーにコピーされていることを確認します。 これは、バイナリのプロパティシートにあります。 ![PerceptionSimulationManager を出力ディレクトリにコピーするようにマークします。](images/copyalways.png)
+4. 実装バイナリ PerceptionSimulationManager をプロジェクト a に追加します。 まず、これをバイナリとしてプロジェクトに追加します (プロジェクト > 追加 > 既存の項目...)。プロジェクトソースフォルダーにコピーしないように、リンクとして保存します。 PerceptionSimulationManager をリンクとしてプロジェクトに追加 ![b](images/saveaslink.png) ます。 次に、ビルド時に出力フォルダーにコピーされていることを確認します。 これは、バイナリのプロパティシートにあります。 PerceptionSimulationManager マークを付けて、出力ディレクトリにコピー ![](images/copyalways.png)
 5. アクティブソリューションプラットフォームを x64 に設定します。  (Configuration Manager を使用して、x64 用のプラットフォームエントリがまだ存在しない場合は作成します)。
 
 ## <a name="creating-an-iperceptionsimulation-manager-object"></a>IPerceptionSimulation Manager オブジェクトの作成
 
 シミュレーションを制御するには、IPerceptionSimulationManager オブジェクトから取得したオブジェクトに更新を発行します。 最初の手順では、そのオブジェクトを取得し、ターゲットデバイスまたはエミュレーターに接続します。 エミュレーターの IP アドレスを取得するには、[ツールバー](using-the-hololens-emulator.md)の [デバイスポータル] ボタンをクリックします。
 
-![デバイスポータルを開く](images/emulator-deviceportal.png)アイコン開いている**デバイスポータル**:エミュレーターで HoloLens OS の Windows デバイス ポータルを開きます。  Windows Mixed Reality の場合、この設定は、[デバイスポータルを有効にする] の下にある [Connect & Security] (セキュリティの更新) の下にある [設定] アプリで取得できます。  IP アドレスとポートの両方に注意してください。
+![デバイスポータルを開く アイコン](images/emulator-deviceportal.png) 開いている**デバイスポータル**: エミュレーターで HoloLens OS の Windows デバイスポータルを開きます。  Windows Mixed Reality の場合、この設定は、[デバイスポータルを有効にする] の下にある [Connect & Security] (セキュリティの更新) の下にある [設定] アプリで取得できます。  IP アドレスとポートの両方に注意してください。
 
 まず、RestSimulationStreamSink を呼び出して、RestSimulationStreamSink オブジェクトを取得します。 これは、http 接続を介して制御するターゲットデバイスまたはエミュレーターです。 コマンドは、デバイスまたはエミュレーターで実行されている[Windows デバイスポータル](using-the-windows-device-portal.md)に渡され、処理されます。 オブジェクトを作成するには、次の4つのパラメーターが必要です。
-* Uri uri-ターゲットデバイスの IP アドレス (例: "http://123.123.123.123" または "http://123.123.123.123:50080")
-* System .Net. NetworkCredential 資格情報-ターゲットデバイスまたはエミュレーターで[Windows デバイスポータル](using-the-windows-device-portal.md)に接続するためのユーザー名/パスワード。 ローカルアドレスを使用してエミュレーターに接続している場合 (例: 168. *.* *) 同じ PC で、すべての資格情報が受け入れられます。
+* Uri uri-ターゲットデバイスの IP アドレス (例: "https://123.123.123.123" または "https://123.123.123.123:50080")
+* System .Net. NetworkCredential 資格情報-ターゲットデバイスまたはエミュレーターで[Windows デバイスポータル](using-the-windows-device-portal.md)に接続するためのユーザー名/パスワード。 ローカルアドレスを使用してエミュレーターに接続している場合 (例: 168 *...* *) 同じ PC で、すべての資格情報が受け入れられます。
 * bool normal-通常の優先度の場合は True、低優先度の場合は false。 テストシナリオでは、通常、これを*true*に設定して、テストで制御を行うことができます。  エミュレーターと Windows Mixed Reality のシミュレーションでは、優先度の低い接続を使用します。  テストで優先度の低い接続も使用している場合は、最後に確立された接続が制御されます。
 * CancellationToken は、非同期操作を取り消すためのトークンです。
 
@@ -46,7 +46,7 @@ ms.locfileid: "67414531"
 
 ## <a name="control-the-simulated-human"></a>シミュレートされた人間を制御する
 
-IPerceptionSimulationManager には、ISimulatedHuman オブジェクトを返すヒューマンプロパティがあります。 シミュレートされた人間を制御するには、このオブジェクトに対して操作を実行します。 以下に例を示します。
+IPerceptionSimulationManager には、ISimulatedHuman オブジェクトを返すヒューマンプロパティがあります。 シミュレートされた人間を制御するには、このオブジェクトに対して操作を実行します。 次に、例を示します。
 
 ```
 manager.Human.Move(new Vector3(0.1f, 0.0f, 0.0f))
@@ -78,7 +78,7 @@ namespace ConsoleApplication1
                 {
                     sink = await RestSimulationStreamSink.Create(
                         // use the IP address for your device/emulator
-                        new Uri("http://169.254.227.115"),
+                        new Uri("https://169.254.227.115"),
                         // no credentials are needed for the emulator
                         new System.Net.NetworkCredential("", ""),
                         // normal priorty
@@ -134,7 +134,7 @@ namespace ConsoleApplication1
                 {
                     sink = await RestSimulationStreamSink.Create(
                         // use the IP address for your device/emulator
-                        new Uri("http://169.254.227.115"),
+                        new Uri("https://169.254.227.115"),
                         // no credentials are needed for the emulator
                         new System.Net.NetworkCredential("", ""),
                         // normal priorty
@@ -869,7 +869,7 @@ public interface ISimulatedHand
 
 SimulatedDevice に手が現在表示されているかどうかを取得します (この位置が、[ツール] で検出される位置にあるかどうか)。
 
-**PerceptionSimulation. ISimulatedHand. Ensurevisible**
+**PerceptionSimulation. ISimulatedHand. Ensurevisible\**
 
 SimulatedDevice に見えるようにハンドを移動します。
 

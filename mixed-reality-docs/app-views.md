@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: イマーシブビュー、2D ビュー、スレート、アプリ
-ms.openlocfilehash: 2cf65941616ac6906d40e4b4616311317ac705d3
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: a5b50df5be31d66a866e691d9e059bcf38672064
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63516925"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437017"
 ---
 # <a name="app-views"></a>アプリ ビュー
 
@@ -19,20 +19,20 @@ Windows アプリには、2種類のビュー、**イマーシブビュー** 、
 
 ## <a name="immersive-views"></a>イマーシブビュー
 
-イマーシブビューを使用すると、お客様のアプリは、ユーザーの周囲にホログラムを作成したり、仮想環境でユーザーをこちらしたりすることができます。 アプリがイマーシブビューで描画されている場合、複数のアプリの&mdash;ホログラムが同時に描画されることはありません。 アプリがユーザーのヘッド移動に合わせてシーンを[レンダリング](rendering.md)するパースペクティブを継続的に調整することにより、アプリでは、現実世界の固定されたポイントにとどまっている[世界中にロック](coordinate-systems.md)されたホログラムをレンダリングしたり、ユーザーがその内部で移動する位置。
+イマーシブビューを使用すると、お客様のアプリは、ユーザーの周囲にホログラムを作成したり、仮想環境でユーザーをこちらしたりすることができます。 アプリがイマーシブビューで描画されている場合、同時に他のアプリが描画されることはありません&mdash;複数のアプリからのホログラムは一緒に合成されません。 アプリがユーザーのヘッド移動に合わせてシーンを[レンダリング](rendering.md)するパースペクティブを継続的に調整することにより、アプリでは、現実世界の固定されたポイントにとどまっている[世界中にロック](coordinate-systems.md)されたホログラムをレンダリングしたり、ユーザーがその内部で移動する位置。
 
-![イマーシブビューでは、ホログラムを世界中に配置できます。](images/designoverview.jpg)<br>
+![イマーシブビューでは、ホログラムを世界中に配置できます。](images/designoverview-940px.jpg)<br>
 *イマーシブビューでは、ホログラムを世界中に配置できます。*
 
 [HoloLens](hololens-hardware-details.md)では、アプリはユーザーの実際の環境の上にホログラムをレンダリングします。 [Windows Mixed Reality のイマーシブヘッドセット](immersive-headset-hardware-details.md)では、ユーザーは実際の世界を見ることができないため、ユーザーに表示されるすべてのものをアプリでレンダリングする必要があります。
 
 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)(環境の周囲に配置した [スタート] メニューとホログラムを含む) は、イマーシブビューでは表示されません。 HoloLens では、イマーシブビューが表示されている間に発生するシステム通知は、Cortana によって音声でリレーされ、ユーザーは音声入力を使用して応答できます。
 
-イマーシブビューでは、すべての入力を処理することもアプリに任されています。 Windows Mixed Reality での入力は、[宝石](gaze.md)、[ジェスチャ](gestures.md)(HoloLens のみ)、[音声](voice-input.md)および[モーションコントローラー](motion-controllers.md) (イマーシブヘッドセットのみ) で構成されています。
+イマーシブビューでは、すべての入力を処理することもアプリに任されています。 Windows Mixed Reality での入力は、[宝石](gaze-and-commit.md)、[ジェスチャ](gaze-and-commit.md#composite-gestures)(HoloLens のみ)、[音声](voice-input.md)および[モーションコントローラー](motion-controllers.md) (イマーシブヘッドセットのみ) で構成されています。
 
 ## <a name="2d-views"></a>2D ビュー
 
-![Windows Mixed Reality ホームの周囲にレイアウトされた複数の2D ビュー](images/teleportation-640px.png)<br>
+Windows Mixed Reality ホーム](images/teleportation-940px.png) 周囲にレイアウトされた複数の2D ビュー ![<br>
 *Windows Mixed Reality ホームの周囲に2D ビューが配置された複数のアプリ*
 
 2D ビューを使用するアプリは、 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)("シェル" とも呼ばれます) に仮想スレートとして表示されます。これは、アプリランチャーと、ユーザーが世界中に配置したその他のホログラムと共にレンダリングされます。 ユーザーは、サイズに関係なく固定された解像度でも、このスレートを調整してスケールすることができます。 アプリの最初のビューが2D ビューの場合、2D コンテンツはアプリを起動するために使用されるものと同じスレートに収まるようになります。

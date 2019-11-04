@@ -6,12 +6,12 @@ ms.author: joekelly
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、空間サウンド、デザイン、スタイル
-ms.openlocfilehash: c758037300392d9365c16933677fb0f026976c2a
-ms.sourcegitcommit: c2a5bff423feba7d29d5431c870b6017c2fe1bc2
+ms.openlocfilehash: acc568eeb08d2a27574dcfbc9f132519e1e31843
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66750306"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438290"
 ---
 # <a name="spatial-sound-design"></a>空間サウンドのデザイン
 
@@ -21,7 +21,7 @@ ms.locfileid: "66750306"
 
 <br>
 
-> [!VIDEO https://www.youtube.com/embed/aB3TDjYklmo]
+<iframe width="940" height="530" src="https://www.youtube.com/embed/aB3TDjYklmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## <a name="device-support"></a>デバイスのサポート
 
@@ -100,7 +100,7 @@ ms.locfileid: "66750306"
 
 **オブジェクト検出とユーザーインターフェイス**
 
-オーディオキューを使用して、現在のビューを超えてユーザーの注意を促した場合、サウンドは、ステレオサウンドの上にある音で目立つようにする必要があります。また、その他の spatialized 音は、指向性オーディオキューからは聞こえない可能性があります。 ユーザーインターフェイスの要素 (メニューなど) に関連付けられているサウンドや音楽の場合は、サウンドエミッタをそのオブジェクトに接続する必要があります。 ステレオおよびその他の非位置オーディオ再生によって、ユーザーが spatialized の要素を見つけることが困難になる場合があります (上記を参照)。空間マスキングは避けてください。)
+オーディオキューを使用して、現在のビューを超えてユーザーの注意を促した場合、サウンドは、ステレオサウンドの上にある音で目立つようにする必要があります。また、その他の spatialized 音は、指向性オーディオキューからは聞こえない可能性があります。 ユーザーインターフェイスの要素 (メニューなど) に関連付けられているサウンドや音楽の場合は、サウンドエミッタをそのオブジェクトに接続する必要があります。 ステレオおよびその他の位置指定されていないオーディオ再生では、ユーザーが spatialized の要素を見つけることが困難になる可能性があります (上記の「空間マスクを使用しない」を参照)。
 
 **可能な限り標準3D サウンドに対する空間サウンドを使用する**
 

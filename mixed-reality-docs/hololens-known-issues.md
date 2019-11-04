@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/10/2019
 ms.topic: article
 keywords: トラブルシューティング、既知の問題、ヘルプ
-ms.openlocfilehash: 80bd7499c0075399e516648dd92b7515fdba753a
-ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
+ms.openlocfilehash: fe4e83764433cea5a772b26796d79ac156a59c5d
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122131"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73434260"
 ---
 # <a name="hololens-known-issues"></a>HoloLens の既知の問題
 
@@ -20,11 +20,11 @@ ms.locfileid: "70122131"
 ## <a name="unable-to-connect-and-deploy-to-hololens-through-visual-studio"></a>Visual Studio を使用して HoloLens に接続して展開できない
 
 >[!NOTE]
->最終更新日時:8/8 @ 5: 午後11時-Visual Studio は、この問題の修正を含む VS 2019 バージョン16.2 をリリースしました。 このエラーが発生しないように、この最新バージョンに更新することをお勧めします。
+>最終更新: 8/8 @ 5: 午後11時-Visual Studio は、この問題の修正を含む VS 2019 バージョン16.2 をリリースしました。 このエラーが発生しないように、この最新バージョンに更新することをお勧めします。
 
 Visual Studio には、この問題の修正を含む VS 2019 バージョン16.2 がリリースされています。 このエラーが発生しないように、この最新バージョンに更新することをお勧めします。
 
-問題の根本原因:Visual studio 2015 または Visual Studio 2017 の初期リリースを使用して、HoloLens でアプリケーションをデプロイおよびデバッグした後、同じ HoloLens を使用した最新バージョンの Visual Studio 2017 または Visual Studio 2019 を使用したユーザーは、影響を受けます。 新しいリリースの Visual Studio では、新しいバージョンのコンポーネントが配置されますが、古いバージョンのファイルはデバイス上に残されるため、新しいバージョンのエラーが発生します。  これにより、次のエラーメッセージが表示されます。DEP0100:ターゲットデバイスの開発者モードが有効になっていることを確認してください。 エラー80004005が発生したため<ip> 、で開発者ライセンスを取得できませんでした。
+問題の根本原因: visual studio 2015 または Visual Studio 2017 の初期リリースを使用して、HoloLens でアプリケーションをデプロイおよびデバッグした後、同じ HoloLens で最新バージョンの Visual Studio 2017 または Visual Studio 2019 を使用したユーザーは、次のようになります。影響を受ける. 新しいリリースの Visual Studio では、新しいバージョンのコンポーネントが配置されますが、古いバージョンのファイルはデバイス上に残されるため、新しいバージョンのエラーが発生します。  これにより、DEP0100: ターゲットデバイスの開発者モードが有効になっていることを確認してください。 エラー80004005が発生したため、<ip> で開発者ライセンスを取得できませんでした。
  
 **対応策**: 
 
@@ -44,7 +44,7 @@ Visual Studio には、この問題の修正を含む VS 2019 バージョン16.
  
 6. ソリューションエクスプローラーでプロジェクトを右クリックし、[既存項目の追加 >] を選択します。
  
-7. C:\Program Files (x86) \Windows Kits\10\bin\10.0.18362.0\x86 を参照し、フィルターを "すべてのファイル (\*.\*)" に変更します。
+7. C:\Program Files (x86) \Windows Kits\10\bin\10.0.18362.0\x86 を参照し、フィルターを "すべてのファイル (\*に変更します。\*) "
  
 8. SirepClient と SshClient の両方を選択し、[追加] をクリックします。
  
@@ -70,7 +70,7 @@ Visual Studio には、この問題の修正を含む VS 2019 バージョン16.
  
 13. コンパイルされた .exe を含むフォルダー (例: C:\MyProjects\HoloLensDeploymentFix\bin\Debug) に対してコマンドプロンプトを開きます。
  
-14. 実行可能ファイルを実行し、デバイスの IP アドレスをコマンドライン引数として指定します。  (USB 経由で接続されている場合は、127.0.0.1 を使用できます。それ以外の場合は、デバイスの WiFi IP アドレスを使用します)。たとえば、"HoloLensDeploymentFix 127.0.0.1" のようになります。
+14. 実行可能ファイルを実行し、デバイスの IP アドレスをコマンドライン引数として指定します。  (USB 経由で接続されている場合は、127.0.0.1 を使用できます。それ以外の場合は、デバイスの WiFi IP アドレスを使用します)。 たとえば、"HoloLensDeploymentFix 127.0.0.1" のようになります。
  
 15. ツールがメッセージなしで終了すると (これには数秒しかかかりません)、Visual Studio 2017 以降からデプロイおよびデバッグできるようになります。  ツールを引き続き使用する必要はありません。
 
@@ -78,7 +78,7 @@ Visual Studio には、この問題の修正を含む VS 2019 バージョン16.
 ## <a name="issues-launching-the-microsoft-store-and-apps-on-hololens"></a>HoloLens での Microsoft Store とアプリの起動に関する問題
 
 >[!NOTE]
->最終更新日時:4/2 @ 10 AM-問題が解決されました。 
+>最終更新日時: 4/2 @ 10 AM-問題が解決されました。 
 
 HoloLens で Microsoft Store とアプリを起動しようとすると、問題が発生することがあります。 この問題が発生するのは、バックグラウンドアプリの更新プログラムによって、特定のシーケンスで新しいバージョンのフレームワークパッケージが配置されているにもかかわらず、1つまたは複数の依存アプリがまだ実行中である場合です。 この場合、アプリの自動更新によって新しいバージョンの .NET ネイティブ Framework (バージョン10.0.25531 から 10.0.27413) が提供されたため、以前のバージョンのフレームワークを使用している実行中のすべてのアプリに対して、実行中のアプリが正しく更新されませんでした。  Framework 更新のフローは次のとおりです。-
 
@@ -98,7 +98,7 @@ HoloLens で Microsoft Store とアプリを起動しようとすると、問題
 3.  17763.380 への更新が利用可能な場合は、このビルドに更新して、アプリのハングのバグの修正を受け取るようにしてください。
 4.  このバージョンの OS に更新すると、アプリは想定どおりに動作するはずです。
 
-また、HoloLens OS のリリースごとに、Microsoft ダウンロードセンター https://aka.ms/hololensdownload/10.0.17763.380 のに ffu イメージを投稿しました。 
+また、HoloLens OS のすべてのリリースで、Microsoft ダウンロードセンターの https://aka.ms/hololensdownload/10.0.17763.380 に FFU イメージを投稿しました。 
 
 更新を希望しない場合は、3/29 の時点で Microsoft Store UWP アプリの新しいバージョンをリリースしました。 更新されたバージョンのストアを作成したら、次のようにします。
 
@@ -110,12 +110,12 @@ HoloLens で Microsoft Store とアプリを起動しようとすると、問題
 
 デバイスがまだアプリを読み込むことができない場合は、次の手順を実行して、ダウンロードセンターで .NET ネイティブ Framework および Runtime のバージョンをサイドロードできます。
 
-1)  [この zip ファイル](http://download.microsoft.com/download/8/5/C/85C23745-794C-419D-B8D7-115FBCCD6DA7/netfx_1.7.zip)は、Microsoft ダウンロードセンターからダウンロードしてください。  解凍すると2つのファイルが生成されます。  .NET........................... .net
-2)  デバイスのロックが解除されていることを確認してください。  これを実行していない場合は、[こちら](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fmixed-reality%2Fusing-the-windows-device-portal&data=02%7C01%7Cjalynch%40microsoft.com%7C3622a462ebd04870fccb08d6ae94cad6%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636888351416725140&sdata=ZB6Zdx9GV95PcU6FAVgWaP3eQNMsyIc%2FbNDEby3Sb8A%3D&reserved=0)の手順に従ってください。
-3)  次に、Windows デバイスポータルにアクセスします。  USB 経由でこれを行うことをお勧めします。これを http://127.0.0.1:10080 行うには、ブラウザーに「」と入力します。  
+1)  [この zip ファイル](https://download.microsoft.com/download/8/5/C/85C23745-794C-419D-B8D7-115FBCCD6DA7/netfx_1.7.zip)は、Microsoft ダウンロードセンターからダウンロードしてください。  解凍すると2つのファイルが生成されます。  .NET........................... .net
+2)  デバイスのロックが解除されていることを確認してください。  これを実行していない場合は、[こちら](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2F%2Fwindows%2Fmixed-reality%2Fusing-the-windows-device-portal&data=02%7C01%7Cjalynch%40microsoft.com%7C3622a462ebd04870fccb08d6ae94cad6%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636888351416725140&sdata=ZB6Zdx9GV95PcU6FAVgWaP3eQNMsyIc%2FbNDEby3Sb8A%3D&reserved=0)の手順に従ってください。
+3)  次に、Windows デバイスポータルにアクセスします。  USB 経由でこれを行うことをお勧めします。これを行うには、ブラウザーに https://127.0.0.1:10080 を入力します。  
 4)  Windows デバイスポータルを作成したら、ダウンロードした2つのファイルの "サイドロード" を行う必要があります。  これを行うには、[アプリ] セクションに移動して [アプリ] をクリックするまで、左側のバーを下に表示する必要があります。
 5)  次のような画面が表示されます。  "アプリのインストール" というセクションに移動し、これら2つの APPX ファイルを解凍した場所を参照します。  一度に1つだけ実行できます。そのため、最初の1つを選択した後、[デプロイ] セクションで [実行] をクリックします。  次に、2番目の APPX ファイルに対してこれを実行します。 
-  ![サイドロードアプリをインストールするための Windows デバイスポータル](images/20190322-DevicePortal.png)<br>
+  Windows デバイスポータルを ![して、サイドロードされたアプリをインストール](images/20190322-DevicePortal.png)<br>
 6)  この時点で、アプリケーションが再び動作を開始し、ストアにもアクセスできると思われます。
 7)  場合によっては、影響を受けるアプリが起動する前に3D ビューアーアプリを起動する追加手順を実行する必要があります。 
 
@@ -128,14 +128,14 @@ OOBE & 設定では、資格情報のタイムアウトは2分です。 ユー�
 長いパスワードを入力する場合は、Bluetooth キーボードを使用することをお勧めします。
 
 >[!NOTE]
-> OOBE 中に誤ったネットワークが選択されている場合は、デバイスを完全にリセットする必要があります。 手順については、こちらを参照[してください。](https://docs.microsoft.com/en-us/windows/mixed-reality/reset-or-recover-your-hololens#perform-a-full-device-recovery) 
+> OOBE 中に誤ったネットワークが選択されている場合は、デバイスを完全にリセットする必要があります。 手順については、こちらを参照[してください。](https://docs.microsoft.com//windows/mixed-reality/reset-or-recover-your-hololens#perform-a-full-device-recovery) 
 
 ## <a name="device-update"></a>デバイスの更新
 * 30秒新しい更新の後、シェルが1回消えることがあります。 **ブルーム**ジェスチャを実行してセッションを再開してください。
 
-## <a name="visual-studio"></a>Visual Studio
+## <a name="visual-studio"></a>Visual Studio
 * 「HoloLens 開発に推奨される Visual Studio の最新バージョン用の[ツールをインストール](install-the-tools.md)する」を参照してください。
-* アプリを Visual Studio から HoloLens にデプロイすると、次のエラーが表示される場合があります。**ユーザーマップセクションが開いているファイルに対して、要求された操作を実行することはできません。(HRESULT からの例外: 0x800704C8)** 。 この問題が発生した場合は、もう一度やり直してください。通常、配置は成功します。
+* アプリを Visual Studio から HoloLens にデプロイすると、次のエラーが表示されることがあります。**ユーザーマップセクションが開いているファイルに対して、要求された操作を実行することはできません。(HRESULT からの例外: 0x800704C8)** 。 この問題が発生した場合は、もう一度やり直してください。通常、配置は成功します。
 
 ## <a name="emulator"></a>エミュレーター
 * Microsoft Store の一部のアプリは、エミュレーターと互換性がありません。 たとえば、若い Conker とフラグメントは、エミュレーターでは再生できません。
@@ -144,7 +144,7 @@ OOBE & 設定では、資格情報のタイムアウトは2分です。 ユー�
 
 ## <a name="unity"></a>Unity
 * 「HoloLens の開発に推奨される最新バージョンの Unity 用の[ツールをインストール](install-the-tools.md)する」を参照してください。
-* Unity HoloLens Technical Preview の既知の問題については、 [Hololens Unity フォーラム](http://forum.unity3d.com/threads/known-issues.394627/)に記載されています。
+* Unity HoloLens Technical Preview の既知の問題については、 [Hololens Unity フォーラム](https://forum.unity3d.com/threads/known-issues.394627/)に記載されています。
 
 ## <a name="windows-device-portal"></a>Windows Device Portal
 * Mixed Reality キャプチャのライブプレビュー機能は、数秒の待機時間が発生する場合があります。

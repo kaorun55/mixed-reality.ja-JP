@@ -6,18 +6,18 @@ ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, 設計, 3D アプリランチャー, イマーシブヘッドセット, ライブキューブ
-ms.openlocfilehash: 47db5bffa121c0cc11d246dc749c464e5f187270
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: ce9d242e26d67c8fe5af7ac32f4e910a15715d25
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63517682"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437224"
 ---
 # <a name="3d-app-launcher-design-guidance"></a>3D アプリランチャーの設計ガイダンス
 
 Windows Mixed Reality イマーシブ (VR) ヘッドセットを使用する場合は、山と水で囲まれた崖に家として視覚化された Windows Mixed Reality ホームを入力します (ただし、[他の環境を選択して独自に作成](add-custom-home-environments.md)することもできます)。 このホームの領域内では、ユーザーは、必要に応じて、必要な3D オブジェクトとアプリを自由に配置して整理することができます。 **3d アプリランチャー**は、アプリを起動するために選択できる、ユーザーの mixed reality ハウスの "物理" オブジェクトです。
 
-![例:Floaty 鳥3D アプリランチャー](images/20171016-151526-mixedreality1-1200px-1000px.jpg)<br>
+![例: Floaty 鳥3D アプリランチャー](images/20171016-151526-mixedreality1-1200px-1000px.jpg)<br>
 *Floaty 鳥3D アプリランチャーの例 (架空のアプリ)*
 
 ## <a name="3d-app-launcher-creation-process"></a>3D アプリランチャー作成プロセス
@@ -39,7 +39,7 @@ Windows Mixed Reality イマーシブ (VR) ヘッドセットを使用する場�
 
 アプリランチャーを確認するときは、アプリを起動する目的を明確にする必要があり、混乱を招くことはありません。 たとえば、décor が崖家の1つの部分と混同されないように、ランチャーが明らかであることを確認してください。 アプリランチャーは、ユーザーにタッチまたは選択を招待する必要があります。
 
-![例:新しいメモ3D アプリランチャー](images/20171016-152145-mixedreality1-1200px-1000px.jpg)<br>
+![例: 新しい Note 3D アプリランチャー](images/20171016-152145-mixedreality1-1200px-1000px.jpg)<br>
 *新鮮ノート3D アプリランチャーの例 (架空のアプリ)*
 
 ### <a name="home-scale"></a>ホームスケール
@@ -50,7 +50,7 @@ Windows Mixed Reality イマーシブ (VR) ヘッドセットを使用する場�
 
 アプリランチャーは、ユーザーが自分のスペースにあるように感じられるオブジェクトのように感じます。 これらの機能は実質的にこのような処理を行っているので、ランチャーは、ユーザーが近くにいると思っていたようなものと考える必要があります。
 
-![例:Astro ワープ3D アプリランチャー](images/20171016-132936-mixedreality-1200px-1000px.jpg)<br>
+![例: Astro ワープ3D アプリランチャー](images/20171016-132936-mixedreality-1200px-1000px.jpg)<br>
 *Astro ワープ3D アプリランチャーの例 (架空のアプリ)*
 
 ### <a name="recognizable"></a>認識可能な
@@ -64,24 +64,20 @@ Windows Mixed Reality イマーシブ (VR) ヘッドセットを使用する場�
 
 :::row:::
     :::column:::
-        ![Logo only](images/20171016-140436-mixedreality-640px.jpg)
-        *Logo only*
+        ![ロゴのみ](images/20171016-140436-mixedreality-640px.jpg)*ロゴ*のみ
     :::column-end:::
     :::column:::
-        ![More recognizable with a character](images/20171016-140557-mixedreality-640px.jpg)
-        *More recognizable with a character*
+        文字](images/20171016-140557-mixedreality-640px.jpg) より認識しやすい ![文字で*より*わかりやすくなります。
     :::column-end:::
 :::row-end:::
 
 
 :::row:::
     :::column:::
-        ![Flat approach, not surprisingly, feels flat](images/20171016-155101-mixedreality-640px.jpg)
-        *Flat approach, not surprisingly, feels flat*
+        非常に単調では](images/20171016-155101-mixedreality-640px.jpg) なくフラットなアプローチを ![、非常に単調では*なく*フラットなアプローチを実現
     :::column-end:::
     :::column:::
-        ![Volumetric approach better showcases your app](images/20171016-161407-mixedreality-640px.jpg)
-        *Volumetric approach better showcases your app*
+        アプリの*容量アプローチ*をより適切](images/20171016-161407-mixedreality-640px.jpg) に紹介する ![容量アプローチの方が優れています。
     :::column-end:::
 :::row-end:::
 
@@ -98,7 +94,7 @@ Windows Mixed Reality イマーシブ (VR) ヘッドセットを使用する場�
 * モデルの距離とサイズが異なることを確認します。
 * モデルの準備ができたら、「資産の[エクスポートに関するガイドライン](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md#asset-requirements-overview)」を参照してください。
 
-![テクスチャの微妙な詳細情報を含むモデル](images/20171013-143334-mixedreality-640px.jpg)<br>
+テクスチャの微妙な詳細を含む ![モデル](images/20171013-143334-mixedreality-640px.jpg)<br>
 *テクスチャの微妙な詳細情報を含むモデル*
 
 ### <a name="what-to-avoid"></a>回避すべき事項
@@ -106,7 +102,7 @@ Windows Mixed Reality イマーシブ (VR) ヘッドセットを使用する場�
 * シンジオメトリは使用しないでください。距離が適切ではなく、別名が正しくありません。
 * モデルの一部が1:1:1 のサイズ比を超えて拡張されないようにしてください。 スケーリングの問題が発生します。
 
-![ハイコントラストの小さなビジーパターンを避ける](images/20171013-143603-mixedreality-640px.jpg)<br>
+ハイコントラスト、小さなビジーパターンを回避する ![](images/20171013-143603-mixedreality-640px.jpg)<br>
 *ハイコントラスト、小さい、ビジーパターンを避ける*
 
 ## <a name="how-to-handle-type"></a>型を処理する方法
@@ -120,54 +116,51 @@ Windows Mixed Reality イマーシブ (VR) ヘッドセットを使用する場�
 
 :::row:::
     :::column:::
-        ![Flat type without a backdrop can be hard to view from certain angles and in certain environments](images/flattype-640px.png)
-        *Flat type without a backdrop can be hard to view from certain angles and in certain environments*
+        背景を持たないフラット型 ![は特定の角度から見るのが難しい場合があります。また、特定の環境では、*背景を持たないフラット型を特定の角度や特定の環境で表示する*のは難しい場合があり](images/flattype-640px.png)
     :::column-end:::
     :::column:::
-        ![Type with a built-in backdrop can work well](images/flattypeandbkg-640px.png)
-        *Type with a built-in backdrop can work well*
+        組み込みの背景を持つ ![型は、*組み込みの背景を使用して*適切に](images/flattypeandbkg-640px.png) 動作させることができます。
     :::column-end:::
     :::column:::
-        ![Extruded type can work well if you shade the sides](images/20171016-160221-mixedreality-640px.jpg)
-        *Extruded type can work well if you shade the sides*
+        押し出しの種類](images/20171016-160221-mixedreality-640px.jpg) 押し出しの種類に影を付けると、*辺を網掛け*した場合に適切に機能するように、押し出し型を ![できます。
     :::column-end:::
 :::row-end:::
 
 
 **機能する色を入力する**
-* White
-* 黒
+* 白黒
+* 極太
 * 明るい半彩度の色
 
-![機能する色を入力します。](images/20171016-112111-mixedreality-640px.jpg)<br>
+![種類の色を使用します。](images/20171016-112111-mixedreality-640px.jpg)<br>
 *機能する色を入力する*
 
 ### <a name="what-to-avoid"></a>回避すべき事項
 
 **問題の原因となる色を入力する**
 * ミッドトーン
-* 灰色
+* 暗く
 * 彩度が高い色または desaturated の色
 
-![問題の原因となる色を入力します。](images/20171016-112246-mixedreality-640px.jpg)<br>
+![種類の色で問題が発生します。](images/20171016-112246-mixedreality-640px.jpg)<br>
 *問題の原因となる色を入力する*
 
-## <a name="lighting"></a>照明
+## <a name="lighting"></a>光源
 
 アプリランチャーのライティングは、崖ハウス環境から取得されます。 ライトとシャドウの両方で適切に見えるように、家全体の複数の場所でランチャーをテストしてください。 このドキュメントに記載されている他の設計ガイダンスに従っている場合は、崖家のほとんどの照明に対してランチャーが非常に優れた形になっているはずです。
 
 環境内のさまざまなライトをランチャーがどのように検索するのかをテストするのに適しているのは、テラス (芝生を使用した具体的な領域) の外側と背面のどこにあるかを問わず、Studio、メディアルームです。 もう1つの優れたテストは、それを半分のライトと半分に配置し、外観を確認することです。
 
-![起動ツールがライトとシャドウの両方で適切であることを確認します。](images/20171013-145523-mixedreality-1200px-1000px.jpg)<br>
+![は、ライトとシャドウの両方でランチャーが適切であることを確認します。](images/20171013-145523-mixedreality-1200px-1000px.jpg)<br>
 *起動ツールがライトとシャドウの両方で適切であることを確認します。*
 
 ## <a name="texturing"></a>テクスチャ
 
 ### <a name="authoring-your-textures"></a>テクスチャの作成
 
-3D アプリランチャーの終了形式は、glb ファイルになります。これは、(物理的にベースになった) .PBR パイプラインを使用して作成されます。 これは厄介なプロセスである可能性があります。すでにない場合は、技術的アーティストを使用することをお勧めします。 勇気 DIY がある場合は、まず、情報を[調査して、.pbr の用語について学習](http://wiki.polycount.com/wiki/PBR)して、内部で何が起きているかを確認すると、よくある間違いを避けることができます。 
+3D アプリランチャーの終了形式は、glb ファイルになります。これは、(物理的にベースになった) .PBR パイプラインを使用して作成されます。 これは厄介なプロセスである可能性があります。すでにない場合は、技術的アーティストを使用することをお勧めします。 勇気 DIY がある場合は、まず、情報を[調査して、.pbr の用語について学習](https://wiki.polycount.com/wiki/PBR)して、内部で何が起きているかを確認すると、よくある間違いを避けることができます。 
 
-![例:新しいノートアプリ](images/pbr-freshnote1-640px-500px.png)<br>
+![例: 新しいメモアプリ](images/pbr-freshnote1-640px-500px.png)<br>
 *新鮮ノート3D アプリランチャーの例 (架空のアプリ)*
 
 **推奨 authoring tool**

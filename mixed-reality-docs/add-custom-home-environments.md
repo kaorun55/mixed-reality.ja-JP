@@ -1,24 +1,24 @@
 ---
-title: カスタムホーム環境の追加
+title: 独自のイマーシブ環境を設計する
 description: 提供する Windows Mixed Reality ホーム環境に加えて、独自のを作成して使用することもできます。
 author: thmignon
 ms.author: thmignon
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows Mixed Reality、Mixed Reality、Virtual Reality、VR、MR、Home、Custom Environment、地名、崖ハウス、skyloft、user、create
-ms.openlocfilehash: d0cdb878f1994cb5f898f06b98d74dee3dd4fdf1
-ms.sourcegitcommit: 150d258a23130026c8792da383a3993657841fb4
+ms.openlocfilehash: e133e1438410540592a51f54ed136aecd04c6244
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67024534"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437073"
 ---
-# <a name="add-custom-home-environments"></a>カスタムホーム環境の追加
+# <a name="design-your-own-immersive-environments"></a>独自のイマーシブ環境を設計する
 
 >[!NOTE]
 >これは試験的な機能です。 試してみてください。しかし、すべてが期待どおりに動作しない場合、驚かれることはありません。 この機能の有効性を評価し、それを使用することに関心があるので、[開発者フォーラム](https://forums.hololens.com/categories/custom-home-environments)で、経験 (および発見したバグ) についてご意見をお聞かせください。
 
-[Windows 10 April 2018 update](#release-notes-april-2018.md)以降では、 [windows Mixed Reality ホーム](#navigating-the-windows-mixed-reality-home.md)として使用するカスタム環境を [スタート] メニューの [場所] ピッカーに追加できる実験的な機能が有効になりました。 Windows Mixed Reality には、2つの既定の環境 (崖家と Skyloft) があり、これをホームとして選択することができます。 カスタム環境を作成すると、独自の作成でそのリストを拡張できます。 これを早期の状態で使用できるようにして、作成者と開発者の関心を評価し、作成した世界の種類を確認し、さまざまな作成ツールの使用方法を理解します。
+[Windows 10 April 2018 update](release-notes-april-2018.md)以降では、 [windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)として使用するカスタム環境を [スタート] メニューの [場所] ピッカーに追加できる実験的な機能が有効になりました。 Windows Mixed Reality には、2つの既定の環境 (崖家と Skyloft) があり、これをホームとして選択することができます。 カスタム環境を作成すると、独自の作成でそのリストを拡張できます。 これを早期の状態で使用できるようにして、作成者と開発者の関心を評価し、作成した世界の種類を確認し、さまざまな作成ツールの使用方法を理解します。
 
 カスタム環境を使用すると、Skyloft が崖家やの場合と同じように、テレ移植、アプリとの対話、およびホログラムの配置が行われます。 Web を fantasy ランドスケープで閲覧したり、ホログラムを使用して futuristic の都市を埋めることができます。可能性は無限です。
 
@@ -45,9 +45,9 @@ ms.locfileid: "67024534"
 ## <a name="trying-a-sample-environment"></a>サンプル環境を試す
 
 カスタムホーム環境の独創的な可能性を示すサンプル環境を作成しました。 次の手順に従って試してみてください。
-1. [サンプル Fantasy アイランド環境のダウンロード](https://download.microsoft.com/download/B/2/5/B25C1AEF-40CD-4B03-A596-4BCA3D33035A/Fantasy_Island.exe)(自己解凍形式の実行可能ファイルへのリンクポイント)。
+1. [サンプル Fantasy アイランド環境](https://download.microsoft.com/download/B/2/5/B25C1AEF-40CD-4B03-A596-4BCA3D33035A/Fantasy_Island.exe)(自己解凍形式の実行可能ファイルへのリンクポイント) をダウンロードします。
 
-    ![Fantasy 島のサンプル環境](images/FantasyLand.jpg)<br>
+    ![Fantasy アイランドのサンプル環境](images/FantasyLand.jpg)<br>
     *Fantasy 島のサンプル環境*<br>
 
 2. ダウンロードした**Fantasy_Island**ファイルを実行します。
@@ -55,7 +55,7 @@ ms.locfileid: "67024534"
     > [!NOTE]
     > Web からダウンロードした .exe ファイルを実行しようとすると (この例のように)、"Windows で保護されている PC" ポップアップが表示されることがあります。 このポップアップから Fantasy_Island を実行するには、 **[詳細情報]** を選択し、 **[実行]** をクリックします。 このセキュリティ設定は、信頼しないファイルのダウンロードを防止するためのものであるため、ファイルのソースを信頼する場合にのみ、このオプションを選択してください。
 
-3. **ファイルエクスプローラー**を開き、アドレスバーに次のよう`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`に貼り付けて、[環境] フォルダーに移動します。
+3. **ファイルエクスプローラー**を開き、アドレスバーに次のように貼り付けて、環境 フォルダーに移動します。 `%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState` を参照してください。
 4. ダウンロードしたサンプル環境をこのフォルダーにコピーします。
 5. **Mixed Reality ポータル**を再起動します。 これにより、[場所の選択] の環境の一覧が更新されます。
 6. ヘッドセットに配置します。 自宅にいる場合は、コントローラーで [Windows] ボタンを使用して [**スタート] メニュー**を開きます。
@@ -96,12 +96,12 @@ Windows Mixed Reality では、環境の読み込み時間を大幅に短縮す�
 
 現在、コンバーターでは、最適化の正確な動作を調整するための多数のフラグがサポートされています。 最良の結果を得るには、次のフラグを使用してを実行することをお勧めします。
 
-フラグ|推奨値|説明
+Flag|推奨値|説明
 ---|---|---
 -max-テクスチャ-サイズ|1024または2048| テクスチャの品質を向上させるためにこれを微調整します。既定値は512x512 です。 大きな値を指定すると、環境のファイルサイズに大きく影響するため、256 mb の制限を考慮してください。
 -最小バージョン|1803|カスタム環境は、windows > = 1803 のバージョンでのみサポートされています。 このフラグは、古いバージョンのテクスチャを削除し、最終的な資産のファイルサイズを縮小します
 
-例:
+次に、例を示します。
 
 ```cmd
 WindowsMRAssetConverter FileToConvert.gltf -max-texture-size 1024 -min-version 1803
@@ -111,7 +111,7 @@ WindowsMRAssetConverter FileToConvert.gltf -max-texture-size 1024 -min-version 1
 
 Glb 環境が完成したら、ヘッドセットでテストする準備が整います。 カスタム環境を mixed reality ホームとして使用する場合は、 [「サンプル環境を試す」](#trying-a-sample-environment)セクションの手順2から開始します。 
 
-## <a name="feedback"></a>フィードバック
+## <a name="feedback"></a>Feedback
 
 この試験的な機能を評価していますが、ここでは、カスタム環境の使用方法、発生する可能性があるすべてのバグ、および機能の好みについて説明します。 [開発者フォーラム](https://forums.hololens.com/categories/custom-home-environments)でカスタムホーム環境を作成および使用するためのすべてのフィードバックを共有してください。
 
@@ -123,7 +123,7 @@ Glb 環境が完成したら、ヘッドセットでテストする準備が整�
 
 ### <a name="how-do-i-remove-custom-environments-from-my-places-picker"></a>マイプレースピッカーからカスタム環境を削除操作方法には
 
-カスタム環境を削除するには、PC (`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`) の環境フォルダーを開き、環境を削除します。 Mixed Reality ポータルを再起動すると、この環境は [場所の選択] に表示されなくなります。 
+カスタム環境を削除するには、PC の環境フォルダー (`%LOCALAPPDATA%\Packages\EnvironmentsApp_cw5n1h2txyewy\LocalState`) を開き、環境を削除します。 Mixed Reality ポータルを再起動すると、この環境は [場所の選択] に表示されなくなります。 
 
 ### <a name="how-do-i-default-to-my-favorite-custom-environment"></a>お気に入りのカスタム環境に既定操作方法しますか?
 

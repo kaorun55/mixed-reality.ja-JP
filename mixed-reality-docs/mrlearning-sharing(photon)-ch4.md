@@ -6,21 +6,21 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 2e676d319ba7221cf9549b200b3d748f26025aa7
-ms.sourcegitcommit: af1602710c1ccb7ed870a491923350d387706129
+ms.openlocfilehash: b4713caf2c4d913fe8f5b01c08b3cd0152e32cd9
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701898"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438367"
 ---
-# <a name="4-sharing-object-movements-with-multiple-users"></a>4。オブジェクトの移動を複数のユーザーと共有する
+# <a name="4-sharing-object-movements-with-multiple-users"></a>4. オブジェクトの移動を複数のユーザーと共有する
 
-このチュートリアルでは、共有セッションのすべての参加者が連携して相互作用を表示できるように、オブジェクトの移動を共有する方法について説明します。 このレッスンは、[基本モジュールチュートリアル](mrlearning-base.md)の一部として作成された太陰暦ランチャーに基づいています。
+このチュートリアルでは、共有セッションのすべての参加要素が相互に共同作業したり、他のユーザーの操作を表示したりできるように、オブジェクトの移動を共有する方法を学習します。 このレッスンは、[基本モジュールチュートリアル](mrlearning-base.md)の一部として作成された太陰暦ランチャーに基づいています。
 
 事項
 
 - 共有する3D モデルとして旧暦ランチャーを使用する
-- 3D モデルの移動を共有するようにプロジェクトを構成します。
+- 3D モデルの移動を共有するようにプロジェクトを構成する
 - 基本的なマルチユーザーコラボレーションアプリケーションを構築する方法について説明します
 
 ## <a name="instructions"></a>手順
@@ -28,19 +28,19 @@ ms.locfileid: "68701898"
 
 1. 前のレッスン (コントロール + S) からシーンを保存します。 必要なときに簡単に見つけられるように、HLSharedProjectMainPart4 という名前を指定できます。
 
-2. [プロジェクト] ウィンドウの [Assets-> Scripts] フォルダーで [GenericNetSync] をダブルクリックして、Visual Studio または使用しているコードエディターで開きます。  
+2. [プロジェクト] ウィンドウの [Assets-> Scripts] フォルダーで、[GenericNetSync] をダブルクリックして、Visual Studio または使用しているコードエディターで開きます。  
 
 ![module3chapter4updatestep2](images/module3chapter4updatestep2.png)
 
-3. 34および38行の場合は、このレッスンで使用するテーブルのコードをアクティブ化するために//を削除します。 次に、ファイルを保存します。 
+3. 34および38行では、"//" を削除して、このレッスンで使用するテーブルのコードをアクティブ化します。 次に、ファイルを保存します。 
 
 ![module3chapter4updatestep3](images/module3chapter4updatestep3.png)
 
-4. プロジェクトウィンドウで、PhotonRoom.cs Scripts フォルダー > 内のファイルをダブルクリックして、Visual Studio で開きます。 
+4. [プロジェクト] ウィンドウで、[Assets-> Scripts] フォルダー内の PhotonRoom.cs ファイルをダブルクリックして、Visual Studio で開きます。 
 
 ![module3chapter4updatestep4](images/module3chapter4updatestep4.png)
 
-5. 手順 3. と同じように、//を削除して106コードをアクティブ化する必要があります。
+5. 手順 3. と同じように、"//" を削除してコードをアクティブにする必要があります (25、26、106行)。
 
 ![module3chapter4updatestep5a](images/module3chapter4updatestep5a.png) 
 
@@ -54,12 +54,12 @@ ms.locfileid: "68701898"
 
 ![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
 
-   注:Prefab オブジェクトとリリースのいずれかをクリックすると、インスペクターがそのオブジェクトに切り替わります。 各オブジェクトをクリックし、ドラッグしてドロップし、各オブジェクトを適切なスロットに解放します。
+注: prefab オブジェクトとリリースのいずれかをクリックすると、インスペクターがそのオブジェクトに切り替わります。 各オブジェクトをクリックし、ドラッグしてドロップし、各オブジェクトを適切なスロットに解放します。
 
-8. MixedRealityPlayspace の左側にある矢印をクリックし、子ゲームオブジェクトの MainCamera を SharedPlayground グラウンドに移動します。 次に、prefab、MixedRealityPlayspace を削除して削除し、事前 fab を選択して、キーボードの [削除] をタップします。
+8. MixedRealityPlayspace の左側にある矢印をクリックし、子ゲームオブジェクト MainCamera を SharedPlayground グラウンドに移動します。 次に、prefab を削除し、キーボードの [削除] をタップして、MixedRealityPlayspace を削除します。
 ![Module3hapter4step5im](images/module3chapter4step5im.PNG)
 
->注:メインカメラと SharedPlayground グラウンドの両方の位置が0、0、0に設定されていることを確認します。
+>注: メインカメラと SharedPlayground グラウンドの両方の位置が0、0、0に設定されていることを確認してください。
 >
 
 9. 新しいオブジェクトを作成するために、SharedPlayground グラウンド親オブジェクトの子オブジェクトとして新しいゲームオブジェクトセットを作成します。 親オブジェクトを右クリックし、[空の作成] を選択します。 
@@ -68,11 +68,11 @@ ms.locfileid: "68701898"
 
 ![Module3Chapter4step6im](images/module3chapter4step7im.PNG)
 
-11. 次に、[プロジェクト] パネルの [Prefabs] フォルダーで、先ほど作成した "TableAnchor" 子オブジェクトにテーブル prefab をドラッグします。
+11. Prefabs フォルダーの [プロジェクト] パネルで、テーブル prefab を、先ほど作成した "TableAnchor" 子オブジェクトにドラッグします。
 
 ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
 
-12. 最後に、DebugWindow オブジェクトで、幅を50に、高さを20に変更します。
+12. DebugWindow オブジェクトで、幅を50に、高さを20に変更します。
 
 ![Module3Chapter4step9im](images/module3chapter4step11im.PNG)
 
@@ -81,9 +81,9 @@ ms.locfileid: "68701898"
 
 この処理が完了すると、Unity プロジェクトに参加しているすべてのユーザーが、旧暦ランチャーを移動できるようになります。 すべての移動が同期されるため、各ユーザーが互いの相互作用を参照できます。 これらの概念は、すべての機能を備えた共有コラボレーションエクスペリエンスの基本的な構成要素として機能します。 
 
-すべてのユーザーは共有エクスペリエンスの一部として接続されており、オブジェクトの相対的な移動を確認できますが、ローカルユーザーが物理的に同じ場所にある他のオブジェクトとオブジェクトを参照できるように、アバターとオブジェクトを正確に配置することはできません。現実的. ローカルの共有エクスペリエンスを固定するために、すべてのデバイスは物理環境についてよく理解している必要があります。 このモジュールでは、次のレッスンで実装する[Azure 空間アンカー](<https://azure.microsoft.com/en-us/services/spatial-anchors/>) (ASA) を使用してこれを実現します。
+すべてのユーザーは共有エクスペリエンスの一部として接続されており、オブジェクトの相対的な移動を確認できますが、ローカルユーザーが物理的に同じ場所にある他のオブジェクトとオブジェクトを参照できるように、アプリケーションでアバターとオブジェクトを正確に配置することはできません。現実的. ローカルの共有エクスペリエンスを固定するために、すべてのデバイスは物理環境についてよく理解している必要があります。 このモジュールでは、次のレッスンで実装する[Azure 空間アンカー](<https://azure.microsoft.com//services/spatial-anchors/>) (ASA) を使用してこれを実現します。
 
-次のレッスンに進む前に、asa の基本、Azure アカウントとリソースの作成、およびその他の基本的なビルディングブロックについて説明している ASA Learning モジュールを完成させる必要があります。これは、共有エクスペリエンスに統合する前に必要です。
+次のレッスンに進む前に、asa の基本、Azure アカウントとリソースの作成、およびその他の基本的なビルディングブロックについて説明する ASA Learning モジュールを完成させる必要があります。これは、共有エクスペリエンスに統合する前に必要です。
 
-[次のレッスン:5。Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch5.md)
+[次のレッスン: 5. Azure 空間アンカーを共有エクスペリエンスに統合する](mrlearning-sharing(photon)-ch5.md)
 

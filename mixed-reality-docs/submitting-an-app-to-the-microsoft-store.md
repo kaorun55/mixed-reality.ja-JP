@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: アプリ, uwp, 送信, 送信, フィルター, メタデータ, システム要件, キーワード, wack, 認定, パッケージ, appx, 販売
-ms.openlocfilehash: af8ee89b2cae42fc3abeec072acde20f437eb820
-ms.sourcegitcommit: b0b1b8e1182cce93929d409706cdaa99ff24fdee
+ms.openlocfilehash: 63377239498319e84666ba0dbdbe36ce626901c5
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68387750"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437439"
 ---
 # <a name="submitting-an-app-to-the-microsoft-store"></a>Microsoft Store にアプリを送信する
 
@@ -27,11 +27,11 @@ Appx 作成ツールでは、ストアに送信するためにアプリケーシ
 
 | 必要な資産 | 推奨される小数点以下桁数 | イメージ形式 | これはどこに表示されますか。 | 
 |----------|----------|----------|------------------|
-| 71x71 正方形の正方形のロゴ | Any |  PNG | なし | 
+| 71x71 正方形の正方形のロゴ | 任意 |  PNG | 該当なし | 
 | 150x150 正方形の正方形のロゴ | 150x150 正方形 (100% scale) または 225x225 (150% scale) | PNG | 開始 pin とすべてのアプリ (310x310 のが提供されていない場合)、ストア検索候補、ストアリストページ、ストア参照、ストア検索 | 
-|  310x150 ワイドのワイドロゴ |  Any  |  PNG  |  なし | 
+|  310x150 ワイドのワイドロゴ |  任意  |  PNG  |  該当なし | 
 |  ストアロゴ |  75 x 75 (150% スケール)  |  PNG  |  パートナーセンター, レポートアプリ, レビューの作成, マイライブラリ | 
-|  スプラッシュ スクリーン |  930x450 (150% scale)  |  PNG  |  2D アプリランチャー (スレート) | 
+|  スプラッシュスクリーン |  930x450 (150% scale)  |  PNG  |  2D アプリランチャー (スレート) | 
 
 また、HoloLens で利用できる推奨資産もいくつかあります。
 
@@ -116,7 +116,7 @@ HoloLens 専用のパッケージを、他の Windows 10 デバイスファミ�
 
 一般的なガイダンスとして、デバイスに適用可能な最も高いバージョン番号のパッケージがストアによって配布されます。
 
-Windows のユニバーサルパッケージと Holographic パッケージがあり、Windows のユニバーサルパッケージのバージョン番号が高い場合、HoloLens ユーザーは、Holographic の代わりに、より新しいバージョン番号の Windows をダウンロードします。パック. この問題を解決するいくつかあります。
+Windows のユニバーサルパッケージと Holographic パッケージがあり、Windows のユニバーサルパッケージのバージョン番号が高い場合、HoloLens ユーザーは、Holographic の代わりに、より新しいバージョン番号の Windows をダウンロードします。パック. この問題には、次のようないくつかの解決策があります。
 1. Holographic などのプラットフォーム固有のパッケージが、Windows などのプラットフォームに依存しないパッケージよりも常に高いバージョン番号を持っていることを確認します。
 2. アプリを Windows. Universal としてパッケージ化しないでください。プラットフォーム固有のパッケージがある場合は、代わりに、使用可能な特定のプラットフォーム用に Windows のユニバーサルパッケージをパッケージ化します。
 
@@ -153,7 +153,7 @@ Unity プロジェクトに基づく mixed reality アプリを送信する場�
 
 アプリの送信プロセスの [ **[プロパティ](https://docs.microsoft.com/windows/uwp/publish/enter-app-properties)** ] ページでは、[ **[製品宣言](https://docs.microsoft.com/windows/uwp/publish/app-declarations)** ] セクションで mixed reality に関連するいくつかのオプションを確認できます。
 
-![Mixed reality 製品宣言](images/product-declarations-900px.png)<br>
+![Mixed reality の製品宣言](images/product-declarations-900px.png)<br>
 Mixed reality 製品宣言
 
 まず、アプリが mixed reality エクスペリエンスを提供するデバイスの種類を特定します。 これにより、アプリがストアの Windows Mixed Reality コレクションに含まれ、イマーシブヘッドセットを接続した後 (または HoloLens でストアを参照している場合)、ストアを閲覧しているユーザーに表示されるようになります。
@@ -182,7 +182,7 @@ Mixed reality 製品宣言
 
 入力の種類については、[ハードウェアの最小値] または [推奨されるハードウェア] のチェックボックスをオンにすることをお勧めします。 
 
-以下に例を示します。 
+次に、例を示します。 
 * ゲームにモーションコントローラーが必要で、マイクを使用して音声入力を受け入れる場合は、[Windows Mixed Reality motion controller] の横にある [最小ハードウェア] チェックボックスをオンにします。ただし、[マイク] の横にある [推奨されるハードウェア] チェックボックスをオンにします。 
 * Xbox コントローラー/ゲームパッドまたはモーションコントローラーでゲームをプレイできる場合は、"Xbox コントローラーまたはゲームパッド" の横にある [最小ハードウェア] チェックボックスをオンにし、[Windows Mixed Reality motion] の横にある [推奨されるハードウェア] チェックボックスをオンにします。コントローラー "は、モーションコントローラーとして、ゲームパッドからの体験を提供する可能性があります。
 
@@ -208,7 +208,7 @@ Mixed reality アプリが、より優れたパフォーマンスを発揮する
 
 Visual Studio で[アプリを正しくパッケージ化](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)した場合は、アプリの送信プロセスの [パッケージ] ページでアップロードすることで、アプリが使用可能になるデバイスファミリを識別するテーブルを作成する必要があります。
 
-![デバイスファミリの可用性テーブル](images/device-family-table-900px.png)<br>
+![デバイスファミリ可用性テーブル](images/device-family-table-900px.png)<br>
 デバイスファミリの可用性テーブル
 
 混合の現実アプリがイマーシブヘッドセットで動作する場合は、テーブルで少なくとも "Windows 10 Desktop" を選択する必要があります。 Mixed reality アプリが HoloLens で動作する場合は、少なくとも "Windows 10 Holographic" を選択する必要があります。 [混合現実 Academy の "プロジェクトアイランド" アプリ](mixed-reality-250.md)のように、Windows mixed reality ヘッドセットの両方の種類でアプリを実行する場合は、"Windows 10 Desktop" と "Windows 10 Holographic" の両方を選択する必要があります。
@@ -216,7 +216,7 @@ Visual Studio で[アプリを正しくパッケージ化](https://docs.microsof
 >[!TIP]
 >多くの開発者は、パッケージマニフェストと、パートナーセンターでのアプリ/発行者アカウント情報の不一致に関連するアプリのパッケージをアップロードするときに、エラーが発生します。 多くの場合、これらのエラーは、Windows 開発者アカウントに関連付けられているアカウント (パートナーセンターへのサインインに使用するアカウント) を使用して Visual Studio にサインインすることで回避できます。 同じアカウントを使用すると、アプリをパッケージ化する前に、Microsoft Store の id に関連付けることができます。
 
-![アプリを Microsoft Store に関連付ける](images/associate-your-app-700px.png)<br>
+アプリを Microsoft Store に関連付ける ![](images/associate-your-app-700px.png)<br>
 Visual Studio でアプリを Microsoft Store に関連付ける
 
 ### <a name="store-listing-page"></a>ストアの一覧ページ
@@ -226,7 +226,7 @@ Visual Studio でアプリを Microsoft Store に関連付ける
 >[!IMPORTANT]
 >アプリがストアによって適切に分類され、Windows Mixed Reality のお客様が検出できるようにするには、アプリの "検索用語" の1つとして **"Windows Mixed Reality"** を追加する必要があります ([共有フィールド] を展開して検索語句を見つけることができます)。セクション)。
 
-![Windows Mixed Reality を検索語句に追加する](images/search-terms-800px.png)<br>
+検索語句に Windows Mixed Reality を追加 ![](images/search-terms-800px.png)<br>
 検索語句に "Windows Mixed Reality" を追加する
 
 ## <a name="offering-a-free-trial-for-your-game-or-app"></a>ゲームまたはアプリの無料試用版を提供する
@@ -235,7 +235,7 @@ Windows Mixed Reality のイマーシブヘッドセットを購入する前に�
 
 ## <a name="see-also"></a>関連項目
 * [Mixed Reality](mixed-reality.md)
-* [開発の概要](development-overview.md)
+* [開発の概要](development.md)
 * [アプリ ビュー](app-views.md)
 * [Mixed Reality のパフォーマンスについて](understanding-performance-for-mixed-reality.md)
 * [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)

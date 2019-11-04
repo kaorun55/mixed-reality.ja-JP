@@ -6,12 +6,12 @@ ms.author: shentan
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 資産、作成、処理、予算、多角形、テクスチャ、シェーダー、パフォーマンス
-ms.openlocfilehash: f7bee55249764af37453ea0fab01730b43907569
-ms.sourcegitcommit: c4d0132ea755c861c504dad46957e791b9c705d5
+ms.openlocfilehash: fb8266a018e11a8fb944819a0cac5ace38f2cb25
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896504"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73437002"
 ---
 # <a name="asset-creation-process"></a>資産の作成プロセス
 
@@ -31,7 +31,7 @@ Windows Mixed Reality は、Microsoft が DirectX に加えた数十年の投資
 
 <table style="float:right; margin-left: 10px;">
 <tr>
-<th style="text-align:left;"><b>資産</b></th><th style="text-align:right;"> CPU</th><th> GPU</th><th> Memory</th>
+<th style="text-align:left;"><b>資産</b></th><th style="text-align:right;"> CPU</th><th> GPU</th><th> メモリ</th>
 </tr><tr>
 <td> 多角形</td><td> 0</td><td> 5%</td><td> 10%</td>
 </tr><tr>
@@ -84,7 +84,7 @@ Windows Mixed Reality は、Microsoft が DirectX に加えた数十年の投資
 
 ### <a name="purchasing-assets"></a>資産の購入
 
-もう1つの優れた選択肢は、お客様のエクスペリエンスのために資産を購入することです。 [Unity 資産ストア](https://www.assetstore.unity3d.com/)や[TurboSquid](http://www.turbosquid.com/)などのサービスを通じて利用できる資産は多数あります。
+もう1つの優れた選択肢は、お客様のエクスペリエンスのために資産を購入することです。 [Unity 資産ストア](https://www.assetstore.unity3d.com/)や[TurboSquid](https://www.turbosquid.com/)などのサービスを通じて利用できる資産は多数あります。
 
 サードパーティから資産を購入する場合は、常に次のことを確認する必要があります。
 * **Poly count とは何ですか。**
@@ -92,7 +92,7 @@ Windows Mixed Reality は、Microsoft が DirectX に加えた数十年の投資
 * **モデルの詳細レベル (LODs) はありますか。**
   * モデルの詳細レベルでは、パフォーマンスのためにモデルの詳細をスケーリングできます。
 * **ソースファイルは使用できますか?**
-  * 通常、 [Unity 資産ストア](https://www.assetstore.unity3d.com/)には含まれていませんが、 [TurboSquid](http://www.turbosquid.com/)のようなサービスには常に含まれています。
+  * 通常、 [Unity 資産ストア](https://www.assetstore.unity3d.com/)には含まれていませんが、 [TurboSquid](https://www.turbosquid.com/)のようなサービスには常に含まれています。
   * ソースファイルがない場合、アセットを変更することはできません。
   * 指定されたソースファイルを3D ツールでインポートできることを確認します。
 * **取得している内容を把握する**

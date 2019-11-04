@@ -6,12 +6,12 @@ ms.author: kaluccin
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Galaxy エクスプローラー、HoloLens、Windows Mixed Reality、アイデアの共有、ケーススタディ
-ms.openlocfilehash: a478eaa35144a8ee0fbeaeb43cec4b9f901890ab
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 696662eb92371708389f8a128dcee6a61acf1816
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63523758"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73436880"
 ---
 # <a name="case-study---creating-a-galaxy-in-mixed-reality"></a>ケーススタディ-mixed reality での galaxy の作成
 
@@ -25,7 +25,7 @@ Andy Zibits、プロジェクトのアートリーダー、およびチームの
 
 HoloLens の能力を最大限に活用して、お客様の生きた空間で3D オブジェクトを直接表示することを望んでいました。したがって、ユーザーが近くに拡大して個々の星を見ることができる現実的な外観の galaxy を作成することにしました.
 
-開発の第1週には、天の川方法 Galaxy の表現に関していくつかの目標がありました。これには、容量の深さ、動き、感覚を持たせる必要がありました。これは、galaxy の形を作成するのに役立つ星です。
+開発の最初の週では、天の川方法の表記についていくつかの目標がありました。これは、高度、動き、および感覚容量を必要としています。これは、galaxy の形の作成に役立つ星です。
 
 数十億の星を持つアニメーションの galaxy の作成に問題があるのは、更新が必要な1つの要素の数が、HoloLens が CPU を使用してアニメーション化するためのフレームごとに大きすぎるということでした。 このソリューションでは、アートとサイエンスが複雑に組み合わされていました。
 
@@ -41,7 +41,7 @@ HoloLens の能力を最大限に活用して、お客様の生きた空間で3D
 
 ### <a name="creating-the-position-of-the-stars"></a>星の位置の作成
 
-チームメンバーの1人が、最初のC#位置に星を生成するコードを既に作成しています。 星は楕円上にあり、その位置は (**curveoffset**、 **ellipseSize**、**標高**) で記述できます。 **curveoffset**は楕円に沿った星の角度で、 **ellipseSize**は楕円の次元です。X と Z に沿って、galaxy 内の星の適切な昇格が昇格します。 このため、各スター属性で初期化されるバッファー ([Unity の ComputeBuffer](http://docs.unity3d.com/ScriptReference/ComputeBuffer.html)) を作成し、それを GPU に送信して、残りのエクスペリエンスに使用することができます。 このバッファーを描画するには、 [Unity の DrawProcedural](http://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html)を使用します。これにより、galaxy を表す実際のメッシュがなくても、任意のポイントのセットに対してシェーダー (GPU 上のコード) を実行できます。
+チームメンバーの1人が、最初のC#位置に星を生成するコードを既に作成しています。 星は楕円上にあり、その位置は (**curveoffset**、 **ellipseSize**、**標高**) で記述できます。 **curveoffset**は楕円に沿った星の角度で、 **ellipseSize**は楕円の次元です。X と Z に沿って、galaxy 内の星の適切な昇格が昇格します。 このため、各スター属性で初期化されるバッファー ([Unity の ComputeBuffer](https://docs.unity3d.com/ScriptReference/ComputeBuffer.html)) を作成し、それを GPU に送信して、残りのエクスペリエンスに使用することができます。 このバッファーを描画するには、 [Unity の DrawProcedural](https://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html)を使用します。これにより、galaxy を表す実際のメッシュがなくても、任意のポイントのセットに対してシェーダー (GPU 上のコード) を実行できます。
 
 **CPU**
 
@@ -135,9 +135,9 @@ float3 ComputeStarPosition(StarDescriptor star)
 
 2回目の試行では、できるだけ多くのパーティクルを使用しようとしました。 シーンに追加する前に、パーティクルを描画してぼかしを加算したときに最適なビジュアルが得られました。 このアプローチに関する一般的な問題は、一度に描画できるパーティクルの数と、60 fps を維持しながらカバーされる画面領域の量に関連していました。 このクラウドを実現するために生成されたイメージをぼかすことは、通常、非常にコストのかかる操作でした。
 
-![テクスチャを使用しない場合、雲は 2% の不透明度で表示されます。](images/clouds-without-texture-300px.jpg)
+![テクスチャを使用しない場合、雲は2% の不透明度で表示されます。](images/clouds-without-texture-300px.jpg)
 
-テクスチャを使用しない場合、雲は 2% の不透明度で表示されます。
+テクスチャを使用しない場合、雲は2% の不透明度で表示されます。
 
 
 
@@ -147,7 +147,7 @@ float3 ComputeStarPosition(StarDescriptor star)
 
 ### <a name="a-bit-of-context-first"></a>最初は少しコンテキスト
 
-ゲームでテクスチャを使用する場合、テクスチャのサイズで使用する領域を一致ことはほとんどありませんが、別の種類のテクスチャ、テクスチャのピクセルから色の補間にグラフィック カードを取得するフィルタ リングを使用できます ([Texture Filtering](https://msdn.microsoft.com/library/dn642451.aspx))。 興味のあるフィルター処理は、近接している4つの近隣ノードを使用して任意のピクセルの値を計算する、[バイリニアフィルター](https://msdn.microsoft.com/library/windows/desktop/bb172357.aspx)です。
+ゲームでテクスチャを使用する場合、テクスチャサイズはそれを使用する領域とほとんど一致しませんが、さまざまな種類のテクスチャフィルターを使用して、グラフィックカードを取得し、テクスチャのピクセルから必要な色を補間することができます ([テクスチャフィルター](https://msdn.microsoft.com/library/dn642451.aspx))。 興味のあるフィルター処理は、近接している4つの近隣ノードを使用して任意のピクセルの値を計算する、[バイリニアフィルター](https://msdn.microsoft.com/library/windows/desktop/bb172357.aspx)です。
 
 ![フィルター処理前の元](images/texture-1.png)
 

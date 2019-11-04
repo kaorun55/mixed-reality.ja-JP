@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: a6367a1be1bcaeab911b925641dbb3a66998c2dc
-ms.sourcegitcommit: 599bbdd861ce6ff11b6cfb345a0a995f8b7bf85b
+ms.openlocfilehash: 4baef90f8e00e5da1063c708ae24d2057e0dc227
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68977992"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438379"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1. 音声認識と議事録の統合と使用
 
 このチュートリアルでは、Azure Cognitive Services Speech SDK と HoloLens 2 の使用方法を紹介する Mixed Reality アプリケーションを作成します。 このチュートリアルシリーズを終了すると、デバイスのマイクを使用して、音声をリアルタイムでテキストにしたり、音声を他の言語に翻訳したり、音声認識機能を活用して音声コマンドを理解したりすることができます。人工知能。
 
-## <a name="objectives"></a>目的
+## <a name="objectives"></a>目標
 
 - Azure Speech SDK を HoloLens 2 アプリケーションに統合する方法について説明します
 - 音声コマンドの使用方法について説明します。
@@ -31,7 +31,7 @@ ms.locfileid: "68977992"
 
 ![Module2Chapter3step1im](images/module4chapter1step1im.PNG)
 
-> 注:上の図に示すように、テンプレートが3D に設定されていることを確認します。
+> 注: 上の図に示すように、テンプレートが3D に設定されていることを確認してください。
 
 2. [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.unitypackage) Unity パッケージをダウンロードし、PC 上のフォルダーに保存します。 Unity プロジェクトにパッケージをインポートします。 これを行う方法の詳細については、「[基本モジュールレッスン 1](mrlearning-base-ch1.md)」を参照してください。 
 
@@ -58,7 +58,7 @@ ms.locfileid: "68977992"
 
 8. これで、シーンに MRTK から複数の新しい項目が追加されました。 [ファイル]、[名前を付けて保存] の順にクリックし、シーンに SpeechScene という名前を付けて、シーンを別の名前で保存します。 
 
-> 注:プロジェクトに MRTK を追加した後にシーンで Play を押すと、再生モードにならない場合は、Unity の再起動が必要になることがあります。 
+> メモ: プロジェクトに MRTK を追加した後にシーンで Play を押すと、再生モードにならない場合は、Unity の再起動が必要になることがあります。 
 
 9. 階層で MixedRealityToolkit オブジェクトを選択した状態で、[インスペクター] パネルの [コピーとカスタマイズ] をクリックします。
 
@@ -96,7 +96,7 @@ ms.locfileid: "68977992"
 
 ![Module4Chapter1step13im](images/module4chapter1step13im.PNG)
 
-17. アプリケーションを Azure Cognitive Services に接続するには、Speech サービスのサブスクリプションキー (API キーとも呼ばれます) を入力する必要があります。 無料のサブスクリプションキーを取得するには、[こちら](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started)の手順に従ってください。 サブスクリプションキーを取得したら、次の図に示すように、[インスペクター] パネルの [LunarcomController] コンポーネントの [Speech Service API キー] フィールドに入力します。
+17. アプリケーションを Azure Cognitive Services に接続するには、Speech サービスのサブスクリプションキー (API キーとも呼ばれます) を入力する必要があります。 無料のサブスクリプションキーを取得するには、[こちら](https://docs.microsoft.com//azure/cognitive-services/speech-service/get-started)の手順に従ってください。 サブスクリプションキーを取得したら、次の図に示すように、[インスペクター] パネルの [LunarcomController] コンポーネントの [Speech Service API キー] フィールドに入力します。
 
 18. [インスペクター] パネルの [LunarcomController] コンポーネントの [Speech Service Region] フィールドに、サブスクリプションキーにサインアップしたときに選択したリージョンを入力します。 たとえば、"westus" という地域では "West US" という種類を使用します。
 
@@ -133,7 +133,7 @@ ms.locfileid: "68977992"
 ![レッスン1から Chapter5 手順](images/Lesson1Chapter5Step1.JPG)
 
 2. [開いているシーンの追加] ボタンをクリックして、試したいシーンが [ビルド内のシーン] リストに含まれていることを確認します。
-3. [プレーヤーの設定] ボタンをクリックし、[発行の設定] にアクセスします。 [機能] で、次を有効にします。インターネット、インターネットクライアントサーバー、プライベートネットワーククライアントサーバー、マイクと空間認識。
+3. [プレーヤーの設定] ボタンをクリックし、[発行の設定] にアクセスします。 [機能] で、[インターネット]、[インターネットクライアントサーバー]、[プライベートネットワーククライアントサーバー]、[マイクと空間認識] を有効にします。
 4. 同じプレーヤー設定で、XR settings にアクセスして、でサポートされている仮想現実を選択します。
 5. [ビルド] ボタンを押して、ビルド プロセスを開始します。
 
@@ -143,18 +143,18 @@ ms.locfileid: "68977992"
 
 ![レッスン1から Chapter5 手順4](images/Lesson1Chapter5Step4.JPG)
 
-> 注: ビルドが失敗した場合は、もう一度構成してみるか、Unity を再起動してから再度ビルドしてください。 [エラー:CS0246 = “XX” という名前の型または名前空間が見つかりませんでした (ディレクトリの使用またはアセンブリ参照が不足しています)] のようなエラーが表示される場合は、[Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>) のインストールが必要な場合があります
+> 注: ビルドに失敗した場合は、もう一度ビルドするか、Unity を再起動して、もう一度ビルドしてみてください。 "エラー: CS0246 = 型または名前空間名" XX "が見つかりませんでした (using ディレクティブまたはアセンブリ参照がないことを確認してください)" というエラーが表示された場合は、 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)のインストールが必要になることがあります。
 
 7. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 ".Sln" ソリューションファイルをダブルクリックして、Visual Studio でソリューションファイルを開きます。
 
-> 注:必ず、新しく作成したフォルダー (つまり、前の手順で名前付け規則に従っている場合は、[App] フォルダー) を開いてください。そのフォルダーの外部に同じような名前の .sln ファイルがあり、ビルド フォルダー内の .sln ファイルと混同してはならないためです。 
+> 注: 新しく作成されたフォルダー (前の手順の名前付け規則に従っている場合は "App" フォルダー) を必ず開いてください。これは、ビルドフォルダー内の .sln ファイルと混同しないように、同じ名前の .sln ファイルがそのフォルダー外に存在するためです。 
 
 ![Lesson1 Chapter5 Step5](images/Lesson1Chapter5Step5.JPG)
 
-> 注:Visual Studio から新しいコンポーネントをインストールするよう求められたら、少し時間を取って、[「ツールのインストール」ページ](install-the-tools.md)で示されている、前提条件となるすべてのコンポーネントがインストールされていることを確認してください
+> 注: Visual Studio で新しいコンポーネントのインストールを求められた場合は、 [[ツールのインストール] ページ](install-the-tools.md)で指定したとおりにすべての前提条件コンポーネントがインストールされていることを確認してください。
 
-8. USB ケーブルを使って HoloLens 2 を PC に接続します。 これらのレッスンの手順では、HoloLens 2 デバイスを使ってテストをデプロイすることを前提としていますが、[HoloLens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイすることも、[サイドローディング用のアプリ パッケージ](<https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps>)を作成することもできます
-9. デバイスにビルドする前に、デバイスが開発者モードであることを確認してください。 HoloLens 2 に初めてデプロイする場合は、Visual Studio により、PIN を使用して HoloLens 2 をペアリングするよう求められる場合があります。 開発者モードを有効にするか、Visual Studio とペアリングする必要がある場合は、[こちらの手順](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)に従ってください。
+8. USB ケーブルを使って HoloLens 2 を PC に接続します。 これらのレッスンの手順では、HoloLens 2 デバイスを使ってテストをデプロイすることを前提としていますが、[HoloLens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイすることも、[サイドローディング用のアプリ パッケージ](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)を作成することもできます
+9. デバイスにビルドする前に、デバイスが開発者モードであることを確認してください。 HoloLens 2 に初めてデプロイする場合は、Visual Studio により、PIN を使用して HoloLens 2 をペアリングするよう求められる場合があります。 開発者モードを有効にするか、Visual Studio とペアリングする必要がある場合は、[こちらの手順](https://docs.microsoft.com//windows/mixed-reality/using-visual-studio)に従ってください。
 
 10. [リリース] 構成と [ARM] アーキテクチャを選択して、HoloLens 2 へのビルド用に Visual Studio を構成します。
 
@@ -168,5 +168,5 @@ ms.locfileid: "68977992"
 
 Azure を使用して、アプリケーションに音声認識を設定しました。 アプリケーションを実行して、すべての関数と機能が正常に動作していることを確認します。 まず、「手順 22. ターミナルをアクティブ化する」で入力したウェイクワードを言います。 マイクボタンをクリックして音声認識を開始します。 読み上げを開始します。 書き起こしという単語がターミナルに表示されます。 音声認識を停止するには、マイクボタンをもう一度押します。 「ターミナルを閉じる」と言うと、Lunarcom ターミナルが非表示になります。 次のレッスンでは、HoloLens 2 がオフラインであるために Azure の speech SDK が利用できない場合に、デバイスを使用した音声認識を使用してに動的に切り替える方法について説明します。
 
-[次のチュートリアル:2. ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
+[次のチュートリアル: 2. ローカルの音声からテキストへの変換のオフラインモードの追加](mrlearning-speechSDK-ch2.md)
 
