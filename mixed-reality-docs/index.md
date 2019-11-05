@@ -1,182 +1,212 @@
 ---
 layout: LandingPage
-title: Mixed Reality に関するドキュメント
-description: HoloLens とイマーシブ ヘッドセット向けの複合現実エクスペリエンスを構築する方法を説明します。
-author: varnauld
-ms.author: vanesa
-ms.date: 02/24/2019
-ms.topic: article
+title: Mixed Reality の概要
+description: Mixed Reality を初めて使用するユーザーにその概要と機能について説明します。
+author: grbury
+ms.author: grbury
+ms.date: 08/24/2019
+ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト
-ms.openlocfilehash: c39a5f2f31dc962758456f743e17aaf37fd4ed64
-ms.sourcegitcommit: 6a3b7d489c2aa3451b1c88c5e9542fbe1472c826
+ms.openlocfilehash: 1a5e4fcbb7704db6df59db9d01bb72a5b153b576
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817360"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438079"
 ---
-# <a name="mixed-reality-documentation"></a>Mixed Reality に関するドキュメント
+# <a name="get-started-with-mixed-reality"></a>Mixed Reality の概要
 
-Mixed Reality では、現実世界と仮想コンテンツを、物理的なオブジェクトとデジタルのオブジェクトが共存してやり取りするハイブリッド環境とブレンドします。 Microsoft HoloLens と Windows Mixed Reality イマーシブ ヘッドセット (VR) を使って Mixed Reality エクスペリエンスを構築する方法について説明します。
+## <a name="choose-your-track"></a>トラックを選択する
+
+
+:::row:::
+    :::column:::
+       [![Mixed Reality を初めて使う](images/Tile-New.jpg)](index.md#understand-the-basics)<br>
+        **[Mixed Reality を初めて使う](index.md#understand-the-basics)**<br>
+        基本を理解する
+    :::column-end:::
+    :::column:::
+       [![デザイナーである](images/Tile-Create.jpg)](design.md)<br>
+        **[デザイナーである](design.md)**<br>
+        設計とプロトタイプ作成を始める
+    :::column-end:::
+    :::column:::
+       [![開発者である](images/Tile-Develop.jpg)](development.md)<br>
+        **[開発者である](development.md)**<br>
+        ツールとアーキテクチャについて学習する
+    :::column-end:::
+    :::column:::
+       [![Unity と MRTK をすぐに使い始める](images/Tile-JumpIn.jpg)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)<br>
+        **[Unity と MRTK をすぐに使い始める](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)**<br>
+        MR 用 Unity の開発を最適化する
+    :::column-end:::
+:::row-end:::
+
 
 <br>
 
-<ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
-                            <li>
-                            <a href="design.md" title="設計ランディング" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/DesignIcon.png" alt="Design icon">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>設計</h3>
-                                                    <p>設計ガイダンスを入手し、ユーザー インターフェイスを構築して、操作と入力について学びます。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                               </a>
-                            </li>
-                            <li>
-                             <a href="development.md" title="開発ランディング" data-linktype="absolute-path">
-                              <div class="cardSize">
-                                  <div class="cardPadding">
-                                      <div class="card">
-                                          <div class="cardImageOuter">
-                                              <div class="cardImage">
-                                                  <img src="images/DevelopIcon.png" alt="Develop icon">
-                                              </div>
-                                          </div>
-                                          <div class="cardText">
-                                              <h3>開発</h3>
-                                              <p>開発ガイドを取得し、テクノロジを学習し、科学を理解します。</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                               </a>
-                            </li>
-                             <li>
-                              <a href="implementing-3d-app-launchers.md" title="配布" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/DistributeIcon.png" alt="Distribute icon">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">配布</h3>
-                                                  <p>他のユーザー用にアプリケーションを準備し、3D ランチャーの作成を検討します。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
- </ul>
+---
 
-<h2>サービス</h2>
+<br>
 
-<ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
-                            <li>
-                              <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank" title="Azure Spatial Anchors" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/AzureSpatialAnchors.jpg" alt="Azure Spatial Anchors image">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">Azure Spatial Anchors</h3>
-                                                  <p>Spatial Anchors はクロスプラットフォーム開発者向けサービスで、時間とデバイスを超えてその場所に存続するオブジェクトを使用して複合現実エクスペリエンスを作成できます。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                            </li>
-                            <li>
-                              <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/" target="_blank" title="音声認識サービス" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/speech.jpg" alt="Speech Services image">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">音声認識サービス</h3>
-                                                  <p>音声テキスト変換、話者認識、アプリケーションへの音声変換など Azure を利用した音声認識機能を検出、統合します。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                            </li>
-                             <li>
-                              <a href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/" target="_blank" title="視覚サービス" data-linktype="absolute-path">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage">
-                                                        <img src="images/vision.jpg" alt="Vision Services image">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3 class="x-hidden-focus">視覚サービス</h3>
-                                                  <p>コンピューター ビジョン、顔検出、感情認識、Video Indexer などのビジョン サービスを使用して画像またはビデオ コンテンツを特定、分析します。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                            </li>
-</ul>
+# <a name="understand-the-basics"></a>基本を理解する
 
-<h2>HoloLens 2 の概要</h2>
+Mixed Reality を初めて使用する場合、その概要と機能を学習します。
 
-[![HoloLens 2](images/hololens2.jpg)](https://www.microsoft.com/hololens/hardware)
 
-[HoloLens 2](https://www.microsoft.com/hololens/hardware) では、数分で価値を提供できる業界最先端のソリューションにより、最も快適でイマーシブな複合現実エクスペリエンスが提供されます。 これらはすべて、Microsoft のクラウドおよび AI サービスの信頼性、セキュリティ、および拡張性によってバックアップされています。 [HoloLens 2 Development Edition](https://www.microsoft.com/en-us/hololens/developers) を使用すると、HoloLens 2 と Unity ソフトウェアの無料試用版およびクラウド サービス用の Azure クレジットを組み合わせた特典付きの複合現実プランをすぐに開始できます。
+![Mixed Reality の範囲](images/RWtpZ1.jpeg)
 
-<h2>ニュースと注意事項</h2>
+## <a name="what-is-mixed-reality"></a>Mixed Reality とは
 
-<h3>2019 年 6 月</h3>
 
-お伝えしたとおり、複合現実エクスペリエンスをさらにお客様と共有できることを楽しみにしています。 ぜひご意見をお寄せください。Microsoft で扱ってほしいトピック、話を聞いてみたい人物、必要なチュートリアルやハウツーに関して[会話にご参加](https://holodevelopersslack.azurewebsites.net/)ください… [Twitter](https://twitter.com/MxdRealityDev) からフィードバックを送信したり、[開発者向けプログラムに参加](https://aka.ms/iwantmr)して、新しいドキュメント、ツール、イベントなどに関する更新情報を入手することもできます。 今後も引き続き最新情報をお知らせします。
+### <a name="mixed-reality-is-a-spectrummixed-realitymd"></a>[さまざまな Mixed Reality がある](mixed-reality.md)
+Mixed Reality は現実世界とデジタル世界を組み合わせたものです。 これは、人間、コンピューター、環境の相互作用における次の進化であり、これまでは想像することしかできなかった可能性が引き出されます。
 
-<table>
-<tr>
-<th style="width: 400px; text-align:left;">コンテンツ</th><th style="width: 125px; text-align:left;">配信</th><th style="width: 125px; text-align:left;">ライブ中継中</th>
-</tr> 
-<tr>
-<td><b>移植ガイド</b> <br>1. HoloToolKit (HTK)/Mixed Reality ツールキット (MRTK) から MRTK バージョン 2
-<br>2. HoloLens (第 1 世代) から HoloLens 2 (x86 から ARM、操作や設計に関する推奨事項)
-</td></td><td>2019 年 3 月 から 5 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-porting-guide>既存のアプリケーションを HoloLens 2 で利用できるようにする</a><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html>HoloToolKit から MRTK API に</a></td>
-</tr>
-<tr>
-<td>月単位のオープン ソース開発者向けモジュール (チュートリアルとサンプル アプリ)</td><td>2019 年 3 月 から 6 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrlearning-base-ch1>MR 学習ベース モジュール</a></td>
-</tr>
-<tr>
-<td>HoloLens 2 用 MRTK の新機能を見る</td><td>2019 年 4 月</td><td> <ul><li><a href=https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html>MRTK に関するドキュメント</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/mrtk-getting-started>MRTK v2 をお使いになる前に</a></td>
-</tr>
-<tr>
-<td>HoloLens 2 の設計と開発のガイダンス</td><td>2019 年 4 月</td><td> <ul><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools>ツールのインストール</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/using-the-hololens-emulator>HoloLens 2 エミュレーター</a><li><a href=https://docs.microsoft.com/en-us/windows/mixed-reality/interaction-fundamentals>本能的な操作の設計ガイダンス</a></td>
-</tr>
-<tr>
-  <td>Unreal の詳細情報</td><td>2019 年 5 月</td><td> <ul><li><a href=https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access>Unreal Engine 4 をいち早く体験</a></td>
-</tr>
-</table>
+<br>
+
+
+### <a name="what-is-a-hologramhologrammd"></a>[ホログラムとは](hologram.md)
+HoloLens を使用すると、ホログラムつまり自分の周囲に表示される光と音で構成されたオブジェクトを、実際のオブジェクトであるかのように作成できます。 ホログラムは、視線入力、ジェスチャ、音声コマンドに応答し、周囲の現実世界のサーフェスと対話できます。 ホログラムを使用すると、世界の一部であるデジタル オブジェクトを作成できます。
+
+<br>
+
+
+---
+
+<br>
+
+![Mixed Reality でできること](images/HLS19_remoteAssistHologram_001.jpg)
+
+## <a name="what-can-you-do-with-mixed-reality"></a>Mixed Reality でできること
+
+### <a name="a-new-vision-for-workhttpsdynamicsmicrosoftcommixed-realityoverview"></a>[仕事のための新しいビジョン](https://dynamics.microsoft.com//mixed-reality/overview/)
+Microsoft 社内では、従業員の生産性を向上させ、操作を最適化するために、Mixed Reality アプリケーションを作成しています。 Dynamics 365 チームは、さまざまな可能性を示す幅広いプロジェクトに取り組んでいます: リモート アシスト、レイアウト、ガイド。
+
+<br>
+
+### <a name="the-pursuit-of-more-personal-computingcase-study-the-pursuit-of-more-personal-computingmd"></a>[よりパーソナルなコンピューティングの追求](case-study-the-pursuit-of-more-personal-computing.md)
+今日製品を構築することで、明日のチャンスが広がります。 これらの製品で提供されるソリューションにより、将来の向上のために必要なものが明らかになります。 Mixed Reality の場合は特にそうです。実際の仕事 (実際のデバイス、実際の顧客、実際の問題) の実体験から、実践的な洞察が得られます。
+
+
+<br>
+
+
+
+## <a name="see-how-industry-partners-are-using-mixed-reality"></a>業界のパートナーが Mixed Reality をどのように使用しているかを確認する
+
+
+:::row:::
+    :::column:::
+       [![Bentley](images/Bentley-Synchro1.jpg)](https://binged.it/31AR3kP)
+    :::column-end:::
+    :::column span="2":::
+        ### <a name="view-complex-construction-projects-with-bentleys-digital-construction-softwarehttpsbingedit31ar3kp"></a>[Bentley のデジタル建設ソフトウェアで複雑な建設プロジェクトを表示する](https://binged.it/31AR3kP)
+        Synchro は、複雑な建設プロジェクトを Mixed Reality で表示できるようにする Bentley のデジタル建設ソフトウェアです。 これらの 4D デジタル建設プラットフォームは、従来のガント チャート CPM スケジュールと、統合されたリアルタイムの 4D 視覚化機能を組み合わせたものです。
+    :::column-end:::
+:::row-end:::
+
+---
+
+:::row:::
+    :::column:::
+       [![PTC の Vuforia Studio](images/PTC-Vuforia-Studio1.jpg)](https://binged.it/31ARrjh)
+    :::column-end:::
+    :::column span="2":::
+        ### <a name="ptcs-vuforia-studio-authoring-solution-promotes-workforce-productivity-and-safetyhttpsbingedit31arrjh"></a>[PTC の Vuforia Studio 作成ソリューションで従業員の生産性と安全性を促進する](https://binged.it/31ARrjh)
+        Vuforia Studio の効率的な Mixed Reality 作成ソリューションは、従業員が最も頻繁に必要とする情報を提供することによって、従業員の生産性と安全性を促進します。これは、日常業務環境の実際のコンテキストで使用されます。
+    :::column-end:::
+:::row-end:::
+
+---
+
+:::row:::
+    :::column:::
+       [![Philips-Azurion](images/Philips-Azurion1.jpg)](https://binged.it/31B1RiR)
+    :::column-end:::
+    :::column span="2":::
+        ### <a name="philips-is-piloting-hololens-in-the-domain-of-image-guided-minimally-invasive-procedureshttpsbingedit31b1rir"></a>[Philips は画像誘導低侵襲的処置の分野で HoloLens をいち早く導入しています](https://binged.it/31B1RiR)
+        Philips は画像誘導低侵襲的処置の分野で HoloLens をいち早く導入しています。医師はライブ X 線、超音波、その他の情報源を利用して、患者の体内を "見る" ことにより、処置に役立てています。
+    :::column-end:::
+:::row-end:::
+
+<br>
+
+<br>
+
+---
+
+<br>
+
+![HoloLens の分解図](images/HoloLens2_ExplodedView_8k.png)
+
+## <a name="what-are-the-capabilities-of-hololens"></a>HoloLens の機能は何か
+
+### <a name="immersive-ergonomic-instinctual-and-untetheredhttpswwwmicrosoftcomhololenshardware"></a>[イマーシブ、人間工学的、直感的、接続不要](https://www.microsoft.com//hololens/hardware)
+
+HoloLens 2 は、数分で価値を提供できる業界最先端のソリューションにより、最も快適でイマーシブな複合現実エクスペリエンスを提供します。これらはすべて、Microsoft のクラウドおよび AI サービスの信頼性、セキュリティ、および拡張性によって強化されています。
+
+<br>
+
+---
+
+<br>
+
+![コア エクスペリエンス](images/text_in_unity_viewingangle.jpg)
+
+## <a name="what-are-the-core-concepts-of-an-experience"></a>エクスペリエンスの主要な概念は何か
+
+### <a name="keep-the-user-comfortable---comfortcomfortmd"></a>[ユーザーの快適さを維持する (快適さ)](comfort.md)
+ヘッド マウント ディスプレイを可能な限り快適なものにするため、デザイナーと開発者は、これらの手掛かりの自然界での動作方法と同じようにコンテンツを作成して提示することが重要です。
+
+<br>
+
+### <a name="how-the-user-sees-the-world---holographic-frameholographic-framemd"></a>[ユーザーには世界がどのように見えるか - (ホログラフィック フレーム)](holographic-frame.md)
+ユーザーは、ヘッドセットによって作成される四角形のビューポートを通して、Mixed Reality の世界を見ることになります。 HoloLens では、この四角形の領域はホログラフィック フレームと呼ばれ、ユーザーは自分の周囲の現実世界に重ねてデジタル コンテンツを見ることができます。
+
+<br>
+
+### <a name="making-holographic-objects-feel-real---spatial-mappingspatial-mappingmd"></a>[ホログラフィック オブジェクトを現実的なものにする - (空間マッピング)](spatial-mapping.md)
+空間マッピングにより、オブジェクトを実際のサーフェスの上に配置できるようになります。 これは、オブジェクトをユーザーの世界に固定し、現実世界の奥行きの手掛かりを利用するのに役立ちます。
+
+<br>
+
+### <a name="suggesting-the-scale-of-an-object---scalescalemd"></a>[オブジェクトのスケールを示す - (スケール)](scale.md)
+ホログラフィック形式で現実的に見えるようにコンテンツを表示する鍵は、現実世界の視覚的な統計に可能な限り近付けることです。 これは、オブジェクトがどこにあるか、どのくらいの大きさか、何でできているのかを (現実世界で) 理解するのに役立つ視覚的な手掛かりを、できる限り多く組み込むことを意味します。
+
+
+<br>
+
+---
+
+## <a name="what-would-you-like-to-do-next"></a>次に行うこと
+
+
+:::row:::
+    :::column:::
+       [![試す](images/icon-hololensuser.jpg)](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)<br>
+        **[Mixed Reality を試す](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)**<br>
+        ローカルの Microsoft Store で、Mixed Reality と HoloLens のデモを入手してください。 
+    :::column-end:::
+    :::column:::
+        [![作成者になる](images/icon-design.jpg)](design.md)<br>
+        **[作成者になる](design.md)**<br>
+        設計とプロトタイプ作成を開始するために必要な基本的な概念について説明します。
+    :::column-end:::
+    :::column:::
+        [![イベントに参加する](images/icon-calendar.jpg)](sf-academy-events.md)<br>
+        **[イベントに参加する](sf-academy-events.md)**<br>
+        最初の HoloLens 2 アプリケーションを作成するには、ハードウェアを参照し、ハンズオン チュートリアルを入手してください。
+    :::column-end:::
+    :::column:::
+        [![開発を始める](images/icon-developer.jpg)](development.md)<br>
+        **[開発を始める](development.md)**<br>
+        スキル レベル、ワーク スタイル、プラットフォームへの関心に基づいて、開発パスを選択します。
+    :::column-end:::
+:::row-end:::
+
+
+<br>
 
 <br>
 
