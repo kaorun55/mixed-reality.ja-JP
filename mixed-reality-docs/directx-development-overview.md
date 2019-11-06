@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX, holographic レンダリング, ネイティブ, ネイティブアプリ, WinRT, WinRT アプリ, プラットフォーム Api, カスタムエンジン, ミドルウェア
-ms.openlocfilehash: 698ccb57a39189b9c0634c47ad6cbd6325c06caa
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e77ee5053e69aef502481d18618e604c6bfb5939
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435587"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641092"
 ---
 # <a name="directx-development-overview"></a>DirectX 開発の概要
 
@@ -49,7 +49,7 @@ Windows Mixed Reality は[、次の2種類のアプリを](app-views.md)サポ�
 * [DirectX でのヘッド視線入力とアイ視線入力](gaze-in-directx.md)
 * [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 * [DirectX の音声入力](voice-input-in-directx.md)
-* [DirectX の立体音響](spatial-sound-in-directx.md)
+* [立体音響](https://docs.microsoft.com/windows/win32/coreaudio/spatial-sound)
 * [DirectX の空間マッピング](spatial-mapping-in-directx.md)
 
 

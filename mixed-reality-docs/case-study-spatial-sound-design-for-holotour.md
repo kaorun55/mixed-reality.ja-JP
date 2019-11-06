@@ -6,12 +6,12 @@ ms.author: jsylte
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、HoloTour、空間サウンド、ケーススタディ
-ms.openlocfilehash: eca675534dba12dd65a20fb9d85e4df57f725288
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: e1da80bd647084aa4d7839c0f1b1848b46c2b1b4
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63522445"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641152"
 ---
 # <a name="case-study---spatial-sound-design-for-holotour"></a>ケーススタディ-HoloTour の空間サウンド設計
 
@@ -27,13 +27,13 @@ HoloTour では、HoloLens の空間サウンド機能を利用して、360度�
 
 ## <a name="behind-the-scenes"></a>しくみ
 
-2つの異なる場所の HoloTour エクスペリエンスを作成しました。ローマと Machu の絵文字。 これらのツアーが本物で説得力のあるものになるように、一般的なサウンドを使用しないようにし、撮影していた場所から直接オーディオを取り込むことを望んでいました。
+ローマと Machu の2つの場所の HoloTour エクスペリエンスを作成しました。 これらのツアーが本物で説得力のあるものになるように、一般的なサウンドを使用しないようにし、撮影していた場所から直接オーディオを取り込むことを望んでいました。
 
 ### <a name="capturing-the-audio"></a>オーディオをキャプチャする
 
 [HoloTour のビジュアルコンテンツのキャプチャに関するこのケーススタディ](case-study-capturing-and-creating-content-for-holotour.md)では、カメラのリモートテストマシンのカスタム設計について説明します。 3D 印刷ハウジングに含まれる14個の GoPro カメラで、三脚の特定の寸法に合わせて設計されています。 このリモートテストマシンからオーディオを取り込むために、カメラの下にクワッドマイクロフォンアレイを追加しました。これは、三脚のベースにあるコンパクトな4チャンネル記録単位になります。 私たちは、カメラのビューを occlude ないように、非常に小さなフットプリントを使用しているだけではなく、非常に小さいマイクを選択しました。
 
-![カスタムカメラとマイクのリモートテストマシン群](images/camera-rig-microphones-300px.png)<br>
+カスタムカメラとマイクのリモートテストマシンの ![](images/camera-rig-microphones-300px.png)<br>
 *カスタムカメラとマイクのリモートテストマシン群*
 
 このセットアップでは、カメラの正確な位置から4つの方向にサウンドがキャプチャされています。これにより、空間サウンドを使用して 3D aural パノラマを再作成するための十分な情報が得られます。これは、後で360度のビデオに同期することができます。
@@ -59,18 +59,18 @@ HoloTour では、HoloLens の空間サウンド機能を利用して、360度�
 ## <a name="tips-and-tricks"></a>ヒントとテクニック
 
 シーンにオーディオをまとめるときは、他にもいくつかの方法で方向性と immersion を強調表示し、HoloLens の空間サウンド機能を最大限に活用することができます。 以下の一覧が用意されています。次に HoloTour を試すときにリッスンします。
-* **ターゲットの検索**:これらは、holographic フレームの特定のオブジェクトまたは領域を見ているときにのみトリガーされるサウンドです。 たとえば、ローマの Piazza Navona でのストリートのカフェの方向を調べると、忙しいレストランの音が微妙にトリガーされます。
-* **ローカルビジョン**:HoloTour の旅には、ホログラムによって支援されるツアーガイドが、トピックの詳細を調べる特定の拍が含まれています。 たとえば、Pantheon ディゾルブのファサードは oculus を明らかにするため、Pantheon の内部から3D エミッタとして配置された reverberating オーディオは、ユーザーが内部モデルを探索することを奨励します。
-* **強化**された方向性:多くの場面では、さまざまな方法でサウンドを置き、方向性を追加していました。 Pantheon シーンでは、たとえば、ふんすいの音は、ユーザーにとって十分に近い独立したエミッタとして配置されています。これは、再生スペースの周りに見られる "音波視差" という意味を持つことができるようにするためです。 ペルー氏は、"シーンとしての Salinas de" として、一部の小さなストリームの個々の観点が個別の発信器として配置されています。これは、ユーザーがその場所の本物のサウンドを使用して、よりイマーシブな環境を構築するためのものです。
-* **スプラインエミッタ**:この特殊な空間サウンドエミッタは、アタッチされているオブジェクトの視覚的な位置に対して相対的に3D 空間で移動します。 この例として、スプラインエミッタを使用して、方向性と移動を明確に示すためにスプラインエミッタを使用した、Machu の電車でのトレーニングがありました。
-* **音楽と SFX**:より複雑なアプローチを表す HoloTour の特定の側面では、音楽とサウンド効果を使用して、感情的な影響を面白くしています。 ローマツアーの終わりにある gladiator の戦いでは、whooshes や stingers などの特殊な効果を使用して、ラベルがバックグラウンドで表示される効果を高めることができました。
+* **[ターゲットの検索]** : これらは、holographic フレームの特定のオブジェクトまたは領域を見ているときにのみトリガーされるサウンドです。 たとえば、ローマの Piazza Navona でのストリートのカフェの方向を調べると、忙しいレストランの音が微妙にトリガーされます。
+* **ローカルビジョン**: HoloTour を使用すると、ホログラムによって支援されるツアーガイドでは、トピックの詳細を調べることができます。 たとえば、Pantheon ディゾルブのファサードは oculus を明らかにするため、Pantheon の内部から3D エミッタとして配置された reverberating オーディオは、ユーザーが内部モデルを探索することを奨励します。
+* **方向性の向上**: 多くのシーンで、方向性を高めるさまざまな方法でサウンドを配置しました。 Pantheon シーンでは、たとえば、ふんすいの音は、ユーザーにとって十分に近い独立したエミッタとして配置されています。これは、再生スペースの周りに見られる "音波視差" という意味を持つことができるようにするためです。 ペルー氏は、"シーンとしての Salinas de" として、一部の小さなストリームの個々の観点が個別の発信器として配置されています。これは、ユーザーがその場所の本物のサウンドを使用して、よりイマーシブな環境を構築するためのものです。
+* **スプラインエミッタ**: この特殊な空間サウンドエミッタは、アタッチされているオブジェクトの視覚的な位置に対して相対的に3d 空間で移動します。 この例として、スプラインエミッタを使用して、方向性と移動を明確に示すためにスプラインエミッタを使用した、Machu の電車でのトレーニングがありました。
+* **Music AND SFX (音楽と**再生): より定型的なアプローチや、より複雑なアプローチを表す HoloTour の特定の側面は、感情的影響を面白くために音楽とサウンド効果を使用します。 ローマツアーの終わりにある gladiator の戦いでは、whooshes や stingers などの特殊な効果を使用して、ラベルがバックグラウンドで表示される効果を高めることができました。
 
 ## <a name="about-the-author"></a>作成者について
 
 <table style="border-collapse:collapse">
 <tr>
 <td style="border-style: none" width="60px"><img alt="Picture of Jason Syltebo" width="60" height="60" src="images/syltebo.png"></td>
-<td style="border-style: none"><b>Jason Syltebo</b><br>オーディオデザイナー@Microsoft</td>
+<td style="border-style: none"><b>Jason Syltebo</b><br>オーディオデザイナーの @Microsoft</td>
 </tr>
 </table>
 
@@ -78,7 +78,6 @@ HoloTour では、HoloLens の空間サウンド機能を利用して、360度�
 * [立体音響](spatial-sound.md)
 * [立体音響の設計](spatial-sound-design.md)
 * [Unity の立体音響](spatial-sound-in-unity.md)
-* [MR 空間220](holograms-220.md)
-* [ビデオ:Microsoft HoloLens:HoloTour](https://www.youtube.com/watch?v=pLd9WPlaMpY)
+* [ビデオ: Microsoft HoloLens: HoloTour](https://www.youtube.com/watch?v=pLd9WPlaMpY)
 
  

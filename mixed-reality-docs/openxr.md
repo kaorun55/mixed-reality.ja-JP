@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR、Khronos、BasicXRApp、Mixed Reality OpenXR 開発者ポータル、DirectX、ネイティブ、ネイティブアプリカスタムエンジン、ミドルウェア
-ms.openlocfilehash: cf8795e6fed7db9fd0743d0902ce1585d56fa5e0
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d29b59d7dec19e5423c83ea6e61bb5625c8981dd
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438136"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641129"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -90,7 +90,7 @@ Windows Mixed Reality OpenXR Runtime は、年の終わりまでに、HoloLens 2
 * [手 articulation + 手メッシュ](hands-and-tools.md)
 * [目の視線入力](eye-tracking.md)
 * [セカンダリビューの構成 (Mixed Reality キャプチャ)](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in)
-* [空間マッピング](spatial-mapping.md)
+* [シーンの理解](scene-understanding.md)
 * Windows SDK Api との相互運用
 
 これらの拡張機能の一部は、ベンダー固有の MSFT 拡張機能として開始される場合がありますが、Microsoft およびその他の OpenXR runtime ベンダーが連携して、これらの機能領域の多くについて、クロスベンダーの EXT または KHR 拡張機能を設計します。  これにより、コア仕様と同様に、これらの機能用に記述したコードをランタイムベンダー間で移植可能にすることができます。

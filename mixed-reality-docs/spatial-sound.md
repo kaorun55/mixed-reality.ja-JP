@@ -1,23 +1,31 @@
 ---
-title: 立体音響
-description: 混合 reality アプリケーションで空間サウンドを使用すると、3D 空間にサウンドを convincingly ことができます。
-author: hak0n
-ms.author: hakons
-ms.date: 03/21/2018
+title: 混合現実のオーディオ
+description: 混合現実のオーディオを使用すると、UI インタラクションのユーザーの信頼を高め、ユーザーのエクスペリエンスをこちらことができます。
+author: kegodin
+ms.author: kegodin
+ms.date: 11/07/2019
 ms.topic: article
 keywords: 空間サウンド、サラウンドサウンド、3d オーディオ、3d サウンド、空間オーディオ
-ms.openlocfilehash: 31ec8f88a060127daab9bf3afc970457ec7c90a3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1930017903439aee3ac53b6c4be344fdc44c356f
+ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437393"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73641115"
 ---
-# <a name="spatial-sound"></a>立体音響
+# <a name="audio-in-mixed-reality"></a>混合現実のオーディオ
+オーディオは、混合現実の設計と生産性の重要な部分であり、次のことが可能です。
+* ジェスチャと音声ベースの対話でユーザーの信頼度を高める
+* ユーザーガイドの次の手順
+* 仮想オブジェクトを実際の世界と効果的に組み合わせる
 
-オブジェクトが目に見えなくなったときに、私たちが何をしているのかを確認する方法の1つは、サウンドを使用することです。 Windows Mixed Reality では、音声エンジンは、方向、距離、および環境シミュレーションを使用して3D サウンドをシミュレートすることによって、mixed reality の aural コンポーネントを提供します。 アプリケーションで空間サウンドを使用すると、開発者はユーザーに対して3次元空間 (球) でサウンドを convincingly ことができます。 これらのサウンドは、実際の物理オブジェクトまたはユーザーの周囲の混合現実ホログラムからのものであるように見えます。 [ホログラム](hologram.md)が光の付いたオブジェクトであり、音がかかることがあるので、サウンドコンポーネントは、believable を増やし、よりイマーシブなエクスペリエンスを作成するために、地面のホログラムに役立ちます。
+HoloLens を含む mixed reality ヘッドセットの待機時間の短いヘッドトラッキングでは、高品質の HRTF ベースの spatialization を使用できます。 アプリケーションの Spatializing オーディオは次のようになります。
+* ビジュアル要素へのアテンション呼び出し
+* ユーザーが実際の環境を認識できるようにする
 
-ホログラムは、ユーザーの宝石が指している場所でのみ視覚的に表示できますが、アプリのサウンドはすべての方向から取得できます。上、下、背後、その他この機能を使用すると、現在ユーザーの表示に含まれていない可能性があるオブジェクトに注意を促すことができます。 ユーザーは、混合現実の世界でソースから emanating されるような音を感じることができます。 たとえば、ユーザーがオブジェクトに近づいたり、オブジェクトに近づいたりすると、ボリュームが増加します。 同様に、オブジェクトがユーザーの周りを移動する場合や、その逆の場合は、空間サウンドによって、サウンドがオブジェクトから直接送られるようになります。
+Acoustics を追加すると、ホログラムが混合世界に接続され、環境とオブジェクトの状態に関する手掛かりを得ることができます。
+
+オーディオを使用したデザインの詳細な例については、「[サウンドのデザイン](spatial-sound-design.md)」を参照してください。
 
 <br>
 
@@ -39,38 +47,52 @@ ms.locfileid: "73437393"
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
      <tr>
-        <td>立体音響</td>
+        <td>Spatialization</td>
         <td>✔️</td>
         <td>✔️</td>
-        <td>✔️ (ヘッドフォンあり)</td>
+        <td>✔️</td>
+    </tr>
+     <tr>
+        <td>Spatialization ハードウェアアクセラレーション</td>
+        <td>❌</td>
+        <td>✔️</td>
+        <td>❌</td>
     </tr>
 </table>
 
-## <a name="simulating-the-perceived-location-and-distance-of-sounds"></a>認識された場所とサウンドの距離をシミュレートする
+## <a name="using-sounds-in-mixed-reality"></a>Mixed reality でのサウンドの使用
+[Mixed reality でサウンドを使用](spatial-sound-design.md)する場合、タッチおよびキーボードおよびマウスアプリケーションとは別のアプローチが必要になることがあります。 サウンド設計の主な決定事項には、どのようなサウンドを spatialize し、どのような対話を sonify にするかが含まれます。 これらの決定は、ユーザーの自信、生産性、学習曲線に大きな影響を与える可能性があります。
 
-サウンドが耳の両方に到達したかを分析することで、脳は、サウンドを生成するオブジェクトの距離と方向を決定します。 HRTF (または Head 関連の転送関数) は、ポイントの地点からの耳の反応を特徴付けるスペクトル応答をモデル化することで、この相互作用をシミュレートします。 空間オーディオエンジンでは、カスタマイズされた HRTFs を使用して、mixed reality エクスペリエンスを拡張し、さまざまな方向や距離からのサウンドをシミュレートします。
+### <a name="case-studies"></a>導入事例
+HoloTour は事実上、世界中の tourist と歴史的なサイトにユーザーを移動させることになります。 次のケーススタディでは、HoloTour の HoloTour: [sound design](case-study-spatial-sound-design-for-holotour.md)のサウンドデザインについて説明します。 特殊なマイクとレンダリングのセットアップを使用して、サブジェクトスペースがキャプチャされました。
+
+RoboRaid は、HoloLens の高エネルギー shooter です。 次のケーススタディでは、空間オーディオを最大限に利用するために使用されたデザインの選択について説明します。 [RoboRaid のサウンドデザイン](case-study-using-spatial-sound-in-roboraid.md)です。
+
+## <a name="spatialization"></a>Spatialization
+Spatialization は、空間オーディオの方向コンポーネントです。 7\.1 home シアターセットアップを使用する場合、spatialization は、スピーカー間のパンと同様に簡単です。 しかし、ヘッドホンが混在している場合は、正確さと快適さを実現するために HRTF ベースのテクノロジを使用することが不可欠です。 Windows には HRTF ベースの spatialization が用意されており、このサポートは HoloLens 2 でハードウェアアクセラレータを利用しています。
 
 <br>
 
 <iframe width="940" height="530" src="https://www.youtube.com/embed/aB3TDjYklmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-左または右のオーディオ (azimuth) のキューは、各 ear でサウンドが到着したときの違いに起因します。 上下のキューは、外側の ear 図形 (pinnae) によって生成されたスペクトル変化から発生します。 オーディオの発信元を指定することにより、システムは、耳に異なる時刻に到着したサウンドのエクスペリエンスをシミュレートできます。 HoloLens では、azimuth spatialization はパーソナル化されていますが、昇格のシミュレーションは平均 anthropometrics のセットに基づいていることに注意してください。 したがって、昇格の精度は azimuth の精度よりも正確ではない可能性があります。
+### <a name="should-i-spatialize"></a>Spatialize ですか。
+Mixed reality アプリケーションの多くのサウンドには、リスナーの頭から音を spatialization、世界中に配置する、という利点があります。 アプリケーションで spatialization を最も効果的に使用するための推奨事項については、「[空間サウンドの設計](spatial-sound-design.md)」を参照してください。
 
-サウンドの特性は、それらが存在する環境によっても変わります。 たとえば、岩穴で叫んを使用すると、音声が壁、床、および雲に出、エコー効果が作成されます。 空間サウンドの部屋モデル設定は、特定のオーディオ環境でサウンドを配置するために、これらの反射を再現します。 この設定を使用すると、ユーザーの実際の場所を一致させて、よりイマーシブなオーディオエクスペリエンスを作成することができます。
+### <a name="spatializer-personalization"></a>Spatializer のパーソナル化
+HRTFs は、頻度の範囲内の耳間のレベルとフェーズの差を操作します。 これらは、物理的なモデルと、人間の頭、torso および ear 図形 (pinnae) の測定値に基づいています。 脳は、これらの違いに対応して、サウンドの方向を認識します。 
 
-## <a name="integrating-spatial-sound"></a>空間サウンドの統合
+各個人には、独自の ear 図形、ヘッドサイズ、および耳の位置があります。したがって、最適な HRTFs は自分に準拠しているものです。 HoloLens では、ヘッドセットから pupilary distance (IPD) を使用して spatialization の精度が向上し、ヘッドサイズに対して HRTFs が調整されます。
 
-混合現実の一般的な原則は、ユーザーの物理的な世界または仮想環境での最先端の[ホログラム](hologram.md)であるため、ホログラムからのほとんどのサウンドは spatialized にする必要があります。 HoloLens では、自然に CPU とメモリの予算に関する考慮事項がありますが、CPU の使用率が12% 未満 (4 つのコアのうちの 70%) を使用して、10-12 の空間サウンド音声を使用できます。 空間サウンドの音声の推奨される用途は次のとおりです。
-* (特にビュー外の) オブジェクトを見つめています。 ホログラムにユーザーの注意が必要な場合は、そのホログラムでサウンドを再生します (例: 仮想 dog ほえ)。 これにより、ユーザーは、表示されていないホログラムを見つけることができます。
-* Audio Haptics (touchless 相互作用のためのリアクティブオーディオ)。 たとえば、ユーザーの手や運動コントローラーがジェスチャフレームを入力して終了したときに音を鳴らします。 または、ユーザーがホログラムを選択したときに音を鳴らします。
-* Immersion (ユーザーを囲むアンビエントサウンド)。
+### <a name="spatializer-platform-support"></a>Spatializer プラットフォームのサポート
+Windows では、 [ISPATIALAUDIOCLIENT API](https://docs.microsoft.com/windows/win32/coreaudio/spatial-sound)を使用して、hrtfs などの spatialization を提供しています。 この API は、HoloLens 2 HRTF ハードウェアアクセラレーションをアプリケーションに公開します。
 
-また、標準のステレオサウンドと空間サウンドをブレンドすると、現実的な環境を作成するのに効果的な場合があることに注意してください。ステレオサウンドは、反射 (距離の手掛かり) は、ノイズの多い環境では聞こえにくいことがあります。
+### <a name="spatializer-middleware-support"></a>Spatializer ミドルウェアのサポート
+Windows の HRTFs のサポートは、一部のサードパーティのオーディオエンジンで利用できます。
+* [Unity オーディオエンジン](spatial-sound-in-unity.md)プラグインは HRTF xapo を呼び出します。
+* [Wwise なオーディオエンジンプラグイン](https://www.audiokinetic.com/products/plug-ins/msspatial/)は、ISpatialAudioClient API を呼び出します。
 
-Windows の空間サウンドエンジンでは、再生用に 48 k サンプルレートのみがサポートされています。 Unity などのほとんどのミドルウェアでは、サウンドファイルはサポートされている形式に自動的に変換されますが、Windows Audio Api を直接使用する場合は、コンテンツの形式を、その効果でサポートされている形式に一致させることができます。
+## <a name="acoustics"></a>Acoustics
+空間オーディオは、方向よりも大きくなる可能性があります。 閉鎖、障害物、リバーブ、portalling、ソースモデリングなどの他のディメンションは、総称して "acoustics" と呼ばれます。 Acoustics を使用しない場合、spatialized サウンドには認識できない距離があります。
 
-## <a name="see-also"></a>関連項目
-* [MR 空間220](holograms-220.md)
-* [Unity の立体音響](spatial-sound-in-unity.md)
-* [DirectX の立体音響](spatial-sound-in-directx.md)
-* [立体音響の設計](spatial-sound-design.md)
+Acoustics の扱いは、単純なものから非常に複雑なものまでさまざまです。 任意のオーディオエンジンでサポートされているような単純なリバーブを使用すると、リスナーを囲む環境に spatialized サウンドをプッシュできます。 [プロジェクト acoustics](https://aka.ms/acoustics)などの acoustics システムから、より豊富で説得力のある acoustics 処理を利用できます。 Project Acoustics は、壁、ドア、およびその他のシーンジオメトリの効果をサウンドでモデル化できます。これは、開発時に関連するシーンジオメトリが既知の場合に有効なオプションです。
+
