@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D、ロゴ、アイコン、モデリング、ランチャー、3D ランチャー、タイル、live cube、win32
-ms.openlocfilehash: ac3d5e17614bcd1072f6843a46bf0525f441f130
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 87eadfb5184f9fb5f8d513ab00a2a954e71df376
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63515603"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438578"
 ---
 # <a name="implement-3d-app-launchers-win32-apps"></a>3D アプリランチャーの実装 (Win32 アプリ)
 
@@ -42,18 +42,18 @@ Win32 アプリケーションは、Windows Mixed Reality の [スタート] メ
         * これらは、Windows Mixed Reality のすべてのアプリの一覧とデスクトップの [スタート] メニューのアプリの2D ロゴに使用されます。
         * ファイルパスは、ビジュアル要素マニフェストを含むフォルダーに対する相対パスです。
         * その場合でも、標準のメカニズムを使用して、アプリのデスクトップの [スタート] メニューアイコンを指定する必要があります。 これは、実行可能ファイルまたは作成したショートカット (IShellLink:: SetIconLocation など) に直接配置できます。
-        * *Optional*MRT.DLL がさまざまな解像度スケールとハイコントラストテーマに対して複数のアセットサイズを提供する場合は、リソースの pri ファイルを使用できます。
+        * *省略可能:* MRT.DLL がさまざまな解像度スケールとハイコントラストテーマに対して複数のアセットサイズを提供する場合は、リソースの pri ファイルを使用できます。
     3. 3D アプリランチャーの GLB をポイントするように**MixedRealityModel パス**を更新します。
     4. "" という拡張子を持つ実行可能ファイルと同じ名前のファイルを保存します。Visualを Manifest.xml し、同じディレクトリに保存します。 たとえば、実行可能ファイル "al.exe" の場合、付随する XML ファイルの名前は "contoso. visual、.manifest" になります。
 3. アプリケーションへの**ショートカットを**デスクトップの [スタート] メニューに追加します。 実装の例C++については、[次のサンプル](#sample-app-launcher-shortcut-creation)を参照してください。 
     * %ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs (machine) または%APPDATA%\Microsoft\Windows\Start Menu\Programs (user) で作成する
     * 更新によって、ビジュアル要素マニフェストまたはそれによって参照される資産が変更された場合、更新プログラムによって、マニフェストが再解析され、キャッシュされたアセットが更新されるようにショートカットが更新されます。
-4. *Optional*デスクトップショートカットがアプリケーションの EXE を直接指していない場合 (たとえば、"myapp://" のようなカスタムプロトコルハンドラーが呼び出された場合)、[スタート] メニューでアプリの Visual要素のマニフェストファイルが自動的に検索されません。 これを解決するには、ショートカットで VisualElementsManifestHintPath () を使用して、ビジュアル要素マニフェストのファイルパスを指定する必要があります。 これは、System.AppUserModel.ID と同じ手法を使用して、ショートカットで設定できます。 System.AppUserModel.ID を使用する必要はありませんが、アプリケーションの明示的なアプリケーションユーザーモデル ID が使用されている場合に、そのショートカットに一致するように指定することもできます。  サンプルについては、後の「[サンプルアプリランチャーショートカットの作成](#sample-app-launcher-shortcut-creation)」セクションを参照してください。 C++
+4. *省略可能:* デスクトップショートカットがアプリケーションの EXE を直接指していない場合 (たとえば、"myapp://" のようなカスタムプロトコルハンドラーが呼び出された場合)、[スタート] メニューでアプリの Visual要素のマニフェストファイルが自動的に検索されません。 これを解決するには、ショートカットで VisualElementsManifestHintPath () を使用して、ビジュアル要素マニフェストのファイルパスを指定する必要があります。 これは、System.AppUserModel.ID と同じ手法を使用して、ショートカットで設定できます。 System.AppUserModel.ID を使用する必要はありませんが、アプリケーションの明示的なアプリケーションユーザーモデル ID が使用されている場合に、そのショートカットに一致するように指定することもできます。  サンプルについては、後の「[サンプルアプリランチャーショートカットの作成](#sample-app-launcher-shortcut-creation)」セクションを参照してください。 C++
 
 ### <a name="sample-visual-elements-manifest"></a>ビジュアル要素マニフェストのサンプル
 
 ```xml
-<Application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Application xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
   <VisualElements
     ShowNameOnSquare150x150Logo="on"
     Square150x150Logo="YOUR_APP_LOGO_150X150.png"
