@@ -39,6 +39,7 @@
 ### [部屋のスキャンの可視化](room-scan-visualization.md)
 ### [シーンの理解](scene-understanding.md)
 ### [空間アンカー](spatial-anchors.md)
+### [サウンド](spatial-sound.md)
 ### [空間マッピング](spatial-mapping.md)
 ### [システム ジェスチャ](system-gesture.md)
 ### [複合現実アプリの種類](types-of-mixed-reality-apps.md)
@@ -65,7 +66,6 @@
 ### スタイル
 #### [色、ライト、マテリアル](color,-light-and-materials.md)
 #### [スケール](scale.md)
-#### [立体音響](spatial-sound.md)
 #### [立体音響の設計](spatial-sound-design.md)
 #### [文字体裁](typography.md)
 ### コントロールと動作
@@ -193,7 +193,6 @@
 #### [手と目の視線入力](gaze-in-directx.md)
 #### [手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 #### [音声入力](voice-input-in-directx.md)
-#### [立体音響](spatial-sound-in-directx.md)
 #### [空間マッピング](spatial-mapping-in-directx.md)
 #### [シーンの理解](scene-understanding-sdk.md)
 #### [共有空間アンカー](shared-spatial-anchors-in-directx.md)
