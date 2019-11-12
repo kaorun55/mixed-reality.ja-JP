@@ -6,12 +6,12 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality、holographic、ar、vr、mr、xr、強化現実、仮想現実、説明
-ms.openlocfilehash: 83beca8b6abad56fc37800ddfc9faad0d21859bf
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 601e42c03e827f0f531f9dcf937a0dd34b008dc3
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437873"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926782"
 ---
 # <a name="what-is-mixed-reality"></a>Mixed Reality とは
 
@@ -71,7 +71,7 @@ Mixed reality は物理的な世界とデジタルの両方の面を融合して
 <br>
 
 混合現実のスペクトルを ![](images/MixedRealitySpectrum.jpg)<br>
-*混合現実の specturm*
+*混合現実のスペクトラム*
 
 <br>
 

@@ -6,12 +6,12 @@ ms.author: daescu
 ms.date: 04/06/2019
 ms.topic: article
 keywords: 現実、ショー、カレンダー、academy、schedule、sf、サンフランシスコ、リアクター
-ms.openlocfilehash: ebecfa59d1c1b60ba7f3bf546816ed33b4910ad7
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a7cecd4dcce63afb17c3f6d26596c138490f0181
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438324"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926843"
 ---
 # <a name="the-realities-show"></a>現実のショー
 ![Mixed Reality 向けの設計](images/therealitiesshow.jpg)
@@ -31,11 +31,11 @@ ___
 
 ___
 ## <a name="world-understanding---coming-soon"></a>**世界**的な理解-近日公開予定
-インテリジェントエッジデバイスがクラウドのコンピューティング能力を leveredge、世界を理解します。 HoloLens 2、コンピュータービジョン、共有アンカーサービス、セマンティックラベル付け、Azure Kinect DK を含みます。
+インテリジェントエッジデバイスがクラウドのコンピューティング能力を活用して世界を理解する方法。 HoloLens 2、コンピュータービジョン、共有アンカーサービス、セマンティックラベル付け、Azure Kinect DK を含みます。
 
 ___
 ## <a name="mixedrealitytoolkit---coming-soon"></a>**MixedRealityToolkit** -近日公開予定
-MixedRealityToolkit (MRTK) には、MR アプリの開発を促進するための基本コンポーネントと機能のセットが用意されています。 MRTK-Unity (V2) の最新リリースでは、HoloLens/HoloLens 2、Windows Mixed Reality、および OpenVR プラットフォームがサポートされています。ここでは、その背後にあるエンドとデザイナーについて詳しく見ていきましょう。
+MixedRealityToolkit (MRTK) には、MR アプリの開発を促進するための基本コンポーネントと機能のセットが用意されています。 MRTK-Unity (V2) の最新リリースでは、HoloLens/HoloLens 2、Windows Mixed Reality、および OpenVR プラットフォームがサポートされています。その背後にあるエンジニアとデザイナーについて詳しく見ていきましょう。
 
 ___
 ## <a name="designing-for-hololens-2---coming-soon"></a>**HoloLens 2 用の設計**-近日公開予定

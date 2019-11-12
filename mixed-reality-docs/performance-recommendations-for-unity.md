@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 03/26/2019
 ms.topic: article
 keywords: グラフィックス、cpu、gpu、レンダリング、ガベージコレクション、hololens
-ms.openlocfilehash: 724ec24408e70360fda07c59a4ca2ffc30b49c1f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f3fdda94c417d9f8e8980a90e8928282789e3d0f
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438131"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926869"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity のパフォーマンスに関する推奨事項
 
@@ -273,7 +273,7 @@ Unity が[16 ビット深度でレンダリングテクスチャ](https://docs.u
 
 ### <a name="optimal-lighting-settings"></a>最適な光源設定
 
-Unity で[リアルタイムのグローバルな照明](https://docs.unity3d.com/Manual/GIIntro.html)を使用すると、視覚的な結果を得ることができますが、非常にコストのかかる照明計算が含まれます。 **ウィンドウ** > 使用してすべての Unity シーンファイルのリアルタイムグローバル照明を無効にすることをお勧めします。これに**より、リアルタイムのグローバルな照明**> オフにして > 光源の**設定**が**表示**されます。
+Unity の[リアルタイムグローバル照明](https://docs.unity3d.com/Manual/GIIntro.html)は、未処理のビジュアル結果を提供できますが、非常に負荷の高い照明計算を伴います。 **ウィンドウ** > 使用してすべての Unity シーンファイルのリアルタイムグローバル照明を無効にすることをお勧めします。これに**より、リアルタイムのグローバルな照明**> オフにして > 光源の**設定**が**表示**されます。
 
 さらに、すべてのシャドウキャストを無効にすることをお勧めします。これにより、Unity シーンに負荷の高い GPU パスも追加されます。 影はライトごとに無効にすることができますが、品質設定を使用して総合的を制御することもできます。
 
@@ -301,7 +301,7 @@ Unity で[リアルタイムのグローバルな照明](https://docs.unity3d.co
 
     ![Unity の標準シェーダー操作](images/unity-standard-shader-compilation.png)
 
-#### <a name="optmize-pixel-shaders"></a>ピクセルシェーダーの最適化
+#### <a name="optimize-pixel-shaders"></a>ピクセルシェーダーの最適化
 
 上記のメソッドを使用してコンパイルされた統計結果を確認すると、通常、[フラグメントシェーダー](https://en.wikipedia.org/wiki/Shader#Pixel_shaders)は[頂点シェーダー](https://en.wikipedia.org/wiki/Shader#Vertex_shaders)よりも多くの操作を平均で実行します。 フラグメントシェーダーは、ピクセルシェーダーとも呼ばれ、画面出力のピクセルごとに実行されます。一方、頂点シェーダーは、画面に描画されるすべてのメッシュの頂点ごとに実行されます。 
 

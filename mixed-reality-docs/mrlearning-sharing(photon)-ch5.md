@@ -6,18 +6,18 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b83c7ac39d522fc2b799591fa02608d5fc5cc930
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9d76d5323705c001dbafe4411a9334dd3403d0ca
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437569"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926240"
 ---
 # <a name="5-integrating-azure-spatial-anchors-into-a-shared-experience"></a>5. Azure 空間アンカーを共有エクスペリエンスに統合する
 
 このレッスンでは、Azure 空間アンカー (ASA) を共有エクスペリエンスに統合する方法について説明します。 ASA を使用すると、複数の併置されたデバイスは、物理環境で仮想エクスペリエンスを固定して、すべての参加者が同じ物理的な場所にオブジェクトを表示するようにすることができます。
 
-このレッスンに進む前に、asa learning モジュールを完成させる必要があります。 asa の基本、Azure アカウントとリソースの作成、および asa を共有エクスペリエンスに統合する前に必要なその他の基本的なビルディングブロックについて説明します。
+このレッスンに進む前に、asa learning モジュールを完成させる必要があります。 asa の基本、Azure アカウントとリソースの作成、および ASA を共有エクスペリエンスに統合する前に必要なその他の基本的な構成要素について説明します。
 
 事項
 
@@ -37,11 +37,11 @@ ms.locfileid: "73437569"
 
 ![Module3hapter5step5im](images/module3chapter5step5im.PNG)
 
-4. ここで、階層内で [ShareAzureAnchorButton] を選択し、注意を Inaspector パネルに移動します。 下の画像に表示されているドロップダウンメニューまで下にスクロールし、[AnchorModuleScript] を選択して、[ShareAnchorNetework ()] をクリックします。
+4. ここで、階層内で [ShareAzureAnchorButton] を選択し、注意をインスペクターパネルに移動します。 下の画像に表示されているドロップダウンメニューまで下にスクロールし、[AnchorModuleScript] を選択して、[ShareAnchorNetwork ()] をクリックします。
 
 ![Module3hapter5step6im](images/module3chapter5step6im.PNG)
 
-5. [GetAzureAnchorButton] (手順4を参照) を選択して、注意をインスペクターパネルに移動します。 下の画像に表示されているドロップダウンメニューまで下にスクロールし、[AnchorModuleScript] を選択し、[GetSharedAnchorNetwork ()] をクリックして保存します。
+5. [GetAzureAnchorButton] (手順4を参照) を選択して、注意をインスペクターパネルに移動します。 下の画像に表示されているドロップダウンメニューまで下にスクロールし、[AnchorModuleScript] を選択し、[GetSharedAnchorNetwork ()] をクリックして、[保存] をクリックします。
 
 ![Module3hapter5step7im](images/module3chapter5step7im.PNG)
 

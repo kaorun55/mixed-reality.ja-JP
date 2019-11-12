@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: デプロイ、unity、visual studio、HoloLens、HoloLens 2、イマーシブヘッドセット
-ms.openlocfilehash: f897c9280505b1e84f8e6342729f1598d4b2f559
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 88eaa69f1349e3303a93d9d634479d8265eb417c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436966"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926550"
 ---
 # <a name="best-practices-for-working-with-unity-and-visual-studio"></a>Unity と Visual Studio を使用するためのベストプラクティス
 

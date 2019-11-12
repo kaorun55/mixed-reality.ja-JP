@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 563ed67a388444753e3b560d76d4e6be48249e15
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ac345ecafee3a09e3b5ad58344310234e60354a1
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438469"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926881"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. Azure 空間アンカーの概要
 
@@ -32,36 +32,31 @@ HoloLens 2 チュートリアルの2番目のモジュールへようこそ。 �
 
 [MR Base モジュール Asset Pack v1.0](https://github.com/microsoft/MixedRealityLearning/releases/download/1.2/BaseModuleAssets-1.2.unitypackage)
 
-[ASA モジュール Asset Pack v1.0](https://github.com/microsoft/MixedRealityLearning/releases/tag/ASA_1.3)
+[ASA モジュール Asset Pack v 1.3.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/ASA_1.3/ASAModuleAssets_1.3.1.unitypackage)
 
-[Mixed Reality Toolkit 2.0.0 RC1](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC1-Refresh/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC1-Refresh.unitypackage)
+[Mixed Reality Toolkit Foundation パッケージ2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.1.0)
 
-> 注: Azure 空間アンカーをインポートする具体的な手順については、手順5を参照してください。 MR Base モジュール Asset Pack の具体的な手順については、手順6を参照してください。 Mixed Reality Toolkit (MRKT) の具体的な手順については、手順 3. ~ 4. をご覧ください。
-
-1. プロジェクトに新しいシーンを作成します。 シーンフォルダーを右クリックし、[作成]、[シーン] の順にクリックします。 新しいシーンに ASALearningmodule という名前を指定します。
+1. プロジェクトに新しいシーンを作成します。 シーンフォルダーを右クリックし、[作成]、[シーン] の順にクリックします。 新しいシーンに "ASALearningModule" という名前を付けます。
 
 ![module2chapter1step1im](images/module2chapter1step1im.PNG)
 
-2. [ASALearningmodule] をダブルクリックすると、定義済みの項目の一部が新しいシーンと共に表示されます。 
+2. [ASALearningmodule] シーンをダブルクリックすると、新しいシーンと共に表示される定義済みの項目が表示されます。 
 3. 混合現実開発のシーンを構成します。 
 
 ![module2chapter1step3im](images/module2chapter1step3im.PNG)
 
-> 注: というポップアップが表示されます。 Mixed Reality Toolkit のファイルを選択する必要があります。 [Ok] をクリックすると、手順 4. が表示されます。
+> 注: [Mixed Reality Toolkit のプロファイル](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html)を選択するためのポップアップダイアログボックスが表示される場合があります。 *DefaultHoloLens2ConfigurationProfile*という名前のプロファイルをダブルクリックして選択します。
 
 4. MRTK のファイルを選択する場合は、[DefaultMixedRealityToolkitConfigurationProfile] を選択します。
 
 > 注: 独自の構成プロファイルがある場合は、代わりに自由に使用できます。
+>
 
 ![module2chapter1step4im](images/module2chapter1step4im.PNG)
 
 これで、シーンが混合現実用に構成されました。 シーンを保存していることを確認します (これを行うには、control/command + S を使用するか、[ファイル] をクリックして、[保存] をクリックします)。 
 
-5. [Azure 空間アンカー](https://github.com/azure/azure-spatial-anchors-samples/releases)をインポートします。 空間アンカーを使用するには、この資産をインポートする必要があります。 上のリンクをクリックし、AzureSpatialAnchors. unitypackage を右クリックします。 [ターゲットに名前を付けて保存] をクリックし、コンピューターに保存します。 
-
-![module2chapter1step5aim](images/module2chapter1step5aim.PNG)
-
-保存した後、Unity に戻り、[アセット] をクリックして、[パッケージのインポート] に移動します。 [カスタムパッケージ] をクリックします。コンピューターのファイルが開きます。 その場合は、Azure 空間アンカーパッケージを保存した場所を見つけて、それを選択します。 [開く] をクリックします。
+5. 手順 1. でダウンロードした[Azure 空間アンカー v 1.1.0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage) unity パッケージをインポートします。 その場合は、[資産] をクリックし、[パッケージのインポート] に移動します。 [カスタムパッケージ] をクリックします。コンピューターのファイルが開きます。 その場合は、Azure 空間アンカーパッケージを保存した場所を見つけて、それを選択します。 [開く] をクリックします。
 
 ![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
 
@@ -71,19 +66,13 @@ HoloLens 2 チュートリアルの2番目のモジュールへようこそ。 �
 
 > メモ: しばらくお待ちください。インポートには数分かかります。 
 
-6. Import [MR Base Module Asset Pack](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2) next。 手順 5. と同じように、上のリンクをクリックします。 次に、[BasemoduleAssets-1.2. unitypackage] を右クリックし、[ターゲットを名前を付けて保存] をクリックして、コンピューターに保存します。
-
-![module2chapter1step6aim](images/module2chapter1step6aim.PNG)
-
-> ヒント: これらのすべての資産を同じフォルダーに保存すると、簡単に見つけてアクセスできるようになります。 すべての問題を把握し、整理することができます。
-
-手順5と同じように、Unity に戻り、[アセット] をクリックして、[インポートパッケージ] にカーソルを合わせます。 [カスタムパッケージ] をクリックします。コンピューターのファイルが再び表示されます。 Base module Asset Pack を格納した場所に移動します。 を選択します。 [開く] をクリックします。
+6. Import [MR Base Module Asset Pack](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2) next。 手順 5. と同じように、Unity に戻り、[アセット] をクリックして、[インポートパッケージ] にカーソルを合わせます。 [カスタムパッケージ] をクリックします。コンピューターのファイルが再び表示されます。 Base module Asset Pack を格納した場所に移動します。 を選択します。 [開く] をクリックします。
 
 ![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
 
 > 注: このモジュールでは、後で必要となる資産が増える場合があります。 ここで説明したアセットをインポートするには、次の手順に従います。 
 
-7. 以前のパッケージをインポートする場合と同じ方法を使用して[ASA モジュールパック](https://github.com/microsoft/MixedRealityLearning/releases/tag/ASA_1.3)をインポートします。
+7. 他のパッケージをインポートする場合と同じ手順を使用して、 [ASA module pack 1.3.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/ASA_1.3/ASAModuleAssets_1.3.1.unitypackage)をインポートします。
 
 ### <a name="configuring-your-scene"></a>シーンの構成
 
@@ -97,19 +86,16 @@ HoloLens 2 チュートリアルの2番目のモジュールへようこそ。 �
 
 ![module2chapter1step8im](images/module2chapter1step8im.PNG)
 
-注: HoloLens のデバッグログを確認する場合は、 DebugWindow prefab を ASAModuleAssets フォルダーからシーンにドラッグアンドドロップできます。 DebugWindow インスペクターパネルで DebugWindowMessaging スクリプトをアタッチします。 [デバッグウィンドウを有効にする] オプションを有効にし、DebugWindow prefab を [Debugwindow] 空のフィールドにドラッグします。 必要に応じて、DebugWindow の位置を調整します。
+注: ButtonParent をシーンに追加すると、TMP アセットをインポートするように求めるポップアップが表示されます。 "TMP Essentials" をインポートします。 その後、シーンに大きなフォントテキストが表示された場合は、ButtonParent オブジェクトを削除し、ASAmoduleAssets フォルダーからもう一度追加します。
 
-10. 親アンカーをダブルクリックして選択します。 場合によっては、シーン全体を表示するようにビューを調整する必要があります。 必要に応じてシーンを調整します。
+注: HoloLens のデバッグログを確認する場合は、 DebugWindow prefab を ASAModuleAssets フォルダーからシーンにドラッグアンドドロップできます。 DebugWindow inspector パネルで DebugWindowMessaging スクリプトをアタッチし、[デバッグウィンドウを有効にする] オプションを有効にします。 その後、DebugWindow prefab を Debugwindow 空のフィールドにドラッグアンドドロップします。 また、必要に応じて、DebugWindow の位置を調整することもできます。
 
-ParentAnchor prefab について理解を深めます。 現在、ParentAnchor という名前のゲームオブジェクトは、デモを目的として色分けされたキューブです。 最終的には、キューブを非表示にして、コンテンツを ParentAnchor の子として配置します。 この事前 fab には、ASA SDK に含まれる AzureSpatialAnchorsDemoWrapper.cs スクリプトと ASAmoduleScript.cs スクリプトが含まれています。このスクリプトは、このモジュールの一部として ParentAnchor オブジェクトに含まれています。 
+10. シーンを拡大するには、階層内の親アンカーをダブルクリックし、必要に応じてシーン全体を表示するようにビューを調整します。 現在、ParentAnchor は、デモンストレーションのみを目的として使用される色付きのキューブです。 最終的には、キューブを非表示にして、コンテンツを ParentAnchor の子として配置します。 
 
-注: ButtonParent をシーンに追加すると、TMP アセットをインポートするように求めるポップアップが表示されます。 "TMP Essentials" のみをインポートします。 その後、シーンに大きなフォントテキストが表示された場合は、ButtonParent オブジェクトを削除し、ASAmoduleAssets フォルダーからもう一度追加します。
+11. 次に、シーンを操作するためのボタンを構成します。 そのためには、ButtonParent prefab を展開し、ラベルの付いたボタンをいくつか確認します。 これらのボタンは、MRTK の PressableButton prefabs から作成されます。 [基本モジュール](mrlearning-base-ch2.md)から PressableButton を作成する方法について説明します。 これらのボタンを操作するには、ユーザーが個々のボタンを押したとき、または選択したときにトリガーされるイベントを追加する必要があります。 
 
-11. ボタンを構成します。 ButtonParent prefab の下に、ラベル付きのボタンがいくつかあることを確認します。 これらのボタンは、MRTK の PressableButton prefabs から作成されます。 Pressable ボタンを作成する方法の詳細については、「[基本モジュール](mrlearning-base-ch2.md)」を参照してください。 各ボタンに対して、ユーザーが次の一覧に従ってボタンをクリックまたは選択したときにトリガーされるイベントを追加します。 
-
-- StartAzureSession という名前のボタンについては、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから StartAzureSession () メソッドを割り当てます。
-
-![module2chapter1step10aim](images/module2chapter1step10aim.PNG)
+- StartAzureSession という名前のボタンについては、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、次のスクリーンショットに示すように、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから StartAzureSession () メソッドを割り当てます。
+- ![module2chapter1step10aim](images/module2chapter1step10aim.PNG)
 
 ![module2chapter1step10bim](images/module2chapter1step10bim.PNG)
 
@@ -117,55 +103,69 @@ ParentAnchor prefab について理解を深めます。 現在、ParentAnchor �
 
 - ボタン名として [StopAzureSession] をクリックし、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから StopAzureSession () メソッドを割り当てます。
 
-- [CreateAnchor] という名前のボタンに対して、ボタン押されたイベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから CreateAzureAnchor () メソッドを割り当てます。  その後、ParentAnchor を次の空のフィールドにもう一度ドラッグします。
+- [CreateAnchor] という名前のボタンに対して、ボタン押されたイベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから CreateAzureAnchor () メソッドを割り当てます。  **その後、ParentAnchor を次の空の [Game Object] \ (ゲームオブジェクト \) フィールドにもう一度ドラッグします。**
 
-- という名前のボタンについては、アンカーの検索を開始し、ボタン Presse "イベントトリガーと On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから FindAzureAnchor () メソッドを割り当てます。
+- という名前のボタンについては、アンカーの検索を開始し、Click Click イベントトリガーと On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから FindAzureAnchor () メソッドを割り当てます。
 
-- [DeleteAzureAnchor] という名前のボタンに対して、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから DeleteAzureAnchor () メソッドを割り当てます。  その後、ParentAnchor オブジェクトを次の空のフィールドにもう一度ドラッグします。
+- [DeleteAzureAnchor] という名前のボタンに対して、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから DeleteAzureAnchor () メソッドを割り当てます。  
 
-- [ローカルアンカーの削除] という名前のボタンに対して、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから RemoveLocalAnchor () メソッドを割り当てます。
+- [ローカルアンカーの削除] という名前のボタンに対して、Click イベントトリガーおよび On Click イベントトリガーの下に新しいイベントを作成します。 ParentAnchor オブジェクトを空のフィールドにドラッグし、ParentAnchor オブジェクトの ASAmoduleScript コンポーネントから RemoveLocalAnchor () メソッドを割り当てます。 **その後、ParentAnchor オブジェクトを、次の空の [Game Object] \ (ゲームオブジェクト \) フィールドにもう一度ドラッグします。**
 
-  Azure 空間アンカーを設定するには、assets フォルダー内の AzureSpatialAnchorsPlugin フォルダーに移動し、[例-> Resources-> AzureSpatialAnchorsDemoConfig file] に移動します。 [インスペクター] パネルで、先ほど作成した Azure アカウント ID とアカウントキーを追加します。 まだ作成していない場合、または所有していない場合は、[前提条件](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens)に従ってください。 module2chapter1step13im
-  
+12. Azure 空間アンカーを設定するには、assets フォルダー内の AzureSpatialAnchorsPlugin フォルダーに移動し、[例-> Resources-> AzureSpatialAnchorsDemoConfig file] に移動します。 [インスペクター] パネルで、先ほど作成した Azure アカウント ID とアカウントキーを追加します。 まだ作成していない場合、または所有していない場合は、[前提条件](https://docs.microsoft.com//azure/spatial-anchors/quickstarts/get-started-unity-hololens)に従ってください。 
+
   ![module2chapter1step13im](images/module2chapter1step13im.PNG)
 
 ### <a name="build-and-demonstrate-base-application"></a>基本アプリケーションのビルドとデモンストレーション
 
 ここでは、Azure 空間アンカーの基本を示すためにシーンが構成されたので、Azure 空間アンカーの基本的な動作について説明します。 
 
-1. 前のセクションで [ビルド設定] ウィンドウを閉じた場合は、[ファイル] > [ビルド設定] の順に移動して [ビルド設定] ウィンドウを再度開きます。
-![Lesson1Chapter5Step1](images/Lesson1Chapter5Step1.JPG)
+1. [ファイル > ビルドの設定] に移動して、[ビルドの設定] ウィンドウを再び開きます。
+    ![mrlearning-ch1--ステップごとの](images/mrlearning-asa-ch1-3-step1.jpg)
 2. [開いているシーンを追加] ボタンをクリックして、目的のシーンがビルドリストのシーンにあることを確認します。
 3. プラットフォームがユニバーサル Windows プラットフォームに設定されていることを確認します。 そうでない場合は、同じに設定してください。
 4. [プレーヤーの設定] ボタンをクリックし、[発行の設定] にアクセスします。 [機能] で、[インターネット]、[インターネットクライアントサーバー]、[プライベートネットワーククライアントサーバー]、[リムーバブル記憶域]、[Webcam]、[マイクと空間認識] を有効にします。
 5. 同じプレーヤー設定で、XR settings にアクセスして、でサポートされている仮想現実を選択します。
 6. [ビルド] ボタンを押して、ビルド プロセスを開始します。
-   ![Lesson1Chapter5Step3](images/Lesson1Chapter5Step3.JPG)
-7. アプリケーション用の新しいフォルダーを作成して、名前を付けます。 次の図では、アプリケーションを格納するために、App という名前のフォルダーが作成されています。 [フォルダーの選択] をクリックして、新しく作成したフォルダーへのビルドを開始します。 ビルドが完了したら、Unity の [ビルドの設定] ウィンドウを閉じることができます。 
-    ![Lesson1Chapter5Step4](images/Lesson1Chapter5Step4.JPG)
+   ![mrlearning-ch1-手順 6](images/mrlearning-asa-ch1-3-step6.jpg)
+7. アプリケーション用の新しいフォルダーを作成して、名前を付けます。 次の図では、アプリケーションを格納するために、App という名前のフォルダーが作成されています。 [フォルダーの選択] をクリックして、新しく作成したフォルダーへのビルドを開始します。 ビルドが完了したら、Unity の [ビルドの設定] ウィンドウを閉じることができます。
 
-  > 注: ビルドに失敗した場合は、もう一度ビルドするか、Unity を再起動して、もう一度ビルドしてみてください。 "エラー: CS0246 = 型または名前空間の名前" XX "が見つからないというエラーが表示された場合は、using ディレクティブまたはアセンブリ参照が不足しています。 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)のインストールが必要になる場合があります。 
-  >
+    ![mrlearning-ch1-step7](images/mrlearning-asa-ch1-3-step7.jpg)
 
-8. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 "MixedRealityBase" ソリューションまたは対応する名前をダブルクリックします。 プロジェクトに代替名を使用して、Visual Studio でソリューションファイルを開く場合。
+    > 注: ビルドに失敗した場合は、もう一度ビルドするか、Unity を再起動して、もう一度ビルドしてみてください。 "エラー: CS0246 = 型または名前空間の名前" XX "が見つからないというエラーが表示された場合は、using ディレクティブまたはアセンブリ参照が不足しています。 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)のインストールが必要になる場合があります。 
 
-  > メモ: 新しく作成されたフォルダー (つまり、前の手順の名前付け規則に従っている場合は、アプリフォルダー) を必ず開いてください。これは、ビルドフォルダー内の .sln ファイルと混同しないように、同じ名前の .sln ファイルがそのフォルダーの外部に存在するためです。 
 
-![Lesson1Chapter5Step5](images/Lesson1Chapter5Step5.JPG)
+8. ビルドが正常に完了した後でも、次のようにエラーが発生する可能性がありますが、ビルドが成功した場合は無視して次の手順に進むことができます。
 
-> 注: Visual Studio で新しいコンポーネントのインストールを求められた場合は、 [[ツールのインストール] ページ](install-the-tools.md)で、前提条件となるすべてのコンポーネントが特定のコンポーネントとしてインストールされていることを確認してください。 
+    ![mrlearning-ch1-step7B](images/mrlearning-asa-ch1-3-step7B.png)
+
+    
+
+9. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 "MixedRealityBase" ソリューションまたは対応する名前をダブルクリックします。 プロジェクトに代替名を使用して、Visual Studio でソリューションファイルを開く場合。
+
+    > メモ: 新しく作成されたフォルダー (つまり、前の手順の名前付け規則に従っている場合は、アプリフォルダー) を必ず開いてください。これは、ビルドフォルダー内の .sln ファイルと混同しないように、同じ名前の .sln ファイルがそのフォルダーの外部に存在するためです。
+
+    ![mrlearning-ch1-step8](images/mrlearning-asa-ch1-3-step8.jpg)
+
+    > 注: Visual Studio で新しいコンポーネントのインストールを求められた場合は、 [[ツールのインストール] ページ](install-the-tools.md)で、前提条件となるすべてのコンポーネントが特定のコンポーネントとしてインストールされていることを確認してください。
+
 
 9. USB ケーブルを使って HoloLens 2 を PC に接続します。 これらのレッスンの手順では、HoloLens 2 デバイスでテストをデプロイすることを想定していますが、 [hololens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイするか、[サイドローディング用のアプリパッケージの](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)作成を選択することもできます。
 
 10. デバイスにビルドする前に、デバイスが開発者モードであることを確認してください。 HoloLens 2 に初めてデプロイする場合は、Visual Studio により、PIN を使用して HoloLens 2 をペアリングするよう求められる場合があります。 開発者モードを有効にする必要がある場合、または Visual Studio と組み合わせて使用する場合は、[次の手順](https://docs.microsoft.com//windows/mixed-reality/using-visual-studio)に従います。
+
 11. リリース構成と ARM アーキテクチャを選択して、HoloLens 2 にビルドするように Visual Studio を構成します。
-    ![Lesson1Chapter5Step8](images/Lesson1Chapter5Step8.JPG)
+
+    ![mrlearning-ch1-step11](images/mrlearning-asa-ch1-3-step11.jpg)
+
 
 12. 最後の手順は、デバッグ > デバッグなしで開始 を選択してデバイスにビルドすることです。 [デバッグなしで開始] を選択すると、Visual Studio にデバッグ情報が表示されずにビルドが成功したときに、アプリケーションがすぐにデバイスで起動します。 これは、アプリケーションが停止することなく HoloLens 2 上で実行されている間は、USB ケーブルを取り外すことができることも意味します。 また、[ビルド > デプロイ] を選択して、アプリケーションを自動的に起動せずにデバイスにデプロイすることもできます。
-    ![Lesson1Chapter5Step9](images/Lesson1Chapter5Step9.JPG)
+
+    ![mrlearning-ch1-step12](images/mrlearning-asa-ch1-3-step12.jpg)
+
+>注: Azure 空間アンカーは、インターネットを使用してアンカーデータを保存して読み込みます。そのため、ASA アプリをテストする前に、デバイスがインターネットに接続されていることを確認してください。
 
 13. 画面の指示に従います。 
-    デバイスでアプリケーションが実行されている場合は、画面の指示に従います。 次の手順に対応するシーンボタンを押します。
+    デバイスでアプリケーションが実行されている場合は、画面の指示に従います。 次の手順に対応するシーンボタンを押します。 前の手順で説明したようにデバッグウィンドウを追加した場合は、個々のボタンの押下に関するフィードバックと、Azure 空間アンカーに関連する個々の操作の進行状況を確認できます。
 
 ![module2chapter1step10eim](images/module2chapter1step10eim.PNG)
     
@@ -194,7 +194,7 @@ ParentAnchor prefab について理解を深めます。 現在、ParentAnchor �
 
 前のセクションでは、Azure 空間アンカーの基礎について学習しました。 キューブを使用して、アタッチされたアンカーで親ゲームオブジェクトを表現し、視覚化しました。 このセクションでは、ParentAnchor オブジェクトの子として配置することで、エクスペリエンス全体を固定する方法について説明します。 この例では、「[基本モジュールレッスン 6](mrlearning-base-ch6.md)」で作成した旧暦モジュールアセンブリデモンストレーションアプリケーションを使用します。
 
-1. 次の図に示すように、旧暦モジュールアセンブリの完全な prefab を検索し、オブジェクトの子として階層にドラッグします。
+1. "ロケットランチャー Complete" prefab を検索し、次の図に示すように、オブジェクトの子として階層にドラッグします。
 
 ![module2chapter1step11](images/module2chapter1step11im.PNG)
 

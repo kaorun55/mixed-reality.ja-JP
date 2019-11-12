@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: ジェスチャ、モーションコントローラー、unity、宝石、入力
-ms.openlocfilehash: a7ca5a895015ba0458f0f64f1422612e797f5067
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a85797bfb443f33147c116e90a02c88abda63c67
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435228"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926572"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity のジェスチャとモーションコントローラー
 
@@ -145,7 +145,7 @@ Unity では、現在、一般的な*入力. GetButton/GetAxis* api を使用し
 
 一般的な Unity 入力 Api を使用するには、まず、 [Unity 入力マネージャー](https://docs.unity3d.com/Manual/ConventionalGameInput.html)で論理名にボタンと軸を配線し、ボタンまたは軸 id を各名前にバインドします。 その後、その論理ボタンと軸名を参照するコードを記述できます。
 
-たとえば、左モーションコントローラーの トリガー ボタンを 送信 アクションにマップするには、**編集 > プロジェクトの設定** に移動し、Unity 内の 入力 > て、軸 の 送信 セクションのプロパティを展開します。 次のように、**正ボタン**または**Alt 肯定的ボタン**プロパティを [**ジョイスティックの読み取り] ボタン 14**に変更します。
+たとえば、左モーションコントローラーの トリガー ボタンを 送信 アクションにマップするには、**編集 > プロジェクトの設定** に移動し、Unity 内の 入力 > て、軸 の 送信 セクションのプロパティを展開します。 次のように、**正のボタン**または**Alt 陽性のボタン**プロパティを [ジョイスティックの読み取り **] ボタン 14**に変更します。
 
 ![Unity の InputManager](images/unity-input-manager.png)<br>
 *Unity InputManager*
@@ -446,7 +446,7 @@ void Start()
 
 ### <a name="start-capturing-gestures"></a>ジェスチャのキャプチャを開始する
 
-既定では、 *GestureRecognizer*は、 *Startcapturinggestures ()* が呼び出されるまで、入力を監視しません。 Stopcapturinggestures () が*処理されたフレーム*の前に入力が実行された場合、 *Stopcapturinggestures ()* が呼び出された後にジェスチャイベントが生成される可能性があります。 *GestureRecognizer*は、ジェスチャが実際に発生した previou フレーム中にオンまたはオフになったかどうかを記憶します。そのため、このフレームのターゲット設定に基づいてジェスチャの監視を開始および停止することができます。
+既定では、 *GestureRecognizer*は、 *Startcapturinggestures ()* が呼び出されるまで、入力を監視しません。 Stopcapturinggestures () が*処理されたフレーム*の前に入力が実行された場合、 *Stopcapturinggestures ()* が呼び出された後にジェスチャイベントが生成される可能性があります。 *GestureRecognizer*は、ジェスチャが実際に発生した前のフレームでオンまたはオフにされたかどうかを記憶します。そのため、このフレームのターゲット設定に基づいてジェスチャの監視を開始および停止することができます。
 
 ```cs
 recognizer.StartCapturingGestures();

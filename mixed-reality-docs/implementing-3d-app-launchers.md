@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D、ロゴ、アイコン、モデリング、ランチャー、3D ランチャー、タイル、live cube、ディープリンク、secondarytile、セカンダリタイル、UWP
-ms.openlocfilehash: be47b590e4fd1a847ac47d9cfbcbe824c544dd59
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5d18f699792760c39df4f814bde470fb9f889db7
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438018"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926768"
 ---
 # <a name="implement-3d-app-launchers-uwp-apps"></a>3D アプリランチャーを実装する (UWP アプリ)
 
@@ -164,7 +164,7 @@ await tile.RequestCreateAsync();
 > [!NOTE]
 > この機能は、Windows RS4 update でサポートされる予定です。 この機能を使用する予定がある場合は Windows SDK、アプリケーションが10.0.17125 以上のバージョンを対象としていることを確認してください。
 
-3D secondaryTile のアクティベーション動作を定義して、ユーザーがそれを選択したときの反応を制御できます。 これを使用すると、purley や装飾を持つ混合現実ホームに3D オブジェクトを配置できます。 次のアクティブ化動作の種類がサポートされています。
+3D secondaryTile のアクティベーション動作を定義して、ユーザーがそれを選択したときの反応を制御できます。 これを使用すると、純粋な情報または装飾のある混合現実ホームに3D オブジェクトを配置できます。 次のアクティブ化動作の種類がサポートされています。
 1. 既定: ユーザーが 3D secondaryTile を選択すると、アプリがアクティブ化されます
 2. None: ユーザーが 3D secondaryTile を選択しても何も起こりません。アプリはアクティブ化されません。
 

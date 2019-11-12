@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/11/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, エッジ, iot edge, チュートリアル, api, 通知, 関数, テーブル, hololens, イマーシブ, vr, iot, 仮想マシン, ubuntu, python
-ms.openlocfilehash: 7f56c7931bb036d14ab3aa9156706b1f6247195c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: bfb1518869892ed4899019d7b9c504a960e7db3f
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437966"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926836"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
@@ -945,7 +945,7 @@ Azure Portal に戻ります。ここでは、ストレージリソースを作�
 
 8. 次の値を更新します。
 
-    - 名前: **Partitionkey**、値: **PK_IoTMessages** 
+    - 名前: **Partitionkey**、Value: **PK_IoTMessages** 
 
     - 名前: **RowKey**、値: **RK_1_IoTMessages** 
 
@@ -1241,7 +1241,7 @@ IOT デバイスからデータを視覚化するには**Power BI** (デスク�
     ![Power BI](images/AzureLabs-Lab313-86.png)
 
 > [!WARNING]
-> 次の章は HoloLens 固有です。 Power BI は現在イマーシブアプリケーションとして利用できませんが、デスクトップアプリを使用して Windows Mixed Reality ポータル (崖家) でデスクトップバージョンを実行することはできます。
+> 次の章は HoloLens 固有です。 Power BI は現在イマーシブアプリケーションとして使用できませんが、デスクトップアプリを使用して、Windows Mixed Reality ポータル (崖家) でデスクトップバージョンを実行することができます。
 
 ## <a name="chapter-16---display-power-bi-data-on-hololens"></a>Chapter 16-HoloLens で Power BI データを表示する
 

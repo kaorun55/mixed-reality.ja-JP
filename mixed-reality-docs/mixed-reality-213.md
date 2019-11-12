@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、イマーシブ、motion controller、academy、チュートリアル
-ms.openlocfilehash: e2199c3afed21f9396ed84f71093a8b2fb3bb23b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 273d1bf384d588ab24bfe29e30f299b7a41fe541
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438545"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926818"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。
@@ -197,7 +197,7 @@ protected override void Awake()
 
 ヘッドセットには、モーションコントローラーを含むシーンを表示できます。 ボタンのクリック、サムスティックの移動、およびタッチパッドのタッチの強調表示に関する詳細なアニメーションを表示できます。
 
-![MR213_Controller 視覚化の既定値](images/mr213-controllervisualizationdefault-500px.jpg)
+![視覚エフェクトの既定値 MR213_Controller](images/mr213-controllervisualizationdefault-500px.jpg)
 
 ## <a name="chapter-2---attaching-ui-elements-to-the-controller"></a>第2章-UI 要素のコントローラーへのアタッチ
 
@@ -277,7 +277,7 @@ private void AttachElementToController(MotionControllerInfo newController)
 }
 ```
 
-**Attachtocontroller**スクリプトを使用する最も簡単な方法は、ColorPickerWheel の場合と同様に、このスクリプトを継承することです **。** **Onattachtocontroller**関数と**OnDetatchFromController**関数をオーバーライドするだけで、コントローラーが検出または切断されたときにセットアップ/ブレークダウンを実行できます。
+**Attachtocontroller**スクリプトを使用する最も簡単な方法は、ColorPickerWheel の場合と同様に、このスクリプトを継承することです **。** **Onattachtocontroller**関数と**OnDetachFromController**関数をオーバーライドするだけで、コントローラーが検出または切断されたときにセットアップ/ブレークダウンを実行できます。
 
 **マニュアル**
 
@@ -294,7 +294,7 @@ private void AttachElementToController(MotionControllerInfo newController)
 
 ![ColorPickerWheel スクリプト](images/mr213-attachtocontroller-300px.jpg)
 
-**ColorPickerWheel**は、 **Onattachtocontroller**と**OnDetatchFromController**をオーバーライドして入力イベントをサブスクライブします。これは、タッチパッド入力による色の選択の次の章で使用されます。
+**ColorPickerWheel**は、 **Onattachtocontroller**と**OnDetachFromController**をオーバーライドして入力イベントをサブスクライブします。これは、タッチパッド入力による色の選択の次の章で使用されます。
 
 ```cs
 public class ColorPickerWheel : AttachToController, IPointerTarget
@@ -346,7 +346,7 @@ private IEnumerator Start() {
 ### <a name="instructions"></a>手順
 
 * **[階層]** パネルで、 **[ColorPickerWheel]** をクリックします。
-* **[インスペクター]** パネルの **[Animatior]** で、 **[ColorPickerWheelController]** をダブルクリックします。
+* **[インスペクター]** パネルの **[アニメーター]** の下で、 **[ColorPickerWheelController]** をダブルクリックします。
 * **[アニメーター]** タブが開いていることを確認できます。
 
 **Unity のアニメーションコントローラーを使用した UI の表示/非表示**
@@ -624,7 +624,7 @@ private void SpawnObject()
 {
     // Instantiate the spawned object
     GameObject newObject = Instantiate(displayObject.gameObject, spawnParent);
-    // Detatch the newly spawned object
+    // Detach the newly spawned object
     newObject.transform.parent = null;
     // Reset the scale transform to 1
     scaleParent.localScale = Vector3.one;
@@ -801,7 +801,7 @@ private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
 
 ## <a name="advanced-design---teleportation-and-locomotion"></a>高度な設計-電話と locomotion
 
-ユーザーがサムスティックを使用して、ユーザーによるシーンの移動を許可する場合は、 **MixedRealityCamera**ではなく**MixedRealityCameraParent**を使用します。 **Inputmanager**と**DefaultCusor**も追加する必要があります。 **MixedRealityCameraParent**には既に**Motioncontrollers**と**境界**が子コンポーネントとして含まれているため、既存の**motioncontrollers**と**環境**prefab を削除する必要があります。
+ユーザーがサムスティックを使用して、ユーザーによるシーンの移動を許可する場合は、 **MixedRealityCamera**ではなく**MixedRealityCameraParent**を使用します。 **Inputmanager**と**defaultcursor**も追加する必要があります。 **MixedRealityCameraParent**には既に**Motioncontrollers**と**境界**が子コンポーネントとして含まれているため、既存の**motioncontrollers**と**環境**prefab を削除する必要があります。
 
 ### <a name="instructions"></a>手順
 
@@ -834,7 +834,7 @@ private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
 ## <a name="completed-scenes"></a>完成したシーン
 
 * Unity の **[プロジェクト]** パネルで、 **[シーン]** フォルダーをクリックします。
-* Unity sceens **MixedReality213**と**MixedReality213Advanced**が2つ見つかります。
+* Unity シーン**MixedReality213**と**MixedReality213Advanced**が2つ見つかります。
     * **MixedReality213**: 1 つのブラシを使用した完成したシーン
     * **MixedReality213Advanced**: 複数のブラシを持つ完成したシーンを選択ボタンの押す回数の例
 

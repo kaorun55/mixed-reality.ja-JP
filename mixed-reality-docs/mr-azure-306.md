@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, media services, ストリーミングビデオ, 360, イマーシブ, vr
-ms.openlocfilehash: 6585aa731ff7ebb89beae67ab0b61ac5ef026e47
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e0350d69eed9b922e174bc521107beac7d11b1bc
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438566"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926828"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
@@ -619,7 +619,7 @@ Azure Media Service を使用するには、アプリケーションで使用で
 
 ## <a name="chapter-6---create-the-gaze-class"></a>Chapter 6-"宝石" クラスを作成する
 
-このクラスは、ユーザーがどのオブジェクトを調べているかを検出するために、**メインカメラ**から投影される**Raycast**を作成します。 この場合、 **Raycast**は、ユーザーがシーン内の**GazeButton**オブジェクトを調べて動作をトリガーするかどうかを識別する必要があります。
+このクラスは、ユーザーが参照しているオブジェクトを検出するために、**メインカメラ**から投影される**Raycast**を作成します。 この場合、 **Raycast**は、ユーザーがシーン内の**GazeButton**オブジェクトを調べて動作をトリガーするかどうかを識別する必要があります。
 
 このクラスを作成するには:
 
@@ -828,7 +828,7 @@ Azure Media Service を使用するには、アプリケーションで使用で
 
 3.  **[ファイル > ビルド設定]** にアクセスし、 **[ビルド]** をクリックします。
 
-4.  ソリューションを構築するフォルダーを選択するように求められます。
+4.  ソリューションをビルドするフォルダーを選択するように求められます。
 
 5.  **ビルド**フォルダーを作成し、そのフォルダー内で、適切な名前を指定して別のフォルダーを作成します。
 

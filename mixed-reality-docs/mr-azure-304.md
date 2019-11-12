@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, 顔認識, hololens, イマーシブ, vr
-ms.openlocfilehash: ef75be5485f85538eb8b3db3eebec63b166f7aa3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 23676684c2ec325f9d6f1924e7a0bad14d41f13e
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438495"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926791"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
@@ -575,7 +575,7 @@ FaceAnalysis クラスの目的は、Azure Face 認識サービスとの通信�
             facesToIdentify.maxNumOfCandidatesReturned = 1;
             facesToIdentify.confidenceThreshold = 0.5;
 
-            // Serialise to Json format
+            // Serialize to Json format
             string facesToIdentifyJson = JsonConvert.SerializeObject(facesToIdentify);
             // Change the object into a bytes array
             byte[] facesData = Encoding.UTF8.GetBytes(facesToIdentifyJson);
@@ -769,7 +769,7 @@ FaceAnalysis クラスの目的は、Azure Face 認識サービスとの通信�
         }
 
         /// <summary>
-        /// Register the full execution of the Photo Capture. If successfull, it will begin the Image Analysis process.
+        /// Register the full execution of the Photo Capture. If successful, it will begin the Image Analysis process.
         /// </summary>
         void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
         {
@@ -809,7 +809,7 @@ FaceAnalysis クラスの目的は、Azure Face 認識サービスとの通信�
 
     ![Visual Studio からソリューションをデプロイします。](images/AzureLabs-Lab4-25.png)
 
-7.  アプリフォルダーを開き、新しいプロジェクトソリューションを開きます (上記の MR_FaceRecognition を参照)。
+7.  アプリフォルダーを開き、新しいプロジェクトソリューションを開きます (前述のように、MR_FaceRecognition .sln)。
 
 
 ## <a name="chapter-9---deploying-your-application"></a>第9章-アプリケーションのデプロイ

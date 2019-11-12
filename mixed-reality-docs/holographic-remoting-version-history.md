@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 75e7c276560b4efbbdcbf2ea7579ed5ad7aadb4d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9ff6a5f7594eb67dd4c1c8690812ab724cac9012
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439233"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926650"
 ---
 # <a name="holographic-remoting-version-history"></a>Holographic リモート処理のバージョン履歴
 
@@ -21,7 +21,7 @@ ms.locfileid: "73439233"
 ## バージョン 2.0.14 (2019 年10月26日)<a name="v2.0.14"></a>
 * New PerceptionDevice Api のサポート (Windows 10 11 月2019更新プログラム)。
 * SpatialGestureRecognizer によって保留中のジェスチャイベントがトリガーされない問題を修正しました。
-* SetBoundingVolume を使用するときの theading の問題を修正しています。
+* SpatialSurfaceObserver を使用する場合のスレッド処理の問題を修正します。 SetBoundingVolume。
 
 ## バージョン 2.0.12 (2019 年10月18日)<a name="v2.0.12"></a>
 * NavigationRail (X/Y/Z) を使用するときの SpatialGestureRecognizer のクラッシュを修正します。
