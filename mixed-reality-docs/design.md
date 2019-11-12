@@ -1,372 +1,167 @@
 ---
 layout: LandingPage
-title: 設計
-description: このガイダンスは、ホログラフィック デバイス (HoloLens など) やイマーシブ デバイス (Acer および HP Windows Mixed Reality ヘッドセットなど) にわたって作業しているマイクロソフトのデザイナー、開発者、プログラム マネージャー、研究者によって作成されています。 そのため、この作業を 'Windows ヘッドマウント ディスプレイ向けの設計方法' のための一連のトピックと見なしてください。
-author: rwinj
-ms.author: randyw
-ms.date: 03/21/2018
+title: 設計とプロトタイプ作成を始める
+description: 何かを作成する準備ができたら、設計とプロトタイプ作成を開始するために必要な基本的な概念について学習しましょう。
+author: grbury
+ms.author: grbury
+ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
-keywords: Windows Mixed Reality、設計、操作、スタイル、色、アプリ パターン、コントロール、サンプル アプリ、Mixed Reality ツールキット、MRTK
-ms.openlocfilehash: 6601f4c2dd75e6e555dd79bc92abcccc15eb1ab4
-ms.sourcegitcommit: 30246ab9b9be44a3c707061753e53d4bf401eb6b
+keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト, 主要な概念, 操作
+ms.openlocfilehash: 2bd2b3fef713bfe74f91714be100c7a02e46f8ac
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67326189"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435733"
 ---
-# <a name="design-for-mixed-reality"></a>Mixed Reality 向けの設計
-
-![Mixed Reality 向けの設計](images/Bicycle-Leschi10.gif)
+# <a name="start-designing-and-prototyping"></a>設計とプロトタイプ作成を始める
 
 
-このガイダンスは、ホログラフィック デバイス (HoloLens など) やイマーシブ デバイス (Acer および HP Windows Mixed Reality ヘッドセットなど) にわたって作業しているマイクロソフトのデザイナー、開発者、プログラム マネージャー、研究者によって作成されています。 そのため、この作業を Windows ヘッドマウント ディスプレイ向けの設計方法のための一連のトピックと見なしてください。
+![主要な概念](images/text_in_unity_viewingangle.jpg)
 
+## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[デザイン プロセスを展開する](case-study-expanding-the-design-process-for-mixed-reality.md)
 
-## <a name="article-categories"></a>記事のカテゴリ
-
-<ul class="panelContent cardsF">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/GetStartedIcon.png" alt="Getting started icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>設計の概要</h3>
-                        <p>
-                            <a href="mixed-reality.md">Mixed Reality とは</a>
-                        </p>
-                        <p>
-                            <a href="about-this-design-guidance.md">このガイダンスについて</a>
-                        </p>
-                        <p>
-                            <a href="case-study-my-first-year-on-the-hololens-design-team.md">設計チームでの最初の年</a>
-                        </p>
-                        <p>
-                            <a href="case-study-expanding-the-design-process-for-mixed-reality.md">Mixed Reality 向けの設計プロセスの拡張</a>
-                        </p>
-                        <p>
-                            <a href="case-study-the-pursuit-of-more-personal-computing.md">よりパーソナルなコンピューティングの追求</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/Interaction_Icon_120x130.png" alt="MR design system and tools icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>MR 設計システムとツール</h3>
-                        <p>
-                            <a href="comfort.md">快適性</a>
-                        </p>
-            <p>
-                            <a href="interaction-fundamentals.md">本能的な操作</a>
-                        </p>
-                        <p>
-                            <a href="hands-and-tools.md">手とモーション コントローラー</a>
-                        </p>
-                        <p>
-                            <a href="hands-free.md">ハンズフリー</a>
-                        </p>
-                         <p>
-                            <a href="gaze-and-commit.md">頭の視線入力とコミット</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/Style_Icon_120x130.png" alt="Style icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>スタイル</h3>
-                        <p>
-                            <a href="color,-light-and-materials.md">色、ライト、素材</a>
-                        </p>
-                         <p>
-                            <a href="spatial-sound-design.md">立体音響の設計</a>
-                        </p>
-                        <p>
-                            <a href="typography.md">文字体裁</a>
-                        </p>
-                        <p>
-                            <a href="scale.md">スケール</a>
-                        </p>                      
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/App_patterns_Icon_120x130.png" alt="App patterns icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>アプリのパターン</h3>
-                        <p>
-                            <a href="types-of-mixed-reality-apps.md">Mixed Reality アプリの種類</a>
-                        </p>
-                        <p>
-                            <a href="room-scan-visualization.md">部屋のスキャンの可視化</a>
-                        </p>
-                        <p>
-                            <a href="cursors.md">カーソル</a>
-                        </p>
-                        <p>
-                            <a href="billboarding-and-tag-along.md">Billboard と Tag-along</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/Controls_Icon_120x130.png" alt="Controls icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>コントロール</h3>
-                        <p>
-                            <a href="text-in-unity.md">Unity のテキスト</a>
-                        </p>
-                        <p>
-                            <a href="interactable-object.md">対話可能なオブジェクト</a>
-                        </p>
-                        <p>
-                            <a href="object-collection.md">オブジェクト コレクション</a>
-                        </p>
-                        <p>
-                            <a href="progress.md">進行状況の表示</a>
-                        </p>
-                        <p>
-                            <a href="app-bar-and-bounding-box.md">境界ボックスとアプリ バー</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>    
-</ul>
-
-
-## <a name="sample-apps"></a>サンプル アプリ
-
-マイクロソフトのチームが設計および作成したサンプルからすばらしいエクスペリエンスを構築してください。
+2016 年に Microsoft が待ち望む開発者のために HoloLens を発表したとき、チームは既に Microsoft の内外のスタジオと協力してデバイスの起動エクスペリエンスを構築していました。 これらのチームは、Mixed Reality の設計の新しいフィールドにおける機会と課題の両方を明らかにして学習しました。 [詳細を見る](case-study-expanding-the-design-process-for-mixed-reality.md)
 
 <br>
-<ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
-    <li>
-        <a href="periodic-table-of-the-elements.md" title="要素の定期的なテーブル" data-linktype="absolute-path">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="images/periodictableofelementsapp-tile.jpg" alt="Periodic Table of the Elements< icon">
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>要素の定期的なテーブル</h3>
-                            <p>オブジェクト コレクションを使用して、さまざまな表面の種類を持つ 3D 空間内のオブジェクトの配列をレイアウトする方法を説明します。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>        
-    </li>
-    <li>
-        <a href="lunar-module.md" title="月着陸船" data-linktype="absolute-path">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="images/lunar-module-tile.png" alt="Lunar Module icon">
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>月着陸船</h3>
-                            <p>HoloLens ベースのジェスチャを両手の追跡と Xbox コントローラーの入力で拡張する方法を説明します。 input.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-    <li>
-        <a href="galaxy-explorer.md" title="Galaxy Explorer" data-linktype="absolute-path">
-            <div class="cardSize">
-                <div class="cardPadding">
-                    <div class="card">
-                        <div class="cardImageOuter">
-                            <div class="cardImage">
-                                <img src="images/galaxyexplorer-tile.jpg" alt="Galaxy Explorer icon">
-                            </div>
-                        </div>
-                        <div class="cardText">
-                            <h3>Galaxy Explorer</h3>
-                            <p>Galaxy Explorer プロジェクトの準備が完了しました。 これまではコミュニティとアイデアを共有し、アプリケーションを選択し、チームによるその構築を見てきましたが、ソース コードを取得できるようになりました。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </li>
-</ul>
+
+---
+
+## <a name="what-are-the-core-concepts-of-an-experience"></a>エクスペリエンスの主要な概念は何か
+
+### <a name="keep-the-user-comfortable---comfortcomfortmd"></a>[ユーザーの快適さを維持する (快適さ)](comfort.md)
+ヘッド マウント ディスプレイを可能な限り快適なものにするため、デザイナーと開発者は、これらの手掛かりの自然界での動作方法と同じようにコンテンツを作成して提示することが重要です。
+
+<br>
+
+### <a name="consider-how-the-user-sees-the-world---holographic-frameholographic-framemd"></a>[ユーザーには世界がどのように見えるかを考える - (ホログラフィック フレーム)](holographic-frame.md)
+ユーザーは、ヘッドセットによって作成される四角形のビューポートを通して、Mixed Reality の世界を見ることになります。 HoloLens では、この四角形の領域はホログラフィック フレームと呼ばれ、ユーザーは自分の周囲の現実世界に重ねてデジタル コンテンツを見ることができます。
+
+<br>
+
+### <a name="types-of-mixed-reality-appstypes-of-mixed-reality-appsmd"></a>[複合現実アプリの種類](types-of-mixed-reality-apps.md)
+Mixed Reality 用アプリを開発する利点の 1 つは、プラットフォームでサポートできるエクスペリエンスの広さです。 完全にイマーシブな仮想環境から、ユーザーの現在の環境に重ねて表示されるちょっとした情報まで、Mixed Reality では、エクスペリエンスを実現するための堅牢な一連のツールが提供されています。
+
+<br>
+
+### <a name="keeping-holograms-in-place---coordinate-systemscoordinate-systemsmd"></a>[ホログラムの配置 - (座標系)](coordinate-systems.md)
+基本的に、Mixed Reality アプリは、ホログラムをユーザーの世界に配置し、実際のオブジェクトと同様に見えたり聞こえたりするようにします。 これには、物理的な部屋であれ、作成した仮想領域であれ、ユーザーにとって意味のある世界の特定の位置にこれらのホログラムを正確に配置することが関係します。
+
+<br>
+
+### <a name="making-holographic-objects-feel-real---spatial-mappingspatial-mappingmd"></a>[ホログラフィック オブジェクトを現実的なものにする - (空間マッピング)](spatial-mapping.md)
+空間マッピングにより、オブジェクトを実際のサーフェスの上に配置できるようになります。 これは、オブジェクトをユーザーの世界に固定し、現実世界の奥行きの手掛かりを利用するのに役立ちます。
+
+<br>
+
+
+---
+
+<br>
+
+![操作の設計の要素](images/MRTK_BoundingBox_Main.png)
+
+## <a name="interaction-design-factors-to-consider"></a>考慮する必要がある操作の設計の要素
+
+
+### <a name="choose-an-interaction-model-for-your-customerinteraction-fundamentalsmd"></a>[顧客の操作モデルを選択する](interaction-fundamentals.md)
+シンプルで本能的な操作の理念は、Mixed Reality プラットフォーム全体に織り込まれています。 アプリケーションのデザイナーや開発者が顧客に簡単で直感的な操作を提供できるように、3 つの手順を使用しています。
+
+<br>
+
+### <a name="hands-and-motion-controllershands-and-toolsmd"></a>[手とモーション コントローラー](hands-and-tools.md)
+ユーザーは、現実世界のオブジェクトの場合と同様に、片手または両手で直接ホログラムに触れて操作できます。 また、モーション コントローラーを使用すると、広範囲にわたる正確な操作を提供することにより、ユーザーの身体能力を拡張できます。
+
+<br>
+
+### <a name="directly-commanding-objects-with-voice-inputvoice-inputmd"></a>[音声入力でオブジェクトに直接コマンドを実行する](voice-input.md)
+音声は、HoloLens の主な入力形式の 1 つです。 音声を使うと、ジェスチャを使用せずに、ホログラムに直接コマンドを実行できます。 音声入力は、意図を伝える自然な方法として使用できます。
+
+<br>
+
+### <a name="leveraging-the-users-eye-gazeeye-trackingmd"></a>[ユーザーの目の視線入力を利用する](eye-tracking.md)
+HoloLens 2 を使用すると、開発者はユーザーが見ているものについての情報を使用できるので、ホログラフィック エクスペリエンスにおけるコンテキストと人間の理解が大きく進みます。
+
+<br>
+
+### <a name="color-light-and-materialscolor-light-and-materialsmd"></a>[色、ライト、マテリアル](color,-light-and-materials.md)
+Mixed Reality のコンテンツの設計では、エクスペリエンスで使用される各ビジュアル資産の色、ライト、マテリアルを慎重に検討する必要があります。
+
+<br>
+
+### <a name="suggesting-the-scale-of-an-objectscalemd"></a>[オブジェクトのスケールを示す](scale.md)
+ホログラフィック形式で現実的に見えるようにコンテンツを表示する鍵は、現実世界の視覚的な特徴に可能な限り近付けることです。 これは、オブジェクトがどこにあるか、どのくらいの大きさか、何でできているのかを (現実世界で) 理解するのに役立つ視覚的な手掛かりを、できる限り多く組み込むことを意味します。
+
+<br>
+
+### <a name="clear-and-readable-typographytypographymd"></a>[明確で読みやすい文字体裁](typography.md)
+2D 画面の文字体裁と同じように、明確で読みやすくすることを目指します。 Mixed Reality の 3 次元の側面により、テキストと全体的なユーザー エクスペリエンスをいっそう優れたものにする機会があります。
+
+<br>
+
+
+---
+
+## <a name="choose-a-prototyping-option"></a>プロトタイプ作成のオプションを選択する  
+
+:::row:::   
+    :::column:::    
+       [![Unity について学習する](images/unity_logo.png)](https://learn.unity.com/)<br>
+        **[Unity について学習する](https://learn.unity.com/)**<br>
+        Unity で対話型エクスペリエンスを作成する方法について学習します。 最初から最後まで、実践によって学習できます。
+    :::column-end:::    
+    :::column:::    
+        [![Mixed Reality ツールキット (MRTK)](images/MRTK-small_logo.png)](https://github.com/Microsoft/MixedRealityToolkit-Unity)<br>
+        **[Mixed Reality ツールキット (MRTK)](https://github.com/Microsoft/MixedRealityToolkit-Unity)**<br>  
+        空間操作と UI 構成ブロックを使用すると、Unity での Mixed Reality の設計と開発をすぐに始めることができます。   
+    :::column-end:::
+    :::column:::    
+        [![Mixed Reality Design Labs](images/MRDL_logo.png)](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)<br>
+        **[Mixed Reality Design Labs](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)**<br>  
+        MRTK の構成要素を使用して美しい Mixed Reality エクスペリエンスを作成する方法を示すサンプル アプリを入手できます。
+    :::column-end:::        
+    :::column:::    
+        [![Microsoft Maquette](images/Maquette_logo.png)](https://www.maquette.ms/)<br>
+        **[Microsoft Maquette](https://www.maquette.ms/)**<br>  
+        VR 向けの設計。 Microsoft Maquette を使用すると、空間のプロトタイプ作成をすばやく、簡単、かつイマーシブに実行できます。 
+    :::column-end:::    
+:::row-end:::
+
+<br>
+
+---
 
 
 
-## <a name="design-tools"></a>デザイン ツール
+## <a name="what-would-you-like-to-do-next"></a>次に行うこと
+
+:::row:::
+    :::column:::
+       [![基本を理解する](images/icon-lightbulb.jpg)](index.md#understand-the-basics)<br>
+        **[基本を理解する](index.md#understand-the-basics)**<br>
+        Mixed Reality が何によって定義され、どのように使用されているかについて理解を深めます。
+    :::column-end:::
+    :::column:::
+        [![イベントに参加する](images/icon-calendar.jpg)](sf-academy-events.md)<br>
+         **[イベントに参加する](sf-academy-events.md)**<br>
+        最初の HoloLens 2 アプリケーションを作成するには、ハードウェアを参照し、ハンズオン チュートリアルを入手してください。
+    :::column-end:::
+    :::column:::
+        [![ツールのインストール](images/icon-design.jpg)](install-the-tools.md)<br>
+         **[ツールのインストール](install-the-tools.md)**<br>
+        インストール チェックリストを使用して、HoloLens や Mixed Reality 用のアプリを構築するのに必要なツールを取得します。
+    :::column-end:::
+    :::column:::
+        [![開発を始める](images/icon-developer.jpg)](development.md)<br>
+        **[開発を始める](development.md)**<br>
+        スキル レベル、ワーク スタイル、プラットフォームへの関心に基づいて、開発パスを選択します。
+    :::column-end:::
+:::row-end:::
 
 
-<ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
-    <li>
-    <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/README.html#ui-and-interaction-building-blocks" title="Mixed Reality ツールキット - Unity" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/MRTKandUnity.png" alt="Mixed Reality Toolkit - Unity">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>Mixed Reality ツールキット - Unity</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>
-    <li>
-    <a href="https://github.com/Microsoft/MixedRealityToolkit" title="Mixed Reality ツールキット" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/MRTK.png" alt="Mixed Reality Toolkit">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>Mixed Reality ツールキット</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>       
-            <li>
-    <a href="https://www.simplygon.com" title="Simplygon" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/Simplygon.png" alt="Simplygon">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>Simplygon</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>
-</ul>
+<br>
+
+<br>
 
 
-## <a name="general-design-resources"></a>一般的な設計リソース
-
-<ul id="cardtypes-D" class="cardsD panelContent" style="display: flex; margin-top: 0px;">
-    <li>
-    <a href="http://fluent.microsoft.com" title="Fluent Design System" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/Fluent.png" alt="Fluent Design System">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>Fluent Design System</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>
-    <li>
-    <a href="https://www.microsoft.com/design/inclusive" title="マイクロソフトでの包括性を備えた設計" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/Inclusive.png" alt="Inclusive design at Microsoft">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>マイクロソフトでの包括性を備えた設計</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>   
-        <li>
-    <a href="https://developer.microsoft.com/windows/apps/design" title="ユニバーサル Windows プラットフォーム (UWP) アプリケーションの設計" data-linktype="absolute-path">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/UWP.png" alt="Universal Windows Platform (UWP) app design">
-                        </div>
-                    </div>                    
-            <div class="cardText">
-                        <h3>ユニバーサル Windows プラットフォーム (UWP) アプリケーションの設計</h3>
-                        <p> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>  
-    </li>   
-</ul>

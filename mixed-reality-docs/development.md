@@ -1,240 +1,158 @@
 ---
 layout: LandingPage
-title: 開発
+title: ツールとアーキテクチャについて学習する
 description: HoloLens とイマーシブ ヘッドセットの Mixed Reality 開発者向け説明書です。
 author: grbury
 ms.author: grbury
-ms.date: 02/12/2019
-ms.topic: article
+ms.date: 08/27/2019
+ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 開発する, 開発, HoloLens, Unity, DirectX
-ms.openlocfilehash: bf80b676d03fce9011f5952af476dcaa5e2b4eb2
-ms.sourcegitcommit: 76a7aa6e64e114b63ace058dd6d6d662b3c9f09e
+ms.openlocfilehash: b37a9261f56b19edb3dde11cbeedc40a6e503e35
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68507913"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73435680"
 ---
-# <a name="development-launchpad"></a>開発スタート パッド
-
-## <a name="article-categories"></a>記事のカテゴリ
+# <a name="learn-the-tools-and-architecture"></a>ツールとアーキテクチャについて学習する
 
 
-<ul class="panelContent cardsF">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/GetStartedIcon.png" alt="Get started icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>はじめに</h3>
-                        <p>
-                            <a href="mixed-reality.md">Mixed Reality とは</a>
-                        </p>
-                        <p>
-                            <a href="install-the-tools.md">ツールのインストール</a>
-                        </p>
-                        <p>
-                            <a href="mrlearning-base-ch1.md">MR ラーニング:HoloLens 2 と MRTK v2</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-        <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/HoloLens_Icon_120x130.png" alt="Devices icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>デバイス</h3>
-                          <p>
-                            <a href="https://www.microsoft.com/hololens/hardware" target="_blank">HoloLens 2</a>
-                        </p>
-                        <p>
-                            <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a>
-                        </p>
-                        <p>
-                            <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/AzureSpatialAnchors_Icon_120x130.png" alt="Azure Spatial Anchors icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>サービス</h3>
-                        <p>
-                            <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>
-                        </p>
-                        <p>
-                            <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/" target="_blank">音声認識サービス</a>
-                        </p>
-                        <p>
-                            <a href="https://docs.microsoft.com/azure/cognitive-services/computer-vision/" target="_blank">視覚サービス</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/Unity_Icon_120x130.png" alt="Developer techologies icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>開発者テクノロジ</h3>
-                        <p>
-                            <a href="unity-development-overview.md">Unity</a>
-                        </p>
-                        <p>
-                            <a href="directx-development-overview.md">カスタム エンジン (DirectX)</a>
-                        </p>
-                        <p>
-                            <a href="https://www.unrealengine.com/en-US/blog/unreal-engine-4-support-for-hololens-2-released-in-early-access">Unreal</a>
-                        </p>                
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/PortingGuides-icon_120x130.png" alt="Porting guides icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>移植ガイド</h3>
-                        <p>
-                            <a href="mrtk-porting-guide.md">アプリを HoloLens (第 1 世代) から<br>HoloLens 2 に更新する</a>
-                        </p>
-                        <p>
-                            <a href="https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html">Mixed Reality ツールキット (MRTK)<br>API 移植ガイド</a>
-                        </p>
-                        <p>
-                            <a href="porting-guides.md">イマーシブ ヘッドセット アプリ</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="images/App_patterns_Icon_120x130.png" alt="Development fundamentals icon">
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>開発の基礎</h3>
-                        <p>
-                            <a href="Interaction-fundamentals.md">本能的な操作</a>
-                        </p>
-                        <p>
-                            <a href="rendering.md">ホログラフィック レンダリング</a>
-                        </p>
-                         <p>
-                            <a href="testing-your-app-on-hololens.md">アプリのテスト</a>
-                        </p>                    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>    
-</ul>
+![Mixed Reality Academy で資料を扱うチーム](images/Development_Hero.png)
 
-## <a name="overview"></a>概要
+## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[デザイン プロセスを展開する](case-study-expanding-the-design-process-for-mixed-reality.md)
 
-Mixed Reality アプリケーションは、[ユニバーサル Windows プラットフォーム](https://dev.windows.com/getstarted) (UWP) で構築します。 すべての Mixed Reality アプリケーションは、UWP アプリケーションです。 すべての UWP アプリケーションは、Windows Mixed Reality デバイス上で実行するように作成可能です。 Windows 10 と、Unity などのミドルウェア ツールに関する知識があれば、今日から Mixed Reality エクスペリエンスの構築を始めることができます。
+2016 年に Microsoft が待ち望む開発者のために HoloLens を発表したとき、チームは既に Microsoft の内外のスタジオと協力してデバイスの起動エクスペリエンスを構築していました。 これらのチームは、Mixed Reality の設計の新しいフィールドにおける機会と課題の両方を明らかにして学習しました。 [詳細を見る](case-study-expanding-the-design-process-for-mixed-reality.md)
+
 
 <br>
 
->[!VIDEO https://www.youtube.com/embed/A784OdX8xzI]
-
-## <a name="basics-of-mixed-reality-development"></a>Mixed Reality 開発の基礎
-
-[Mixed Reality](mixed-reality.md) エクスペリエンスは、Windows の新しい環境認識機能によって実現されています。 開発者は、これらの機能を使用して現実世界に[ホログラム](hologram.md)を配置できます。また、ユーザーが実際に歩くことで、デジタル世界を動き回ることができます。 
-
-次に示すのは、Mixed Reality 開発のコア構成要素です。
-
-<table>
-<tr>
-<th style="width:175px">入力</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> <a href="gaze.md">頭の視線入力</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> <a href="gaze.md">目の視線入力</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
-</tr><tr>
- <td> <a href="gestures.md">多関節ハンド</a></td><td></td><td style="text-align: center;">✔️</td><td></td>
-</tr><tr>
-<td> <a href="gestures.md">ジェスチャ</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
-</tr><tr>
-<td> <a href="voice-input.md">音声</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> <a href="hardware-accessories.md">ゲームパッド</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> <a href="motion-controllers.md">モーション コントローラー</a></td><td></td><td></td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<th style="width:175px">認識と空間機能</th><th style="width:125px; text-align: center;"><a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:125px; text-align: center;">HoloLens 2</a></th><th style="width:125px; text-align: center;"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
-</tr><tr>
-<td> <a href="coordinate-systems.md">ワールド座標</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> <a href="spatial-sound.md">立体音響</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td>
-</tr><tr>
-<td> <a href="spatial-mapping.md">空間マッピング</a></td><td style="text-align: center;">✔️</td><td style="text-align: center;">✔️</td><td></td>
-</tr>
-</table>
+---
 
 
+## <a name="what-technology-path-are-you-interested-in"></a>どのようなテクノロジ パスに興味がありますか? 
 
-[HoloLens](hololens-hardware-details.md) の基本的な操作モデルは、[視線入力](gaze.md)、[ジェスチャ](gestures.md)、および[音声](voice-input.md)です。これらは、*GGV* と呼ばれることもあります。 [Windows Mixed Reality イマーシブ ヘッドセット](immersive-headset-hardware-details.md)も視線入力と音声を使用しますが、ジェスチャは[モーション コントローラー](motion-controllers.md)に置き換わっています。
 
-マウス、キーボード、ゲームパッドなどの Windows で利用できる入力エコシステムは、すべての Mixed Reality デバイスで使用できます。 HoloLens では、Bluetooth 経由で[ハードウェア アクセサリ](hardware-accessories.md)を接続します。 イマーシブ ヘッドセットでは、Bluetooth、USB、およびその他のサポートされているプロトコルを使用してアクセサリーをホスト PC に接続します。
+:::row:::   
+    :::column:::    
+       [![Unity](images/unity_logo.png)](development.md#unity)<br>
+        **[Unity](development.md#unity)**<br>   
+        Mixed Reality アプリを構築する最速のパスは、Unity を使用するものです。 
+    :::column-end:::    
+    :::column:::    
+        [![Unreal](images/Unreal_logo.png)](development.md#unreal)<br>
+         **[Unreal](development.md#unreal)**<br>    
+        HoloLens 2 の実稼働可能サポートも、Unreal Engine 4.23 に含まれる予定です。    
+    :::column-end:::
+    :::column:::    
+        [![WebVR](images/WebVR_logo.png)](development.md#webvr)<br>
+        **[WebVR](development.md#webvr)**<br>
+        WebVR は、ブラウザーで VR を体験できるようにするオープン仕様です。 
+    :::column-end:::        
+    :::column:::    
+        [![Native](images/VisualStudio-small_logo.png)](development.md#native)<br>
+        **[Native](development.md#native)**<br> 
+        Windows Mixed Reality API に直接コーディングすることで、Mixed Reality アプリを作成します。 
+    :::column-end:::    
+:::row-end:::
 
-[座標](coordinate-systems.md)、[立体音響](spatial-sound.md)、および[空間マッピング](spatial-mapping.md)などの環境認識機能は、Mixed Reality に必要な機能を提供します。 空間マッピングは HoloLens に固有で、ホログラムがユーザーや周辺の物理世界と相互作用できるようにしています。 座標系は、ユーザーの移動がデジタル世界に影響するようにしています。
+<br>
 
-ホログラムは、ライトとサウンドでできています。これらは、[レンダリング](rendering.md)に依存します。 [Windows Mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md) (「シェル」とも呼ばれます) で説明されているように、配置と永続化のエクスペリエンスを理解することは、ユーザー エクスペリエンスに根ざすための優れた方法です。
+---
 
-## <a name="tools-for-developing-mixed-reality"></a>Mixed Reality を開発するためのツール
+## <a name="unity"></a>Unity
 
-使用するツールは、構築する[アプリのスタイル](app-views.md)によって異なります。
-* [2D 表示を使用するアプリ](building-2d-apps.md)では、Windows Phone、PC、タブレットなどの環境に最適な UWP アプリケーションを構築するツールを活用します。 これらのアプリケーションは、Windows Mixed Reality ホームで 2D のプロジェクションとしてのエクスペリエンスを提供し、スマート フォンと PC を含む複数の種類のデバイスで動作します。
-* イマーシブおよびホログラフィック アプリケーションには、Windows Mixed Reality API を活用するために設計されたツールが必要です。 Mixed Reality アプリケーションの構築には、[Unity の使用をお勧めします](unity-development-overview.md)。 独自エンジンの構築に関心がある開発者は、[DirectX などの Windows API を使用します](directx-development-overview.md)。
 
-以下のツールは、構築しているアプリの種類には関係なく、アプリ開発エクスペリエンスを向上させます。
-* [Visual Studio と Windows SDK](using-visual-studio.md)
-* [Windows Device Portal](using-the-windows-device-portal.md)
-* [HoloLens エミュレーター](using-the-hololens-emulator.md)
-* [Windows Mixed Reality シミュレーター](using-the-windows-mixed-reality-simulator.md)
-* [アプリの品質基準](app-quality-criteria.md)
+### <a name="unity-development-overviewunity-development-overviewmd"></a>[Unity 開発の概要](unity-development-overview.md)
+時間を取って、Unity のチュートリアルをご覧になることをお勧めします。 資産が必要な場合、Unity には包括的な資産ストアがあります。 
 
+<br>
+
+### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unitymrtk-getting-startedmd"></a>[Microsoft の Unity 用 Mixed Reality ツールキット (MRTK)](mrtk-getting-started.md)
+Unity での MRTK v2 は、Mixed Reality アプリケーション向けのオープンソースのクロスプラットフォーム開発キットです。 MRTK バージョン 2 は、Microsoft HoloLens、Windows Mixed Reality イマーシブ (VR) ヘッドセット、OpenVR プラットフォームをターゲットとしたアプリケーションの開発を加速することを目的としています。
+
+<br>
+
+### <a name="open-source-sample-apps-and-step-by-step-tutorialstutorialsmd"></a>[オープンソースのサンプル アプリとステップバイステップ チュートリアル](tutorials.md)
+HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。 チュートリアルは、Mixed Reality ツールキット 2.0 (MRTK 2.0) が基になっています。
+
+<br>
+
+### <a name="hand-interaction-examples-scene-mrtk-for-unityhttpsmicrosoftgithubiomixedrealitytoolkit-unitydocumentationgettingstartedwiththemrtkhtmlopen-and-run-the-handinteractionexamples-scene-in-editor"></a>[Unity 用の手による操作のサンプル シーン (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#open-and-run-the-handinteractionexamples-scene-in-editor)
+HandInteractionExamples.unity のサンプル シーンには、多関節ハンド入力が強調されているさまざまな種類の操作と UI コントロールが含まれています。
+>[!NOTE]
+>MRTK Foundation パッケージとサンプル Unity パッケージのインストールが必要です。
+
+### <a name="eye-tracking-examples-mrtk-for-unityhttpsmicrosoftgithubiomixedrealitytoolkit-unitydocumentationeyetrackingeyetracking_examplesoverviewhtml"></a>[Unity 用の視線追跡のサンプル (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_ExamplesOverview.html)
+このページでは、提供されている MRTK の視線追跡サンプルを基に構築することにより、MRTK での視線追跡をすばやく開始する方法について説明します。
+>[!NOTE]
+>MRTK Foundation パッケージとサンプル Unity パッケージのインストールが必要です。
+
+<br>
+
+---
+
+## <a name="unreal"></a>Unreal
+
+### <a name="unreal-development-overviewunreal-development-overviewmd"></a>[Unreal 開発の概要](unreal-development-overview.md)
+Unreal を使用した Mixed Reality アプリの構築方法について説明します。
+
+<br>
+
+---
+
+## <a name="webvr"></a>WebVR    
+
+### <a name="babylon-development-overviewhttpsdocbabylonjscom"></a>[Babylon 開発の概要](https://doc.babylonjs.com/)  
+Babylon を使用した Mixed Reality アプリの構築方法について説明します。 時間を取って、Babylon のチュートリアルをご覧になることをお勧めします。
+
+<br>
+
+---
+
+## <a name="native"></a>ネイティブ
+
+
+### <a name="native-development-overviewdirectx-development-overviewmd"></a>[ネイティブ開発の概要](directx-development-overview.md)
+ネイティブな Mixed Reality アプリを構築するための最速のパスです。
+
+<br>
+
+### <a name="directx-uwp-app-templates-for-mixed-realityhttpsmarketplacevisualstudiocomitemsitemnamewindowsmixedrealityteamwindowsmixedrealityapptemplatesvsix"></a>[Mixed Reality 用 DirectX UWP アプリ テンプレート](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)
+DirectX を使用して Mixed Reality アプリを記述するのに必要なものすべてが含まれます。
+
+<br>
+
+---
+
+
+## <a name="what-would-you-like-to-do-next"></a>次に行うこと
+
+
+:::row:::
+    :::column:::
+       [![基本を理解する](images/icon-lightbulb.jpg)](index.md#understand-the-basics)<br>
+        **[基本を理解する](index.md#understand-the-basics)**<br>
+        Mixed Reality が何によって定義され、どのように使用されているかについて理解を深めます。
+    :::column-end:::
+    :::column:::
+        [![作成者になる](images/icon-design.jpg)](design.md)<br>
+         **[作成者になる](design.md)**<br>
+        設計とプロトタイプ作成を開始するために必要な基本的な概念について説明します。
+    :::column-end:::
+    :::column:::
+        [![ツールのインストール](images/icon-developer.jpg)](install-the-tools.md)<br>
+         **[ツールのインストール](install-the-tools.md)**<br>
+        インストール チェックリストを使用して、HoloLens や Mixed Reality 用のアプリを構築するのに必要なツールを取得します。
+    :::column-end:::
+    :::column:::
+        [![イベントに参加する](images/icon-calendar.jpg)](sf-academy-events.md)<br>
+         **[イベントに参加する](sf-academy-events.md)**<br>
+        最初の HoloLens 2 アプリケーションを作成するには、ハードウェアを参照し、ハンズオン チュートリアルを入手してください。
+    :::column-end:::
+:::row-end:::
+
+
+<br>
+
+<br>
