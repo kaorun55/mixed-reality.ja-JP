@@ -6,174 +6,174 @@ ms.author: kurtie
 ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、イマーシブ、motion controller、academy、チュートリアル
-ms.openlocfilehash: e2199c3afed21f9396ed84f71093a8b2fb3bb23b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 273d1bf384d588ab24bfe29e30f299b7a41fe541
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438545"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926818"
 ---
 >[!NOTE]
-><span data-ttu-id="b4ce2-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="b4ce2-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="b4ce2-106">これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="b4ce2-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="b4ce2-108">HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-108">[A new series of tutorials](mrlearning-base.md) has been posted for HoloLens 2.</span></span>
+><span data-ttu-id="b538c-104">Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。</span><span class="sxs-lookup"><span data-stu-id="b538c-104">The Mixed Reality Academy tutorials were designed with HoloLens (1st gen) and Mixed Reality Immersive Headsets in mind.</span></span>  <span data-ttu-id="b538c-105">そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。</span><span class="sxs-lookup"><span data-stu-id="b538c-105">As such, we feel it is important to leave these tutorials in place for developers who are still looking for guidance in developing for those devices.</span></span>  <span data-ttu-id="b538c-106">これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。</span><span class="sxs-lookup"><span data-stu-id="b538c-106">These tutorials will **_not_** be updated with the latest toolsets or interactions being used for HoloLens 2.</span></span>  <span data-ttu-id="b538c-107">サポートされているデバイスでの作業を続行するために管理されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-107">They will be maintained to continue working on the supported devices.</span></span> <span data-ttu-id="b538c-108">HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。</span><span class="sxs-lookup"><span data-stu-id="b538c-108">[A new series of tutorials](mrlearning-base.md) has been posted for HoloLens 2.</span></span>
 
 <br>
 
-# <a name="mr-input-213-motion-controllers"></a><span data-ttu-id="b4ce2-109">MR 入力 213: モーションコントローラー</span><span class="sxs-lookup"><span data-stu-id="b4ce2-109">MR Input 213: Motion controllers</span></span>
+# <a name="mr-input-213-motion-controllers"></a><span data-ttu-id="b538c-109">MR 入力 213: モーションコントローラー</span><span class="sxs-lookup"><span data-stu-id="b538c-109">MR Input 213: Motion controllers</span></span>
 
-<span data-ttu-id="b4ce2-110">混合現実世界のモーションコントローラーは、別のレベルの対話機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-110">Motion controllers in the mixed reality world add another level of interactivity.</span></span> <span data-ttu-id="b4ce2-111">[モーションコントローラー](motion-controllers.md)を使用すると、リアルタイムでの物理的な相互作用と同様に、オブジェクトをより自然な方法で直接やり取りし、アプリのエクスペリエンスの immersion と満足させるを増やすことができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-111">With [motion controllers](motion-controllers.md), we can directly interact with objects in a more natural way, similar to our physical interactions in real life, increasing immersion and delight in your app experience.</span></span>
+<span data-ttu-id="b538c-110">混合現実世界のモーションコントローラーは、別のレベルの対話機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="b538c-110">Motion controllers in the mixed reality world add another level of interactivity.</span></span> <span data-ttu-id="b538c-111">[モーションコントローラー](motion-controllers.md)を使用すると、リアルタイムでの物理的な相互作用と同様に、オブジェクトをより自然な方法で直接やり取りし、アプリのエクスペリエンスの immersion と満足させるを増やすことができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-111">With [motion controllers](motion-controllers.md), we can directly interact with objects in a more natural way, similar to our physical interactions in real life, increasing immersion and delight in your app experience.</span></span>
 
-<span data-ttu-id="b4ce2-112">MR 入力213では、単純な空間描画エクスペリエンスを作成することによって、モーションコントローラーの入力イベントを調査します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-112">In MR Input 213, we will explore the motion controller's input events by creating a simple spatial painting experience.</span></span> <span data-ttu-id="b4ce2-113">このアプリでは、ユーザーはさまざまな種類のブラシや色を使用して3次元空間で塗りつぶすことができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-113">With this app, users can paint in three-dimensional space with various types of brushes and colors.</span></span>
+<span data-ttu-id="b538c-112">MR 入力213では、単純な空間描画エクスペリエンスを作成することによって、モーションコントローラーの入力イベントを調査します。</span><span class="sxs-lookup"><span data-stu-id="b538c-112">In MR Input 213, we will explore the motion controller's input events by creating a simple spatial painting experience.</span></span> <span data-ttu-id="b538c-113">このアプリでは、ユーザーはさまざまな種類のブラシや色を使用して3次元空間で塗りつぶすことができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-113">With this app, users can paint in three-dimensional space with various types of brushes and colors.</span></span>
 
-## <a name="topics-covered-in-this-tutorial"></a><span data-ttu-id="b4ce2-114">このチュートリアルで説明するトピック</span><span class="sxs-lookup"><span data-stu-id="b4ce2-114">Topics covered in this tutorial</span></span>
+## <a name="topics-covered-in-this-tutorial"></a><span data-ttu-id="b538c-114">このチュートリアルで説明するトピック</span><span class="sxs-lookup"><span data-stu-id="b538c-114">Topics covered in this tutorial</span></span>
 
 |![MixedReality213 Topic1](images/mr213-topic1.png)|![MixedReality213 Topic2](images/mr213-topic2.png)|![MixedReality213 Topic3](images/mr213-topic3.png)|
 | :--- | :--- | :--- |
-|<span data-ttu-id="b4ce2-118">**コントローラーの視覚化**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-118">**Controller visualization**</span></span>|<span data-ttu-id="b4ce2-119">**コントローラーの入力イベント**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-119">**Controller input events**</span></span>|<span data-ttu-id="b4ce2-120">**カスタムコントローラーと UI**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-120">**Custom controller and UI**</span></span>|
-|<span data-ttu-id="b4ce2-121">Unity のゲームモードとランタイムでモーションコントローラーモデルをレンダリングする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-121">Learn how to render motion controller models in Unity's game mode and runtime.</span></span>|<span data-ttu-id="b4ce2-122">さまざまな種類のボタンイベントとそのアプリケーションを理解します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-122">Understand different types of button events and their applications.</span></span>|<span data-ttu-id="b4ce2-123">コントローラー上に UI 要素を重ね合わせる方法、または UI 要素を完全にカスタマイズする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-123">Learn how to overlay UI elements on top of the controller or fully customize it.</span></span>|
+|<span data-ttu-id="b538c-118">**コントローラーの視覚化**</span><span class="sxs-lookup"><span data-stu-id="b538c-118">**Controller visualization**</span></span>|<span data-ttu-id="b538c-119">**コントローラーの入力イベント**</span><span class="sxs-lookup"><span data-stu-id="b538c-119">**Controller input events**</span></span>|<span data-ttu-id="b538c-120">**カスタムコントローラーと UI**</span><span class="sxs-lookup"><span data-stu-id="b538c-120">**Custom controller and UI**</span></span>|
+|<span data-ttu-id="b538c-121">Unity のゲームモードとランタイムでモーションコントローラーモデルをレンダリングする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-121">Learn how to render motion controller models in Unity's game mode and runtime.</span></span>|<span data-ttu-id="b538c-122">さまざまな種類のボタンイベントとそのアプリケーションを理解します。</span><span class="sxs-lookup"><span data-stu-id="b538c-122">Understand different types of button events and their applications.</span></span>|<span data-ttu-id="b538c-123">コントローラー上に UI 要素を重ね合わせる方法、または UI 要素を完全にカスタマイズする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-123">Learn how to overlay UI elements on top of the controller or fully customize it.</span></span>|
 
-## <a name="device-support"></a><span data-ttu-id="b4ce2-124">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="b4ce2-124">Device support</span></span>
+## <a name="device-support"></a><span data-ttu-id="b538c-124">デバイスのサポート</span><span class="sxs-lookup"><span data-stu-id="b538c-124">Device support</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="b4ce2-125">まで</span><span class="sxs-lookup"><span data-stu-id="b4ce2-125">Course</span></span></th><th style="width:150px"> <span data-ttu-id="b4ce2-126"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="b4ce2-126"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="b4ce2-127"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="b4ce2-127"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
+<th><span data-ttu-id="b538c-125">まで</span><span class="sxs-lookup"><span data-stu-id="b538c-125">Course</span></span></th><th style="width:150px"> <span data-ttu-id="b538c-126"><a href="hololens-hardware-details.md">HoloLens</a></span><span class="sxs-lookup"><span data-stu-id="b538c-126"><a href="hololens-hardware-details.md">HoloLens</a></span></span></th><th style="width:150px"> <span data-ttu-id="b538c-127"><a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></span><span class="sxs-lookup"><span data-stu-id="b538c-127"><a href="immersive-headset-hardware-details.md">Immersive headsets</a></span></span></th>
 </tr><tr>
-<td><span data-ttu-id="b4ce2-128">MR 入力 213: モーションコントローラー</span><span class="sxs-lookup"><span data-stu-id="b4ce2-128">MR Input 213: Motion controllers</span></span></td><td style="text-align: center;"> </td><td style="text-align: center;"> <span data-ttu-id="b4ce2-129">✔️</span><span class="sxs-lookup"><span data-stu-id="b4ce2-129">✔️</span></span></td>
+<td><span data-ttu-id="b538c-128">MR 入力 213: モーションコントローラー</span><span class="sxs-lookup"><span data-stu-id="b538c-128">MR Input 213: Motion controllers</span></span></td><td style="text-align: center;"> </td><td style="text-align: center;"> <span data-ttu-id="b538c-129">✔️</span><span class="sxs-lookup"><span data-stu-id="b538c-129">✔️</span></span></td>
 </tr>
 </table>
 
-## <a name="before-you-start"></a><span data-ttu-id="b4ce2-130">開始前の作業</span><span class="sxs-lookup"><span data-stu-id="b4ce2-130">Before you start</span></span>
+## <a name="before-you-start"></a><span data-ttu-id="b538c-130">開始前の作業</span><span class="sxs-lookup"><span data-stu-id="b538c-130">Before you start</span></span>
 
-### <a name="prerequisites"></a><span data-ttu-id="b4ce2-131">前提条件</span><span class="sxs-lookup"><span data-stu-id="b4ce2-131">Prerequisites</span></span>
+### <a name="prerequisites"></a><span data-ttu-id="b538c-131">前提条件</span><span class="sxs-lookup"><span data-stu-id="b538c-131">Prerequisites</span></span>
 
-<span data-ttu-id="b4ce2-132">[このページ](install-the-tools.md)の「イマーシブヘッドセットのインストールチェックリスト」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-132">See the installation checklist for immersive headsets on [this page](install-the-tools.md).</span></span>
+<span data-ttu-id="b538c-132">[このページ](install-the-tools.md)の「イマーシブヘッドセットのインストールチェックリスト」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b538c-132">See the installation checklist for immersive headsets on [this page](install-the-tools.md).</span></span>
 
-* <span data-ttu-id="b4ce2-133">このチュートリアルには[Unity 2017.2.1 p2](https://beta.unity3d.com/download/1dc514532f08/UnityDownloadAssistant-2017.2.1p2.exe)が必要です</span><span class="sxs-lookup"><span data-stu-id="b4ce2-133">This tutorial requires [Unity 2017.2.1p2](https://beta.unity3d.com/download/1dc514532f08/UnityDownloadAssistant-2017.2.1p2.exe)</span></span>
+* <span data-ttu-id="b538c-133">このチュートリアルには[Unity 2017.2.1 p2](https://beta.unity3d.com/download/1dc514532f08/UnityDownloadAssistant-2017.2.1p2.exe)が必要です</span><span class="sxs-lookup"><span data-stu-id="b538c-133">This tutorial requires [Unity 2017.2.1p2](https://beta.unity3d.com/download/1dc514532f08/UnityDownloadAssistant-2017.2.1p2.exe)</span></span>
 
-### <a name="project-files"></a><span data-ttu-id="b4ce2-134">プロジェクトファイル</span><span class="sxs-lookup"><span data-stu-id="b4ce2-134">Project files</span></span>
+### <a name="project-files"></a><span data-ttu-id="b538c-134">プロジェクトファイル</span><span class="sxs-lookup"><span data-stu-id="b538c-134">Project files</span></span>
 
-* <span data-ttu-id="b4ce2-135">プロジェクトに必要な[ファイルをダウンロード](https://github.com/Microsoft/MixedReality213/archive/master.zip)し、ファイルをデスクトップに抽出します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-135">[Download the files](https://github.com/Microsoft/MixedReality213/archive/master.zip) required by the project and extract the files to the Desktop.</span></span>
+* <span data-ttu-id="b538c-135">プロジェクトに必要な[ファイルをダウンロード](https://github.com/Microsoft/MixedReality213/archive/master.zip)し、ファイルをデスクトップに抽出します。</span><span class="sxs-lookup"><span data-stu-id="b538c-135">[Download the files](https://github.com/Microsoft/MixedReality213/archive/master.zip) required by the project and extract the files to the Desktop.</span></span>
 
 >[!NOTE]
-><span data-ttu-id="b4ce2-136">ダウンロードする前にソースコードを確認する場合は、GitHub から[入手でき](https://github.com/Microsoft/MixedReality213)ます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-136">If you want to look through the source code before downloading, it's [available on GitHub](https://github.com/Microsoft/MixedReality213).</span></span>
+><span data-ttu-id="b538c-136">ダウンロードする前にソースコードを確認する場合は、GitHub から[入手でき](https://github.com/Microsoft/MixedReality213)ます。</span><span class="sxs-lookup"><span data-stu-id="b538c-136">If you want to look through the source code before downloading, it's [available on GitHub](https://github.com/Microsoft/MixedReality213).</span></span>
 
-## <a name="unity-setup"></a><span data-ttu-id="b4ce2-137">Unity のセットアップ</span><span class="sxs-lookup"><span data-stu-id="b4ce2-137">Unity setup</span></span>
+## <a name="unity-setup"></a><span data-ttu-id="b538c-137">Unity のセットアップ</span><span class="sxs-lookup"><span data-stu-id="b538c-137">Unity setup</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/cBAOALaHys4]
 
-### <a name="objectives"></a><span data-ttu-id="b4ce2-138">目標</span><span class="sxs-lookup"><span data-stu-id="b4ce2-138">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="b538c-138">目標</span><span class="sxs-lookup"><span data-stu-id="b538c-138">Objectives</span></span>
 
-* <span data-ttu-id="b4ce2-139">Windows Mixed Reality 開発用に Unity を最適化する</span><span class="sxs-lookup"><span data-stu-id="b4ce2-139">Optimize Unity for Windows Mixed Reality development</span></span>
-* <span data-ttu-id="b4ce2-140">Mixed Reality カメラの設定</span><span class="sxs-lookup"><span data-stu-id="b4ce2-140">Setup Mixed Reality Camera</span></span>
-* <span data-ttu-id="b4ce2-141">環境のセットアップ</span><span class="sxs-lookup"><span data-stu-id="b4ce2-141">Setup environment</span></span>
+* <span data-ttu-id="b538c-139">Windows Mixed Reality 開発用に Unity を最適化する</span><span class="sxs-lookup"><span data-stu-id="b538c-139">Optimize Unity for Windows Mixed Reality development</span></span>
+* <span data-ttu-id="b538c-140">Mixed Reality カメラの設定</span><span class="sxs-lookup"><span data-stu-id="b538c-140">Setup Mixed Reality Camera</span></span>
+* <span data-ttu-id="b538c-141">環境のセットアップ</span><span class="sxs-lookup"><span data-stu-id="b538c-141">Setup environment</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-142">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-142">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-142">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-142">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-143">Unity を起動します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-143">Start Unity.</span></span>
-* <span data-ttu-id="b4ce2-144">**[開く]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-144">Select **Open**.</span></span>
-* <span data-ttu-id="b4ce2-145">デスクトップに移動し、以前に unarchived した**MixedReality213**フォルダーを探します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-145">Navigate to your Desktop and find the **MixedReality213-master** folder you previously unarchived.</span></span>
-* <span data-ttu-id="b4ce2-146">**[フォルダーの選択]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-146">Click **Select Folder**.</span></span>
-* <span data-ttu-id="b4ce2-147">Unity がプロジェクトファイルの読み込みを完了すると、Unity エディターを表示できるようになります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-147">Once Unity finishes loading project files, you will be able to see Unity editor.</span></span>
-* <span data-ttu-id="b4ce2-148">Unity で、 **[ファイル > ビルド設定]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-148">In Unity, select **File > Build Settings**.</span></span>
+* <span data-ttu-id="b538c-143">Unity を起動します。</span><span class="sxs-lookup"><span data-stu-id="b538c-143">Start Unity.</span></span>
+* <span data-ttu-id="b538c-144">**[開く]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-144">Select **Open**.</span></span>
+* <span data-ttu-id="b538c-145">デスクトップに移動し、以前に unarchived した**MixedReality213**フォルダーを探します。</span><span class="sxs-lookup"><span data-stu-id="b538c-145">Navigate to your Desktop and find the **MixedReality213-master** folder you previously unarchived.</span></span>
+* <span data-ttu-id="b538c-146">**[フォルダーの選択]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-146">Click **Select Folder**.</span></span>
+* <span data-ttu-id="b538c-147">Unity がプロジェクトファイルの読み込みを完了すると、Unity エディターを表示できるようになります。</span><span class="sxs-lookup"><span data-stu-id="b538c-147">Once Unity finishes loading project files, you will be able to see Unity editor.</span></span>
+* <span data-ttu-id="b538c-148">Unity で、 **[ファイル > ビルド設定]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-148">In Unity, select **File > Build Settings**.</span></span>
 
     ![MR213_BuildSettings](images/mr213-buildsettings-450px.png)
 
-* <span data-ttu-id="b4ce2-150">**[プラットフォーム]** ボックスの一覧の **[ユニバーサル Windows プラットフォーム]** を選択し、 **[プラットフォームの切り替え]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-150">Select **Universal Windows Platform** in the **Platform** list and click the **Switch Platform** button.</span></span>
-* <span data-ttu-id="b4ce2-151">ターゲットデバイスを**任意のデバイス**に設定する</span><span class="sxs-lookup"><span data-stu-id="b4ce2-151">Set Target Device to **Any device**</span></span>
-* <span data-ttu-id="b4ce2-152">ビルドの種類を**D3D**に設定</span><span class="sxs-lookup"><span data-stu-id="b4ce2-152">Set Build Type to **D3D**</span></span>
-* <span data-ttu-id="b4ce2-153">SDK を**最新のインストール済み**に設定する</span><span class="sxs-lookup"><span data-stu-id="b4ce2-153">Set SDK to **Latest Installed**</span></span>
-* <span data-ttu-id="b4ce2-154">**Unity C#プロジェクト**を確認する</span><span class="sxs-lookup"><span data-stu-id="b4ce2-154">Check **Unity C# Projects**</span></span>
-    * <span data-ttu-id="b4ce2-155">これにより、Unity プロジェクトを再構築しなくても、Visual Studio プロジェクトでスクリプトファイルを変更できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-155">This allows you modify script files in the Visual Studio project without rebuilding Unity project.</span></span>
-* <span data-ttu-id="b4ce2-156">**[プレーヤーの設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-156">Click **Player Settings**.</span></span>
-* <span data-ttu-id="b4ce2-157">**[インスペクター]** パネルで、下にスクロールします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-157">In the **Inspector** panel, scroll down to the bottom</span></span>
-* <span data-ttu-id="b4ce2-158">XR の設定で、 **[Virtual Reality がサポートされる]** をオンにします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-158">In XR Settings, check **Virtual Reality Supported**</span></span>
-* <span data-ttu-id="b4ce2-159">Virtual Reality Sdk で、 **Windows Mixed reality** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-159">Under Virtual Reality SDKs, select **Windows Mixed Reality**</span></span>
+* <span data-ttu-id="b538c-150">**[プラットフォーム]** ボックスの一覧の **[ユニバーサル Windows プラットフォーム]** を選択し、 **[プラットフォームの切り替え]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-150">Select **Universal Windows Platform** in the **Platform** list and click the **Switch Platform** button.</span></span>
+* <span data-ttu-id="b538c-151">ターゲットデバイスを**任意のデバイス**に設定する</span><span class="sxs-lookup"><span data-stu-id="b538c-151">Set Target Device to **Any device**</span></span>
+* <span data-ttu-id="b538c-152">ビルドの種類を**D3D**に設定</span><span class="sxs-lookup"><span data-stu-id="b538c-152">Set Build Type to **D3D**</span></span>
+* <span data-ttu-id="b538c-153">SDK を**最新のインストール済み**に設定する</span><span class="sxs-lookup"><span data-stu-id="b538c-153">Set SDK to **Latest Installed**</span></span>
+* <span data-ttu-id="b538c-154">**Unity C#プロジェクト**を確認する</span><span class="sxs-lookup"><span data-stu-id="b538c-154">Check **Unity C# Projects**</span></span>
+    * <span data-ttu-id="b538c-155">これにより、Unity プロジェクトを再構築しなくても、Visual Studio プロジェクトでスクリプトファイルを変更できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-155">This allows you modify script files in the Visual Studio project without rebuilding Unity project.</span></span>
+* <span data-ttu-id="b538c-156">**[プレーヤーの設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-156">Click **Player Settings**.</span></span>
+* <span data-ttu-id="b538c-157">**[インスペクター]** パネルで、下にスクロールします。</span><span class="sxs-lookup"><span data-stu-id="b538c-157">In the **Inspector** panel, scroll down to the bottom</span></span>
+* <span data-ttu-id="b538c-158">XR の設定で、 **[Virtual Reality がサポートされる]** をオンにします。</span><span class="sxs-lookup"><span data-stu-id="b538c-158">In XR Settings, check **Virtual Reality Supported**</span></span>
+* <span data-ttu-id="b538c-159">Virtual Reality Sdk で、 **Windows Mixed reality** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-159">Under Virtual Reality SDKs, select **Windows Mixed Reality**</span></span>
 
     ![MR213_XRSettings](images/mr213-xrsettings-500px.png)
 
-* <span data-ttu-id="b4ce2-161">**ビルドの設定**ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-161">Close **Build Settings** window.</span></span>
+* <span data-ttu-id="b538c-161">**ビルドの設定**ウィンドウを閉じます。</span><span class="sxs-lookup"><span data-stu-id="b538c-161">Close **Build Settings** window.</span></span>
 
-### <a name="project-structure"></a><span data-ttu-id="b4ce2-162">プロジェクトの構造</span><span class="sxs-lookup"><span data-stu-id="b4ce2-162">Project structure</span></span>
+### <a name="project-structure"></a><span data-ttu-id="b538c-162">プロジェクトの構造</span><span class="sxs-lookup"><span data-stu-id="b538c-162">Project structure</span></span>
 
-<span data-ttu-id="b4ce2-163">このチュートリアルでは **[、Mixed Reality Toolkit-Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)** を使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-163">This tutorial uses **[Mixed Reality Toolkit - Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)**.</span></span> <span data-ttu-id="b4ce2-164">リリースは[このページ](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)で確認できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-164">You can find the releases on [this page](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases).</span></span>
+<span data-ttu-id="b538c-163">このチュートリアルでは **[、Mixed Reality Toolkit-Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)** を使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-163">This tutorial uses **[Mixed Reality Toolkit - Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)**.</span></span> <span data-ttu-id="b538c-164">リリースは[このページ](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases)で確認できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-164">You can find the releases on [this page](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases).</span></span>
 
 ![ProjectStructure](images/mr213-projectstructure-650px.png)
 
-<span data-ttu-id="b4ce2-166">**参照のための完了したシーン**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-166">**Completed scenes for your reference**</span></span>
+<span data-ttu-id="b538c-166">**参照のための完了したシーン**</span><span class="sxs-lookup"><span data-stu-id="b538c-166">**Completed scenes for your reference**</span></span>
 
-* <span data-ttu-id="b4ce2-167">**[シーン]** フォルダーの下に2つの Unity シーンが完成していることがわかります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-167">You will find two completed Unity scenes under **Scenes** folder.</span></span>
-    * <span data-ttu-id="b4ce2-168">**MixedReality213**: 1 つのブラシを使用した完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b4ce2-168">**MixedReality213**: Completed scene with single brush</span></span>
-    * <span data-ttu-id="b4ce2-169">**MixedReality213Advanced**: 複数のブラシを使用した高度なデザインのための完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b4ce2-169">**MixedReality213Advanced**: Completed scene for advanced design with multiple brushes</span></span>
+* <span data-ttu-id="b538c-167">**[シーン]** フォルダーの下に2つの Unity シーンが完成していることがわかります。</span><span class="sxs-lookup"><span data-stu-id="b538c-167">You will find two completed Unity scenes under **Scenes** folder.</span></span>
+    * <span data-ttu-id="b538c-168">**MixedReality213**: 1 つのブラシを使用した完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b538c-168">**MixedReality213**: Completed scene with single brush</span></span>
+    * <span data-ttu-id="b538c-169">**MixedReality213Advanced**: 複数のブラシを使用した高度なデザインのための完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b538c-169">**MixedReality213Advanced**: Completed scene for advanced design with multiple brushes</span></span>
 
-<span data-ttu-id="b4ce2-170">**チュートリアルの新しいシーンの設定**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-170">**New Scene setup for the tutorial**</span></span>
+<span data-ttu-id="b538c-170">**チュートリアルの新しいシーンの設定**</span><span class="sxs-lookup"><span data-stu-id="b538c-170">**New Scene setup for the tutorial**</span></span>
 
-* <span data-ttu-id="b4ce2-171">Unity で、 **[ファイル > 新しいシーン]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-171">In Unity, click **File > New Scene**</span></span>
-* <span data-ttu-id="b4ce2-172">**メインカメラ**と**指向性ライト**の削除</span><span class="sxs-lookup"><span data-stu-id="b4ce2-172">Delete **Main Camera** and **Directional Light**</span></span>
-* <span data-ttu-id="b4ce2-173">[**プロジェクト] パネル**で、次の prefabs を検索し、 **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-173">From the **Project panel**, search and drag the following prefabs into the **Hierarchy** panel:</span></span>
-    * <span data-ttu-id="b4ce2-174">Assets/HoloToolkit/Input/Prefabs/**MixedRealityCamera**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-174">Assets/HoloToolkit/Input/Prefabs/**MixedRealityCamera**</span></span>
-    * <span data-ttu-id="b4ce2-175">Assets/AppPrefabs/**Environment**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-175">Assets/AppPrefabs/**Environment**</span></span>
+* <span data-ttu-id="b538c-171">Unity で、 **[ファイル > 新しいシーン]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-171">In Unity, click **File > New Scene**</span></span>
+* <span data-ttu-id="b538c-172">**メインカメラ**と**指向性ライト**の削除</span><span class="sxs-lookup"><span data-stu-id="b538c-172">Delete **Main Camera** and **Directional Light**</span></span>
+* <span data-ttu-id="b538c-173">[**プロジェクト] パネル**で、次の prefabs を検索し、 **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-173">From the **Project panel**, search and drag the following prefabs into the **Hierarchy** panel:</span></span>
+    * <span data-ttu-id="b538c-174">Assets/HoloToolkit/Input/Prefabs/**MixedRealityCamera**</span><span class="sxs-lookup"><span data-stu-id="b538c-174">Assets/HoloToolkit/Input/Prefabs/**MixedRealityCamera**</span></span>
+    * <span data-ttu-id="b538c-175">Assets/AppPrefabs/**Environment**</span><span class="sxs-lookup"><span data-stu-id="b538c-175">Assets/AppPrefabs/**Environment**</span></span>
 
     ![カメラと環境](images/mr213-cameraenvironment-300px.jpg)
 
-* <span data-ttu-id="b4ce2-177">Mixed Reality Toolkit には、次の2つのカメラ prefabs があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-177">There are two camera prefabs in Mixed Reality Toolkit:</span></span>
-    * <span data-ttu-id="b4ce2-178">**MixedRealityCamera**: カメラのみ</span><span class="sxs-lookup"><span data-stu-id="b4ce2-178">**MixedRealityCamera.prefab**: Camera only</span></span>
-    * <span data-ttu-id="b4ce2-179">**MixedRealityCameraParent**: カメラ + テレの境界線</span><span class="sxs-lookup"><span data-stu-id="b4ce2-179">**MixedRealityCameraParent.prefab**: Camera + Teleportation + Boundary</span></span>
-    * <span data-ttu-id="b4ce2-180">このチュートリアルでは、 **MixedRealityCamera**機能を使用せずに、この機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-180">In this tutorial, we will use **MixedRealityCamera** without teleportation feature.</span></span> <span data-ttu-id="b4ce2-181">このため、基本的なフロアを含む単純な**環境**prefab を追加し、ユーザーが接地できるようにしました。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-181">Because of this, we added simple **Environment** prefab which contains a basic floor to make the user feel grounded.</span></span>
-    * <span data-ttu-id="b4ce2-182">**MixedRealityCameraParent**を使用した電話の詳細については、[上級設計と locomotion](#advanced-design---teleportation-and-locomotion)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-182">To learn more about the teleportation with **MixedRealityCameraParent**, see [Advanced design - Teleportation and locomotion](#advanced-design---teleportation-and-locomotion)</span></span>
+* <span data-ttu-id="b538c-177">Mixed Reality Toolkit には、次の2つのカメラ prefabs があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-177">There are two camera prefabs in Mixed Reality Toolkit:</span></span>
+    * <span data-ttu-id="b538c-178">**MixedRealityCamera**: カメラのみ</span><span class="sxs-lookup"><span data-stu-id="b538c-178">**MixedRealityCamera.prefab**: Camera only</span></span>
+    * <span data-ttu-id="b538c-179">**MixedRealityCameraParent**: カメラ + テレの境界線</span><span class="sxs-lookup"><span data-stu-id="b538c-179">**MixedRealityCameraParent.prefab**: Camera + Teleportation + Boundary</span></span>
+    * <span data-ttu-id="b538c-180">このチュートリアルでは、 **MixedRealityCamera**機能を使用せずに、この機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-180">In this tutorial, we will use **MixedRealityCamera** without teleportation feature.</span></span> <span data-ttu-id="b538c-181">このため、基本的なフロアを含む単純な**環境**prefab を追加し、ユーザーが接地できるようにしました。</span><span class="sxs-lookup"><span data-stu-id="b538c-181">Because of this, we added simple **Environment** prefab which contains a basic floor to make the user feel grounded.</span></span>
+    * <span data-ttu-id="b538c-182">**MixedRealityCameraParent**を使用した電話の詳細については、[上級設計と locomotion](#advanced-design---teleportation-and-locomotion)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="b538c-182">To learn more about the teleportation with **MixedRealityCameraParent**, see [Advanced design - Teleportation and locomotion](#advanced-design---teleportation-and-locomotion)</span></span>
 
-<span data-ttu-id="b4ce2-183">**スカイボックスのセットアップ**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-183">**Skybox setup**</span></span>
+<span data-ttu-id="b538c-183">**スカイボックスのセットアップ**</span><span class="sxs-lookup"><span data-stu-id="b538c-183">**Skybox setup**</span></span>
 
-* <span data-ttu-id="b4ce2-184">**[ウィンドウ > 照明 > 設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-184">Click **Window > Lighting > Settings**</span></span>
-* <span data-ttu-id="b4ce2-185">[**スカイボックス素材] フィールド**の右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-185">Click the circle on the right side of the **Skybox Material field**</span></span>
-* <span data-ttu-id="b4ce2-186">「Gray」と入力し、[ **SkyboxGray** (Assets/AppPrefabs/Support/マテリアル/SkyboxGray)] を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-186">Type in ‘gray’ and select **SkyboxGray** (Assets/AppPrefabs/Support/Materials/SkyboxGray.mat)</span></span>
+* <span data-ttu-id="b538c-184">**[ウィンドウ > 照明 > 設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-184">Click **Window > Lighting > Settings**</span></span>
+* <span data-ttu-id="b538c-185">[**スカイボックス素材] フィールド**の右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-185">Click the circle on the right side of the **Skybox Material field**</span></span>
+* <span data-ttu-id="b538c-186">「Gray」と入力し、[ **SkyboxGray** (Assets/AppPrefabs/Support/マテリアル/SkyboxGray)] を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-186">Type in ‘gray’ and select **SkyboxGray** (Assets/AppPrefabs/Support/Materials/SkyboxGray.mat)</span></span>
 
     ![スカイボックスの設定](images/mr123-skyboxsetting-400px.jpg)
 
-* <span data-ttu-id="b4ce2-188">**スカイ**ボックスをチェックして、割り当てられている灰色のグラデーションスカイボックスを確認できるようにします</span><span class="sxs-lookup"><span data-stu-id="b4ce2-188">Check **Skybox** option to be able to see assigned gray gradient skybox</span></span>
+* <span data-ttu-id="b538c-188">**スカイ**ボックスをチェックして、割り当てられている灰色のグラデーションスカイボックスを確認できるようにします</span><span class="sxs-lookup"><span data-stu-id="b538c-188">Check **Skybox** option to be able to see assigned gray gradient skybox</span></span>
 
     ![スカイボックスの切り替えオプション](images/mr213-skyboxcheck-400px.jpg)
 
-* <span data-ttu-id="b4ce2-190">MixedRealityCamera、Environment、および gray スカイボックスのシーンは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-190">The scene with MixedRealityCamera, Environment and gray skybox will look like this.</span></span>
+* <span data-ttu-id="b538c-190">MixedRealityCamera、Environment、および gray スカイボックスのシーンは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="b538c-190">The scene with MixedRealityCamera, Environment and gray skybox will look like this.</span></span>
 
     ![MixedReality213 環境](images/mr213-environment-600px.jpg)
 
-* <span data-ttu-id="b4ce2-192">**[ファイル > をクリックしてシーンを保存]**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-192">Click **File > Save Scene as**</span></span>
-* <span data-ttu-id="b4ce2-193">シーンを任意の名前でシーンフォルダーに**保存**する</span><span class="sxs-lookup"><span data-stu-id="b4ce2-193">**Save** your scene under Scenes folder with any name</span></span>
+* <span data-ttu-id="b538c-192">**[ファイル > をクリックしてシーンを保存]**</span><span class="sxs-lookup"><span data-stu-id="b538c-192">Click **File > Save Scene as**</span></span>
+* <span data-ttu-id="b538c-193">シーンを任意の名前でシーンフォルダーに**保存**する</span><span class="sxs-lookup"><span data-stu-id="b538c-193">**Save** your scene under Scenes folder with any name</span></span>
 
-## <a name="chapter-1---controller-visualization"></a><span data-ttu-id="b4ce2-194">第1章-コントローラーの視覚化</span><span class="sxs-lookup"><span data-stu-id="b4ce2-194">Chapter 1 - Controller visualization</span></span>
+## <a name="chapter-1---controller-visualization"></a><span data-ttu-id="b538c-194">第1章-コントローラーの視覚化</span><span class="sxs-lookup"><span data-stu-id="b538c-194">Chapter 1 - Controller visualization</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/Kw0bf5NqyRg]
 
-### <a name="objectives"></a><span data-ttu-id="b4ce2-195">目標</span><span class="sxs-lookup"><span data-stu-id="b4ce2-195">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="b538c-195">目標</span><span class="sxs-lookup"><span data-stu-id="b538c-195">Objectives</span></span>
 
-* <span data-ttu-id="b4ce2-196">Unity のゲームモードと実行時にモーションコントローラーモデルをレンダリングする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-196">Learn how to render motion controller models in Unity's game mode and at runtime.</span></span>
+* <span data-ttu-id="b538c-196">Unity のゲームモードと実行時にモーションコントローラーモデルをレンダリングする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-196">Learn how to render motion controller models in Unity's game mode and at runtime.</span></span>
 
-<span data-ttu-id="b4ce2-197">Windows Mixed Reality は、コントローラーを視覚化するためのアニメーションコントローラーモデルを提供します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-197">Windows Mixed Reality provides an animated controller model for controller visualization.</span></span> <span data-ttu-id="b4ce2-198">アプリでコントローラーを視覚化するには、いくつかの方法があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-198">There are several approaches you can take for controller visualization in your app:</span></span>
+<span data-ttu-id="b538c-197">Windows Mixed Reality は、コントローラーを視覚化するためのアニメーションコントローラーモデルを提供します。</span><span class="sxs-lookup"><span data-stu-id="b538c-197">Windows Mixed Reality provides an animated controller model for controller visualization.</span></span> <span data-ttu-id="b538c-198">アプリでコントローラーを視覚化するには、いくつかの方法があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-198">There are several approaches you can take for controller visualization in your app:</span></span>
 
-* <span data-ttu-id="b4ce2-199">既定-変更せずに既定のコントローラーを使用する</span><span class="sxs-lookup"><span data-stu-id="b4ce2-199">Default - Using default controller without modification</span></span>
-* <span data-ttu-id="b4ce2-200">ハイブリッド-既定のコントローラーを使用しますが、一部の要素または UI コンポーネントのオーバーレイをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="b4ce2-200">Hybrid - Using default controller, but customizing some of its elements or overlaying UI components</span></span>
-* <span data-ttu-id="b4ce2-201">置換-コントローラー用にカスタマイズした独自の3D モデルを使用する</span><span class="sxs-lookup"><span data-stu-id="b4ce2-201">Replacement - Using your own customized 3D model for the controller</span></span>
+* <span data-ttu-id="b538c-199">既定-変更せずに既定のコントローラーを使用する</span><span class="sxs-lookup"><span data-stu-id="b538c-199">Default - Using default controller without modification</span></span>
+* <span data-ttu-id="b538c-200">ハイブリッド-既定のコントローラーを使用しますが、一部の要素または UI コンポーネントのオーバーレイをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="b538c-200">Hybrid - Using default controller, but customizing some of its elements or overlaying UI components</span></span>
+* <span data-ttu-id="b538c-201">置換-コントローラー用にカスタマイズした独自の3D モデルを使用する</span><span class="sxs-lookup"><span data-stu-id="b538c-201">Replacement - Using your own customized 3D model for the controller</span></span>
 
-<span data-ttu-id="b4ce2-202">この章では、これらのコントローラーのカスタマイズの例について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-202">In this chapter, we will learn about the examples of these controller customizations.</span></span>
+<span data-ttu-id="b538c-202">この章では、これらのコントローラーのカスタマイズの例について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-202">In this chapter, we will learn about the examples of these controller customizations.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-203">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-203">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-203">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-203">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-204">**[プロジェクト]** パネルで、検索ボックスに「 **motioncontrollers** 」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-204">In the **Project** panel, type **MotionControllers** in the search box .</span></span> <span data-ttu-id="b4ce2-205">また、Assets/HoloToolkit/Input/Prefabs/で見つけることもできます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-205">You can also find it under Assets/HoloToolkit/Input/Prefabs/.</span></span>
-* <span data-ttu-id="b4ce2-206">**Motioncontrollers** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-206">Drag the **MotionControllers** prefab into the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-207">**[階層]** パネルで、 **motioncontrollers** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-207">Click on the **MotionControllers** prefab in the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-204">**[プロジェクト]** パネルで、検索ボックスに「 **motioncontrollers** 」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b538c-204">In the **Project** panel, type **MotionControllers** in the search box .</span></span> <span data-ttu-id="b538c-205">また、Assets/HoloToolkit/Input/Prefabs/で見つけることもできます。</span><span class="sxs-lookup"><span data-stu-id="b538c-205">You can also find it under Assets/HoloToolkit/Input/Prefabs/.</span></span>
+* <span data-ttu-id="b538c-206">**Motioncontrollers** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-206">Drag the **MotionControllers** prefab into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-207">**[階層]** パネルで、 **motioncontrollers** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-207">Click on the **MotionControllers** prefab in the **Hierarchy** panel.</span></span>
 
-<span data-ttu-id="b4ce2-208">**MotionControllers prefab**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-208">**MotionControllers prefab**</span></span>
+<span data-ttu-id="b538c-208">**MotionControllers prefab**</span><span class="sxs-lookup"><span data-stu-id="b538c-208">**MotionControllers prefab**</span></span>
 
-<span data-ttu-id="b4ce2-209">**Motioncontrollers** prefab には、代替コントローラーモデルのスロットを提供する**Motioncontrollers ビジュアライザー**スクリプトが用意されています。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-209">**MotionControllers** prefab has a **MotionControllerVisualizer** script which provides the slots for alternate controller models.</span></span> <span data-ttu-id="b4ce2-210">独自のカスタム3D モデル (手動または剣) を割り当て、[常に代替の左/右モデルを使用する] チェックボックスをオンにすると、既定のモデルの代わりにそれらが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-210">If you assign your own custom 3D models such as a hand or a sword and check 'Always Use Alternate Left/Right Model', you will see them instead of the default model.</span></span> <span data-ttu-id="b4ce2-211">このスロットを4章で使用して、コントローラーモデルをブラシで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-211">We will use this slot in Chapter 4 to replace the controller model with a brush.</span></span>
+<span data-ttu-id="b538c-209">**Motioncontrollers** prefab には、代替コントローラーモデルのスロットを提供する**Motioncontrollers ビジュアライザー**スクリプトが用意されています。</span><span class="sxs-lookup"><span data-stu-id="b538c-209">**MotionControllers** prefab has a **MotionControllerVisualizer** script which provides the slots for alternate controller models.</span></span> <span data-ttu-id="b538c-210">独自のカスタム3D モデル (手動または剣) を割り当て、[常に代替の左/右モデルを使用する] チェックボックスをオンにすると、既定のモデルの代わりにそれらが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-210">If you assign your own custom 3D models such as a hand or a sword and check 'Always Use Alternate Left/Right Model', you will see them instead of the default model.</span></span> <span data-ttu-id="b538c-211">このスロットを4章で使用して、コントローラーモデルをブラシで置き換えます。</span><span class="sxs-lookup"><span data-stu-id="b538c-211">We will use this slot in Chapter 4 to replace the controller model with a brush.</span></span>
 
 ![MR213_ControllerVisualizer](images/mr213-controllervisualizer-600px.png)
 
-<span data-ttu-id="b4ce2-213">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-213">**Instructions**</span></span>
+<span data-ttu-id="b538c-213">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b538c-213">**Instructions**</span></span>
 
-* <span data-ttu-id="b4ce2-214">**[インスペクター]** パネルで、 **[Motionコントローラービジュアライザー]** スクリプト をダブルクリックして、Visual Studio のコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-214">In the **Inspector** panel, double click **MotionControllerVisualizer** script to see the code in the Visual Studio</span></span>
+* <span data-ttu-id="b538c-214">**[インスペクター]** パネルで、 **[Motionコントローラービジュアライザー]** スクリプト をダブルクリックして、Visual Studio のコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b538c-214">In the **Inspector** panel, double click **MotionControllerVisualizer** script to see the code in the Visual Studio</span></span>
 
-<span data-ttu-id="b4ce2-215">**Motionコントローラービジュアライザースクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-215">**MotionControllerVisualizer script**</span></span>
+<span data-ttu-id="b538c-215">**Motionコントローラービジュアライザースクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-215">**MotionControllerVisualizer script**</span></span>
 
-<span data-ttu-id="b4ce2-216">**Motioncontroller ビジュアライザー**と**Motioncontroller info**クラスは、既定のコントローラーモデルにアクセス & 変更する手段を提供します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-216">The **MotionControllerVisualizer** and **MotionControllerInfo** classes provide the means to access & modify the default controller models.</span></span> <span data-ttu-id="b4ce2-217">**Motioncontroller ビジュアライザー**は、Unity の**interactionsourcedetected**イベントをサブスクライブし、検出されたときにコントローラーモデルを自動的にインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-217">**MotionControllerVisualizer** subscribes to Unity's **InteractionSourceDetected** event and automatically instantiates controller models when they are found.</span></span>
+<span data-ttu-id="b538c-216">**Motioncontroller ビジュアライザー**と**Motioncontroller info**クラスは、既定のコントローラーモデルにアクセス & 変更する手段を提供します。</span><span class="sxs-lookup"><span data-stu-id="b538c-216">The **MotionControllerVisualizer** and **MotionControllerInfo** classes provide the means to access & modify the default controller models.</span></span> <span data-ttu-id="b538c-217">**Motioncontroller ビジュアライザー**は、Unity の**interactionsourcedetected**イベントをサブスクライブし、検出されたときにコントローラーモデルを自動的にインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="b538c-217">**MotionControllerVisualizer** subscribes to Unity's **InteractionSourceDetected** event and automatically instantiates controller models when they are found.</span></span>
 
 ```cs
 protected override void Awake()
@@ -185,64 +185,64 @@ protected override void Awake()
 }
 ```
 
-<span data-ttu-id="b4ce2-218">コントローラーモデルは、 [glTF 仕様](https://github.com/KhronosGroup/glTF)に従って配信されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-218">The controller models are delivered according to [the glTF specification](https://github.com/KhronosGroup/glTF).</span></span> <span data-ttu-id="b4ce2-219">この形式は、一般的な形式を提供するために作成されており、3D アセットの送信とアンパックの背後にあるプロセスが改善されています。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-219">This format has been created to provide a common format, while improving the process behind transmitting and unpacking 3D assets.</span></span> <span data-ttu-id="b4ce2-220">この場合、ユーザーの操作を可能な限りシームレスにするため、実行時にコントローラーモデルを取得して読み込む必要があります。また、ユーザーが使用しているモーションコントローラーのバージョンが保証されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-220">In this case, we need to retrieve and load the controller models at runtime, as we want to make the user's experience as seamless as possible, and it's not guaranteed which version of the motion controllers the user might be using.</span></span> <span data-ttu-id="b4ce2-221">このコースでは、Mixed Reality Toolkit を使用して、Khronos グループの[Unitygltf プロジェクト](https://github.com/KhronosGroup/UnityGLTF)のバージョンを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-221">This course, via the Mixed Reality Toolkit, uses a version of the Khronos Group's [UnityGLTF project](https://github.com/KhronosGroup/UnityGLTF).</span></span>
+<span data-ttu-id="b538c-218">コントローラーモデルは、 [glTF 仕様](https://github.com/KhronosGroup/glTF)に従って配信されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-218">The controller models are delivered according to [the glTF specification](https://github.com/KhronosGroup/glTF).</span></span> <span data-ttu-id="b538c-219">この形式は、一般的な形式を提供するために作成されており、3D アセットの送信とアンパックの背後にあるプロセスが改善されています。</span><span class="sxs-lookup"><span data-stu-id="b538c-219">This format has been created to provide a common format, while improving the process behind transmitting and unpacking 3D assets.</span></span> <span data-ttu-id="b538c-220">この場合、ユーザーの操作を可能な限りシームレスにするため、実行時にコントローラーモデルを取得して読み込む必要があります。また、ユーザーが使用しているモーションコントローラーのバージョンが保証されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="b538c-220">In this case, we need to retrieve and load the controller models at runtime, as we want to make the user's experience as seamless as possible, and it's not guaranteed which version of the motion controllers the user might be using.</span></span> <span data-ttu-id="b538c-221">このコースでは、Mixed Reality Toolkit を使用して、Khronos グループの[Unitygltf プロジェクト](https://github.com/KhronosGroup/UnityGLTF)のバージョンを使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-221">This course, via the Mixed Reality Toolkit, uses a version of the Khronos Group's [UnityGLTF project](https://github.com/KhronosGroup/UnityGLTF).</span></span>
 
-<span data-ttu-id="b4ce2-222">コントローラーが配信されると、スクリプトは**Motioncontroller info**を使用して特定のコントローラー要素の変換を見つけることができるため、適切に配置できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-222">Once the controller has been delivered, scripts can use **MotionControllerInfo** to find the transforms for specific controller elements so they can correctly position themselves.</span></span>
+<span data-ttu-id="b538c-222">コントローラーが配信されると、スクリプトは**Motioncontroller info**を使用して特定のコントローラー要素の変換を見つけることができるため、適切に配置できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-222">Once the controller has been delivered, scripts can use **MotionControllerInfo** to find the transforms for specific controller elements so they can correctly position themselves.</span></span>
 
-<span data-ttu-id="b4ce2-223">この後の章では、これらのスクリプトを使用して、UI 要素をコントローラーにアタッチする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-223">In a later chapter, we will learn how to use these scripts to attach UI elements to the controllers.</span></span>
+<span data-ttu-id="b538c-223">この後の章では、これらのスクリプトを使用して、UI 要素をコントローラーにアタッチする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-223">In a later chapter, we will learn how to use these scripts to attach UI elements to the controllers.</span></span>
 
-<span data-ttu-id="b4ce2-224">*スクリプトによっては、#if のあるコードブロックを見つけることができます **。UNITY_EDITOR**または**UNITY_WSA**。これらのコードブロックは、Windows に配置するときに UWP ランタイムでのみ実行されます。これは、Unity エディターと UWP アプリのランタイムで使用される Api のセットが異なるためです。*</span><span class="sxs-lookup"><span data-stu-id="b4ce2-224">*In some scripts, you will find code blocks with **#if !UNITY_EDITOR** or **UNITY_WSA**. These code blocks run only on the UWP runtime when you deploy to Windows. This is because the set of APIs used by the Unity editor and the UWP app runtime are different.*</span></span>
+<span data-ttu-id="b538c-224">*スクリプトによっては、#if のあるコードブロックを見つけることができます **。UNITY_EDITOR**または**UNITY_WSA**。これらのコードブロックは、Windows に配置するときに UWP ランタイムでのみ実行されます。これは、Unity エディターと UWP アプリのランタイムで使用される Api のセットが異なるためです。*</span><span class="sxs-lookup"><span data-stu-id="b538c-224">*In some scripts, you will find code blocks with **#if !UNITY_EDITOR** or **UNITY_WSA**. These code blocks run only on the UWP runtime when you deploy to Windows. This is because the set of APIs used by the Unity editor and the UWP app runtime are different.*</span></span>
 
-* <span data-ttu-id="b4ce2-225">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-225">**Save** the scene and click the **play** button.</span></span>
+* <span data-ttu-id="b538c-225">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-225">**Save** the scene and click the **play** button.</span></span>
 
-<span data-ttu-id="b4ce2-226">ヘッドセットには、モーションコントローラーを含むシーンを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-226">You will be able to see the scene with motion controllers in your headset.</span></span> <span data-ttu-id="b4ce2-227">ボタンのクリック、サムスティックの移動、およびタッチパッドのタッチの強調表示に関する詳細なアニメーションを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-227">You can see detailed animations for button clicks, thumbstick movement, and touchpad touch highlighting.</span></span>
+<span data-ttu-id="b538c-226">ヘッドセットには、モーションコントローラーを含むシーンを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-226">You will be able to see the scene with motion controllers in your headset.</span></span> <span data-ttu-id="b538c-227">ボタンのクリック、サムスティックの移動、およびタッチパッドのタッチの強調表示に関する詳細なアニメーションを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-227">You can see detailed animations for button clicks, thumbstick movement, and touchpad touch highlighting.</span></span>
 
-![MR213_Controller 視覚化の既定値](images/mr213-controllervisualizationdefault-500px.jpg)
+![視覚エフェクトの既定値 MR213_Controller](images/mr213-controllervisualizationdefault-500px.jpg)
 
-## <a name="chapter-2---attaching-ui-elements-to-the-controller"></a><span data-ttu-id="b4ce2-229">第2章-UI 要素のコントローラーへのアタッチ</span><span class="sxs-lookup"><span data-stu-id="b4ce2-229">Chapter 2 - Attaching UI elements to the controller</span></span>
+## <a name="chapter-2---attaching-ui-elements-to-the-controller"></a><span data-ttu-id="b538c-229">第2章-UI 要素のコントローラーへのアタッチ</span><span class="sxs-lookup"><span data-stu-id="b538c-229">Chapter 2 - Attaching UI elements to the controller</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/e-mLlwmTzJo]
 
-### <a name="objectives"></a><span data-ttu-id="b4ce2-230">目標</span><span class="sxs-lookup"><span data-stu-id="b4ce2-230">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="b538c-230">目標</span><span class="sxs-lookup"><span data-stu-id="b538c-230">Objectives</span></span>
 
-* <span data-ttu-id="b4ce2-231">モーションコントローラーの要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-231">Learn about the elements of the motion controllers</span></span>
-* <span data-ttu-id="b4ce2-232">コントローラーの特定の部分にオブジェクトをアタッチする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-232">Learn how to attach objects to specific parts of the controllers</span></span>
+* <span data-ttu-id="b538c-231">モーションコントローラーの要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-231">Learn about the elements of the motion controllers</span></span>
+* <span data-ttu-id="b538c-232">コントローラーの特定の部分にオブジェクトをアタッチする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-232">Learn how to attach objects to specific parts of the controllers</span></span>
 
-<span data-ttu-id="b4ce2-233">この章では、ユーザーがいつでも簡単にアクセスして操作できるコントローラーにユーザーインターフェイス要素を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-233">In this chapter, you will learn how to add user interface elements to the controller which the user can easily access and manipulate at anytime.</span></span> <span data-ttu-id="b4ce2-234">また、タッチパッド入力を使用して簡単なカラーピッカー UI を追加する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-234">You will also learn how to add a simple color picker UI using the touchpad input.</span></span>
+<span data-ttu-id="b538c-233">この章では、ユーザーがいつでも簡単にアクセスして操作できるコントローラーにユーザーインターフェイス要素を追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-233">In this chapter, you will learn how to add user interface elements to the controller which the user can easily access and manipulate at anytime.</span></span> <span data-ttu-id="b538c-234">また、タッチパッド入力を使用して簡単なカラーピッカー UI を追加する方法についても説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-234">You will also learn how to add a simple color picker UI using the touchpad input.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-235">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-235">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-235">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-235">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-236">**[プロジェクト]** パネルで、 **Motionコントローラー情報**スクリプトを検索します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-236">In the **Project** panel, search **MotionControllerInfo** script.</span></span>
-* <span data-ttu-id="b4ce2-237">検索結果から [ **Motionコントローラー情報**スクリプト] をダブルクリックして、Visual Studio のコードを確認します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-237">From the search result, double click **MotionControllerInfo** script to see the code in Visual Studio.</span></span>
+* <span data-ttu-id="b538c-236">**[プロジェクト]** パネルで、 **Motionコントローラー情報**スクリプトを検索します。</span><span class="sxs-lookup"><span data-stu-id="b538c-236">In the **Project** panel, search **MotionControllerInfo** script.</span></span>
+* <span data-ttu-id="b538c-237">検索結果から [ **Motionコントローラー情報**スクリプト] をダブルクリックして、Visual Studio のコードを確認します。</span><span class="sxs-lookup"><span data-stu-id="b538c-237">From the search result, double click **MotionControllerInfo** script to see the code in Visual Studio.</span></span>
 
-<span data-ttu-id="b4ce2-238">**Motionコントローラー情報スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-238">**MotionControllerInfo script**</span></span>
+<span data-ttu-id="b538c-238">**Motionコントローラー情報スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-238">**MotionControllerInfo script**</span></span>
 
-<span data-ttu-id="b4ce2-239">最初の手順は、UI をアタッチするコントローラーの要素を選択することです。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-239">The first step is to choose which element of the controller you want the UI to attach to.</span></span> <span data-ttu-id="b4ce2-240">これらの要素は、 **MotionControllerInfo.cs**の**コントローラー**で定義されています。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-240">These elements are defined in **ControllerElementEnum** in **MotionControllerInfo.cs**.</span></span>
+<span data-ttu-id="b538c-239">最初の手順は、UI をアタッチするコントローラーの要素を選択することです。</span><span class="sxs-lookup"><span data-stu-id="b538c-239">The first step is to choose which element of the controller you want the UI to attach to.</span></span> <span data-ttu-id="b538c-240">これらの要素は、 **MotionControllerInfo.cs**の**コントローラー**で定義されています。</span><span class="sxs-lookup"><span data-stu-id="b538c-240">These elements are defined in **ControllerElementEnum** in **MotionControllerInfo.cs**.</span></span>
 
 ![MR213 Motionコントローラー要素](images/mr213-motioncontrollerelements-1000px.jpg)
 
-* <span data-ttu-id="b4ce2-242">**ホーム**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-242">**Home**</span></span>
-* <span data-ttu-id="b4ce2-243">**メニュー**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-243">**Menu**</span></span>
-* <span data-ttu-id="b4ce2-244">**つかん**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-244">**Grasp**</span></span>
-* <span data-ttu-id="b4ce2-245">**スティック**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-245">**Thumbstick**</span></span>
-* <span data-ttu-id="b4ce2-246">**選択**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-246">**Select**</span></span>
-* <span data-ttu-id="b4ce2-247">**タッチパッド**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-247">**Touchpad**</span></span>
-* <span data-ttu-id="b4ce2-248">**ポインティング**型: この要素は、方向をポイントするコントローラーの先端を表します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-248">**Pointing pose** – this element represents the tip of the controller pointing forward direction.</span></span>
+* <span data-ttu-id="b538c-242">**ホーム**</span><span class="sxs-lookup"><span data-stu-id="b538c-242">**Home**</span></span>
+* <span data-ttu-id="b538c-243">**メニュー**</span><span class="sxs-lookup"><span data-stu-id="b538c-243">**Menu**</span></span>
+* <span data-ttu-id="b538c-244">**つかん**</span><span class="sxs-lookup"><span data-stu-id="b538c-244">**Grasp**</span></span>
+* <span data-ttu-id="b538c-245">**スティック**</span><span class="sxs-lookup"><span data-stu-id="b538c-245">**Thumbstick**</span></span>
+* <span data-ttu-id="b538c-246">**選択**</span><span class="sxs-lookup"><span data-stu-id="b538c-246">**Select**</span></span>
+* <span data-ttu-id="b538c-247">**タッチパッド**</span><span class="sxs-lookup"><span data-stu-id="b538c-247">**Touchpad**</span></span>
+* <span data-ttu-id="b538c-248">**ポインティング**型: この要素は、方向をポイントするコントローラーの先端を表します。</span><span class="sxs-lookup"><span data-stu-id="b538c-248">**Pointing pose** – this element represents the tip of the controller pointing forward direction.</span></span>
 
-<span data-ttu-id="b4ce2-249">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-249">**Instructions**</span></span>
+<span data-ttu-id="b538c-249">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b538c-249">**Instructions**</span></span>
 
-* <span data-ttu-id="b4ce2-250">**[プロジェクト]** パネルで、 **[attachtocontroller]** スクリプト を検索します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-250">In the **Project** panel, search **AttachToController** script.</span></span>
-* <span data-ttu-id="b4ce2-251">検索結果から、[ **Attachtocontroller** script] をダブルクリックして Visual Studio のコードを確認します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-251">From the search result, double click **AttachToController** script to see the code in Visual Studio.</span></span>
+* <span data-ttu-id="b538c-250">**[プロジェクト]** パネルで、 **[attachtocontroller]** スクリプト を検索します。</span><span class="sxs-lookup"><span data-stu-id="b538c-250">In the **Project** panel, search **AttachToController** script.</span></span>
+* <span data-ttu-id="b538c-251">検索結果から、[ **Attachtocontroller** script] をダブルクリックして Visual Studio のコードを確認します。</span><span class="sxs-lookup"><span data-stu-id="b538c-251">From the search result, double click **AttachToController** script to see the code in Visual Studio.</span></span>
 
-<span data-ttu-id="b4ce2-252">**AttachToController スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-252">**AttachToController script**</span></span>
+<span data-ttu-id="b538c-252">**AttachToController スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-252">**AttachToController script**</span></span>
 
-<span data-ttu-id="b4ce2-253">**Attachtocontroller**スクリプトを使用すると、任意のオブジェクトを、指定したコントローラーのききと要素に簡単にアタッチできます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-253">The **AttachToController** script provides a simple way to attach any objects to a specified controller handedness and element.</span></span>
+<span data-ttu-id="b538c-253">**Attachtocontroller**スクリプトを使用すると、任意のオブジェクトを、指定したコントローラーのききと要素に簡単にアタッチできます。</span><span class="sxs-lookup"><span data-stu-id="b538c-253">The **AttachToController** script provides a simple way to attach any objects to a specified controller handedness and element.</span></span>
 
-<span data-ttu-id="b4ce2-254">**Attachelementtocontroller ()** で、</span><span class="sxs-lookup"><span data-stu-id="b4ce2-254">In **AttachElementToController()**,</span></span>
+<span data-ttu-id="b538c-254">**Attachelementtocontroller ()** で、</span><span class="sxs-lookup"><span data-stu-id="b538c-254">In **AttachElementToController()**,</span></span>
 
-* <span data-ttu-id="b4ce2-255">**Motionコントローラー**を使用してきき手をチェックする</span><span class="sxs-lookup"><span data-stu-id="b4ce2-255">Check handedness using **MotionControllerInfo.Handedness**</span></span>
-* <span data-ttu-id="b4ce2-256">**MotionTryGetElement ()** を使用して、コントローラーの特定の要素を取得します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-256">Get specific element of the controller using **MotionControllerInfo.TryGetElement()**</span></span>
-* <span data-ttu-id="b4ce2-257">コントローラーモデルから要素の変換を取得した後、その下にあるオブジェクトを親として設定し、オブジェクトのローカル位置 & 回転を0に設定します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-257">After retrieving the element's transform from the controller model, parent the object under it and set object's local position & rotation to zero.</span></span>
+* <span data-ttu-id="b538c-255">**Motionコントローラー**を使用してきき手をチェックする</span><span class="sxs-lookup"><span data-stu-id="b538c-255">Check handedness using **MotionControllerInfo.Handedness**</span></span>
+* <span data-ttu-id="b538c-256">**MotionTryGetElement ()** を使用して、コントローラーの特定の要素を取得します。</span><span class="sxs-lookup"><span data-stu-id="b538c-256">Get specific element of the controller using **MotionControllerInfo.TryGetElement()**</span></span>
+* <span data-ttu-id="b538c-257">コントローラーモデルから要素の変換を取得した後、その下にあるオブジェクトを親として設定し、オブジェクトのローカル位置 & 回転を0に設定します。</span><span class="sxs-lookup"><span data-stu-id="b538c-257">After retrieving the element's transform from the controller model, parent the object under it and set object's local position & rotation to zero.</span></span>
 
 ```cs
 public MotionControllerInfo.ControllerElementEnum Element { get { return element; } }
@@ -277,24 +277,24 @@ private void AttachElementToController(MotionControllerInfo newController)
 }
 ```
 
-<span data-ttu-id="b4ce2-258">**Attachtocontroller**スクリプトを使用する最も簡単な方法は、ColorPickerWheel の場合と同様に、このスクリプトを継承することです **。**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-258">The simplest way to use **AttachToController** script is to inherit from it, as we've done in the case of **ColorPickerWheel.**</span></span> <span data-ttu-id="b4ce2-259">**Onattachtocontroller**関数と**OnDetatchFromController**関数をオーバーライドするだけで、コントローラーが検出または切断されたときにセットアップ/ブレークダウンを実行できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-259">Simply override the **OnAttachToController** and **OnDetatchFromController** functions to perform your setup / breakdown when the controller is detected / disconnected.</span></span>
+<span data-ttu-id="b538c-258">**Attachtocontroller**スクリプトを使用する最も簡単な方法は、ColorPickerWheel の場合と同様に、このスクリプトを継承することです **。**</span><span class="sxs-lookup"><span data-stu-id="b538c-258">The simplest way to use **AttachToController** script is to inherit from it, as we've done in the case of **ColorPickerWheel.**</span></span> <span data-ttu-id="b538c-259">**Onattachtocontroller**関数と**OnDetachFromController**関数をオーバーライドするだけで、コントローラーが検出または切断されたときにセットアップ/ブレークダウンを実行できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-259">Simply override the **OnAttachToController** and **OnDetachFromController** functions to perform your setup / breakdown when the controller is detected / disconnected.</span></span>
 
-<span data-ttu-id="b4ce2-260">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-260">**Instructions**</span></span>
+<span data-ttu-id="b538c-260">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b538c-260">**Instructions**</span></span>
 
-* <span data-ttu-id="b4ce2-261">**[プロジェクト]** パネルで、検索ボックスに「 **ColorPickerWheel**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-261">In the **Project** panel, type in the search box **ColorPickerWheel**.</span></span> <span data-ttu-id="b4ce2-262">[Assets/AppPrefabs/] の下にも表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-262">You can also find it under Assets/AppPrefabs/.</span></span>
-* <span data-ttu-id="b4ce2-263">**ColorPickerWheel** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-263">Drag **ColorPickerWheel** prefab into the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-264">**[階層]** パネルの **[ColorPickerWheel]** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-264">Click the **ColorPickerWheel** prefab in the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-265">**[インスペクター]** パネルで **[ColorPickerWheel]** Script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-265">In the **Inspector** panel, double click **ColorPickerWheel** Script to see the code in Visual Studio.</span></span>
+* <span data-ttu-id="b538c-261">**[プロジェクト]** パネルで、検索ボックスに「 **ColorPickerWheel**」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b538c-261">In the **Project** panel, type in the search box **ColorPickerWheel**.</span></span> <span data-ttu-id="b538c-262">[Assets/AppPrefabs/] の下にも表示されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-262">You can also find it under Assets/AppPrefabs/.</span></span>
+* <span data-ttu-id="b538c-263">**ColorPickerWheel** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-263">Drag **ColorPickerWheel** prefab into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-264">**[階層]** パネルの **[ColorPickerWheel]** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-264">Click the **ColorPickerWheel** prefab in the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-265">**[インスペクター]** パネルで **[ColorPickerWheel]** Script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b538c-265">In the **Inspector** panel, double click **ColorPickerWheel** Script to see the code in Visual Studio.</span></span>
 
 ![ColorPickerWheel prefab](images/mr213-colorpickerwheel-1000px.jpg)
 
-<span data-ttu-id="b4ce2-267">**ColorPickerWheel スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-267">**ColorPickerWheel script**</span></span>
+<span data-ttu-id="b538c-267">**ColorPickerWheel スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-267">**ColorPickerWheel script**</span></span>
 
-<span data-ttu-id="b4ce2-268">**ColorPickerWheel**は**attachtocontroller**を継承するため 、Inspector と**要素**が**インスペクター**パネルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-268">Since **ColorPickerWheel** inherits **AttachToController**, it shows **Handedness** and **Element** in the **Inspector** panel.</span></span> <span data-ttu-id="b4ce2-269">左側のコントローラーのタッチパッド要素に UI をアタッチします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-269">We'll be attaching the UI to the Touchpad element on the left controller.</span></span>
+<span data-ttu-id="b538c-268">**ColorPickerWheel**は**attachtocontroller**を継承するため 、Inspector と**要素**が**インスペクター**パネルに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-268">Since **ColorPickerWheel** inherits **AttachToController**, it shows **Handedness** and **Element** in the **Inspector** panel.</span></span> <span data-ttu-id="b538c-269">左側のコントローラーのタッチパッド要素に UI をアタッチします。</span><span class="sxs-lookup"><span data-stu-id="b538c-269">We'll be attaching the UI to the Touchpad element on the left controller.</span></span>
 
 ![ColorPickerWheel スクリプト](images/mr213-attachtocontroller-300px.jpg)
 
-<span data-ttu-id="b4ce2-271">**ColorPickerWheel**は、 **Onattachtocontroller**と**OnDetatchFromController**をオーバーライドして入力イベントをサブスクライブします。これは、タッチパッド入力による色の選択の次の章で使用されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-271">**ColorPickerWheel** overrides the **OnAttachToController** and **OnDetatchFromController** to subscribe to the input event which will be used in next chapter for color selection with touchpad input.</span></span>
+<span data-ttu-id="b538c-271">**ColorPickerWheel**は、 **Onattachtocontroller**と**OnDetachFromController**をオーバーライドして入力イベントをサブスクライブします。これは、タッチパッド入力による色の選択の次の章で使用されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-271">**ColorPickerWheel** overrides the **OnAttachToController** and **OnDetachFromController** to subscribe to the input event which will be used in next chapter for color selection with touchpad input.</span></span>
 
 ```cs
 public class ColorPickerWheel : AttachToController, IPointerTarget
@@ -316,11 +316,11 @@ public class ColorPickerWheel : AttachToController, IPointerTarget
 }
 ```
 
-* <span data-ttu-id="b4ce2-272">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-272">**Save** the scene and click the **play** button.</span></span>
+* <span data-ttu-id="b538c-272">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-272">**Save** the scene and click the **play** button.</span></span>
 
-<span data-ttu-id="b4ce2-273">**オブジェクトをコントローラーにアタッチするための別の方法**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-273">**Alternative method for attaching objects to the controllers**</span></span>
+<span data-ttu-id="b538c-273">**オブジェクトをコントローラーにアタッチするための別の方法**</span><span class="sxs-lookup"><span data-stu-id="b538c-273">**Alternative method for attaching objects to the controllers**</span></span>
 
-<span data-ttu-id="b4ce2-274">スクリプトは**attachtocontroller**から継承し、 **onattachtocontroller**をオーバーライドすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-274">We recommend that your scripts inherit from **AttachToController** and override **OnAttachToController**.</span></span> <span data-ttu-id="b4ce2-275">ただし、これは常に可能であるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-275">However, this may not always be possible.</span></span> <span data-ttu-id="b4ce2-276">別の方法として、スタンドアロンコンポーネントとして使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-276">An alternative is using it as a standalone component.</span></span> <span data-ttu-id="b4ce2-277">これは、スクリプトをリファクタリングせずに既存の prefab をコントローラーにアタッチする場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-277">This can be useful when you want to attach an existing prefab to a controller without refactoring your scripts.</span></span> <span data-ttu-id="b4ce2-278">セットアップを実行する前に、クラスで IsAttached が true に設定されるのを待ちます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-278">Simply have your class wait for IsAttached to be set to true before performing any setup.</span></span> <span data-ttu-id="b4ce2-279">これを行う最も簡単な方法は、' Start ' にコルーチンを使用することです。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-279">The simplest way to do this is by using a coroutine for 'Start.'</span></span>
+<span data-ttu-id="b538c-274">スクリプトは**attachtocontroller**から継承し、 **onattachtocontroller**をオーバーライドすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b538c-274">We recommend that your scripts inherit from **AttachToController** and override **OnAttachToController**.</span></span> <span data-ttu-id="b538c-275">ただし、これは常に可能であるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="b538c-275">However, this may not always be possible.</span></span> <span data-ttu-id="b538c-276">別の方法として、スタンドアロンコンポーネントとして使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="b538c-276">An alternative is using it as a standalone component.</span></span> <span data-ttu-id="b538c-277">これは、スクリプトをリファクタリングせずに既存の prefab をコントローラーにアタッチする場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="b538c-277">This can be useful when you want to attach an existing prefab to a controller without refactoring your scripts.</span></span> <span data-ttu-id="b538c-278">セットアップを実行する前に、クラスで IsAttached が true に設定されるのを待ちます。</span><span class="sxs-lookup"><span data-stu-id="b538c-278">Simply have your class wait for IsAttached to be set to true before performing any setup.</span></span> <span data-ttu-id="b538c-279">これを行う最も簡単な方法は、' Start ' にコルーチンを使用することです。</span><span class="sxs-lookup"><span data-stu-id="b538c-279">The simplest way to do this is by using a coroutine for 'Start.'</span></span>
 
 ```cs
 private IEnumerator Start() {
@@ -334,42 +334,42 @@ private IEnumerator Start() {
 }
 ```
 
-## <a name="chapter-3---working-with-touchpad-input"></a><span data-ttu-id="b4ce2-280">第3章: タッチパッド入力の操作</span><span class="sxs-lookup"><span data-stu-id="b4ce2-280">Chapter 3 - Working with touchpad input</span></span>
+## <a name="chapter-3---working-with-touchpad-input"></a><span data-ttu-id="b538c-280">第3章: タッチパッド入力の操作</span><span class="sxs-lookup"><span data-stu-id="b538c-280">Chapter 3 - Working with touchpad input</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/SUyw0kxZPFw]
 
-### <a name="objectives"></a><span data-ttu-id="b4ce2-281">目標</span><span class="sxs-lookup"><span data-stu-id="b4ce2-281">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="b538c-281">目標</span><span class="sxs-lookup"><span data-stu-id="b538c-281">Objectives</span></span>
 
-* <span data-ttu-id="b4ce2-282">タッチパッド入力データイベントを取得する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="b4ce2-282">Learn how to get touchpad input data events</span></span>
-* <span data-ttu-id="b4ce2-283">タッチパッドの軸の位置情報をアプリのエクスペリエンスに使用する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="b4ce2-283">Learn how to use touchpad axis position information for your app experience</span></span>
+* <span data-ttu-id="b538c-282">タッチパッド入力データイベントを取得する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="b538c-282">Learn how to get touchpad input data events</span></span>
+* <span data-ttu-id="b538c-283">タッチパッドの軸の位置情報をアプリのエクスペリエンスに使用する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="b538c-283">Learn how to use touchpad axis position information for your app experience</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-284">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-284">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-284">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-284">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-285">**[階層]** パネルで、 **[ColorPickerWheel]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-285">In the **Hierarchy** panel, click **ColorPickerWheel**</span></span>
-* <span data-ttu-id="b4ce2-286">**[インスペクター]** パネルの **[Animatior]** で、 **[ColorPickerWheelController]** をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-286">In the **Inspector** panel, under **Animatior**, double click **ColorPickerWheelController**</span></span>
-* <span data-ttu-id="b4ce2-287">**[アニメーター]** タブが開いていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-287">You will be able to see **Animator** tab opened</span></span>
+* <span data-ttu-id="b538c-285">**[階層]** パネルで、 **[ColorPickerWheel]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-285">In the **Hierarchy** panel, click **ColorPickerWheel**</span></span>
+* <span data-ttu-id="b538c-286">**[インスペクター]** パネルの **[アニメーター]** の下で、 **[ColorPickerWheelController]** をダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-286">In the **Inspector** panel, under **Animator**, double click **ColorPickerWheelController**</span></span>
+* <span data-ttu-id="b538c-287">**[アニメーター]** タブが開いていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-287">You will be able to see **Animator** tab opened</span></span>
 
-<span data-ttu-id="b4ce2-288">**Unity のアニメーションコントローラーを使用した UI の表示/非表示**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-288">**Showing/hiding UI with Unity's Animation controller**</span></span>
+<span data-ttu-id="b538c-288">**Unity のアニメーションコントローラーを使用した UI の表示/非表示**</span><span class="sxs-lookup"><span data-stu-id="b538c-288">**Showing/hiding UI with Unity's Animation controller**</span></span>
 
-<span data-ttu-id="b4ce2-289">アニメーションを使用して**ColorPickerWheel** UI の表示と非表示を切り替えるには、 [Unity のアニメーションシステム](https://docs.unity3d.com/Manual/AnimationOverview.html)を使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-289">To show and hide the **ColorPickerWheel** UI with animation, we are using [Unity's animation system](https://docs.unity3d.com/Manual/AnimationOverview.html).</span></span> <span data-ttu-id="b4ce2-290">**ColorPickerWheel**の**Visible**プロパティを true または false に設定すると、アニメーショントリガーの**表示**と**非表示が切り替え**られます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-290">Setting the **ColorPickerWheel**'s **Visible** property to true or false triggers **Show** and **Hide** animation triggers.</span></span> <span data-ttu-id="b4ce2-291">**表示**と**非表示**のパラメーターは、 **ColorPickerWheelController** animation コントローラーで定義されています。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-291">**Show** and **Hide** parameters are defined in the **ColorPickerWheelController** animation controller.</span></span>
+<span data-ttu-id="b538c-289">アニメーションを使用して**ColorPickerWheel** UI の表示と非表示を切り替えるには、 [Unity のアニメーションシステム](https://docs.unity3d.com/Manual/AnimationOverview.html)を使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-289">To show and hide the **ColorPickerWheel** UI with animation, we are using [Unity's animation system](https://docs.unity3d.com/Manual/AnimationOverview.html).</span></span> <span data-ttu-id="b538c-290">**ColorPickerWheel**の**Visible**プロパティを true または false に設定すると、アニメーショントリガーの**表示**と**非表示が切り替え**られます。</span><span class="sxs-lookup"><span data-stu-id="b538c-290">Setting the **ColorPickerWheel**'s **Visible** property to true or false triggers **Show** and **Hide** animation triggers.</span></span> <span data-ttu-id="b538c-291">**表示**と**非表示**のパラメーターは、 **ColorPickerWheelController** animation コントローラーで定義されています。</span><span class="sxs-lookup"><span data-stu-id="b538c-291">**Show** and **Hide** parameters are defined in the **ColorPickerWheelController** animation controller.</span></span>
 
 ![Unity アニメーションコントローラー](images/mr123-animationcontroller-550px.jpg)
 
-<span data-ttu-id="b4ce2-293">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-293">**Instructions**</span></span>
+<span data-ttu-id="b538c-293">**マニュアル**</span><span class="sxs-lookup"><span data-stu-id="b538c-293">**Instructions**</span></span>
 
-* <span data-ttu-id="b4ce2-294">**[階層]** パネルで **[ColorPickerWheel]** prefab を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-294">In the **Hierarchy** panel, select **ColorPickerWheel** prefab</span></span>
-* <span data-ttu-id="b4ce2-295">**[インスペクター]** パネルで **[ColorPickerWheel]** script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-295">In the **Inspector** panel, double click **ColorPickerWheel** script to see the code in the Visual Studio</span></span>
+* <span data-ttu-id="b538c-294">**[階層]** パネルで **[ColorPickerWheel]** prefab を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-294">In the **Hierarchy** panel, select **ColorPickerWheel** prefab</span></span>
+* <span data-ttu-id="b538c-295">**[インスペクター]** パネルで **[ColorPickerWheel]** script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b538c-295">In the **Inspector** panel, double click **ColorPickerWheel** script to see the code in the Visual Studio</span></span>
 
-<span data-ttu-id="b4ce2-296">**ColorPickerWheel スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-296">**ColorPickerWheel script**</span></span>
+<span data-ttu-id="b538c-296">**ColorPickerWheel スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-296">**ColorPickerWheel script**</span></span>
 
-<span data-ttu-id="b4ce2-297">**ColorPickerWheel**は、タッチパッドイベントをリッスンするために、Unity の**Interactionsourceupdated**イベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-297">**ColorPickerWheel** subscribes to Unity's **InteractionSourceUpdated** event to listen for touchpad events.</span></span>
+<span data-ttu-id="b538c-297">**ColorPickerWheel**は、タッチパッドイベントをリッスンするために、Unity の**Interactionsourceupdated**イベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="b538c-297">**ColorPickerWheel** subscribes to Unity's **InteractionSourceUpdated** event to listen for touchpad events.</span></span>
 
-<span data-ttu-id="b4ce2-298">**Interactionsourceupdated ()** では、スクリプトはまず次のことを確認します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-298">In **InteractionSourceUpdated()**, the script first checks to ensure that it:</span></span>
+<span data-ttu-id="b538c-298">**Interactionsourceupdated ()** では、スクリプトはまず次のことを確認します。</span><span class="sxs-lookup"><span data-stu-id="b538c-298">In **InteractionSourceUpdated()**, the script first checks to ensure that it:</span></span>
 
-* <span data-ttu-id="b4ce2-299">は、実際にはタッチパッドイベント (obj. state.**touchpadTouched**)</span><span class="sxs-lookup"><span data-stu-id="b4ce2-299">is actually a touchpad event (obj.state.**touchpadTouched**)</span></span>
-* <span data-ttu-id="b4ce2-300">左のコントローラー (obj. state. source.**きき手**)</span><span class="sxs-lookup"><span data-stu-id="b4ce2-300">originates from the left controller (obj.state.source.**handedness**)</span></span>
+* <span data-ttu-id="b538c-299">は、実際にはタッチパッドイベント (obj. state.**touchpadTouched**)</span><span class="sxs-lookup"><span data-stu-id="b538c-299">is actually a touchpad event (obj.state.**touchpadTouched**)</span></span>
+* <span data-ttu-id="b538c-300">左のコントローラー (obj. state. source.**きき手**)</span><span class="sxs-lookup"><span data-stu-id="b538c-300">originates from the left controller (obj.state.source.**handedness**)</span></span>
 
-<span data-ttu-id="b4ce2-301">両方が true の場合、タッチパッドの位置 (obj.**touchpadPosition**) は**selectorPosition**に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-301">If both are true, the touchpad position (obj.state.**touchpadPosition**) is assigned to **selectorPosition**.</span></span>
+<span data-ttu-id="b538c-301">両方が true の場合、タッチパッドの位置 (obj.**touchpadPosition**) は**selectorPosition**に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b538c-301">If both are true, the touchpad position (obj.state.**touchpadPosition**) is assigned to **selectorPosition**.</span></span>
 
 ```cs
 private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
@@ -382,7 +382,7 @@ private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
 }
 ```
 
-<span data-ttu-id="b4ce2-302">**Update ()** では、 **visible**プロパティに基づいて、カラーピッカーのアニメーターコンポーネントでアニメーショントリガーの表示と非表示をトリガーします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-302">In **Update()**, based on **visible** property, it triggers Show and Hide animation triggers in the color picker's animator component</span></span>
+<span data-ttu-id="b538c-302">**Update ()** では、 **visible**プロパティに基づいて、カラーピッカーのアニメーターコンポーネントでアニメーショントリガーの表示と非表示をトリガーします。</span><span class="sxs-lookup"><span data-stu-id="b538c-302">In **Update()**, based on **visible** property, it triggers Show and Hide animation triggers in the color picker's animator component</span></span>
 
 ```cs
 if (visible != visibleLastFrame)
@@ -398,7 +398,7 @@ if (visible != visibleLastFrame)
 }
 ```
 
-<span data-ttu-id="b4ce2-303">**Update ()** では、 **selectorPosition**を使用して、カラーホイールのメッシュ collider に射線をキャストします。これにより、UV 位置が返されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-303">In **Update()**, **selectorPosition** is used to cast a ray at the color wheel's mesh collider, which returns a UV position.</span></span> <span data-ttu-id="b4ce2-304">この位置を使用して、カラーホイールのテクスチャのピクセル座標と色の値を見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-304">This position can then be used to find the pixel coordinate and color value of the color wheel's texture.</span></span> <span data-ttu-id="b4ce2-305">この値は、 **Selectedcolor**プロパティを使用して他のスクリプトからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-305">This value is accessible to other scripts via the **SelectedColor** property.</span></span>
+<span data-ttu-id="b538c-303">**Update ()** では、 **selectorPosition**を使用して、カラーホイールのメッシュ collider に射線をキャストします。これにより、UV 位置が返されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-303">In **Update()**, **selectorPosition** is used to cast a ray at the color wheel's mesh collider, which returns a UV position.</span></span> <span data-ttu-id="b538c-304">この位置を使用して、カラーホイールのテクスチャのピクセル座標と色の値を見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-304">This position can then be used to find the pixel coordinate and color value of the color wheel's texture.</span></span> <span data-ttu-id="b538c-305">この値は、 **Selectedcolor**プロパティを使用して他のスクリプトからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b538c-305">This value is accessible to other scripts via the **SelectedColor** property.</span></span>
 
 ![カラーピッカーのホイール Raycasting](images/mr213-colorpickerwheel-raycast-700px.png)
 
@@ -431,52 +431,52 @@ if (visible != visibleLastFrame)
 }
 ```
 
-## <a name="chapter-4---overriding-controller-model"></a><span data-ttu-id="b4ce2-307">Chapter 4-コントローラーモデルのオーバーライド</span><span class="sxs-lookup"><span data-stu-id="b4ce2-307">Chapter 4 - Overriding controller model</span></span>
+## <a name="chapter-4---overriding-controller-model"></a><span data-ttu-id="b538c-307">Chapter 4-コントローラーモデルのオーバーライド</span><span class="sxs-lookup"><span data-stu-id="b538c-307">Chapter 4 - Overriding controller model</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/8gBFqA_DZ_U]
 
-### <a name="objectives"></a><span data-ttu-id="b4ce2-308">目標</span><span class="sxs-lookup"><span data-stu-id="b4ce2-308">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="b538c-308">目標</span><span class="sxs-lookup"><span data-stu-id="b538c-308">Objectives</span></span>
 
-* <span data-ttu-id="b4ce2-309">カスタム3D モデルを使用してコントローラーモデルを上書きする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-309">Learn how to override the controller model with a custom 3D model.</span></span>
+* <span data-ttu-id="b538c-309">カスタム3D モデルを使用してコントローラーモデルを上書きする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-309">Learn how to override the controller model with a custom 3D model.</span></span>
 
 ![MR213_BrushToolOverride](images/mr213-brushtooloverride-500px.jpg)
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-311">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-311">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-311">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-311">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-312">**[階層]** パネルの **[motioncontrollers]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-312">Click **MotionControllers** in the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-313">**[代替右コントローラー]** フィールドの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-313">Click the circle on the right side of the **Alternate Right Controller** field.</span></span>
-* <span data-ttu-id="b4ce2-314">**「BrushController**」と入力し、結果から prefab を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-314">Type in **'BrushController**' and select the prefab from the result.</span></span> <span data-ttu-id="b4ce2-315">これは Assets/AppPrefabs/**BrushController**にあります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-315">You can find it under Assets/AppPrefabs/**BrushController**.</span></span>
-* <span data-ttu-id="b4ce2-316">**常に代替右モデルを使用することを確認する**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-316">Check **Always Use Alternate Right Model**</span></span>
+* <span data-ttu-id="b538c-312">**[階層]** パネルの **[motioncontrollers]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-312">Click **MotionControllers** in the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-313">**[代替右コントローラー]** フィールドの右側にある円をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-313">Click the circle on the right side of the **Alternate Right Controller** field.</span></span>
+* <span data-ttu-id="b538c-314">**「BrushController**」と入力し、結果から prefab を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-314">Type in **'BrushController**' and select the prefab from the result.</span></span> <span data-ttu-id="b538c-315">これは Assets/AppPrefabs/**BrushController**にあります。</span><span class="sxs-lookup"><span data-stu-id="b538c-315">You can find it under Assets/AppPrefabs/**BrushController**.</span></span>
+* <span data-ttu-id="b538c-316">**常に代替右モデルを使用することを確認する**</span><span class="sxs-lookup"><span data-stu-id="b538c-316">Check **Always Use Alternate Right Model**</span></span>
 
 ![MR213_BrushToolOverrideSlot](images/mr213-motioncontrollersoverride-700px.jpg)
 
-<span data-ttu-id="b4ce2-318">**BrushController** prefab は、**階層**パネルに含まれている必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-318">The **BrushController** prefab does not have to be included in the **Hierarchy** panel.</span></span> <span data-ttu-id="b4ce2-319">ただし、子コンポーネントを確認するには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-319">However, to check out its child components:</span></span>
+<span data-ttu-id="b538c-318">**BrushController** prefab は、**階層**パネルに含まれている必要はありません。</span><span class="sxs-lookup"><span data-stu-id="b538c-318">The **BrushController** prefab does not have to be included in the **Hierarchy** panel.</span></span> <span data-ttu-id="b538c-319">ただし、子コンポーネントを確認するには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="b538c-319">However, to check out its child components:</span></span>
 
-* <span data-ttu-id="b4ce2-320">**[プロジェクト]** パネルで、「 **BrushController** 」と入力し、 **[BrushController]** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-320">In the **Project** panel, type in **BrushController** and drag **BrushController** prefab into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-320">**[プロジェクト]** パネルで、「 **BrushController** 」と入力し、 **[BrushController]** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-320">In the **Project** panel, type in **BrushController** and drag **BrushController** prefab into the **Hierarchy** panel.</span></span>
 
 ![MR213_BrushTool_Prefab2](images/mr213-brushtool-prefab-1000px.jpg)
 
-<span data-ttu-id="b4ce2-322">**Tip**コンポーネントは**BrushController**にあります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-322">You will find the **Tip** component in **BrushController**.</span></span> <span data-ttu-id="b4ce2-323">この変換を使用して、描画線を開始または停止します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-323">We will use its transform to start/stop drawing lines.</span></span>
+<span data-ttu-id="b538c-322">**Tip**コンポーネントは**BrushController**にあります。</span><span class="sxs-lookup"><span data-stu-id="b538c-322">You will find the **Tip** component in **BrushController**.</span></span> <span data-ttu-id="b538c-323">この変換を使用して、描画線を開始または停止します。</span><span class="sxs-lookup"><span data-stu-id="b538c-323">We will use its transform to start/stop drawing lines.</span></span>
 
-* <span data-ttu-id="b4ce2-324">**[階層]** パネルから**BrushController**を削除します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-324">Delete the **BrushController** from the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-325">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-325">**Save** the scene and click the **play** button.</span></span> <span data-ttu-id="b4ce2-326">ブラシモデルは、右側のモーションコントローラーに置き換えられていることがわかります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-326">You will be able to see the brush model replaced the right-hand motion controller.</span></span>
+* <span data-ttu-id="b538c-324">**[階層]** パネルから**BrushController**を削除します。</span><span class="sxs-lookup"><span data-stu-id="b538c-324">Delete the **BrushController** from the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-325">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-325">**Save** the scene and click the **play** button.</span></span> <span data-ttu-id="b538c-326">ブラシモデルは、右側のモーションコントローラーに置き換えられていることがわかります。</span><span class="sxs-lookup"><span data-stu-id="b538c-326">You will be able to see the brush model replaced the right-hand motion controller.</span></span>
 
-## <a name="chapter-5---painting-with-select-input"></a><span data-ttu-id="b4ce2-327">Chapter 5-Select 入力による塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="b4ce2-327">Chapter 5 - Painting with Select input</span></span>
+## <a name="chapter-5---painting-with-select-input"></a><span data-ttu-id="b538c-327">Chapter 5-Select 入力による塗りつぶし</span><span class="sxs-lookup"><span data-stu-id="b538c-327">Chapter 5 - Painting with Select input</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/QTrYaMHIs7w]
 
-### <a name="objectives"></a><span data-ttu-id="b4ce2-328">目標</span><span class="sxs-lookup"><span data-stu-id="b4ce2-328">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="b538c-328">目標</span><span class="sxs-lookup"><span data-stu-id="b538c-328">Objectives</span></span>
 
-* <span data-ttu-id="b4ce2-329">Select button イベントを使用して、線描画を開始および停止する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-329">Learn how to use the Select button event to start and stop a line drawing</span></span>
+* <span data-ttu-id="b538c-329">Select button イベントを使用して、線描画を開始および停止する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-329">Learn how to use the Select button event to start and stop a line drawing</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-330">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-330">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-330">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-330">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-331">**[プロジェクト]** パネルで**BrushController** prefab を検索します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-331">Search **BrushController** prefab in the **Project** panel.</span></span>
-* <span data-ttu-id="b4ce2-332">**[インスペクター]** パネルで **[BrushController]** Script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-332">In the **Inspector** panel, double click **BrushController** Script to see the code in Visual Studio</span></span>
+* <span data-ttu-id="b538c-331">**[プロジェクト]** パネルで**BrushController** prefab を検索します。</span><span class="sxs-lookup"><span data-stu-id="b538c-331">Search **BrushController** prefab in the **Project** panel.</span></span>
+* <span data-ttu-id="b538c-332">**[インスペクター]** パネルで **[BrushController]** Script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b538c-332">In the **Inspector** panel, double click **BrushController** Script to see the code in Visual Studio</span></span>
 
-<span data-ttu-id="b4ce2-333">**BrushController スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-333">**BrushController script**</span></span>
+<span data-ttu-id="b538c-333">**BrushController スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-333">**BrushController script**</span></span>
 
-<span data-ttu-id="b4ce2-334">**BrushController**は、InteractionManager の**Interactionsource押さ**れたイベントと**InteractionSourceReleased**イベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-334">**BrushController** subscribes to the InteractionManager's **InteractionSourcePressed** and **InteractionSourceReleased** events.</span></span> <span data-ttu-id="b4ce2-335">**Interactionsourcepressed**れたイベントがトリガーされると、ブラシの**Draw**プロパティが true に設定されます。**InteractionSourceReleased**イベントがトリガーされると、ブラシの**Draw**プロパティが false に設定されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-335">When **InteractionSourcePressed** event is triggered, the brush's **Draw** property is set to true; when **InteractionSourceReleased** event is triggered, the brush's **Draw** property is set to false.</span></span>
+<span data-ttu-id="b538c-334">**BrushController**は、InteractionManager の**Interactionsource押さ**れたイベントと**InteractionSourceReleased**イベントをサブスクライブします。</span><span class="sxs-lookup"><span data-stu-id="b538c-334">**BrushController** subscribes to the InteractionManager's **InteractionSourcePressed** and **InteractionSourceReleased** events.</span></span> <span data-ttu-id="b538c-335">**Interactionsourcepressed**れたイベントがトリガーされると、ブラシの**Draw**プロパティが true に設定されます。**InteractionSourceReleased**イベントがトリガーされると、ブラシの**Draw**プロパティが false に設定されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-335">When **InteractionSourcePressed** event is triggered, the brush's **Draw** property is set to true; when **InteractionSourceReleased** event is triggered, the brush's **Draw** property is set to false.</span></span>
 
 ```cs
 private void InteractionSourcePressed(InteractionSourcePressedEventArgs obj)
@@ -496,7 +496,7 @@ private void InteractionSourceReleased(InteractionSourceReleasedEventArgs obj)
 }
 ```
 
-<span data-ttu-id="b4ce2-336">**描画**が true に設定されている場合、ブラシはインスタンス化された Unity **LineRenderer**内のポイントを生成します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-336">While **Draw** is set to true, the brush will generate points in an instantiated Unity **LineRenderer**.</span></span> <span data-ttu-id="b4ce2-337">この prefab への参照は、ブラシの**ストローク prefab**フィールドに保持されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-337">A reference to this prefab is kept in the brush's **Stroke Prefab** field.</span></span>
+<span data-ttu-id="b538c-336">**描画**が true に設定されている場合、ブラシはインスタンス化された Unity **LineRenderer**内のポイントを生成します。</span><span class="sxs-lookup"><span data-stu-id="b538c-336">While **Draw** is set to true, the brush will generate points in an instantiated Unity **LineRenderer**.</span></span> <span data-ttu-id="b538c-337">この prefab への参照は、ブラシの**ストローク prefab**フィールドに保持されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-337">A reference to this prefab is kept in the brush's **Stroke Prefab** field.</span></span>
 
 ```cs
 private IEnumerator DrawOverTime()
@@ -537,7 +537,7 @@ private IEnumerator DrawOverTime()
 }
 ```
 
-<span data-ttu-id="b4ce2-338">カラーピッカーのホイール UI で現在選択されている色を使用するには、 **BrushController**が**ColorPickerWheel**オブジェクトへの参照を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-338">To use the currently selected color from the color picker wheel UI, **BrushController** needs to have a reference to the **ColorPickerWheel** object.</span></span> <span data-ttu-id="b4ce2-339">**BrushController** prefab は実行時に交換用コントローラーとしてインスタンス化されるため、シーン内のオブジェクトへの参照は実行時に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-339">Because the **BrushController** prefab is instantiated at runtime as a replacement controller, any references to objects in the scene will have to be set at runtime.</span></span> <span data-ttu-id="b4ce2-340">この例では、 **FindObjectOfType**を使用して**ColorPickerWheel**を検索します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-340">In this case we use **GameObject.FindObjectOfType** to locate the **ColorPickerWheel**:</span></span>
+<span data-ttu-id="b538c-338">カラーピッカーのホイール UI で現在選択されている色を使用するには、 **BrushController**が**ColorPickerWheel**オブジェクトへの参照を持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-338">To use the currently selected color from the color picker wheel UI, **BrushController** needs to have a reference to the **ColorPickerWheel** object.</span></span> <span data-ttu-id="b538c-339">**BrushController** prefab は実行時に交換用コントローラーとしてインスタンス化されるため、シーン内のオブジェクトへの参照は実行時に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-339">Because the **BrushController** prefab is instantiated at runtime as a replacement controller, any references to objects in the scene will have to be set at runtime.</span></span> <span data-ttu-id="b538c-340">この例では、 **FindObjectOfType**を使用して**ColorPickerWheel**を検索します。</span><span class="sxs-lookup"><span data-stu-id="b538c-340">In this case we use **GameObject.FindObjectOfType** to locate the **ColorPickerWheel**:</span></span>
 
 ```cs
 private void OnEnable()
@@ -551,35 +551,35 @@ private void OnEnable()
 }
 ```
 
-* <span data-ttu-id="b4ce2-341">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-341">**Save** the scene and click the **play** button.</span></span> <span data-ttu-id="b4ce2-342">右側のコントローラーの [選択] ボタンを使用して、線を描画し、塗りつぶすことができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-342">You will be able to draw the lines and paint using the select button on the right-hand controller.</span></span>
+* <span data-ttu-id="b538c-341">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-341">**Save** the scene and click the **play** button.</span></span> <span data-ttu-id="b538c-342">右側のコントローラーの [選択] ボタンを使用して、線を描画し、塗りつぶすことができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-342">You will be able to draw the lines and paint using the select button on the right-hand controller.</span></span>
 
-## <a name="chapter-6---object-spawning-with-select-input"></a><span data-ttu-id="b4ce2-343">Chapter 6-Select 入力を使用したオブジェクトの生成</span><span class="sxs-lookup"><span data-stu-id="b4ce2-343">Chapter 6 - Object spawning with Select input</span></span>
+## <a name="chapter-6---object-spawning-with-select-input"></a><span data-ttu-id="b538c-343">Chapter 6-Select 入力を使用したオブジェクトの生成</span><span class="sxs-lookup"><span data-stu-id="b538c-343">Chapter 6 - Object spawning with Select input</span></span>
 
 >[!VIDEO https://www.youtube.com/embed/z4IxyzFHP0U]
 
-### <a name="objectives"></a><span data-ttu-id="b4ce2-344">目標</span><span class="sxs-lookup"><span data-stu-id="b4ce2-344">Objectives</span></span>
+### <a name="objectives"></a><span data-ttu-id="b538c-344">目標</span><span class="sxs-lookup"><span data-stu-id="b538c-344">Objectives</span></span>
 
-* <span data-ttu-id="b4ce2-345">選択ボタンと表示ボタンの入力イベントを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-345">Learn how to use Select and Grasp button input events</span></span>
-* <span data-ttu-id="b4ce2-346">オブジェクトをインスタンス化する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="b4ce2-346">Learn how to instantiate objects</span></span>
+* <span data-ttu-id="b538c-345">選択ボタンと表示ボタンの入力イベントを使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-345">Learn how to use Select and Grasp button input events</span></span>
+* <span data-ttu-id="b538c-346">オブジェクトをインスタンス化する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="b538c-346">Learn how to instantiate objects</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-347">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-347">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-347">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-347">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-348">**プロジェクト** パネルの 検索 ボックスに「 **ObjectSpawner** 」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-348">In the **Project** panel, type **ObjectSpawner** in the search box.</span></span> <span data-ttu-id="b4ce2-349">また、Assets/AppPrefabs の下にあります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-349">You can also find it under Assets/AppPrefabs/</span></span>
-* <span data-ttu-id="b4ce2-350">**ObjectSpawner** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-350">Drag the **ObjectSpawner** prefab into the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-351">**[階層]** パネルの **[ObjectSpawner]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-351">Click **ObjectSpawner** in the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-352">**ObjectSpawner**には、 **Color Source**という名前のフィールドがあります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-352">**ObjectSpawner** has a field named **Color Source**.</span></span>
-* <span data-ttu-id="b4ce2-353">**[階層]** パネルで、 **ColorPickerWheel**参照をこのフィールドにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-353">From the **Hierarchy** panel, drag the **ColorPickerWheel** reference into this field.</span></span>
+* <span data-ttu-id="b538c-348">**プロジェクト** パネルの 検索 ボックスに「 **ObjectSpawner** 」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b538c-348">In the **Project** panel, type **ObjectSpawner** in the search box.</span></span> <span data-ttu-id="b538c-349">また、Assets/AppPrefabs の下にあります。</span><span class="sxs-lookup"><span data-stu-id="b538c-349">You can also find it under Assets/AppPrefabs/</span></span>
+* <span data-ttu-id="b538c-350">**ObjectSpawner** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-350">Drag the **ObjectSpawner** prefab into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-351">**[階層]** パネルの **[ObjectSpawner]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-351">Click **ObjectSpawner** in the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-352">**ObjectSpawner**には、 **Color Source**という名前のフィールドがあります。</span><span class="sxs-lookup"><span data-stu-id="b538c-352">**ObjectSpawner** has a field named **Color Source**.</span></span>
+* <span data-ttu-id="b538c-353">**[階層]** パネルで、 **ColorPickerWheel**参照をこのフィールドにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-353">From the **Hierarchy** panel, drag the **ColorPickerWheel** reference into this field.</span></span>
 
     ![オブジェクト Spawner Inspector](images/mr213-objectspawnercolorpickerwheel-650px.jpg)
 
-* <span data-ttu-id="b4ce2-355">**[階層]** パネルの **[ObjectSpawner]** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-355">Click the **ObjectSpawner** prefab in the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-356">**[インスペクター]** パネルで **[ObjectSpawner]** Script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-356">In the **Inspector** panel, double click **ObjectSpawner** Script to see the code in Visual Studio.</span></span>
+* <span data-ttu-id="b538c-355">**[階層]** パネルの **[ObjectSpawner]** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-355">Click the **ObjectSpawner** prefab in the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-356">**[インスペクター]** パネルで **[ObjectSpawner]** Script をダブルクリックして、Visual Studio でコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="b538c-356">In the **Inspector** panel, double click **ObjectSpawner** Script to see the code in Visual Studio.</span></span>
 
-<span data-ttu-id="b4ce2-357">**ObjectSpawner スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-357">**ObjectSpawner script**</span></span>
+<span data-ttu-id="b538c-357">**ObjectSpawner スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-357">**ObjectSpawner script**</span></span>
 
-<span data-ttu-id="b4ce2-358">**ObjectSpawner**は、空間にプリミティブメッシュ (cube、球、シリンダ) のコピーをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-358">The **ObjectSpawner** instantiates copies of a primitive mesh (cube, sphere, cylinder) into the space.</span></span> <span data-ttu-id="b4ce2-359">**Interactionsourcepressed**れたことが検出されると、きき者と、そのイベントが**interactionsourcepresstype**または**interactionsourcepresstype**であるかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-359">When a **InteractionSourcePressed** is detected it checks the handedness and if it's an **InteractionSourcePressType.Grasp** or **InteractionSourcePressType.Select** event.</span></span>
+<span data-ttu-id="b538c-358">**ObjectSpawner**は、空間にプリミティブメッシュ (cube、球、シリンダ) のコピーをインスタンス化します。</span><span class="sxs-lookup"><span data-stu-id="b538c-358">The **ObjectSpawner** instantiates copies of a primitive mesh (cube, sphere, cylinder) into the space.</span></span> <span data-ttu-id="b538c-359">**Interactionsourcepressed**れたことが検出されると、きき者と、そのイベントが**interactionsourcepresstype**または**interactionsourcepresstype**であるかどうかをチェックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-359">When a **InteractionSourcePressed** is detected it checks the handedness and if it's an **InteractionSourcePressType.Grasp** or **InteractionSourcePressType.Select** event.</span></span>
 
-<span data-ttu-id="b4ce2-360">イベントを**把握**するために、現在のメッシュの種類 (球、cube、円柱) のインデックスをインクリメントします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-360">For a **Grasp** event, it increments the index of current mesh type (sphere, cube, cylinder)</span></span>
+<span data-ttu-id="b538c-360">イベントを**把握**するために、現在のメッシュの種類 (球、cube、円柱) のインデックスをインクリメントします。</span><span class="sxs-lookup"><span data-stu-id="b538c-360">For a **Grasp** event, it increments the index of current mesh type (sphere, cube, cylinder)</span></span>
 
 ```cs
 private void InteractionSourcePressed(InteractionSourcePressedEventArgs obj)
@@ -617,14 +617,14 @@ private void InteractionSourcePressed(InteractionSourcePressedEventArgs obj)
 }
 ```
 
-<span data-ttu-id="b4ce2-361">**Select**イベントの場合、 **SpawnObject ()** では、新しいオブジェクトがインスタンス化され、親ではありません。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-361">For a **Select** event, in **SpawnObject()**, a new object is instantiated, un-parented and released into the world.</span></span>
+<span data-ttu-id="b538c-361">**Select**イベントの場合、 **SpawnObject ()** では、新しいオブジェクトがインスタンス化され、親ではありません。</span><span class="sxs-lookup"><span data-stu-id="b538c-361">For a **Select** event, in **SpawnObject()**, a new object is instantiated, un-parented and released into the world.</span></span>
 
 ```cs
 private void SpawnObject()
 {
     // Instantiate the spawned object
     GameObject newObject = Instantiate(displayObject.gameObject, spawnParent);
-    // Detatch the newly spawned object
+    // Detach the newly spawned object
     newObject.transform.parent = null;
     // Reset the scale transform to 1
     scaleParent.localScale = Vector3.one;
@@ -633,88 +633,88 @@ private void SpawnObject()
 }
 ```
 
-<span data-ttu-id="b4ce2-362">**ObjectSpawner**は、 **ColorPickerWheel**を使用して、表示オブジェクトの素材の色を設定します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-362">The **ObjectSpawner** uses the **ColorPickerWheel** to set the color of the display object's material.</span></span> <span data-ttu-id="b4ce2-363">生成されたオブジェクトには、その色が保持されるように、このマテリアルのインスタンスが与えられます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-363">Spawned objects are given an instance of this material so they will retain their color.</span></span>
+<span data-ttu-id="b538c-362">**ObjectSpawner**は、 **ColorPickerWheel**を使用して、表示オブジェクトの素材の色を設定します。</span><span class="sxs-lookup"><span data-stu-id="b538c-362">The **ObjectSpawner** uses the **ColorPickerWheel** to set the color of the display object's material.</span></span> <span data-ttu-id="b538c-363">生成されたオブジェクトには、その色が保持されるように、このマテリアルのインスタンスが与えられます。</span><span class="sxs-lookup"><span data-stu-id="b538c-363">Spawned objects are given an instance of this material so they will retain their color.</span></span>
 
-* <span data-ttu-id="b4ce2-364">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-364">**Save** the scene and click the **play** button.</span></span>
+* <span data-ttu-id="b538c-364">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-364">**Save** the scene and click the **play** button.</span></span>
 
-<span data-ttu-id="b4ce2-365">ボタンを使用してオブジェクトを変更し、[選択] ボタンを使用してオブジェクトを生成することができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-365">You will be able to change the objects with the Grasp button and spawn objects with the Select button.</span></span>
+<span data-ttu-id="b538c-365">ボタンを使用してオブジェクトを変更し、[選択] ボタンを使用してオブジェクトを生成することができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-365">You will be able to change the objects with the Grasp button and spawn objects with the Select button.</span></span>
 
-## <a name="build-and-deploy-app-to-mixed-reality-portal"></a><span data-ttu-id="b4ce2-366">アプリをビルドし、Mixed Reality ポータルにデプロイする</span><span class="sxs-lookup"><span data-stu-id="b4ce2-366">Build and deploy app to Mixed Reality Portal</span></span>
+## <a name="build-and-deploy-app-to-mixed-reality-portal"></a><span data-ttu-id="b538c-366">アプリをビルドし、Mixed Reality ポータルにデプロイする</span><span class="sxs-lookup"><span data-stu-id="b538c-366">Build and deploy app to Mixed Reality Portal</span></span>
 
-* <span data-ttu-id="b4ce2-367">Unity で、 **[ファイル > ビルド設定]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-367">In Unity, select **File > Build Settings**.</span></span>
-* <span data-ttu-id="b4ce2-368">[**開い**ているシーンの追加] をクリックして、**ビルドのシーン**に現在のシーンを追加します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-368">Click **Add Open Scenes** to add current scene to the **Scenes In Build**.</span></span>
-* <span data-ttu-id="b4ce2-369">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-369">Click **Build**.</span></span>
-* <span data-ttu-id="b4ce2-370">"App" という名前の**新しいフォルダー**を作成します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-370">Create a **New Folder** named "App".</span></span>
-* <span data-ttu-id="b4ce2-371">**アプリ**フォルダーをシングルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-371">Single click the **App** folder.</span></span>
-* <span data-ttu-id="b4ce2-372">**[フォルダーの選択]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-372">Click **Select Folder**.</span></span>
-* <span data-ttu-id="b4ce2-373">Unity が完了すると、エクスプローラーウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-373">When Unity is done, a File Explorer window will appear.</span></span>
-* <span data-ttu-id="b4ce2-374">**アプリ**フォルダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-374">Open the **App** folder.</span></span>
-* <span data-ttu-id="b4ce2-375">**YourSceneName** Visual Studio ソリューションファイルをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-375">Double click **YourSceneName.sln** Visual Studio Solution file.</span></span>
-* <span data-ttu-id="b4ce2-376">Visual Studio の上部のツールバーを使用して、ターゲットをデバッグから**リリース**に、ARM から**X64**に変更します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-376">Using the top toolbar in Visual Studio, change the target from Debug to **Release** and from ARM to **X64**.</span></span>
-* <span data-ttu-id="b4ce2-377">デバイス ボタンの横にあるドロップダウン矢印をクリックし、**ローカルコンピューター** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-377">Click on the drop-down arrow next to the Device button, and select **Local Machine**.</span></span>
-* <span data-ttu-id="b4ce2-378">メニューで [デバッグ] **、[デバッグなしで開始**] の順にクリックする >、Ctrl キーを押し**ながら F5**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-378">Click **Debug -> Start Without debugging** in the menu or press **Ctrl + F5**.</span></span>
+* <span data-ttu-id="b538c-367">Unity で、 **[ファイル > ビルド設定]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-367">In Unity, select **File > Build Settings**.</span></span>
+* <span data-ttu-id="b538c-368">[**開い**ているシーンの追加] をクリックして、**ビルドのシーン**に現在のシーンを追加します。</span><span class="sxs-lookup"><span data-stu-id="b538c-368">Click **Add Open Scenes** to add current scene to the **Scenes In Build**.</span></span>
+* <span data-ttu-id="b538c-369">**[Build]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-369">Click **Build**.</span></span>
+* <span data-ttu-id="b538c-370">"App" という名前の**新しいフォルダー**を作成します。</span><span class="sxs-lookup"><span data-stu-id="b538c-370">Create a **New Folder** named "App".</span></span>
+* <span data-ttu-id="b538c-371">**アプリ**フォルダーをシングルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-371">Single click the **App** folder.</span></span>
+* <span data-ttu-id="b538c-372">**[フォルダーの選択]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-372">Click **Select Folder**.</span></span>
+* <span data-ttu-id="b538c-373">Unity が完了すると、エクスプローラーウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-373">When Unity is done, a File Explorer window will appear.</span></span>
+* <span data-ttu-id="b538c-374">**アプリ**フォルダーを開きます。</span><span class="sxs-lookup"><span data-stu-id="b538c-374">Open the **App** folder.</span></span>
+* <span data-ttu-id="b538c-375">**YourSceneName** Visual Studio ソリューションファイルをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-375">Double click **YourSceneName.sln** Visual Studio Solution file.</span></span>
+* <span data-ttu-id="b538c-376">Visual Studio の上部のツールバーを使用して、ターゲットをデバッグから**リリース**に、ARM から**X64**に変更します。</span><span class="sxs-lookup"><span data-stu-id="b538c-376">Using the top toolbar in Visual Studio, change the target from Debug to **Release** and from ARM to **X64**.</span></span>
+* <span data-ttu-id="b538c-377">デバイス ボタンの横にあるドロップダウン矢印をクリックし、**ローカルコンピューター** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-377">Click on the drop-down arrow next to the Device button, and select **Local Machine**.</span></span>
+* <span data-ttu-id="b538c-378">メニューで [デバッグ] **、[デバッグなしで開始**] の順にクリックする >、Ctrl キーを押し**ながら F5**キーを押します。</span><span class="sxs-lookup"><span data-stu-id="b538c-378">Click **Debug -> Start Without debugging** in the menu or press **Ctrl + F5**.</span></span>
 
-<span data-ttu-id="b4ce2-379">これで、アプリがビルドされ、Mixed Reality ポータルにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-379">Now the app is built and installed in Mixed Reality Portal.</span></span> <span data-ttu-id="b4ce2-380">これは、Mixed Reality ポータルの [スタート] メニューを使用して再度起動することができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-380">You can launch it again through Start menu in Mixed Reality Portal.</span></span>
+<span data-ttu-id="b538c-379">これで、アプリがビルドされ、Mixed Reality ポータルにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="b538c-379">Now the app is built and installed in Mixed Reality Portal.</span></span> <span data-ttu-id="b538c-380">これは、Mixed Reality ポータルの [スタート] メニューを使用して再度起動することができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-380">You can launch it again through Start menu in Mixed Reality Portal.</span></span>
 
-## <a name="advanced-design---brush-tools-with-radial-layout"></a><span data-ttu-id="b4ce2-381">高度なデザイン-放射状レイアウトを使用したブラシツール</span><span class="sxs-lookup"><span data-stu-id="b4ce2-381">Advanced design - Brush tools with radial layout</span></span>
+## <a name="advanced-design---brush-tools-with-radial-layout"></a><span data-ttu-id="b538c-381">高度なデザイン-放射状レイアウトを使用したブラシツール</span><span class="sxs-lookup"><span data-stu-id="b538c-381">Advanced design - Brush tools with radial layout</span></span>
 
 ![MixedReality213 Main](images/mr213-main-600px.jpg)
 
-<span data-ttu-id="b4ce2-383">この章では、既定のモーションコントローラーモデルをカスタムブラシツールコレクションに置き換える方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-383">In this chapter, you will learn how to replace the default motion controller model with a custom brush tool collection.</span></span> <span data-ttu-id="b4ce2-384">参考までに **、[シーン**] フォルダーの下の完成したシーン**MixedReality213Advanced**を見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-384">For your reference, you can find the completed scene **MixedReality213Advanced** under **Scenes** folder.</span></span>
+<span data-ttu-id="b538c-383">この章では、既定のモーションコントローラーモデルをカスタムブラシツールコレクションに置き換える方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-383">In this chapter, you will learn how to replace the default motion controller model with a custom brush tool collection.</span></span> <span data-ttu-id="b538c-384">参考までに **、[シーン**] フォルダーの下の完成したシーン**MixedReality213Advanced**を見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-384">For your reference, you can find the completed scene **MixedReality213Advanced** under **Scenes** folder.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-385">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-385">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-385">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-385">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-386">**プロジェクト** パネルの 検索 ボックスに「 **BrushSelector** 」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-386">In the **Project** panel, type **BrushSelector** in the search box .</span></span> <span data-ttu-id="b4ce2-387">また、Assets/AppPrefabs の下にあります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-387">You can also find it under Assets/AppPrefabs/</span></span>
-* <span data-ttu-id="b4ce2-388">**BrushSelector** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-388">Drag the **BrushSelector** prefab into the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-389">組織の場合は、**ブラシ**と呼ばれる空のオブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-389">For organization, create an empty GameObject called **Brushes**</span></span>
-* <span data-ttu-id="b4ce2-390">**[プロジェクト]** パネルから **[ブラシ]** に次の prefabs をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-390">Drag following prefabs from the **Project** panel into **Brushes**</span></span>
-    * <span data-ttu-id="b4ce2-391">Assets/AppPrefabs/**BrushFat**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-391">Assets/AppPrefabs/**BrushFat**</span></span>
-    * <span data-ttu-id="b4ce2-392">Assets/AppPrefabs/**BrushThin**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-392">Assets/AppPrefabs/**BrushThin**</span></span>
-    * <span data-ttu-id="b4ce2-393">Assets/AppPrefabs/**消しゴム**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-393">Assets/AppPrefabs/**Eraser**</span></span>
-    * <span data-ttu-id="b4ce2-394">Assets/AppPrefabs/**MarkerFat**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-394">Assets/AppPrefabs/**MarkerFat**</span></span>
-    * <span data-ttu-id="b4ce2-395">Assets/AppPrefabs/**MarkerThin**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-395">Assets/AppPrefabs/**MarkerThin**</span></span>
-    * <span data-ttu-id="b4ce2-396">Assets/AppPrefabs/**鉛筆**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-396">Assets/AppPrefabs/**Pencil**</span></span>
+* <span data-ttu-id="b538c-386">**プロジェクト** パネルの 検索 ボックスに「 **BrushSelector** 」と入力します。</span><span class="sxs-lookup"><span data-stu-id="b538c-386">In the **Project** panel, type **BrushSelector** in the search box .</span></span> <span data-ttu-id="b538c-387">また、Assets/AppPrefabs の下にあります。</span><span class="sxs-lookup"><span data-stu-id="b538c-387">You can also find it under Assets/AppPrefabs/</span></span>
+* <span data-ttu-id="b538c-388">**BrushSelector** prefab を **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-388">Drag the **BrushSelector** prefab into the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-389">組織の場合は、**ブラシ**と呼ばれる空のオブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="b538c-389">For organization, create an empty GameObject called **Brushes**</span></span>
+* <span data-ttu-id="b538c-390">**[プロジェクト]** パネルから **[ブラシ]** に次の prefabs をドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-390">Drag following prefabs from the **Project** panel into **Brushes**</span></span>
+    * <span data-ttu-id="b538c-391">Assets/AppPrefabs/**BrushFat**</span><span class="sxs-lookup"><span data-stu-id="b538c-391">Assets/AppPrefabs/**BrushFat**</span></span>
+    * <span data-ttu-id="b538c-392">Assets/AppPrefabs/**BrushThin**</span><span class="sxs-lookup"><span data-stu-id="b538c-392">Assets/AppPrefabs/**BrushThin**</span></span>
+    * <span data-ttu-id="b538c-393">Assets/AppPrefabs/**消しゴム**</span><span class="sxs-lookup"><span data-stu-id="b538c-393">Assets/AppPrefabs/**Eraser**</span></span>
+    * <span data-ttu-id="b538c-394">Assets/AppPrefabs/**MarkerFat**</span><span class="sxs-lookup"><span data-stu-id="b538c-394">Assets/AppPrefabs/**MarkerFat**</span></span>
+    * <span data-ttu-id="b538c-395">Assets/AppPrefabs/**MarkerThin**</span><span class="sxs-lookup"><span data-stu-id="b538c-395">Assets/AppPrefabs/**MarkerThin**</span></span>
+    * <span data-ttu-id="b538c-396">Assets/AppPrefabs/**鉛筆**</span><span class="sxs-lookup"><span data-stu-id="b538c-396">Assets/AppPrefabs/**Pencil**</span></span>
 
     ![ブラシ](images/mixedreality213-brushes-250px.png)
 
-* <span data-ttu-id="b4ce2-398">**[階層]** パネルの **[motioncontrollers]** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-398">Click **MotionControllers** prefab in the **Hierarchy** panel.</span></span>
-* <span data-ttu-id="b4ce2-399">**[インスペクター]** パネルの [**モーションコントローラービジュアライザー**で**常に代替モデルを使用する**] チェックボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-399">In the **Inspector** panel, uncheck **Always Use Alternate Right Model** on the **Motion Controller Visualizer**</span></span>
-* <span data-ttu-id="b4ce2-400">**[階層]** パネルで、 **[BrushSelector]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-400">In the **Hierarchy** panel, click **BrushSelector**</span></span>
-* <span data-ttu-id="b4ce2-401">**BrushSelector**に**colorpicker**という名前のフィールドがある</span><span class="sxs-lookup"><span data-stu-id="b4ce2-401">**BrushSelector** has a field named **ColorPicker**</span></span>
-* <span data-ttu-id="b4ce2-402">**[階層]** パネルで、 **[ColorPickerWheel]** を **[インスペクター]** パネルの **[colorpicker]** フィールドにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-402">From the **Hierarchy** panel, drag the **ColorPickerWheel** into **ColorPicker** field in the **Inspector** panel.</span></span>
+* <span data-ttu-id="b538c-398">**[階層]** パネルの **[motioncontrollers]** prefab をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-398">Click **MotionControllers** prefab in the **Hierarchy** panel.</span></span>
+* <span data-ttu-id="b538c-399">**[インスペクター]** パネルの [**モーションコントローラービジュアライザー**で**常に代替モデルを使用する**] チェックボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="b538c-399">In the **Inspector** panel, uncheck **Always Use Alternate Right Model** on the **Motion Controller Visualizer**</span></span>
+* <span data-ttu-id="b538c-400">**[階層]** パネルで、 **[BrushSelector]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-400">In the **Hierarchy** panel, click **BrushSelector**</span></span>
+* <span data-ttu-id="b538c-401">**BrushSelector**に**colorpicker**という名前のフィールドがある</span><span class="sxs-lookup"><span data-stu-id="b538c-401">**BrushSelector** has a field named **ColorPicker**</span></span>
+* <span data-ttu-id="b538c-402">**[階層]** パネルで、 **[ColorPickerWheel]** を **[インスペクター]** パネルの **[colorpicker]** フィールドにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-402">From the **Hierarchy** panel, drag the **ColorPickerWheel** into **ColorPicker** field in the **Inspector** panel.</span></span>
 
     ![ColorPickerWheel をブラシセレクターに割り当てる](images/mr213-brushselector-500px.jpg)
 
-* <span data-ttu-id="b4ce2-404">**[階層]** パネルの **[BrushSelector]** Prefab で、**メニュー**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-404">In the **Hierarchy** panel, under **BrushSelector** prefab, select the **Menu** object.</span></span>
-* <span data-ttu-id="b4ce2-405">**[インスペクター]** パネルの**lineobjectcollection**コンポーネントで、 **[オブジェクト]** 配列 ドロップダウンを開きます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-405">In the **Inspector** panel, under the **LineObjectCollection** component, open the **Objects** array dropdown.</span></span> <span data-ttu-id="b4ce2-406">6個の空のスロットが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-406">You will see 6 empty slots.</span></span>
-* <span data-ttu-id="b4ce2-407">**[階層]** パネルで、 **[ブラシ]** の prefabs の下にある各親を、任意の順序でこれらのスロットにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-407">From the **Hierarchy** panel, drag each of the prefabs parented under the **Brushes** GameObject into these slots in any order.</span></span> <span data-ttu-id="b4ce2-408">(プロジェクトフォルダー内の prefabs ではなく、シーンから prefabs をドラッグしていることを確認してください)。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-408">(Make sure you're dragging the prefabs from the scene, not the prefabs in the project folder.)</span></span>
+* <span data-ttu-id="b538c-404">**[階層]** パネルの **[BrushSelector]** Prefab で、**メニュー**オブジェクトを選択します。</span><span class="sxs-lookup"><span data-stu-id="b538c-404">In the **Hierarchy** panel, under **BrushSelector** prefab, select the **Menu** object.</span></span>
+* <span data-ttu-id="b538c-405">**[インスペクター]** パネルの**lineobjectcollection**コンポーネントで、 **[オブジェクト]** 配列 ドロップダウンを開きます。</span><span class="sxs-lookup"><span data-stu-id="b538c-405">In the **Inspector** panel, under the **LineObjectCollection** component, open the **Objects** array dropdown.</span></span> <span data-ttu-id="b538c-406">6個の空のスロットが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-406">You will see 6 empty slots.</span></span>
+* <span data-ttu-id="b538c-407">**[階層]** パネルで、 **[ブラシ]** の prefabs の下にある各親を、任意の順序でこれらのスロットにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-407">From the **Hierarchy** panel, drag each of the prefabs parented under the **Brushes** GameObject into these slots in any order.</span></span> <span data-ttu-id="b538c-408">(プロジェクトフォルダー内の prefabs ではなく、シーンから prefabs をドラッグしていることを確認してください)。</span><span class="sxs-lookup"><span data-stu-id="b538c-408">(Make sure you're dragging the prefabs from the scene, not the prefabs in the project folder.)</span></span>
 
 ![ブラシセレクター](images/mr213-brushselectorbrushes-700px.jpg)
 
-<span data-ttu-id="b4ce2-410">**BrushSelector prefab**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-410">**BrushSelector prefab**</span></span>
+<span data-ttu-id="b538c-410">**BrushSelector prefab**</span><span class="sxs-lookup"><span data-stu-id="b538c-410">**BrushSelector prefab**</span></span>
 
-<span data-ttu-id="b4ce2-411">**BrushSelector**は**attachtocontroller**を継承するため、 **[Inspector]** パネルに**きき**と**要素**のオプションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-411">Since the **BrushSelector** inherits **AttachToController**, it shows **Handedness** and **Element** options in the **Inspector** panel.</span></span> <span data-ttu-id="b4ce2-412">**右**を選択し、[ポーズ] を**ポイント**して、右のコントローラーに [ブラシ] ツールを接続します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-412">We selected **Right** and **Pointing Pose** to attach brush tools to the right hand controller with forward direction.</span></span>
+<span data-ttu-id="b538c-411">**BrushSelector**は**attachtocontroller**を継承するため、 **[Inspector]** パネルに**きき**と**要素**のオプションが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-411">Since the **BrushSelector** inherits **AttachToController**, it shows **Handedness** and **Element** options in the **Inspector** panel.</span></span> <span data-ttu-id="b538c-412">**右**を選択し、[ポーズ] を**ポイント**して、右のコントローラーに [ブラシ] ツールを接続します。</span><span class="sxs-lookup"><span data-stu-id="b538c-412">We selected **Right** and **Pointing Pose** to attach brush tools to the right hand controller with forward direction.</span></span>
 
-<span data-ttu-id="b4ce2-413">**BrushSelector**は、次の2つのユーティリティを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-413">The **BrushSelector** makes use of two utilities:</span></span>
+<span data-ttu-id="b538c-413">**BrushSelector**は、次の2つのユーティリティを使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-413">The **BrushSelector** makes use of two utilities:</span></span>
 
-* <span data-ttu-id="b4ce2-414">**楕円**: 楕円形に沿って空間内のポイントを生成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-414">**Ellipse**: used to generate points in space along an ellipse shape.</span></span>
-* <span data-ttu-id="b4ce2-415">**Lineobjectcollection**: 任意の行クラスによって生成された点を使用してオブジェクトを分散します (例: 楕円)。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-415">**LineObjectCollection**: distributes objects using the points generated by any Line class (eg, Ellipse).</span></span> <span data-ttu-id="b4ce2-416">ここでは、楕円の形状に沿ってブラシを配置するために使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-416">This is what we'll be using to place our brushes along the Ellipse shape.</span></span>
+* <span data-ttu-id="b538c-414">**楕円**: 楕円形に沿って空間内のポイントを生成するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-414">**Ellipse**: used to generate points in space along an ellipse shape.</span></span>
+* <span data-ttu-id="b538c-415">**Lineobjectcollection**: 任意の行クラスによって生成された点を使用してオブジェクトを分散します (例: 楕円)。</span><span class="sxs-lookup"><span data-stu-id="b538c-415">**LineObjectCollection**: distributes objects using the points generated by any Line class (eg, Ellipse).</span></span> <span data-ttu-id="b538c-416">ここでは、楕円の形状に沿ってブラシを配置するために使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-416">This is what we'll be using to place our brushes along the Ellipse shape.</span></span>
 
-<span data-ttu-id="b4ce2-417">これらのユーティリティを組み合わせて使用すると、放射状メニューを作成できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-417">When combined, these utilities can be used to create a radial menu.</span></span>
+<span data-ttu-id="b538c-417">これらのユーティリティを組み合わせて使用すると、放射状メニューを作成できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-417">When combined, these utilities can be used to create a radial menu.</span></span>
 
-<span data-ttu-id="b4ce2-418">**LineObjectCollection スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-418">**LineObjectCollection script**</span></span>
+<span data-ttu-id="b538c-418">**LineObjectCollection スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-418">**LineObjectCollection script**</span></span>
 
-<span data-ttu-id="b4ce2-419">**Lineobjectcollection**には、その行に沿って分布するオブジェクトのサイズ、位置、および回転を制御します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-419">**LineObjectCollection** has controls for the size, position and rotation of objects distributed along its line.</span></span> <span data-ttu-id="b4ce2-420">これは、ブラシセレクターのような放射状メニューを作成する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-420">This is useful for creating radial menus like the brush selector.</span></span> <span data-ttu-id="b4ce2-421">中心が選択された位置に近づいたときに、何もスケールアップしないブラシの外観を作成するために、 **objectscale**曲線は中央にピークし、端に tapers ます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-421">To create the appearance of brushes that scale up from nothing as they approach the center selected position, the **ObjectScale** curve peaks in the center and tapers off at the edges.</span></span>
+<span data-ttu-id="b538c-419">**Lineobjectcollection**には、その行に沿って分布するオブジェクトのサイズ、位置、および回転を制御します。</span><span class="sxs-lookup"><span data-stu-id="b538c-419">**LineObjectCollection** has controls for the size, position and rotation of objects distributed along its line.</span></span> <span data-ttu-id="b538c-420">これは、ブラシセレクターのような放射状メニューを作成する場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="b538c-420">This is useful for creating radial menus like the brush selector.</span></span> <span data-ttu-id="b538c-421">中心が選択された位置に近づいたときに、何もスケールアップしないブラシの外観を作成するために、 **objectscale**曲線は中央にピークし、端に tapers ます。</span><span class="sxs-lookup"><span data-stu-id="b538c-421">To create the appearance of brushes that scale up from nothing as they approach the center selected position, the **ObjectScale** curve peaks in the center and tapers off at the edges.</span></span>
 
-<span data-ttu-id="b4ce2-422">**BrushSelector スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-422">**BrushSelector script**</span></span>
+<span data-ttu-id="b538c-422">**BrushSelector スクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-422">**BrushSelector script**</span></span>
 
-<span data-ttu-id="b4ce2-423">**BrushSelector**の場合、手続き型アニメーションを使用することを選択しました。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-423">In the case of the **BrushSelector**, we've chosen to use procedural animation.</span></span> <span data-ttu-id="b4ce2-424">最初に、ブラシモデルは**Lineobjectcollection**スクリプトによって楕円で配分されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-424">First, brush models are distributed in an ellipse by the **LineObjectCollection** script.</span></span> <span data-ttu-id="b4ce2-425">次に、各ブラシは、選択内容に基づいて変化する**DisplayMode**値に基づいて、ユーザー側での位置を維持する役割を担います。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-425">Then, each brush is responsible for maintaining its position in the user's hand based on its **DisplayMode** value, which changes based on the selection.</span></span> <span data-ttu-id="b4ce2-426">ユーザーがブラシを選択したときにブラシの位置の切り替えが中断される可能性が高いため、手続き型の方法を選択しました。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-426">We chose a procedural approach because of the high probability of brush position transitions being interrupted as the user selects brushes.</span></span> <span data-ttu-id="b4ce2-427">Mecanim アニメーションは中断を適切に処理できますが、単純な Lerp 操作よりも複雑になる傾向があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-427">Mecanim animations can handle interruptions gracefully, but it tends to be more complicated than a simple Lerp operation.</span></span>
+<span data-ttu-id="b538c-423">**BrushSelector**の場合、手続き型アニメーションを使用することを選択しました。</span><span class="sxs-lookup"><span data-stu-id="b538c-423">In the case of the **BrushSelector**, we've chosen to use procedural animation.</span></span> <span data-ttu-id="b538c-424">最初に、ブラシモデルは**Lineobjectcollection**スクリプトによって楕円で配分されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-424">First, brush models are distributed in an ellipse by the **LineObjectCollection** script.</span></span> <span data-ttu-id="b538c-425">次に、各ブラシは、選択内容に基づいて変化する**DisplayMode**値に基づいて、ユーザー側での位置を維持する役割を担います。</span><span class="sxs-lookup"><span data-stu-id="b538c-425">Then, each brush is responsible for maintaining its position in the user's hand based on its **DisplayMode** value, which changes based on the selection.</span></span> <span data-ttu-id="b538c-426">ユーザーがブラシを選択したときにブラシの位置の切り替えが中断される可能性が高いため、手続き型の方法を選択しました。</span><span class="sxs-lookup"><span data-stu-id="b538c-426">We chose a procedural approach because of the high probability of brush position transitions being interrupted as the user selects brushes.</span></span> <span data-ttu-id="b538c-427">Mecanim アニメーションは中断を適切に処理できますが、単純な Lerp 操作よりも複雑になる傾向があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-427">Mecanim animations can handle interruptions gracefully, but it tends to be more complicated than a simple Lerp operation.</span></span>
 
-<span data-ttu-id="b4ce2-428">**BrushSelector**は、両方の組み合わせを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-428">**BrushSelector** uses a combination of both.</span></span> <span data-ttu-id="b4ce2-429">タッチパッドの入力が検出されると、ブラシのオプションが表示され、放射状メニューに沿ってスケールアップされます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-429">When touchpad input is detected, brush options become visible and scale up along the radial menu.</span></span> <span data-ttu-id="b4ce2-430">タイムアウト期間が経過すると (ユーザーが選択を行ったことを示す)、ブラシのオプションが再度スケールダウンされ、選択したブラシだけが残ります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-430">After a timeout period (which indicates that the user has made a selection) the brush options scale down again, leaving only the selected brush.</span></span>
+<span data-ttu-id="b538c-428">**BrushSelector**は、両方の組み合わせを使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-428">**BrushSelector** uses a combination of both.</span></span> <span data-ttu-id="b538c-429">タッチパッドの入力が検出されると、ブラシのオプションが表示され、放射状メニューに沿ってスケールアップされます。</span><span class="sxs-lookup"><span data-stu-id="b538c-429">When touchpad input is detected, brush options become visible and scale up along the radial menu.</span></span> <span data-ttu-id="b538c-430">タイムアウト期間が経過すると (ユーザーが選択を行ったことを示す)、ブラシのオプションが再度スケールダウンされ、選択したブラシだけが残ります。</span><span class="sxs-lookup"><span data-stu-id="b538c-430">After a timeout period (which indicates that the user has made a selection) the brush options scale down again, leaving only the selected brush.</span></span>
 
-<span data-ttu-id="b4ce2-431">**タッチパッド入力の視覚化**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-431">**Visualizing touchpad input**</span></span>
+<span data-ttu-id="b538c-431">**タッチパッド入力の視覚化**</span><span class="sxs-lookup"><span data-stu-id="b538c-431">**Visualizing touchpad input**</span></span>
 
-<span data-ttu-id="b4ce2-432">コントローラーモデルが完全に置き換えられている場合でも、元のモデル入力に入力を表示すると便利な場合があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-432">Even in cases where the controller model has been completely replaced, it can be helpful to show input on the original model inputs.</span></span> <span data-ttu-id="b4ce2-433">これは、実際にユーザーの操作をグラウンドにするのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-433">This helps to ground the user's actions in reality.</span></span> <span data-ttu-id="b4ce2-434">**BrushSelector**の場合、入力を受け取ったときにタッチパッドを短時間で表示するように選択しました。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-434">For the **BrushSelector** we've chosen to make the touchpad briefly visible when the input is received.</span></span> <span data-ttu-id="b4ce2-435">これを行うには、コントローラーからタッチパッド要素を取得し、そのマテリアルをカスタムマテリアルに置き換えて、タッチパッド入力を最後に受信したときに基づいてそのマテリアルの色にグラデーションを適用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-435">This was done by retrieving the Touchpad element from the controller, replacing its material with a custom material, then applying a gradient to that material's color based on the last time touchpad input was received.</span></span>
+<span data-ttu-id="b538c-432">コントローラーモデルが完全に置き換えられている場合でも、元のモデル入力に入力を表示すると便利な場合があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-432">Even in cases where the controller model has been completely replaced, it can be helpful to show input on the original model inputs.</span></span> <span data-ttu-id="b538c-433">これは、実際にユーザーの操作をグラウンドにするのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="b538c-433">This helps to ground the user's actions in reality.</span></span> <span data-ttu-id="b538c-434">**BrushSelector**の場合、入力を受け取ったときにタッチパッドを短時間で表示するように選択しました。</span><span class="sxs-lookup"><span data-stu-id="b538c-434">For the **BrushSelector** we've chosen to make the touchpad briefly visible when the input is received.</span></span> <span data-ttu-id="b538c-435">これを行うには、コントローラーからタッチパッド要素を取得し、そのマテリアルをカスタムマテリアルに置き換えて、タッチパッド入力を最後に受信したときに基づいてそのマテリアルの色にグラデーションを適用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-435">This was done by retrieving the Touchpad element from the controller, replacing its material with a custom material, then applying a gradient to that material's color based on the last time touchpad input was received.</span></span>
 
 ```cs
 protected override void OnAttachToController()
@@ -747,13 +747,13 @@ private void Update()
 }
 ```
 
-<span data-ttu-id="b4ce2-436">**タッチパッド入力によるブラシツールの選択**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-436">**Brush tool selection with touchpad input**</span></span>
+<span data-ttu-id="b538c-436">**タッチパッド入力によるブラシツールの選択**</span><span class="sxs-lookup"><span data-stu-id="b538c-436">**Brush tool selection with touchpad input**</span></span>
 
-<span data-ttu-id="b4ce2-437">ブラシセレクターがタッチパッドの押された入力を検出すると、入力の位置を調べて、左または右にあるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-437">When the brush selector detects touchpad's pressed input, it checks the position of the input to determine if it was to the left or right.</span></span>
+<span data-ttu-id="b538c-437">ブラシセレクターがタッチパッドの押された入力を検出すると、入力の位置を調べて、左または右にあるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="b538c-437">When the brush selector detects touchpad's pressed input, it checks the position of the input to determine if it was to the left or right.</span></span>
 
-<span data-ttu-id="b4ce2-438">**SelectPressedAmount を使用したストロークの太さ**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-438">**Stroke thickness with selectPressedAmount**</span></span>
+<span data-ttu-id="b538c-438">**SelectPressedAmount を使用したストロークの太さ**</span><span class="sxs-lookup"><span data-stu-id="b538c-438">**Stroke thickness with selectPressedAmount**</span></span>
 
-<span data-ttu-id="b4ce2-439">**Interactionsourcepresstype ()** 内の**Select**イベントの代わりに、 **selectPressedAmount**を使用して、押された量のアナログ値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-439">Instead of the **InteractionSourcePressType.Select** event in the **InteractionSourcePressed()**, you can get the analog value of the pressed amount through **selectPressedAmount**.</span></span> <span data-ttu-id="b4ce2-440">この値は、 **Interactionsourceupdated ()** で取得できます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-440">This value can be retrieved in **InteractionSourceUpdated()**.</span></span>
+<span data-ttu-id="b538c-439">**Interactionsourcepresstype ()** 内の**Select**イベントの代わりに、 **selectPressedAmount**を使用して、押された量のアナログ値を取得できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-439">Instead of the **InteractionSourcePressType.Select** event in the **InteractionSourcePressed()**, you can get the analog value of the pressed amount through **selectPressedAmount**.</span></span> <span data-ttu-id="b538c-440">この値は、 **Interactionsourceupdated ()** で取得できます。</span><span class="sxs-lookup"><span data-stu-id="b538c-440">This value can be retrieved in **InteractionSourceUpdated()**.</span></span>
 
 ```cs
 private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
@@ -795,52 +795,52 @@ private void InteractionSourceUpdated(InteractionSourceUpdatedEventArgs obj)
 }
 ```
 
-<span data-ttu-id="b4ce2-441">**消しゴムスクリプト**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-441">**Eraser script**</span></span>
+<span data-ttu-id="b538c-441">**消しゴムスクリプト**</span><span class="sxs-lookup"><span data-stu-id="b538c-441">**Eraser script**</span></span>
 
-<span data-ttu-id="b4ce2-442">**消しゴム**は、基本**ブラシ**の**drawovertime ()** 関数をオーバーライドする特殊な種類のブラシです。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-442">**Eraser** is a special type of brush that overrides the base **Brush**'s **DrawOverTime()** function.</span></span> <span data-ttu-id="b4ce2-443">描画が true の場合、消しゴムは、そのチップが既存のブラシストロークと交差しているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-443">While Draw is true, the eraser checks to see if its tip intersects with any existing brush strokes.</span></span> <span data-ttu-id="b4ce2-444">存在する場合は、圧縮されて削除されるようにキューに追加されます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-444">If it does, they are added to a queue to be shrunk down and deleted.</span></span>
+<span data-ttu-id="b538c-442">**消しゴム**は、基本**ブラシ**の**drawovertime ()** 関数をオーバーライドする特殊な種類のブラシです。</span><span class="sxs-lookup"><span data-stu-id="b538c-442">**Eraser** is a special type of brush that overrides the base **Brush**'s **DrawOverTime()** function.</span></span> <span data-ttu-id="b538c-443">描画が true の場合、消しゴムは、そのチップが既存のブラシストロークと交差しているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="b538c-443">While Draw is true, the eraser checks to see if its tip intersects with any existing brush strokes.</span></span> <span data-ttu-id="b538c-444">存在する場合は、圧縮されて削除されるようにキューに追加されます。</span><span class="sxs-lookup"><span data-stu-id="b538c-444">If it does, they are added to a queue to be shrunk down and deleted.</span></span>
 
-## <a name="advanced-design---teleportation-and-locomotion"></a><span data-ttu-id="b4ce2-445">高度な設計-電話と locomotion</span><span class="sxs-lookup"><span data-stu-id="b4ce2-445">Advanced design - Teleportation and locomotion</span></span>
+## <a name="advanced-design---teleportation-and-locomotion"></a><span data-ttu-id="b538c-445">高度な設計-電話と locomotion</span><span class="sxs-lookup"><span data-stu-id="b538c-445">Advanced design - Teleportation and locomotion</span></span>
 
-<span data-ttu-id="b4ce2-446">ユーザーがサムスティックを使用して、ユーザーによるシーンの移動を許可する場合は、 **MixedRealityCamera**ではなく**MixedRealityCameraParent**を使用します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-446">If you want to allow the user to move around the scene with teleportation using thumbstick, use **MixedRealityCameraParent** instead of **MixedRealityCamera**.</span></span> <span data-ttu-id="b4ce2-447">**Inputmanager**と**DefaultCusor**も追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-447">You also need to add **InputManager** and **DefaultCusor**.</span></span> <span data-ttu-id="b4ce2-448">**MixedRealityCameraParent**には既に**Motioncontrollers**と**境界**が子コンポーネントとして含まれているため、既存の**motioncontrollers**と**環境**prefab を削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-448">Since **MixedRealityCameraParent** already includes **MotionControllers** and **Boundary** as child components, you should remove existing **MotionControllers** and **Environment** prefab.</span></span>
+<span data-ttu-id="b538c-446">ユーザーがサムスティックを使用して、ユーザーによるシーンの移動を許可する場合は、 **MixedRealityCamera**ではなく**MixedRealityCameraParent**を使用します。</span><span class="sxs-lookup"><span data-stu-id="b538c-446">If you want to allow the user to move around the scene with teleportation using thumbstick, use **MixedRealityCameraParent** instead of **MixedRealityCamera**.</span></span> <span data-ttu-id="b538c-447">**Inputmanager**と**defaultcursor**も追加する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-447">You also need to add **InputManager** and **DefaultCursor**.</span></span> <span data-ttu-id="b538c-448">**MixedRealityCameraParent**には既に**Motioncontrollers**と**境界**が子コンポーネントとして含まれているため、既存の**motioncontrollers**と**環境**prefab を削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b538c-448">Since **MixedRealityCameraParent** already includes **MotionControllers** and **Boundary** as child components, you should remove existing **MotionControllers** and **Environment** prefab.</span></span>
 
-### <a name="instructions"></a><span data-ttu-id="b4ce2-449">手順</span><span class="sxs-lookup"><span data-stu-id="b4ce2-449">Instructions</span></span>
+### <a name="instructions"></a><span data-ttu-id="b538c-449">手順</span><span class="sxs-lookup"><span data-stu-id="b538c-449">Instructions</span></span>
 
-* <span data-ttu-id="b4ce2-450">**[階層]** パネルで、 **MixedRealityCamera**、 **Environment** 、 **motioncontrollers**を削除します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-450">In the **Hierarchy** panel, delete **MixedRealityCamera**, **Environment** and **MotionControllers**</span></span>
-* <span data-ttu-id="b4ce2-451">[**プロジェクト] パネル**で、次の prefabs を検索し、 **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-451">From the **Project panel**, search and drag the following prefabs into the **Hierarchy** panel:</span></span>
-    * <span data-ttu-id="b4ce2-452">Assets/AppPrefabs/Input/Prefabs/**MixedRealityCameraParent**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-452">Assets/AppPrefabs/Input/Prefabs/**MixedRealityCameraParent**</span></span>
-    * <span data-ttu-id="b4ce2-453">Assets/AppPrefabs/Input/Prefabs/**Inputmanager**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-453">Assets/AppPrefabs/Input/Prefabs/**InputManager**</span></span>
-    * <span data-ttu-id="b4ce2-454">Assets/AppPrefabs/Input/Prefabs/Cursor/**Defaultcursor**</span><span class="sxs-lookup"><span data-stu-id="b4ce2-454">Assets/AppPrefabs/Input/Prefabs/Cursor/**DefaultCursor**</span></span>
+* <span data-ttu-id="b538c-450">**[階層]** パネルで、 **MixedRealityCamera**、 **Environment** 、 **motioncontrollers**を削除します。</span><span class="sxs-lookup"><span data-stu-id="b538c-450">In the **Hierarchy** panel, delete **MixedRealityCamera**, **Environment** and **MotionControllers**</span></span>
+* <span data-ttu-id="b538c-451">[**プロジェクト] パネル**で、次の prefabs を検索し、 **[階層]** パネルにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-451">From the **Project panel**, search and drag the following prefabs into the **Hierarchy** panel:</span></span>
+    * <span data-ttu-id="b538c-452">Assets/AppPrefabs/Input/Prefabs/**MixedRealityCameraParent**</span><span class="sxs-lookup"><span data-stu-id="b538c-452">Assets/AppPrefabs/Input/Prefabs/**MixedRealityCameraParent**</span></span>
+    * <span data-ttu-id="b538c-453">Assets/AppPrefabs/Input/Prefabs/**Inputmanager**</span><span class="sxs-lookup"><span data-stu-id="b538c-453">Assets/AppPrefabs/Input/Prefabs/**InputManager**</span></span>
+    * <span data-ttu-id="b538c-454">Assets/AppPrefabs/Input/Prefabs/Cursor/**Defaultcursor**</span><span class="sxs-lookup"><span data-stu-id="b538c-454">Assets/AppPrefabs/Input/Prefabs/Cursor/**DefaultCursor**</span></span>
 
     ![Mixed Reality カメラの親](images/mr213-cameraparent-300px.png)
 
-* <span data-ttu-id="b4ce2-456">**[階層]** パネルで、 **[入力マネージャー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-456">In the **Hierarchy** panel, click **Input Manager**</span></span>
-* <span data-ttu-id="b4ce2-457">**[インスペクター]** パネルで、**単純な単一ポインターセレクター**セクションまで下にスクロールします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-457">In the **Inspector** panel, scroll down to the **Simple Single Pointer Selector** section</span></span>
-* <span data-ttu-id="b4ce2-458">**[階層]** パネルで、 **[Defaultcursor]** を**カーソル**フィールドにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-458">From the **Hierarchy** panel, drag **DefaultCursor** into **Cursor** field</span></span>
+* <span data-ttu-id="b538c-456">**[階層]** パネルで、 **[入力マネージャー]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-456">In the **Hierarchy** panel, click **Input Manager**</span></span>
+* <span data-ttu-id="b538c-457">**[インスペクター]** パネルで、**単純な単一ポインターセレクター**セクションまで下にスクロールします。</span><span class="sxs-lookup"><span data-stu-id="b538c-457">In the **Inspector** panel, scroll down to the **Simple Single Pointer Selector** section</span></span>
+* <span data-ttu-id="b538c-458">**[階層]** パネルで、 **[Defaultcursor]** を**カーソル**フィールドにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="b538c-458">From the **Hierarchy** panel, drag **DefaultCursor** into **Cursor** field</span></span>
 
     ![DefaultCursor の割り当て](images/mr213-defaultcursor-500px.png)
 
-* <span data-ttu-id="b4ce2-460">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-460">**Save** the scene and click the **play** button.</span></span> <span data-ttu-id="b4ce2-461">サムスティックを使用して、左/右に回転したり、テレポートしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-461">You will be able to use the thumbstick to rotate left/right or teleport.</span></span>
+* <span data-ttu-id="b538c-460">シーンを**保存**し、 **[再生]** ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-460">**Save** the scene and click the **play** button.</span></span> <span data-ttu-id="b538c-461">サムスティックを使用して、左/右に回転したり、テレポートしたりすることができます。</span><span class="sxs-lookup"><span data-stu-id="b538c-461">You will be able to use the thumbstick to rotate left/right or teleport.</span></span>
 
-## <a name="the-end"></a><span data-ttu-id="b4ce2-462">最後です</span><span class="sxs-lookup"><span data-stu-id="b4ce2-462">The end</span></span>
+## <a name="the-end"></a><span data-ttu-id="b538c-462">最後です</span><span class="sxs-lookup"><span data-stu-id="b538c-462">The end</span></span>
 
-<span data-ttu-id="b4ce2-463">これがこのチュートリアルの終わりです。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-463">And that's the end of this tutorial!</span></span> <span data-ttu-id="b4ce2-464">学習した内容:</span><span class="sxs-lookup"><span data-stu-id="b4ce2-464">You learned:</span></span>
+<span data-ttu-id="b538c-463">これがこのチュートリアルの終わりです。</span><span class="sxs-lookup"><span data-stu-id="b538c-463">And that's the end of this tutorial!</span></span> <span data-ttu-id="b538c-464">学習した内容:</span><span class="sxs-lookup"><span data-stu-id="b538c-464">You learned:</span></span>
 
-* <span data-ttu-id="b4ce2-465">Unity のゲームモードとランタイムでモーションコントローラーモデルを操作する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-465">How to work with motion controller models in Unity's game mode and runtime.</span></span>
-* <span data-ttu-id="b4ce2-466">さまざまな種類のボタンイベントとそのアプリケーションを使用する方法。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-466">How to use different types of button events and their applications.</span></span>
-* <span data-ttu-id="b4ce2-467">コントローラー上に UI 要素を重ね合わせる方法、または UI 要素を完全にカスタマイズする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-467">How to overlay UI elements on top of the controller or fully customize it.</span></span>
+* <span data-ttu-id="b538c-465">Unity のゲームモードとランタイムでモーションコントローラーモデルを操作する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-465">How to work with motion controller models in Unity's game mode and runtime.</span></span>
+* <span data-ttu-id="b538c-466">さまざまな種類のボタンイベントとそのアプリケーションを使用する方法。</span><span class="sxs-lookup"><span data-stu-id="b538c-466">How to use different types of button events and their applications.</span></span>
+* <span data-ttu-id="b538c-467">コントローラー上に UI 要素を重ね合わせる方法、または UI 要素を完全にカスタマイズする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b538c-467">How to overlay UI elements on top of the controller or fully customize it.</span></span>
 
-<span data-ttu-id="b4ce2-468">これで、モーションコントローラーで独自のイマーシブエクスペリエンスを作成する準備が整いました。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-468">You are now ready to start creating your own immersive experience with motion controllers!</span></span>
+<span data-ttu-id="b538c-468">これで、モーションコントローラーで独自のイマーシブエクスペリエンスを作成する準備が整いました。</span><span class="sxs-lookup"><span data-stu-id="b538c-468">You are now ready to start creating your own immersive experience with motion controllers!</span></span>
 
-## <a name="completed-scenes"></a><span data-ttu-id="b4ce2-469">完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b4ce2-469">Completed scenes</span></span>
+## <a name="completed-scenes"></a><span data-ttu-id="b538c-469">完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b538c-469">Completed scenes</span></span>
 
-* <span data-ttu-id="b4ce2-470">Unity の **[プロジェクト]** パネルで、 **[シーン]** フォルダーをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-470">In Unity's **Project** panel click on the **Scenes** folder.</span></span>
-* <span data-ttu-id="b4ce2-471">Unity sceens **MixedReality213**と**MixedReality213Advanced**が2つ見つかります。</span><span class="sxs-lookup"><span data-stu-id="b4ce2-471">You will find two Unity sceens **MixedReality213** and **MixedReality213Advanced**.</span></span>
-    * <span data-ttu-id="b4ce2-472">**MixedReality213**: 1 つのブラシを使用した完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b4ce2-472">**MixedReality213**: Completed scene with single brush</span></span>
-    * <span data-ttu-id="b4ce2-473">**MixedReality213Advanced**: 複数のブラシを持つ完成したシーンを選択ボタンの押す回数の例</span><span class="sxs-lookup"><span data-stu-id="b4ce2-473">**MixedReality213Advanced**: Completed scene with multiple brush with select button's press amount example</span></span>
+* <span data-ttu-id="b538c-470">Unity の **[プロジェクト]** パネルで、 **[シーン]** フォルダーをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b538c-470">In Unity's **Project** panel click on the **Scenes** folder.</span></span>
+* <span data-ttu-id="b538c-471">Unity シーン**MixedReality213**と**MixedReality213Advanced**が2つ見つかります。</span><span class="sxs-lookup"><span data-stu-id="b538c-471">You will find two Unity scenes **MixedReality213** and **MixedReality213Advanced**.</span></span>
+    * <span data-ttu-id="b538c-472">**MixedReality213**: 1 つのブラシを使用した完成したシーン</span><span class="sxs-lookup"><span data-stu-id="b538c-472">**MixedReality213**: Completed scene with single brush</span></span>
+    * <span data-ttu-id="b538c-473">**MixedReality213Advanced**: 複数のブラシを持つ完成したシーンを選択ボタンの押す回数の例</span><span class="sxs-lookup"><span data-stu-id="b538c-473">**MixedReality213Advanced**: Completed scene with multiple brush with select button's press amount example</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="b4ce2-474">関連項目</span><span class="sxs-lookup"><span data-stu-id="b4ce2-474">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b538c-474">関連項目</span><span class="sxs-lookup"><span data-stu-id="b538c-474">See also</span></span>
 
-* [<span data-ttu-id="b4ce2-475">MR 入力213プロジェクトファイル</span><span class="sxs-lookup"><span data-stu-id="b4ce2-475">MR Input 213 project files</span></span>](https://github.com/Microsoft/MixedReality213)
-* [<span data-ttu-id="b4ce2-476">Mixed Reality Toolkit-モーションコントローラーテストシーン</span><span class="sxs-lookup"><span data-stu-id="b4ce2-476">Mixed Reality Toolkit - Motion Controller Test scene</span></span>](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Examples/Input/Scenes)
-* [<span data-ttu-id="b4ce2-477">Mixed Reality Toolkit-グラブ機構</span><span class="sxs-lookup"><span data-stu-id="b4ce2-477">Mixed Reality Toolkit - Grab Mechanics</span></span>](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Examples/MotionControllers-GrabMechanics)
-* [<span data-ttu-id="b4ce2-478">モーションコントローラーの開発ガイドライン</span><span class="sxs-lookup"><span data-stu-id="b4ce2-478">Motion controller development guidelines</span></span>](motion-controllers.md)
+* [<span data-ttu-id="b538c-475">MR 入力213プロジェクトファイル</span><span class="sxs-lookup"><span data-stu-id="b538c-475">MR Input 213 project files</span></span>](https://github.com/Microsoft/MixedReality213)
+* [<span data-ttu-id="b538c-476">Mixed Reality Toolkit-モーションコントローラーテストシーン</span><span class="sxs-lookup"><span data-stu-id="b538c-476">Mixed Reality Toolkit - Motion Controller Test scene</span></span>](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Examples/Input/Scenes)
+* [<span data-ttu-id="b538c-477">Mixed Reality Toolkit-グラブ機構</span><span class="sxs-lookup"><span data-stu-id="b538c-477">Mixed Reality Toolkit - Grab Mechanics</span></span>](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit-Examples/MotionControllers-GrabMechanics)
+* [<span data-ttu-id="b538c-478">モーションコントローラーの開発ガイドライン</span><span class="sxs-lookup"><span data-stu-id="b538c-478">Motion controller development guidelines</span></span>](motion-controllers.md)
