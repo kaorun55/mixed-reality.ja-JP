@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: a862fa52695c7bfb94b58c6c0b85606a112835da
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 2861c780c5d7e516d5b7ddc757bbcba6da7e6559
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434277"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926669"
 ---
 # <a name="custom-holographic-remoting-data-channels"></a>カスタム Holographic リモート処理データチャネル
 
@@ -38,7 +38,7 @@ winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnDataReceived_revoker
 winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnClosed_revoker m_customChannelClosedEventRevoker;
 ```
 
-接続が正常に確立されると、ホスト側とプレーヤー側のどちらからでも、新しいデータチャネルの作成を開始できます。 RemoteContext と PlayerContext はどちらも、これを行うための ```CreateDataChannel()``` 方法を提供します。 最初のパラメーターは、susequent 操作でデータチャネルを識別するために使用されるチャネル ID です。 2番目のパラメーターは、このチャネルのデータを相手側に転送する優先度を指定する優先順位です。 チャネル Id の有効な範囲は、ホスト64側の場合は63、プレーヤー側の場合は127を含む0になります。 有効な優先順位は、```Low```、```Medium``` または ```High``` (両側) です。
+接続が正常に確立されると、ホスト側とプレーヤー側のどちらからでも、新しいデータチャネルの作成を開始できます。 RemoteContext と PlayerContext はどちらも、これを行うための ```CreateDataChannel()``` 方法を提供します。 最初のパラメーターはチャネル ID で、後続の操作でデータチャネルを識別するために使用されます。 2番目のパラメーターは、このチャネルのデータを相手側に転送する優先度を指定する優先順位です。 チャネル Id の有効な範囲は、ホスト64側の場合は63、プレーヤー側の場合は127を含む0になります。 有効な優先順位は、```Low```、```Medium``` または ```High``` (両側) です。
 
 **ホスト**側でデータチャネルの作成を開始するには、次のようにします。
 ```cpp
@@ -95,7 +95,7 @@ m_customChannelClosedEventRevoker = m_customDataChannel.OnClosed(winrt::auto_rev
 
 ## <a name="sending-data"></a>データの送信
 
-カスタムデータチャネルを介してデータを送信するには、```IDataChannel::SendData()``` メソッドを使用します。 最初のパラメーターは、送信する必要があるデータへの ```winrt::array_view<const uint8_t>``` です。 2番目のパラメーターは、もう一方の側が受信を承認するまで、データを再送信するかどうかを指定します。 
+カスタムデータチャネルを介してデータを送信するには、```IDataChannel::SendData()``` メソッドを使用します。 最初のパラメーターは、送信する必要があるデータへの ```winrt::array_view<const uint8_t>``` です。 2番目のパラメーターは、もう一方の側が受信を承認するまで、データを再送信する場所を指定します。 
 
 >[!IMPORTANT]
 >ネットワークの状態が正しくない場合は、同じデータパケットが複数回到着する可能性があります。 受信コードでは、この状況に対処できる必要があります。

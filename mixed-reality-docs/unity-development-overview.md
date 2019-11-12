@@ -6,12 +6,12 @@ ms.author: kurtie
 ms.date: 10/25/2018
 ms.topic: article
 keywords: Unity, mixed reality, 開発, 作業の開始, 新しいプロジェクト, 移植, 機能, カメラ, シミュレーション, エミュレーション, ドキュメント
-ms.openlocfilehash: b78afb0cf6557ec9b61a029e2d557debbd0b6b46
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f9b314bfc7c58e72b11ecfd76fe7293ef2f6c11e
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437375"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926694"
 ---
 # <a name="unity-development-overview"></a>Unity 開発の概要
 
@@ -37,7 +37,7 @@ Windows Mixed Reality に移植している既存の Unity プロジェクトが
 
 [空間ステージ](coordinate-systems.md#spatial-coordinate-systems)、[ジェスチャ、モーションコントローラー](gestures-and-motion-controllers-in-unity.md) 、[音声入力](voice-input-in-unity.md)など、Windows Mixed Reality 機能のサポートを追加するには、Unity に直接組み込まれている api を使用します。 
 
-まず、アプリケーションが対象とする[エクスペリエンススケール](coordinate-systems.md)を確認します。
+まず、アプリケーションがターゲットとする[エクスペリエンススケール](coordinate-systems.md)を確認します。
 * **向きのみ**または取り付けられた**スケールエクスペリエンス**を構築しようとしている場合は、Unity の追跡領域の種類を [[固定](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)] に設定する必要があります。
 * 継続**スケール**または**ルームスケールのエクスペリエンス**を構築しようとしている場合は、Unity の追跡領域の種類が正常に[RoomScale](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)に設定されていることを確認する必要があります。
 * ユーザーが5メートルを超えてローミングできるようにするために、HoloLens で**世界規模**のエクスペリエンスを構築する場合は、 [WorldAnchor](coordinate-systems-in-unity.md#building-a-world-scale-experience)コンポーネントを使用する必要があります。

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 77d639a88d8b4c71dc5fbe1c78565c4c3f91d36c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 9f57cb9874aade2d6b19d0c061fd83eb04b9ef11
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438416"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914379"
 ---
 # <a name="3-displaying-azure-spatial-anchor-feedback"></a>3. Azure 空間アンカーのフィードバックを表示する
 
@@ -45,28 +45,11 @@ ms.locfileid: "73438416"
 
 ![module2chapter3step4im](images/module2chapter3step4im.PNG)
 
-5. [プロジェクト] パネルで、[資産] を選択して右クリックし、[エクスプローラーで表示] を選択します。
-   
-
-![module2chapter3step4im](images/module2chapter3step5im.PNG)
-
-次のいくつかの手順で必要なファイルをダウンロードするには、[ここ](https://onedrive.live.com/?authkey=%21ABXEC8PvyQu8Qd8&id=5B7335C4342BCB0E%21395636&cid=5B7335C4342BCB0E)をクリックしてください。
-
-6. エクスプローラーが開いたら、Assets フォルダーを選択し、"ASAmodulesAssets" フォルダーを選択して、アンカーフィードバックスクリプトとアンカーモジュールスクリプトファイルをフォルダーにコピーします。 
-
-![module2chapter3step5im](images/module2chapter3step6im.PNG)
-
-> 注: 古いものを上書きするか古いままにするかを確認するポップアップメッセージが表示された場合は、[上書き] を選択します。
-
-7. Assets フォルダーに戻ります。 次に、"AzureSpatialAnchorsPlugin" フォルダーにアクセスし、[例] フォルダーを選択して、最後に Scripts フォルダーを入力します。 次に、Azure 空間アンカーデモラッパーをそのフォルダーにコピーします。 
-
-![module2chapter3step8im](images/module2chapter3step7im.PNG)
-
-8. ファイルがアップロードされたので、ASA_feedback 階層で "フィードバックパネル" というテキストが選択されていることを確認し、[コンポーネントの追加] をクリックしてアンカーフィードバックスクリプトを検索し、表示されたらそれを選択して追加します。 
+5. ASA_feedback 階層で "フィードバックパネル" のテキストが選択されていることを確認し、[コンポーネントの追加] をクリックして、アンカーフィードバックスクリプトを検索し、表示されたらそれを選択して追加します。 
 
 ![module2chapter3step8im](images/module2chapter3step8im.PNG)
 
-9. 次の図に示すように、ASA_Feedback 階層の "フィードバックパネル" テキストオブジェクトを、スクリプトの下の空のスロットにドラッグします。 
+6. 次の図に示すように、ASA_Feedback 階層の "フィードバックパネル" テキストオブジェクトを、スクリプトの下の空のスロットにドラッグします。 
 
 ![module2chapter3step9im](images/module2chapter3step9im.PNG)
 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, 機械学習, ml, machine learning studio, hololens, イマーシブ, vr
-ms.openlocfilehash: c86c592573dd39d926869d8cce6025fa264cc90f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e302e287049cd746a436904c2af2bcc2b0835796
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437922"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926618"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
@@ -410,7 +410,7 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
 
     ![MLProducts Unity パッケージをインポートしています](images/AzureLabs-Lab7-41.png)
 
-5.  [**プロジェクトパネル]** フォルダー内の **[シーン]** フォルダーをクリックし、( **MR_MachineLearningScene**と呼ばれる) シーンをダブルクリックします。 シーンが開きます (下図を参照)。 赤いひし形が欠けている場合は、[**ゲーム] パネル**の右上にある **[ギズモ]** ボタンをクリックします。
+5.  [**プロジェクトパネル]** フォルダー内の **[シーン]** フォルダーをクリックし、内部のシーン ( **MR_MachineLearningScene**) をダブルクリックします。 シーンが開きます (下図を参照)。 赤いひし形が欠けている場合は、[**ゲーム] パネル**の右上にある **[ギズモ]** ボタンをクリックします。
 
     ![MLProducts Unity パッケージをインポートしています](images/AzureLabs-Lab7-44.png)
 
@@ -731,7 +731,7 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
 
             Debug.LogFormat("Score request built");
 
-            // Serialise the request
+            // Serialize the request
             string json = JsonConvert.SerializeObject(ro);
 
             using (UnityWebRequest www = UnityWebRequest.Post(serviceEndpoint, "POST"))
@@ -849,7 +849,7 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
 
 1.  新しい Unity ビルド (**アプリ**フォルダー) に移動し、 **Visual Studio**でソリューションファイルを開きます。
 
-2.  Visual Studio を開いた状態で、NuGet パッケージを復元する必要があります。これを行うには、MachineLearningLab_Build ソリューションを右クリックし、(Visual Studio の右側にある) ソリューションエクスプローラーから、[NuGet パッケージの復元] をクリックします。
+2.  Visual Studio を開いた状態で、NuGet パッケージを復元する必要があります。これを行うには、MachineLearningLab_Build ソリューションを右クリックし、(Visual Studio の右側にある) ソリューションエクスプローラーから [NuGet パッケージの復元] をクリックします。
 
     ![NuGet パッケージの追加](images/AzureLabs-Lab7-57.png)
 

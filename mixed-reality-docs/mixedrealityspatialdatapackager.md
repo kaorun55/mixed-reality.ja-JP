@@ -6,12 +6,12 @@ ms.author: alreynol
 ms.date: 05/16/2019
 ms.topic: article
 keywords: lbe、MixedRealitySpatialDataPackager、MixedRealitySpatialDataPackager
-ms.openlocfilehash: 52556e4028407086f943c4b765a8bcfad2744eac
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 331fa6dc752c64eeaa5bc2e9d1dd6b2c15049a27
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438476"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926757"
 ---
 # <a name="mixed-reality-spatial-data-packager-documentation"></a>Mixed Reality 空間データパッケージャーのドキュメント
 
@@ -66,7 +66,7 @@ Mixed Reality 空間データパッケージャーツールは、エクスポー
 4. 空白の領域を最小化する (たとえば、異なるポスターの範囲をホワイトウォールに配置する)
 5. オブジェクトの移動など、シーンに動的オブジェクトを使用せずに領域をマップする
 6. インポート時にマップをロックする (Insider Preview 経由で利用可能)
-7. トラックの品質が低下したとき、または環境に変化があった場合に、マップのロックを解除して環境を再スキャンする (照明またはオブジェクトのレイアウトの変更)
+7. 品質の追跡が低下したとき、または環境に変化があった場合に、マップのロックを解除して環境を再スキャンする (照明またはオブジェクトのレイアウトの変更)
 ***
 
 ## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>コンパニオンスクリプトを使用した Mixed Reality 空間データパッケージャーの実行
@@ -107,7 +107,7 @@ Mixed Reality 空間データパッケージャーツールは、エクスポー
 ```
 Package Family Name for holoshell: HoloShell_cw5n1h2txyewy
 User SID for Administrator: S-1-5-21-1279937937-3984375698-1043392598-499
-Lock map value succesfully set to 0
+Lock map value successfully set to 0
 
 Running: C:\bin\MixedRealitySpatialDataPackager.exe export D:\temp\ HoloShell_cw5n1h2txyewy S-1-5-21-1279937937-3984375698-1043392598-499
 
@@ -197,7 +197,7 @@ Failed to find local user for passed in user SID
 3. Unable to create directory at <PATH> for export
 ```
 
-### <a name="if-there-was-an-error-related-to-starting-and-stoping-spectrumsharedrealitysvc"></a>Starting と停止スペクトラム/SharedRealitySvc に関連するエラーが発生した場合
+### <a name="if-there-was-an-error-related-to-starting-and-stopping-spectrumsharedrealitysvc"></a>スペクトラムの開始と停止に関連するエラーが発生した場合は、
 ```
 1. Unable to open service manager <SERVICE>
 2. Timed out trying to start/stop <SERVICE>

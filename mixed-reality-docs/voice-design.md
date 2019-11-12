@@ -6,16 +6,16 @@ ms.author: shentan
 ms.date: 04/21/2019
 ms.topic: article
 keywords: Windows Mixed Reality, 設計, 対話, 音声
-ms.openlocfilehash: bfcaef787b22f17da9627a53c92c43f5cb1e1d9b
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 350acfbe777869f150b7c90c93124e10e155168d
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437216"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926709"
 ---
 # <a name="voice-commanding"></a>音声コマンド
 
-音声コマンドを使用する場合、視線入力は通常、ターゲットを設定するメカニズムとして使用されます。ポインターとして (「選択」)、またはアプリケーションにコマンドを送る (「見て発音する」) 目的で使用します。 もちろん、音声コマンドの中には、「スタートに移動」や「コルタナさん」のようにターゲットが必要ないものもあります。
+音声コマンドを使用する場合、通常、宝石はターゲットメカニズムとして使用されます。これは、ポインター ("select") として、またはコマンドをアプリケーションに送信する場合 ("参照してください。" と言います) に使用されます。 もちろん、音声コマンドの中には、「スタートに移動」や「コルタナさん」のようにターゲットが必要ないものもあります。
 
 
 ## <a name="device-support"></a>デバイスのサポート

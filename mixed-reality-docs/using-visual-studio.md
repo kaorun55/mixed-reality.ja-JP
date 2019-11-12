@@ -6,19 +6,19 @@ ms.author: pbarnett
 ms.date: 10/24/2019
 ms.topic: article
 keywords: Visual Studio, HoloLens, Mixed Reality, デバッグ, 配置
-ms.openlocfilehash: 2b84183417a1bd4eaa90eef58bebe2b65966b933
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 07854c800008658835b169607d85d562682cf194
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437310"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914121"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>Visual Studio を使用した配置とデバッグ
 
-DirectX と Unity のどちらを使用して mixed reality アプリを開発する場合でも、Visual Studio を使用してデバッグと配置を行います。 このセクションでは、次のことについて説明します。
-* Visual Studio を使用して HoloLens または Windows Mixed Reality のイマーシブヘッドセットにアプリケーションを展開する方法について説明します。
-* Visual Studio に組み込まれている HoloLens エミュレーターを使用する方法。
-* Mixed reality アプリをデバッグする方法。
+DirectX と Unity のどちらを使用して mixed reality アプリを開発する場合でも、Visual Studio を使用してデバッグと配置を行います。 このセクションでは、次の方法について説明します。
+* Visual Studio を使用して、HoloLens または Windows Mixed Reality のイマーシブヘッドセットにアプリケーションをデプロイします。
+* Visual Studio に組み込まれている HoloLens エミュレーターを使用します。
+* 混合の reality アプリをデバッグします。
 
 ## <a name="prerequisites"></a>前提条件
 1. インストール手順について[は、「ツールのインストール](install-the-tools.md)」を参照してください。
@@ -48,7 +48,7 @@ PC に接続されている Windows Mixed Reality ヘッドセットを使用し
 ## <a name="deploying-an-app-over-wi-fi---hololens-1st-gen"></a>Wi-fi 経由でのアプリの展開 (第1世代)
 1. Visual Studio で x86 ビルド構成 ![、アプリの**x86**ビルド構成を選択し](images/x86setting.png)
 2. 配置ターゲット ドロップダウンメニューで **[リモートコンピューター]** を選択して、Visual Studio でリモートコンピューターの配置ターゲットを ![](images/remotemachinesetting.png)
-3. およびC++ JavaScript プロジェクトの場合は、**プロジェクト > のプロパティ > 構成プロパティ** の デバッグ > ます。 プロジェクトC#の場合、接続を構成するためのダイアログボックスが自動的にポップアップ表示されます。
+3. およびC++ JavaScript プロジェクトの場合は、**プロジェクト > のプロパティ > 構成プロパティ** の デバッグ > ます。 プロジェクトC#の場合、接続を構成するためのダイアログが自動的に表示されます。
   」を参照します。 [**アドレス**または**コンピューター名**] フィールドに、デバイスの IP アドレスを入力します。 **[設定 > Network & Internet > 詳細オプション]** の下の HOLOLENS で ip アドレスを見つけます。または、Cortana "どのような ip アドレスがあるか" を質問することもできます。
   b. Visual Studio の [リモート接続] ダイアログ![[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に設定し](images/remotedeploy.png)
 4. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
@@ -57,9 +57,9 @@ PC に接続されている Windows Mixed Reality ヘッドセットを使用し
 ## <a name="deploying-an-app-over-wi-fi---hololens-2"></a>Wi-fi-HoloLens 2 でのアプリの展開
 1. アプリの**ARM**または**ARM64**のビルド構成を選択してください。 Visual Studio の ARM64 ビルド構成 ![](images/arm64setting.png)
 2. 配置ターゲット ドロップダウンメニューで **[リモートコンピューター]** を選択して、Visual Studio でリモートコンピューターの配置ターゲットを ![](images/remotemachinesetting_arm64.png)
-3. およびC++ JavaScript プロジェクトの場合は、**プロジェクト > のプロパティ > 構成プロパティ** の デバッグ > ます。 プロジェクトC#の場合、接続を構成するためのダイアログボックスが自動的にポップアップ表示されます。
+3. およびC++ JavaScript プロジェクトの場合は、**プロジェクト > のプロパティ > 構成プロパティ** の デバッグ > ます。 プロジェクトC#の場合、接続を構成するためのダイアログが自動的に表示されます。
   」を参照します。 [**アドレス**または**コンピューター名**] フィールドに、デバイスの IP アドレスを入力します。 **[設定 > Network & Internet > 詳細オプション]** の下の HOLOLENS で ip アドレスを見つけます。または、Cortana "どのような ip アドレスがあるか" を質問することもできます。
-  b. Visual Studio の [リモート接続] ダイアログ![[認証モード] を [**ユニバーサル (暗号化**されていないプロトコル)] に設定し](images/remotedeploy.png)
+  b. Visual Studio のリモート接続ダイアログ![認証モードを [**ユニバーサル (暗号化**されていないプロトコル)] に設定し](images/remotedeploy.png)
 4. [デバッグ **> 開始**] を選択して、アプリを配置し、デバッグを開始![Visual Studio でデバッグを行わずに開始](images/deploywithdebugging.png)
 5. PC から HoloLens にアプリを初めて展開するときに、PIN の入力を求められます。 下記の「**デバイスのペアリング**」の手順に従います。
 

@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 3D, モデリング, モデリングガイダンス, 資産要件, 作成ガイドライン, ランチャー, 3D ランチャー, テクスチャ, マテリアル, 複雑さ, 三角形, メッシュ, 多角形, polycount, 制限
-ms.openlocfilehash: 73af40cf2915742cab612625c8243a36ee74d748
-ms.sourcegitcommit: f20beea6a539d04e1d1fc98116f7601137eebebe
+ms.openlocfilehash: 536fd9bc2002d679ee3bf73d5c906b84c51e5d46
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66692289"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926577"
 ---
 # <a name="create-3d-models-for-use-in-the-home"></a>ホームで使用する3D モデルを作成する
 
@@ -67,7 +67,7 @@ Windows Mixed Reality ホームは、64ノード以上のモデル、または L
 
 ## <a name="material-guidelines"></a>マテリアルのガイドライン
 
-テクスチャは、.PBR 金属の粗さワークフローを使用して準備する必要があります。 まず、Albedo、Normal、遮蔽、メタリック、粗さを含むテクスチャの完全なセットを作成します。 Windows Mixed Reality では、4096x4096 までの解像度のテクスチャがサポートされますが、512 x 512 で作成することをお勧めします。 さらに、テクスチャは4の倍数の解像度で作成する必要があります。これは、以下で説明するエクスポート手順のテクスチャに適用される圧縮形式の要件です。 最後に、mip マップまたはテクスチャの場合、最も低い mipmap は最大4×4にする必要があります。
+テクスチャは、.PBR 金属の粗さワークフローを使用して準備する必要があります。 まず、Albedo、Normal、遮蔽、メタリック、粗さを含むテクスチャの完全なセットを作成します。 Windows Mixed Reality では、4096x4096 までの解像度のテクスチャがサポートされますが、512 x 512 で作成することをお勧めします。 さらに、テクスチャは4の倍数の解像度で作成する必要があります。これは、以下で説明するエクスポート手順のテクスチャに適用される圧縮形式の要件です。 最後に、mip マップまたはテクスチャを生成する場合、最も低い mipmap は最大4×4にする必要があります。
 <br>
 
 |  推奨されるテクスチャサイズ  |  テクスチャの最大サイズ | 最小 Mip
@@ -78,7 +78,7 @@ Windows Mixed Reality ホームは、64ノード以上のモデル、または L
 
 照明情報のない未加工の色。 このマップには、金属 (メタリックマップの白) と insulator (メタリックマップでは黒) の反射と拡散に関する情報も含まれています。
 
-### <a name="normal"></a>標準
+### <a name="normal"></a>正常
 
 接空間法線マップ
 
@@ -96,9 +96,9 @@ Windows Mixed Reality ホームは、64ノード以上のモデル、または L
 
 ## <a name="optimizations"></a>よる
 
-Windows Mixed Reality ホームには、カスタム拡張機能を使用して定義された核となる glTF 仕様に加えて、一連の最適化が用意されています。 これらの最適化は、Windows バージョン < = 1709 であり、新しいバージョンの Windows で推奨されます。 GitHub で提供されている[Windows Mixed Reality アセットコンバーター](https://github.com/Microsoft/glTF-Toolkit/releases)を使用して、任意の gltf 2.0 モデルを簡単に最適化できます。 このツールでは、次に示すように、正しいテクスチャパッキングと最適化が実行されます。 一般的な使用方法として、windowsmrassetconverter を使用することをお勧めしますが、エクスペリエンスをより細かく制御する必要があり、独自の最適化パイプラインを作成する必要がある場合は、以下の詳細な仕様を参照できます。  
+Windows Mixed Reality ホームには、カスタム拡張機能を使用して定義された核となる glTF 仕様に加えて、一連の最適化が用意されています。 これらの最適化は、Windows バージョン < = 1709 であり、新しいバージョンの Windows で推奨されます。 GitHub で提供されている[Windows Mixed Reality アセットコンバーター](https://github.com/Microsoft/glTF-Toolkit/releases)を使用して、任意の gltf 2.0 モデルを簡単に最適化できます。 このツールでは、次に示すように、正しいテクスチャパッキングと最適化が実行されます。 一般的な使用方法として、WindowsMRAssetConverter を使用することをお勧めしますが、エクスペリエンスをより細かく制御する必要があり、独自の最適化パイプラインを作成する必要がある場合は、以下の詳細な仕様を参照できます。  
 
-### <a name="materials"></a>素材
+### <a name="materials"></a>本
 
 混合環境での資産の読み込み時間を向上させるために、Windows MR は、このセクションで定義されているテクスチャパッキングスキームに従ってパックされた、圧縮された DDS テクスチャのレンダリングをサポートします。 DDS テクスチャは、 [MSFT_texture_dds 拡張機能](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_texture_dds)を使用して参照されます。 テクスチャを圧縮することを強くお勧めします。 
 
@@ -170,11 +170,11 @@ Windows MR では、ジオメトリノード LODs を使用して、画面の範
 |  LOD 1 |  5000  |  10,000 | 
 |  LOD 2 |  2500  |  10,000 | 
 
-LODs を使用する場合は、常に3つの LOD レベルを指定します。 LODs が見つからないと、LOD システムが不足している LOD レベルに切り替えられるため、モデルが予期せず表示されなくなります。 glTF 2.0 では、現在、コア仕様の一部として LODs はサポートされていません。したがって、LODs は[MSFT_LOD 拡張機能](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod)を使用して定義する必要があります。
+LODs を使用する場合は、常に3つの LOD レベルを指定します。 LODs が見つからないと、LOD システムが不足している LOD レベルに切り替えられるため、モデルが予期せず表示されなくなります。 glTF 2.0 では、現在、コア仕様の一部として LODs をサポートしていません。したがって、この場合は、 [MSFT_LOD 拡張機能](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod)を使用して LODs を定義する必要があります。
 
 ### <a name="screen-coverage"></a>画面カバレッジ
 
-LODs は、各 LOD に設定された画面カバレッジ値によって制御されるシステムに基づいて、Windows Mixed Reality に表示されます。 現在、画面領域の大きな部分を消費しているオブジェクトは、上位の LOD レベルで表示されます。 画面カバレッジは、核となる glTF 2.0 仕様の一部ではありません。 [MSFT_lod 拡張機能](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod)の "MSFT_ScreenCoverage" セクションでは、この仕様を使用して指定する必要があります。
+LODs は、各 LOD に設定された画面カバレッジ値によって制御されるシステムに基づいて、Windows Mixed Reality に表示されます。 現在、画面領域の大きな部分を消費しているオブジェクトは、上位の LOD レベルで表示されます。 画面カバレッジは、核となる glTF 2.0 仕様の一部ではなく、 [MSFT_lod 拡張機能](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod)の "エクストラ" セクションの MSFT_ScreenCoverage を使用して指定する必要があります。
 <br>
 
 |  LOD レベル  |  推奨される範囲  |  既定の範囲 | 
@@ -198,12 +198,12 @@ Mixed reality ホームでは、HoloLens およびイマーシブ (VR) ヘッド
 
 
 ### <a name="opening-and-previewing-the-model"></a>モデルを開いてプレビューする
-まず、VSCode で gltf モデルを開いて、その glTF ファイルをエディターウィンドウにドラッグします。 GlTF ファイルではなく. glb を使用している場合は、ダウンロードした glTF Tools アドインを使用して VSCode にインポートできます。 ビュー-> コマンドパレット にアクセスし、コマンドパレットで「glTF」と入力して、glTF:Glb からインポートします。これにより、を使用して glb をインポートするためのファイルピッカーがポップアップ表示されます。 
+まず、VSCode で gltf モデルを開いて、その glTF ファイルをエディターウィンドウにドラッグします。 GlTF ファイルではなく. glb を使用している場合は、ダウンロードした glTF Tools アドオンを使用して VSCode にインポートできます。 [ビュー-> コマンドパレット] にアクセスして、コマンドパレットで「glTF」と入力し、「glTF: Import from glb (glTF: Import from glb)」を選択します。これにより、を使用してをインポートするためのファイルピッカーがポップアップ表示されます。 
 
-GlTF モデルを開いたら、エディターウィンドウに JSON が表示されます。 また、を使用してライブ3D ビューアーでモデルをプレビューすることもできます。そのためには、ファイル名を右クリックし、glTF:右クリックメニューから 3D モデルのプレビュー コマンドショートカットを表示します。 
+GlTF モデルを開いたら、エディターウィンドウに JSON が表示されます。 また、を使用してライブ3D ビューアーでモデルをプレビューすることもできます。そのためには、ファイル名を右クリックし、右クリックメニューから [glTF: Preview 3D Model] コマンドショートカットを選択します。 
 
 ### <a name="adding-the-triggers"></a>トリガーの追加
-アニメーショントリガーは、アニメーションマップ拡張機能を使用して glTF model JSON に追加されます。 ここでは、アニメーションマップ拡張機能を[GitHub で](https://github.com/msfeldstein/glTF/blob/04f7005206257cf97b215df5e3f469d7838c1fee/extensions/Vendor/FB_animation_map/README.md)公開しています (注:これは、ドラフトの拡張機能です)。 モデルに拡張機能を追加するには、エディターで glTF ファイルの末尾までスクロールし、ファイルがまだ存在しない場合は "extensionsUsed" および "extensions" ブロックを追加します。 "ExtensionsUsed" セクションで、"EXT_animation_map" 拡張機能への参照を追加し、"extensions" ブロックに、モデル内のアニメーションにマッピングを追加します。
+アニメーショントリガーは、アニメーションマップ拡張機能を使用して glTF model JSON に追加されます。 ここでは、アニメーションマップ拡張機能を[GitHub で](https://github.com/msfeldstein/glTF/blob/04f7005206257cf97b215df5e3f469d7838c1fee/extensions/Vendor/FB_animation_map/README.md)公開しています (注: これはドラフト拡張機能です)。 モデルに拡張機能を追加するには、エディターで glTF ファイルの末尾までスクロールし、ファイルがまだ存在しない場合は "extensionsUsed" および "extensions" ブロックを追加します。 "ExtensionsUsed" セクションで、"extensions" ブロックに "EXT_animation_map" 拡張機能への参照を追加し、モデルのアニメーションにマッピングを追加します。
 
 [仕様に](https://github.com/msfeldstein/glTF/blob/04f7005206257cf97b215df5e3f469d7838c1fee/extensions/Vendor/FB_animation_map/README.md)示されているように、アニメーションでは、アニメーションのインデックスの配列である "アニメーション" のリストに "セマンティック" 文字列を使用して、何をトリガーするかを定義します。 次の例では、ユーザーがオブジェクトを使用しているときに再生するアニメーションを指定しています。
 
@@ -223,22 +223,22 @@ GlTF モデルを開いたら、エディターウィンドウに JSON が表示
   }
 ```
 Windows Mixed Reality ホームでは、次のアニメーショントリガーセマンティクスがサポートされています。  
-* "ALWAYS":アニメーションを常にループする
-* "保持":オブジェクトがすべての期間中にループされます。
-* "宝石":オブジェクトの検索中にループします
-* "近接":ビューアーがオブジェクトの近くにあるときにループします
-* "ポインティング":ユーザーがオブジェクトをポイントしているときにループします
+* "ALWAYS": アニメーションを常にループする
+* "保持": オブジェクトが獲得されるまでの間にループします。
+* "宝石": オブジェクトの検索中にループしています
+* "近接": ビューアーがオブジェクトの近くにある間にループします。
+* "ポインティング": ユーザーがオブジェクトをポイントしているときのループ
 
 ### <a name="saving-and-exporting"></a>保存とエクスポート
-GlTF モデルに変更を加えたら、glTF として直接保存することも、エディターでファイルの名前を右クリックして glTF:GLB (バイナリファイル) にエクスポートし、代わりに GLB をエクスポートします。 
+GlTF モデルに変更を加えた後は、glTF として直接保存できます。または、エディターでファイル名を右クリックして [glTF: Export to GLB (バイナリファイル)] を選択し、代わりに GLB をエクスポートすることもできます。 
 
 ### <a name="restrictions"></a>制限
 アニメーションは20分より長くすることはできず、36000のキーフレーム (30 FPS で20分) を含めることはできません。 また、変形ターゲットベースのアニメーションを使用する場合は、8192の変形ターゲット頂点以下を超えることはありません。 これらの数を超えると、アニメーション化された資産が Windows Mixed Reality ホームでサポートされなくなります。 
 
-|機能|[最大]|
+|機能|最大|
 |-----|-----|
-|Duration|20 分|
-|フレーム|36,000| 
+|期間|20 分|
+|フレーム|36000| 
 |変形ターゲット頂点|8192|
 
 ## <a name="gltf-implementation-notes"></a>glTF 実装に関する注意事項
@@ -246,22 +246,22 @@ Windows MR では、負のスケールを使用した geometry の反転はサ�
 
 GlTF 資産は、Windows MR によって表示されるシーン属性を使用して、既定のシーンをポイントする必要があります。 さらに、 [windows 10 の2018年4月の更新](release-notes-april-2018.md)より前の windows MR では、アクセサー**が必要です**。
 * 最小値と最大値が必要です。
-* 型スカラーは componentType UNSIGNED_SHORT (5123) または UNSIGNED_INT (5125) である必要があります。
+* 型スカラーは、componentType UNSIGNED_SHORT (5123) または UNSIGNED_INT (5125) である必要があります。
 * 型 VEC2 と VEC3 は、componentType FLOAT (5126) である必要があります。
 
 次の素材プロパティは、核となる glTF 2.0 仕様で使用されていますが、必須ではありません。
 * baseColorFactor, metallicFactor, roughnessFactor
-* baseColorTexture:Dds に格納されているテクスチャをポイントする必要があります。
-* emissiveTexture:Dds に格納されているテクスチャをポイントする必要があります。
+* baseColorTexture: dds に格納されているテクスチャをポイントする必要があります。
+* emissiveTexture: dds に格納されているテクスチャをポイントする必要があります。
 * emissiveFactor
 * alphaMode
 
 コア仕様では、次の素材プロパティは無視されます。
 * すべてのマルチ UVs
-* metalRoughnessTexture:以下で定義されている Microsoft 最適化されたテクスチャパッキングを使用する必要があります
-* normalTexture:以下で定義されている Microsoft 最適化されたテクスチャパッキングを使用する必要があります
+* metalRoughnessTexture: 代わりに、次に定義されている Microsoft 最適化されたテクスチャパッキングを使用する必要があります
+* normalTexture: 代わりに、次に定義されている Microsoft 最適化テクスチャパッキングを使用する必要があります
 * normalScale
-* occlusionTexture:以下で定義されている Microsoft 最適化されたテクスチャパッキングを使用する必要があります
+* occlusionTexture: 代わりに、次に定義されている Microsoft 最適化されたテクスチャパッキングを使用する必要があります
 * occlusionStrength
 
 Windows MR は、プリミティブモードの線とポイントをサポートしていません。 

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 5d8194e9a51bdb0ce32f345b4adfbfaf408c5396
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 91935cb5b465e51d3948f68b818f93ba52b215f1
+ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438382"
+ms.lasthandoff: 11/11/2019
+ms.locfileid: "73914423"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. Unity を開発用に準備する 
 
@@ -28,7 +28,7 @@ ms.locfileid: "73438382"
 
 ## <a name="instructions"></a>手順
 
-1. ここをクリックして、Mixed Reality Toolkit unity パッケージをダウンロードして保存し[ます。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.0.0-RC2.1/Microsoft.MixedReality.Toolkit.Unity.Foundation-v2.0.0-RC2.1.unitypackage)
+1. ここをクリックして、Mixed Reality Toolkit Foundation unity パッケージをダウンロードして保存し[ます。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)
 
 2. Unity で、[アセット] メニューをクリックし、[パッケージのインポート] をクリックして、[カスタムパッケージ] をクリックします。
 
@@ -50,13 +50,15 @@ ms.locfileid: "73438382"
 
 ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
 
-6. この処理が完了すると、新しい構成ファイルが表示され、プロファイルをカスタマイズすることができます。 [コピーとカスタマイズ] をクリックします。
+6. この処理が完了すると、新しい構成ファイルが表示され、プロファイルをカスタマイズすることができます。 
 
-![Module3Chapter2step6ima](images/module3chapter2step6ima.PNG)
+![Module2Chapter1step4im](images/Module2Chapter1step4im.PNG)
 
-![Module3Chapter2step6imb](images/module3chapter2step6imb.PNG)
+7. 階層から [Mixed-Reality Toolkit (MRTK)] を選択します。 [インスペクター] パネルで、Mixed Reality Toolkit スクリプトを探して、次の図に示すように [Copy & Customize] ボタンを押します。  この後、ポップアップメニューの [複製] オプションを選択すると、pop が表示されます。
 
 ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
+
+![Module3Chapter2step6imd](images/module3chapter2step6imd.PNG)
 
 7. [診断] ウィンドウを非表示にする場合は、下にスクロールし、[診断システムを有効にする] チェックボックスをオフにします。 アプリケーションの開発中は、パフォーマンスを監視し、運用またはアプリケーションのデモンストレーション中に無効にすることをお勧めします。 
 

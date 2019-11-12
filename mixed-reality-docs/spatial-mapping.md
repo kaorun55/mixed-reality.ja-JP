@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 空間マッピング、HoloLens、mixed reality、surface 再構築、メッシュ
-ms.openlocfilehash: 2988056b5caf50a4428d39c725bfe5432867a9c0
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c4e2f9e49cfe4df9cf875d18b19d62e25c200d76
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437459"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926734"
 ---
 # <a name="spatial-mapping"></a>空間マッピング
 
@@ -64,13 +64,13 @@ ms.locfileid: "73437459"
 
 HoloLens が環境に関する新しいデータを収集すると、環境に対する変更が発生すると、空間サーフェスが表示され、非表示になり、変更されます。
 
-## <a name="spatial-mapping-vs-scene-undesranding-worldmesh"></a>空間マッピングとシーン Undesranding の比較
+## <a name="spatial-mapping-vs-scene-understanding-worldmesh"></a>空間マッピングとシーンについて WorldMesh を理解する
 HoloLens 2 では、[シーンを理解する SDK](scene-understanding-SDK.md) (EnableWorldMesh 設定) を使用して、空間マッピングデータの静的なバージョンを照会することができます。 空間マッピングデータにアクセスする2つの方法の違いを次に示します。
 * 空間マッピング API:
    * 制限された範囲: ユーザーに対してキャッシュされた ' バブル ' のサイズで、アプリケーションが使用できる空間マッピングデータ。
    * SurfacesChanged イベントによって変更されたメッシュ領域の低待機時間の更新を提供します。
    * 3次測定パラメーターあたりの三角形によって制御される詳細の可変レベル。
-* シーン undestanding:
+* シーンを理解する SDK:
    * 無制限の範囲-クエリ radius 内でスキャンされたすべての空間マッピングデータを提供します。
    * 空間マッピングデータの静的なスナップショットを提供します。 更新された空間マッピングデータを取得するには、メッシュ全体に対して新しいクエリを実行する必要があります。
    * RequestedMeshLevelOfDetail の設定によって制御される詳細レベルの一貫性。
@@ -366,7 +366,7 @@ Surface オブザーバーによって提供される "変化したサーフェ�
 * 実際のユーザー (および理想的には coached ではありません) でテストを実行することをお勧めします。これは、ユーザーが HoloLens またはアプリケーションをまったく同じ方法で使用しない可能性があるためです。 実際には、異なるているユーザーの行動、知識、および前提条件はどのようになるかを驚かれるかもしれません。
 
 ## <a name="troubleshooting"></a>[トラブルシューティング]
-* サーフェスメッシュを適切に配置するためには、各 SurfaceObeserver オブジェクトをアクティブにしてから、メッシュが構築されるようにする必要があります。 そうしないと、メッシュはスペースに表示されますが、回転角度は変わってきます。
+* サーフェスメッシュを適切に配置するためには、各 SurfaceObserver オブジェクトをアクティブにしてから、メッシュが構築されるようにする必要があります。 そうしないと、メッシュはスペースに表示されますが、回転角度は変わってきます。
 * SurfaceObserver と通信するスクリプトを実行するオブジェクトは、オリジンに設定する必要があります。 そうしないと、メッシュを構築するために作成して SurfaceObserver に送信するすべてのゲームオブジェクトが、親 Game オブジェクトのオフセットと同じオフセットを持つことになります。 これにより、メッシュがいくつかのメーターを表示して、何が起こっているかを簡単にデバッグできるようになります。
 
 ## <a name="see-also"></a>関連項目

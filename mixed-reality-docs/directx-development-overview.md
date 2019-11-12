@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 03/21/2018
 ms.topic: article
 keywords: DirectX, holographic レンダリング, ネイティブ, ネイティブアプリ, WinRT, WinRT アプリ, プラットフォーム Api, カスタムエンジン, ミドルウェア
-ms.openlocfilehash: e77ee5053e69aef502481d18618e604c6bfb5939
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 0af73314c3c93d230ef87ed468f718f5b3e1813c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641092"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926625"
 ---
 # <a name="directx-development-overview"></a>DirectX 開発の概要
 
@@ -44,7 +44,7 @@ Windows Mixed Reality は[、次の2種類のアプリを](app-views.md)サポ�
 
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>Mixed reality 機能と入力の追加
 
-イマーシブ appslication ユーザーに最適なエクスペリエンスを実現するには、次の主要な構成要素をサポートする必要があります。
+イマーシブアプリケーションのユーザーに最適なエクスペリエンスを実現するには、次の主要な構成要素をサポートする必要があります。
 
 * [DirectX でのヘッド視線入力とアイ視線入力](gaze-in-directx.md)
 * [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)

@@ -6,12 +6,12 @@ ms.author: crderr
 ms.date: 03/21/2018
 ms.topic: article
 keywords: アプリ品質基準、mixed reality、mixed reality アプリ
-ms.openlocfilehash: f98111ebe9aacc30778e86501be41e6ac5f6d165
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d167e141b536f9247d22e40afefa718ecc399f5a
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437047"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926586"
 ---
 # <a name="app-quality-criteria"></a>アプリの品質基準
 
@@ -124,7 +124,7 @@ ms.locfileid: "73437047"
 * ホログラムと環境内を移動し、スイム・ jumpiness などの動作を探します。 この種類のモーションは、デバイスが環境を追跡していない、または空間アンカーへの距離が原因である可能性があります。
 * フレーム内に複数のホログラムがある場合は、さまざまな深度でのホログラムの動作を観察し、揺れるが表示されている場合は、安定化平面によって発生する可能性があります。
 
-### <a name="recomendations"></a>な推奨事項
+### <a name="recommendations"></a>推奨事項
 
 * 開発作業の開始時にフレームレートカウンターを追加します。
 * 安定化平面を使用します。
@@ -188,7 +188,7 @@ ms.locfileid: "73437047"
 * 空間マップは、精度が不要な場合にオブジェクトをサーフェイスに配置する場合に便利です。
 * 最適な精度を得るには、マーカーまたはポスターを使用して、ホログラムと Xbox コントローラー (または手動配置機構) を最終的な調整用に設定します。
 * 特大の大きなホログラムを論理部分に分割し、各部分をサーフェイスに配置することを検討してください。
-* 不適切に設定した interpupilary distance (IPD) は、ホログラムのアラインメントにも影響を与えることがあります。 常に HoloLens をユーザーの IPD に構成します。
+* 不適切に設定した interpupillary distance (IPD) は、ホログラムのアラインメントにも影響を与えることがあります。 常に HoloLens をユーザーの IPD に構成します。
 
 ### <a name="resources"></a>参考資料
 
@@ -523,7 +523,7 @@ Windows Mixed Reality では、音声エンジンは、方向、距離、およ�
 ### <a name="how-to-measure"></a>測定する方法
 
 * アプリでは、一貫[した標準の入力方法が使用されます。](interaction-fundamentals.md)
-* アプリになる入力がある場合は、次の方法で明確に伝達されます。
+* アプリにカスタム入力がある場合は、次の方法で明確に伝達されます。
 * 最初の実行エクスペリエンス
 * 入門画面
 * ヒント

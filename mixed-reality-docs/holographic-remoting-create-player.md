@@ -6,12 +6,12 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 982a3f42014d8f5eb9ba181247fee9825fb78371
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1f8a0cbe0f6da88c0c5e5a695737d8694020635c
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434312"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926655"
 ---
 # <a name="writing-a-custom-holographic-remoting-player-app"></a>カスタム Holographic リモート処理プレーヤーアプリの作成
 
@@ -27,7 +27,7 @@ Holographic リモート処理プレーヤーを使用すると、アプリは�
 開始点としては、既に Windows Mixed Reality API を対象としている、動作する DirectX ベースの UWP アプリを使用することをお勧めします。 詳細については、「 [DirectX 開発の概要](directx-development-overview.md)」を参照してください。 既存のアプリがなく、ゼロから開始する場合は、 [ C++ holographic プロジェクトテンプレート](creating-a-holographic-directx-project.md)を使用することをお勧めします。
 
 >[!IMPORTANT]
->Holographic リモート処理を使用するすべてのアプリは、[マルチスレッドアパートメント](https://docs.microsoft.com//windows/win32/com/multithreaded-apartments)を使用するように作成する必要があります。 [シングルスレッドのアパートメント](https://docs.microsoft.com//windows/win32/com/single-threaded-apartments)使用はサポートされていますが、パフォーマンスが低下し、再生中に途切れが生じる可能性があります。 /Winrt C++ [winrt:: init_apartment](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/get-started)を使用すると、マルチスレッドアパートメントが既定値になります。
+>Holographic リモート処理を使用するすべてのアプリは、[マルチスレッドアパートメント](https://docs.microsoft.com//windows/win32/com/multithreaded-apartments)を使用するように作成する必要があります。 [シングルスレッドのアパートメント](https://docs.microsoft.com//windows/win32/com/single-threaded-apartments)使用はサポートされていますが、パフォーマンスが低下し、再生中に途切れが生じる可能性があります。 /Winrt C++ [winrt:: init_apartment](https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/get-started)使用すると、マルチスレッドアパートメントが既定値になります。
 
 ## <a name="get-the-holographic-remoting-nuget-package"></a>Holographic リモート処理 NuGet パッケージを取得する
 
@@ -122,7 +122,7 @@ catch(winrt::hresult_error& e)
 ```
 
 >[!IMPORTANT]
->任意C++の HRESULT_ERROR ```Connect``` API と同様に、処理する必要がある winrt:: がスローされる場合があります。
+>すべてC++の/winrt API ```Connect``` は、処理する必要がある WinRT:: hresult_error をスローすることがあります。
 
 プレーヤーアプリで着信接続をリッスンするには、```Listen``` メソッドを呼び出します。 この呼び出しでは、ハンドシェイクポートとトランスポートポートの両方を指定できます。 ハンドシェイクポートは、初期ハンドシェイクに使用されます。 データは、トランスポートポートを介して送信されます。 既定では、ポート番号**8265**と**8266**が使用されます。
 
@@ -200,7 +200,7 @@ winrt::Microsoft::Holographic::AppRemoting::BlitResult result = m_playerContext.
 
 ## 省略可能: Set BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
 >[!IMPORTANT]
-> ```PlayerContext::BlitRemoteFrameTimout``` は、バージョン[2.0.9](holographic-remoting-version-history.md#v2.0.9)以降でサポートされています。 
+> ```PlayerContext::BlitRemoteFrameTimeout``` は、バージョン[2.0.9](holographic-remoting-version-history.md#v2.0.9)以降でサポートされています。 
 
 ```PlayerContext::BlitRemoteFrameTimeout``` プロパティは、新しいリモートフレームが受信されなかった場合に、リモートフレームが再利用される時間を指定します。 
 
