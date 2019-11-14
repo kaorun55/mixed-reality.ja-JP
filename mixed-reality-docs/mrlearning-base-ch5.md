@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 5599fe48f62a35d1dc02ce30fb7858fd74e87685
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: b740c463e3d73d5df9b996562e9ff0a1952703f0
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926533"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064322"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 詳細な入力オプションを調査する
 
@@ -110,7 +110,7 @@ ms.locfileid: "73926533"
 
 ### <a name="the-pan-gesture"></a>パン ジェスチャ
 
-このセクションでは、パンジェスチャの使用方法について説明します。 これは、指またはハンドを使用してコンテンツをスクロールすることでスクロールする場合に便利です。 また、パンジェスチャを使用して、オブジェクトの回転、3D オブジェクトのコレクションの反復処理、または 2D UI のスクロールを行うこともできます。 <!--TMP You will also learn how to use the pan gesture to warp a texture, and how to move a collection of 3D objects.-->
+このセクションでは、パンジェスチャの使用方法について説明します。 これは、指またはハンドを使用してコンテンツをスクロールすることでスクロールする場合に便利です。 また、パンジェスチャを使用して、オブジェクトの回転、3D オブジェクトのコレクションの反復処理、または 2D UI のスクロールを行うこともできます。
 
 1. quad を作成します。 BaseScene 階層で、右クリックし、[3D オブジェクト] を選択し、次にクワッドを選択します。
 
@@ -128,10 +128,7 @@ ms.locfileid: "73926533"
 4. [プロジェクト] パネルで、検索ボックスに「コンテンツのパン」と入力します。 その素材をシーンのクワッドにドラッグします。
 
     >[!NOTE]
-    >Pan コンテンツマテリアルは MRTK には含まれていませんが、前のレッスンでインポートしたように、このモジュールの資産パッケージのアセットに含まれています。
-
-    >[!NOTE]
-    >パン コンテンツを追加すると、引き伸ばされたように見えることがあります。 これを修正するには、quad のサイズの x、y、z 値を希望する大きさになるまで調整します。
+    >PanContent マテリアルは MRTK には含まれませんが、前のレッスンでインポートした BaseModuleAssets 資産に含まれています。
 
     パン ジェスチャを使用するには、オブジェクト上のコライダーが必要です。 場合によっては、quad には既にメッシュ コライダーがあります。 ただし、メッシュ コライダーは極めて薄く、選択するのが容易ではないため理想的ではありません。 メッシュ コライダーをボックス コライダーに置き換えることをお勧めします。
 
@@ -157,26 +154,45 @@ ms.locfileid: "73926533"
 
     これにより、パン対応のクワッドが用意されています。
 
-    ご覧のように、ハンド対話のパンズームコンポーネントには、オプションの演習としてさまざまな設定があり、自由に再生することができます。
+    ご覧のように、ハンドインタラクションのパンズームスクリプトコンポーネントにはさまざまな設定があり、オプションの演習として自由に再生できます。
 
     ![mrlearning-base-ch5-2-step8b](images/mrlearning-base-ch5-2-step8b.png)
 
-<!--TMP
-   Next, we will learn how to pan 3D objects. 
+9. 次に、3D オブジェクトをパンする方法を学びます。
 
-10. Right-click the quad object, select 3D object and click Cube. Scale the cube so that it’s roughly x = 0.1, y = 0.1 and z = 0.1. Copy that cube three times by right-clicking the cube and pressing duplicate, or by pressing control/command D. Space them out evenly. Your scene should look similar to the image below.
+    階層で、Quad オブジェクトを右クリックしてコンテキストポップアップメニューを開き、[ **3D オブジェクト** > **キューブ**] を選択してシーンにキューブを追加します。
 
-![Lesson5 Chapter2 Step10im](images/Lesson5_chapter2_step10im.PNG)
+    キューブの**位置**が_0、0、0_に設定されていることを確認してください。 キューブを_0.1、0.1、0.1_の**スケール**にスケールダウンします。
 
-11. Select the quad again and under the hand interaction pan script, set the pan actions to each of the cubes. Under Pan Event Receivers, we want to specify the number of objects receiving the event. Since there are four cubes, type “4” and press Enter. Four empty fields should appear.
+    ![mrlearning-base-ch5-2-step9](images/mrlearning-base-ch5-2-step9.png)
 
-![Lesson5 Chapter2 Step11im](images/Lesson5_chapter2_step11im.PNG)
+    キューブを右クリックして、キューブを3回複製し、コンテキストポップアップメニューを開き、 **[複製]** を選択します。
 
-12. Drag each of the cubes into each of the empty element slots.
-     ![Lesson5 Chapter2 Step12im](images/Lesson5_chapter2_step12im.PNG)
-    
-13. Add the Move with Pan script to all of the cubes by pressing and holding control/command and select each object. From the Inspector panel, click Add Component and search for “move with pan.” Click the script and it is added to each cube. Now the 3D objects will move with your pan gesture. If you remove the mesh render on your quad, you should now have an invisible quad where you can pan through a list of 3D objects.
--->
+    キューブが均等になるようにします。 シーンは次の図のようになります。
+
+10. CTRL キーを押しながら [階層] パネルで各**キューブ**オブジェクトを選択して、すべてのキューブに MoveWithPan スクリプトを追加します。 インスペクター パネルで コンポーネントの追加 をクリックし、**移動** をクリックして、すべてのキューブに追加します。
+
+    ![mrlearning-base-ch5-2-step10a](images/mrlearning-base-ch5-2-step10a.png)
+
+    >[!NOTE]
+    >MoveWithPan スクリプトは MRTK には含まれていませんが、前のレッスンでインポートした BaseModuleAssets 資産に含まれています。
+
+    キューブが選択された状態で、階層 パネルから パン**の移動** スクリプトコンポーネントの **パン入力ソース** フィールドに**Quad**オブジェクトをドラッグします。
+
+    ![mrlearning-base-ch5-2-step10b](images/mrlearning-base-ch5-2-step10b.png)
+
+    これで、キューブはパンジェスチャで移動します。
+
+    >[!TIP]
+    >各キューブの MoveWithPan インスタンスは、4つのオブジェクトに対して、各キューブの [Pan Input Source] (パン入力ソース) フィールドに追加し、それぞれのキューブオブジェクトの位置をそれに応じて更新する、イベントを監視します。
+
+    キューブが選択された状態で、Z 軸に沿って前方に移動します。これにより、各キューブのメッシュは、Z 値を_0.7_に変更することで、**クワッド**の**Box の Collider**内に**配置**されます。
+
+    ![mrlearning-base-ch5-2-step10c](images/mrlearning-base-ch5-2-step10c.png)
+
+    これで、[インスペクター] パネルでチェックを解除して、**クワッド**の**メッシュレンダラー**コンポーネントを無効にした場合、非表示の四角形が表示され、3d オブジェクトの一覧を通じてパンできます。
+
+    ![mrlearning-base-ch5-2-step10d](images/mrlearning-base-ch5-2-step10d.png)
 
 ### <a name="eye-tracking"></a>視線追跡
 
@@ -197,13 +213,16 @@ ms.locfileid: "73926533"
 2. [Eye Tracking Target] (視線追跡ターゲット) コンポーネントをターゲット オブジェクトに追加します。 オブジェクトが視線イベントに応答できるようにするには、視線を使用して操作する各オブジェクトに EyeTrackingTarget コンポーネントを追加する必要があります。 このコンポーネントを、グリッド コレクションの一部である 9 つの 3D オブジェクトそれぞれに追加します。
 
     >[!TIP]
-    >Shift キーまたは ctrl キーを使用してシーン階層内の複数の項目を選択し、EyeTrackingTarget コンポーネントを一括して追加することができます。
+    >Shift キーまたは CRTL キーを使用して階層内の複数の項目を選択し、EyeTrackingTarget コンポーネントを一括して追加することができます。
 
     ![Lesson5 Chapter3 のステップごとのステップ](images/Lesson5Chapter3Step2.JPG)
 
-3. 次に、いくつかの魅力的な対話用に EyeTrackingTutorialDemo スクリプトを追加します。 EyeTrackingTutorialDemo スクリプトは、このチュートリアルシリーズリポジトリの一部として含まれています。 混合 Reality ツールキットには、既定では含まれていません。 Grid コレクション内の3D オブジェクトごとに、[コンポーネントの追加] メニューでコンポーネントを検索して、EyeTrackingTutorialDemo スクリプトを追加します。
+3. 次に、いくつかの魅力的な対話用に EyeTrackingTutorialDemo スクリプトを追加します。 Grid コレクション内の3D オブジェクトごとに、[コンポーネントの追加] メニューでコンポーネントを検索して、EyeTrackingTutorialDemo スクリプトを追加します。
 
-   ![Lesson5 Chapter3 手順3](images/Lesson5Chapter3Step3.JPG)
+    ![Lesson5 Chapter3 手順3](images/Lesson5Chapter3Step3.JPG)
+
+    >[!NOTE]
+    >EyeTrackingTutorialDemo スクリプトマテリアルは MRTK の一部ではありませんが、前のレッスンでインポートした BaseModuleAssets 資産に含まれています。
 
 4. ターゲットを見つめている間、オブジェクトを回転させます。 3D オブジェクトを見ながらスピンするように構成したいと考えています。 これを行うには、次の図に示すように、EyeTrackingTarget コンポーネントの Target () セクションを参照しながら、に新しいフィールドを挿入します。
 

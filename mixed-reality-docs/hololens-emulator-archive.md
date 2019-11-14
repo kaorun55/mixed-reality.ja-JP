@@ -3,15 +3,15 @@ title: HoloLens エミュレーターのアーカイブ
 description: Microsoft HoloLens エミュレーターのリリース済みビルドの一覧。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 9/11/2019
+ms.date: 11/11/2019
 ms.topic: article
 keywords: HoloLens、エミュレーター、ビルド、バージョン
-ms.openlocfilehash: c2d0c8d9e81bae906c786a32f08d0e701638535e
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f9ce72febfd07b7dc743b9ee202e8c4353f1de96
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434202"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064226"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 エミュレーターアーカイブ
 
@@ -19,6 +19,7 @@ HoloLens Emulator (第1世代) と HoloLens 2 エミュレーターは、サイ�
 
 |  ビルド |  リリース日 |  注意 | 
 |----------|----------|----------|
+|  [HoloLens 2 Emulator ビルド10.0.18362.1039](https://go.microsoft.com/fwlink/?linkid=2110553) | 2019年11月11日 | 11月 2019 HoloLens 2 ビルド。 |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1034](https://go.microsoft.com/fwlink/?linkid=2106649) | 2019年10月8日 | 10月 2019 HoloLens 2 ビルド。  利用可能な最新バージョンより古いバージョンを実行すると、エミュレーターは新しいバージョンに更新するように求められます。  Windows 10 の2019更新プログラムまたはそれ以降のバージョンのエミュレーターを使用すると、開発者は、別のデバイスで実行されているアプリケーションのポートを開いてエミュレーターに接続したり、[更新プログラム] タブに使用可能なエミュレーターのバージョンが表示されたりすることができます。  詳細については、 [HoloLens emulator のドキュメント](using-the-hololens-emulator.md)を参照してください。 |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1031](https://go.microsoft.com/fwlink/?linkid=2103724) | 2019年9月11日 | 9月 2019 HoloLens 2 ビルド。  Windows 10 5 月2019更新プログラムまたはそれ以降のバージョンでエミュレーターを実行すると、[エミュレーターツール] ウィンドウに [ネットワーク] タブが表示されます。 |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1028](https://go.microsoft.com/fwlink/?linkid=2101019) | 2019年8月14日 | 8月 2019 HoloLens 2 ビルド。  Holographic アプリテンプレートは含まれなくなりましたが、Visual Studio Marketplace で利用できます。  Sdk がカスタムの場所にインストールされると、エミュレーターが動作するようになります。 |

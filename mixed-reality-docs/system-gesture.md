@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現実、ジェスチャ、相互作用、設計
-ms.openlocfilehash: ba543ffe0802d0b95cc539fb0e73c0b4e51fc186
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 417811fff9d98e459dc0047d46ea065acfced4ef
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926725"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064237"
 ---
 # <a name="system-gesture"></a>システムジェスチャ
 
@@ -98,7 +98,7 @@ HoloLens 2 では、ブルームジェスチャを仮想手首ボタンに置き
     :::column-end:::
     :::column:::
         ![手首ボタンのピンチ](images/wrist-button-pinch.png)<br>
-        **手順: ボタンをクリックしてからピンチする**<br>
+        **手順 2: ボタンをクリックしてからピンチする**<br>
     :::column-end:::
 :::row-end:::
 

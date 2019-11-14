@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 32a77d6032335ab3ae769b85c5f947440658743f
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: ade7a839e03a306332bf18f1db49805f59c71429
+ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913540"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74064254"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 動的なコンテンツを配置し、ソルバーを使用する
 
@@ -72,7 +72,7 @@ ms.locfileid: "73913540"
 
     ![mrlearning-base-ch3-3-step2b](images/mrlearning-base-ch3-3-step2b.png)
 
-3. 放射状ビューの最大距離と最小距離を0に設定します。これにより、キューブがユーザーの手首と同じ距離になることはありません。 設定すると、cube は完全に手首を追従するようになります。 また、[参照方向] フィールドを調整して、キューブの向きの動作を調整することもできます。たとえば、オブジェクトをユーザーの手首で回転できるようにする場合は、参照の方向を [追跡対象オブジェクト] に設定します。
+3. 放射状ビューの最大距離と最小距離を0に設定します。これにより、キューブがユーザーの手首と同じ距離になることはありません。 設定すると、cube は完全に手首を追従するようになります。 また、[参照方向] フィールドを調整して、キューブの向きの動作を調整することもできます。たとえば、オブジェクトをオブジェクト指向に設定することによって、ユーザーの手首でオブジェクトを回転できるようにする場合などです。
 
     ![mrlearning-base-ch3-3-step3](images/mrlearning-base-ch3-3-step3.png)
 
