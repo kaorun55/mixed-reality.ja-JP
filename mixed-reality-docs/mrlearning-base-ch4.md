@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 07bcce2ab9ab3bda035f7f2b39a90753cf45358d
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: 8c60d8291ede123817c93458fff003891169840c
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913847"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105973"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 3D オブジェクトとの対話
 
@@ -38,7 +38,7 @@ ms.locfileid: "73913847"
 
     ![mrlearning-base-ch4-1-step1](images/mrlearning-base-ch4-1-step1.png)
 
-2. Unity パッケージ[Basemoduleassets バージョン 1.2.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/1.2.1/BaseModuleAssets-1.2.1.unitypackage)をダウンロードし、[レッスン1から](mrlearning-base-ch1.md)に記載されているカスタムパッケージをインポートする場合と同じ手順でインポートします。 このパッケージには、このチュートリアル全体で使用される3D モデルとその他の便利なアセットが含まれています。
+2. Unity パッケージ HoloLens2 をダウンロードし、[レッスン1から](mrlearning-base-ch1.md)に記載されているカスタムパッケージをインポートする場合と同じ手順を使用して[2.1.0.0](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)をインポートします。 このパッケージには、このチュートリアル全体で使用される3D モデルとその他の便利なアセットが含まれています。
 
 3. [プロジェクト] パネルで、[資産 > BaseModuleAssets] > ベースモジュール Prefabs に移動し、"不完全" を検索します。これらの Prefabs の一部を使用します。
 

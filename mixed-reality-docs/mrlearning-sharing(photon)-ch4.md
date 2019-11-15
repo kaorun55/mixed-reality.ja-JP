@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b4713caf2c4d913fe8f5b01c08b3cd0152e32cd9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 34b8165888c13b0c94be8951d5a4fdc07fab5308
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438367"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106036"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4. オブジェクトの移動を複数のユーザーと共有する
 
@@ -62,11 +62,13 @@ ms.locfileid: "73438367"
 >注: メインカメラと SharedPlayground グラウンドの両方の位置が0、0、0に設定されていることを確認してください。
 >
 
-9. 新しいオブジェクトを作成するために、SharedPlayground グラウンド親オブジェクトの子オブジェクトとして新しいゲームオブジェクトセットを作成します。 親オブジェクトを右クリックし、[空の作成] を選択します。 
+9. "SharedPlayground グラウンド" オブジェクトを選択し、マウスを右クリックして [空の作成] オプションを選択し、空のゲームオブジェクトを "SharedPlayground グラウンド" ゲームオブジェクトの子として作成します。
+
+   ![Module3chapter4step6im](images/module3chapter4step6im.PNG)
 
 10. 階層で新しいオブジェクトを選択し、[インスペクター] パネルでオブジェクトの名前を TableAnchor に変更します。 また、[コンポーネントの追加] をクリックし、TableAnchor コンポーネントを検索します。 それを選択してオブジェクトに追加します。 
 
-![Module3Chapter4step6im](images/module3chapter4step7im.PNG)
+![Module3Chapter4step7im](images/module3chapter4step7im.PNG)
 
 11. Prefabs フォルダーの [プロジェクト] パネルで、テーブル prefab を、先ほど作成した "TableAnchor" 子オブジェクトにドラッグします。
 
@@ -79,9 +81,9 @@ ms.locfileid: "73438367"
 ## <a name="congratulations"></a>結論
 
 
-この処理が完了すると、Unity プロジェクトに参加しているすべてのユーザーが、旧暦ランチャーを移動できるようになります。 すべての移動が同期されるため、各ユーザーが互いの相互作用を参照できます。 これらの概念は、すべての機能を備えた共有コラボレーションエクスペリエンスの基本的な構成要素として機能します。 
+この処理が完了したら、次のようにして、旧暦モジュールを見つけます。 その後、Unity プロジェクトに参加するすべてのユーザーが、旧暦ランチャーを移動できます。  すべての移動が同期されるため、各ユーザーが互いの相互作用を参照できます。 これらの概念は、すべての機能を備えた共有コラボレーションエクスペリエンスの基本的な構成要素として機能します。 
 
-すべてのユーザーは共有エクスペリエンスの一部として接続されており、オブジェクトの相対的な移動を確認できますが、ローカルユーザーが物理的に同じ場所にある他のオブジェクトとオブジェクトを参照できるように、アプリケーションでアバターとオブジェクトを正確に配置することはできません。現実的. ローカルの共有エクスペリエンスを固定するために、すべてのデバイスは物理環境についてよく理解している必要があります。 このモジュールでは、次のレッスンで実装する[Azure 空間アンカー](<https://azure.microsoft.com//services/spatial-anchors/>) (ASA) を使用してこれを実現します。
+すべてのユーザーは共有エクスペリエンスの一部として接続されており、オブジェクトの相対的な移動を確認できますが、アプリケーションでは、ローカルユーザーが他のオブジェクトとオブジェクトを表示できないように、アバターとオブジェクトを正確に配置することはできません。物理的な世界。 ローカルの共有エクスペリエンスを固定するために、すべてのデバイスは物理環境についてよく理解している必要があります。 このモジュールでは、次のレッスンで実装する[Azure 空間アンカー](<https://azure.microsoft.com//services/spatial-anchors/>) (ASA) を使用してこれを実現します。
 
 次のレッスンに進む前に、asa の基本、Azure アカウントとリソースの作成、およびその他の基本的なビルディングブロックについて説明する ASA Learning モジュールを完成させる必要があります。これは、共有エクスペリエンスに統合する前に必要です。
 

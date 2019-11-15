@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 91935cb5b465e51d3948f68b818f93ba52b215f1
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: 750161ff4c52a7ab71869b3cb0f97197d4ad09f2
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73914423"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106045"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. Unity を開発用に準備する 
 
@@ -52,7 +52,7 @@ ms.locfileid: "73914423"
 
 6. この処理が完了すると、新しい構成ファイルが表示され、プロファイルをカスタマイズすることができます。 
 
-![Module2Chapter1step4im](images/Module2Chapter1step4im.PNG)
+![Module2Chapter1step4ima](images/Module2Chapter1step4ima.PNG)
 
 7. 階層から [Mixed-Reality Toolkit (MRTK)] を選択します。 [インスペクター] パネルで、Mixed Reality Toolkit スクリプトを探して、次の図に示すように [Copy & Customize] ボタンを押します。  この後、ポップアップメニューの [複製] オプションを選択すると、pop が表示されます。
 
@@ -76,7 +76,14 @@ ms.locfileid: "73914423"
 
 ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
 
-11. SharingAssetCollection というカスタムパッケージをインポートし[ます。この](https://github.com/microsoft/MixedRealityLearning/releases/tag/development)パッケージはここからダウンロードできます。
+11. 一覧表示されたカスタムパッケージをインポートします。
+
+    」を参照します。 [HoloLens2. 2.1.0.0. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
+
+    b. [Unity. HoloLens2. 2.1.0.0. unitypackage を行います。](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.0/Unity.HoloLens2.MultiUserCapabilities.Tutorials.Asset.2.1.0.0.unitypackage)
+
+    >[!TIP]
+    >「[チュートリアル](mrlearning-base-ch1.md)入門」を完了している場合でも、 _HoloLens2_という名前の unity パッケージがコンピューターに保存されている可能性があります。 その場合は、上記の手順に記載されている資産のダウンロードをスキップできます。
 
 ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 

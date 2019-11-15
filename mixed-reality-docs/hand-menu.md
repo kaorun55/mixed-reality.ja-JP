@@ -6,16 +6,16 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: ハンド、メニュー、ボタン、クイックアクセス、レイアウト
-ms.openlocfilehash: ee958806ac462535b33164bb4faa4bf1aa29e709
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: b4ea7411be22633e82a88d1c91b6b2b1edbea735
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439253"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105638"
 ---
 # <a name="hand-menu"></a>ハンドメニュー
 
-![Ulnar side location](images/MRTK_UX_HandMenu.png)
+![Ulnar side location](images/UX/UX_Hero_HandMenu.jpg)
 
 メニューを使用すると、ユーザーは頻繁に使用される関数のための直接の UI をすぐに表示できます。 
 
@@ -127,9 +127,33 @@ ms.locfileid: "73439253"
 
 ---
 
+## <a name="hand-menu-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity の MRTK (Mixed Reality Toolkit) の手の形のメニュー
+**[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、ハンドメニューのスクリプトとサンプルシーンが用意されています。 HandConstraintPalmUp ソルバースクリプトを使用すると、さまざまな構成可能なオプションを使用して、任意のオブジェクトを簡単にアタッチできます。
+
+* [HandConstraintPalmUp を使用した MRTK ハンドメニュー](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)
+
+
+<br>
+
+---
+
 
 ## <a name="see-also"></a>関連項目
 
+* [カーソル](cursors.md)
+* [ハンドレイ](point-and-commit.md)
+* [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
-* [手で直接操作](direct-manipulation.md)
-* [手とモーション コントローラー](hands-and-tools.md)
+* [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
+* [操作性](direct-manipulation.md)
+* [ハンド メニュー](hand-menu.md)
+* [Near メニュー](near-menu.md)
+* [オブジェクト コレクション](object-collection.md)
+* [音声コマンド](voice-input.md)
+* [キーボード](keyboard.md)
+* [ボタン](tooltip.md)
+* [翻訳](slate.md)
+* [スライダー](slider.md)
+* [Billboard と Tag-along](billboarding-and-tag-along.md)
+* [進行状況を表示する](progress.md)
+* [表面の吸着](surface-magnetism.md)

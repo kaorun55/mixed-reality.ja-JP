@@ -6,14 +6,16 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens (第1世代)、HoloLens 2、Mixed Reality、カーソル、ターゲット設定、宝石、ジェスチャ
-ms.openlocfilehash: ef011d8400de1e23db3d6fb4b0f2a853d787ae86
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 719e7a573e8c8bc682ec0f960d9f3c8f8c8e5a4a
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435760"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105743"
 ---
 # <a name="cursors"></a>カーソル
+
+![カーソル](images/UX/UX_Hero_Cursor.jpg)
 
 現在のターゲットベクターのカーソルまたはインジケーターは、その時点でヘッドセットが現在のフォーカスを認識している場所を理解するための継続的なフィードバックをユーザーに提供します。 カーソルを使用すると、ユーザーは現在のターゲットポイントを理解し、フィードバックとして機能し、どの領域、ホログラム、またはポイントが入力に応答するかを示すことができます。 これは、デバイスがユーザーの注意を認識している場所のデジタル表現です (ただし、意図したものを決定することと同じではない可能性があります)。
 
@@ -154,6 +156,15 @@ Immersion の意味がエクスペリエンスの重要なコンポーネント�
 
 ---
 
+## <a name="cursor-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity の MRTK (Mixed Reality Toolkit) のカーソル
+既定では、 **[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、シェルのシステムカーソルと同じビジュアル状態を持つカーソル事前 Fab ([defaultcursor. prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Cursors)) が用意されています。 これは、MRTK の入力プロファイルの [ポインター] の下に割り当てられます。 このカーソルを置き換えたり、カスタマイズしたりすることができます。 アイトラッキング入力のエクスペリエンスを実現するために、MRTK には EyeGazeCursor が用意されており、視覚効果を最小限に抑えることができます。
+
+* [MRTK-ポインタープロファイル](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html#pointer-configuration)
+* [MRTK-入力システム](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)
+* [MRTK-ポインター](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Pointers.html)
+
+
+---
 
 ## <a name="see-also"></a>関連項目
 * [ジェスチャ](gaze-and-commit.md#composite-gestures)

@@ -6,14 +6,16 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、音声、cortana、音声、入力
-ms.openlocfilehash: 1b0a57ad680b7f779201e99dea24bfe746820c44
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 7264b0b8882928f64860bc5a30b97683306cb19c
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437144"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105768"
 ---
 # <a name="voice-input"></a>音声入力
+
+![音声入力](images/UX/UX_Hero_VoiceCommand.jpg)
 
 音声は、HoloLens での入力の主要な形式の1つです。 [ハンドジェスチャ](gaze-and-commit.md#composite-gestures)を使用しなくても、ホログラムに直接コマンドを渡すことができます。 音声入力は、意図したとおりに通信するための自然な方法である可能性があります。 複雑なインターフェイスを走査するのは、ユーザーが1つのコマンドで入れ子になったメニューを使用できるため、音声は特に便利です。
 
@@ -274,9 +276,9 @@ Holographic キーボードがアクティブなときはいつでも、入力�
 ## <a name="communication"></a>通信
 
 HoloLens が提供するカスタマイズされたオーディオ入力処理オプションを利用する必要があるアプリケーションでは、アプリが使用できるさまざまな[オーディオストリームのカテゴリ](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)を理解することが重要です。 Windows 10 では、さまざまなストリームカテゴリがサポートされています。 HoloLens では、これらのうちの3つを使用して、音声、通信、およびアンビエント環境のオーディオ用に調整されたマイクオーディオの品質を最適化するカスタム処理を可能にします。キャプチャ ("カムコーダー" など) シナリオ。
-* AudioCategory_Communications stream カテゴリは、通話の品質とナレーションのシナリオに合わせてカスタマイズされ、クライアントにユーザーの声の 16kHz 24bit mono オーディオストリームを提供します。
-* AudioCategory_Speech stream カテゴリは、HoloLens (Windows) 音声エンジン用にカスタマイズされており、ユーザーの声の 16kHz 24bit mono ストリームを提供します。 このカテゴリは、サードパーティの音声エンジンで必要に応じて使用できます。
-* AudioCategory_Other stream カテゴリはアンビエント環境オーディオ記録用にカスタマイズされており、クライアントには 48 Khz 24 ビットのステレオオーディオストリームが用意されています。
+* AudioCategory_Communications ストリームカテゴリは、通話の品質とナレーションのシナリオに合わせてカスタマイズされ、クライアントにユーザーの声の 16kHz 24bit mono オーディオストリームを提供します。
+* AudioCategory_Speech ストリームカテゴリは、HoloLens (Windows) 音声エンジン用にカスタマイズされており、ユーザーの声の 16kHz 24bit mono ストリームを提供します。 このカテゴリは、サードパーティの音声エンジンで必要に応じて使用できます。
+* AudioCategory_Other ストリームカテゴリは、アンビエント環境オーディオ記録用にカスタマイズされており、クライアントには 48 Khz 24 ビットのステレオオーディオストリームが用意されています。
 
 このようなオーディオ処理はすべてハードウェアアクセラレータです。これは、HoloLens CPU で同じ処理が行われた場合と比べて、機能の電力消費が多くなることを意味します。 システムのバッテリ寿命を最大化し、組み込みのオフロードオーディオ入力処理を活用するために、CPU で他のオーディオ入力処理を実行しないようにします。
 
@@ -290,8 +292,20 @@ HoloLens 2 では、追加の言語もサポートされています。 複数�
 
 Windows Mixed Reality Developer Edition release 2017 では、オーディオエンドポイント管理ロジックは、最初の HMD 接続の後、いったんログアウトして PC デスクトップに戻すと、正常に機能します。 ユーザーは、WMR OOBE を通過した後に初めてサインアウト/イベントが発生する前に、HMD を初めて接続する前にシステムがどのように設定されているかによって、オーディオの切り替えなしのさまざまなオーディオ機能の問題が発生する可能性があります。
 
+<br>
+
+---
+
+## <a name="voice-input-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) での音声入力
+**[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** では、任意のオブジェクトに音声コマンドを簡単に割り当てることができます。 MRTK の**音声入力プロファイル**を使用して、キーワードを定義します。 **SpeechInputHandler**スクリプトを割り当てることにより、音声入力プロファイルで定義されているキーワードにオブジェクトを応答させることができます。 また、SpeechInputHandler は、ユーザーの信頼度を向上させるための音声確認ラベルも提供します。
+
+* [MRTK-Voice コマンド](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)
+
+
+---
+
 ## <a name="see-also"></a>関連項目
-* [宝石とコミットメント](gaze-and-commit.md)
+* [視線入力とコミット](gaze-and-commit.md)
 * [本能的な操作](interaction-fundamentals.md)
 * [MR 入力 212: 音声](holograms-212.md)
 * [DirectX の音声入力](voice-input-in-directx.md)

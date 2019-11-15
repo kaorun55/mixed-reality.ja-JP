@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: ac345ecafee3a09e3b5ad58344310234e60354a1
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: fb7074849c5a07a95b370b5bfa75228fac36ba5b
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926881"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105959"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. Azure 空間アンカーの概要
 
@@ -30,9 +30,9 @@ HoloLens 2 チュートリアルの2番目のモジュールへようこそ。 �
 
 [Azure 空間アンカー v 1.1.0](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v1.1.0/AzureSpatialAnchors.unitypackage)
 
-[MR Base モジュール Asset Pack v1.0](https://github.com/microsoft/MixedRealityLearning/releases/download/1.2/BaseModuleAssets-1.2.unitypackage)
+[HoloLens2. 2.1.0.0. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)
 
-[ASA モジュール Asset Pack v 1.3.1](https://github.com/Developer-OI/MixedRealityLearning/releases/download/ASA_1.3/ASAModuleAssets_1.3.1.unitypackage)
+[HoloLens2. AzureSpatialAnchor. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchor-v2.1.0.0/Unity.HoloLens2.AzureSpatialAnchor.Tutorials.Asset.2.1.0.0.unitypackage)
 
 [Mixed Reality Toolkit Foundation パッケージ2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/tag/v2.1.0)
 
@@ -66,7 +66,7 @@ HoloLens 2 チュートリアルの2番目のモジュールへようこそ。 �
 
 > メモ: しばらくお待ちください。インポートには数分かかります。 
 
-6. Import [MR Base Module Asset Pack](https://github.com/microsoft/MixedRealityLearning/releases/tag/1.2) next。 手順 5. と同じように、Unity に戻り、[アセット] をクリックして、[インポートパッケージ] にカーソルを合わせます。 [カスタムパッケージ] をクリックします。コンピューターのファイルが再び表示されます。 Base module Asset Pack を格納した場所に移動します。 を選択します。 [開く] をクリックします。
+6. [HoloLens2. 2.1.0.0. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage) next. をインポートします。 手順 5. と同じように、Unity に戻り、[アセット] をクリックして、[インポートパッケージ] にカーソルを合わせます。 [カスタムパッケージ] をクリックします。コンピューターのファイルが再び表示されます。 Base module Asset Pack を格納した場所に移動します。 を選択します。 [開く] をクリックします。
 
 ![module2chapter1step5bim](images/module2chapter1step5bim.PNG)
 

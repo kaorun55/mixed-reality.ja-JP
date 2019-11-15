@@ -6,16 +6,16 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、コントロール、デザイン
-ms.openlocfilehash: 8f3629c6d9465383efc901ed784a3719cd6fdfb2
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 98fec76558502658511faf3f18d623bfa5a49dc2
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438168"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74106003"
 ---
 # <a name="object-collection"></a>オブジェクトコレクション
 
-![Elements アプリの定期テーブルで使用されるオブジェクトコレクション](images/640px-objectcollection-hero-640px.jpg)<br>
+![Elements アプリの定期テーブルで使用されるオブジェクトコレクション](images/UX/UX_Hero_ObjectCollection.jpg)<br>
 
 
 オブジェクトコレクションは、定義済みの3次元図形内のオブジェクトの配列をレイアウトするのに役立つレイアウトコントロールです。 さまざまな表面スタイル (**平面、円柱、球**、**放射状**) をサポートしています。 オブジェクトの半径とサイズ、およびそれらの間の間隔を調整できます。 オブジェクトコレクションでは、Unity からのすべてのオブジェクト (2D と3D の両方) がサポートされています。 **[Mixed Reality Toolkit](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)** では、オブジェクトコレクションの作成に役立つ Unity スクリプトと例を作成しました。
@@ -44,7 +44,36 @@ ms.locfileid: "73438168"
 オブジェクトコレクションを含む2D イメージの例を ![](images/940px-layout-2dimages.jpg)<br>
 *2D イメージでオブジェクトコレクションを使用する例*
 
+<br>
+
+---
+
+## <a name="object-collection-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) のオブジェクトコレクション
+
+* [MRTK-オブジェクトコレクション](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)
+
+
+<br>
+
+---
+
+
 ## <a name="see-also"></a>関連項目
-* [GitHub の Mixed Reality Toolkit でのオブジェクトコレクションのためのスクリプトと prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_ObjectCollection.md)
+
+* [カーソル](cursors.md)
+* [ハンドレイ](point-and-commit.md)
+* [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
-* [境界ボックス](app-bar-and-bounding-box.md)
+* [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
+* [操作性](direct-manipulation.md)
+* [ハンド メニュー](hand-menu.md)
+* [Near メニュー](near-menu.md)
+* [オブジェクト コレクション](object-collection.md)
+* [音声コマンド](voice-input.md)
+* [キーボード](keyboard.md)
+* [ボタン](tooltip.md)
+* [翻訳](slate.md)
+* [スライダー](slider.md)
+* [Billboard と Tag-along](billboarding-and-tag-along.md)
+* [進行状況を表示する](progress.md)
+* [表面の吸着](surface-magnetism.md)

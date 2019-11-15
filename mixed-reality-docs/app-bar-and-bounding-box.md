@@ -6,19 +6,16 @@ ms.author: adlinv
 ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality、アプリバー、境界ボックス
-ms.openlocfilehash: f09187bc2a3969a8f844711052e15433f5449d6d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 97afc0df02fd8460547e955d4fcf3e33a4e9f566
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437052"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105759"
 ---
 # <a name="bounding-box-and-app-bar"></a>境界ボックスとアプリバー
-![境界は、混合現実のオブジェクト操作の標準インターフェイスです。](images/640px-boundingbox-hero.jpg)<br>
-
+![境界は、Mixed Reality でのオブジェクト操作の標準インターフェイスです。](images/640px-boundingbox-hero.jpg)<br>
 <br>
-
----
 
 ## <a name="what-is-the-bounding-box"></a>境界ボックスとは何ですか。
 
@@ -95,15 +92,33 @@ ms.locfileid: "73437052"
 <br>
 
 
+## <a name="bounding-box-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) の境界ボックス
+**[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、境界ボックスとアプリバーのスクリプトと prefabs が用意されています。 BoundingBox.cs スクリプトを任意のオブジェクトに割り当てるだけで、境界ボックスを追加できます。
 
-**Unity アプリの開発については、「 [Mixed Reality Toolkit-Unity のアプリバー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_AppBar.html) 」を参照してください。**
+* [MRTK-境界ボックス](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)
+
 
 <br>
 
 ---
 
+
 ## <a name="see-also"></a>関連項目
+
+* [カーソル](cursors.md)
+* [ハンドレイ](point-and-commit.md)
+* [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
-* [Unity のテキスト](text-in-unity.md)
+* [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
+* [操作性](direct-manipulation.md)
+* [ハンド メニュー](hand-menu.md)
+* [Near メニュー](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
+* [音声コマンド](voice-input.md)
+* [キーボード](keyboard.md)
+* [ボタン](tooltip.md)
+* [翻訳](slate.md)
+* [スライダー](slider.md)
+* [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
+* [表面の吸着](surface-magnetism.md)

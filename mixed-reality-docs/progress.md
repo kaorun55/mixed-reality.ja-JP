@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、設計、コントロール、ui、ux
-ms.openlocfilehash: 43b4802e7c821c98c847509ace950f381da12f95
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: aafcd8eebbabfc5b53d09348d513f62def909da6
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437541"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105982"
 ---
-# <a name="displaying-progress"></a>進行状況の表示
+# <a name="progress-indicator"></a>進行状況インジケーター
 
 <br>
 
-<img src="images/HoloLens2_Loader.gif" alt="Progress ring example in HoloLens" width="940px">
+<img src="images/UX/MRTK_ProgressIndicator.gif" alt="Progress ring example in HoloLens" width="940px">
 
 プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。 使用されているインジケーターに応じて、進行状況インジケーターが表示されているときはユーザーはアプリを操作できないことを知らせたり、待ち時間の長さを示したりできます。
 
@@ -88,9 +88,32 @@ ms.locfileid: "73437541"
 
 ---
 
+## <a name="progress-indicator-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用 MRTK (Mixed Reality Toolkit) の進行状況インジケーター
+
+* [MRTK-進行状況インジケーター prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/ProgressIndicators)
+* [MRTK-シーン移行サービス](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html)
+
+
+<br>
+
+---
+
 ## <a name="see-also"></a>関連項目
-* [Mixed Reality Toolkit での進行状況スクリプトと prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Loader)
-* [境界ボックス](app-bar-and-bounding-box.md)
+
+* [カーソル](cursors.md)
+* [ハンドレイ](point-and-commit.md)
+* [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
+* [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
+* [操作性](direct-manipulation.md)
+* [ハンド メニュー](hand-menu.md)
+* [Near メニュー](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
+* [音声コマンド](voice-input.md)
+* [キーボード](keyboard.md)
+* [ボタン](tooltip.md)
+* [翻訳](slate.md)
+* [スライダー](slider.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
+* [進行状況を表示する](progress.md)
+* [表面の吸着](surface-magnetism.md)
