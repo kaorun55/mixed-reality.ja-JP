@@ -6,12 +6,12 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: ハンド、メニュー、ボタン、クイックアクセス、レイアウト
-ms.openlocfilehash: b4ea7411be22633e82a88d1c91b6b2b1edbea735
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: c53fdc4ea6f3243cf906ee1916a9c234d0fce6ca
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105638"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143176"
 ---
 # <a name="hand-menu"></a>ハンドメニュー
 
@@ -154,6 +154,7 @@ ms.locfileid: "74105638"
 * [ボタン](tooltip.md)
 * [翻訳](slate.md)
 * [スライダー](slider.md)
+* [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
 * [表面の吸着](surface-magnetism.md)

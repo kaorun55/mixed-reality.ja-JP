@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、対話、ui、ux
-ms.openlocfilehash: 07433b3749ca6dc62edbc2b7a29f72d582ba5396
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: 2c3c1a8550a3ae953f0e6af942159e958d560eec
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74106201"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143102"
 ---
 # <a name="surface-magnetism"></a>表面の吸着
 
@@ -50,6 +50,7 @@ ms.locfileid: "74106201"
 * [ボタン](tooltip.md)
 * [翻訳](slate.md)
 * [スライダー](slider.md)
+* [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
 * [表面の吸着](surface-magnetism.md)

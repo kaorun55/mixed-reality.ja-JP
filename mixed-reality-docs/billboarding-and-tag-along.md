@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、billboarding、タグ
-ms.openlocfilehash: 06cd1c6f67f8aa2dd94173d4089adbdbd0765211
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: ff2b1ce20174b1b9aecbb90b1d1dc3e8896b3761
+ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105736"
+ms.lasthandoff: 11/17/2019
+ms.locfileid: "74143131"
 ---
 # <a name="billboarding-and-tag-along"></a>Billboarding とタグに沿って
 
@@ -73,6 +73,7 @@ Billboarding が有効になっているオブジェクトは、ユーザーの�
 * [ボタン](tooltip.md)
 * [翻訳](slate.md)
 * [スライダー](slider.md)
+* [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
 * [表面の吸着](surface-magnetism.md)
