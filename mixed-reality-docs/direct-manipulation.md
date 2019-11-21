@@ -7,14 +7,17 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 視線入力, 視線入力ターゲット設定, 対話, 設計, 手に近い, HoloLens
-ms.openlocfilehash: ed3b25fe9a7dd404d07073b578b8da13e1984cab
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e0b0e6273917df071f49eb0108039ebe204bbc12
+ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435886"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74105943"
 ---
 # <a name="direct-manipulation-with-hands"></a>手で直接操作
+
+![Button](images/UX/UX_Hero_Manipulation.jpg)
+
 直接操作は、ホログラムに手で直接触れる入力モデルです。 この概念の背景にある考え方は、オブジェクトを現実の世界と同じように動かすことです。 ボタンを押してオンにしたり、オブジェクトをつかんで手に取ったりできます。2D コンテンツは仮想タッチスクリーンのように動作します。 このため、直接操作はユーザーにとって学びやすく、楽しくもあります。 直接操作は、"近接" 入力モデルと考えられており、手の届く範囲にあるコンテンツの操作に最適です。
 
 直接操作はアフォーダンスをベースとしているので、操作が簡単です。 ユーザーは象徴的なジェスチャを学ぶ必要はありません。 すべての対話は、触ったりつかんだりできる視覚的要素を中心に構築されています。
@@ -296,12 +299,6 @@ HoloLens (第 1 世代) では、ブルームやエアタップなど、いく�
 
 AR の手と VR のモーション コントローラーとの間には、操作に類似点があることにお気付きかもしれません。 どちらの入力も、それぞれの環境で直接操作をトリガーするために使用できます。 HoloLens 2 で近くのものを手でグラブ アンド ドラッグする操作は、WMR のモーション コントローラーのグラブ ボタンによる実行内容とほとんど同じです。 これにより、ユーザーは、2 つのプラットフォームの間の操作に習熟することができます。この知識は、アプリケーションを一方から他方に移植する場合に役立つことがあります。
 
-
-<br>
-
----
-
-
 <br>
 
 ---
@@ -324,6 +321,18 @@ AR の手と VR のモーション コントローラーとの間には、操作
 * **どこ**:クイック スロー ジェスチャで、ユーザーの視線に関する情報を使用します。 ホログラムをつかみ、目標とする場所のだいたいの方角に向かって放り投げたとします。  
 
     これでうまくいくこともあるかもしれませんが、ジェスチャの手の動きが速いと、目標とする場所が極めて不正確になる可能性があります。 しかし、視線追跡でジェスチャの精度を向上できる場合があります。
+
+<br>
+
+---
+
+## <a name="manipulation-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 向け MRTK (Mixed Reality ツールキット) の操作
+**[MRTK](https://github.com/Microsoft/MixedRealityToolkit-Unity)** を使用すると、スクリプト **ManipulationHandler** を使って一般的な操作の動作を簡単に実行できます。 ManipulationHandler を使用すると、手で直接またはハンド レイを使って、オブジェクトをつかんで移動させることができます。 また、オブジェクトのスケーリングおよび回転に対する両手の操作もサポートしています。
+
+* [MRTK - 操作](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)
+
+
+---
 
 ## <a name="see-also"></a>関連項目
 
