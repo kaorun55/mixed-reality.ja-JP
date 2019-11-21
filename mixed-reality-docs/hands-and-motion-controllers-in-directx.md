@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 04/30/2019
 ms.topic: article
 keywords: ハンド、モーションコントローラー、directx、入力、ホログラム
-ms.openlocfilehash: 7b8222e5e539eb95b07cc24d6b49106bd174b490
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 54eaacc3f0dccf728b5438c020a5efd7e0788251
+ms.sourcegitcommit: 4081dc2356fec0ea3625f1d989689cfbbb3fcf5f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435197"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74203338"
 ---
 # <a name="hands-and-motion-controllers-in-directx"></a>DirectX のハンドアンドモーションコントローラー
 
@@ -99,7 +99,7 @@ GetDetectedSourcesAtTimestamp には timestamp パラメーターがあること
 ## <a name="cross-device-input-properties"></a>デバイス間の入力プロパティ
 SpatialInteractionSource API では、さまざまな機能を備えたコントローラーおよびハンドトラッキングシステムがサポートされています。 これらの機能の多くは、デバイスの種類によって一般的です。 たとえば、ハンドトラッキングとモーションコントローラーは、どちらも ' select ' アクションと3D 位置を提供します。 可能な限り、API はこれらの共通機能を SpatialInteractionSource の同じプロパティにマップします。  これにより、アプリケーションは幅広い種類の入力をより簡単にサポートできるようになります。 次の表では、サポートされるプロパティと、入力の種類間での比較方法について説明します。
 
-| プロパティ | 説明 | HoloLens のジェスチャ | モーションコントローラー | 手によるハンド|
+| プロパティ | 説明 | HoloLens (第1世代) ジェスチャ | モーションコントローラー | 手によるハンド|
 |--- |--- |--- |--- |--- |
 | [SpatialInteractionSource::**きき**](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsource.handedness) | Right または left/controller。 | サポートされない | サポート対象 | サポート対象 |
 | [SpatialInteractionSourceState::**Isselectpressed**れました](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionsourcestate.isselectpressed) | プライマリボタンの現在の状態。 | エアタップ | トリガー | 緩やかに出た空気タップ (垂直ピンチ) |
