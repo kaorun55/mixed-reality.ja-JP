@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 05/09/2019
 ms.topic: article
 keywords: 視線、ヘッド見つめ、ヘッドトラッキング、視線追跡、directx、入力、ホログラム
-ms.openlocfilehash: 48188cc8c886b371847357701b42249f486bceac
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 664657b9ab01530a608e31091823e828cc99d0cd
+ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641117"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73926561"
 ---
 # <a name="head-gaze-and-eye-gaze-input-in-directx"></a>DirectX でのヘッドと視線の入力
 
@@ -144,7 +144,7 @@ if (Windows::Perception::People::EyesPose::IsSupported() &&
 
 ### <a name="getting-the-eye-gaze-ray"></a>視線を見つめます
 にアクセスした後は、すべてのフレームに対して視線を自由に取得できます。
-ヘッドを見つめた場合と同様に、目的のタイムスタンプと座標系を使用して[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)を呼び出すことによって[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose)を取得します。 SpatialPointerPose には、[視線](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)プロパティを通じて[EyesPose](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose)オブジェクトが含まれています。 この値は、視線追跡が有効になっている場合にのみ null です。 そこから、 [EyesPose:: IsCalibrationValid](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)を呼び出すことによって、デバイスのユーザーが監視の調整を行っているかどうかを確認できます。  次に、[見つめ](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)プロパティを使用して、 [SpatialRay](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialray) contianing を視線の位置と方向に移動します。 "宝石" プロパティは null になることがあるため、必ず確認してください。 これは、調整されたユーザーが一時的にその目を閉じる場合に発生する可能性があります。
+ヘッドを見つめた場合と同様に、目的のタイムスタンプと座標系を使用して[SpatialPointerPose:: TryGetAtTimestamp](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.trygetattimestamp)を呼び出すことによって[SpatialPointerPose](https://docs.microsoft.com//uwp/api/Windows.UI.Input.Spatial.SpatialPointerPose)を取得します。 SpatialPointerPose には、[視線](https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialpointerpose.eyes)プロパティを通じて[EyesPose](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose)オブジェクトが含まれています。 この値は、視線追跡が有効になっている場合にのみ null です。 そこから、 [EyesPose:: IsCalibrationValid](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.iscalibrationvalid#Windows_Perception_People_EyesPose_IsCalibrationValid)を呼び出すことによって、デバイスのユーザーが監視の調整を行っているかどうかを確認できます。  次に、[見つめ](https://docs.microsoft.com//uwp/api/windows.perception.people.eyespose.gaze#Windows_Perception_People_EyesPose_Gaze)プロパティを使用して、視線位置と方向を含む[SpatialRay](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialray)を取得します。 "宝石" プロパティは null になることがあるため、必ず確認してください。 これは、調整されたユーザーが一時的にその目を閉じる場合に発生する可能性があります。
 
 次のコードは、視線光線にアクセスする方法を示しています。
 
@@ -193,7 +193,10 @@ if (pointerPose)
 <br>
 
 ## <a name="calibration"></a>目盛り
-視線追跡を正確に機能させるには、各ユーザーが[視点を追跡](calibration.md)する必要があります。 これにより、デバイスはシステムを調整して、より快適で品質の高い閲覧エクスペリエンスをユーザーに提供し、同時に正確な視点を追跡することができます。 開発者は、ユーザーの調整を管理するために、エンドユーザーの作業を行う必要はありません。 システムは、ユーザーがデバイスを最初に使用しているときに、ユーザーが初めてデバイスを使用していることを確認します。 * ユーザーは、最初に調整プロセスをオプトアウトした *、調整プロセスは最後に成功しなかったことを示します。ユーザーがデバイスを使用した時刻
+視線追跡を正確に機能させるには、各ユーザーが[視点を追跡](calibration.md)する必要があります。 これにより、デバイスはシステムを調整して、より快適で品質の高い閲覧エクスペリエンスをユーザーに提供し、同時に正確な視点を追跡することができます。 開発者は、ユーザーの調整を管理するために、エンドユーザーの作業を行う必要はありません。 システムによって、次のような状況で、デバイスを調整するように求めるメッセージがユーザーに表示されます。
+* ユーザーが初めてデバイスを使用している
+* ユーザーが以前に調整プロセスをオプトアウトした
+* ユーザーが最後にデバイスを使用したときに、調整プロセスが成功しませんでした
 
 開発者は、視線追跡データが使用できない可能性のあるユーザーに対して十分なサポートを提供する必要があります。 代替ソリューションに関する考慮事項の詳細については、「 [Hololens 2 での目の追跡](eye-tracking.md)」を参照してください。
 
