@@ -64,12 +64,12 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
 
 **機能**
 * 光学式の追跡
-* きっかけ
+* トリガー
 * グラブボタン
 * スティック
 * タッチパッド
 
-## <a name="setup"></a>[セットアップ]
+## <a name="setup"></a>セットアップ
 
 ### <a name="before-you-begin"></a>始める前に
 
@@ -203,9 +203,9 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 <tr>
 <th> 状態の追跡 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt; 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt; 1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精度 (失われるリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度 (失われるリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>おおよその精度</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
@@ -218,7 +218,7 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 これらのモーションコントローラーの追跡状態は、次のように定義されています。
 * **高精度:** モーションコントローラーは、ヘッドセットのビューに含まれていますが、通常、ビジュアルの追跡に基づいて高精度の位置を提供します。 一時的にビューのフィールドから離れるか、ヘッドセットセンサーから瞬間的に見えなくなっている移動コントローラー (ユーザーなど) は、コントローラーの慣性追跡に基づいて、短時間で高精度のポーズを返します。自分自身.
 * **高精度 (損失のリスク):** ユーザーが、ヘッドセットのビューの端を越えてモーションコントローラーを動かすと、ヘッドセットはすぐにコントローラーの位置を視覚的に追跡できなくなります。 アプリでは、 **SourceLossRisk**が1.0 に到達して、コントローラーがこの視界の境界に達したことを認識します。 その時点で、アプリは、非常に高品質なポーズの安定したストリームを必要とするコントローラージェスチャを一時停止することを選択できます。
-* **おおよその精度:** コントローラーのビジュアル追跡が十分に失われた場合、コントローラーの位置はおおよその精度の位置にドロップします。 この時点で、システムはコントローラーをユーザーにボディロックし、ユーザーが移動したときの位置を追跡しながら、内部方向センサーを使用してコントローラーの真向きを公開します。 UI 要素をポイントしてアクティブ化するためにコントローラーを使用する多くのアプリは、ユーザーに気付かずに正確な精度で、通常どおりに動作できます。 入力要件が重いアプリでは、 **positionaccuracy**プロパティを調べることによって、精度が**高い**ことを**意味します**。たとえば、オフスクリーンのターゲットでユーザーにより多くのヒットボックスを与えることができます。この期間中。
+* **おおよその精度:** コントローラーのビジュアル追跡が十分に失われた場合、コントローラーの位置はおおよその精度の位置にドロップします。 この時点で、システムはコントローラーをユーザーにボディロックし、ユーザーが移動したときの位置を追跡しながら、内部方向センサーを使用してコントローラーの真向きを公開します。 UI 要素をポイントしてアクティブ化するためにコントローラーを使用する多くのアプリは、ユーザーに気付かずに正確な精度で、通常どおりに動作できます。 入力要件が重いアプリでは、 **positionaccuracy**プロパティを調べることによって、精度が**高い**ことを**意味します**。たとえば、この期間中にユーザーに対して、オフスクリーンのターゲットに対してより多くのヒットボックスを与えることができます。
 * **位置なし:** コントローラーは長時間の精度で実行できますが、本体でロックされている位置が現時点では意味を持たないことをシステムが認識している場合があります。 たとえば、電源が入っていたコントローラーが視覚的に観察されていない場合や、ユーザーがコントローラーを停止した後に他のユーザーが選択した場合などです。 これらのタイミングでは、システムはアプリに位置を提供せず、 **TryGetPosition**は false を返します。
 
 ## <a name="interactions-low-level-spatial-input"></a>相互作用: 低レベルの空間入力
@@ -233,7 +233,7 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 
 ## <a name="composite-gestures-high-level-spatial-input"></a>複合ジェスチャ: 高度な空間入力
 
-[ハンドジェスチャ](gaze-and-commit.md#composite-gestures)とモーションコントローラーはどちらも、高レベルの **[複合ジェスチャ](gaze-and-commit.md#composite-gestures)** の共通セットを検出するために、時間の経過と共に追跡できます。 これにより、アプリは、ユーザーがハンドまたはコントローラーを使用するかどうかにかかわらず、高レベルの**タップ**、**保持**、**操作**、および**ナビゲーション**ジェスチャを検出できます。
+両方[ジェスチャを渡す](gaze-and-commit.md#composite-gestures)モーションのコント ローラーは、高レベルの共通セットを検出するために時間の経過と共に追跡できますと **[複合ジェスチャ](gaze-and-commit.md#composite-gestures)** します。 これにより、アプリは、ユーザーがハンドまたはコントローラーを使用するかどうかにかかわらず、高レベルの**タップ**、**保持**、**操作**、および**ナビゲーション**ジェスチャを検出できます。
 
 ## <a name="rendering-the-motion-controller-model"></a>モーションコントローラーモデルのレンダリング
 
@@ -269,7 +269,7 @@ Unity でコントローラーモデルを動的に読み込む方法の詳細�
 
 ユニバーサル Windows アプリケーションでは使用できません。
 
-## <a name="troubleshooting"></a>[トラブルシューティング]
+## <a name="troubleshooting"></a>トラブルシューティング
 
 ファンガイドの「[モーションコントローラーのトラブルシューティング](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#motion-controllers)」を参照してください。
 

@@ -77,7 +77,7 @@ HoloSketch](images/holosketch-image-04-1000px.png) を使用した ![単純化�
 
 このツールを使用すると、デザイナーは、真の3次元空間でソリューションを調査できるようになり、2D では動かなくなります。 HoloLens の場合、バックグラウンドは実際の世界であるため、UI の背景を作成することを考える必要はありません。 HoloSketch を使用すると、デザイナーは HoloLens での3D デザインを簡単に調べることができます。
 
-## <a name="get-started"></a>[開始する]
+## <a name="get-started"></a>はじめに
 
 ### <a name="how-to-import-2d-images-jpgpng-into-holosketch"></a>HoloSketch に2D イメージ (JPG/PNG) をインポートする方法
 
@@ -123,7 +123,7 @@ OneDrive フォルダーにアップロードする前に、次の手順に従�
 11. Unity プロジェクトの ' Asset ' フォルダーの下に ' Assetbundles ' という名前のフォルダーを作成します。
 
 12. [アセット] メニューの [Build AssetBundles] を選択して、ファイルを生成します。 
-   [アセット] メニューから ![[Build AssetBundles] を選択して、ファイルを生成します。](images/holosketch-15a-assetbundles.png)
+   ![[資産] メニューからファイルを生成する ' AssetBundles のビルド を選択します。](images/holosketch-15a-assetbundles.png)
 
 
 13. **生成されたファイルを OneDrive の/Files/Documents/HoloSketch フォルダーにアップロードします。** Asset_unique_name ファイルのみをアップロードします。 マニフェストファイルまたは AssetBundles ファイルをアップロードする必要はありません。 <br>

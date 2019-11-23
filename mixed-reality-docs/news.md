@@ -27,7 +27,7 @@ ms.locfileid: "73439903"
 
 <table>
 <tr>
-<th style="width: 400px; text-align:left;">コンテンツ</th><th style="width: 125px; text-align:left;">配信</th><th style="width: 125px; text-align:left;">ライブ中継中</th>
+<th style="width: 400px; text-align:left;">コンテンツ</th><th style="width: 125px; text-align:left;">Delivery</th><th style="width: 125px; text-align:left;">ライブ中継中</th>
 </tr> 
 <tr>
 <td><b>移植ガイド</b> <br>1. HoloToolKit (HTK)/Mixed Reality ツールキット (MRTK) から MRTK バージョン 2
@@ -47,7 +47,7 @@ ms.locfileid: "73439903"
 <td>HoloLens 2 の設計と開発のガイダンス</td><td>2019年10月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/>Mixed reality の概要</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/design>設計とプロトタイプ作成</a><li><a href=https://docs.microsoft.com/windows/mixed-reality/development>開発者ツールとアーキテクチャ</a></td>
 </tr>
 <tr>
-  <td>Unreal の新しい情報</td><td>2019年10月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview>Unreal development の概要</a></td>
+  <td>Unreal の新しい情報</td><td>2019年10月</td><td> <ul><li><a href=https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview>Unreal 開発の概要</a></td>
 </tr>
 <tr>
   <td>Microsoft Fluent デザイン</td><td>2019年10月</td><td> <ul><li><a href=https://www.microsoft.com/design/fluent/>Mixed reality デザインページ</a></td>
