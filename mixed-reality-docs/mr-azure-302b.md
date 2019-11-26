@@ -6,19 +6,19 @@ ms.author: jemccull
 ms.date: 07/03/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, カスタムビジョン, hololens, イマーシブ, vr
-ms.openlocfilehash: b173648e2e829e94e47306277bd7814a19842cae
-ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
+ms.openlocfilehash: 2c8bd31958cca3b0e27fb0e97839d75fcdebe8c5
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047210"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438520"
 ---
 >[!NOTE]
 >Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
 <br>
 
-# <a name="mr-and-azure-302b-custom-vision"></a>MR と Azure 302b:カスタムビジョン
+# <a name="mr-and-azure-302b-custom-vision"></a>MR と Azure 302b: カスタムビジョン
 
 このコースでは、混合現実アプリケーションで Azure Custom Vision の機能を使用して、提供されたイメージ内のカスタムビジュアルコンテンツを認識する方法を学習します。
 
@@ -42,7 +42,7 @@ Azure Custom Vision は、開発者がカスタムイメージ分類子を構築
 <tr>
 <th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td> MR と Azure 302b:カスタムビジョン</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
+<td> MR と Azure 302b: カスタムビジョン</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
 </table>
 
@@ -66,7 +66,7 @@ Azure Custom Vision は、開発者がカスタムイメージ分類子を構築
 - Azure セットアップと Custom Vision API の取得のためのインターネットアクセス
 - Custom Vision Service が認識するオブジェクトごとに、少なくとも5つのイメージ (10) が推奨されます。 必要に応じて、[このコースで既に提供されているイメージ (コンピューターマウスとキーボード)](https://github.com/Microsoft/HolographicAcademy/raw/Azure-MixedReality-Labs/Azure%20Mixed%20Reality%20Labs/MR%20and%20Azure%20302b%20-%20Custom%20vision/ComputerVision_Images.zip)を使用できます。
 
-## <a name="before-you-start"></a>開始前の準備
+## <a name="before-you-start"></a>開始前の作業
 
 1.  このプロジェクトのビルドで問題が発生しないように、このチュートリアルで説明されているプロジェクトをルートまたはほぼルートフォルダーに作成することを強くお勧めします (長いフォルダーパスはビルド時に問題を引き起こす可能性があります)。
 2.  HoloLens をセットアップしてテストします。 HoloLens のセットアップをサポートする必要がある場合は、 [hololens セットアップに関する記事にアクセスして](https://docs.microsoft.com/hololens/hololens-setup)ください。 
@@ -125,7 +125,7 @@ Custom Vision ポータルでは、主な目的は、イメージ内の特定の
 
 Custom Vision Service プロジェクトをトレーニングするには:
 
-1.  [タグ] **+** の横にあるボタンをクリックし**ます。**
+1.  [タグ] の横にある [ **+** ] ボタンをクリックし**ます。**
 
     ![](images/AzureLabs-Lab302b-06.png)
 
@@ -205,7 +205,7 @@ Custom Vision Service プロジェクトをトレーニングするには:
 
 5.  それでも**ファイル > ビルド設定**を行い、次のことを確認します。
 
-    1.  **ターゲットデバイス**が**Hololens**に設定されています
+    1.  **ターゲットデバイス**が**HoloLens**に設定されています
 
         > イマーシブヘッドセットの場合は、**ターゲットデバイス**を*任意のデバイス*に設定します。
         
@@ -261,7 +261,7 @@ Custom Vision Service プロジェクトをトレーニングするには:
 
     ![](images/AzureLabs-Lab302b-27.png)
 
-8.  *ビルド設定*に戻る*Unity C\#プロジェクト*はグレーで表示されなくなりました。この横にあるチェックボックスをオンにします。
+8.  *ビルド設定*に戻る*Unity C\# プロジェクト*はグレーで表示されなくなりました。このの横にあるチェックボックスをオンにします。
 
 9.  [ビルドの設定] ウィンドウを閉じます。
 
@@ -297,7 +297,7 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
 
 6.  次に、 **Newtonsoft**フォルダー内の**WSA**フォルダーを開く必要があります。 先ほど構成したものと同じファイルのコピーが表示されます。 ファイルを選択し、インスペクターで次のことを確認します。
     -   **すべてのプラットフォーム**が**オフ**になっています 
-    -   **のみ** **Wsaplayer**が**オン**になっています
+    -   **wsaplayer**のみが**チェック**されます
     -   **処理**されないかどうかを**確認**します
 
     ![](images/AzureLabs-Lab302b-31.png)
@@ -348,7 +348,7 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
 
 2.  作成したばかりのフォルダーをダブルクリックして開きます。
 
-3.  フォルダー内を右クリックし、[ **\# C スクリプト**の**作成** > ] をクリックします。 スクリプトに*CustomVisionAnalyser*という名前を指定します。
+3.  フォルダー内を右クリックし、[ **Create** > **C\# Script**] をクリックします。 スクリプトに*CustomVisionAnalyser*という名前を指定します。
 
 4.  新しい*CustomVisionAnalyser*スクリプトをダブルクリックして、 **Visual Studio**で開きます。
 
@@ -737,7 +737,7 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
 4.  次に、 **Start ()** メソッドの上に、 *CustomVisionTrainer*クラス内に次の変数を追加します。 
 
     > [!NOTE]
-    > ここで使用されているトレーニング URL は*Custom Vision トレーニング 1.2*のドキュメントに記載されており、の構造は次のとおりです。 https://southcentralus.api.cognitive.microsoft.com/customvision/v1.2/Training/projects/{projectId}/  
+    > ここで使用されているトレーニング URL は*Custom Vision トレーニング 1.2*のドキュメント内に記載されており、 https://southcentralus.api.cognitive.microsoft.com/customvision/v1.2/Training/projects/{projectId}/ 次の構造を持ちます。  
     > 詳細については、 [*Custom Vision トレーニング v2.0 リファレンス API*](https://southcentralus.dev.cognitive.microsoft.com/docs/services/f2d62aa3b93843d79e948fe87fa89554/operations/5a3044ee08fa5e06b890f11f)」を参照してください。
 
     > [!WARNING]
@@ -1447,7 +1447,7 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
                 }
             } 
 
-            // Subscribing to the Hololens API gesture recognizer to track user gestures
+            // Subscribing to the HoloLens API gesture recognizer to track user gestures
             recognizer = new GestureRecognizer();
             recognizer.SetRecognizableGestures(GestureSettings.Tap);
             recognizer.Tapped += TapHandler;
@@ -1649,7 +1649,7 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
 
 1.  **ファイル > ビルド設定**にアクセスします。
 
-2.  **\# Unity C プロジェクト**をティックします。
+2.  **Unity C\# プロジェクト**をティックします。
 
 3.  **[Build]** をクリックします。 Unity は**エクスプローラー**ウィンドウを起動します。このウィンドウでは、アプリを作成するフォルダーを作成して選択する必要があります。 ここでそのフォルダーを作成し、「 **App**」という名前を指定します。 次に、**アプリ**フォルダーを選択し、 **[フォルダーの選択]** をクリックします。
 
@@ -1659,15 +1659,15 @@ Newtonsoft ライブラリをプロジェクトにインポートするには、
 
 HoloLens に展開するには:
 
-1.  Hololens が**開発者モード**になっていることを確認するには、HOLOLENS の IP アドレス (リモートデプロイ用) が必要です。 これを行うには :
+1.  Hololens が**開発者モード**になっていることを確認するには、HOLOLENS の IP アドレス (リモートデプロイ用) が必要です。 これには、次の手順を実行します。
 
     1.  HoloLens を装着した後、**設定**を開きます。
 
-    2.  [**ネットワーク & インターネット** > **wi-fi** > **詳細オプション]** にアクセスします。
+    2.  [**ネットワーク & インターネット** > **Wi-fi** > **詳細オプション]** にアクセス
 
     3.  **IPv4**アドレスをメモしておきます。
 
-    4.  次に、 **[設定]** に戻り、**開発者の** **& セキュリティ** > を更新します。
+    4.  次に、 **[設定]** に戻り、**開発者向けの** **& セキュリティ** > を更新します。
 
     5.  **開発者モードをに**設定します。
 

@@ -6,21 +6,21 @@ ms.author: dgedye
 ms.date: 05/03/2018
 ms.topic: article
 keywords: research モード, cv, rs4, コンピュータービジョン, 研究, HoloLens
-ms.openlocfilehash: e9a7683f8d582b459185066e74655e8f2b236db4
-ms.sourcegitcommit: 17f86fed532d7a4e91bd95baca05930c4a5c68c5
+ms.openlocfilehash: 307df0c226221422f13af09d8f4944c22ead3865
+ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66829935"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73438308"
 ---
 # <a name="hololens-research-mode"></a>HoloLens Research モード
 
 > [!NOTE]
 > この機能は、HoloLens 用の[Windows 10 April 2018 更新プログラム](release-notes-april-2018.md)の一部として追加されたものであり、以前のリリースでは使用できません。
 
-Research モードは、デバイス上のキーセンサーへのアプリケーションアクセスを提供する HoloLens の新機能です。 これには次が含まれます。
+Research モードは、デバイス上のキーセンサーへのアプリケーションアクセスを提供する HoloLens の新機能です。 次のようなクラスがあります。
 - マップの構築とヘッド追跡のためにシステムで使用される4つの環境追跡カメラ。
-- 深度カメラデータの2つのバージョン (高周波数 (30 FPS) のほぼ詳細な検出、通常は手動での追跡、および空間マッピングで現在使用されている低頻度 (1 FPS) の詳細な検出のため)
+- 深度カメラデータの2つのバージョン (高周波数 (30 FPS) のほぼ詳細な検出、通常は手動での追跡で使用)、および空間マッピングで現在使用されている低頻度 (1-5 FPS) の詳細な検出用
 - IR 反射反射ストリームの2つのバージョン。 HoloLens では深度を計算するために使用されますが、これらのイメージは HoloLens から照らされ、アンビエントライトによって適度に影響を受けないという利点があります。
 
 ![Research モードアプリのスクリーンショット](images/sensor-stream-viewer.jpg)<br>
@@ -59,7 +59,7 @@ Research モードは、デバイス上のキーセンサーへのアプリケ�
 
 次に、HoloLens と同じ Wi-fi ネットワークに接続されている web ブラウザーを使用して、HoloLens の IP アドレスに移動します (**設定 > network & Internet > wi-fi > ハードウェアプロパティ**)。 これは[デバイスポータル](using-the-windows-device-portal.md)であり、ポータルの [システム] セクションに "リサーチモード" ページがあります。
 
-![HoloLens デバイスポータルの [リサーチモード] タブ](images/ResearchModeDevPortal.png)<br>
+HoloLens デバイスポータルの ![リサーチモード] タブ](images/ResearchModeDevPortal.png)<br>
 *HoloLens デバイスポータルでのリサーチモード*
 
 [**センサーストリームへのアクセスを許可**する] を選択した後、HoloLens を再起動する必要があります。 これを行うには、デバイスポータルのページ上部にある [Power] (電源) メニュー項目を使用します。
