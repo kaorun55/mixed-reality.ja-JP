@@ -1,64 +1,64 @@
 ---
-title: Scene understanding SDK
-description: Programming guide to the Scene Understanding SDK
+title: シーンを理解する SDK
+description: シーンについて理解する SDK のプログラミングガイド
 author: szymons
 ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
-keywords: Scene Understanding, Spatial Mapping, Windows Mixed Reality, Unity
+keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
 ms.openlocfilehash: f38145c4124a9f162e58188c6179dc29c22e864e
 ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/26/2019
 ms.locfileid: "74491121"
 ---
-# <a name="scene-understanding-sdk-overview"></a>Scene understanding SDK overview
+# <a name="scene-understanding-sdk-overview"></a>シーンについて SDK の概要
 
-The goal of Scene understanding is to transform the un-structured environment sensor data that your Mixed Reality device captures and to convert it into a powerful but abstracted representation that is intuitive and easy to develop for. The SDK acts as the communication layer between your application and the Scene Understanding runtime. It's aimed to mimic existing standard constructs such as 3d scene graphs for 3d representations and 2D rectangles/panels for 2d applications. While the constructs Scene Understanding mimics will map to concrete frameworks you may use, in general SceneUnderstanding is framework agnostic allowing for interop between varied frameworks that interact with it. As Scene Understanding evolves the role of the SDK is to ensure new representations and capabilities continue to be exposed within a unified framework. In this document we will first introduce high level concepts that will help you get familiar with the development environment/usage and then provide more detailed documentation for specific classes and constructs.
+シーンを理解することは、Mixed Reality デバイスによってキャプチャされた非構造化環境センサーデータを変換し、を直感的かつ簡単に開発できる強力で抽象化された表現に変換することです。 SDK は、アプリケーションとシーンのランタイムを理解するための通信レイヤーとして機能します。 3d 表現の3d シーングラフや2d アプリケーション用の2D 四角形/パネルなど、既存の標準構成要素を模倣することを目的としています。 シーン認識の模倣は、使用する可能性のある具象フレームワークにマップされますが、一般に SceneUnderstanding はフレームワークに依存しないため、相互にやり取りする多様なフレームワーク間の相互運用が可能です。 シーンを理解することは、SDK の役割を進化させることで、新しい表現と機能が統合されたフレームワーク内で引き続き公開されるようにしています。 このドキュメントでは、まず、開発環境や使用状況について理解を深め、特定のクラスと構成要素に関するより詳細なドキュメントを提供するための概要を紹介します。
 
-## <a name="where-do-i-get-the-sdk"></a>Where do I get the SDK?
+## <a name="where-do-i-get-the-sdk"></a>SDK はどこで入手できますか?
 
-The SceneUnderstanding SDK is downloadable via NuGet.
+SceneUnderstanding SDK は NuGet を使用してダウンロードできます。
 
 [SceneUnderstanding SDK](https://www.nuget.org/packages/Microsoft.MixedReality.SceneUnderstanding/)
 
-**Note:** the latest release depends on preview packages and you will need to enable pre-release packages to see it.
+**注:** 最新リリースはプレビューパッケージに依存しており、プレリリースパッケージを表示するには、そのパッケージを有効にする必要があります。
 
-As of version 0.5.2022-rc, Scene Understanding supports language projections for C# and C++ allowing applications to develop applications for Win32 or UWP platforms. As of this version, SceneUnderstanding supports unity in-editor support barring the SceneObserver which is used solely for communicating with HoloLens2. 
+0\.5.2022 のバージョンでは、シーンの理解によってのC#言語C++予測がサポートされ、アプリケーションで Win32 または UWP プラットフォーム用のアプリケーションを開発できるようになります。 このバージョンの場合、SceneUnderstanding では、HoloLens2 との通信専用に使用される SceneObserver を除いて、unity のエディター内でのサポートをサポートしています。 
 
-SceneUnderstanding requires Windows SDK version 18362 or higher. 
+SceneUnderstanding には Windows SDK バージョン18362以降が必要です。 
 
-If you are using the SDK in a Unity project, please use [NuGet for Unity](https://github.com/GlitchEnzo/NuGetForUnity) to install the package into your project.
+Unity プロジェクトで SDK を使用している場合は、 [unity 用の NuGet](https://github.com/GlitchEnzo/NuGetForUnity)を使用して、パッケージをプロジェクトにインストールしてください。
 
-## <a name="conceptual-overview"></a>Conceptual Overview
+## <a name="conceptual-overview"></a>概念の概要
 
-### <a name="the-scene"></a>The Scene
+### <a name="the-scene"></a>シーン
 
-Your mixed reality device is constantly integrating information about what it sees in your environment. Scene Understanding funnels all of these data sources and produces one single cohesive abstraction. Scene Understanding generates Scenes which are a composition of [SceneObjects](scene-understanding-SDK.md#sceneobjects) that represent an instance of a single thing, (e.g. a wall/ceiling/floor.) Scene Objects themselves are a composition of [SceneComponents](scene-understanding-SDK.md#scenecomponents) which represent more granular pieces that make up this SceneObject. Examples of components are quads and meshes, but in the future could represent bounding boxes, collision meshes, metadata etc...
+混合の現実のデバイスは、環境内で認識されている内容に関する情報を常に統合しています。 シーンは、これらすべてのデータソースをじょうごし、1つのまとまりを持つ抽象化を生成します。 シーンを理解すると、1つの物のインスタンスを表す[SceneObjects](scene-understanding-SDK.md#sceneobjects)の構成であるシーンが生成されます。シーンオブジェクト自体は、この SceneObject を構成する粒度の細かい部分を表す[SceneComponents](scene-understanding-SDK.md#scenecomponents)の合成です。 コンポーネントの例としては、四角形やメッシュなどがありますが、将来的には、境界ボックス、衝突メッシュ、メタデータなどを表すことができます。
 
-The process of converting the raw sensor data into a Scene is a potentially expensive operation that could take seconds for medium spaces (~10x10m) to minutes for very large spaces (~50x50m) and therefore it is not something that is being computed by the device without application request. Instead, Scene generation is triggered by your application on demand. The SceneObserver class has static methods that can Compute or Deserialize a scene, which you can then enumerate/interact with. The "Compute" action is executed on-demand and executes on the CPU but in a separate process (the Mixed Reality Driver). However, while we do compute in another process the resulting Scene data is stored and maintained in your application in the Scene object. 
+生のセンサーデータをシーンに変換するプロセスは、非常に大きなスペース (~ 10x10m) が非常に大きい場合 (~ 50x50m)、デバイスによって計算されているものではない場合に、時間がかかります。アプリケーション要求。 代わりに、必要に応じて、アプリケーションによってシーン生成がトリガーされます。 SceneObserver クラスには、シーンを計算または逆シリアル化できる静的メソッドがあります。このメソッドを使用して、列挙および操作を行うことができます。 "Compute" アクションは要求時に実行され、CPU ではなく、別のプロセス (Mixed Reality ドライバー) で実行されます。 ただし、別のプロセスで計算を行う場合、結果として得られるシーンデータは、アプリケーションのシーンオブジェクトに格納され、保持されます。 
 
-Below is a diagram that illustrates this process flow and shows examples of two applications interfacing with the Scene Understanding runtime. 
+このプロセスフローを示す図を以下に示します。また、2つのアプリケーションの例を示します。 
 
-![Process Diagram](images/SU-ProcessFlow.png)
+![プロセス図](images/SU-ProcessFlow.png)
 
-On the left hand side is a diagram of the mixed reality runtime which is always on and running in its own process. This runtime is responsible for performing device tracking, spatial mapping, and other operations that Scene Understanding uses to understand and reason about the world around you. On the right side of the diagram, we show two theoretical applications that make use of Scene Understanding. The first application interfaces with MRTK which uses the Scene Understanding SDK internally, the second app computes and uses two separate scene instances. All 3 Scenes in this diagram generate distinct instances of the scenes, the driver is not tracking global state that is shared between applications and Scene Objects in one scene are not found in another. Scene Understanding does provide a mechanism to track over time, but this is done using the SDK and the code that performs this tracking is running in the SDK in your app's process.
+左側には、常にオンで、独自のプロセスで実行されている mixed reality ランタイムの図があります。 このランタイムは、デバイスの追跡や空間マッピングなどの操作を実行します。また、シーンを理解することで、世界についての理解と理由を理解するために使用されます。 図の右側には、シーンの理解を活用する2つの理論的なアプリケーションが示されています。 最初のアプリケーションは、シーンを理解する SDK を使用する MRTK とのインターフェイスを使用して、2つの異なるシーンインスタンスを計算して使用します。 この図の3つのすべてのシーンでは、個別のインスタンスが生成されます。ドライバーは、アプリケーション間で共有されるグローバル状態を追跡しません。また、1つのシーンのシーンオブジェクトが別のシーンで見つからないことを示します。 シーンを理解することは、時間の経過と共に追跡するメカニズムを提供しますが、これは SDK を使用して行われます。この追跡を実行するコードは、アプリのプロセスで SDK で実行されます。
 
-Because each Scene stores it's data in your application's memory space, you can assume that all function of the Scene object or it's internal data is always executed in your application's process.
+各シーンでは、アプリケーションのメモリ領域にデータが格納されるため、シーンオブジェクトまたはその内部データのすべての関数がアプリケーションのプロセスで常に実行されると想定できます。
 
 ### <a name="layout"></a>レイアウト
 
-To work with Scene Understanding it may be valuable to know and understand how the runtime represents components logically and physically. The Scene represents data with a specific layout that was chosen to be simple while maintaining an underlying structure that is pliable to meet future requirements without needing major revisions. The Scene does this by storing all Components (building blocks for all Scene Objects) in a flat list and defining hierarchy and composition through references where specific components reference others.
+シーンを理解するには、ランタイムが論理的および物理的にコンポーネントを表す方法を理解し、理解しておくことが重要な場合があります。 シーンは、主要な改訂を必要とせずに将来の要件を満たすように pliable された、基になる構造を維持しながら、単純なレイアウトを持つデータを表します。 このシーンでは、すべてのコンポーネント (すべてのシーンオブジェクトの構成要素) をフラットリストに格納し、特定のコンポーネントが他のコンポーネントを参照する参照を使用して階層とコンポジションを定義します。
 
-Below we present an example of a structure in both its flat and logical form.
+次に、フラットフォームと論理形式の両方で構造体の例を示します。
 
 <table>
-<tr><th>Logical Layout</th><th>Physical Layout</th></tr>
+<tr><th>論理レイアウト</th><th>物理的なレイアウト</th></tr>
 <tr>
 <td>
 <ul>
-  Scene
+  登場
   <ul>
   <li>SceneObject_1
     <ul>
@@ -95,67 +95,67 @@ Below we present an example of a structure in both its flat and logical form.
 </tr>
 </table>
 
-This illustration highlights the difference between the physical and logical layout of the Scene. On the left we see the hierarchical layout of the data that your application sees when enumerating the scene. On the right we see that the scene is actually comprised of 12 distinct components that are accessible individually if necessary. When processing a new scene, we expect applications to walk this hierarchy logically, however when tracking between scene updates, some applications may only be interested in targeting specific components that are shared between two scenes.
+この図は、シーンの物理的レイアウトと論理的レイアウトの違いを示しています。 左側には、シーンを列挙するときにアプリケーションに表示されるデータの階層型レイアウトが表示されます。 右側には、必要に応じて個別にアクセスできる12個の個別のコンポーネントで構成されたシーンがあることがわかります。 新しいシーンを処理する場合、アプリケーションはこの階層を論理的にウォークすることを想定していますが、シーンの更新間を追跡する場合、一部のアプリケーションは、2つのシーン間で共有される特定のコンポーネントを対象にするだけでよい場合があります。
 
 ## <a name="api-overview"></a>API の概要
 
-The following section provides a high-level overview of the constructs in Scene Understanding. Reading this section will give you an  understanding of how scenes are represented, and what the various components do/are used for. The next section will provide concrete code examples and additional details that are glossed over in this overview.
+次のセクションでは、シーンについて理解するための構造の概要について説明します。 このセクションを読むと、シーンの表現方法や、さまざまなコンポーネントがどのように使用されるかについて理解できます。 次のセクションでは、具体的なコード例と、この概要でここしている追加の詳細について説明します。
 
-All of the types described below reside in the `Microsoft.MixedReality.SceneUnderstanding` namespace.
+以下で説明するすべての型は、`Microsoft.MixedReality.SceneUnderstanding` 名前空間に存在します。
 
 ### <a name="scenecomponents"></a>SceneComponents
 
-Now that you understand the logical layout of scenes we can now present the concept of SceneComponents and how they are used to compose hierarchy. SceneComponents are the most granular decompositions in SceneUnderstanding representing a single core thing, e.g. a mesh or a quad or a bounding box. SceneComponents are things that can update independently and can be referenced by other SceneComponents, hence they have a single global property a unique Id, that allow for this type of tracking/referencing mechanism. Ids are used for the logical composition of scene hierarchy as well as object persistence (the act of updating one scene relative to another.) 
+これで、背後の論理的なレイアウトを理解できるようになったので、SceneComponents の概念と、それらを使用して階層を構築する方法を提示できます。 SceneComponents は、メッシュ、クワッド、境界ボックスなど、1つのコアを表す SceneUnderstanding の最も詳細な decompositions です。 SceneComponents は、独立して更新でき、他の SceneComponents が参照できるものです。したがって、この種の追跡/参照メカニズムを可能にする一意の Id を持つ単一のグローバルプロパティを持つことになります。 Id は、シーン階層の論理構成およびオブジェクトの永続化 (あるシーンを別のシーンに更新する操作) に使用されます。 
 
-If you are treating every newly computed scene as being distinct, and simply enumerating all data within it then Ids are largely transparent to you. However, if you are planning to track components over several updates you will use the Ids to index and find SceneComponents between Scene objects.
+新しく計算されたすべてのシーンを個別として処理し、その中のすべてのデータを列挙するだけで、Id は主に透過的になります。 ただし、複数の更新プログラムでコンポーネントの追跡を計画している場合は、これらの Id を使用して、シーンオブジェクト間の SceneComponents のインデックス作成と検索を行います。
 
 ### <a name="sceneobjects"></a>SceneObjects
 
-A SceneObject is a SceneComponent that represents an instance of a "thing" e.g. a wall, a floor, a ceiling, etc... expressed by their Kind property. SceneObjects are geometric, and therefore have functions and properties that represent their location in space, however they don't contain any geometric or logical structure. Instead, SceneObjects reference other SceneComponents, specifically SceneQuads and SceneMeshes which provide the varied representations that are supported by the system. When a new scene is computed, your application will most likely enumerate the Scene's SceneObjects to process what it's interested in.
+SceneObject は、"物" のインスタンスを表す SceneComponent です。たとえば、壁、床、天井、などです。Kind プロパティで表されます。 SceneObjects は幾何学的であるため、空間内の場所を表す関数とプロパティがありますが、ジオメトリックや論理構造は含まれていません。 代わりに、SceneObjects は、システムでサポートされているさまざまな表現を提供する他の SceneComponents、特に SceneQuads と SceneMeshes を参照します。 新しいシーンが計算されると、ほとんどの場合、アプリケーションは、目的の内容を処理するためにシーンの SceneObjects を列挙します。
 
-SceneObjects can have any one of the following:
+SceneObjects は、次のいずれかを持つことができます。
 
 <table>
 <tr>
 <th>SceneObjectKind</th> <th>説明</th>
 </tr>
-<tr><td>背景</td><td>The SceneObject is known to be <b>not</b> one of the other recognized kinds of scene object. This class should not be confused with Unknown where Background is known not to be wall/floor/ceiling etc... while unknown is not yet categorized.</b></td></tr>
-<tr><td>Wall</td><td>A physical wall. Walls are assumed to be immovable environmental structures.</td></tr>
-<tr><td>Floor</td><td>Floors are any surfaces on which one can walk. Note: stairs are not floors. Also note, that floors assume any walkable surface and therefore there is no explicit assumption of a singular floor. Multi-level structures, ramps etc... should all classify as floor.</td></tr>
-<tr><td>Ceiling</td><td>The upper surface of a room.</td></tr>
-<tr><td>プラットフォーム</td><td>A large flat surface on which you could place holograms. These tend to represent tables, countertops and other large horizontal surfaces.</td></tr>
-<tr><td>World</td><td>A reserved label for geometric data that is agnostic to labeling. The mesh generated by setting the EnableWorldMesh update flag would be classified as world.</td></tr>
-<tr><td>不明</td><td>This scene object has yet to be classified and assigned a kind. This should not be confused with Background, as this object could be anything, the system has just not come up with a strong enough classification for it yet.</td></tr>
+<tr><td>背景</td><td>SceneObject は、他の認識された種類のシーンオブジェクトの1つでは<b>ない</b>ことがわかっています。 このクラスは不明と混同しないでください。背景が壁、床、天井などではないことがわかっています。不明なカテゴリはまだ分類されていません。</b></td></tr>
+<tr><td>電話</td><td>物理的な壁面。 壁面は、移動可能な環境構造であると見なされます。</td></tr>
+<tr><td>階数</td><td>床は、どのような面でも使用できます。 注: 階段はフロアではありません。 また、このフロアは、明らかになる可能性があるため、1つの床面を明確に示すものではないことにも注意してください。 複数レベルの構造、傾斜などすべてが floor として分類される必要があります。</td></tr>
+<tr><td>切り上げ</td><td>部屋の上面。</td></tr>
+<tr><td>プラットフォーム</td><td>ホログラムを配置できる大きな平らなサーフェイス。 これらは、テーブル、countertops、およびその他の大きな水平サーフェスを表す傾向があります。</td></tr>
+<tr><td>World</td><td>ラベル付けに依存しないジオメトリックデータ用に予約されたラベル。 EnableWorldMesh update フラグを設定することによって生成されるメッシュは、"世界" として分類されます。</td></tr>
+<tr><td>Unknown</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
 </tr>
 </table>
 
 ### <a name="scenemesh"></a>SceneMesh
 
-A SceneMesh is a SceneComponent that approximates the geometry of arbitrary geometric objects using a triangle list. SceneMeshes are used in several different contexts, they can represent components of the watertight cell structure or as the WorldMesh which represents the unbounded spatial mapping mesh associated with the Scene. The index and vertex data provided with each mesh uses the same familiar layout as the [vertex and index buffers](https://msdn.microsoft.com/library/windows/desktop/bb147325%28v=vs.85%29.aspx) that are used for rendering triangle meshes in all modern rendering APIs. Note that in Scene Understanding, meshes use 32-bit indices and may need to be broken up into chunks for certain rendering engines.
+SceneMesh は、トライアングルリストを使用して任意のジオメトリックオブジェクトのジオメトリを近似する SceneComponent です。 SceneMeshes は、いくつかの異なるコンテキストで使用されます。 watertight セル構造のコンポーネント、またはシーンに関連付けられている非バインド空間マッピングメッシュを表す WorldMesh として表現できます。 各メッシュで提供されるインデックスと頂点データは、すべての最新のレンダリング Api で三角形メッシュをレンダリングするために使用される[頂点およびインデックスバッファー](https://msdn.microsoft.com/library/windows/desktop/bb147325%28v=vs.85%29.aspx)と同じ使い慣れたレイアウトを使用します。 シーンの理解では、メッシュは32ビットのインデックスを使用し、特定のレンダリングエンジンのチャンクに分割する必要がある場合があることに注意してください。
 
-#### <a name="winding-order-and-coordinate-systems"></a>Winding Order and Coordinate Systems
+#### <a name="winding-order-and-coordinate-systems"></a>ワインディング順序と座標系
 
-All meshes produced by Scene Understanding are expected to return meshes in a Right-Handed coordinate system using clockwise winding order. 
+シーンの理解によって生成されるすべてのメッシュは、時計回りのワインディング順序を使用して右手座標系でメッシュを返すことが想定されています。 
 
-Note: OS builds prior to .191105 may have a known bug where "World" meshes were returning in Counter-Clockwise winding order, which has subsequently been fixed.
+注: 191105 より前の OS ビルドでは既知のバグが発生する可能性があります。これは、"世界" メッシュが、後で修正された反時計回りのワインディング順序で返されています。
 
 ### <a name="scenequad"></a>SceneQuad
 
-A SceneQuad is a SceneComponent that represents 2d surfaces that occupy the 3d world. SceneQuads can be used similarly to ARKit ARPlaneAnchor or ARCore Planes but they offer more high level functionality as 2d canvases to be used by flat apps, or augmented UX. 2D specific APIs are provided for quads that make placement and layout simple to use, and developing (with the exception of rendering) with quads should feel more akin to working with 2d canvases than 3d meshes.
+SceneQuad は、3d ワールドを占める2d 表面を表す SceneComponent です。 SceneQuads は ARKit Arkit Eanchor または Arkit プレーンと同様に使用できますが、フラットなアプリや拡張された UX で使用される2d キャンバスとして、より高度な機能を提供します。 2D 固有の Api は、配置とレイアウトを簡単に使用できるようにするための四角形、および (レンダリングを除く) 四角形での開発には3d メッシュよりも2d キャンバスの方が似ています。
 
-#### <a name="scenequad-shape"></a>SceneQuad shape
+#### <a name="scenequad-shape"></a>SceneQuad 図形
 
-SceneQuads define a bounded rectangular surface in 2d. However, SceneQuads are representing surfaces with arbitrary and potentially complex shapes (e.g. a donut shaped table.) To represent the complex shape of the surface of a quad you may use the GetSurfaceMask API to render the shape of the surface onto an image buffer you provide. If the SceneObject that has the quad also has a mesh, the mesh triangles should be equivalent to this rendered image, they both represent real geometry of the surface, just either in 2d or 3d coordinates.
+SceneQuads は、境界のある四角形の表面を2d で定義します。 ただし、SceneQuads は、任意の複雑な可能性のある図形 (ドーナツの形のテーブルなど) を含むサーフェイスを表します。クワッドの表面の複雑な形状を表すために、GetSurfaceMask API を使用して、指定したイメージバッファーにサーフェイスの形状をレンダリングすることができます。 クワッドを持つ SceneObject にメッシュがある場合、メッシュの三角形は、このレンダリングされたイメージと同じである必要があり、両方とも2d 座標または3d 座標で表面の実際のジオメトリを表します。
 
-## <a name="scene-understanding-sdk-details-and-reference"></a>Scene understanding SDK details and reference
+## <a name="scene-understanding-sdk-details-and-reference"></a>シーンについて SDK の詳細とリファレンス
 
-The following section will help get you familiar with the basics of SceneUnderstanding. This section should provide you with the basics, at which point you should have enough context to browse through the sample applications to see how SceneUnderstanding is used holistically.
+次のセクションでは、SceneUnderstanding の基本について説明します。 このセクションでは、サンプルアプリケーションを参照して、SceneUnderstanding がどのように総合的に使用されているかを確認するのに十分なコンテキストがある点について説明します。
 
 ### <a name="initialization"></a>初期化
 
-The first step to working with SceneUnderstanding is for your application to gain reference to a Scene object. This can be done in one of two ways, a Scene can either be computed by the driver, or an existing Scene that was computed in the past can be de-serialized. The latter is particularly useful for working with SceneUnderstanding during development, where applications and experiences can be prototyped quickly without a mixed reality device.
+SceneUnderstanding を操作するための最初の手順は、アプリケーションが Scene オブジェクトへの参照を取得することです。 これは、2つの方法のいずれかで実行できます。シーンはドライバーによって計算されるか、過去に計算された既存のシーンを逆シリアル化することができます。 後者は、開発時に SceneUnderstanding を使用する場合に特に便利です。この場合、アプリケーションとエクスペリエンスは、mixed reality デバイスなしで簡単にプロトタイプを作成できます。
 
-Scenes are computed using a SceneObserver. Before creating a Scene, your application should query your device to ensure that it supports SceneUnderstanding, as well as to request user access for information that SceneUnderstanding needs.
+シーンは SceneObserver を使用して計算されます。 シーンを作成する前に、アプリケーションがデバイスを照会して、SceneUnderstanding をサポートしていることを確認し、SceneUnderstanding が必要とする情報に対するユーザーアクセスを要求する必要があります。
 
 ```cs
 if (SceneObserver.IsSupported())
@@ -167,7 +167,7 @@ if (SceneObserver.IsSupported())
 await SceneObserver.RequestAccessAsync();
 ```
 
-If RequestAccessAsync() is not called, computing a new Scene will fail. Next we will compute a new scene that's rooted around the Mixed Reality headset and has a 10 meter radius.
+RequestAccessAsync () が呼び出されていない場合、新しいシーンを計算することはできません。 次に、Mixed Reality ヘッドセットを中心とした新しいシーンを計算し、10個の測定半径を持ちます。
 
 ```cs
 // Create Query settings for the scene update
@@ -183,9 +183,9 @@ querySettings.RequestedMeshLevelOfDetail = SceneMeshLevelOfDetail.Fine;         
 Scene myScene = SceneObserver.ComputeAsync(querySettings, 10.0f).GetAwaiter().GetResult();
 ```
 
-### <a name="initialization-from-data-aka-the-pc-path"></a>Initialization from Data (aka. the PC Path)
+### <a name="initialization-from-data-aka-the-pc-path"></a>データからの初期化 (別名、 PC パス)
 
-While Scenes can be computed for direct consumption, they can also be computed in serialized form for later use. This has proven to be very useful for development as it allows developers to work in and test Scene Understanding without the need for a device. The act of serializing a scene is nearly identical to computing it, the data is returned to your application instead of being deserialized locally by the SDK. You may then deserialize it yourself or save it for future use.
+直接消費するためのシーンは計算できますが、後で使用できるようにシリアル化された形式で計算することもできます。 これは、開発者がデバイスを使用しなくてもシーンの理解を深めることができるように、開発に非常に役立つことが実証されています。 シーンをシリアル化する操作は、それを計算することとほぼ同じです。データは、SDK によってローカルで逆シリアル化されるのではなく、アプリケーションに返されます。 その後、自分で逆シリアル化したり、将来使用するために保存したりすることができます。
 
 ```cs
 // Create Query settings for the scene update
@@ -202,9 +202,9 @@ Scene mySceneDeSerialized = Scene.Deserialize(newSceneData);
 // Save newSceneBlob for later
 ```
 
-### <a name="sceneobject-enumeration"></a>SceneObject Enumeration
+### <a name="sceneobject-enumeration"></a>SceneObject 列挙型
 
-Now that your application has a scene, your application will be looking at and interacting with SceneObjects. This is done by accessing the **SceneObjects** property:
+アプリケーションにシーンが作成されたので、アプリケーションは SceneObjects と対話します。 これを行うには、 **SceneObjects**プロパティにアクセスします。
 
 ```cs
 SceneObject firstFloor = null;
@@ -220,9 +220,9 @@ foreach (var sceneObject in myScene.SceneObjects)
 }
 ```
 
-### <a name="component-update-and-re-finding-components"></a>Component update and re-finding components
+### <a name="component-update-and-re-finding-components"></a>コンポーネントの更新とコンポーネントの再検出
 
-There is another function that retrieves components in the Scene called ***FindComponent***. This function is useful when updating tracking objects and finding them in subsequent scenes. The following code will compute a new scene relative to a previous scene and then find the floor in the new scene.
+***Findcomponent***というシーン内のコンポーネントを取得する関数もあります。 この関数は、追跡オブジェクトを更新し、それを後続のシーンで検索する場合に便利です。 次のコードでは、前のシーンに対して相対的な新しいシーンを計算し、新しいシーンでフロアを検索します。
 
 ```cs
 // Compute a new scene, and tell the system that we want to compute relative to the previous scene
@@ -237,9 +237,9 @@ if (firstFloor != null)
 }
 ```
 
-## <a name="accessing-meshes-and-quads-from-scene-objects"></a>Accessing Meshes and Quads from Scene Objects
+## <a name="accessing-meshes-and-quads-from-scene-objects"></a>シーンオブジェクトからのメッシュと四角形へのアクセス
 
-Once SceneObjects have been found your application will most likely want to access the data that is contained in the quads/meshes that it is comprised of. This data is accessed with the ***Quads*** and ***Meshes*** properties. The following code will enumerate all quads and meshes of our floor object.
+SceneObjects が見つかると、ほとんどの場合、アプリケーションは、構成されている四角形やメッシュに含まれるデータにアクセスします。 このデータには、[***四角形***と***メッシュ***] プロパティを使用してアクセスします。 次のコードは、floor オブジェクトのすべての四角形とメッシュを列挙します。
 
 ```cs
 
@@ -259,13 +259,13 @@ foreach (var mesh in firstFloor.Meshes)
 }
 ```
 
-Notice that it is the SceneObject that has the transform that is relative to the Scene origin. This is because the SceneObject represents an instance of a "thing" and is locatable in space, the quads and meshes represent geometry that is transformed relative to their parent. It is possible for separate SceneObjects to reference the same SceneMesh/SceneQuad SceneComponents, and it is also possible that a SceneObject has more than one SceneMesh/SceneQuad.
+これは、シーンオリジンに対する変換を含む SceneObject であることに注意してください。 これは、SceneObject が "事柄" のインスタンスを表し、スペースで参照できるため、四角形とメッシュが親を基準として変換されるジオメトリを表しているためです。 個別の SceneObjects が同じ SceneMesh/SceneQuad SceneComponents を参照している可能性があります。また、SceneObject に複数の SceneMesh/SceneQuad がある可能性もあります。
 
-### <a name="dealing-with-transforms"></a>Dealing with Transforms
+### <a name="dealing-with-transforms"></a>変換の処理
 
-Scene Understanding has made a deliberate attempt to align with traditional 3D scene representations when dealing with transforms. Each Scene is therefore confined to a single coordinate system much like most common 3D environmental representations. SceneObjects each provide their location as a position and orientation within that coordinate system. If your application is dealing with Scenes that stretch the limit of what a single origin provides it can anchor SceneObjects to SpatialAnchors, or generate several scenes and merge them together, but for simplicity we assume that watertight scenes exist in their own origin that's localized by one NodeId defined by Scene.OriginSpatialGraphNodeId.
+シーンの理解により、変換を処理するときに、従来の3D シーン表現に合わせて意図的に配置しようとしました。 そのため、各シーンは、最も一般的な3D 環境表現と同じように、1つの座標系に限定されます。 SceneObjects は、その座標系内の位置と方向として場所を提供します。 アプリケーションが、1つのオリジンが提供する機能の上限を広げることによって、SceneObjects を SpatialAnchors に固定したり、複数のシーンを生成して結合したりすることができますが、わかりやすくするために、watertight のシーンが独自のものであることを前提としています。OriginSpatialGraphNodeId によって定義された1つの NodeId によってローカライズされるオリジン。
 
-The following Unity code, for example, shows how to use Windows Perception and Unity APIs to align coordinate systems together. See [SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) and [SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) for details on the Windows Perception APIs, and [Mixed Reality native objects in Unity](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced) for details on obtaining a SpatialCoordinateSystem that corresponds to Unity's world origin, as well as the `.ToUnity()` extension method for converting between `System.Numerics.Matrix4x4` and `UnityEngine.Matrix4x4`.
+次の Unity コードは、Windows 認識と Unity Api を使用して、座標系をまとめて配置する方法を示しています。 Unity `.ToUnity()` の[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview)に対応する SpatialCoordinateSystem を取得する `UnityEngine.Matrix4x4``System.Numerics.Matrix4x4` 方法の詳細については、「 [SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) And For the Windows 知覚 Api」と「 [unity の Mixed Reality native objects](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced) 」を参照してください。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -295,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-Each `SceneObject` has a `Position` and `Orientation` property which can be used to position corresponding content relative to the origin of the containing `Scene`. For example, the following example assumes that the game is a child of the scene root, and assigns its local position and rotation to align to a given `SceneObject`:
+各 `SceneObject` には `Position` と `Orientation` プロパティがあり、これを使用して、含まれている `Scene`の元を基準として対応するコンテンツを配置できます。 たとえば、次の例では、ゲームがシーンルートの子であると想定し、そのローカル位置と回転を割り当てて特定の `SceneObject`に配置します。
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -307,11 +307,11 @@ void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneOb
 
 ### <a name="quad"></a>Quad
 
-Quads were designed to facilitate 2D placement scenarios and should be thought of as extensions to 2D canvas UX elements. While Quads are components of SceneObjects and can be rendered in 3D, the Quad APIs themselves assume Quads are 2D structures. They offer information such as extent, shape, and provide APIs for placement.
+四角形は、2D の配置シナリオを容易にするように設計されており、2D キャンバス UX 要素の拡張機能と考える必要があります。 四角形は SceneObjects のコンポーネントであり、3D でレンダリングできますが、クワッド Api 自体は、四角形が2D 構造体であると想定しています。 エクステントや形などの情報を提供し、配置のための Api を提供します。
 
-Quads have rectangular extents, but they represent arbitrarily shaped 2D surfaces. To enable placement on these 2D surfaces that interact with the 3D environment quads offer utilities to make this interaction possible. Currently Scene Understanding provides two such functions, **FindCentermostPlacement** and **GetOcclusionMask**. FindCentermostPlacement is a high level API that locates a position on the quad where an object can be placed and will try to find the best location for your object guaranteeing that the bounding box you provide will reside on the underlying surface.
+四角形は四角形のエクステントを持ちますが、任意の形の2D サーフェイスを表します。 3D 環境の四角形を操作するこれらの2D サーフェイス上の配置を有効にするには、この相互作用を可能にするユーティリティを提供します。 現在、シーンの理解には、 **Findセンター**のほとんどの配置と**GetOcclusionMask**という2つの関数が用意されています。 Findセンターのほとんどの配置は、オブジェクトを配置できるクワッド上の位置を特定し、指定した境界ボックスが基になるサーフェイスに存在することを保証するオブジェクトの最適な位置を検索する、高レベルの API です。
 
-The following example shows how to find the centermost placeable location and anchor a hologram to the quad.
+次の例では、中央の最も配置可能な場所を検索し、クワッドにホログラムを固定する方法を示します。
 
 ```cs
 // This code assumes you already have a "Root" object that attaches the Scene's Origin.
@@ -341,18 +341,18 @@ foreach (var sceneObject in myScene.SceneObjects)
 }
 ```
 
-Steps 1-4 are highly dependent on your particular framework/implementation, but the themes should be similar. It is important to note that the Quad simply represents a bounded 2D plane that is localized in space. By having your engine/framework know where the quad is and rooting your objects relative to the quad, your holograms will be located correctly with respect to the real world. For more detailed information please see our samples on quads which show specific implementations.
+手順1-4 は、特定のフレームワーク/実装に大きく依存しますが、テーマは類似している必要があります。 クワッドは、空間でローカライズされた境界2D 平面を表すだけであることに注意する必要があります。 お使いのエンジンとフレームワークで、クワッドがどこにあるかを認識し、クワッドを基準としてオブジェクトをルート設定することにより、ホログラムは実際の世界に対して正しく配置されます。 詳細については、特定の実装を示す四角形のサンプルを参照してください。
 
-### <a name="mesh"></a>Mesh
+### <a name="mesh"></a>メッシュ
 
-Meshes represent geometric representations of objects or environments. Much like [spatial mapping](spatial-mapping.md), mesh index and vertex data provided with each spatial surface mesh uses the same familiar layout as the vertex and index buffers that are used for rendering triangle meshes in all modern rendering APIs. Vertex positions are provided in the coordinate system of the `Scene`. The specific APIs used to reference this data are as follows:
+メッシュは、オブジェクトまたは環境の幾何学的表現を表します。 [空間マッピング](spatial-mapping.md)と同様に、各空間サーフェスメッシュで提供されるメッシュインデックスと頂点データは、すべての最新のレンダリング api で三角形メッシュをレンダリングするために使用される頂点およびインデックスバッファーと同じ使い慣れたレイアウトを使用します。 頂点の位置は、`Scene`の座標系で指定します。 このデータを参照するために使用される特定の Api は次のとおりです。
 
 ```cs
 void GetTriangleIndices(int[] indices);
 void GetVertices(System.Numerics.Vector3[] vertices);
 ```
 
-The following code provides an example of generating a triangle list from the mesh structure:
+次のコードは、メッシュ構造から三角形リストを生成する例を示しています。
 
 ```cs
 uint[] indices = new uint[mesh.TriangleIndexCount];
@@ -362,11 +362,11 @@ mesh.GetTriangleIndices(indices);
 mesh.GetVertexPositions(positions);
 ```
 
-The index/vertex buffers must be >= the index/vertex counts, but otherwise can be arbitrarily sized allowing for efficient memory re-use.
+インデックス/頂点バッファーは > = インデックスまたは頂点の数である必要がありますが、それ以外は任意にサイズを変更して、効率的なメモリの再利用を可能にすることができます。
 
-## <a name="developing-with-scene-understandings"></a>Developing with scene understandings
+## <a name="developing-with-scene-understandings"></a>シーン異なればを使用した開発
 
-At this point you should understand the core building blocks of the scene understanding runtime and SDK. The bulk of the power and complexity lies in access patterns, interaction with 3D frameworks, and tools that can be written on top of these APIs to perform more advanced tasks like spatial planning, room analysis, navigation, physics etc. We hope to capture these in samples that should hopefully guide you in the proper direction to make your scenarios shine. If there are samples/scenarios we are not addressing, please let us know and we will try to document/prototype what you need.
+この時点で、ランタイムと SDK について理解しているシーンのコア構成要素について理解しておく必要があります。 電力と複雑さの大部分は、アクセスパターン、3D フレームワークとの対話、およびこれらの Api の上に記述できるツールによって、空間プランニング、ルーム分析、ナビゲーション、物理などのより高度なタスクを実行できます。これらをサンプルでキャプチャして、シナリオを適切な方向に導くことができるようにすることをお勧めします。 説明していないサンプルまたはシナリオがある場合は、お知らせください。必要なものをドキュメント化してプロトタイプを作成します。
 
 ## <a name="see-also"></a>関連項目
 

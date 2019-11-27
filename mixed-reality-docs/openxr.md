@@ -5,13 +5,13 @@ author: thetuvix
 ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
-keywords: OpenXR、Khronos、BasicXRApp、Mixed Reality OpenXR 開発者ポータル、DirectX、ネイティブ、ネイティブアプリカスタムエンジン、ミドルウェア
-ms.openlocfilehash: 67d2ab42a40aa04eb9dcd6881a4392a81c0f3b8f
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+keywords: OpenXR、Khronos、BasicXRApp、Mixed Reality OpenXR 開発者ポータル、DirectX、ネイティブ、ネイティブアプリ、カスタムエンジン、ミドルウェア
+ms.openlocfilehash: aa91918e20b4276b7453bae1a05ad18df9d8ab0e
+ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73914392"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74491138"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -74,6 +74,10 @@ Windows Mixed Reality OpenXR ランタイムを試すには、 <a href="https://
 <a href="https://github.com/Microsoft/OpenXR-SDK-VisualStudio/tree/master/samples/BasicXrApp" target="_blank">BasicXrApp</a>プロジェクトでは、2つの Visual Studio プロジェクトファイルを含む単純な OpenXR サンプルを示しています。1つは Win32 デスクトップアプリ用で、もう1つは UWP HoloLens 2 アプリ用です。  ソリューションには HoloLens UWP プロジェクトが含まれているため、Visual Studio にインストールされた[ユニバーサル Windows プラットフォームの開発ワークロード](install-the-tools.md#installation-checklist)を完全に開く必要があります。
 
 Win32 と UWP のプロジェクトファイルは、パッケージ化と配置の違いによって分離されていますが、各プロジェクト内のアプリコード100は同じであることに注意してください。
+
+OpenXR Win32 デスクトップを構築した後。EXE を使用して、OpenXR をサポートする任意の desktop VR プラットフォームの VR ヘッドセットと共に使用できます。これは、Windows Mixed Reality ヘッドセットであるか、他のヘッドセットであるかどうかによって異なります。
+
+OpenXR UWP アプリケーションパッケージをビルドした後、[そのパッケージ](using-visual-studio.md)を hololens 2 デバイスまたは Hololens 2 エミュレーターにデプロイできます。
 
 ## <a name="openxr-app-best-practices-for-hololens-2"></a>HoloLens 2 の OpenXR app のベストプラクティス
 
@@ -189,7 +193,7 @@ Windows Mixed Reality OpenXR Runtime は、年の終わりまでに、HoloLens 2
 
 これらの拡張機能の一部は、ベンダー固有の MSFT 拡張機能として開始される場合がありますが、Microsoft およびその他の OpenXR runtime ベンダーが連携して、これらの機能領域の多くについて、クロスベンダーの EXT または KHR 拡張機能を設計します。  これにより、コア仕様と同様に、これらの機能用に記述したコードをランタイムベンダー間で移植可能にすることができます。
 
-## <a name="troubleshooting"></a>[トラブルシューティング]
+## <a name="troubleshooting"></a>トラブルシューティング
 
 Windows Mixed Reality OpenXR Runtime のトラブルシューティングのヒントを次に示します。  <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 の仕様</a>に関して他に質問がある場合は、 <a href="https://community.khronos.org/c/openxr" target="_blank">Khronos OpenXR フォーラム</a>または<a href="https://khr.io/slack" target="_blank">余裕期間 #openxr チャネル</a>にアクセスしてください。
 
