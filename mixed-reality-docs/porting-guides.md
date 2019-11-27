@@ -2,16 +2,16 @@
 title: 移植ガイド
 description: 既存のイマーシブアプリケーションを Windows Mixed Reality に移植する方法を説明するステップバイステップチュートリアル。
 author: ChimeraScorn
-ms.author: cwhite
+ms.author: alexturn
 ms.date: 10/02/2018
 ms.topic: article
 keywords: ポート、移植、unity、ミドルウェア、エンジン、UWP
-ms.openlocfilehash: 19835cd06680e374c92e6e454b11663481bc4a07
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 5d3debc9a810873f21a9f55a32061565d4ce75ae
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438336"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539508"
 ---
 # <a name="porting-guides"></a>移植ガイド
 

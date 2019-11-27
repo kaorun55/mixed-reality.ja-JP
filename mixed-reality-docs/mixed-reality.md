@@ -6,14 +6,16 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality、holographic、ar、vr、mr、xr、強化現実、仮想現実、説明
-ms.openlocfilehash: 601e42c03e827f0f531f9dcf937a0dd34b008dc3
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 65588902565ee0c5a1710f823311ccdecc23230e
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926782"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539557"
 ---
 # <a name="what-is-mixed-reality"></a>Mixed Reality とは
+
+![ハンズオンを使用したポイントとコミット (HoloLens 2)](images/02_MixedRealitySlashMixedReality.png)
 
 Mixed Reality は現実世界とデジタル世界を組み合わせたものです。 Mixed Reality は、人間、コンピューター、および環境の相互作用における次の進化であり、これまでは想像することしかできなかった可能性が実現されます。 これは、コンピュータービジョン、グラフィカル処理能力、表示テクノロジ、および入力システムの機能強化によって可能になります。 *Mixed reality*という用語は、当初、Paul ミルグラムと Fumio Kishino によって[1994 のホワイト](https://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)ペーパーに導入されました。 このホワイトペーパーでは、 *virtuality 連続性*の概念を紹介し、分類の分類がどのように表示されるかに焦点を絞っています。 そのため、混合現実のアプリケーションは表示されません。 また、環境の入力、空間サウンド、場所も含まれます。
 

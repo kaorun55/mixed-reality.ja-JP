@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 0595010a0b443d88e3f208b785903e3f6cc99295
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: f0a54bb591479dbe8ffa719cb5e6a9d846f67f9e
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926528"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539740"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3. ユーザーインターフェイスを作成し、Mixed Reality Toolkit を構成する
 
@@ -29,7 +29,7 @@ ms.locfileid: "73926528"
 
 このセクションでは、空間認識メッシュの表示オプションを調整して、既定の MRTK プロファイルをカスタマイズおよび構成する方法について説明します。 MRTK プロファイル内の設定または値を調整するには、次の同じ原則に従うことができます。
 
-1. BaseScene 階層から Mixed-Reality Toolkit (MRTK) を選択します。 [インスペクター] パネルで、次の図に示すように、Mixed Reality Toolkit スクリプトを探し、アクティブなプロファイルを選択します。 それをダブルクリックして開きます。
+1. BaseScene 階層から Mixed-Reality Toolkit (MRTK) を選択します。 [インスペクター] パネルで、次の図に示すように、Mixed Reality Toolkit スクリプトを探し、アクティブなプロファイルを選択します。 ダブルクリックして開きます。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step1.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "73926528"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step2b.png)
 
-    **[複製]** をクリックして、MRTK プロファイルのコピーを作成します。 MRTK プロファイルの独自のコピーが取得できたので、このプロファイル内の任意の設定をカスタマイズできるようになりました。 また、後の手順で説明するように、このプロファイルの下に入れ子になっている追加のプロファイルについても、[コピーとカスタマイズ] ステップを繰り返す必要があります。
+    **[複製]** をクリックして、MRTK プロファイルのコピーを作成します。 MRTK プロファイルの独自のコピーを使用して、このプロファイルの設定をカスタマイズできるようになりました。 また、後の手順で説明するように、このプロファイルの下に入れ子になっている追加のプロファイルについても、[コピーとカスタマイズ] ステップを繰り返す必要があります。
 
 3. 空間認識メッシュの可視性を無効にします。 これを行うには、次の図に示すように、空間認識システムの設定を見つけます。 **[空間認識システムを有効にする]** オプションがオンになっていることを確認します。 空間認識システム プロファイルの右側にある **複製** ボタンをクリックして、既定のプロファイルをカスタマイズ可能なコピーに置き換えます。 次の2番目の図に示すように、表示されたポップアップウィンドウで、 **[複製]** ボタンをクリックします。
 
@@ -99,9 +99,9 @@ ms.locfileid: "73926528"
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6b.png)
 
     >[!NOTE]
-    >一般に、Unity の 1 ユニットは現実の世界のほぼ 1 m に相当します。 これには、あるオブジェクトがスケーリングされたオブジェクトの子である場合などの例外があります。
+    >一般に、Unity の 1 ユニットは現実の世界のほぼ 1 m に相当します。 これには例外があります。たとえば、オブジェクトがスケーリングされたオブジェクトの子である場合などです。
 
-5. PressableButtonHoloLens2 game オブジェクトを選択した状態で、インスペクターの下方向へスクロールして、対話型 (スクリプト) コンポーネントのイベントセクションを探します。
+5. PressableButtonHoloLens2 game オブジェクトを選択した状態で、インスペクターの下部にスクロールして、対話型 (スクリプト) コンポーネントのイベントセクションを探します。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step4.png)
 
@@ -117,23 +117,23 @@ ms.locfileid: "73926528"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7b.png)
 
-    [空の素材] フィールドの横にある円をクリックして、[素材の選択] ポップアップを開きます。 MRTK には、選択する多くの素材と色が含まれています。 この例では、ポップアップ検索バーに「MRTK_Standard」と入力することによって検出された素材 MRTK_Standard_Cyan を使用します。 素材フィールドを設定するには、MRTK_Standard_Cyan マテリアルを選択します。
+    [空の素材] フィールドの横にある円をクリックして、[素材の選択] ポップアップを開きます。 MRTK には、選択する多くの素材と色が含まれています。 この例では、ポップアップ検索バーに「MRTK_Standard」と入力して検出された素材 MRTK_Standard_Cyan を使用します。 素材フィールドを設定するには、MRTK_Standard_Cyan マテリアルを選択します。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step7c.png)
 
     これで、このイベントは、ボタンが押されたら、指定された素材に基づいてキューブが色を変更するように設定されました。 この例では、キューブはシアン色に変更されます。
 
-8. 次に、ボタンが放されたら、ボタンが既定の色に戻るように、ボタンを放すアクションを設定します。 上記の手順 7. を繰り返します。 ここでは、次の図に示すように、Onrelease MRTK_Standard_LightGray マテリアルではなく OnRelease イベントを使用します。
+8. 次に、リリース時に、ボタンが既定の色に戻るようにリリースアクションを設定します。 上記の手順 7. を繰り返します。 ただし、次の図に示すように、この時間は Onrelease MRTK_Standard_LightGray マテリアルではなく OnRelease イベントを使用しています。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step8.png)
 
-    これで、ボタンが押されたときに、新しい色シアンに変わります。 ボタンが離されると、指定した既定の色 (淡い灰色など) に戻ります。画面の上部にある [再生] ボタンをクリックして、エディターで試してみるか、HoloLens 2 に展開してテストします。 ハンドシミュレーションなど、エディター内のシミュレーションの詳細については、 [Mrtk のシミュレーションに関するドキュメントのページ](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)を参照してください。
+    これで、ボタンが押されたときに、新しい色に変わります。シアン. ボタンが離されると、指定した既定の色 (淡い灰色など) に戻ります。画面の上部にある [再生] ボタンをクリックして、エディターで試してみるか、HoloLens 2 に展開してテストします。 ハンドシミュレーションなど、エディター内のシミュレーションの詳細については、 [Mrtk のシミュレーションに関するドキュメントのページ](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)を参照してください。
 
 ### <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>MRTK のグリッド オブジェクト コレクションを使用したボタンのパネルの作成
 
 このセクションでは、MRTK の GridObjectCollection ツールを使用して、複数のボタンを適切なユーザーインターフェイスに自動的に配置する方法について説明します。
 
-1. 5つのボタンが表示されるまで、前のセクションのボタンを複製します。 これを行うには、ボタンを右クリックし、[コピー] をクリックします。 次に、ボタンの下に移動し、もう一度右クリックして、[貼り付け] をクリックします。
+1. 5つのボタンが表示されるまで、前のセクションのボタンを複製します。 これを行うには、次の方法があります。ボタンを右クリックし、[コピー] をクリックします。 次に、ボタンの下に移動し、もう一度右クリックして、[貼り付け] をクリックします。
     -ボタンを右クリックし、[複製] をクリックします。
     -キューブをクリックし、キーボードの Ctrl D キーを押して、キーボードコマンドを使用します。
 
@@ -141,7 +141,7 @@ ms.locfileid: "73926528"
 
     ![Mrlearning Base Ch2 3Step1im](images/mrlearning-base-ch2-3step1im.PNG)
 
-2. ボタンを空の親ゲーム オブジェクトの下にグループ化します。 グリッドコレクション内のボタンを使用するには、共通の親オブジェクトの下にボタンをグループ化する必要があります。 Hiハイキング achy を右クリックし、[空の作成] をクリックします。 これにより、すべてのボタンを配置するための新しい空のゲーム オブジェクトが作成されます。 これは、"説明" オブジェクトとして表示されます。 右クリックし、ButtonCollection という名前を変更します。
+2. ボタンを空の親ゲーム オブジェクトの下にグループ化します。 グリッドコレクション内のボタンを使用するには、共通の親オブジェクトの下にボタンをグループ化する必要があります。 Hiを右クリックし、[空の作成] をクリックします。 これにより、すべてのボタンを配置するための新しい空のゲーム オブジェクトが作成されます。 これは、"説明" オブジェクトとして表示されます。 右クリックして、[ButtonCollection] という名前に変更します。
 
     ![Mrlearning Base Ch2 3Step2im](images/mrlearning-base-ch2-3step2im.PNG)
 
@@ -164,7 +164,7 @@ ms.locfileid: "73926528"
 
 ### <a name="adding-text-into-your-scene"></a>シーンへのテキストの追加
 
-このセクションでは、テキストを Mixed Reality エクスペリエンスに追加したり編集したりする方法を学習します。 まだ行っていない場合は、[ここ](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)にある手順に従って、Unity で TextMeshPro を有効にするようにしてください。
+このセクションでは、テキストを Mixed Reality エクスペリエンスに追加したり編集したりする方法を学習します。 まだインストールしていない場合は、[ここ](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)に記載されている手順に従って、Unity で TextMeshPro が有効になっていることを確認します。
 
 1. ButtonCollection 親オブジェクトを選択し、コレクションを右クリックします。 ドロップダウンメニューの [3D オブジェクト] を展開します。 次に、[TextMeshPro] を選択します。 次の図に示すように、ボタンコレクションの下に TextMeshPro オブジェクトが表示されます。
 
@@ -174,11 +174,11 @@ ms.locfileid: "73926528"
 
     ![レッスン 2 Chapter4 手順3](images/mrlearning-base-ch2-4-step3.png)
 
-3. 次の図に示すように、[インスペクター] パネルの TextMeshPro コンポーネントの [テキスト] フィールドに「Button Collection Text」と入力し、[Alignment] プロパティを [Center] と [Top] に調整します。
+3. 次の図に示すように、[インスペクター] パネルの TextMeshPro コンポーネントの [テキスト] フィールドに「ボタンコレクションテキスト」と入力し、[配置] プロパティを [中央] と [上] に調整します。
 
     ![レッスン 2 Chapter4 手順4](images/mrlearning-base-ch2-4-step4.png)
 
-4. ボタンオブジェクトのテキスト値を変更するには、任意のボタンの横にある矢印をクリックして展開し、[参照] をクリックします。 上の手順で説明したように、ボタンにテキストを編集できる TextMeshPro に移動します。
+4. ボタンオブジェクトのテキスト値を変更するには、任意のボタンの横にある矢印をクリックして展開し、[参照] をクリックします。 上の手順で説明したように、ボタンのテキストを編集するには、TextMeshPro に移動します。
 
     ![Lesson2 Chapter4 Step5](images/Lesson2_Chapter4_Step5.JPG)
 

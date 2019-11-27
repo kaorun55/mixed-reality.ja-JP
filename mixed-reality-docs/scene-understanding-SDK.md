@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
-ms.openlocfilehash: f38145c4124a9f162e58188c6179dc29c22e864e
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
-ms.translationtype: HT
+ms.openlocfilehash: f365b0444576e03acd8dba194d7f8f24175e7bee
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491121"
+ms.locfileid: "74539524"
 ---
 # <a name="scene-understanding-sdk-overview"></a>シーンについて SDK の概要
 
@@ -125,7 +125,7 @@ SceneObjects は、次のいずれかを持つことができます。
 <tr><td>切り上げ</td><td>部屋の上面。</td></tr>
 <tr><td>プラットフォーム</td><td>ホログラムを配置できる大きな平らなサーフェイス。 これらは、テーブル、countertops、およびその他の大きな水平サーフェスを表す傾向があります。</td></tr>
 <tr><td>World</td><td>ラベル付けに依存しないジオメトリックデータ用に予約されたラベル。 EnableWorldMesh update フラグを設定することによって生成されるメッシュは、"世界" として分類されます。</td></tr>
-<tr><td>Unknown</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
+<tr><td>不明</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
 </tr>
 </table>
 
@@ -368,7 +368,20 @@ mesh.GetVertexPositions(positions);
 
 この時点で、ランタイムと SDK について理解しているシーンのコア構成要素について理解しておく必要があります。 電力と複雑さの大部分は、アクセスパターン、3D フレームワークとの対話、およびこれらの Api の上に記述できるツールによって、空間プランニング、ルーム分析、ナビゲーション、物理などのより高度なタスクを実行できます。これらをサンプルでキャプチャして、シナリオを適切な方向に導くことができるようにすることをお勧めします。 説明していないサンプルまたはシナリオがある場合は、お知らせください。必要なものをドキュメント化してプロトタイプを作成します。
 
+### <a name="where-can-i-get-sample-code"></a>サンプルコードはどこで入手できますか。
+
+Unity のサンプルコードについては、Unity の[サンプルページ](https://github.com/sceneunderstanding-microsoft/unitysample)ページを参照してください。 このアプリケーションを使用すると、デバイスと通信してさまざまなシーンオブジェクトをレンダリングすることができます。または、シリアル化されたシーンを PC に読み込んで、デバイスを使用せずにシーンの理解を体験することができます。
+
+### <a name="where-can-i-get-sample-scenes"></a>サンプルシーンはどこで入手できますか。
+
+HoloLens2 を持っている場合は、ComputeSerializedAsync の出力をファイルに保存し、独自の使いやすさで逆シリアル化することで、キャプチャしたすべてのシーンを保存できます。 
+
+HoloLens2 デバイスを持っていないが、シーンを理解したい場合は、キャプチャ済みシーンをダウンロードする必要があります。 現在、シーンに関する理解のサンプルにはシリアル化されたシーンが付属しています。これをダウンロードして、独自の便利な方法で使用できます。 次の場所で見つけることができます。
+
+[シーンについてのサンプルシーン](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+
 ## <a name="see-also"></a>関連項目
 
 * [空間マッピング](spatial-mapping.md)
 * [シーンの理解](scene-understanding.md)
+* [Unity のサンプル](https://github.com/sceneunderstanding-microsoft/unitysample)

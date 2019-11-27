@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
-ms.openlocfilehash: fdfe40571ac8893dcb3a3ba8fe3bb12707c800e4
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: bacec5e6a9bfda49d4ad6d3dd849156c9cc09add
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926916"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539703"
 ---
 # <a name="scene-understanding"></a>シーンの理解
 
@@ -19,7 +19,29 @@ ms.locfileid: "73926916"
 
 ![空間マッピングメッシュ, ラベル付き平面サーフェス, watertight メッシュ](images/SUScenarios.png)
 
-このドキュメントでは、シナリオの概要を説明し、シーンの理解と空間マッピングの共有の関係を明確にすることを目的としています。 シーンの理解とその開発方法の詳細については、「シーンに[ついて SDK の概要](scene-understanding-SDK.md)」を参照してください。
+このドキュメントでは、シナリオの概要を説明し、シーンの理解と空間マッピングの共有の関係を明確にすることを目的としています。
+
+## <a name="developing-with-scene-understanding"></a>シーンの理解による開発
+
+この記事では、シーンの実行時と概念について説明します。 シーンを理解して開発する方法に関するドキュメントをお探しの場合は、次のことをお勧めします。
+
+[シーンについて SDK の概要](scene-understanding-SDK.md)
+
+サンプルの GitHub サイトから、シーンについてのサンプルアプリをダウンロードできます。
+
+[シーンの理解のサンプル](https://github.com/sceneunderstanding-microsoft/unitysample)
+
+デバイスがなく、サンプルシーンにアクセスしてシーンの理解を試す必要がある場合は、サンプルアセットフォルダーにシーンがあります。
+
+[シーンについてのサンプルシーン](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+
+### <a name="sdk"></a>SDK
+
+シーン Understandiing 向けの開発方法の詳細については、「シーンについて」を参照してください。このドキュメントでは、「[シーンについ](scene-understanding-SDK.md)て」を参照してください。
+
+
+### <a name="sample"></a>サンプル
+
 
 ## <a name="device-support"></a>デバイスのサポート
 
