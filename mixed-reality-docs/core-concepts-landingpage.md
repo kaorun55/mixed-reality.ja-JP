@@ -7,14 +7,17 @@ ms.author: grbury
 ms.date: 10/02/2019
 ms.topic: overview
 keywords: Windows Mixed Reality, デザイン, アプリパターン, コントロール, スタイル, HoloLens, 相互作用, UX 要素, 動作, 構成要素
-ms.openlocfilehash: 5f5f97d3f4a34e0d88c781df494a4afc2ee0b992
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d8f904183e51943246613e99a805bee1518523c8
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439433"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539541"
 ---
 # <a name="core-concepts-overview"></a>主要な概念の概要
+
+![手で直接操作](images/05_CoreConcepts.png)
+
 
 エクスペリエンスを設計する前に、いくつかの主要な概念を理解しておくことをお勧めします。 以下の各トピックは、ユーザーに対して作成している mixed reality エクスペリエンスの品質に根本的に影響を与え、その品質に寄与する基礎となる要因です。 
 

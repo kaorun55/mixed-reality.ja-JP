@@ -8,12 +8,12 @@ ms.date: 08/24/2019
 ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト
-ms.openlocfilehash: 1a5e4fcbb7704db6df59db9d01bb72a5b153b576
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f6f72df63628bba590ac7af098d0b405e6721cc2
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438079"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539635"
 ---
 # <a name="get-started-with-mixed-reality"></a>Mixed Reality の概要
 
@@ -55,7 +55,7 @@ ms.locfileid: "73438079"
 Mixed Reality を初めて使用する場合、その概要と機能を学習します。
 
 
-![Mixed Reality の範囲](images/RWtpZ1.jpeg)
+![仮想ハチドリと人の手](images/01_MixedReality.png)
 
 ## <a name="what-is-mixed-reality"></a>Mixed Reality とは
 
