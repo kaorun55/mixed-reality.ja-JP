@@ -7,14 +7,16 @@ ms.date: 04/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 視線入力, 視線入力ターゲット設定, 対話, 設計, HoloLens, MMR, マルチモーダル
-ms.openlocfilehash: abd82947be08a2f6aecc4462abc34c4674abfb7a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 6b54d6e844c1b501a0835fc3a48deb4932ba551d
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437975"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539736"
 ---
 # <a name="introducing-instinctual-interactions"></a>本能的な操作の概要
+
+![手で遠隔操作する](images/04_InteractionFundamentals.png)
 
 シンプルで本能的な操作の理念は、Mixed Reality (MR) プラットフォーム全体に織り込まれています。 アプリケーションのデザイナーや開発者が顧客に簡単で直感的な操作を提供できるように、3 つの手順を使用しています。 
 

@@ -8,17 +8,17 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト, 主要な概念, 操作
-ms.openlocfilehash: 2bd2b3fef713bfe74f91714be100c7a02e46f8ac
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 92af4ddba96f659f0af812672599d4a90bf00224
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435733"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74539596"
 ---
 # <a name="start-designing-and-prototyping"></a>設計とプロトタイプ作成を始める
 
 
-![主要な概念](images/text_in_unity_viewingangle.jpg)
+![3D メッシュ アート](images/03_Design.png)
 
 ## <a name="expand-your-design-processcase-study-expanding-the-design-process-for-mixed-realitymd"></a>[デザイン プロセスを展開する](case-study-expanding-the-design-process-for-mixed-reality.md)
 
@@ -98,6 +98,10 @@ Mixed Reality のコンテンツの設計では、エクスペリエンスで使
 ### <a name="clear-and-readable-typographytypographymd"></a>[明確で読みやすい文字体裁](typography.md)
 2D 画面の文字体裁と同じように、明確で読みやすくすることを目指します。 Mixed Reality の 3 次元の側面により、テキストと全体的なユーザー エクスペリエンスをいっそう優れたものにする機会があります。
 
+<br>
+
+### <a name="ux-elements-for-the-mixed-realityapp-patterns-landingpagemd"></a>[複合現実のための UX 要素](app-patterns-landingpage.md)
+Mixed Reality での空間相互作用と UI の構成要素について説明します。
 <br>
 
 
