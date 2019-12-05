@@ -1,64 +1,65 @@
 ---
-title: Spectator ビュー
-description: 外部ディスプレイで mixed reality エクスペリエンスをデモンストレーションする手段として、または mixed reality エクスペリエンスのビデオを録画する手段として、外部デバイスからホログラムを視覚化します。
+title: Spectator View
+description: 複合現実エクスペリエンスを外部ディスプレイでデモンストレーションしたり録画したりする手段として、外部デバイスからのホログラムを視覚化します。
 author: chrisfromwork
 ms.author: chriba
 ms.date: 02/11/2019
 ms.topic: article
-keywords: Spectator View、iPhone、iOS、iPad、OpenCV、カメラ、ARKit、HoloLens、Mixed Reality、MixedRealityToolkit、demo、record
-ms.openlocfilehash: 708ed694af3769f16d5dce0595e026f9a348d754
-ms.sourcegitcommit: 3b32339c5d5c79eaecd84ed27254a8f4321731f1
-ms.translationtype: MT
+ms.localizationpriority: high
+keywords: Spectator View, iPhone, iOS, iPad, OpenCV, カメラ, ARKit, HoloLens, 複合現実, MixedRealityToolkit, デモ, 記録
+ms.openlocfilehash: 9bc1c2809c7d780d439d9efb58f464b41de3dccd
+ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047174"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74491165"
 ---
-# <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens および HoloLens 用 Spectator ビュー2
+# <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens および HoloLens 2 向けの Spectator View
 
 ![Marker](images/SpecViewPhoneHero.jpg)
 
 ## <a name="overview"></a>概要
 
-HoloLens を装着すると、それを持っていない人は、可能な偉大なる象徴を体験することができなくなります。 Spectator View を使用すると、他のユーザーは、世界で HoloLens ユーザーに表示される2D 画面で見ることができます。
-Spectator View は、モバイルデバイスで HD のホログラムを記録するための、高速で手頃な価格のアプローチを提供します。 また、ビデオカメラを使用したホログラムの高品質記録も提供します。
+HoloLens を装着していると、自分が体験している素晴らしい世界を、HoloLens を装着していない人は見ることができないことをしばしば忘れてしまいます。 Spectator View を使用すれば、HoloLens ユーザーが見ている世界を他のユーザーが 2D 画面で見ることができます。
+Spectator View は、モバイル デバイスを使用して HD でホログラムを記録するための高速で手頃な方法を提供します。 さらに、ビデオ カメラを使用したホログラムのプロ品質の録画も提供します。
 
-## <a name="key-resources"></a>主要リソース
+## <a name="key-resources"></a>重要なリソース
 
-* [**GitHub の Spectator ビュー**](https://github.com/microsoft/MixedReality-SpectatorView)
+* [**Spectator View (GitHub)** ](https://github.com/microsoft/MixedReality-SpectatorView)
 * [**Spectator View のドキュメント**](https://microsoft.github.io/MixedReality-SpectatorView/README.html)
-* [**Spectator ビューのサンプル**](https://github.com/microsoft/MixedReality-SpectatorView/tree/master/samples)
+* [**Spectator View のサンプル**](https://github.com/microsoft/MixedReality-SpectatorView/tree/master/samples)
 
-## <a name="use-cases"></a>ユース ケース
-* IPhone または Android デバイスを使用して、mixed reality エクスペリエンスを記録できます。 フル HD で記録し、ホログラムと偶数の影にアンチエイリアシングを適用します。 これは、ホログラムのビデオをキャプチャする費用効果が高く、迅速な方法です。
-* ライブ mixed reality エクスペリエンスを iPhone または iPad から直接 Apple TV にストリーミングし、すぐに利用できるようにします。
-* ゲストとのエクスペリエンスを共有します。非 HoloLens ユーザーが自分の電話やタブレットから直接ホログラムを使用できるようにします。
+## <a name="use-cases"></a>使用事例
+* iPhone または Android デバイスを使用して、複合現実エクスペリエンスを記録できます。 フル HD で記録し、ホログラムだけでなく、影にもアンチエイリアシングを適用します。 それは、ホログラムの動画をキャプチャするための費用対効果が高く、簡単に実行できる方法です。
+* 複合現実エクスペリエンスを、iPhone または iPad から直接 Apple TV にライブ ストリーミングします。遅延は発生しません。
+* ゲストとエクスペリエンスを共有します。非 HoloLens ユーザーが各自の電話やタブレットから直接ホログラムを体験できるようにします。
 
 ## <a name="current-features"></a>現在の機能
 
-* ホログラムの空間同期によって、すべてのユーザーが同じ場所でホログラムを確認できるようになります。
-* iOS (ARKit 対応デバイス) と Android (Arkit 対応デバイス) はサポートされています。
+* ホログラムの空間同期。これにより、すべてのユーザーが同じ場所でホログラムを確認できるようになります。
+* iOS (ARKit 対応デバイス) と Android (ARCore 対応デバイス) のサポート。
 複数の iOS ゲスト。
-ビデオ + ホログラム + アンビエントサウンド + ホログラムサウンドの記録。
-ビデオを保存したり、電子メールで送信したり、他のサポートアプリと共有したりできるように、シートを共有します。
+動画 + ホログラム + 周囲の音 + ホログラムの音の記録。
+シートを共有して、動画を保存したり、電子メールで送信したり、他のサポート アプリと共有したりできるようにします。
 
-![](images/SpecViewPhoneDemo.jpg)
-マーカーマーカー![マーカー](images/hololensspectatorview-500px.jpg) ![](images/spectatorview-300px.png)
+![マーカー](images/SpecViewPhoneDemo.jpg)
+![マーカー](images/hololensspectatorview-500px.jpg) ![マーカー](images/spectatorview-300px.png)
 
-次の表は、Spectator ビューのさまざまな機能とその機能を示しています。 ビデオ記録のニーズに最適なオプションを選択します。
+次の表に、Spectator View のさまざまな機能を示します。 ご自分の録画のニーズに最適なオプションを選択してください。
 
-|                                      | 携帯                  |                    ビデオカメラ              |
+|                                      | モバイル                  |                    ビデオ カメラ              |
 |--------------------------------------|:-----------------------:|:-------------------------------------------:|
-| HD 品質                           |         フル HD         |        Professional quality 撮影 (ビデオカメラによって決定)      |
-| カメラの移動を簡単に                 |            ✔            |                      ✔                      |
-| 3人のユーザービュー                    |            ✔            |                      ✔                      |
-| 画面にストリームできます           |            ✔            |                      ✔                      |
+| HD 品質                           |         フル HD         |        プロ品質の撮影 (ビデオ カメラによって決定される)      |
+| カメラの容易な移動                 |            ✔            |                      ✔                      |
+| 第三者の視点                    |            ✔            |                      ✔                      |
+| 画面にストリーム可能           |            ✔            |                      ✔                      |
 | 移植性があります。                             |            ✔            |                                             |
 | ワイヤレス                             |            ✔            |                                             |
-| 追加の必要なハードウェア         |     Android フォン、iPhone    | HoloLens + テストマシン + 三脚 + ビデオカメラ + PC + Unity |
-| ハードウェア投資                  |           Low            |                     高                    |
+| 必要な追加のハードウェア         |     Android フォン、iPhone    | HoloLens + リグ + 三脚 + ビデオ カメラ + PC + Unity |
+| ハードウェア投資                  |           低            |                     高                    |
 | クロスプラットフォーム                       |           Android、iOS   |                                             |
-| 同期されたコンテンツ                 |            ✔            |                      ✔                      |
-| ランタイムのセットアップ期間               |         リプレイ          |                     スロー (低速)                    |
+| 同期されるコンテンツ                 |            ✔            |                      ✔                      |
+| ランタイムのセットアップ期間               |         即時          |                     スロー (低速)                    |
 ## <a name="see-also"></a>関連項目
 
 * [複合現実キャプチャ](mixed-reality-capture.md) 

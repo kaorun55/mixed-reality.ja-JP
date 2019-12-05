@@ -1,44 +1,45 @@
 ---
-title: MRTK バージョン2の概要
-description: MRTK の活用に関心がある新しい開発者向け
+title: MRTK バージョン 2 の概要
+description: MRTK の活用に関心がある開発初心者向け
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 05/15/2019
 ms.topic: article
-keywords: Windows Mixed Reality、test、Mixed Reality Toolkit、MRTK バージョン2、MRTK、tools、SDK、HoloLens、HoloLens 2
-ms.openlocfilehash: bb958543aa68586dd689a2048665b233d6be7064
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
-ms.translationtype: MT
+ms.localizationpriority: high
+keywords: Windows Mixed Reality, テスト, Mixed Reality Toolkit, MRTK バージョン2, MRTK, ツール, SDK, HoloLens, HoloLens 2
+ms.openlocfilehash: fc9638f405604bed7c7531ace0977a88509e91b5
+ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913128"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74491107"
 ---
 # <a name="getting-started-with-mrtk-v2"></a>MRTK v2 の概要
 
-## <a name="mrtk-getting-started-guide"></a>MRTK はじめにガイド
-MRTK V2 の概要については、「 [mrtk ファーストステップガイド](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)」を参照してください。
+## <a name="mrtk-getting-started-guide"></a>MRTK 入門ガイド
+MRTK V2 を使って作業を開始するうえでの詳細情報は、[MRTK の入門ガイド](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)を参照してください。
 
 ## <a name="what-is-mixed-reality-toolkit-mrtk"></a>Mixed Reality Toolkit (MRTK) とは
-MRTK は、HoloLens が最初にリリースされた後に行われていたすばらしいオープンソースのツールキットであり、現在のところ、開発者コミュニティが提供されているので、このツールキットを使用することはできません。 過去3年間、microsoft は開発者コミュニティのフィードバックを受け、最大の関心事を考慮するために MRTK v2 を構築しました。  
+MRTK は、HoloLens が最初にリリースされて以来培われてきたすばらしいオープン ソースのツールキットであり、貢献してくれた開発者コミュニティの努力によって、現在の姿があります。 過去 3 年間で、Microsoft では開発者コミュニティのフィードバックを受け、最も重要な懸念事項に対応するために MRTK v2 を構築しました。  
 
-Unity での MRTK v2 は、Mixed Reality アプリケーション向けのオープンソースのクロスプラットフォーム開発キットです。  MRTK バージョン 2 は、Microsoft HoloLens、Windows Mixed Reality イマーシブ (VR) ヘッドセット、OpenVR プラットフォームをターゲットとしたアプリケーションの開発を加速することを目的としています。 プロジェクトは、参加する障壁を減らすことを目的としています。これにより、複雑な現実アプリケーションを作成し、すべての拡大に応じてコミュニティに貢献できます。 
+Unity での MRTK v2 は、Mixed Reality アプリケーション向けのオープンソースのクロスプラットフォーム開発キットです。  MRTK バージョン 2 は、Microsoft HoloLens、Windows Mixed Reality イマーシブ (VR) ヘッドセット、OpenVR プラットフォームをターゲットとしたアプリケーションの開発を加速することを目的としています。 プロジェクトでは、Mixed Reality アプリケーションを作成するにあたっての参入の障壁を減らし、私たち全員の成長とともにコミュニティに貢献することを目的としています。 
 
-詳細については、 [Mrtk ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)を参照してください。
+詳細については、[MRTK ドキュメント ポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)を参照してください。
 
-## <a name="new-with-mrtk-v2"></a>MRTK v2 の新バージョン
-これらのプラットフォームツールに対するコミットメントを重視したいと考えています。  実際、MRTK バージョン2を利用して、setup experience (OOBE) や Mixed Reality Learning アプリケーションなどの受信トレイエクスペリエンスを開発しました。  また、プラットフォームで開発するのに最適な方法であると考えられるため、新しい HoloLens 2 機能が MRTK を通じて最初に公開されることが予想されます。 
+## <a name="new-with-mrtk-v2"></a>MRTK v2 の新機能
+これらのプラットフォーム ツールに込めた Microsoft の成果に注目して欲しいと考えています。  事実、Microsoft では MRTK バージョン 2 を活かして、セットアップ エクスペリエンス (OOBE) などのすぐに使えるエクスペリエンスや Mixed Reality Learning アプリケーションを開発しました。  また、新しい HoloLens 2 機能は、まずは MRTK 経由で公開されることを期待していただいてかまいません。Microsoft では、お客様が当社のプラットフォーム上で開発を行ううえで、それが最適な方法であると確信しているからです。 
 
-### <a name="modular"></a>方式
-モジュール型の方法でビルドしたので、ツールキットのすべての機能をプロジェクトに組み込む必要はありません。  これには、実際にいくつかの利点があります。  これにより、プロジェクトのサイズが小さくなり、管理が容易になります。  さらに、スクリプト可能なオブジェクトを使用して構築され、インターフェイス主導型であるため、独自のに含まれているコンポーネントを置き換えることで、他のサービス、システム、およびプラットフォームをサポートすることもできます。
+### <a name="modular"></a>モジュール式
+モジュール式の手法でビルドされているため、ツールキットのすべての機能をプロジェクトに組み込む必要はありません。  実際に、これにはいくつかの利点があります。  プロジェクトを小規模に保ち、管理を容易にすることができます。  さらに、スクリプト作成が可能なオブジェクトによってビルドされており、インターフェイス駆動型であるため、組み込みのコンポーネントをお客様独自のものに置き換えて、他のサービス、システム、およびプラットフォームをサポートすることも可能です。
 
 ### <a name="cross-platform"></a>クロスプラットフォーム
-他のプラットフォームの場合は、クロスプラットフォームのサポートがあります。  これは、すべての単一プラットフォームが既定でサポートされているわけではありませんが、ビルドターゲットを他のプラットフォームに切り替えると、どのツールキットコードも破損しないようにしました。  モジュール型の設計による堅牢性と拡張性により、ARCore、Arcore、OpenVR などの複数のプラットフォームをサポートするための優れたパスを設定できます。
+他のプラットフォームに関しては、クロスプラットフォームのサポートを備えています。  また、このことによって、何もしなくてもすべての単一プラットフォームがサポートされるわけではありませんが、ビルド ターゲットを他のプラットフォームに切り替えたときに、どのツールキットのコードも中断されないことを保証しています。  モジュール式の設計による堅牢性と拡張性を備えることから、適切な手法を利用して、ARCore、ARKit、および OpenVR などの複数のプラットフォームをサポートできます。
 
-### <a name="performant"></a>パフォーマンス
-モバイルプラットフォームを使用すると、パフォーマンスを考慮して構築されています。  これは非常に重要であり、ツールがお客様に対して機能しないようにする必要がありました。
+### <a name="performant"></a>高いパフォーマンス
+モバイル プラットフォームに対応し、パフォーマンスを考慮して構築されています。  このことは非常に重要であり、Microsoft ではツールがお客様の妨げにならないことを保証したいと考えました。
 
 ## <a name="see-also"></a>関連項目
-* [MRTK ファーストステップガイド](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
-* [MRTK ドキュメントホーム](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
+* [MRTK 入門ガイド](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
+* [MRTK のドキュメント ホーム](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 * [ツールのインストール](install-the-tools.md)
-* [HTK/MRTK から MRTK バージョン2への移植](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html)
+* [HTK/MRTK から MRTK バージョン 2 への移植](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html)

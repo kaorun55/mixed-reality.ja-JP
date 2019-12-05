@@ -1,27 +1,28 @@
 ---
-title: 入門チュートリアル-2. プロジェクトと最初のアプリケーションを初期化しています
+title: 入門チュートリアル -2. プロジェクトと最初のアプリケーションの初期化
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 11/01/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 3bf218b42ea8abed45a80c0dd048e791cdd8372b
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
-ms.translationtype: MT
+ms.localizationpriority: high
+keywords: Mixed Reality, Unity, チュートリアル, Hololens
+ms.openlocfilehash: d4e58e2c9236ba35b4394fd80cde3843edaa6f57
+ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926885"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74491204"
 ---
-# <a name="2-initializing-your-project-and-first-application"></a>2. プロジェクトと最初のアプリケーションを初期化する
+# <a name="2-initializing-your-project-and-first-application"></a>2. プロジェクトと最初のアプリケーションの初期化
 
-この最初のレッスンでは、 [Mixed Reality Toolkit (MRTK)]()が提供する必要があるいくつかの機能について説明します。 HoloLens 2 の最初のアプリケーションを起動し、デバイスにデプロイします。
+この最初のレッスンでは、[Mixed Reality ツールキット (MRTK) ]()によって提供され、HoloLens 2 用の最初のアプリケーションを起動してデバイスにデプロイされる必要のあるいくつかの機能について学習します。
 
 ## <a name="objectives"></a>目標
 
 * HoloLens 用 Unity の開発を最適化する。
 * アセットをインポートし、シーンをセットアップする。
-* 空間マッピングメッシュ、手メッシュ、フレームレートカウンターの視覚化。
+* 空間マッピングのメッシュ、ハンド メッシュ、およびフレームレート カウンターの視覚化。
 
 ## <a name="instructions"></a>手順
 
@@ -29,104 +30,104 @@ ms.locfileid: "73926885"
 
 1. Unity を起動します。
 2. **[新規]** を選択します。
-![レッスン1から Section1 のステップ](images/mrlearning-base-ch1-1-step2.JPG)
+![レッスン 1 セクション 1 手順 2](images/mrlearning-base-ch1-1-step2.JPG)
 
-3. プロジェクト名を入力してください (例: "MixedRealityBase")。
-![レッスン1から Section1 手順 3](images/mrlearning-base-ch1-1-step3.JPG)
+3. プロジェクト名を入力します (例: "MixedRealityBase")。
+![レッスン 1 セクション 1 手順 3](images/mrlearning-base-ch1-1-step3.JPG)
 4. プロジェクトを保存する場所を入力します。
-![レッスン1から Section1 手順 4](images/mrlearning-base-ch1-1-step4.JPG)
+![レッスン 1 セクション 1 手順 4](images/mrlearning-base-ch1-1-step4.JPG)
 5. プロジェクトが **[3D]** に設定されていることを確認します。
-![レッスン1から Section1 手順 5](images/mrlearning-base-ch1-1-step5.JPG)
+![レッスン 1 セクション 1 手順 5](images/mrlearning-base-ch1-1-step5.JPG)
 6. **[プロジェクトの作成]** をクリックします。
-![レッスン1から Section1 手順 6](images/mrlearning-base-ch1-1-step6.JPG)
+![レッスン 1 セクション 1 手順 6](images/mrlearning-base-ch1-1-step6.JPG)
 
 
 ### <a name="configure-the-unity-project-for-windows-mixed-reality"></a>Windows Mixed Reality 用に Unity プロジェクトを構成する
 
-1. [*ビルドの設定*] ウィンドウを開き、[**ファイル** > **ビルドの設定**] に移動します。
-![レッスン1から Section2 ステップ](images/mrlearning-base-ch1-2-step1.JPG)
-2. *ユニバーサル Windows プラットフォーム*を選択し、 **[プラットフォームの切り替え]** ボタンをクリックしてプラットフォームを切り替えます。 HoloLens 2 で実行されるアプリケーションは、ユニバーサル Windows プラットフォーム (UWP) と互換性がある必要があります。
-![レッスン1から Section2 のステップ](images/mrlearning-base-ch1-2-step2.JPG)
-3. 次の図に示すように、ビルド] ウィンドウの **[プレーヤーの設定]** ボタンをクリックして仮想現実を有効にし、[XR の設定 の下の [*仮想*化の詳細] チェックボックスをオンにします。 [インスペクター] パネルを表示するには、[*ビルドの設定*] ウィンドウをそのままドラッグする必要があることに注意してください。 [*サポートされている仮想現実*] チェックボックスは、ステレオスコピック構想の有効化 (各目に異なるイメージのレンダリング ![) を参照するため、Mixed reality と拡張された現実のヘッドセットにも適用され](images/mrlearning-base-ch1-2-step3.JPG)
-4. また、[XR の設定] で、*ステレオレンダリングモード*を*シングルパスインスタンス*化に変更します。 通常、この[表示パイプラインスタイル](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)は HoloLens 2 で最も高いパフォーマンスを備えています。 Unity 環境の他のパフォーマンスの高い構成に関心がある場合は、こちらの[手順](recommended-settings-for-unity.md)に従ってください。
-![レッスン1から Section2 手順 4](images/mrlearning-base-ch1-2-step4.jpg)
-5. 同じ [インスペクター] パネルで、[機能] セクションの [*空間認識*] チェックボックスが [*発行の設定*] で有効になっていることを確認します。 空間認識を使用すると、HoloLens 2 などの混合の現実デバイスで空間マッピングメッシュを視覚化できます。 発行の設定は、[インスペクター] パネルの [XR Settings (その他の設定)] の下にあります。
-![レッスン1から Section2 手順 5](images/mrlearning-base-ch1-2-step5.JPG)
+1. **[ファイル]**  >  **[ビルド設定]** の順に移動して、 *[ビルド設定]* ウィンドウを開きます。
+![レッスン 1 セクション 2 手順 1](images/mrlearning-base-ch1-2-step1.JPG)
+2. *[ユニバーサル Windows プラットフォーム ]* を選択して、 **[Switch Platform]\(プラットフォームの切り替え\)** ボタンをクリックしてプラットフォームを切り替えます。 HoloLens 2 上で実行されるアプリケーションは、ユニバーサル Windows プラットフォーム (UWP) に対応している必要があります。
+![レッスン 1 セクション 2 手順 2](images/mrlearning-base-ch1-2-step2.JPG)
+3. 下の図に示されているように、ビルド ウィンドウで **[プレーヤー設定]** ボタンをクリックして仮想現実を有効にしてから、[インスペクター] パネルの [XR 設定] 下にある *[仮想現実のサポート]* チェック ボックスをオンにします。 状況によっては、[インスペクター] パネルを表示するために、邪魔にならないように *[ビルド設定]* ウィンドウをドラッグする必要があることに注意してください。 *[仮想現実のサポート]* チェック ボックスは、立体視 (それぞれの目で異なる画像をレンダリングする) を有効にすることを指すため、Mixed Reality および Augmented Reality ヘッドセットにも適用されます。![レッスン 1 セクション 2 手順 3](images/mrlearning-base-ch1-2-step3.JPG)
+4. また、[XR の設定] 下で *[Stereo Rendering Mode]\(ステレオ レンダリング モード\)* を *[Single Pass Instanced]\(単一パスのインスタンス化\)* に変更します。 この[パイプラインのレンダリング スタイル](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)は通常、HoloLens 2 においてパフォーマンスが最も高くなります。 Unity 環境における他の高パフォーマンスの構成に関心がある場合は、[こちらの手順](recommended-settings-for-unity.md)に従ってください。
+![レッスン 1 セクション 2 手順 4](images/mrlearning-base-ch1-2-step4.jpg)
+5. 同じ [インスペクター] パネルで、 *[公開設定]* の下の [機能] セクションにある *[空間認識]* チェック ボックスがオンになっていることを確認します。 空間認識を使用すると、HoloLens 2 などの Mixed Reality デバイス上で空間マッピングのメッシュを視覚化できます。 [公開設定] は、[インスペクター] パネル内の [XR 設定] の上、[その他の設定] の下にあります。
+![レッスン 1 セクション 2 手順 5](images/mrlearning-base-ch1-2-step5.JPG)
 
     > [!NOTE]
-    > このセクションでは使用しませんが、他のいくつかの一般的な機能を有効にするには、音声コマンドの*マイク*や、ネットワーク接続を必要とするサービスに接続するための*internetclient*などがあります。
+    > このセクションでは使用していませんが、有効にできるその他の一般的な機能には、 *[マイク]* (音声コマンド用) と *[InternetClient]* (ネットワーク接続が必要なサービスの接続用) が含まれています。
 
 ### <a name="import-the-mixed-reality-toolkit"></a>Mixed Reality ツールキットをインポートする
 
-1. [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [foundation パッケージバージョン 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)をダウンロードし、PC 上のフォルダーに保存します。
+1. [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) の Unity [ Foundation パッケージ バージョン 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage) をダウンロードし、PC 上のフォルダーに保存します。
 
-2. 前の手順でダウンロードした*Mixed Reality Toolkit*パッケージをインポートします。 まず、 **[アセット]** をクリックし > **カスタムパッケージ** > **インポート**し、 *unitypackage*を選択して開き、インポートプロセスを開始します。 インポート処理が完了するまで数分かかります。
-    ![レッスン1から Section3 Step2a](images/mrlearning-base-ch1-3-step2a.JPG) ![レッスン1から Section3 Step2b](images/mrlearning-base-ch1-3-step2b.JPG)
+2. 前の手順でダウンロードした *Mixed Reality Toolkit* パッケージをインポートします。 まず、 **[資産]**  >  **[インポート]**  >  **[カスタム パッケージ]** の順にクリックし、*Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage* を選択して開き、インポート処理を開始します。 インポート プロセスが完了するまで数分間、待機してください。
+    ![レッスン 1 セクション 3 手順 2a](images/mrlearning-base-ch1-3-step2a.JPG) ![レッスン 1 セクション 3 手順 2b](images/mrlearning-base-ch1-3-step2b.JPG)
 
-3. 次のポップアップウィンドウで、 **[インポート]** をクリックして、選択したパッケージの Unity プロジェクトへのインポートを開始します。 画像に示されているように、すべての項目がオンになっていることを確認します。
-    ![レッスン1から Section3 手順 3](images/mrlearning-base-ch1-3-step3.JPG)
+3. 次のポップアップ ウィンドウで、 **[インポート]** をクリックして、選択したパッケージの Unity プロジェクトへのインポートを開始します。 図に示されているように、すべての項目のチェックを必ずオンにしてください。
+    ![レッスン 1 セクション 3 手順 3](images/mrlearning-base-ch1-3-step3.JPG)
 
     > [!NOTE]
-    > Mixed Reality Toolkit の既定の設定を適用するよう求めるポップアップダイアログボックスが表示されたら、 **[適用]** をクリックします。 MRTK では、自動セットアップのためにインポートするときに、推奨されていない設定があればプロジェクトを分析します。 設定によっては、次の図のようなポップアップが表示される場合があります。
+    > Mixed Reality Toolkit の既定の設定を適用するかを尋ねるポップアップのダイアログ ボックスが表示されたら、 **[適用]** をクリックします。 MRTK では、自動セットアップのためにインポートが行われる場合、不足している推奨設定についてプロジェクトが分析されます。 設定によっては、ポップアップ表示は、以下の図と異なる場合があります。
 
-    ![レッスン1から Section3 手順 4 Note1](images/mrlearning-base-ch1-3-step4-note1.JPG)
+    ![レッスン 1 セクション 3 手順 4 注意 1](images/mrlearning-base-ch1-3-step4-note1.JPG)
 
 ### <a name="configure-the-mixed-reality-toolkit"></a>Mixed Reality ツールキットを構成する
 
-1. Mixed **reality** toolkit を選択して、現在のシーンに*mixed reality toolkit*を追加し > [**シーンに追加] および [構成] を選択します**。 メニューバーから。 Mixed Reality Toolkit をインポートした後でこのメニュー項目が表示されない場合は、Unity を再起動してください。
-    ![レッスン1から Section4 ステップ](images/mrlearning-base-ch1-4-step1.JPG)
+1. **[Mixed Reality Toolkit]**  >  **[Add to Scene and Configure..]\(シーンに追加して構成する\)** の順に選択して、 *[Mixed reality Toolkit]* を現在のシーンに追加します。 メニュー バーから行います。 Mixed Reality Toolkit をインポートした後でこのメニュー項目が表示されない場合は、Unity を再起動してください。
+    ![レッスン 1 セクション 4 手順 1](images/mrlearning-base-ch1-4-step1.JPG)
 
     > [!NOTE]
-    > [Mixed Reality Toolkit のプロファイル](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html)を選択するためのポップアップダイアログボックスが表示される場合があります。 *DefaultHoloLens2ConfigurationProfile*という名前のプロファイルをダブルクリックして選択します。
+    > [Mixed Reality Toolkit 向けのプロファイル](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Profiles/Profiles.html)を選択するためのポップアップ ダイアログ ボックスが表示される場合があります。 *DefaultHoloLens2ConfigurationProfile* という名前のプロファイルをダブルクリックして選択します。
 
-2. シーンに新しい項目と変更がいくつか追加されます。 [**ファイル** > 名前を付け**て保存...** ] をクリックしてシーンを別の名前で保存し、シーンに*basescene*などの名前を付けます。 シーンを整理して、プロジェクトの [ *Assets* ] フォルダー内の [*シーン*] フォルダーに保存します。
-    ![レッスン1から Section4 Step2a](images/mrlearning-base-ch1-4-step2a.JPG) ![レッスン1から Section4 Step2b](images/mrlearning-base-ch1-4-step2b.JPG)
+2. シーンには、新しい項目と変更がいくつか追加される予定です。 **[ファイル]**  >  **[名前を付けて保存]** の順にクリックして別の名前でシーンを保存します。シーンには、*BaseScene* などの名前を付けます。 シーンをプロジェクトの *[アセット]* フォルダー内の *[シーン]* フォルダーに保存して、整理します。
+    ![レッスン 1 セクション 4 手順 2a](images/mrlearning-base-ch1-4-step2a.JPG) ![レッスン 1 セクション 4 手順 2b](images/mrlearning-base-ch1-4-step2b.JPG)
 
 ### <a name="build-your-application-to-your-device"></a>デバイスへのアプリケーションのビルド
 
-1. 前のセクションの [*ビルドの設定*] ウィンドウを閉じた場合は、[**ファイル** > ビルドの**設定**] に移動して [ビルドの*設定*] ウィンドウを再び開きます。
-    ![レッスン1から Section5 ステップ](images/mrlearning-base-ch1-5-step1.JPG)
+1. 前のセクションで *[ビルド設定]* ウィンドウを閉じた場合は、 **[ファイル]**  >  **[ビルド設定]** の順に移動して *[ビルド設定]* ウィンドウを再度開きます。
+    ![レッスン 1 セクション 5 手順 1](images/mrlearning-base-ch1-5-step1.JPG)
 
-2. 作成したシーンが、Unity でシーンが開いているときに [開いているシーンを**追加**] ボタンをクリックして、[ビルド] の一覧*の*シーンにあることを確認します。
+2. Unity でシーンが開いているときに、 **[Add Open Scenes]\(開いているシーンの追加\)** ボタンをクリックして、 *[Scenes in Build]\(ビルド内のシーン\)* に先ほど作成したシーンがあることを確認します。
 
-3. ビルドを開始するには、 **[ビルド]** をクリックします。
-    ![レッスン1から Section5 手順 3](images/mrlearning-base-ch1-5-step3.JPG)
+3. **[ビルド]** ボタンを押して、ビルド プロセスを開始します。
+    ![レッスン 1 セクション 5 手順 3](images/mrlearning-base-ch1-5-step3.JPG)
 
-4. アプリケーション用の新しいフォルダーを作成して、名前を付けます。 次の図では、アプリケーションを格納するために、App という名前のフォルダーが作成されています。 **[フォルダーの選択]** をクリックして、新しく作成したフォルダーへのビルドを開始します。 ビルドが完了したら、Unity の [*ビルドの設定*] ウィンドウを閉じることができます。
-    ![レッスン1から Section5 手順 4](images/mrlearning-base-ch1-5-step4.JPG)
+4. アプリケーション用の新しいフォルダーを作成して、名前を付けます。 下の図では、アプリケーションを格納するための App という名前のフォルダーが作成されています。 **[フォルダーの選択]** をクリックして、新しく作成したフォルダーへのビルドを開始します。 ビルドが完了したら、Unity の *[ビルド設定]* ウィンドウを閉じてもかまいません。
+    ![レッスン 1 セクション 5 手順 4](images/mrlearning-base-ch1-5-step4.JPG)
 
   > [!IMPORTANT]
-  > ビルドが失敗した場合は、もう一度構成してみるか、Unity を再起動してから再度ビルドしてください。 "エラー: CS0246 = 型または名前空間の名前" XX "が見つからないなどのエラーが表示された場合は、using ディレクティブまたはアセンブリ参照が不足しています。 その場合は、 [Windows 10 SDK (10.0.18362.0)](https://developer.microsoft.com//windows/downloads/windows-10-sdk)のインストールが必要になることがあります。
+  > ビルドが失敗した場合は、もう一度構成してみるか、Unity を再起動してから再度ビルドしてください。 "エラー:CS0246 = “XX” という名前の型または名前空間が見つかりませんでした (using ディレクティブまたはアセンブリ参照が不足しています)" のようなエラーが表示される場合があります。 その場合は、必要に応じて [Windows 10 SDK (10.0.18362.0)](https://developer.microsoft.com//windows/downloads/windows-10-sdk) をインストールします。
 
-5. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 *MixedRealityBase*ソリューションをダブルクリックするか、プロジェクトに別の名前を使用している場合は対応する名前をダブルクリックして、Visual Studio でソリューションファイルを開きます。
+5. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 *MixedRealityBase.sln* ソリューション (または、プロジェクトの代替名を使用した場合は対応する名前) をダブルクリックして、Visual Studio でソリューション ファイルを開きます。
 
     > [!NOTE]
-    > 新しく作成されたフォルダー (前の手順の名前付け規則に従っている場合は*アプリ*フォルダー) を必ず開いてください。これは、ビルドフォルダー内の .sln ファイルと混同しないように、同じ名前の .sln ファイルがそのフォルダー外に存在するためです。 フォルダー構造は次の図のようになります。
+    > 必ず、新しく作成したフォルダー (つまり、前の手順での名前付け規則に従っている場合は、*App* フォルダー) を開いてください。そのフォルダーの外部に同じような名前の .sln ファイルがあり、ビルド フォルダー内の .sln ファイルと混同しないようにするためです。 フォルダー構造は、以下の画像のようになります。
     >
     > Visual Studio から新しいコンポーネントをインストールするよう求められたら、少し時間を取って、[「ツールのインストール」ページ](install-the-tools.md)で示されている、前提条件となるすべてのコンポーネントがインストールされていることを確認してください
 
-    ![レッスン1から Section5 手順5](images/mrlearning-base-ch1-5-step5.JPG)
+    ![レッスン 1 セクション 5 手順 5](images/mrlearning-base-ch1-5-step5.JPG)
 
-6. HoloLens 2 を PC に接続します。 これらの手順では HoloLens 2 デバイスにデプロイすることを前提としていますが、 [hololens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイするか、[サイドローディング用のアプリパッケージの](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)作成を選択することもできます。
+6. HoloLens 2 を PC に接続します。 これらの手順では、HoloLens 2 デバイスにデプロイすることを前提としていますが、[HoloLens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイすることも、[サイドローディング用のアプリ パッケージ](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)を作成することもできます
 
     > [!IMPORTANT]
-    > デバイスをビルドする前に、デバイスが開発*者モード*であり、開発用コンピューターとペアリングされている必要があります。 これらの手順は、次[の手順に従って](using-visual-studio.md)完了できます。
+    > デバイスをビルドする前に、デバイスが "*開発者モード*" であり、かつ、開発コンピューターと一組になっている必要があります。 この両方のステップを完了するには、[こちらの手順](using-visual-studio.md)に従います。
 
-7. *リリース*または*マスター*構成、 *ARM*アーキテクチャ、および*デバイス*をターゲットとして選択して、HoloLens 2 にビルドするように Visual Studio を構成します。
-    ![レッスン1から Section5 Step8](images/mrlearning-base-ch1-5-step7.JPG)
+7. *[リリース]* または *[マスター]* 構成、 *[ARM]* アーキテクチャ、ターゲットとして *[デバイス]* を選択して、HoloLens 2 に対するビルド用に Visual Studio を構成します。
+    ![レッスン 1 セクション 5 手順 8](images/mrlearning-base-ch1-5-step7.JPG)
 
-8. 最後の手順は、**デバッグ > デバッグ** **なしで開始** を選択して、デバイスにビルドしてデプロイすることです。 [*デバッグなしで開始*] を選択すると、ビルドが成功したときに、アプリケーションがすぐにデバイスで開始されます。ただし、デバッガーがアタッチされていない場合は、Visual Studio に情報が表示されます。 これは、アプリケーションが停止することなく HoloLens 2 上で実行されている間は、USB ケーブルを取り外すことができることも意味します。
+8. 最後の手順として、 **[デバッグ]**  >  **[デバッグなしで開始]** を選択してビルドし、デバイスにデプロイします。 *[デバッグなしで開始]* を選択すると、ビルドが成功した時点でアプリケーションがデバイス上ですぐに起動しますが、デバッガーがアタッチされていない状態であり、Visual Studio にデバッグ情報は表示されません。 これは、アプリケーションが停止することなく HoloLens 2 上で実行されている間は、USB ケーブルを取り外すことができることも意味します。
 
     > [!NOTE]
-    > また、[**ビルド** > **デプロイ**] を選択して、アプリケーションを自動的に起動せずにデバイスにデプロイすることもできます。
+    > また、 **[ビルド]**  >  **[ソリューションの配置]** を選択することで、アプリケーションを自動的に起動せずにデバイスにデプロイすることもできます。
 
-    ![レッスン1から Section5 Step9](images/mrlearning-base-ch1-5-step8.JPG)
+    ![レッスン 1 セクション 5 手順 9](images/mrlearning-base-ch1-5-step8.JPG)
 
 ## <a name="congratulations"></a>結論
 
-これで、最初の HoloLens 2 アプリケーションが展開されました。 このチュートリアルでは、HoloLens 2 によって認識されたすべてのサーフェスをカバーする空間マッピングメッシュがあることを確認します。 さらに、ハンドトラッキングのためのインジケーターと、アプリケーションのパフォーマンスを監視するためのフレームレートカウンターが表示されます。 これらは、Mixed Reality ツールキットに含まれている、すぐに使用できる基礎となる部分のほんの一部です。 このレッスンでは、HoloLens 2 と Mixed Reality Toolkit の機能を十分に調べることができるように、シーンにコンテンツと対話機能を追加します。
+これで、最初の HoloLens 2 アプリケーションがデプロイされました。 手順に従うと、HoloLens 2 によって認識されたすべてのサーフェイスに対応する空間マッピングのメッシュが表示されるはずです。 さらに、ハンド トラッキング用の手および指に対するインジケーターと、アプリケーションのパフォーマンスを監視するためのフレーム レート カウンターも表示されるはずです。 これらは、Mixed Reality ツールキットに含まれている、すぐに使用できる基礎となる部分のほんの一部です。 以降のレッスンでは、HoloLens 2 と Mixed Reality Toolkit の機能を十分に探索できるように、シーンにコンテンツや対話機能を追加する作業を開始します。
 
 > [!NOTE]
-> アプリでは、ビジュアルプロファイラーに気付くことがあります。 [レッスン 5](mrlearning-base-ch5.md)では、音声コマンドを使用してフレームレートカウンターを切り替える方法について説明します。 一般に、コードの変更によってパフォーマンスが低下した可能性がある場合は、開発中に常にビジュアルプロファイラーを表示したままにしておくことをお勧めします。 HoloLens 2 アプリケーションは、 [60 FPS で継続的に実行](understanding-performance-for-mixed-reality.md)する必要があります。
+> アプリ上で、ビジュアル プロファイラーに気が付く場合があります。 音声コマンドを使用してフレーム レート カウンターを切り替える方法については、[レッスン 5](mrlearning-base-ch5.md) で説明します。 一般に、コードの変更によってパフォーマンスが影響を受ける可能性がある場合は、開発中に常にビジュアル プロファイラーを表示したままにしておくことをお勧めします。 HoloLens 2 アプリケーションは、[60 FPS で継続的に実行される](understanding-performance-for-mixed-reality.md)必要があります。
 
-[次のレッスン: 3. ユーザーインターフェイスを作成し、Mixed Reality Toolkit を構成する](mrlearning-base-ch2.md)
+[次のレッスン:3.ユーザー インターフェイスの作成と Mixed Reality ツールキットの構成](mrlearning-base-ch2.md)
