@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, Unity, チュートリアル, Hololens
-ms.openlocfilehash: d4e58e2c9236ba35b4394fd80cde3843edaa6f57
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: cae2398582d399f2bad56b354694f7e99ef8681c
+ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491204"
+ms.locfileid: "74539689"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2. プロジェクトと最初のアプリケーションの初期化
 
@@ -61,7 +61,7 @@ ms.locfileid: "74491204"
 
 1. [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) の Unity [ Foundation パッケージ バージョン 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage) をダウンロードし、PC 上のフォルダーに保存します。
 
-2. 前の手順でダウンロードした *Mixed Reality Toolkit* パッケージをインポートします。 まず、 **[資産]**  >  **[インポート]**  >  **[カスタム パッケージ]** の順にクリックし、*Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage* を選択して開き、インポート処理を開始します。 インポート プロセスが完了するまで数分間、待機してください。
+2. 前の手順でダウンロードした *Mixed Reality Toolkit* パッケージをインポートします。 まず、 **[資産]**  >  **[インポート]**  >  **[カスタム パッケージ]** の順にクリックし、*Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage* を選択して開き、インポート処理を開始します。 インポート プロセスが完了するまで数分間お待ちください。
     ![レッスン 1 セクション 3 手順 2a](images/mrlearning-base-ch1-3-step2a.JPG) ![レッスン 1 セクション 3 手順 2b](images/mrlearning-base-ch1-3-step2b.JPG)
 
 3. 次のポップアップ ウィンドウで、 **[インポート]** をクリックして、選択したパッケージの Unity プロジェクトへのインポートを開始します。 図に示されているように、すべての項目のチェックを必ずオンにしてください。
@@ -102,7 +102,7 @@ ms.locfileid: "74491204"
 5. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 *MixedRealityBase.sln* ソリューション (または、プロジェクトの代替名を使用した場合は対応する名前) をダブルクリックして、Visual Studio でソリューション ファイルを開きます。
 
     > [!NOTE]
-    > 必ず、新しく作成したフォルダー (つまり、前の手順での名前付け規則に従っている場合は、*App* フォルダー) を開いてください。そのフォルダーの外部に同じような名前の .sln ファイルがあり、ビルド フォルダー内の .sln ファイルと混同しないようにするためです。 フォルダー構造は、以下の画像のようになります。
+    > 必ず、新しく作成したフォルダー (つまり、前の手順での名前付け規則に従っている場合は、 *[App]* フォルダー) を開いてください。そのフォルダーの外部に同じような名前の .sln ファイルがあり、ビルド フォルダー内の .sln ファイルと混同しないようにするためです。 フォルダー構造は、以下の画像のようになります。
     >
     > Visual Studio から新しいコンポーネントをインストールするよう求められたら、少し時間を取って、[「ツールのインストール」ページ](install-the-tools.md)で示されている、前提条件となるすべてのコンポーネントがインストールされていることを確認してください
 
