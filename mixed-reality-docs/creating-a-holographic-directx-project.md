@@ -6,12 +6,12 @@ ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, holographic アプリ, 新しいアプリ, UWP アプリ, テンプレートアプリ, ホログラム, 新しいプロジェクト, チュートリアル, ダウンロード, サンプルコード
-ms.openlocfilehash: 1a6071d692d4a2470493b8f5dc2af6e234aca6f2
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: d99478a0d98d0593b7b82f25080d20913789cb6c
+ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435742"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74940852"
 ---
 # <a name="creating-a-holographic-directx-project"></a>Holographic DirectX プロジェクトの作成
 
@@ -19,15 +19,15 @@ HoloLens 用に作成した holographic アプリは、<a href="https://docs.mic
 
 DirectX 11 holographic UWP アプリテンプレートは DirectX 11 UWP アプリテンプレートとよく似ています。これには、プログラムループ (または "ゲームループ")、Direct3D デバイスとコンテキストを管理するための**DeviceResources**クラス、および簡略化されたコンテンツレンダラークラスが含まれます。 他の UWP アプリと同じように、 <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview" target="_blank">IFrameworkView</a>もあります。
 
-ただし、mixed reality アプリには、一般的な Direct3D 11 UWP アプリには存在しないいくつかの追加機能があります。 Windows Holographic アプリケーションテンプレートでは、次のことができます。
+ただし、mixed reality アプリには、一般的な Direct3D UWP アプリには存在しないいくつかの追加機能があります。 Windows Mixed Reality アプリテンプレートでは、次のことができます。
 * Holographic カメラに関連付けられている Direct3D デバイスリソースを処理します。
-* システムからカメラバックバッファーを取得します。
+* システムからカメラのバックバッファーを取得します。または (Direct3D12 の場合)、holographic バックバッファーリソースを作成し、リソースの有効期間を管理します。
 * [見つめ](gaze-and-commit.md)入力を処理し、簡単な[ジェスチャ](gaze-and-commit.md#composite-gestures)を認識します。
 * 全画面表示のステレオレンダリングモードに切り替えます。
 
-## <a name="how-do-i-get-started"></a>操作方法開始しますか?
+## <a name="how-do-i-get-started"></a>使用を開始するには
 
-まず、Visual Studio 2019 と Microsoft HoloLens emulator のダウンロードに関する説明に従って、[ツールをインストール](install-the-tools.md)します。 Holographic アプリテンプレートは、Microsoft HoloLens エミュレーターと同じインストーラーに含まれています。 また、インストールする前に、テンプレートをインストールするオプションが選択されていることを確認してください。
+まず、Visual Studio 2019 および Windows Mixed Reality アプリテンプレートのダウンロードに関する説明に従って、[ツールをインストール](install-the-tools.md)します。 混合 reality アプリテンプレートは、Visual Studio marketplace の[web ダウンロード](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)として、または VISUAL studio UI を使用して拡張機能としてインストールすることによって入手できます。
 
 これで、DirectX 11 Windows Mixed Reality アプリを作成する準備ができました。 サンプルコンテンツを削除するには、 *pch*の**DRAW_SAMPLE_CONTENT**プリプロセッサディレクティブをコメントアウトします。
 
@@ -35,17 +35,34 @@ DirectX 11 holographic UWP アプリテンプレートは DirectX 11 UWP アプ�
 
 [ツールがインストールさ](install-the-tools.md)れたら、HOLOGRAPHIC DirectX UWP プロジェクトを作成できます。
 
-新しいプロジェクトを作成するには:
+Visual Studio 2019 で新しいプロジェクトを作成するには:
+1. **Visual Studio**を起動します。
+2. 右側の **[はじめ]** に セクションで、 **[新しいプロジェクトの作成]** を選択します。
+3. **[新しいプロジェクトの作成]** ダイアログボックスのドロップダウンメニューで、[ **C++** **Windows Mixed Reality**]、 **[UWP]** の順に選択します。
+4. **Holographic DirectX 11 アプリ (ユニバーサル Windows)C++(WinRT)** を選択します。
+   ![Visual Studio 2019 の Holographic DirectX C++11/WinRT UWP アプリプロジェクトテンプレートのスクリーンショット](images/holographic-directx-app-cpp-new-project-2019.png)<br>
+   *Visual Studio 2019 C++の Holographic DirectX 11/WinRT UWP アプリプロジェクトテンプレート*
+   >[!IMPORTANT]
+   >プロジェクトテンプレートの名前に "(C++/WinRT)" が含まれていることを確認してください。  それ以外の場合は、古いバージョンの holographic プロジェクトテンプレートがインストールされています。  最新のプロジェクトテンプレートを入手するには、Visual Studio 2019 の拡張機能として[インストール](install-the-tools.md)します。
+5. **[次へ]** をクリックします。
+5. **[プロジェクト名]** と **[場所]** のテキストボックスに入力し、 **[作成]** をクリックまたはタップします。 Holographic app プロジェクトが作成されます。
+6. HoloLens 2 のみを対象とする開発では、**ターゲットバージョン**と**最小バージョン**が**Windows 10 バージョン 1903**に設定されていることを確認します。  HoloLens (第1世代) またはデスクトップ Windows Mixed Reality ヘッドセットも対象としている場合は、代わりに、**最小バージョン**を**Windows 10 バージョン 1809**に設定できます。ただし、hololens 2 の新機能を使用する場合は、コードに<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">バージョンのアダプティブチェック</a>が必要になります。
+   ターゲットと最小バージョンとして Windows 10 バージョン1903を設定したスクリーンショット ![](images/new-uwp-project.png)<br>
+   *ターゲットバージョンと最小バージョンとして**Windows 10 バージョン1903を**設定する*
+   >[!IMPORTANT]
+   >オプションとして**windows 10 バージョン 1903**が表示されない場合は、最新の WINDOWS 10 SDK がインストールされていません。  このオプションを表示するに<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk" target="_blank">は、Windows 10 SDK のバージョン10.0.18362.0 以降をインストール</a>します。
+
+Visual Studio 2017 で新しいプロジェクトを作成するには:
 1. **Visual Studio**を起動します。
 2. **[ファイル]** メニューの **[新規作成]** をポイントし、コンテキストメニューの **[プロジェクト]** をクリックします。 **[新しいプロジェクト]** ダイアログボックスが開きます。
 3. 左側にある **[インストール済み]** を展開し、 **[ビジュアルC++ ]** 言語 ノードを展開します。
 4. **[Windows Universal > Holographic]** ノードに移動し、 **[Holographic DirectX 11 App (Universal WindowsC++) (/WinRT)]** を選択します。
-   ![Visual Studio の Holographic DirectX 11 C++/WinRT UWP アプリプロジェクトテンプレートのスクリーンショット](images/holographic-directx-app-cpp-new-project.png)<br>
-   *Visual Studio でC++の Holographic DirectX 11/WinRT UWP アプリプロジェクトテンプレート*
+   ![Visual Studio 2017 の Holographic DirectX C++11/WinRT UWP アプリプロジェクトテンプレートのスクリーンショット](images/holographic-directx-app-cpp-new-project.png)<br>
+   *Visual Studio 2017 C++の Holographic DirectX 11/WinRT UWP アプリプロジェクトテンプレート*
    >[!IMPORTANT]
-   >プロジェクトテンプレートの名前に "(C++/WinRT)" が含まれていることを確認してください。  それ以外の場合は、古いバージョンの holographic プロジェクトテンプレートがインストールされています。  最新のプロジェクトテンプレートを入手するには、[最新の HoloLens エミュレーターをインストール](using-the-hololens-emulator.md)します。
+   >プロジェクトテンプレートの名前に "(C++/WinRT)" が含まれていることを確認してください。  それ以外の場合は、古いバージョンの holographic プロジェクトテンプレートがインストールされています。  最新のプロジェクトテンプレートを入手するには、Visual Studio 2017 の拡張機能として[インストール](install-the-tools.md)します。
 5. **[名前]** と **[場所]** のテキストボックスに入力し、 **[OK]** をクリックまたはタップします。 Holographic app プロジェクトが作成されます。
-6. HoloLens 2 のみを対象とする開発では、**ターゲットバージョン**と**最小バージョン**が**Windows 10 バージョン 1903**に設定されていることを確認します。  HoloLens (第1世代) またはデスクトップ Windows Mixed Reality ヘッドセットも対象としている場合は、代わりに、 **[最小バージョン]** を**Windows 10 バージョン 1809**に設定できます。ただし、これには、新しいを使用するときに、コードにいくつかの<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">バージョンのアダプティブチェック</a>が必要になります。HoloLens 2 の機能。
+6. HoloLens 2 のみを対象とする開発では、**ターゲットバージョン**と**最小バージョン**が**Windows 10 バージョン 1903**に設定されていることを確認します。  HoloLens (第1世代) またはデスクトップ Windows Mixed Reality ヘッドセットも対象としている場合は、代わりに、**最小バージョン**を**Windows 10 バージョン 1809**に設定できます。ただし、hololens 2 の新機能を使用する場合は、コードに<a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code" target="_blank">バージョンのアダプティブチェック</a>が必要になります。
    ターゲットと最小バージョンとして Windows 10 バージョン1903を設定したスクリーンショット ![](images/new-uwp-project.png)<br>
    *ターゲットバージョンと最小バージョンとして**Windows 10 バージョン1903を**設定する*
    >[!IMPORTANT]
@@ -53,7 +70,7 @@ DirectX 11 holographic UWP アプリテンプレートは DirectX 11 UWP アプ�
 
 このテンプレートは、標準に準拠している c++ 17 コンパイラをサポートする Windows ランタイム api の c++ 17 言語プロジェクションである<a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/" target="_blank"> C++/WinRT</a>を使用してプロジェクトを生成します。  このプロジェクトは、ユーザーから2メートル離れたワールドロックキューブを作成する方法を示しています。 ユーザーは、コントローラー上のボタンを使用して、ユーザーの[宝石](gaze-and-commit.md)によって指定された別の位置にキューブを[配置できます](gaze-and-commit.md#composite-gestures)。 このプロジェクトを変更して、mixed reality アプリを作成できます。
 
-または、SharpDX に基づく**Visual C#**  holographic プロジェクトテンプレートを使用して、新しいプロジェクトを作成することもできます。  Holographic C#プロジェクトが windows holographic アプリテンプレートから開始されなかった場合は、Windows Mixed Reality C#テンプレートプロジェクトから ms. fxcompile .targets ファイルをコピーして、HLSL ファイルにインポートして HLSL をコンパイルする必要があります。プロジェクトに追加するファイル。
+または、SharpDX に基づく**Visual C#**  holographic プロジェクトテンプレートを使用して、新しいプロジェクトを作成することもできます。  Holographic プロジェクトがC# windows holographic アプリテンプレートから開始されなかった場合は、プロジェクトに追加した HLSL ファイルをコンパイルするために、Windows Mixed Reality C#テンプレートプロジェクトからファイルをコピーし、.csproj ファイルにインポートする必要があります。 Direct3D 12 テンプレートは、Visual Studio の Windows Mixed Reality アプリテンプレート拡張機能にも用意されています。
 
 [「Visual Studio を使用してデプロイとデバッグ](using-visual-studio.md)を行う」で、HoloLens、PC にデバイスが接続されている PC、またはエミュレーターにサンプルを構築してデプロイする方法について確認します。
 
@@ -143,6 +160,8 @@ int APIENTRY wWinMain(
 
 `VertexShaderShared.hlsl` には、`VertexShader.hlsl` と `VPRTVertexShader.hlsl`間で共有される共通のコードが含まれています。
 
+注: Direct3D 12 アプリケーションテンプレートには、`ViewInstancingVertexShader.hlsl`も含まれています。 このバリアントでは、D3D12 のオプション機能を使用して、ステレオ画像をより効率的にレンダリングします。
+
 シェーダーは、プロジェクトのビルド時にコンパイルされ、 **SpinningCubeRenderer:: CreateDeviceDependentResources**メソッドに読み込まれます。
 
 ## <a name="interact-with-your-holograms"></a>ホログラムを操作する
@@ -154,6 +173,10 @@ int APIENTRY wWinMain(
 混合 reality アプリの更新は、既定では `AppMain.cpp`の**Update**メソッドに実装されているゲームループで更新されます。 **Update**メソッドは、回転するキューブなどのシーンオブジェクトを更新し、最新のビューおよび射影マトリックスを取得して、スワップチェーンを表示するために使用される<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>オブジェクトを返します。
 
 `AppMain.cpp` の**Render**メソッドは、現在のアプリと空間ポジショニングの状態に従って、 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>を受け取り、現在のフレームを各 holographic カメラにレンダリングします。
+
+## <a name="notes"></a>注意
+
+Windows Mixed Reality アプリケーションテンプレートで、Spectre 軽減フラグが有効になっているコンパイル (/Qspectre) がサポートされるようになりました。 Spectre 軽減策が有効になっている構成をコンパイルするC++前に、Spectre-緩和されたバージョンの Microsoft Visual (MSVC) ランタイムライブラリをインストールしてください。 Spectre 軽減C++ライブラリをインストールするには、Visual Studio インストーラーを起動し、 **[変更]** を選択します。 個々の**コンポーネント**に移動し、"spectre" を検索します。 Spectre コードをコンパイルするために必要なターゲットプラットフォームと MSVC のバージョンに対応するボックスを選択し、 **[変更]** をクリックしてインストールを開始します。
 
 ## <a name="see-also"></a>関連項目
 * [HolographicSpace を入手する](getting-a-holographicspace.md)

@@ -5,17 +5,19 @@ author: MikeRiches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
-keywords: Windows Mixed Reality, ホログラム, レンダリング, 3D グラフィックス, HolographicFrame, レンダリングループ, 更新ループ, チュートリアル, サンプルコード
-ms.openlocfilehash: 6edcaf808f2d7d48f480169e5579adb8984678a0
-ms.sourcegitcommit: 45676da11ebe33a2aa3dccec0e8ad7d714420853
+keywords: Windows Mixed Reality, ホログラム, レンダリング, 3D グラフィックス, HolographicFrame, レンダリングループ, 更新ループ, チュートリアル, サンプルコード, Direct3D
+ms.openlocfilehash: 6b2e2dca9115d7093e94019d5ed91201f6ee3424
+ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629034"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74940870"
 ---
 # <a name="rendering-in-directx"></a>DirectX でのレンダリング
 
 Windows Mixed Reality は DirectX 上に構築されており、ユーザーに対して豊富な3D グラフィカルエクスペリエンスを生み出します。 レンダリングの抽象化は DirectX のすぐ上にあり、システムによって予測される holographic シーンの1つ以上のオブザーバーの位置と向きに関するアプリの理由を示します。 開発者は、各カメラを基準としてそのホログラムを見つけることができます。これにより、アプリは、ユーザーが移動するときに、さまざまな空間座標系でこれらのホログラムをレンダリングします。
+
+メモ: このチュートリアルでは、Direct3D 11 での holographic レンダリングについて説明します。 Direct3D 12 Windows Mixed Reality アプリテンプレートには、Mixed Reality アプリテンプレート拡張機能も用意されています。
 
 ## <a name="update-for-the-current-frame"></a>現在のフレームの更新
 
@@ -89,7 +91,7 @@ auto viewTransformContainer = cameraPose.TryGetViewTransform(coordinateSystem);
 
 ### <a name="process-gaze-and-gesture-input"></a>プロセスの宝石とジェスチャの入力
 
-手書き[入力と](gaze-in-directx.md)[ハンド](hands-and-motion-controllers-in-directx.md)入力は時間ベースではないため、 **steptimer**関数で更新する必要はありません。 ただし、この入力は、アプリが各フレームを確認する必要があります。
+手書き入力と[ハンド](hands-and-motion-controllers-in-directx.md)入力は時間ベースではない[ため、](gaze-in-directx.md) **steptimer**関数で更新する必要はありません。 ただし、この入力は、アプリが各フレームを確認する必要があります。
 
 ### <a name="process-time-based-updates"></a>プロセス時間ベースの更新
 
@@ -457,7 +459,7 @@ VertexShaderOutput main(VertexShaderInput input)
 }
 ```
 
-既にインスタンス化された描画手法をステレオレンダーターゲット配列に描画する方法を使用する場合は、通常持っているインスタンスの数を2倍にするだけで済みます。 シェーダーでは、**入力した instId**を2で除算して元のインスタンス ID を取得します。これは、オブジェクトごとのデータのバッファーにインデックスを付けることができます。`int actualIdx = input.instId / 2;`
+既にインスタンス化された描画手法をステレオレンダーターゲット配列に描画する方法を使用する場合は、通常持っているインスタンスの数を2倍にするだけで済みます。 シェーダーでは、**入力した instId**を2で除算して、オブジェクトごとのデータのバッファー (たとえば) にインデックスを作成できる元のインスタンス ID を取得します。 `int actualIdx = input.instId / 2;`
 
 ### <a name="important-note-about-rendering-stereo-content-on-hololens"></a>HoloLens でのステレオコンテンツのレンダリングに関する重要な注意事項
 
@@ -553,7 +555,7 @@ if (!m_usingVprtShaders)
 }
 ```
 
-**HLSL メモ**:この場合は、TEXCOORD0 など、常に許可されているシェーダーセマンティクスを使用して、レンダーターゲットの配列インデックスを geometry シェーダーに渡す、若干変更された頂点シェーダーも読み込む必要があります。 ジオメトリシェーダーは、作業を行う必要はありません。テンプレートジオメトリシェーダーは、SV_RenderTargetArrayIndex セマンティックを設定するために使用されるレンダーターゲット配列インデックスを除き、すべてのデータを通過します。
+**HLSL メモ**: この例では、TEXCOORD0 など、常に許可されているシェーダーセマンティクスを使用して、レンダーターゲットの配列インデックスを geometry シェーダーに渡す若干変更された頂点シェーダーも読み込む必要があります。 ジオメトリシェーダーは、作業を行う必要はありません。テンプレートジオメトリシェーダーは、すべてのデータを処理します。ただし、render ターゲットの配列インデックスは除き、SV_RenderTargetArrayIndex セマンティックを設定するために使用されます。
 
 **GeometryShader**のアプリテンプレートコード:
 
@@ -591,7 +593,7 @@ void main(triangle GeometryShaderInput input[3], inout TriangleStream<GeometrySh
 }
 ```
 
-## <a name="present"></a>存在
+## <a name="present"></a>Present
 
 ### <a name="enable-the-holographic-frame-to-present-the-swap-chain"></a>Holographic フレームでスワップチェーンを表示できるようにします
 
