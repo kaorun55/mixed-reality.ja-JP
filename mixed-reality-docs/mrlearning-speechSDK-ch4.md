@@ -6,16 +6,16 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 9235452d9dce38e9d849821a694a5d4c710d8e87
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+ms.openlocfilehash: e712fc2fd66b1add5b16b7dd8e6c37551aefe43a
+ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913336"
+ms.lasthandoff: 12/11/2019
+ms.locfileid: "75003211"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4. インテントと自然言語の理解の設定
 
-このレッスンでは、Azure Speech Service のインテント機能について説明します。 インテント機能を使用すると、アプリケーションに AI を使用した音声コマンドを提供できるようになります。この場合、ユーザーは特に特定できない音声コマンドを読み上げ、システムがその意図を理解することができます。 このレッスンでは、Azure LUIS Portal を設定し、インテント/エンティティ/発話を設定し、インテントリソースを発行し、Unity アプリをインテントリソースに接続して、最初のインテント API 呼び出しを行います。
+このレッスンでは、Azure Speech Service のインテント機能について説明します。 インテント機能を使用すると、アプリケーションに AI を使用した音声コマンドが適用されます。ユーザーは、特定の音声コマンドではなく、システムによってその意図を理解できます。 このレッスンでは、Azure LUIS Portal を設定し、インテント/エンティティ/発話を設定し、インテントリソースを発行し、Unity アプリをインテントリソースに接続して、最初のインテント API 呼び出しを行います。
 
 ## <a name="objectives"></a>目標
 
@@ -25,7 +25,7 @@ ms.locfileid: "73913336"
 
 ## <a name="instructions"></a>手順
 
-1. コンピューターでディクテーションを有効にするには、この操作を行うには、[Windows の設定] にアクセスし、[プライバシー]、[& 音声] の順に選択して、音声サービスをオンにして、候補を入力します。
+1. コンピューターでディクテーションを有効にできるようにします。 これを行うには、[Windows の設定] にアクセスし、[プライバシー]、[音声] の順に選択し、[インク & 入力] をクリックして、音声サービスをオンにして、候補を入力します。
 
     ![Module4Chapter4step1aim](images/module4chapter4step1aim.PNG)
 
@@ -33,7 +33,7 @@ ms.locfileid: "73913336"
 
     ![Module4Chapter4step1cim](images/module4chapter4step1cim.PNG)
 
-2. [Azure Portal](https://portal.azure.com/)にログインします。 ログインしたら、[リソースの作成] をクリックし、[Language Understanding] を検索して、enter キーを押します。
+2. [Azure ポータル](https://portal.azure.com/) にログインします。 ログインしたら、[リソースの作成] をクリックし、[Language Understanding] を検索して、Enter キーを押します。
 
     ![mrlearning-speech-ch4-1-step2](images/mrlearning-speech-ch4-1-step2.png)
 
@@ -41,16 +41,16 @@ ms.locfileid: "73913336"
 
     ![mrlearning-speech-ch4-1-step3a](images/mrlearning-speech-ch4-1-step3a.png)
 
-    リソースに**名前**を付けます。たとえば、「 *Speech-SDK-Learning-Module*」と指定します。 **サブスクリプション**については、試用版アカウントをお持ちの場合は、*従量課金制*または*無料証跡*を選択します。 次に、 **[新規作成]** リンクをクリックして新しい**リソースグループ**を作成し、名前を入力します。たとえば、「 *HoloLens-2-チュートリアル-リソースグループ*」と入力し、 **[OK** ] ボタンをクリックします。
+    リソースに**名前**を付けます。たとえば、「 *Speech-SDK-Learning-Module*」と指定します。 **サブスクリプション**については、試用版アカウントをお持ちの場合は、*従量課金制*または*無料証跡*を選択します。 次に、 **[新規作成]** リンクをクリックして新しい**リソースグループ**を作成し、たとえば「 *HoloLens-2-チュートリアル-リソースグループ*」という名前を入力して、 **[OK]** ボタンをクリックします。
 
     ![mrlearning-speech-ch4-1-step3b](images/mrlearning-speech-ch4-1-step3b.png)
 
-4. **作成場所**と**実行時の場所**を選択します。このチュートリアルでは、[*米国西部*] を使用します。 **作成価格レベル**と**ランタイム価格レベル**に対して、 *F0 (1 秒あたり5回の呼び出し、1か月あたり10,000 回の呼び出し)* を選択します。 最後に、 **[作成]** ボタンをクリックして、リソースと新しいリソースグループを作成します。
+4. **作成場所**と**実行時の場所**を選択します。 このチュートリアルでは、[*米国西部*] を使用します。次に、 **[オーサリング価格レベル]** と **[ランタイム価格レベル]** に [ *F0] (1 秒あたり5回、1か月あたり10,000 回)* を選択します。 最後に、 **[作成]** ボタンをクリックして、新しいリソースグループだけでなく、リソースを作成します。
 
     ![mrlearning-speech-ch4-1-step4](images/mrlearning-speech-ch4-1-step4.png)
 
     >[!NOTE]
-    >[作成] ボタンをクリックした後、サービスが作成されるまで待機する必要があります。これには数分かかることがあります。
+    >[作成] ボタンをクリックした後、サービスが作成されるまで待機する必要があります。これには数分かかる場合があります。
 
 5. リソースの作成プロセスが完了すると、**デプロイが完了**したことを確認するメッセージが表示されます。
 
@@ -59,7 +59,7 @@ ms.locfileid: "73913336"
 6. 同じユーザーアカウントを使用して、 [Language Understanding Intelligent Service (LUIS)](https://www.luis.ai/)ポータルにサインインし、お住まいの国を選択して、使用条件に同意します。
 
     >[!NOTE]
-    >Language Understanding ポータルに達したら、Azure portal と同じ資格情報を使用してログインする必要がある場合があります (まだログインしていない場合)。 LUIS を初めて使用する場合は、[ようこそ] ページの一番下までスクロールして、[Create LUIS] \ (アプリの作成 \) ボタンを見つけてクリックする必要があります。
+    >Language Understanding ポータルに達したら、Azure portal と同じ資格情報を使用してログインする必要がある場合があります (まだログインしていない場合)。 LUIS を初めて使用する場合は、[ようこそ] ページの一番下までスクロールして [Create LUIS] \ (アプリの作成 \) ボタンをクリックする必要があります。
 
 7. ログインしたら、[マイアプリ] をクリックします (現在このセクションにない場合)。 [新しいアプリの作成] をクリックします。 新しいアプリに "Speech SDK Learning Module" という名前を指定します。 "Speech SDK Learning Module" を [説明] フィールドにも追加します。 [完了] をクリックします。
 
@@ -82,11 +82,11 @@ ms.locfileid: "73913336"
     >[!NOTE]
     >これで、"PressButton" と "None" の2つのインテントが作成されました。
 
-10. 左側の [アプリ資産] で、[エンティティ] を選択し、[新しいエンティティの作成] をクリックして、"Action" という名前を付け、エンティティ型を "Simple" にしておきます。
+10. 左側の [アプリ資産] で、[エンティティ] を選択し、[新しいエンティティの作成] をクリックして、「アクション」という名前を付け、エンティティ型を "Simple" として保持します。
 
     ![Module4Chapter4step11im](images/module4chapter4step11im.PNG)
 
-11. [新しいエンティティの作成] をもう一度クリックし、"Target" という名前を付けて、エンティティ型を "Simple" として保持します。
+11. [新しいエンティティの作成] をもう一度クリックし、"Target" という名前を指定します。 エンティティ型も "Simple" として保持します。
 
     ![Module4Chapter4step12im](images/module4chapter4step12im.PNG)
 
@@ -98,7 +98,7 @@ ms.locfileid: "73913336"
 
     ![Module4Chapter4step14aim](images/module4chapter4step14aim.PNG)
 
-    [例を入力してください...] をクリックします。 wl. 次に、次の発話を入力します。
+    [例を入力してください...] をクリックします。 ボックスに入力します。 次に、次の発話を入力します。
 
     ![Module4Chapter4step14bim](images/module4chapter4step14bim.PNG)
 
@@ -117,15 +117,15 @@ ms.locfileid: "73913336"
 17. テキストボックスの [起動ボタンを選択してください] に「」と入力します。
 
     >[!NOTE]
-    >発話のいずれかのアクションとして "select" を追加しませんでした。ただし、[検査] をクリックすると、モデルはアクションエンティティとして "select" を認識しました。
+    >発話のいずれかに "select" をアクションとして追加しませんでしたが、[検査] をクリックすると、モデルはアクションエンティティとして "select" を認識しました。
     >
     > ![Module4Chapter4noteim](images/module4chapter4noteim.PNG)
 
-18. 次に、右上にある [発行] をクリックします。 ドロップダウンが "Production" と表示されていることを確認し、ポップアップの [発行] もクリックします。
+18. 右上にある [発行] をクリックします。 ドロップダウンが "Production" と表示されていることを確認し、ポップアップの [発行] をクリックします。
 
     ![Module4Chapter4step19im](images/module4chapter4step19im.PNG)
 
-19. 発行されると、ページの上部に緑色のバーが表示されます。  緑色のバーをクリックして、[管理] ページに移動します。
+19. 発行されると、ページの上部に緑色のバーが表示されます。 緑色のバーをクリックすると、[管理] ページが表示されます。
 
     ![Module4Chapter4step20im](images/module4chapter4step20im.PNG)
 
@@ -163,4 +163,4 @@ ms.locfileid: "73913336"
 
 ## <a name="congratulations"></a>結論
 
-このレッスンでは、AI を利用した音声コマンドを追加する方法について学習しました。 これで、ユーザーが正確な音声コマンドを utter ない場合でも、プログラムはユーザーの意図を認識できるようになりました。
+このレッスンでは、AI を使用した音声コマンドを追加する方法について学習しました。 これで、ユーザーが正確な音声コマンドを utter ない場合でも、プログラムはユーザーの意図を認識できるようになりました。
