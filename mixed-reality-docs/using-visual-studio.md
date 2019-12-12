@@ -7,12 +7,12 @@ ms.date: 10/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Visual Studio, HoloLens, Mixed Reality, デバッグ, 配置
-ms.openlocfilehash: fecd9db8777b6947c3ea19a02e428459c78c935b
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: b7e6a8d538670a53de20a2f3a2850639e756da1a
+ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491183"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74830840"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>Visual Studio を使用した配置とデバッグ
 
@@ -23,7 +23,7 @@ DirectX と Unity のどちらを使用して Mixed Reality アプリを開発�
 
 ## <a name="prerequisites"></a>前提条件
 1. インストール手順については、「[ツールのインストール](install-the-tools.md)」を参照してください。
-2. Visual Studio で新しいユニバーサル Windows アプリ プロジェクトを作成します。  HoloLens (第 1 世代) の場合は、Visual Studio 2017 以降を使用します。  Hololens 2 の場合は、Visual Studio 2019 16.2 以降を使用します。 C# と C++ がサポートされています (または、[Unity でのアプリの作成とビルド](holograms-100.md)の手順に従ってください)。
+2. Visual Studio で新しいユニバーサル Windows アプリ プロジェクトを作成します。  HoloLens (第 1 世代) の場合は、Visual Studio 2017 以降を使用します。  Hololens 2 の場合は、Visual Studio 2019 16.2 以降を使用します。 C# と C++ がサポートされています (または、[Unity でアプリを作成する](holograms-100.md)ための手順に従ってください)。
 
 ## <a name="enabling-developer-mode"></a>開発者モードを有効にする
 

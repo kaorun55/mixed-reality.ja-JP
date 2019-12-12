@@ -3,16 +3,16 @@ title: HoloLens エミュレーターを使用する
 description: HoloLens エミュレーターを使用して、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストします。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 11/11/2019
+ms.date: 12/5/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: 2e96c4262d2006f6a971004c5c0a5a9b3b65d4f1
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+ms.openlocfilehash: 49b67530d46edda3c38efd74f03f730c2b2247bd
+ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064267"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74940890"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
@@ -25,12 +25,12 @@ HoloLens のエミュレーターを使用すると、物理的な HoloLens を�
 HoloLens のエミュレーターをダウンロードします。
 
 バージョン: 
-* [HoloLens 2 エミュレーター (2019 年 11 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2110553)。
+* [HoloLens 2 エミュレーター (2019 年 12 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2112589)。
 * [HoloLens エミュレーター (第 1 世代) およびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
-HoloLens のエミュレーターの以前のビルドは、「[HoloLens のエミュレーターのアーカイブ](hololens-emulator-archive.md)」ページをご覧ください。
+HoloLens エミュレーターのリリース ノートと以前のビルドは、「[HoloLens エミュレーターのアーカイブ](hololens-emulator-archive.md)」ページにあります。
 
-### <a name="hololens-emulator-system-requirements"></a>HoloLens のエミュレーターのシステム要件
+### <a name="hololens-emulator-system-requirements"></a>HoloLens エミュレーターのシステム要件
 
 HoloLens エミュレーターでは、ハードウェア アクセラレータによるグラフィックスのため、RemoteFx 対応の Hyper-V (第 1 世代エミュレーター) または GPU PV (HoloLens 2 エミュレーター) を使用します。 エミュレーターを使用するには、PC が次のハードウェア要件を満たしていることを確認します。
 * 64 ビットの Windows 10 Pro、Enterprise、または Education 
