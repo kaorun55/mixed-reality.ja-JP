@@ -6,16 +6,16 @@ ms.author: hakons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、RoboRaid、空間サウンド
-ms.openlocfilehash: 9be5c461c1546d241e559f6b2f874656a29b019a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 1482c914d261cae698a1460873b217b0683cd16b
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436500"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181942"
 ---
 # <a name="case-study---using-spatial-sound-in-roboraid"></a>ケーススタディ-RoboRaid での空間サウンドの使用
 
-Microsoft HoloLens エクスペリエンスチームのオーディオリーダーであるチャールズ Sinex は、 [RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)のオーディオを作成するときに発生した固有の課題について話しています。これは、mixed reality first person shooter です。
+この記事では、 [RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)for shooter (mixed reality first person) を作成するときに Microsoft HoloLens Experience チームが経験した固有の課題について説明します。
 
 ## <a name="the-tech"></a>技術
 
@@ -35,7 +35,7 @@ HoloLens アプリ用の空間サウンドを作成するプロセスは、新�
 
 Dodging 整備士は、RoboRaid のゲームプレイの最も重要な側面の1つであり、さらに HoloLens のエクスペリエンスに対して真に固有のものです。 このように、dodges を成功させるには、windows media player を使用する必要がありました。 開発の早い段階では、"whizz by" が非常に優れています。 最初の計画では、ループを使用し、ボリューム、ピッチ、フィルターを使用してリアルタイムで操作しました。 この実装は非常に複雑になります。したがって、実際にビルドするためにリソースをコミットする前に、アセットを使用して安価なプロトタイプを作成しました。これは、その意味を理解するためだけに組み込まれています。 非常に優れた開発者が、このようにしています。これは、選手がプレーヤーの耳によって完成するまでの時間がちょうど0.7 秒前に再生されるようにしました。結果は本当にすばらしいものでした。 言うまでもありませんが、より複雑なソリューションを刷新、プロトタイプを実装しています。
 
-\* * (組み込みのドップラー効果を使用してオーディオ資産を作成する方法の詳細については、サウンドデザイナーの記事「 [2 分で 100 Whooshes](https://designingsound.org/2010/02/charles-deenen-special-100-whooshes-in-2-minutes/)と呼ばれます)」を参照してください。*
+*(ドップラー効果が組み込まれたオーディオ資産を作成する方法の詳細については、「 [100 Whooshes In 2 Minutes](http://designingsound.org/2010/02/26/charles-deenen-special-100-whooshes-in-2-minutes/)」を参照してください)。*  
 <br>
 ![、敵の dodging が正常に完了したら、プレーヤーはゲームに満足しています。](images/successful-dodge-roboraid-500px.jpg)
 
@@ -67,31 +67,24 @@ RoboRaid サウンドをデバイス上で可能な限り大きくするには�
 
 私が RoboRaid で作業していたので、オーディオの専門家が自分のアプリに対して楽しく、魅力を持っています。 Microsoft の外部にある有能な人たちが HoloLens を使用することはできません。
 
-## <a name="do-it-yourself"></a>自分で実行する
+## <a name="do-it-yourself"></a>自分でやってみる
 
 部屋がいっぱいになっているように、特定のイベント (爆発など) の "大規模な" サウンドを作成するために発見したトリックは、空間サウンド用の mono 資産を作成し、2D ステレオアセットとミックスして3D で再生することでした。 ステレオコンテンツに含まれる情報が多すぎると、mono 資産の方向が低下するため、調整が必要になります。 ただし、バランスを取ると、大きな音が発生し、プレーヤーが適切な方向に表示されるようになります。
 
 次のオーディオアセットを使用して、この操作を自分で試すことができます。
 
-**シナリオ1**
-1. [Roboraid_enemy_explo_mono](images/roboraid-enemy-explo-mono.wav)をダウンロードし、空間サウンドを使用して再生するように設定して、イベントに割り当てます。
+**シナリオ 1**
+1. [Roboraid_enemy_explo_mono .wav](images/roboraid-enemy-explo-mono.wav)をダウンロードし、空間サウンドを使用して再生するように設定し、イベントに割り当てます。
 2. [Roboraid_enemy_explo_stereo](images/roboraid-enemy-explo-stereo.wav)をダウンロードし、2d ステレオで再生するように設定して、上記と同じイベントに割り当てます。 これらのアセットは Unity に正規化されるため、両方のアセットのボリュームを減衰させて、クリップしないようにします。
 3. 両方のサウンドを同時に再生します。 どのように動作するかを気にするために、頭を動かしてください。
 
-**シナリオ2**
+**シナリオ 2**
 1. [Roboraid_enemy_explo_summed](images/roboraid-enemy-explo-summed.wav)をダウンロードし、空間サウンドを使用して再生するように設定し、イベントに割り当てます。
 2. この資産を単独で再生し、シナリオ1のイベントと比較します。
 3. Mono ファイルとステレオファイルのバランスを調整してください。
 
-## <a name="about-the-author"></a>作成者について
 
-<table style="border-collapse:collapse">
-<tr>
-<td style="border-style: none" width="60px"><img alt="Picture of Charles Sinex" width="60" height="60" src="images/genericusertile.jpg"></td>
-<td style="border-style: none"><b>チャールズ Sinex</b><br>オーディオエンジニア @Microsoft</td>
-</tr>
-</table>
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 * [立体音響](spatial-sound.md)
 * [Microsoft HoloLens 用 RoboRaid](https://www.microsoft.com/p/roboraid/9nblggh5fv3j)

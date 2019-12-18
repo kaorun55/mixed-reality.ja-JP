@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 02/24/2019
 ms.topic: article
 keywords: レンダリング、ホログラム
-ms.openlocfilehash: 9c32d8ddf5a1fb9e9d991211756ba1306f4d3fa9
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8984a16d92ed2f2b72d99e103eaae81b8eba742b
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926860"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182032"
 ---
 # <a name="rendering"></a>レンダリング
 
@@ -83,17 +83,21 @@ Windows Mixed Reality では、 **holographic カメラ**の概念が導入さ�
 3D で医療 Mri やエンジニアリングボリュームをレンダリングする場合、多くの場合、[ボリュームレンダリング](volume-rendering.md)手法が使用されます。 これらの手法は、特に、ユーザーが頭を移動するだけで、キーの角度からそのようなボリュームを自然に表示できる mixed reality で特に興味深いものです。
 
 ## <a name="supported-resolutions-on-hololens-1st-gen"></a>HoloLens でサポートされている解像度 (第1世代)
-> [!NOTE]
-> 今後、さらに多くの更新が予定されています。 [更新リストを表示する](release-notes-april-2018.md)
 
-* 現在とサポートされている最大解像度は、[ビュー構成](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)のプロパティです。 HoloLens は、既定では、最大解像度 (720p (1268x720)) に設定されています。
-* サポートされている最も低いビューポートのサイズは720p の50% です。これは 360p (634x360) です。 HoloLens では、これは0.5 の ViewportScaleFactor です。
-* 視覚の劣化によって540p よりも低いものは推奨され**ません**が、necks がピクセルフィルレートでボトルを識別するために使用できます。
+* ビューポートの最大サイズは、 [HolographicDisplay](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay)のプロパティです。 HoloLens は、既定では、ビューポートの最大サイズ (720p (1268x720)) に設定されています。
+* ビューポートのサイズは、HolographicCamera で ViewportScaleFactor を設定することによって変更できます。 このスケール係数は 0 ~ 1 の範囲内です。
+* HoloLens (第1世代) でサポートされる最も低いビューポートのサイズは、720p の50% です。これは 360p (634x360) です。 これは0.5 の ViewportScaleFactor です。
+* 視覚の劣化によって540p より低いものは推奨されませんが、ピクセルフィルレートのボトルネックを特定するために使用できます。
 
 ## <a name="supported-resolutions-on-hololens-2"></a>HoloLens 2 でサポートされている解像度
 
-> [!NOTE]
-> HoloLens 2 に固有のその他のガイダンスは[近日対応予定](news.md)です。
+* サポートされているレンダーターゲットの最大サイズは、[ビュー構成](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration#Windows_Graphics_Holographic_HolographicViewConfiguration)のプロパティです。 HoloLens 2 は、既定では1440x936 という最大レンダーターゲットサイズに設定されています。
+* アプリでは、RequestRenderTargetSize メソッドを呼び出して新しいレンダーターゲットサイズを要求することによって、レンダーターゲットバッファーのサイズを変更できます。 要求されたレンダーターゲットサイズを満たす、またはそれを超えるレンダーターゲットサイズが選択されます。 この API はレンダーターゲットバッファーのサイズを変更します。これにより、GPU でのメモリの再割り当てが必要になります。 この場合の影響: レンダーターゲットのサイズをスケールダウンして GPU のメモリ不足を減らすことができます。また、このメソッドを高頻度で呼び出すことはできません。
+* アプリでは、HoloLens 1 と同じ方法でビューポートのサイズを変更することもできます。 これにより、GPU でのメモリの再割り当ては発生しません。そのため、高い頻度で変更できますが、GPU のメモリ負荷を軽減するために使用することはできません。
+* HoloLens 2 でサポートされている最も低いビューポートのサイズは634x412 です。 これは、既定のレンダーターゲットサイズが使用されている場合、約0.44 の ViewportScaleFactor になります。
+* サポートされている最も低いビューポートのサイズよりも少ないレンダーターゲットサイズが指定されている場合、ビューポートのスケールファクターは無視されます。
+* 視覚の劣化によって540p より低いものは推奨されませんが、ピクセルフィルレートのボトルネックを特定するために使用できます。
+
 
 
 ## <a name="see-also"></a>関連項目

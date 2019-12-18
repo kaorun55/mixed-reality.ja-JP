@@ -6,12 +6,12 @@ ms.author: cmeekhof
 ms.date: 10/22/2019
 ms.topic: article
 keywords: 混合現実、ジェスチャ、相互作用、設計
-ms.openlocfilehash: 417811fff9d98e459dc0047d46ea065acfced4ef
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+ms.openlocfilehash: 9cfee1104cb9b8135dae51bea73850062fadd25c
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064237"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182002"
 ---
 # <a name="system-gesture"></a>システムジェスチャ
 
@@ -33,7 +33,7 @@ ms.locfileid: "74064237"
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
      <tr>
-        <td>ブルーム</td>
+        <td>Bloom (ブルーム)</td>
         <td>✔️</td>
         <td>❌</td>
         <td>❌</td>
@@ -52,7 +52,7 @@ ms.locfileid: "74064237"
     </tr>
 </table>
 
-## <a name="bloom"></a>ブルーム
+## <a name="bloom"></a>Bloom (ブルーム)
 HoloLens (第1世代) の [スタート] メニューを表示するには、"ブルーム" を設計しました。これは、花開花を模倣したシンボリックジェスチャです。 これは、簡単に操作できるようにするためのものであり、簡単に実行でき、簡単に再現できます。 HoloLens (第1世代) でブルームジェスチャを実行するには、手を手に入れてすぐに手に入れ、指を押しながら手を開けます。
 
 :::row:::
@@ -70,7 +70,7 @@ HoloLens (第1世代) の [スタート] メニューを表示するには、"�
 
 ---
 
-## <a name="wrist-button"></a>手首ボタン
+## <a name="start-gesture"></a>開始ジェスチャ
 HoloLens 2 では、ブルームジェスチャを仮想手首ボタンに置き換えました。これにより、追加の教育を必要としない instinctual の対話が可能になります。 手首にユーザーを表示することにより、ユーザーは直感的に接続して、もう一方の手で押すことができます。
 
 :::row:::
@@ -89,8 +89,15 @@ HoloLens 2 では、ブルームジェスチャを仮想手首ボタンに置き
 ---
 
 
-## <a name="eye-gaze-and-palm-up-pinch"></a>視線とパームアップのピンチ
-また、HoloLens 2 でのアクセスを容易にするための1つのソリューションを設計しました。 このジェスチャを使用するには、ユーザーが手首ボタンをクリックし、同じ手で親指とインデックスの指を使用して、パームアップピンチを実行する必要があります。<br>
+## <a name="one-handed-start-gesture"></a>ワンきき開始ジェスチャ
+
+> [!IMPORTANT]
+> ワンきき開始ジェスチャを機能させるには、次のようにします。
+>
+> 1. 2019年11月の更新プログラム (ビルド 18363.1039) 以降に更新する必要があります。
+> 1. 視線追跡が正常に機能するように、デバイスで目を調整する必要があります。 [Start] \ (開始 \) アイコンを見たときに orbiting のドットが表示されない場合は、デバイス上で目が調整されていません。
+
+開始ジェスチャは、ワンハンドでのみ実行することもできます。 これを行うには、パームに接続したままにして、内部の手首の [**開始] アイコン**を見てください。 **アイコンを見たまま**にして、親指と人差し指を一緒にピンチします。<br>
 :::row:::
     :::column:::
         ![手首ボタンの準備完了](images/wrist-button-ready.png)<br>

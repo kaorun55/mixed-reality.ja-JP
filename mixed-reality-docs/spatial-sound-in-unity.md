@@ -1,61 +1,64 @@
 ---
 title: Unity の空間サウンド
-description: Unity シーン内の特定の3D ポイントから取得した空間サウンドを再生します。
+description: Unity シーン内の特定の3D ポイントから空間サウンドを再生します。
 author: kegodin
 ms.author: kegodin
 ms.date: 11/07/2019
 ms.topic: article
 keywords: Unity、空間サウンド、HRTF、部屋サイズ
-ms.openlocfilehash: c96717d9df9b89fbb09f0b4466ee3a9bf5c8a149
-ms.sourcegitcommit: 2e54d0aff91dc31aa0020c865dada3ae57ae0ffc
+ms.openlocfilehash: 3e7d0ea231545d5112d182dffbc02f217ca4a4a7
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73641071"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181992"
 ---
 # <a name="spatial-sound-in-unity"></a>Unity の空間サウンド
 
-このページでは、Unity mixed reality プロジェクトで Microsoft HRTF spatializer を使用および設計する際に役立つリソースにリンクしています。
+このページでは、Unity の空間サウンドのリソースにリンクしています。
+
+## <a name="spatializer-options"></a>Spatializer オプション
+Mixed reality アプリケーションの Spatializer オプションは次のとおりです。
+* *MS HRTF Spatializer*。 Unity は、これを*Windows Mixed Reality*のオプションパッケージの一部として提供します。
+  * これは、高コストの ' 単一ソース ' アーキテクチャの CPU 上で実行されます。
+  * これは、元の HoloLens アプリケーションとの下位互換性のために用意されています。
+* *Microsoft Spatializer*。 これは、 [Microsoft Spatializer GitHub リポジトリ](https://github.com/microsoft/spatialaudio-unity)から入手できます。
+  * これは、低コストの ' マルチソース ' アーキテクチャを使用します。
+  * HoloLens 2 では、これはハードウェアアクセラレータにオフロードされます。
+
+新しいアプリケーションの場合は、 *Microsoft Spatializer*をお勧めします。
 
 ## <a name="enable-spatialization"></a>Spatialization を有効にする
 
-プロジェクトのオーディオ設定で**MS HRTF Spatializer**を有効にします。 詳細については、 [Unity の spatializer のドキュメント](https://docs.unity3d.com/Manual/VRAudioSpatializer.html)を参照してください。 
+[Unity の NuGet](https://github.com/GlitchEnzo/NuGetForUnity/releases/latest)を使用して_SpatialAudio_をインストールし、プロジェクトのオーディオ設定で**microsoft Spatializer**を選択します。 さらに、次の手順を実行します。
+* 階層内のオブジェクトに**オーディオソース**をアタッチする
+* **[Enable spatialization]** チェックボックスをオンにします。
+* **空間ブレンド**スライダーを ' 1 ' に移動します
 
-階層内のオブジェクトに**オーディオソース**をアタッチし、 **[enable spatialization]** チェックボックスをオンにして **[空間 Blend]** スライダーを [1] に移動して、spatialization を有効にします。 詳細については、 [Unity のオーディオソースのドキュメント](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)を参照してください。 
+詳細については、次を参照してください。
+* [Microsoft spatializer GitHub リポジトリ](https://github.com/microsoft/spatialaudio-unity)
+* [Microsoft の spatializer チュートリアル](unity-spatial-audio-ch1.md)
+* [Unity のオーディオソースドキュメント](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)
+* [Unity の spatializer のドキュメント](https://docs.unity3d.com/Manual/VRAudioSpatializer.html)
 
-## <a name="design-with-spatialization"></a>Spatialization を使用した設計
+## <a name="distance-based-attenuation"></a>距離ベースの減衰
+Unity の既定の距離ベースの減衰には、最小距離は1メーター、最大距離は500メートル、対数のロールアウトがあります。 これらの設定は、シナリオによっては機能する場合があります。また、ソースが急激に増加したり、遅くなったりする場合もあります。 詳細については、次を参照してください。
+* 推奨設定のための[混合現実のサウンドデザイン](spatial-sound-design.md)。
+* これらの曲線を設定する方法については、 [Unity のオーディオソースドキュメント](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)を参照してください。
 
-### <a name="distance-based-attenuation"></a>距離ベースの減衰
-Unity の既定の距離ベースの減衰には、最小距離は1メーター、最大距離は500メートル、対数のロールアウトがあります。 これは、シナリオによっては機能します。また、ソースが急激に減少したり、速度が低下したりする可能性があります。 距離の減衰曲線の推奨設定については、「 [mixed reality のサウンドデザイン](spatial-sound-design.md)」を参照してください。 unity でこれらの曲線を設定する方法の詳細については、 [unity のオーディオソースのドキュメント](https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html)を参照してください。
+## <a name="reverb"></a>ほど
+_Microsoft Spatializer_は、既定で Spatializer 効果を無効にします。 Spatialized ソースに対してリバーブとその他の効果を有効にするには:
+* 各ソースに**Room 効果の送信レベル**コンポーネントをアタッチする
+* 各ソースの送信レベル曲線を調整して、エフェクト処理のためにグラフに返されるオーディオのゲインを制御します。
 
-### <a name="environment"></a>環境
-**MS HRTF Spatializer**には、 [4 つのリバーブ設定](https://docs.microsoft.com/windows/win32/api/hrtfapoapi/ne-hrtfapoapi-hrtfenvironment)と既定値 "small" を持つ部屋リバーブコンポーネントが含まれています。 ルーム設定は、spatialized オーディオソースを持つ Unity の各オブジェクトに次C#のスクリプトをアタッチすることで、プログラムによってオーディオソースごとに変更できます。
-
-```cs
-using UnityEngine;
-   using System.Collections;
-   public class SetHRTF : MonoBehaviour    {
-       public enum ROOMSIZE { Small, Medium, Large, None };
-       public ROOMSIZE room = ROOMSIZE.Small;  // Small is regarded as the "most average"
-       // defaults and docs from MSDN
-       // https://msdn.microsoft.com/library/windows/desktop/mt186602(v=vs.85).aspx
-       AudioSource audiosource;
-       void Awake()
-       {
-           audiosource = this.gameObject.GetComponent<AudioSource>();
-           if (audiosource == null)
-           {
-               print("SetHRTFParams needs an audio source to do anything.");
-               return;
-           }
-           audiosource.spatialize = 1; // we DO want spatialized audio
-           audiosource.spread = 0; // we dont want to reduce our angle of hearing
-           audiosource.spatialBlend = 1;   // we do want to hear spatialized audio
-           audiosource.SetSpatializerFloat(1, (float)room);    // 1 is the roomsize param
-       }
-   }
-```
+詳細について[は、spatializer チュートリアルの第5章](unity-spatial-audio-ch5.md)を参照してください。
 
 ## <a name="unity-spatial-sound-examples"></a>Unity の空間サウンドの例
-Mixed Reality Toolkit (MRTK) には、mixed reality でオーディオ効果を適用する方法の例が含まれています。 [Mrtk のデモ](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/Audio)です。
+Unity の空間サウンドの例については、次を参照してください。
+* [MRTK デモ](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/Audio)
+* [Microsoft Spatializer サンプルプロジェクト](https://github.com/microsoft/spatialaudio-unity/tree/master/Samples/MicrosoftSpatializerSample)
+
+## <a name="next-steps"></a>次のステップ
+* [混合現実におけるサウンドのデザイン](spatial-sound-design.md)
+* [Microsoft の spatializer チュートリアル](unity-spatial-audio-ch1.md)
 

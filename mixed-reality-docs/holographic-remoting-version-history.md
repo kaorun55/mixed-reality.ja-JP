@@ -6,17 +6,26 @@ ms.author: nopohl
 ms.date: 10/21/2019
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 9ff6a5f7594eb67dd4c1c8690812ab724cac9012
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: f051dbf24cab550470a312933ffb99e1ba595257
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926650"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75181962"
 ---
 # <a name="holographic-remoting-version-history"></a>Holographic リモート処理のバージョン履歴
 
 > [!IMPORTANT]
 > このガイダンスは、HoloLens 2 の Holographic リモート処理に固有のものです。
+
+## バージョン 2.0.18.0 (2019 年12月17日)<a name="v2.0.18"></a>
+* HolographicViewConfiguration のサポートを追加しました: https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration
+* クラッシュの原因となるさまざまなバグが修正されています。
+* HolographicCamera が受け入れられ、HoloraphicFrame に追加されたカメラとして表示されるために HolographicSpace CameraAdded コールバックが必要なバグを修正しました。
+
+## バージョン 2.0.16 (2019 年11月11日)<a name="2.0.16"></a>
+* QR コードの追跡でデッドロックを修正します。
+* メインスレッドでの待機をブロックしているため、固定されていない例外を修正しています。
 
 ## バージョン 2.0.14 (2019 年10月26日)<a name="v2.0.14"></a>
 * New PerceptionDevice Api のサポート (Windows 10 11 月2019更新プログラム)。
@@ -50,4 +59,4 @@ ms.locfileid: "73926650"
 * [Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
 * [Holographic リモート処理のトラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
 * [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
-* [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
+* [Microsoft プライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
