@@ -64,10 +64,13 @@
 ## UX 要素
 ### [概要](app-patterns-landingpage.md)
 ### スタイル
-#### [色、ライト、マテリアル](color,-light-and-materials.md)
+#### [色、ライト、素材](color-light-and-materials.md)
 #### [スケール](scale.md)
-#### [立体音響の設計](spatial-sound-design.md)
 #### [文字体裁](typography.md)
+### 立体音響
+#### [立体音響の設計](spatial-sound-design.md)
+#### [ケース スタディ:HoloTour ](case-study-spatial-sound-design-for-holotour.md)
+#### [ケース スタディ:RoboRaid](case-study-using-spatial-sound-in-roboraid.md)
 
 ### コントロールと動作
 #### [カーソル](cursors.md)
@@ -126,6 +129,12 @@
 ###### [3.複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)
 ###### [4.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch4.md)
 ###### [5.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch5.md)
+##### 立体オーディオのチュートリアル
+###### [1.プロジェクトへの立体オーディオの追加](unity-spatial-audio-ch1.md)
+###### [2.ボタンの対話式操作サウンドの立体化](unity-spatial-audio-ch2.md)
+###### [3.ビデオからオーディオの立体化](unity-spatial-audio-ch3.md)
+###### [4.実行時の立体オーディオの有効化と無効化](unity-spatial-audio-ch4.md)
+###### [5.リバーブを使用して立体オーディオに距離を追加する](unity-spatial-audio-ch5.md)
 #### HoloLens (第 1 世代) オープン ソースのサンプル アプリ
 ##### [元素周期表](periodic-table-of-the-elements.md)
 ##### [月着陸船](lunar-module.md)
@@ -208,7 +217,7 @@
 #### [空間マッピング](spatial-mapping-in-directx.md)
 #### [シーンの理解](scene-understanding-sdk.md)
 #### [共有空間アンカー](shared-spatial-anchors-in-directx.md)
-#### [キーボード、マウス、コントローラー入力](keyboard,-mouse,-and-controller-input-in-directx.md)
+#### [キーボード、マウス、コントローラー入力](keyboard-mouse-and-controller-input-in-directx.md)
 #### [ホログラフィック アプリで XAML を使用する](using-xaml-with-holographic-directx-apps.md)
 #### [QR コードの追跡](qr-code-tracking.md)
 ### [複合現実での共有エクスペリエンス](shared-experiences-in-mixed-reality.md)
