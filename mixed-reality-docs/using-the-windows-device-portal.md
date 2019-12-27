@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows デバイスポータル、HoloLens
-ms.openlocfilehash: 972fe2e828a0a054925a45b4f6965c668f6da078
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 9bb8116330d88c532b955ef497d29fe98c86fddb
+ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926751"
+ms.lasthandoff: 12/17/2019
+ms.locfileid: "75182022"
 ---
 # <a name="using-the-windows-device-portal"></a>Windows デバイスポータルの使用
 
@@ -30,8 +30,8 @@ HoloLens 用 Windows デバイスポータルでは、Wi-fi または USB を使
 ## <a name="setting-up-hololens-to-use-windows-device-portal"></a>Windows デバイスポータルを使用するための HoloLens の設定
 
 1. HoloLens の電源を入れ、デバイスを装着します。
-2. [ブルーム](system-gesture.md#bloom) ジェスチャを実行して、メイン メニューを開きます。
-3. **[設定]** タイルを見つめ、[エアタップ](gaze-and-commit.md#composite-gestures)ジェスチャを実行します。 2番目のエアタップを実行して、環境にアプリを配置します。 配置すると、設定アプリが起動します。
+2. HoloLens (第1世代) の HoloLens2 または[ブルーム](https://docs.microsoft.com/hololens/hololens1-basic-usage#open-the-start-menu-with-bloom)の[開始ジェスチャ](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture)を実行して、メインメニューを起動します。 
+3. **[設定]** タイルを見つめ、hololens (第1世代) での[エアタップ](https://docs.microsoft.com/hololens/hololens1-basic-usage#select-holograms-with-gaze-and-air-tap)ジェスチャを実行するか、[または、接しているか、またはハンドレイを使用](https://docs.microsoft.com/hololens/hololens2-basic-usage)して hololens 2 で選択します。 
 4. **[Update]** (更新) メニュー項目を選択します。
 5. **[For developers]** (開発者向け) メニュー項目を選択します。
 6. **[Developer Mode]** (開発者モード) を有効にします。
@@ -91,7 +91,7 @@ HoloLens で初めて Device Portal に接続するときは、ユーザー名�
 
 ## <a name="device-portal-pages"></a>Device Portal のページ
 
-### <a name="home"></a>Home
+### <a name="home"></a>[ホーム]
 
 Microsoft HoloLens](images/windows-device-portal-home-page-1000px.png) で Windows デバイスポータルのホームページを ![する<br>
 *Microsoft HoloLens の Windows デバイスポータルホームページ*
@@ -99,10 +99,10 @@ Microsoft HoloLens](images/windows-device-portal-home-page-1000px.png) で Windo
 Device Portal セッションは Home (ホーム) ページから始まります。 他のページにアクセスするには、ホーム ページの左側にあるナビゲーション バーを使います。
 
 ページの最上部にあるツール バーでは、よく使われる状態や機能にアクセスできます。
-* **Online** (オンライン): デバイスが Wi-Fi に接続しているかどうかを示します。
+* **[Online]** (オンライン): デバイスが Wi-Fi に接続しているかどうかを示します。
 * **[Shutdown]** (シャットダウン): デバイスをオフにします。
 * **[Restart]** (再起動): デバイスの電源を入れ直します。
-* **Security** (セキュリティ): [Device Security] (デバイスのセキュリティ) ページを開きます。
+* **[Security]** (セキュリティ): [Device Security] (デバイスのセキュリティ) ページを開きます。
 * **[Cool]** (低温): デバイスの温度を示します。
 * **[A/C]** : デバイスが電源に接続され、充電されているかどうかを示します。
 * **[Help]** (ヘルプ): REST インターフェイスのドキュメント ページを開きます。
@@ -144,7 +144,7 @@ Microsoft HoloLens](images/3dview-1000px.png) の Windows デバイスポータ�
 Microsoft HoloLens の Windows デバイスポータルで Mixed Reality キャプチャページを ![する](images/windows-device-portal-mixed-reality-capture-page-1000px.png)<br>
 *Microsoft HoloLens の Windows デバイスポータルの混合現実のキャプチャページ*
 
-Mixed Reality キャプチャ ページを使うと、HoloLens からメディア ストリームを保存できます。
+[Mixed Reality Capture] (複合現実キャプチャ) ページを使うと、HoloLens からメディア ストリームを保存できます。
 * **設定**: 次の設定を確認することによってキャプチャされるメディアストリームを制御します。
   * **ホログラム**: ビデオストリームの holographic コンテンツをキャプチャします。 ホログラムは、ステレオではなくモノラルでレンダリングされます。
   * **[PV camera]** (PV カメラ): 写真/ビデオ カメラからビデオ ストリームをキャプチャします。
@@ -170,7 +170,7 @@ Mixed Reality キャプチャ ページを使うと、HoloLens からメディ�
 
 ### <a name="performance-tracing"></a>パフォーマンストレース
 
-Microsoft HoloLens](images/windows-device-portal-performance-tracing-page-1000px.png) の Windows デバイスポータルの ![パフォーマンストレース] ページ<br>
+Microsoft HoloLens(images/windows-device-portal-performance-tracing-page-1000px.png) の Windows デバイスポータルの ![パフォーマンストレース] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [パフォーマンストレース] ページ*
 
 HoloLens から[Windows パフォーマンスレコーダー](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (wpr) のトレースをキャプチャします。
@@ -190,7 +190,7 @@ Microsoft HoloLens の Windows デバイスポータルの [![のプロセス] �
 
 ### <a name="system-performance"></a>System Performance (システム パフォーマンス)
 
-Microsoft HoloLens](images/windows-device-portal-system-performance-page-1000px.png) の Windows デバイスポータルの ![システムパフォーマンス] ページ<br>
+Microsoft HoloLens(images/windows-device-portal-system-performance-page-1000px.png) の Windows デバイスポータルの ![システムパフォーマンス] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [システムパフォーマンス] ページ*
 
 電力消費、フレーム レート、CPU 負荷など、システムの診断情報のグラフをリアルタイムで表示します。
@@ -199,34 +199,34 @@ Microsoft HoloLens](images/windows-device-portal-system-performance-page-1000px.
 * **[SoC power]** (SoC 電力): System on a Chip の瞬間的な電力使用量 (1 秒あたりの平均)
 * **[System power]** (システム電力): システムの瞬間的な電力使用量 (1 秒あたりの平均)
 * **[Frame rate]** (フレーム レート): 1 秒あたりのフレーム数、1 秒あたりに失敗した VBlank 数、連続で失敗した VBlank 数
-* **GPU**: GPU エンジンの使用率、使用可能量の合計に対するパーセント
+* **[GPU]** : GPU エンジンの使用率、使用可能量の合計に対するパーセント
 * **CPU**: 使用可能量の合計に対するパーセント
 * **[I/O]** : 読み取りと書き込み
-* **ネットワーク**: 受信と送信
+* **[Network]** (ネットワーク): 受信と送信
 * **メモリ**: 合計、使用中、コミット済み、ページング、非ページ化
 
 ### <a name="apps"></a>アプリ
 
-Microsoft HoloLens](images/windows-device-portal-apps-page-1000px.png) の Windows デバイスポータルの ![アプリ] ページ<br>
+Microsoft HoloLens(images/windows-device-portal-apps-page-1000px.png) の Windows デバイスポータルの ![アプリ] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [アプリ] ページ*
 
 HoloLens にインストールされているアプリを管理します。
-* **インストール済みのアプリ**: アプリを削除および起動します。
-* **Running apps**: 現在実行されているアプリを一覧表示します。
+* **[Installed apps]** (インストール済みのアプリ): アプリを削除および起動します。
+* **[Running apps]** (実行中のアプリ): 現在実行されているアプリを一覧表示します。
 * **アプリのインストール**: コンピューターまたはネットワーク上のフォルダーからインストールするアプリパッケージを選択します。
 * **[Dependency]** (依存関係): インストールするアプリの依存関係を追加します。
 * **展開**: 選択したアプリと依存関係を HoloLens に展開します。
 
 ### <a name="app-crash-dumps"></a>アプリクラッシュダンプ
 
-Microsoft HoloLens](images/windows-device-portal-dev-apps-crash-dumps-page-1000px.png) の Windows デバイスポータルの ![アプリのクラッシュダンプ] ページ<br>
+Microsoft HoloLens(images/windows-device-portal-dev-apps-crash-dumps-page-1000px.png) の Windows デバイスポータルの ![アプリのクラッシュダンプ] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [アプリクラッシュダンプ] ページ*
 
 このページでは、サイドローディングしたアプリのクラッシュ ダンプを収集できます。 クラッシュダンプを収集する各アプリの [**クラッシュダンプを有効**にする] チェックボックスをオンにします。 後でこのページに戻ると、クラッシュ ダンプが収集されています。 [デバッグ用に Visual Studio で](https://msdn.microsoft.com/library/d5zhxt22.aspx)ダンプファイルを開くことができます。
 
-### <a name="file-explorer"></a>エクスプローラー
+### <a name="file-explorer"></a>[エクスプローラー]
 
-Microsoft HoloLens](images/fileexplorer-1000px.png) の Windows デバイスポータルの ![ファイルエクスプローラー] ページ<br>
+Microsoft HoloLens(images/fileexplorer-1000px.png) の Windows デバイスポータルの ![ファイルエクスプローラー] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [ファイルエクスプローラー] ページ*
 
 ファイルエクスプローラーを使用して、ファイルを参照、アップロード、およびダウンロードします。 ドキュメントフォルダー、ピクチャフォルダー、および Visual Studio またはデバイスポータルからデプロイしたアプリのローカルストレージフォルダー内のファイルを操作できます。
@@ -238,7 +238,7 @@ Microsoft HoloLens](images/fileexplorer-1000px.png) の Windows デバイスポ�
 
 Windows デバイスポータルでキオスクモードを有効にするための最新の手順については、Windows IT Pro センターの[キオスクモードでの HoloLens のセットアップ](https://docs.microsoft.com/hololens/hololens-kiosk#set-up-kiosk-mode-using-the-windows-device-portal-windows-10-version-1607-and-version-1803)に関する記事をご覧ください。
 
-### <a name="logging"></a>ログ記録
+### <a name="logging"></a>ログ
 
 Microsoft HoloLens](images/windows-device-portal-logging-page-1000px.png) の Windows デバイスポータルの ![ログページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [ログ記録] ページ*
@@ -274,7 +274,7 @@ Microsoft HoloLens](images/windows-device-portal-simulation-page-1000px.png) の
 * **再生**: [録音の**アップロード**] をクリックまたはタップして、PC から xef ファイルを選択し、データを HoloLens に送信します。
 * **コントロールモード**: ドロップダウンから **[既定]** または **[シミュレーション]** を選択し、 **[設定]** ボタンをクリックまたはタップして HoloLens のモードを選択します。 [Simulation] (シミュレーション) を選ぶと、HoloLens の実際のセンサーは無効になり、アップロードされたシミュレーション データが代わりに使われます。 [Simulation] (シミュレーション) に切り替えると、[Default] (既定) に戻すまで、HoloLens は実際のユーザーに応答しなくなります。
 
-### <a name="networking"></a>ネットワーク
+### <a name="networking"></a>のネットワーク
 
 Microsoft HoloLens](images/windows-device-portal-networking-page-1000px.png) の Windows デバイスポータルの [ネットワーク] ページ ![<br>
 *Microsoft HoloLens の Windows デバイスポータルの [ネットワーク] ページ*
@@ -286,7 +286,7 @@ HoloLens で Wi-fi 接続を管理します。
 
 ### <a name="virtual-input"></a>Virtual Input (仮想入力)
 
-Microsoft HoloLens](images/windows-device-portal-virtual-input-page-1000px.png) の Windows デバイスポータルの ![仮想入力] ページ<br>
+Microsoft HoloLens(images/windows-device-portal-virtual-input-page-1000px.png) の Windows デバイスポータルの ![仮想入力] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [仮想入力] ページ*
 
 リモート コンピューターから HoloLens にキーボード入力を送信します。
