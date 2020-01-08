@@ -8,22 +8,22 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, アカデミー, チュートリアル
-ms.openlocfilehash: 66246e33bfd1b63630c07005661a744f8939de47
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: ebb40c6ae877ac167c7c16a67e08ef2501f6290d
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539643"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334460"
 ---
 # <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
 
 ![HoloLens 2 ユーザー](images/08_Tutorials.png)
 
-現在、すべてのチュートリアルとサンプル アプリは Unity ベースです。  他のエンジンおよびプラットフォーム向けのコンテンツを開発する場合は、目次にある関連する見出しの下で確認できます。
+現在、すべてのチュートリアルとサンプル アプリは Unity ベースです。 他のエンジンおよびプラットフォーム向けのコンテンツを開発する場合は、目次にある関連する見出しの下で確認できます。
 
 ## <a name="hololens-2-tutorials"></a>HoloLens 2 のチュートリアル
 
-HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。  チュートリアルは、[Mixed Reality ツールキット 2.0 (MRTK 2.0) ](https://github.com/microsoft/MixedRealityToolkit-Unity)が基になっています。
+HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。 チュートリアルは、[Mixed Reality ツールキット 2.0 (MRTK 2.0) ](https://github.com/microsoft/MixedRealityToolkit-Unity)が基になっています。
 
 * チュートリアル入門 - [概要および目標 (1/7 章)](mrlearning-base.md)
 * Azure Spatial Anchor チュートリアル - [Azure Spatial Anchors を使い始める (1/3 章)](mrlearning-asa-ch1.md)
@@ -48,7 +48,7 @@ Mixed Reality Academy は、該当のプロジェクト ファイルを含むオ
 * Windows 10 PC に適切な[ツールがインストールされていること](install-the-tools.md)は、各チュートリアルを完了するための共通の前提条件です。
 
 >[!NOTE]
->Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。  そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。  これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは " **_ありません_** "。  これらは、サポートされているデバイス上で継続して動作するように、保守されます。 HoloLens 2 向けには、[新しいチュートリアル シリーズ](mrlearning-base.md)が投稿されています。
+>Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。 そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。 これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは " **_ありません_** "。 これらは、サポートされているデバイス上で継続して動作するように、保守されます。 HoloLens 2 向けには、[新しいチュートリアル シリーズ](mrlearning-base.md)が投稿されています。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
@@ -265,7 +265,7 @@ Mixed Reality Academy は、該当のプロジェクト ファイルを含むオ
 
 ## <a name="mixed-reality-and-azure-services-tutorials"></a>Mixed Reality および Azure サービスのチュートリアル
 
-これらのスタンドアロン チュートリアルは、さまざまな Azure サービスを Unity プロジェクトに実装する方法を学習するのに最適です。  これらのチュートリアルはすべて、HoloLens (第1世代) またはイマーシブ ヘッドセットに基づいていますが、サービスの使用に関するレッスンは、ほぼどのデバイスにも応用できます。
+これらのスタンドアロン チュートリアルは、さまざまな Azure サービスを Unity プロジェクトに実装する方法を学習するのに最適です。 これらのチュートリアルはすべて、HoloLens (第1世代) またはイマーシブ ヘッドセットに基づいていますが、サービスの使用に関するレッスンは、ほぼどのデバイスにも応用できます。
 
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
     <li>
@@ -375,7 +375,7 @@ Mixed Reality Academy は、該当のプロジェクト ファイルを含むオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 305:機能とストレージ</h3>
-                                              <p>このコースでは、Mixed Reality アプリの中で、Azure Functions を作成して使用し Azure Storage 内にデータを格納する方法について学習します。</p>
+                                              <p>このコースでは、Mixed Reality アプリの中で、Azure Functions を作成して使用し、Azure Storage 内にデータを格納する方法について学習します。</p>
                                           </div>
                                       </div>
                                   </div>
@@ -413,7 +413,7 @@ Mixed Reality Academy は、該当のプロジェクト ファイルを含むオ
                                           </div>
                                           <div class="cardText">
                                               <h3>MR と Azure 307:機械学習</h3>
-                                              <p>お客様の Mixed Reality アプリ内で Azure Machine Learning Studio を活用して、多数の機械学習 (ML) アルゴリズムをデプロイします。</p>
+                                              <p>お客様の Mixed Reality アプリ内で Azure Machine Learning Studio (クラシック) を活用して、多数の機械学習 (ML) アルゴリズムをデプロイします。</p>
                                           </div>
                                       </div>
                                   </div>
