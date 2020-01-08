@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 861c42f9449fcb3cf038258af91088fc927941e5
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+keywords: mixed reality, unity, チュートリアル, hololens
+ms.openlocfilehash: e62d3626ec6f2dbf8b66378212afab7db2f56422
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940980"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334449"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1. Azure 空間アンカーの概要
 
@@ -30,11 +30,19 @@ ms.locfileid: "74940980"
 * HoloLens 2 用の Azure 空間アンカーを使用した開発の基礎について説明します。
 * 空間アンカーを作成、アップロード、ダウンロードする
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必要条件
 
-* 「[クイックスタート: Azure 空間アンカーを使用する Unity HoloLens アプリを作成](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)する」の「[前提条件](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#prerequisites)」セクションに記載されている要件を満たしていること。
+>[!TIP]
+>[概要チュートリアル](mrlearning-base.md)シリーズをまだ完了していない場合は、まずこれらのチュートリアルを完了することをお勧めします。
+
+* 適切な[ツールがインストール](install-the-tools.md)されている WINDOWS 10 PC
+* Windows 10 SDK 10.0.18362.0 以降
+* 基本的なC#プログラミング機能
+* [開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens 2 デバイス
 * 「[クイックスタート: Azure 空間アンカーを使用した Unity HoloLens アプリの作成](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)」チュートリアルの「[空間アンカーリソースの作成](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)」セクションを完了します。
-* [概要チュートリアル](mrlearning-base.md)シリーズをまだ完了していない場合は、まずこれらのチュートリアルを完了することをお勧めします。
+
+>[!IMPORTANT]
+>このチュートリアルシリーズでは<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a>が必要であり、推奨されるバージョンは unity 2019.1.14 です。 これは、前にリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
 
 ## <a name="creating-the-unity-project"></a>Unity プロジェクトの作成
 

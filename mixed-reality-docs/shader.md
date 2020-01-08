@@ -1,23 +1,23 @@
 ---
 title: シェーダー
-description: ''
+description: MRTK 標準シェーダーには、ホログラムで使用できるさまざまな種類の視覚効果が用意されています。
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、対話、ui、ux
-ms.openlocfilehash: 23371ae5d70e5e792415fd25c0d58def0a7cefbb
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 4d95e335b3f7020766beae916423d0588ee66572
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143272"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694166"
 ---
 # <a name="shader"></a>シェーダー
 
 ![シェーダー](images/UX/UX_Hero_StandardShader.jpg)
 
-Holographic オブジェクトは環境内の物理的なオブジェクトと混在するため、ビジュアルキューを用意することは、mixed reality では重要です。 MRTK Standard shader には、ホログラムで使用できるさまざまな種類の視覚効果が用意されています。 MRTK 標準シェーディングシステムでは、Unity の標準シェーダーに似た視覚エフェクトを実現し、Fluent 設計システムの原則を実装し、mixed reality デバイスでパフォーマンスを維持できる、単一の柔軟なシェーダーを利用しています。
+Holographic オブジェクトは環境内の物理的なオブジェクトと混在するため、mixed reality で視覚的な手掛かりを提供することが重要です。 MRTK 標準シェーダーには、ホログラムで使用できるさまざまな種類の視覚効果が用意されています。 MRTK 標準シェーディングシステムでは、Unity の標準シェーダーに似た視覚エフェクトを実現し、 [Fluent 設計システムの原則](https://www.microsoft.com/design/fluent/#/)を実装し、mixed reality デバイスでパフォーマンスを維持できる、単一の柔軟なシェーダーを利用しています。
 <br>
 
 ## <a name="examples-of-visual-effects-using-mrtk-standard-shader"></a>MRTK Standard shader を使用した視覚効果の例 
@@ -32,9 +32,11 @@ Holographic オブジェクトは環境内の物理的なオブジェクトと�
     :::column-end:::
 :::row-end:::
 
+<br>
+
 ---
 
-## <a name="mrtk-standard-shader-in-mrtkmixed-reality-toolkit-for-unity"></a>MRTK の MRTK Standard shader (Mixed Reality Toolkit) (Unity 用)
+## <a name="mrtk-standard-shader-in-mrtk-mixed-reality-toolkit-for-unity"></a>MRTK の MRTK Standard shader (Mixed Reality Toolkit) (Unity 用)
 
 * [MRTK-標準シェーダー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_MRTKStandardShader.html)
 
@@ -43,22 +45,22 @@ Holographic オブジェクトは環境内の物理的なオブジェクトと�
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [カーソル](cursors.md)
-* [ハンドレイ](point-and-commit.md)
+* [ハンド レイ](point-and-commit.md)
 * [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [操作性](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [ハンド メニュー](hand-menu.md)
-* [Near メニュー](near-menu.md)
+* [メニューの近く](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
 * [音声コマンド](voice-input.md)
 * [キーボード](keyboard.md)
-* [ボタン](tooltip.md)
-* [翻訳](slate.md)
+* [ヒント](tooltip.md)
+* [スレート](slate.md)
 * [スライダー](slider.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
-* [表面の吸着](surface-magnetism.md)
+* [表面吸着](surface-magnetism.md)

@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR、Khronos、BasicXRApp、Mixed Reality OpenXR 開発者ポータル、DirectX、ネイティブ、ネイティブアプリ、カスタムエンジン、ミドルウェア
-ms.openlocfilehash: aa91918e20b4276b7453bae1a05ad18df9d8ab0e
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: 8140b9d3a9e1f4d2d7a25b77a48b39cb765cf6d9
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491138"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694136"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -83,7 +83,7 @@ OpenXR UWP アプリケーションパッケージをビルドした後、[そ�
 
 以下のベストプラクティスの例については、BasicXrApp の[OpenXRProgram](https://github.com/microsoft/OpenXR-SDK-VisualStudio/blob/master/samples/BasicXrApp/OpenXrProgram.cpp)ファイルを参照してください。 最初の Run () 関数は、初期化からイベントおよびレンダリングループへの一般的な OpenXR app コードフローをキャプチャします。
 
-### <a name="select-a-pixel-format"></a>ピクセル形式を選択してください
+### <a name="select-a-swapchain-format"></a>スワップチェーン形式を選択してください
 
 常に `xrEnumerateSwapchainFormats`を使用してサポートされているピクセル形式を列挙し、アプリがサポートするランタイムから最初の色と深度のピクセル形式を選択します。これは、ランタイムが推奨するものであるためです。 HoloLens 2 では、通常、レンダリングのパフォーマンスを向上させるために、`DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` と `DXGI_FORMAT_D16_UNORM` が最初に選択されます。 この設定は、デスクトップ PC で実行されている VR ヘッドセットでは異なる場合があります。  
   
@@ -148,9 +148,7 @@ HoloLens 2 では、推奨される `DXGI_FORMAT_D16_UNORM` 深度形式を使�
 ### <a name="support-mixed-reality-capture"></a>混合現実のキャプチャをサポートする
 
 HoloLens 2 のプライマリディスプレイは加法の環境ブレンドを使用しますが、ユーザーが[mixed reality キャプチャ](mixed-reality-capture-for-developers.md)を開始すると、アプリのレンダリングコンテンツは環境のビデオストリームとアルファブレンドされます。
-Mixed reality のキャプチャビデオで最高の画質を実現するには、投影レイヤーの `layerFlags`に `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` を設定することをお勧めします。  
-
-**パフォーマンスの警告:** 1つの投影レイヤーで `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` フラグを省略すると、パフォーマンスが大幅に低下するランタイム後処理が発生します。
+Mixed reality のキャプチャビデオで最高の画質を実現するには、投影レイヤーの `layerFlags`に `XR_COMPOSITION_LAYER_BLEND_TEXTURE_SOURCE_ALPHA_BIT` を設定することをお勧めします。
 
 ### <a name="avoid-quad-layers"></a>クワッドレイヤーを避ける
 
@@ -163,8 +161,7 @@ Mixed reality のキャプチャビデオで最高の画質を実現するには
 HoloLens 2 では、`xrEndFrame` を使用してコンポジションデータを送信する方法が多数あり、その結果、パフォーマンスが大幅に低下する後処理が発生します。
 パフォーマンス penalities を回避するには、次の特性を持つ[1 つの `XrCompositionProjectionLayer`を送信](#use-a-single-projection-layer)します。
 * [テクスチャ配列のスワップチェーンを使用する](#render-with-texture-array-and-vprt)
-* [プライマリ色のスワップチェーン形式を使用する](#select-a-pixel-format)
-* [テクスチャソース-アルファブレンドフラグを設定する](#support-mixed-reality-capture)
+* [プライマリ色のスワップチェーン形式を使用する](#select-a-swapchain-format)
 * [推奨ビューディメンションを使用する](#render-with-recommended-rendering-parameters-and-frame-timing)
 * `XR_COMPOSITION_LAYER_UNPREMULTIPLIED_ALPHA_BIT` フラグを設定しない
 * `XrCompositionLayerDepthInfoKHR` `minDepth` を 0.0 f に、`maxDepth` を 1.0 f に設定します
@@ -193,7 +190,7 @@ Windows Mixed Reality OpenXR Runtime は、年の終わりまでに、HoloLens 2
 
 これらの拡張機能の一部は、ベンダー固有の MSFT 拡張機能として開始される場合がありますが、Microsoft およびその他の OpenXR runtime ベンダーが連携して、これらの機能領域の多くについて、クロスベンダーの EXT または KHR 拡張機能を設計します。  これにより、コア仕様と同様に、これらの機能用に記述したコードをランタイムベンダー間で移植可能にすることができます。
 
-## <a name="troubleshooting"></a>トラブルシューティング
+## <a name="troubleshooting"></a>[トラブルシューティング]
 
 Windows Mixed Reality OpenXR Runtime のトラブルシューティングのヒントを次に示します。  <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 の仕様</a>に関して他に質問がある場合は、 <a href="https://community.khronos.org/c/openxr" target="_blank">Khronos OpenXR フォーラム</a>または<a href="https://khr.io/slack" target="_blank">余裕期間 #openxr チャネル</a>にアクセスしてください。
 
@@ -221,7 +218,7 @@ Windows Mixed Reality OpenXR Runtime のトラブルシューティングのヒ�
 
 Windows Mixed Reality OpenXR Runtime が既にインストールされ、アクティブになっている場合は、[OpenXR の設定] メニュー項目が表示されないことに注意してください。  [Mixed Reality OpenXR Developer Portal](#getting-the-mixed-reality-openxr-developer-portal)をインストールすると、システム上の OpenXR ランタイムの現在の状態を確認できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * <a href="https://www.khronos.org/openxr/" target="_blank">OpenXR の詳細情報</a>
 * <a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html" target="_blank">OpenXR 1.0 仕様</a>

@@ -3,15 +3,15 @@ title: Unity での Vuforia の使用
 description: Unity で Vuforia を活用して、Windows Mixed Reality アプリケーションを構築します。
 author: thetuvix
 ms.author: alexturn
-ms.date: 01/28/2019
+ms.date: 12/20/2019
 ms.topic: article
 keywords: Vuforia、マーカー、座標、参照のフレーム、追跡
-ms.openlocfilehash: bae5d0eb04ab9434dd3e72674686743779a8f70c
-ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
+ms.openlocfilehash: 2d7cc27cd9a5fe9bb6502edaa6df0b7a80755049
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75003191"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334477"
 ---
 # <a name="using-vuforia-engine-with-unity"></a>Unity での Vuforia Engine の使用
 
@@ -80,7 +80,7 @@ Vuforia Engine は、カメラの追跡と HoloLens の空間トラッキング�
 プロセスは自動的に処理されるため、開発者がプログラミングを行う必要はありません。
 
 
-**次のような処理が行われます。**
+**プロセスの概要を次に示します。**
 1. Vuforia のターゲットトラッカーはターゲットを認識します
 2. 次に、ターゲットの追跡を初期化します。
 3. ターゲットの位置と回転が分析され、HoloLens の堅牢な予測が提供されます。
@@ -104,7 +104,7 @@ Unity のパフォーマンスモードを変更するには、ARCamera の Vufo
 *   カメラデバイスモードのドロップダウンメニューを選択し、3つのオプションのいずれかを選択します。
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [ツールのインストール](install-the-tools.md)
 * [座標系](coordinate-systems.md)
 * [空間マッピング](spatial-mapping.md)

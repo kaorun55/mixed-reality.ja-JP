@@ -6,12 +6,12 @@ ms.author: shentan
 ms.date: 04/26/2019
 ms.topic: article
 keywords: 混合現実、ハンド、モーションコントローラー、相互作用、設計
-ms.openlocfilehash: 395862fe987244e2af70bb6794caa91e243cd076
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 27d13316bbc4b3b40a1e617d73dd5487c05cb347
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435153"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334440"
 ---
 # <a name="hands-and-motion-controllers"></a>ハンドコントローラーとモーションコントローラー
 ## <a name="scenarios"></a>シナリオ
@@ -22,7 +22,7 @@ ms.locfileid: "73435153"
 * ファクトリアセンブリラインのためのファーストラインワーカーのチュートリアルとガイドの提供
 * 医療プロフェッショナルを支援および教育するためのプロフェッショナルなツールの開発  
 * 3D 仮想オブジェクトを使用して実際の世界を装飾する、または第2の世界を作成する 
-* 現実世界を背景とした場所ベースのサービスとゲームの作成
+* 現実世界を背景として使用して、場所ベースのサービスとゲームを作成する
 
 <br>
 
@@ -39,7 +39,7 @@ ms.locfileid: "73435153"
     :::column:::
        [![ポイントし、ハンドでコミットする](images/hands-and-controllers-point-and-commit.jpg)](point-and-commit.md)<br>
         ### <a name="point-and-commit-with-handspoint-and-commitmdbr"></a>[手を使ったポイントとコミット](point-and-commit.md)<br>
-        このモダリティによって、ユーザーは距離内でホログラムを操作できるようになります。 これにより、ユーザーは周囲を最大限に活用できるようになります。 ユーザーは、ホログラムをどこにでも配置でき、任意の距離からそれらにアクセスできます。 2D および3D ホログラムの制御と操作を行うためのメンタルモデルとジェスチャは、直接操作のものと非常に同期されています。
+        このモダリティによって、ユーザーは距離内でホログラムを操作できるようになります。 これにより、ユーザーは周囲を最大限に活用できるようになります。 ユーザーは、ホログラムを任意の場所に配置し、どこからでもアクセスすることができます。 2D および3D ホログラムの制御と操作を行うためのメンタルモデルとジェスチャは、直接操作のものと非常に同期されています。
     :::column-end:::
     :::column:::
        [![モーションコントローラー](images/hands-and-controllers-motion-controllers.jpg)](motion-controllers.md)<br>
@@ -52,7 +52,7 @@ ms.locfileid: "73435153"
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [頭の視線入力とコミット](gaze-and-commit.md)
 * [ヘッド視線入力とドウェル](gaze-and-dwell.md)
 * [手で直接操作](direct-manipulation.md)
