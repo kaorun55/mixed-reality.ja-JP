@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 08/27/2019
 ms.topic: article
 keywords: HoloLens、MRTK、Mixed Reality Toolkit、Windows Mixed Reality、design、sample app、controls
-ms.openlocfilehash: 95c81442cc390da8ac7c9a8de218341cb5e7c948
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ad9d2755522c2610ae051fa61f96605e49404d2d
+ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439653"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75623505"
 ---
 # <a name="mrtk-101-how-to-use-mixed-reality-toolkit-unity-for-basic-interactions-hololens-2-hololens-windows-mixed-reality-openvr"></a>MRTK 101: 基本的な対話に Mixed Reality Toolkit Unity を使用する方法 (HoloLens 2、HoloLens、Windows Mixed Reality、Open VR)
 
@@ -55,7 +55,7 @@ ManipulationHandler.cs は、2つのを持つスケール/回転をサポート�
 <img alt="NearInteractionGrabbable and ManipulationHandler.cs assigned to an object" width="800" src="images/MRTK101/MRTK_ManipulationHandler.gif">
 
 ## <a name="how-to-move-or-rotate-an-object-with-precision"></a>有効桁数を使用してオブジェクトを移動または回転する方法
-BoundingBox.cs をオブジェクトに割り当てて、オブジェクトを拡大縮小および回転するためのインターフェイスである境界ボックスを使用します。 既定では、HoloLens 1 スタイルの青いハンドルとワイヤが表示されます。 HoloLens 2 のスタイル近接に基づくアニメーションハンドルを使用するには、prefabs と素材を割り当てる必要があります。 構成の詳細については、境界ボックスのドキュメントと BoundingBoxExamples シーンを参照してください。
+BoundingBox.cs をオブジェクトに割り当てて、オブジェクトを拡大縮小および回転するためのインターフェイスである境界ボックスを使用します。 既定では、HoloLens 1 スタイルの青いハンドルとワイヤが表示されます。 HoloLens 2 のスタイル近接に基づくアニメーションハンドルを使用するには、prefabs と素材を割り当てる必要があります。 構成の詳細については、[境界ボックスのドキュメント](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)と BoundingBoxExamples シーンを参照してください。
 
 <img alt="BoundingBox.cs assigned to an object" width="800" src="images/MRTK101/MRTK_BoundingBox.png">
 
@@ -132,7 +132,7 @@ Billboard.cs スクリプトをオブジェクトに割り当てます。 位置
 
 Mixed reality のすばらしいエクスペリエンスを作成する準備はできましたか? MRTK と mixed reality の詳細については、以下のページを参照してください。
 
-## <a name="about-the-author"></a>作成者について
+## <a name="about-the-author"></a>執筆者紹介
 
 <table style="border-collapse:collapse" padding-left="0px">
 <tr>
@@ -141,7 +141,7 @@ Mixed reality のすばらしいエクスペリエンスを作成する準備は
 </tr>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [Mixed Reality Toolkit-Unity (MRTK) GitHub](https://github.com/Microsoft/MixedRealityToolkit-Unity)
 * [MRTK ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
