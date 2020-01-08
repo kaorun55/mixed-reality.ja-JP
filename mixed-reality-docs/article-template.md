@@ -6,12 +6,12 @@ ms.author: randyw
 ms.date: 10/22/2019
 ms.topic: article
 keywords: なし
-ms.openlocfilehash: b443e48f96b6fb978fdf487c6eea7e6c804c9e70
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 314d07292a679eefb22583d522ff9bd4182a0832
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439553"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694016"
 ---
 # <a name="title-be-as-specific-as-possible-use-human-terms"></a>タイトル (可能な限り指定する場合は、人間の言葉を使用します) 
 
@@ -38,7 +38,7 @@ ms.locfileid: "73439553"
 </tr>
 <tr>
      <td>件名または記事のタイトル</td>
-     <td>❌ サポートされていません</td>
+     <td>❌ サポート対象外</td>
      <td>✔️ 推奨</td>
      <td>✔️ 推奨</td>
 </tr>
@@ -92,7 +92,7 @@ ms.locfileid: "73439553"
 ---
 
 
-### <a name="3-columns"></a>3列
+### <a name="3-columns"></a>3 columns
 
 Photorealism アクションの描画色フィールドの描画 stuckism international cloisonnism、remodernism 社会学的な幾何抽象概念図、secularism structuralism neo-minimalism man ism。<br>
 
@@ -192,7 +192,7 @@ Photorealism action painting color field painting stuckism international cloison
 
 Neo-geo humanism structuralism post-impressionism さいころ brücke existentialism superflat、neo-dada idealism gründerzeit。
 
-| 単位 | 表示角度 | Size |
+| [距離] | 表示角度 | サイズ |
 |---------|---------|---------|
 | 45cm  | 2°未満 | 1.6 x 1.6 cm |
 
@@ -233,11 +233,8 @@ Iframe を width = "940" height = "530" に設定します。
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [関連記事1名](design.md)
 * [関連記事2名](design.md)
-* [関連記事3の名前](design.md)
-
-
-
+* [関連記事3名前-特定のセクションへのリンク](design.md#what-are-the-core-concepts-of-an-experience)

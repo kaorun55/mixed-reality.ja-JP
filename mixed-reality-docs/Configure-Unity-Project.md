@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 04/15/2018
 ms.topic: article
 keywords: Unity, mixed reality, 開発, 作業の開始, 新しいプロジェクト
-ms.openlocfilehash: af30cf91eda1b654bea6048c34f63c61238626c7
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 99c72f2d9d900c8a05fb7d8b9b8de10d657fdd13
+ms.sourcegitcommit: 7e8b9de561cbc8483e84511f3e9cbd779f3a999f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437112"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502653"
 ---
 # <a name="configure-a-new-unity-project-for-windows-mixed-reality"></a>Windows Mixed Reality 用の新しい Unity プロジェクトを構成する 
 
@@ -39,7 +39,7 @@ Windows Mixed Reality をターゲットにするには、最初に Unity プロ
 ![Unity 品質設定](images/getting-started-unity-quality-settings.jpg)<br>
 *Unity xr の設定*
 
-これで、アプリで基本的な holographic のレンダリングと空間入力を行うことができるようになりました。 特定の機能を利用するには、アプリでマニフェスト内の適切な機能を宣言する必要があります。 マニフェスト宣言は Unity で作成できるため、後続のすべてのプロジェクトエクスポートに含まれます。 この設定は**ユニバーサル Windows プラットフォーム > の発行設定 > 機能の [プレーヤーの設定 > 設定**] にあります。 一般的に使用される Unity Api を混合現実に対して有効にするための適用可能な機能は次のとおりです。
+これで、アプリで基本的な holographic のレンダリングと空間入力を行うことができるようになりました。 特定の機能を利用するには、アプリでマニフェスト内の適切な機能を宣言する必要があります。 マニフェスト宣言は Unity で作成できるため、後続のすべてのプロジェクトエクスポートに含まれます。 設定は、**ユニバーサル Windows プラットフォーム > の発行設定 > 機能の [プレーヤーの設定 > 設定**] にあります。 一般的に使用される Unity Api を混合現実に対して有効にするための適用可能な機能は次のとおりです。
 
 |  機能  |  機能を必要とする Api | 
 |----------|----------|
@@ -69,7 +69,7 @@ HoloLens には、モバイルクラスの GPU があります。 アプリが H
 
 アプリが HoloLens を対象としている場合は、デバイスの透明なディスプレイを最適化するために変更する必要がある設定がいくつかあります。そのため、アプリは物理的な世界に表示されます。
 1. **階層**で、**メインカメラ**を選択します。
-2. **[インスペクター]** パネルで、変換 **[位置]** を**0、0、0**に設定します。これにより、ユーザーの位置が Unity の元の場所で開始されます。
+2. **[インスペクター]** パネルで、変換 **[位置]** を**0、0、0**に設定します。これにより、ユーザーのヘッドの位置が Unity の元の場所から開始されます。
 3. **クリアフラグ**を**純色**に変更します。
 4. **背景**色を**RGBA 0、0、0、0**に変更します。 ブラックは HoloLens では透明としてレンダリングされます。
 5. **クリッププレーン**を[HoloLens の推奨](camera-in-unity.md#clip-planes)0.85 (メーター) に近い場所に変更します。
@@ -77,6 +77,6 @@ HoloLens には、モバイルクラスの GPU があります。 アプリが H
 新しいカメラを削除して作成する場合は、カメラが**maincamera**として**タグ付け**されていることを確認してください。
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [Mixed Reality Toolkit v2](mrtk-getting-started.md)
 * [Unity 開発の概要](unity-development-overview.md)
