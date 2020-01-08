@@ -6,12 +6,12 @@ ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality、holographic、ar、vr、mr、xr、強化現実、仮想現実、説明
-ms.openlocfilehash: 65588902565ee0c5a1710f823311ccdecc23230e
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: e3205590ce46e0fc9113421e0dbaeb87fe6bc0c2
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539557"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334052"
 ---
 # <a name="what-is-mixed-reality"></a>Mixed Reality とは
 
@@ -19,8 +19,8 @@ ms.locfileid: "74539557"
 
 Mixed Reality は現実世界とデジタル世界を組み合わせたものです。 Mixed Reality は、人間、コンピューター、および環境の相互作用における次の進化であり、これまでは想像することしかできなかった可能性が実現されます。 これは、コンピュータービジョン、グラフィカル処理能力、表示テクノロジ、および入力システムの機能強化によって可能になります。 *Mixed reality*という用語は、当初、Paul ミルグラムと Fumio Kishino によって[1994 のホワイト](https://etclab.mie.utoronto.ca/people/paul_dir/IEICE94/ieice.html)ペーパーに導入されました。 このホワイトペーパーでは、 *virtuality 連続性*の概念を紹介し、分類の分類がどのように表示されるかに焦点を絞っています。 そのため、混合現実のアプリケーションは表示されません。 また、環境の入力、空間サウンド、場所も含まれます。
 
-混合現実のスペクトルを ![](images/MixedRealitySpectrum-worlds.jpg)<br>
-*Mixed reality は、物理的な世界とデジタルの世界をブレンドした結果です。*
+混合現実のスペクトルを ![](images/mixedrealityspectrum-worlds.png)<br>
+*画像: Mixed reality は、物理的な世界とデジタルの世界をブレンドした結果です。*
 
 <br>
 
@@ -30,22 +30,16 @@ Mixed Reality は現実世界とデジタル世界を組み合わせたもので
 
 過去数年にわたり、人間とコンピューターの両方の入力の関係が十分に調査されました。 また、*人間のコンピューターの操作*や HCI と呼ばれる、広く研究されている分野もあります。 人間の入力は、キーボード、マウス、タッチ、インク、音声、さらには Kinect の骨格追跡など、さまざまな方法で行われます。
 
-センサーと処理の進歩は、環境からのコンピューター入力の新しい領域に大きくなります。 コンピューターと環境の間の相互作用は、実質的には環境の理解または*認識*です。 そのため、環境情報を公開する Windows の API 名は、[認識 api](https://docs.microsoft.com/uwp/api/Windows.Perception)と呼ばれます。 環境入力では、世界中の人の位置 ([ヘッドトラッキング](coordinate-systems.md)など)、表面と境界 ([空間マッピング](spatial-mapping.md)と[シーンの理解](scene-understanding.md)など)、アンビエント照明、環境サウンド、オブジェクト認識などがキャプチャされます。との場所。
+センサーと処理の進歩は、環境からのコンピューター入力の新しい領域に大きくなります。 コンピューターと環境の間の相互作用は、実質的には環境の理解または*認識*です。 そのため、環境情報を公開する Windows の API 名は、[認識 api](https://docs.microsoft.com/uwp/api/Windows.Perception)と呼ばれます。 環境入力は、世界中のユーザーの位置 ([ヘッドトラッキング](coordinate-systems.md)など)、表面と境界 ([空間マッピング](spatial-mapping.md)と[シーンの理解](scene-understanding.md)など)、アンビエント照明、環境サウンド、オブジェクト認識、および場所などをキャプチャします。
 
 <br>
 
+コンピューター、人間、および環境間の相互作用を示すベン図 ![](images/mixed-reality-venn-diagram-300px.png)<br> 
+*イメージ: コンピューター、人間、環境の間の相互作用。*
 
+<br>
 
-:::row:::
-    :::column:::
-        ここで、3つの**コンピューターの処理、人間による入力、および環境入力**のすべてを組み合わせて、真の mixed reality エクスペリエンスを作成する機会を設定します。 物理的な世界への移動は、デジタル世界での動きにつながる可能性があります。 物理的な世界の境界は、デジタル環境でのゲームプレイなどのアプリケーションエクスペリエンスに影響を与える可能性があります。 環境情報を入力しないと、経験によって物理的な現実とデジタルの現実とを組み合わせることはできません。<br>
-        <br>
-        *イメージ: コンピューター、人間、環境の間の相互作用。*
-    :::column-end:::
-        :::column:::
-       ![コンピューター、人間、および環境間の相互作用を示すベン図](images/mixed-reality-venn-diagram-300px.png)<br> 
-    :::column-end:::
-:::row-end:::
+ここで、3つの**コンピューターの処理、人間による入力、および環境入力**のすべてを組み合わせて、真の mixed reality エクスペリエンスを作成する機会を設定します。 物理的な世界への移動は、デジタル世界での動きにつながる可能性があります。 物理的な世界の境界は、デジタル環境でのゲームプレイなどのアプリケーションエクスペリエンスに影響を与える可能性があります。 環境情報を入力しないと、経験によって物理的な現実とデジタルの現実とを組み合わせることはできません。<br>
 
 <br>
 
@@ -72,8 +66,8 @@ Mixed reality は物理的な世界とデジタルの両方の面を融合して
 
 <br>
 
-混合現実のスペクトルを ![](images/MixedRealitySpectrum.jpg)<br>
-*混合現実のスペクトラム*
+混合現実のスペクトルを ![](images/mixedrealityspectrum.png)<br>
+*Image: mixed reality のスペクトル*
 
 <br>
 
@@ -91,15 +85,17 @@ Windows Mixed Reality エクスペリエンスを提供するデバイスには�
 
 <table>
 <tr>
-<th width="20%"> 特性</th><th width="40%"> Holographic デバイス</th><th width="40%"> イマーシブデバイス</th>
+<th width="30%"> 特性</th><th width="35%"> Holographic デバイス</th><th width="35%"> イマーシブデバイス</th>
 </tr><tr>
-<td> デバイスの例</td><td> Microsoft HoloLens<br /> <img alt="Microsoft HoloLens image" width="300" height="169" src="images/mshololens-hero1-whitbg-rgb-300px.png" /></td><td> Acer Windows Mixed Reality Development Edition<br /> <img alt="Acer Windows Mixed Reality Development Edition image" width="300" height="169" src="images/acer-windows-mixed-reality-development-edition-headset-300px.jpg" /></td>
+<td><strong>デバイスの例</strong></td><td> Microsoft HoloLens<br><br> <img alt="Microsoft HoloLens 2 image" width="300" height="169" src="images/HoloLens2.jpg" /></td><td> Samsung HMD Odyssey +<br><br> <img alt="Samsung HMD Odyssey+ image" width="300" height="169" src="images/Samsung-HMD-Odyssey.jpg" /></td>
 </tr><tr>
-<td> [ディスプレイ]</td><td> <i>「」を参照してください。</i> ヘッドセットを装着しているときに、ユーザーが物理環境を確認できるようにします。</td><td> <i>非透過ディスプレイ。</i> ヘッドセットの装着中に物理環境をブロックします。</td>
+<td><strong>Display</strong></td><td> 「」を参照してください。 ヘッドセットを装着しているときに、ユーザーが物理環境を確認できるようにします。</td><td> 非透過ディスプレイ。 ヘッドセットの装着中に物理環境をブロックします。</td>
 </tr><tr>
-<td> 動かす</td><td> 回転と翻訳の両方で、完全に6度の自由な移動。</td><td> 回転と翻訳の両方で、完全に6度の自由な移動。</td>
+<td><strong>動かす</strong></td><td> 回転と翻訳の両方で、完全に6度の自由な移動。</td><td> 回転と翻訳の両方で、完全に6度の自由な移動。</td>
 </tr>
 </table>
+
+
 
 デバイスが別の PC に接続されているかどうか (USB ケーブルまたは Wi-fi 経由)、または自己完結型 (ならでは) であるかどうかは、デバイスが holographic かイマーシブかは反映されません。 確かに、モビリティを向上させる機能によりエクスペリエンスが向上し、holographic デバイスとイマーシブデバイスの両方がテザリングさまたはならではになる可能性があります。
 
@@ -108,8 +104,8 @@ Windows Mixed Reality エクスペリエンスを提供するデバイスには�
 
 <br>
 
-混合現実スペクトルでのデバイスの種類の ![](images/MixedRealitySpectrum-devices.jpg)<br>
-*混合現実のスペクトラムにデバイスが存在する場合*
+混合現実スペクトルでのデバイスの種類の ![](images/Final_WhatIsMixedReality07.png)<br>
+*イメージ: デバイスが混合現実のスペクトラムに存在する*
 
 多くの場合、アプリケーションまたはゲーム開発者が作成しようとしているエクスペリエンスの種類を考えることをお勧めします。 エクスペリエンスは、通常、特定のポイントまたは部分を対象としています。 次に、開発者は、対象とするデバイスの機能を考慮する必要があります。 たとえば、物理的な世界に依存するエクスペリエンスは、HoloLens で最高のパフォーマンスを発揮します。
 * **左側 (ほぼ物理的な現実)。** ユーザーは、物理的な環境内に存在していて、その環境が離れていると信じられることはありません。
@@ -117,7 +113,7 @@ Windows Mixed Reality エクスペリエンスを提供するデバイスには�
 * **右側に (デジタル現実に近い)。** ユーザーは、完全なデジタル環境を体験し、物理的な環境で何が起こっているかを認識していません。
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [ホログラムとは](hologram.md)
 * [Mixed reality の基本を理解する](index.md#understand-the-basics)

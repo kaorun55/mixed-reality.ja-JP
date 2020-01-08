@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 8c60d8291ede123817c93458fff003891169840c
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+keywords: mixed reality, unity, チュートリアル, hololens
+ms.openlocfilehash: fe068d0cfcea369f10e6fa636eb73fecb3002fa7
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105973"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334380"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 3D オブジェクトとの対話
 
@@ -30,9 +30,7 @@ ms.locfileid: "74105973"
 * 近距離操作と遠距離操作について確認する
 * グラブやタッチなど、その他のハンドトラッキングジェスチャについて説明します。
 
-## <a name="instructions"></a>手順
-
-### <a name="organizing-3d-objects-in-a-collection"></a>3D オブジェクトをコレクションに整理する
+## <a name="organizing-3d-objects-in-a-collection"></a>3D オブジェクトをコレクションに整理する
 
 1. 階層を右クリックし、[空の作成] を選択して空の game オブジェクトを作成し、名前を3DObjectCollection に変更して、x = 0、y = 0、z = 0 に配置されていることを確認します。
 
@@ -70,7 +68,7 @@ ms.locfileid: "74105973"
     >[!NOTE]
     >上の図のように、一部のオブジェクトはセンター外にあることがわかります。 これは、プレハブまたはオブジェクトに整列していない子オブジェクトが含まれている可能性があるためです。 オブジェクトの位置や子オブジェクトの位置に必要な調整を自由に加えることで、グリッドを適切に整列させることができます。
 
-### <a name="manipulating-3d-objects"></a>3D オブジェクトの操作
+## <a name="manipulating-3d-objects"></a>3D オブジェクトの操作
 
 1. 立方体を操作する機能を追加します。 3D オブジェクトを操作する機能を追加するには、次の手順を実行します。
     * 階層内で操作する3D オブジェクト (つまり、キューブの1つ) を選択します。
@@ -132,7 +130,7 @@ ms.locfileid: "74105973"
     >[!NOTE]
     >この設定は、スローできるボールを作成するなどのシナリオに役立ちます。 適切なベロシティと角速度を維持して、ボールがリリースされた後も、そのボールがリリースされた速度で移動し続けます。物理的なボールの動作と似ています。
 
-### <a name="adding-bounding-boxes"></a>境界ボックスの追加
+## <a name="adding-bounding-boxes"></a>境界ボックスの追加
 
 境界ボックスを使用すると、直接操作 (ほぼ相互作用) と射線ベースの操作 (遠くのやり取り) の両方で、オブジェクトを1つの手で操作することが簡単になり、直観的になります。境界ボックスは、特定の軸に沿ってオブジェクトを拡大縮小および回転するために取得できるハンドルを提供します。
 
@@ -180,7 +178,7 @@ ms.locfileid: "74105973"
     >[!NOTE]
     >境界ボックスの視覚エフェクトは、再生モードの場合にのみ表示されます。
 
-### <a name="adding-touch-effects"></a>タッチ効果の追加
+## <a name="adding-touch-effects"></a>タッチ効果の追加
 
 この例では、オブジェクトを手でタッチしたときに効果音が再生されるようにします。
 

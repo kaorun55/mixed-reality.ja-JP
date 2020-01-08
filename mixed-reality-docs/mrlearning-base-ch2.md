@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: f0a54bb591479dbe8ffa719cb5e6a9d846f67f9e
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+keywords: mixed reality, unity, チュートリアル, hololens
+ms.openlocfilehash: e961238b8fc7f2ef15bea5f25eba8a8e9eb2ef3e
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539740"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334393"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3. ユーザーインターフェイスを作成し、Mixed Reality Toolkit を構成する
 
@@ -23,13 +23,11 @@ ms.locfileid: "74539740"
 * UI 要素とボタンを使用したホログラムとの対話
 * 基本的な手の追跡の入力と操作
 
-## <a name="instructions"></a>手順
-
-### <a name="how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option"></a>Mixed Reality Toolkit プロファイルを構成する方法 (空間認識表示オプションの変更)
+## <a name="how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option"></a>Mixed Reality Toolkit プロファイルを構成する方法 (空間認識表示オプションの変更)
 
 このセクションでは、空間認識メッシュの表示オプションを調整して、既定の MRTK プロファイルをカスタマイズおよび構成する方法について説明します。 MRTK プロファイル内の設定または値を調整するには、次の同じ原則に従うことができます。
 
-1. BaseScene 階層から Mixed-Reality Toolkit (MRTK) を選択します。 [インスペクター] パネルで、次の図に示すように、Mixed Reality Toolkit スクリプトを探し、アクティブなプロファイルを選択します。 ダブルクリックして開きます。
+1. BaseScene 階層から Mixed-Reality Toolkit (MRTK) を選択します。 [インスペクター] パネルで、次の図に示すように、Mixed Reality Toolkit スクリプトを探し、アクティブなプロファイルを選択します。 これをダブルクリックして開きます。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-1-step1.png)
 
@@ -73,7 +71,7 @@ ms.locfileid: "74539740"
 
 これで終了です。 ここまで、MRTK プロファイル内の設定を変更する方法を学習しました。 見てわかるように、MRTK の設定を変更するには、既定のプロファイルのコピーを作成して編集できるようにする必要があります。 新しい設定でプロファイルを作成する場合、または既定のプロファイルを参照する場合は、既定のプロファイル (編集不可) が常に表示されます。 調整できる設定には多くのものがあります。 MRTK プロファイル設定の完全な参照については、MRTK のドキュメントを参照してください: [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 
-### <a name="hand-tracking-gestures-and-interactable-buttons"></a>手の追跡のジェスチャと操作可能なボタン
+## <a name="hand-tracking-gestures-and-interactable-buttons"></a>手の追跡のジェスチャと操作可能なボタン
 
 このセクションでは、ハンドトラッキングを使用して pressable ボタンを押す方法について説明します。
 
@@ -94,7 +92,7 @@ ms.locfileid: "74539740"
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6a.png)
 
-    ここで、キューブが表示されます。 非常に大きいように見えます。 サイズを縮小するには、[階層] 領域で [キューブ] を選択した状態で、座標を調整します。 小数点以下桁数の値を x = 0.02、y = 0.02、z = 0.02 に設定します。 キューブは、ボタンの近くのシーンに配置してください。ただし、重なっていないようにしてください。 次の図では、キューブの位置は x = 0、y = 0.4、z = 0.2 です。
+    ここで、キューブが表示されます。 非常に大きいように見えます。 サイズを縮小するには、[階層] 領域で [キューブ] を選択した状態で、座標を調整します。 小数点以下桁数の値を x = 0.02、y = 0.02、z = 0.02 に設定します。 キューブは、ボタンの近くのシーンに配置してください。ただし、重なっていないようにしてください。 次の図では、キューブの位置は x = 0、y = 0.04、z = 0.2 です。
 
     ![MR213_BuildSettings](images/mrlearning-base-ch2-2-step6b.png)
 
@@ -129,7 +127,7 @@ ms.locfileid: "74539740"
 
     これで、ボタンが押されたときに、新しい色に変わります。シアン. ボタンが離されると、指定した既定の色 (淡い灰色など) に戻ります。画面の上部にある [再生] ボタンをクリックして、エディターで試してみるか、HoloLens 2 に展開してテストします。 ハンドシミュレーションなど、エディター内のシミュレーションの詳細については、 [Mrtk のシミュレーションに関するドキュメントのページ](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html>)を参照してください。
 
-### <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>MRTK のグリッド オブジェクト コレクションを使用したボタンのパネルの作成
+## <a name="creating-a-panel-of-buttons-using-mrtks-grid-object-collection"></a>MRTK のグリッド オブジェクト コレクションを使用したボタンのパネルの作成
 
 このセクションでは、MRTK の GridObjectCollection ツールを使用して、複数のボタンを適切なユーザーインターフェイスに自動的に配置する方法について説明します。
 
@@ -162,7 +160,7 @@ ms.locfileid: "74539740"
     >[!NOTE]
     >子オブジェクトまたは親オブジェクトの向きによっては、将来のプロジェクトで、向きの設定を異なった方法で調整することが必要になる可能性があります。 また、コレクション内のオブジェクトのサイズによっては、[セルの幅] や [セルの高さ] のフィールドも異なった方法で定義することが必要になる可能性があります。
 
-### <a name="adding-text-into-your-scene"></a>シーンへのテキストの追加
+## <a name="adding-text-into-your-scene"></a>シーンへのテキストの追加
 
 このセクションでは、テキストを Mixed Reality エクスペリエンスに追加したり編集したりする方法を学習します。 まだインストールしていない場合は、[ここ](https://docs.unity3d.com/Packages/com.unity.textmeshpro@2.0/manual/index.html#installation)に記載されている手順に従って、Unity で TextMeshPro が有効になっていることを確認します。
 

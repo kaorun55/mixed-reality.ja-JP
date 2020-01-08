@@ -1,19 +1,19 @@
 ---
-title: モーションコントローラー
+title: モーション コントローラー
 description: Mixed Reality モーションコントローラーの詳細。
 author: wguyman
 ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 6自由コントローラー、モーションコントローラー
-ms.openlocfilehash: 84ebc6c0d7c63e58346b6ee9e565811bc40571b5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: e4b3946401bcc9abfcefeb3e33bb79f01526ba20
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437861"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597675"
 ---
-# <a name="motion-controllers"></a>モーションコントローラー
+# <a name="motion-controllers"></a>モーション コントローラー
 
 :::row:::
     :::column:::
@@ -46,7 +46,7 @@ ms.locfileid: "73437861"
      <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
 </tr>
 <tr>
-     <td>モーションコントローラー</td>
+     <td>モーション コントローラー</td>
      <td>❌</td>
      <td>❌</td>
      <td>✔️</td>
@@ -62,18 +62,18 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
 コントローラーを知り ![には](images/controllerimage-750px.png)<br>
 *コントローラーを知る*
 
-**機能**
+**機能:**
 * 光学式の追跡
 * トリガー
 * グラブボタン
 * スティック
 * タッチパッド
 
-## <a name="setup"></a>セットアップ
+## <a name="setup"></a>[セットアップ]
 
 ### <a name="before-you-begin"></a>始める前に
 
-**次のものが必要です。**
+**以下のものが必要になります。**
 * 2つのモーションコントローラーのセット。
 * 4つの AA バッテリ。
 * Bluetooth 4.0 に対応した PC。
@@ -87,7 +87,7 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
 モーションコントローラーは、他の Bluetooth デバイスと同様に、Windows 設定を使用してホスト PC と結合できます。
 
 1. 2つの AA 乾電池をコントローラーの背面に挿入します。 ここではバッテリカバーをオフのままにします。
-2. 組み込みの Bluetooth ラジオではなく外部 USB Bluetooth アダプターを使用している場合は、先に進む前に、 [bluetooth のベストプラクティス](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)を確認してください。 組み込みのラジオを使用したデスクトップ構成の場合は、アンテナが接続されていることを確認してください。
+2. 組み込みの Bluetooth ラジオではなく外部 USB Bluetooth アダプターを使用している場合は、先に進む前に、 [bluetooth のベストプラクティス](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)を確認してください。 組み込みのラジオを使用したデスクトップ構成の場合は、アンテナが接続されていることを確認します。
 3. [ **Windows**の -> 設定] を開き、bluetooth**またはその他のデバイス** -> **bluetooth**を追加 ** -> 、** "motion controller – Right" と "motion controller – Left" の以前のインスタンスをすべて削除します。 一覧の下部にある [その他のデバイス] カテゴリも確認します。
 4. **[Bluetooth またはその他のデバイスの追加]** を選択すると、bluetooth デバイスの検出が開始されます。
 5. コントローラーの [Windows] ボタンを押してコントローラーをオンにすると、buzzes すると解放されます。
@@ -112,7 +112,7 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
 
 :::row:::
     :::column:::
-        両方のコントローラーを正常にペアリングした後、設定は [**マウス、キーボード、& ペン] カテゴリ**の下のようになります。 <br>
+        両方のコントローラーが正常にペアリングされると、設定は次のようになります。 [**マウス、キーボード、& ペン] カテゴリ**の下に表示されます。 <br>
         <br>
         *画像: モーションコントローラーが接続されました*
     :::column-end:::
@@ -121,7 +121,7 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
     :::column-end:::
 :::row-end:::
 
-ペアリング後にコントローラーがオフになっている場合、それらの状態はペアとして表示されます。 コントローラーが "その他のデバイス" のままになっている場合は、カテゴリのペアリングが部分的に完了していて、コントローラーを機能させるためにもう一度実行する必要があります。
+ペアリング後にコントローラーがオフになっている場合、それらの状態はペアとして表示されます。 コントローラーが "その他のデバイス" カテゴリのままになっている場合は、ペアリングが部分的にしか完了していないため、コントローラーを機能させるにはもう一度実行する必要があります。
 
 ### <a name="updating-controller-firmware"></a>コントローラーのファームウェアを更新しています
 
@@ -146,11 +146,11 @@ Windows Mixed Reality モーションコントローラーは、イマーシブ�
 
 ## <a name="gazing-and-pointing"></a>ガスとポイント
 
-Windows Mixed Reality では、対話、宝石、**コミット**、**ポイントとコミット**の2つの主要なモデルがサポートされています。
+Windows Mixed Reality では、対話のために2つの主要なモデルがサポートされます。**宝石を見つめ、コミット**して、**ポイントアンドコミット**します。
 * ユーザーは、**宝石とコミット**を使用して、オブジェクトを[宝石](gaze-and-commit.md)として選択し、ハンドタップ、ゲームパッド、clicker、または音声を使用してオブジェクトを選択します。
 * **ポイントとコミット**を使用すると、ユーザーは、ポイント対応のモーションコントローラーをターゲットオブジェクトでターゲットにして、コントローラーのトリガーを持つオブジェクトを選択できます。
 
-また、モーションコントローラーを使用したポイントをサポートするアプリでは、可能な場合は、使用する入力デバイスをユーザーが選択できるようにすることもできます。
+また、モーションコントローラーを使用したポイントをサポートするアプリでは、可能な場合は、ユーザーが使用する入力デバイスにユーザーが選択できるようにすることもできます。
 
 ### <a name="managing-recoil-when-pointing"></a>ポイント時の recoil の管理
 
@@ -162,7 +162,7 @@ Windows Mixed Reality では、対話、宝石、**コミット**、**ポイン�
 
 Windows Mixed Reality では、さまざまなフォームファクターでのモーションコントローラーがサポートされています。各コントローラーの設計は、ユーザーの手の形と、アプリがレンダリングするときに使用する自然な "進む" 方向との間の関係で異なります。コントロール.
 
-これらのコントローラーをより適切に表現するために、それぞれの相互作用ソース、**グリップ**の原因、および**ポインター**の種類に対して調査できる2種類の方法があります。
+これらのコントローラーをより適切に表現するために、相互作用ソースごとに調査できる2種類の方法があります。**グリップ**と**ポインター**があります。
 
 ### <a name="grip-pose"></a>グリップの原因
 
@@ -203,9 +203,9 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 <tr>
 <th> 状態の追跡 </th><th> SourceLossRisk </th><th> PositionAccuracy </th><th> TryGetPosition</th>
 </tr><tr>
-<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt; 1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度</b> </td><td style="background-color: green; color: white"> &lt; 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
-<td> <b>高精度 (失われるリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> 高 </td><td style="background-color: green; color: white"> true</td>
+<td> <b>高精度 (失われるリスク)</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: green; color: white"> [高] </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
 <td> <b>おおよその精度</b> </td><td style="background-color: orange"> = = 1.0 </td><td style="background-color: orange"> Approximate </td><td style="background-color: green; color: white"> true</td>
 </tr><tr>
@@ -224,12 +224,12 @@ Windows Mixed Reality では、さまざまなフォームファクターでの�
 ## <a name="interactions-low-level-spatial-input"></a>相互作用: 低レベルの空間入力
 
 ハンズオンコントローラーとモーションコントローラーの間の主要な相互作用は、**選択**、**メニュー**、**つかみ**、**タッチパッド**、**サムスティック**、および**ホーム**です。
-* **選択**は、ホログラムをアクティブにするための主要な相互作用です。これは、プレスとその後のリリースで構成されます。 モーションコントローラーの場合は、コントローラーのトリガーを使用して、選択したプレスを実行します。 選択を実行する他の方法として、[音声コマンド](voice-input.md)"Select" を読み上げます。 同じ選択操作を任意のアプリ内で使用できます。 Select は、マウスクリックと同等のものと考えることができます。これは、1回学習するユニバーサルアクションであり、すべてのアプリに適用されます。
+* **選択**は、ホログラムをアクティブにするための主要な相互作用です。これは、プレスとその後のリリースで構成されます。 モーションコントローラーの場合は、コントローラーのトリガーを使用して、選択したプレスを実行します。 選択を実行する他の方法として、[音声コマンド](voice-input.md)"Select" を読み上げます。 同じ選択操作を任意のアプリ内で使用できます。 Select は、マウスのクリックと同等のものと考えることができます。1回学習してからすべてのアプリに適用する、ユニバーサルアクション。
 * **メニュー**は、オブジェクトを操作するための二次的な相互作用であり、コンテキストメニューを取得したり、他のセカンダリアクションを実行したりするために使用されます。 モーションコントローラーを使用すると、コントローラーの*メニュー*ボタンを使用してメニュー操作を行うことができます。 (例: ハンバーガー "menu" アイコンが付いたボタン)
 * **理解**することは、ユーザーが直接オブジェクトを操作して操作できるようにする方法です。 モーションコントローラーを使用すると、最初に厳密につかんで操作を実行できます。 モーションコントローラーは、グラブボタン、パームトリガー、またはその他のセンサーを使用して、つかみを検出する場合があります。
 * **タッチパッド**を使用すると、ユーザーは、モーションコントローラーのタッチパッドの表面に沿って2つのディメンションのアクションを調整し、タッチパッドの [下へ] をクリックしてアクションをコミットできます。 タッチパッド向けは、押された状態、タッチされた状態、および正規化された XY 座標を提供します。 X と Y の範囲は、円形のタッチパッドの範囲で、中央は (0, 0) です。 X の場合、-1 は左に、1は右側にあります。 Y の場合、-1 が一番下にあり、1が一番上にあります。
 * **サムスティック**を使用すると、ユーザーは、モーションコントローラーのサムスティックを円形の範囲内に移動することで、2つのディメンションのアクションを調整できます。これにより、サムスティック上で [下へ] をクリックしてアクションをコミットできます。 Thumbsticks は、押された状態と正規化された XY 座標も提供します。 X と Y の範囲は、円形のタッチパッドの範囲で、中央は (0, 0) です。 X の場合、-1 は左に、1は右側にあります。 Y の場合、-1 が一番下にあり、1が一番上にあります。
-* **Home**は、[スタート] メニューに戻るために使用される特殊なシステムアクションです。 これは、キーボード上で Windows キーを押すか、Xbox コントローラーの Xbox ボタンを押すことと似ています。 モーションコントローラーの Windows ボタンを押すと、ホームに進むことができます。 "Cortana, 帰宅してください" と言うと、いつでも最初に戻ることができます。 アプリは、システムによって処理されるため、特にホームアクションに対応することはできません。
+* **Home**は、[スタート] メニューに戻るために使用される特殊なシステムアクションです。 これは、キーボード上で Windows キーを押すか、Xbox コントローラーの Xbox ボタンを押すことと似ています。 モーションコントローラーの Windows ボタンを押すと、ホームに進むことができます。 まず、"Cortana, 帰宅してください" と言うと、いつでも開始できます。 アプリは、システムによって処理されるため、特にホームアクションに対応することはできません。
 
 ## <a name="composite-gestures-high-level-spatial-input"></a>複合ジェスチャ: 高度な空間入力
 
@@ -259,7 +259,7 @@ Unity でコントローラーモデルを動的に読み込む方法の詳細�
 
 ### <a name="how-do-i-update-motion-controller-firmware"></a>モーションコントローラーのファームウェアを更新操作方法ますか?
 
-モーションコントローラーのファームウェアはヘッドセットドライバーの一部であり、必要に応じて接続時に自動的に更新されます。 通常、ファームウェアの更新は、Bluetooth ラジオとリンクの品質に応じて1-2 分かかります。 まれに、コントローラーのファームウェアの更新に最大で10分かかる場合があります。これは、Bluetooth 接続や無線の干渉が低いことを示している可能性があります。 接続の問題のトラブルシューティングについて[は、Bluetooth のベストプラクティス](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)に関するガイドを参照してください。 ファームウェアが更新されると、コントローラーが再起動し、ホスト PC に再接続されます (Led が監視に対して明るくなることがあります)。 ファームウェアの更新が中断された場合 (たとえば、コントローラーの電源が切れている場合)、次にコントローラーの電源がオンになったときにもう一度試行されます。
+モーションコントローラーのファームウェアはヘッドセットドライバーの一部であり、必要に応じて、接続時に自動的に更新されます。 通常、ファームウェアの更新は、Bluetooth ラジオとリンクの品質に応じて1-2 分かかります。 まれに、コントローラーのファームウェアの更新に最大で10分かかる場合があります。これは、Bluetooth 接続や無線の干渉が低いことを示している可能性があります。 接続の問題をトラブルシューティングする方法について[は、「Bluetooth のベストプラクティス](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#bluetooth-best-practices)」を参照してください。 ファームウェアの更新後、コントローラーは再起動し、ホスト PC に再接続します (Led が監視に対して明るくなることがあります)。 ファームウェアの更新が中断された場合 (たとえば、コントローラーの電源が切れている場合)、次にコントローラーの電源がオンになったときにもう一度試行されます。
 
 ### <a name="how-i-can-check-battery-level"></a>バッテリレベルを確認するにはどうすればよいですか。
 
@@ -269,7 +269,7 @@ Unity でコントローラーモデルを動的に読み込む方法の詳細�
 
 ユニバーサル Windows アプリケーションでは使用できません。
 
-## <a name="troubleshooting"></a>トラブルシューティング
+## <a name="troubleshooting"></a>[トラブルシューティング]
 
 ファンガイドの「[モーションコントローラーのトラブルシューティング](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality#motion-controllers)」を参照してください。
 
@@ -277,7 +277,7 @@ Unity でコントローラーモデルを動的に読み込む方法の詳細�
 
 "Mixed Reality-> 入力" カテゴリを使用してフィードバックハブに[フィードバックをお](give-us-feedback.md)寄せください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [Unity でのジェスチャとモーション コントローラー](gestures-and-motion-controllers-in-unity.md)
 * [DirectX での手とモーション コントローラー](hands-and-motion-controllers-in-directx.md)
 * [ジェスチャ](gaze-and-commit.md#composite-gestures)

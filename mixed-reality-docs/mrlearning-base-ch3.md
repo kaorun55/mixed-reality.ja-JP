@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: ade7a839e03a306332bf18f1db49805f59c71429
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+keywords: mixed reality, unity, チュートリアル, hololens
+ms.openlocfilehash: e08de0bc769ceda493eafe40158b6aeed87751c7
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064254"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334360"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 動的なコンテンツを配置し、ソルバーを使用する
 
@@ -23,9 +23,7 @@ ms.locfileid: "74064254"
 * ソルバーを使用して、ボタン コレクションにユーザーを追跡させる
 * ソルバーを使用して、追跡されているユーザーの手をゲーム オブジェクトに追跡させる
 
-## <a name="instructions"></a>手順
-
-### <a name="location-of-solvers-in-the-mrtk"></a>MRTK でのソルバーの場所
+## <a name="location-of-solvers-in-the-mrtk"></a>MRTK でのソルバーの場所
 
  プロジェクトで使用可能なソルバーを見つけるには、MRTK SDK フォルダー (MixedRealityToolkit フォルダー) を探します。 次の図に示すように、utilities フォルダーの下に、ソルバーフォルダーが表示されます。
 
@@ -34,7 +32,7 @@ ms.locfileid: "74064254"
 >[!NOTE]
 >このレッスンでは、回転ソルバーと放射 Alview ソルバーの実装についてのみ説明します。 MRTK で利用可能なすべての種類のソルバーの詳細については、次のページを参照してください: [https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)
 
-### <a name="use-a-solver-to-follow-the-user"></a>ソルバーを使用してユーザーを追跡する
+## <a name="use-a-solver-to-follow-the-user"></a>ソルバーを使用してユーザーを追跡する
 
 この章の目的は、以前に作成されたボタンコレクションを拡張して、ユーザーの見つめ方向に従うようにすることです。 以前のバージョンの MRTK と HoloToolkit では、これは tagalong いう機能と呼ばれていました。
 
@@ -50,13 +48,14 @@ ms.locfileid: "74064254"
     >回転コンポーネントを追加すると、システムによって、必要なコンポーネントである、"要素の追加" コンポーネントも追加されることがわかります。
 
 3. ユーザーに従うようにボタンコレクションを構成するには、次の調整を実装する必要があります (以下の図を参照してください)。
+
     * 回転スクリプトで、[方向の種類] ボックスの一覧を [ヨーのみ] に設定します。 これを設定するのは、ユーザーを追跡する際にオブジェクトの 1 つの軸だけが回転するようにするためです。
     * すべての軸で [Local Offset] (ローカル オフセット) を 0 に設定します。 ワールドオフセットを x = 0、y =-0.1、z = 0.6 に設定します。 これにより、オブジェクトの移動がロックされるため、ユーザーが高さを変更したときに、ユーザーが環境について移動したときにユーザーの操作を継続できるようになります。 これらの値を調整して、さまざまな動作を実現できます。
     * ユーザーが十分に離れたところでボタンがユーザーのビューに従うようにするには、次のように、[ワールドオフセットの角度をステップ実行する] チェックボックスをオンにします (注: このタイトルは、次の図のように、一部の画面では切り捨てられる場合があります)。たとえば、オブジェクトが90度ごとにユーザーにのみ従うようにするには、ステップ数を4に設定します (下の例では緑色の矢印でマークされています)。
 
     ![Lesson3 Chapter2 Step3im](images/Lesson3_chapter2_step3im.PNG)
 
-### <a name="enabling-objects-to-follow-tracked-hands"></a>追跡したハンドに従ってオブジェクトを有効にする
+## <a name="enabling-objects-to-follow-tracked-hands"></a>追跡したハンドに従ってオブジェクトを有効にする
 
 このセクションでは、前に作成したキューブゲームオブジェクトを構成して、ユーザーの追跡対象ユーザーに対して、放射 Alview ソルバーを使用します。
 

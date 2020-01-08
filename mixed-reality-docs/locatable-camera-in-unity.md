@@ -6,19 +6,19 @@ ms.author: wguyman
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 写真、ビデオ、hololens、カメラ、unity、お持ちの場合
-ms.openlocfilehash: f0183400f55b1c6663a9a20ab4992befe5ad0718
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: b4a1a7e11a7606dab76b954c8d58a335d6bae0ab
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63515438"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597615"
 ---
 # <a name="locatable-camera-in-unity"></a>Unity でのお持ちのカメラ
 
 ## <a name="enabling-the-capability-for-photo-video-camera"></a>フォトビデオカメラの機能を有効にする
 
 アプリで[カメラ](locatable-camera.md)を使用するには、"WebCam" 機能を宣言する必要があります。
-1. Unity エディターで、[Edit > Project Settings > Player] ページに移動して、windows media player の設定に移動します。
+1. Unity エディターで、[> プロジェクト > 設定の編集] ページに移動して、プレーヤーの設定に移動します。
 2. [Windows ストア] タブをクリックします。
 3. [発行設定 > 機能] セクションで、 **Web カメラ**と**マイク**の機能を確認します。
 
@@ -26,12 +26,12 @@ ms.locfileid: "63515438"
 
 ## <a name="photo-capture"></a>写真のキャプチャ
 
-**名前空間:** *UnityEngine. XR*<br>
-**種類:** *PhotoCapture*
+**名前空間:** *UNITYENGINE. XR*<br>
+**種類:** *photocapture*
 
 *Photocapture*の種類を使用すると、写真ビデオカメラで引き続き写真を撮ることができます。 *Photocapture*を使用して写真を撮影する一般的なパターンを次に示します。
 1. *Photocapture*オブジェクトを作成する
-2. 必要な設定で*CameraParameters*オブジェクトを作成する
+2. 必要な設定を使用して*CameraParameters*オブジェクトを作成する
 3. *Startphotomodeasync*を使用して写真モードを開始する
 4. 目的の写真を撮影する
     * optionalその画像と対話する
@@ -39,9 +39,9 @@ ms.locfileid: "63515438"
 
 ### <a name="common-set-up-for-photocapture"></a>PhotoCapture 用の一般的な設定
 
-3つのすべての使用について、上記と同じ最初の3つの手順から開始します。
+3つのすべての使用について、上記の最初の3つの手順から開始します。
 
-まず、 *Photocapture*オブジェクトを作成します。
+*Photocapture*オブジェクトの作成から開始する
 
 ```cs
 PhotoCapture photoCaptureObject = null;
@@ -51,7 +51,7 @@ PhotoCapture photoCaptureObject = null;
    }
 ```
 
-次に、オブジェクトを保存し、パラメーターを設定して、写真モードを開始します。
+次に、オブジェクトを格納し、パラメーターを設定して、写真モードを開始します。
 
 ```cs
 void OnPhotoCaptureCreated(PhotoCapture captureObject)
@@ -70,7 +70,7 @@ void OnPhotoCaptureCreated(PhotoCapture captureObject)
    }
 ```
 
-最後に、ここで紹介したものと同じクリーンアップコードを使用します。
+最後に、ここに示されているのと同じクリーンアップコードを使用します。
 
 ```cs
 void OnStoppedPhotoMode(PhotoCapture.PhotoCaptureResult result)
@@ -105,7 +105,7 @@ private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
    }
 ```
 
-写真をディスクにキャプチャした後、写真モードを終了し、オブジェクトをクリーンアップします。
+写真をディスクにキャプチャしたら、フォトモードを終了し、オブジェクトをクリーンアップします。
 
 ```cs
 void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)
@@ -128,7 +128,7 @@ Texture2D にデータをキャプチャする場合、プロセスはディス�
 
 上記のセットアッププロセスに従います。
 
-*Onphotomodestarted 開始*したときに、フレームをメモリにキャプチャします。
+*Onphotomodestarted 開始*し、フレームをメモリにキャプチャします。
 
 ```cs
 private void OnPhotoModeStarted(PhotoCapture.PhotoCaptureResult result)
@@ -165,9 +165,9 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 
 ### <a name="capture-a-photo-and-interact-with-the-raw-bytes"></a>写真をキャプチャし、生のバイトを操作する
 
-インメモリフレームの生バイトを操作するには、Texture2D に写真をキャプチャする場合と同じように、上記と*Onphotomodestarted 開始*したときと同じセットアップ手順に従います。 違いは、生のバイトを取得して操作できる*OnCapturedPhotoToMemory*です。
+インメモリフレームの生バイトを操作するには、写真を Texture2D にキャプチャする場合と同じように、上記と*Onphotomodestarted 開始*したときと同じ設定に従います。 違いは、生のバイトを取得して操作できる*OnCapturedPhotoToMemory*です。
 
-この例では、 *setpixels ()* を使用してさらに処理またはテクスチャに適用できる*リスト<Color>* を作成します。
+この例では、 *Setpixels ()* を使用してさらに処理またはテクスチャに適用できる*リスト<Color>* を作成します。
 
 ```cs
 void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptureFrame photoCaptureFrame)
@@ -202,18 +202,18 @@ void OnCapturedPhotoToMemory(PhotoCapture.PhotoCaptureResult result, PhotoCaptur
 
 ## <a name="video-capture"></a>ビデオキャプチャ
 
-**名前空間:** *UnityEngine. XR*<br>
-**種類:** *VideoCapture*
+**名前空間:** *UNITYENGINE. XR*<br>
+**型:** *VideoCapture*
 
 *VideoCapture*は*photocapture*と非常に似ています。 2つの違いは、1秒あたりのフレーム数 (FPS) の値を指定する必要があり、mp4 ファイルとして直接ディスクに保存できることだけです。 *VideoCapture*を使用する手順は次のとおりです。
 1. *VideoCapture*オブジェクトを作成する
-2. 必要な設定で*CameraParameters*オブジェクトを作成する
+2. 必要な設定を使用して*CameraParameters*オブジェクトを作成する
 3. *Startvideomodeasync*を使用してビデオモードを開始する
 4. ビデオの録画を開始する
 5. ビデオ記録の停止
 6. ビデオモードを停止してリソースをクリーンアップする
 
-まず、 *VideoCapture*オブジェクト*VideoCapture m_VideoCapture = null*を作成します。
+まず、 *VideoCapture*オブジェクト VideoCapture m_VideoCapture を作成し*ます。*
 
 ```cs
 void Start ()
@@ -222,7 +222,7 @@ void Start ()
    }
 ```
 
-次に、記録と開始のために必要なパラメーターを設定します。
+次に、記録に使用するパラメーターを設定し、を開始します。
 
 ```cs
 void OnVideoCaptureCreated (VideoCapture videoCapture)
@@ -267,7 +267,7 @@ void OnStartedVideoCaptureMode(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-記録が開始されたら、UI または動作を更新して停止を有効にすることができます。 ここでログを記録します。
+記録が開始されたら、UI または動作を更新して停止を有効にすることができます。 ここでは、ログを記録するだけです。
 
 ```cs
 void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
@@ -277,7 +277,7 @@ void OnStartedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-後で、記録を停止します。 これは、たとえば、タイマーやユーザー入力によって発生する可能性があります。
+後で、記録を停止する必要があります。 これは、たとえば、タイマーやユーザー入力によって発生する可能性があります。
 
 ```cs
 // The user has indicated to stop recording
@@ -303,7 +303,7 @@ void OnStoppedRecordingVideo(VideoCapture.VideoCaptureResult result)
    }
 ```
 
-## <a name="troubleshooting"></a>トラブルシューティング
+## <a name="troubleshooting"></a>[トラブルシューティング]
 * 解決策はありません
     * **Web カメラ**機能がプロジェクトで指定されていることを確認します。
 

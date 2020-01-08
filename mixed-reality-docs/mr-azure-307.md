@@ -1,20 +1,20 @@
 ---
 title: MR と Azure 307-Machine learning
-description: このコースでは、mixed reality アプリケーション内で Azure Machine Learning Studio を実装する方法について説明します。
+description: このコースでは、mixed reality アプリケーション内で Azure Machine Learning Studio (クラシック) を実装する方法について説明します。
 author: drneil
 ms.author: jemccull
 ms.date: 07/04/2018
 ms.topic: article
 keywords: azure, mixed reality, academy, unity, チュートリアル, api, 機械学習, ml, machine learning studio, hololens, イマーシブ, vr
-ms.openlocfilehash: e302e287049cd746a436904c2af2bcc2b0835796
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: d1692faef825d0ee20be4cfc8d8333bcccd754e1
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926618"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75333820"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは、HoloLens 2 に使用されている最新のツールセットまたは相互作用では更新され **_ません_** 。  サポートされているデバイスでの作業を続行するために管理されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
+>Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。  そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。  これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは " **_ありません_** "。  これらは、サポートされているデバイス上で継続して動作するように、保守されます。 今後、HoloLens 2 向けの開発方法を示す新しい一連のチュートリアルが掲載されています。  この通知は、これらのチュートリアルが投稿されたときのリンクと共に更新されます。
 
 <br>
 
@@ -22,13 +22,13 @@ ms.locfileid: "73926618"
 
 ![最終製品-開始](images/AzureLabs-Lab7-0.png)
 
-このコースでは、Azure Machine Learning Studio を使用して Machine Learning (ML) 機能を mixed reality アプリケーションに追加する方法について説明します。
+このコースでは、Azure Machine Learning Studio (クラシック) を使用して Machine Learning (ML) 機能を mixed reality アプリケーションに追加する方法について説明します。
 
-*Azure Machine Learning Studio*は Microsoft のサービスであり、開発者は多数の機械学習アルゴリズムを使用できます。これは、データの入力、出力、準備、および視覚化に役立ちます。 これらのコンポーネントから、予測分析実験を開発し、それを反復処理して、モデルのトレーニングに使用することができます。 次のトレーニングでは、Azure クラウド内でモデルを操作できるようになり、新しいデータをスコア付けできるようになります。 詳細については、 [Azure Machine Learning Studio のページ](https://azure.microsoft.com/services/machine-learning-studio/)を参照してください。
+*Azure Machine Learning Studio (クラシック)* は Microsoft のサービスであり、開発者は大量の機械学習アルゴリズムを使用できます。これは、データの入力、出力、準備、および視覚化に役立ちます。 これらのコンポーネントから、予測分析実験を開発し、それを反復処理して、モデルのトレーニングに使用することができます。 次のトレーニングでは、Azure クラウド内でモデルを操作できるようになり、新しいデータをスコア付けできるようになります。 詳細については、 [Azure Machine Learning Studio (クラシック) のページ](https://azure.microsoft.com/services/machine-learning-studio/)を参照してください。
 
 このコースを完了すると、現実のイマーシブヘッドセットアプリケーションが完成し、次の操作方法を学習できるようになります。
 
-1.  *Azure Machine Learning Studio*ポータルに売上データのテーブルを提供し、人気のあるアイテムの将来の売上を予測するためのアルゴリズムを設計します。
+1.  *Azure Machine Learning Studio (クラシック)* ポータルに売上データのテーブルを提供し、人気のあるアイテムの将来の売上を予測するためのアルゴリズムを設計します。
 2.  ML サービスから予測データを受信して解釈できる**Unity プロジェクト**を作成します。
 3.  Predication データを**Unity プロジェクト**内に視覚的に表示し、最も人気のある販売品目を棚に提供します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "73926618"
 
 <table>
 <tr>
-<th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
+<th>コース</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
 <td> MR と Azure 307: Machine learning</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -49,7 +49,7 @@ ms.locfileid: "73926618"
 > [!NOTE]
 > このコースでは主に Windows Mixed Reality イマーシブ (VR) ヘッドセットに焦点を当てていますが、このコースで学習した内容を Microsoft HoloLens に適用することもできます。 このコースに従うと、HoloLens をサポートするために必要となる可能性のある変更に関する注意事項が表示されます。 HoloLens を使用する場合、音声キャプチャ中にエコーが発生することがあります。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必要条件
 
 > [!NOTE]
 > このチュートリアルは、Unity とC#の基本的な経験を持つ開発者向けに設計されています。 また、このドキュメントに記載されている前提条件と記述に記載されている手順は、作成時にテストおよび検証されたものを表します (2018 年5月)。 [「ツールのインストール](install-the-tools.md)」の記事に記載されているように、最新のソフトウェアを自由に使用できます。ただし、このコースの情報は、以下に記載されているものよりも新しいソフトウェアで見つかったものと完全に一致するとは限りません。
@@ -92,7 +92,7 @@ Azure Translator API を使用するには、アプリケーションで使用�
     1.  アカウントの**名前**を挿入します。このフィールドには数字と小文字のみを使用できることに注意してください。
     2.  [**デプロイモデル] で、** **[リソースマネージャー]** を選択します。
     3.  **[アカウントの種類]** で、 **[ストレージ (汎用 v1)]** を選択します。
-    4.  **[パフォーマンス]** で **[標準]** を選択します。
+    4.  **[パフォーマンス]** では、 **[Standard]** を選択します。
     5.  **レプリケーション**の場合は、 **[読み取りアクセス-geo 冗長ストレージ (RA-GRS)]** を選択します。
     6.  **安全な転送**は無効のまま**に**しておく必要があります。
     7.  **サブスクリプション**を選択します。
@@ -112,13 +112,13 @@ Azure Translator API を使用するには、アプリケーションで使用�
 
     ![Azure Storage アカウントのセットアップ](images/AzureLabs-Lab7-4.png)
 
-## <a name="chapter-2---the-azure-machine-learning-studio"></a>Chapter 2-Azure Machine Learning Studio
+## <a name="chapter-2---the-azure-machine-learning-studio--classic"></a>Chapter 2-Azure Machine Learning Studio (クラシック)
 
 *Azure Machine Learning*を使用するには、アプリケーションで使用できるように Machine Learning サービスのインスタンスを構成する必要があります。
 
 1.  Azure Portal で、左上隅にある **[新規]** をクリックし、 **Machine Learning Studio ワークスペース**を検索して **、enter キーを押します**。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-5.png)
+    ![Azure Machine Learning Studio (クラシック)](images/AzureLabs-Lab7-5.png)
 
 2.  新しいページには、 **Machine Learning Studio ワークスペース**サービスの説明が表示されます。 このプロンプトの左下にある **[作成]** ボタンをクリックして、このサービスとの関連付けを作成します。
 
@@ -146,30 +146,30 @@ Azure Translator API を使用するには、アプリケーションで使用�
 
     10. **[作成]** をクリックします。
 
-        ![Azure Machine Learning Studio](images/AzureLabs-Lab7-6.png)
+        ![Azure Machine Learning Studio (クラシック)](images/AzureLabs-Lab7-6.png)
 
 4.  **[作成]** をクリックした後、サービスが作成されるまで待機する必要があります。これには1分かかることがあります。
 
 5.  サービスインスタンスが作成されると、ポータルに通知が表示されます。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-7.png)
+    ![Azure Machine Learning Studio (クラシック)](images/AzureLabs-Lab7-7.png)
 
 6.  通知をクリックして、新しいサービスインスタンスを探索します。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-8.png)
+    ![Azure Machine Learning Studio (クラシック)](images/AzureLabs-Lab7-8.png)
 
 7.  通知の **[リソースへのジャンプ]** ボタンをクリックして、新しいサービスインスタンスを探索します。
 
 8.  表示されたページの **[追加リンク]** セクションで **[Machine Learning Studio の起動]** をクリックすると、ブラウザーが**Machine Learning Studio**ポータルに送信されます。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-9.png)
+    ![Azure Machine Learning Studio (クラシック)](images/AzureLabs-Lab7-9.png)
 
-9.  右上または中央にある **[サインイン]** ボタンを使用して、Machine Learning Studio にログインします。
+9.  右上または中央にある **[サインイン]** ボタンを使用して、Machine Learning Studio (クラシック) にログインします。
 
-    ![Azure Machine Learning Studio](images/AzureLabs-Lab7-10.png)
+    ![Azure Machine Learning Studio (クラシック)](images/AzureLabs-Lab7-10.png)
 
 
-## <a name="chapter-3---the-machine-learning-studio-dataset-setup"></a>章 3-Machine Learning Studio: データセットのセットアップ
+## <a name="chapter-3---the-machine-learning-studio-classic-dataset-setup"></a>第3章-Machine Learning Studio (クラシック): データセットのセットアップ
 
 Machine Learning アルゴリズムが動作する方法の1つは、既存のデータを分析し、既存のデータセットに基づいて将来の結果を予測することです。 これは一般に、既存のデータが多いほど、将来の結果を予測するアルゴリズムの方が優れていることを意味します。
 
@@ -180,25 +180,25 @@ Machine Learning アルゴリズムが動作する方法の1つは、既存の�
 
 このサンプルデータセットには、2017年の各日の1時間ごとに最適な販売オブジェクトのレコードが含まれています。
         
-![Machine Learning Studio: Dataset のセットアップ](images/AzureLabs-Lab7-11.png)
+![Machine Learning Studio (クラシック): データセットのセットアップ](images/AzureLabs-Lab7-11.png)
 
 たとえば、2017年の午前1時に、1pm (時間 13) では、最も売れた項目がソルトと胡椒になりました。
 
 このサンプルテーブルには、9998のエントリが含まれています。
 
-1.  **Machine Learning Studio**ポータルに戻り、このテーブルを ML の**データセット**として追加します。 これを行うには、画面の左下隅にある **[+ 新規]** ボタンをクリックします。
+1.  **Machine Learning Studio (クラシック)** ポータルに戻り、このテーブルを ML の**データセット**として追加します。 これを行うには、画面の左下隅にある **[+ 新規]** ボタンをクリックします。
 
-    ![Machine Learning Studio: Dataset のセットアップ](images/AzureLabs-Lab7-12.png)
+    ![Machine Learning Studio (クラシック): データセットのセットアップ](images/AzureLabs-Lab7-12.png)
 
 2.  セクションは下部に表示され、左側にナビゲーションパネルがあります。 **[データセット]** をクリックし、右側の **[ローカルファイル]** をクリックします。
 
-    ![Machine Learning Studio: Dataset のセットアップ](images/AzureLabs-Lab7-13.png)
+    ![Machine Learning Studio (クラシック): データセットのセットアップ](images/AzureLabs-Lab7-13.png)
 
 3.  新しい**データセット**をアップロードするには、次の手順を実行します。
 
     1. [アップロード] ウィンドウが表示されます。このウィンドウで、新しいデータセットのハードドライブを**参照**できます。
 
-        ![Machine Learning Studio: Dataset のセットアップ](images/AzureLabs-Lab7-14.png)
+        ![Machine Learning Studio (クラシック): データセットのセットアップ](images/AzureLabs-Lab7-14.png)
 
     2.  選択してアップロードウィンドウに戻ると、チェックボックスはオンのままにしておきます。
 
@@ -208,7 +208,7 @@ Machine Learning アルゴリズムが動作する方法の1つは、既存の�
 
     5.  アップロードウィンドウの右下にあるティックを押すと、**データセット**がアップロードされます。
 
-## <a name="chapter-4---the-machine-learning-studio-the-experiment"></a>Chapter 4-Machine Learning Studio: 実験
+## <a name="chapter-4---the-machine-learning-studio-classic-the-experiment"></a>Chapter 4-Machine Learning Studio (クラシック): 実験
 
 機械学習システムを構築する前に、実験を作成して、データに関する理論を検証する必要があります。 結果によって、さらに多くのデータが必要かどうか、またはデータと考えられる結果の間に相関関係がないかどうかがわかります。
 
@@ -216,39 +216,39 @@ Machine Learning アルゴリズムが動作する方法の1つは、既存の�
 
 1.  ページの左下にある **[+ 新規]** ボタンをクリックし、 **[実験]**  >  **[空の実験]** の順にクリックします。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-15.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-15.png)
 
 2.  空の実験で新しいページが表示されます。
 
 3.  左側のパネルで、[**保存されたデータ**セット > **マイデータセット**] を展開し、 **[Productstablecsv]** を**実験キャンバス**にドラッグします。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-16.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-16.png)
 
 4.  左側のパネルで、[**データ変換** > **サンプルおよび分割**] を展開します。 次に、 **[データの分割]** 項目を**実験キャンバス**にドラッグします。 データの分割項目によって、データセットが2つの部分に分割されます。 機械学習アルゴリズムのトレーニングに使用する1つのパート。 2番目の部分は、生成されたアルゴリズムの精度を評価するために使用されます。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-17.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-17.png)
 
 5.  右側のパネル (キャンバスの [データの分割] 項目が選択されている状態) で、**最初の出力データセットの行の割合**を**0.7**に変更します。 これにより、データは2つの部分に分割され、最初の部分はデータの70% になり、2番目の部分は残りの30% になります。 データがランダムに分割されるようにするには、 **[ランダム分割]** チェックボックスがオンのままになっていることを確認します。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-18.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-18.png)
 
 6.  キャンバスの**Productstablecsv**項目のベースから分割データ項目の一番上に接続をドラッグします。 これにより、項目が接続され、 **Productstablecsv**データセットの出力 (データ) が分割データ入力に送信されます。  
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-19.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-19.png)
 
 7.  左側の**実験**パネルで、[ **Machine Learning** > **トレーニング**] を展開します。 **[モデルのトレーニング]** 項目を実験キャンバスにドラッグします。 キャンバスは次のようになります。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-20.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-20.png)
 
 8.  **[データの分割]** ***項目の左下***から、 **[モデルのトレーニング]** 項目の**右上**に接続をドラッグします。 データセットからの最初の70% の分割は、アルゴリズムをトレーニングするために Train モデルによって使用されます。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-21.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-21.png)
 
 9.  キャンバスで **[モデルのトレーニング]** 項目を選択し、 **[プロパティ]** パネル (ブラウザーウィンドウの右側) で、 **[列セレクターの起動]** ボタンをクリックします。
 
 10. テキストボックスに「 **product** 」と入力し、 **enter**キーを押します。*製品*は、予測をトレーニングするための列として設定されます。 次に、右下隅にある**目盛り**をクリックして、選択ダイアログを閉じます。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-22.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-22.png)
 
 11. **多クラスロジスティック回帰**アルゴリズムをトレーニングして、その日の時間と日付に基づいて販売された**製品**を予測します。 Azure Machine Learning studio によって提供されるさまざまなアルゴリズムの詳細については、このドキュメントでは説明しません。ただし、 [Machine Learning アルゴリズム](https://docs.microsoft.com/azure/machine-learning/studio/algorithm-cheat-sheet)の詳細については、「」を参照してください。
 
@@ -256,7 +256,7 @@ Machine Learning アルゴリズムが動作する方法の1つは、既存の�
 
 13. **多クラスロジスティック回帰**の一番下にある出力を、 **[モデルのトレーニング]** 項目の左上の入力に接続します。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-23.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-23.png)
 
 14. 左側のパネルにある実験項目の一覧で、[ **Machine Learning** > **スコア**] を展開し、[**モデルのスコア**付け] 項目をキャンバスにドラッグします。
 
@@ -264,60 +264,60 @@ Machine Learning アルゴリズムが動作する方法の1つは、既存の�
 
 16. 分割された**データ**から、**モデルのスコア**付け項目の右上の入力に、右下の出力を接続します。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-24.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-24.png)
 
 17. 左側のパネルにある**実験**項目の一覧で、 > **Machine Learning**を展開して **評価** を展開し、**モデルの評価** 項目をキャンバスにドラッグします。
 
 18. **スコアモデル**の出力を、**評価モデル**の左上の入力に接続します。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-25.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-25.png)
 
 19. 最初の Machine Learning 実験を作成しました。 これで、実験を保存して実行できるようになりました。 ページの下部にあるメニューで、 **[保存]** ボタンをクリックして実験を保存し、 **[実行]** をクリックして実験を開始します。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-26.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-26.png)
 
 20. キャンバスの右上にある実験の**状態**を確認できます。 実験が終了するまでしばらく待ちます。
 
     > ビッグ (実際の) データセットがある場合は、実験の実行に時間がかかる可能性があります。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-27.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-27.png)
 
 21. キャンバスで **[モデルの評価]** 項目を右クリックし、コンテキストメニューから、**評価結果**にマウスポインターを移動して、 **[視覚化]** を選択します。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-28.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-28.png)
 
 22. 予測された結果と実際の結果を示す評価結果が表示されます。 これにより、前に分割した元のデータセットの30% がモデルの評価に使用されます。 結果が最適ではないことがわかります。各行の最大数が列の強調表示された項目になるのが理想的です。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-29.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-29.png)
 
 23. **結果**を閉じます。
 
 24. 新しくトレーニングされた Machine Learning モデルを使用するには、 **Web サービス**として公開する必要があります。 これを行うには、ページの下部にあるメニューの **[Web サービスの設定]** メニュー項目をクリックし、 **[予測 Web サービス]** をクリックします。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-30.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-30.png)
 
 25. 新しいタブが作成され、新しい web サービスを作成するためにトレーニングモデルが結合されます。 
 
 26. ページの下部にあるメニューで **[保存]** をクリックし、 **[実行]** をクリックします。 実験キャンバスの右上隅に更新された状態が表示されます。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-31.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-31.png)
 
 27. 実行が完了すると、 **[Web サービスのデプロイ]** ボタンがページの下部に表示されます。 これで、web サービスをデプロイする準備が整いました。 ページの下部にあるメニューで、[ **Deploy Web Service** (クラシック)] をクリックします。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-32.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-32.png)
 
     > ブラウザーでポップアップ**を許可する**ように求められる場合があります。ただし、デプロイ ページが表示されない場合は、 **Web サービスのデプロイ** をもう一度クリックする必要があります。 
 
 28. 実験が作成されると、 **API キー**が表示される**ダッシュボード**ページにリダイレクトされます。 その時点でメモ帳にコピーします。コードですぐに必要になります。 API キーを書き留めたら、キーの下にある **[既定のエンドポイント]** セクションの **[要求/応答]** ボタンをクリックします。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-33.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-33.png)
 
     > [!NOTE] 
     > このページで [テスト] をクリックすると、入力データを入力して出力を表示できるようになります。 **日付**と**時刻**を入力します。 **製品**エントリを空白のままにします。 次に、 **[確認]** ボタンをクリックします。 ページの下部にある出力には、各製品が選択されている可能性を表す JSON が表示されます。
 
-29. 新しい web ページが開き、Machine Learning Studio に必要な要求構造に関する指示といくつかの例が表示されます。 このページに表示されている**要求 URI**をメモ帳にコピーします。
+29. 新しい web ページが開き、Machine Learning Studio (クラシック) で必要とされる要求構造に関する指示といくつかの例が表示されます。 このページに表示されている**要求 URI**をメモ帳にコピーします。
 
-    ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-34.png)
+    ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-34.png)
 
 これで、過去の購入データに基づいて販売される可能性の高い製品を提供する機械学習システムが構築されました。これは、その年の日付と時刻に関連付けられています。
 
@@ -334,7 +334,7 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
 
 1.  **Unity**を開き、MR\_を持つ q&a という名前の新しい unity プロジェクトを作成し**ます。** プロジェクトの種類が**3d**に設定されていることを確認します。
 
-2.  Unity を開いている場合は、[既定の**スクリプトエディター** ] が**Visual Studio**に設定されていることを確認する必要があります。 [ > の**設定**の**編集**] に移動し、新しいウィンドウで **[外部ツール]** に移動します。 **外部スクリプトエディター**を**Visual Studio 2017**に変更します。 **[基本設定]** ウィンドウを閉じます。
+2.  既定値を確認する必要が開いている Unity、 **スクリプト エディター** に設定されている **Visual Studio** します。 [ > の**設定**の**編集**] に移動し、新しいウィンドウで **[外部ツール]** に移動します。 変更 **External Script Editor** に **Visual Studio 2017** します。 **[基本設定]** ウィンドウを閉じます。
 
 3.  次に、[**ファイル** > **ビルド設定**] に移動し、[プラットフォームの***切り替え***] ボタンをクリックして、プラットフォームを**ユニバーサル Windows プラットフォーム**に切り替えます。
 
@@ -531,7 +531,7 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
 
 3.  新しい**Productprediction**スクリプトをダブルクリックして、 **Visual Studio 2017**で開きます。
 
-4.  [**ファイルの変更が検出されまし**た] ダイアログボックスが表示されたら、[ソリューションの**再読み込み**] をクリックします。
+4.  場合、**ファイル変更の検出**ダイアログ ポップアップ、 をクリック ***ソリューションの再読み込み**します。
 
 5.  ProductPrediction クラスの先頭に次の名前空間を追加します。
 
@@ -648,9 +648,9 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
     > [!IMPORTANT]
     > Machine Learning ポータルから、**主キー**と**要求-応答のエンドポイント**を、ここでの変数に挿入してください。 次の画像は、キーとエンドポイントを取得した場所を示しています。 
     >  
-    > ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-53-1.png)
+    > ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-53-1.png)
     >
-    > ![Machine Learning Studio: 実験](images/AzureLabs-Lab7-53-2.png)
+    > ![Machine Learning Studio (クラシック): 実験](images/AzureLabs-Lab7-53-2.png)
 
 8.  このコードを**Start ()** メソッド内に挿入します。 **Start ()** メソッドは、クラスの初期化時に呼び出されます。
 
@@ -851,7 +851,7 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
 
 2.  Visual Studio を開いた状態で、NuGet パッケージを復元する必要があります。これを行うには、MachineLearningLab_Build ソリューションを右クリックし、(Visual Studio の右側にある) ソリューションエクスプローラーから [NuGet パッケージの復元] をクリックします。
 
-    ![NuGet パッケージの追加](images/AzureLabs-Lab7-57.png)
+    ![NuGet パッケージを追加します。](images/AzureLabs-Lab7-57.png)
 
 3.  ソリューション構成で、 **[デバッグ]** を選択します。
 
@@ -861,7 +861,7 @@ Mixed Reality のイマーシブヘッドセットをセットアップしてテ
     > - HoloLens の**IP アドレス**を確認します。これは、 *[設定 > ネットワーク & インターネット > Wi-fi > 詳細オプション]* にあります。IPv4 は、使用するアドレスです。 
     > - **開発者モード**が**オンに**なっていることを確認します。*開発者向けのセキュリティ > の更新プログラム & の > の設定*にあります。
 
-    ![NuGet パッケージの追加](images/AzureLabs-Lab7-58.png)
+    ![NuGet パッケージを追加します。](images/AzureLabs-Lab7-58.png)
 
 5.  [**ビルド] メニュー**の **[ソリューションの配置]** をクリックして、アプリケーションを PC にサイドロードします。
 
@@ -874,9 +874,9 @@ Mixed Reality アプリケーションを実行すると、Unity シーンで設
  
 これで、Azure Machine Learning を活用してデータ予測を行い、シーンに表示する mixed reality アプリを構築しました。
 
-![NuGet パッケージの追加](images/AzureLabs-Lab7-0.png)
+![NuGet パッケージを追加します。](images/AzureLabs-Lab7-0.png)
 
-## <a name="exercise"></a>今回
+## <a name="exercise"></a>演習
 
 **演習1**
 

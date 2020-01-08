@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b033e4f9a379fb1778da3d94da70262e073d141b
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+keywords: mixed reality, unity, チュートリアル, hololens
+ms.openlocfilehash: 3127ffceea08202fe9d978ad77f8fddb6fba60a3
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926519"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334375"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7. 旧暦モジュールサンプルアプリケーションを作成する
 
@@ -25,9 +25,7 @@ ms.locfileid: "73926519"
 - 剛体の物理学と力を使用する
 - ヒントの使用を調査する
 
-## <a name="instructions"></a>手順
-
-### <a name="configuring-the-lunar-module"></a>月着陸船の構成
+## <a name="configuring-the-lunar-module"></a>月着陸船の構成
 
 このセクションでは、サンプルエクスペリエンスを作成するために必要なさまざまなコンポーネントについて説明します。
 
@@ -38,7 +36,7 @@ ms.locfileid: "73926519"
 
     ![Lesson6 Chapter1 Step1im](images/Lesson6_Chapter1_step1im.PNG)
 
-    階層内でロケット Launcher_Tutorial game オブジェクトを展開し、旧暦モジュールオブジェクトをさらに展開すると、"x 射線" という素材を持ついくつかの子オブジェクトが検索されます。 "X 射線" のマテリアルでは、ユーザーの配置ヒントとして使用される半透明色を使用できます。 
+    階層内でロケット Launcher_Tutorial game オブジェクトを展開し、旧暦モジュールオブジェクトをさらに展開すると、"x 射線" という素材を持ついくつかの子オブジェクトが検索されます。 "X 射線" のマテリアルでは、ユーザーの配置ヒントとして使用される半透明色を使用できます。
 
     ![Lesson6 Chapter1.txt のターゲット](images/Lesson6_Chapter1_noteaim.PNG)
 
@@ -81,7 +79,7 @@ ms.locfileid: "73926519"
 
     ![Lesson6 Chapter1 Step6im](images/Lesson6_Chapter1_step6im.PNG)
 
-### <a name="lunar-module-parts-overview"></a>旧暦モジュールパーツの概要
+## <a name="lunar-module-parts-overview"></a>旧暦モジュールパーツの概要
 
 旧暦モジュールパーツの親オブジェクトは、ユーザーが操作するオブジェクトのコレクションです。 シーンがかっこで囲まれた Game オブジェクト名は、次の一覧に示されています。
 
@@ -106,7 +104,7 @@ ms.locfileid: "73926519"
 
 オーディオソースが自動的にグラブされます。
 
-### <a name="configuring-the-placement-hints-button"></a>配置ヒントボタンの構成
+## <a name="configuring-the-placement-hints-button"></a>配置ヒントボタンの構成
 
 [レッスン 2](mrlearning-base-ch2.md)では、項目の色を変更したり、プッシュ時に音を鳴らすようにしたりするためのボタンを配置および構成する方法について学習しました。 ここでは配置のヒントを切り替えるためのボタンを構成するため、これらの原則を引き続き使用します。
 
@@ -120,7 +118,7 @@ ms.locfileid: "73926519"
 
     ![Lesson6 Chapter3 Step2im](images/Lesson6_Chapter3_step2im.PNG)
 
-### <a name="configuring-the-reset-button"></a>[リセット] ボタンの構成
+## <a name="configuring-the-reset-button"></a>[リセット] ボタンの構成
 
 ユーザーが誤ってオブジェクトを破棄したり、エクスペリエンスをリセットしたりする場合があります。 [リセット] ボタンをクリックすると、エクスペリエンスを再起動する機能が追加されます。
 
@@ -137,7 +135,7 @@ ms.locfileid: "73926519"
     >[!NOTE]
     >既定では、BroadcastMessage は ResetPlacement に構成されていることに注意してください。 これにより、RocketLauncher_Tutorial のすべての子オブジェクトに対して ResetPlacement という名前のメッセージがブロードキャストされます。 ResetPlacement () のメソッドを持つオブジェクトは、位置をリセットすることによって、そのメッセージに応答します。
 
-### <a name="configuring-the-launch-button"></a>[起動] ボタンの構成
+## <a name="configuring-the-launch-button"></a>[起動] ボタンの構成
 
 ここでは、[起動] ボタンを構成する方法について説明します。このボタンを使用すると、ユーザーはボタンをクリックして、スペースで旧暦モジュールを起動することができます。
 
@@ -161,6 +159,6 @@ ms.locfileid: "73926519"
 
     ![Lesson6 Chapter5 Step6im](images/Lesson6_Chapter5_step6im.PNG)
 
-### <a name="congratulations"></a>結論
+## <a name="congratulations"></a>結論
 
 このアプリケーションは完全に構成されています。 ここで、[再生] をクリックすると、旧暦モジュールを完全に組み立て、ヒントを切り替えることができます。また、旧暦モジュールを起動してリセットし、再起動することもできます。

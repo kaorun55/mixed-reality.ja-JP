@@ -5,36 +5,49 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: defa33e56cfe4450a8d42855bd11dc23973dc401
-ms.sourcegitcommit: b6b76275fad90df6d9645dd2bc074b7b2168c7c8
+keywords: mixed reality, unity, チュートリアル, hololens
+ms.openlocfilehash: 05728cf090b2e998e92980816943a2c3bef18dfb
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2019
-ms.locfileid: "73913442"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334297"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1. 音声認識と議事録の統合と使用
 
-このチュートリアルでは、Azure Cognitive Services Speech SDK と HoloLens 2 の使用方法を紹介する Mixed Reality アプリケーションを作成します。 このチュートリアルシリーズを終了すると、デバイスのマイクを使用して、音声をリアルタイムでテキストにしたり、音声を他の言語に翻訳したり、音声認識機能を活用して音声コマンドを理解したりすることができます。人工知能。
+## <a name="overview"></a>概要
+
+このチュートリアルでは、Azure Cognitive Services Speech SDK と HoloLens 2 の使用方法を紹介する Mixed Reality アプリケーションを作成します。 このチュートリアルシリーズを完了すると、デバイスのマイクを使用して、音声をリアルタイムでテキストにしたり、音声を他の言語に変換したり、音声認識 SDK の目的機能を活用して、人工の音声コマンドを理解したりすることができます。高度.
 
 ## <a name="objectives"></a>目標
 
-- Azure Speech SDK を HoloLens 2 アプリケーションに統合する方法について説明します
-- 音声コマンドの使用方法について説明します。
-- 音声をテキストに変換する機能の使用方法について説明します。
+* Azure Speech SDK を HoloLens 2 アプリケーションに統合する方法について説明します
+* 音声コマンドの使用方法について説明します。
+* 音声をテキストに変換する機能の使用方法について説明します。
 
-## <a name="instructions"></a>手順
+## <a name="prerequisites"></a>必要条件
 
-### <a name="getting-started"></a>作業の開始
+>[!TIP]
+>[概要チュートリアル](mrlearning-base.md)シリーズをまだ完了していない場合は、まずこれらのチュートリアルを完了することをお勧めします。
 
-1. Unity を起動し、新しいプロジェクトを作成します。 Project name Speech SDK Learning モジュールを入力します。 プロジェクトを保存する場所を選択します。 次に、[プロジェクトの作成] をクリックします。
+* 適切な[ツールがインストール](install-the-tools.md)されている WINDOWS 10 PC
+* Windows 10 SDK 10.0.18362.0 以降
+* 基本的なC#プログラミング機能
+* [開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens 2 デバイス
+
+>[!IMPORTANT]
+>このチュートリアルシリーズでは<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a>が必要であり、推奨されるバージョンは unity 2019.1.14 です。 これは、前にリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
+
+## <a name="getting-started"></a>はじめに
+
+1. Unity を起動し、新しいプロジェクトを作成します。 Project name Speech SDK Learning モジュールを入力します。 プロジェクトを保存する場所を選択します。 [プロジェクトの作成] をクリックします。
 
     ![Module2Chapter3step1im](images/module4chapter1step1im.PNG)
 
     >[!NOTE]
     >上の図に示すように、テンプレートが3D に設定されていることを確認します。
 
-2. [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [foundation パッケージバージョン 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)をダウンロードし、PC 上のフォルダーに保存します。 Unity プロジェクトにパッケージをインポートします。 これを行う方法の詳細については、入門チュートリアルのレッスン2を参照してください[。プロジェクトと最初のアプリケーションを初期化して](mrlearning-base-ch1.md)います。
+2. [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) の Unity [ Foundation パッケージ バージョン 2.1.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage) をダウンロードし、PC 上のフォルダーに保存します。 Unity プロジェクトにパッケージをインポートします。 これを行う方法の詳細については、入門チュートリアルの「レッスン2」を参照してください[。プロジェクトと最初のアプリケーションを初期化して](mrlearning-base-ch1.md)います。
 
 3. Unity 資産パッケージ用の Azure [SPEECH SDK](https://aka.ms/csspeech/unitypackage)をダウンロードしてインポートします。 [アセット] をクリックし、[パッケージのインポート]、[カスタムパッケージ] の順に選択して、Speech SDK パッケージをインポートします。 先ほどダウンロードした Speech SDK パッケージを検索し、それを開いてインポートプロセスを開始します。
 
@@ -42,11 +55,11 @@ ms.locfileid: "73913442"
 
     ![mrlearning-speech-ch1-1-step3b](images/mrlearning-speech-ch1-1-step3b.png)
 
-4. 次のポップアップウィンドウで [インポート] をクリックして、Speech SDK パッケージのインポートを開始します。 次の図に示すように、すべての項目がオンになっていることを確認します。
+4. 次のポップアップウィンドウで [インポート] をクリックして、Speech SDK パッケージのインポートを開始します。 次の図に示すように、すべての項目がチェックされていることを確認します。
 
     ![mrlearning-speech-ch1-1-step4](images/mrlearning-speech-ch1-1-step4.png)
 
-5. Speech SDK モジュールアセットパックをダウンロードします。[このリンク](https://github.com/microsoft/MixedRealityLearning/releases/tag/Speech_2)をクリックして、Lunarcom パッケージとしても知られています。 Lunarcom 資産パッケージは、このレッスンシリーズ用に開発された資産とスクリプトのコレクションであり、Azure の Speech SDK の実際の使用方法を示しています。 これは、入門チュートリアルで開発した太陰暦モジュールのアセンブリエクスペリエンスに最終的にインターフェイスを提供する音声コマンドターミナルです[。レッスン 7.旧暦モジュールサンプルアプリケーションを作成する](mrlearning-base-ch6.md)。
+5. [このリンク](https://github.com/microsoft/MixedRealityLearning/releases/tag/Speech_2)をクリックして、"Lunarcom" パッケージとも呼ばれる Speech SDK モジュールアセットパックをダウンロードします。 Lunarcom 資産パッケージは、このレッスンシリーズ用に開発された資産とスクリプトのコレクションであり、Azure の Speech SDK の実際の使用方法を示しています。 これは、入門チュートリアルで開発した太陰暦モジュールのアセンブリエクスペリエンスに最終的にインターフェイスを提供する音声コマンドターミナルです[。レッスン 7.旧暦モジュールサンプルアプリケーションを作成する](mrlearning-base-ch6.md)。
 
 6. Mixed Reality Toolkit と Speech SDK をインポートする場合と同様の手順に従って、Lunarcom 資産パッケージを Unity プロジェクトにインポートします。
 
@@ -65,7 +78,7 @@ ms.locfileid: "73913442"
     >[!NOTE]
     >プロジェクトに MRTK を追加した後にシーンで Play を押すと、再生モードにならない場合は、Unity の再起動が必要になることがあります。
 
-9. シーン階層で MixedRealityToolkit オブジェクトを選択した状態で、[インスペクター] パネルの [& のコピー] をクリックして [複製プロファイル] ポップアップを開きます。 [複製プロファイル] ポップアップで、カスタムプロファイルに適切な名前 (たとえば、Custom HoloLens2ConfigurationProfile) を入力し、[複製] をクリックしてカスタム構成プロファイルを作成し、アクティブなプロファイルとして設定します。
+9. シーン階層で MixedRealityToolkit オブジェクトを選択した状態で、[インスペクター] パネルの [& のコピー] をクリックして [複製プロファイル] ポップアップを開きます。 [複製プロファイル] ポップアップで、カスタムプロファイルに適切な名前 (たとえば、Custom HoloLens2ConfigurationProfile) を入力します。 [複製] をクリックしてカスタム構成プロファイルを作成し、アクティブなプロファイルとして設定します。
 
     ![mrlearning-speech-ch1-1-step9](images/mrlearning-speech-ch1-1-step9.png)
 
@@ -73,7 +86,7 @@ ms.locfileid: "73913442"
 
     ![mrlearning-speech-ch1-1-step10](images/mrlearning-speech-ch1-1-step10.png)
 
-11. このチュートリアルでは、音声認識と議事録に入力音声コマンドを使用します。 入力プロファイルを複製して、音声設定を変更できます。
+11. このチュートリアルでは、音声認識と議事録に入力音声コマンドを使用します。 音声設定を変更するために、入力プロファイルを複製してみましょう。
 
     シーン階層で MixedRealityToolkit オブジェクトを選択した状態で、[インスペクター] パネルの [小さい複製] ボタンをクリックして、[複製プロファイル] ポップアップを開きます。 [複製プロファイル] ポップアップで、カスタムプロファイルに適切な名前 (たとえば、Custom HoloLens2InputSystemProfile) を入力し、[複製] をクリックしてカスタム入力システムプロファイルを作成し、アクティブなプロファイルとして設定します。
 
@@ -107,7 +120,7 @@ ms.locfileid: "73913442"
 
 19. 階層で、左側の矢印をクリックして Lunarcom_Base オブジェクトを展開します。 その後、次の図に示すように、子オブジェクト "ターミナル" に対して同じ操作を行います。
 
-20. Lunarcom_Base を選択した状態で、次の図に示すように、階層の Lunarcom テキストをクリックして、[インスペクター] パネルの LunarcomController コンポーネントの出力テキストスロットにドラッグします。
+20. Lunarcom_Base を選択した状態で、次の図に示すように、階層の Lunarcom テキストをクリックして、[インスペクター] パネルの [LunarcomController] コンポーネントの出力テキストスロットにドラッグします。
 
 21. ターミナルオブジェクトをターミナルスロットに、接続光オブジェクトを接続ライトコントローラースロットに対して同じ操作を行います。
 
@@ -129,7 +142,7 @@ ms.locfileid: "73913442"
 
     ![Module4Chapter1step18im](images/module4chapter1step22im.PNG)
 
-### <a name="build-your-application-to-your-device"></a>デバイスへのアプリケーションのビルド
+## <a name="build-your-application-to-your-device"></a>デバイスへのアプリケーションのビルド
 
 1. [ファイル > ビルドの設定] に移動して、[ビルドの設定] ウィンドウを再び開きます。
 
@@ -150,17 +163,17 @@ ms.locfileid: "73913442"
     ![mrlearning-ch1-2-手順6](images/mrlearning-speach-ch1-2-step6.jpg)
 
     >[!NOTE]
-    >ビルドが失敗した場合は、もう一度構成してみるか、Unity を再起動してから再度ビルドしてください。 "エラー: CS0246 = 型または名前空間名" XX "が見つかりませんでした (using ディレクティブまたはアセンブリ参照がないことを確認してください)" というエラーが表示された場合は、 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)のインストールが必要になることがあります。
+    >ビルドが失敗した場合は、もう一度構成してみるか、Unity を再起動してから再度ビルドしてください。 "エラー: CS0246 = 型または名前空間名" XX "が見つかりませんでした (using ディレクティブまたはアセンブリ参照が不足していることを確認してください)" というエラーが表示された場合は、 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)のインストールが必要になることがあります。
 
 7. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 ".Sln" ソリューションファイルをダブルクリックして、Visual Studio でソリューションファイルを開きます。
 
     >[!NOTE]
-    >必ず、新しく作成したフォルダー (つまり、前の手順で名前付け規則に従っている場合は、[App] フォルダー) を開いてください。そのフォルダーの外部に同じような名前の .sln ファイルがあり、ビルド フォルダー内の .sln ファイルと混同してはならないためです。 
+    >新しく作成されたフォルダー (前の手順の名前付け規則に従っている場合は "App" フォルダー) を必ず開いてください。これは、ビルドフォルダー内の .sln ファイルとは異なる、同じ名前の .sln ファイルがそのフォルダー外に存在するためです。 
 
     ![mrlearning-ch1-2-step7](images/mrlearning-speach-ch1-2-step7.jpg)
 
     >[!NOTE]
-    >Visual Studio から新しいコンポーネントをインストールするよう求められたら、少し時間を取って、[「ツールのインストール」ページ](install-the-tools.md)で示されている、前提条件となるすべてのコンポーネントがインストールされていることを確認してください
+    >Visual Studio で新しいコンポーネントのインストールを求められた場合は、 [[ツールのインストール] ページ](install-the-tools.md)で指定したとおりにすべての前提条件コンポーネントがインストールされていることを確認します。
 
 8. USB ケーブルを使って HoloLens 2 を PC に接続します。 これらのレッスンの手順では、HoloLens 2 デバイスを使ってテストをデプロイすることを前提としていますが、[HoloLens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイすることも、[サイドローディング用のアプリ パッケージ](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)を作成することもできます
 

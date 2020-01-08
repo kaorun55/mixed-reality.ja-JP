@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b740c463e3d73d5df9b996562e9ff0a1952703f0
-ms.sourcegitcommit: f2b7c6381006fab6d0472fcaa680ff7fb79954d6
+keywords: mixed reality, unity, チュートリアル, hololens
+ms.openlocfilehash: 75a14697953026474d8ca00e6473145d7b12a482
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064322"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334350"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 詳細な入力オプションを調査する
 
@@ -23,9 +23,7 @@ ms.locfileid: "74064322"
 - 追跡したハンドを使用して、追跡したハンドでテクスチャと3D オブジェクトをパンする
 - HoloLens 2 の監視機能を活用してオブジェクトを選択する
 
-## <a name="instructions"></a>手順
-
-### <a name="enabling-voice-commands"></a>音声コマンドの有効化
+## <a name="enabling-voice-commands"></a>音声コマンドの有効化
 
 このセクションでは、2つの音声コマンドが実装されています。 まず、[診断の切り替え] を表示することによって、フレームレート診断パネルを切り替える機能が導入されました。 次に、音声コマンドでサウンドを再生する機能について説明します。 まず、音声コマンドの構成を担当する MRTK プロファイルと設定を確認します。
 
@@ -108,7 +106,7 @@ ms.locfileid: "74064322"
 
     ![Lesson5 Chapter1.txt Step16im](images/Lesson5_chapter1_step16im.PNG)
 
-### <a name="the-pan-gesture"></a>パン ジェスチャ
+## <a name="the-pan-gesture"></a>パン ジェスチャ
 
 このセクションでは、パンジェスチャの使用方法について説明します。 これは、指またはハンドを使用してコンテンツをスクロールすることでスクロールする場合に便利です。 また、パンジェスチャを使用して、オブジェクトの回転、3D オブジェクトのコレクションの反復処理、または 2D UI のスクロールを行うこともできます。
 
@@ -194,7 +192,7 @@ ms.locfileid: "74064322"
 
     ![mrlearning-base-ch5-2-step10d](images/mrlearning-base-ch5-2-step10d.png)
 
-### <a name="eye-tracking"></a>視線追跡
+## <a name="eye-tracking"></a>視線追跡
 
 このセクションでは、デモで目の追跡を有効にする方法について説明します。 3D メニュー項目が目の gazed になったときに、その項目をゆっくりと回転させます。 また、見つめられた項目が選択されると、楽しい効果がトリガーされるようにします。
 
