@@ -7,22 +7,22 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 視線入力, 視線入力ターゲット設定, 対話, 設計, 手に近い, HoloLens
-ms.openlocfilehash: e0b0e6273917df071f49eb0108039ebe204bbc12
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: d263c84d306a2ece3783c2e7fb0e3f599dec49eb
+ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105943"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694176"
 ---
 # <a name="direct-manipulation-with-hands"></a>手で直接操作
 
-![Button](images/UX/UX_Hero_Manipulation.jpg)
+![ボタン](images/UX/UX_Hero_Manipulation.jpg)
 
 直接操作は、ホログラムに手で直接触れる入力モデルです。 この概念の背景にある考え方は、オブジェクトを現実の世界と同じように動かすことです。 ボタンを押してオンにしたり、オブジェクトをつかんで手に取ったりできます。2D コンテンツは仮想タッチスクリーンのように動作します。 このため、直接操作はユーザーにとって学びやすく、楽しくもあります。 直接操作は、"近接" 入力モデルと考えられており、手の届く範囲にあるコンテンツの操作に最適です。
 
 直接操作はアフォーダンスをベースとしているので、操作が簡単です。 ユーザーは象徴的なジェスチャを学ぶ必要はありません。 すべての対話は、触ったりつかんだりできる視覚的要素を中心に構築されています。
 
-## <a name="device-support"></a>デバイスのサポート
+## <a name="device-support"></a>デバイス サポート
 
 <table>
 <colgroup>
@@ -178,7 +178,7 @@ HoloLens 2 では、ユーザーの手が、左右の手の骨格モデルとし
 
 ## <a name="2d-slate-interaction"></a>2D スレートとの対話
 
-2D スレートは、Web ブラウザーなどの 2D アプリ コンテンツをホストするホログラフィック コンテナーです。 直接操作による 2D スレートとの対話の設計概念は、物理的なタッチ画面との対話という概念的モデルを利用するというものです。
+2D [スレート](slate.md)は、Web ブラウザーなどの 2D アプリ コンテンツをホストするホログラフィック コンテナーです。 直接操作による 2D スレートとの対話の設計概念は、物理的なタッチ画面との対話という概念的モデルを利用するというものです。
 
 ### <a name="to-interact-with-the-slate-contact"></a>スレートとの接触は、次のように操作します。
 
@@ -334,7 +334,7 @@ AR の手と VR のモーション コントローラーとの間には、操作
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [頭の視線入力とコミット](gaze-and-commit.md)
 * [手を使ったポイントとコミット](point-and-commit.md)

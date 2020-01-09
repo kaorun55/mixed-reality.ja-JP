@@ -7,12 +7,12 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 対話, 設計, HoloLens, 手, 遠隔, ポイントとコミット
-ms.openlocfilehash: 77c596f5250240d436529e879434a8f508b06732
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: c7952338c6937e42889a08ee37f6ce8bc1bb9ad3
+ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105990"
+ms.lasthandoff: 12/24/2019
+ms.locfileid: "75334059"
 ---
 # <a name="point-and-commit-with-hands"></a>手を使ったポイントとコミット
 
@@ -20,7 +20,7 @@ ms.locfileid: "74105990"
 
 手を使ったポイントとコミットは、ユーザーが手の届かない所にある 2D コンテンツや 3D オブジェクトをターゲットに設定したり、選択したり、操作したりすることを可能にする入力モデルです。 この "遠隔" 対話技術は Mixed Reality に固有のものであり、人間が現実の世界と自然に対話するためのものではありません。 たとえば、スーパー ヒーロー映画 *X-Men* のキャラクター [Magneto ](https://en.wikipedia.org/wiki/Magneto_(comics)) は、遠くにある物体に手を伸ばして操作することができます。 こうしたことは現実世界では行えません。 HoloLens (AR) と Mixed Reality (MR) を使用することで、この魔法の力をユーザーに付与してホログラフィック コンテンツをただ楽しむだけでなく、ユーザーの対話をより効果的かつ効率的にするために現実世界の物理的制約を打ち破ることができます。
 
-## <a name="device-support"></a>デバイスのサポート
+## <a name="device-support"></a>デバイス サポート
 
 <table>
 <colgroup>
@@ -202,7 +202,7 @@ HoloLens 2 では、ユーザーの手のひらの中心から放出される手
 ---
 
 ## <a name="hand-ray-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 向け MRTK (Mixed Reality ツールキット) のハンド レイ
-既定で、MRTK には、シェルのシステム ハンド レイと同じ表示状態のハンド レイ プレハブ ([DefaultControllerPointer.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Pointers)) が備わっています。 これは、[ポインター] にある MRTK の入力プロファイルに割り当てられています。 Windows Mixed Reality イマーシブ ヘッドセットでは、モーション コントローラーにも同じレイが使用されています。
+既定で、MRTK には、シェルのシステム ハンド レイと同じ表示状態のハンド レイ プレハブ ([DefaultControllerPointer.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Pointers)) が備わっています。 これは、[ポインター] にある MRTK の入力プロファイルに割り当てられています。 Windows Mixed Reality イマーシブ ヘッドセットでは、モーション コントローラーにも同じ光線が使用されています。
 
 * [MRTK - ポインター プロファイル](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html#pointer-configuration)
 * [MRTK - 入力システム](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)
@@ -211,7 +211,7 @@ HoloLens 2 では、ユーザーの手のひらの中心から放出される手
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [手で直接操作](direct-manipulation.md)
 * [視線入力とコミット](gaze-and-commit.md)
 * [手 - 直接操作](direct-manipulation.md)

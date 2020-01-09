@@ -7,12 +7,12 @@ ms.date: 2/11/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新, ツール, はじめに, 基本, unity, visual studio, ツールキット
-ms.openlocfilehash: 7687576eb0c786a12bd0e14fa81f66c9918653e7
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 7dde2e90a3e1057a0b5ac33be1ddeed70bf79788
+ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940880"
+ms.lasthandoff: 01/01/2020
+ms.locfileid: "75597645"
 ---
 # <a name="install-the-tools"></a>ツールのインストール
 
@@ -32,12 +32,12 @@ Mixed Reality アプリの作成を開始する最も簡単な方法として、
 ## <a name="installation-checklist"></a>インストールのチェックリスト
 
 
-| ツール | 説明 | 説明 |
+| ツール | 説明 | メモ |
 |---------|---------|---------|
-| ![Windows ロゴ](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10**<br>(手動インストールのリンク)</a> | お使いの PC のオペレーティング システムが、Mixed Reality アプリケーションの構築対象プラットフォームと一致するように、Windows 10 の最新バージョンをインストールしてください。 | **Windows 10 のインストール** <br> <ul><li>[設定] の [Windows Update] を利用するか、インストール メディアを作成して (左の列のリンクを使用して)、Windows 10 の最新バージョンをインストールできます。<li>Windows 10 の各リリースで使用可能な最新の Mixed Reality 機能については、[最新のリリース ノート](release-notes-october-2018.md)を参照してください。</ul> [設定] > [更新とセキュリティ] > [開発者向け] から、**PC で開発者モードを有効にします**。 <br><br> **エンタープライズ管理および会社管理の PC の場合の注意事項:** お使いの PC が組織の IT 部門によって管理されている場合、更新するために管理者への連絡が必要な場合があります。 <br><br> **Windows の 'N' バージョン:** Windows Mixed Reality イマーシブ (VR) ヘッドセットは、Windows の 'N' バージョンではサポートされていません。 |
-| ![Visual Studio のロゴ](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019 (16.2 以降)**<br>(インストールのリンク)</a> | 完全な機能を備えた Windows などの統合開発環境 (IDE) です。 コードの記述、デバッグ、テスト、配置には、Visual Studio を使用します。 | **インストールするワークロード:** <ul><li>C++ によるデスクトップ開発</li><li>ユニバーサル Windows プラットフォーム (UWP) の開発</li></ul>**Unity に関する注意事項:** 特定の目的のために意図的により新しいバージョンの (LTS 以外の) Unity をインストールしようとしているのでなければ、Visual Studio のインストールの一部として Unity ワークロードをインストールする*のではなく*、下記のように Unity の 2018.4 LTS ストリームをインストールすることをお勧めします。<br> <br>**注:** Visual Studio 2019 バージョン 16.0 での Mixed Reality アプリのデバッグに関して既知の問題がいくつかあります。  Visual Studio 2019 を必ずバージョン 16.2 以降に更新してください。 |
-| ![Windows ロゴ](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com//windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)**<br>(手動インストールのリンク)</a> | HoloLens 2 で Windows 10 アプリを作成するための最新のヘッダー、ライブラリ、メタデータ、ツールが用意されています。 | HoloLens 2 アプリを構築するには、ビルド 18362 以降の Windows SDK をインストールする必要があります。<br> <br> デスクトップの Windows Mixed Reality ヘッドセットまたは HoloLens (第 1 世代) 用のアプリケーションのみを開発している場合は、Visual Studio 2017 によってインストールされた Windows SDK を使用することができます。 |
-| ![Visual Studio のロゴ](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2112589" target="_blank">**HoloLens 2 エミュレーター (2019 年 12 月の更新プログラム)**<br>(インストールのリンク:10.0.18362.1042)</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens (第 1 世代) エミュレーター**<br>(インストールのリンク:10.0.17763.134)</a> | エミュレーターを使用すると、物理的な HoloLens を使用せずに、HoloLens 仮想マシン イメージ上でアプリケーションを実行できます。<br> <br> | エミュレーターの使用を開始する方法については、「[Using the HoloLens emulator (HoloLens エミュレーターを使用する)](using-the-hololens-emulator.md)」を参照してください。<br> <br> エミュレーターのインストールを成功させるには、**ご使用のシステムが Hyper-V をサポートしている必要があります**。 詳細については、以下の「システム要件」セクションを参照してください。 <br>|
+| ![Windows ロゴ](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10** (手動インストールのリンク)</a> | お使いの PC のオペレーティング システムが、Mixed Reality アプリケーションの構築対象プラットフォームと一致するように、Windows 10 の最新バージョンをインストールしてください。 | **Windows 10 のインストール** <br> <ul><li>[設定] の [Windows Update] を利用するか、インストール メディアを作成して (左の列のリンクを使用して)、Windows 10 の最新バージョンをインストールできます。<li>Windows 10 の各リリースで使用可能な最新の Mixed Reality 機能については、[最新のリリース ノート](release-notes-october-2018.md)を参照してください。</ul> [設定] > [更新とセキュリティ] > [開発者向け] から、**PC で開発者モードを有効にします**。 <br><br> **エンタープライズ管理および会社管理の PC の場合の注意事項:** お使いの PC が組織の IT 部門によって管理されている場合、更新するために管理者への連絡が必要な場合があります。 <br><br> **Windows の 'N' バージョン:** Windows Mixed Reality イマーシブ (VR) ヘッドセットは、Windows の 'N' バージョンではサポートされていません。 |
+| ![Visual Studio のロゴ](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019 (16.2 以降)** (インストールのリンク)</a> | 完全な機能を備えた Windows などの統合開発環境 (IDE) です。 コードの記述、デバッグ、テスト、配置には、Visual Studio を使用します。 | **インストールするワークロード:** <ul><li>C++ によるデスクトップ開発</li><li>ユニバーサル Windows プラットフォーム (UWP) の開発</li></ul>**Unity に関する注意事項:** 特定の目的のために意図的により新しいバージョンの (LTS 以外の) Unity をインストールしようとしているのでなければ、Visual Studio のインストールの一部として Unity ワークロードをインストールする*のではなく*、下記のように Unity の 2018.4 LTS ストリームをインストールすることをお勧めします。<br> <br>**注:** Visual Studio 2019 バージョン 16.0 での Mixed Reality アプリのデバッグに関して既知の問題がいくつかあります。  Visual Studio 2019 を必ずバージョン 16.2 以降に更新してください。 |
+| ![Windows ロゴ](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com//windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)** (手動インストールのリンク)</a> | HoloLens 2 で Windows 10 アプリを作成するための最新のヘッダー、ライブラリ、メタデータ、ツールが用意されています。 | HoloLens 2 アプリを構築するには、ビルド 18362 以降の Windows SDK をインストールする必要があります。<br> <br> デスクトップの Windows Mixed Reality ヘッドセットまたは HoloLens (第 1 世代) 用のアプリケーションのみを開発している場合は、Visual Studio 2017 によってインストールされた Windows SDK を使用することができます。 |
+| ![Visual Studio のロゴ](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2112589" target="_blank">**HoloLens 2 エミュレーター (2019 年 12 月の更新プログラム)** (インストールのリンク:10.0.18362.1042)</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens (第 1 世代) エミュレーター** (インストールのリンク:10.0.17763.134)</a> | エミュレーターを使用すると、物理的な HoloLens を使用せずに、HoloLens 仮想マシン イメージ上でアプリケーションを実行できます。<br> <br> | エミュレーターの使用を開始する方法については、「[Using the HoloLens emulator (HoloLens エミュレーターを使用する)](using-the-hololens-emulator.md)」を参照してください。<br> <br> エミュレーターのインストールを成功させるには、**ご使用のシステムが Hyper-V をサポートしている必要があります**。 詳細については、以下の「システム要件」セクションを参照してください。 <br>|
 
 ## <a name="choose-your-engine"></a>エンジンの選択
 
@@ -96,7 +96,7 @@ HoloLens と Windows Mixed Reality イマーシブ (VR) ヘッドセットの両
 <tr>
 <th></th><th> 最小</th><th> 推奨</th>
 </tr><tr>
-<td> 処理者</td><td> <b>ノートブック:</b>Intel Mobile Core i5 第 7 世代 CPU、ハイパー スレッディング対応デュアルコア <b>デスクトップ:</b>Intel Desktop i5 第 6 世代 CPU、ハイパー スレッディング対応デュアルコア<b>または</b> AMD FX4350 4.2GHz クワッドコア相当</td><td> <b>デスクトップ:</b>Intel Desktop i7 第 6 世代 (6 コア) <b>または</b> AMD Ryzen 5 1600 (6 コア、12 スレッド)</td>
+<td> プロセッサ</td><td> <b>ノートブック:</b>Intel Mobile Core i5 第 7 世代 CPU、ハイパー スレッディング対応デュアルコア <b>デスクトップ:</b>Intel Desktop i5 第 6 世代 CPU、ハイパー スレッディング対応デュアルコア<b>または</b> AMD FX4350 4.2GHz クワッドコア相当</td><td> <b>デスクトップ:</b>Intel Desktop i7 第 6 世代 (6 コア) <b>または</b> AMD Ryzen 5 1600 (6 コア、12 スレッド)</td>
 </tr><tr>
 <td> GPU</td><td> <b>ノートブック:</b>NVIDIA GTX 965M、AMD RX 460M (2 GB) 相当またはそれ以上の DX12 対応 GPU <b>デスクトップ:</b>NVIDIA GTX 960/1050、AMD Radeon RX 460 (2GB) 相当またはそれ以上の DX12 対応 GPU</td><td><b>デスクトップ:</b>NVIDIA GTX 980/1060、AMD Radeon RX 480 (2GB) 相当またはそれ以上の DX12 対応 GPU</td>
 </tr><tr>
@@ -106,11 +106,11 @@ HoloLens と Windows Mixed Reality イマーシブ (VR) ヘッドセットの両
 </tr><tr>
 <td> グラフィックス表示ポート</td><td colspan="2"> ヘッドセット用の使用可能なグラフィックス ディスプレイ ポート (60 Hz ヘッドセットの場合は HDMI 1.4 または DisplayPort 1.2、90 Hz ヘッドセットの場合は HDMI 2.0 または DisplayPort 1.2) x 1</td>
 </tr><tr>
-<td> 画面の解像度</td><td colspan="2"> 解決策:SVGA (800 x 600) 以上のビットの深度:1 ピクセルあたり 32 ビット色</td>
+<td> 画面の解像度</td><td colspan="2"> 解像度:SVGA (800 x 600) 以上のビットの深度:1 ピクセルあたり 32 ビット色</td>
 </tr><tr>
 <td> メモリ</td><td> 8&#160;GB 以上の RAM</td><td> 16 GB 以上の RAM</td>
 </tr><tr>
-<td> ストレージ</td><td colspan="2"> &gt;10 GB の追加の空き領域</td>
+<td> 記憶域</td><td colspan="2"> &gt;10 GB の追加の空き領域</td>
 </tr><tr>
 <td> USB ポート</td><td colspan="2"> ヘッドセット (USB 3.0 Type-A) の使用可能な USB ポート x 1<b>メモ:USB は、最低 900 mA を給電する必要があります</b></td>
 </tr><tr>
@@ -118,10 +118,10 @@ HoloLens と Windows Mixed Reality イマーシブ (VR) ヘッドセットの両
 </tr>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [開発の概要](development.md)
-* [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)
+* [HoloLens エミュレーターを使用する](using-the-hololens-emulator.md)
 * [Windows Mixed Reality シミュレーターを使用する](using-the-windows-mixed-reality-simulator.md)
 * [Unity 開発の概要](unity-development-overview.md)
 * [Unreal 開発の概要](unreal-development-overview.md)
