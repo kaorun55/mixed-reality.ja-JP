@@ -1,18 +1,14 @@
-# 最新情報 
+# 新機能 
 ## [最新情報](news.md)
 ## [アプリを HL2 用に準備する](mrtk-porting-guide.md)
 ## [Azure Services について](azure-services.md)
 ## プログラムとイベント
-### [Mixed Reality Dev Days](mr-dev-days.md)
-#### [Mixed Reality Dev Days セッション](mr-dev-days-sessions.md)
-#### [Mixed Reality Dev Days に関する FAQ](mr-dev-days-faq.md)
 ### [サンフランシスコ Reactor Academy イベント予定表](sf-academy-events.md)
-### [CVPR 2018 HoloLens Research モード セッション](cvpr-2018.md)
-### [コンピューター ビジョン調査用のツールとしての ECCV 2018 HoloLens](eccv-2018.md)
 ### [CVPR 2019 Mixed Reality ワークショップ](cvpr-2019.md)
 ## [最新の Mixed Reality のリリース ノート](release-notes-may-2019.md)
+## [コミュニティ リソース](community.md)
 ## [このドキュメントに寄稿する](CONTRIBUTING.md)
-# Discover
+# [探索]
 ## [Mixed Reality の概要](index.md)
 ## [デザイン プロセスを展開する](case-study-expanding-the-design-process-for-mixed-reality.md)
 ## [ケース スタディ ギャラリー](case-studies-overview.md)
@@ -24,6 +20,7 @@
 ### [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)
 ### [技術者向けガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [場所に基づいたエンターテインメント](location-based-experiences.md)
+## [コミュニティ リソース](community.md)
 # 設計
 ## [設計とプロトタイプ作成を始める](design.md)
 ## [この設計ガイダンスについて](about-this-design-guidance.md)
@@ -91,7 +88,7 @@
 #### [Billboard と Tag-along](billboarding-and-tag-along.md)
 #### [進行状況を表示する](progress.md)
 #### [表面吸着](surface-magnetism.md)
-## 参考資料
+## 参照情報
 ### [Unity について学習する](https://learn.unity.com/)
 ### [Mixed Reality ツールキット](https://github.com/Microsoft/MixedRealityToolkit-Unity)
 ### [Mixed Reality Design Labs](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)
@@ -168,7 +165,7 @@
 ##### [MR と Azure 313:IoT Hub サービス](mr-azure-313.md)
 ## Unity
 ### [Unity 開発の概要](unity-development-overview.md)
-### 概要
+### はじめに
 #### [Mixed Reality Toolkit v2 の概要](mrtk-getting-started.md)
 #### [Windows Mixed Reality 用に Unity プロジェクトを構成する](Configure-Unity-Project.md)
 #### [Unity で推奨される設定](recommended-settings-for-unity.md)
@@ -203,7 +200,7 @@
 ### [Edge での WebVR を Windows Mixed Reality と共に使用する](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## ネイティブ
 ### [ネイティブ開発の概要](directx-development-overview.md)
-### 概要
+### はじめに
 #### [ネイティブ ホログラフィック プロジェクトを作成する](creating-a-holographic-directx-project.md)
 #### [HolographicSpace を入手する](getting-a-holographicspace.md)
 #### [ネイティブ レンダリング](rendering-in-directx.md)
@@ -249,7 +246,7 @@
 #### [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)
 #### [Visual Studio を使用してデプロイおよびデバッグする](using-visual-studio.md)
 #### [HoloLens でアプリをテストする](testing-your-app-on-hololens.md)
-#### [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)
+#### [HoloLens エミュレーターを使用する](using-the-hololens-emulator.md)
 #### [Windows Mixed Reality シミュレーターを使用する](using-the-windows-mixed-reality-simulator.md)
 #### [高度な HoloLens エミュレーターと Mixed Reality Simulator の入力](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
 #### [HoloLens エミュレーターのアーカイブ](hololens-emulator-archive.md)
