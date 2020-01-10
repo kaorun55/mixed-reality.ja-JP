@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、billboarding、タグ
-ms.openlocfilehash: ff2b1ce20174b1b9aecbb90b1d1dc3e8896b3761
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 24c4ca8bdc3c6ea1081311102204d4a7f5a95425
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143131"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723181"
 ---
 # <a name="billboarding-and-tag-along"></a>Billboarding とタグに沿って
 
@@ -46,7 +46,7 @@ Billboarding が有効になっているオブジェクトは、ユーザーの�
 
 ---
 
-## <a name="billboarding-and-tag-along-in-mrtkmixed-reality-toolkit-for-unity"></a>Billboarding とタグ-Unity の MRTK (Mixed Reality Toolkit)
+## <a name="billboarding-and-tag-along-in-mrtk-mixed-reality-toolkit-for-unity"></a>Billboarding とタグ-Unity の MRTK (Mixed Reality Toolkit)
 **[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、Billboarding とタグに沿った動作のスクリプトが用意されています。 Billboard.cs スクリプトを任意のオブジェクトに割り当てて、billboarding の動作を追加し、オブジェクトが常に顔になるようにします。 タグに沿った動作を追加するには、RadialView.cs スクリプトを使用します。 Lerping time、distance、次数などのさまざまなオプションを調整できます。
 
 * [MRTK-放射状ビューのソルバー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html#radialview)
@@ -57,23 +57,23 @@ Billboarding が有効になっているオブジェクトは、ユーザーの�
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [カーソル](cursors.md)
-* [ハンドレイ](point-and-commit.md)
+* [ハンド レイ](point-and-commit.md)
 * [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [操作性](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [ハンド メニュー](hand-menu.md)
-* [Near メニュー](near-menu.md)
+* [メニューの近く](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
 * [音声コマンド](voice-input.md)
 * [キーボード](keyboard.md)
-* [ボタン](tooltip.md)
-* [翻訳](slate.md)
+* [ヒント](tooltip.md)
+* [スレート](slate.md)
 * [スライダー](slider.md)
 * [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
-* [表面の吸着](surface-magnetism.md)
+* [表面吸着](surface-magnetism.md)

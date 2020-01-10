@@ -6,12 +6,12 @@ ms.author: jennyk
 ms.date: 06/06/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、対話、ui、ux
-ms.openlocfilehash: 73c8a3ce9e01f580ecbae23f2178871642c4540e
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: 87979d2d7b7de4a384b42b5059239e9b830a92e8
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143258"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723231"
 ---
 # <a name="interactable-object"></a>対話型オブジェクト
 
@@ -140,8 +140,8 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
 
 :::row:::
     :::column:::
-        ![[Default]](images/640px-interactibleobject-pressablebutton-default.jpg)<br>
-        **[Default]**<br>
+        ![[既定]](images/640px-interactibleobject-pressablebutton-default.jpg)<br>
+        **[既定]**<br>
     :::column-end:::
     :::column:::
         ホバー](images/640px-interactibleobject-pressablebutton-hover.jpg) ![<br>
@@ -157,8 +157,8 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
         Ripple 効果を表示します。
     :::column-end:::
     :::column:::
-        ![押す](images/640px-interactibleobject-pressablebutton-press.jpg)<br>
-        <bpt id="p1">**</bpt>Press<ept id="p1">**</ept><br>
+        ![ショートカット キー](images/640px-interactibleobject-pressablebutton-press.jpg)<br>
+        **ショートカット キー**<br>
         前面プレートを移動します。
     :::column-end:::
 :::row-end:::
@@ -175,7 +175,7 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
         *ビデオループ: 境界ボックスとの近接度に基づくビジュアルフィードバックの例*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ](images/HoloLens2_Proximity.gif) における視覚的フィードバックの ![<br>
     :::column-end:::
 :::row-end:::
@@ -216,7 +216,7 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
 ---
 
 
-## <a name="sizing-recommendations"></a>サイズ設定の推奨事項 
+## <a name="sizing-recommendations"></a>サイズ設定に関する推奨事項 
 
 すべての対話型オブジェクトをユーザーが簡単に操作できるようにするには、ユーザーからの距離に基づいて、対話型が最小サイズ (視覚的な弧の角度で測定されることが多い) を満たしていることを確認することをお勧めします。 視覚的な角度は、ユーザーの視点とオブジェクトの間の距離に基づいており、一定のままになります。一方、ターゲットの物理的なサイズは、ユーザーからの距離が変化すると変化する可能性があります。 ユーザーからの距離に基づいてオブジェクトの必要な物理サイズを判断するには、[この](https://elvers.us/perception/visualAngle/)ような視覚的な角度計算ツールを使用します。
 
@@ -225,7 +225,7 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
 
 ### <a name="target-size-for-direct-hand-interaction"></a>ダイレクトハンド操作のターゲットサイズ
 
-| 単位 | 表示角度 | サイズ |
+| [距離] | 表示角度 | サイズ |
 |---------|---------|---------|
 | 45cm  | 2°未満 | 1.6 x 1.6 cm |
 
@@ -238,7 +238,7 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
 
 直接対話するためのボタンを作成する場合は、3.2 x 3.2 cm の最小サイズを大きくすることをお勧めします。これにより、アイコンと一部のテキストを格納するための十分な領域が確保されます。
 
-| 単位 | 最小サイズ |
+| [距離] | 最小サイズ |
 |---------|---------|
 | 45cm  | 3.2 x 3.2 cm |
 
@@ -248,7 +248,7 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
 <br>
 
 ### <a name="target-size-for-hand-ray-or-gaze-interaction"></a>ハンドレイまたは宝石の相互作用の目標サイズ
-| 単位 | 表示角度 | サイズ |
+| [距離] | 表示角度 | サイズ |
 |---------|---------|---------|
 | 2分  | 1°未満 | 3.5 x 3.5 cm |
 
@@ -261,12 +261,12 @@ HoloLens 2 では、オブジェクトを操作できるようにするための
 ---
 
 
-## <a name="interactable-object-in-mrtkmixed-reality-toolkit-for-unit"></a>Unit 用の MRTK (Mixed Reality Toolkit) の対話型オブジェクト
+## <a name="interactable-object-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) の対話型オブジェクト
 
 **[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** では、スクリプト[**対話型**](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Interactable/Scripts)を使用して、オブジェクトがさまざまな種類の入力相互作用状態に応答するようにすることができます。 さまざまな種類のテーマをサポートしており、色、サイズ、素材、シェーダーなどのオブジェクトプロパティを制御することにより、視覚的な状態を定義できます。
 
 * [対話型](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Interactable.html)
-* [Button](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
+* [ボタン](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Button.html)
 * [ハンド操作の例シーン](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_HandInteractionExamples.md)
 
 MixedRealityToolkit の標準シェーダーには、ビジュアルおよびオーディオキューを作成するのに役立つ**近接光**などのさまざまなオプションが用意されています。
@@ -278,23 +278,23 @@ MixedRealityToolkit の標準シェーダーには、ビジュアルおよびオ
 ---
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [カーソル](cursors.md)
-* [ハンドレイ](point-and-commit.md)
-* [Button](button.md)
+* [ハンド レイ](point-and-commit.md)
+* [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [操作性](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [ハンド メニュー](hand-menu.md)
-* [Near メニュー](near-menu.md)
+* [メニューの近く](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
 * [音声コマンド](voice-input.md)
 * [キーボード](keyboard.md)
-* [ボタン](tooltip.md)
-* [翻訳](slate.md)
+* [ヒント](tooltip.md)
+* [スレート](slate.md)
 * [スライダー](slider.md)
 * [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
-* [表面の吸着](surface-magnetism.md)
+* [表面吸着](surface-magnetism.md)

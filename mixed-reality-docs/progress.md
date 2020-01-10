@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、設計、コントロール、ui、ux
-ms.openlocfilehash: 4befaa6f55bff6a820c976db969fdad7b64a2214
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: d028b8717dae0e04a9a1104a8a4b7803023334ef
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143253"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723211"
 ---
 # <a name="progress-indicator"></a>進行状況インジケーター
 
@@ -37,7 +37,7 @@ ms.locfileid: "74143253"
         *イメージ: HoloLens での進行状況バーの例*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        HoloLens](images/640px-progressbar.jpg) の進行状況バーの例 ![<br>
     :::column-end:::
 :::row-end:::
@@ -54,7 +54,7 @@ ms.locfileid: "74143253"
         *イメージ: HoloLens での進行状況リングの例*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        HoloLens](images/640px-progressring.jpg) での ![の進行状況リングの例<br>
     :::column-end:::
 :::row-end:::
@@ -71,7 +71,7 @@ ms.locfileid: "74143253"
         *イメージ: HoloLens でのカスタムメッシュの例の進行状況*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        HoloLens](images/640px-progresscustom.jpg) でカスタムメッシュの例を使用して進行状況を ![<br>
     :::column-end:::
 :::row-end:::
@@ -88,7 +88,7 @@ ms.locfileid: "74143253"
 
 ---
 
-## <a name="progress-indicator-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用 MRTK (Mixed Reality Toolkit) の進行状況インジケーター
+## <a name="progress-indicator-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 用 MRTK (Mixed Reality Toolkit) の進行状況インジケーター
 
 * [MRTK-進行状況インジケーター prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/ProgressIndicators)
 * [MRTK-シーン移行サービス](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Extensions/SceneTransitionService/SceneTransitionServiceOverview.html)
@@ -98,23 +98,23 @@ ms.locfileid: "74143253"
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [カーソル](cursors.md)
-* [ハンドレイ](point-and-commit.md)
+* [ハンド レイ](point-and-commit.md)
 * [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [操作性](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [ハンド メニュー](hand-menu.md)
-* [Near メニュー](near-menu.md)
+* [メニューの近く](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
 * [音声コマンド](voice-input.md)
 * [キーボード](keyboard.md)
-* [ボタン](tooltip.md)
-* [翻訳](slate.md)
+* [ヒント](tooltip.md)
+* [スレート](slate.md)
 * [スライダー](slider.md)
 * [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
-* [表面の吸着](surface-magnetism.md)
+* [表面吸着](surface-magnetism.md)

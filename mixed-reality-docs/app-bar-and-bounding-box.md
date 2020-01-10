@@ -6,12 +6,12 @@ ms.author: adlinv
 ms.date: 06/07/2019
 ms.topic: article
 keywords: Windows Mixed Reality、アプリバー、境界ボックス
-ms.openlocfilehash: e4f519cba459efac25f6c1370b07fcda4def30a1
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: dab41207c2558fe8bb3fe07fca666cb2668f4e45
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143172"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723201"
 ---
 # <a name="bounding-box-and-app-bar"></a>境界ボックスとアプリバー
 ![境界は、Mixed Reality でのオブジェクト操作の標準インターフェイスです。](images/UX/UX_Hero_BoundingBox.jpg)<br>
@@ -29,7 +29,7 @@ ms.locfileid: "74143172"
         *ビデオループ: 境界ボックスを使用したオブジェクトのスケーリング*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        境界ボックスを使用してオブジェクトをスケーリングする ![HoloLens ポイント](images/HoloLens2_BoundingBox.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -44,7 +44,7 @@ ms.locfileid: "74143172"
         *ビデオループ: 境界ボックスを使用したオブジェクトの回転*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        境界ボックスを使用してオブジェクトを回転する ![HoloLens ポイント](images/HoloLens2_BoundingBox_Rotate.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -59,7 +59,7 @@ ms.locfileid: "74143172"
         *ビデオループ: 境界ボックスとの近接度に基づくビジュアルフィードバックの例*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ](images/HoloLens2_Proximity.gif) における視覚的フィードバックの ![<br>
     :::column-end:::
 :::row-end:::
@@ -84,7 +84,7 @@ ms.locfileid: "74143172"
         *ビデオループ: ホログラムの周りをたどると、アプリバーが次のようになります。*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
        ホログラムの周りを ![。 アプリバーは次のようになります。](images/HoloLens2_AppBarFollowing.gif)<br>
     :::column-end:::
 :::row-end:::
@@ -92,7 +92,7 @@ ms.locfileid: "74143172"
 <br>
 
 
-## <a name="bounding-box-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) の境界ボックス
+## <a name="bounding-box-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) の境界ボックス
 **[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、境界ボックスとアプリバーのスクリプトと prefabs が用意されています。 BoundingBox.cs スクリプトを任意のオブジェクトに割り当てるだけで、境界ボックスを追加できます。
 
 * [MRTK-境界ボックス](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)
@@ -103,23 +103,23 @@ ms.locfileid: "74143172"
 ---
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [カーソル](cursors.md)
-* [ハンドレイ](point-and-commit.md)
+* [ハンド レイ](point-and-commit.md)
 * [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [操作性](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [ハンド メニュー](hand-menu.md)
-* [Near メニュー](near-menu.md)
+* [メニューの近く](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
 * [音声コマンド](voice-input.md)
 * [キーボード](keyboard.md)
-* [ボタン](tooltip.md)
-* [翻訳](slate.md)
+* [ヒント](tooltip.md)
+* [スレート](slate.md)
 * [スライダー](slider.md)
 * [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
-* [表面の吸着](surface-magnetism.md)
+* [表面吸着](surface-magnetism.md)

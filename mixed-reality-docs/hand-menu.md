@@ -6,12 +6,12 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: ハンド、メニュー、ボタン、クイックアクセス、レイアウト
-ms.openlocfilehash: c53fdc4ea6f3243cf906ee1916a9c234d0fce6ca
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: c0e1800be69a15706e17f40b1601fc79d05e5d75
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143176"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723261"
 ---
 # <a name="hand-menu"></a>ハンドメニュー
 
@@ -26,15 +26,15 @@ ms.locfileid: "74143176"
 ---
 
 ## <a name="behavior-best-practices"></a>動作のベストプラクティス
-**A. ボタンの数を小さく**します。ハンドロックされたメニューと目の間の距離が近づいているため、またはユーザーが比較的小さな視覚面に焦点を当てる傾向がある場合 (attentional コーンは約10度)、お勧めします。ボタンの数を小さくします。 この探索に基づいて、3つのボタンがある1つの列は、ユーザーが視界の中央に移動した場合でも、ビューのフィールド (視界) 内のすべてのコンテンツを保持することで効果的に機能します。 
+**A. ボタンの数を小さく**します。ハンドロックされたメニューと目の間の距離が近づいているため、またはユーザーが比較的小さな視覚面に焦点を当てる傾向がある場合 (attentional コーンは約10度)、ボタンの数を小さくしておくことをお勧めします。 この探索に基づいて、3つのボタンがある1つの列は、ユーザーが視界の中央に移動した場合でも、ビューのフィールド (視界) 内のすべてのコンテンツを保持することで効果的に機能します。 
 
 **B. 迅速な対処のために手のメニューを使用**します。 arm を持ち上げて位置を維持すると、arm の疲労が簡単になります。 短い対話を必要とするメニューには、ハンドロックされたメソッドを使用します。 メニューが複雑で、対話時間の延長が必要な場合は、代わりにワールドロックまたは本体ロックを使用することを検討してください。 
 
-**C. ボタン/パネルアングル:** メニューは、両端が反対のショルダーと真ん中を持つようにする必要があります。これにより、自然な移動は反対の手でメニューと対話し、タッチするときに不快または不快な針を避けることができます。83'7b. 
+**C. ボタン/パネルアングル:** メニューは、両端が反対のショルダーと真ん中になるようにする必要があります。これにより、自然な移動は反対の手でメニューと対話し、ボタンをタッチするときに不快または不快な針を回避できます。 
 
 **D. ワンきき操作またはハンズフリー操作のサポートを検討する:** 両方のユーザーが常に使用できるとは限りません。 一方または両方のハンズオンが使用できない場合は、さまざまなコンテキストを検討し、そのような状況に合わせて設計アカウントを確認します。 片手メニューをサポートするには、手動でロックしたときに、メニューの配置を手動でロックしてみてください。 ハンドフリーのシナリオでは、音声コマンドを使用して、メニューボタンを起動することを検討してください。
 
-**E. 2 段階の呼び出し:** ポップアップをイベントとして使用する場合は、不要になったときに誤って表示されることがあります (偽陽性)。これは、人が意図的に (通信とオブジェクトの操作のために) 自分を多く移動するためです。意図せずに。 アプリで誤検知が発生した場合は、完全に開いた指などの手のメニューを呼び出すために、パームアップイベント以外に追加の手順を追加することを検討してください。
+**E. 2 段階呼び出し:** ポップアップをイベントとして使用した場合は、不要になったときに誤って表示されることがあります (偽陽性)。これは、ユーザーが (通信とオブジェクトの操作のために) 意図的に (通信とオブジェクトの操作のために)、意図せずに手を移動するためです。 アプリで誤検知が発生した場合は、完全に開いた指などの手のメニューを呼び出すために、パームアップイベント以外に追加の手順を追加することを検討してください。
 
 **F. 手首 (システムホームボタン) の近くにボタンを追加しないよう**にします。メニューボタンが [ホーム] ボタンの近くにある場合、メニューを操作しているときに誤ってトリガーされることがあります。
 
@@ -127,7 +127,7 @@ ms.locfileid: "74143176"
 
 ---
 
-## <a name="hand-menu-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity の MRTK (Mixed Reality Toolkit) の手の形のメニュー
+## <a name="hand-menu-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity の MRTK (Mixed Reality Toolkit) の手の形のメニュー
 **[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、ハンドメニューのスクリプトとサンプルシーンが用意されています。 HandConstraintPalmUp ソルバースクリプトを使用すると、さまざまな構成可能なオプションを使用して、任意のオブジェクトを簡単にアタッチできます。
 
 * [HandConstraintPalmUp を使用した MRTK ハンドメニュー](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)
@@ -138,23 +138,23 @@ ms.locfileid: "74143176"
 ---
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [カーソル](cursors.md)
-* [ハンドレイ](point-and-commit.md)
+* [ハンド レイ](point-and-commit.md)
 * [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [操作性](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [ハンド メニュー](hand-menu.md)
-* [Near メニュー](near-menu.md)
+* [メニューの近く](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
 * [音声コマンド](voice-input.md)
 * [キーボード](keyboard.md)
-* [ボタン](tooltip.md)
-* [翻訳](slate.md)
+* [ヒント](tooltip.md)
+* [スレート](slate.md)
 * [スライダー](slider.md)
 * [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
-* [表面の吸着](surface-magnetism.md)
+* [表面吸着](surface-magnetism.md)

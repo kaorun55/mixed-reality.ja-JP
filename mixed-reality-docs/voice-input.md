@@ -6,18 +6,18 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、音声、cortana、音声、入力
-ms.openlocfilehash: 7264b0b8882928f64860bc5a30b97683306cb19c
-ms.sourcegitcommit: 781e47db2ca2f2c792c95e76ac309b44b3535555
+ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74105768"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723191"
 ---
 # <a name="voice-input"></a>音声入力
 
 ![音声入力](images/UX/UX_Hero_VoiceCommand.jpg)
 
-音声は、HoloLens での入力の主要な形式の1つです。 [ハンドジェスチャ](gaze-and-commit.md#composite-gestures)を使用しなくても、ホログラムに直接コマンドを渡すことができます。 音声入力は、意図したとおりに通信するための自然な方法である可能性があります。 複雑なインターフェイスを走査するのは、ユーザーが1つのコマンドで入れ子になったメニューを使用できるため、音声は特に便利です。
+音声は、HoloLens の主な入力形式の 1 つです。 [ハンドジェスチャ](gaze-and-commit.md#composite-gestures)を使用しなくても、ホログラムに直接コマンドを渡すことができます。 音声入力は、意図を伝える自然な方法として使用できます。 複雑なインターフェイスを走査するのは、ユーザーが1つのコマンドで入れ子になったメニューを使用できるため、音声は特に便利です。
 
 音声入力は、他のすべての_ユニバーサル Windows アプリ_で音声をサポートするのと[同じエンジン](https://msdn.microsoft.com/library/windows/apps/mt185615.aspx)によって機能します。 HoloLens では、音声認識は常に [設定] で構成された Windows 表示言語で機能します。 
 
@@ -121,7 +121,7 @@ ms.locfileid: "74105768"
         *イメージ: ユーザーはアプリバーに表示される "調整" コマンドを使用してアプリの位置を調整できます。*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
+        ![space](images/spacer-20x582.png)<br>
         アプリウィンドウまたはホログラムを見ると、ユーザーはアプリバーに表示される "調整" コマンドを使用して、世界中のアプリの位置を調整](images/microphone-600px.png) ことができ ![<br>
     :::column-end:::
 :::row-end:::
@@ -296,7 +296,7 @@ Windows Mixed Reality Developer Edition release 2017 では、オーディオエ
 
 ---
 
-## <a name="voice-input-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) での音声入力
+## <a name="voice-input-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) での音声入力
 **[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** では、任意のオブジェクトに音声コマンドを簡単に割り当てることができます。 MRTK の**音声入力プロファイル**を使用して、キーワードを定義します。 **SpeechInputHandler**スクリプトを割り当てることにより、音声入力プロファイルで定義されているキーワードにオブジェクトを応答させることができます。 また、SpeechInputHandler は、ユーザーの信頼度を向上させるための音声確認ラベルも提供します。
 
 * [MRTK-Voice コマンド](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html)
@@ -304,7 +304,7 @@ Windows Mixed Reality Developer Edition release 2017 では、オーディオエ
 
 ---
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [視線入力とコミット](gaze-and-commit.md)
 * [本能的な操作](interaction-fundamentals.md)
 * [MR 入力 212: 音声](holograms-212.md)

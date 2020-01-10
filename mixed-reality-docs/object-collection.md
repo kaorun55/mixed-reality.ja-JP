@@ -1,19 +1,19 @@
 ---
-title: オブジェクトコレクション
+title: オブジェクト コレクション
 description: オブジェクトコレクションは、定義済みの3次元図形内のオブジェクトの配列をレイアウトするのに役立つレイアウトコントロールです。
 author: cre8ivepark
 ms.author: dongpark
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、コントロール、デザイン
-ms.openlocfilehash: 9a111fcbe4c49972cc5ef22fb647f89544188af5
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
+ms.openlocfilehash: ec41cfad77617a90d02e7b23a2334249aa430190
+ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143146"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75723221"
 ---
-# <a name="object-collection"></a>オブジェクトコレクション
+# <a name="object-collection"></a>オブジェクト コレクション
 
 ![Elements アプリの定期テーブルで使用されるオブジェクトコレクション](images/UX/UX_Hero_ObjectCollection.jpg)<br>
 
@@ -48,7 +48,7 @@ ms.locfileid: "74143146"
 
 ---
 
-## <a name="object-collection-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) のオブジェクトコレクション
+## <a name="object-collection-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 用の MRTK (Mixed Reality Toolkit) のオブジェクトコレクション
 
 * [MRTK-オブジェクトコレクション](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ObjectCollection.html)
 
@@ -58,23 +58,23 @@ ms.locfileid: "74143146"
 ---
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 * [カーソル](cursors.md)
-* [ハンドレイ](point-and-commit.md)
+* [ハンド レイ](point-and-commit.md)
 * [ボタン](button.md)
 * [対話可能なオブジェクト](interactable-object.md)
 * [境界ボックスとアプリ バー](app-bar-and-bounding-box.md)
-* [操作性](direct-manipulation.md)
+* [操作](direct-manipulation.md)
 * [ハンド メニュー](hand-menu.md)
-* [Near メニュー](near-menu.md)
+* [メニューの近く](near-menu.md)
 * [オブジェクト コレクション](object-collection.md)
 * [音声コマンド](voice-input.md)
 * [キーボード](keyboard.md)
-* [ボタン](tooltip.md)
-* [翻訳](slate.md)
+* [ヒント](tooltip.md)
+* [スレート](slate.md)
 * [スライダー](slider.md)
 * [シェーダー](shader.md)
 * [Billboard と Tag-along](billboarding-and-tag-along.md)
 * [進行状況を表示する](progress.md)
-* [表面の吸着](surface-magnetism.md)
+* [表面吸着](surface-magnetism.md)
