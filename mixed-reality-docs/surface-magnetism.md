@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、対話、ui、ux
-ms.openlocfilehash: 17015fef7a73930109844a48d6017230a4efecd5
-ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
+ms.openlocfilehash: bc9c8a36f110010270ca7dadbd8655f29af25f32
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694146"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901435"
 ---
 # <a name="surface-magnetism"></a>表面の吸着
 

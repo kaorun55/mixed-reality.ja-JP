@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、対話、ui、ux
-ms.openlocfilehash: 4d95e335b3f7020766beae916423d0588ee66572
-ms.sourcegitcommit: 270ca09ec61e1153a83cf44942d7ba3783ef1805
+ms.openlocfilehash: 8d0e01bb26347d95a80703884c4e9408653e03ed
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694166"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901455"
 ---
 # <a name="shader"></a>シェーダー
 
 ![シェーダー](images/UX/UX_Hero_StandardShader.jpg)
 
-Holographic オブジェクトは環境内の物理的なオブジェクトと混在するため、mixed reality で視覚的な手掛かりを提供することが重要です。 MRTK 標準シェーダーには、ホログラムで使用できるさまざまな種類の視覚効果が用意されています。 MRTK 標準シェーディングシステムでは、Unity の標準シェーダーに似た視覚エフェクトを実現し、 [Fluent 設計システムの原則](https://www.microsoft.com/design/fluent/#/)を実装し、mixed reality デバイスでパフォーマンスを維持できる、単一の柔軟なシェーダーを利用しています。
+Holographic オブジェクトは実際の環境の物理的なオブジェクトと混在するため、ユーザーに視覚的な手掛かりを与えることが重要です。 MRTK 標準シェーダーには、ホログラムで使用できるさまざまな種類の視覚効果が用意されています。 MRTK 標準シェーディングシステムでは、Unity の標準シェーダーに似た視覚エフェクトを実現し、 [Fluent 設計システムの原則](https://www.microsoft.com/design/fluent/#/)を実装し、mixed reality デバイスでパフォーマンスを維持できる、単一の柔軟なシェーダーを利用しています。
 <br>
 
 ## <a name="examples-of-visual-effects-using-mrtk-standard-shader"></a>MRTK Standard shader を使用した視覚効果の例 
