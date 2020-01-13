@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows デバイスポータル、HoloLens
-ms.openlocfilehash: 9bb8116330d88c532b955ef497d29fe98c86fddb
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 17ed27653c8e3ec19c8c42b625fbd12cde2c5d84
+ms.sourcegitcommit: 5054f5c23965ce56599cb29ac9d9c6e48812dabd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75182022"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75623322"
 ---
 # <a name="using-the-windows-device-portal"></a>Windows デバイスポータルの使用
 
@@ -75,7 +75,7 @@ HoloLens で初めて Device Portal に接続するときは、ユーザー名�
 
 ## <a name="security-certificate"></a>セキュリティ証明書
 
-ブラウザーで "証明書エラー" が表示される場合は、デバイスとの信頼関係を作成することで修正できます。
+ブラウザーに "証明書エラー" が表示された場合は、デバイスとの信頼関係を作成することで修正できます。
 
 ぞれぞれの HoloLens では、SSL 接続用に一意の自己署名証明書が生成されます。 既定では、この証明書が PC の Web ブラウザーによって信頼されていないため、"証明書エラー" が発生することがあります。 この証明書を HoloLens から (USB または信頼している Wi-Fi ネットワーク経由で) ダウンロードし、PC で信頼すると、デバイスに安全に接続できます。
 1. **セキュリティで保護されたネットワーク (USB または信頼できる Wi-fi ネットワーク) を使用していることを確認します。**
@@ -136,7 +136,7 @@ Microsoft HoloLens](images/3dview-1000px.png) の Windows デバイスポータ�
   * [**空間アンカーの表示]** : アクティブなアプリの空間アンカーを表示します。 アンカーを取得して更新するには、[更新] ボタンをクリックする必要があります。
   * **[Show details]** (詳細を表示): 手の位置、頭部の回転の四元数、デバイスの原点のベクトルを、動きに合わせてリアルタイムで表示します。
   * **[Full screen]** (全画面表示) ボタン: 3D ビューを全画面表示モードで表示します。 Esc キーを押すと全画面表示を終了します。
-* **Surface**の再構築: **[更新]** をクリックまたはタップして、デバイスから最新の空間マッピングメッシュを表示します。 全体の処理が完了するまでには、最大で数秒かかる可能性があります。 メッシュは3D ビューで自動的に更新されません。また、 **[更新]** を手動でクリックして、デバイスから最新のメッシュを取得する必要があります。 **[保存]** をクリックして、現在の空間マッピングメッシュを PC 上の obj ファイルとして保存します。
+* **Surface**の再構築: **[更新]** をクリックまたはタップして、デバイスから最新の空間マッピングメッシュを表示します。 完全なパスは、完了するまでに時間がかかる場合があります (最大で数秒)。 メッシュは3D ビューで自動的に更新されません。また、 **[更新]** を手動でクリックして、デバイスから最新のメッシュを取得する必要があります。 **[保存]** をクリックして、現在の空間マッピングメッシュを PC 上の obj ファイルとして保存します。
 * **空間アンカー**: アクティブなアプリの空間アンカーを表示または更新するには、[更新] をクリックします。
 
 ### <a name="mixed-reality-capture"></a>Mixed Reality Capture (複合現実キャプチャ)
@@ -170,14 +170,14 @@ Microsoft HoloLens の Windows デバイスポータルで Mixed Reality キャ�
 
 ### <a name="performance-tracing"></a>パフォーマンストレース
 
-Microsoft HoloLens(images/windows-device-portal-performance-tracing-page-1000px.png) の Windows デバイスポータルの ![パフォーマンストレース] ページ<br>
+Microsoft HoloLens](images/windows-device-portal-performance-tracing-page-1000px.png) の Windows デバイスポータルの ![パフォーマンストレース] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [パフォーマンストレース] ページ*
 
 HoloLens から[Windows パフォーマンスレコーダー](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (wpr) のトレースをキャプチャします。
 * **[Available profiles]** (利用可能なプロファイル): ドロップダウン リストから WPR プロファイルを選択し、 **[Start]** (開始) をクリックまたはタップすると、トレースを開始できます。
 * **[Custom profiles]** (カスタム プロファイル): **[Browse]** (参照) をクリックまたはタップして、PC から WPR プロファイルを選択します。 **[Upload and start]** (アップロードして開始) をクリックまたはタップすると、トレースが開始します。
 
-トレースを停止するには、停止リンクをクリックします。 トレースファイルのダウンロードが完了するまで、このページをそのままにしておきます。
+トレースを停止するには、[停止] リンクをクリックします。 トレースファイルのダウンロードが完了するまで、このページをそのままにしておきます。
 
 キャプチャした ETL ファイルは、[Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) で開いて分析に使用できます。
 
@@ -190,7 +190,7 @@ Microsoft HoloLens の Windows デバイスポータルの [![のプロセス] �
 
 ### <a name="system-performance"></a>System Performance (システム パフォーマンス)
 
-Microsoft HoloLens(images/windows-device-portal-system-performance-page-1000px.png) の Windows デバイスポータルの ![システムパフォーマンス] ページ<br>
+Microsoft HoloLens](images/windows-device-portal-system-performance-page-1000px.png) の Windows デバイスポータルの ![システムパフォーマンス] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [システムパフォーマンス] ページ*
 
 電力消費、フレーム レート、CPU 負荷など、システムの診断情報のグラフをリアルタイムで表示します。
@@ -207,7 +207,7 @@ Microsoft HoloLens(images/windows-device-portal-system-performance-page-1000px.p
 
 ### <a name="apps"></a>アプリ
 
-Microsoft HoloLens(images/windows-device-portal-apps-page-1000px.png) の Windows デバイスポータルの ![アプリ] ページ<br>
+Microsoft HoloLens](images/windows-device-portal-apps-page-1000px.png) の Windows デバイスポータルの ![アプリ] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [アプリ] ページ*
 
 HoloLens にインストールされているアプリを管理します。
@@ -219,14 +219,14 @@ HoloLens にインストールされているアプリを管理します。
 
 ### <a name="app-crash-dumps"></a>アプリクラッシュダンプ
 
-Microsoft HoloLens(images/windows-device-portal-dev-apps-crash-dumps-page-1000px.png) の Windows デバイスポータルの ![アプリのクラッシュダンプ] ページ<br>
+Microsoft HoloLens](images/windows-device-portal-dev-apps-crash-dumps-page-1000px.png) の Windows デバイスポータルの ![アプリのクラッシュダンプ] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [アプリクラッシュダンプ] ページ*
 
 このページでは、サイドローディングしたアプリのクラッシュ ダンプを収集できます。 クラッシュダンプを収集する各アプリの [**クラッシュダンプを有効**にする] チェックボックスをオンにします。 後でこのページに戻ると、クラッシュ ダンプが収集されています。 [デバッグ用に Visual Studio で](https://msdn.microsoft.com/library/d5zhxt22.aspx)ダンプファイルを開くことができます。
 
 ### <a name="file-explorer"></a>[エクスプローラー]
 
-Microsoft HoloLens(images/fileexplorer-1000px.png) の Windows デバイスポータルの ![ファイルエクスプローラー] ページ<br>
+Microsoft HoloLens](images/fileexplorer-1000px.png) の Windows デバイスポータルの ![ファイルエクスプローラー] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [ファイルエクスプローラー] ページ*
 
 ファイルエクスプローラーを使用して、ファイルを参照、アップロード、およびダウンロードします。 ドキュメントフォルダー、ピクチャフォルダー、および Visual Studio またはデバイスポータルからデプロイしたアプリのローカルストレージフォルダー内のファイルを操作できます。
@@ -256,10 +256,10 @@ HoloLens のリアルタイム Windows イベントトレーシング (ETW) を�
 * **[Custom providers]** (カスタム プロバイダー): カスタム ETW プロバイダーとトレース レベルを選択します。 GUID を使用してプロバイダーを識別します。 GUID にはかっこを含めないでください。
 * **[Enabled providers]** (有効なプロバイダー): 有効なプロバイダーを一覧表示します。 ドロップダウンからプロバイダーを選択し、 **[Disable]** (無効にする) をクリックまたはタップしてトレースを停止します。 すべてのトレースを中断するには、 **[Stop All]** (すべて停止) をクリックまたはタップします。
 * **[Providers history]** (プロバイダー履歴): 現在のセッション中に有効になった ETW プロバイダーを表示します。 無効になっているプロバイダーをアクティブ化するには、 **[Enable]** (有効にする) をクリックまたはタップします。 履歴をクリアするには、 **[Clear]** (クリア) をクリックまたはタップします。
-* **[Events]** (イベント): 選択したプロバイダーの ETW イベントを表形式で一覧表示します。 この表は、リアルタイムで更新されます。 テーブルの下にある **[クリア]** ボタンをクリックして、テーブルからすべての ETW イベントを削除します。 これによってプロバイダーが無効になることはありません。 **[Save to file]** (ファイルに保存) をクリックすると、現在収集されている ETW イベントをローカルの CSV ファイルにエクスポートできます。
+* **[Events]** (イベント): 選択したプロバイダーの ETW イベントを表形式で一覧表示します。 この表は、リアルタイムで更新されます。 すべての ETW イベントを表から削除するには、表の下にある **[Clear]** (クリア) ボタンをクリックします。 これによってプロバイダーが無効になることはありません。 **[Save to file]** (ファイルに保存) をクリックすると、現在収集されている ETW イベントをローカルの CSV ファイルにエクスポートできます。
 * **フィルター**: ID、キーワード、レベル、プロバイダー名、タスク名、テキストによって収集された ETW イベントをフィルター処理できます。 複数の条件を組み合わせることができます。
-   1. 同じプロパティに適用される条件の場合、イベントはこれらの条件のいずれかを満たすことができます。
-   2. 異なるプロパティに適用する条件の場合-イベントはすべての条件を満たしている必要があります
+   1. 同じプロパティに適用する条件では、これらの条件のいずれかを満たすことができるイベントが表示されます。
+   2. 別のプロパティに適用する条件の場合、イベントはすべての条件を満たしている必要があります
 
 たとえば、条件 *(タスク名に ' Foo ' または ' bar ' が含まれている) と、(テキストには ' error ' または ' warning ' が含まれます)* を指定できます。
 
@@ -286,7 +286,7 @@ HoloLens で Wi-fi 接続を管理します。
 
 ### <a name="virtual-input"></a>Virtual Input (仮想入力)
 
-Microsoft HoloLens(images/windows-device-portal-virtual-input-page-1000px.png) の Windows デバイスポータルの ![仮想入力] ページ<br>
+Microsoft HoloLens](images/windows-device-portal-virtual-input-page-1000px.png) の Windows デバイスポータルの ![仮想入力] ページ<br>
 *Microsoft HoloLens の Windows デバイスポータルの [仮想入力] ページ*
 
 リモート コンピューターから HoloLens にキーボード入力を送信します。
