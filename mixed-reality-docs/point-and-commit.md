@@ -7,12 +7,12 @@ ms.date: 04/05/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 対話, 設計, HoloLens, 手, 遠隔, ポイントとコミット
-ms.openlocfilehash: c7952338c6937e42889a08ee37f6ce8bc1bb9ad3
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: d3f886fd8e892fe34116c3a1d601ae3a87d87a9b
+ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334059"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901529"
 ---
 # <a name="point-and-commit-with-hands"></a>手を使ったポイントとコミット
 
@@ -201,8 +201,8 @@ HoloLens 2 では、ユーザーの手のひらの中心から放出される手
 
 ---
 
-## <a name="hand-ray-in-mrtkmixed-reality-toolkit-for-unity"></a>Unity 向け MRTK (Mixed Reality ツールキット) のハンド レイ
-既定で、MRTK には、シェルのシステム ハンド レイと同じ表示状態のハンド レイ プレハブ ([DefaultControllerPointer.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Pointers)) が備わっています。 これは、[ポインター] にある MRTK の入力プロファイルに割り当てられています。 Windows Mixed Reality イマーシブ ヘッドセットでは、モーション コントローラーにも同じ光線が使用されています。
+## <a name="hand-ray-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity 向け MRTK (Mixed Reality ツールキット) のハンド レイ
+既定で、MRTK には、シェルのシステム ハンド レイと同じ表示状態のハンド レイ プレハブ ([DefaultControllerPointer.prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.SDK/Features/UX/Prefabs/Pointers)) が備わっています。 これは、[ポインター] にある MRTK の入力プロファイルに割り当てられています。 イマーシブ ヘッドセットでは、モーション コントローラーにも同じ光線が使用されています。
 
 * [MRTK - ポインター プロファイル](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/MixedRealityConfigurationGuide.html#pointer-configuration)
 * [MRTK - 入力システム](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Overview.html)
