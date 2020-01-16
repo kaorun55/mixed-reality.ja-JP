@@ -6,18 +6,18 @@ ms.author: dongpark
 ms.date: 11/01/2019
 ms.topic: article
 keywords: Mixed Reality、コントロール、対話、ui、ux
-ms.openlocfilehash: bc9c8a36f110010270ca7dadbd8655f29af25f32
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: 9de4cc1a7a015f85be54b4b9ff6188a7e9d02e85
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901435"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036371"
 ---
 # <a name="surface-magnetism"></a>表面の吸着
 
 ![表面の吸着](images/UX/MRTK_SurfaceMagnetism.gif)
 
-表面吸着技法を使用すると、holographic オブジェクトを実際の物理面に配置できます。 オブジェクトの向きを実際の画面に合わせて調整することにより、よりイマーシブで自然なエクスペリエンスを作成できます。
+表面吸着技法を使用すると、holographic オブジェクトを実際の物理面に配置できます。 オブジェクトの向きを実際の画面に合わせて調整することにより、ユーザーによりイマーシブで自然なエクスペリエンスを作成できます。
 
 <br>
 

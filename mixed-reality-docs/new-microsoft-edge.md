@@ -1,25 +1,30 @@
 ---
 title: Windows Mixed Reality と新しい Microsoft Edge
-description: Windows Mixed Reality のドキュメントに投稿する方法。
+description: Windows Mixed Reality の新しい Microsoft Edge の準備をします。 予想される変更、検索対象の更新、および既知の問題が含まれます。
 author: mattzmsft
 ms.author: mazeller
-ms.date: 01/07/2020
+ms.date: 01/15/2020
 ms.topic: article
 keywords: edge、新規、イマーシブ web、microsoft edge、browser、vr
-ms.openlocfilehash: cb0f96069ffaa8f7d40b64bae55ab2749f5f02c6
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.openlocfilehash: e38cd83cef274281f0d36ae8714ea82aac5f0c65
+ms.sourcegitcommit: e9e4e722f4b607888ce69185f8bda9549ad526ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75727049"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76041004"
 ---
 # <a name="windows-mixed-reality-and-the-new-microsoft-edge"></a>Windows Mixed Reality と新しい Microsoft Edge
 
-ご存知かもしれませんが、[新しい Microsoft Edge は近日公開されてい](https://blogs.windows.com/windowsexperience/2019/11/04/introducing-the-new-microsoft-edge-and-bing/)ます。 2020年1月15日を対象とした一般提供では、Windows Mixed Reality VR ヘッドセットのお客様に、新しい Microsoft Edge からの期待内容を知らせ、Windows Mixed での web 閲覧エクスペリエンスを向上させる保留中の更新について通知します。実際.
+[新しい Microsoft Edge をダウンロードできるようになりました](https://blogs.windows.com/windowsexperience/?p=173496)が、今後数か月の間に測定されたロールアウトアプローチに従って、 [Windows 10 の今後の更新プログラムにインストールされるのを待つ](https://blogs.windows.com/msedgedev/2020/01/15/upgrading-new-microsoft-edge-79-chromium/)こともできます。 
+
+この記事では、 **Windows Mixed reality のヘッドセットのお客様に、新しい Microsoft Edge から期待されることを知らせ、Windows Mixed reality での web 閲覧エクスペリエンスを向上させる保留中の更新**について通知します。
 
 ## <a name="introducing-the-new-microsoft-edge"></a>新しい Microsoft Edge の紹介
 
 新しい Microsoft Edge は、 [Chromium のオープンソースプロジェクト](https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/)をデスクトップ上に採用しているため、より優れた web 互換性をユーザーに提供し、すべての web 開発者が web の断片化を減らすことができます。 また、WebVR の代わりに、VR ヘッドセット用のイマーシブ web エクスペリエンスを作成するための新しい標準である WebXR at launch もサポートします。
+
+>[!IMPORTANT]
+>Microsoft Edge を最新の Windows 10 デバイスにインストールすると、PC 上の以前の (レガシ) バージョンが置き換えられます。
 
 ## <a name="getting-ready-for-the-new-microsoft-edge"></a>新しい Microsoft Edge の準備
 
@@ -45,7 +50,7 @@ Mixed reality ホームで新しい Microsoft Edge を使用する windows Mixed
 
 -   Windows Mixed reality で開かれている web サイトは、Mixed reality ポータルが閉じたときに失われます。ただし、Microsoft Edge ウィンドウは、mixed reality ホームに配置された場所に残ります。
 -   Microsoft Edge ウィンドウからのオーディオは spatialized ません。
--   Windows Mixed Reality で YouTube から360ビデオを開くと、ヘッドセットでビデオがゆがんでしまう可能性があります。 YouTube ビデオのページを更新し、360ビデオを再起動すると、問題が解決されます。
+-   Windows Mixed Reality で YouTube から360ビデオを開くと、ヘッドセットでビデオがゆがんでしまう可能性があります。 YouTube ビデオのページを更新し、360ビデオを再起動すると、問題が解決する*可能性があり*ますが、問題が引き続き発生する可能性があるというフィードバックが寄せられています。
 -   Windows Mixed Reality セッション中に、設定 の > システム > 表示に汎用物理モニターとして表示されます。
 
 

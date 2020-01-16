@@ -3,15 +3,15 @@ title: HoloLens エミュレーターのアーカイブ
 description: Microsoft HoloLens エミュレーターのリリース済みビルドの一覧。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 12/5/2019
+ms.date: 1/13/2020
 ms.topic: article
 keywords: HoloLens、エミュレーター、ビルド、バージョン
-ms.openlocfilehash: 3061c97e0e945bf9d829e2259533c7d32683d581
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 11fd763ec0832558a7a981dce34e0c6700d12a37
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940800"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036322"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 エミュレーターアーカイブ
 
@@ -19,6 +19,7 @@ HoloLens Emulator (第1世代) と HoloLens 2 エミュレーターは、サイ�
 
 |  ビルド |  リリース日 |  注意 | 
 |----------|----------|----------|
+|  [HoloLens 2 Emulator ビルド10.0.18362.1044](https://go.microsoft.com/fwlink/?linkid=2114824) | 2020年1月13日 | 1月 2020 HoloLens 2 ビルド。  HoloLens 2 の一般的なリリースノートについては、「」を参照してください https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1042](https://go.microsoft.com/fwlink/?linkid=2112589) | 2019年12月6日 | 12月 2019 HoloLens 2 ビルド。  ピンパネルを表示するときに、エミュレーターで実行されている Holographic アプリが予期せず中断される問題に対処します。  認識シミュレーション API または知覚シミュレーション制御アプリを使用するときに、リモートエミュレーターへの接続を有効にします。  HoloLens 2 の一般的なリリースノートについては、「」を参照してください https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1034](https://go.microsoft.com/fwlink/?linkid=2106649) | 2019 年 10 月 8 日 | 10月 2019 HoloLens 2 ビルド。  利用可能な最新バージョンより古いバージョンを実行すると、エミュレーターは新しいバージョンに更新するように求められます。  Windows 10 の2019更新プログラムまたはそれ以降のバージョンのエミュレーターを使用すると、開発者は、別のデバイスで実行されているアプリケーションのポートを開いてエミュレーターに接続したり、[更新プログラム] タブに使用可能なエミュレーターのバージョンが表示されたりすることができます。  詳細については、 [HoloLens emulator のドキュメント](using-the-hololens-emulator.md)を参照してください。 |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1031](https://go.microsoft.com/fwlink/?linkid=2103724) | 2019 年 9 月 11 日 | 9月 2019 HoloLens 2 ビルド。  Windows 10 5 月2019更新プログラムまたはそれ以降のバージョンでエミュレーターを実行すると、[エミュレーターツール] ウィンドウに [ネットワーク] タブが表示されます。 |
@@ -38,7 +39,7 @@ HoloLens Emulator (第1世代) と HoloLens 2 エミュレーターは、サイ�
 |  [HoloLens Emulator ビルド10.0.14342.1018](https://go.microsoft.com/fwlink/?LinkID=823018) |  2016 年 5 月 31 日 |
 |  [HoloLens Emulator ビルド10.0.11082.1033](https://go.microsoft.com/fwlink/?LinkID=724053) |  2016 年 3 月 30 日 |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [ツールのインストール](install-the-tools.md)
 * [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)
 * [Advanced HoloLens emulator と Mixed reality シミュレーター入力](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
