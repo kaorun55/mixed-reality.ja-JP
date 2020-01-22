@@ -3,16 +3,16 @@ title: HoloLens エミュレーターを使用する
 description: HoloLens エミュレーターを使用して、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストします。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 12/5/2019
+ms.date: 1/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: 49b67530d46edda3c38efd74f03f730c2b2247bd
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 7cbddae7cc5088bc8be7187e8b2dff3249e9d265
+ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940890"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76036457"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
@@ -25,7 +25,7 @@ HoloLens のエミュレーターを使用すると、物理的な HoloLens を�
 HoloLens のエミュレーターをダウンロードします。
 
 バージョン: 
-* [HoloLens 2 エミュレーター (2019 年 12 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2112589)。
+* [HoloLens 2 エミュレーター (2020 年 1 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2114824)。
 * [HoloLens エミュレーター (第 1 世代) およびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 HoloLens エミュレーターのリリース ノートと以前のビルドは、「[HoloLens エミュレーターのアーカイブ](hololens-emulator-archive.md)」ページにあります。
@@ -41,7 +41,7 @@ HoloLens エミュレーターでは、ハードウェア アクセラレータ�
 * 4 コアの CPU (または合計 4 コアとなる複数の CPU)
 * 8 GB 以上の RAM
 * BIOS で以下の機能が[サポートされ、有効になっている](https://blogs.technet.com/b/iftekhar/archive/2010/08/09/enable-hardware-settings-in-bios-to-run-hyper-v.aspx)必要があります。
-   * ハードウェア支援による仮想化
+   * ハードウェア補助による仮想化
    * Second Level Address Translation (SLAT)
    * ハードウェアベースのデータ実行防止 (DEP)
 * GPU の要件
@@ -243,7 +243,7 @@ Visual Studio のデバッグ ターゲット リストが空 (たとえば、[�
 エミュレーターを開始するときにシステムがハングする場合は、エミュレーターのグラフィックスのハードウェア アクセラレータを無効にします。
 * HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\XDE\10.0 に「DisableGPU」という名前のレジストリ DWORD 値を作成し、値を 1 に設定します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [高度な HoloLens エミュレーターと Mixed Reality Simulator の入力](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)
 * [HoloLens のエミュレーターのソフトウェアの歴史](hololens-emulator-archive.md)
 * [Unity の空間マッピング](spatial-mapping-in-unity.md)
