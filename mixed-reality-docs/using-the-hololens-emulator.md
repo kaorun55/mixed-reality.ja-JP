@@ -7,12 +7,12 @@ ms.date: 1/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: 7cbddae7cc5088bc8be7187e8b2dff3249e9d265
-ms.sourcegitcommit: 542a481b00b36d92633c64a6189ea989551bab3d
+ms.openlocfilehash: 3d358cf72e8481d27ca41784bbc059c45e0da7ff
+ms.sourcegitcommit: cf3b662cfcf3fb05a554c302e595eb018f01abf2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76036457"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76521683"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
@@ -220,7 +220,7 @@ HoloLens (第 1 世代) で [Windows デバイス ポータル](using-the-window
 
 エミュレーターのインストール中に、 *"Visual Studio 2015 Update 1 と UWP ツール バージョン 1.2"* が必要であることを示すエラー メッセージが表示される場合があります。 このエラーには、3 つの原因が考えられます。
 * Visual Studio のバージョン (Visual Studio 2019、Visual Studio 2017 または Visual Studio 2015 Update 1 またはそれ以降) が新しくない。 これを修正するには、Visual Studio の最新リリースをインストールします。
-* Visual Studio のバージョンは新しいが、ユニバーサル Windows プラットフォーム (UWP) ツールがインストールされていない。 これは、Visual Studio のオプション機能です。
+* Visual Studio のバージョンは新しいが、ユニバーサル Windows プラットフォーム (UWP) ツールがインストールされていない。 これは、Visual Studio のオプション機能です。 HoloLens (第 1 世代) では、Visual Studio 2015 または Visual Studio 2017 用の UWP ツールが必要です。
 
 Pro/Enterprise/Education SKU でない Windows 、または Hyper-V 機能が有効になっていない場合にエミュレーターをインストールすると、エラーが表示される場合があります。
 * すべての要件については、上記の「[システム要件](#hololens-emulator-system-requirements)」セクションを参照してください。

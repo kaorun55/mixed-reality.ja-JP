@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: f1bcbbd368635c25207127142f21ff50f26a7b58
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.openlocfilehash: 56f7c767323285453cbeea9034f97a7c14e92359
+ms.sourcegitcommit: d73d9012941fa1b13eb7d2f45ccc481d6365827a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901489"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885626"
 ---
 # <a name="4-sharing-object-movements-with-multiple-users"></a>4. オブジェクトの移動を複数のユーザーと共有する
 
@@ -74,6 +74,12 @@ ms.locfileid: "75901489"
 11. Prefabs フォルダーの [プロジェクト] パネルで、テーブル prefab を、先ほど作成した "TableAnchor" 子オブジェクトにドラッグします。
 
     ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
+   
+12. 資産-> Resources-> Prefabs から、"ロケット Launcher_Complete バリアント" prefab を開きます。
+
+13. "LunarModule" を選択し、"Photon Transform View" と "Photon View" という2つのコンポーネントを追加します。
+
+14. "LunarModule" の "検出" オブジェクトが選択された状態で、"Photon Transform View" コンポーネントを "Photon View" コンポーネントの "観察されたコンポーネント" スロットにドラッグします。
 
 ## <a name="congratulations"></a>結論
 

@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 01/15/2020
 ms.topic: article
 keywords: edge、新規、イマーシブ web、microsoft edge、browser、vr
-ms.openlocfilehash: e38cd83cef274281f0d36ae8714ea82aac5f0c65
-ms.sourcegitcommit: e9e4e722f4b607888ce69185f8bda9549ad526ad
+ms.openlocfilehash: 2576762786c9234377308f226036c830e01d9133
+ms.sourcegitcommit: d73d9012941fa1b13eb7d2f45ccc481d6365827a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76041004"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885622"
 ---
 # <a name="windows-mixed-reality-and-the-new-microsoft-edge"></a>Windows Mixed Reality と新しい Microsoft Edge
 
@@ -50,7 +50,7 @@ Mixed reality ホームで新しい Microsoft Edge を使用する windows Mixed
 
 -   Windows Mixed reality で開かれている web サイトは、Mixed reality ポータルが閉じたときに失われます。ただし、Microsoft Edge ウィンドウは、mixed reality ホームに配置された場所に残ります。
 -   Microsoft Edge ウィンドウからのオーディオは spatialized ません。
--   Windows Mixed Reality で YouTube から360ビデオを開くと、ヘッドセットでビデオがゆがんでしまう可能性があります。 YouTube ビデオのページを更新し、360ビデオを再起動すると、問題が解決する*可能性があり*ますが、問題が引き続き発生する可能性があるというフィードバックが寄せられています。
+-   **360 Viewer 拡張機能のバージョン 2.3.8**: Windows Mixed Reality で YouTube から360ビデオを開くと、ヘッドセットでビデオがゆがんでしまう可能性があります。 Edge を再起動して、この問題を解決するには、360 Viewer 拡張機能を非表示にする必要があります。 アドレスバーに `edge://system/` を入力し、[拡張機能] の横にある**展開**ボタンを選択すると、使用している拡張機能のバージョンを確認できます。
 -   Windows Mixed Reality セッション中に、設定 の > システム > 表示に汎用物理モニターとして表示されます。
 
 
