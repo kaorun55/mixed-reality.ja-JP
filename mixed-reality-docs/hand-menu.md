@@ -6,12 +6,12 @@ ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: ハンド、メニュー、ボタン、クイックアクセス、レイアウト
-ms.openlocfilehash: c0e1800be69a15706e17f40b1601fc79d05e5d75
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.openlocfilehash: 41a936d6041438c1cf1d8e4d4cc8cc30a5167491
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75723261"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092056"
 ---
 # <a name="hand-menu"></a>ハンドメニュー
 
@@ -88,8 +88,8 @@ ms.locfileid: "75723261"
     :::column:::
         ![指](images/AboveFingers.gif)<br>
         **上の指**<br>
-        長い時間を保持することによる1手の疲労<br>
-        インデックスとミドルフィンガーでの2ハンドトラッキングの問題
+        長い時間が経過したことによる1つの疲労<br>
+        インデックスと中段指に関する2つの問題の追跡
     :::column-end:::
 :::row-end:::
 
@@ -105,7 +105,7 @@ ms.locfileid: "75723261"
     :::column:::
         top**指先**の ![top 指先](images/TopFingerTip.gif)<br>
         1ハンドトラッキングの問題<br>
-        標準の姿勢を超える2ハンドの疲労<br>
+        通常の姿勢を超えたままの2ハンドの疲労<br>
         3-指間のスペースが限られているために偶発的に他の指でボタンを押す問題
     :::column-end:::
 :::row-end:::
@@ -117,7 +117,7 @@ ms.locfileid: "75723261"
         Arm](images/BackOfTheArm.gif) の ![戻します。<br>
         **Arm の背面**<br>
         1-事故によってホームボタンをトリガーできる<br>
-        2-ユーザーに自然な、または使いやすい位置
+        2-自然または快適な位置
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -138,7 +138,7 @@ ms.locfileid: "75723261"
 ---
 
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 * [カーソル](cursors.md)
 * [ハンド レイ](point-and-commit.md)

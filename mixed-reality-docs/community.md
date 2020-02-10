@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: Mixed Reality、コミュニティ、mvp、meetup
-ms.openlocfilehash: 7cdbebc63cc04d2e3c2913662ed29e65880da727
-ms.sourcegitcommit: 48e12b342a50b9777330392db74d462ead5a8012
+ms.openlocfilehash: 486a099cb38a99975171cb7ec4a6754b1c0b682f
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75662432"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092073"
 ---
 # <a name="mixed-reality-community"></a>Mixed Reality コミュニティ
 
@@ -19,7 +19,7 @@ Microsoft では、開発者、プラットフォーム、およびエコシス�
 
 ## <a name="online-communities"></a>オンラインコミュニティ
 
-|コミュニティ名  |[リンク]  |説明  |
+|コミュニティ名  |リンク  |説明  |
 |---------|---------|---------|
 |**HoloDevelopers の余裕期間**|[ここに参加](https://aka.ms/holodevelopers)|HoloDevelopers の余裕は、HoloLens を探求する開発者が相互に理解し、friendships を形成し、ビルドの信頼を構築し、相互に支援を得るための場所として最初に作成されました。  この記事は活発コミュニティに拡張されていますが、それに焦点を絞っていますが、このような会話によって、多くのプラットフォーム、デバイス、および企業にわたる mixed reality の範囲がカバーされています。|
 |**スタック オーバーフロー**|[MR の質問](https://stackoverflow.com/questions/tagged/windows-mixed-reality)||
@@ -31,9 +31,9 @@ Microsoft では、開発者、プラットフォーム、およびエコシス�
 ## <a name="local-communities"></a>ローカルコミュニティ
 このページに掲載するコミュニティを実行する場合は、詳細を記載した[電子メールをここ](mailto:jemccull@microsoft.com)に送信してください
 
-|コミュニティ名|Country|市区町村|[リンク]|
+|コミュニティ名|国|市|リンク|
 |---------|---------|---------|---------|
-|**シカゴ AWE Nite**|USA|シカゴ|[Link](https://www.meetup.com/AWENiteChicago/)|
+|**シカゴ AWE Nite**|海岸|シカゴ|[Link](https://www.meetup.com/AWENiteChicago/)|
 <!-- 
 |Row2     |         |         |         |
 |Row3     |         |         |         |
@@ -48,7 +48,7 @@ Microsoft では、開発者、プラットフォーム、およびエコシス�
 
 |||||
 |---------|---------|---------|---------|
-|<!-- ![Daniel Escudero](images/BiographyImages/) --></br>**Daniel Escudero**</br>*MR Academy リーダー*| |サンフランシスコ、Ca|[メール](mailto:daescu@microsoft.com)|
+|<![Daniel Escudero](images/BiographyImages/DanielEscudero_270x270.jpg)</br>**Daniel Escudero**</br>*MR Academy リーダー*|対話的なデザイナー、prototyper、およびプログラマは、相互作用のデザインエクスペリエンスが15年を超えて、混合現実に特化しています。 現在、混合環境での新しい形式の対話を設計およびプロトタイプ作成しています。また、サンフランシスコ Bay Area パートナーと MR/VR/AR コミュニティでワークショップやハッカソンを作成することもできます。 複数の MR/VR/AR イベントと講義における Mixed Reality 設計のためのメンターと講演者。|サンフランシスコ、Ca|[メール](mailto:daescu@microsoft.com)|
 |<!-- ![Daniel Gonzalez](images/BiographyImages/) --></br>**Daniel Gonzalez。**</br>*プログラムマネージャー II*| |ワシントン州レドモンド|[メール](mailto:dgonza@microsoft.com)|
 |<!-- ![Jane Fang](images/BiographyImages/) --></br>**Jane Fang**</br>*主要プログラムマネージャーのリーダー*| |サンフランシスコ、Ca|[メール](mailto:jafang@microsoft.com)|
 |![Jesse McCulloch](images/BiographyImages/JesseMcCulloch270x270.png)</br>**Jesse McCulloch**</br>*プログラムマネージャー II*|Jesse は、Microsoft の Mixed Reality Developer エコシステムチームのプログラムマネージャーです。 多くの場合、開発者にとっては、このような急速に増加する領域で発生するすべてのことを把握しようとしている Twitter で、または世界中の開発者との交流を実現するために空中で飛行するビッグメタルの集合で、開発者の余裕があることがわかります。|ワシントン州レドモンド|[メール](mailto:jemccull@microsoft.com)|
