@@ -5,160 +5,212 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: 3127ffceea08202fe9d978ad77f8fddb6fba60a3
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: b5b1bd0115822449bd6098f78cfc94d909169737
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334375"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77129452"
 ---
-# <a name="7-creating-a-lunar-module-sample-application"></a><span data-ttu-id="7aff6-105">7. 旧暦モジュールサンプルアプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="7aff6-105">7. Creating a Lunar Module sample application</span></span>
+# <a name="7-creating-a-lunar-module-sample-application"></a><span data-ttu-id="5b9c1-105">7. 旧暦モジュールサンプルアプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-105">7. Creating a Lunar Module sample application</span></span>
+<!-- TODO: Rename to 'Creating a Rocket Launcher sample application' -->
 
-<span data-ttu-id="7aff6-106">このチュートリアルでは、前のレッスンとの複数の概念を組み合わせて、独自のサンプルエクスペリエンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-106">In this tutorial, multiple concepts are combined from previous lessons to create a unique sample experience.</span></span> <span data-ttu-id="7aff6-107">旧暦モジュールアセンブリアプリケーションを作成する方法について学習します。ユーザーは、追跡したハンドを使用して旧暦モジュールパーツを取得し、旧暦モジュールを組み立てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-107">You will learn how to create a lunar module assembly application whereby a user needs to use tracked hands to pick up lunar module parts and attempt to assemble a lunar module.</span></span> <span data-ttu-id="7aff6-108">Pressable ボタンを使用して配置ヒントを切り替え、エクスペリエンスをリセットして、旧暦モジュールをスペースで起動します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-108">We use pressable buttons to toggle placement hints, to reset our experience, and to launch our lunar module into space!</span></span> <span data-ttu-id="7aff6-109">今後のチュートリアルでは、このエクスペリエンスの構築を続けています。これには、空間アラインメントに Azure 空間アンカーを利用する強力なマルチユーザーユースケースが含まれます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-109">In future tutorials, we will continue to build upon this experience, which includes powerful multi-user use cases that leverage Azure Spatial Anchors for spatial alignment.</span></span>
+<span data-ttu-id="5b9c1-106">このチュートリアルでは、前のレッスンとの複数の概念を組み合わせて、独自のサンプルエクスペリエンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-106">In this tutorial, multiple concepts are combined from previous lessons to create a unique sample experience.</span></span> <span data-ttu-id="5b9c1-107">パートアセンブリアプリケーションを作成する方法を学習します。このアプリケーションでは、ユーザーが追跡したハンドを使用して部品を取り出し、旧暦モジュールを組み立てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-107">You will learn how to create a part assembly application whereby a user needs to use tracked hands to pick up parts and attempt to assemble a lunar module.</span></span> <span data-ttu-id="5b9c1-108">Pressable ボタンを使用して、配置ヒントのオンとオフを切り替えたり、エクスペリエンスをリセットしたり、旧暦モジュールをスペースで起動したりします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-108">You will use pressable buttons to toggle placement hints on and off, to reset the experience, and to launch the lunar module into space!</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="7aff6-110">目標</span><span class="sxs-lookup"><span data-stu-id="7aff6-110">Objectives</span></span>
+<span data-ttu-id="5b9c1-109">今後のチュートリアルでは、このエクスペリエンスの構築を継続します。これには、空間の配置に Azure 空間アンカーを利用する強力なマルチユーザーのユースケースが含まれます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-109">In future tutorials, you will continue to build upon this experience, which includes powerful multi-user use cases that leverage Azure Spatial Anchors for spatial alignment.</span></span>
 
-- <span data-ttu-id="7aff6-111">前のレッスンの複数の概念を組み合わせて固有のエクスペリエンスを作成する</span><span class="sxs-lookup"><span data-stu-id="7aff6-111">Combine multiple concepts from previous lessons to create a unique experience</span></span>
-- <span data-ttu-id="7aff6-112">オブジェクトを切り替える方法を学習する</span><span class="sxs-lookup"><span data-stu-id="7aff6-112">Learn how to toggle objects</span></span>
-- <span data-ttu-id="7aff6-113">押しボタンを使用して複雑なイベントをトリガーする</span><span class="sxs-lookup"><span data-stu-id="7aff6-113">Trigger complex events using pressable buttons</span></span>
-- <span data-ttu-id="7aff6-114">剛体の物理学と力を使用する</span><span class="sxs-lookup"><span data-stu-id="7aff6-114">Use rigidbody physics and forces</span></span>
-- <span data-ttu-id="7aff6-115">ヒントの使用を調査する</span><span class="sxs-lookup"><span data-stu-id="7aff6-115">Explore the use of tool tips</span></span>
+## <a name="objectives"></a><span data-ttu-id="5b9c1-110">目標</span><span class="sxs-lookup"><span data-stu-id="5b9c1-110">Objectives</span></span>
 
-## <a name="configuring-the-lunar-module"></a><span data-ttu-id="7aff6-116">月着陸船の構成</span><span class="sxs-lookup"><span data-stu-id="7aff6-116">Configuring the Lunar Module</span></span>
+* <span data-ttu-id="5b9c1-111">前のレッスンの複数の概念を組み合わせて固有のエクスペリエンスを作成する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-111">Combine multiple concepts from previous lessons to create a unique experience</span></span>
+* <span data-ttu-id="5b9c1-112">オブジェクトを切り替える方法を学習する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-112">Learn how to toggle objects</span></span>
+* <span data-ttu-id="5b9c1-113">押しボタンを使用して複雑なイベントをトリガーする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-113">Trigger complex events using pressable buttons</span></span>
+* <span data-ttu-id="5b9c1-114">剛体の物理学と力を使用する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-114">Use rigidbody physics and forces</span></span>
+* <span data-ttu-id="5b9c1-115">ヒントの使用を調査する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-115">Explore the use of tool tips</span></span>
 
-<span data-ttu-id="7aff6-117">このセクションでは、サンプルエクスペリエンスを作成するために必要なさまざまなコンポーネントについて説明します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-117">In this section, we introduce the various components needed to create our sample experience.</span></span>
+## <a name="lunar-module-parts-overview"></a><span data-ttu-id="5b9c1-116">旧暦モジュールパーツの概要</span><span class="sxs-lookup"><span data-stu-id="5b9c1-116">Lunar Module Parts overview</span></span>
+<!-- TODO: Rename to 'Implementing the part assembly functionality' -->
 
-1. <span data-ttu-id="7aff6-118">基本シーンに旧暦モジュールアセンブリ prefab を追加します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-118">Add the Lunar Module Assembly prefab to your base scene.</span></span> <span data-ttu-id="7aff6-119">これを行うには、プロジェクト タブで > BaseModuleAssets > Prefabs に移動します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-119">To do this, in the Project tab navigate to Assets > BaseModuleAssets > Prefabs.</span></span> <span data-ttu-id="7aff6-120">2つのロケットランチャー prefabs が表示され、ロケット Launcher_Tutorial prefab をシーンにドラッグし、必要に応じて配置します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-120">You will see two rocket launcher prefabs, drag the Rocket Launcher_Tutorial prefab into your scene, and position as you wish.</span></span>
+<span data-ttu-id="5b9c1-117">このセクションでは、簡単なパートアセンブリチャレンジを作成します。ユーザーの目標は、テーブルに展開される5つの部分を太陰暦モジュールの正しい位置に配置することです。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-117">In this section, you will create a simple part assembly challenge where the user's goal is to place five parts that are spread out on the table at the correct location on the Lunar Module.</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="7aff6-121">ロケット Launcher_Complete prefab は、参照用に提供された、完成したランチャーです。</span><span class="sxs-lookup"><span data-stu-id="7aff6-121">The Rocket Launcher_Complete prefab is the completed launcher, provided for reference.</span></span>
+<span data-ttu-id="5b9c1-118">これを実現するには、主に次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-118">The main steps you will take to achieve this are:</span></span>
 
-    ![Lesson6 Chapter1 Step1im](images/Lesson6_Chapter1_step1im.PNG)
+1. <span data-ttu-id="5b9c1-119">ロケットランチャー prefab をシーンに追加する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-119">Add the Rocket Launcher prefab to the scene</span></span>
+2. <span data-ttu-id="5b9c1-120">すべての部分に対してオブジェクトの操作を有効にする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-120">Enable object manipulation for all the parts</span></span>
+3. <span data-ttu-id="5b9c1-121">パーツアセンブリのデモ (スクリプト) コンポーネントを追加して構成する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-121">Add and configure the Part Assembly Demo (Script) component</span></span>
 
-    <span data-ttu-id="7aff6-123">階層内でロケット Launcher_Tutorial game オブジェクトを展開し、旧暦モジュールオブジェクトをさらに展開すると、"x 射線" という素材を持ついくつかの子オブジェクトが検索されます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-123">If you expand the Rocket Launcher_Tutorial game object in your hierarchy and further expand the Lunar Module object, you find several child objects that have a material called "x-ray."</span></span> <span data-ttu-id="7aff6-124">"X 射線" のマテリアルでは、ユーザーの配置ヒントとして使用される半透明色を使用できます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-124">The "x-ray" material allows for a slightly translucent color that will be used as placement hints for the user.</span></span>
+> [!NOTE]
+> <span data-ttu-id="5b9c1-122">パートアセンブリデモ (スクリプト) コンポーネントは、MRTK の一部ではありません。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-122">The Part Assembly Demo (Script) component is not part of MRTK.</span></span> <span data-ttu-id="5b9c1-123">このチュートリアルでは、このチュートリアルのアセットを提供しました。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-123">It was provided with this tutorial's assets.</span></span>
 
-    ![Lesson6 Chapter1.txt のターゲット](images/Lesson6_Chapter1_noteaim.PNG)
+### <a name="1-add-the-rocket-launcher-prefab-to-the-scene"></a><span data-ttu-id="5b9c1-124">1. ロケットランチャー prefab をシーンに追加する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-124">1. Add the Rocket Launcher prefab to the scene</span></span>
 
-    <span data-ttu-id="7aff6-126">次の図に示すように、ユーザーが操作する旧暦モジュールには5つの部分があります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-126">There are five parts to the lunar module that the user will interact with, as shown in the image below:</span></span>
+<span data-ttu-id="5b9c1-125">プロジェクト ウィンドウで、**アセット** >  **mrtk に移動します。チュートリアル: GettingStarted** **Prefabs** > **RocketLauncher**フォルダーに移動し、 **RocketLauncher** prefab を 階層 ウィンドウにドラッグしてシーンに追加した後、適切な場所に配置します。次に例を示します。 > </span><span class="sxs-lookup"><span data-stu-id="5b9c1-125">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.GettingStarted** > **Prefabs** > **RocketLauncher** folder, drag the **RocketLauncher** prefab into the Hierarchy window to add it to your scene, and then position it at a suitable location, for example:</span></span>
 
-    1. <span data-ttu-id="7aff6-127">探査車格納庫</span><span class="sxs-lookup"><span data-stu-id="7aff6-127">The Rover Enclosure</span></span>
-    2. <span data-ttu-id="7aff6-128">燃料タンク</span><span class="sxs-lookup"><span data-stu-id="7aff6-128">The Fuel Tank</span></span>
-    3. <span data-ttu-id="7aff6-129">エネルギー セル</span><span class="sxs-lookup"><span data-stu-id="7aff6-129">The Energy Cell</span></span>
-    4. <span data-ttu-id="7aff6-130">ドッキング ポータル</span><span class="sxs-lookup"><span data-stu-id="7aff6-130">The Docking Portal</span></span>
-    5. <span data-ttu-id="7aff6-131">外部センサー</span><span class="sxs-lookup"><span data-stu-id="7aff6-131">The External sensor</span></span>
+* <span data-ttu-id="5b9c1-126">変換位置 X = 1.5、Y =-0.4、Z = 0 の場合、ユーザーの右側にウェスト height で配置されます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-126">Transform Position X = 1.5, Y = -0.4, Z = 0, so it is positioned to the right of the user at waist height</span></span>
+* <span data-ttu-id="5b9c1-127">変換の回転 X = 0、Y = 180、Z = 0、エクスペリエンスの主な機能はユーザーにとって</span><span class="sxs-lookup"><span data-stu-id="5b9c1-127">Transform Rotation X = 0, Y = 180, Z = 0, so the main features of the experience faces the user</span></span>
 
-    ![Lesson6 Chapter1 Notebim](images/Lesson6_Chapter1_notebim.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial6-section1-step1-1.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="7aff6-133">[Base Scene] 階層に表示されるゲーム オブジェクト名は、シーン内のオブジェクトの名前に対応していません。</span><span class="sxs-lookup"><span data-stu-id="7aff6-133">The game object names that you see in your base scene hierarchy do not correspond to the names of the objects in the scene.</span></span>
+### <a name="2-enable-object-manipulation-for-all-the-parts"></a><span data-ttu-id="5b9c1-129">2. すべての部分に対してオブジェクトの操作を有効にします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-129">2. Enable object manipulation for all the parts</span></span>
 
-2. <span data-ttu-id="7aff6-134">オーディオソースを LunarModule ゲームオブジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-134">Add an audio source to the LunarModule game object.</span></span> <span data-ttu-id="7aff6-135">シーン階層で LunarModule が選択されていることを確認し、[コンポーネントの追加] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-135">Make sure the LunarModule is selected in your scene hierarchy and click Add Component.</span></span> <span data-ttu-id="7aff6-136">オーディオソースを検索し、game オブジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-136">Search for Audio Source and add it to the game object.</span></span> <span data-ttu-id="7aff6-137">ここでは、[AudioClip] フィールドを空白のままにします。ただし、[特殊な Blend] 設定を0から1に変更して、空間オーディオを有効にします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-137">Leave the AudioClip field blank for now, but change the Special Blend setting from 0 to 1 so to enable spatial audio.</span></span> <span data-ttu-id="7aff6-138">後でサウンドを再生するには、このオーディオソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-138">You will use this audio source to play the launching sound later.</span></span>
+<span data-ttu-id="5b9c1-130">[階層] ウィンドウで、RocketLauncher > **Lunarmoduleparts**オブジェクトを見つけてすべての**子オブジェクト**を選択し、**操作ハンドラー (スクリプト)** コンポーネントと**Near Grabbable (スクリプト**) コンポーネントを追加して、操作ハンドラー (スクリプト) を次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-130">In the Hierarchy window, locate the RocketLauncher > **LunarModuleParts** object and select all the **child objects**, add the **Manipulation Handler (Script)** component and the **Near Interaction Grabbable (Script)** component, and then configure the Manipulation Handler (Script) as follows:</span></span>
 
-    ![Lesson6 Chapter1.txt Step2im](images/Lesson6_Chapter1_step2im.PNG)
+* <span data-ttu-id="5b9c1-131">**2 つのきき操作の種類**を移動回転に変更して、スケーリングが無効になるようにします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-131">Change **Two Handed Manipulation Type** to Move Rotate so scaling is disabled</span></span>
+* <span data-ttu-id="5b9c1-132">[**遠隔操作を許可**する] チェックボックスをオフにして、ほぼ対話のみを許可します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-132">Un-check the **Allow Far Manipulation** checkbox to only allow near interaction</span></span>
 
-3. <span data-ttu-id="7aff6-140">スクリプトの切り替えの配置ヒントを追加します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-140">Add the script Toggle Placement Hints.</span></span> <span data-ttu-id="7aff6-141">[コンポーネントの追加] をクリックし、[配置ヒントの切り替え] を検索します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-141">Click Add Component and search for Toggle Placement Hints.</span></span> <span data-ttu-id="7aff6-142">これは、前に説明したように半透明のヒント (x 線を持つオブジェクト) をオンまたはオフにできるカスタムスクリプトです。</span><span class="sxs-lookup"><span data-stu-id="7aff6-142">This is a custom script that lets you turn on and off the translucent hints (objects with the x-ray material), as mentioned earlier.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial6-section1-step1-2.png)
 
-    ![Lesson6 Chapter1.txt Step3im](images/Lesson6_Chapter1_step3im.PNG)
+> [!TIP]
+> <span data-ttu-id="5b9c1-134">オブジェクトの操作を実装する方法に関する詳細な手順については、「 [3D オブジェクトの操作](mrlearning-base-ch4.md#manipulating-3d-objects)」の指示を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-134">For a reminder, with step by step instructions, on how to implement object manipulation, you can refer to the [Manipulating 3D Objects](mrlearning-base-ch4.md#manipulating-3d-objects) instructions.</span></span>
 
-4. <span data-ttu-id="7aff6-144">5つのオブジェクトがあるため、game オブジェクトの配列サイズとして「5」と入力します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-144">Since we have five objects, type "5" for the game object array size.</span></span> <span data-ttu-id="7aff6-145">5つの新しい要素が表示されます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-145">You will then see five new elements appear.</span></span>
+### <a name="3-add-and-configure-the-part-assembly-demo-script-component"></a><span data-ttu-id="5b9c1-135">3. パーツアセンブリのデモ (スクリプト) コンポーネントを追加して構成する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-135">3. Add and configure the Part Assembly Demo (Script) component</span></span>
 
-    ![Lesson6 Chapter1 Step4bim](images/Lesson6_Chapter1_step4bim.PNG)
+<span data-ttu-id="5b9c1-136">すべての LunarModuleParts 子オブジェクトを選択したまま、**オーディオソース**コンポーネントを追加し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-136">With all the LunarModuleParts child objects still selected, add an **Audio Source** component and then configure it as follows:</span></span>
 
-    <span data-ttu-id="7aff6-147">各半透明オブジェクトを [すべての名前 (ゲームオブジェクト)] ボックスにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-147">Drag each of the translucent objects into all the Name (Game Object) boxes.</span></span> <span data-ttu-id="7aff6-148">上の図に示すように、シーンの旧暦モジュールから次のオブジェクトをオブジェクト配列のフィールドにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-148">Drag the following objects from the lunar module in your scene into the object array fields as shown in the image above:</span></span>
+* <span data-ttu-id="5b9c1-137">適切なオーディオクリップを**audioclip**フィールドに割り当てます (たとえば、MRKT_Scale_Start</span><span class="sxs-lookup"><span data-stu-id="5b9c1-137">Assign a suitable audio clip to the **AudioClip** field, for example, MRKT_Scale_Start</span></span>
+* <span data-ttu-id="5b9c1-138">シーンの読み込み時にオーディオクリップが自動的に再生されないように、 **[スリープ状態で再生]** チェックボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-138">Un-check the **Play On Awake** checkbox, so the audio clip does not automatically play when the scene loads</span></span>
+* <span data-ttu-id="5b9c1-139">空間**Blend**を1に変更して、空間オーディオを有効にする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-139">Change **Spatial Blend** to 1, to enable spatial audio</span></span>
 
-    ![Lesson6 Chapter1 Step4aim](images/Lesson6_Chapter1_step4aim.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-1.png)
 
-    <span data-ttu-id="7aff6-150">[配置ヒントの切り替え] スクリプトが構成され、ヒントをオンまたはオフにできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="7aff6-150">The Toggle Placement Hints script is now configured, which allows us to turn hints on and off.</span></span>
+<span data-ttu-id="5b9c1-141">すべての LunarModuleParts 子オブジェクトがまだ選択されている状態で、 **Part Assembly Demo (スクリプト)** コンポーネントを追加します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-141">With all the LunarModuleParts child objects still selected, add the **Part Assembly Demo  (Script)** component:</span></span>
 
-5. <span data-ttu-id="7aff6-151">Launch 旧暦モジュールスクリプトを追加します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-151">Add the Launch Lunar Module script.</span></span> <span data-ttu-id="7aff6-152">[コンポーネントの追加] ボタンをクリックし、[旧暦モジュールの起動] を検索して選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-152">Click the Add Component button, search for "launch lunar module" and select it.</span></span> <span data-ttu-id="7aff6-153">このスクリプトは、旧暦モジュールを起動します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-153">This script launches the lunar module.</span></span> <span data-ttu-id="7aff6-154">構成されたボタンを押したときに、旧暦モジュールの固定本文コンポーネントに上位の力が追加され、モジュールが上に起動します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-154">When we press a configured button, it adds an upward force to the lunar module's rigid body component and causes the module to launch upwards.</span></span> <span data-ttu-id="7aff6-155">屋内にいる場合は、月着陸船が天井メッシュに当たってクラッシュする可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-155">If you are indoors, the lunar module may crash against your ceiling mesh.</span></span> <span data-ttu-id="7aff6-156">雲の高低がある領域にいる場合、旧暦モジュールはスペースを無制限に飛びます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-156">If you are in an area with high ceilings or no ceilings, the lunar module will fly into space indefinitely.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-2.png)
 
-    ![Lesson6 Chapter1 Step5im](images/Lesson6_Chapter1_step5im.PNG)
+<span data-ttu-id="5b9c1-143">[階層] ウィンドウで、 **Roverenclosure クロージャ**オブジェクトを選択し、その**パートアセンブリデモ (スクリプト)** コンポーネントを次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-143">In the Hierarchy window, select the **RoverEnclosure** object and configure its **Part Assembly Demo (Script)** component as follows:</span></span>
 
-6. <span data-ttu-id="7aff6-158">月着陸船が正常に上に向かって飛行するように [推進力] を調整します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-158">Adjust the thrust so that the lunar module will fly up gracefully.</span></span> <span data-ttu-id="7aff6-159">0\.01 の値を試してください。</span><span class="sxs-lookup"><span data-stu-id="7aff6-159">Try a value of 0.01.</span></span> <span data-ttu-id="7aff6-160">[Rb] フィールドは空白のままにします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-160">Leave the "Rb" field blank.</span></span> <span data-ttu-id="7aff6-161">Rb は固定の本体を表し、このフィールドは実行時に自動的に設定されます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-161">Rb stands for Rigid body and this field will be automatically populated during runtime.</span></span>
+* <span data-ttu-id="5b9c1-144">フィールドを**配置するオブジェクト**に対して、オブジェクト自体 (この場合は**roverenclosure クロージャ**オブジェクト) を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-144">To the **Object To Place** field, assign the object itself, in this case, the **RoverEnclosure** object</span></span>
+* <span data-ttu-id="5b9c1-145">**[場所]** フィールドに、対応する PlacementHints オブジェクト (この例では**RoverEnclosure_PlacementHints**オブジェクト) を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-145">To the **Location To Place** field, assign the corresponding PlacementHints object, in this case, the **RoverEnclosure_PlacementHints** object</span></span>
+* <span data-ttu-id="5b9c1-146">**ツールヒントオブジェクト**フィールドに、対応する ToolTipObject (この例では**RoverEnclosure_ToolTip**オブジェクト) を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-146">To the **Tool Tip Object** field, assign the corresponding ToolTipObject, in this case, the **RoverEnclosure_ToolTip** object</span></span>
+* <span data-ttu-id="5b9c1-147">**[オーディオソース]** フィールドに、オブジェクト自体 (この場合は**roverenclosure クロージャ**オブジェクト) を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-147">To the **Audio Source** field, assign the object itself, in this case, the **RoverEnclosure** object</span></span>
 
-    ![Lesson6 Chapter1 Step6im](images/Lesson6_Chapter1_step6im.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-3.png)
 
-## <a name="lunar-module-parts-overview"></a><span data-ttu-id="7aff6-163">旧暦モジュールパーツの概要</span><span class="sxs-lookup"><span data-stu-id="7aff6-163">Lunar Module Parts overview</span></span>
+<span data-ttu-id="5b9c1-149">他のすべての LunarModuleParts 子オブジェクト (つまり、Futex、EnergyCell、DockingPortal、ExternalSensor) に対して**繰り返し**ます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-149">**Repeat** for each of the other LunarModuleParts child objects, i.e. FuelTank, EnergyCell, DockingPortal, and ExternalSensor.</span></span>
 
-<span data-ttu-id="7aff6-164">旧暦モジュールパーツの親オブジェクトは、ユーザーが操作するオブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="7aff6-164">The Lunar Module Parts parent object is the collection of the objects that the user interacts with.</span></span> <span data-ttu-id="7aff6-165">シーンがかっこで囲まれた Game オブジェクト名は、次の一覧に示されています。</span><span class="sxs-lookup"><span data-stu-id="7aff6-165">The Game object names with scene labeled names in parentheses, are provided in the list below:</span></span>
+<span data-ttu-id="5b9c1-150">ここでゲームモードに入り、' オブジェクト ' を移動して、それに対応する ' Location ' の位置に近い場所に配置すると、次のことがわかります。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-150">If you now enter Game mode and move an 'Object To Place' close to it's corresponding 'Location To Place' you will notice:</span></span>
 
-- <span data-ttu-id="7aff6-166">Backpack (エネルギーセル)</span><span class="sxs-lookup"><span data-stu-id="7aff6-166">Backpack (Energy Cell)</span></span>
-- <span data-ttu-id="7aff6-167">GasTank (燃料タンク)</span><span class="sxs-lookup"><span data-stu-id="7aff6-167">GasTank (Fuel Tank)</span></span>
-- <span data-ttu-id="7aff6-168">TopLeftBody (探査車格納庫)</span><span class="sxs-lookup"><span data-stu-id="7aff6-168">TopLeftBody (Rover Enclosure)</span></span>
-- <span data-ttu-id="7aff6-169">Nose (ドッキング ポータル)</span><span class="sxs-lookup"><span data-stu-id="7aff6-169">Nose (Docking Portal)</span></span>
-- <span data-ttu-id="7aff6-170">LeftTwirler (外部センサー)</span><span class="sxs-lookup"><span data-stu-id="7aff6-170">LeftTwirler (External Sensor)</span></span>
+* <span data-ttu-id="5b9c1-151">オブジェクトが配置され、LunarModule オブジェクトの親になります。これにより、オブジェクトが旧暦モジュールの一部になります。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-151">The object will snap into place and be parented under the LunarModule object so it becomes part of the Lunar Module</span></span>
+* <span data-ttu-id="5b9c1-152">オブジェクトのオーディオソースは、オブジェクトの位置で割り当てられたオーディオクリップを再生します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-152">The Audio Source on the object will play the assigned Audio Clip at the location of the object</span></span>
+* <span data-ttu-id="5b9c1-153">対応するツールヒントオブジェクトは非表示になります</span><span class="sxs-lookup"><span data-stu-id="5b9c1-153">The corresponding Tool Tip object will be hidden</span></span>
 
-<span data-ttu-id="7aff6-171">レッスン4で説明されているように、これらの各オブジェクトには操作ハンドラーがあることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="7aff6-171">Notice that each of these objects has a manipulation handler, as explained in Lesson 4.</span></span> <span data-ttu-id="7aff6-172">この機能を使用すると、ユーザーはオブジェクトを取得して操作できます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-172">This feature enables users to grab and manipulate the object.</span></span> <span data-ttu-id="7aff6-173">また、設定の2つのきき操作の種類が移動と回転に設定されていることにも注意してください。</span><span class="sxs-lookup"><span data-stu-id="7aff6-173">Also note that the setting, Two Handed Manipulation Type, is set to Move and Rotate.</span></span> <span data-ttu-id="7aff6-174">このオプションは、オブジェクトの移動だけを許可し、アセンブリアプリケーションに必要な機能であるサイズを変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="7aff6-174">This option only permits the user to move the object and not change its size, which is the desired functionality for an assembly application.</span></span>
-<span data-ttu-id="7aff6-175">さらに、モジュールパーツを直接やり取りするためだけに、遠くの操作はオフになっています。</span><span class="sxs-lookup"><span data-stu-id="7aff6-175">In addition, Far Manipulation is unchecked to allow only for direct interaction of module parts.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-4.png)
 
-![Lesson6 Chapter2im](images/Lesson6_Chapter2im.PNG)
+> [!TIP]
+> <span data-ttu-id="5b9c1-155">エディター内入力シミュレーションの使用方法に関する注意事項については、「エディターでの入力シミュレーションを使用して、 [Mrtk ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)でシーンガイドを[テストする](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-155">For a reminder on how to use the in-editor input simulation, you can refer to the [Using the In-Editor Hand Input Simulation to test a scene](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#using-the-in-editor-hand-input-simulation-to-test-a-scene) guide in the [MRTK Documentation Portal](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html).</span></span>
 
-<span data-ttu-id="7aff6-177">部分アセンブリデモスクリプト (上図参照) は、ユーザーがユーザーによってユーザーが旧暦モジュールに配置するオブジェクトを管理するスクリプトです。</span><span class="sxs-lookup"><span data-stu-id="7aff6-177">The Part Assembly Demo script (shown above) is the script that manages the objects that the user places on the lunar module by the user.</span></span>
+## <a name="configuring-the-lunar-module"></a><span data-ttu-id="5b9c1-156">月着陸船の構成</span><span class="sxs-lookup"><span data-stu-id="5b9c1-156">Configuring the Lunar Module</span></span>
 
-<span data-ttu-id="7aff6-178">フィールドを配置するオブジェクトは、上の図に示すように選択されている変換です。これは、接続先のオブジェクトに関連付けられている backpack/燃料タンクです。</span><span class="sxs-lookup"><span data-stu-id="7aff6-178">The Object To Place field is the transform that is selected, as shown in the image above, the backpack/fuel tank associated with the object that it connects to.</span></span>
+<span data-ttu-id="5b9c1-157">このセクションでは、ユーザーが次のことができるように、ロケットランチャーアプリケーションに機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-157">In this section, you will add additional features to the Rocket Launcher application so the user can:</span></span>
 
-<span data-ttu-id="7aff6-179">近距離距離と遠く距離の設定によって、どのパーツがどこに配置されているか、または解放できるかが決まります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-179">The Near Distance and Far Distance settings determine the proximity to which parts snap in place or can be released.</span></span> <span data-ttu-id="7aff6-180">たとえば、backpack/燃料タンクは、位置に合わせる前に、旧暦モジュールから離れた0.1 単位である必要があります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-180">For example, the backpack/fuel tank needs to be 0.1 units away from the lunar module before it will snap into place.</span></span> <span data-ttu-id="7aff6-181">[遠くの距離] 設定では、オブジェクトが旧暦モジュールからデタッチできるようになる位置が設定されます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-181">The Far Distance setting sets the location where the object can be before it can detach from the lunar module.</span></span> <span data-ttu-id="7aff6-182">この場合、ユーザーの手は Backpack/燃料タンクをつかみ、再度はめ込まれないように取り外すには月着陸船から 0.2 ユニット離れた場所に引く必要があります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-182">In this case, the user’s hand must grab the backpack/fuel tank and pull it 0.2 units away from the lunar module to remove it from snapping back into place.</span></span>
+* <span data-ttu-id="5b9c1-158">旧暦モジュールとの対話</span><span class="sxs-lookup"><span data-stu-id="5b9c1-158">Interact with the Lunar Module</span></span>
+* <span data-ttu-id="5b9c1-159">旧暦モジュールをスペースで起動し、起動時にサウンドを再生します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-159">Launch the Lunar Module into space and play a sound when it is launched</span></span>
+* <span data-ttu-id="5b9c1-160">旧暦モジュールとすべての部分が元の位置に戻されるようにアプリケーションをリセットします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-160">Reset the application so the Lunar Module and all the part are placed back to their original position</span></span>
+* <span data-ttu-id="5b9c1-161">パーツアセンブリのチャレンジをより困難にするために配置ヒントを非表示にします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-161">Hide the placement hints to make the part assembly challenge more difficult.</span></span>
 
-<span data-ttu-id="7aff6-183">ツールヒントオブジェクトはシーンのツールヒントラベルです。</span><span class="sxs-lookup"><span data-stu-id="7aff6-183">The Tool Tip Object is the tool tip label in the scene.</span></span> <span data-ttu-id="7aff6-184">オブジェクトが所定の位置にスナップされると、ラベルは無効になります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-184">When the objects are snapped in place, the label is disabled.</span></span>
+<span data-ttu-id="5b9c1-162">これを実現するには、主に次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-162">The main steps you will take to achieve this are:</span></span>
 
-<span data-ttu-id="7aff6-185">オーディオソースが自動的にグラブされます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-185">The Audio Source is automatically grabbed.</span></span>
+1. <span data-ttu-id="5b9c1-163">オブジェクトの操作を有効にする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-163">Enable object manipulation</span></span>
+2. <span data-ttu-id="5b9c1-164">物理を有効にする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-164">Enable physics</span></span>
+3. <span data-ttu-id="5b9c1-165">オーディオソースコンポーネントを追加する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-165">Add an Audio Source component</span></span>
+4. <span data-ttu-id="5b9c1-166">Launch 旧暦モジュール (スクリプト) コンポーネントの追加と構成</span><span class="sxs-lookup"><span data-stu-id="5b9c1-166">Add and configure the Launch Lunar Module (Script) component</span></span>
+5. <span data-ttu-id="5b9c1-167">配置ヒントの切り替え (スクリプト) コンポーネントの追加と構成</span><span class="sxs-lookup"><span data-stu-id="5b9c1-167">Add and configure the Toggle Placement Hints (Script) component</span></span>
 
-## <a name="configuring-the-placement-hints-button"></a><span data-ttu-id="7aff6-186">配置ヒントボタンの構成</span><span class="sxs-lookup"><span data-stu-id="7aff6-186">Configuring the Placement Hints button</span></span>
+> [!NOTE]
+> <span data-ttu-id="5b9c1-168">[旧暦モジュール (スクリプト)] コンポーネントと [配置ヒントの切り替え (スクリプト)] コンポーネントは、MRTK の一部ではありません。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-168">The Launch Lunar Module (Script) component and the Toggle Placement Hints (Script) component are not part of MRTK.</span></span> <span data-ttu-id="5b9c1-169">これらは、このチュートリアルの資産で提供されています。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-169">They were provided with this tutorial's assets.</span></span>
 
-<span data-ttu-id="7aff6-187">[レッスン 2](mrlearning-base-ch2.md)では、項目の色を変更したり、プッシュ時に音を鳴らすようにしたりするためのボタンを配置および構成する方法について学習しました。</span><span class="sxs-lookup"><span data-stu-id="7aff6-187">In [Lesson 2](mrlearning-base-ch2.md), you learned how to place and configure buttons to do things like change the color of an item or make it play a sound when pushed.</span></span> <span data-ttu-id="7aff6-188">ここでは配置のヒントを切り替えるためのボタンを構成するため、これらの原則を引き続き使用します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-188">We will continue to use those principles as we configure our buttons for toggling placement hints.</span></span>
+### <a name="1-enable-object-manipulation"></a><span data-ttu-id="5b9c1-170">1. オブジェクトの操作を有効にする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-170">1. Enable object manipulation</span></span>
 
-<span data-ttu-id="7aff6-189">目標は、ユーザーが配置ヒントボタンを押すたびに、半透明の配置ヒントが表示されるように、ボタンを構成することです。</span><span class="sxs-lookup"><span data-stu-id="7aff6-189">The goal is to configure our button so that every time the user presses the Placement hint button, it toggles the visibility of the translucent placement hints.</span></span>
+<span data-ttu-id="5b9c1-171">[階層] ウィンドウで、RocketLauncher > **Lunarmodule**オブジェクトを選択し、**操作ハンドラー (スクリプト)** コンポーネントと**Near Grabbable (スクリプト)** コンポーネントを追加して、操作ハンドラー (スクリプト) を次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-171">In the Hierarchy window, select the RocketLauncher > **LunarModule** object, add the **Manipulation Handler (Script)** component and the **Near Interaction Grabbable (Script)** component, and then configure the Manipulation Handler (Script) as follows:</span></span>
 
-1. <span data-ttu-id="7aff6-190">基本のシーン階層で配置ヒントオブジェクトが選択されている間、[インスペクター] パネルの空のランタイムのみのスロットに旧暦モジュールを移動します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-190">Move the lunar module to the empty Runtime Only slot in the inspector panel while the Placement Hints object is selected in your base scene hierarchy.</span></span>
+* <span data-ttu-id="5b9c1-172">**2 つのきき操作の種類**を移動回転に変更して、スケーリングが無効になるようにします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-172">Change **Two Handed Manipulation Type** to Move Rotate so scaling is disabled</span></span>
+* <span data-ttu-id="5b9c1-173">[**遠隔操作を許可**する] チェックボックスをオフにして、ほぼ対話のみを許可します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-173">Un-check the **Allow Far Manipulation** checkbox to only allow near interaction</span></span>
 
-    ![Lesson6 Chapter3 Step1im](images/Lesson6_Chapter3_step1im.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial6-section2-step1-1.png)
 
-2. <span data-ttu-id="7aff6-192">[関数なし] ドロップダウンリストをクリックします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-192">Click the No Function dropdown list.</span></span> <span data-ttu-id="7aff6-193">TogglePlacementHints に移動し、そのメニューの下にある ToggleGameObjects () を選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-193">Go down to TogglePlacementHints and select ToggleGameObjects () under that menu.</span></span> <span data-ttu-id="7aff6-194">ToggleGameObjects () は、ボタンが押されるたびに表示または非表示になるように配置ヒントのオンとオフを切り替えます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-194">ToggleGameObjects() toggles the placement hints on and off so that they are visible or invisible each time the button is pressed.</span></span>
+### <a name="2-enable-physics"></a><span data-ttu-id="5b9c1-175">2. 物理を有効にする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-175">2. Enable physics</span></span>
 
-    ![Lesson6 Chapter3 Step2im](images/Lesson6_Chapter3_step2im.PNG)
+<span data-ttu-id="5b9c1-176">RocketLauncher > **Lunarmodule**オブジェクトを選択したまま、Rigidbody コンポーネントを追加し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-176">With the RocketLauncher > **LunarModule** object still selected, add a Rigidbody component and then configure it as follows:</span></span>
 
-## <a name="configuring-the-reset-button"></a><span data-ttu-id="7aff6-196">[リセット] ボタンの構成</span><span class="sxs-lookup"><span data-stu-id="7aff6-196">Configuring the Reset button</span></span>
+* <span data-ttu-id="5b9c1-177">**[重力を使用する]** チェックボックスをオフにして、太陰暦モジュールが重力の影響を受けないようにします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-177">Un-check the **Use Gravity** checkbox so the Lunar Module is not affected by gravity</span></span>
+* <span data-ttu-id="5b9c1-178">**[Is キネマティック]** チェックボックスをオンにします。これにより、旧暦モジュールは、physic の強制による影響を受けません。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-178">Check the **Is Kinematic** checkbox so the Lunar Module initially isn't affected by physic forces</span></span>
 
-<span data-ttu-id="7aff6-197">ユーザーが誤ってオブジェクトを破棄したり、エクスペリエンスをリセットしたりする場合があります。</span><span class="sxs-lookup"><span data-stu-id="7aff6-197">There will be situations where the user makes a mistake, accidentally throws the object away or just wants to reset the experience.</span></span> <span data-ttu-id="7aff6-198">[リセット] ボタンをクリックすると、エクスペリエンスを再起動する機能が追加されます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-198">The Reset button adds the ability to restart the experience.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial6-section2-step2-1.png)
 
-1. <span data-ttu-id="7aff6-199">[リセット] ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-199">Select the Reset button.</span></span> <span data-ttu-id="7aff6-200">基本シーンでは、ResetRoundButton という名前が付けられます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-200">In the base scene, it’s named ResetRoundButton.</span></span>
+### <a name="3-add-an-audio-source-component"></a><span data-ttu-id="5b9c1-180">3. オーディオソースコンポーネントを追加する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-180">3. Add an Audio Source component</span></span>
 
-2. <span data-ttu-id="7aff6-201">[インスペクター] パネルの [Button] の下にある空のスロットに、[基本のシーン] 階層から旧暦モジュールをドラッグします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-201">Drag the lunar module from the base scene hierarchy into the empty slot under Button Pressed on the inspector panel.</span></span>
+<span data-ttu-id="5b9c1-181">RocketLauncher > **Lunarmodule**オブジェクトを選択したまま、**オーディオソース**コンポーネントを追加し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-181">With the RocketLauncher > **LunarModule** object still selected, add an **Audio Source** component and then configure it as follows:</span></span>
 
-    ![Lesson6 Chapter4 Step2im](images/Lesson6_Chapter4_step2im.PNG)
+* <span data-ttu-id="5b9c1-182">空間**Blend**を1に変更して空間オーディオを有効にする</span><span class="sxs-lookup"><span data-stu-id="5b9c1-182">Change **Spatial Blend** to 1 to enable spatial audio</span></span>
 
-3. <span data-ttu-id="7aff6-203">[関数なし] ドロップダウンメニューを選択し、LaunchLunarModule の上にマウスポインターを移動し、[resetModule ()] を選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-203">Select the No Function dropdown menu and hover over LaunchLunarModule, then select resetModule ().</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial6-section2-step3-1.png)
 
-    ![Lesson6 Chapter4 Step3im](images/Lesson6_Chapter4_step3im.PNG)
+### <a name="4-add-and-configure-the-launch-lunar-module-script-component"></a><span data-ttu-id="5b9c1-184">4. Launch Module (スクリプト) コンポーネントを追加して構成する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-184">4. Add and configure the Launch Lunar Module (Script) component</span></span>
 
-    >[!NOTE]
-    ><span data-ttu-id="7aff6-205">既定では、BroadcastMessage は ResetPlacement に構成されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="7aff6-205">Notice that by default, the GameObject.BroadcastMessage is configured to ResetPlacement.</span></span> <span data-ttu-id="7aff6-206">これにより、RocketLauncher_Tutorial のすべての子オブジェクトに対して ResetPlacement という名前のメッセージがブロードキャストされます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-206">This broadcasts a message named ResetPlacement for every child object of the RocketLauncher_Tutorial.</span></span> <span data-ttu-id="7aff6-207">ResetPlacement () のメソッドを持つオブジェクトは、位置をリセットすることによって、そのメッセージに応答します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-207">Any object that has a method for ResetPlacement() responds to that message by resetting it's position.</span></span>
+<span data-ttu-id="5b9c1-185">RocketLauncher > **Lunarmodule**オブジェクトを選択した状態で、 **Launch 旧暦モジュール (スクリプト)** コンポーネントを追加し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-185">With the RocketLauncher > **LunarModule** object still selected, add the **Launch Lunar Module (Script)** component and then configure it as follows:</span></span>
 
-## <a name="configuring-the-launch-button"></a><span data-ttu-id="7aff6-208">[起動] ボタンの構成</span><span class="sxs-lookup"><span data-stu-id="7aff6-208">Configuring the Launch button</span></span>
+* <span data-ttu-id="5b9c1-186">**推力**の値を変更して、旧暦を起動したときに (たとえば、0.01 に)、旧暦のモジュールが適切に表示されるようにします。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-186">Change **Thrust** value so the Lunar Module will fly up gracefully when launched, for example, to 0.01</span></span>
 
-<span data-ttu-id="7aff6-209">ここでは、[起動] ボタンを構成する方法について説明します。このボタンを使用すると、ユーザーはボタンをクリックして、スペースで旧暦モジュールを起動することができます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-209">This section explains how to configure the Launch button, which permits the user to press the button and launch the lunar module into space.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial6-section2-step4-1.png)
 
-1. <span data-ttu-id="7aff6-210">[起動] ボタンを選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-210">Select the Launch button.</span></span> <span data-ttu-id="7aff6-211">基本シーンでは、LaunchRoundButton と呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-211">In the base scene, it’s called LaunchRoundButton.</span></span> <span data-ttu-id="7aff6-212">[インスペクター] パネルの [タッチエンド] の下にある空のスロットに、旧暦モジュールをドラッグします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-212">Drag the lunar module to the empty slot under Touch End in the Inspector panel.</span></span>
+### <a name="5-add-and-configure-the-toggle-placement-hints-script-component"></a><span data-ttu-id="5b9c1-188">5. 配置ヒントの切り替え (スクリプト) コンポーネントを追加および構成する</span><span class="sxs-lookup"><span data-stu-id="5b9c1-188">5. Add and configure the Toggle Placement Hints (Script) component</span></span>
 
-    ![Lesson6 Chapter5 Step1im](images/Lesson6_Chapter5_step1im.PNG)
+<span data-ttu-id="5b9c1-189">RocketLauncher > **Lunarmodule**オブジェクトを選択したまま、 **[配置ヒント (スクリプト) の切り替え]** コンポーネントを追加し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-189">With the RocketLauncher > **LunarModule** object still selected, add the **Toggle Placement Hints (Script)** component and then configure it as follows:</span></span>
 
-2. <span data-ttu-id="7aff6-214">[関数なし] ドロップダウンメニューを選択し、LaunchLunarModule の上にマウスポインターを移動し、[StopThruster ()] を選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-214">Select the No Function dropdown menu and hover over LaunchLunarModule, and select StopThruster ().</span></span> <span data-ttu-id="7aff6-215">これにより、ユーザーが旧暦モジュールに与える推力の量が制御されます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-215">This controls how much thrust the user wants to give to the lunar module.</span></span>
+* <span data-ttu-id="5b9c1-190">Game オブジェクトの配列**サイズ**プロパティを5に設定します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-190">Set the Game Object Array **Size** property to 5</span></span>
+* <span data-ttu-id="5b9c1-191">**PlacementHints**オブジェクトの各**子オブジェクト**を、Game オブジェクト配列の**要素**フィールドに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-191">Assign each of the **PlacementHints** object's **child objects** to the an **Element** field in the Game Object Array:</span></span>
 
-    ![Lesson6 Chapter5 Step2im](images/Lesson6_Chapter5_step2im.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial6-section2-step5-1.png)
 
-3. <span data-ttu-id="7aff6-217">[インスペクター] パネルの [Button] の下にある空のスロットに、[基本のシーン] 階層から旧暦モジュールをドラッグします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-217">Drag the lunar module from the base scene hierarchy into the empty slot under Button Pressed in the inspector panel.</span></span>
+## <a name="configuring-the-launch-button"></a><span data-ttu-id="5b9c1-193">[起動] ボタンの構成</span><span class="sxs-lookup"><span data-stu-id="5b9c1-193">Configuring the Launch button</span></span>
 
-4. <span data-ttu-id="7aff6-218">[関数なし] ドロップダウンメニューをクリックし、[LaunchLunarModule] をクリックして、[StartThruster ()] を選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-218">Click the No function dropdown menu and then on LaunchLunarModule and select StartThruster ().</span></span>
+<span data-ttu-id="5b9c1-194">[階層] ウィンドウで、[> RocketLauncher] ボタン > **launchbutton**オブジェクトを選択し、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**ボタン押された ()** イベントを作成して、イベントを受信するための**lunarmodule**オブジェクトを構成し、トリガーするアクションとして**launchlunarStartThruster**を定義します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-194">In the Hierarchy window, select the RocketLauncher > Buttons > **LaunchButton** object, then on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, and define **LaunchLunarModule.StartThruster** as the action to be triggered:</span></span>
 
-    ![Lesson6 Chapter5 Step4im](images/Lesson6_Chapter5_step4im.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-1.png)
 
-5. <span data-ttu-id="7aff6-220">音楽がロケットの撮影時に再生されるように、旧暦モジュールに音楽を追加します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-220">Add music to the lunar module so that music plays when the rocket takes off.</span></span> <span data-ttu-id="7aff6-221">これを行うには、[] ボタンが押された状態の次の空のスロット () に旧暦モジュールをドラッグします。</span><span class="sxs-lookup"><span data-stu-id="7aff6-221">To do this, drag the lunar module to the next empty slot under Button Pressed().</span></span>
+> [!TIP]
+> <span data-ttu-id="5b9c1-196">イベントの実装方法に関する注意事項については、「[ハンドトラッキングジェスチャ」と「対話型 buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) 」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-196">For a reminder on how to implement events, you can refer to the [Hand tracking gestures and interactable buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) instructions.</span></span>
 
-6. <span data-ttu-id="7aff6-222">[関数なし] ドロップダウンメニューを選択し、AudioSource の上にマウスポインターを移動して、[PlayOneShot (Audiosource)] を選択します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-222">Select the No Function dropdown menu, hover over AudioSource and select PlayOneShot (AudioClip).</span></span> <span data-ttu-id="7aff6-223">MRTK に含まれているさまざまな音から自由に選択してください。</span><span class="sxs-lookup"><span data-stu-id="7aff6-223">Feel free to explore the variety of sounds included with the MRTK.</span></span> <span data-ttu-id="7aff6-224">この例では、"MRTK_Gem" を使用します。</span><span class="sxs-lookup"><span data-stu-id="7aff6-224">In this example, we'll use "MRTK_Gem."</span></span>
+<span data-ttu-id="5b9c1-197">RocketLauncher > ボタン > **launchbutton**オブジェクトが選択された状態で、[ **Pressable] ボタン (スクリプト)** コンポーネントで、新しい**Button 押された ()** イベントを作成し、イベントを受信するように**lunarmodule**オブジェクトを構成し、トリガーするアクションとして**audiosource. PlayOneShot**を定義し **、オーディオクリップフィールドに**適切 MRTK_Gem なオーディオクリップを割り当てます</span><span class="sxs-lookup"><span data-stu-id="5b9c1-197">With the RocketLauncher > Buttons > **LaunchButton** object still selected, on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, define **AudioSource.PlayOneShot** as the action to be triggered, and assign a suitable audio clip to the **Audio Clip** field, for example, the MRTK_Gem audio clip:</span></span>
 
-    ![Lesson6 Chapter5 Step6im](images/Lesson6_Chapter5_step6im.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-2.png)
 
-## <a name="congratulations"></a><span data-ttu-id="7aff6-226">結論</span><span class="sxs-lookup"><span data-stu-id="7aff6-226">Congratulations</span></span>
+<span data-ttu-id="5b9c1-199">RocketLauncher > ボタン > **launchbutton**オブジェクトが選択された状態で、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**タッチ終了 ()** イベントを作成し、イベントを受信するように**lunarmodule**オブジェクトを構成して、トリガーされるアクションとして**launchlunarmodule. StopThruster**を定義します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-199">With the RocketLauncher > Buttons > **LaunchButton** object still selected, on the **Pressable Button (Script)** component, create a new **Touch Ended ()** event, configure the **LunarModule** object to receive the event, and define **LaunchLunarModule.StopThruster** as the action to be triggered:</span></span>
 
-<span data-ttu-id="7aff6-227">このアプリケーションは完全に構成されています。</span><span class="sxs-lookup"><span data-stu-id="7aff6-227">You have fully configured this application.</span></span> <span data-ttu-id="7aff6-228">ここで、[再生] をクリックすると、旧暦モジュールを完全に組み立て、ヒントを切り替えることができます。また、旧暦モジュールを起動してリセットし、再起動することもできます。</span><span class="sxs-lookup"><span data-stu-id="7aff6-228">Now, when you press play, you can fully assemble the lunar module, toggle hints, launch the lunar module and reset it to start again.</span></span>
+![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-3.png)
+
+<span data-ttu-id="5b9c1-201">これでゲームモードに入り、[起動] ボタンを押すと、オーディオクリップが再生されます。また、[起動] ボタンを1秒以上押したままにすると、旧暦モジュールがスペースで起動していることがわかります。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-201">If you now enter Game mode and press the Launch button, you will hear the audio clip play, and if you hold the Launch button down for about a second or longer, you will see the Lunar Module launch into space:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-4.png)
+
+## <a name="configuring-the-reset-button"></a><span data-ttu-id="5b9c1-203">[リセット] ボタンの構成</span><span class="sxs-lookup"><span data-stu-id="5b9c1-203">Configuring the Reset button</span></span>
+
+<span data-ttu-id="5b9c1-204">[階層] ウィンドウで、[RocketLauncher >] ボタン > **Resetbutton**オブジェクトを選択し、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**Button 押された ()** イベントを作成します。次に、イベントを受信するための**lunarmodule**オブジェクトを構成し、トリガーするアクションとして**launchlunarmodule. resetbutton**を定義します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-204">In the Hierarchy window, select the RocketLauncher > Buttons > **ResetButton** object, then on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, and define **LaunchLunarModule.ResetModule** as the action to be triggered:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial6-section4-step1-1.png)
+
+<span data-ttu-id="5b9c1-206">RocketLauncher > のボタン > **resetbutton**オブジェクトを選択したまま、[ **Pressable] ボタン (スクリプト)** コンポーネントで、新しい**Button 押された ()** イベントを作成し、イベントを受信するように**RocketLauncher**オブジェクトを構成し、トリガーするアクションとして**BroadcastMessage**を定義し、メッセージフィールドに**resetbutton**を入力します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-206">With the RocketLauncher > Buttons > **ResetButton** object still selected, on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **RocketLauncher** object to receive the event, define **GameObject.BroadcastMessage** as the action to be triggered, and enter **ResetPlacement** in message field:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial6-section4-step1-2.png)
+
+> [!TIP]
+> <span data-ttu-id="5b9c1-208">BroadcastMessage アクションは、ResetPlacement メッセージを RocketLauncher オブジェクトからすべての子オブジェクトに送信します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-208">The GameObject.BroadcastMessage action sends the ResetPlacement message from the RocketLauncher object to all its child object.</span></span> <span data-ttu-id="5b9c1-209">すべての LunarModuleParts 子オブジェクトに追加したパーツアセンブリデモ (スクリプト) コンポーネントで定義されている ResetPlacement 関数を持つ子オブジェクトは、その子オブジェクトの配置をリセットする ResetPlacement 関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-209">Any child object that has the ResetPlacement function, which is defined in the Part Assembly Demo (Script) component you added to all the LunarModuleParts child object, will invoke the ResetPlacement function which resets that child object's placement.</span></span>
+
+<span data-ttu-id="5b9c1-210">これでゲームモードに入り、[リセット] ボタンを押すと、再生中のオーディオクリップが表示され、スペースで開かれている旧暦が表示されます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-210">If you now enter Game mode and press the Reset button you will hear the audio clip being played and see the Lunar Module being launched into space:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial6-section4-step1-3.png)
+
+## <a name="configuring-the-placement-hints-button"></a><span data-ttu-id="5b9c1-212">配置ヒントボタンの構成</span><span class="sxs-lookup"><span data-stu-id="5b9c1-212">Configuring the Placement Hints button</span></span>
+<!-- TODO: Rename to 'Configuring the Hints button'-->
+
+<span data-ttu-id="5b9c1-213">[階層] ウィンドウで、[RocketLauncher > ボタン > **Hintsbutton]** オブジェクトを選択し、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**ボタン押された ()** イベントを作成します。次に、イベントを受信するための**lunarmodule**オブジェクトを構成し、トリガーされるアクションを**TogglePlacementHints**に定義します。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-213">In the Hierarchy window, select the RocketLauncher > Buttons > **HintsButton** object, then on the **Pressable Button (Script)** component, create a new **Button Pressed ()** event, configure the **LunarModule** object to receive the event, and define **TogglePlacementHints.ToggleGameObjects** the action to be triggered:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial6-section5-step1-1.png)
+
+<span data-ttu-id="5b9c1-215">これでゲームモードに入ると、半透明の配置ヒントが既定で無効になっていることがわかりますが、ヒントボタンを押すことによって、オンとオフを切り替えることができます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-215">If you now enter Game mode you will notice that the translucent placement hints are disabled by default, but that you can toggle them on and off by pressing the Hints button:</span></span>
+
+![mrlearning-base](images/mrlearning-base/tutorial6-section5-step1-2.png)
+
+## <a name="congratulations"></a><span data-ttu-id="5b9c1-217">結論</span><span class="sxs-lookup"><span data-stu-id="5b9c1-217">Congratulations</span></span>
+
+<span data-ttu-id="5b9c1-218">このアプリケーションは完全に構成されています。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-218">You have fully configured this application.</span></span> <span data-ttu-id="5b9c1-219">これで、アプリケーションでは、ユーザーが旧暦モジュールを完全に組み立て、旧暦モジュールを起動し、ヒントを切り替えることができるようになりました。また、アプリケーションをリセットして再起動することもできます。</span><span class="sxs-lookup"><span data-stu-id="5b9c1-219">Now, your application allows users to fully assemble the Lunar Module, launch the Lunar Module, toggle hints, and reset the application to start again.</span></span>
