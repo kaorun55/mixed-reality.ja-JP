@@ -5,239 +5,263 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: 75a14697953026474d8ca00e6473145d7b12a482
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: 18bcbc95746a2e66b88d83f279603aa7f171bbcb
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334350"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77129663"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 詳細な入力オプションを調査する
 
-このチュートリアルでは、音声コマンド、パンジェスチャ、および視線追跡の使用を含む、HoloLens 2 の高度な入力オプションをいくつか紹介します。 
+このチュートリアルでは、HoloLens 2 の高度な入力オプションをいくつか紹介します。これには、音声コマンド、パンジェスチャ、および視線追跡の使用が含まれます。
 
 ## <a name="objectives"></a>目標
 
-- 音声コマンドとキーワードを使用してイベントをトリガーする
-- 追跡したハンドを使用して、追跡したハンドでテクスチャと3D オブジェクトをパンする
-- HoloLens 2 の監視機能を活用してオブジェクトを選択する
+* 音声コマンドとキーワードを使用してイベントをトリガーする
+* 追跡したハンドを使用して、追跡したハンドでテクスチャと3D オブジェクトをパンする
+* HoloLens 2 の監視機能を活用してオブジェクトを選択する
 
 ## <a name="enabling-voice-commands"></a>音声コマンドの有効化
+<!-- TODO: Consider changing to 'Enabling Speech Commands -->
 
-このセクションでは、2つの音声コマンドが実装されています。 まず、[診断の切り替え] を表示することによって、フレームレート診断パネルを切り替える機能が導入されました。 次に、音声コマンドでサウンドを再生する機能について説明します。 まず、音声コマンドの構成を担当する MRTK プロファイルと設定を確認します。
+このセクションでは、speech コマンドを実装して、ユーザーが Octa オブジェクトでサウンドを再生できるようにします。 このためには、新しい speech コマンドを作成し、speech コマンドキーワードが話されたときに目的のアクションをトリガーするようにイベントを構成します。
 
-1. [BaseScene] 階層で、[MixedRealityToolkit] を選択します。 次に、[インスペクター] パネルで [入力] を選択し、DefaultMixedRealityInputSystemProfile の左側にある小さい [複製] ボタンをクリックして、[複製プロファイル] ポップアップを開きます。 ポップアップで [複製] をクリックして、新しいプロファイル MixedRealityInputSystemProfile を作成します。
+これを実現するには、主に次の手順を実行します。
 
-    ![mrlearning-base-ch5-1-step1a](images/mrlearning-base-ch5-1-step1a.png)
+1. 既定の入力システムプロファイルを複製する
+2. 既定の Speech コマンドプロファイルを複製する
+3. 新しい speech コマンドを作成する
+4. 音声入力ハンドラー (スクリプト) コンポーネントを追加して構成する
+5. Speech コマンドの応答イベントを実装します。
 
-    これにより、新しく作成された MixedRealityInputSystemProfile で MixedRealityToolkitConfigurationProfile が自動的に設定されます。
+### <a name="1-clone-the-default-input-system-profile"></a>1. 既定の入力システムプロファイルを複製します。
 
-    ![mrlearning-base-ch5-1-step1b](images/mrlearning-base-ch5-1-step1b.png)
+階層 ウィンドウで**MixedRealityToolkit**オブジェクトを選択し、インスペクター ウィンドウで **入力** タブを選択し、 **DefaultHoloLens2InputSystemProfile**を複製して独自のカスタマイズ可能な**入力システムプロファイル**に置き換えます。
 
-2. 入力システムプロファイルには、さまざまな設定があります。 音声コマンドの場合は、[音声] セクションを展開し、前の手順と同じ手順を実行して DefaultMixedRealitySpeechCommandsProfile を複製し、独自の編集可能なコピーに置き換えます。
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step1-1.png)
 
-    ![mrlearning-base-ch5-1-step2](images/mrlearning-base-ch5-1-step2.png)
+> [!TIP]
+> MRTK プロファイルの複製方法に関する注意事項については、「 [Mixed Reality Toolkit プロファイルの構成方法](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)」を参照してください。
 
-    Speech コマンドプロファイルでは、さまざまな設定がわかります。 これらの設定の詳細については、 [Mrtk speech のドキュメント](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/Speech.html>)を参照してください。
+### <a name="2-clone-the-default-speech-commands-profile"></a>2. 既定の Speech コマンドプロファイルを複製します。
 
-    既定では、一般の動作は [Auto Start] (自動で開始) です。 必要に応じて、これを手動で開始するように変更できます。 ただし、この例では、[自動開始] のままにしておきます。 MRTK には、メニュー、診断の切り替え、プロファイラーの切り替えなど、いくつかの既定の音声コマンドが付属しています。 診断フレームカウントカウンターをオンまたはオフにするために、キーワード "診断の切り替え" を使用します。 また、以下のステップで新しい音声コマンドを追加します。
+**Speech**セクションを展開し、 **DefaultMixedRealitySpeechCommandsProfile**を複製して、カスタマイズ可能な独自の**Speech コマンドプロファイル**に置き換えます。
 
-3. 新しい音声コマンドを追加します。 これを行うには、[+ 新しい音声の追加] コマンドボタンをクリックします。 既存の音声コマンドの一覧の下に新しい行が表示されます。 使用する音声コマンドを入力します。 この例では、"play music" コマンドを使用します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step2-1.png)
 
-    ![mrlearning-base-ch5-1-step3](images/mrlearning-base-ch5-1-step3.png)
+### <a name="3-create-a-new-speech-command"></a>3. 新しい speech コマンドを作成する
 
-    >[!NOTE]
-    >また、音声認識コマンドのキーコードを設定することもできます。 これにより、音声コマンドを使用して、キーボードキーを押したときにイベントをトリガーできます。
+**[音声コマンド]** セクションで、 **[+ 新しい音声]** コマンドの追加 ボタンをクリックして、既存の音声コマンドの一覧の一番下に新しい speech コマンドを追加します。次に、 **[キーワード]** フィールドに適切な単語または語句を入力します。たとえば、 **[音楽の再生]** を選択します。
 
-4. 音声コマンドに応答する機能を追加します。 MixedRealityPlayspace game オブジェクトなど、他の入力スクリプトがアタッチされていない BaseScene 階層内のオブジェクトを選択します。 [インスペクター] パネルで [コンポーネントの追加] をクリックし、[音声] を検索して、[音声入力ハンドラー] スクリプトを選択します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step3-1.png)
 
-    ![mrlearning-base-ch5-1-step4](images/mrlearning-base-ch5-1-step4.png)
+> [!TIP]
+> コンピューターにマイクが搭載されていない場合に、エディター内のシミュレーションを使用して音声コマンドをテストするには、キーコードを speech コマンドに割り当てることができます。これにより、対応するキーが押されたときに、トリガーを起動することができます。
 
-    既定では、2つのチェックボックスが表示されます。 1つは [フォーカスが必要] チェックボックスです。 そのため、光を見つめ、ヘッドを見つめ、コントローラーを見つめ、または手動でオブジェクトをポイントしている限り、音声コマンドがトリガーされます。 ユーザーが音声コマンドを使用するためにオブジェクトを確認する必要がないように、このチェックボックスをオフにします。
+### <a name="4-add-and-configure-the-speech-input-handler-script-component"></a>4. 音声入力ハンドラー (スクリプト) コンポーネントを追加して構成する
 
-5. 音声コマンドに応答する機能を追加します。 これを行うには、音声入力ハンドラーにある [+] ボタンをクリックします。
+[階層] ウィンドウで、 **Octa**オブジェクトを選択し、 **Speech 入力ハンドラー (スクリプト)** コンポーネントを octa オブジェクトに追加します。 次に、 **[フォーカスが必要]** チェックボックスをオフにして、ユーザーが speech コマンドをトリガーするために octa オブジェクトを確認する必要がないようにします。
 
-    ![mrlearning-base-ch5-1-step5](images/mrlearning-base-ch5-1-step5.png)
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step4-1.png)
 
-6. [キーワード] の横に、ドロップダウンメニューが表示されます。 [診断の切り替え] を選択すると、ユーザーが "診断の切り替え" という語句が表示されるたびに、アクションがトリガーされます。 要素0を展開するには、その横にある矢印を押す必要があることに注意してください。
+### <a name="5-implement-the-response-event-for-the-speech-command"></a>5. speech コマンドの応答イベントを実装する
 
-    ![mrlearning-base-ch5-1-step6](images/mrlearning-base-ch5-1-step6.png)
+音声入力ハンドラー (スクリプト) コンポーネントで、小さい **+** ボタンをクリックしてキーワードを追加し、 **[キーワード]** ドロップダウンから、前の手順で作成した**Play Music**キーワードを選択します。
 
-    >[!NOTE]
-    >これらのキーワードは、手順 3. で編集したプロファイルに基づいて設定されます。
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-1.png)
 
-7. 診断システムの音声制御スクリプトを追加して、フレームレートカウンターの診断のオンとオフを切り替えます。 これを行うには、[コンポーネントの追加] をクリックし、[Diagnostics System Voice Controls script] を検索して、メニューから追加します。 このスクリプトは任意のオブジェクトに追加できますが、わかりやすさのため、[Speech Input Handler] (音声入力ハンドラー) と同じオブジェクトに追加します。
+> [!NOTE]
+> キーワードドロップダウンのキーワードは、Speech コマンドのプロファイルにある音声コマンドリストで定義されているキーワードに基づいて設定されます。
 
-    ![mrlearning-base-ch5-1-step7](images/mrlearning-base-ch5-1-step7.png)
+新しい**Response ()** イベントを作成し、イベントを受信するように**octa**オブジェクトを構成し、トリガーするアクションとして**PlayOneShot**を定義し **、オーディオクリップフィールドに**適切なオーディオクリップ (たとえば、MRTK_Gem オーディオクリップ) を割り当てます。
 
-8. 音声入力ハンドラーに新しい応答を追加します。 これを行うには、[+] アイコンをクリックして、応答の一覧に新しい応答を追加します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-2.png)
 
-    ![mrlearning-base-ch5-1-step8](images/mrlearning-base-ch5-1-step8.png)
-
-9. Diagnostics System Voice Controls スクリプトを含むオブジェクトを、前の手順で作成した新しい応答にドラッグします。
-
-    ![mrlearning-base-ch5-1-step9](images/mrlearning-base-ch5-1-step9.png)
-
-10. 関数のドロップダウンをクリックし ([関数なし] と表示されます)、診断システムの音声コントロールを選択し、診断をオンまたはオフに切り替える ToggleDiagnostics () 関数を選択します。
-
-    ![mrlearning-base-ch5-1-step10](images/mrlearning-base-ch5-1-step10.png)
-
-    >[!IMPORTANT]
-    > デバイスにビルドする前に、mic 設定を有効にする必要があります。 これを行うには、[ファイル] をクリックし、[ビルドの設定]、[プレーヤーの設定] の順にクリックし、マイクの機能が設定されていることを確認します
-
-    次に、Octa オブジェクトを使用して音声コマンドからオーディオファイルを再生する機能を追加します。 [レッスン 4](mrlearning-base-ch4.md)から、オーディオクリップを再生して、octa オブジェクトにタッチする機能が追加されたことを思い出してください。 この同じオーディオ ソースを、ミュージック音声コマンドでも活用します。
-
-11. BaseScene 階層内の Octa オブジェクトを選択します。
-
-12. 別の音声入力ハンドラーを追加します (手順4と5を繰り返します)。ただし、octa オブジェクトを使用します。
-
-13. 手順6の [診断の切り替え] コマンドを追加するのではなく、次の図に示すように、[音楽音声の再生] コマンドを追加します。
-
-    ![mrlearning-base-ch5-1-step13](images/mrlearning-base-ch5-1-step13.png)
-
-14. 手順 8. と 9. と同様に、新しい応答を追加し、診断システムの音声制御スクリプトを持つオブジェクトである Octa オブジェクトを空の応答スロットにドラッグします。
-
-15. [関数なし] というドロップダウンメニューを選択します。 次に、[オーディオソース]、[PlayOneShot (AudioClip)] の順に選択します。
-
-    ![Lesson5 Chapter1 Step15im](images/Lesson5_chapter1_step15im.PNG)
-
-16. この例では、[レッスン 4](mrlearning-base-ch4.md)と同じオーディオクリップを使用します。 プロジェクトパネルに移動し、"MRTK_Gem" オーディオクリップを検索して、次の図に示すようにオーディオソーススロットにドラッグします。 これで、アプリケーションは音声コマンド "トグル診断" に応答して、フレームレートカウンターパネルを切り替え、音楽を再生して MRTK_Gem 楽曲を再生します。
-
-    ![Lesson5 Chapter1.txt Step16im](images/Lesson5_chapter1_step16im.PNG)
+> [!TIP]
+> イベントの実装方法とオーディオクリップの割り当て方法に関する注意事項については、「[タッチ開始イベントの実装](mrlearning-base-ch4.md#4-implement-the-on-touch-started-event)」を参照してください。
 
 ## <a name="the-pan-gesture"></a>パン ジェスチャ
 
-このセクションでは、パンジェスチャの使用方法について説明します。 これは、指またはハンドを使用してコンテンツをスクロールすることでスクロールする場合に便利です。 また、パンジェスチャを使用して、オブジェクトの回転、3D オブジェクトのコレクションの反復処理、または 2D UI のスクロールを行うこともできます。
+パンジェスチャは、指またはハンドを使用してコンテンツをスクロールすることでスクロールする場合に便利です。 この例では、まず 2D UI をスクロールし、それを展開して、3D オブジェクトのコレクションをスクロールできるようにする方法について説明します。
 
-1. quad を作成します。 BaseScene 階層で、右クリックし、[3D オブジェクト] を選択し、次にクワッドを選択します。
+これを実現するには、主に次の手順を実行します。
 
-    ![Lesson5 Chapter2 Step2im](images/Lesson5_chapter2_step2im.PNG)
+1. パンに使用できるクワッドオブジェクトを作成する
+2. Near 相互作用 Touchable (スクリプト) コンポーネントを追加します。
+3. ハンドインタラクションのパンズーム (スクリプト) コンポーネントを追加する
+4. スクロールする2D コンテンツを追加する
+5. スクロールする3D コンテンツを追加する
+6. Move With Pan (スクリプト) コンポーネントを追加する
 
-2. 必要に応じて、クワッドの位置を変更します。 この例では、HoloLens 2 から快適に使用できるように、x = 0、y = 0、z = 1.5 をカメラから離れた位置に設定します。
+> [!NOTE]
+> Move With Pan (スクリプト) コンポーネントは、MRTK の一部ではありません。 このチュートリアルでは、このチュートリアルのアセットを提供しました。
 
-    >[!NOTE]
-    >4つのブロックまたは前のレッスンの内容の前にある場合は、他のオブジェクトをブロックしないように注意してください。
+### <a name="1-create-a-quad-object-that-can-be-used-for-panning"></a>1. パンに使用できるクワッドオブジェクトを作成する
 
-3. 素材を quad に適用します。 この資料では、パンジェスチャを使用してスクロールします。
+[階層] ウィンドウで、空の領域を右クリックし、[ **3D オブジェクト** > **クワッド**] を選択して、四角形をシーンに追加します。 適切な名前 (たとえば、「 **Pangesture**) を指定し、適切な場所に配置します (例: X = 0、Y =-0.2、Z = 2)。
 
-    ![Lesson5 Chapter2 Step3im](images/Lesson5_chapter2_step3im.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-1.png)
 
-4. [プロジェクト] パネルで、検索ボックスに「コンテンツのパン」と入力します。 その素材をシーンのクワッドにドラッグします。
+> [!TIP]
+> 3D quad などの Unity プリミティブをシーンに追加する方法については、「[キューブをシーンに追加](mrlearning-base-ch2.md#2-add-a-cube-to-the-scene)する」の説明を参照してください。
 
-    >[!NOTE]
-    >PanContent マテリアルは MRTK には含まれませんが、前のレッスンでインポートした BaseModuleAssets 資産に含まれています。
+他の対話と同様に、パンジェスチャにも collider が必要です。 既定では、クワッドにはメッシュ collider があります。 ただし、メッシュ collider は非常に薄いため、理想的ではありません。 ユーザーが collider との対話を容易にするために、メッシュ collider を box collider に置き換えます。
 
-    パン ジェスチャを使用するには、オブジェクト上のコライダーが必要です。 場合によっては、quad には既にメッシュ コライダーがあります。 ただし、メッシュ コライダーは極めて薄く、選択するのが容易ではないため理想的ではありません。 メッシュ コライダーをボックス コライダーに置き換えることをお勧めします。
+PanGesture が選択された状態で、**メッシュ collider**コンポーネントの**設定**アイコンをクリックし、 **[コンポーネントの削除]** を選択してメッシュ Collider を削除します。
 
-5. [インスペクター] パネルから、クワッド上のメッシュ collider を右クリックします。 次に、[コンポーネントの削除] をクリックして削除します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-2.png)
 
-    ![Lesson5 Chapter2 Step5im](images/Lesson5_chapter2_step5im.PNG)
+インスペクター ウィンドウで、**コンポーネントの追加** ボタンを使用して**box collider**を追加し、box の collider **Size** Z を0.15 に変更して box collider の太さを増やします。
 
-6. 次に、[コンポーネントの追加] をクリックして box collider を追加し、"box collider" を検索します。 既定で追加された box collider はまだ薄くなっているため、[Collider の編集] ボタンをクリックして編集します。 ボタンを押すと、x、y、z の値を使用して、またはシーン エディターの要素を使用してサイズを調整できます。 この例では、ボックス コライダーを quad の少し後ろまで拡張します。 シーン エディターで、ボックス コライダーを後ろから外側にドラッグします (下の図を参照してください)。 これにより、ユーザーは指を使用するだけでなく、スクロールすることもできます。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step1-3.png)
 
-    ![Lesson5 Chapter2 Step6im](images/Lesson5_chapter2_step6im.PNG)
+### <a name="2-add-the-near-interaction-touchable-script-component"></a>2. Near 相互作用 Touchable (スクリプト) コンポーネントを追加します。
 
-7. 操作ができるようにします。 このモジュールを直接操作する必要があるので、ここではレッスン4で、Octa オブジェクトから音楽を再生するために使用した Near インタラクション Touchable コンポーネントを使用します。 [コンポーネントの追加] をクリックし、次の図に示すように "near インタラクション touchable" を検索して選択します。
+**Pangesture**オブジェクトが選択された状態で、 **Near 相互作用 Touchable (スクリプト)** コンポーネントを pangesture に追加します。次に、 **[境界の修正]** と センターの **[修正]** ボタンをクリックして、Near 相互作用 Touchable (スクリプト) のローカルの中心と境界のプロパティを boxcollider と一致するように更新します。
 
-    ![mrlearning-base-ch5-2-step7a](images/mrlearning-base-ch5-2-step7a.png)
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step2-1.png)
 
-    境界や中心が BoxCollider のサイズや中心に一致しないという警告が黄色で表示されている場合は、[境界の修正] ボタンまたは [修正センター] ボタンをクリックして、中心と境界の値を更新します。
+### <a name="3-add-the-hand-interaction-pan-zoom-script-component"></a>3. ハンドインタラクションのパンズーム (スクリプト) コンポーネントを追加する
 
-    ![mrlearning-base-ch5-2-step7b](images/mrlearning-base-ch5-2-step7b.png)
+**Pangesture**オブジェクトが選択された状態で、**ハンドインタラクションのパンズーム (スクリプト)** コンポーネントを pangesture に追加し、[**水平**方向にロック] チェックボックスをオンにして垂直スクロールのみを許可します。
 
-8. パン ジェスチャを認識する機能を追加します。 [コンポーネントの追加] をクリックし、検索フィールドに「手動での相互作用」と入力して、ハンドインタラクションのパンズームスクリプトコンポーネントを追加します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step3-1.png)
 
-    ![mrlearning-base-ch5-2-step8a](images/mrlearning-base-ch5-2-step8a.png)
+### <a name="4-add-2d-content-to-be-scrolled"></a>4. スクロールする2D コンテンツを追加する
 
-    これにより、パン対応のクワッドが用意されています。
+[プロジェクト] パネルで、 **Pancontent**の素材を検索し、[-] をクリックして、 **Pangesture**オブジェクトのメッシュレンダラー**マテリアル**0 プロパティにドラッグします。
 
-    ご覧のように、ハンドインタラクションのパンズームスクリプトコンポーネントにはさまざまな設定があり、オプションの演習として自由に再生できます。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step4-1.png)
 
-    ![mrlearning-base-ch5-2-step8b](images/mrlearning-base-ch5-2-step8b.png)
+[インスペクター] ウィンドウで、新しく追加した**Pancontent**マテリアルコンポーネントを展開し、 **[タイル]** の Y 値を0.5 に変更します。これにより X 値が一致し、タイルが正方形で表示されます。
 
-9. 次に、3D オブジェクトをパンする方法を学びます。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step4-2.png)
 
-    階層で、Quad オブジェクトを右クリックしてコンテキストポップアップメニューを開き、[ **3D オブジェクト** > **キューブ**] を選択してシーンにキューブを追加します。
+ここでゲームモードに入ると、エディター内のシミュレーションでパンジェスチャを使用して、2D コンテンツのスクロールをテストできます。
 
-    キューブの**位置**が_0、0、0_に設定されていることを確認してください。 キューブを_0.1、0.1、0.1_の**スケール**にスケールダウンします。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step4-3.png)
 
-    ![mrlearning-base-ch5-2-step9](images/mrlearning-base-ch5-2-step9.png)
+### <a name="5-add-3d-content-to-be-scrolled"></a>5. スクロールする3D コンテンツを追加する
 
-    キューブを右クリックして、キューブを3回複製し、コンテキストポップアップメニューを開き、 **[複製]** を選択します。
+[階層] ウィンドウで、 **Pancontent**の子オブジェクトとして**4 つのキューブを作成**し、変換の**スケール**を X = 0.15、Y = 0.15、Z = 0.15 に設定します。
 
-    キューブが均等になるようにします。 シーンは次の図のようになります。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step5-1.png)
 
-10. CTRL キーを押しながら [階層] パネルで各**キューブ**オブジェクトを選択して、すべてのキューブに MoveWithPan スクリプトを追加します。 インスペクター パネルで コンポーネントの追加 をクリックし、**移動** をクリックして、すべてのキューブに追加します。
+キューブの間隔を均等にし、時間を節約するには、Grid オブジェクトコレクション (スクリプト) コンポーネントをキューブの親オブジェクト (つまり、PanGesture) に追加し、次のようにグリッドオブジェクトコレクション (スクリプト) を構成します。
 
-    ![mrlearning-base-ch5-2-step10a](images/mrlearning-base-ch5-2-step10a.png)
+* すべてのキューブが1つの行にアラインメントされるようにするには、 **Num Rows**を1に変更します。
+* **セルの幅**を0.25 に変更して、行内のキューブを空白にします。
 
-    >[!NOTE]
-    >MoveWithPan スクリプトは MRTK には含まれていませんが、前のレッスンでインポートした BaseModuleAssets 資産に含まれています。
+次に、 **[コレクションの更新]** ボタンをクリックして、新しい構成を適用します。
 
-    キューブが選択された状態で、階層 パネルから パン**の移動** スクリプトコンポーネントの **パン入力ソース** フィールドに**Quad**オブジェクトをドラッグします。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step5-2.png)
 
-    ![mrlearning-base-ch5-2-step10b](images/mrlearning-base-ch5-2-step10b.png)
+### <a name="6-add-the-move-with-pan-script-component"></a>6. Pan (スクリプト) コンポーネントでの移動を追加する
 
-    これで、キューブはパンジェスチャで移動します。
+階層 ウィンドウで、すべての**キューブ子オブジェクト**を選択します。次に、インスペクター ウィンドウで **コンポーネントの追加** ボタンを使用して、 **Move With Pan (スクリプト)** コンポーネントをすべてのキューブに追加します。
 
-    >[!TIP]
-    >各キューブの MoveWithPan インスタンスは、4つのオブジェクトに対して、各キューブの [Pan Input Source] (パン入力ソース) フィールドに追加し、それぞれのキューブオブジェクトの位置をそれに応じて更新する、イベントを監視します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-1.png)
 
-    キューブが選択された状態で、Z 軸に沿って前方に移動します。これにより、各キューブのメッシュは、Z 値を_0.7_に変更することで、**クワッド**の**Box の Collider**内に**配置**されます。
+> [!TIP]
+> [階層] ウィンドウで複数のオブジェクトを選択する方法に関する注意事項については、「[操作ハンドラーを追加する (スクリプト) コンポーネントをすべてのオブジェクトの命令に追加](mrlearning-base-ch4.md#1-add-the-manipulation-handler-script-component-to-all-the-objects)する」を参照してください。
 
-    ![mrlearning-base-ch5-2-step10c](images/mrlearning-base-ch5-2-step10c.png)
+すべてのキューブが選択された状態で、 **Pangesture**をクリックして、 **[パン入力ソース]** フィールドにドラッグします。
 
-    これで、[インスペクター] パネルでチェックを解除して、**クワッド**の**メッシュレンダラー**コンポーネントを無効にした場合、非表示の四角形が表示され、3d オブジェクトの一覧を通じてパンできます。
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-2.png)
 
-    ![mrlearning-base-ch5-2-step10d](images/mrlearning-base-ch5-2-step10d.png)
+> [!TIP]
+> 各キューブの [Move With Pan (スクリプト)] コンポーネントでは、前の手順で [パン] 入力ソースとして割り当てた PanGesture の [Paninteractionpanzoom (スクリプト)] コンポーネントによって送信されたパン更新イベントをリッスンし、各キューブの位置を更新します。適切.
+
+階層 ウィンドウで、 **Pangesture**オブジェクトを選択し、インスペクター で**メッシュレンダラー**の**チェック**ボックスをオフにして、メッシュレンダラーコンポーネントを無効にします。
+
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-3.png)
+
+ゲームモードに入ると、エディター内のシミュレーションでパンジェスチャを使用して、3D コンテンツのスクロールをテストできます。
+
+![mrlearning-base](images/mrlearning-base/tutorial5-section2-step6-4.png)
 
 ## <a name="eye-tracking"></a>視線追跡
 
-このセクションでは、デモで目の追跡を有効にする方法について説明します。 3D メニュー項目が目の gazed になったときに、その項目をゆっくりと回転させます。 また、見つめられた項目が選択されると、楽しい効果がトリガーされるようにします。
+このセクションでは、プロジェクトでアイトラッキングを有効にする方法について説明します。 この例では、ユーザーの視点で見ている間に、3DObjectCollection の各オブジェクトの回転速度を低下させる機能を実装します。また、参照しているオブジェクトがエアタップまたは音声コマンドによって選択されたときにブリップが発生効果をトリガーします。
 
-1. MRTK プロファイルが視線追跡用に適切に構成されていることを確認します。 これを行うには、「 [MRTK での目の追跡](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html)の概要」の手順に進み、「視線[追跡ステップバイステップの設定](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#setting-up-eye-tracking-step-by-step)」セクションの手順を確認して、目の追跡が適切に構成されていることを確認します。 ドキュメントの残りの手順をすべて完了します。
+これを実現するには、主に次の手順を実行します。
 
-    >[!NOTE]
-    >「 [Mixed Reality Toolkit の構成](https://docs.microsoft.com/windows/mixed-reality/mrlearning-base-ch1#configure-the-mixed-reality-toolkit)」のレッスンで説明されているように、DefaultHoloLens2InputSystemProfile を使用してカスタム MRTK 構成プロファイルを複製する場合、unity プロジェクトではアイ tracking が既定で有効になりますが、unity エディターの視線追跡シミュレーションを設定し、ビルドの目の追跡を許可するように Visual Studio を構成する必要があります。
+1. すべての対象オブジェクトにアイ Tracking ターゲット (スクリプト) コンポーネントを追加する
+2. すべてのターゲットオブジェクトにアイトラッキングチュートリアルのデモ (スクリプト) コンポーネントを追加する
+3. ターゲットイベントの参照中にを実装します
+4. 選択したイベントにを実装します
+5. エディター内のシミュレーションのシミュレートされた目の追跡を有効にする
+6. Visual Studio プロジェクトのアプリ機能での、宝石による入力を有効にする
 
-    上記のリンクでは、以下の点についての簡潔な指示があります。
+### <a name="1-add-the-eye-tracking-target-script-component-to-all-target-objects"></a>1. すべてのターゲットオブジェクトにアイ Tracking ターゲット (スクリプト) コンポーネントを追加します。
 
-    - MRTK プロファイルで使用するために Windows Mixed Reality の視線 Data Provider を作成する
-    - カメラに接続されている宝石プロバイダーの目の追跡を有効にする
-    - Unity エディターでの目の追跡シミュレーションの設定
-    - Visual Studio ソリューションの機能を編集して、ビルド済みアプリケーションで視線追跡できるようにする
+階層 ウィンドウで、 **3DObjectCollection**オブジェクトを展開し、すべての**子オブジェクト**を選択します。次に、インスペクター ウィンドウで **コンポーネントの追加** ボタンを使用して、すべての子オブジェクトに**視線追跡ターゲット (スクリプト)** コンポーネントを追加します。
 
-2. [Eye Tracking Target] (視線追跡ターゲット) コンポーネントをターゲット オブジェクトに追加します。 オブジェクトが視線イベントに応答できるようにするには、視線を使用して操作する各オブジェクトに EyeTrackingTarget コンポーネントを追加する必要があります。 このコンポーネントを、グリッド コレクションの一部である 9 つの 3D オブジェクトそれぞれに追加します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step1-1.png)
 
-    >[!TIP]
-    >Shift キーまたは CRTL キーを使用して階層内の複数の項目を選択し、EyeTrackingTarget コンポーネントを一括して追加することができます。
+すべての**子オブジェクト**が選択された状態で、次のように**視線追跡ターゲット (スクリプト)** コンポーネントを構成します。
 
-    ![Lesson5 Chapter3 のステップごとのステップ](images/Lesson5Chapter3Step2.JPG)
+* 選択**操作**の選択を変更**し、この**オブジェクトのエアタップアクションを select として定義します
+* **[音声の選択]** を展開し、[音声コマンド一覧の**サイズ**] を1に設定します。次に、表示される新しい要素の一覧で、[**要素 0** **] を [選択**] に変更し、このオブジェクトの音声コマンドアクションを [選択] として定義します。
 
-3. 次に、いくつかの魅力的な対話用に EyeTrackingTutorialDemo スクリプトを追加します。 Grid コレクション内の3D オブジェクトごとに、[コンポーネントの追加] メニューでコンポーネントを検索して、EyeTrackingTutorialDemo スクリプトを追加します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step1-2.png)
 
-    ![Lesson5 Chapter3 手順3](images/Lesson5Chapter3Step3.JPG)
+### <a name="2-add-the-eye-tracking-tutorial-demo-script-component--to-all-target-objects"></a>2. すべてのターゲットオブジェクトにアイトラッキングチュートリアルのデモ (スクリプト) コンポーネントを追加する
 
-    >[!NOTE]
-    >EyeTrackingTutorialDemo スクリプトマテリアルは MRTK の一部ではありませんが、前のレッスンでインポートした BaseModuleAssets 資産に含まれています。
+すべての**子オブジェクト**がまだ選択されている状態で、 **[コンポーネントの追加]** ボタンを使用して、すべての子オブジェクトに**アイトラッキングチュートリアルのデモ (スクリプト)** コンポーネントを追加します。
 
-4. ターゲットを見つめている間、オブジェクトを回転させます。 3D オブジェクトを見ながらスピンするように構成したいと考えています。 これを行うには、次の図に示すように、EyeTrackingTarget コンポーネントの Target () セクションを参照しながら、に新しいフィールドを挿入します。
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step2-1.png)
 
-    ![Lesson5 Chapter3 Step4a](images/Lesson5Chapter3Step4a.JPG)
+> [!NOTE]
+> アイ Tracking のターゲット (スクリプト) コンポーネントは、MRTK の一部ではありません。 このチュートリアルでは、このチュートリアルのアセットを提供しました。
 
-    新しく作成されたフィールドで、次の図に示すように、現在の Game オブジェクトを空のフィールドに追加し、EyeTrackingTutorialDemo > RotateTarget () を選択します。 これで、視線追跡により、3D オブジェクトを見つめると回転するように構成できました。
+### <a name="3-implement-the-while-looking-at-target-event"></a>3. ターゲットイベントの参照中にを実装します。
 
-    ![Lesson5 Chapter3 Step4b](images/Lesson5Chapter3Step4b.JPG)
+階層 ウィンドウで、**チーズ** オブジェクトを選択し、 **Target ()** イベントを参照して新しいを作成します。次に、イベントを受信するように**チーズ**オブジェクトを構成し、トリガーするアクションとして**EyeTrackingTutorialDemo**を定義します。
 
-5. エアタップによって、または "select" と言ったときに、選択時に gazed される "ブリップが発生 target" の機能を追加します。 手順4と同様に、次の図に示すように、EyeTrackingTarget コンポーネントの game オブジェクトの Select () フィールドに割り当てることによって、EyeTrackingTutorialDemo > をトリガーします。 これで構成が完了すると、エアタップや音声コマンドの "select" などの選択アクションをトリガーするたびに、game オブジェクトにわずかなブリップが発生が見られます。
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step3-1.png)
 
-    ![Lesson5 Chapter3 手順5](images/Lesson5Chapter3Step5.JPG)
+3DObjectCollection 内の各子オブジェクトに対して、この**手順を繰り返し**ます。
 
-6. HoloLens 2 向けにビルドする前に、視線追跡機能が適切に構成されていることを確かめます。 このドキュメントの執筆時点では、Unity には、視線追跡機能に対して、宝石入力を設定する機能がまだありません。 この機能の設定は、監視が HoloLens 2 で動作するために必要です。 「 [HoloLens 2 での Unity アプリのテスト](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2)」の手順に従って、宝石入力機能を有効にします。
+> [!TIP]
+> イベントの実装方法に関する注意事項については、「[ハンドトラッキングジェスチャ」と「対話型 buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) 」を参照してください。
+
+### <a name="4-implement-the-on-selected-event"></a>4. 選択したイベントにを実装する
+
+階層 ウィンドウで、**チーズ** オブジェクトを選択し、select **Selected ()** イベントを作成します。次に、イベントを受信するように**チーズ**オブジェクトを構成し、トリガーするアクションとして**EyeTrackingTutorialDemo**を定義します。
+
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step4-1.png)
+
+3DObjectCollection 内の各子オブジェクトに対して、この**手順を繰り返し**ます。
+
+### <a name="5-enable-simulated-eye-tracking-for-in-editor-simulations"></a>5. エディター内のシミュレーションのシミュレートされた目の追跡を有効にする
+
+階層] ウィンドウで **[MixedRealityToolkit]** オブジェクトを選択し、[インスペクター ウィンドウで [入力 **] タブ**を選択します。次に、入力 **[データプロバイダー]** セクションを展開し、 **[入力シミュレーションサービス]** セクションを展開し、 **DefaultMixedRealityInputSimulationProfile**を複製して独自のカスタマイズ可能な**入力シミュレーションプロファイル**に置き換えます。
+
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-1.png)
+
+> [!TIP]
+> MRTK プロファイルの複製方法に関する注意事項については、「 [Mixed Reality Toolkit プロファイルの構成方法](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)」を参照してください。
+
+**[目のシミュレーション]** セクションで、目の **[位置をシミュレート]** する チェックボックスをオンにして、視線追跡シミュレーションを有効にします。
+
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-2.png)
+
+ゲームモードに入ると、次のようにビューを調整することで、実装したスピンとブリップが発生の効果をテストできます。これにより、カーソルがオブジェクトの1つにヒットし、手動操作または音声コマンドを使用してオブジェクトを選択できるようになります。
+
+![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-3.png)
+
+> [!NOTE]
+> DefaultHoloLens2ConfigurationProfile を使用してカスタマイズ可能な MRTK 構成プロファイルを複製しなかった場合は、「 [Mixed Reality Toolkit の構成](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)」の手順で説明したように、プロジェクトで目の追跡が有効にならないため、有効にする必要があります。 詳細については、「 [MRTK の監視](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html)の概要」の手順を参照してください。
+
+### <a name="6-enable-gaze-input-in-the-visual-studio-projects-app-capabilities"></a>6. Visual Studio プロジェクトのアプリ機能で、入力を見つめて有効にする
+
+アプリをビルドして、Visual Studio からデバイスにデプロイする前に、プロジェクトのアプリの機能で、お客様のアプリの入力が有効になっている必要があります。 これには、 [HoloLens 2 命令での Unity アプリのテスト](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_BasicSetup.html#testing-your-unity-app-on-a-hololens-2)に従うことができます。
 
 ## <a name="congratulations"></a>結論
 
-アプリケーションに基本的な監視機能が正常に追加されました。 これらの操作は、視線追跡が持つ可能性のほんの一部にすぎません。 また、レッスン5では、音声コマンド、パンジェスチャ、視線追跡などの高度な入力機能について学習しました。
+これで、アプリケーションに基本的な監視機能が追加されました。 これらの操作は、視線追跡が持つ可能性のほんの一部にすぎません。 このチュートリアルでは、音声コマンドやパンジェスチャなど、その他の高度な入力機能についても学習しました。
 
 [次のレッスン: 7. 旧暦モジュールサンプルアプリケーションの作成](mrlearning-base-ch6.md)

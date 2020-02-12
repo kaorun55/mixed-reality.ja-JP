@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: Mixed Reality、コミュニティ、mvp、meetup
-ms.openlocfilehash: 1b140fffdda91fca0a73ae6d4309c518efd6660c
-ms.sourcegitcommit: 567bcb7019820ac933834087d77b01d684b5cc7b
-ms.translationtype: HT
+ms.openlocfilehash: 191c80c0429370f7864f5826c538296306e26e8d
+ms.sourcegitcommit: f5d6dd420aa347acf1de4798f4e3e0f6a11d19cc
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125203"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155509"
 ---
 # <a name="mixed-reality-community"></a>Mixed Reality コミュニティ
 
@@ -34,7 +34,7 @@ Microsoft では、開発者、プラットフォーム、およびエコシス�
 |コミュニティ名|国|市|リンク|
 |---------|---------|---------|---------|
 |**シカゴ AWE Nite**|海岸|シカゴ|[Link](https://www.meetup.com/AWENiteChicago/)|
-|**VR フィリピン**|Philoppines|N/A|[Link](https://www.facebook.com/vrphilippines/)|
+|**VR フィリピン**|フィリピン|N/A|[Link](https://www.facebook.com/vrphilippines/)|
 <!--
 |Row3     |         |         |         |
 |Row4     |         |         |         |
@@ -107,5 +107,5 @@ Microsoft の最も重要な専門家 (Mvp) は、コミュニティとの知識
 |![Takahiro Miyaura](images/BiographyImages/TakahiroMiyaura_270x270.jpg)</br>**Takahiro Miyaura**</br>*Nara (日本)*|私はソフトウェアエンジニアとして、IT 業界で開発者として働いています。 具体的には、研究 XR (VR/AR/MR など) を実行しています。 ) テクノロジと、XR を利用できるさまざまなテクノロジ (AI、IoT など) があります。|[メール](mailto:cafe.kobe@gmail.com)|
 |![Tamás Deme](images/BiographyImages/tamasdeme_270.png)</br>**Tamás Deme**</br>*ブダペスト、ハンガリー*|Tamás は、アトランタベースの VIM で働いている mixed reality エンジニアで、サーバーから、ホログラムを表示するヘッドセットまで、さまざまなデバイス向けのソリューションを開発しています。 Windows 開発における Microsoft MVP の5回で、オープンソースプロジェクトに関心を持っています。 [https://tomzorz.me](https://tomzorz.me) 、または twitter の[https://twitter.com/tomzorz_](https://twitter.com/tomzorz_)については、オンラインで確認できます。|[メール](mailto:mixedreality@tomzorz.me)|
 |![Tatsuro Ueda](images/BiographyImages/TatsuroUeda_270x270.png)</br>**Tatsuro Ueda**</br>*Mie、日本*|5つの国 (Afrika を含む) の物理教育副社長|[メール](mailto:tatsuro.ueda@feel-physics.jp)|
-|![ビンセント Guigui](images/BiographyImages/VincentGuigui_270x270.jpg)</br>**ビンセント Guigui**</br>*パリ、フランス*|OCTO テクノロジで革新的な相互作用の分担を行うことにより、お客様は人間とデジタル世界の間で新しい対話を開発できます。</br></br>ここでは、イノベーションと自然なユーザーインターフェイスのトピックについて説明します。イマーシブエクスペリエンス (VR/AR/MR)、会話インターフェイス (Bot)、および将来のユーザーインターフェイスの可能性について説明しています...</br></br>2013以来、Microsoft は、Kinect、自然なユーザーインターフェイス、および HoloLens (非常に重要な専門家賞) に関して、ヨーロッパをリードする専門家の1人として受賞しています。|[メール](mailto:vincent@guigui.fr)|
+|![ビンセント Guigui](images/BiographyImages/VincentGuigui_270x270.jpg)</br>**ビンセント Guigui**</br>*パリ、フランス*|[Octo テクノロジ](https://www.octo.com)で革新的な相互作用の分担を行うことにより、お客様は人間とデジタル世界の間で新しい対話を開発できます。</br></br>ここでは、イノベーションと自然なユーザーインターフェイスのトピックについて説明します。イマーシブエクスペリエンス (VR/AR/MR)、会話インターフェイス (Bot)、および将来のユーザーインターフェイスの可能性について説明しています...</br></br>2013以来、Microsoft は、Kinect、自然なユーザーインターフェイス、および HoloLens (非常に重要な専門家賞) に関して、ヨーロッパをリードする専門家の1人として受賞しています。|[メール](mailto:vincent@guigui.fr)|
 

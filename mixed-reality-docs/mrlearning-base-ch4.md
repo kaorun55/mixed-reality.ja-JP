@@ -5,223 +5,285 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
-keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: fe068d0cfcea369f10e6fa636eb73fecb3002fa7
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: a1b26d56b4693ef23f2d77ba53e0961693489a3a
+ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334380"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130283"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 3D オブジェクトとの対話
 
-このチュートリアルでは、基本的な3D コンテンツとユーザーエクスペリエンスについて学習します。次に例を示します。
-
-* コレクションの一部としての3D オブジェクトの整理
-* 基本操作のための境界ボックス
-* Near と far の相互作用
-* ハンドトラッキングを使用したタッチジェスチャとグラブジェスチャ
+このチュートリアルでは、基本的な3D コンテンツとユーザーエクスペリエンスについて学習します。これには、コレクションの一部としての3D オブジェクトの整理、基本的な操作のための境界ボックス、近辺と遠くの対話、およびハンドトラッキングによるタッチやグラブのジェスチャなどが含まれます。
 
 ## <a name="objectives"></a>目標
 
-* MRTK の grid オブジェクトコレクションで3D コンテンツを整理する方法について説明します。
+* 他の学習目的に使用される3D オブジェクトのパネルを作成する
 * 境界ボックスを実装する
-* 基本的な操作のための3D オブジェクトの構成--移動、回転、およびスケール
+* 移動、回転、拡大/縮小などの基本的な操作のために3D オブジェクトを構成する
 * 近距離操作と遠距離操作について確認する
 * グラブやタッチなど、その他のハンドトラッキングジェスチャについて説明します。
 
-## <a name="organizing-3d-objects-in-a-collection"></a>3D オブジェクトをコレクションに整理する
+## <a name="importing-the-tutorial-assets"></a>チュートリアル資産のインポート
 
-1. 階層を右クリックし、[空の作成] を選択して空の game オブジェクトを作成し、名前を3DObjectCollection に変更して、x = 0、y = 0、z = 0 に配置されていることを確認します。
+Unity カスタムパッケージをダウンロードしてインポートします。
 
-    ![mrlearning-base-ch4-1-step1](images/mrlearning-base-ch4-1-step1.png)
+* [MRTK。HoloLens2. 2.2.0.0. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.2.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.2.0.0.unitypackage)
 
-2. Unity パッケージ HoloLens2 をダウンロードし、[レッスン1から](mrlearning-base-ch1.md)に記載されているカスタムパッケージをインポートする場合と同じ手順を使用して[2.1.0.0](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.0/Unity.HoloLens2.GettingStarted.Tutorials.Asset.2.1.0.0.unitypackage)をインポートします。 このパッケージには、このチュートリアル全体で使用される3D モデルとその他の便利なアセットが含まれています。
+チュートリアルのアセットをインポートすると、プロジェクトウィンドウは次のようになります。
 
-3. [プロジェクト] パネルで、[資産 > BaseModuleAssets] > ベースモジュール Prefabs に移動し、"不完全" を検索します。これらの Prefabs の一部を使用します。
+![mrlearning-base](images/mrlearning-base/tutorial4-section1-step1-1.png)
 
-    ![mrlearning-base-ch4-1-step3](images/mrlearning-base-ch4-1-step3.png)
+> [!TIP]
+> Unity カスタムパッケージをインポートする方法については、「 [Mixed Reality Toolkit のインポート](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)」の手順を参照してください。
 
-4. コーヒーカップを手順 1. の 3DObjectCollection game オブジェクトにドラッグします。 これでコーヒー カップはコレクションの子になりました。
+## <a name="decluttering-the-scene-view"></a>シーンビューの Decluttering
 
-    ![mrlearning-base-ch4-1-step4](images/mrlearning-base-ch4-1-step4.png)
+シーンを簡単に操作できるようにするには、オブジェクトの左側にある**目**のアイコンをクリックして、キューブおよび buttoncollection オブジェクトの**シーンの表示**をオフに設定します。 これにより、シーンウィンドウ内のオブジェクトが非表示になります。ゲーム中の可視性は変更されません。
 
-5. 次に、前の手順と同じプロセスに従って、3D オブジェクトをシーンに追加します。 この例で追加するオブジェクトの一覧を次に示します。 オブジェクトを追加すると、さまざまなサイズのシーンにオブジェクトが表示されることがあります。 [インスペクター] パネルの [変換の設定] で、各3D モデルのスケールを調整します。 この例で推奨される調整とそのオブジェクトを以下に示します。
+![mrlearning-base](images/mrlearning-base/tutorial4-section2-step1-1.png)
 
-    * Cheese_BaseModuleIncomplete。 Scale: x = 0.05、y = 0.05、z = 0.05。
-    * CoffeeCup_BaseModuleIncomplete。 Scale: x = 0.1、y = 0.1、z = 0.1。
-    * EarthCore_BaseModuleIncomplete。 Scale: x = 50.0 y = 50.0、z = 50.0。
-    * Model_Platonic_BaseModuleIncomplete。 Scale: x = 0.13、y = 0.13、z = 0.13。
-    * Octa_BaseModuleIncomplete。 Scale: x = 0.13。 y = 0.13、z =0.13 に設定します。
-    * TheModule_BaseModuleIncomplete。 Scale: x = 0.03、y = 0.03、z = 0.03。
+> [!TIP]
+> シーンの可視性の制御とそれらを使用してシーンビューやワークフローを最適化する方法の詳細については、Unity の<a href="https://docs.unity3d.com/Manual/SceneVisibility.html" target="_blank">シーンの可視性</a>に関するドキュメントを参照してください。
 
-    ![mrlearning-base-ch4-1-step5](images/mrlearning-base-ch4-1-step5.png)
+## <a name="organizing-3d-objects-in-a-collection"></a>コレクション内の3D オブジェクトの整理
 
-6. シーンに3つのキューブを追加します。 3DObjectCollection オブジェクトを右クリックし、[3D オブジェクト]、[キューブ] の順に選択します。 スケールを x = 0.14、y = 0.14、z = 0.14 に設定します。 合計3つのキューブを作成するには、この手順をさらに2回繰り返します。 または、キューブを合計3つのキューブに対して2回複製することもできます。 また、[アセット] > [BaseModuleAssets] > [ベース モジュール プレハブ] から用意されている 3 つの立方体のプレハブを使用し、GreenCube_BaseModuleIncomplete、BlueCube_BaseModuleIncomplete、および OrangeCube_BaseModuleIncomplete を選択することもできます。
+このセクションでは、このチュートリアルの次のセクションで3D オブジェクトを操作するさまざまな方法を調べるときに使用する、3D オブジェクトのパネルを作成します。 具体的には、3D オブジェクトが 3 x 3 グリッドに配置されるように構成します。
 
-    ![mrlearning-base-ch4-1-step6](images/mrlearning-base-ch4-1-step6.png)
+[ボタンのパネルを作成](mrlearning-base-ch2.md#creating-a-panel-of-buttons-using-mrtks-grid-object-collection)したときと同様に、これを実現するための主要な手順は次のとおりです。
 
-7. 「[レッスン 2](mrlearning-base-ch2.md)」で説明されている手順に従って、オブジェクトのコレクションを整理してグリッドを形成します。 3 x 3 グリッドでオブジェクトを構成する例については、次の図を参照してください。
+1. 親オブジェクトへの3D オブジェクトの親
+2. Grid オブジェクトコレクション (スクリプト) コンポーネントの追加と構成
 
-    ![mrlearning-base-ch4-1-step7](images/mrlearning-base-ch4-1-step7.png)
+### <a name="1-parent-the-3d-objects-to-a-parent-object"></a>1. 3D オブジェクトを親オブジェクトに親します。
 
-    >[!NOTE]
-    >上の図のように、一部のオブジェクトはセンター外にあることがわかります。 これは、プレハブまたはオブジェクトに整列していない子オブジェクトが含まれている可能性があるためです。 オブジェクトの位置や子オブジェクトの位置に必要な調整を自由に加えることで、グリッドを適切に整列させることができます。
+[階層] ウィンドウで、**空のオブジェクトを作成**し、適切な名前 (たとえば、 **3DObjectCollection**) を指定し、適切な場所に配置します (例: X = 0、Y =-0.2、Z = 2)。
+
+[プロジェクト] ウィンドウで、[**アセット** > **mrtk] に移動します。チュートリアル: GettingStarted** **Prefabs**を開始し、次の Prefabs を**3DObjectCollection**に**親**とします。 > 
+
+* 頭
+* CoffeeCup
+* EarthCore
+* Octa
+* プラトニック
+* モジュール
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-1.png)
+
+[階層] ウィンドウで、 **3DObjectCollection**の子オブジェクトとして**3 つのキューブを作成**し、変換の**スケール**を X = 0.15、Y = 0.15、Z = 0.15 に設定します。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-2.png)
+
+<!-- TODO: Finish -->
+> [!TIP]
+> 上記の手順を実行する方法については、「[ユーザーインターフェイスの作成」および「Mixed Reality Toolkit の構成](mrlearning-base-ch2.md)」のチュートリアルを参照してください。
+
+各キューブを表示できるように、キューブの位置を変更します。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-3.png)
+
+[プロジェクト] ウィンドウで、[**資産** > **MixedRealityToolkit** > **standardassets** > **マテリアル**] に移動し、mrtk で提供されている素材を確認します。
+
+次の例のように、適切な素材を各キューブのメッシュ**レンダラーの**要素0プロパティに**ドラッグ**アンドドロップします。
+
+* MRTK_Standard_GlowingCyan
+* MRTK_Standard_GlowingOrange
+* MRTK_Standard_Green:
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-4.png)
+
+### <a name="2-add-and-configure-the-grid-object-collection-script-component"></a>2. Grid オブジェクトコレクション (スクリプト) コンポーネントを追加して構成する
+
+**Grid オブジェクトコレクション (スクリプト)** コンポーネントを3DObjectCollection オブジェクトに追加し、次のように構成します。
+
+* 子オブジェクトが親オブジェクトの下に配置された順序で並べ替えられるようにするには、**並べ替えの種類** を 子の順序 に変更します。
+
+次に、 **[コレクションの更新]** ボタンをクリックして、新しい構成を適用します。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section3-step2-1.png)
 
 ## <a name="manipulating-3d-objects"></a>3D オブジェクトの操作
 
-1. 立方体を操作する機能を追加します。 3D オブジェクトを操作する機能を追加するには、次の手順を実行します。
-    * 階層内で操作する3D オブジェクト (つまり、キューブの1つ) を選択します。
-    * [コンポーネントの追加] をクリックします。
-    * "操作" の検索
-    * 操作ハンドラーの選択
-    * 3DObjectCollection オブジェクトの下にあるすべての3D オブジェクトに対して繰り返しますが、3DObjectCollection 自体は同じではありません。
-    * すべての3D オブジェクトに collider または box collider があることを確認します (コンポーネント > Box Collider を追加します)。
+このセクションでは、前のセクションで作成したパネル内のすべての3D オブジェクトを操作する機能を追加します。 さらに、prefab オブジェクトの場合は、ユーザーが追跡したハンドを使用してこれらのオブジェクトを取得して取得できるようにします。 次に、オブジェクトに適用できるいくつかの操作の動作について説明します。
 
-    ![Lesson4 Chapter2 Step1im](images/Lesson4_chapter2_step1im.PNG)
+これを実現するには、主に次の手順を実行します。
 
-    >[!NOTE]
-    >操作ハンドラーは、操作時にオブジェクトがどのように動作するかの設定を調整できるコンポーネントです。 これには、特定の軸での回転、拡大縮小、移動、制約の移動が含まれます。
+1. すべてのオブジェクトに操作ハンドラー (スクリプト) コンポーネントを追加します。
+2. Near 相互作用 Grabbable (スクリプト) コンポーネントを prefab オブジェクトに追加します。
+3. 操作ハンドラー (スクリプト) コンポーネントの構成
 
-2. 1 つの立方体を、拡大縮小しかできないように制限します。 3DObjectCollection オブジェクトで1つのキューブを選択します。 [インスペクター] パネルで、[2 つのきき操作の種類] の横にあるドロップダウンメニューをクリックし、[スケール] を選択します。 これにより、ユーザーは立方体のサイズしか変更できなくなります。
+> [!IMPORTANT]
+> **オブジェクトを操作**できるようにするには、オブジェクトに次のコンポーネントが必要です。
+>
+> * **Collider**コンポーネント (Box collider など)
+> * **操作ハンドラー (スクリプト)** コンポーネント
+>
+> **追跡したハンドを使用**してオブジェクトを**操作**および取得できるようにするには、オブジェクトに次のコンポーネントが含まれている必要があります。
+>
+> * **Collider**コンポーネント (Box collider など)
+> * **操作ハンドラー (スクリプト)** コンポーネント
+> * **Near 相互作用 Grabbable (スクリプト)** コンポーネント
 
-    ![Lesson4 Chapter2 Step2im](images/Lesson4_Chapter2_step2im.PNG)
+### <a name="1-add-the-manipulation-handler-script-component-to-all-the-objects"></a>1. 操作ハンドラー (スクリプト) コンポーネントをすべてのオブジェクトに追加します。
 
-3. 立方体を区別できるように、それぞれの色を変更します。
-    * [プロジェクト] パネルに移動し、MixedRealityToolkit が表示されるまで下にスクロールして、それを選択します。
-    * [Standard Assets] フォルダーを選択します。
-    * [素材] フォルダーをクリックします。
-    * 立方体のそれぞれに異なる素材をドラッグします。
+階層 ウィンドウで、**チーズ** オブジェクトを選択し、 **shift**キーを押したまま**Cube ()** オブジェクトを選択して、**操作ハンドラー (スクリプト)** コンポーネントをすべてのオブジェクトに追加します。
 
-    >[!NOTE]
-    >立方体には任意の色を選択できます。 この例では、glowingcyan、glowingorange、および green が使用されています。 さまざまな色を自由に試すことができます。 キューブに色を追加するには、変更するキューブをクリックし、その素材をキューブの [インスペクター] パネルのメッシュレンダラーの [素材] フィールドにドラッグします。
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step1-1.png)
 
-    ![Lesson4 Chapter2 Step3im](images/Lesson4_Chapter2_step3im.PNG)
+> [!NOTE]
+> このチュートリアルでは、colliders が既に prefabs に追加されています。 キューブオブジェクトなどの Unity プリミティブの場合、オブジェクトの作成時に Collider コンポーネントが自動的に追加されます。 上の図では、colliders は緑色のアウトラインで表されています。 Colliders の詳細については、Unity の<a href="https://docs.unity3d.com/Manual/CollidersOverview.html" target="_blank">Collider</a>のドキュメントを参照してください。
 
-4. 3DObjectCollection オブジェクト内の別のキューブを選択し、その移動を先頭からの固定距離に制限するように設定します。 この操作を行うには、[移動] ラベルの [制約] の右側にあるドロップダウンメニューをクリックし、[ヘッドからの距離を修正] を選択します。 これにより、キューブがビジョンのフィールド内になるように調整されます。
+### <a name="2-add-the-near-interaction-grabbable-script-component-to-the-prefab-objects"></a>2. Near の相互作用 Grabbable (スクリプト) コンポーネントを prefab オブジェクトに追加する
 
-    ![Lesson4 Chapter2 Step4im](images/Lesson4_chapter2_step4im.PNG)
+階層 ウィンドウで、**チーズ** オブジェクトを選択し、 **shift**キーを押したまま、**モジュール** オブジェクトを選択し、 **Near インタラクション Grabbable (スクリプト)** コンポーネントをすべてのオブジェクトに追加します。
 
-    次のいくつかの手順の目的は、3D オブジェクトをグラブして操作し、異なる操作設定を適用できるようにすることです。
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step2-1.png)
 
-5. [チーズ] オブジェクトを選択し、[インスペクター] パネルの [コンポーネントの追加] をクリックします。
+### <a name="3-configure-the-manipulation-handler-script-component"></a>3. 操作ハンドラー (スクリプト) コンポーネントを構成する
 
-6. [検索] ボックスで [Near インタラクション Grabbable] を検索し、スクリプトを選択します。 このコンポーネントを使用すると、ユーザーは追跡したハンドを使用してオブジェクトに接続し、オブジェクトを取得できます。 次の画像の緑色の円で示されているように、[Far 操作を許可する] チェックボックスをオフにしない限り、オブジェクトを距離から操作することもできます。
+#### <a name="default-manipulation"></a>既定の操作
 
-    ![Lesson4 Chapter2 Step6im](images/Lesson4_Chapter2_step6im.PNG)
+既定の操作動作を実行するには、**キューブ**オブジェクトに対して、すべてのプロパティを既定のままにします。
 
-7. これらのオブジェクトに対して手順 5. と 6. を繰り返して、プラトニックオブジェクト、地球コア、旧暦モジュール、およびコーヒーカップに Near Grabbable を追加します。
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-1.png)
 
-8. Octa オブジェクトから遠距離操作ができないようにします。 これを行うには、階層内で Octa を選択し、[far 操作を許可する] チェックボックスをオフにします (緑色の円でマークされています)。 これにより、ユーザーは追跡したハンドを使用して、octa だけを直接操作できるようになります。
+> [!TIP]
+> コンポーネントを既定値にリセットするには、コンポーネントの設定アイコンを選択し、[リセット] を選択します。
 
-    >[!NOTE]
-    >操作ハンドラーコンポーネントとそれに関連する設定の完全なドキュメントについては、 [Mrtk のドキュメント](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)を参照してください。
+#### <a name="restrict-manipulation-to-scale-only"></a>操作をスケールのみに制限する
 
-9. Near の相互作用 Grabbable コンポーネントが、地球コア、太陰暦モジュール、およびコーヒーカップに追加されていることを確認します (手順7を参照)。
+**Cube (1)** オブジェクトの場合は、 **2 つのきき操作の種類**を Scale に変更し、ユーザーがオブジェクトのサイズを変更できるようにします。
 
-10. 旧暦モジュールの場合は、次の図に示すように、操作ハンドラーの設定を変更して、オブジェクトの中心を前後の対話の両方で回転させます。
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-2.png)
 
-    ![Lesson4 Chapter2 Step10im](images/Lesson4_chapter2_step10im.PNG)
+#### <a name="constrain-the-movement-to-a-fixed-distance-from-the-user"></a>ユーザーからの固定距離への移動を制限する
 
-11. 地球コアの場合は、リリース動作を何も変更しません。 これにより、地球コアがユーザーのつかみから解放されると、移動は続行されません。
+**Cube (2)** オブジェクトの場合は、移動時**に制約**を変更して、オブジェクトが移動されたときに、ユーザーからの距離を維持したままにします。
 
-    ![Lesson4 Chapter2 Step11im](images/Lesson4_Chapter2_step11im.PNG)
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-3.png)
 
-    >[!NOTE]
-    >この設定は、スローできるボールを作成するなどのシナリオに役立ちます。 適切なベロシティと角速度を維持して、ボールがリリースされた後も、そのボールがリリースされた速度で移動し続けます。物理的なボールの動作と似ています。
+#### <a name="default-grabbable-manipulation"></a>既定の grabbable 操作
+
+**チーズ**、 **CoffeCup**、および**EarthCore**オブジェクトの場合は、既定ですべてのプロパティをそのままにして、既定の grabbable 操作動作を体験します。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-4.png)
+
+#### <a name="remove-the-ability-of-far-manipulation"></a>遠くの操作の機能を削除する
+
+**Octa**オブジェクトの場合は、[**遠隔操作を許可**する] チェックボックスをオフにして、ユーザーが追跡したハンドを使用して直接オブジェクトと対話できるようにします。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-5.png)
+
+#### <a name="make-an-object-rotate-around-its-center"></a>オブジェクトを中央に回転させる
+
+**プラトニック**オブジェクトの場合は、一方の**手の回転モードの近く**と1つの手回転モードを**遠く**に回転させます。これにより、ユーザーがオブジェクトを1つ回転させると、オブジェクトの中心を中心に回転します。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-6.png)
+
+#### <a name="prevent-movement-after-object-is-released"></a>オブジェクトが解放された後の移動を禁止する
+
+**モジュール**オブジェクトの場合は、**リリース動作**を何も変更しないでください。これにより、オブジェクトがユーザーの手から解放されると、移動は続行されません。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-7.png)
+
+操作ハンドラーコンポーネントとそれに関連付けられているプロパティの詳細については、 [Mrtk ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)の[操作ハンドラー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)ガイドを参照してください。
 
 ## <a name="adding-bounding-boxes"></a>境界ボックスの追加
 
-境界ボックスを使用すると、直接操作 (ほぼ相互作用) と射線ベースの操作 (遠くのやり取り) の両方で、オブジェクトを1つの手で操作することが簡単になり、直観的になります。境界ボックスは、特定の軸に沿ってオブジェクトを拡大縮小および回転するために取得できるハンドルを提供します。
+境界ボックスを使用すると、拡大縮小および回転に使用できるハンドルを提供することによって、近距離および遠くの相互作用のために、オブジェクトを簡単かつ直感的に操作できるようになります。
 
->[!NOTE]
->オブジェクトに境界ボックスを追加するには、まず、このレッスンで前に説明したように、オブジェクト (box collider など) に collider を用意する必要があります。 Colliders を追加するには、オブジェクトを選択し、オブジェクトの [インスペクター] パネルで [コンポーネントの追加 > Box Collider] を選択します。
+この例では、EarthCore オブジェクトに境界ボックスを追加します。これにより、前のセクションで構成したオブジェクト操作を使用して、境界ボックスハンドルを使用してスケールおよび回転することで、このオブジェクトと対話できるようになります。
 
-1. 箱の collider を地球コアオブジェクトに追加します (まだ存在しない場合)。 指定された指示に従って、ベースモジュールの Assets フォルダーに用意されている prefab を使用する場合、box の collider とセットアップは必要ありません。 地球コアの場合、次の図に示すように、box collider を、、node_id30、地球コアの下にあるオブジェクトに追加しました。 オブジェクトの [インスペクター] タブで [node_id30] を選択し、[コンポーネントの追加] をクリックして、box collider を検索します。
+> [!IMPORTANT]
+> **境界ボックス**を使用できるようにするには、オブジェクトに次のコンポーネントが必要です。
+>
+> * **Collider**コンポーネント (Box collider など)
+> * **境界ボックス (スクリプト)** コンポーネント
 
-    ![Lesson4 Chapter3 Step1im](images/Lesson4_Chapter3_step1im.PNG)
+### <a name="1-add-the-bounding-box-script-component-to-the-earthcore-object"></a>1. 境界ボックス (スクリプト) コンポーネントを EarthCore オブジェクトに追加する
 
-    ![Lesson4 Chapter3 Step2im](images/Lesson4_chapter3_step2im.PNG)
+[インスペクター] ウィンドウで、 **EarthCore**オブジェクトを選択し、**境界ボックス (スクリプト)** コンポーネントを EarthCore オブジェクトに追加します。
 
-    >[!NOTE]
-    >Box collider のサイズを大きくしたり小さくしたりしないようにしてください。 それが囲むオブジェクト (この例では地球の核) とほぼ同じサイズである必要があります。 Box collider の [Collider の編集] オプションを選択して、必要に応じて box の collider を調整します。 X、y、z の値を変更するか、[エディターシーン] ウィンドウで境界ボックスハンドラーをドラッグします。
+![mrlearning-base](images/mrlearning-base/tutorial4-section5-step1-1.png)
 
-    ![Lesson4 Chapter3 Noteim](images/Lesson4_Chapter3_noteim.PNG)
+> [!NOTE]
+> 境界ボックスの視覚エフェクトは実行時に作成されるため、ゲームモードに入る前には表示されません。
 
-2. アースコアの node_id30 オブジェクトに境界ボックスを追加します。 これを行うには、3DObjectCollection から node_id30 オブジェクトを選択します。 [インスペクター] タブで、[コンポーネントの追加] をクリックし、[境界ボックス] を検索します。 境界ボックス、ボックス コライダー、および操作スクリプト (操作ハンドラー、近距離操作 - グラブ可能) がすべて同じゲーム オブジェクト上にあることを確認します。
+### <a name="2-visualize-and-test-the-bounding-box-using-the-in-editor-simulation"></a>2. エディター内シミュレーションを使用して境界ボックスを視覚化およびテストする
 
-3. 境界ボックスの [動作] セクションで、[アクティブ化] ドロップダウンリストから [開始時にアクティブにする] を選択します。 さまざまなアクティブ化オプションおよびその他の境界ボックスオプションに関する詳細については、 [Mrtk の境界ボックスのドキュメント](<https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html>)を参照してください。
+再生ボタンを押してゲームモードに入ります。 次に、space キーを押して手を置き、マウスを使用して境界ボックスと対話します。
 
-    *次のいくつかの手順では、既定のボックスマテリアル、グラブ中の素材、コーナーハンドルとサイドハンドルの視覚化を調整して、境界ボックスがどのように見えるかを変更します。MRTK には、境界ボックスをカスタマイズするためのオプションがいくつか含まれています。*
+![mrlearning-base](images/mrlearning-base/tutorial4-section5-step2-1.png)
 
-4. [プロジェクト] パネルで "boundingbox" を検索すると、次の図に示すように、検索結果に青い球で示される素材の一覧が表示されます。
-
-5. Boundingbox マテリアルを、境界ボックスコンポーネントのボックス素材スロットにドラッグします。 また、boundingboxgrabbed の素材を取得し、境界ボックスコンポーネントのボックスに挿入します。
-
-    ![mrlearning-base-ch4-3-step5](images/mrlearning-base-ch4-3-step5.png)
-
-6. MRTK_BoundingBox_ScaleHandle prefab をスケールハンドル prefab スロットにドラッグし、MRTK_BoundingBox_RotateHandle prefab を結合ボックスコンポーネントの回転ハンドルスロットにドラッグします。
-
-    ![mrlearning-base-ch4-3-step6](images/mrlearning-base-ch4-3-step6.png)
-
-7. 境界ボックスの正しいオブジェクトを対象としていることを確認します。 境界ボックスコンポーネントには、ターゲットオブジェクトと境界オーバーライドスクリプトがあります。 境界ボックスを持つオブジェクトをこれらのスロットの両方にドラッグします。 この例では、次の図に示すように、これらのスロットの両方に node_id30 オブジェクトをドラッグします。
-
-    ![mrlearning-base-ch4-3-step7](images/mrlearning-base-ch4-3-step7.png)
-
-    >[!NOTE]
-    >アプリケーションを起動または再生すると、オブジェクトは青いフレームで囲まれます。 そのフレームのコーナーをドラッグすると、オブジェクトのサイズを自由に変更できます。 スケーリングハンドルと回転ハンドルのサイズを大きくして表示する場合は、既定の境界ボックスの設定を使用することをお勧めします (手順 4. ~ 6. を回避)。
-
-8. 既定の境界ボックスの視覚化に戻るには、境界ボックスのオブジェクトの [インスペクター] パネルで、回転ハンドル prefab を選択し、del キーを押して削除します。 再生モードに入ると、次の図のような境界ボックスの視覚エフェクトが表示されます。
-
-    ![mrlearning-base-ch4-3-step8](images/mrlearning-base-ch4-3-step8.png)
-
-    >[!NOTE]
-    >境界ボックスの視覚エフェクトは、再生モードの場合にのみ表示されます。
+境界ボックスコンポーネントとそれに関連付けられているプロパティの詳細については、 [Mrtk ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)の[境界ボックス](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)ガイドを参照してください。
 
 ## <a name="adding-touch-effects"></a>タッチ効果の追加
 
-この例では、オブジェクトを手でタッチしたときに効果音が再生されるようにします。
+この例では、手の形でオブジェクトを操作したときにイベントがトリガーされるようにします。 具体的には、ユーザーが操作したときにサウンド効果を再生するように、Octa オブジェクトを構成します。
 
-1. ゲーム オブジェクトにオーディオ ソース コンポーネントを追加します。 シーン階層で Octa オブジェクトを選択します。 [インスペクター] パネルで [コンポーネントの追加] ボタンをクリックし、[オーディオソース] を検索して選択します。 後の方の手順で、このオーディオ ソースを使用して効果音を再生します。
+これを実現するには、主に次の手順を実行します。
 
-    >[!NOTE]
-    >Octa オブジェクトに box collider があることを確認します。
+1. オーディオソースコンポーネントをオブジェクトに追加する
+2. Near 相互作用 Touchable (スクリプト) コンポーネントをオブジェクトに追加します。
+3. オブジェクトにハンドインタラクションタッチ (スクリプト) コンポーネントを追加します。
+4. タッチ開始イベントを実装する
+5. エディター内シミュレーションを使用したタッチ操作のテスト
 
-2. Near 対話 Touchable コンポーネントを追加します。 [インスペクター] パネルの [Add Component (コンポーネントの追加)] ボタンをクリックし、near インタラクション touchable を検索します。 選択してコンポーネントに追加します。
+> [!IMPORTANT]
+> **タッチイベントをトリガー**できるようにするには、オブジェクトに次のコンポーネントが必要です。
+>
+> * **Collider**コンポーネント (可能であれば Box Collider)
+> * **Near 相互作用 Touchable (スクリプト)** コンポーネント
+> * **ハンドインタラクションタッチ (スクリプト)** コンポーネント
 
-    >[!NOTE]
-    >以前は、grabbable の近くに追加しました。 この相互作用 touchable の違いは、grabbable の相互作用は、オブジェクトをグラブして操作することを意図しています。 Touchable コンポーネントは、タッチするオブジェクトを対象としています。 操作を組み合わせるために両方のコンポーネントを一緒に使用することができます。
+> [!NOTE]
+> 手書き操作タッチ (スクリプト) コンポーネントは、MRTK の一部ではありません。 このチュートリアルのアセットと共にインポートされ、もともとは MixedReality Toolkit Unity の例に含まれています。
 
-    ![Lesson4 Chapter4 Step1 2Im](images/Lesson4_chapter4_step1-2im.PNG)
+### <a name="1-add-an-audio-source-component-to-the-object"></a>1. オーディオソースコンポーネントをオブジェクトに追加する
 
-3. ハンドインタラクションタッチスクリプトにを追加します。 前の手順と同じように、[コンポーネントの追加] をクリックして、追加するタッチ操作を検索します。
+[階層] ウィンドウで、 **Octa**オブジェクトを選択し、**オーディオソース**コンポーネントを octa オブジェクトに追加します。次に、空間**ブレンド**を1に変更して、空間オーディオを有効にします。
 
-    スクリプトには次の3つのオプションがあることに注意してください。
-    * タッチ完了時: オブジェクトをタッチして解放するとトリガーされます
-    * タッチ開始時: オブジェクトがタッチされたときにトリガーします
-    * タッチ更新時: ハンドがオブジェクトに接している間、定期的にトリガーします。
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step1-1.png)
 
-    この例では、[タッチによる開始] 設定を使用します。
+### <a name="2-add-the-near-interaction-touchable-script-component-to-the-object"></a>2. Near 相互作用 Touchable (スクリプト) コンポーネントをオブジェクトに追加します。
 
-    >[!NOTE]
-    >このスクリプトは、このチュートリアルの冒頭でインポートした BaseModuleAssets Unity パッケージに含まれており、元の MRTK には含まれていません。
+**Octa**オブジェクトを選択した状態で、 **Touchable (スクリプト)** コンポーネントを octa オブジェクトに追加します。次に、 **[境界の修正]** と センターの **[修正]** ボタンをクリックして、Near 相互作用 Touchable (スクリプト) のローカルの中央および境界のプロパティを boxcollider と一致するように更新します。
 
-4. [タッチ開始時] オプションの [+] ボタンをクリックし、[Octa] オブジェクトを空のフィールドにドラッグします。
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step2-1.png)
 
-    ![mrlearning-base-ch4-4-step4](images/mrlearning-base-ch4-4-step4.png)
+### <a name="3-add-the-hand-interaction-touch-script-component-to-the-object"></a>3. ハンドインタラクションタッチ (スクリプト) コンポーネントをオブジェクトに追加する
 
-5. [関数がありません] というドロップダウンで、[AudioSource > PlayOneShot] を選択します。 以下のコンセプトを元に、このフィールドにオーディオ クリップを追加します。
+**Octa**オブジェクトを選択した状態で、次のように、**手動インタラクションタッチ (スクリプト)** コンポーネントを octa オブジェクトに追加します。
 
-    * MRTK には、オーディオ クリップの小さいリストがあります。 これらは、プロジェクトパネルで自由に調べることができます。 これらのファイルは、[アセット > MixedRealityToolkit > Standard Assets > Audio フォルダー] の下にあります。
-    * この例では、MRTK_Gem オーディオクリップを使用します。
-    * オーディオクリップを追加するには、目的のクリップを [プロジェクト] パネルから [PlayOneShot] フィールドにドラッグするだけです。
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step3-1.png)
 
-    ![mrlearning-base-ch4-4-step5](images/mrlearning-base-ch4-4-step5.png)
+### <a name="4-implement-the-on-touch-started-event"></a>4. タッチ開始イベントを実装する
 
-   これで、ユーザーがに到達し、Octa オブジェクトに触れると、オーディオトラック MRTK_Gem が再生されます。 また、ハンドインタラクションタッチスクリプトでは、オブジェクトの色も調整されます。
+手書き入力タッチ (スクリプト) コンポーネントで、小さい **+** アイコンをクリックし**て、タッチ開始 ()** イベントの新しいイベントを作成します。 次に、イベントを受信するように**Octa**オブジェクトを構成し、トリガーされるアクションとして**PlayOneShot**を定義します。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-1.png)
+
+**[アセット]**  > [ **> > ]** に移動して、mrtk で提供されているオーディオクリップを表示し、適切なオーディオクリップを**オーディオクリップ**フィールド (たとえば、MRTK_Gem オーディオクリップ) に**割り当てます。**
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-2.png)
+
+> [!TIP]
+> イベントの実装方法に関する注意事項については、「[ハンドトラッキングジェスチャ」と「対話型 buttons](mrlearning-base-ch2.md#hand-tracking-gestures-and-interactable-buttons) 」を参照してください。
+
+### <a name="5-test-the-touch-interaction-using-the-in-editor-simulation"></a>5. エディター内のシミュレーションを使用してタッチ操作をテストする
+
+再生ボタンを押してゲームモードに入ります。 次に、space キーを押して手を置き、マウスを使用して Octa オブジェクトにタッチし、サウンド効果をトリガーします。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section6-step5-1.png)
+
+> [!NOTE]
+> タッチ操作のテスト時に見たように、上の図に示すように、処理されたときに、Octa オブジェクトの色が表示されます。 この効果は、前述の手順で完了したイベント構成の結果ではなく、ハンドインタラクションタッチ (スクリプト) コンポーネントにハードコーディングされます。
+>
+> この効果を無効にする場合は、たとえばコメントアウトまたは行 32 ' TargetRenderer = GetComponentInChildren<Renderer>(); ' を指定すると、TargetRenderer が null になり、色はません。
 
 ## <a name="congratulations"></a>結論
 
-このチュートリアルでは、グリッドコレクション内の3D オブジェクトを整理する方法と、近くの操作 (追跡したハンドを使用した直接グラブ) と遠くの相互作用 (宝石を使用した、または光線を使用) を使用して、これらのオブジェクトを操作する方法について学習しました。 また、3D オブジェクトの周囲に境界ボックスを配置する方法と、境界ボックスでギズモを使用およびカスタマイズする方法についても学習しました。 最後に、オブジェクトにタッチしたときにイベントをトリガーする方法を学習しました。
+このチュートリアルでは、グリッドコレクション内の3D オブジェクトを整理する方法と、近くの操作 (追跡したハンドを使用した直接グラブ) と遠くの相互作用 (宝石を使用した、または光線を使用) を使用して、これらのオブジェクトを操作する方法について学習しました。 また、3D オブジェクトの周囲に境界ボックスを配置する方法と、境界ボックスでハンドルを使用およびカスタマイズする方法についても学習しました。 最後に、オブジェクトにタッチしたときにイベントをトリガーする方法を学習しました。
 
 [次のレッスン: 6. 詳細な入力オプションの調査](mrlearning-base-ch5.md)
