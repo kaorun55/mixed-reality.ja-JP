@@ -7,12 +7,12 @@ ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, テスト, MRTK, MRTK バージョン 2, HoloLens 2
-ms.openlocfilehash: 41e6f8b3632a53663f237deb54a3144fb8ad79e8
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8e0c66a1c3d8ebd5422d19a02f313147ecf76653
+ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926209"
+ms.lasthandoff: 02/08/2020
+ms.locfileid: "77092036"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>既存のアプリを HoloLens 2 で利用できるようにする
 
@@ -22,7 +22,7 @@ ms.locfileid: "73926209"
 
 | 手順 1 | 手順 2 | 手順 3 | 手順 4 |
 |----------|-------------------|-------------------|-------------------|
-| ![Visual Studio のロゴ](images/visualstudio_logo.png) | ![Unity のロゴ](images/unity_logo.png)| ![Unity のアイコン](images/hololens2_icon.jpg) | ![MRTK のロゴ](images/MRTKIcon.jpg) |
+| ![Visual Studio のロゴ](images/visualstudio_logo.png) | ![Unity のロゴ](images/final_unity_logo.png)| ![Unity のアイコン](images/hololens2_icon.jpg) | ![MRTK のロゴ](images/final_mrtk-small_logo.png) |
 | 最新のツールのダウンロード | Unity プロジェクトの更新 | ARM 用にコンパイル | MRTK v2 に移行
 
 前提条件:
@@ -141,7 +141,7 @@ HoloLens (第 1 世代) では、アプリケーションで視線入力とコ�
 
 - ARM のシェーダー コンパイラは、シェーダーの読み込み時ではなく、シェーダーが読み込まれた後またはシェーダーが依存するものが変更された後の最初の描画呼び出しの中で実行されます。 コンパイルする必要があるシェーダーの数によっては、フレーム レートへの影響が顕著になる場合があります。 これは、HoloLens 2 と HoloLens (第 1 世代) でのシェーダーの処理、パッケージ化、更新の方法の違いに対してさまざまな影響を与えます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 * [ツールのインストール](install-the-tools.md)
 * [MRTK バージョン 2 をお使いになる前に](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 * [HTK API 対 MRTK API](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html)
