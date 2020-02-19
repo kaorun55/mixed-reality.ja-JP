@@ -3,16 +3,16 @@ title: ツールのインストール
 description: ここでは Mixed Reality の開発の準備を開始します。 この記事では、HoloLens および Windows Mixed Reality のイマーシブ ヘッドセット開発に推奨される Unity、Visual Studio、その他のツールの最新バージョンが常に反映されています。
 author: thetuvix
 ms.author: alexturn
-ms.date: 2/11/2019
+ms.date: 2/12/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新, ツール, はじめに, 基本, unity, visual studio, ツールキット
-ms.openlocfilehash: d2b9a3718845e755a5cd8d9866ec9716ee0c0609
-ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
+ms.openlocfilehash: 8eb9511ab027eb32c5608acd1bde4e0ac15431ef
+ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77092046"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77250767"
 ---
 # <a name="install-the-tools"></a>ツールのインストール
 
@@ -37,7 +37,7 @@ Mixed Reality アプリの作成を開始する最も簡単な方法として、
 | ![Windows ロゴ](images/Windows10_logo.png)<br><br><a href="https://www.microsoft.com/software-download/windows10" target="_blank">**Windows 10** (手動インストールのリンク)</a> | お使いの PC のオペレーティング システムが、Mixed Reality アプリケーションの構築対象プラットフォームと一致するように、Windows 10 の最新バージョンをインストールしてください。 | **Windows 10 のインストール** <br> <ul><li>[設定] の [Windows Update] を利用するか、インストール メディアを作成して (左の列のリンクを使用して)、Windows 10 の最新バージョンをインストールできます。<li>Windows 10 の各リリースで使用可能な最新の Mixed Reality 機能については、[最新のリリース ノート](release-notes-october-2018.md)を参照してください。</ul> [設定] > [更新とセキュリティ] > [開発者向け] から、**PC で開発者モードを有効にします**。 <br><br> **エンタープライズ管理および会社管理の PC の場合の注意事項:** お使いの PC が組織の IT 部門によって管理されている場合、更新するために管理者への連絡が必要な場合があります。 <br><br> **Windows の 'N' バージョン:** Windows Mixed Reality イマーシブ (VR) ヘッドセットは、Windows の 'N' バージョンではサポートされていません。 |
 | ![Visual Studio のロゴ](images/visualstudio_logo.png)<br><br><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">**Visual Studio 2019 (16.2 以降)** (インストールのリンク)</a> | 完全な機能を備えた Windows などの統合開発環境 (IDE) です。 コードの記述、デバッグ、テスト、配置には、Visual Studio を使用します。 | **インストールするワークロード:** <ul><li>C++ によるデスクトップ開発</li><li>ユニバーサル Windows プラットフォーム (UWP) の開発</li></ul>**Unity に関する注意事項:** 特定の目的のために意図的により新しいバージョンの (LTS 以外の) Unity をインストールしようとしているのでなければ、Visual Studio のインストールの一部として Unity ワークロードをインストールする*のではなく*、下記のように Unity の 2018.4 LTS ストリームをインストールすることをお勧めします。<br> <br>**注:** Visual Studio 2019 バージョン 16.0 での Mixed Reality アプリのデバッグに関して既知の問題がいくつかあります。  Visual Studio 2019 を必ずバージョン 16.2 以降に更新してください。 |
 | ![Windows ロゴ](images/Windows10_logo.png)<br><br><a href="https://developer.microsoft.com//windows/downloads/windows-10-sdk" target="_blank">**Windows 10 SDK (10.0.18362.0)** (手動インストールのリンク)</a> | HoloLens 2 で Windows 10 アプリを作成するための最新のヘッダー、ライブラリ、メタデータ、ツールが用意されています。 | HoloLens 2 アプリを構築するには、ビルド 18362 以降の Windows SDK をインストールする必要があります。<br> <br> デスクトップの Windows Mixed Reality ヘッドセットまたは HoloLens (第 1 世代) 用のアプリケーションのみを開発している場合は、Visual Studio 2017 によってインストールされた Windows SDK を使用することができます。 |
-| ![Visual Studio のロゴ](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2114824" target="_blank">**HoloLens 2 エミュレーター (2020 年 1 月の更新プログラム)** (インストールのリンク:10.0.18362.1044)</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens (第 1 世代) エミュレーター** (インストールのリンク:10.0.17763.134)</a> | エミュレーターを使用すると、物理的な HoloLens を使用せずに、HoloLens 仮想マシン イメージ上でアプリケーションを実行できます。<br> <br> | エミュレーターの使用を開始する方法については、「[Using the HoloLens emulator (HoloLens エミュレーターを使用する)](using-the-hololens-emulator.md)」を参照してください。<br> <br> エミュレーターのインストールを成功させるには、**ご使用のシステムが Hyper-V をサポートしている必要があります**。 詳細については、以下の「システム要件」セクションを参照してください。 <br>|
+| ![Visual Studio のロゴ](images/HoloLensIcon.jpg)<br><br><a href="https://go.microsoft.com/fwlink/?linkid=2118321" target="_blank">**HoloLens 2 エミュレーター (2020 年 2 月の更新プログラム)** (インストールのリンク:10.0.18362.1053)</a><br> <br><a href="https://go.microsoft.com/fwlink/?linkid=2065980" target="_blank">**HoloLens (第 1 世代) エミュレーター** (インストールのリンク:10.0.17763.134)</a> | エミュレーターを使用すると、物理的な HoloLens を使用せずに、HoloLens 仮想マシン イメージ上でアプリケーションを実行できます。<br> <br> | エミュレーターの使用を開始する方法については、「[Using the HoloLens emulator (HoloLens エミュレーターを使用する)](using-the-hololens-emulator.md)」を参照してください。<br> <br> エミュレーターのインストールを成功させるには、**ご使用のシステムが Hyper-V をサポートしている必要があります**。 詳細については、以下の「システム要件」セクションを参照してください。 <br>|
 
 ## <a name="choose-your-engine"></a>エンジンの選択
 
@@ -119,7 +119,7 @@ HoloLens と Windows Mixed Reality イマーシブ (VR) ヘッドセットの両
 </tr>
 </table>
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 * [開発の概要](development.md)
 * [HoloLens エミュレーターを使用する](using-the-hololens-emulator.md)
