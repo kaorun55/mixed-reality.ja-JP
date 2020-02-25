@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: d3392df9bfad5938d71d3a01999be51834a98a5d
-ms.sourcegitcommit: 87aca9c2b73b0e83cb70a46443dcdb08c3621005
+ms.openlocfilehash: 9c219313ad6e73cde78efd8e5e718a466ebd6137
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77373444"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77554402"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.プロジェクトと最初のアプリケーションの初期化
 
@@ -154,13 +154,13 @@ Unity メニューで、 **[Window]\(ウィンドウ\)**  >  **[TextMeshPro]**  
 
 Unity カスタム パッケージをダウンロードします。
 
-* [Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.2.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage)
+* [Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)
 
 Unity メニューで、 **[Assets]\(アセット\)**  >  **[Import Package]\(パッケージのインポート\)**  >  **[Custom Package...]\(カスタム パッケージ...\)** を選択して [Import package...]\(パッケージのインポート...\) ウィンドウを開きます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section4-step1-1.png)
 
-[Import package...]\(パッケージのインポート...\) ウィンドウで、ダウンロードした **Microsoft.MixedReality.Toolkit.Unity.Foundation.2.2.0.unitypackage** を選択し、 **[Open]\(開く\)** ボタンをクリックします。
+[Import package...]\(パッケージのインポート...\) ウィンドウで、ダウンロードした **Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage** を選択し、 **[Open]\(開く\)** ボタンをクリックします。
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section4-step1-2.png)
 
@@ -190,15 +190,18 @@ Unity メニューで、 **[Mixed Reality Toolkit]\(Mixed Reality ツールキ�
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-1.png)
 
-[Hierarchy]\(階層\) ウィンドウで MixedRealityToolkit オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで、Mixed Reality ツールキットの構成プロファイルを **DefaultHoloLens2ConfigurationProfile** に変更します。
+[Hierarchy]\(階層\) ウィンドウで MixedRealityToolkit オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで、Mixed Reality ツールキットの構成プロファイルが **DefaultMixedRealityToolkitConfigurationProfile** に設定されていることを確認します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-2.png)
+
+> [!IMPORTANT]
+> 通常、HoloLens 2 の開発時には DefaultHoloLens2ConfigurationProfile を使用します。 ただし、このチュートリアルでは、DefaultMixedRealityToolkitConfigurationProfile を使用します。次のチュートリアル「[ユーザー インターフェイスの作成と Mixed Reality ツールキットの構成](mrlearning-base-ch2.md)」で、DefaultHoloLens2ConfigurationProfile に変更します。
 
 Unity メニューで、 **[File]\(ファイル\)**  >  **[Save As...]\(名前を付けて保存...\)** を選択して [Save Scene]\(シーンの保存\) ウィンドウを開きます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-3.png)
 
-[Save Scene]\(シーンの保存\) ウィンドウで、プロジェクトの **[Scenes]\(シーン\)** フォルダーに移動し、シーンに適切な名前を付け (たとえば、_はじめに_)、 **[Save]\(保存\)** ボタンをクリックしてシーンを保存します。
+[Save Scene]\(シーンの保存\) ウィンドウで、プロジェクトの **[Scenes]\(シーン\)** フォルダーに移動し、シーンに適切な名前を付け (たとえば、_GettingStarted_)、 **[Save]\(保存\)** ボタンをクリックしてシーンを保存します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section6-step1-4.png)
 
