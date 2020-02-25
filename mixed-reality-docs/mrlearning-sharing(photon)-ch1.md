@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: efa03c49a9a083d2b8e591e03bccbeb776bb57b2
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: d879144c7097d8b3873618f986b9f169e8553fa8
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901473"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553820"
 ---
 # <a name="1-setting-up-photon-unity-networking"></a>1. Photon Unity ネットワークを設定する
 
@@ -25,18 +25,18 @@ ms.locfileid: "75901473"
 * Photon Unity ネットワークを検索してインポートする方法について説明します。
 * ローカル Photon サーバーをセットアップする
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>前提条件
 
 >[!TIP]
 >チュートリアル「はじめに」[チュートリアルをまだ](mrlearning-asa-ch1.md)完了していない場合[は、チュートリアルを完了](mrlearning-base.md)しておくことをお勧めします。
 
-* 適切な[ツールがインストール](install-the-tools.md)されている WINDOWS 10 PC
+* 正しい[ツールがインストールされている](install-the-tools.md)構成済みの Windows 10 PC
 * Windows 10 SDK 10.0.18362.0 以降
-* 基本的なC#プログラミング機能
-* [開発用に構成され](using-visual-studio.md#enabling-developer-mode)た HoloLens 2 デバイス
+* 基本的な C# プログラミング能力
+* [開発用に構成された](using-visual-studio.md#enabling-developer-mode) HoloLens 2 デバイス
 
 >[!IMPORTANT]
->このチュートリアルシリーズでは<a href="https://unity3d.com/get-unity/download/archive" target="_blank">unity 2019.1</a>が必要であり、推奨されるバージョンは unity 2019.1.14 です。 これは、前にリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
+> このチュートリアル シリーズで推奨されている Unity バージョンは Unity 2019.2.X です。 これは、上のリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
 
 ## <a name="setting-up-photon"></a>Photon の設定
 

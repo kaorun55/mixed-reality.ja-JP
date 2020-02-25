@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: a3b136023b0beea7cf6eecd52a9a21447576d482
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: c1b64b9d32409d61284f21ca216417ece4767d1b
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901465"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553810"
 ---
 # <a name="5-integrating-azure-spatial-anchors-into-a-shared-experience"></a>5. Azure 空間アンカーを共有エクスペリエンスに統合する
 
@@ -42,11 +42,17 @@ ms.locfileid: "75901465"
 
     ![Module3hapter5step7im](images/module3chapter5step7im.PNG)
 
-6. 共有モジュールをテストするには、[Azure ASA セッションの開始] ボタンをクリックして azure 空間アンカーセッションを開始し、[Azure アンカーの作成] ボタンをクリックして azure アンカーを作成します。 Azure アンカーが作成されるまで待ちます。 Azure アンカーが作成されたら、[Azure アンカーを共有する] ボタンをクリックして、作成した azure アンカーを HoloLens から共有します。
+6. 手順4を繰り返して、StartAzureSession () 関数を StartAzureSessionButton にフックします。
 
-7. 別の HoloLens で共有 azure アンカーを受信するには、[Azure ASA セッションを開始します] をクリックして開始し、現在の ASA セッションにアクセスします。
+7. 手順 4. を繰り返して、CreateAzureAnchor () 関数を CreateAzureAnchorButton にフックし、TableAnchor オブジェクトが関数のパラメーター "Game Object" フィールドに割り当てられていることを確認します。
 
-8. [Get Azure Anchor] \ (Azure アンカーの取得 \) ボタンをクリックして、他の HoloLens から共有 azure アンカーを取得します。
+8. 「[シーンを azure リソースに接続](mrlearning-asa-ch1.md#4-connect-the-scene-to-the-azure-resource)する」の指示に従って、Azure 空間アンカーサービスの資格情報を追加します。
+
+9. 共有モジュールをテストするには、[Azure ASA セッションの開始] ボタンをクリックして azure 空間アンカーセッションを開始し、[Azure アンカーの作成] ボタンをクリックして azure アンカーを作成します。 Azure アンカーが作成されるまで待ちます。 Azure アンカーが作成されたら、[Azure アンカーを共有する] ボタンをクリックして、作成した azure アンカーを HoloLens から共有します。
+
+10. 別の HoloLens で共有 azure アンカーを受信するには、[Azure ASA セッションを開始します] をクリックして開始し、現在の ASA セッションにアクセスします。
+
+11. [Get Azure Anchor] \ (Azure アンカーの取得 \) ボタンをクリックして、他の HoloLens から共有 azure アンカーを取得します。
 
 ## <a name="congratulations"></a>結論
 

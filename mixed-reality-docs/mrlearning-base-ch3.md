@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 8275d5a97d7827d34ed3926cabe4032cc7f4cfac
-ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
+ms.openlocfilehash: 5463f363291790fd5e5d76ffa322a61ca7bf8e31
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77129333"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553890"
 ---
 # <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 動的なコンテンツを配置し、ソルバーを使用する
 <!-- Consider renaming to 'Placing dynamic content using Solvers' -->
@@ -58,7 +58,7 @@ ms.locfileid: "77129333"
 
 **回転 (スクリプト)** コンポーネントを構成します。
 
-* **追跡対象オブジェクトに従っ**て**向きの種類**を変更する
+* 向きの**種類**が**追跡対象オブジェクトに従う**ように設定されていることを確認する
 * **ローカルオフセット**を X = 0、Y = 0、Z = 0 にリセットします。
 * **ワールドオフセット**を X = 0、Y =-0.4、Z = 0.3 に変更します。
 

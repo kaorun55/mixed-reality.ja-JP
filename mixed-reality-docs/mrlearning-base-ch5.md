@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 18bcbc95746a2e66b88d83f279603aa7f171bbcb
-ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
+ms.openlocfilehash: aaa02ce118fd051d94311e837b143affc96ff72b
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77129663"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77554256"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6. 詳細な入力オプションを調査する
 
@@ -68,16 +68,20 @@ ms.locfileid: "77129663"
 
 ### <a name="5-implement-the-response-event-for-the-speech-command"></a>5. speech コマンドの応答イベントを実装する
 
-音声入力ハンドラー (スクリプト) コンポーネントで、小さい **+** ボタンをクリックしてキーワードを追加し、 **[キーワード]** ドロップダウンから、前の手順で作成した**Play Music**キーワードを選択します。
+[音声入力ハンドラー (スクリプト)] コンポーネントで、[小さい **+** ] ボタンをクリックし、キーワードの一覧にキーワード要素を追加します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-1.png)
+
+新しく作成した**要素 0**をクリックして展開し、 **[キーワード]** ドロップダウンから、前の手順で作成した**Play Music**キーワードを選択します。
+
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-2.png)
 
 > [!NOTE]
 > キーワードドロップダウンのキーワードは、Speech コマンドのプロファイルにある音声コマンドリストで定義されているキーワードに基づいて設定されます。
 
 新しい**Response ()** イベントを作成し、イベントを受信するように**octa**オブジェクトを構成し、トリガーするアクションとして**PlayOneShot**を定義し **、オーディオクリップフィールドに**適切なオーディオクリップ (たとえば、MRTK_Gem オーディオクリップ) を割り当てます。
 
-![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-2.png)
+![mrlearning-base](images/mrlearning-base/tutorial5-section1-step5-3.png)
 
 > [!TIP]
 > イベントの実装方法とオーディオクリップの割り当て方法に関する注意事項については、「[タッチ開始イベントの実装](mrlearning-base-ch4.md#4-implement-the-on-touch-started-event)」を参照してください。
@@ -145,11 +149,11 @@ PanGesture が選択された状態で、**メッシュ collider**コンポー�
 
 ### <a name="5-add-3d-content-to-be-scrolled"></a>5. スクロールする3D コンテンツを追加する
 
-[階層] ウィンドウで、 **Pancontent**の子オブジェクトとして**4 つのキューブを作成**し、変換の**スケール**を X = 0.15、Y = 0.15、Z = 0.15 に設定します。
+[階層] ウィンドウで、 **Pangesture**オブジェクトの子オブジェクトとして**4 つのキューブを作成**し、その変換の**スケール**を X = 0.15、Y = 0.15、Z = 0.15 に設定します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section2-step5-1.png)
 
-キューブの間隔を均等にし、時間を節約するには、Grid オブジェクトコレクション (スクリプト) コンポーネントをキューブの親オブジェクト (つまり、PanGesture) に追加し、次のようにグリッドオブジェクトコレクション (スクリプト) を構成します。
+キューブの間隔を均等にし、時間を節約するには、 **Grid オブジェクトコレクション (スクリプト)** コンポーネントをキューブの親オブジェクト (つまり、 **pangesture** ) に追加し、次のようにグリッドオブジェクトコレクション (スクリプト) を構成します。
 
 * すべてのキューブが1つの行にアラインメントされるようにするには、 **Num Rows**を1に変更します。
 * **セルの幅**を0.25 に変更して、行内のキューブを空白にします。
@@ -230,7 +234,7 @@ PanGesture が選択された状態で、**メッシュ collider**コンポー�
 
 ### <a name="4-implement-the-on-selected-event"></a>4. 選択したイベントにを実装する
 
-階層 ウィンドウで、**チーズ** オブジェクトを選択し、select **Selected ()** イベントを作成します。次に、イベントを受信するように**チーズ**オブジェクトを構成し、トリガーするアクションとして**EyeTrackingTutorialDemo**を定義します。
+階層 ウィンドウで、**チーズ** オブジェクトを選択し、**選択された**イベントを新規に作成 () イベントを作成します。次に、イベントを受信するように**チーズ**オブジェクトを構成し、トリガーされるアクションとして**EyeTrackingTutorialDemo**を定義します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step4-1.png)
 

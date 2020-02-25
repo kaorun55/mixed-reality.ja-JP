@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: e712fc2fd66b1add5b16b7dd8e6c37551aefe43a
-ms.sourcegitcommit: 9005b3fdfa87ac8fdc18a594a681e25c00ac5ce1
+ms.openlocfilehash: 8805fa6410e882bce2f0fe8da780dfd5f794cc74
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2019
-ms.locfileid: "75003211"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77554002"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4. インテントと自然言語の理解の設定
 
@@ -33,7 +33,7 @@ ms.locfileid: "75003211"
 
     ![Module4Chapter4step1cim](images/module4chapter4step1cim.PNG)
 
-2. [Azure ポータル](https://portal.azure.com/) にログインします。 ログインしたら、[リソースの作成] をクリックし、[Language Understanding] を検索して、Enter キーを押します。
+2. [Azure Portal](https://portal.azure.com/)にログインします。 ログインしたら、[リソースの作成] をクリックし、[Language Understanding] を検索して、Enter キーを押します。
 
     ![mrlearning-speech-ch4-1-step2](images/mrlearning-speech-ch4-1-step2.png)
 
@@ -147,14 +147,22 @@ ms.locfileid: "75003211"
 
     ![Module4Chapter4step23im](images/module4chapter4step23im.PNG)
 
-23. [インスペクター] パネルの [Luis Endpoint] フィールドに、手順 22. で保存したエンドポイント URL を入力します。
+23. [インスペクター] パネルの [Luis Endpoint] フィールドに、手順21で保存したエンドポイント URL を入力します。
 
     ![Module4Chapter4step24im](images/module4chapter4step24im.PNG)
 
     >[!NOTE]
     >[インスペクター] パネルの [LunarcomOfflineRecognizer] コンポーネントで、"disable" が "SimulateOfflineMode" に対して選択されていることを確認します。そうしないと、プログラムのテストは機能しません。
 
-24. Unity エディターの [再生] ボタンをクリックし、[ロケット] ボタンをクリックして、インテント認識を開始します。 「Utter を選択する」という語句を選択します。
+24. [プロジェクト] ウィンドウで、[アセット] > [MRTK] に移動します。チュートリアル。 GettingStarted Prefabs > RocketLauncher フォルダーで、RocketLauncher_Complete prefab を階層ウィンドウにドラッグし、Lunarcom_Base オブジェクトの前に配置します。
+
+    ![Module4Chapter4step24im](images/module4chapter4step24im-missing01.png)
+
+25. 階層 ウィンドウで Lunarcom_Base オブジェクトを選択し、Lunarcom インテントレコグナイザー (スクリプト) コンポーネントを見つけます。次に、RocketLauncher_Complete > ボタンオブジェクトを展開し、各ボタンオブジェクトを対応する旧暦ランチャーボタンに割り当てます。分野.
+
+    ![Module4Chapter4step24im](images/module4chapter4step24im-missing02.png)
+
+26. Unity エディターの [再生] ボタンをクリックし、[ロケット] ボタンをクリックして、インテント認識を開始します。 「Utter を選択する」という語句を選択します。
 
     >[!NOTE]
     >アプリは目的の関数を認識し、ロケットボタンをアクティブにしました。

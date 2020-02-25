@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 05/02/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: a1b26d56b4693ef23f2d77ba53e0961693489a3a
-ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
+ms.openlocfilehash: 7eb38e205237257e400550299fdeebb73ba746f1
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77130283"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77555499"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5. 3D オブジェクトとの対話
 
@@ -29,7 +29,7 @@ ms.locfileid: "77130283"
 
 Unity カスタムパッケージをダウンロードしてインポートします。
 
-* [MRTK。HoloLens2. 2.2.0.0. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.2.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.2.0.0.unitypackage)
+* [MRTK。HoloLens2. 2.3.0.2. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
 
 チュートリアルのアセットをインポートすると、プロジェクトウィンドウは次のようになります。
 
@@ -40,7 +40,7 @@ Unity カスタムパッケージをダウンロードしてインポートし�
 
 ## <a name="decluttering-the-scene-view"></a>シーンビューの Decluttering
 
-シーンを簡単に操作できるようにするには、オブジェクトの左側にある**目**のアイコンをクリックして、キューブおよび buttoncollection オブジェクトの**シーンの表示**をオフに設定します。 これにより、シーンウィンドウ内のオブジェクトが非表示になります。ゲーム中の可視性は変更されません。
+シーンを簡単に操作できるようにするには、オブジェクトの左側にある**目**のアイコンをクリックして、**キューブ**および**buttoncollection**オブジェクトの**シーンの表示**をオフに設定します。 これにより、シーンウィンドウ内のオブジェクトが非表示になります。ゲーム中の可視性は変更されません。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section2-step1-1.png)
 
@@ -75,7 +75,6 @@ Unity カスタムパッケージをダウンロードしてインポートし�
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-2.png)
 
-<!-- TODO: Finish -->
 > [!TIP]
 > 上記の手順を実行する方法については、「[ユーザーインターフェイスの作成」および「Mixed Reality Toolkit の構成](mrlearning-base-ch2.md)」のチュートリアルを参照してください。
 
@@ -89,15 +88,15 @@ Unity カスタムパッケージをダウンロードしてインポートし�
 
 * MRTK_Standard_GlowingCyan
 * MRTK_Standard_GlowingOrange
-* MRTK_Standard_Green:
+* MRTK_Standard_Green
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section3-step1-4.png)
 
 ### <a name="2-add-and-configure-the-grid-object-collection-script-component"></a>2. Grid オブジェクトコレクション (スクリプト) コンポーネントを追加して構成する
 
-**Grid オブジェクトコレクション (スクリプト)** コンポーネントを3DObjectCollection オブジェクトに追加し、次のように構成します。
+**Grid オブジェクトコレクション (スクリプト)** コンポーネントを**3DObjectCollection**オブジェクトに追加し、次のように構成します。
 
-* 子オブジェクトが親オブジェクトの下に配置された順序で並べ替えられるようにするには、**並べ替えの種類** を 子の順序 に変更します。
+* 子オブジェクトが親オブジェクトの下に配置された順序で並べ替えられるようにするには、 **[並べ替えの種類]** を **[子の順序]** に変更します。
 
 次に、 **[コレクションの更新]** ボタンをクリックして、新しい構成を適用します。
 
@@ -127,7 +126,7 @@ Unity カスタムパッケージをダウンロードしてインポートし�
 
 ### <a name="1-add-the-manipulation-handler-script-component-to-all-the-objects"></a>1. 操作ハンドラー (スクリプト) コンポーネントをすべてのオブジェクトに追加します。
 
-階層 ウィンドウで、**チーズ** オブジェクトを選択し、 **shift**キーを押したまま**Cube ()** オブジェクトを選択して、**操作ハンドラー (スクリプト)** コンポーネントをすべてのオブジェクトに追加します。
+階層 ウィンドウで、**チーズ** オブジェクトを選択し、 **shift**キーを押しながら、 **Cube () 2**オブジェクトを選択して、**操作ハンドラー (スクリプト)** コンポーネントをすべてのオブジェクトに追加します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section4-step1-1.png)
 
@@ -153,13 +152,13 @@ Unity カスタムパッケージをダウンロードしてインポートし�
 
 #### <a name="restrict-manipulation-to-scale-only"></a>操作をスケールのみに制限する
 
-**Cube (1)** オブジェクトの場合は、 **2 つのきき操作の種類**を Scale に変更し、ユーザーがオブジェクトのサイズを変更できるようにします。
+**Cube (1)** オブジェクトの場合は、 **2 つのきき操作の種類**を**Scale**に変更し、ユーザーがオブジェクトのサイズを変更できるようにします。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-2.png)
 
 #### <a name="constrain-the-movement-to-a-fixed-distance-from-the-user"></a>ユーザーからの固定距離への移動を制限する
 
-**Cube (2)** オブジェクトの場合は、移動時**に制約**を変更して、オブジェクトが移動されたときに、ユーザーからの距離を維持したままにします。
+**Cube (2)** オブジェクトの場合は、移動時**に制約**を変更して、オブジェクトが移動されたときに、ユーザーからの距離を維持した**ままにし**ます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-3.png)
 
@@ -171,21 +170,25 @@ Unity カスタムパッケージをダウンロードしてインポートし�
 
 #### <a name="remove-the-ability-of-far-manipulation"></a>遠くの操作の機能を削除する
 
-**Octa**オブジェクトの場合は、[**遠隔操作を許可**する] チェックボックスをオフにして、ユーザーが追跡したハンドを使用して直接オブジェクトと対話できるようにします。
+**Octa**オブジェクトの場合は、[ **Far 操作を許可**する] チェックボックスをオフにして、ユーザーが追跡したハンドを使用して直接オブジェクトと対話できるようにします。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-5.png)
 
 #### <a name="make-an-object-rotate-around-its-center"></a>オブジェクトを中央に回転させる
 
-**プラトニック**オブジェクトの場合は、一方の**手の回転モードの近く**と1つの手回転モードを**遠く**に回転させます。これにより、ユーザーがオブジェクトを1つ回転させると、オブジェクトの中心を中心に回転します。
+**プラトニック**オブジェクトの場合は、一方の**手の回転モードの近く**と1つの手回転モードを**遠く**に**回転させ**ます。これにより、ユーザーがオブジェクトを1つ回転させると、オブジェクトの中心を中心に回転します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-6.png)
 
-#### <a name="prevent-movement-after-object-is-released"></a>オブジェクトが解放された後の移動を禁止する
+#### <a name="keep-movement-after-object-is-released"></a>オブジェクトがリリースされた後も移動を続ける
 
-**モジュール**オブジェクトの場合は、**リリース動作**を何も変更しないでください。これにより、オブジェクトがユーザーの手から解放されると、移動は続行されません。
+**モジュール**オブジェクトの場合は、 **Rigidbody**コンポーネントを追加して物理を有効にします。次に、オブジェクトが重力の影響を受けないように、[**重力を使用**する] チェックボックスをオフにします。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-7.png)
+
+操作ハンドラー (スクリプト) コンポーネントに戻り、**リリースの動作**が [**ベロシティを維持**する] に設定されていることを確認し、オブジェクトがユーザーから解放された後も移動し続けるようにします。
+
+![mrlearning-base](images/mrlearning-base/tutorial4-section4-step3-8.png)
 
 操作ハンドラーコンポーネントとそれに関連付けられているプロパティの詳細については、 [Mrtk ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)の[操作ハンドラー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_ManipulationHandler.html)ガイドを参照してください。
 
@@ -260,7 +263,7 @@ Unity カスタムパッケージをダウンロードしてインポートし�
 
 ### <a name="4-implement-the-on-touch-started-event"></a>4. タッチ開始イベントを実装する
 
-手書き入力タッチ (スクリプト) コンポーネントで、小さい **+** アイコンをクリックし**て、タッチ開始 ()** イベントの新しいイベントを作成します。 次に、イベントを受信するように**Octa**オブジェクトを構成し、トリガーされるアクションとして**PlayOneShot**を定義します。
+手書き入力**タッチ (スクリプト)** コンポーネントで、小さい **+** アイコンをクリックし**て、タッチ開始 ()** イベントの新しいイベントを作成します。 次に、イベントを受信するように**Octa**オブジェクトを構成し、トリガーされるアクションとして**PlayOneShot**を定義します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-1.png)
 

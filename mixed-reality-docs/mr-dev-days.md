@@ -4,35 +4,24 @@ title: Mixed Reality 開発日
 description: HoloLens とイマーシブ ヘッドセット向けの複合現実エクスペリエンスを構築する方法を説明します。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/25/2019
+ms.date: 02/21/2020
 ms.topic: article
 keywords: Mixed Reality、カンファレンス、サミット、developer、HoloLens、HoloLens 2、Kinect
-ms.openlocfilehash: baf6e7a6f046190e15e1b228eb4a3814255404b9
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: be3b09e177b04cd7d163994d1a3ed1448b4179ee
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63525082"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77555190"
 ---
-# <a name="mixed-reality-dev-days"></a>Mixed Reality 開発日
+# <a name="mixed-reality-dev-days--tour-2020"></a>Mixed Reality Dev Days & ツアー2020
 
-アプリケーションは現在閉じられています。 ご関心をお寄せいただき、ありがとうございます。
+MR Dev Days 2020 のデプロイはありますが、Redmond イベントの日付と場所以外の情報を共有することはできません。
 
-Microsoft では、Microsoft が mixed reality とクラウドスペースで最近[発表](https://blogs.microsoft.com/blog/2019/02/24/microsoft-at-mwc-barcelona-introducing-microsoft-hololens-2/)したもので、mixed reality アプリケーションを作成するために必要なスキル、ネットワーク、およびアイデアを構築する機会を嬉しく思いています。次のレベルへ。 Mixed Reality の開発日は、エンジニアがエンジニアリングチームと並行してコードを作成し、ポートフォリオの最新版を学習してテストし、mixed reality アプリケーションの新しい時代 (年号) をリードしているのと同じように、開発者のコミュニティとつながります。  </br>
+Redmond の今年の MR Dev Days は、2020年5月16日 & 17 日の Microsoft カンファレンスセンターで開催されています。
 
-また、新機能について詳しく説明し、作業を開始するためのヒントを共有するために、チームによる[セッション](mr-dev-days-sessions.md)を開催します。 </br>
+登録情報を含め、さらに詳しい情報が提供されます。  最新の更新プログラムについては、 [https://aka.ms/IWantMR](https://aka.ms/IWantMR)で開発者プログラムにサインアップしていることを確認してください。
 
-セッションの一時的な一覧については、[こちら](mr-dev-days-sessions.md)を参照してください。
-
-また、参加者は、ハンズオンラボとデモ用のステーションの両方において、テクノロジを実践する機会もあります。
-</br>
-
-## <a name="details"></a>詳細
-
-*   **日付:5月2-3、2019**
-* **場所:** Microsoft ビルディング 92 5010 NE, WA 98052
-* **夜間ネットワークの受信:** 木曜日、6-午後8時
-* **Costこのイベントは、無料で参加できます。出張費を担当します。**
 
 
 </br>

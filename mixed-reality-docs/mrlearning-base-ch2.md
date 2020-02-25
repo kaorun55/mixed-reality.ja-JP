@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 067832a130f130ffbaa8d455007b8e77e1b13671
-ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
+ms.openlocfilehash: f1d042150d1c81940e672b174c6c02ac71e05883
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77130534"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77554883"
 ---
 # <a name="3-creating-user-interface-and-configure-mixed-reality-toolkit"></a>3. ユーザーインターフェイスを作成し、Mixed Reality Toolkit を構成する
 <!-- TODO: Consider renaming to 'Configuring Mixed Reality Toolkit profiles and creating user interfaces' -->
@@ -47,17 +47,21 @@ ms.locfileid: "77130534"
 > [!NOTE]
 > 構成プロファイルは最上位レベルのプロファイルです。 そのため、他のプロファイルを編集できるようにするには、まず、構成プロファイルを複製する必要があります。
 
-階層 ウィンドウで**MixedRealityToolkit**オブジェクトを選択した状態で、 **& カスタマイズ** ボタンをクリックして プロファイルの複製 ウィンドウを開きます。
+[階層] ウィンドウで**MixedRealityToolkit**オブジェクトを選択し、[インスペクター] ウィンドウで Mixed Reality Toolkit**構成プロファイル**を**DefaultHoloLens2ConfigurationProfile**に変更します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial2-section1-step1-1.png)
 
-複製プロファイル ウィンドウで、**複製** ボタンをクリックして、 **DefaultHololens2ConfigurationProfile**の編集可能なコピーを作成します。
+**MixedRealityToolkit**オブジェクトを選択した状態で、インスペクター ウィンドウの **カスタマイズのコピー &** をクリックして、プロファイルの複製 ウィンドウを開きます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial2-section1-step1-2.png)
 
-新しく作成された構成プロファイルが、シーンの構成プロファイルとして割り当てられました。
+複製プロファイル ウィンドウで、**複製** ボタンをクリックして、 **DefaultHololens2ConfigurationProfile**の編集可能なコピーを作成します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial2-section1-step1-3.png)
+
+新しく作成された構成プロファイルが、シーンの構成プロファイルとして割り当てられました。
+
+![mrlearning-base](images/mrlearning-base/tutorial2-section1-step1-4.png)
 
 Unity メニューで、[**ファイル** > **保存**] を選択してシーンを保存します。
 
@@ -142,7 +146,7 @@ Unity メニューで、[**ファイル** > **保存**] を選択してシーン
 > [!TIP]
 > 次の図に示すようにシーンを表示するには、[階層] ウィンドウで PressableButtonHoloLens2 オブジェクトをダブルクリックしてフォーカスを設定し、[シーン] ウィンドウの右上隅にある<a href="https://docs.unity3d.com/Manual/SceneViewNavigation.html" target="_blank">シーンの Gizmo</a>を使用して、前方 Z 軸に沿って表示角度を調整します。
 
-PressableButtonHoloLens2 オブジェクトを選択したまま、 **[インスペクター]** ウィンドウで次のようにします。
+**PressableButtonHoloLens2**オブジェクトを選択したまま、 **[インスペクター]** ウィンドウで次のようにします。
 
 * カメラの前に配置されるように変換**位置**を変更する (例: x = 0、y = 0、z = 0.5)
 
@@ -157,7 +161,7 @@ PressableButtonHoloLens2 オブジェクトを選択したまま、 **[インス
 
 ![mrlearning-base](images/mrlearning-base/tutorial2-section2-step2-1.png)
 
-キューブオブジェクトを選択した状態で、 **[インスペクター]** ウィンドウで次のようにします。
+**キューブ**オブジェクトを選択した状態で、 **[インスペクター]** ウィンドウで次のようにします。
 
 * Pressable ボタンの近くに配置されるように変換**位置**を変更します。ただし、x = 0、y = 0.04、z = 0.5 など、重複しないようにします。
 * 変換**スケール**を適切なサイズに変更します (たとえば、x = 0.02、y = 0.02、z = 0.02)。
@@ -166,7 +170,7 @@ PressableButtonHoloLens2 オブジェクトを選択したまま、 **[インス
 
 ### <a name="3-configure-the-interactableonpressreceiver-event-type"></a>3. InteractableOnPressReceiver イベントの種類を構成する
 
-階層 ウィンドウで PressableButtonHoloLens2 オブジェクトを選択した状態で、**インスペクター** ウィンドウ**ハンバーガーメニュー**で **すべてのコンポーネント** を選択し、このオブジェクトのすべてのコンポーネントの概要を取得します。
+[階層] ウィンドウで、 **PressableButtonHoloLens2**オブジェクトを選択します。次に、 **[インスペクター]** ウィンドウ**ハンバーガーメニュー**で、 **[すべてのコンポーネントを折りたたむ]** を選択して、このオブジェクトのすべてのコンポーネントの概要を取得します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial2-section2-step3-1.png)
 
@@ -174,12 +178,16 @@ PressableButtonHoloLens2 オブジェクトを選択したまま、 **[インス
 
 ![mrlearning-base](images/mrlearning-base/tutorial2-section2-step3-2.png)
 
-イベントレシーバーの種類**Interactableonpressreceiver**では、**相互作用フィルター**を**Near と Far**に変更します。
+**[イベントの追加]** ボタンをクリックして、イベントレシーバーの種類が**Interactableonpressreceiver**の新しいイベントレシーバーを作成します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial2-section2-step3-3.png)
 
 > [!NOTE]
 > InteractableOnPressReceiver という名前のイベントレシーバーの種類を使用すると、追跡したハンドがボタンを押したときに、ボタンが押されたイベントに応答できるようになります。
+
+新しく作成されたイベントレシーバーについて、**相互作用フィルター**を**Near と Far**に変更します。
+
+![mrlearning-base](images/mrlearning-base/tutorial2-section2-step3-4.png)
 
 ### <a name="4-configure-the-cube-to-receive-the-on-press-event"></a>4. On Press イベントを受け取るようにキューブを構成する
 
@@ -203,7 +211,7 @@ PressableButtonHoloLens2 オブジェクトを選択したまま、 **[インス
 
 ### <a name="6-configure-the-cube-to-receive-the-on-release-event"></a>6. On Release イベントを受け取るようにキューブを構成する
 
-**繰り返し**On release イベントの手順4では、On Release () イベントの受信者としてキューブを割り当てます。
+**繰り返し**On release イベントの手順4では、 **On release ()** イベントの受信者として**キューブ**を割り当てます。
 
 ### <a name="7-define-the-action-to-be-triggered-by-the-on-release-event"></a>7. On Release イベントによってトリガーされるアクションを定義する
 

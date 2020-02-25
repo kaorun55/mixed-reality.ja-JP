@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/07/2019
 ms.topic: article
 keywords: Unity、空間サウンド、HRTF、部屋サイズ
-ms.openlocfilehash: 3e7d0ea231545d5112d182dffbc02f217ca4a4a7
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 6720eac30c69ebfcd0f003cf131f60295818d676
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181992"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553700"
 ---
 # <a name="spatial-sound-in-unity"></a>Unity の空間サウンド
 
@@ -30,10 +30,11 @@ Mixed reality アプリケーションの Spatializer オプションは次の�
 
 ## <a name="enable-spatialization"></a>Spatialization を有効にする
 
-[Unity の NuGet](https://github.com/GlitchEnzo/NuGetForUnity/releases/latest)を使用して_SpatialAudio_をインストールし、プロジェクトのオーディオ設定で**microsoft Spatializer**を選択します。 さらに、次の手順を実行します。
+[Unity の NuGet](https://github.com/GlitchEnzo/NuGetForUnity/releases/latest)を使用して_SpatialAudio_をインストールし、プロジェクトのオーディオ設定で**microsoft Spatializer**を選択します。 次のようになります。
 * 階層内のオブジェクトに**オーディオソース**をアタッチする
 * **[Enable spatialization]** チェックボックスをオンにします。
 * **空間ブレンド**スライダーを ' 1 ' に移動します
+* 開発者ワークステーションで空間オーディオが有効になっていることを確認します。 これを有効にするには、タスクバーのボリュームアイコンを右クリックし、[空間サウンド] が "オフ" 以外に設定されていることを確認します。 HoloLens 2 で聞く内容を最適に表示するには、 **[ヘッドホン用 Windows Sonic]** を選択します。
 
 詳細については、次を参照してください。
 * [Microsoft spatializer GitHub リポジトリ](https://github.com/microsoft/spatialaudio-unity)
@@ -58,7 +59,7 @@ Unity の空間サウンドの例については、次を参照してくださ�
 * [MRTK デモ](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_release/Assets/MixedRealityToolkit.Examples/Demos/Audio)
 * [Microsoft Spatializer サンプルプロジェクト](https://github.com/microsoft/spatialaudio-unity/tree/master/Samples/MicrosoftSpatializerSample)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 * [混合現実におけるサウンドのデザイン](spatial-sound-design.md)
 * [Microsoft の spatializer チュートリアル](unity-spatial-audio-ch1.md)
 

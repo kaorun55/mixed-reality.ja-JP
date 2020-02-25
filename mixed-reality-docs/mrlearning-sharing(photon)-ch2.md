@@ -5,13 +5,13 @@ author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
-keywords: mixed reality, unity, チュートリアル, hololens
-ms.openlocfilehash: 6abf4fa8fc87afc7007d6f7c76becfbd88ed7a12
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+keywords: Mixed Reality、Unity、チュートリアル、Hololens
+ms.openlocfilehash: 2bcec7e70949186c6e711120c36ee8649c006ec7
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901515"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553842"
 ---
 # <a name="2-getting-unity-ready-for-development"></a>2. Unity を開発用に準備する
 
@@ -25,31 +25,37 @@ ms.locfileid: "75901515"
 
 ## <a name="instructions"></a>手順
 
-1. ここをクリックして、Mixed Reality Toolkit Foundation unity パッケージをダウンロードして保存し[ます。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.1.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.1.0.unitypackage)
+1. ここをクリックして、Mixed Reality Toolkit Foundation unity パッケージをダウンロードして保存し[ます。](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)
 
 2. Unity で、[アセット] メニューをクリックし、[パッケージのインポート] をクリックして、[カスタムパッケージ] をクリックします。
 
     ![Module3Chapter2step2im](images/module3chapter2step2im.PNG)
 
-3. 手順 1. で指定したリンクからダウンロードした Unity パッケージを選択します。 [インポート] ポップアップウィンドウが Unity に表示されたら、[インポート] ボタンをクリックして MRTK のインポートを開始します。 これには数分かかる場合があります。
+3. 手順 1. で指定したリンクからダウンロードした Unity パッケージを選択します。 [インポート] ポップアップウィンドウが Unity に表示されたら、[インポート] ボタンをクリックして MRTK のインポートを開始します。 この処理には数分かかることがあります。
 
     ![Module3Chapter2step3im](images/module3chapter2step3im.PNG)
 
     >[!NOTE]
     >ダウンロードしたパッケージは、ファイルを保存したローカルフォルダーにあります。 上の図では、パッケージを検索する場所はされるません。
 
-4. 新しいシーンを作成します。 これを行うには、[ファイル] をクリックし、[新しいシーン] を選択します。 HLSharedProjectMain として保存します。
+    パッケージがインポートされると、[MRTK Project Configurator]\(MRTK プロジェクト コンフィギュレーター\) ウィンドウが表示されます。 表示されていない場合は、Unity メニューの [Mixed Reality Toolkit > ユーティリティ] > [Unity プロジェクトの構成] の順に選択して開きます。
 
-    次の図のようなポップアップが表示されることがあります。 ここでは、[いいえ] をクリックします。
-    ![Module3Chapter2note1im](images/module3chapter2note1im.PNG)
+    [MRTK プロジェクトコンフィギュレーター] ウィンドウで、[構成の変更] セクションを展開し、[Unity の MSBuild を有効にする] チェックボックスをオフにします。他のすべてのオプションがオンになっていることを確認し、[適用] ボタンをクリックして設定を適用します。
+
+    ![Module3Chapter2note1im](images/module3chapter2note1im-missing01.png)
+
+    > [!CAUTION]
+    > MSBuild for Unity は使用するすべての SDK をサポートしていない場合があり、有効にした後は無効にするのが困難な場合があります。 そのため、MSBuild for Unity を有効にしないことを強くお勧めします。
+    
+4. 新しいシーンを作成します。 これを行うには、[ファイル] をクリックし、[新しいシーン] を選択します。 HLSharedProjectMain として保存します。
 
 5. Mixed Reality Toolkit の [シーンに追加] をクリックし、[構成] をクリックします。
 
     ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
 
-6. この処理が完了すると、新しい構成ファイルが表示され、プロファイルをカスタマイズすることができます。
+6. この処理が完了したら、階層から Mixed Reality Toolkit (MRTK) を選択します。 [インスペクター] パネルで、MRTK 構成プロファイルを DefaultHoloLens2ConfigurationProfile に変更します。
 
-    ![Module2Chapter1step4ima](images/Module2Chapter1step4ima.PNG)
+    ![Module2Chapter1step4ima](images/Module2Chapter1step4ima-missing01.png)
 
 7. 階層から [Mixed-Reality Toolkit (MRTK)] を選択します。 [インスペクター] パネルで、Mixed Reality Toolkit スクリプトを探して、次の図に示すように [Copy & Customize] ボタンを押します。  この後、ポップアップメニューの [複製] オプションを選択すると、pop が表示されます。
 
@@ -75,18 +81,14 @@ ms.locfileid: "75901515"
 
 12. 一覧表示されたカスタムパッケージをインポートします。
 
-    」を参照します。 [AzureSpatialAnchors unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.0.0/AzureSpatialAnchors.unitypackage) (バージョン 2.0.0)
-
-    b. [MRTK。HoloLens2. 2.1.0.1. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.1.0.1.unitypackage)
-
-    c. [MRTK。HoloLens2. AzureSpatialAnchors. 2.1.0.1. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.1.0.1.unitypackage)
-
-    d. [MRTK。HoloLens2. 2.1.0.1. unitypackage のようになります。](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
+    * [AzureSpatialAnchors unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage) (バージョン 2.1.1)
+    * [MRTK。HoloLens2. 2.3.0.2. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+    * [MRTK。HoloLens2. AzureSpatialAnchors. 2.3.0.0 以降. unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage)
+    * [MRTK。HoloLens2. 2.1.0.1. unitypackage のようになります。](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
 
     >[!TIP]
     >Azure 空間アンカー用に Unity プロジェクトを構成する方法については、 [azure 空間アンカーチュートリアルシリーズ](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)の一部である[azure 空間](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)アンカーの概要に関するチュートリアルを参照してください。
 
-    ![Module3Chapter2step12im](images/module3chapter2step11im.PNG)
 
 13. [プロジェクト] パネルで、Prefabs フォルダーにアクセスします。 次の手順では、いくつかの prefabs をシーンに実装します。 Prefabs フォルダーで、[prefab]、[デバッグ] ウィンドウをクリックし、階層にドラッグします。 完了したら、[ファイル] をクリックし、[保存] をクリックしてプロジェクトを保存するか、ctrl + S キーを押します。
 

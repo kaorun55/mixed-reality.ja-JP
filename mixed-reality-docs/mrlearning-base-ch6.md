@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: b5b1bd0115822449bd6098f78cfc94d909169737
-ms.sourcegitcommit: cc61f7ac08f9ac2f2f04e8525c3260ea073e04a7
+ms.openlocfilehash: 3a557be91bee9b98e750ae1546ea1c4b3103298e
+ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77129452"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77555281"
 ---
 # <a name="7-creating-a-lunar-module-sample-application"></a>7. 旧暦モジュールサンプルアプリケーションを作成する
 <!-- TODO: Rename to 'Creating a Rocket Launcher sample application' -->
@@ -55,8 +55,8 @@ ms.locfileid: "77129452"
 
 [階層] ウィンドウで、RocketLauncher > **Lunarmoduleparts**オブジェクトを見つけてすべての**子オブジェクト**を選択し、**操作ハンドラー (スクリプト)** コンポーネントと**Near Grabbable (スクリプト**) コンポーネントを追加して、操作ハンドラー (スクリプト) を次のように構成します。
 
-* **2 つのきき操作の種類**を移動回転に変更して、スケーリングが無効になるようにします。
 * [**遠隔操作を許可**する] チェックボックスをオフにして、ほぼ対話のみを許可します。
+* **2 つのきき操作の種類**を**移動回転**に変更して、スケーリングが無効になるようにします。
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step1-2.png)
 
@@ -79,10 +79,10 @@ ms.locfileid: "77129452"
 
 [階層] ウィンドウで、 **Roverenclosure クロージャ**オブジェクトを選択し、その**パートアセンブリデモ (スクリプト)** コンポーネントを次のように構成します。
 
-* フィールドを**配置するオブジェクト**に対して、オブジェクト自体 (この場合は**roverenclosure クロージャ**オブジェクト) を割り当てます。
-* **[場所]** フィールドに、対応する PlacementHints オブジェクト (この例では**RoverEnclosure_PlacementHints**オブジェクト) を割り当てます。
-* **ツールヒントオブジェクト**フィールドに、対応する ToolTipObject (この例では**RoverEnclosure_ToolTip**オブジェクト) を割り当てます。
-* **[オーディオソース]** フィールドに、オブジェクト自体 (この場合は**roverenclosure クロージャ**オブジェクト) を割り当てます。
+* フィールドを**配置するオブジェクト**に対して、オブジェクト**自体**(この場合は roverenclosure クロージャオブジェクト) を割り当てます。
+* **[場所]** フィールドに、対応する**PlacementHints**オブジェクト (この例では RoverEnclosure_PlacementHint オブジェクト) を割り当てます。
+* **ツールヒントオブジェクト**フィールドに、対応する**ツールヒント**(この場合は RoverEnclosure_ToolTip オブジェクト) を割り当てます。
+* **[オーディオソース]** フィールドに、オブジェクト**自体**(この場合は roverenclosure クロージャオブジェクト) を割り当てます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section1-step2-3.png)
 
@@ -123,14 +123,14 @@ ms.locfileid: "77129452"
 
 [階層] ウィンドウで、RocketLauncher > **Lunarmodule**オブジェクトを選択し、**操作ハンドラー (スクリプト)** コンポーネントと**Near Grabbable (スクリプト)** コンポーネントを追加して、操作ハンドラー (スクリプト) を次のように構成します。
 
-* **2 つのきき操作の種類**を移動回転に変更して、スケーリングが無効になるようにします。
 * [**遠隔操作を許可**する] チェックボックスをオフにして、ほぼ対話のみを許可します。
+* **2 つのきき操作の種類**を移動回転に変更して、スケーリングが無効になるようにします。
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section2-step1-1.png)
 
 ### <a name="2-enable-physics"></a>2. 物理を有効にする
 
-RocketLauncher > **Lunarmodule**オブジェクトを選択したまま、Rigidbody コンポーネントを追加し、次のように構成します。
+RocketLauncher > **Lunarmodule**オブジェクトを選択したまま、 **Rigidbody**コンポーネントを追加し、次のように構成します。
 
 * **[重力を使用する]** チェックボックスをオフにして、太陰暦モジュールが重力の影響を受けないようにします。
 * **[Is キネマティック]** チェックボックスをオンにします。これにより、旧暦モジュールは、physic の強制による影響を受けません。
@@ -158,7 +158,7 @@ RocketLauncher > **Lunarmodule**オブジェクトを選択した状態で、 **
 RocketLauncher > **Lunarmodule**オブジェクトを選択したまま、 **[配置ヒント (スクリプト) の切り替え]** コンポーネントを追加し、次のように構成します。
 
 * Game オブジェクトの配列**サイズ**プロパティを5に設定します。
-* **PlacementHints**オブジェクトの各**子オブジェクト**を、Game オブジェクト配列の**要素**フィールドに割り当てます。
+* RocketLauncher > LunarModule > **PlacementHints**オブジェクトの**子オブジェクト**を、Game オブジェクト配列の**要素**フィールドに割り当てます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section2-step5-1.png)
 
@@ -175,7 +175,7 @@ RocketLauncher > ボタン > **launchbutton**オブジェクトが選択され�
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-2.png)
 
-RocketLauncher > ボタン > **launchbutton**オブジェクトが選択された状態で、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**タッチ終了 ()** イベントを作成し、イベントを受信するように**lunarmodule**オブジェクトを構成して、トリガーされるアクションとして**launchlunarmodule. StopThruster**を定義します。
+RocketLauncher > ボタン > **launchbutton**オブジェクトを選択したまま、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**Touch End ()** イベントを作成し、イベントを受信するように**lunarmodule**オブジェクトを構成して、トリガーするアクションとして**launchbutton**を定義します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section3-step1-3.png)
 
@@ -196,14 +196,14 @@ RocketLauncher > のボタン > **resetbutton**オブジェクトを選択した
 > [!TIP]
 > BroadcastMessage アクションは、ResetPlacement メッセージを RocketLauncher オブジェクトからすべての子オブジェクトに送信します。 すべての LunarModuleParts 子オブジェクトに追加したパーツアセンブリデモ (スクリプト) コンポーネントで定義されている ResetPlacement 関数を持つ子オブジェクトは、その子オブジェクトの配置をリセットする ResetPlacement 関数を呼び出します。
 
-これでゲームモードに入り、[リセット] ボタンを押すと、再生中のオーディオクリップが表示され、スペースで開かれている旧暦が表示されます。
+ここでゲームモードに移行した場合、一部のパーツを移動するか、旧暦モジュールを起動してから、リセットボタンを押すと、パーツまたは旧暦モジュールが元の位置にリセットされます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section4-step1-3.png)
 
 ## <a name="configuring-the-placement-hints-button"></a>配置ヒントボタンの構成
 <!-- TODO: Rename to 'Configuring the Hints button'-->
 
-[階層] ウィンドウで、[RocketLauncher > ボタン > **Hintsbutton]** オブジェクトを選択し、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**ボタン押された ()** イベントを作成します。次に、イベントを受信するための**lunarmodule**オブジェクトを構成し、トリガーされるアクションを**TogglePlacementHints**に定義します。
+[階層] ウィンドウで、[RocketLauncher > ボタン > **Hintsbutton]** オブジェクトを選択し、[ **Pressable] ボタン (スクリプト)** コンポーネントで新しい**ボタン押された ()** イベントを作成します。次に、イベントを受信するための**lunarmodule**オブジェクトを構成し、トリガーするアクションとして**TogglePlacementHints**を定義します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial6-section5-step1-1.png)
 
