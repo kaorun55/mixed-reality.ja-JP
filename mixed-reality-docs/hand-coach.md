@@ -1,19 +1,19 @@
 ---
-title: MRTK 手動による設計ガイダンス
+title: 手コーチ
 description: 3D ハンドは、システムがユーザーの手を認識しない場合にトリガーされます。
 author: grayclee
 ms.author: glee
 ms.date: 09/25/2019
 ms.topic: article
 keywords: Windows Mixed Reality、設計、手作業、イマーシブヘッドセット、MRTK、ハンズオン、
-ms.openlocfilehash: dc04f8f77548b226a822576befd60be107f4d3fb
-ms.sourcegitcommit: 87aca9c2b73b0e83cb70a46443dcdb08c3621005
+ms.openlocfilehash: c5f0a0c241ff71dc93f370a5a8caa627128bfb1a
+ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77373523"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78202739"
 ---
-# <a name="hand-coach-design-guidance"></a>手作業の設計ガイダンス
+# <a name="hand-coach"></a>手コーチ
 
 ユーザーの手がシステムによって検出されなかった場合にトリガーされる、3D でモデル化されたハンドです。 これは、ジェスチャが学習されていないときにユーザーをガイドする "教職員" コンポーネントとして実装されます。 ユーザーが指定されたジェスチャをピリオドに対して実行していない場合、針は遅延でループします。 針を使用すると、ボタンを押すか、またはホログラムを選ぶことができます。  
 
