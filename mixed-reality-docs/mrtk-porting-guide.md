@@ -141,7 +141,7 @@ HoloLens (第 1 世代) では、アプリケーションで視線入力とコ�
 
 - ARM のシェーダー コンパイラは、シェーダーの読み込み時ではなく、シェーダーが読み込まれた後またはシェーダーが依存するものが変更された後の最初の描画呼び出しの中で実行されます。 コンパイルする必要があるシェーダーの数によっては、フレーム レートへの影響が顕著になる場合があります。 これは、HoloLens 2 と HoloLens (第 1 世代) でのシェーダーの処理、パッケージ化、更新の方法の違いに対してさまざまな影響を与えます。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 * [ツールのインストール](install-the-tools.md)
 * [MRTK バージョン 2 をお使いになる前に](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
 * [HTK API 対 MRTK API](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/HTKToMRTKPortingGuide.html)
