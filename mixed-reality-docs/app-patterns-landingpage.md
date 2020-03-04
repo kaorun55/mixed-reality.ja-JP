@@ -7,18 +7,18 @@ ms.author: grbury
 ms.date: 11/15/2019
 ms.topic: overview
 keywords: Windows Mixed Reality, デザイン, アプリパターン, コントロール, スタイル, HoloLens, 相互作用, UX 要素, 動作, 構成要素
-ms.openlocfilehash: 16a6c08230dbe16ebb04c39751cce306bbc57c2d
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.openlocfilehash: 9e2173e55a8c37ae4333d459ffe37fc01389b143
+ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334214"
+ms.lasthandoff: 03/01/2020
+ms.locfileid: "78202752"
 ---
 # <a name="ux-elements-overview"></a>UX 要素の概要
 
 ![HoloLens 2 ユーザーと holographic ボタンの対話](images/06_AppPatterns.png)
 
-## <a name="style"></a>[スタイル]
+## <a name="style"></a>スタイル
 
 :::row:::
     :::column:::
@@ -31,7 +31,7 @@ ms.locfileid: "75334214"
 
 :::row:::
     :::column:::
-       [文字](images/text_in_unity_viewingangle.png)](typography.md)  **[](typography.md)体裁の![**
+       [![文字体裁](images/text_in_unity_viewingangle.png)](typography.md) **[文字体裁](typography.md)**
     :::column-end:::
     :::column:::
        [サウンド](images/spatialaudio.png)](spatial-sound.md) **[サウンド](spatial-sound.md)を![**
@@ -62,7 +62,7 @@ ms.locfileid: "75334214"
        [![対話型 object](images/UX/UX_Hero_Interactable.jpg)](interactable-object.md) **[対話型オブジェクト](interactable-object.md)**
     :::column-end:::
     :::column:::
-       [操作の![](images/UX/UX_Hero_Manipulation.jpg)](direct-manipulation.md)  **[](direct-manipulation.md)操作**
+       [![操作](images/UX/UX_Hero_Manipulation.jpg)](direct-manipulation.md) **[操作](direct-manipulation.md)**
     :::column-end:::
 :::row-end:::
 
@@ -71,7 +71,7 @@ ms.locfileid: "75334214"
        [![ハンドメニュー](images/UX/UX_Hero_HandMenu.jpg)](hand-menu.md)の **[メニュー](hand-menu.md)**
     :::column-end:::
     :::column:::
-       メニューの近くにある[メニューを![](images/UX/UX_Hero_NearMenu.jpg)](near-menu.md)  **[](near-menu.md)**
+       [![メニューの近くにある](images/UX/UX_Hero_NearMenu.jpg)](near-menu.md) **[メニューの近くにある](near-menu.md)**
     :::column-end:::
     :::column:::
        [![オブジェクトコレクション](images/UX/UX_Hero_ObjectCollection.jpg)](object-collection.md) **[オブジェクトコレクション](object-collection.md)**
@@ -114,6 +114,15 @@ ms.locfileid: "75334214"
     :::column-end:::
 :::row-end:::
 
+:::row:::
+    :::column:::
+       [![ハンド コーチ](images/HandCoach/MRTK_handCoach.jpg)](hand-coach.md) **[ハンド コーチ](hand-coach.md)**
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 <br>
 
