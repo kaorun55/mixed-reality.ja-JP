@@ -1,5 +1,4 @@
 # 新機能 
-## [最新情報](news.md)
 ## [アプリを HL2 用に準備する](mrtk-porting-guide.md)
 ## [Azure Services について](azure-services.md)
 ## [新しい Microsoft Edge の準備](new-microsoft-edge.md)
