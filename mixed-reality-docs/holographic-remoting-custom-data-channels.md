@@ -1,17 +1,17 @@
 ---
 title: カスタム Holographic リモート処理データチャネル
 description: カスタムデータチャネルは、既に確立されている Holographic リモート処理接続を介してユーザーデータを送信するために使用できます。
-author: NPohl-MSFT
-ms.author: nopohl
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 2861c780c5d7e516d5b7ddc757bbcba6da7e6559
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 8bfa19b7af0f3429130aabf70d9d11083bc56a52
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926669"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092298"
 ---
 # <a name="custom-holographic-remoting-data-channels"></a>カスタム Holographic リモート処理データチャネル
 
@@ -21,10 +21,10 @@ ms.locfileid: "73926669"
 カスタムデータチャネルを使用して、確立されたリモート処理接続を介してカスタムデータを送信します。
 
 >[!IMPORTANT]
->カスタムデータチャネルには、カスタムホストアプリとカスタムプレーヤーアプリが必要です。これは、2つのカスタムアプリ間の通信を可能にするためです。
+>カスタムデータチャネルでは、カスタムのリモートアプリとカスタムプレーヤーアプリが必要です。これは、2つのカスタムアプリ間の通信を可能にするためです。
 
 >[!TIP]
->単純なピンポン方の例については、 [Holographic リモート処理サンプル github リポジトリ](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)内のホストとプレーヤーのサンプルを参照してください。 サンプルコードを有効にするには、SampleHostMain ファイル内の ```#define ENABLE_CUSTOM_DATA_CHANNEL_SAMPLE``` をコメント解除します。
+>単純なピンポン方の例については、 [Holographic リモート処理サンプル github リポジトリ](https://github.com/microsoft/MixedReality-HolographicRemoting-Samples)内の remote および player サンプルを参照してください。 SampleRemoteMain/SamplePlayerMain ファイル内の ```#define ENABLE_CUSTOM_DATA_CHANNEL_SAMPLE``` をコメント解除して、サンプルコードを有効にします。
 
 
 ## <a name="create-a-custom-data-channel"></a>カスタムデータチャネルを作成する
@@ -38,11 +38,11 @@ winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnDataReceived_revoker
 winrt::Microsoft::Holographic::AppRemoting::IDataChannel::OnClosed_revoker m_customChannelClosedEventRevoker;
 ```
 
-接続が正常に確立されると、ホスト側とプレーヤー側のどちらからでも、新しいデータチャネルの作成を開始できます。 RemoteContext と PlayerContext はどちらも、これを行うための ```CreateDataChannel()``` 方法を提供します。 最初のパラメーターはチャネル ID で、後続の操作でデータチャネルを識別するために使用されます。 2番目のパラメーターは、このチャネルのデータを相手側に転送する優先度を指定する優先順位です。 チャネル Id の有効な範囲は、ホスト64側の場合は63、プレーヤー側の場合は127を含む0になります。 有効な優先順位は、```Low```、```Medium``` または ```High``` (両側) です。
+接続が正常に確立されると、新しいデータチャネルの作成は、リモート側とプレーヤー側のどちらからでも開始できます。 RemoteContext と PlayerContext はどちらも、これを行うための ```CreateDataChannel()``` 方法を提供します。 最初のパラメーターはチャネル ID で、後続の操作でデータチャネルを識別するために使用されます。 2番目のパラメーターは、このチャネルのデータを相手側に転送する優先度を指定する優先順位です。 チャネル Id の有効な範囲は、リモート64側の場合は63、プレーヤー側の場合は127を含む0になります。 有効な優先順位は、```Low```、```Medium``` または ```High``` (両側) です。
 
-**ホスト**側でデータチャネルの作成を開始するには、次のようにします。
+**リモート**側でデータチャネルの作成を開始するには、次のようにします。
 ```cpp
-// Valid channel ids for channels created on the host side are 0 up to and including 63
+// Valid channel ids for channels created on the remote side are 0 up to and including 63
 m_remoteContext.CreateDataChannel(0, DataChannelPriority::Low);
 ```
 
@@ -53,11 +53,11 @@ m_playerContext.CreateDataChannel(64, DataChannelPriority::Low);
 ```
 
 >[!NOTE]
->新しいカスタムデータチャネルを作成するには、1つの側 (ホストまたはプレーヤー) だけが ```CreateDataChannel``` メソッドを呼び出す必要があります。
+>新しいカスタムデータチャネルを作成するには、1つの側 (リモートまたはプレーヤー) だけが ```CreateDataChannel``` メソッドを呼び出す必要があります。
 
 ## <a name="handling-custom-data-channel-events"></a>カスタムデータチャネルイベントの処理
 
-カスタムデータチャネルを確立するには、(プレーヤーとホスト側の両方で) ```OnDataChannelCreated``` イベントを処理する必要があります。 このメソッドは、ユーザーデータチャネルがいずれかの側で作成されたときにトリガーされ、```IDataChannel``` オブジェクトを提供します。このオブジェクトを使用して、このチャネルでデータを送受信できます。
+カスタムデータチャネルを確立するには、(プレーヤーとリモート側の両方で) ```OnDataChannelCreated``` イベントを処理する必要があります。 このメソッドは、ユーザーデータチャネルがいずれかの側で作成されたときにトリガーされ、```IDataChannel``` オブジェクトを提供します。このオブジェクトを使用して、このチャネルでデータを送受信できます。
 
 ```OnDataChannelCreated``` イベントにリスナーを登録するには、次のようにします。
 ```cpp
@@ -114,7 +114,7 @@ m_customDataChannel.Close();
 ```
 
 ## <a name="see-also"></a>参照
-* [Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
+* [Holographic リモート処理リモートアプリの作成](holographic-remoting-create-host.md)
 * [カスタム Holographic リモート処理プレーヤーアプリの作成](holographic-remoting-create-player.md)
 * [Holographic リモート処理のトラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
 * [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

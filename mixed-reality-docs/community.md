@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: Mixed Reality、コミュニティ、mvp、meetup
-ms.openlocfilehash: 08cb0142a2e26d3c855b742ab3b8d0054f698efb
-ms.sourcegitcommit: 1ec628a9107194c0a9d4073b5ca09ee816030e85
+ms.openlocfilehash: 7814db195e105c2fdf9ba894dc1877e2cbdc4675
+ms.sourcegitcommit: fcd4ca74d59bd4cf469b71f07169defd0887ac21
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/01/2020
-ms.locfileid: "78202776"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79084585"
 ---
 # <a name="mixed-reality-community"></a>Mixed Reality コミュニティ
 
@@ -36,8 +36,8 @@ Microsoft では、開発者、プラットフォーム、およびエコシス�
 |**シカゴ AWE Nite**|海岸|シカゴ|[Link](https://www.meetup.com/AWENiteChicago/)|
 |**Mixed Reality ユーザーグループ-オランダ**|オランダ|Rijswijk|[Link](https://www.mixug.com)|
 |**VR フィリピン**|フィリピン|N/A|[Link](https://www.facebook.com/vrphilippines/)|
+|**XRLA**|海岸|Los Angeles|[Link](https://www.meetup.com/XRLA_Meetup/)|
 <!--
-|Row3     |         |         |         |
 |Row4     |         |         |         |
 |Row5     |         |         |         |
 |Row6     |         |         |         |
@@ -98,7 +98,7 @@ Microsoft の最も重要な専門家 (Mvp) は、コミュニティとの知識
 |![Dave Smits](images/BiographyImages/DaveSmits_270x270.jpg)</br>**Dave Smits**</br>*Amersfoort、オランダ*|Dave Smits は、2014以降の Microsoft MVP であり、最初に起動されてから HoloLens を使用します。 いくつかのプロジェクトが、単純なモデルから始まり、ホログラムで使用されるモーショントラッキングセンサーを含むアプリケーションまで、いくつかのプロジェクトを開始しました。|[メール](mailto:dave@familie-smits.com)|
 |![Eric Provencher](images/BiographyImages/EricProvencher_270x270.jpg)</br>**Eric Provencher**</br>*モントリオール、QC、カナダ*|Eric は、CAE の上級混合現実フレームワークと UX 開発者であり、最初の Microsoft Mixed Reality パートナーの1つであり、wave 1 HoloLens の導入者です。 私たちの主要な役割は、MRTK とよく似た内部クロスプラットフォーム開発フレームワークのアーキテクチャと開発に加えて、新規および既存の医療シミュレーションとトレーニングアプリケーションの開発と保守を行います。Unity では主に、VR (Oculus クエスト)、AR (HoloLens 1 & 2)、および画面ベース (WebGL + iOS/Android) でアプリを構築しています。|[メール](mailto:erproven@gmail.com)|
 |![Fabrice Barbin](images/BiographyImages/FabriceBarbin_270x270.jpg)</br>**Fabrice Barbin**</br>*フランス*|Fabrice は、長年にわたりイノベーションとテクノロジを実現しています。 CEO は、 [SYNERGIZ](http://www.synergiz.com)、Microsoft Mixed Reality パートナー、およびフランスでの HoloLens ユースケースのパイオニアです。 Microsoft テクノロジを講演者として積極的に推進することにより、MVP、Kinect4Azure、IoT、Surface Hub、インク、タッチ、IA、Machine Learning、Cognitive Services、Azure など、多数の製品が対象となります。|[メール](mailto:fbarbin@synergiz.com)|
-|![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*ミラノ (イタリア)*|Fanciful と creative は、passioned に関するすべてのことを扱っています。 3年間、私は Politecnico di Milano の研究員として働いていたので、子供たちのための対話型テクノロジについての調査を行い、IOT システムの開発、スマートオブジェクト、ロボットの相互作用、照明設計、multisensory 環境と自然なユーザーインターフェイスは、国内と国際の両方のプロジェクトに対応しています。</br></br>現在、IOT、web ソリューション、システム統合の分野で、フリーランスのコンサルタントとして働いています。 mixed reality や人工知能などの最新の革新的なテクノロジに注力しています。|[メール](mailto:klasaf@outlook.com)|
+|![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*ミラノ (イタリア)*|Fanciful と creative は、passioned に関するすべてのことを扱っています。 3年間、私は Politecnico di Milano の研究員として働いていたので、子供たちのための対話型テクノロジについての調査を行い、IOT システムの開発、スマートオブジェクト、ロボットの相互作用、照明設計、multisensory 環境と自然なユーザーインターフェイスは、国内と国際の両方のプロジェクトに対応しています。</br></br>現在、 [FifthIngenium](https://fifthingenium.com)で作業しているのは、IOT、web ソリューション、システム統合の分野における上級クリエイティブ開発者であり、mixed reality や人工知能などの最新の革新的なテクノロジに焦点を合わせています。|[メール](mailto:klasaf@outlook.com)|
 |![Gianni Rosa Gallina](images/BiographyImages/GianniRosaGallina_270x270.png)</br>**Gianni Rosa Gallina**</br>*イタリア*|Gianni は、2011以降の Microsoft MVP であり、2013以降の最新のテクノロジ、AI、および仮想/拡張された現実に焦点を絞っています。 現時点では、Deltatre のイノベーションラボの R & D シニアソフトウェアエンジニアが、VR/MR アプリからエンドツーエンドの Azure アーキテクチャとビデオワークフローまで、Cognitive Services、AI などを使用して、スポーツ関連のエクスペリエンスとサービス用の次世代ソリューションを設計およびプロトタイプしています。 それに加えて、彼はローカルコミュニティ "Torino Technologies グループ" (TTG)、開催者、トレーナーがジム Torino 毎月ミートアップをコーディングするための開催者とトレーナー、Pluralsight オンラインコースの作成者、ブログの記事、および米国の講演者です。国際テクノロジ会議とイベント。|[メール](mailto:giannishub@hotmail.com)|
 |![Jessica Engstrom](images/BiographyImages/JessicaEngstrom_270x270.jpg)</br>**Jessica Engstrom**</br>*ストックホルム、スウェーデン*|Microsoft MVP-Windows プラットフォーム開発、パブリックスピーカー、UX、ボット、Mixed Reality。 作業ポッドキャストの共同ホストの後にコーディングします。 ユーザーグループと会議開催者|[メール](mailto:jessica@catoholic.se)|
 |![Jimmy Engstrom](images/BiographyImages/JimmyEngstrom_270x270.jpg)</br>**Jimmy Engstrom**</br>*ストックホルム、スウェーデン*|Microsoft MVP-Windows プラットフォーム開発、講演者、Blazor、Mixed Reality、HoloLens、および Windows developer。 作業ポッドキャストの共同ホストの後にコーディングします。 ユーザーグループと会議開催者|[メール](mailto:jimmy@engstromjimmy.se)|

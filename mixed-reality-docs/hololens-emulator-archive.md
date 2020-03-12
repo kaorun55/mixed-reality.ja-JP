@@ -3,15 +3,15 @@ title: HoloLens エミュレーターのアーカイブ
 description: Microsoft HoloLens エミュレーターのリリース済みビルドの一覧。
 author: hamalawi
 ms.author: moelhama
-ms.date: 2/12/2020
+ms.date: 3/10/2020
 ms.topic: article
 keywords: HoloLens、エミュレーター、ビルド、バージョン
-ms.openlocfilehash: 4696330e62d2b7b5d58c73e13713e0731f5ec3bc
-ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
+ms.openlocfilehash: 7aed01ecc155e4ea93bbbf9c347f117b319d2bc7
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77250667"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031772"
 ---
 # <a name="hololens-2-emulator-archive"></a>HoloLens 2 エミュレーターアーカイブ
 
@@ -19,6 +19,7 @@ HoloLens Emulator (第1世代) と HoloLens 2 エミュレーターは、サイ�
 
 |  ビルド |  リリース日 |  説明 | 
 |----------|----------|----------|
+|  [HoloLens 2 Emulator ビルド10.0.18362.1056](https://go.microsoft.com/fwlink/?linkid=2121323) | 2020年3月10日 | 3月 2020 HoloLens 2 ビルド。  HoloLens 2 の一般的なリリースノートについては、「」を参照してください https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1053](https://go.microsoft.com/fwlink/?linkid=2118321) | 2020年2月11日 | 2月 2020 HoloLens 2 ビルド。  HoloLens 2 の一般的なリリースノートについては、「」を参照してください https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1044](https://go.microsoft.com/fwlink/?linkid=2114824) | 2020年1月13日 | 1月 2020 HoloLens 2 ビルド。  HoloLens 2 の一般的なリリースノートについては、「」を参照してください https://docs.microsoft.com/hololens/hololens-release-notes |
 |  [HoloLens 2 Emulator ビルド10.0.18362.1042](https://go.microsoft.com/fwlink/?linkid=2112589) | 2019年12月6日 | 12月 2019 HoloLens 2 ビルド。  ピンパネルを表示するときに、エミュレーターで実行されている Holographic アプリが予期せず中断される問題に対処します。  認識シミュレーション API または知覚シミュレーション制御アプリを使用するときに、リモートエミュレーターへの接続を有効にします。  HoloLens 2 の一般的なリリースノートについては、「」を参照してください https://docs.microsoft.com/hololens/hololens-release-notes |

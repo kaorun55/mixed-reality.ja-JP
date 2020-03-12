@@ -1,17 +1,17 @@
 ---
 title: Holographic Remoting を使用したセキュリティで保護された接続の確立
 description: このページでは、Holographic リモート処理の使用時にセキュリティで保護された暗号化接続を確立する方法について説明します。
-author: bethau
-ms.author: bethau
-ms.date: 10/21/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 1142ba3bd8b0d05202ccd04885de5d70165872d1
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: ac1170cb3e6d681fc164c3f4cee14da6ab6eb90b
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434197"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092479"
 ---
 # <a name="establishing-a-secure-connection-with-holographic-remoting"></a>Holographic Remoting を使用したセキュリティで保護された接続の確立
 
@@ -25,7 +25,7 @@ ms.locfileid: "73434197"
 >[!IMPORTANT]
 >信頼されたローカル WiFi を使用している場合でも、暗号化された接続を使用することを検討してください。
 
-暗号化された接続を使用できるようにするには、[カスタムプレーヤー](holographic-remoting-create-player.md)と[カスタムホストアプリ](holographic-remoting-create-host.md)の両方を実装する必要があります。
+暗号化された接続を使用できるようにするには、[カスタムプレーヤー](holographic-remoting-create-player.md)と[カスタムリモートアプリ](holographic-remoting-create-host.md)の両方を実装する必要があります。
 
 暗号化は、基になるプラットフォームの TLS 実装を使用して実現されます。
 
@@ -61,7 +61,7 @@ ms.locfileid: "73434197"
 これらのオブジェクトを実装した後は、リモートコンテキストとプレーヤーコンテキストでは ```Connect``` なく、```Listen``` と ```ConnectSecure``` ではなく ```ListenSecure``` を呼び出す必要があります。 ```ListenSecure``` には、```Listen```経由で追加の証明書プロバイダーと認証受信者が必要です。 ```ConnectSecure``` には、追加の認証プロバイダーと、```Connect```に対する証明書検証が必要です。
 
 ## <a name="see-also"></a>参照
-* [Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
+* [Holographic リモート処理リモートアプリの作成](holographic-remoting-create-host.md)
 * [カスタム Holographic リモート処理プレーヤーアプリの作成](holographic-remoting-create-player.md)
 * [Holographic リモート処理のトラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
 * [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)

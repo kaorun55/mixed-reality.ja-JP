@@ -1,24 +1,24 @@
 ---
 title: Holographic リモート処理プレーヤー
 description: Holographic Remoting Player は、Holographic リモート処理をサポートする PC アプリやゲームに接続するコンパニオンアプリです。 Holographic リモート処理では、Wi-fi 接続を使用して、PC から Microsoft HoloLens にコンテンツを Holographic します。
-author: JonMLyons
-ms.author: jlyons
-ms.date: 08/01/2019
+author: FlorianBagarMicrosoft
+ms.author: flbagar
+ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 2827676ee95daf6a24ad11fceaade839f579cff4
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 88a9aa0bb058776a32016e51fc22bcb73f08ab85
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73434339"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79092369"
 ---
 # <a name="holographic-remoting-player"></a>Holographic リモート処理プレーヤー
 
 >[!IMPORTANT]
->HoloLens 2 の Holographic リモート処理は、メジャーバージョンの変更です。 [Hololens のホストアプリケーション **(1 つ目の世代)** ](add-holographic-remoting.md)では 、NuGet パッケージバージョン1.x とホストアプリケーションを使用する必要があります。 [ **hololens 2**で](holographic-remoting-create-host.md)は 2.x**を使用する**必要があります。 これは、HoloLens 2 用に作成されたホストアプリケーションが HoloLens (第1世代) と互換性がないことを意味します。
+>HoloLens 2 の Holographic リモート処理は、メジャーバージョンの変更です。 [ **Hololens (第1世代)** のリモートアプリケーション](add-holographic-remoting.md)では、NuGet**パッケージバージョン 1.x**および[ **hololens 2**のリモートアプリケーション](holographic-remoting-create-host.md)を使用する必要が**あります2.x を使用する**必要があります。 これは、HoloLens 2 用に作成されたリモートアプリケーションが HoloLens (第1世代) と互換性がないことを意味します。
 
-Holographic Remoting Player は、Holographic リモート処理をサポートする PC アプリやゲームに接続するコンパニオンアプリです。 Holographic リモート処理では、Wi-fi 接続を使用して、PC から Microsoft HoloLens にコンテンツを Holographic します。
+[Holographic Remoting Player](https://www.microsoft.com/p/holographic-remoting-player/9nblggh4sv40)は、Holographic リモート処理をサポートする PC アプリやゲームに接続するコンパニオンアプリです。 Holographic リモート処理では、Wi-fi 接続を使用して、PC から Microsoft HoloLens にコンテンツを Holographic します。
 
 Holographic リモート処理プレーヤーは、特に Holographic リモート処理をサポートするように設計された PC アプリでのみ使用できます。
 
@@ -55,7 +55,7 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 * **Render** -リモートプレーヤーが最後の1秒間にレンダリングしたフレームの数。 これは、ネットワーク経由で到着したフレームの数とは関係がありません (**ビデオフレーム**を参照)。 さらに、レンダリングされたフレーム間の平均/最大レンダリングデルタ時間 (ミリ秒) が表示されます。
 
 * **ビデオフレーム**-表示される最初の数字はスキップされたビデオフレーム、2つ目はビデオフレームを再利用し、3番目はビデオフレームを受信します。 すべての数値は、最後の1秒間のカウントを表します。
-    * ```Received frames``` は、最後の1秒間に到着したビデオフレームの数です。 通常の条件下では、これは60になりますが、これはネットワークの問題のためにフレームがドロップされたか、またはリモート/ホスト側が想定されたレートでフレームを生成しないことを示すインジケーターです。
+    * ```Received frames``` は、最後の1秒間に到着したビデオフレームの数です。 通常の条件下では、これは60になりますが、これはネットワークの問題のためにフレームがドロップされたか、またはリモート/リモート側が想定されたレートでフレームを生成しないことを示すインジケーターです。
     * ```Reused frames``` は、最後の1秒間に複数回使用されたビデオフレームの数です。 たとえば、ビデオフレームが遅れて到着した場合でも、プレーヤーのレンダリングループはフレームをレンダリングしますが、前のフレームで既に使用されていたビデオフレームを*再利用*する必要があります。
     * ```Skipped frames``` は、プレーヤーのレンダリングループによって使用されていないビデオフレームの数です。 たとえば、ネットワークのジッターでは、受信するビデオフレームが均等に分散されないようにすることができます。 たとえば、何らかの遅延が発生し、他のユーザーが時間内に到着した場合、60Hz で実行したときに16.66 ミリ秒のデルタが得られなくなります。 プレーヤーのレンダーループの2つのタイマー刻みの間に複数のフレームが到着する可能性があります。 この場合、プレーヤーは、常に最新の受信したビデオフレームを常に表示することが想定されているため、1つ以上のフレームを*スキップ*します。
 
@@ -63,7 +63,7 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
     >ネットワークのジッターを使用する場合、スキップされたフレームと再利用されるフレームは通常、ほぼ同じです。 これに対して、[スキップされたフレーム] のみが表示される場合は、プレーヤーがターゲットフレームレートにヒットしないことを示すインジケーターです。 この場合は、問題を診断するときに、レンダーデルタの最大時間を監視する必要があります。
 
 * **ビデオフレームのデルタ**-最後の1秒間に受信したビデオフレーム間の最小/最大デルタです。 通常、この数は、ネットワークのジッターに起因する問題が発生した場合に、スキップまたは再利用されたフレームと関連付けられます。
-* **Latency** -最後の1秒間の平均待機時間 (ミリ秒)。 このコンテキストでのターンアラウンドとは、hololens の待機/センサーデータを HoloLens からリモート/ホスト側に送信するまでの時間を意味します。
+* **Latency** -最後の1秒間の平均待機時間 (ミリ秒)。 このコンテキストでのターンアラウンドとは、hololens の待機/センサーデータを hololens からリモートまたはリモート側に送信してから、HoloLens ディスプレイにそのポーズ/テレメトリデータのビデオフレームを表示するまでの時間を意味します。
 * **破棄されるビデオフレーム**-最後の1秒間に破棄されたビデオフレームの数。接続が確立されたためです。 破棄されるビデオフレームの主な原因は、ビデオフレームが順番に到着せず、既に新しいものが存在するためにその理由を破棄する必要がある場合です。 これは破棄された*フレーム*に似ていますが、リモート処理スタックの下位のレベルにあります。 破棄されたビデオフレームは、ネットワークの状態が非常に悪い場合にのみ必要です。
 
 
@@ -77,6 +77,6 @@ Holographic remoting 接続は暗号化されて**いない**ことに注意し�
 
 ## <a name="see-also"></a>参照
 * [HoloLens (第1世代): Holographic リモート処理の追加](add-holographic-remoting.md)
-* [HoloLens 2: Holographic リモート処理ホストアプリの作成](holographic-remoting-create-host.md)
+* [HoloLens 2: Holographic リモート処理リモートアプリの作成](holographic-remoting-create-host.md)
 * [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com//legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
 * [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
