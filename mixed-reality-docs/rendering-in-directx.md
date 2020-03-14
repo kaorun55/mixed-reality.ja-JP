@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, ホログラム, レンダリング, 3D グラフィックス, HolographicFrame, レンダリングループ, 更新ループ, チュートリアル, サンプルコード, Direct3D
 ms.openlocfilehash: 6b2e2dca9115d7093e94019d5ed91201f6ee3424
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940870"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375979"
 ---
 # <a name="rendering-in-directx"></a>DirectX でのレンダリング
 
@@ -593,7 +593,7 @@ void main(triangle GeometryShaderInput input[3], inout TriangleStream<GeometrySh
 }
 ```
 
-## <a name="present"></a>Present
+## <a name="present"></a>あり
 
 ### <a name="enable-the-holographic-frame-to-present-the-swap-chain"></a>Holographic フレームでスワップチェーンを表示できるようにします
 
@@ -743,6 +743,6 @@ if (FAILED(hr))
     return hr;
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [DirectX の座標系](coordinate-systems-in-directx.md)
 * [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)

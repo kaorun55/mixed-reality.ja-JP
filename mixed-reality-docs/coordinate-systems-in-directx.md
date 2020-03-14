@@ -7,11 +7,11 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: 混合現実、空間ロケーター、空間参照フレーム、空間座標系、空間ステージ、サンプルコード、イメージの安定化、空間アンカー、空間アンカーストア、追跡の損失、チュートリアル
 ms.openlocfilehash: a0bce897c1982715af24f0bf7c398cdee10f017f
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436227"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375619"
 ---
 # <a name="coordinate-systems-in-directx"></a>DirectX でのシステムの調整
 
@@ -574,7 +574,7 @@ SpatialAnchors の独自のメモリ内データベースが必要です。作�
 
 ## <a name="create-holograms-using-a-device-attached-frame-of-reference"></a>デバイスに接続された参照のフレームを使用してホログラムを作成する
 
-デバイスの場所に[まだアタッチさ](coordinate-systems.md#attached-frame-of-reference)れているホログラムをレンダリングする必要がある場合があります。たとえば、デバッグ情報を含むパネルや、デバイスが向きを特定でき、その位置ではない場合に情報メッセージが表示されます。行間. これを実現するには、関連付けられている参照のフレームを使用します。
+デバイスの場所に[まだアタッチさ](coordinate-systems.md#attached-frame-of-reference)れているホログラムをレンダリングする必要がある場合があります。たとえば、デバッグ情報を含むパネルや、デバイスが領域内の位置ではなく向きだけを判断できる場合に、情報メッセージが表示されます。 これを実現するには、関連付けられている参照のフレームを使用します。
 
 SpatialLocatorAttachedFrameOfReference クラスは、実際の環境ではなく、デバイスに対して相対的な座標系を定義します。 このフレームには、参照フレームの作成時にユーザーが直面していた方向を示す、ユーザーの周囲を基準とした固定の見出しがあります。 その後、ユーザーがデバイスを回転させる場合でも、この参照フレーム内のすべての向きは、その固定の見出しに対して相対的になります。
 
@@ -730,7 +730,7 @@ StationaryQuadRenderer の場合 **::P ositionhologram**:
        );
 ```
 
-以上で作業は終了です。 ホログラムは、ユーザーの見つめ方向の前に2メートルの位置を "追跡" するようになります。
+以上で終わりです。 ホログラムは、ユーザーの見つめ方向の前に2メートルの位置を "追跡" するようになります。
 
 >[!NOTE]
 >この例では、追加のコンテンツも読み込まれます。 StationaryQuadRenderer を参照してください。
@@ -794,7 +794,7 @@ Windows Holographic アプリケーションテンプレートには、既に作
 
 [空間マッピング](spatial-mapping-in-directx.md)api は、座標系を使用して、サーフェスメッシュのモデル変換を取得します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [座標系](coordinate-systems.md)
 * [空間アンカー](spatial-anchors.md)
 * <a href="https://docs.microsoft.com/azure/spatial-anchors" target="_blank">Azure Spatial Anchors</a>

@@ -7,11 +7,11 @@ ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、スタイル、フォント、タイポグラフィ、ui、ux
 ms.openlocfilehash: 9664d355e941d800ac1ac862860fc5889b6b7686
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437404"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375799"
 ---
 # <a name="typography"></a>文字体裁
 
@@ -45,7 +45,7 @@ HoloLens では、加法色システムに基づいた光を使用したホロ�
 
 細い垂直線はバイブレーションになり、読みにくくなるため、42 pt 未満の型サイズに対しては薄いまたは semilight のフォントの重みを使用しないようにします。 ストロークの太さが十分にある最新のフォントがうまく機能します。 たとえば、Helvetica, と Arial は、標準または太字の重みを使用して HoloLens で非常に読みやすくなっています。
 
-### <a name="color"></a>Color
+### <a name="color"></a>色
 
 HoloLens では、ホログラムは加法の光源システムを使用して構築されるため、白のテキストは非常に読みやすくなります。 ホワイトテキストの例については、[スタート] メニューとアプリバーを参照してください。 HoloLens でバックプレートを使用しなくても白のテキストは適切に機能しますが、複雑な物理的背景によって型が読みづらくなる可能性があります。 ユーザーのフォーカスを改善し、物理的な背景からの邪魔を最小限に抑えるには、濃い色または色付きの背景色で白いテキストを使用することをお勧めします。
 
@@ -83,14 +83,14 @@ HoloLens では、ホログラムは加法の光源システムを使用して�
 
 
 ### <a name="the-minimum-legible-font-size"></a>最小のフォントサイズの最小値
-| 単位 | 表示角度 | テキストの高さ | フォントサイズ * * |
+| [距離] | 表示角度 | テキストの高さ | フォントサイズ * * |
 |---------|---------|---------|---------|
 | 45cm (直接操作距離) | 0.4 °-0.5 ° | 3.14 ~ 3.9 mm | 8.9 – 11.13 pt |
 | 2分 | 0.35 °-0.4 ° | 12.21 – 13.97 mm | 34.63-39.58 pt |
 
 
 ### <a name="the-comfortably-legible-font-size"></a>判読しやすいフォントサイズ
-| 単位 | 表示角度 | テキストの高さ | フォントサイズ * * |
+| [距離] | 表示角度 | テキストの高さ | フォントサイズ * * |
 |---------|---------|---------|---------|
 | 45cm (直接操作距離) | 0.65 °-0.8 ° | 5.1-6.3 mm | 14.47-17.8 pt |
 | 2分 | 0.6 °-0.75 ° | 20.9-26.2 mm | 59.4-74.2 pt |
@@ -107,13 +107,13 @@ Segoe UI (Windows の既定のフォント) は、ほとんどの場合に適し
 
 ---
 
-## <a name="resources"></a>参考資料
+## <a name="resources"></a>リソース
 
 :::row:::
     :::column:::
-    ### <a name="segoe-fontshttpsdownloadmicrosoftcomdownload1bc1bcf071a-78ee-4968-acbe-15461c274b61segoe20fonts20v1705zipbr"></a>[Yu gothic フォント](https://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe%20fonts%20v1705.zip)<br>
+    ### <a name="segoe-fontsbr"></a>[Yu gothic フォント](https://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe%20fonts%20v1705.zip)<br>
     (Zip ファイル)<br>
-    ### <a name="hololens-fonthttpsdownloadmicrosoftcomdownload38d38d659e2-4b9c-413a-b2e7-1956181dc427hololens20fontzipbr"></a>[HoloLens フォント](https://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens%20font.zip)<br>
+    ### <a name="hololens-fontbr"></a>[HoloLens フォント](https://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens%20font.zip)<br>
     (Zip ファイル)<br>
     <br>
     *Image: HoloLens フォントは、Windows Mixed Reality で使用される記号のグリフを提供します。*
@@ -129,6 +129,6 @@ Segoe UI (Windows の既定のフォント) は、ほとんどの場合に適し
 ---
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [Unity のテキスト](text-in-unity.md)
 * [色、ライト、マテリアル](color,-light-and-materials.md)

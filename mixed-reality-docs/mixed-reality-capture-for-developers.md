@@ -7,11 +7,11 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、写真、ビデオ、キャプチャ、カメラ
 ms.openlocfilehash: 72600f889997c96a629faebc35aba4b4841d4d8b
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926798"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375969"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>開発者向けの Mixed reality キャプチャ
 
@@ -197,7 +197,7 @@ Unity アプリケーションでは、プロパティの[Locatable_camera_in_Un
 
 MRC ビデオ効果 (**MixedRealityCapture. MixedRealityCaptureVideoEffect**)
 
-|  プロパティ名  |  タスクバーの検索ボックスに  |  既定値  |  説明 | 
+|  プロパティ名  |  種類  |  既定値  |  説明 | 
 |----------|----------|----------|----------|
 |  StreamType  |  UINT32 ([Mediastreamtype](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType))  |  1 (VideoRecord)  |  この効果がどのキャプチャストリームに使用されるかを説明します。 オーディオは使用できません。 | 
 |  HologramCompositionEnabled  |  boolean  |  TRUE  |  ビデオキャプチャのホログラムを有効または無効にするフラグ。 | 
@@ -207,7 +207,7 @@ MRC ビデオ効果 (**MixedRealityCapture. MixedRealityCaptureVideoEffect**)
 |  GlobalOpacityCoefficient  |  float  |  0.9 (HoloLens) 1.0 (イマーシブヘッドセット)  |  0\.0 (完全に透明) から 1.0 (完全に不透明) までの範囲内のホログラムのグローバル不透明度係数を設定します。 | 
 |  BlankOnProtectedContent  |  boolean  |  FALSE  |  保護されたコンテンツを示す 2d UWP アプリがある場合に空のフレームを返すことを有効または無効にするフラグ。 このフラグが false で、2d UWP アプリで保護されたコンテンツが表示されている場合、2d UWP アプリはヘッドセットと mixed reality キャプチャの両方で保護されたコンテンツテクスチャに置き換えられます。 |
 |  ShowHiddenMesh  |  boolean  |  FALSE  |  Holographic カメラの非表示領域メッシュと隣接するコンテンツの表示を有効または無効にするフラグ。 |
-| OutputSize | Size | 0、0 | ビデオの安定化のトリミング後に、目的の出力サイズを設定します。 0または無効な出力サイズが指定されている場合は、既定のトリミングサイズが選択されます。 |
+| OutputSize | サイズ | 0, 0 | ビデオの安定化のトリミング後に、目的の出力サイズを設定します。 0または無効な出力サイズが指定されている場合は、既定のトリミングサイズが選択されます。 |
 | PreferredHologramPerspective | UINT32 | 1 (PhotoVideoCamera) | キャプチャする holographic カメラビュー構成を示すために使用される列挙です。 0 (表示) に設定すると、アプリは写真/ビデオカメラから表示するように要求されません。 |
 
 MRC オーディオ効果 (**MixedRealityCapture. MixedRealityCaptureAudioEffect**)
@@ -215,7 +215,7 @@ MRC オーディオ効果 (**MixedRealityCapture. MixedRealityCaptureAudioEffect
 <table>
 <tr>
 <th>プロパティ名</th>
-<th>タスクバーの検索ボックスに</th>
+<th>種類</th>
 <th>既定値</th>
 <th>説明</th>
 </tr>
@@ -267,6 +267,6 @@ Windows 10 April 2018 更新プログラムでは、MRC ストリームにアク
 
 Windows 10 April 2018 Update より前のバージョンでは、アプリのカスタム MRC レコーダーはシステム MRC と同時に使用できませんでした (写真をキャプチャする、ビデオをキャプチャする、または Windows デバイスポータルからストリーミングする)。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [複合現実キャプチャ](mixed-reality-capture.md)
 * [Spectator View](spectator-view.md)

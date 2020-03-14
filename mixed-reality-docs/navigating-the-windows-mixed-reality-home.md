@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: シェル, os, プラットフォーム, 崖家, 家, ホーム, 環境, スタート, スタートメニュー, ホームメニュー, pin, アプリ, アプリの起動, アプリの配置, テレポート, 移動, 移動
 ms.openlocfilehash: 9de4cb44505d6cf4d0d3e4bd0fd9c5ee681063a5
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438153"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375899"
 ---
 # <a name="navigating-the-windows-mixed-reality-home"></a>Windows Mixed Reality ホームの移動
 
@@ -85,7 +85,7 @@ Windows PC エクスペリエンスがデスクトップで起動するのと同
 
 [Windows Mixed reality イマーシブヘッドセット](immersive-headset-hardware-details.md)は、Windows mixed reality ホーム内を移動するための複数の入力の種類をサポートしています。 HoloLens は、ナビゲーションのためのアクセサリ入力をサポートしていません。これは、環境が物理的に移動して表示されるためです。 ただし、HoloLens は、アプリと対話するための[入力をサポート](hardware-accessories.md)しています。
 
-### <a name="motion-controllers"></a>モーションコントローラー
+### <a name="motion-controllers"></a>モーション コントローラー
 
 最適な Windows Mixed Reality エクスペリエンスは、ヘッドセットのセンサーのみを使用して6度の自由度の追跡をサポートする Windows Mixed Reality の[モーションコントローラー](motion-controllers.md)です。外部カメラやマーカーは必要ありません。
 
@@ -134,7 +134,7 @@ Windows Mixed Reality には、次のようなさまざまな組み込みアプ�
 * イマーシブヘッドセット内のデスクトップモニターを表示するための**デスクトップ**(イマーシブヘッドセット)
 * **エクスプローラー**デバイスにあるファイルとフォルダーにアクセスする
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [アプリ ビュー](app-views.md)
 * [モーション コントローラー](motion-controllers.md)
 * [ハードウェア アクセサリ](hardware-accessories.md)

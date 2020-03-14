@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: mixed reality、holographic、ar、vr、mr、xr、強化現実、仮想現実、説明
 ms.openlocfilehash: e3205590ce46e0fc9113421e0dbaeb87fe6bc0c2
-ms.sourcegitcommit: 23b130d03fea46a50a712b8301fe4e5deed6cf9c
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/24/2019
-ms.locfileid: "75334052"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376039"
 ---
 # <a name="what-is-mixed-reality"></a>Mixed Reality とは
 
@@ -89,7 +89,7 @@ Windows Mixed Reality エクスペリエンスを提供するデバイスには�
 </tr><tr>
 <td><strong>デバイスの例</strong></td><td> Microsoft HoloLens<br><br> <img alt="Microsoft HoloLens 2 image" width="300" height="169" src="images/HoloLens2.jpg" /></td><td> Samsung HMD Odyssey +<br><br> <img alt="Samsung HMD Odyssey+ image" width="300" height="169" src="images/Samsung-HMD-Odyssey.jpg" /></td>
 </tr><tr>
-<td><strong>Display</strong></td><td> 「」を参照してください。 ヘッドセットを装着しているときに、ユーザーが物理環境を確認できるようにします。</td><td> 非透過ディスプレイ。 ヘッドセットの装着中に物理環境をブロックします。</td>
+<td><strong>ディスプレイ</strong></td><td> 「」を参照してください。 ヘッドセットを装着しているときに、ユーザーが物理環境を確認できるようにします。</td><td> 非透過ディスプレイ。 ヘッドセットの装着中に物理環境をブロックします。</td>
 </tr><tr>
 <td><strong>動かす</strong></td><td> 回転と翻訳の両方で、完全に6度の自由な移動。</td><td> 回転と翻訳の両方で、完全に6度の自由な移動。</td>
 </tr>
@@ -113,7 +113,7 @@ Windows Mixed Reality エクスペリエンスを提供するデバイスには�
 * **右側に (デジタル現実に近い)。** ユーザーは、完全なデジタル環境を体験し、物理的な環境で何が起こっているかを認識していません。
 
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 * [ホログラムとは](hologram.md)
 * [Mixed reality の基本を理解する](index.md#understand-the-basics)

@@ -7,11 +7,11 @@ ms.date: 10/31/2019
 ms.topic: article
 keywords: Mixed Reality、宝石、ビジョン化、相互作用、設計、視線追跡、ヘッドトラッキング
 ms.openlocfilehash: df152f6a3a6e4ae2d6c32a0c56fbb615bcfa7aa8
-ms.sourcegitcommit: a5dc182da237f63f0487d40a2e11894027208b6c
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73441125"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375849"
 ---
 # <a name="gaze-and-commit"></a>宝石とコミットメント
 
@@ -290,13 +290,13 @@ HoloLens でのジェスチャでは、ジェスチャが検出されたカメ�
 
 
 
-## <a name="see-also"></a>関連項目
-* [視線に基づく対話](eye-gaze-interaction.md)
-* [HoloLens 2 の目の追跡](eye-tracking.md)
+## <a name="see-also"></a>参照
+* [視線ベースの操作](eye-gaze-interaction.md)
+* [HoloLens 2 上の視線追跡](eye-tracking.md)
 * [視線入力とドウェル](gaze-and-dwell.md)
-* [ハンドダイレクト操作](direct-manipulation.md)
-* [ハンドジェスチャ](gaze-and-commit.md#composite-gestures)
-* [ハンドポイントとコミット](point-and-commit.md)
+* [手 - 直接操作](direct-manipulation.md)
+* [手 - ジェスチャ](gaze-and-commit.md#composite-gestures)
+* [手 - ポイントとコミット](point-and-commit.md)
 * [本能的な操作](interaction-fundamentals.md)
 * [音声入力](voice-input.md)
 

@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 操作方法、アクセサリ、bluetooth、bt、コントローラー、ゲームパッド、clicker、xbox
 ms.openlocfilehash: 566d4217fb674057e1dc3d9791b247185bf61d32
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73435146"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375699"
 ---
 # <a name="hardware-accessories"></a>ハードウェアのアクセサリ
 
@@ -31,7 +31,7 @@ Bluetooth 周辺機器と Microsoft HoloLens のペアリングは、Bluetooth �
 5. デバイスの名前が Bluetooth デバイスの一覧に表示されるまで待ちます。 その場合は、デバイスを選択し、 **[ペアリング]** ボタンを選択します。 近くの Bluetooth デバイスが多数ある場合は、[Bluetooth デバイス] 一覧の一番下までスクロールして、ペアリングしようとしているデバイスを確認する必要があります。
 6. Bluetooth 周辺機器と入力機能 (Bluetooth キーボードなど) をペアリングすると、6桁または8桁の pin が表示される場合があります。 周辺機器に pin を入力し、enter キーを押して、Microsoft HoloLens とのペアリングを完了してください。
 
-## <a name="motion-controllers"></a>モーションコントローラー
+## <a name="motion-controllers"></a>モーション コントローラー
 
 Windows Mixed Reality[モーションコントローラー](motion-controllers.md)は、HoloLens ではなく、イマーシブヘッドセットでサポートされています。 これらのコントローラーは、イマーシブヘッドセットのセンサーを使用して、ビューのフィールドの移動を正確かつ迅速に追跡できます。つまり、領域内の壁にハードウェアを取り付ける必要はありません。 各コントローラーは、いくつかの入力方法を特徴としています。
 

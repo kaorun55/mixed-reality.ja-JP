@@ -7,15 +7,15 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: holotoolkit、mixedrealitytoolkit、mixedrealitytoolkit、holographic レンダリング、holographic、イマーシブ、フォーカスポイント、深度バッファー、方向専用、位置指定、不透明、透明、クリップ
 ms.openlocfilehash: 1a2e66d5c028109a58ea8682668521f50158add9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436960"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375589"
 ---
 # <a name="camera-in-unity"></a>Unity のカメラ
 
-Mixed reality ヘッドセットを使用すると、holographic 世界の中心になります。 Unity[カメラ](https://docs.unity3d.com/Manual/class-Camera.html)コンポーネントは、ステレオスコピックレンダリングを自動的に処理します。プロジェクトで "Windows Mixed reality" がデバイスとして選択されている場合 (他の設定の場合)、ヘッドの移動とローテーションに従います。」を参照してください。 以前のバージョンの Unity では、"Windows Holographic" として表示される場合があります。
+Mixed reality ヘッドセットを使用すると、holographic 世界の中心になります。 Unity[カメラ](https://docs.unity3d.com/Manual/class-Camera.html)コンポーネントは、ステレオスコピックレンダリングを自動的に処理します。プロジェクトで "Windows Mixed reality" がデバイスとして選択されている場合 (Windows ストアプレーヤー設定の [その他の設定] セクション)、ヘッドの移動とローテーションに従います。 以前のバージョンの Unity では、"Windows Holographic" として表示される場合があります。
 
 ただし、ビジュアルの品質とホログラムの[安定性](hologram-stability.md)を完全に最適化するには、以下で説明するカメラの設定を設定する必要があります。
 
@@ -76,7 +76,7 @@ HoloLens とイマーシブヘッドセットはどちらも、photons が出力
 * アプリが特定のフレームに対して深度バッファーを提供する場合、**イマーシブヘッドセット**は位置の再プロジェクションを実行し、位置と向きの両方で misprediction のホログラムを調整します。  深度バッファーが指定されていない場合、システムは mispredictions の向きのみを修正します。
 * HoloLens のような**Holographic ヘッドセット**は、アプリが深度バッファーを提供するかどうかに関係なく、位置指定再プロジェクションを実行します。  レンダリングは、実際には安定した背景でスパースになることが多いため、HoloLens で深度バッファーを使用せずに位置指定リポジトリを使用できます。
 
-固定本文でロックされたコンテンツ (たとえば、360度のビデオコンテンツ) を使用して[向きのみのエクスペリエンス](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)を構築していることがわかっている場合は、を設定[するだけで、reprojection モードを明示的に方向に設定することができます。HolographicSettings ReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html) HolographicReprojectionMode. [OrientationOnly](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html).
+固定本文でロックされたコンテンツ (360 度のビデオコンテンツなど) を使用して[向きのみのエクスペリエンス](coordinate-systems-in-unity.md#building-an-orientation-only-or-seated-scale-experience)を構築していることがわかっている場合は、HolographicSettings を[HolographicReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.HolographicReprojectionMode.html)に設定することによってのみ、Reprojection モードを[ReprojectionMode](https://docs.unity3d.com/ScriptReference/XR.WSA.HolographicSettings.ReprojectionMode.html)に明示的に設定できます。
 
 ## <a name="sharing-your-depth-buffers-with-windows"></a>Windows での深度バッファーの共有
 
@@ -93,7 +93,7 @@ Unity アプリで Windows に深度バッファーを提供するかどうか�
 
 Windows に深度バッファーを指定すると、Windows がメインカメラで Unity に設定した近距離および遠方を使用して、深度バッファー内の正規化されたピクセルごとの深度値をメートル単位の距離に正確にマップできる限り、視覚品質が向上します。  通常の方法でレンダリングがハンドルの深さの値を渡す場合は、通常、ここで問題ありません。ただし、既存のカラーピクセルに対してを使用している間に深度バッファーに書き込む半透明のレンダリングパスは、再プロジェクションを混乱させる可能性があります。  レンダリングパスによって、最終的な深度ピクセルの多くが正確でない深さの値になることがわかっている場合は、[深度バッファーの共有を有効にする] をオフにすると、表示品質が向上する可能性があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [ホログラムの安定性](hologram-stability.md)
 * [MixedRealityToolkit メインカメラ。 prefab](https://github.com/Microsoft/MixedRealityToolkit-Unity/tree/htk_release/Assets/HoloToolkit/Input/Prefabs)

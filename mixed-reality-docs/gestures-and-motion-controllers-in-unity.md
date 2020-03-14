@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: ジェスチャ、モーションコントローラー、unity、宝石、入力
 ms.openlocfilehash: a85797bfb443f33147c116e90a02c88abda63c67
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926572"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375649"
 ---
 # <a name="gestures-and-motion-controllers-in-unity"></a>Unity のジェスチャとモーションコントローラー
 
@@ -305,7 +305,7 @@ InteractionManager.InteractionSourcePressed -= InteractionManager_InteractionSou
 ユーザーが手やコントローラーを押したときの本来の目的に基づいて正確にターゲットを指定するには、その*Interactionsourcepressed*れたイベントまたは*InteractionSourceReleased*入力イベントからの履歴ソースの発生元またはヘッドポーズを使用する必要があります。
 
 ユーザーのヘッドまたはコントローラーの履歴リーダーデータを使用して、プレスまたはリリースを対象にすることができます。
-* ジェスチャまたはコントローラーの押下が発生した時点で、ユーザーが**どのように**しているかを[判断する](gaze-and-commit.md)ために使用できます。
+* ジェスチャまたはコントローラーの押下が発生した時点で、[ユーザーがどの](gaze-and-commit.md)ようにしているかを**判断するため**に使用できます。
 
    ```cs
    void InteractionManager_InteractionSourcePressed(InteractionSourcePressedEventArgs args) {
@@ -525,7 +525,7 @@ void OnDestroy()
 [![MR 入力 213-Motion controller](images/mr213-main-600px.jpg)](https://docs.microsoft.com/windows/mixed-reality/mixed-reality-213)<br>
 *MR 入力 213-モーションコントローラー*
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [頭の視線入力とコミット](gaze-and-commit.md)
 * [モーション コントローラー](motion-controllers.md)

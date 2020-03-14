@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens, 同期, 空間アンカー, 転送, マルチプレイヤー, ビュー, シナリオ, チュートリアル, サンプルコード, 転送, ローカルアンカー転送, アンカーエクスポート, アンカーインポート
 ms.openlocfilehash: f961862c3c49872484683e264fb9c62b5d0b60ee
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437955"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376029"
 ---
 # <a name="local-anchor-transfers-in-directx"></a>DirectX でのローカルアンカー転送
 
@@ -33,7 +33,7 @@ ms.locfileid: "73437955"
 
 [SpatialAnchorTransferManager](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialanchortransfermanager.aspx)を使用するには、アプリに spatialPerception 機能を使用するためのアクセス許可が付与されている必要があります。 これは、空間アンカーを転送する場合に必要です。これは、そのアンカーの近くで、時間の経過と共に収集されるセンサーイメージを共有することです。
 
-この機能をアプリの package.appxmanifest ファイルで宣言します。 以下に例を示します。
+この機能をアプリの package.appxmanifest ファイルで宣言します。 次に例を示します。
 
 ```
 <Capabilities>
@@ -41,7 +41,7 @@ ms.locfileid: "73437955"
 </Capabilities>
 ```
 
-この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、&lt;Package > 要素に*xlmns*属性として追加します。 以下に例を示します。
+この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、&lt;Package > 要素に*xlmns*属性として追加します。 次に例を示します。
 
 ```
 <Package
@@ -284,7 +284,7 @@ Blob には、SpatialAnchor をインポートするデバイスで環境を認�
 
 ### <a name="export-of-multiple-spatialanchors"></a>複数の SpatialAnchors のエクスポート
 
-1つの SpatialAnchor のエクスポートと同様に、blob には、指定されたすべての SpatialAnchors の近接部分にある環境の表現が含まれます。 また、blob には、含まれている SpatialAnchors との間の接続に関する情報が含まれています (同じ物理領域に存在する場合)。 これは、隣接する2つの SpatialAnchors がインポートされた場合、デバイスが*最初*の SpatialAnchor 周辺の環境を認識しているのに、十分なデータがあるため、 *2 番目*の SpatialAnchor にアタッチされたホログラムが見つからないことを意味します。2つの SpatialAnchors 間のコンピューティング変換が blob に含まれていました。 2つの SpatialAnchors が個別にエクスポートされた場合 (TryExportSpatialAnchors の2つの個別の呼び出し)、最初の SpatialAnchor に接続されている、2番目のにアタッチされているホログラムの blob に十分なデータが含まれていない可能性があります。
+1つの SpatialAnchor のエクスポートと同様に、blob には、指定されたすべての SpatialAnchors の近接部分にある環境の表現が含まれます。 また、blob には、含まれている SpatialAnchors との間の接続に関する情報が含まれています (同じ物理領域に存在する場合)。 これは、隣接する2つの SpatialAnchors がインポートされた場合、2つの SpatialAnchors 間の変換を計算するのに十分なデータが blob に含まれていたため、2*番目*の SpatialAnchor にアタッチされたホログラムが、デバイスが*最初*の SpatialAnchor の周囲の環境を認識している場合でも、このようになります。 2つの SpatialAnchors が個別にエクスポートされた場合 (TryExportSpatialAnchors の2つの個別の呼び出し)、最初の SpatialAnchor に接続されている、2番目のにアタッチされているホログラムの blob に十分なデータが含まれていない可能性があります。
 
 ![1つの TryExportAnchorsAsync 呼び出しを使用してエクスポートされた複数のアンカー](images/multipleanchors.png) ![アンカーごとに個別の TryExportAnchorsAsync 呼び出しを使用してエクスポートされた複数のアンカー](images/separateanchors.png)
 
@@ -672,9 +672,9 @@ void SampleAnchorTcpClient::HandleException(Exception^ exception)
 }
 ```
 
-以上で作業は終了です。 これで、ネットワーク経由で受信したアンカーを特定するための十分な情報が得られます。 ここでも、クライアントがアンカーを正常に見つけるために十分な数のビジュアル追跡データが必要であることに注意してください。すぐに機能しない場合は、しばらく試してみてください。 それでもうまくいかない場合は、サーバーがより多くのアンカーを送信するようにし、ネットワーク通信を使用してクライアントに対して機能するものに同意してください。 これを試すには、HolographicSpatialAnchorTransferSample をダウンロードし、クライアントとサーバーの Ip アドレスを構成して、クライアントとサーバーの HoloLens デバイスに展開します。
+以上で終わりです。 これで、ネットワーク経由で受信したアンカーを特定するための十分な情報が得られます。 ここでも、クライアントがアンカーを正常に見つけるために十分な数のビジュアル追跡データが必要であることに注意してください。すぐに機能しない場合は、しばらく試してみてください。 それでもうまくいかない場合は、サーバーがより多くのアンカーを送信するようにし、ネットワーク通信を使用してクライアントに対して機能するものに同意してください。 これを試すには、HolographicSpatialAnchorTransferSample をダウンロードし、クライアントとサーバーの Ip アドレスを構成して、クライアントとサーバーの HoloLens デバイスに展開します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [並列パターンライブラリ (PPL)](https://msdn.microsoft.com/library/dd492418.aspx)
 * [Windows. ネットワーク. StreamSocket](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocket.aspx)
 * [Windows. ネットワーク. StreamSocketListener](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamsocketlistener.aspx)

@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows mixed reality, 空間マッピング, 環境, 相互作用, directx, winrt, api, サンプルコード, UWP, SDK, チュートリアル
 ms.openlocfilehash: 456fcf1c00e23a287a741673e94b3f8d2d2d346c
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437446"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375819"
 ---
 # <a name="spatial-mapping-in-directx"></a>DirectX での空間マッピング
 
@@ -74,7 +74,7 @@ ms.locfileid: "73437446"
   - ここから、アプリケーションでメッシュデータの分析または[処理](spatial-mapping.md#mesh-processing)を必要に応じて実行し、[レンダリング](spatial-mapping.md#rendering)や物理的な[raycasting と競合](spatial-mapping.md#raycasting-and-collision)に使用することができます。
   - 注意すべき重要な点の1つは、メッシュの頂点位置 (メッシュのレンダリングに使用される頂点シェーダーなど) にスケールを適用して、バッファーに格納されている最適化された整数単位からメーターに変換する必要があることです。 このスケールを取得するには、 [Vertexpositionscale](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)を呼び出します。
 
-### <a name="troubleshooting"></a>[トラブルシューティング]
+### <a name="troubleshooting"></a>トラブルシューティング
 * [SpatialSurfaceMesh スケール](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.surfaces.spatialsurfacemesh.vertexpositionscale.aspx)によって返されるスケールを使用して、頂点シェーダー内のメッシュ頂点の位置を必ずスケーリングしてください。
 
 ## <a name="spatial-mapping-code-sample-walkthrough"></a>空間マッピングコードサンプルのチュートリアル
@@ -85,7 +85,7 @@ ms.locfileid: "73437446"
 
 ### <a name="set-up-your-app-to-use-the-spatialperception-capability"></a>SpatialPerception 機能を使用するようにアプリを設定する
 
-アプリで空間マッピング機能を使用できる必要があります。 これが必要になるのは、空間メッシュがユーザーの環境を表しているためです。これは、プライベートデータと見なされる場合があります。 この機能をアプリの package.appxmanifest ファイルで宣言します。 以下に例を示します。
+アプリで空間マッピング機能を使用できる必要があります。 これが必要になるのは、空間メッシュがユーザーの環境を表しているためです。これは、プライベートデータと見なされる場合があります。 この機能をアプリの package.appxmanifest ファイルで宣言します。 次に例を示します。
 
 ```xml
 <Capabilities>
@@ -93,7 +93,7 @@ ms.locfileid: "73437446"
 </Capabilities>
 ```
 
-この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、&lt;Package > 要素に*xlmns*属性として追加します。 以下に例を示します。
+この機能は、 **uap2**名前空間から取得されます。 マニフェスト内のこの名前空間へのアクセスを取得するには、&lt;Package > 要素に*xlmns*属性として追加します。 次に例を示します。
 
 ```xml
 <Package
@@ -216,7 +216,7 @@ m_surfaceObserver->SetBoundingVolume(
             );
 ```
 
-Surface マッピングデータを使用できない場合にアプリの動作を変える必要がある場合は、 [SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)が**許可**されていない場合に応答するコードを記述できます。たとえば、イマーシブを使用する pc では許可されません。接続されているデバイスは、空間マッピング用のハードウェアを備えていません。 これらのデバイスでは、代わりに、ユーザーの環境とデバイスの構成に関する情報を空間ステージに依存させる必要があります。
+Surface マッピングのデータを使用できない場合にアプリの動作を変える必要がある場合は、 [SpatialPerceptionAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.spatialperceptionaccessstatus.aspx)が**許可**されていない場合に応答するコードを記述できます。たとえば、デバイスにデバイスを接続している pc では、空間マッピングのハードウェアが搭載されていないため、このコードを使用することはできません。 これらのデバイスでは、代わりに、ユーザーの環境とデバイスの構成に関する情報を空間ステージに依存させる必要があります。
 
 ### <a name="initialize-and-update-the-surface-mesh-collection"></a>Surface メッシュコレクションの初期化と更新
 
@@ -673,6 +673,6 @@ context->OMSetRenderTargets(1, targets, pCameraResources->GetSurfaceDepthStencil
 m_meshCollection->Render(pCameraResources->IsRenderingStereoscopic(), false);
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [ホログラフィック DirectX プロジェクトを作成する](creating-a-holographic-directx-project.md)
 * [Windows... 空間 API](https://msdn.microsoft.com/library/windows/apps/windows.perception.spatial.aspx)

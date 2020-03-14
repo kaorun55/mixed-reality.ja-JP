@@ -7,14 +7,14 @@ ms.date: 10/22/2019
 ms.topic: article
 keywords: mixed reality、Windows Mixed Reality、HoloLens、イマーシブ、vr、mr、はじめに、ホログラム、academy、チュートリアル
 ms.openlocfilehash: 0600383b3cca3f580f014597217afc6ae78836dd
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926641"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375599"
 ---
 >[!NOTE]
->Mixed Reality Academy チュートリアルは、HoloLens (第1世代) と Mixed Reality イマーシブヘッドセットを念頭に置いて設計されています。  そのため、これらのデバイスの開発に関するガイダンスをまだ探している開発者には、これらのチュートリアルを残しておくことが重要です。  これらのチュートリアルは **_いない_** 最新のツールセットや相互作用が使用されている HoloLens 2 で更新されます。  サポートされているデバイスでの作業を続行するために管理されます。 HoloLens 2 については[、新しい一連のチュートリアル](mrlearning-base.md)が投稿されています。
+>Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。  そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。  これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは " **_ありません_** "。  これらは、サポートされているデバイス上で継続して動作するように、保守されます。 HoloLens 2 向けには、[新しいチュートリアル シリーズ](mrlearning-base.md)が投稿されています。
 
 <br>
 
@@ -26,7 +26,7 @@ ms.locfileid: "73926641"
 
 <table>
 <tr>
-<th>まで</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
+<th>コース</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens</a></th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
 <td>MR 基本 100: Unity の概要</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;"> ✔️</td>
 </tr>
@@ -194,7 +194,7 @@ Unity プロジェクトでのキューブの作成は、Unity で他のオブ�
 6.  **UWP ビルドの種類**は**D3D**である必要があります。
 7.  **UWP SDK**は、**インストールされている最新**の状態のままにすることができます。
 8.  [デバッグ] で**Unity C#プロジェクト**を確認します。
-9.  **[Build]** をクリックします。
+9.  **[ビルド]** をクリックします。
 10. エクスプローラーで、 **[新しいフォルダー]** をクリックし、フォルダーに **「App」** という名前を指定します。
 11. **アプリ**フォルダーを選択した状態で、 **[フォルダーの選択]** ボタンをクリックします。
 12. Unity のビルドが完了すると、Windows エクスプローラーウィンドウが表示されます。
@@ -234,7 +234,7 @@ Unity プロジェクトでのキューブの作成は、Unity で他のオブ�
 
 アプリがデプロイされたので、キューブ全体を移動して、その前に世界中の状態が維持されることを確認します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [Unity 開発の概要](unity-development-overview.md)
 * [Unity と Visual Studio を使用するためのベスト プラクティス](best-practices-for-working-with-unity-and-visual-studio.md)

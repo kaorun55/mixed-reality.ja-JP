@@ -7,11 +7,11 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 3D, モデリング, モデリングガイダンス, 資産要件, 作成ガイドライン, ランチャー, 3D ランチャー, テクスチャ, マテリアル, 複雑さ, 三角形, メッシュ, 多角形, polycount, 制限
 ms.openlocfilehash: 536fd9bc2002d679ee3bf73d5c906b84c51e5d46
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926577"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79375629"
 ---
 # <a name="create-3d-models-for-use-in-the-home"></a>ホームで使用する3D モデルを作成する
 
@@ -54,8 +54,8 @@ Windows Mixed Reality ホームでは、1万を超える三角形のモデルは
 |  LOD レベル  |  推奨される三角形数  |  三角形の最大数 | 
 |------|------|------|
 |  LOD 0 |  10,000 |  10,000 | 
-|  LOD 1 |  5000  |  10,000 | 
-|  LOD 2 |  2500  |  10,000 | 
+|  LOD 1 |  5,000  |  10,000 | 
+|  LOD 2 |  2,500  |  10,000 | 
 
 ### <a name="node-counts-and-submesh-limits"></a>ノード数と submesh の制限
 Windows Mixed Reality ホームは、64ノード以上のモデル、または LOD あたり 32 submeshes をサポートしていません。 ノードは、シーン内のオブジェクトを定義する[Gltf 仕様](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#nodes-and-hierarchy)の概念です。 Submeshes は、オブジェクトのメッシュ上の[プリミティブ](https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#meshes)の配列で定義されます。 
@@ -78,7 +78,7 @@ Windows Mixed Reality ホームは、64ノード以上のモデル、または L
 
 照明情報のない未加工の色。 このマップには、金属 (メタリックマップの白) と insulator (メタリックマップでは黒) の反射と拡散に関する情報も含まれています。
 
-### <a name="normal"></a>正常
+### <a name="normal"></a>標準
 
 接空間法線マップ
 
@@ -167,8 +167,8 @@ Windows MR では、ジオメトリノード LODs を使用して、画面の範
 |  LOD レベル  |  推奨される三角形数  |  三角形の最大数 | 
 |-------|-------|-------|
 |  LOD 0 |  10,000 |  10,000 | 
-|  LOD 1 |  5000  |  10,000 | 
-|  LOD 2 |  2500  |  10,000 | 
+|  LOD 1 |  5,000  |  10,000 | 
+|  LOD 2 |  2,500  |  10,000 | 
 
 LODs を使用する場合は、常に3つの LOD レベルを指定します。 LODs が見つからないと、LOD システムが不足している LOD レベルに切り替えられるため、モデルが予期せず表示されなくなります。 glTF 2.0 では、現在、コア仕様の一部として LODs をサポートしていません。したがって、この場合は、 [MSFT_LOD 拡張機能](https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod)を使用して LODs を定義する必要があります。
 
@@ -232,13 +232,13 @@ Windows Mixed Reality ホームでは、次のアニメーショントリガー�
 ### <a name="saving-and-exporting"></a>保存とエクスポート
 GlTF モデルに変更を加えた後は、glTF として直接保存できます。または、エディターでファイル名を右クリックして [glTF: Export to GLB (バイナリファイル)] を選択し、代わりに GLB をエクスポートすることもできます。 
 
-### <a name="restrictions"></a>制限
+### <a name="restrictions"></a>制約
 アニメーションは20分より長くすることはできず、36000のキーフレーム (30 FPS で20分) を含めることはできません。 また、変形ターゲットベースのアニメーションを使用する場合は、8192の変形ターゲット頂点以下を超えることはありません。 これらの数を超えると、アニメーション化された資産が Windows Mixed Reality ホームでサポートされなくなります。 
 
 |機能|最大|
 |-----|-----|
-|期間|20 分|
-|フレーム|36000| 
+|継続期間|20 分|
+|キーフレーム|36,000| 
 |変形ターゲット頂点|8192|
 
 ## <a name="gltf-implementation-notes"></a>glTF 実装に関する注意事項
@@ -268,7 +268,7 @@ Windows MR は、プリミティブモードの線とポイントをサポート
 
 1つの UV 頂点属性のみがサポートされています。
 
-## <a name="additional-resources"></a>その他の資料
+## <a name="additional-resources"></a>その他のリソース
 * [glTF エクスポーターおよびコンバーター](https://github.com/KhronosGroup/glTF#converters-and-exporters)
 * [glTF Toolkit](https://github.com/Microsoft/glTF-Toolkit)
 * [glTF 2.0 仕様](https://github.com/KhronosGroup/glTF/blob/master/README.md)
@@ -277,7 +277,7 @@ Windows MR は、プリミティブモードの線とポイントをサポート
 * [HoloLens Mixed Reality テクスチャパッキング拡張機能の仕様](https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/MSFT_packing_normalRoughnessMetallic/README.md)
 * [Microsoft DDS テクスチャ glTF extensions 仕様](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/MSFT_texture_dds)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [3D アプリ起動ツールの実装 (UWP アプリ)](implementing-3d-app-launchers.md)
 * [3D アプリ起動ツールの実装 (Win32 アプリ)](implementing-3d-app-launchers-win32.md)
