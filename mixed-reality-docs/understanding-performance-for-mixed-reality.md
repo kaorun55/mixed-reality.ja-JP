@@ -6,12 +6,12 @@ ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality、Mixed Reality、Virtual Reality、VR、MR、パフォーマンス、最適化、CPU、GPU
-ms.openlocfilehash: 7d8a0c95d59ec7e42e11bc1e1b6b40c702e01529
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 287b95363acff00ab7a0407475e0a419fc076611
+ms.sourcegitcommit: 184227dc591ca2791f523d520555730ba1e95b5c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438236"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79479575"
 ---
 # <a name="understanding-performance-for-mixed-reality"></a>Mixed reality のパフォーマンスについて
 
@@ -70,7 +70,7 @@ ms.locfileid: "73438236"
 
 一般に、CPU 上の mixed reality アプリケーションでほとんどの作業を行うには、シーンの "シミュレーション" を実行し、アプリケーションロジックを処理する必要があります。 通常、最適化の対象となる領域は次のとおりです。
 
-- [アニメーション]
+- アニメーション
 - 物理
 - メモリの割り当て
 - 複雑なアルゴリズム ( 逆のキネマティック、パスの検索)
@@ -98,7 +98,8 @@ Fill rate は、レンダリングされた最終的なピクセルに対して�
 4) レンダリングするピクセル数 (表示解像度)
 
 #### <a name="reduce-polygon-count"></a>多角形の数を減らす
-ポリゴンの数が多いほど、GPU に対する操作が増えることになります。シーンの多角形の数を減らすと、レンダリング時間が短縮されます。 コストがかかる可能性のあるジオメトリの網掛けに関連する要因は他にもありますが、polygon count は、シーンがどの程度高価にレンダリングされるかを判断するための最も簡単なメトリックです。
+
+ポリゴンの数が多いほど、GPU に対する操作が増えることになります。シーン[の多角形の数を減らす](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)と、レンダリング時間が短縮されます。 コストがかかる可能性のあるジオメトリの網掛けに関連する要因は他にもありますが、polygon count は、シーンがどの程度高価にレンダリングされるかを判断するための最も簡単なメトリックです。
 
 #### <a name="limit-overdraw"></a>オーバードローを制限する
 
@@ -123,9 +124,11 @@ Occluding オブジェクトによって非表示になっているため、複�
     - 一般に、頂点の数は、ピクセル数よりもはるかに小さくなっています (720p は921600ピクセル、1080p は2073600ピクセル、など)。
 
 #### <a name="remove-gpu-stages"></a>GPU ステージの削除
+
 処理後の影響は非常に高額であり、アプリケーションの塗りつぶしレートが高くなる可能性があります。 これには、MSAA などのアンチエイリアシング技法が含まれます。 HoloLens では、これらの手法を完全に回避することをお勧めします。また、geometry、ハル、compute シェーダーなどの追加のシェーダーステージを回避することをお勧めします。
 
 ## <a name="memory-recommendations"></a>メモリに関する推奨事項
+
 過剰なメモリの割り当ておよび解放操作を行うと、パフォーマンスが低下したり、フレームがフリーズしたり、その他の有害な動作が発生したりする可能性があります。 メモリ管理はガベージコレクターによって制御されるため、Unity で開発するときは、メモリに関する考慮事項を理解することが特に重要です。
 
 #### <a name="object-pooling"></a>オブジェクトプール
@@ -135,3 +138,6 @@ Occluding オブジェクトによって非表示になっているため、複�
 ## <a name="see-also"></a>関連項目
 - [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)
 - [Unity で推奨される設定](recommended-settings-for-unity.md)
+- [3D モデルの最適化](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)
+- [リアルタイム3D モデルの変換と最適化に関するベストプラクティス](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/best-practices)
+
