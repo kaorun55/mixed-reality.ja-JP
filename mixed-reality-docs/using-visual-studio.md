@@ -8,11 +8,11 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: Visual Studio, HoloLens, Mixed Reality, デバッグ, 配置
 ms.openlocfilehash: b7e6a8d538670a53de20a2f3a2850639e756da1a
-ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74830840"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376109"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>Visual Studio を使用した配置とデバッグ
 
@@ -50,7 +50,7 @@ PC に接続された Windows Mixed Reality ヘッドセットを使用してい
 1. アプリの **[x86]** ビルド構成を選択します ![Visual Studio の [x86] ビルド構成](images/x86setting.png)
 2. [配置ターゲット] ドロップダウン メニューで **[リモート コンピューター]** を選択します ![Visual Studio の [リモート コンピューター] 配置ターゲット](images/remotemachinesetting.png)
 3. C++ および JavaScript プロジェクトの場合は、 **[プロジェクト] > [プロパティ] > [構成プロパティ] > [デバッグ]** に移動します。 C# プロジェクトの場合、接続を構成するダイアログが自動的に表示されます。
-  a. **[アドレス]** または **[コンピューター名]** フィールドに、デバイスの IP アドレスを入力します。 IP アドレスは、HoloLens の **[Settings]\(設定\) > [Network & Internet]\(ネットワークとインターネット\) > [Advanced Options]\(詳細オプション\)** で確認します。または、Cortana に「自分の IP アドレスを教えて」と聞くことができます。
+  a。 **[アドレス]** または **[コンピューター名]** フィールドに、デバイスの IP アドレスを入力します。 IP アドレスは、HoloLens の **[Settings]\(設定\) > [Network & Internet]\(ネットワークとインターネット\) > [Advanced Options]\(詳細オプション\)** で確認します。または、Cortana に「自分の IP アドレスを教えて」と聞くことができます。
   b. [認証モード] を **[ユニバーサル (暗号化されていないプロトコル)]**  に設定します ![Visual Studio の [リモート接続] ダイアログ](images/remotedeploy.png)
 4. **[デバッグ] > [デバッグの開始]** を選択してアプリを配置し、デバッグを開始します ![Visual Studio の [デバッグなしで開始]](images/deploywithdebugging.png)
 5. PC から HoloLens にアプリを初めて配置するときは、PIN の入力を求められます。 後述する「**デバイスのペアリング**」の手順を実行します。
@@ -59,7 +59,7 @@ PC に接続された Windows Mixed Reality ヘッドセットを使用してい
 1. アプリに合わせて **[ARM]** または **[ARM64]** ビルド構成を選択します ![Visual Studio の [ARM64] ビルド構成](images/arm64setting.png)
 2. [配置ターゲット] ドロップダウン メニューで **[リモート コンピューター]** を選択します ![Visual Studio の [リモート コンピューター] 配置ターゲット](images/remotemachinesetting_arm64.png)
 3. C++ および JavaScript プロジェクトの場合は、 **[プロジェクト] > [プロパティ] > [構成プロパティ] > [デバッグ]** に移動します。 C# プロジェクトの場合、接続を構成するダイアログが自動的に表示されます。
-  a. **[アドレス]** または **[コンピューター名]** フィールドに、デバイスの IP アドレスを入力します。 IP アドレスは、HoloLens の **[Settings]\(設定\) > [Network & Internet]\(ネットワークとインターネット\) > [Advanced Options]\(詳細オプション\)** で確認します。または、Cortana に「自分の IP アドレスを教えて」と聞くことができます。
+  a。 **[アドレス]** または **[コンピューター名]** フィールドに、デバイスの IP アドレスを入力します。 IP アドレスは、HoloLens の **[Settings]\(設定\) > [Network & Internet]\(ネットワークとインターネット\) > [Advanced Options]\(詳細オプション\)** で確認します。または、Cortana に「自分の IP アドレスを教えて」と聞くことができます。
   b. [認証モード] を **[ユニバーサル (暗号化されていないプロトコル)]**  に設定します ![Visual Studio の [リモート接続] ダイアログ](images/remotedeploy.png)
 4. **[デバッグ] > [デバッグの開始]** を選択してアプリを配置し、デバッグを開始します ![Visual Studio の [デバッグなしで開始]](images/deploywithdebugging.png)
 5. PC から HoloLens にアプリを初めて配置するときは、PIN の入力を求められます。 後述する「**デバイスのペアリング**」の手順を実行します。
@@ -138,6 +138,6 @@ Visual Studio プロジェクトから配置せずにインストールされた
 
 ## <a name="see-also"></a>関連項目
 * [ツールのインストール](install-the-tools.md)
-* [HoloLens のエミュレーターを使用する](using-the-hololens-emulator.md)
+* [HoloLens エミュレーターを使用する](using-the-hololens-emulator.md)
 * [ユニバーサル Windows プラットフォーム (UWP) アプリのデプロイとデバッグ](https://msdn.microsoft.com/library/windows/apps/xaml/mt613243.aspx)
 * [デバイスを開発用に有効にする](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)
