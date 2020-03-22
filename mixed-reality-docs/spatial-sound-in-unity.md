@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/07/2019
 ms.topic: article
 keywords: Unity、空間サウンド、HRTF、部屋サイズ
-ms.openlocfilehash: 6720eac30c69ebfcd0f003cf131f60295818d676
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
+ms.openlocfilehash: af3f1486c3e931ad93d7b8960d822653ec740c12
+ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77553700"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082042"
 ---
 # <a name="spatial-sound-in-unity"></a>Unity の空間サウンド
 
@@ -35,6 +35,9 @@ Mixed reality アプリケーションの Spatializer オプションは次の�
 * **[Enable spatialization]** チェックボックスをオンにします。
 * **空間ブレンド**スライダーを ' 1 ' に移動します
 * 開発者ワークステーションで空間オーディオが有効になっていることを確認します。 これを有効にするには、タスクバーのボリュームアイコンを右クリックし、[空間サウンド] が "オフ" 以外に設定されていることを確認します。 HoloLens 2 で聞く内容を最適に表示するには、 **[ヘッドホン用 Windows Sonic]** を選択します。
+
+>[!NOTE]
+>Unity で、その依存関係の1つが見つからないために SpatialAudio を読み込めないことを示すエラーが表示された場合は、 [Microsoft Visual C++の再頒布可能パッケージ](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)の最新バージョンが PC にインストールされていることを確認してください。
 
 詳細については、次を参照してください。
 * [Microsoft spatializer GitHub リポジトリ](https://github.com/microsoft/spatialaudio-unity)
