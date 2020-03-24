@@ -1,198 +1,167 @@
 ---
-title: Azure Speech Services チュートリアル-1. 音声認識と議事録の統合と使用
-description: このコースでは、mixed reality アプリケーション内で Azure Speech SDK を実装する方法について説明します。
+title: Azure Speech Services のチュートリアル - 1. 音声認識と文字起こしの統合と使用
+description: このコースを完了すると、Mixed Reality アプリケーション内で Azure Speech SDK を実装する方法を学習できます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 25e5aa05839845620a23c3dba6698ac7b5854d6d
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: a72eb808adbc14df65c55e694ea985d97f9ec24c
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77553976"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79032583"
 ---
-# <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1. 音声認識と議事録の統合と使用
+# <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.音声認識と文字起こしの統合と使用
 
 ## <a name="overview"></a>概要
 
-このチュートリアルでは、Azure Cognitive Services Speech SDK と HoloLens 2 の使用方法を紹介する Mixed Reality アプリケーションを作成します。 このチュートリアルシリーズを完了すると、デバイスのマイクを使用して、音声をリアルタイムでテキストにしたり、音声を他の言語に変換したり、音声認識 SDK の目的機能を活用して、人工の音声コマンドを理解したりすることができます。高度.
+
+このチュートリアル シリーズでは、HoloLens 2 での Azure Speech Services の使用を探索する Mixed Reality アプリケーションを作成します。 このチュートリアル シリーズを完了すると、デバイスのマイクを使用して、リアルタイムで音声を文字に起こしたり、音声を他の言語に翻訳したり、意図認識機能を利用して、人工知能を使って音声コマンドを理解したりできるようになります。
 
 ## <a name="objectives"></a>目標
 
-* Azure Speech SDK を HoloLens 2 アプリケーションに統合する方法について説明します
-* 音声コマンドの使用方法について説明します。
-* 音声をテキストに変換する機能の使用方法について説明します。
+* Azure Speech Services と HoloLens 2 アプリケーションを統合する方法を学習する
+* 音声認識を使用して文字に起こす方法を学習する
 
 ## <a name="prerequisites"></a>前提条件
 
 >[!TIP]
->[概要チュートリアル](mrlearning-base.md)シリーズをまだ完了していない場合は、まずこれらのチュートリアルを完了することをお勧めします。
+>[入門チュートリアル](mrlearning-base.md) シリーズをまだ完了していない場合は、まずこれらのチュートリアルを完了することをお勧めします。
 
 * 正しい[ツールがインストールされている](install-the-tools.md)構成済みの Windows 10 PC
 * Windows 10 SDK 10.0.18362.0 以降
 * 基本的な C# プログラミング能力
 * [開発用に構成された](using-visual-studio.md#enabling-developer-mode) HoloLens 2 デバイス
+* Unity 2019.2.X がインストールされ、ユニバーサル Windows プラットフォーム ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > このチュートリアル シリーズで推奨されている Unity バージョンは Unity 2019.2.X です。 これは、上のリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="creating-and-preparing-the-unity-project"></a>Unity プロジェクトの作成と準備
 
-1. Unity を起動し、新しいプロジェクトを作成します。 Project name Speech SDK Learning モジュールを入力します。 プロジェクトを保存する場所を選択します。 [プロジェクトの作成] をクリックします。
+このセクションでは、新しい Unity プロジェクトを作成し、MRTK 開発用に準備をします。
 
-    ![Module2Chapter3step1im](images/module4chapter1step1im.PNG)
+このためには、まず「[プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)」に従ってください (「[デバイスへのアプリケーションのビルド](mrlearning-base-ch1.md#build-your-application-to-your-device)」の手順は除く)。これには、次の手順が含まれます。
 
-    >[!NOTE]
-    >上の図に示すように、テンプレートが3D に設定されていることを確認します。
+1. [新しい Unity プロジェクトを作成](mrlearning-base-ch1.md#create-new-unity-project)して、適切な名前を付ける (たとえば、*MRTK Tutorials*)
 
-2. [Mixed Reality Toolkit](https://github.com/microsoft/MixedRealityToolkit-Unity/releases) Unity [foundation パッケージバージョン 2.3.0](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)をダウンロードし、PC 上のフォルダーに保存します。 Unity プロジェクトにパッケージをインポートします。 これを行う方法の詳細については、入門チュートリアルの「レッスン2」を参照してください[。プロジェクトと最初のアプリケーションを初期化して](mrlearning-base-ch1.md)います。
+2. [Windows Mixed Reality 用に Unity プロジェクトを構成する](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)
 
-3. Unity 資産パッケージ用の Azure [SPEECH SDK](https://aka.ms/csspeech/unitypackage)をダウンロードしてインポートします。 [アセット] をクリックし、[パッケージのインポート]、[カスタムパッケージ] の順に選択して、Speech SDK パッケージをインポートします。 先ほどダウンロードした Speech SDK パッケージを検索し、それを開いてインポートプロセスを開始します。
+3. [TextMesh Pro の Essential Resources (重要なリソース) をインポートする](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)
 
-    ![mrlearning-speech-ch1-1-step3a](images/mrlearning-speech-ch1-1-step3a.png)
+4. [Mixed Reality Toolkit をインポートする](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)
 
-    ![mrlearning-speech-ch1-1-step3b](images/mrlearning-speech-ch1-1-step3b.png)
+5. [Mixed Reality Toolkit 用に Unity プロジェクトを構成する](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)
 
-4. 次のポップアップウィンドウで [インポート] をクリックして、Speech SDK パッケージのインポートを開始します。 次の図に示すように、すべての項目がチェックされていることを確認します。
+6. [Mixed Reality Toolkit を Unity シーンに追加](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)し、シーンに適切な名前を付ける (たとえば、*AzureSpeechServices*)
 
-    ![mrlearning-speech-ch1-1-step4](images/mrlearning-speech-ch1-1-step4.png)
+次に、「[Mixed Reality Toolkit プロファイルを構成する方法 (空間認識表示オプションの変更)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)」の手順に従って、シーンの MRTK 構成プロファイルを **[DefaultHoloLens2ConfigurationProfile]** に変更し、空間認識メッシュの表示オプションを **[Occlusion]\(オクルージョン\)** に変更します。
 
-5. チュートリアル資産をダウンロードします。
-    * [MRTK。HoloLens2. 2.3.0.2. unitypackage を実行します。](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
-    * [SpeechSDKAssets unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/Speech_2/SpeechSDKAssets.unitypackage) (バージョン 1.2)
+> [!CAUTION]
+> 上のリンクの「[Mixed Reality Toolkit 用に Unity プロジェクトを構成する](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)」の手順で述べられているように、MSBuild for Unity を有効にしないことを強くお勧めします。
 
-    SpeechSDKAssets asset パッケージは、このチュートリアルシリーズ用に開発された資産とスクリプトのコレクションであり、Azure の Speech SDK の実際の使用方法を示しています。 これは、入門チュートリアルで開発したロケットランチャーアセンブリエクスペリエンスに最終的にインターフェイスを提供する音声コマンド端末です[。レッスン 7.旧暦モジュールサンプルアプリケーションを作成する](mrlearning-base-ch6.md)。
+## <a name="configuring-the-speech-commands-start-behavior"></a>音声コマンドの開始動作の構成
 
-6. Mixed Reality Toolkit と Speech SDK をインポートする場合と同様の手順に従って、2つのチュートリアル資産パッケージを Unity プロジェクトにインポートします。
+音声認識と文字起こしには Speech SDK を使用するため、Speech SDK の機能の妨げにならないように、MRTK の音声コマンドを構成する必要があります。 これを実現するには、音声コマンドの開始動作を [Auto Start]\(自動開始\) から [Manual Start]\(手動開始\) に変更することができます。
 
-7. Mixed Reality Toolkit (MRTK) を構成します。
+[Hierarchy]\(階層\) ウィンドウで **MixedRealityToolkit** オブジェクトを選択した状態で、[Inspector]\(インスペクター\) ウィンドウで **[Input]\(入力\)** タブを選択し、**DefaultHoloLens2InputSystemProfile** と **DefaultMixedRealitySpeechCommandsProfile** を複製し、音声コマンドの **[Start Behavior]\(開始動作\)** を **[Manual Start]\(手動開始\)** に変更します。
 
-    これを行うには、ウィンドウの上部にある [Mixed Reality Toolkit] パネルをクリックし、[シーンに追加] と [構成] を選択します。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section2-step1-1.png)
 
-    ![mrlearning-speech-ch1-1-step7a](images/mrlearning-speech-ch1-1-step7a.png)
+> [!TIP]
+> MRTK プロファイルを複製して構成する方法については、「[Mixed Reality Toolkit プロファイルを構成する方法 (空間認識表示オプションの変更)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)」の説明を参照してください。
 
-    シーン階層で MixedRealityToolkit オブジェクトを選択した状態で、[インスペクター] ウィンドウで [DefaultHoloLens2ConfigurationProfile] を選択し、Mixed Reality Toolkit のアクティブなプロファイルにします。
+## <a name="configuring-the-capabilities"></a>機能の構成
 
-    ![mrlearning-speech-ch1-1-step7b](images/mrlearning-speech-ch1-1-step7b.png)
+Unity メニューで **[Edit]\(編集\)**  >  **[Project Settings]\(プロジェクトの設定\)** を選択して、[Player Settings]\(プレーヤーの設定\) ウィンドウを開きます。次に、 **[Player]\(プレーヤー\)**  >   **[Publishing Settings]\(発行の設定\)** セクションを見つけます。
 
-8. これで、シーンに MRTK から複数の新しい項目が追加されました。 [ファイル]、[名前を付けて保存] の順にクリックし、シーンに SpeechScene という名前を付けて、シーンを別の名前で保存します。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section3-step1-1.png)
 
-    >[!NOTE]
-    >プロジェクトに MRTK を追加した後にシーンで Play を押すと、再生モードにならない場合は、Unity の再起動が必要になることがあります。
+**[Publishing Settings]\(発行の設定\)** で、下にスクロールして **[Capabilities]\(機能\)** セクションまで移動し、チュートリアルの開始時にプロジェクトを作成したときに有効にした **InternetClient**、**Microphone**、および **SpatialPerception** の機能が有効になっていることを再確認します。 次に、**InternetClientServer** と **PrivateNetworkClientServer** の機能を有効にします。
 
-9. シーン階層で MixedRealityToolkit オブジェクトを選択した状態で、[インスペクター] パネルの [& のコピー] をクリックして [複製プロファイル] ポップアップを開きます。 [複製プロファイル] ポップアップで、カスタムプロファイルに適切な名前 (たとえば、Custom HoloLens2ConfigurationProfile) を入力します。 [複製] をクリックしてカスタム構成プロファイルを作成し、アクティブなプロファイルとして設定します。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section3-step1-2.png)
 
-    ![mrlearning-speech-ch1-1-step9](images/mrlearning-speech-ch1-1-step9.png)
+## <a name="importing-the-tutorial-assets"></a>チュートリアルのアセットのインポート
 
-10. また、[インスペクター] パネル (階層で MixedRealityToolkit オブジェクトが選択された状態) で、[診断システムを有効にする] の右側のチェックボックスをオフにして、診断システムを無効にします。
+次の Unity カスタム パッケージを、**一覧に表示されている順序で**ダウンロードして**インポート**します。
 
-    ![mrlearning-speech-ch1-1-step10](images/mrlearning-speech-ch1-1-step10.png)
+* [Microsoft.CognitiveServices.Speech.N.N.N.unitypackage](https://aka.ms/csspeech/unitypackage) (最新バージョン)
+* [MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
+* [MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-speech-services-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage)
 
-11. このチュートリアルでは、音声認識と議事録に入力音声コマンドを使用します。 音声設定を変更するために、入力プロファイルを複製してみましょう。
+> [!TIP]
+> Unity カスタム パッケージをインポートする方法については、「[Mixed Reality Toolkit をインポートする](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)」を参照してください。
 
-    シーン階層で MixedRealityToolkit オブジェクトを選択した状態で、[インスペクター] パネルの [小さい複製] ボタンをクリックして、[複製プロファイル] ポップアップを開きます。 [複製プロファイル] ポップアップで、カスタムプロファイルに適切な名前 (たとえば、Custom HoloLens2InputSystemProfile) を入力し、[複製] をクリックしてカスタム入力システムプロファイルを作成し、アクティブなプロファイルとして設定します。
+チュートリアルのアセットをインポートすると、プロジェクト ウィンドウは次のようになります。
 
-    ![mrlearning-speech-ch1-1-step11](images/mrlearning-speech-ch1-1-step11.png)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section4-step1-1.png)
 
-12. 入力プロファイルが複製されたら、Speech セクションを展開し、前の手順と同じプロセスに従って speech コマンドプロファイルを複製します。
+## <a name="preparing-the-scene"></a>シーンの準備
 
-    ![mrlearning-speech-ch1-1-step12](images/mrlearning-speech-ch1-1-step12.png)
+このセクションでは、チュートリアルのプレハブを追加してシーンを準備し、シーンを制御するように Lunarcom Controller (Script) コンポーネントを構成します。
 
-13. [音声] セクションで、[全般設定] に移動し、[開始動作] を [手動開始] に変更します。
+[Project]\(プロジェクト\) ウィンドウで、 **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.AzureSpeechServices]**  >  **[Prefabs]** フォルダーに移動し、 **[Lunarcom]** プレハブを [Hierarchy]\(階層\) ウィンドウにドラッグしてシーンに追加します。
 
-    ![mrlearning-speech-ch1-1-step13](images/mrlearning-speech-ch1-1-step13.png)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-1.png)
 
-14. [プロジェクト] パネルで、[Lunarcom] フォルダーを展開し、Lunarcom_Base prefab をシーン階層にドラッグします。
+[Hierarchy]\(階層\) ウィンドウで **Lunarcom** オブジェクトを選択した状態で、[Inspector]\(インスペクター\) ウィンドウで **[Add Component]\(コンポーネントの追加\)** ボタンを使用して、**Lunarcom Controller (Script)** コンポーネントを Lunarcom オブジェクトに追加します。
 
-    ![mrlearning-speech-ch1-1-step14](images/mrlearning-speech-ch1-1-step14.png)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-2.png)
 
-15. 階層内の Lunarcom_Base オブジェクトを選択し、位置が x = 0、y = 0、z = 0 に設定されていること、および x = 0、y = 0、z = 0 に設定された回転を確認します。 Scale を read x = 0.008、y = 0.008、および z = 0.01 に設定します。
+> [!NOTE]
+> Lunarcom Controller (Script) コンポーネントは MRTK の一部ではありません。 このチュートリアルのアセットと共に提供されました。
 
-    ![Module4Chapter1step12im](images/module4chapter1step12im.PNG)
+**[Lunarcom]** オブジェクトを選択した状態で、それを展開して子オブジェクトを表示し、次に **Terminal** オブジェクトを Lunarcom Controller (Script) コンポーネントの **[Terminal]\(ターミナル\)** フィールドにドラッグします。
 
-16. [コンポーネントの追加] をクリックし、[Lunarcom コントローラー] を検索して選択します。 このスクリプトは、手順 6. でインポートした Lunarcom アセットパックに含まれています。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-3.png)
 
-    ![Module4Chapter1step13im](images/module4chapter1step13im.PNG)
+**Lunarcom** オブジェクトを選択した状態で、Terminal オブジェクトを展開して子オブジェクトを表示し、**ConnectionLight** オブジェクトを Lunarcom Controller (Script) コンポーネントの **[Connection Light]\(接続ライト\)** フィールドに、**OutputText** オブジェクトを **[Output Text]\(出力テキスト\)** フィールドにドラッグします。
 
-17. アプリケーションを Azure Cognitive Services に接続するには、Speech サービスのサブスクリプションキー (API キーとも呼ばれます) を入力する必要があります。 無料のサブスクリプションキーを取得するには、[こちら](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started)の手順に従ってください。 サブスクリプションキーを取得したら、次の図に示すように、[インスペクター] パネルの [LunarcomController] コンポーネントの [Speech Service API キー] フィールドに入力します。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-4.png)
 
-18. [インスペクター] パネルの [LunarcomController] コンポーネントの [Speech Service Region] フィールドに、サブスクリプションキーにサインアップしたときに選択したリージョンを入力します。 たとえば、"westus" という地域では "米国西部" と入力します。
+**Lunarcom** オブジェクトを選択した状態で、Buttons オブジェクトを展開して子オブジェクトを表示し、次に [Inspector]\(インスペクター\) ウィンドウで **[Buttons]\(ボタン\)** リストを展開し、その **[Size]\(サイズ\)** を 3 に設定し、**MicButton**、**SatelliteButton**、および **RocketButton** の各オブジェクトを **[Element]\(要素\)** 0、1、2 のフィールドにそれぞれドラッグします。
 
-    ![Module4Chapter1step15im](images/module4chapter1step15im.PNG)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section5-step1-5.png)
 
-19. 階層で、左側の矢印をクリックして Lunarcom_Base オブジェクトを展開します。 その後、次の図に示すように、子オブジェクト "ターミナル" に対して同じ操作を行います。
+## <a name="connecting-the-unity-project-to-the-azure-resource"></a>Unity プロジェクトを Azure リソースに接続
 
-20. Lunarcom_Base を選択した状態で、次の図に示すように、階層の Lunarcom テキストをクリックして、[インスペクター] パネルの [LunarcomController] コンポーネントの出力テキストスロットにドラッグします。
+Azure Speech Services を使用するには、Azure リソースを作成し、Speech Service 用の API キーを取得する必要があります。 「[Speech Service を無料で試す](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started)」の手順に従って、ご利用のサービス リージョン (ロケーションとも呼ばれる) と API キー (Key1 または Key2 とも呼ばれる) をメモします。
 
-21. ターミナルオブジェクトをターミナルスロットに、接続光オブジェクトを接続ライトコントローラースロットに対して同じ操作を行います。
+[Hierarchy]\(階層\) ウィンドウで **Lunarcom** オブジェクトを選択し、次に [Inspector]\(インスペクター\) ウィンドウで **Lunarcom Controller (Script)** コンポーネントの **[Speech SDK Credentials]\(Speech SDK 資格情報\)** セクションを見つけ、次のように構成します。
 
-    ![Module4Chapter1step18im](images/module4chapter1step18im.PNG)
+* **[Speech Service API Key]\(Speech Service の API キー\)** フィールドに、API キー (Key1 または Key2) を入力します
+* **[Speech Service Region]\(Speech Service のリージョン\)** フィールドに、小文字を使用し、スペースを削除して、サービス リージョン (ロケーション) を入力します
 
-22. [インスペクター] パネルの LunarcomController スクリプトの [Lunarcom ボタン] セクションの横にある矢印をクリックし、サイズを3に変更します。 Enter キーを押すか、戻ります。 これにより、3つの新しい要素フィールドが表示されます。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section6-step1-1.png)
 
-    ![Module4Chapter1step19im](images/module4chapter1step19im.PNG)
+## <a name="using-speech-recognition-to-transcribe-speech"></a>音声認識を使用して音声を文字に起こす
 
-23. [Lunarcom] ボタンを展開します。このボタンの横にある矢印をクリックし、上記と同じプロセスを使用して、Mic、衛星、およびロケットの各オブジェクトを、次のように、それぞれの LunarcomController コンポーネントの要素0、1、および2にドラッグします。インスペクターパネル。
+[Hierarchy]\(階層\) ウィンドウで **Lunarcom** オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで **[Add Component]\(コンポーネントの追加\)** ボタンを使用して、**Lunarcom Speech Recognizer (Script)** コンポーネントを Lunarcom オブジェクトに追加します。
 
-    ![Module4Chapter1step18im](images/module4chapter1step20im.PNG)
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section7-step1-1.png)
 
-24. 階層内の Lunarcom_Base のオブジェクトを選択します。 [インスペクター] パネルの [コンポーネントの追加] をクリックし、[Lunarcom Speech レコグナイザー] を検索して選択します。 同じ手順を繰り返して、Lunarcom Wake Word レコグナイザーを追加します。
+> [!NOTE]
+> Lunarcom Speech Recognizer (Script) コンポーネントは MRTK の一部ではありません。 このチュートリアルのアセットと共に提供されました。
 
-    ![Module4Chapter1step18im](images/module4chapter1step21im.PNG)
+ゲーム モードに入ったら、まずマイクのボタンを押して音声認識をテストすることができます。
 
-25. Wake Word スロットで、「Activate Terminal」と入力します。 [Word のスロットを閉じる] に「ターミナルを閉じる」と入力します。
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section7-step1-2.png)
 
-    ![Module4Chapter1step18im](images/module4chapter1step22im.PNG)
+次に、お使いのコンピューターにマイクがあると仮定して、何か話すと、音声がターミナルのパネル上に文字で表示されます。
 
-## <a name="build-your-application-to-your-device"></a>デバイスへのアプリケーションのビルド
+![mrlearning-speech](images/mrlearning-speech/tutorial1-section7-step1-3.png)
 
-1. [ファイル > ビルドの設定] に移動して、[ビルドの設定] ウィンドウを再び開きます。
 
-    ![images/mrlearning-ch1-2-ステップ1](images/mrlearning-speach-ch1-2-step1.jpg)
-
-2. [開いているシーンの追加] ボタンをクリックして、試したいシーンが [ビルド内のシーン] リストに含まれていることを確認します。
-
-3. [プレーヤーの設定] ボタンをクリックし、[発行の設定] にアクセスします。 [機能] で、[インターネット]、[インターネットクライアントサーバー]、[プライベートネットワーククライアントサーバー]、[マイクと空間認識] を有効にします。
-
-4. 同じプレーヤー設定で、XR settings にアクセスして、でサポートされている仮想現実を選択します。
-
-5. [ビルド] ボタンを押して、ビルド プロセスを開始します。
-
-    ![mrlearning-ch1-2-手順5](images/mrlearning-speach-ch1-2-step5.jpg)
-
-6. アプリケーション用の新しいフォルダーを作成して、名前を付けます。 下の図では、アプリケーションを含めるために [App] という名前のフォルダーが作成されています。 [フォルダーの選択] をクリックして、新しく作成したフォルダーへのビルドを開始します。 ビルドが完了したら、Unity の [ビルド設定] ウィンドウを閉じてもかまいません。
-
-    ![mrlearning-ch1-2-手順6](images/mrlearning-speach-ch1-2-step6.jpg)
-
-    >[!NOTE]
-    >ビルドが失敗した場合は、もう一度構成してみるか、Unity を再起動してから再度ビルドしてください。 "エラー: CS0246 = 型または名前空間名" XX "が見つかりませんでした (using ディレクティブまたはアセンブリ参照が不足していることを確認してください)" というエラーが表示された場合は、 [Windows 10 SDK (10.0.18362.0)](<https://developer.microsoft.com//windows/downloads/windows-10-sdk>)のインストールが必要になることがあります。
-
-7. ビルドが完了したら、新しくビルドされたアプリケーション ファイルが含まれている、新しく作成されたフォルダーを開きます。 ".Sln" ソリューションファイルをダブルクリックして、Visual Studio でソリューションファイルを開きます。
-
-    >[!NOTE]
-    >新しく作成されたフォルダー (前の手順の名前付け規則に従っている場合は "App" フォルダー) を必ず開いてください。これは、ビルドフォルダー内の .sln ファイルとは異なる、同じ名前の .sln ファイルがそのフォルダー外に存在するためです。 
-
-    ![mrlearning-ch1-2-step7](images/mrlearning-speach-ch1-2-step7.jpg)
-
-    >[!NOTE]
-    >Visual Studio で新しいコンポーネントのインストールを求められた場合は、 [[ツールのインストール] ページ](install-the-tools.md)で指定したとおりにすべての前提条件コンポーネントがインストールされていることを確認します。
-
-8. USB ケーブルを使って HoloLens 2 を PC に接続します。 これらのレッスンの手順では、HoloLens 2 デバイスを使ってテストをデプロイすることを前提としていますが、[HoloLens 2 エミュレーター](using-the-hololens-emulator.md)にデプロイすることも、[サイドローディング用のアプリ パッケージ](<https://docs.microsoft.com//windows/uwp/packaging/packaging-uwp-apps>)を作成することもできます
-
-9. デバイスにビルドする前に、デバイスが開発者モードであることを確認してください。 HoloLens 2 に初めてデプロイする場合は、Visual Studio により、PIN を使用して HoloLens 2 をペアリングするよう求められる場合があります。 開発者モードを有効にするか、Visual Studio とペアリングする必要がある場合は、[こちらの手順](https://docs.microsoft.com//windows/mixed-reality/using-visual-studio)に従ってください。
-
-10. [リリース] 構成と [ARM] アーキテクチャを選択して、HoloLens 2 へのビルド用に Visual Studio を構成します。
-
-    ![mrlearning-ch1-2-step10](images/mrlearning-speach-ch1-2-step10.jpg)
-
-11. 最後の手順は、[デバッグ] > [デバッグなしで開始] を選択して、デバイスにビルドすることです。 [デバッグなしで開始] を選択すると、ビルドが成功した時点でアプリケーションがデバイスですぐに起動しますが、Visual Studio にデバッグ情報は表示されません。 これは、アプリケーションが停止することなく HoloLens 2 上で実行されている間は、USB ケーブルを取り外すことができることも意味します。 また、[ビルド] > [ソリューションの配置] を選択することで、アプリケーションを自動的に起動せずにデバイスに配置することもできます。
-
-    ![mrlearning-ch1-2-step11.JPG](images/mrlearning-speach-ch1-2-step11.jpg)
+> [!CAUTION]
+> アプリケーションは Azure に接続する必要があるため、お使いのコンピューター/デバイスがインターネットに接続されていることを確認してください。
 
 ## <a name="congratulations"></a>結論
 
-Azure を使用して、アプリケーションに音声認識を設定しました。 アプリケーションを実行して、すべての関数と機能が正常に動作していることを確認します。 まず、「手順 25. でターミナルをアクティブ化する」で入力したウェイクワードを言います。 マイクボタンをクリックして音声認識を開始します。 読み上げを開始します。 書き起こしという単語がターミナルに表示されます。 音声認識を停止するには、マイクボタンをもう一度押します。 「ターミナルを閉じる」と言うと、Lunarcom ターミナルが非表示になります。 次のレッスンでは、HoloLens 2 がオフラインであるために Azure の speech SDK が利用できない場合に、デバイスを使用した音声認識を使用してに動的に切り替える方法について説明します。
+Azure で提供される音声認識を実装しました。 デバイスでアプリケーションを実行して、機能が正常に動作していることを確認してください。
 
-[次のチュートリアル: 2. ローカルの音声からテキストへの変換のオフラインモードの追加](mrlearning-speechSDK-ch2.md)
+次のチュートリアルでは、Azure 音声認識を使用してコマンドを実行する方法を学習します。
+
+[次のチュートリアル: 2.音声認識を使用したコマンドの実行](mrlearning-speechSDK-ch2.md)

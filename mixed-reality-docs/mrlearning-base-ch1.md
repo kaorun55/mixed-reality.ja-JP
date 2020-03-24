@@ -7,12 +7,12 @@ ms.date: 11/01/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 9c219313ad6e73cde78efd8e5e718a466ebd6137
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
+ms.openlocfilehash: 56adb4bfc66768684c8269c0f0cafd70c486ea8a
+ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77554402"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376209"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.プロジェクトと最初のアプリケーションの初期化
 
@@ -236,6 +236,9 @@ Unity がビルド処理を完了するまで待ちます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial1-section7-step2-2.png)
 
+> [!NOTE]
+> オプションとして [デバイス] が表示されない場合は、既定のスタートアップ プロジェクトを IC2Lpp プロジェクトから UWP プロジェクトに変更することが必要な場合があります。 **ソリューション エクスプローラー**で、 **[yourprojectname (Universal Windows)]\(yourprojectname (ユニバーサル Windows)\)** を右クリックし、 **[スタートアップ プロジェクトに設定]** を選択します。 
+
 HoloLens 2 をコンピューターに接続します。
 
 > [!IMPORTANT]
@@ -257,6 +260,6 @@ HoloLens 2 をコンピューターに接続します。
 これで、最初の HoloLens 2 アプリケーションがデプロイされました。 手順に従うと、HoloLens 2 によって認識されたすべてのサーフェイスに対応する空間マッピングのメッシュが表示されるはずです。 さらに、ハンド トラッキング用の手および指に対するインジケーターと、アプリケーションのパフォーマンスを監視するためのフレーム レート カウンターも表示されるはずです。 これらは、Mixed Reality ツールキットに含まれている、すぐに使用できる基礎となる部分のほんの一部です。 以降のチュートリアルでは、HoloLens 2 と Mixed Reality ツールキットの機能を十分に探索できるように、シーンにコンテンツや対話機能を追加する作業を開始します。
 
 > [!NOTE]
-> アプリでは、診断プロファイラーに気付くことがあります。この表示を切り替えるには、音声コマンド **Toogle Diagnostics** を使用します。 ただし、一般に、アプリに対する変更がパフォーマンスに影響を与える可能性がある場合を把握するために、開発中に常にプロファイラーを表示したままにしておくことをお勧めします。たとえば、HoloLens 2 アプリケーションは [60 FPSで継続的に実行](understanding-performance-for-mixed-reality.md)される必要があります。
+> アプリでは、診断プロファイラーが表示される場合があります。この表示を切り替えるには、音声コマンド **Toggle Diagnostics** を使用します。 ただし、一般に、アプリに対する変更がパフォーマンスに影響を与える可能性がある場合を把握するために、開発中に常にプロファイラーを表示したままにしておくことをお勧めします。たとえば、HoloLens 2 アプリケーションは [60 FPSで継続的に実行](understanding-performance-for-mixed-reality.md)される必要があります。
 
 [次のチュートリアル:3.ユーザー インターフェイスの作成と Mixed Reality ツールキットの構成](mrlearning-base-ch2.md)

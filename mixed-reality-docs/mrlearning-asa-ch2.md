@@ -1,91 +1,92 @@
 ---
-title: Azure 空間アンカーチュートリアル-2. Azure 空間アンカーの保存、取得、共有
+title: Azure Spatial Anchors チュートリアル - 2. Azure Spatial Anchors の保存、取得、および共有
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 7b19233a9634e2568200476c9483464bbf9dd3c8
-ms.sourcegitcommit: a580166a19294f835b8e09c780f663f228dd5de0
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 4de40bb0b66ed299fa4a571490b33a0454f25817
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77250745"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031706"
 ---
-# <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2. Azure 空間アンカーを保存、取得、共有する
+# <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.Azure Spatial Anchors の保存、取得、および共有
 
-このチュートリアルでは、HoloLens 2 のストレージにアンカー ID を保存することにより、複数のアプリセッションにわたって Azure 空間アンカーを保存する方法について説明します。 また、このアンカー ID を他のデバイスと共有して、複数デバイスのアンカーの配置を行う方法についても説明します。
+このチュートリアルでは、HoloLens 2 のストレージにアンカー ID を保存することにより、複数のアプリ セッションにわたって Azure Spatial Anchors を保存する方法について学習します。 また、このアンカー ID を他のデバイスと共有して、複数デバイスのアンカーの位置合わせ行う方法についても学習します。
 
 ## <a name="objectives"></a>目標
 
-* アプリセッション間の永続化のために、HoloLens 2 ローカルディスクとの間で Azure 空間アンカー Id を保存および取得する方法について説明します。
-* マルチデバイスシナリオでユーザー間で Azure 空間アンカー Id を共有する方法について説明します。
+* アプリ セッション間で永続化するために、Azure Spatial Anchor ID を HoloLens 2 ローカル ディスクに保存したり、そこから取得したりする方法について学習します。
+* マルチデバイス シナリオで、Azure Spatial Anchor ID をユーザー間で共有する方法について学習します
 
 ## <a name="preparing-the-scene"></a>シーンの準備
 
-[プロジェクト] ウィンドウで、[**アセット** > **mrtk] に移動します。AzureSpatialAnchors** > **Prefabs**フォルダー。 CTRL ボタンを押したまま、 **ButtonParent_SaveAnchorId**をクリックして**ButtonParent_ShareAnchorId** 2 つの prefabs を選択し、階層 ウィンドウにドラッグしてシーンに追加します。
+[Project]\(プロジェクト\) ウィンドウで、 **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.AzureSpatialAnchors]**  >  **[Prefabs]\(プレハブ\)** フォルダーに移動します。 Ctrl ボタンを押したまま、 **[ButtonParent_SaveAnchorId]** および **[ButtonParent_ShareAnchorId]** をクリックして 2 つのプレハブを選択し、これらを [Hierarchy]\(階層\) ウィンドウにドラッグしてシーンに追加します。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial2-section1-step1-1.png)
 
-## <a name="persist-azure-anchors-between-app-sessions---save-anchor-id-to-disk"></a>アプリセッション間で Azure のアンカーを保持する-アンカー ID をディスクに保存する
+## <a name="persist-azure-anchors-between-app-sessions---save-anchor-id-to-disk"></a>アプリ セッション間で Azure Anchors を永続化する - アンカー ID をディスクに保存する
 <!-- TODO: Consider renaming to 'Persist Azure Anchors between app sessions' -->
 
-このセクションでは、HoloLens 2 ローカルディスクとの間で Azure Anchor ID を保存および取得する方法について説明します。 これにより、異なるアプリセッション間で同じアンカー ID の Azure に対してクエリを実行できるため、固定されたホログラムを前のアプリセッションと同じ場所に配置できます。
+このセクションでは、Azure Anchor ID を HoloLens 2 ローカル ディスクに保存したり、そこから取得したりするについて学習します。 これにより、Azure に対して、異なるアプリ セッション間で同じアンカー ID をクエリできるため、固定されたホログラムを前のアプリ セッションと同じ場所に配置できます。
 
-[階層] ウィンドウで、2つのボタンが含まれている**ButtonParent_SaveAnchorId**オブジェクトを展開します。1つは、AZURE Anchor ID を HoloLens 2 ストレージに保存するためのボタンで、もう1つは、保存された id をディスクから取得するためのボタンです。
+[Hierarchy]\(階層\) ウィンドウで、Azure Anchor ID を HoloLens 2 ストレージに保存するためのボタンと、保存された ID をディスクから取得するためのボタンの 2 つのボタンを含む **[ButtonParent_SaveAnchorId]** オブジェクトを展開します。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial2-section2-step1-1.png)
 
-前のチュートリアルの「[シーンの指示を操作するためのボタンの構成](mrlearning-asa-ch1.md#configuring-the-buttons-to-operate-the-scene)」の手順に従って、 **Pressable Button Holo レンズ 2 (スクリプト)** コンポーネントと**対話型 (スクリプト)** コンポーネントを次の2つのボタンにそれぞれ構成します。
+前のチュートリアルの[シーンを操作するためのボタンの構成](mrlearning-asa-ch1.md#configuring-the-buttons-to-operate-the-scene)と同じ手順に従い、**Pressable Button Holo Lens 2 (Script)** コンポーネントと **Interactable (Script)** コンポーネントを次の 2 つのボタンそれぞれに対して構成します。
 
-* **SaveAzureAnchorIdToDisk**オブジェクトの場合は、AnchorModuleScript > **SaveAzureAnchorIdToDisk ()** 関数を割り当てます。
-* **GetAzureAnchorIdFromDisk**オブジェクトの場合は、AnchorModuleScript > **GetAzureAnchorIdFromDisk ()** 関数を割り当てます。
+* **[SaveAzureAnchorIdToDisk]** オブジェクトの場合、[AnchorModuleScript] > **[SaveAzureAnchorIdToDisk ()]** 関数を割り当てます。
+* **[GetAzureAnchorIdFromDisk]** オブジェクトの場合、[AnchorModuleScript] > **[GetAzureAnchorIdFromDisk ()]** 関数を割り当てます。
 
-更新されたアプリケーションを HoloLens にビルドすると、Azure アンカー ID を保存することで、アプリセッション間で Azure 空間アンカーを永続化できるようになりました。 テストするには、次の手順を実行します。
+更新されたアプリケーションを HoloLens にビルドすると、Azure Anchor ID を保存することで、アプリ セッション間で Azure Spatial Anchors を永続化できるようになります。 これをテストするには、次の手順を実行します。
 
-1. ロケットランチャーエクスペリエンスを目的の場所に移動します。
+1. ロケット発射台エクスペリエンスを目的の場所に移動します。
 2. Azure セッションを開始します。
-3. Azure Anchor を作成します (ロケットランチャーエクスペリエンスの場所にアンカーを作成します)。
+3. Azure Anchor を作成します (ロケット発射台エクスペリエンスの場所にアンカーを作成します)。
 4. Azure Anchor ID をディスクに保存します。
 5. アプリケーションを再起動します。
-6. ディスクから Azure アンカーを取得します (保存したアンカー ID が読み込まれます)。
+6. ディスクから Azure Anchor を取得します (保存したアンカー ID を読み込みます)。
 7. Azure セッションを開始します。
-8. Azure Anchor を探します (手順 3. の場所にロケットランチャーエクスペリエンスを配置します)。
+8. Azure Anchor を見つけます (手順 3 の場所にロケット発射台エクスペリエンスを配置します)。
 
-## <a name="share-azure-anchors-between-multiple-devices"></a>複数のデバイス間で Azure アンカーを共有する
+## <a name="share-azure-anchors-between-multiple-devices"></a>複数のデバイス間で Azure Anchor を共有する
 
-このセクションでは、複数のデバイス間で Azure Anchor ID を共有する方法について説明します。 これにより、複数のデバイスが同じアンカー ID に対して Azure に対してクエリを実行できるようになり、固定されたホログラムを空間的に配置できるようになります。 空間の配置。つまり、複数のデバイス間で同じ物理的な場所に同じホログラムがある場合は、HoloLens 2 のローカル共有エクスペリエンスが重要になります。
+このセクションでは、複数のデバイス間で Azure Anchor ID を共有する方法について学習します。 これにより、複数のデバイスが同じアンカー ID を Azure に対してクエリできるようになり、固定されたホログラムを空間的に位置合わせできるようになります。 空間的な位置合わせ、つまり複数のデバイス間で同じ物理的な場所に同じホログラムを表示できることは、HoloLens 2 のローカル共有エクスペリエンスにとって重要です。
 
-[複数ユーザー機能のチュートリアル](mrlearning-sharing(photon)-ch1.md)シリーズに記載されている方法を含め、デバイス間で Azure Anchor id を転送する方法は多数あります。 この例では、単純な web サービスを使用して、デバイス間でアンカー Id をアップロードしてダウンロードします。
+Azure Anchor ID をデバイス間で転送するには、[マルチユーザー機能のチュートリアル](mrlearning-sharing(photon)-ch1.md) シリーズで説明されている方法など、さまざまな方法があります。 この例では、デバイス間でアンカー ID をアップロードおよびダウンロードする単純な Web サービスを使用します。
 
-[階層] ウィンドウで、2つのボタンを含む**ButtonParent_ShareAnchorId**オブジェクトを展開します。Azure Anchor ID を web サーバーにアップロードするためのボタンと、web サーバーから ID をダウンロードするためのボタンの1つです。
+[Hierarchy]\(階層\) ウィンドウで、 Azure Anchor ID を Web サーバーにアップロードするためのボタンと、ID を Web サーバーからダウンロードするためのボタンの 2 つのボタンを含む **[ButtonParent_ShareAnchorId]** オブジェクトを展開します。
 
 ![mrlearning-asa](images/mrlearning-asa/tutorial2-section3-step1-1.png)
 
-前のチュートリアルの「[シーンの指示を操作するためのボタンの構成](mrlearning-asa-ch1.md#configuring-the-buttons-to-operate-the-scene)」の手順に従って、 **Pressable Button Holo レンズ 2 (スクリプト)** コンポーネントと**対話型 (スクリプト)** コンポーネントを次の2つのボタンにそれぞれ構成します。
+前のチュートリアルの[シーンを操作するためのボタンの構成](mrlearning-asa-ch1.md#configuring-the-buttons-to-operate-the-scene)と同じ手順に従い、**Pressable Button Holo Lens 2 (Script)** コンポーネントと **Interactable (Script)** コンポーネントを次の 2 つのボタンそれぞれに対して構成します。
 
-* **ShareAzureAnchorIdToNetwork**オブジェクトの場合は、AnchorModuleScript > **ShareAzureAnchorIdToNetwork ()** 関数を割り当てます。
-* **GetAzureAnchorIdFromNetwork**オブジェクトの場合は、AnchorModuleScript > **GetAzureAnchorIdFromNetwork ()** 関数を割り当てます。
+* **[ShareAzureAnchorIdToNetwork]** オブジェクトの場合は、[AnchorModuleScript] > **[ShareAzureAnchorIdToNetwork ()]** 関数を割り当てます。
+* **[GetAzureAnchorIdFromNetwork]** オブジェクトの場合は、[AnchorModuleScript] > **[GetAzureAnchorIdFromNetwork ()]** 関数を割り当てます。
 
-更新されたアプリケーションを2つの HoloLens デバイスにビルドすると、Azure アンカー ID を共有することによって、それらの間で空間の配置を実現できるようになりました。 テストするには、次の手順を実行します。
+更新されたアプリケーションを 2 つの HoloLens デバイスにビルドすると、Azure Anchor ID を共有することで、デバイス間で空間的な位置合わせを実現できるようになります。 これをテストするには、次の手順を実行します。
 
-1. HoloLens デバイス 1: ロケットランチャーエクスペリエンスを目的の場所に移動します。
-2. HoloLens デバイス 1: Azure セッションを開始します。
-3. HoloLens デバイス 1: Azure アンカーを作成します (ロケットランチャーエクスペリエンスの場所にアンカーを作成します)。
-4. HoloLens デバイス 1: Azure Anchor ID をネットワークに共有します。
-5. HoloLens デバイス 2: アプリケーションを再起動します。
-6. HoloLens デバイス 2: ネットワークから共有アンカー ID を取得します (HoloLens デバイス1から共有されたアンカー ID をフェッチします)。
-7. HoloLens デバイス 2: Azure セッションを開始します。
-8. HoloLens デバイス 2: Azure アンカーを検索します (手順 3. の場所でロケットランチャーエクスペリエンスを配置します)。
+1. HoloLens デバイス 1 で次のようにします。ロケット発射台エクスペリエンスを目的の場所に移動します。
+2. HoloLens デバイス 1 で次のようにします。Azure セッションを開始します。
+3. HoloLens デバイス 1 で次のようにします。Azure Anchor を作成します (ロケット発射台エクスペリエンスの場所にアンカーを作成します)。
+4. HoloLens デバイス 1 で次のようにします。Azure Anchor ID をネットワークに共有します。
+5. HoloLens デバイス 2 で次のようにします。アプリケーションを再起動します。
+6. HoloLens デバイス 2 で次のようにします。ネットワークから共有アンカー ID を取得します (HoloLens デバイス 1 から共有されたアンカー ID を取得します)。
+7. HoloLens デバイス 2 で次のようにします。Azure セッションを開始します。
+8. HoloLens デバイス 2 で次のようにします。Azure Anchor を見つけます (手順 3 の場所にロケット発射台エクスペリエンスを配置します)。
 
 > [!TIP]
-> HoloLens が1つしかない場合でも、2つ目の HoloLens デバイスを使用する代わりにアプリケーションを再起動することで、機能をテストできます。
+> HoloLens が 1 つしかない場合でも、2 つ目の HoloLens デバイスを使用する代わりにアプリケーションを再起動することで、機能をテストできます。
 
 ## <a name="congratulations"></a>結論
 
-このチュートリアルでは、azure 空間アンカー ID を HoloLens のローカルディスクに保存することで、アプリケーションセッションとアプリケーションの再起動の間で Azure 空間アンカーを永続化する方法について学習しました。 また、複数のデバイス間で Azure 空間アンカーを共有し、基本的なマルチユーザーの静的なホログラム共有エクスペリエンスを実現する方法についても学習しました。
+このチュートリアルでは、Azure Spatial Anchor ID を HoloLens のローカル ディスクに保存することで、アプリケーションのセッションとアプリケーションの再起動を通して Azure Spatial Anchors を永続化する方法について学習しました。 また、Azure Spatial Anchors を複数のデバイス間で共有し、基本的なマルチユーザーの静的ホログラム共有エクスペリエンスを実現する方法についても学習しました。
 
-次のチュートリアルでは、リアルタイムのフィードバックをユーザーに提供する方法について説明します。 このフィードバックには、アンカーの作成、環境の理解の質、Azure セッションの状態に関する情報が含まれています。 フィードバックがないと、アンカーが Azure に正常にアップロードされたかどうか、環境の品質がアンカーの作成に十分であるか、現在の状態であるかをユーザーが知ることができません。
+次のチュートリアルでは、リアルタイムのフィードバックをユーザーに提供する方法について学習します。 このフィードバックには、アンカーの作成、環境の品質についての理解、および Azure セッションの状態に関する情報が含まれています。 フィードバックがなければ、アンカーが Azure に正常にアップロードされたかどうか、環境の品質がアンカーの作成に十分であるかどうか、または現在の状態をユーザーが知ることができません。
 
-[次のレッスン: 3. Azure 空間アンカーフィードバックの表示](mrlearning-asa-ch3.md)
+[次のレッスン:3.Azure Spatial Anchors フィードバックの表示](mrlearning-asa-ch3.md)

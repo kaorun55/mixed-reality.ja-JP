@@ -1,119 +1,120 @@
 ---
-title: 入門チュートリアル-4. 動的なコンテンツの配置とソルバーの使用
+title: 入門チュートリアル - 4. 動的なコンテンツの配置とソルバーの使用
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 5463f363291790fd5e5d76ffa322a61ca7bf8e31
-ms.sourcegitcommit: bd536f4f99c71418b55c121b7ba19ecbaf6336bb
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 2825f99f49eca6fd7277d02828bfe1bc3c23291a
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77553890"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031221"
 ---
-# <a name="4-placing-dynamic-content-and-using-solvers"></a>4. 動的なコンテンツを配置し、ソルバーを使用する
+# <a name="4-placing-dynamic-content-and-using-solvers"></a>4.動的なコンテンツの配置とソルバーの使用
 <!-- Consider renaming to 'Placing dynamic content using Solvers' -->
 
-ホログラムは、ユーザーに直感的に従うことができ、シームレスで洗練された方法で物理的な環境に配置されると、HoloLens 2 で有効になります。 このチュートリアルでは、複雑な空間配置シナリオを解決するために、ソルバーと呼ばれる MRTK の利用可能な配置ツールを使用して、ホログラムを動的に配置する方法について説明します。 MRTK では、ソルバーはスクリプトと動作のシステムであり、UI 要素がシーン内のユーザー、ユーザー、またはその他のゲームオブジェクトに従うことを許可するために使用されます。 また、特定の場所にすばやくスナップして、アプリケーションをさらに直感的にするために使用することもできます。
+ホログラムは HoloLens 2 で現実のものとなります。ホログラムは直感的にユーザーを追跡し、滑らかで洗練された操作ができるように物理環境に配置されます。 このチュートリアルでは、複雑な空間配置シナリオを解決するために、「ソルバー」として知られる MRTK で使用できる配置ツールを使用して、ホログラムを動的に配置する方法について学習します。 MRTK では、ソルバーとは、UI 要素がシーン内で、あなた、ユーザー、他のゲーム オブジェクトを追跡できるようにするために使用される、スクリプトと動作のシステムです。 また、特定の場所にすばやくスナップして、アプリケーションをさらに直感的にするために使用することもできます。
 
 ## <a name="objectives"></a>目標
 
-* MRTK のソルバーを導入する
-* ソルバーを使用して、ユーザーに続くボタンのコレクションを作成します
-* ソルバーを使用して、ユーザーの追跡対象に従うゲームオブジェクトを作成します。
+* MRTK ソルバーの紹介
+* ソルバーを使用して、ボタン コレクションにユーザーを追跡させる
+* ソルバーを使用して、ユーザーの追跡対象の手をゲーム オブジェクトに追跡させる
 
 ## <a name="location-of-solvers-in-the-mrtk"></a>MRTK でのソルバーの場所
 
- MRTK のソルバーは、MRTK SDK フォルダーにあります。 プロジェクトで使用可能なソルバーを表示するには、プロジェクト ウィンドウで、**資産** >   > **機能**  >  > **ユーティリティ** **ソルバー** の順に**移動します**。
+ MRTK のソルバーは、MRTK SDK フォルダーにあります。 プロジェクトで使用可能なソルバーを表示するには、[Project]\(プロジェクト\) ウィンドウで、 **[Assets]\(アセット\)**  >  **[MixedRealityToolkit.SDK]**  >  **[Features]\(機能\)**  >  **[Utilities]\(ユーティリティ\)**  >  **[Solvers]\(ソルバー\)** に移動します。
 
 ![mrlearning-base](images/mrlearning-base/tutorial3-section1-step1-1.png)
 
-このチュートリアルでは、回転ソルバーと放射状ビューのソルバーの実装について説明します。 MRTK で利用可能なすべてのソルバーの詳細については、 [Mrtk ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)の「[ソルバー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)ガイド」を参照してください。
+このチュートリアルでは、Orbital ソルバーと Radial View ソルバーの実装について説明します。 MRTK で利用可能なすべてのソルバーの詳細については、[MRTK ドキュメント ポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)の[ソルバー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)に関するガイドを参照してください。
 
-## <a name="use-a-solver-to-follow-the-user"></a>ソルバーを使用してユーザーをフォローする
+## <a name="use-a-solver-to-follow-the-user"></a>ソルバーを使用してユーザーを追跡する
 <!-- Consider renaming to 'Use a Solver to have an object follow the user' -->
 
-このセクションでは、前のチュートリアルで作成したボタンコレクションを拡張して、ユーザーの見つめ方向に従うようにします。 さらに、ボタンコレクションが常にであるように、ソルバーも構成します。
+このセクションでは、前のチュートリアルで作成したボタン コレクションを拡張して、ユーザーの視線の方向に従うようにします。 さらに、ボタン コレクションが常に次のようになるようにソルバーを構成します。
 
-* 自然な左から右への読み取りのために、ユーザーの読み取り方向に並列に回転
-* このチュートリアルの後半では、ユーザーの横方向の水平方向の向きを少しずらして配置します。そのため、このチュートリアルの後半で追加するオブジェクトは obstructing ません。
-* ユーザーに対して約半分の arm の長さが配置されているため、ボタンを簡単に押すことができます。
+* 左から右への自然な読み取りのために、ユーザーの読み取り方向に対して平行に回転する
+* ユーザーの水平の視線の向きより少し下に配置することで、このチュートリアルの後の方で追加する他のオブジェクトを妨げないようにする
+* ボタンを押しやすくするために、ユーザーからおよそ腕半分の距離に配置する
 
-このためには、**回転ソルバー**を使用します。これにより、オブジェクトが、参照先のオブジェクトから指定した位置とオフセットにロックされます。
+このためには、参照オブジェクトから、指定された位置とオフセットにオブジェクトをロックする **Orbital ソルバー**を使用します。
 
-### <a name="1-add-the-orbital-solver"></a>1. 回転ソルバーを追加する
+### <a name="1-add-the-orbital-solver"></a>1.Orbital ソルバーを追加する
 
-階層 ウィンドウで、 **buttoncollection**オブジェクトを選択し、インスペクター ウィンドウで **コンポーネントの追加** ボタンを使用して、**回転 (スクリプト)** コンポーネントを buttoncollection オブジェクトに追加します。
+[Hierarchy]\(階層\) ウィンドウで、 **[ButtonCollection]** オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで、 **[Add Component]\(コンポーネントの追加\)** ボタンを使用して、**Orbital (Script)** コンポーネントを ButtonCollection オブジェクトに追加します。
 
 > [!NOTE]
-> ソルバー (この場合は回転 (スクリプト) コンポーネント) を追加すると、ソルバーで必要になるため、ソルバーハンドラー (スクリプト) コンポーネントが自動的に追加されます。
+> ソルバー (この場合は Orbital (Script) コンポーネント) を追加すると、ソルバーで必要になる Solver Handler (Script) コンポーネントが自動的に追加されます。
 
-### <a name="2-configure-the-orbital-solver"></a>2. 回転ソルバーを構成する
+### <a name="2-configure-the-orbital-solver"></a>2.Orbital ソルバーを構成する
 
-**ソルバーハンドラー (スクリプト)** コンポーネントを構成します。
+**Solver Handler (Script)** コンポーネントを構成する
 
-* **追跡対象のターゲットの種類**が**Head**に設定されていることを確認する
+* **[Tracked Target Type]\(追跡対象の種類\)** が **[Head]\(頭\)** に設定されていることを確認します
 
-**回転 (スクリプト)** コンポーネントを構成します。
+**Orbital (Script)** コンポーネントを構成します。
 
-* 向きの**種類**が**追跡対象オブジェクトに従う**ように設定されていることを確認する
-* **ローカルオフセット**を X = 0、Y = 0、Z = 0 にリセットします。
-* **ワールドオフセット**を X = 0、Y =-0.4、Z = 0.3 に変更します。
+* **[Orientation Type]\(向きの種類\)** が **[Follow Tracked Object]\(追跡対象オブジェクトに従う\)** に設定されていることを確認します
+* **[Local Offset]\(ローカル オフセット\)** を X = 0、Y = 0、Z = 0 にリセットします
+* **[World Offset]\(ワールド オフセット\)** を X = 0、Y = -0.4、Z = 0.3 に変更します
 
 ![mrlearning-base](images/mrlearning-base/tutorial3-section2-step2-1.png)
 
-### <a name="3-test-the-orbital-solver-using-the-in-editor-simulation"></a>3. エディター内シミュレーションを使用して回転ソルバーをテストする
+### <a name="3-test-the-orbital-solver-using-the-in-editor-simulation"></a>3.エディター内シミュレーションを使用して Orbital ソルバーをテストする
 
-再生ボタンを押してゲームモードに入り、マウスの右ボタンを押したままにして、次の点に注意してください。
+[Play]\(再生\) ボタンを押してゲーム モードに入り、マウスの右ボタンを押したままにして視線方向を回転させます。次の点に注意してください。
 
-* ButtonCollection の変換位置が、ソルバーの設定によって決定されるようになりました。
-* この場合、ソルバーの影響を受けないキューブは同じ位置に残ります。
+* ButtonCollection の変換位置が、ソルバーの設定によって決定されるようになりました
+* ソルバーの影響を受けない Cube は同じ位置のままになります
 
 ![mrlearning-base](images/mrlearning-base/tutorial3-section2-step3-1.png)
 
 > [!TIP]
-> シーンウィンドウにカメラの射線が表示されない場合は、ギズモメニューが有効になっていることを確認してください。 [ギズモ] メニューと、それを使用してシーンビューを最適化する方法の詳細については、Unity の<a href="https://docs.unity3d.com/Manual/GizmosMenu.html" target="_blank">ギズモメニュー</a>のドキュメントを参照してください。
+> シーン ウィンドウにカメラの光線が表示されない場合は、ギズモ メニューが有効になっていることを確認してください。 ギズモ メニューと、それを使用してシーン ビューを最適化する方法の詳細については、Unity の <a href="https://docs.unity3d.com/Manual/GizmosMenu.html" target="_blank">ギズモ メニュー</a>に関するドキュメントを参照してください。
 >
-> 上の図に示されているようにシーンとゲームウィンドウを並べて表示するには、[シーン] ウィンドウの右側にゲームウィンドウをドラッグするだけです。 ワークスペースのカスタマイズの詳細については、「<a href="https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html" target="_blank">ワークスペース</a>のドキュメントをカスタマイズする」を参照してください。
+> 上の図に示されているようにシーンとゲーム ウィンドウを並べて表示するには、ゲーム ウィンドウをシーン ウィンドウの右側にドラッグします。 ワークスペースのカスタマイズの詳細については、Unity の<a href="https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html" target="_blank">ワークスペースのカスタマイズ</a>に関するドキュメントを参照してください。
 
-## <a name="enabling-objects-to-follow-tracked-hands"></a>追跡したハンドに従ってオブジェクトを有効にする
+## <a name="enabling-objects-to-follow-tracked-hands"></a>オブジェクトに追跡対象の手を追跡させる
 
-このセクションでは、前のチュートリアルで作成したキューブオブジェクトを構成して、ユーザーの追跡対象 (特に右側の手首) に従っていることを確認します。 また、次のように、キューブにソルバーを構成します。
+このセクションでは、前のチュートリアルで作成した Cube オブジェクトを、ユーザーの追跡対象の手 (特に右手の手首) を追跡するように構成します。 さらに、キューブが常に次のようになるようにソルバーを構成します。
 
-* ユーザーの手の回転で向きを変更します。
-* ユーザーの手首に位置指定
+* ユーザーの手の回転に合わせて向きを変える
+* ユーザーの手首の位置に移動する
 
-この場合は、参照先のオブジェクトによってキャストされたビューコーン内のオブジェクトを保持する**放射状ビューのソルバー**を使用します。
+このためには、参照オブジェクトによって投影されるビュー円錐内にオブジェクトを維持する **Radial View ソルバー**を使用します。
 
-### <a name="1-add-the-radial-view-solver"></a>1. 放射状ビューのソルバーを追加する
+### <a name="1-add-the-radial-view-solver"></a>1.Radial View ソルバーを追加する
 
-階層 ウィンドウで、**キューブ**オブジェクトを選択し、インスペクター ウィンドウで **コンポーネントの追加** ボタンを使用して、**放射状ビュー (スクリプト)** コンポーネントキューブオブジェクトを追加します。
+[Hierarchy]\(階層\) ウィンドウで、 **[Cube]** オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで、 **[Add Component]\(コンポーネントの追加\)** ボタンを使用して、**Radial View (Script)** コンポーネントを Cube オブジェクトに追加します。
 
-### <a name="2-configure-the-radial-view-solver"></a>2. 放射状ビューのソルバーを構成する
+### <a name="2-configure-the-radial-view-solver"></a>2.Radial View ソルバーを構成する
 
-**ソルバーハンドラー (スクリプト)** コンポーネントを構成します。
+**Solver Handler (Script)** コンポーネントを構成する
 
-* **追跡対象のターゲットの種類**を**手動**に変更する
-* **追跡**した内容を**右**に変更する
-* 追跡した**ハンドジョイント**を**手首**に変更する
+* **[Tracked Target Type]\(追跡対象の種類\)** を **[Hand Joint]\(手の関節\)** に変更します
+* **[Tracked Handness]\(追跡対象の手\)** を **[Right]\(右\)** に変更します
+* **[Tracked Hand Joint]\(追跡対象の手の関節\)** を **[Wrist]\(手首\)** に変更します
 
-**放射状ビュー (スクリプト)** コンポーネントを構成します。
+**Radial View (Script)** コンポーネントを構成します。
 
-* **参照の方向**を**オブジェクト指向**に変更し、 **[参照方向への向き]** チェックボックスをオンにします。
-* **最小距離**と**最大距離**を0に変更します
+* **[Reference Direction]\(参照方向\)** を **[Object Oriented]\(オブジェクトの向き\)** に変更してから、 **[Orient To Reference Direction]\(参照方向に向ける\)** チェックボックスをオンにします
+* **[Min Distance]\(最小距離\)** および **[Max Distance]\(最大距離\)** を 0 に変更します
 
 ![mrlearning-base](images/mrlearning-base/tutorial3-section3-step2-1.png)
 
-### <a name="3-test-the-radial-view-solver-using-the-in-editor-simulation"></a>3. エディター内シミュレーションを使用して放射状ビューのソルバーをテストする
+### <a name="3-test-the-radial-view-solver-using-the-in-editor-simulation"></a>3.エディター内シミュレーションを使用して Radial View ソルバーをテストする
 
-再生ボタンを押してゲームモードに入り、space キーを押したままにします。 マウスカーソルを移動して手を動かし、マウスの左ボタンを押したままにします。
+[Play]\(再生\) ボタンを押してゲーム モードに入り、スペースキーを押して保持することで手を表示します。 マウス カーソルを移動して手を動かし、マウスの左ボタンを押したままにして手を回転させます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial3-section3-step3-1.png)
 
 ## <a name="congratulations"></a>結論
 
-このチュートリアルでは、MRTK のソルバーを使用して、UI を直感的にユーザーに従う方法を学習しました。 また、オブジェクト (つまりキューブ) にソルバーをアタッチして、ユーザーの追跡対象に従う方法についても学習しました。 MRTK に含まれるこれらの他のソルバーの詳細については、 [Mrtk ドキュメントポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)の「[ソルバー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html)ガイド」を参照してください。
+このチュートリアルでは、MRTK ソルバーを使用して UI に直感的にユーザーを追跡させる方法を学びました。 また、ソルバーをオブジェクト (cube) に追加して、ユーザーの追跡対象の手を追跡させる方法についても学びました。 MRTK に含まれるこれらのソルバーや他のソルバーについて学ぶには、[MRTK ドキュメント ポータル](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)の[ソルバー](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_Solver.html) に関するガイドを参照してください。
 
-[次のチュートリアル: 5. 3D オブジェクトとの対話](mrlearning-base-ch4.md)
+[次のチュートリアル:5.3D オブジェクトの操作](mrlearning-base-ch4.md)

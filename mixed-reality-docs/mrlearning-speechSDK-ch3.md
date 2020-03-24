@@ -1,47 +1,47 @@
 ---
-title: Azure Speech Services チュートリアル-3. Azure Cognitive Services speech translation コンポーネントの追加
-description: このコースでは、mixed reality アプリケーション内で Azure Speech SDK を実装する方法について説明します。
+title: Azure Speech Services のチュートリアル - 3. Azure Cognitive Services の Speech Translation コンポーネントの追加
+description: このコースでは、Mixed Reality アプリケーション内で Azure Speech SDK を実装する方法を学習します。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: dc5300b51ccb151a2e38f9d15b84a4a9031e2bb4
-ms.sourcegitcommit: 17427d4d8c3723d53540f1b7f5bc061bba08c1d6
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: d8e73e24f0522ff71b95ea1886d59893216b0597
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74143226"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79028341"
 ---
-# <a name="3-adding-the-azure-cognitive-services-speech-translation-component"></a>3. Azure Cognitive Services speech 変換コンポーネントを追加する
+# <a name="3-adding-the-azure-cognitive-services-speech-translation-component"></a>3.Azure Cognitive Services の Speech Translation コンポーネントの追加
 
-このチュートリアルでは、プロジェクトの Azure Cognitive Services Speech Translation コンポーネントに加えて、3つの異なる言語に変換する方法についても説明します。
+このチュートリアルでは、Speech Translation をプロジェクトに追加します。これにより、音声を 3 つの異なる言語に翻訳して書き起こすことができます。
+
+## <a name="objectives"></a>目標
+
+* Azure Speech Translation を統合する方法を学習する
 
 ## <a name="instructions"></a>手順
 
-1. 階層内の Lunarcom_Base オブジェクトを選択し、[インスペクター] パネルの [コンポーネントの追加] をクリックします。 [Lunarcom Translation レコグナイザー] を検索して選択します。
+[Hierarchy]\(階層\) ウィンドウで **Lunarcom** オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで **[Add Component]\(コンポーネントの追加\)** ボタンを使用して、**Lunarcom Translation Recognizer (Script)** コンポーネントを Lunarcom オブジェクトに追加し、次のように構成します。
 
-    ![Module4Chapter3step1im](images/module4chapter3step1im.PNG)
+* **[Target Language]\(対象言語\)** を選択した言語 (たとえば、[_German_]\(ドイツ語\)) に変更します。
 
-    オフラインモードシミュレーターを無効にします。
+![mrlearning-speech](images/mrlearning-speech/tutorial3-section1-step1-1.png)
 
-    ![Module4Chapter3noteim](images/module4chapter3noteim.PNG)
+> [!NOTE]
+> Lunarcom Translation Recognizer (Script) コンポーネントは MRTK の一部ではありません。 このチュートリアルのアセットと共に提供されました。
 
-    >[!IMPORTANT]
-    >前の図に示すように、オフラインモードシミュレーターが無効になっていることを確認してから、Speech SDK translator をテストしてください。 を翻訳するには、インターネットに接続されている必要があります。
+ゲーム モードに入ったら、まずサテライト ボタンを押して音声翻訳をテストすることができます。 次に、お使いのコンピューターにマイクがあると仮定して、何かを話すと、選択した言語に音声が翻訳されて、ターミナルのパネル上に文字で表示されます。
 
-2. [Lunarcom 変換認識エンジン] のドロップダウンをクリックし、変換する言語を選択します。
+![mrlearning-speech](images/mrlearning-speech/tutorial3-section1-step1-2.png)
 
-    ![Module4Chapter3step2im](images/module4chapter3step2im.PNG)
-
-3. アプリケーションを実行し、[サテライト] ボタンをクリックして変換をテストし、読み上げを開始します。 [サテライト] ボタンをもう一度クリックして、認識を停止します。 シーンがどのように表示されるかの例を次に示します。 [ターゲット言語] ドロップダウンの下にある言語を自由に変更し (上の図を参照)、他の言語への翻訳を調べることができます。
-
-    シーンの外観の例を次に示します。
-
-    ![Module4Chapter3exampleim](images/module4chapter3exampleim.PNG)
+> [!CAUTION]
+> アプリケーションは Azure に接続する必要があるため、お使いのコンピューター/デバイスがインターネットに接続されていることを確認してください。
 
 ## <a name="congratulations"></a>結論
 
-これで、お客様のプロジェクトは、読み上げた単語を複数の異なる言語に変換できるようになりました。 自由に言語を自由に試して、翻訳の精度をテストしてください。
+プロジェクトでは、話した言葉を複数の異なる言語に正常に翻訳できるようになりました。 デバイスでアプリケーションを実行して、機能が適切に動作していることを確認してください。
 
-[次のチュートリアル: 4. インテントと自然言語の理解の設定](mrlearning-speechSDK-ch4.md)
+[次のチュートリアル: 4.インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)

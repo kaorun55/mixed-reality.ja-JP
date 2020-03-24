@@ -1,26 +1,27 @@
 ---
-title: MR ラーニングベースモジュールの概要
+title: MR Learning Base モジュールの概要
 description: このコースを完了すると、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法を学習することができます。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 04/28/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
-ms.openlocfilehash: 63948e9eb67a177bde22573730014ae3a13a5f7e
-ms.sourcegitcommit: 90ce9415889e7121dd2fd76a893dc3734672881b
-ms.translationtype: MT
+ms.localizationpriority: high
+ms.openlocfilehash: 01429d3952eb97d4f8aaab2d2ce442eb1e1fcdac
+ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64874024"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031711"
 ---
 # <a name="mr-learning-modules"></a>MR 学習モジュール
 
 ## <a name="overview"></a>概要
 
-MR Learning モジュールは、開発者が、最初の Academy チュートリアルシリーズの学習に基づいて、Mixed Reality プラットフォームとデバイス用のアプリケーションを作成する方法を教育するための更新されたアプローチです。 この新しいシリーズで対処する必要があるフィードバックの例をいくつか次に示します。
+MR Learning モジュールは、Academy のオリジナル チュートリアル シリーズからの学習に基づいて、Mixed Reality プラットフォームおよびデバイスのためのアプリケーションを作成する方法を開発者に伝えるための最新のアプローチです。 この新しいシリーズで Microsoft が対応を検討したフィードバックの例としては、以下のようなものがあります。
 
-* チュートリアルでは、Mixed Reality Toolkit の使用方法を実装したり、表示したりしない
-* チュートリアルは、1つの作業を実装する方法を学ぶのに最適ですが、アプリケーションの構築には適していません。
-* 実際に使用できる UI ガイダンスはありません。
+* チュートリアルでは、Mixed Reality ツールキットを実装していないか、使用方法が示されていません
+* チュートリアルは、1 つのものを実装する方法を学ぶのには適していますが、アプリケーションを構築するのには向いていません
+* 実際に使用できる UI ガイダンスがありません
 
-このフィードバックを参考にして、上記の項目に対処するだけでなく、すべての開発者にとって便利な基準コードテンプレートを作成できるようにする一連のチュートリアルを設計しました。
+Microsoft はこのフィードバックを受けて、上記の項目に対処するだけでなく、すべての開発者に有用なベースラインのコードテンプレートを提供する一連のチュートリアルを設計するための取り組みを行っています。
