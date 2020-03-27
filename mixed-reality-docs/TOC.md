@@ -201,11 +201,16 @@
 ### [Edge での WebVR を Windows Mixed Reality と共に使用する](using-webvr-in-edge-with-windows-mixed-reality.md)
 ## ネイティブ
 ### [ネイティブ開発の概要](directx-development-overview.md)
-### はじめに
+### OpenXR
+#### [OpenXR の概要](openxr.md)
+#### [OpenXR の概要](openxr-getting-started.md)
+#### [OpenXR ベスト プラクティス](openxr-best-practices.md)
+#### [OpenXR パフォーマンス](openxr-performance.md)
+#### [OpenXR トラブルシューティング](openxr-troubleshooting.md)
+### WinRT
 #### [ネイティブ ホログラフィック プロジェクトを作成する](creating-a-holographic-directx-project.md)
 #### [HolographicSpace を入手する](getting-a-holographicspace.md)
 #### [ネイティブ レンダリング](rendering-in-directx.md)
-### [OpenXR](openxr.md)
 ## プラットフォームの機能と API
 ### コア構成要素
 #### [座標系](coordinate-systems-in-directx.md)
