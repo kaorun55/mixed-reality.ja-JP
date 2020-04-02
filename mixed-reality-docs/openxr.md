@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 7/29/2019
 ms.topic: article
 keywords: OpenXR、Khronos、BasicXRApp、DirectX、ネイティブ、ネイティブアプリ、カスタムエンジン、ミドルウェア
-ms.openlocfilehash: 8a3cfef506f47a7cc49bff2851b9fc14c8a830b4
-ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
+ms.openlocfilehash: 04b2404889dc74f191543466beb7ae1e516d0d42
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80160008"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549374"
 ---
 # <a name="openxr"></a>OpenXR
 
@@ -62,7 +62,7 @@ Windows Mixed Reality OpenXR ランタイムは、2020年7月に、一連の `MS
 | [ハンドインタラクション<br />(グリップ/aim、エアタップ、つかみ)](hands-and-tools.md) | **使用可能な拡張機能 `MSFT_preview`:**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_interaction_preview">XR_MSFT_hand_interaction_preview</a></code><p>**`MSFT` リリース**: 2020 年4月 *(計画)*</p> |
 | [手 articulation + 手メッシュ](hands-and-tools.md) | **使用可能な拡張機能 `MSFT_preview`:**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_preview">XR_MSFT_hand_tracking_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_hand_tracking_mesh_preview">XR_MSFT_hand_tracking_mesh_preview</a></code><p>**`MSFT` リリース**: 5 月 2020 *(計画済み)*</p> |
 | 他の HoloLens Sdk との相互運用 ( [QR](qr-code-tracking.md)など) | **使用可能な拡張機能 `MSFT_preview`:**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_spatial_graph_bridge_preview">XR_MSFT_spatial_graph_bridge_preview</a></code><p>**`MSFT` リリース**: 5 月 2020 *(計画済み)*</p> |
-| [目の視線入力](eye-tracking.md) | <p>**`MSFT_preview`** : 2020 年4月 *(計画済)*</p><p>**`MSFT` または `EXT` リリース**: 2020 年5月 *(計画)*</p> |
+| [目の視線入力](eye-tracking.md) | <p>**定義されている拡張機能`EXT`** : *(まだサポートされていません)*<br /><code><a href="https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#XR_EXT_eye_gaze_interaction" target="_blank">XR_EXT_eye_gaze_interaction</a></code><p>**プレビューのサポート**: 2020 年4月 *(計画済)*</p><p>**フルサポート**: 5 月 2020 *(計画済み)*</p> |
 | [Mixed Reality Capture<br />(PV カメラからの3番目のレンダリング)](mixed-reality-capture-for-developers.md#render-from-the-pv-camera-opt-in) | **使用可能な拡張機能 `MSFT_preview`:**<br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_secondary_view_configuration_preview">XR_MSFT_secondary_view_configuration_preview</a></code><br /><code><a href="https://microsoft.github.io/OpenXR-MixedReality/openxr_preview/specs/openxr.html#XR_MSFT_first_person_observer_preview">XR_MSFT_first_person_observer_preview</a></code><br /><p>**`MSFT` リリース**: 6 月 2020 *(計画済み)*</p> |
 | [モーションコントローラーレンダリングモデル](motion-controllers.md#rendering-the-motion-controller-model) | <p>**`MSFT_preview`** : 2020 年4月 *(計画済)*</p><p>**`MSFT` リリース**: 2020 年7月 *(計画)*</p> |
 | [シーンの理解 (平面、メッシュ)](scene-understanding.md) | <p>**`MSFT_preview`** : 2020 年5月 *(計画)*</p><p>**`MSFT` リリース**: 2020 年7月 *(計画)*</p> |

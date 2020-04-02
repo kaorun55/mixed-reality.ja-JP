@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 2/28/2020
 ms.topic: article
 keywords: OpenXR、Khronos、BasicXRApp、DirectX、ネイティブ、ネイティブアプリ、カスタムエンジン、ミドルウェア、ベストプラクティス、パフォーマンス、品質、安定性
-ms.openlocfilehash: c0ddbd0604760ccae34d347e93b918be4aead269
-ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
+ms.openlocfilehash: 0a0bbd37521be52ec328b4f32e53969c0ec7fef4
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80362023"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549365"
 ---
 # <a name="openxr-app-best-practices"></a>OpenXR アプリのベストプラクティス
 
@@ -25,8 +25,8 @@ HoloLens 2 に固有のパフォーマンスの推奨事項については、後
 
 ### <a name="gamma-correct-rendering"></a>ガンマ-正しいレンダリング
 
-レンダリングパイプラインのガンマが正しいことを確認する必要があります。 スワップチェーンにレンダリングする場合、レンダーターゲットビュー形式は、スワップチェーン形式 (スワップチェーン形式とレンダーターゲットビューの両方の DXGI_FORMAT_B8G8R8A8_UNORM_SRGB など) と一致する必要があります。
-例外は、アプリのレンダリングパイプラインがシェーダーコードで手動の sRGB 変換を行う場合です。この場合、アプリでは、sRGB スワップチェーン形式を要求しますが、レンダリングターゲットビューには線形形式を使用します (たとえば、要求 DXGI_FORMAT_B8G8R8A8_UNORM_SRGB をコンテンツがダブルガンマ補正されないようにするために、DXGI_FORMAT_B8G8R8A8_UNORM をレンダーターゲットビューとして使用します)。
+レンダリングパイプラインのガンマが正しいことを確認する必要があります。 スワップチェーンにレンダリングする場合、レンダーターゲットビュー形式は、スワップチェーン形式 (スワップチェーン形式とレンダーターゲットビューの両方の `DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` など) と一致する必要があります。
+例外は、アプリのレンダリングパイプラインがシェーダーコード内で手動で srgb 変換を行う場合です。この場合、アプリは srgb スワップチェーン形式を要求しますが、レンダリングターゲットビューには線形形式を使用します (たとえば、要求 `DXGI_FORMAT_B8G8R8A8_UNORM_SRGB` をスワップチェーン形式として使用し、`DXGI_FORMAT_B8G8R8A8_UNORM` をレンダーターゲットビューとして使用します)。
 
 ### <a name="submit-depth-buffer-for-projection-layers"></a>プロジェクションレイヤーの深度バッファーを送信します
 

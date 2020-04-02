@@ -6,12 +6,12 @@ ms.author: thmignon
 ms.date: 07/12/2018
 ms.topic: article
 keywords: 3D、ロゴ、アイコン、モデリング、ランチャー、3D ランチャー、タイル、live cube、ディープリンク、secondarytile、セカンダリタイル、UWP
-ms.openlocfilehash: 5d18f699792760c39df4f814bde470fb9f889db7
-ms.sourcegitcommit: 2cf3f19146d6a7ba71bbc4697a59064b4822b539
+ms.openlocfilehash: 0a2e2177ffa7e381c461a58f373c818c9c5e72c4
+ms.sourcegitcommit: 46bd1a56d272a5880f410751fa8429d65d816431
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73926768"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80549390"
 ---
 # <a name="implement-3d-app-launchers-uwp-apps"></a>3D アプリランチャーを実装する (UWP アプリ)
 
@@ -42,12 +42,12 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 マニフェストの先頭に、uap5 スキーマを追加し、それを ignorable 名前空間として含めます。
 
 ```xml
-<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
          IgnorableNamespaces="uap uap2 uap5 mp"
-         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 
 次に、アプリケーションの既定のタイルで "MixedRealityModel" を指定します。
@@ -85,13 +85,13 @@ MixedRealityModel 要素は、アプリケーションパッケージに格納�
 境界ボックス属性のサポートには、MixedRealityModel 要素のプロパティとして Windows RS4 update が使用されます。 最初にアプリケーションマニフェストの最上部にある境界ボックスを定義するには、uap6 スキーマを追加し、それを無視できる名前空間として含めます。
 
 ```xml
-<Package xmlns:mp="https://schemas.microsoft.com/appx/2014/phone/manifest" 
-         xmlns:uap="https://schemas.microsoft.com/appx/manifest/uap/windows10" 
-         xmlns:uap2="https://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
-         xmlns:uap5="https://schemas.microsoft.com/appx/manifest/uap/windows10/5"
-         xmlns:uap6="https://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+         xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
          IgnorableNamespaces="uap uap2 uap5 uap6 mp"
-         xmlns="https://schemas.microsoft.com/appx/manifest/foundation/windows10">
+         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10">
 ```
 次に、MixedRealityModel で、SpatialBoundingBox プロパティを設定して境界ボックスを定義します。 
 
@@ -118,7 +118,7 @@ Unity を使用する場合は、アプリケーションマニフェストを�
 >[!IMPORTANT]
 >3D ディープリンク (secondaryTiles) は、2D UWP アプリでのみ機能します。 ただし、Windows Mixed Reality ホームから排他的なアプリを起動するための[3d アプリランチャー](implementing-3d-app-launchers.md)を作成できます。
 
-Windows の [開始] の[2d セカンダリタイル](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)と同じように、アプリから[windows mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)に3d モデルを追加して、2d アプリ内のコンテンツへのディープリンクとして使用できるようにすることで、windows Mixed reality 向けに2d アプリケーションを拡張できます。メニュー. たとえば、360°フォトビューアーアプリに直接リンクする360°の球体を作成したり、ユーザーが資産のコレクションから3D コンテンツを配置して、作成者に関する詳細ページを開いたりすることができます。 3D コンテンツを使用して2D アプリケーションの機能を拡張するには、次の2つの方法があります。
+Windows の [スタート] メニューの[2d セカンダリタイル](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-secondary-tiles)と同じように、アプリから[windows mixed Reality ホーム](navigating-the-windows-mixed-reality-home.md)に3d モデルを配置する機能を、2d アプリ内のコンテンツへのディープリンクとして追加することで、windows Mixed reality 向けに2d アプリケーションを拡張できます。 たとえば、360°フォトビューアーアプリに直接リンクする360°の球体を作成したり、ユーザーが資産のコレクションから3D コンテンツを配置して、作成者に関する詳細ページを開いたりすることができます。 3D コンテンツを使用して2D アプリケーションの機能を拡張するには、次の2つの方法があります。
 
 ### <a name="creating-a-3d-secondarytile"></a>3D "secondaryTile" の作成
 
@@ -202,7 +202,7 @@ if (!tile.VisualElements.MixedRealityModel.Uri.Equals(updatedUri))
 
 その他のタイルの特徴と属性、およびそれらを2D タイルに使用する方法の詳細については、 [UWP アプリのドキュメントのタイル](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * 3D アプリランチャーを含む[Mixed reality モデルサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MixedRealityModel)。
 * [3D アプリ起動ツールの設計ガイダンス](3d-app-launcher-design-guidance.md)
