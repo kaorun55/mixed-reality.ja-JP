@@ -243,7 +243,7 @@ PanGesture オブジェクトを選択した状態で、**Mesh Collider** コン
 
 ### <a name="5-enable-simulated-eye-tracking-for-in-editor-simulations"></a>5.エディター内のシミュレーションでシミュレートされた視線追跡を有効にする
 
-[Hierarchy]\(階層\) ウィンドウで **[MixedRealityToolkit]** オブジェクトを選択し、次に [Inspector]\(インスペクター\) ウィンドウで **[Input]\(入力\)** タブを選択し、 **[Input Data Providers]\(入力データ プロバイダー)\** セクションを展開して、 **[Input Simulation Service]\(入力シミュレーション サービス\)** セクションを展開し、**DefaultMixedRealityInputSimulationProfile** を複製して、カスタマイズ可能な独自の **[Input Simulation Profile]\(入力シミュレーション プロファイル\)** に置き換えます。
+[Hierarchy]\(階層\) ウィンドウで **[MixedRealityToolkit]** オブジェクトを選択し、次に [Inspector]\(インスペクター\) ウィンドウで **[Input]\(入力\)** タブを選択し、 **[Input Data Providers]\(入力データ プロバイダー)** セクションを展開して、 **[Input Simulation Service]\(入力シミュレーション サービス\)** セクションを展開し、 **DefaultMixedRealityInputSimulationProfile** を複製して、カスタマイズ可能な独自の **[Input Simulation Profile]\(入力シミュレーション プロファイル\)** に置き換えます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section3-step5-1.png)
 
