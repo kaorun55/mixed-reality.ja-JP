@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 4de40bb0b66ed299fa4a571490b33a0454f25817
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: 36f25229469e848a3f0612a5971cc8e9381262f5
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031706"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362009"
 ---
 # <a name="2-saving-retrieving-and-sharing-azure-spatial-anchors"></a>2.Azure Spatial Anchors の保存、取得、および共有
 
@@ -54,6 +54,9 @@ ms.locfileid: "79031706"
 7. Azure セッションを開始します。
 8. Azure Anchor を見つけます (手順 3 の場所にロケット発射台エクスペリエンスを配置します)。
 
+> [!NOTE]
+> アプリケーションを完全に再起動するには、イマーシブ アプリ ビューを終了した後、[スタート] メニューからアプリケーションを再起動する前に、Mixed Reality ホームのアプリ ウィンドウを閉じる必要があります。 詳細については、「[HoloLens でアプリを使用する](https://docs.microsoft.com/hololens/holographic-home#using-apps-on-hololens)」のドキュメントを参照してください。
+
 ## <a name="share-azure-anchors-between-multiple-devices"></a>複数のデバイス間で Azure Anchor を共有する
 
 このセクションでは、複数のデバイス間で Azure Anchor ID を共有する方法について学習します。 これにより、複数のデバイスが同じアンカー ID を Azure に対してクエリできるようになり、固定されたホログラムを空間的に位置合わせできるようになります。 空間的な位置合わせ、つまり複数のデバイス間で同じ物理的な場所に同じホログラムを表示できることは、HoloLens 2 のローカル共有エクスペリエンスにとって重要です。
@@ -75,7 +78,7 @@ Azure Anchor ID をデバイス間で転送するには、[マルチユーザー
 2. HoloLens デバイス 1 で次のようにします。Azure セッションを開始します。
 3. HoloLens デバイス 1 で次のようにします。Azure Anchor を作成します (ロケット発射台エクスペリエンスの場所にアンカーを作成します)。
 4. HoloLens デバイス 1 で次のようにします。Azure Anchor ID をネットワークに共有します。
-5. HoloLens デバイス 2 で次のようにします。アプリケーションを再起動します。
+5. HoloLens デバイス 2 で次のようにします。アプリケーションを開始します。
 6. HoloLens デバイス 2 で次のようにします。ネットワークから共有アンカー ID を取得します (HoloLens デバイス 1 から共有されたアンカー ID を取得します)。
 7. HoloLens デバイス 2 で次のようにします。Azure セッションを開始します。
 8. HoloLens デバイス 2 で次のようにします。Azure Anchor を見つけます (手順 3 の場所にロケット発射台エクスペリエンスを配置します)。

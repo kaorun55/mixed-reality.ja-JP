@@ -7,12 +7,12 @@ ms.date: 05/02/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 419b381c1240b2cc10708eab03245ed3aabfa859
-ms.sourcegitcommit: 61291e83536c8cb2e8401a8e66060128ede35922
+ms.openlocfilehash: 65bcef6a7c10450816d7a928302b0b266b132f0f
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79416140"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362065"
 ---
 # <a name="5-interacting-with-3d-objects"></a>5.3D オブジェクトの操作
 
@@ -268,7 +268,7 @@ Bounding Box コンポーネントとその関連プロパティの詳細につ�
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-1.png)
 
-**[Assets]\(アセット\)**  >  **[MixedRealityToolkit.SDK]**  >  **[StandardAssets]** > [Materials]\(素材\) に移動して、MRTK で提供されているオーディオ クリップを表示します。次に、適切なオーディオ クリップ (MRTK_Gem オーディオ クリップなど) を **[Audio Clip]\(オーディオ クリップ\)** フィールドに割り当てます。
+**[Assets]\(アセット\)**  >  **[MixedRealityToolkit.SDK]**  >  **[StandardAssets]**  >  **[Audio]\(オーディオ\)** に移動して、MRTK で提供されているオーディオ クリップを表示します。次に、適切なオーディオ クリップ (MRTK_Gem オーディオ クリップなど) を **[Audio Clip]\(オーディオ クリップ\)** フィールドに割り当てます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial4-section6-step4-2.png)
 

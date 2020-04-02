@@ -7,18 +7,20 @@ ms.date: 03/26/2019
 ms.topic: article
 keywords: グラフィックス, cpu, gpu, レンダリング, ガベージ コレクション, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: f889d899ba55f4b3040080f6632cd27db86d6fc3
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 18691ab7993b2802268d3c4ce05532dfa5bd1723
+ms.sourcegitcommit: 9de2cb11321e6517db69e8c93459a205900a2174
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082065"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80160018"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity のパフォーマンスに関する推奨事項
 
 この記事は、[Mixed Reality のパフォーマンスに関する推奨事項](understanding-performance-for-mixed-reality.md)についての記事の内容が基になっていますが、Unity エンジン環境に固有の学習に焦点を当てています。
 
-また、開発者には、[Unity の推奨される環境設定に関する記事](Recommended-settings-for-unity.md)も確認することを強くお勧めします。 この記事には、パフォーマンスに優れた Mixed Reality アプリを構築するための最も重要なシーン構成に関するコンテンツが含まれています。 これらの推奨設定の一部は、以下でも強調して示されています。
+## <a name="use-recommended-unity-project-settings"></a>推奨される Unity プロジェクト設定を使用する
+
+Unity で Mixed Reality アプリのパフォーマンスを最適化する際に最も重要な初めのステップは、[推奨される Unity の環境設定](recommended-settings-for-unity.md)を使用しているかどうかを確認することです。 この記事には、パフォーマンスに優れた Mixed Reality アプリを構築するための最も重要なシーン構成に関するコンテンツが含まれています。 これらの推奨設定の一部は、以下でも強調して示されています。
 
 ## <a name="how-to-profile-with-unity"></a>Unity でプロファイルする方法
 

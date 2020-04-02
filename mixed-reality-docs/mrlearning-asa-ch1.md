@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: fa0ebc409fa38f664bdd0966906c6fd77f7a6081
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 47063fbf9a1b9f3a43497a0742deba2c16b53d99
+ms.sourcegitcommit: 536fd45b48a70bbeca1454cef517ae007225e533
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376149"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362062"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.Azure Spatial Anchors をお使いになる前に
 
@@ -41,23 +41,23 @@ HoloLens 2 チュートリアルのシリーズ 2 へようこそ。 この 3 �
 * 基本的な C# プログラミング能力
 * [開発用に構成された](using-visual-studio.md#enabling-developer-mode) HoloLens 2 デバイス
 * Unity 2019.2.X がインストールされ、ユニバーサル Windows プラットフォーム ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
-* 「[クイックスタート:Azure Spatial Anchors を使用する Unity HoloLens アプリを作成する](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens)」チュートリアルの「[Spatial Anchors リソースを作成する](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)」セクションを完了します。
+* 「[Spatial Anchors リソースを作成する](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)」セクション ([クイック スタート:Azure Spatial Anchors を使用する Unity HoloLens アプリを作成する](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens) チュートリアルにあります) を完了します。
 
 > [!IMPORTANT]
 > このチュートリアル シリーズで推奨されている Unity バージョンは Unity 2019.2.X です。 これは、上のリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
 
 ## <a name="creating-the-unity-project"></a>Unity プロジェクトの作成
-<!-- TODO: Consider renaming to 'Creating and preparing the Unity scene and project'-->
+<!-- TODO: Consider renaming to 'Creating and preparing the Unity project'-->
 
 このセクションでは、新しい Unity プロジェクトを作成し、MRTK 開発用に準備します。
 
-このためには、まず「[プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)」に従います (「[デバイスへのアプリケーションのビルド](mrlearning-base-ch1.md#build-your-application-to-your-device)」の手順は除く)。これには、次の手順が含まれます。
+このためには、まず「[プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)」に従ってください (「[デバイスへのアプリケーションのビルド](mrlearning-base-ch1.md#build-your-application-to-your-device)」の手順は除く)。これには、次の手順が含まれます。
 
-1. [新しい Unity プロジェクトを作成](mrlearning-base-ch1.md#create-new-unity-project)し、それに適切な名前 (たとえば、"*MRTK Tutorials*") を付ける。
+1. [新しい Unity プロジェクトを作成](mrlearning-base-ch1.md#create-new-unity-project)して、適切な名前を付ける (たとえば、*MRTK Tutorials*)
 
 2. [Windows Mixed Reality 用に Unity プロジェクトを構成する](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)
 
-3. [TextMesh Pro Essential Resources をインポートする](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)
+3. [TextMesh Pro の Essential Resources (重要なリソース) をインポートする](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)
 
 4. [Mixed Reality Toolkit をインポートする](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)
 
