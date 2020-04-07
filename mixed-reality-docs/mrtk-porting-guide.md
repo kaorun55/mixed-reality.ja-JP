@@ -7,12 +7,12 @@ ms.date: 10/14/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Windows Mixed Reality, テスト, MRTK, MRTK バージョン 2, HoloLens 2
-ms.openlocfilehash: 8e0c66a1c3d8ebd5422d19a02f313147ecf76653
-ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
+ms.openlocfilehash: ced33a082152822779ae23a854800072bc8dfb5f
+ms.sourcegitcommit: d451b2055593ba8d0e4e05132ce889d60c71ee81
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77092036"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80613987"
 ---
 # <a name="get-your-existing-app-ready-for-hololens-2"></a>既存のアプリを HoloLens 2 で利用できるようにする
 
@@ -77,7 +77,7 @@ HoloLens (第 1 世代) は、x86 プロセッサ上でアプリケーション�
 MRTK バージョン 2 の使用方法の詳細については、以下を参照してください。
 - [MRTK のランディング ページ](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)
 - [MRTK をお使いになる前に](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html)
-- [MRTK の手](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSystem/HandTracking.html)
+- [MRTK の手](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/Input/HandTracking.html)
 - [MRTK の視線追跡](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_Main.html)
 
 ### <a name="prepare-for-the-migration"></a>移行を準備する
