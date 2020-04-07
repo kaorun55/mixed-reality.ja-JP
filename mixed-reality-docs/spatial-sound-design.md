@@ -6,12 +6,12 @@ ms.author: kegodin
 ms.date: 11/02/2019
 ms.topic: article
 keywords: Windows Mixed Reality、空間サウンド、デザイン、スタイル
-ms.openlocfilehash: 34923e1ebfc8e46ea8e67a4444fe3c2691efd4db
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 08844f6d837407d52ad2ab84b78440ce856151fc
+ms.sourcegitcommit: b1ca4194eff452804ce5852208cce9815c6a4500
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75182012"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80677983"
 ---
 # <a name="how-to-use-sound-in-mixed-reality-applications"></a>Mixed reality アプリケーションでサウンドを使用する方法
 
@@ -46,20 +46,20 @@ ms.locfileid: "75182012"
 
 ### <a name="gesture-interactions"></a>ジェスチャの相互作用
 Mixed reality では、ユーザーはマウスを使用してボタンを操作できます。 ボタンの操作は、通常、ユーザーがボタンをクリックするのではなく、ユーザーが操作をキャンセルできるようにしたときに発生します。 サウンドを使用して、これらのステージを補強します。 離れた場所にあるボタンをユーザーがターゲットとして使用できるようにするには、ポインターをポイントするサウンドの使用も検討してください。
-* ボタン-enter キーを押すと、tactile の "クリック" が短くなります。<br/>例: [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
-* ボタン-"押されていない" サウンドは、同様の tactile 感を持つ必要があります。 押されたサウンドよりも高いピッチで、完了の意味がわかります。<br/>例: [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
+* ボタン-enter キーを押すと、tactile の "クリック" が短くなります。<br/>例: [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* ボタン-"押されていない" サウンドは、同様の tactile 感を持つ必要があります。 押されたサウンドよりも高いピッチで、完了の意味がわかります。<br/>例: [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
 * ホバーサウンドの場合は、低周波数の thud やバンプなど、微妙で脅威のないサウンドを使用することを検討してください。
 
 ### <a name="direct-manipulation"></a>直接操作
 HoloLens 2 では、独自の追跡はユーザーインターフェイス要素の直接操作をサポートしています。 他の物理的なフィードバックがない場合は、音が重要になります。
 
 キーストロークの一番下に到達したときにユーザーが他の情報を取得しないため、直接操作では*ボタンの押下*音が重要になります。 キー移動のサウンドインジケーターは、小、軽度、occluded にすることができます。 ジェスチャの対話と同様に、ボタンを押すと、クリックのような短い tactile サウンドが表示されます。 Unpresses は、同じようなクリック音を持つ必要がありますが、ピッチが発生します。
-* 例: [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
-* 例: [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_ButtonUnpress)
+* 例: [MRTK_ButtonPress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonPress.wav)
+* 例: [MRTK_ButtonUnpress .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_ButtonUnpress.wav)
 
 グラブまたはリリースアクションを視覚的に確認することは困難です。 多くの場合、ユーザーの手は視覚効果の高い方法であり、ハードハンドオブジェクトには "グラブ" という実際の視覚的な類似性がありません。 サウンドは、成功したグラブとリリースの相互作用を効果的に伝えることができます。
-* グラブアクションには、オブジェクトの周りを閉じる指の概念を evokes する、やや muffled な短い tactile サウンドが必要です。 また、"whoosh" 音が発生して、手の動きを知らせる音が出てくることもあります。<br/>例: [MRTK_Move_Start .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_Start.wav)
-* リリースアクションは、同様の短いサウンドと tactile サウンドを取得する必要があります。 通常は、グラブ音と逆の順序で、オブジェクトが所定の位置にあることを通知する "whoosh" に影響を与えます。<br/>例: [MRTK_Move_End .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Audio/MRTK_Move_End.wav)
+* グラブアクションには、オブジェクトの周りを閉じる指の概念を evokes する、やや muffled な短い tactile サウンドが必要です。 また、"whoosh" 音が発生して、手の動きを知らせる音が出てくることもあります。<br/>例: [MRTK_Move_Start .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_Move_Start.wav)
+* リリースアクションは、同様の短いサウンドと tactile サウンドを取得する必要があります。 通常は、グラブ音と逆の順序で、オブジェクトが所定の位置にあることを通知する "whoosh" に影響を与えます。<br/>例: [MRTK_Move_End .wav](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Audio/MRTK_Move_End.wav)
 
 *描画*の相互作用は、ユーザーの手の動きによってボリュームが決定される、永続的なループサウンドを取得する必要があります。 ユーザーの手が、すぐに手を移動するときには、静かである必要があります。
 
@@ -108,7 +108,7 @@ Spatialization には、いくつかの CPU コストが伴います。 多く�
 ### <a name="which-spatialization-technology-to-use"></a>使用する spatialization テクノロジ
 ヘッドホンまたは HoloLens スピーカーでは、head 関連の転送関数 (HRTF) ベースの spatialization テクノロジを使用します。 これらのテクノロジは、物理的な世界でのヘッドの周りにおけるサウンド伝達をモデル化します。 サウンドソースが1のヘッドの向こう側にある場合でも、サウンドは減衰と遅延によって遠くの耳に伝達されます。 これに対して、スピーカーパンは減衰にのみ依存し、サウンドが右側にあるときは左の耳に合計の減衰を適用します (逆の場合もあります)。 この手法は、"通常の聴覚" リスナーでは不快になる可能性があり、1つの耳で聴覚に障害があるリスナーではアクセスできません。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 * [Unity で空間サウンドを使用する](spatial-sound-in-unity.md)
 * [Roboraid のケーススタディ](case-study-using-spatial-sound-in-roboraid.md)
 * [HoloTour のケーススタディ](case-study-spatial-sound-design-for-holotour.md)
