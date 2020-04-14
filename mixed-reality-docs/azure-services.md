@@ -7,12 +7,12 @@ ms.author: grbury
 ms.date: 08/21/2019
 ms.topic: overview
 keywords: 混合現実、開発、開発、HoloLens、Azure サービス、空間アンカー、音声、ビジョン、リモートレンダリング
-ms.openlocfilehash: 692c99bfa21fab8e01d38bebb34f656114d9fee3
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: a79495fd9bc82622d0ded14b7b4048584aed1da3
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73439503"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277750"
 ---
 # <a name="azure-mixed-reality-services"></a>Azure mixed reality サービス
 Azure mixed reality サービスを使用して、人間全員が、3次元の物理的な世界である専門家であることを、ロック解除します。 仕事や世界のコンテキスト内でデジタル情報をキャプチャして表示することで、ユーザーがより効果的に作成、学習、共同作業を行うことができます。 3D をモバイルデバイス、ヘッドセット、およびその他のならではデバイスに移動します。 Azure を使用すると、最も機密性の高い情報を確実に保護することができます。
@@ -46,7 +46,7 @@ Azure リモートレンダリングプレビューを使用して、すべて�
        [![音声認識](images/speech.jpg)](https://docs.microsoft.com/azure/cognitive-services/speech-service/)
     :::column-end:::
     :::column span="2":::
-        ### <a name="speechhttpsdocsmicrosoftcomazurecognitive-servicesspeech-service"></a>[音声認識](https://docs.microsoft.com/azure/cognitive-services/speech-service/)
+        ### <a name="speech"></a>[音声認識](https://docs.microsoft.com/azure/cognitive-services/speech-service/)
         音声認識を使用して、音声処理機能を任意のアプリやサービスに統合する方法について説明します。 読み上げられた言語をテキストに変換したり、標準的な (またはカスタマイズ可能な) 音声フォントを使用して、テキストから自然に発音した音声を生成します。 任意のサービスを無料で試すことができ、次の機能を使用して音声対応のアプリとサービスをすばやく作成できます。
     :::column-end:::
 :::row-end:::
@@ -58,15 +58,13 @@ Azure リモートレンダリングプレビューを使用して、すべて�
        [![ビジョン](images/vision.jpg)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
     :::column-end:::
     :::column span="2":::
-        ### <a name="visionhttpsdocsmicrosoftcomazurecognitive-servicescomputer-vision"></a>[ビジョン](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
+        ### <a name="vision"></a>[ビジョン](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
         画像、ビデオ、およびデジタルインクコンテンツを認識し、識別し、キャプションし、インデックスを作成し、モデレートします。アプリやサービスが画像、ビデオ、およびデジタルインク内のコンテンツを正確に特定して分析する方法について説明します。
     :::column-end:::
 :::row-end:::
 
 
-
-
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * HoloLens 2-1 の azure 空間アンカーチュートリアル[Azure 空間アンカーの](mrlearning-asa-ch1.md)概要
 * HoloLens 2- [1、音声認識と議事録の統合と使用](mrlearning-speechSDK-ch1.md)に関する Azure Speech Services チュートリアル
