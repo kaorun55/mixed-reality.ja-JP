@@ -197,8 +197,10 @@
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
 ## Unreal
 ### [Unreal 開発の概要](unreal-development-overview.md)
-## WebVR
-### [Edge での WebVR を Windows Mixed Reality と共に使用する](using-webvr-in-edge-with-windows-mixed-reality.md)
+## JavaScript
+### [JavaScript 開発の概要](javascript-development-overview.md)
+### [WebXR](webxr-overview.md)
+### [WebVR](webvr-overview.md)
 ## ネイティブ
 ### [ネイティブ開発の概要](directx-development-overview.md)
 ### OpenXR
