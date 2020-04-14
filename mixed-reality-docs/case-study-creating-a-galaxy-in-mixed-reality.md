@@ -1,17 +1,17 @@
 ---
 title: ケーススタディ-mixed reality での galaxy の作成
 description: Microsoft HoloLens を出荷する前に、開発者コミュニティに、新しいデバイスに対して経験豊富な内部チームビルドを表示するアプリの種類を尋ねました。 5000を超えるアイデアが共有されており、24時間の Twitter の投票の後、優勝者は "Galaxy エクスプローラ" という考え方でした。
-author: KarimLUCCIN
+author: karimluccin
 ms.author: kaluccin
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Galaxy エクスプローラー、HoloLens、Windows Mixed Reality、アイデアの共有、ケーススタディ
-ms.openlocfilehash: 696662eb92371708389f8a128dcee6a61acf1816
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: f13395250c8a73718408c051ab95d2ec4bf62014
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436880"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278180"
 ---
 # <a name="case-study---creating-a-galaxy-in-mixed-reality"></a>ケーススタディ-mixed reality での galaxy の作成
 
@@ -23,7 +23,7 @@ Andy Zibits、プロジェクトのアートリーダー、およびチームの
 
 [私たちのチーム](galaxy-explorer.md#meet-the-team)は、3つの開発者、3人のアーティスト、プロデューサー、1人のテスト担当者で構成されており、6週間で完全に機能するアプリを構築しました。これにより、天の川のような優れた方法を習得し、その結果を調べることができます。
 
-HoloLens の能力を最大限に活用して、お客様の生きた空間で3D オブジェクトを直接表示することを望んでいました。したがって、ユーザーが近くに拡大して個々の星を見ることができる現実的な外観の galaxy を作成することにしました.
+HoloLens の能力を最大限に活用して、お客様の生きた空間で3D オブジェクトを直接表示することにしました。したがって、リアルな外観の galaxy を作成することを決定しました。
 
 開発の最初の週では、天の川方法の表記についていくつかの目標がありました。これは、高度、動き、および感覚容量を必要としています。これは、galaxy の形の作成に役立つ星です。
 
@@ -41,7 +41,7 @@ HoloLens の能力を最大限に活用して、お客様の生きた空間で3D
 
 ### <a name="creating-the-position-of-the-stars"></a>星の位置の作成
 
-チームメンバーの1人が、最初のC#位置に星を生成するコードを既に作成しています。 星は楕円上にあり、その位置は (**curveoffset**、 **ellipseSize**、**標高**) で記述できます。 **curveoffset**は楕円に沿った星の角度で、 **ellipseSize**は楕円の次元です。X と Z に沿って、galaxy 内の星の適切な昇格が昇格します。 このため、各スター属性で初期化されるバッファー ([Unity の ComputeBuffer](https://docs.unity3d.com/ScriptReference/ComputeBuffer.html)) を作成し、それを GPU に送信して、残りのエクスペリエンスに使用することができます。 このバッファーを描画するには、 [Unity の DrawProcedural](https://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html)を使用します。これにより、galaxy を表す実際のメッシュがなくても、任意のポイントのセットに対してシェーダー (GPU 上のコード) を実行できます。
+チームメンバーの1人が、最初のC#位置に星を生成するコードを既に作成しています。 星は楕円上にあり、その位置は (**curveoffset**, **ellipseSize**,**標高**) によって記述できます。 **curveoffset**は楕円に沿った星の角度、 **ellipseSize**は X と Z に沿った楕円の次元で、galaxy 内では星の適切な標高を昇格します。 このため、各スター属性で初期化されるバッファー ([Unity の ComputeBuffer](https://docs.unity3d.com/ScriptReference/ComputeBuffer.html)) を作成し、それを GPU に送信して、残りのエクスペリエンスに使用することができます。 このバッファーを描画するには、 [Unity の DrawProcedural](https://docs.unity3d.com/ScriptReference/Graphics.DrawProcedural.html)を使用します。これにより、galaxy を表す実際のメッシュがなくても、任意のポイントのセットに対してシェーダー (GPU 上のコード) を実行できます。
 
 **CPU**
 
@@ -74,7 +74,7 @@ v2g vert (uint index : SV_VertexID)
 
 このように、回転したさまざまなパターンとパーティクルシステムを試しました。
 
-私たちのチームは、galaxies の機能についていくつかの調査を行ってきました。これは、"[密度の波理論](https://en.wikipedia.org/wiki/Density_wave_theory)" に基づいて楕円に対してパーティクルを移動できるようにするためのカスタムパーティクルシステムを作成しました。これにより、galaxy のアームは次の領域になります。密度は高くなりますが、トラフィックが詰まっているように一定の流束になります。 これは安定した安定したように見えますが、各星はそれぞれの楕円に沿って移動されるため、実際には腕に沿って移動します。 システムでは、パーティクルが CPU 上に存在することはありません。カードを生成し、GPU 上にすべてを回転させるので、システム全体が単に初期状態 + 時間になります。 次のように進行します。
+私たちのチームは、galaxies の機能についていくつかの調査を行ってきました。これは、"[密度の波理論](https://en.wikipedia.org/wiki/Density_wave_theory)" に基づいて楕円の粒子を移動できるようにするために、galaxy の腕が密度の高い領域であるにもかかわらず、トラフィックの量が多いという点で一定の流量であることを theorizes これは安定した安定したように見えますが、各星はそれぞれの楕円に沿って移動されるため、実際には腕に沿って移動します。 システムでは、パーティクルが CPU 上に存在することはありません。カードを生成し、GPU 上にすべてを回転させるので、システム全体が単に初期状態 + 時間になります。 次のように進行します。
 
 ![GPU レンダリングを使用したパーティクルシステムの進行状況](images/spiral-galaxy-arms-500px.jpg)
 
@@ -203,6 +203,6 @@ Galaxy エクスプローラーの開発プロセスの詳細については、 
 </table>
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [GitHub の Galaxy エクスプローラー](https://github.com/Microsoft/GalaxyExplorer)
 * [YouTube での Galaxy エクスプローラープロジェクトの更新](https://www.youtube.com/playlist?list=PLZCHH_4VqpRj0Nl46J0LNRkMyBNU4knbL)

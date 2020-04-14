@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 07/11/2019
 ms.topic: article
 keywords: リリースノート、バージョン、windows 10、ビルド、19h1、os、2019年5月
-ms.openlocfilehash: f5163e128c3f1e1b68d827b09078b565a58c5a4d
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 97bf4c3b5c24fc6f0c763b8dd9f146bbaa01187a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438317"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277630"
 ---
 # <a name="release-notes---may-2019"></a>リリースノート-2019 年5月
 
@@ -44,6 +44,10 @@ Windows Mixed Reality で Win32 アプリケーションを起動するには、
 
 HoloLens (第1世代) は、長期的なサービス (LTS) 状態に入ります。 今後の更新では、 [Windows 10 10 月2018リリース](release-notes-october-2018.md)の HOLOLENS (RS5 とも呼ばれます) との機能パリティを維持しながら、問題とセキュリティの修正に焦点を当てています。 
 
+## <a name="known-issues"></a>既知の問題
+
+イマーシブヘッドセットが正しく機能するためには、モニターが PC に接続されていることを必要とする問題を追跡しています。 Backpack PC ユーザーは、アクティブなディスプレイアダプター (または EDID エミュレーター) を使用して、PC モニターが使用されていないときに、イマーシブヘッドセットが引き続きレンダリングされるようにすることができます。 
+
 ## <a name="provide-feedback-and-report-issues"></a>フィードバックの提供と問題の報告
 
 フィードバックとレポートに関する問題を提供するには、Windows 10 PC または HoloLens デバイス[でフィードバックハブアプリ](give-us-feedback.md)を使用してください。 フィードバックハブを使用すると、エンジニアが迅速に問題をデバッグして解決できるように、必要な診断情報がすべて含まれるようになります。
@@ -61,7 +65,7 @@ HoloLens (第1世代) は、長期的なサービス (LTS) 状態に入ります
 * [リリース ノート - 2016 年 5 月](release-notes-may-2016.md)
 * [リリース ノート - 2016 年 3 月](release-notes-march-2016.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [イマーシブヘッドセットのサポート (外部リンク)](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/troubleshooting-windows-mixed-reality)
 * [HoloLens サポート (外部リンク)](https://support.microsoft.com/products/hololens)
 * [ツールのインストール](install-the-tools.md)

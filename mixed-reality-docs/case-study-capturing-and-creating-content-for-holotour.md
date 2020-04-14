@@ -1,17 +1,17 @@
 ---
 title: ケーススタディ-HoloTour
 description: Microsoft HoloLens の HoloTour は、世界中のアイコンの位置をイマーシブ3D で表示します。 このケーススタディでは、HoloTour に使用するコンテンツをキャプチャして作成するプロセスについて説明します。
-author: DannyAskew
+author: dannyaskew
 ms.author: daaske
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloTour、HoloLens、Windows Mixed Reality
-ms.openlocfilehash: 035bec9b0d46a31978bc91f23bfb3a5ee47d6247
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 59c3dffd48009aa792643ea27b59f8f6f85b64d7
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436925"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278190"
 ---
 # <a name="case-study---holotour"></a>ケーススタディ-HoloTour
 
@@ -152,5 +152,5 @@ Pantheon 以外の他の資産は、ビデオを撮影している場所に存�
 
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [ビデオ: Microsoft HoloLens: HoloTour](https://www.youtube.com/watch?v=pLd9WPlaMpY)

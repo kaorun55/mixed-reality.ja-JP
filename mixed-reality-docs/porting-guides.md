@@ -1,17 +1,17 @@
 ---
 title: 移植ガイド
 description: 既存のイマーシブアプリケーションを Windows Mixed Reality に移植する方法を説明するステップバイステップチュートリアル。
-author: ChimeraScorn
+author: chimerascorn
 ms.author: alexturn
 ms.date: 10/02/2018
 ms.topic: article
 keywords: ポート、移植、unity、ミドルウェア、エンジン、UWP
-ms.openlocfilehash: 5d3debc9a810873f21a9f55a32061565d4ce75ae
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+ms.openlocfilehash: 06501742d4b5c30036982deef2ec2a88171912bf
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539508"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278040"
 ---
 # <a name="porting-guides"></a>移植ガイド
 
@@ -152,7 +152,7 @@ Windows Mixed Reality は、ハイエンドゲーム Pc から広範な市場メ
 
 [Unity](https://docs.unity3d.com/Manual/Profiler.html)と[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)のどちらにも、パフォーマンスプロファイラーと、パフォーマンスプロファイルと最適化に関する[Microsoft](understanding-performance-for-mixed-reality.md)と[Intel](https://software.intel.com/articles/vr-content-developer-guide)の両方の発行ガイドラインが含まれています。 [混合現実のパフォーマンスを理解](understanding-performance-for-mixed-reality.md)することで、パフォーマンスの詳細な説明があります。 さらに、unity の[パフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)には、unity に関する具体的な詳細があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [Unity 用入力移植ガイド](input-porting-guide-for-unity.md)
 * [Windows Mixed Reality の PC ハードウェアの最小互換性ガイドライン](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [Mixed Reality のパフォーマンスについて](understanding-performance-for-mixed-reality.md)

@@ -1,17 +1,17 @@
 ---
 title: DirectX でのローカルアンカー転送
 description: 空間アンカーを転送して2つの HoloLens デバイスを同期する方法について説明します。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens, 同期, 空間アンカー, 転送, マルチプレイヤー, ビュー, シナリオ, チュートリアル, サンプルコード, 転送, ローカルアンカー転送, アンカーエクスポート, アンカーインポート
-ms.openlocfilehash: f961862c3c49872484683e264fb9c62b5d0b60ee
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: e709f107e280f9c88a4f1af590cb62de301633fe
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79376029"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278070"
 ---
 # <a name="local-anchor-transfers-in-directx"></a>DirectX でのローカルアンカー転送
 

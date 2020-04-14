@@ -1,18 +1,18 @@
 ---
 title: Mixed Reality とは
 description: この記事では、複合現実について定義し、複合現実の範囲における単純な AR デバイスや VR デバイス、および Microsoft HoloLens や Windows Mixed Reality イマーシブ ヘッドセットなどの Windows Mixed Reality デバイスの位置づけについて説明します。
-author: BrandonBray
+author: brandonbray
 ms.author: branbray
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 複合現実, ホログラフィック, ar, vr, mr, xr, 拡張現実, 仮想現実, 説明
 ms.localizationpriority: high
-ms.openlocfilehash: f170fe7a3353ac0cce1bd7532802eaff7a357494
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 7b0dcbdb88f880d4c1632fae874ba6a610f023fb
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082078"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278050"
 ---
 # <a name="what-is-mixed-reality"></a>Mixed Reality とは
 

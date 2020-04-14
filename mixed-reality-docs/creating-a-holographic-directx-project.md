@@ -1,17 +1,17 @@
 ---
 title: Holographic DirectX プロジェクトの作成
 description: Windows Mixed Reality アプリテンプレートに基づいて新しい holographic アプリを作成する方法について説明します。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, holographic アプリ, 新しいアプリ, UWP アプリ, テンプレートアプリ, ホログラム, 新しいプロジェクト, チュートリアル, ダウンロード, サンプルコード
-ms.openlocfilehash: d99478a0d98d0593b7b82f25080d20913789cb6c
-ms.sourcegitcommit: f4812e1312c4751a22a2de56771c475b22a4ba24
+ms.openlocfilehash: 30f2c630b2919fbc304dc96d13cab74e22ed4adc
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74940852"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277920"
 ---
 # <a name="creating-a-holographic-directx-project"></a>Holographic DirectX プロジェクトの作成
 
@@ -25,7 +25,7 @@ DirectX 11 holographic UWP アプリテンプレートは DirectX 11 UWP アプ�
 * [見つめ](gaze-and-commit.md)入力を処理し、簡単な[ジェスチャ](gaze-and-commit.md#composite-gestures)を認識します。
 * 全画面表示のステレオレンダリングモードに切り替えます。
 
-## <a name="how-do-i-get-started"></a>使用を開始するには
+## <a name="how-do-i-get-started"></a>接続を開始する前に
 
 まず、Visual Studio 2019 および Windows Mixed Reality アプリテンプレートのダウンロードに関する説明に従って、[ツールをインストール](install-the-tools.md)します。 混合 reality アプリテンプレートは、Visual Studio marketplace の[web ダウンロード](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)として、または VISUAL studio UI を使用して拡張機能としてインストールすることによって入手できます。
 
@@ -54,7 +54,7 @@ Visual Studio 2019 で新しいプロジェクトを作成するには:
 
 Visual Studio 2017 で新しいプロジェクトを作成するには:
 1. **Visual Studio**を起動します。
-2. **[ファイル]** メニューの **[新規作成]** をポイントし、コンテキストメニューの **[プロジェクト]** をクリックします。 **[新しいプロジェクト]** ダイアログボックスが開きます。
+2. **[ファイル]** メニューの **[新規作成]** をポイントし、コンテキストメニューの **[プロジェクト]** をクリックします。 **[新しいプロジェクト]** ダイアログが開きます。
 3. 左側にある **[インストール済み]** を展開し、 **[ビジュアルC++ ]** 言語 ノードを展開します。
 4. **[Windows Universal > Holographic]** ノードに移動し、 **[Holographic DirectX 11 App (Universal WindowsC++) (/WinRT)]** を選択します。
    ![Visual Studio 2017 の Holographic DirectX C++11/WinRT UWP アプリプロジェクトテンプレートのスクリーンショット](images/holographic-directx-app-cpp-new-project.png)<br>
@@ -174,11 +174,11 @@ int APIENTRY wWinMain(
 
 `AppMain.cpp` の**Render**メソッドは、現在のアプリと空間ポジショニングの状態に従って、 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe" target="_blank">HolographicFrame</a>を受け取り、現在のフレームを各 holographic カメラにレンダリングします。
 
-## <a name="notes"></a>注意
+## <a name="notes"></a>説明
 
 Windows Mixed Reality アプリケーションテンプレートで、Spectre 軽減フラグが有効になっているコンパイル (/Qspectre) がサポートされるようになりました。 Spectre 軽減策が有効になっている構成をコンパイルするC++前に、Spectre-緩和されたバージョンの Microsoft Visual (MSVC) ランタイムライブラリをインストールしてください。 Spectre 軽減C++ライブラリをインストールするには、Visual Studio インストーラーを起動し、 **[変更]** を選択します。 個々の**コンポーネント**に移動し、"spectre" を検索します。 Spectre コードをコンパイルするために必要なターゲットプラットフォームと MSVC のバージョンに対応するボックスを選択し、 **[変更]** をクリックしてインストールを開始します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [HolographicSpace を入手する](getting-a-holographicspace.md)
 * <a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspaceh" target="_blank">HolographicSpace</a>
 * [DirectX でのレンダリング](rendering-in-directx.md)

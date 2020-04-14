@@ -1,17 +1,17 @@
 ---
 title: HoloLens 用 Unity を使用した WinRT Api
 description: HoloLens の Unity プロジェクトで WinRT Api (Windows 名前空間) を使用する方法について説明します。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity、WinRT、windows mixed reality、API、チュートリアル
-ms.openlocfilehash: 73764d191813f6dcae750e74ce3181af987c9e0e
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 80f950d7571a936e93eb08490ad83dbb34a50b3a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437235"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277990"
 ---
 # <a name="winrt-apis-with-unity-for-hololens"></a>HoloLens 用 Unity を使用した WinRT Api
 
@@ -62,8 +62,8 @@ public class WinRTAPI : MonoBehaviour {
 
 ## <a name="edit-your-scripts-in-a-unity-c-project"></a>Unity C#プロジェクトでスクリプトを編集する
 
-Unity エディターでスクリプトをダブルクリックすると、既定ではエディタープロジェクトでスクリプトが起動されます。 Visual Studio プロジェクトで Windows ランタイムが参照されていないため、WinRT Api は不明であるように見えます。 さらに、 **ENABLE_WINMD_SUPPORT**ディレクティブは未定義になり、ラップされたコード *#if*は、プロジェクトを UWP Visual Studio ソリューションにビルドするまで無視されます。
+Unity エディターでスクリプトをダブルクリックすると、既定ではエディタープロジェクトでスクリプトが起動されます。 Visual Studio プロジェクトで Windows ランタイムが参照されていないため、WinRT Api は不明であるように見えます。 さらに、 **ENABLE_WINMD_SUPPORT**ディレクティブは未定義になり、 *#if*ラップされたコードは、UWP Visual Studio ソリューションにプロジェクトをビルドするまで無視されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)
 * [Unity のサポート Windows ランタイム](https://docs.unity3d.com/Manual/IL2CPP-WindowsRuntimeSupport.html)

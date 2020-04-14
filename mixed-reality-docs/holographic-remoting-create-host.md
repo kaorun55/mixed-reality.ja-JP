@@ -1,17 +1,17 @@
 ---
 title: Holographic リモート処理リモートアプリの作成
 description: リモートコンピューター上にレンダリングされる Holographic リモート処理リモートアプリリモートコンテンツを HoloLens 2 にストリーミングできます。 この記事では、これを実現する方法について説明します。
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 76e37499fd32a82e6846c6c7cac1a292ef6b553a
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 6c6da16d83f593d9987bf7e534f9f663f11abd01
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092317"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278120"
 ---
 # <a name="writing-a-holographic-remoting-remote-app"></a>Holographic リモート処理リモートアプリの作成
 

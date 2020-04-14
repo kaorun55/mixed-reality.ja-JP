@@ -1,22 +1,22 @@
 ---
 title: Holographic リモート処理の追加
 description: Holographic Remoting を使用してネットワーク経由で HoloLens にホログラムを表示する方法について説明します。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 05/24/2019
 ms.topic: article
 keywords: Windows Mixed Reality, ホログラム, holographic リモート処理, リモートレンダリング, ネットワークレンダリング, HoloLens, リモートホログラム
-ms.openlocfilehash: 523486c26c03bd4b3d5ed8e8cafd994f12678e3b
-ms.sourcegitcommit: ff330a7e36e5ff7ae0e9a08c0e99eb7f3f81361f
+ms.openlocfilehash: 2f6ade5552c993f66281d0be8a7e62c8f076deac
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70122045"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277710"
 ---
 # <a name="add-holographic-remoting-hololens-1st-gen"></a>Holographic リモート処理 (HoloLens (第1世代)) の追加
 
 >[!IMPORTANT]
->このドキュメントでは、HoloLens 1 用のホストアプリケーションの作成について説明します。 HoloLens のホストアプリケーション **(第1世代)** では、NuGetパッケージバージョン1.x を使用する必要があります。 これは、HoloLens 1 用に作成されたホストアプリケーションが HoloLens 2 との互換性がないことを意味します。
+>このドキュメントでは、HoloLens 1 用のホストアプリケーションの作成について説明します。 HoloLens のホストアプリケーション **(第1世代)** では、NuGet**パッケージバージョン 1.x**を使用する必要があります。 これは、HoloLens 1 用に作成されたホストアプリケーションが HoloLens 2 との互換性がないことを意味します。
 
 ## <a name="hololens-2"></a>HoloLens 2
 
@@ -30,7 +30,7 @@ Holographic リモート処理を使用する HoloLens 開発者は、HoloLens 2
 
 このページでは、Holographic リモート処理をデスクトップまたは UWP アプリに追加する方法について説明します。
 
-Holographic リモート処理を使用すると、アプリはデスクトップ PC でホストされている Holographic コンテンツ、または Xbox One などの UWP デバイスでホストされている HoloLens を対象にすることができます。これにより、より多くのシステムリソースにアクセスし、リモートの[イマーシブビュー](app-views.md)を統合することが可能になります。既存のデスクトップ PC ソフトウェア。 リモート処理ホストアプリは、HoloLens から入力データストリームを受け取り、仮想イマーシブビューでコンテンツをレンダリングし、コンテンツフレームを HoloLens にストリームバックします。 接続は標準の Wi-fi を使用して行われます。 リモート処理を使用するには、NuGet パッケージを使用して、holographic リモート処理をデスクトップまたは UWP アプリに追加し、接続を処理し、イマーシブビューでレンダリングするコードを記述します。 ヘルパーライブラリは、デバイス接続を処理するタスクを簡略化するコードサンプルに含まれています。
+Holographic remoting を使用すると、アプリはデスクトップ PC または Xbox One などの UWP デバイスでホストされている Holographic コンテンツを使用して HoloLens をターゲットにすることができます。これにより、より多くのシステムリソースへのアクセスが可能になり、リモートの[イマーシブビュー](app-views.md)を既存のデスクトップ PC ソフトウェアに統合できるようになります。 リモート処理ホストアプリは、HoloLens から入力データストリームを受け取り、仮想イマーシブビューでコンテンツをレンダリングし、コンテンツフレームを HoloLens にストリームバックします。 接続は標準の Wi-fi を使用して行われます。 リモート処理を使用するには、NuGet パッケージを使用して、holographic リモート処理をデスクトップまたは UWP アプリに追加し、接続を処理し、イマーシブビューでレンダリングするコードを記述します。 ヘルパーライブラリは、デバイス接続を処理するタスクを簡略化するコードサンプルに含まれています。
 
 一般的なリモート処理接続では、待機時間が50ミリ秒に抑えられます。 プレーヤーアプリは、リアルタイムで待機時間を報告できます。
 

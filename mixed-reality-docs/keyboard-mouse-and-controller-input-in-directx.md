@@ -1,17 +1,17 @@
 ---
 title: DirectX でのキーボード、マウス、およびコントローラー入力
 description: キーボード、マウス、およびゲームコントローラーを使用する Windows Mixed Reality 用のアプリを作成する方法について説明します。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, キーボード, マウス, ゲームコントローラー, xbox コントローラー, HoloLens, デスクトップ, チュートリアル, サンプルコード
-ms.openlocfilehash: 1e61cb50a561492fdc6849b5b231e97fab1bb6cf
-ms.sourcegitcommit: 05fa75193059a2dac4b580a9eef7b6c4bb64d8d7
+ms.openlocfilehash: 27f1bf72435ce6889ba3f7b83664367a4440b162
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835098"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278090"
 ---
 # <a name="keyboard-mouse-and-controller-input-in-directx"></a>DirectX でのキーボード、マウス、およびコントローラー入力
 
@@ -265,5 +265,5 @@ Microsoft HoloLens でこのコードを使用する方法には、主な違い�
 * キーボード入力は、特にユーザーがキーボードを使用する必要がないため、アプリまたはゲームエンジンのデバッグ側面を制御するのに優れた方法です。 この配線は、CoreWindow イベント Api を使用した場合と同じです。 このシナリオでは、デバッグセッション中にキーボードイベントを "デバッグ入力のみ" モードにルーティングするようにアプリを構成する方法を実装することを選択できます。
 * Bluetooth コントローラーも同様に機能します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [ハードウェア アクセサリ](hardware-accessories.md)

@@ -1,17 +1,17 @@
 ---
 title: Mixed Reality のパフォーマンスについて
 description: Windows Mixed Reality アプリのパフォーマンスの最適化に関する高度なトピックと詳細
-author: Troy-Ferrell
+author: troy-ferrell
 ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality、Mixed Reality、Virtual Reality、VR、MR、パフォーマンス、最適化、CPU、GPU
-ms.openlocfilehash: 287b95363acff00ab7a0407475e0a419fc076611
-ms.sourcegitcommit: 184227dc591ca2791f523d520555730ba1e95b5c
+ms.openlocfilehash: 54e1eec5445fe655a0b498be5c18f08efe2270f0
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79479575"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277480"
 ---
 # <a name="understanding-performance-for-mixed-reality"></a>Mixed reality のパフォーマンスについて
 
@@ -66,7 +66,7 @@ ms.locfileid: "79479575"
 
 ## <a name="how-to-improve-your-application"></a>アプリケーションを改善する方法
 
-### <a name="cpu-performance-recommendations"></a>CPU パフォーマンスに関する推奨事項
+### <a name="cpu-performance-recommendations"></a>CPU のパフォーマンスに関する推奨事項
 
 一般に、CPU 上の mixed reality アプリケーションでほとんどの作業を行うには、シーンの "シミュレーション" を実行し、アプリケーションロジックを処理する必要があります。 通常、最適化の対象となる領域は次のとおりです。
 
@@ -131,11 +131,11 @@ Occluding オブジェクトによって非表示になっているため、複�
 
 過剰なメモリの割り当ておよび解放操作を行うと、パフォーマンスが低下したり、フレームがフリーズしたり、その他の有害な動作が発生したりする可能性があります。 メモリ管理はガベージコレクターによって制御されるため、Unity で開発するときは、メモリに関する考慮事項を理解することが特に重要です。
 
-#### <a name="object-pooling"></a>オブジェクトプール
+#### <a name="object-pooling"></a>オブジェクト プーリング
 
-オブジェクトプールは、オブジェクトの継続的な割り当てと割り当て解除のコストを削減するための一般的な手法です。 これを行うには、同一のオブジェクトの大規模なプールを割り当て、時間の経過と共にオブジェクトを絶えず破棄するのではなく、このプールから使用可能な非アクティブなインスタンスを再利用します。 オブジェクトプールは、アプリの有効期間が可変の再使用可能なコンポーネントに最適です。
+オブジェクトプールは、オブジェクトの継続的な割り当てと割り当て解除のコストを削減するための一般的な手法です。 これを行うには、同一のオブジェクトの大規模なプールを割り当て、時間の経過と共にオブジェクトを絶えず生成して破棄するのではなく、このプールの非アクティブで使用可能なインスタンスを再利用します。 オブジェクト プールは、アプリの間の有効期間が一定ではない再使用可能なコンポーネントに最適です。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)
 - [Unity で推奨される設定](recommended-settings-for-unity.md)
 - [3D モデルの最適化](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)

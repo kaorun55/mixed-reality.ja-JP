@@ -1,17 +1,17 @@
 ---
 title: ケーススタディ-実際の穴を見る
 description: このケーススタディでは、HoloLens に "マジックウィンドウ" 効果を実装する方法について説明します。これにより、ユーザーは、壁の背後、床の下、および実際の環境内の仮想化について確認できます。
-author: EricRehmeyer
+author: ericrehmeyer
 ms.author: bestruku
 ms.date: 10/18/2019
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、マジックウィンドウ、視差
-ms.openlocfilehash: a1b9f0b2e576379846a867f3d3bffef7d8ec277e
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: c829656c98b7c87f8b969dbbd16115f6a0bbaf27
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73436668"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278150"
 ---
 # <a name="case-study---looking-through-holes-in-your-reality"></a>ケーススタディ-実際の穴を見る
 
@@ -85,7 +85,7 @@ ColorMask 0
 
 次に示すのは、occluding ボックスの外側の部分を除いて、Unity によって描画される[MR の基本 101](holograms-101.md)のシークレットです。 黄泉の方のために、この図は箱の中央にあります。これにより、穴をできるだけ安定した状態に保つことができます。
 
-## <a name="do-it-yourself"></a>自分で実行する
+## <a name="do-it-yourself"></a>自分でやってみる
 
 HoloLens を所有していて、その効果を試す必要がある場合は、 最も簡単な方法は (コーディングが不要)、無料の3D ビューアーアプリをインストールし、 [GitHub で提供した fbx ファイルをダウンロード](https://github.com/Microsoft/HolographicAcademy/tree/CaseStudy-MagicWindow/MagicWindow)して、部屋に花ポットモデルを表示することです。 これを HoloLens に読み込んで、仕事ができていることを確認できます。 モデルの前にいる場合は、小さな穴だけを見ることができます。他のすべての要素は非表示になります。 モデルを他の側から見ると、完全に消えます。 3D ビューアーの移動、回転、およびスケールのコントロールを使用して、いくつかのアイデアを生成するために考えられる垂直方向の表面に仮想ホールを配置します。
 
@@ -99,7 +99,7 @@ Unity エディターでこのモデルを表示すると、flowerpot の周り�
 * 仮想ホール内のコンテンツを対話形式で作成する方法について考えてみましょう。 ユーザーが壁を越える影響を与えることで、このトリックによって得られる不思議な意義を高めることができます。
 * オブジェクトを使用して既知の領域に戻る方法を考えてみましょう。 たとえば、holographic 穴をコーヒーテーブルに配置し、その下にフロアを表示するにはどうすればよいでしょうか。
 
-## <a name="about-the-author"></a>作成者について
+## <a name="about-the-author"></a>筆者について
 
 <table style="border-collapse:collapse">
 <tr>
@@ -108,7 +108,7 @@ Unity エディターでこのモデルを表示すると、flowerpot の周り�
 </tr>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [MR 基本 101: デバイスを含むプロジェクトを完了する](holograms-101.md)
 * [座標系](coordinate-systems.md)
 * [空間アンカー](spatial-anchors.md)

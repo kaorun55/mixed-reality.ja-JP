@@ -1,17 +1,17 @@
 ---
 title: Holographic リモート処理のトラブルシューティングと制限事項
 description: HoloLens 2 での Holographic Remoting のトラブルシューティングの手順
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: Windows Mixed Reality, ホログラム, holographic リモート処理, リモートレンダリング, ネットワークレンダリング, HoloLens, リモートホログラム, トラブルシューティング, ヘルプ
-ms.openlocfilehash: 79258832d29741c56a1e7e89baeb7d728c806dd1
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: c6d8333bf22c3abb254a9f1b6e30a785effa9999
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092361"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277350"
 ---
 # <a name="holographic-remoting-troubleshooting"></a>Holographic リモート処理のトラブルシューティング
 

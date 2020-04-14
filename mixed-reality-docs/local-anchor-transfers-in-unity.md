@@ -1,17 +1,17 @@
 ---
 title: Unity でのローカルアンカー転送
 description: Unity アプリケーション内の複数の HoloLens デバイス間でアンカーを転送します。
-author: fieldsJacksonG
+author: fieldsjacksong
 ms.author: jacksonf
 ms.date: 03/21/2018
 ms.topic: article
 keywords: 共有、アンカー、WorldAnchor、MR 共有250、WorldAnchorTransferBatch、SpatialPerception、転送、ローカルアンカー転送、アンカーエクスポート、アンカーインポート
-ms.openlocfilehash: 82bcd07417fd5aa1b265ebc3c8edc939101dd783
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: fd071f736add094fd65ae4d889f8008eefd8515d
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63516137"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278060"
 ---
 # <a name="local-anchor-transfers-in-unity"></a>Unity でのローカルアンカー転送
 
@@ -34,8 +34,8 @@ ms.locfileid: "63516137"
 
 ### <a name="anchor-transfer"></a>アンカー転送
 
-**名前空間:**  *UnityEngine.XR.WSA.Sharing*<br>
-**種類**:*WorldAnchorTransferBatch*
+**名前空間:** *UNITYENGINE. XR*<br>
+**型**: *WorldAnchorTransferBatch*
 
 [WorldAnchor](coordinate-systems-in-unity.md)を転送するには、転送するアンカーを設定する必要があります。 1つの HoloLens のユーザーが自分の環境をスキャンし、共有エクスペリエンスのアンカーとなるポイントを手動またはプログラムによって選択します。 その後、このポイントを表すデータをシリアル化し、エクスペリエンスで共有している他のデバイスに転送できます。 各デバイスは、アンカーデータを逆シリアル化し、そのポイントの位置を特定しようとします。 アンカー転送を機能させるには、各デバイスが、アンカーで表されるポイントを識別できるように、十分な環境でスキャンする必要があります。
 

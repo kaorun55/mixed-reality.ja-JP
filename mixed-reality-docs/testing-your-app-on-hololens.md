@@ -1,23 +1,23 @@
 ---
 title: HoloLens でのアプリのテスト
 description: HoloLens アプリのテストに関するガイダンスと提案
-author: JonMLyons
+author: jonmlyons
 ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: HoloLens, テスト
-ms.openlocfilehash: 9a189bf139c97fc13034d94f05aa8f5974cc19b9
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 3ab5eeec4046b81dc41db51ae138eb9d1069d1ff
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437385"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277590"
 ---
 # <a name="testing-your-app-on-hololens"></a>HoloLens でのアプリのテスト
 
 HoloLens アプリケーションのテストは、Windows アプリケーションのテストとよく似ています。 通常のすべての領域 (機能、相互運用性、パフォーマンス、セキュリティ、信頼性など) を考慮する必要があります。 ただし、PC や電話のアプリでは通常見られない特別な処理や詳細への対処が必要な領域もあります。 Holographic アプリは、さまざまな環境のセットでスムーズに実行する必要があります。 また、パフォーマンスとユーザーの快適さを常に維持する必要もあります。 これらの領域のテストに関するガイダンスについては、このトピックで詳しく説明します。
 
-## <a name="performance"></a>パフォーマンス
+## <a name="performance"></a>パフォーマンス テスト
 
 Holographic アプリは、さまざまな環境のセットでスムーズに実行する必要があります。 また、パフォーマンスとユーザーの快適さを常に維持する必要もあります。 Holographic アプリのユーザーエクスペリエンスにとってパフォーマンスが非常に重要です。これには、トピック全体が含まれています。 [Mixed Reality のパフォーマンスを理解](understanding-performance-for-mixed-reality.md)し、それに従っていることを確認してください。
 
@@ -36,7 +36,7 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 
 ![HoloLens アプリ開発のための環境テストマトリックス](images/environment-matrix-600px.png)
 
-## <a name="comfort"></a>安心
+## <a name="comfort"></a>快適性
 1. **クリッププレーン。** [ホログラムがレンダリング](hologram-stability.md#hologram-render-distances)される場所に attentive してください。
 2. **仮想移動は、実際のヘッド移動と矛盾しないようにしてください。** ユーザーの実際の動きを代表しない方法でカメラを移動しないようにします。 アプリでシーンを通じてユーザーを移動する必要がある場合は、動きを予測可能にし、加速を最小化して、ユーザーが移動を制御できるようにします。
 3. **ホログラムの品質ガイドラインに従います。** [ホログラム品質ガイダンス](hologram-stability.md)を実装する高性能アプリでは、ユーザー不快感が発生する可能性が低くなります。
@@ -45,7 +45,7 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 
 ## <a name="input"></a>入力
 
-### <a name="interaction-models"></a>相互作用モデル
+### <a name="interaction-models"></a>操作モデル
 
 ホログラムの相互作用が、選択した[相互作用モデル](interaction-fundamentals.md)と連携していることを確認します。
 また、ユーザー補助機能をサポートするためにこれらのアクセサリが必要な場合は、マウスやキーボードなどのさまざまなアクセサリで検証することをお勧めします。
@@ -67,7 +67,7 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 
 ## <a name="system-integration"></a>システム統合
 
-### <a name="battery"></a>[バッテリー]
+### <a name="battery"></a>バッテリー
 
 電源が接続されていない状態でアプリケーションをテストし、バッテリの消費速度を把握します。 電源 LED の測定を見ることで、バッテリの状態を簡単に把握できます。 
 
@@ -85,7 +85,7 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 
 特にバックグラウンドタスクが実装されている場合は、アプリ間を切り替えるときにアプリのコア機能を検証します。 コピー/貼り付けと Cortana 統合は、該当する場合にも確認する価値があります。
 
-## <a name="telemetry"></a>利用統計情報
+## <a name="telemetry"></a>製品利用統計情報
 
 テレメトリと分析を使用してガイドを作成できます。 Analytics をアプリに統合することで、ベータテスターやエンドユーザーからアプリに関する洞察を得ることができます。 このデータを使用して、ストアに送信する前にアプリを最適化したり、将来の更新に使用したりできます。 分析オプションは多数あります。 どこから始めるかわからない場合は、「 [App Insights](https://www.visualstudio.com/products/application-insights-vs.aspx)」をご覧ください。
 
@@ -112,5 +112,5 @@ Holographic アプリは、さまざまな環境のセットでスムーズに�
 
 アプリを[Windows ストアで公開](submitting-an-app-to-the-microsoft-store.md)する機会を与えるには、証明書を送信する前に、ローカルで検証してテストします。 アプリが Holographic デバイスファミリを対象としている場合、 [Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/xaml/mt186449.aspx)では、ローカルの静的分析テストのみが PC 上で実行されます。 HoloLens ではテストは実行されません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [Windows ストアへのアプリの送信](submitting-an-app-to-the-microsoft-store.md)

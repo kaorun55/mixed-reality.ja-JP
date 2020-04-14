@@ -1,17 +1,17 @@
 ---
 title: 音声入力
 description: 音声入力は、HoloLens および Windows Mixed Reality イマーシブヘッドセットの中核となる入力です。 音声は、コマンド、ディクテーション、Cortana などに使用できます。
-author: Hak0n
+author: hak0n
 ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、音声、cortana、音声、入力
-ms.openlocfilehash: f2ae18d4063c7c4a63346a1202cacaa7fbbdf959
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 6cf94e6bc828c6f07ee81cb121cb64601df41c4e
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375989"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277980"
 ---
 # <a name="voice-input"></a>音声入力
 
@@ -275,7 +275,7 @@ Holographic キーボードがアクティブなときはいつでも、入力�
 
 ## <a name="communication"></a>通信
 
-HoloLens が提供するカスタマイズされたオーディオ入力処理オプションを利用する必要があるアプリケーションでは、アプリが使用できるさまざまな[オーディオストリームのカテゴリ](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)を理解することが重要です。 Windows 10 では、さまざまなストリームカテゴリがサポートされています。 HoloLens では、これらのうちの3つを使用して、音声、通信、およびアンビエント環境のオーディオ用に調整されたマイクオーディオの品質を最適化するカスタム処理を可能にします。キャプチャ ("カムコーダー" など) シナリオ。
+HoloLens が提供するカスタマイズされたオーディオ入力処理オプションを利用する必要があるアプリケーションでは、アプリが使用できるさまざまな[オーディオストリームのカテゴリ](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)を理解することが重要です。 Windows 10 では、さまざまなストリームカテゴリがサポートされています。 HoloLens では、これらのうちの3つを使用して、音声、通信、およびアンビエント環境のオーディオキャプチャ (つまり "ビデオカメラ") シナリオで使用できるマイクオーディオ品質をカスタム処理によって最適化します。
 * AudioCategory_Communications ストリームカテゴリは、通話の品質とナレーションのシナリオに合わせてカスタマイズされ、クライアントにユーザーの声の 16kHz 24bit mono オーディオストリームを提供します。
 * AudioCategory_Speech ストリームカテゴリは、HoloLens (Windows) 音声エンジン用にカスタマイズされており、ユーザーの声の 16kHz 24bit mono ストリームを提供します。 このカテゴリは、サードパーティの音声エンジンで必要に応じて使用できます。
 * AudioCategory_Other ストリームカテゴリは、アンビエント環境オーディオ記録用にカスタマイズされており、クライアントには 48 Khz 24 ビットのステレオオーディオストリームが用意されています。

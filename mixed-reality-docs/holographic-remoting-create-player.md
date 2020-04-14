@@ -1,17 +1,17 @@
 ---
 title: カスタム Holographic リモート処理プレーヤーの作成
 description: カスタム Holographic リモート処理プレーヤーアプリを作成することにより、リモートコンピューター上にレンダリングされたコンテンツを HoloLens 2 に表示できるカスタムアプリケーションを作成できます。 この記事では、これを実現する方法について説明します。
-author: FlorianBagarMicrosoft
+author: florianbagarmicrosoft
 ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: eaa6549eb34d3a37c21b3decb348bf43594a110f
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: b276558e43fc545be9e5c0be6feded229904ee97
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79092417"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278220"
 ---
 # <a name="writing-a-custom-holographic-remoting-player-app"></a>カスタム Holographic リモート処理プレーヤーアプリの作成
 
@@ -218,7 +218,7 @@ Holographic リモート処理を介して深度再プロジェクションを�
 - ```Remote``` 射影変換は、リモートアプリによって指定された近距離距離と遠距離を反映します。
 - ```Merged```-リモートアプリとカスタムプレーヤーアプリからのほぼまたは遠くのプレーン距離がマージされます。 既定では、これを行うには、近距離距離の最小値と、遠くの平面距離の最大値を取得します。 リモート側またはローカル側のどちらか一方が反転している場合は、遠く < 近くにあるとしても、遠くと遠くに離れた距離の距離が反転します。
 
-## 省略可能: Set BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
+## <a name="optional-set-blitremoteframetimeout"></a>省略可能: Set BlitRemoteFrameTimeout<a name="BlitRemoteFrameTimeout"></a>
 >[!IMPORTANT]
 > ```PlayerContext::BlitRemoteFrameTimeout``` は、バージョン[2.0.9](holographic-remoting-version-history.md#v2.0.9)以降でサポートされています。 
 

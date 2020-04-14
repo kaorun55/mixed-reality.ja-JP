@@ -1,17 +1,17 @@
 ---
 title: デバイスポータル API リファレンス
 description: HoloLens の Windows デバイスポータルの API リファレンス
-author: JonMLyons
-ms.author: JLyons
+author: jonmlyons
+ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows デバイスポータル、API
-ms.openlocfilehash: 4b5b48c13b1b7ec8bfdf447f42097a8448b6a0e6
-ms.sourcegitcommit: 06ac2200d10b50fb5bcc413ce2a839e0ab6d6ed1
+ms.openlocfilehash: 236de35c2c736fc5a0289b7be1f1548f0a08fa26
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67694430"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278240"
 ---
 # <a name="device-portal-api-reference"></a>デバイスポータル API リファレンス
 
@@ -24,14 +24,14 @@ ms.locfileid: "67694430"
 アプリをアンインストールします
 
 パラメーター
-* パックアンインストールするパッケージのファイル名。
+* パッケージ: アンインストールするパッケージのファイル名。
 
 **/api/app/packagemanager/package (POST)**
 
 アプリをインストールします
 
 パラメーター
-* パックインストールするパッケージのファイル名。
+* パッケージ: インストールするパッケージのファイル名。
 
 ペイロード
 * マルチパート準拠の http 本文
@@ -40,7 +40,7 @@ ms.locfileid: "67694430"
 
 システムにインストールされているアプリの一覧を詳細と共に取得します。
 
-データを返す
+データを返します
 * インストールされているパッケージの一覧と詳細
 
 **/api/app/packagemanager/state (GET)**
@@ -86,14 +86,14 @@ ms.locfileid: "67694430"
 * packageFullname: パッケージ名
 * fileName: ダンプファイル名
 
-データを返す
+データを返します
 * ダンプファイル。 WinDbg または Visual Studio を使用して検査する
 
 **/api/debug/dump/usermode/dumps (GET)**
 
 サイドロードアプリのすべてのクラッシュダンプの一覧を返します。
 
-データを返す
+データを返します
 * サイドロードされたアプリごとのクラッシュダンプの一覧
 
 ## <a name="etw"></a>ETW
@@ -102,14 +102,14 @@ ms.locfileid: "67694430"
 
 登録されたプロバイダーを列挙します
 
-データを返す
+データを返します
 * プロバイダー、フレンドリ名、GUID の一覧
 
 **/api/etw/session/realtime (GET/WebSocket)**
 
 リアルタイム ETW セッションを作成します。websocket 経由で管理されます。
 
-データを返す
+データを返します
 * 有効なプロバイダーからの ETW イベント
 
 ## <a name="holographic-os"></a>ホログラフィック OS
@@ -131,7 +131,7 @@ ms.locfileid: "67694430"
 IPD を設定します。
 
 パラメーター
-* ipdミリメートル単位で設定する新しい IPD 値
+* ipd: mm で設定する新しい IPD 値
 
 **/api/holographic/os/webmanagement/settings/https (GET)**
 
@@ -163,11 +163,11 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 
 **/api/holographic/simulation/control/mode (GET)**
 
-シミュレーションモードを取得する
+シミュレーション モードを取得する
 
 **/api/holographic/simulation/control/mode (POST)**
 
-シミュレーションモードの設定
+シミュレーション モードを設定する
 
 パラメーター
 * モード: シミュレーションモード: 既定、シミュレーション、リモート、レガシ
@@ -191,7 +191,7 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 記録を削除します。
 
 パラメーター
-* 録音削除する記録の名前。
+* 記録: 削除する記録の名前。
 
 **/api/holographic/simulation/playback/file (POST)**
 
@@ -206,21 +206,21 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 記録の現在の再生状態を取得します。
 
 パラメーター
-* 録音記録の名前。
+* 記録: 記録の名前。
 
 **/api/holographic/simulation/playback/session/file (削除)**
 
 記録をアンロードします。
 
 パラメーター
-* 録音アンロードする記録の名前。
+* 記録: アンロードする記録の名前。
 
 **/api/holographic/simulation/playback/session/file (POST)**
 
 記録を読み込みます。
 
 パラメーター
-* 録音読み込む記録の名前。
+* 記録: 読み込む記録の名前。
 
 **/api/holographic/simulation/playback/session/files (GET)**
 
@@ -231,28 +231,28 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 記録を一時停止します。
 
 パラメーター
-* 録音記録の名前。
+* 記録: 記録の名前。
 
 **/api/holographic/simulation/playback/session/play (POST)**
 
 録音を再生します。
 
 パラメーター
-* 録音記録の名前。
+* 記録: 記録の名前。
 
 **/api/holographic/simulation/playback/session/stop (POST)**
 
 記録を停止します。
 
 パラメーター
-* 録音記録の名前。
+* 記録: 記録の名前。
 
 **/api/holographic/simulation/playback/session/types (GET)**
 
 読み込まれた記録のデータの種類を取得します。
 
 パラメーター
-* 録音記録の名前。
+* 記録: 記録の名前。
 
 ## <a name="perception-simulation-recording"></a>認識のシミュレーション記録
 
@@ -261,12 +261,12 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 記録を開始します。 一度にアクティブにできる記録は1つだけです。 ヘッド、ハンド、spatialMapping、または環境のいずれかを設定する必要があります。
 
 パラメーター
-* 矢印ヘッドデータを記録するには、を1に設定します。
-* みるハンドデータを記録するには、を1に設定します。
-* spatialMapping :空間マッピングを記録するには、1に設定します。
-* environment環境データを記録するには、を1に設定します。
-* 指定記録の名前。
-* singleSpatialMappingFrame :1に設定すると、空間マッピングフレームが1つだけ記録されます。
+* head: 1 に設定すると、ヘッドデータが記録されます。
+* 手: 1 に設定すると、手のデータが記録されます。
+* spatialMapping: 空間マッピングを記録するには、1に設定します。
+* 環境: 1 に設定すると、環境データが記録されます。
+* 名前: 記録の名前。
+* singleSpatialMappingFrame: 1 に設定すると、空間マッピングフレームが1つだけ記録されます。
 
 **/api/holographic/simulation/recording/status (GET)**
 
@@ -283,7 +283,7 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 混合の現実ファイルをデバイスからダウンロードします。 ストリーミングには op = stream クエリパラメーターを使用します。
 
 パラメーター
-* /db取得するビデオファイルの名前 (hex64 encoded)
+* filename: 取得するビデオファイルの名前、hex64 encoded
 * op: ストリーム
 
 **/api/holographic/mrc/file (削除)**
@@ -291,7 +291,7 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 デバイスから mixed reality の記録を削除します。
 
 パラメーター
-* /db削除するファイルの名前、hex64 encoded
+* filename: 削除するファイルの名前、hex64 encoded
 
 **/api/holographic/mrc/files (GET)**
 
@@ -304,7 +304,7 @@ Mixed reality の写真を取得し、デバイスにファイルを作成しま
 パラメーター
 * holo: キャプチャホログラム: true または false (既定値は false)
 * pv: キャプチャの PV カメラ: true または false (既定値は false)
-* RenderFromCamera:(HoloLens 2 のみ) 写真/ビデオカメラの視点からレンダー: true または false (既定値は true)
+* RenderFromCamera: (HoloLens 2 のみ) 写真/ビデオカメラから見たレンダリング: true または false (既定値は true)
 
 **/api/holographic/mrc/settings (GET)**
 
@@ -323,7 +323,7 @@ Mixed reality の写真を取得し、デバイスにファイルを作成しま
 指定したファイルのサムネイルイメージを取得します。
 
 パラメーター
-* /dbサムネイルが要求されているファイルの名前、hex64 encoded
+* filename: サムネイルが要求されているファイルの名前 (hex64 encoded)
 
 **/api/holographic/mrc/video/control/start (POST)**
 
@@ -334,9 +334,9 @@ Mixed reality の記録を開始します
 * pv: キャプチャの PV カメラ: true または false (既定値は false)
 * mic: キャプチャマイク: true または false (既定値は false)
 * ループバック: キャプチャアプリオーディオ: true または false (既定値は false)
-* RenderFromCamera:(HoloLens 2 のみ) 写真/ビデオカメラの視点からレンダー: true または false (既定値は true)
-* vstab :(HoloLens 2 のみ) ビデオ安定化を有効にします (true または false) (既定値は true)
-* vstabbuffer:(HoloLens 2 のみ) ビデオ安定化バッファー待機時間:0 ~ 30 フレーム (既定値は15フレーム)
+* RenderFromCamera: (HoloLens 2 のみ) 写真/ビデオカメラから見たレンダリング: true または false (既定値は true)
+* vstab: (HoloLens 2 のみ) ビデオ安定化を有効にします。 true または false (既定値は true)
+* vstabbuffer: (HoloLens 2 のみ) ビデオ安定化バッファー待機時間: 0 ~ 30 フレーム (既定値は15フレーム)
 
 **/api/holographic/mrc/video/control/stop (POST)**
 
@@ -358,21 +358,21 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 省略可能なパラメーター (HoloLens 2 のみ)
 * RenderFromCamera: 写真/ビデオカメラから見たレンダリング: true または false (既定値は true)
 * vstab: ビデオ安定化を有効にします。 true または false (既定値は false)
-* vstabbuffer: ビデオ安定化バッファーの待機時間:0 ~ 30 フレーム (既定値は15フレーム)
+* vstabbuffer: ビデオ安定化バッファー待機時間: 0 ~ 30 フレーム (既定では15フレーム)
 
 **/api/holographic/stream/live.mp4 (GET)**
 
 1280x720p 30 fps 5 Mbit ストリーム。
 
-**/api/holographic/stream/live_high.mp4 (GET)**
+**/api/holographic/stream/live_high. mp4 (GET)**
 
 1280x720p 30 fps 5 Mbit ストリーム。
 
-**/api/holographic/stream/live_med.mp4 (GET)**
+**/api/holographic/stream/live_med. mp4 (GET)**
 
 854x480p 30 fps 2.5 Mbit ストリーム。
 
-**/api/holographic/stream/live_low.mp4 (GET)**
+**/api/holographic/stream/live_low. mp4 (GET)**
 
 428x240p 15fps 0.6 Mbit ストリーム。
 
@@ -397,7 +397,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 コンピューター名を設定します
 
 パラメーター
-* 指定に設定する新しいコンピューター名 (hex64 encoded)
+* [名前]: 新しいコンピューター名、hex64 encoded、をに設定します。
 
 ## <a name="performance-data"></a>パフォーマンス データ
 
@@ -405,17 +405,17 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 詳細を含む実行中のプロセスの一覧を返します
 
-データを返す
+データを返します
 * 各プロセスのプロセスと詳細の一覧を含む JSON
 
 **/api/resourcemanager/systemperf (GET)**
 
 システムパフォーマンス統計情報 (i/o 読み取り/書き込み、メモリ統計など) を返します。
 
-データを返す
-* システム情報を含む JSON:CPU、GPU、メモリ、ネットワーク、IO
+データを返します
+* システム情報を含む JSON: CPU、GPU、メモリ、ネットワーク、IO
 
-## <a name="power"></a>Power
+## <a name="power"></a>電力
 
 **/api/バッテリ (GET)**
 
@@ -425,7 +425,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 システムが低電力状態であるかどうかを確認します
 
-## <a name="remote-control"></a>リモート コントロール
+## <a name="remote-control"></a>[リモート制御]
 
 **/api/control/restart (POST)**
 
@@ -442,16 +442,16 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 モダンアプリを停止します
 
 パラメーター
-* パックアプリケーションパッケージの完全名、hex64 encoded
-* forcestop:すべてのプロセスを強制的に停止する (= yes)
+* パッケージ: アプリパッケージの完全名、hex64 encoded
+* forcestop: すべてのプロセスを強制的に停止します (= yes)
 
 **/api/taskmanager/app (POST)**
 
 モダンアプリを開始します
 
 パラメーター
-* appidアプリの開始、hex64 エンコード
-* パックアプリケーションパッケージの完全名、hex64 encoded
+* appid: アプリの開始、hex64 エンコード
+* パッケージ: アプリパッケージの完全名、hex64 encoded
 
 ## <a name="wifi-management"></a>WiFi の管理
 
@@ -459,7 +459,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 ワイヤレスネットワークインターフェイスを列挙します。
 
-データを返す
+データを返します
 * 詳細 (GUID、説明など) があるワイヤレスインターフェイスの一覧
 
 **/api/wifi/network (削除)**
@@ -477,7 +477,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 パラメーター
 * インターフェイス: ネットワークインターフェイス guid
 
-データを返す
+データを返します
 * ネットワークインターフェイスで検出されたワイヤレスネットワークの一覧と詳細
 
 **/api/wifi/network (POST)**
@@ -500,21 +500,21 @@ WPR プロファイルをアップロードし、アップロードされたプ�
 ペイロード
 * マルチパート準拠の http 本文
 
-データを返す
+データを返します
 * WPR セッションの状態を返します。
 
 **/api/wpr/status (GET)**
 
 WPR セッションの状態を取得します。
 
-データを返す
+データを返します
 * WPR セッションの状態。
 
 **/api/wpr/trace (GET)**
 
 WPR (パフォーマンス) トレースセッションを停止します
 
-データを返す
+データを返します
 * トレース ETL ファイルを返します。
 
 **/api/wpr/trace (POST)**
@@ -522,11 +522,11 @@ WPR (パフォーマンス) トレースセッションを停止します
 WPR (パフォーマンス) トレースセッションを開始します
 
 パラメーター
-* profileプロファイル名。 使用可能なプロファイルは perfprofiles/profiles. json に格納されます。
+* プロファイル: プロファイル名。 使用可能なプロファイルは perfprofiles/profiles. json に格納されます。
 
-データを返す
+データを返します
 * 開始時に、WPR セッションの状態を返します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [Windows Device Portal を使用する](using-the-windows-device-portal.md)
 * [デバイスポータルコア API リファレンス (UWP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

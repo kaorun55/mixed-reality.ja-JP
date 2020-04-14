@@ -1,17 +1,17 @@
 ---
 title: Unity Play モード
 description: Unity エディターの再生モードを使用して、アプリをデプロイせずにデバイスでの変更をプレビューします。
-author: JonMLyons
+author: jonmlyons
 ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Unity, リモート処理, holographic リモート処理, holographic リモート処理プレーヤー
-ms.openlocfilehash: 6164d7ae1bc2d9ac13135f17132aca089e63ecdf
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: dca7ffba1270802fcabed8a88fe7428ef2981553
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438225"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277560"
 ---
 # <a name="unity-play-mode"></a>Unity Play モード
 

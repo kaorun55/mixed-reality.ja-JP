@@ -1,18 +1,18 @@
 ---
 title: Windows デバイス ポータルを使用する
 description: HoloLens 用の Windows デバイス ポータルでは、Wi-Fi または USB 経由でリモートからデバイスを構成および管理できます。 デバイス ポータルは、お使いの PC に Web ブラウザーから接続することができる HoloLens 上の Web サーバーです。 デバイス ポータルには、HoloLens を管理し、アプリをデバッグおよび最適化するのに役立つ多くのツールが用意されています。
-author: JonMLyons
+author: jonmlyons
 ms.author: jlyons
 ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows デバイス ポータル, HoloLens
 ms.localizationpriority: high
-ms.openlocfilehash: 6a5a0ef164cbbe80f74f0fe6cc42e08834d2a4b4
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.openlocfilehash: 9cd9b33fed12802e5b41afa3fee850356911a989
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082094"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278030"
 ---
 # <a name="using-the-windows-device-portal"></a>Windows デバイス ポータルを使用する
 

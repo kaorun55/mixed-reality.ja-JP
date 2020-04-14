@@ -1,17 +1,17 @@
 ---
 title: ケーススタディ-HoloTour の不可能なパースペクティブの作成
 description: Microsoft HoloLens を unforgettable にするための HoloTour の経験が必要でした。 従来の tourist の停止に加えて、"不可能なパースペクティブ" を計画しています。
-author: DannyAskew
+author: dannyaskew
 ms.author: daaske
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloTour、HoloLens、Windows Mixed Reality
-ms.openlocfilehash: be00df73543aa295e1e0dbe1462a888d6bb24954
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: f3ca07dfab1e4477039481c268e418aac9034bc5
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63523591"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278170"
 ---
 # <a name="case-study---creating-impossible-perspectives-for-holotour"></a>ケーススタディ-HoloTour の不可能なパースペクティブの作成
 
@@ -34,7 +34,7 @@ HoloTour 経験には特定のシーンがあります。たとえば、現代�
 気球の航空写真ビューを作成するために、Microsoft の他のチームと協力して、ローマの航空写真パノラマ画像にアクセスできるようにしました。 これらの画像の品質は非常に優れており、ビューは美しいものでしたが、変更せずにバックグラウンドで使用した場合、lifeless はツアーの他の部分と比較して、動きが邪魔にならないと感じていました。 
 
 
-![ホットエアバルーンバスケット、ローマでの流動。](images/hotairballoon1-300px.png)<br>
+ローマに対してフリーエアバルーンバスケットを ![します。](images/hotairballoon1-300px.png)<br>
 *ホットエアバルーンバスケット、ローマでフローティング*
 
 航空写真の場所が他の変換先と同じ品質基準を満たしていることを確認するために、静的な写真を生きた動きに変換することにしました。 最初のステップでは、イメージと複合モーションを編集しました。 私たちは、これを支援する視覚効果のアーティストを契約しています。 編集が完了し、雲のません、鳥の鳥、地平線を飛ぶことのない飛行機やヘリコプターを表示するようになりました。 グラウンドでは、自動車の通りに車が作られました。 HoloTour のローマのツアーにいたとしても、このような動きを明示的に認識していることはほとんどありません。 これは本当にすばらしいです。 微妙な動きは目を引くことを意図したものではありませんが、これらの小さなタッチを使用しないと、シーン内の静的なイメージであることがすぐにわかります。
@@ -49,7 +49,7 @@ HoloTour 経験には特定のシーンがあります。たとえば、現代�
 
 当然ながら、Colosseum の作成時にはビデオ映像や静止画像が表示されないため、独自に作成する必要がありました。 このような構造については、多くの調査を行う必要がありました。仮想再作成を可能にするために必要な情報を得るために、作成されたマテリアルを理解し、アーキテクチャ図を確認し、履歴の説明を読みます。 
 
-![Colosseum の現代の日の廃墟は、古代ローマで見てきたように、1つの市場を示しています。](images/rome-colosseum-overlay-500px.png)<br>
+Colosseum の最新の日の廃墟を ![します。これは、古代ローマで見たように、のフロアフロアを示すオーバーレイを備えています。](images/rome-colosseum-overlay-500px.png)<br>
 *古代ローマで見たように、Colosseum の最新の日の廃墟には、その分野を示すオーバーレイがあります。*
 
 まず、教育オーバーレイを使用して従来のツアーを強化したいと考えていました。 HoloTour では、現在の Colosseum の廃墟にアクセスするときに、複雑な地下のステージング領域を含め、使用中にどのように表示されるかを示すために、領域フロアが変換されます。 通常のツアーでは、この情報が説明されている場合がありますが、想像してみてください。しかし、HoloTour では実際に見ることができます。
@@ -62,17 +62,17 @@ HoloTour 経験には特定のシーンがあります。たとえば、現代�
 
 この作業は、チームにとっては大きすぎて実行できませんでした。私たちの芸術チームは、通常、Hollywood 映画の視覚効果を発揮する外部の影響会社である Whiskytree を使用しました。 Whiskytree は、Colosseum を heyday に再作成するのに役立ちました。これにより、その構造について説明し、その中でも、皇帝の箱から gladiator 戦いのビューを作成できるようになりました。 声援 crowds とは、画像だけでなく実際の場所であるようにするために必要な微妙な動きを追加します。
 
-![Colosseum のフロアから見たように、再作成された。 HoloTour で見ると、バナーは簡単に見えて、動きが見やすくなります。](images/recreated-colosseum-holotour-500px.png)<br>
+Colosseum のフロアから見たように、再作成されたを ![します。 HoloTour で見ると、バナーは簡単に見えて、動きが見やすくなります。](images/recreated-colosseum-holotour-500px.png)<br>
 *Colosseum のフロアから見たように、再作成された。HoloTour で見ると、バナーは簡単に見えて、動きが見やすくなります。*
 
 Gladiator 戦いでのローマ culminates のツアー。 Whiskytree はビデオとしてレンダリングされた [gladiators] と [3D] の各シミュレーションを提供しましたが、それを追加する必要がありました。 プロセスのこの部分は、育成 game studio のプロジェクトと比べて、Hollywood ビデオ制作のようなものです。 私たちのチームのメンバーは、大まかな戦いのシーケンスをマップし、choreographer で改良しています。 私たちは、モックの戦いと購入した防御力をステージするためにアクターを採用しています。 最後に、シーン全体を緑色の画面に客席します。
 
-![Gladiators は、の間の命令を取得しています。](images/green-screen-gladiators-holotour-500px.jpg)<br>
+gladiators を ![、の手順を取得します。](images/green-screen-gladiators-holotour-500px.jpg)<br>
 *私たちの gladiatiors、手順の取得*
 
 このシーンを使用すると、皇帝の箱が表示されます。これは、すべての映像がその観点から必要であるということを意味します。 私たちは、gladiators が客席にいる場所から、戦いの流れを適切に合成することはできませんでした。そのため、カメラのオペレータを非常に高度なシザーリフトにし、撮影の戦いシーケンスを見ていきます。
 
-![適切なパースペクティブの取得: 撮影のリフトから見ていきます。](images/scissor-lift-holotour-500px.jpg)<br>
+撮影を適切に取得するには、シザーリフトからします。 ![](images/scissor-lift-holotour-500px.jpg)<br>
 *適切なパースペクティブの取得: シザーリフトからの撮影*
 
 実稼働後、gladiators は領域フロアに合成されていますが、パースペクティブは正しいのですが、1つの問題が残っています。複合プロセスの一環として、緑色の画面の gladiators の影が削除されました。 シャドウを使用しない場合、gladiators は空気で浮動のように見えました。 幸運にも、Whiskytree はこのような問題を解決するのに非常に優れており、少しの技術 wizardry を使って、シーンに影を追加していました。 このツアーでは、結果が表示されます。
@@ -97,5 +97,5 @@ Gladiator 戦いでのローマ culminates のツアー。 Whiskytree はビデ�
 </table>
 
 
-## <a name="see-also"></a>関連項目
-* [ビデオ:Microsoft HoloLens:HoloTour](https://www.youtube.com/watch?v=pLd9WPlaMpY)
+## <a name="see-also"></a>参照
+* [ビデオ: Microsoft HoloLens: HoloTour](https://www.youtube.com/watch?v=pLd9WPlaMpY)

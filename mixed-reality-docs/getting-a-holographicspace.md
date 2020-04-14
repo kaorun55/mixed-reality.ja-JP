@@ -1,17 +1,17 @@
 ---
 title: HolographicSpace を取得する
 description: HolographicSpace API について説明します。これは、holographic レンダリングと空間入力の中核となる概念です。
-author: MikeRiches
+author: mikeriches
 ms.author: mriches
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality, HolographicSpace, CoreWindow, 空間入力, レンダリング, スワップチェーン, holographic フレーム, 更新ループ, ゲームループ, 参照のフレーム, locatability, サンプルコード, チュートリアル
-ms.openlocfilehash: 828352203b20ec38275796b3f172e7ecc5df3f00
-ms.sourcegitcommit: 915d3cc63a5571ba22ac4608589f3eca8da1bc81
+ms.openlocfilehash: 76211c8a5394e2e296748253df4eac063841746c
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63525447"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81277830"
 ---
 # <a name="getting-a-holographicspace"></a>HolographicSpace を取得する
 
@@ -27,7 +27,7 @@ Holographic space オブジェクトの作成は、Windows Mixed Reality アプ�
 m_holographicSpace = HolographicSpace::CreateForCoreWindow(window);
 ```
 
-[ *Basichologram* win32 サンプルから始まる](creating-a-holographic-directx-project.md#creating-a-win32-project) **win32 アプリ**の場合は、「 **app:: CREATEWINDOWANDHOLOGRAPHICSPACE** 」を参照して、HWND を作成してから、関連付けられ<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace" target="_blank">たを作成して、それをイマーシブ HWND に変換します。HolographicSpace</a>:
+[ *Basichologram* win32 サンプルから始まる](creating-a-holographic-directx-project.md#creating-a-win32-project) **win32 アプリ**の場合は、 **app:: CreateWindowAndHolographicSpace**で HWND を作成し、関連付けられた<a href="https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace" target="_blank">HolographicSpace</a>を作成することによって、その hwnd に変換する方法の例を確認してください。
 ```cpp
 void App::CreateWindowAndHolographicSpace(HINSTANCE hInstance, int nCmdShow)
 {
@@ -172,6 +172,6 @@ m_locatabilityChangedToken = m_spatialLocator.LocatabilityChanged(
 
 次に、このイベントを使用して、ホログラムを世界にどのようにレンダリングするかを決定します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [DirectX でのレンダリング](rendering-in-directx.md)
 * [DirectX の座標系](coordinate-systems-in-directx.md)

@@ -1,17 +1,17 @@
 ---
 title: ケーススタディ-HoloTour の空間サウンド設計
 description: Microsoft HoloLens 向けの真のイマーシブ3D 仮想ツアーを作成するために、パノラマビデオと holographic シーナリーは式の一部にすぎません。
-author: JSyltebo
+author: jsyltebo
 ms.author: jsylte
 ms.date: 03/21/2018
 ms.topic: article
 keywords: Windows Mixed Reality、HoloLens、HoloTour、空間サウンド、ケーススタディ
-ms.openlocfilehash: f2dd704089d9c76b7ba175a4a1ad5cebf9ec6c68
-ms.sourcegitcommit: 8bf7f315ba17726c61fb2fa5a079b1b7fb0dd73f
+ms.openlocfilehash: 5c6331bd93447f53c1dd4c9941bfa13a5eadc1bd
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2019
-ms.locfileid: "75181927"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278140"
 ---
 # <a name="case-study-spatial-sound-design-for-holotour"></a>ケーススタディ: HoloTour の空間サウンド設計
 
@@ -65,7 +65,7 @@ HoloTour については、HoloLens の空間サウンド機能を活用して�
 * **スプラインエミッタ:** これらの発信器は、アタッチされているオブジェクトの視覚的な位置に対して相対的に3D 空間を移動します。 例として、スプラインエミッタを使用して、方向性と移動を明確に示すためにスプラインエミッタを使用した train in Machu のようなものが挙げられます。
 * **音楽と SFX:** より定型的なアプローチを表す HoloTour の特定の側面は、感情効果を面白くために音楽とサウンド効果を使用します。 ローマツアーの終わりにある gladiator の戦いでは、whooshes や stingers などの特殊効果によって、シーンに表示されるラベルの効果を高めることができます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 * [立体音響](spatial-sound.md)
 * [立体音響の設計](spatial-sound-design.md)
 * [Unity の立体音響](spatial-sound-in-unity.md)
