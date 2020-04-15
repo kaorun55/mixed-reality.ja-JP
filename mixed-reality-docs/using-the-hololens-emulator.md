@@ -1,18 +1,18 @@
 ---
 title: HoloLens エミュレーターを使用する
 description: HoloLens エミュレーターを使用して、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストします。
-author: hamalawi
-ms.author: moelhama
-ms.date: 3/10/2020
+author: pbarnettms
+ms.author: pbarnett
+ms.date: 4/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: 57a20b476ba0b1cc02a7e9bf41b33367b64d539c
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: bbdf389a1b7bf42e3dfb1fffb09cf6d3b1a65b6a
+ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79028259"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81278020"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
@@ -20,12 +20,15 @@ HoloLens のエミュレーターを使用すると、物理的な HoloLens を�
 
 デスクトップ PC 用の Windows Mixed Reality イマーシブ (VR) ヘッドセット アプリケーションまたはゲームを開発したい場合は、[Windows Mixed Reality シミュレーター](using-the-windows-mixed-reality-simulator.md)についてのページをご覧ください。デスクトップ ヘッドセットをシミュレートできます。
 
+## <a name="hololens-2-emulator-overview"></a>HoloLens 2 エミュレーターの概要
+
+>[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/HoloLens-2-Emulator-Overview/player?format=ny]
 
 ## <a name="installing-the-hololens-emulator"></a>HoloLens エミュレーターをインストールする
 HoloLens のエミュレーターをダウンロードします。
 
 バージョン: 
-* [HoloLens 2 エミュレーター (2020 年 3 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2121323)。
+* [HoloLens 2 エミュレーター (2020 年 4 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2126826)。
 * [HoloLens エミュレーター (第 1 世代) およびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 HoloLens エミュレーターのリリース ノートと以前のビルドは、「[HoloLens エミュレーターのアーカイブ](hololens-emulator-archive.md)」ページにあります。
