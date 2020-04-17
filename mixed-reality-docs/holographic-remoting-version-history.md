@@ -6,17 +6,25 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 5ba3aaa8874dea4418114b331d3d99fc977e982c
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: cd6d076c00fd21ca6fa60cafb94eb9d89796825a
+ms.sourcegitcommit: 48456c607a2d0dcf035a77e8ba67615396b0a211
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278200"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81484302"
 ---
 # <a name="holographic-remoting-version-history"></a>Holographic リモート処理のバージョン履歴
 
 > [!IMPORTANT]
 > このガイダンスは、HoloLens 2 の Holographic リモート処理に固有のものです。
+
+## <a name="version-212-april-5-2020"></a>バージョン 2.1.2 (2020 年4月5日)<a name="v2.1.2"></a>
+* 最新の Holographic リモート処理プレーヤーと2.1.0 より小さいバージョンを使用したリモートアプリとの間で、オーディオの下位互換性の問題を修正した。
+* Holographic リモート処理プレーヤーを予期せず閉じた空間アンカーの問題を修正しました。 この問題は、カスタムプレーヤーにも影響します。
+
+## <a name="version-211-march-20-2020"></a>バージョン 2.1.1 (2020 年3月20日)<a name="v2.1.1"></a>
+* AMD Gpu を使用する場合のリモートアプリのビデオエンコードに関する問題を修正します。
+* Holographic リモート処理プレーヤーのパフォーマンスが向上しました。
 
 ## <a name="version-210-march-11-2020"></a>バージョン 2.1.0 (2020 年3月11日)<a name="v2.1.0"></a>
 * UDP 経由で[RTP](https://en.wikipedia.org/wiki/Real-time_Transport_Protocol)を使用するようにネットワークトランスポートを切り替えました。 セキュリティで保護された接続では、 [Srtp](https://en.wikipedia.org/wiki/Secure_Real-time_Transport_Protocol)を使用します。 [Holographic リモート処理プレーヤー](holographic-remoting-player.md)は、以前にリリースされたすべての Holographic リモート処理バージョンと互換性があることに注意してください。 新しいネットワークトランスポートの利点を活用するには、Holographic リモート処理プレーヤーと、問題のリモートアプリの両方でバージョン2.1.0 を使用する必要があります。
@@ -28,7 +36,7 @@ ms.locfileid: "81278200"
 ## <a name="version-2018-december-17-2019"></a>バージョン 2.0.18 (2019 年12月17日)<a name="v2.0.18"></a>
 * [HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration)のサポートを追加しました
 * クラッシュの原因となるさまざまなバグが修正されています。
-* HolographicCamera が受け入れられ、HoloraphicFrame に追加されたカメラとして表示されるために HolographicSpace CameraAdded コールバックが必要なバグを修正しました。
+* HolographicCamera が受け入れられ、HolographicFrame に追加されたカメラとして表示されるために HolographicSpace CameraAdded コールバックが必要なバグを修正しました。
 
 ## <a name="version-2016-november-11-2019"></a>バージョン 2.0.16 (2019 年11月11日)<a name="2.0.16"></a>
 * QR コードの追跡でデッドロックを修正します。
