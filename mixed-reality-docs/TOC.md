@@ -235,7 +235,7 @@
 #### [そのしくみ - 複合現実キャプチャ スタジオ](how-it-works-mixed-reality-capture-studios.md)
 ### ホログラフィック リモート
 #### [Holographic Remoting Player](holographic-remoting-player.md)
-#### [Holographic Remoting ホストアプリの記述](holographic-remoting-create-host.md)
+#### [Holographic Remoting リモート アプリの作成](holographic-remoting-create-host.md)
 #### [Holographic Remoting プレーヤーの記述](holographic-remoting-create-player.md)
 #### [カスタムの Holographic Remoting データ チャネル](holographic-remoting-custom-data-channels.md)
 #### [Holographic Remoting によりセキュリティ保護された接続](holographic-remoting-secure-connection.md)
