@@ -119,7 +119,7 @@
 ##### Azure 音声認識サービス チュートリアル
 ###### [1.音声認識とトランスクリプションの統合と使用](mrlearning-speechSDK-ch1.md)
 ###### [2.ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
-###### [3.Azure 認識サービスの音声変換コンポーネントの追加](mrlearning-speechSDK-ch3.md)
+###### [3.Azure Cognitive Services の音声変換コンポーネントの追加](mrlearning-speechSDK-ch3.md)
 ###### [4.インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)
 ##### マルチユーザー機能のチュートリアル
 ###### [1.Photon Unity ネットワークの設定](mrlearning-sharing(photon)-ch1.md)
