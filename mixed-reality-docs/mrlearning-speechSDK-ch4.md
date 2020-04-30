@@ -29,7 +29,7 @@ ms.locfileid: "79028434"
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial4-section1-step1-1.png)
 
-[プロジェクト] ウィンドウで、 **[資産]**  >  **[MRTK.Tutorials.GettingStarted]**  >  **[Prefabs]\(プレハブ\)**  >  **[RocketLauncher]** フォルダーで、**RocketLauncher_Complete** プレハブを [Hierarchy]\(階層\) ウィンドウにドラッグし、カメラの前の適切な場所に配置します。次に例を示します。
+[プロジェクト] ウィンドウで、 **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.GettingStarted]**  >  **[Prefabs]\(プレハブ\)**  >  **[RocketLauncher]** フォルダーで、**RocketLauncher_Complete** プレハブを [Hierarchy]\(階層\) ウィンドウにドラッグし、カメラの前の適切な場所に配置します。次に例を示します。
 
 * [変換] の **[位置]** X = 0、Y =-0.4、Z = 1
 * [変換] の **[回転]** X = 0、Y = 90、Z = 0
