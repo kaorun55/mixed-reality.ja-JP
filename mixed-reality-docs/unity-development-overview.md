@@ -7,18 +7,20 @@ ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unity, Mixed Reality, 開発, 概要, 新しいプロジェクト, 移植, 機能, カメラ, シミュレーション, エミュレーション, ドキュメント
-ms.openlocfilehash: 23b3d9a3fe419911e774722a7d2db6809c2955cf
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.openlocfilehash: e0fe775f5fe891416145d91e52a5a801e049c568
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74491096"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81433418"
 ---
 # <a name="unity-development-overview"></a>Unity 開発の概要
 
 [Mixed Reality アプリ](app-views.md)を構築する最速の方法は、[Unity](https://unity.com) を使用することです。 時間を取って、[Unity のチュートリアル](https://unity3d.com/learn/tutorials)をご覧になることをお勧めします。 資産が必要な場合、Unity には包括的な[資産ストア](https://www.assetstore.unity3d.com/)があります。 Unity についての基本的な理解ができたら、[チュートリアル](tutorials.md)にアクセスして、Unity を使用した Mixed Reality 開発の詳細を確認できます。 [Unity Mixed Reality フォーラム](https://forum.unity3d.com/forums/hololens.102/)にアクセスして、Unity で Mixed Reality アプリを構築する他のコミュニティと協働し、遭遇しがちな問題の解決策を見つけてください。
 
 Unity を使用して Mixed Reality アプリの構築を開始するには、まず、[ツールをインストール](install-the-tools.md)します。 
+
+>[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Setting-up-your-HoloLens-2-development-environment/player?format=ny]
 
 ## <a name="new-unity-project-with-mixed-reality-toolkit"></a>Mixed Reality Toolkit による新しい Unity プロジェクト 
 

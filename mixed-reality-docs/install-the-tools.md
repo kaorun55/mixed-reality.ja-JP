@@ -7,12 +7,12 @@ ms.date: 3/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: 最新, ツール, はじめに, 基本, unity, visual studio, ツールキット
-ms.openlocfilehash: 79f0e529f2c1c8331b14dcdbdd69d4fbfe11db79
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 131d2a91c882fbcd31c4deb76a5ab5c3f97d7d42
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278110"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82137877"
 ---
 # <a name="install-the-tools"></a>ツールのインストール
 
@@ -43,8 +43,7 @@ Mixed Reality アプリの作成を開始する最も簡単な方法として、
 
 :::row:::
     :::column:::
-        <a href="https://unity3d.com/unity/qa/lts-releases?version=2018.4" target="_blank">![Unity](images/unity_logo.png)<br>
-        **Unity**</a><br>
+        <a href="https://unity3d.com/unity/qa/lts-releases?version=2018.4" target="_blank">![Unity](images/unity_logo.png)<br>**Unity**</a><br>
         通常、Unity LTS (長期サポート) ストリームを新しいプロジェクトを開始するのに最適なバージョンとしてお勧めします。最新の安定した修正プログラムを取得するには最新リビジョンに更新します。<br>
         <br>
         現在は、**Unity 2018.4.x** を使用することをお勧めしています。これは、以下の MRTK v2 に必要な LTS ビルドです。<br>
@@ -53,15 +52,13 @@ Mixed Reality アプリの作成を開始する最も簡単な方法として、
         <br>
         HoloLens 2 または Windows Mixed Reality イマーシブ ヘッドセット向けの Unity 開発を開始するには、「[Unity 開発の概要](unity-development-overview.md)」を参照してください。<br>
         <br>
-        <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">![MRTK](images/final_mrtk-small_logo.png)<br>
-        **Mixed Reality ツールキット (MRTK)** </a><br>
+        <a href="https://github.com/Microsoft/MixedRealityToolkit-Unity/releases" target="_blank">![MRTK](images/final_mrtk-small_logo.png)<br>**Mixed Reality ツールキット (MRTK)** </a><br>
         Unity 用の Mixed Reality Toolkit (MRTK) v2 は、Mixed Reality アプリケーション向けのオープン ソースのクロスプラットフォーム開発キットです。<br>
         <br>
         MRTK v2 は、Microsoft HoloLens、Windows Mixed Reality イマーシブ (VR) ヘッドセット、OpenVR プラットフォームをターゲットとしたアプリケーションの開発を加速することを目的としています。 このプロジェクトは、Mixed Reality アプリケーション作成への参入の障壁を減らし、事態の発展とともにコミュニティに貢献することを目的としています。
     :::column-end:::
     :::column:::
-        <a href="https://docs.unrealengine.com//GettingStarted/Installation/index.html" target="_blank">![Unreal](images/Unreal_logo.png)<br>
-        **Unreal**</a><br>
+        <a href="https://docs.unrealengine.com//GettingStarted/Installation/index.html" target="_blank">![Unreal](images/Unreal_logo.png)<br>**Unreal**</a><br>
         Unreal Engine 4 は、強力なオープン ソースの作成エンジンで、C++ と Blueprints の両方の Mixed Reality を完全にサポートします。<br>
         <br>
         Unreal Engine 4.24 に対する HoloLens のサポートは、現在ベータ版です。<br>

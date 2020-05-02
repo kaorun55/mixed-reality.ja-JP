@@ -1,5 +1,5 @@
 ---
-title: 入門チュートリアル - 1. 概要と目標
+title: 入門チュートリアル - 1.  概要と目標
 description: このコースでは、Mixed Reality アプリケーション内で Azure 顔認識を実装する方法について説明します。
 author: jessemcculloch
 ms.author: jemccull
@@ -8,10 +8,10 @@ ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
 ms.openlocfilehash: 36c12d82759b8ac2ba24aa9af37a096e0faf5fb5
-ms.sourcegitcommit: ee8c7e821cb337cbccd8af64b13ee5f50109a776
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "80082047"
 ---
 # <a name="1-overview-and-objectives"></a>1.概要と目標

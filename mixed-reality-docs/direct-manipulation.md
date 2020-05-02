@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 視線入力, 視線入力ターゲット設定, 対話, 設計, 手に近い, HoloLens
 ms.openlocfilehash: 6811fe0b09ecff1ddc76d9df9ddc440f9c934ce3
-ms.sourcegitcommit: 6844930427b658ae31f642c395cd8a3b3cdbf857
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75723251"
 ---
 # <a name="direct-manipulation-with-hands"></a>手で直接操作
@@ -334,7 +334,7 @@ AR の手と VR のモーション コントローラーとの間には、操作
 
 ---
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 * [頭の視線入力とコミット](gaze-and-commit.md)
 * [手を使ったポイントとコミット](point-and-commit.md)

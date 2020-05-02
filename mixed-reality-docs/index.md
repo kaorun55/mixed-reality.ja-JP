@@ -1,5 +1,4 @@
 ---
-layout: LandingPage
 title: Mixed Reality の概要
 description: Mixed Reality を初めて使用するユーザーにその概要と機能について説明します。
 author: grbury
@@ -8,12 +7,12 @@ ms.date: 08/24/2019
 ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト
-ms.openlocfilehash: f6f72df63628bba590ac7af098d0b405e6721cc2
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 71777327d9eca488ceffdaa1ee4d7a78efe56713
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375569"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82137887"
 ---
 # <a name="get-started-with-mixed-reality"></a>Mixed Reality の概要
 
