@@ -123,10 +123,9 @@
 ###### [4.インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)
 ##### マルチユーザー機能のチュートリアル
 ###### [1.Photon Unity ネットワークの設定](mrlearning-sharing(photon)-ch1.md)
-###### [2.Unity の開発に向けた準備](mrlearning-sharing(photon)-ch2.md)
-###### [3.複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)
-###### [4.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch4.md)
-###### [5.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch5.md)
+###### [2.複数ユーザーの接続](mrlearning-sharing(photon)-ch2.md)
+###### [3.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch3.md)
+###### [4.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch4.md)
 ##### 立体オーディオのチュートリアル
 ###### [1.プロジェクトへの立体オーディオの追加](unity-spatial-audio-ch1.md)
 ###### [2.ボタンの対話式操作サウンドの立体化](unity-spatial-audio-ch2.md)
