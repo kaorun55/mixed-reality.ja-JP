@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
 ms.openlocfilehash: 01429d3952eb97d4f8aaab2d2ce442eb1e1fcdac
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79031711"
 ---
-# <a name="mr-learning-modules"></a><span data-ttu-id="0bcf3-104">MR 学習モジュール</span><span class="sxs-lookup"><span data-stu-id="0bcf3-104">MR Learning Modules</span></span>
+# <a name="mr-learning-modules"></a><span data-ttu-id="e80aa-104">MR 学習モジュール</span><span class="sxs-lookup"><span data-stu-id="e80aa-104">MR Learning Modules</span></span>
 
-## <a name="overview"></a><span data-ttu-id="0bcf3-105">概要</span><span class="sxs-lookup"><span data-stu-id="0bcf3-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="e80aa-105">概要</span><span class="sxs-lookup"><span data-stu-id="e80aa-105">Overview</span></span>
 
-<span data-ttu-id="0bcf3-106">MR Learning モジュールは、Academy のオリジナル チュートリアル シリーズからの学習に基づいて、Mixed Reality プラットフォームおよびデバイスのためのアプリケーションを作成する方法を開発者に伝えるための最新のアプローチです。</span><span class="sxs-lookup"><span data-stu-id="0bcf3-106">The MR Learning Modules are an updated approach to teaching developers how to create applications for the Mixed Reality Platform and devices, based on learnings from the original Academy tutorial series.</span></span> <span data-ttu-id="0bcf3-107">この新しいシリーズで Microsoft が対応を検討したフィードバックの例としては、以下のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="0bcf3-107">Some examples of feedback we wanted to address with this new series include:</span></span>
+<span data-ttu-id="e80aa-106">MR Learning モジュールは、Academy のオリジナル チュートリアル シリーズからの学習に基づいて、Mixed Reality プラットフォームおよびデバイスのためのアプリケーションを作成する方法を開発者に伝えるための最新のアプローチです。</span><span class="sxs-lookup"><span data-stu-id="e80aa-106">The MR Learning Modules are an updated approach to teaching developers how to create applications for the Mixed Reality Platform and devices, based on learnings from the original Academy tutorial series.</span></span> <span data-ttu-id="e80aa-107">この新しいシリーズで Microsoft が対応を検討したフィードバックの例としては、以下のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="e80aa-107">Some examples of feedback we wanted to address with this new series include:</span></span>
 
-* <span data-ttu-id="0bcf3-108">チュートリアルでは、Mixed Reality ツールキットを実装していないか、使用方法が示されていません</span><span class="sxs-lookup"><span data-stu-id="0bcf3-108">Tutorials don't implement or show how to use the Mixed Reality Toolkit</span></span>
-* <span data-ttu-id="0bcf3-109">チュートリアルは、1 つのものを実装する方法を学ぶのには適していますが、アプリケーションを構築するのには向いていません</span><span class="sxs-lookup"><span data-stu-id="0bcf3-109">The tutorials are great for learning how to implement one thing, but not for building an application</span></span>
-* <span data-ttu-id="0bcf3-110">実際に使用できる UI ガイダンスがありません</span><span class="sxs-lookup"><span data-stu-id="0bcf3-110">There is not really any UI guidance available</span></span>
+* <span data-ttu-id="e80aa-108">チュートリアルでは、Mixed Reality ツールキットを実装していないか、使用方法が示されていません</span><span class="sxs-lookup"><span data-stu-id="e80aa-108">Tutorials don't implement or show how to use the Mixed Reality Toolkit</span></span>
+* <span data-ttu-id="e80aa-109">チュートリアルは、1 つのものを実装する方法を学ぶのには適していますが、アプリケーションを構築するのには向いていません</span><span class="sxs-lookup"><span data-stu-id="e80aa-109">The tutorials are great for learning how to implement one thing, but not for building an application</span></span>
+* <span data-ttu-id="e80aa-110">実際に使用できる UI ガイダンスがありません</span><span class="sxs-lookup"><span data-stu-id="e80aa-110">There is not really any UI guidance available</span></span>
 
-<span data-ttu-id="0bcf3-111">Microsoft はこのフィードバックを受けて、上記の項目に対処するだけでなく、すべての開発者に有用なベースラインのコードテンプレートを提供する一連のチュートリアルを設計するための取り組みを行っています。</span><span class="sxs-lookup"><span data-stu-id="0bcf3-111">With that feedback in hand, we set out to design a set of tutorials that would not only address the above items, but also will give all developers a useful baseline code template to begin from.</span></span>
+<span data-ttu-id="e80aa-111">Microsoft はこのフィードバックを受けて、上記の項目に対処するだけでなく、すべての開発者に有用なベースラインのコードテンプレートを提供する一連のチュートリアルを設計するための取り組みを行っています。</span><span class="sxs-lookup"><span data-stu-id="e80aa-111">With that feedback in hand, we set out to design a set of tutorials that would not only address the above items, but also will give all developers a useful baseline code template to begin from.</span></span>

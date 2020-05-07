@@ -1,5 +1,5 @@
 ---
-title: マルチユーザー機能のチュートリアル - 2. Unity の開発に向けた準備
+title: マルチユーザー機能のチュートリアル - 3. 複数のユーザーの接続
 description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法を学習します。
 author: jessemcculloch
 ms.author: jemccull
@@ -7,100 +7,110 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: f7ae77d6978b5da860d890bcfe5b6f7c3d4640c8
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: a597aadbddb49fefc824d8c5b5193585fa9476a5
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031240"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81610932"
 ---
-# <a name="2-getting-unity-ready-for-development"></a><span data-ttu-id="9abc3-105">2.Unity の開発に向けた準備</span><span class="sxs-lookup"><span data-stu-id="9abc3-105">2. Getting Unity ready for development</span></span>
+# <a name="2-connecting-multiple-users"></a><span data-ttu-id="af6c6-105">2.複数のユーザーの接続</span><span class="sxs-lookup"><span data-stu-id="af6c6-105">2. Connecting multiple users</span></span>
 
-<span data-ttu-id="9abc3-106">このチュートリアルでは、Mixed Reality Toolkit のインポート、ビルド設定の構成、シーンの準備など、アプリケーション開発に向けて Unity を準備して構成する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-106">In this tutorial, you will learn how to prepare and configure Unity for application development, including importing the Mixed Reality Toolkit, configuring build settings, and preparing your scene.</span></span>
+<span data-ttu-id="af6c6-106">このチュートリアルでは、ライブ共有エクスペリエンスの一部として複数のユーザーを接続する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-106">In this tutorial, you will learn how to connect multiple users as part of a live shared experience.</span></span> <span data-ttu-id="af6c6-107">チュートリアルを終えるときには、複数のデバイスでアプリケーションを実行して、各ユーザーが他のユーザーのアバターの動きをリアルタイムで確認できるようになります。</span><span class="sxs-lookup"><span data-stu-id="af6c6-107">By the end of the tutorial you will be able to run the application on multiple devices and have each user see the avatar of other users move in real-time.</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="9abc3-107">目標</span><span class="sxs-lookup"><span data-stu-id="9abc3-107">Objectives</span></span>
+## <a name="objectives"></a><span data-ttu-id="af6c6-108">目標</span><span class="sxs-lookup"><span data-stu-id="af6c6-108">Objectives</span></span>
 
-* <span data-ttu-id="9abc3-108">アプリケーション開発のために Unity を構成する</span><span class="sxs-lookup"><span data-stu-id="9abc3-108">Configure Unity for application development</span></span>
-* <span data-ttu-id="9abc3-109">Mixed Reality ツールキットをインポートする</span><span class="sxs-lookup"><span data-stu-id="9abc3-109">Import the Mixed Reality Toolkit</span></span>
-* <span data-ttu-id="9abc3-110">プロジェクト シーンを準備する</span><span class="sxs-lookup"><span data-stu-id="9abc3-110">Prepare your project scene</span></span>
+* <span data-ttu-id="af6c6-109">共有エクスペリエンスで複数のユーザーを接続する方法を学習する</span><span class="sxs-lookup"><span data-stu-id="af6c6-109">Learn how to connect multiple users in a shared experience</span></span>
 
-## <a name="instructions"></a><span data-ttu-id="9abc3-111">手順</span><span class="sxs-lookup"><span data-stu-id="9abc3-111">Instructions</span></span>
+## <a name="preparing-the-scene"></a><span data-ttu-id="af6c6-110">シーンの準備</span><span class="sxs-lookup"><span data-stu-id="af6c6-110">Preparing the scene</span></span>
 
-1. <span data-ttu-id="9abc3-112">[こちら](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)をクリックして、Mixed Reality Toolkit Foundation Unity パッケージをダウンロードして保存します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-112">Download and save the Mixed Reality Toolkit Foundation unity package by clicking [here.](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)</span></span>
+<span data-ttu-id="af6c6-111">このセクションでは、チュートリアルのプレハブをいくつか追加してシーンを準備します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-111">In this section, you will prepare the scene by adding some of the tutorial prefabs.</span></span>
 
-2. <span data-ttu-id="9abc3-113">Unity で、[Assets]\(アセット\) メニューをクリックして [Import Package]\(パッケージのインポート\) を選択し、[Custom Package]\(カスタム パッケージ\) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-113">In Unity, click the Assets menu and select Import Package, then click on Custom Package.</span></span>
+<span data-ttu-id="af6c6-112">[Project]\(プロジェクト\) ウィンドウで **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.MultiUserCapabilities]**  >  **[Prefabs]\(プレハブ\)** フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-112">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.MultiUserCapabilities** > **Prefabs** folder.</span></span> <span data-ttu-id="af6c6-113">Ctrl ボタンを押しながら **[DebugWindow]** 、 **[NetworkLobby]** 、 **[SharedPlayground]** をクリックして、3 つのプレハブを選択します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-113">While holding down the CTRL button, click on **DebugWindow**, **NetworkLobby**, and **SharedPlayground** to select the three prefabs:</span></span>
 
-    ![Module3Chapter2step2im](images/module3chapter2step2im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section1-step1-1.png)
 
-3. <span data-ttu-id="9abc3-115">手順 1 に示されているリンクからダウンロードした Unity パッケージを選択します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-115">Select the Unity package you just downloaded from the link provided in step 1.</span></span> <span data-ttu-id="9abc3-116">[Import]\(インポート\) ポップアップ ウィンドウが Unity に表示されたら、[Import]\(インポート\) ボタンをクリックして MRTK のインポートを開始します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-116">Once the import pop-up window appears in Unity, click the Import button to begin importing the MRTK.</span></span> <span data-ttu-id="9abc3-117">この処理には数分かかることがあります。</span><span class="sxs-lookup"><span data-stu-id="9abc3-117">This may take several minutes.</span></span>
+<span data-ttu-id="af6c6-115">3 つのプレハブを選択したまま、[Hierarchy]\(ヒエラルキー\) ウィンドウにドラッグしてこれらをシーンに追加します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-115">With the three prefabs still selected, drag them into the Hierarchy window to add them to the scene:</span></span>
 
-    ![Module3Chapter2step3im](images/module3chapter2step3im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section1-step1-2.png)
 
-    >[!NOTE]
-    ><span data-ttu-id="9abc3-119">ダウンロードしたパッケージは、ファイルを保存したローカル フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="9abc3-119">The downloaded package is in your local folder, where you have saved the file.</span></span> <span data-ttu-id="9abc3-120">上の図では、パッケージのある場所は示されていません。</span><span class="sxs-lookup"><span data-stu-id="9abc3-120">The image above does not portray where you will find the package.</span></span>
+## <a name="creating-the-user-prefab"></a><span data-ttu-id="af6c6-117">ユーザー プレハブを作成する</span><span class="sxs-lookup"><span data-stu-id="af6c6-117">Creating the user prefab</span></span>
 
-    <span data-ttu-id="9abc3-121">パッケージがインポートされると、[MRTK Project Configurator]\(MRTK プロジェクト コンフィギュレーター\) ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9abc3-121">After the package has been imported, the MRTK Project Configurator window should appear.</span></span> <span data-ttu-id="9abc3-122">表示されない場合は、Unity メニューの [Mixed Reality Toolkit] > [Utilities]\(ユーティリティ\) > [Configure Unity Project]\(Unity プロジェクトの構成\) を選択して開きます。</span><span class="sxs-lookup"><span data-stu-id="9abc3-122">If it does not, open it by selecting Mixed Reality Toolkit > Utilities > Configure Unity Project in the Unity menu.</span></span>
+<span data-ttu-id="af6c6-118">このセクションでは、共有エクスペリエンスでユーザーを表すために使用されるプレハブを作成します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-118">In this section, you will create a prefab that will be used to represent the users in the shared experience.</span></span>
 
-    <span data-ttu-id="9abc3-123">[MRTK Project Configurator]\(MRTK プロジェクト コンフィギュレーター\) ウィンドウで、[Modify Configurations]\(構成の変更\) セクションを展開し、[Enable MSBuild for Unity]\(MSBuild for Unity を有効にする\) チェックボックスをオフにし、他のすべてのオプションがオンになっていることを確認し、[Apply]\(適用\) ボタンをクリックして設定を適用します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-123">In the MRTK Project Configurator window, expand the Modify Configurations section, uncheck the Enable MSBuild for Unity checkbox, ensure all other options are checked, and click the Apply button to apply the settings.</span></span>
+### <a name="1-create-and-configure-the-user"></a><span data-ttu-id="af6c6-119">1.ユーザーの作成と構成</span><span class="sxs-lookup"><span data-stu-id="af6c6-119">1. Create and configure the user</span></span>
 
-    ![Module3Chapter2note1im](images/module3chapter2note1im-missing01.png)
+<span data-ttu-id="af6c6-120">[Hierarchy]\(ヒエラルキー\) ウィンドウで空の領域を右クリックし、 **[Create Empty]\(空のユーザーを作成\)** を選択してシーンに空のオブジェクトを追加し、オブジェクトに「**PhotonUser**」という名前を付けて、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-120">In the Hierarchy window, right-click on an empty area and select **Create Empty** to add an empty object to your scene, name the object **PhotonUser**, and configure it as follows:</span></span>
 
-    > [!CAUTION]
-    > <span data-ttu-id="9abc3-125">MSBuild for Unity は使用するすべての SDK をサポートしていない場合があり、有効にした後は無効にするのが困難な場合があります。</span><span class="sxs-lookup"><span data-stu-id="9abc3-125">MSBuild for Unity may not support all SDKs you will be using and can be challenging to disable after it has been enabled.</span></span> <span data-ttu-id="9abc3-126">そのため、MSBuild for Unity を有効にしないことを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-126">Consequently, it is strongly recommended to not enable MSBuild for Unity.</span></span>
-    
-4. <span data-ttu-id="9abc3-127">新しいシーンを作成します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-127">Create a new scene.</span></span> <span data-ttu-id="9abc3-128">これを行うには、[File]\(ファイル\) をクリックし、[New Scene]\(新しいシーン\) を選択します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-128">This can be done by clicking File and selecting New Scene".</span></span> <span data-ttu-id="9abc3-129">HLSharedProjectMain として保存します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-129">Save it as HLSharedProjectMain.</span></span>
+* <span data-ttu-id="af6c6-121">[Transform]\(変換\) の **[Position]\(位置\)** が、X = 0、Y = 0、Z = 0 に設定されていることを確認する</span><span class="sxs-lookup"><span data-stu-id="af6c6-121">Ensure the Transform **Position** is set to X = 0, Y = 0, Z = 0:</span></span>
 
-5. <span data-ttu-id="9abc3-130">Mixed Reality Toolkit の下で、[Add to Scene and Configure]\(シーンに追加して構成\) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-130">Under Mixed Reality Toolkit, click on Add to Scene and Configure.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-1.png)
 
-    ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
+<span data-ttu-id="af6c6-123">**PhotonUser** オブジェクトを引き続き選択した状態で、[Inspector]\(インスペクター\) ウィンドウの **[Add Component]\(コンポーネントの追加\)** ボタンを使用して **Photon User (Script)** コンポーネントを PhotonUser オブジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-123">With the **PhotonUser** object still selected, in the Inspector window, use the **Add Component** button to add the **Photon User (Script)** component to the PhotonUser object:</span></span>
 
-6. <span data-ttu-id="9abc3-132">これが完了したら、階層から [Mixed-Reality Toolkit (MRTK)] を選択します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-132">Once that is complete, select Mixed-Reality Toolkit (MRTK) from the hierarchy.</span></span> <span data-ttu-id="9abc3-133">[Inspector]\(インスペクター\) パネルで、MRTK の構成プロファイルを [DefaultHoloLens2ConfigurationProfile] に変更します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-133">In the inspector panel, change the MRTK configuration profile to DefaultHoloLens2ConfigurationProfile.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-2.png)
 
-    ![Module2Chapter1step4ima](images/Module2Chapter1step4ima-missing01.png)
+<span data-ttu-id="af6c6-125">[Inspector]\(インスペクター\) ウィンドウで、 **[Add Component]\(コンポーネントの追加\)** ボタンを使用して PhotonUser オブジェクトに **Generic Net Sync (Script)** コンポーネントを追加し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-125">In the Inspector window, use the **Add Component** button to add the **Generic Net Sync (Script)** component to the PhotonUser object and configure it as follows:</span></span>
 
-7. <span data-ttu-id="9abc3-135">階層から [Mixed-Reality Toolkit (MRTK)] を選択します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-135">Select Mixed-Reality Toolkit (MRTK) from the  hierarchy.</span></span> <span data-ttu-id="9abc3-136">[Inspector]\(インスペクター\) パネルで Mixed Reality Toolkit (Script) を探し、次の図に示すように [Copy & Customize]\(コピーしてカスタマイズ\) ボタンを押します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-136">In the inspector panel, look for the Mixed Reality Toolkit Script and press the "Copy & Customize" button  as shown in the figure below.</span></span>  <span data-ttu-id="9abc3-137">この後、ポップアップが表示されます。ポップアップ メニューで [Clone]\(複製\) オプションを選択します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-137">A pop will appear after this and select clone option in the pop up menu.</span></span>
+* <span data-ttu-id="af6c6-126">**[Is User]\(ユーザーである\)** チェックボックスをオンにする</span><span class="sxs-lookup"><span data-stu-id="af6c6-126">Check the **Is User** checkbox</span></span>
 
-    ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-3.png)
 
-    ![Module3Chapter2step6imd](images/module3chapter2step6imd.PNG)
+<span data-ttu-id="af6c6-128">[Inspector]\(インスペクター\) ウィンドウで、 **[Add Component]\(コンポーネントの追加\)** ボタンを使用して PhotonUser オブジェクトに **Photon View (Script)** コンポーネントを追加し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-128">In the Inspector window, use the **Add Component** button to add the **Photon View (Script)** component to the PhotonUser object and configure it as follows:</span></span>
 
-8. <span data-ttu-id="9abc3-140">診断ウィンドウを非表示にする場合は、下にスクロールし、[Enable Diagnostics system]\(診断システムを有効にする\) チェックボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-140">Scroll down and uncheck Enable Diagnostics system if you want to hide the diagnostics window.</span></span> <span data-ttu-id="9abc3-141">アプリケーションの開発中は、パフォーマンスを監視するために診断ウィンドウを有効なままにし、運用またはアプリケーションのデモンストレーション中は無効にすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-141">We recommend keeping the diagnostics window enabled during application development to monitor performance, and then disabling it during production or application demonstrations.</span></span> 
+* <span data-ttu-id="af6c6-129">**"Observed Components"(観察されるコンポーネント)** フィールドに、Generic Net Sync (Script) コンポーネントを割り当てる</span><span class="sxs-lookup"><span data-stu-id="af6c6-129">To the **Observed Components** field, assign the Generic Net Sync (Script) component</span></span>
 
-    ![Module3Chapter2step7ima](images/module3chapter2step7ima.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-4.png)
 
-9. <span data-ttu-id="9abc3-143">Ctrl + Shift + B を押すか、[File]\(ファイル\) > [Build Settings]\(ビルド設定\) に移動して、ビルド設定を開きます。</span><span class="sxs-lookup"><span data-stu-id="9abc3-143">Open the build settings by pressing control+shift+B or going to File->Build Settings.</span></span> <span data-ttu-id="9abc3-144">プログラムが現在、[PC, Mac and Linux Standalone]\(PC、Mac、および Linux のスタンドアロン\) プラットフォームに設定されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="9abc3-144">Notice that the program is currently set under the PC, Mac and Linux standalone platform.</span></span> <span data-ttu-id="9abc3-145">HoloLens 2 の開発の場合は、プラットフォームを [Universal Windows Platform]\(ユニバーサル Windows プラットフォーム\) に設定します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-145">For HoloLens 2 development, set the platform to be Universal Windows Platform.</span></span> <span data-ttu-id="9abc3-146">それを選択し、[Switch Platform]\(プラットフォームの切り替え\) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-146">Select it and click Switch Platform.</span></span>
+### <a name="2-create-the-avatar"></a><span data-ttu-id="af6c6-131">2.アバターを作成する</span><span class="sxs-lookup"><span data-stu-id="af6c6-131">2. Create the avatar</span></span>
 
-    ![Module3Chapter2step8im](images/module3chapter2step8im.PNG)
+<span data-ttu-id="af6c6-132">[Hierarchy]\(ヒエラルキー\) ウィンドウで、**PhotonUser** オブジェクトを右クリックして **[3D Object]\(3D オブジェクト\)**  >  **[Sphere]\(球体\)** を選択し、PhotonUser オブジェクトの子として球体オブジェクトを作成して次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-132">In the Hierarchy window, right-click on the **PhotonUser** object and select **3D Object** > **Sphere** to create a sphere object as a child of the PhotonUser object and configure it as follows:</span></span>
 
-10. <span data-ttu-id="9abc3-148">完了したら、[Add Open Scenes]\(オープン シーンの追加\) というボックスをクリックします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-148">Once complete, click the box called Add Open Scenes.</span></span> <span data-ttu-id="9abc3-149">次に、[Inspector]\(インスペクター\) パネルに移動し、[Virtual Reality Supported]\(仮想現実がサポートされている\) の右側にあるチェック ボックスがオンになっている (下の図を参照) ことを確認します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-149">Now go to the Inspector panel and ensure that the check box to the right of Virtual Reality Supported (as shown in the image below) is checked.</span></span> <span data-ttu-id="9abc3-150">また、次の図に示すように、[scenes/HLSharedProjectMain]\(シーン/HLSharedProjectMain\) の横のチェック ボックスもオンになっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-150">Also ensure that the check box next to scenes/HLSharedProjectMain is also checked, as shown in the image below.</span></span>
+* <span data-ttu-id="af6c6-133">[Transform]\(変換\) の **[Position]\(位置\)** が、X = 0、Y = 0、Z = 0 に設定されていることを確認する</span><span class="sxs-lookup"><span data-stu-id="af6c6-133">Ensure the Transform **Position** is set to X = 0, Y = 0, Z = 0</span></span>
+* <span data-ttu-id="af6c6-134">[Transform]\(変換\) の **[Scale]\(スケール\)** を適切なサイズに変更する。例: X = 0.15、Y = 0.15、Z = 0.15</span><span class="sxs-lookup"><span data-stu-id="af6c6-134">Change the Transform **Scale** to a suitable size, for example, X = 0.15, Y = 0.15, Z = 0.15</span></span>
 
-    ![Module3Chapter2step9im](images/module3chapter2step9im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step2-1.png)
 
-11. <span data-ttu-id="9abc3-152">[Inspector]\(インスペクター\) パネルの [Publishing Settings]\(発行の設定\) セクションで、下にスクロールして [Capabilities]\(機能\) に移動し、次のチェック ボックスがオンになっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-152">Under the Publishing Settings section in the Inspector panel, scroll down to Capabilities and ensure the following check boxes are marked:</span></span>
+### <a name="3-create-the-prefab"></a><span data-ttu-id="af6c6-136">3.プレハブを作成する</span><span class="sxs-lookup"><span data-stu-id="af6c6-136">3. Create the prefab</span></span>
 
-    ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
+<span data-ttu-id="af6c6-137">[Project]\(プロジェクト\) ウィンドウで **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.MultiUserCapabilities]**  >  **[Resources]\(リソース\)** フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-137">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.MultiUserCapabilities** > **Resources** folder:</span></span>
 
-12. <span data-ttu-id="9abc3-154">一覧表示されているカスタム パッケージをインポートします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-154">Import the listed custom packages:</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-1.png)
 
-    * <span data-ttu-id="9abc3-155">[AzureSpatialAnchors.unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage) (バージョン 2.1.1)</span><span class="sxs-lookup"><span data-stu-id="9abc3-155">[AzureSpatialAnchors.unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage) (version 2.1.1)</span></span>
-    * [<span data-ttu-id="9abc3-156">MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage</span><span class="sxs-lookup"><span data-stu-id="9abc3-156">MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
-    * [<span data-ttu-id="9abc3-157">MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage</span><span class="sxs-lookup"><span data-stu-id="9abc3-157">MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage)
-    * [<span data-ttu-id="9abc3-158">MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage</span><span class="sxs-lookup"><span data-stu-id="9abc3-158">MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage</span></span>](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
+<span data-ttu-id="af6c6-139">[Resources]\(リソース\) フォルダーを選択したまま、[Hierarchy]\(ヒエラルキー\) ウィンドウから **PhotonUser** オブジェクトを **[Resources]\(リソース\)** フォルダーに**クリックしてドラッグ**し、PhotonUser オブジェクトをプレハブにします。</span><span class="sxs-lookup"><span data-stu-id="af6c6-139">With the Resources folder still selected, **click-and-drag** the **PhotonUser** object from the Hierarchy window into the **Resources** folder to make the PhotonUser object a prefab:</span></span>
 
-    >[!TIP]
-    ><span data-ttu-id="9abc3-159">Azure Spatial Anchors 用に Unity プロジェクトを構成する方法については、[Azure Spatial Anchors](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1) のチュートリアル シリーズの一部である「[Azure Spatial Anchors をお使いになる前に](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)」チュートリアルを参照してください。</span><span class="sxs-lookup"><span data-stu-id="9abc3-159">For a reminder on how to configure a Unity project for Azure Spatial Anchors, you can refer to the [Getting started with Azure Spatial Anchors](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1) tutorial which is part of the the [Azure Spatial Anchors](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1) tutorial series.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-2.png)
 
+<span data-ttu-id="af6c6-141">[Hierarchy]\(ヒエラルキー\) ウィンドウで **PhotonUser** オブジェクトを右クリックし、 **[Delete]\(削除\)** を選択してシーンから削除します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-141">In the Hierarchy window, right-click on the **PhotonUser** object and select **Delete** to remove it from the scene:</span></span>
 
-13. <span data-ttu-id="9abc3-160">[Project]\(プロジェクト\) パネルで、[Prefabs] フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-160">In the Project panel, go to the Prefabs folder.</span></span> <span data-ttu-id="9abc3-161">次の手順では、いくつかのプレハブをシーンに実装します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-161">In the following steps, you will implement a few prefabs into the scene.</span></span> <span data-ttu-id="9abc3-162">[Prefabs] フォルダーで、[Debug Window] というプレハブをクリックして階層にドラッグします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-162">In the Prefabs folder, click and drag the prefab, Debug Window into the hierarchy.</span></span> <span data-ttu-id="9abc3-163">完了したら、[File]\(ファイル\)、[Save]\(保存\) の順にクリックするか、Ctrl + S を押して、プロジェクトを保存します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-163">Once finished, save the project by clicking File, then Save or press Control+S.</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-3.png)
 
-    ![Module3Chapter2step12im](images/module3chapter2step12im.PNG)
+## <a name="configuring-pun-to-instantiate-the-user-prefab"></a><span data-ttu-id="af6c6-143">PUN を構成してユーザー プレハブのインスタンスを作成する</span><span class="sxs-lookup"><span data-stu-id="af6c6-143">Configuring PUN to instantiate the user prefab</span></span>
 
-    <span data-ttu-id="9abc3-165">プレハブをクリックするとポップアップが表示され、TMP Essentials について尋ねられることがあります。</span><span class="sxs-lookup"><span data-stu-id="9abc3-165">You may notice a pop-up appear as you click on the prefab, asking you about TMP Essentials.</span></span> <span data-ttu-id="9abc3-166">それらは必要なので、[Import TMP Essentials]\(TMP Essentials のインポート\) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="9abc3-166">Click Import TMP Essentials as they are needed.</span></span> <span data-ttu-id="9abc3-167">このポップアップが表示された場合は、テキストに関連したエラーが発生しないように、階層からプレハブを削除し、再び階層にドラッグする必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="9abc3-167">If this pop-up appears, you might need to delete the prefab from your hierarchy and re-drag it into your hierarchy to avoid potential text-related errors.</span></span>
+<span data-ttu-id="af6c6-144">このセクションでは、前のセクションで作成した PhotonUser プレハブを使用するようにプロジェクトを構成します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-144">In this section, you will configure the project to use the PhotonUser prefab you created in the previous section.</span></span>
 
-    ![Module3Chapter2note2im](images/module3chapter2note2im.PNG)
+<span data-ttu-id="af6c6-145">[Project]\(プロジェクト\) ウィンドウで **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.MultiUserCapabilities]**  >  **[Resources]\(リソース\)** フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-145">In the Project window, navigate to the **Assets** > **MRTK.Tutorials.MultiUserCapabilities** > **Resources** folder.</span></span>
 
-## <a name="congratulations"></a><span data-ttu-id="9abc3-169">結論</span><span class="sxs-lookup"><span data-stu-id="9abc3-169">Congratulations</span></span>
+<span data-ttu-id="af6c6-146">[Hierarchy]\(ヒエラルキー\) ウィンドウで **NetworkLobby** オブジェクトを展開して **NetworkRoom** 子オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで **Photon Room (Script)** コンポーネントを探し、次のように構成します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-146">In the Hierarchy window, expand the **NetworkLobby** object and select the **NetworkRoom** child object, then in the Inspector window, locate the **Photon Room (Script)** component and configure it as follows:</span></span>
 
-<span data-ttu-id="9abc3-170">Unity プロジェクトを Photon で使用する準備ができました。</span><span class="sxs-lookup"><span data-stu-id="9abc3-170">Your Unity Project is now ready for Photon.</span></span> <span data-ttu-id="9abc3-171">この後のチュートリアルでは、このシーンに基づき、完全な共有エクスペリエンスに向けて Unity プロジェクトを構築します。</span><span class="sxs-lookup"><span data-stu-id="9abc3-171">In the coming tutorials, we'll build upon this scene and our Unity project towards a full shared experience.</span></span>
+* <span data-ttu-id="af6c6-147">**"Photon User Prefab"(Photon ユーザー プレハブ)** フィールドに、[Resources]\(リソース\) フォルダーから **PhotonUser** プレハブを割り当てる</span><span class="sxs-lookup"><span data-stu-id="af6c6-147">To the **Photon User Prefab** field, assign the **PhotonUser** prefab from the Resources folder</span></span>
 
-<span data-ttu-id="9abc3-172">[次のチュートリアル: 3.複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)</span><span class="sxs-lookup"><span data-stu-id="9abc3-172">[Next tutorial: 3. Connecting multiple users](mrlearning-sharing(photon)-ch3.md)</span></span>
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section3-step1-1.png)
+
+## <a name="trying-the-experience-with-multiple-users"></a><span data-ttu-id="af6c6-149">複数のユーザーのエクスペリエンスを試す</span><span class="sxs-lookup"><span data-stu-id="af6c6-149">Trying the experience with multiple users</span></span>
+
+<span data-ttu-id="af6c6-150">Unity プロジェクトをビルドして HoloLens に配置してから Unity に戻り、HoloLens でアプリケーションが実行されている間に [Play]\(再生\) ボタンを押してゲーム モードに入ると、頭 (HoloLens) を動かした時に HoloLens のユーザー アバターが動くのを確認できます。</span><span class="sxs-lookup"><span data-stu-id="af6c6-150">If you now build and deploy the Unity project to your HoloLens, and then, back in Unity, press the Play button to enter Game mode while the application is running on your HoloLens, you will see the HoloLens user avatar move when you move your head (HoloLens) around:</span></span>
+
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section4-step1-1.gif)
+
+> [!TIP]
+> <span data-ttu-id="af6c6-152">HoloLens 2 に Unity プロジェクトをビルドしてデプロイする方法については、「[デバイスへのアプリケーションのビルド](mrlearning-base-ch1.md#build-your-application-to-your-device)」の手順を参照してください。</span><span class="sxs-lookup"><span data-stu-id="af6c6-152">For a reminder on how to build and deploy your Unity project to HoloLens 2, you can refer to the [Build your application to your device](mrlearning-base-ch1.md#build-your-application-to-your-device) instructions.</span></span>
+
+> [!CAUTION]
+> <span data-ttu-id="af6c6-153">アプリケーションは Photon に接続する必要があるため、お使いのコンピューター/デバイスがインターネットに接続されていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="af6c6-153">The application needs to connect to Photon, so make sure your computer/device is connected to the internet.</span></span>
+
+## <a name="congratulations"></a><span data-ttu-id="af6c6-154">結論</span><span class="sxs-lookup"><span data-stu-id="af6c6-154">Congratulations</span></span>
+
+<span data-ttu-id="af6c6-155">複数のユーザーが同じエクスペリエンスに接続して、互いの動きを確認できるようにプロジェクトを構成できました。</span><span class="sxs-lookup"><span data-stu-id="af6c6-155">You have successfully configured your project to allow multiple users to connect to the same experience and see each other's movements.</span></span> <span data-ttu-id="af6c6-156">次のチュートリアルでは、オブジェクトの動きが複数のデバイスで共有されるようにする機能を実装します。</span><span class="sxs-lookup"><span data-stu-id="af6c6-156">In the next tutorial, you will implement functionality so that the movements of objects are also shared across multiple devices.</span></span>
+
+<span data-ttu-id="af6c6-157">[次のチュートリアル: 2.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch3.md)</span><span class="sxs-lookup"><span data-stu-id="af6c6-157">[Next tutorial: 2. Sharing object movements with multiple users](mrlearning-sharing(photon)-ch3.md)</span></span>
