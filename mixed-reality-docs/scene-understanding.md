@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
-ms.openlocfilehash: 3d56f375c38b1dee6ab9eb97219a5e37fe698c63
-ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
+ms.openlocfilehash: 615da20df95f4a435216457e8b9f16bb7d7d069b
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81003338"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604963"
 ---
 # <a name="scene-understanding"></a>シーンの理解
 
@@ -29,7 +29,7 @@ ms.locfileid: "81003338"
 
 サンプルの GitHub サイトから、シーンについてのサンプルアプリをダウンロードできます。
 
-[シーンの理解のサンプル](https://github.com/sceneunderstanding-microsoft/unitysample)
+[シーンの理解のサンプル](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples)
 
 デバイスがなく、サンプルシーンにアクセスしてシーンの理解を試す必要がある場合は、サンプルアセットフォルダーにシーンがあります。
 
@@ -54,7 +54,7 @@ ms.locfileid: "81003338"
     </colgroup>
     <tr>
         <td><strong>機能</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第 1 世代)</strong></a></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens (第1世代)</strong></a></td>
         <td><a href="https://docs.microsoft.com/hololens/hololens2-hardware"><strong>HoloLens 2</strong></td>
         <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
     </tr>
@@ -68,7 +68,7 @@ ms.locfileid: "81003338"
 
 ## <a name="common-usage-scenarios"></a>一般的な利用シナリオ
 
-一般的な空間マッピングの使用シナリオの ![図: 配置、遮蔽、物理、ナビゲーション](images/sm-concepts-1000px.png)<br>
+![一般的な空間マッピングの使用シナリオの図: 配置、閉鎖、物理、およびナビゲーション](images/sm-concepts-1000px.png)<br>
 *一般的な空間マッピングの使用シナリオ: 配置、遮蔽、物理、およびナビゲーション。*
 
 <br>
@@ -77,17 +77,17 @@ ms.locfileid: "81003338"
 
 次のセクションでは、新しいシーンの概要 SDK のコンテキストにおける主要な空間マッピングのシナリオについて説明します。
 
-### <a name="placement"></a>[位置]
+### <a name="placement"></a>配置
 
 シーンの理解は、配置シナリオを簡略化するために特別に設計された新しい構造を提供します。 シーンでは、ホログラムを配置できるフラットサーフェスを記述する SceneQuads と呼ばれるプリミティブを計算できます。 SceneQuads は、特に配置を中心に設計されており、2D サーフェイスを記述し、そのサーフェイス上に配置するための API を提供しています。 以前は、トライアングルメッシュを使用して配置を実行する場合、オブジェクトの配置の適切な場所を識別するために、クワッドのすべての領域をスキャンし、穴の塗りつぶし/後処理を実行する必要がありました。 これは、四角形では常に必要となるわけではありません。これは、実行時には、スキャンされなかったクワッドの領域を推定することができ、サーフェイスの一部ではない四角形の領域を無効にすることができるためです。
 
 :::row:::
     :::column:::
-       推定が無効になっている ![SceneQuads。スキャンされたリージョンの配置領域をキャプチャします。](images/SUQuads.png)<br>
+       ![推定が無効になっている SceneQuads。スキャンされたリージョンの配置領域をキャプチャします。](images/SUQuads.png)<br>
        **イメージ #1** -推定を無効にし、スキャンされたリージョンの配置領域をキャプチャします。
     :::column-end:::
         :::column:::
-       推論が有効になっている ![の四角形は、スキャンされた領域に制限されなくなりました。](images/SUWatertight.png)<br>
+       ![推論が有効になっている四角形は、スキャンされた領域に限定されなくなりました。](images/SUWatertight.png)<br>
         **イメージ #2** -推論が有効になっている四角形、配置はスキャンされた領域に限定されなくなりました。
     :::column-end:::
 :::row-end:::
@@ -115,7 +115,7 @@ ms.locfileid: "81003338"
 
 現在でも正確なナビゲーションメッシュを生成するには後処理が必要です。つまり、アプリケーションでは、移動が乱雑またはテーブルを通過しないように、フロアに occluders を投影する必要があります。これを実現する最も正確な方法は、EnableWorldMesh フラグを使用してシーンが計算された場合に提供される世界のメッシュデータを射影することです。
 
-### <a name="visualization"></a>ビジュアル化
+### <a name="visualization"></a>グラフ
 
 [空間マッピングの視覚化](spatial-mapping.md#visualization)を使用して、環境のリアルタイムのフィードバックを行うことができますが、平面オブジェクトと watertight オブジェクトの単純化によってパフォーマンスや視覚品質が向上する多くのシナリオがあります。 四角形または平面 watertight メッシュによって提供される平面サーフェスに射影した場合、空間マッピングを使用して記述されているシャドウプロジェクションとアース手法は、より見栄えが良い場合があります。 これは、シーンが推測されることが原因で完全な事前スキャンが最適ではない環境やシナリオでは特に当てはまり、完全な環境と平面の前提条件によって成果物が最小化されます。
 

@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 設計, 快適性, HoloLens 2, HoloLens (第 1 世代)
 ms.openlocfilehash: 178044ce8c76de75b7cce5e10664ce65d108f0f8
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79376069"
 ---
 # <a name="comfort"></a>快適性
@@ -98,7 +98,7 @@ Mixed Reality アプリがユニークなのは、ユーザーが世界を自由
 
 ## <a name="self-motion-and-user-locomotion"></a>自発運動とユーザー移動
 
-唯一の制限は、物理的な空間のサイズです。ユーザーが仮想環境で実際の室内で可能な距離よりも遠くに移動できるようにするには、純粋に仮想的な動作の形式を実装する必要があります。 ただし、ユーザーの実際の身体的な動作と一致しない仮想動作が長く続くと、多くの場合、乗り物酔いを引き起こす可能性があります。 この結果は、"*仮想世界*" の自発運動の "*視覚的手がかり*" と、"*現実世界*" から来る自発運動の "[内耳の前庭の手がかり](https://en.wikipedia.org/wiki/Vestibular_system)" との競合によるものです。
+唯一の制限は、物理的な空間のサイズです。ユーザーが仮想環境で実際の室内で可能な距離よりも遠くに移動できるようにするには、純粋に仮想的な動作の形式を実装する必要があります。 ただし、ユーザーの実際の身体的な動作と一致しない仮想動作が長く続くと、多くの場合、乗り物酔いを引き起こす可能性があります。 この結果は、"*仮想世界*" の自発運動の "*視覚的手がかり*" と、"[現実世界](https://en.wikipedia.org/wiki/Vestibular_system)" から来る自発運動の "*内耳の前庭の手がかり*" との競合によるものです。
 
 幸い、この問題を回避するために役立つ、ユーザー移動を実装する際のヒントがあります。
 * 常にユーザーが自分の動作を制御できるようにします。予期しない自発運動は特に問題です

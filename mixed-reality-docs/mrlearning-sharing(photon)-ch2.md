@@ -1,5 +1,5 @@
 ---
-title: マルチユーザー機能のチュートリアル - 2. Unity の開発に向けた準備
+title: マルチユーザー機能のチュートリアル - 3. 複数のユーザーの接続
 description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法を学習します。
 author: jessemcculloch
 ms.author: jemccull
@@ -7,100 +7,110 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: f7ae77d6978b5da860d890bcfe5b6f7c3d4640c8
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: a597aadbddb49fefc824d8c5b5193585fa9476a5
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031240"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81610932"
 ---
-# <a name="2-getting-unity-ready-for-development"></a>2.Unity の開発に向けた準備
+# <a name="2-connecting-multiple-users"></a>2.複数のユーザーの接続
 
-このチュートリアルでは、Mixed Reality Toolkit のインポート、ビルド設定の構成、シーンの準備など、アプリケーション開発に向けて Unity を準備して構成する方法を学習します。
+このチュートリアルでは、ライブ共有エクスペリエンスの一部として複数のユーザーを接続する方法を学習します。 チュートリアルを終えるときには、複数のデバイスでアプリケーションを実行して、各ユーザーが他のユーザーのアバターの動きをリアルタイムで確認できるようになります。
 
 ## <a name="objectives"></a>目標
 
-* アプリケーション開発のために Unity を構成する
-* Mixed Reality ツールキットをインポートする
-* プロジェクト シーンを準備する
+* 共有エクスペリエンスで複数のユーザーを接続する方法を学習する
 
-## <a name="instructions"></a>手順
+## <a name="preparing-the-scene"></a>シーンの準備
 
-1. [こちら](https://github.com/microsoft/MixedRealityToolkit-Unity/releases/download/v2.3.0/Microsoft.MixedReality.Toolkit.Unity.Foundation.2.3.0.unitypackage)をクリックして、Mixed Reality Toolkit Foundation Unity パッケージをダウンロードして保存します。
+このセクションでは、チュートリアルのプレハブをいくつか追加してシーンを準備します。
 
-2. Unity で、[Assets]\(アセット\) メニューをクリックして [Import Package]\(パッケージのインポート\) を選択し、[Custom Package]\(カスタム パッケージ\) をクリックします。
+[Project]\(プロジェクト\) ウィンドウで **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.MultiUserCapabilities]**  >  **[Prefabs]\(プレハブ\)** フォルダーに移動します。 Ctrl ボタンを押しながら **[DebugWindow]** 、 **[NetworkLobby]** 、 **[SharedPlayground]** をクリックして、3 つのプレハブを選択します。
 
-    ![Module3Chapter2step2im](images/module3chapter2step2im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section1-step1-1.png)
 
-3. 手順 1 に示されているリンクからダウンロードした Unity パッケージを選択します。 [Import]\(インポート\) ポップアップ ウィンドウが Unity に表示されたら、[Import]\(インポート\) ボタンをクリックして MRTK のインポートを開始します。 この処理には数分かかることがあります。
+3 つのプレハブを選択したまま、[Hierarchy]\(ヒエラルキー\) ウィンドウにドラッグしてこれらをシーンに追加します。
 
-    ![Module3Chapter2step3im](images/module3chapter2step3im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section1-step1-2.png)
 
-    >[!NOTE]
-    >ダウンロードしたパッケージは、ファイルを保存したローカル フォルダーにあります。 上の図では、パッケージのある場所は示されていません。
+## <a name="creating-the-user-prefab"></a>ユーザー プレハブを作成する
 
-    パッケージがインポートされると、[MRTK Project Configurator]\(MRTK プロジェクト コンフィギュレーター\) ウィンドウが表示されます。 表示されない場合は、Unity メニューの [Mixed Reality Toolkit] > [Utilities]\(ユーティリティ\) > [Configure Unity Project]\(Unity プロジェクトの構成\) を選択して開きます。
+このセクションでは、共有エクスペリエンスでユーザーを表すために使用されるプレハブを作成します。
 
-    [MRTK Project Configurator]\(MRTK プロジェクト コンフィギュレーター\) ウィンドウで、[Modify Configurations]\(構成の変更\) セクションを展開し、[Enable MSBuild for Unity]\(MSBuild for Unity を有効にする\) チェックボックスをオフにし、他のすべてのオプションがオンになっていることを確認し、[Apply]\(適用\) ボタンをクリックして設定を適用します。
+### <a name="1-create-and-configure-the-user"></a>1.ユーザーの作成と構成
 
-    ![Module3Chapter2note1im](images/module3chapter2note1im-missing01.png)
+[Hierarchy]\(ヒエラルキー\) ウィンドウで空の領域を右クリックし、 **[Create Empty]\(空のユーザーを作成\)** を選択してシーンに空のオブジェクトを追加し、オブジェクトに「**PhotonUser**」という名前を付けて、次のように構成します。
 
-    > [!CAUTION]
-    > MSBuild for Unity は使用するすべての SDK をサポートしていない場合があり、有効にした後は無効にするのが困難な場合があります。 そのため、MSBuild for Unity を有効にしないことを強くお勧めします。
-    
-4. 新しいシーンを作成します。 これを行うには、[File]\(ファイル\) をクリックし、[New Scene]\(新しいシーン\) を選択します。 HLSharedProjectMain として保存します。
+* [Transform]\(変換\) の **[Position]\(位置\)** が、X = 0、Y = 0、Z = 0 に設定されていることを確認する
 
-5. Mixed Reality Toolkit の下で、[Add to Scene and Configure]\(シーンに追加して構成\) をクリックします。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-1.png)
 
-    ![Module3Chapter2step5im](images/module3chapter2step5im.PNG)
+**PhotonUser** オブジェクトを引き続き選択した状態で、[Inspector]\(インスペクター\) ウィンドウの **[Add Component]\(コンポーネントの追加\)** ボタンを使用して **Photon User (Script)** コンポーネントを PhotonUser オブジェクトに追加します。
 
-6. これが完了したら、階層から [Mixed-Reality Toolkit (MRTK)] を選択します。 [Inspector]\(インスペクター\) パネルで、MRTK の構成プロファイルを [DefaultHoloLens2ConfigurationProfile] に変更します。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-2.png)
 
-    ![Module2Chapter1step4ima](images/Module2Chapter1step4ima-missing01.png)
+[Inspector]\(インスペクター\) ウィンドウで、 **[Add Component]\(コンポーネントの追加\)** ボタンを使用して PhotonUser オブジェクトに **Generic Net Sync (Script)** コンポーネントを追加し、次のように構成します。
 
-7. 階層から [Mixed-Reality Toolkit (MRTK)] を選択します。 [Inspector]\(インスペクター\) パネルで Mixed Reality Toolkit (Script) を探し、次の図に示すように [Copy & Customize]\(コピーしてカスタマイズ\) ボタンを押します。  この後、ポップアップが表示されます。ポップアップ メニューで [Clone]\(複製\) オプションを選択します。
+* **[Is User]\(ユーザーである\)** チェックボックスをオンにする
 
-    ![Module3Chapter2step6imc](images/module3chapter2step6imc.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-3.png)
 
-    ![Module3Chapter2step6imd](images/module3chapter2step6imd.PNG)
+[Inspector]\(インスペクター\) ウィンドウで、 **[Add Component]\(コンポーネントの追加\)** ボタンを使用して PhotonUser オブジェクトに **Photon View (Script)** コンポーネントを追加し、次のように構成します。
 
-8. 診断ウィンドウを非表示にする場合は、下にスクロールし、[Enable Diagnostics system]\(診断システムを有効にする\) チェックボックスをオフにします。 アプリケーションの開発中は、パフォーマンスを監視するために診断ウィンドウを有効なままにし、運用またはアプリケーションのデモンストレーション中は無効にすることをお勧めします。 
+* **"Observed Components"(観察されるコンポーネント)** フィールドに、Generic Net Sync (Script) コンポーネントを割り当てる
 
-    ![Module3Chapter2step7ima](images/module3chapter2step7ima.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step1-4.png)
 
-9. Ctrl + Shift + B を押すか、[File]\(ファイル\) > [Build Settings]\(ビルド設定\) に移動して、ビルド設定を開きます。 プログラムが現在、[PC, Mac and Linux Standalone]\(PC、Mac、および Linux のスタンドアロン\) プラットフォームに設定されていることに注意してください。 HoloLens 2 の開発の場合は、プラットフォームを [Universal Windows Platform]\(ユニバーサル Windows プラットフォーム\) に設定します。 それを選択し、[Switch Platform]\(プラットフォームの切り替え\) をクリックします。
+### <a name="2-create-the-avatar"></a>2.アバターを作成する
 
-    ![Module3Chapter2step8im](images/module3chapter2step8im.PNG)
+[Hierarchy]\(ヒエラルキー\) ウィンドウで、**PhotonUser** オブジェクトを右クリックして **[3D Object]\(3D オブジェクト\)**  >  **[Sphere]\(球体\)** を選択し、PhotonUser オブジェクトの子として球体オブジェクトを作成して次のように構成します。
 
-10. 完了したら、[Add Open Scenes]\(オープン シーンの追加\) というボックスをクリックします。 次に、[Inspector]\(インスペクター\) パネルに移動し、[Virtual Reality Supported]\(仮想現実がサポートされている\) の右側にあるチェック ボックスがオンになっている (下の図を参照) ことを確認します。 また、次の図に示すように、[scenes/HLSharedProjectMain]\(シーン/HLSharedProjectMain\) の横のチェック ボックスもオンになっていることを確認します。
+* [Transform]\(変換\) の **[Position]\(位置\)** が、X = 0、Y = 0、Z = 0 に設定されていることを確認する
+* [Transform]\(変換\) の **[Scale]\(スケール\)** を適切なサイズに変更する。例: X = 0.15、Y = 0.15、Z = 0.15
 
-    ![Module3Chapter2step9im](images/module3chapter2step9im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step2-1.png)
 
-11. [Inspector]\(インスペクター\) パネルの [Publishing Settings]\(発行の設定\) セクションで、下にスクロールして [Capabilities]\(機能\) に移動し、次のチェック ボックスがオンになっていることを確認します。
+### <a name="3-create-the-prefab"></a>3.プレハブを作成する
 
-    ![Module3Chapter2step9imb](images/module3chapter2step9imb.PNG)
+[Project]\(プロジェクト\) ウィンドウで **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.MultiUserCapabilities]**  >  **[Resources]\(リソース\)** フォルダーに移動します。
 
-12. 一覧表示されているカスタム パッケージをインポートします。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-1.png)
 
-    * [AzureSpatialAnchors.unitypackage](https://github.com/Azure/azure-spatial-anchors-samples/releases/download/v2.1.1/AzureSpatialAnchors.unitypackage) (バージョン 2.1.1)
-    * [MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/getting-started-v2.3.0.2/MRTK.HoloLens2.Unity.Tutorials.Assets.GettingStarted.2.3.0.2.unitypackage)
-    * [MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-spatial-anchors-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpatialAnchors.2.3.0.0.unitypackage)
-    * [MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/multi-user-capabilities-v2.1.0.1/MRTK.HoloLens2.Unity.Tutorials.Assets.MultiUserCapabilities.2.1.0.1.unitypackage)
+[Resources]\(リソース\) フォルダーを選択したまま、[Hierarchy]\(ヒエラルキー\) ウィンドウから **PhotonUser** オブジェクトを **[Resources]\(リソース\)** フォルダーに**クリックしてドラッグ**し、PhotonUser オブジェクトをプレハブにします。
 
-    >[!TIP]
-    >Azure Spatial Anchors 用に Unity プロジェクトを構成する方法については、[Azure Spatial Anchors](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1) のチュートリアル シリーズの一部である「[Azure Spatial Anchors をお使いになる前に](https://docs.microsoft.com/windows/mixed-reality/mrlearning-asa-ch1)」チュートリアルを参照してください。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-2.png)
 
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **PhotonUser** オブジェクトを右クリックし、 **[Delete]\(削除\)** を選択してシーンから削除します。
 
-13. [Project]\(プロジェクト\) パネルで、[Prefabs] フォルダーに移動します。 次の手順では、いくつかのプレハブをシーンに実装します。 [Prefabs] フォルダーで、[Debug Window] というプレハブをクリックして階層にドラッグします。 完了したら、[File]\(ファイル\)、[Save]\(保存\) の順にクリックするか、Ctrl + S を押して、プロジェクトを保存します。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section2-step3-3.png)
 
-    ![Module3Chapter2step12im](images/module3chapter2step12im.PNG)
+## <a name="configuring-pun-to-instantiate-the-user-prefab"></a>PUN を構成してユーザー プレハブのインスタンスを作成する
 
-    プレハブをクリックするとポップアップが表示され、TMP Essentials について尋ねられることがあります。 それらは必要なので、[Import TMP Essentials]\(TMP Essentials のインポート\) をクリックします。 このポップアップが表示された場合は、テキストに関連したエラーが発生しないように、階層からプレハブを削除し、再び階層にドラッグする必要がある場合があります。
+このセクションでは、前のセクションで作成した PhotonUser プレハブを使用するようにプロジェクトを構成します。
 
-    ![Module3Chapter2note2im](images/module3chapter2note2im.PNG)
+[Project]\(プロジェクト\) ウィンドウで **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.MultiUserCapabilities]**  >  **[Resources]\(リソース\)** フォルダーに移動します。
+
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **NetworkLobby** オブジェクトを展開して **NetworkRoom** 子オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで **Photon Room (Script)** コンポーネントを探し、次のように構成します。
+
+* **"Photon User Prefab"(Photon ユーザー プレハブ)** フィールドに、[Resources]\(リソース\) フォルダーから **PhotonUser** プレハブを割り当てる
+
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section3-step1-1.png)
+
+## <a name="trying-the-experience-with-multiple-users"></a>複数のユーザーのエクスペリエンスを試す
+
+Unity プロジェクトをビルドして HoloLens に配置してから Unity に戻り、HoloLens でアプリケーションが実行されている間に [Play]\(再生\) ボタンを押してゲーム モードに入ると、頭 (HoloLens) を動かした時に HoloLens のユーザー アバターが動くのを確認できます。
+
+![mrlearning-sharing](images/mrlearning-sharing/tutorial2-section4-step1-1.gif)
+
+> [!TIP]
+> HoloLens 2 に Unity プロジェクトをビルドしてデプロイする方法については、「[デバイスへのアプリケーションのビルド](mrlearning-base-ch1.md#build-your-application-to-your-device)」の手順を参照してください。
+
+> [!CAUTION]
+> アプリケーションは Photon に接続する必要があるため、お使いのコンピューター/デバイスがインターネットに接続されていることを確認してください。
 
 ## <a name="congratulations"></a>結論
 
-Unity プロジェクトを Photon で使用する準備ができました。 この後のチュートリアルでは、このシーンに基づき、完全な共有エクスペリエンスに向けて Unity プロジェクトを構築します。
+複数のユーザーが同じエクスペリエンスに接続して、互いの動きを確認できるようにプロジェクトを構成できました。 次のチュートリアルでは、オブジェクトの動きが複数のデバイスで共有されるようにする機能を実装します。
 
-[次のチュートリアル: 3.複数ユーザーの接続](mrlearning-sharing(photon)-ch3.md)
+[次のチュートリアル: 2.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch3.md)

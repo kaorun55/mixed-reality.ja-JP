@@ -6,18 +6,18 @@ ms.author: ayyonet
 ms.date: 04/10/2020
 ms.topic: article
 keywords: WebXR、WinMR、WebAR、WebVR、WindowsMixedReality、HoloLens、windows mixed reality、web vr、web xr、web mr、web ar、360、360 video、360ビデオ、360 photo、360 photos、360コンテンツ、イマーシブ web、イマーシブ-web、IW、immersiveweb
-ms.openlocfilehash: 5756af9f48f4bb25477e75fb1f7c09e7239bdab9
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: a1288e8f477f42b0937e797623fb83fe8f63685c
+ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278483"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82835611"
 ---
 # <a name="mixed-reality-development-with-javascript-overview"></a>JavaScript を使用した Mixed Reality 開発の概要
 
 ## <a name="mixed-reality-applications-on-the-web"></a>Web 上の Mixed Reality アプリケーション
 
-[WebXR Device api](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)と [Deprecated webvr api] ([WebXR の概要](webxr-overview.md)) を使用して、web で Mixed Reality 機能を使用できます。 WebXR の全機能をサポートしていないブラウザーでは、 [WebXR Polyfills](https://github.com/immersive-web/webxr-polyfill)を web サイトに追加できます。
+[WebXR Device api](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)と[非推奨の webvr api](webxr-overview.md)を使用して、Web 上で Mixed Reality 機能を使用できます。 WebXR の全機能をサポートしていないブラウザーでは、 [WebXR Polyfills](https://github.com/immersive-web/webxr-polyfill)を web サイトに追加できます。
 
 ## <a name="what-is-webxr-polyfill"></a>WebXR ポリフィルとは
 

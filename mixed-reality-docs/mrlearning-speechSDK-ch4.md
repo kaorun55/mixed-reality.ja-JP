@@ -8,10 +8,10 @@ ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
 ms.openlocfilehash: b2342e7d0d502af2787ca311d18a44f8726acf2d
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79028434"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.意図と自然言語の理解の設定
@@ -29,7 +29,7 @@ ms.locfileid: "79028434"
 
 ![mrlearning-speech](images/mrlearning-speech/tutorial4-section1-step1-1.png)
 
-[プロジェクト] ウィンドウで、 **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.GettingStarted]**  >  **[Prefabs]\(プレハブ\)**  >  **[RocketLauncher]** フォルダーで、**RocketLauncher_Complete** プレハブを [Hierarchy]\(階層\) ウィンドウにドラッグし、カメラの前の適切な場所に配置します。次に例を示します。
+[プロジェクト] ウィンドウで、 **[資産]**  >  **[MRTK.Tutorials.GettingStarted]**  >  **[Prefabs]\(プレハブ\)**  >  **[RocketLauncher]** フォルダーで、**RocketLauncher_Complete** プレハブを [Hierarchy]\(階層\) ウィンドウにドラッグし、カメラの前の適切な場所に配置します。次に例を示します。
 
 * [変換] の **[位置]** X = 0、Y =-0.4、Z = 1
 * [変換] の **[回転]** X = 0、Y = 90、Z = 0
@@ -134,7 +134,7 @@ ms.locfileid: "79028434"
 ![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step2-1.png)
 
 > [!CAUTION]
-> このチュートリアルでは、Unity プロジェクトでこの意図がその名前 (つまり、"PressButton") によって参照されます。 そのため、意図にまったく同じ名前を付けることが非常に重要です。
+> このチュートリアルでは、Unity プロジェクトでこの意図がその名前によって参照されます。つまり、'PressButton' です。 そのため、意図にまったく同じ名前を付けることが非常に重要です。
 
 新しい意図が作成されると、その意図のページが表示されます。
 
@@ -178,7 +178,7 @@ ms.locfileid: "79028434"
 ![mrlearning-speech](images/mrlearning-speech/tutorial4-section3-step4-2.png)
 
 > [!CAUTION]
-> このチュートリアルでは、Unity プロジェクトでこれらのエンティティがその名前 (つまり、"Action" と "Target") によって参照されます。 そのため、エンティティにまったく同じ名前を付けることが非常に重要です。
+> このチュートリアルでは、Unity プロジェクトでこれらのエンティティがその名前によって参照されます。つまり、'Action' と 'Target' です。 そのため、エンティティにまったく同じ名前を付けることが非常に重要です。
 
 ### <a name="5-assign-entities-to-the-example-utterances"></a>5.サンプル発話へのエンティティの割り当て
 

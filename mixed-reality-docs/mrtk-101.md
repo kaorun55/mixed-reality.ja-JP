@@ -8,10 +8,10 @@ ms.topic: article
 keywords: HoloLens, MRTK, Mixed Reality Toolkit, Windows Mixed Reality, 設計, サンプル アプリ, コントロール
 ms.localizationpriority: high
 ms.openlocfilehash: 4564e7a0c6a717452effacae2587461fe283cf0b
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "79028312"
 ---
 # <a name="mrtk-101-how-to-use-mixed-reality-toolkit-unity-for-basic-interactions-hololens-2-hololens-windows-mixed-reality-openvr"></a>MRTK 101: 基本的な対話式操作に Mixed Reality Toolkit Unity を使用する方法 (HoloLens 2、HoloLens、Windows Mixed Reality、Open VR)
@@ -41,7 +41,7 @@ MRTK では、エディター内入力シミュレーションがサポートさ
 
 
 ## <a name="how-to-grab-and-move-anobject"></a>オブジェクトをつかんで動かす方法
-オブジェクトをつかめるようにするには、ManipulationHandler.cs と NearInteractionGrabbable.cs (多関節ハンド トラッキング入力を使用して直接つかむ) の 2 つのスクリプトを割り当てます。ManipulationHandler では、近くと遠くの両方の対話式操作がサポートされています。 オブジェクトをつかんで動かすには、HoloLens 2 の多関節ハンド トラッキング入力 (近く)、ハンド レイ (遠く)、モーション コントローラーのビーム (遠く)、HoloLens の視線カーソルとエアタップ (遠く) を使用できます。
+オブジェクトをつかめるようにするには、次の 2 つのスクリプトを割り当てます。ManipulationHandler.cs と NearInteractionGrabbable.cs(多関節ハンド トラッキング入力を使用して直接つかむ)。ManipulationHandler では、近くと遠くの両方の対話式操作がサポートされています。 オブジェクトをつかんで動かすには、HoloLens 2 の多関節ハンド トラッキング入力 (近く)、ハンド レイ (遠く)、モーション コントローラーのビーム (遠く)、HoloLens の視線カーソルとエアタップ (遠く) を使用できます。
 
 <img alt="NearInteractionGrabbable and ManipulationHandler.cs assigned to an object" width="800" src="images/MRTK101/MRTK_ManipulationHandler.png">
 

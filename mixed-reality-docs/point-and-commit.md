@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 対話, 設計, HoloLens, 手, 遠隔, ポイントとコミット
 ms.openlocfilehash: d3f886fd8e892fe34116c3a1d601ae3a87d87a9b
-ms.sourcegitcommit: 2bfe9b1af4ee2cc0d668caeccb8ebc3137cbc20b
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75901529"
 ---
 # <a name="point-and-commit-with-hands"></a>手を使ったポイントとコミット
@@ -20,7 +20,7 @@ ms.locfileid: "75901529"
 
 手を使ったポイントとコミットは、ユーザーが手の届かない所にある 2D コンテンツや 3D オブジェクトをターゲットに設定したり、選択したり、操作したりすることを可能にする入力モデルです。 この "遠隔" 対話技術は Mixed Reality に固有のものであり、人間が現実の世界と自然に対話するためのものではありません。 たとえば、スーパー ヒーロー映画 *X-Men* のキャラクター [Magneto ](https://en.wikipedia.org/wiki/Magneto_(comics)) は、遠くにある物体に手を伸ばして操作することができます。 こうしたことは現実世界では行えません。 HoloLens (AR) と Mixed Reality (MR) を使用することで、この魔法の力をユーザーに付与してホログラフィック コンテンツをただ楽しむだけでなく、ユーザーの対話をより効果的かつ効率的にするために現実世界の物理的制約を打ち破ることができます。
 
-## <a name="device-support"></a>デバイス サポート
+## <a name="device-support"></a>デバイスのサポート
 
 <table>
 <colgroup>
@@ -211,7 +211,7 @@ HoloLens 2 では、ユーザーの手のひらの中心から放出される手
 
 ---
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 * [手で直接操作](direct-manipulation.md)
 * [視線入力とコミット](gaze-and-commit.md)
 * [手 - 直接操作](direct-manipulation.md)

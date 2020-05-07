@@ -8,10 +8,10 @@ ms.topic: article
 ms.localizationpriority: high
 keywords: Spectator View, iPhone, iOS, iPad, OpenCV, カメラ, ARKit, HoloLens, 複合現実, MixedRealityToolkit, デモ, 記録
 ms.openlocfilehash: 9bc1c2809c7d780d439d9efb58f464b41de3dccd
-ms.sourcegitcommit: 4d43a8f40e3132605cee9ece9229e67d985db645
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74491165"
 ---
 # <a name="spectator-view-for-hololens-and-hololens-2"></a>HoloLens および HoloLens 2 向けの Spectator View
@@ -47,7 +47,7 @@ Spectator View は、モバイル デバイスを使用して HD でホログラ
 
 次の表に、Spectator View のさまざまな機能を示します。 ご自分の録画のニーズに最適なオプションを選択してください。
 
-|                                      | モバイル                  |                    ビデオ カメラ              |
+|                                      | 携帯電話                  |                    ビデオ カメラ              |
 |--------------------------------------|:-----------------------:|:-------------------------------------------:|
 | HD 品質                           |         フル HD         |        プロ品質の撮影 (ビデオ カメラによって決定される)      |
 | カメラの容易な移動                 |            ✔            |                      ✔                      |

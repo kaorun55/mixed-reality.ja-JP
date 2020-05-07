@@ -7,12 +7,12 @@ ms.date: 04/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Visual Studio, HoloLens, Mixed Reality, デバッグ, 配置
-ms.openlocfilehash: 718635922196b9c044c6904ebab994e9e2a2ff1a
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 8708ca39460fbd381bd41f5887e1276291f48b07
+ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278000"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81484322"
 ---
 # <a name="using-visual-studio-to-deploy-and-debug"></a>Visual Studio を使用した配置とデバッグ
 
@@ -23,7 +23,7 @@ DirectX と Unity のどちらを使用して Mixed Reality アプリを開発�
 
 ## <a name="prerequisites"></a>前提条件
 1. インストール手順については、「[ツールのインストール](install-the-tools.md)」を参照してください。
-2. Visual Studio で新しいユニバーサル Windows アプリ プロジェクトを作成します。  HoloLens (第 1 世代) の場合は、Visual Studio 2017 以降を使用します。  Hololens 2 の場合は、Visual Studio 2019 16.2 以降を使用します。 C# と C++ がサポートされています (または、[Unity でアプリを作成する](holograms-100.md)ための手順に従ってください)。
+2. Visual Studio で新しいユニバーサル Windows アプリ プロジェクトを作成します。  HoloLens (第 1 世代) の場合は、Visual Studio 2017 以降を使用します。  Hololens 2 の場合は、Visual Studio 2019 16.2 以降を使用します。 C# と C++ がサポートされています  (または、[Unity でアプリを作成する](holograms-100.md)ための手順に従ってください)。
 
 ## <a name="enabling-developer-mode"></a>開発者モードを有効にする
 
@@ -31,8 +31,8 @@ DirectX と Unity のどちらを使用して Mixed Reality アプリを開発�
 
 ### <a name="hololens"></a>HoloLens
 1. HoloLens の電源を入れ、デバイスを装着します。
-2. [ブルーム](system-gesture.md#bloom) ジェスチャを実行して、メイン メニューを開きます。
-3. **[Settings]\(設定\)** タイルを見つめて、[エアタップ](gaze-and-commit.md#composite-gestures) ジェスチャを実行します。 2 回目のエア タップを実行して、アプリを環境内に配置します。 配置すると、設定アプリが起動します。
+2. [スタート ジェスチャ](system-gesture.md)を実行して、メイン メニューを開きます。
+3. **[Settings]\(設定\)** タイルを選択して、環境でアプリを起動します。
 4. **[Update]** (更新) メニュー項目を選択します。
 5. **[For developers]** (開発者向け) メニュー項目を選択します。
 6. **[Developer Mode]** (開発者モード) を有効にします。 これで、[Visual Studio から HoloLens にアプリを配置](using-visual-studio.md)できるようになります。
@@ -84,6 +84,9 @@ HoloLens IP アドレスが変わった場合は、 **[プロジェクト] > [�
 4. PC から HoloLens にアプリを初めて配置するときは、PIN の入力を求められます。 後述する「**デバイスのペアリング**」の手順を実行します。
 
 ## <a name="deploying-an-app-over-usb---hololens-2"></a>USB 経由での アプリの配置 - HoloLens 2
+
+>[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Deploying-your-HoloLens-2-application/player?format=ny]
+
 1. アプリに合わせて **[ARM]** または **[ARM64]** ビルド構成を選択します</br>
 ![Visual Studio の [ARM64] ビルド構成](images/arm64setting.png)</br>
 2. [配置ターゲット] ドロップダウン メニューで **[デバイス]** を選択します</br>

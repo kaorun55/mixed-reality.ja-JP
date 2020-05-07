@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
-ms.openlocfilehash: f293e779b041cdf4aa636cf317b7eaca70e16410
-ms.sourcegitcommit: 37816514b8fe20669c487774b86e80ec08edcadf
+ms.openlocfilehash: 3eb54f84e30b2354907204895e62accdb9ad54f9
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81003328"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604953"
 ---
 # <a name="scene-understanding-sdk-overview"></a>シーンについて SDK の概要
 
@@ -25,7 +25,7 @@ SceneUnderstanding SDK は NuGet を使用してダウンロードできます�
 
 **注:** 最新リリースはプレビューパッケージに依存しており、プレリリースパッケージを表示するには、そのパッケージを有効にする必要があります。
 
-0\.5.2022 のバージョンでは、シーンの理解によってのC#言語C++予測がサポートされ、アプリケーションで Win32 または UWP プラットフォーム用のアプリケーションを開発できるようになります。 このバージョンの場合、SceneUnderstanding では、HoloLens2 との通信専用に使用される SceneObserver を除いて、unity のエディター内でのサポートをサポートしています。 
+バージョン 0.5.2022-rc では、シーンの理解によって C# および C++ の言語予測がサポートされるため、アプリケーションは Win32 または UWP プラットフォーム用のアプリケーションを開発できます。 このバージョンの場合、SceneUnderstanding では、HoloLens2 との通信専用に使用される SceneObserver を除いて、unity のエディター内でのサポートをサポートしています。 
 
 SceneUnderstanding には Windows SDK バージョン18362以降が必要です。 
 
@@ -47,7 +47,7 @@ Unity プロジェクトで SDK を使用している場合は、 [unity 用の 
 
 各シーンでは、アプリケーションのメモリ領域にデータが格納されるため、シーンオブジェクトまたはその内部データのすべての関数がアプリケーションのプロセスで常に実行されると想定できます。
 
-### <a name="layout"></a>[レイアウト]
+### <a name="layout"></a>レイアウト
 
 シーンを理解するには、ランタイムが論理的および物理的にコンポーネントを表す方法を理解し、理解しておくことが重要な場合があります。 シーンは、主要な改訂を必要とせずに将来の要件を満たすように pliable された、基になる構造を維持しながら、単純なレイアウトを持つデータを表します。 このシーンでは、すべてのコンポーネント (すべてのシーンオブジェクトの構成要素) をフラットリストに格納し、特定のコンポーネントが他のコンポーネントを参照する参照を使用して階層とコンポジションを定義します。
 
@@ -58,7 +58,7 @@ Unity プロジェクトで SDK を使用している場合は、 [unity 用の 
 <tr>
 <td>
 <ul>
-  シーン
+  Scene
   <ul>
   <li>SceneObject_1
     <ul>
@@ -101,7 +101,7 @@ Unity プロジェクトで SDK を使用している場合は、 [unity 用の 
 
 次のセクションでは、シーンについて理解するための構造の概要について説明します。 このセクションを読むと、シーンの表現方法や、さまざまなコンポーネントがどのように使用されるかについて理解できます。 次のセクションでは、具体的なコード例と、この概要でここしている追加の詳細について説明します。
 
-以下で説明するすべての型は、`Microsoft.MixedReality.SceneUnderstanding` 名前空間に存在します。
+以下で説明するすべての型は、 `Microsoft.MixedReality.SceneUnderstanding`名前空間に存在します。
 
 ### <a name="scenecomponents"></a>SceneComponents
 
@@ -119,13 +119,13 @@ SceneObjects は、次のいずれかを持つことができます。
 <tr>
 <th>SceneObjectKind</th> <th>説明</th>
 </tr>
-<tr><td>背景</td><td>SceneObject は、他の認識された種類のシーンオブジェクトの1つでは<b>ない</b>ことがわかっています。 このクラスは不明と混同しないでください。背景が壁、床、天井などではないことがわかっています。不明なカテゴリはまだ分類されていません。</b></td></tr>
+<tr><td>バックグラウンド</td><td>SceneObject は、他の認識された種類のシーンオブジェクトの1つでは<b>ない</b>ことがわかっています。 このクラスは不明と混同しないでください。背景が壁、床、天井などではないことがわかっています。不明なカテゴリはまだ分類されていません。</b></td></tr>
 <tr><td>電話</td><td>物理的な壁面。 壁面は、移動可能な環境構造であると見なされます。</td></tr>
-<tr><td>階数</td><td>床は、どのような面でも使用できます。 注: 階段はフロアではありません。 また、このフロアは、明らかになる可能性があるため、1つの床面を明確に示すものではないことにも注意してください。 複数レベルの構造、傾斜などすべてが floor として分類される必要があります。</td></tr>
+<tr><td>床</td><td>床は、どのような面でも使用できます。 注: 階段はフロアではありません。 また、このフロアは、明らかになる可能性があるため、1つの床面を明確に示すものではないことにも注意してください。 複数レベルの構造、傾斜などすべてが floor として分類される必要があります。</td></tr>
 <tr><td>Ceiling</td><td>部屋の上面。</td></tr>
 <tr><td>プラットフォーム</td><td>ホログラムを配置できる大きな平らなサーフェイス。 これらは、テーブル、countertops、およびその他の大きな水平サーフェスを表す傾向があります。</td></tr>
 <tr><td>World</td><td>ラベル付けに依存しないジオメトリックデータ用に予約されたラベル。 EnableWorldMesh update フラグを設定することによって生成されるメッシュは、"世界" として分類されます。</td></tr>
-<tr><td>不明</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
+<tr><td>Unknown</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
 </tr>
 </table>
 
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 シーンの理解により、変換を処理するときに、従来の3D シーン表現に合わせて意図的に配置しようとしました。 そのため、各シーンは、最も一般的な3D 環境表現と同じように、1つの座標系に限定されます。 SceneObjects は、その座標系内の位置と方向として場所を提供します。 アプリケーションが、1つのオリジンが提供する機能の制限を拡大するシーンを処理している場合は、SceneObjects を SpatialAnchors に固定するか、複数のシーンを生成して結合することができますが、わかりやすくするために、watertight のシーンが独自のオリジンに存在することを想定しています。
 
-次の Unity コードは、Windows 認識と Unity Api を使用して、座標系をまとめて配置する方法を示しています。 Unity `.ToUnity()` の[SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview)に対応する SpatialCoordinateSystem を取得する `UnityEngine.Matrix4x4``System.Numerics.Matrix4x4` 方法の詳細については、「 [SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) And For the Windows 知覚 Api」と「 [unity の Mixed Reality native objects](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced) 」を参照してください。
+次の Unity コードは、Windows 認識と Unity Api を使用して、座標系をまとめて配置する方法を示しています。 Unity の`.ToUnity()`世界の原点に対応する SpatialCoordinateSystem の取得の詳細[について](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)は、「 [SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) and [SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 」、および「」と「」 `System.Numerics.Matrix4x4`と`UnityEngine.Matrix4x4`「」を参照してください。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -295,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-各 `SceneObject` には `Position` と `Orientation` プロパティがあり、これを使用して、含まれている `Scene`の元を基準として対応するコンテンツを配置できます。 たとえば、次の例では、ゲームがシーンルートの子であると想定し、そのローカル位置と回転を割り当てて特定の `SceneObject`に配置します。
+各`SceneObject`には`Position` 、 `Orientation`プロパティとプロパティがあります。これを使用すると、を含む`Scene`の原点を基準として、対応するコンテンツを配置できます。 たとえば、次の例では、ゲームがシーンルートの子であることを前提として、そのローカル位置と回転を、 `SceneObject`指定されたに合わせて割り当てます。
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -345,7 +345,7 @@ foreach (var sceneObject in myScene.SceneObjects)
 
 ### <a name="mesh"></a>メッシュ
 
-メッシュは、オブジェクトまたは環境の幾何学的表現を表します。 [空間マッピング](spatial-mapping.md)と同様に、各空間サーフェスメッシュで提供されるメッシュインデックスと頂点データは、すべての最新のレンダリング api で三角形メッシュをレンダリングするために使用される頂点およびインデックスバッファーと同じ使い慣れたレイアウトを使用します。 頂点の位置は、`Scene`の座標系で指定します。 このデータを参照するために使用される特定の Api は次のとおりです。
+メッシュは、オブジェクトまたは環境の幾何学的表現を表します。 [空間マッピング](spatial-mapping.md)と同様に、各空間サーフェスメッシュで提供されるメッシュインデックスと頂点データは、すべての最新のレンダリング api で三角形メッシュをレンダリングするために使用される頂点およびインデックスバッファーと同じ使い慣れたレイアウトを使用します。 頂点位置は、 `Scene`の座標系で指定されます。 このデータを参照するために使用される特定の Api は次のとおりです。
 
 ```cs
 void GetTriangleIndices(int[] indices);
@@ -362,7 +362,7 @@ mesh.GetTriangleIndices(indices);
 mesh.GetVertexPositions(positions);
 ```
 
-インデックス/頂点バッファーは > = インデックスまたは頂点の数である必要がありますが、それ以外は任意にサイズを変更して、効率的なメモリの再利用を可能にすることができます。
+インデックス/頂点バッファーは >= インデックスまたは頂点の数である必要がありますが、それ以外は任意にサイズを変更して、効率的なメモリの再利用を可能にすることができます。
 
 ## <a name="developing-with-scene-understandings"></a>シーン異なればを使用した開発
 
@@ -378,10 +378,10 @@ HoloLens2 を持っている場合は、ComputeSerializedAsync の出力をフ�
 
 HoloLens2 デバイスを持っていないが、シーンを理解したい場合は、キャプチャ済みシーンをダウンロードする必要があります。 現在、シーンに関する理解のサンプルにはシリアル化されたシーンが付属しています。これをダウンロードして、独自の便利な方法で使用できます。 次の場所で見つけることができます。
 
-[シーンについてのサンプルシーン](https://github.com/sceneunderstanding-microsoft/unitysample/tree/master/Assets/Resources/SerializedScenesForPCPath)
+[シーンについてのサンプルシーン](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples/tree/master/Assets/Resources/SerializedScenesForPCPath)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [空間マッピング](spatial-mapping.md)
 * [シーンの理解](scene-understanding.md)
-* [Unity のサンプル](https://github.com/sceneunderstanding-microsoft/unitysample)
+* [Unity のサンプル](https://github.com/microsoft/MixedReality-SceneUnderstanding-Samples)
