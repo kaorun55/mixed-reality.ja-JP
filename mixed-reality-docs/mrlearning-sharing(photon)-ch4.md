@@ -1,87 +1,107 @@
 ---
-title: マルチユーザー機能のチュートリアル - 4. 複数のユーザーとオブジェクトの移動を共有する
-description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法について学習します。
+title: マルチユーザー機能のチュートリアル - 5. Azure Spatial Anchors の共有エクスペリエンスへの統合
+description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法を学習します。
 author: jessemcculloch
 ms.author: jemccull
 ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: b0ddf0799fd94c29ce8f1221c55073cd77b63703
-ms.sourcegitcommit: 5b2ba01aa2e4a80a3333bfdc850ab213a1b523b9
+ms.openlocfilehash: c27ed7327cfe0a61f2b63e309348bdea1a535ea1
+ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031243"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82604973"
 ---
-# <a name="4-sharing-object-movements-with-multiple-users"></a>4.複数のユーザーとオブジェクトの移動を共有する
+# <a name="4-integrating-azure-spatial-anchors-into-a-shared-experience"></a>4.Azure Spatial Anchors の共有エクスペリエンスへの統合
 
-このチュートリアルでは、共有セッションのすべての参加者が共同作業したり、相互の操作を表示したりできるように、オブジェクトの移動を共有する方法について説明します。 このレッスンは、[ベース モジュール チュートリアル](mrlearning-base.md)の一部として作成された月着陸船ランチャーに基づいて進められます。
+このチュートリアルでは、Azure Spatial Anchors (ASA) を共有エクスペリエンスに統合する方法を学習します。 ASA により複数のデバイスが現実の世界への共通の参照を持てるようになり、ユーザーは互いの姿をその現実の物理的な位置に見たり、共有エクスペリエンスを同じ場所で見たりすることができるようになります。
 
 ## <a name="objectives"></a>目標
 
-- 共有する 3D モデルとして月着陸船ランチャーを取り込む
-- 3D モデルの移動を共有するようにプロジェクトを構成する
-- 基本的なマルチユーザー コラボレーション アプリケーションを構築する方法を学習する
+* ASA を共有エクスペリエンスに統合し、複数デバイスで位置合わせする
+* ASA がローカル共有エクスペリエンスのコンテキストでどのように機能するかについての基本を学ぶ
 
-## <a name="instructions"></a>手順
+## <a name="preparing-the-scene"></a>シーンの準備
 
-1. 前のレッスンのシーンを保存します (Ctrl + S)。 必要なときに簡単に見つけられるように、HLSharedProjectMainPart4.unity という名前を付けることができます。
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **SharedPlayground** オブジェクトを展開し、**TableAnchor** オブジェクトを展開してその子オブジェクトを公開します。
 
-2. [Project]\(プロジェクト\) ウィンドウの [Assets]\(資産\) -> [Scripts]\(スクリプト\) フォルダーで、[GenericNetSync] をダブルクリックして、Visual Studio または使用している任意のコード エディターで開きます。  
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section1-step1-1.png)
 
-    ![module3chapter4updatestep2](images/module3chapter4updatestep2.png)
+[Project]\(プロジェクト\) ウィンドウで **[Assets]\(アセット\)**  >  **[MRTK.Tutorials.MultiUserCapabilities]**  >  **[Prefabs]\(プレハブ\)** フォルダーに移動して、**Buttons** プレハブを [Hierarchy]\(ヒエラルキー\) ウィンドウの **TableAnchor** 子オブジェクト上にドラッグし、TableAnchor オブジェクトの子としてシーンに追加します。
 
-3. 行 34 および 38 の "//" を削除して、このレッスンで使用するテーブルのコードをアクティブにします。 次に、ファイルを保存します。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section1-step1-2.png)
 
-    ![module3chapter4updatestep3](images/module3chapter4updatestep3.png)
+## <a name="configuring-the-buttons-to-operate-the-scene"></a>シーンを操作するためのボタンの構成
 
-4. [Project]\(プロジェクト\) ウィンドウで、[Assets]\(資産\) -> [Scripts]\(スクリプト\) フォルダー内の PhotonRoom.cs ファイルをダブルクリックして、Visual Studio で開きます。
+このセクションでは一連のボタン イベントを構成して、Azure Spatial Anchors を使用して共有エクスペリエンスでの空間的な位置合わせを実現する方法の基本を示します。
 
-    ![module3chapter4updatestep4](images/module3chapter4updatestep4.png)
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **Button** オブジェクトを展開し、**StartAzureSession** という名前の最初の子ボタン オブジェクトを選択します。
 
-5. 手順 3 と同じように、"//" を削除して、行 25、26、106 のコードをアクティブにする必要があります。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-1.png)
 
-    ![module3chapter4updatestep5a](images/module3chapter4updatestep5a.png)
+[Inspector]\(インスペクター\) ウィンドウで **Interactable (Script)** コンポーネントを探し、**OnClick ()** イベントを次のように構成します。
 
-    ![module3chapter4updatestep5b](images/module3chapter4updatestep5b.png)
+* **"None (Object)"(なし (オブジェクト))** フィールドに、**TableAnchor** オブジェクトを割り当てる
+* **[No Function]\(関数なし\)** ドロップダウンから、 **[AnchorModuleScript]**  > **StartAzureSession ()** 関数を選択する
 
-6. [Hierarchy]\(階層\) ビューで、[NetworkRoom] オブジェクトを選択します。
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-2.png)
 
-    ![module3chapter4updatestep6](images/module3chapter4updatestep6.png)
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **CreateAzureAnchor** という名前の 2 番目の子ボタン オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで **Interactable (Script)** コンポーネントを探して **OnClick ()** イベントを次のように構成します。
 
-7. [Project]\(プロジェクト\) ビューで、[Assets]\(資産\) -> [Resources]\(リソース\) -> [Prefabs]\(プレハブ\) に移動します。 まず、Table プレハブを PhotonRoom クラスの Tableprefab スロットにドラッグ アンド ドロップします。 次に、RocketLauncherCompleteVariantprefab を PhotonRoom クラスの Module Prefab スロットにドラッグ アンド ドロップします。
+* **"None (Object)"(なし (オブジェクト))** フィールドに、**TableAnchor** オブジェクトを割り当てる
+* **[No Function]\(関数なし\)** ドロップダウンから、 **[AnchorModuleScript]**  > **CreateAzureAnchor()** 関数を選択する
+* 表示される新しい **"None (Game Object)"(なし (ゲーム オブジェクト))** フィールドに、**TableAnchor** オブジェクトを割り当てる
 
-    ![module3chapter4updatestep7](images/module3chapter4updatestep7.png)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-3.png)
 
-    >[!NOTE]
-    >プレハブ オブジェクトのいずれかをクリックして解放した場合、インスペクターがそのオブジェクトに切り替えます。 各オブジェクトをクリックし、適切なスロットにドラッグしてドロップし、解放します。
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **ShareAzureAnchor** という名前の 3 番目の子ボタン オブジェクトを選択して、[Inspector]\(インスペクター\) ウィンドウで **Interactable (Script)** コンポーネントを探して **OnClick ()** イベントを次のように構成します。
 
-8. MixedRealityPlayspace の左側にある矢印をクリックし、子ゲーム オブジェクト MainCamera を SharedPlayground プレハブに移動します。 次に、プレハブ MixedRealityPlayspace を選択してキーボードの [Delete] キーを押して、そのプレハブを削除します。
+* **"None (Object)"(なし (オブジェクト))** フィールドに、**TableAnchor** オブジェクトを割り当てる
+* **[No Function]** (関数なし) ドロップダウンから、 **[SharingModuleScript]**  > **ShareAzureAnchor()** 関数を選択する
 
-    ![Module3hapter4step5im](images/module3chapter4step5im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-4.png)
 
-    >[!NOTE]
-    >Main Camera と SharedPlayground の両方の位置が 0、0、0 に設定されていることを確認してください。
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **GetAzureAnchor** という名前の 4 番目の子ボタン オブジェクトを選択して、[Inspector]\(インスペクター\) ウィンドウで **Interactable (Script)** コンポーネントを探して **OnClick ()** イベントを次のように構成します:
 
-9. "SharedPlayground" オブジェクトを選択し、マウスを右クリックして [Create Empty]\(空の作成\) オプションを選択し、空のゲーム オブジェクトを "SharedPlayground" ゲーム オブジェクトの子として作成します。
+* **"None (Object)"(なし (オブジェクト))** フィールドに、**TableAnchor** オブジェクトを割り当てる
+* **[No Function]** (関数なし) ドロップダウンから、 **[SharingModuleScript]**  > **GetAzureAnchor()** 関数を選択する
 
-   ![Module3chapter4step6im](images/module3chapter4step6im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section2-step1-5.png)
 
-10. 階層で新しいオブジェクトが選択された状態で、[Inspector]\(インスペクター\) パネルでオブジェクトの名前を TableAnchor に変更します。 また、[Add Component]\(コンポーネントの追加\) をクリックし、TableAnchor コンポーネントを検索します。 それを選択してオブジェクトに追加します。
+## <a name="connecting-the-scene-to-the-azure-resource"></a>シーンを Azure リソースに接続する
 
-    ![Module3Chapter4step7im](images/module3chapter4step7im.PNG)
+[Hierarchy]\(ヒエラルキー\) ウィンドウで **SharedPlayground** オブジェクトを展開し、**TableAnchor** オブジェクトを選択します。 [Inspector]\(インスペクター\) ウィンドウで **Spatial Anchor Manager (Script)** コンポーネントを探し、このチュートリアル シリーズの「[前提条件](mrlearning-sharing(photon)-ch1.md#prerequisites)」の部分で作成した Azure Spatial Anchors アカウントからの資格情報を使用して、 **[Credentials]\(資格情報\)** セクションを構成します。
 
-11. [Prefabs]\(プレハブ\) フォルダーの [Project]\(プロジェクト\) パネルで、Table プレハブを、先ほど作成した "TableAnchor" 子オブジェクトにドラッグします。
+* **"Spatial Anchors Account ID"(Spatial Anchors アカウント ID)** フィールドに、Azure Spatial Anchors アカウントからの**アカウント ID** を貼り付ける
+* **"Spatial Anchors Account Key"(Spatial Anchors アカウント キー)** フィールドに、Azure Spatial Anchors アカウントからのプライマリまたはセカンダリ **アクセス キー** を貼り付ける
 
-    ![Module3Chapter4step8im](images/module3chapter4step8im.PNG)
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section3-step1-1.png)
+
+**TableAnchor** オブジェクトを選択したまま、[Inspector]\(インスペクター\) ウィンドウですべてのスクリプト コンポーネントが有効になっていることを確認します。
+
+* **Spatial Anchor Manager (Script)** コンポーネントの隣にあるチェックボックスをオンにして有効にする
+* **Anchor Module Script (Script)** コンポーネントの隣にあるチェックボックスをオンにして有効にする
+* **Sharing Module Script (Script)** コンポーネントの隣にあるチェックボックスをオンにして有効にする
+
+![mrlearning-sharing](images/mrlearning-sharing/tutorial4-section3-step1-2.png)
+
+## <a name="trying-the-experience-with-spatial-alignment"></a>空間的な位置合わせのエクスペリエンスを試す
+
+> [!NOTE]
+> Azure Spatial Anchors を Unity で実行することはできません。 そのため、Azure Spatial Anchors の機能をテストするには、最低 2 台の HoloLens デバイスにプロジェクトを配置する必要があります。
+
+Unity プロジェクトをビルドして 2 台の HoloLens デバイスに配置すると、Azure Anchor ID を共有してデバイス間で空間的な位置合わせを実現できます。 これをテストするには、次の手順を実行します。
+
+1. HoloLens デバイス 1 で次のようにします。**アプリケーションを開始する** (Rocket Launcher のインスタンスが作成され、テーブルに配置されます)
+2. HoloLens デバイス 2 で次のようにします。**アプリケーションを開始する** (両方のユーザーが Rocket Launcher のあるテーブルを見ることができますが、テーブルは同じ場所には表示されず、ユーザー アバターはユーザーが実際にいるところに表示されません)
+3. HoloLens デバイス 1 で次のようにします。 **[Start Azure Session]\(Azure セッションの開始\)** ボタンを押す
+4. HoloLens デバイス 1 で次のようにします。 **[Create Azure Anchor]\(Azure Anchor の作成\)** ボタンを押す (TableAnchor オブジェクトの場所にアンカーが作成され、アンカーの情報が Azure リソースに保存されます)。
+5. HoloLens デバイス 1 で次のようにします。 **[Share Azure Anchor]\(Azure Anchor の共有\)** ボタンを押す (他のユーザーとアンカー ID がリアルタイムで共有されます)
+6. HoloLens デバイス 2 で次のようにします。 **[Start Azure Session]\(Azure セッションの開始\)** ボタンを押す
+7. HoloLens デバイス 2 で次のようにします。 **[Get Azure Anchor]\(Azure Anchor の取得\)** を押す (Azure リソースに接続して共有アンカー ID のアンカー情報が取得され、TableAnchor オブジェクトは HoloLens デバイス 1 でアンカーを作成した場所に移動します)
 
 ## <a name="congratulations"></a>結論
 
-これが完了したら、月着陸船を見つけます。 その後、Unity プロジェクトに参加するすべてのユーザーが月着陸船ランチャーをあちこちに移動できます。  すべての移動が同期されるため、各ユーザーがお互いの操作を確認できます。 これらの概念は、すべての機能を備えた共有コラボレーション エクスペリエンスの基本的な構成要素となります。
-
-すべてのユーザーは共有エクスペリエンスの一部として接続され、オブジェクトの相対的な移動を参照できますが、アプリケーションでは依然としてアバターとオブジェクトを正確に配置できないため、ローカル ユーザーは現実世界の中の同じ場所にあるお互いとオブジェクトを参照できませんでした。 ローカル共有エクスペリエンスを固定するために、すべてのデバイスで物理環境についての共通理解が必要です。 このモジュールでは、次のレッスンで実装する [Azure Spatial Anchors](<https://azure.microsoft.com//services/spatial-anchors/>) (ASA) を使用してこれを実現します。
-
-次のレッスンに進む前に、ASA 学習モジュールを完了する必要があります。これには、ASA の基本、Azure アカウントとリソースの作成、および共有エクスペリエンスにこれを統合する前に必要なその他の基本的な構成要素が対象として含まれます。
-
-[次のレッスン:5.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch5.md)
+このチュートリアルでは、Azure の強力な Spatial Anchors を統合して、複数のデバイスを共有エクスペリエンスの中に配置する方法を学習しました。 これでこのチュートリアル シリーズは終了となります。Photon アカウントとアプリケーションを設定し、Photon と PUN を Unity アプリケーションに統合し、ユーザー アバターと共有オブジェクトを構成し、最後に ASA を使用して複数の参加者を配置する方法を学習しました。
