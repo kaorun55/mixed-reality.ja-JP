@@ -1,19 +1,19 @@
 ---
-title: デバイスポータル API リファレンス
+title: Device Portal API リファレンス
 description: HoloLens の Windows デバイスポータルの API リファレンス
 author: jonmlyons
 ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows デバイスポータル、API
-ms.openlocfilehash: 236de35c2c736fc5a0289b7be1f1548f0a08fa26
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 8c9d60f458cddd3ba258aed0ee82f7aa16c10ba6
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278240"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227963"
 ---
-# <a name="device-portal-api-reference"></a>デバイスポータル API リファレンス
+# <a name="device-portal-api-reference"></a>Device Portal API リファレンス
 
 [Windows デバイスポータル](using-the-windows-device-portal.md)のすべての機能は REST API の上に構築されており、データにアクセスしたり、デバイスをプログラムで制御したりするために使用できます。
 
@@ -33,7 +33,7 @@ ms.locfileid: "81278240"
 パラメーター
 * パッケージ: インストールするパッケージのファイル名。
 
-ペイロード
+Payload
 * マルチパート準拠の http 本文
 
 **/api/app/packagemanager/packages (GET)**
@@ -163,11 +163,11 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 
 **/api/holographic/simulation/control/mode (GET)**
 
-シミュレーション モードを取得する
+シミュレーションモードを取得する
 
 **/api/holographic/simulation/control/mode (POST)**
 
-シミュレーション モードを設定する
+シミュレーションモードの設定
 
 パラメーター
 * モード: シミュレーションモード: 既定、シミュレーション、リモート、レガシ
@@ -183,6 +183,10 @@ Websocket のアップグレードを受け入れ、30 fps で更新を送信す
 **/api/holographic/simulation/control/stream (POST)**
 
 コントロールストリームを作成するか (優先順位が必要)、作成されたストリームにデータを post します (streamId が必要)。 ポストされたデータは ' application/オクテット-stream ' 型である必要があります。
+
+**/api/holographic/simulation/display/stream (GET/WebSocket)**
+
+"シミュレーション" モードで、システムに表示されるコンテンツを含むシミュレーションビデオストリームを要求します。  単純なフォーマット記述子ヘッダーが最初に送信され、その後に h.264 でエンコードされたテクスチャが続きます。それぞれのヘッダーには、目のインデックスとテクスチャサイズが示されます。
 
 ## <a name="perception-simulation-playback"></a>認識シミュレーションの再生
 
@@ -415,7 +419,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 データを返します
 * システム情報を含む JSON: CPU、GPU、メモリ、ネットワーク、IO
 
-## <a name="power"></a>電力
+## <a name="power"></a>Power
 
 **/api/バッテリ (GET)**
 
@@ -425,7 +429,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 システムが低電力状態であるかどうかを確認します
 
-## <a name="remote-control"></a>[リモート制御]
+## <a name="remote-control"></a>リモート コントロール
 
 **/api/control/restart (POST)**
 
@@ -497,7 +501,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 WPR プロファイルをアップロードし、アップロードされたプロファイルを使用してトレースを開始します。
 
-ペイロード
+Payload
 * マルチパート準拠の http 本文
 
 データを返します
@@ -527,6 +531,6 @@ WPR (パフォーマンス) トレースセッションを開始します
 データを返します
 * 開始時に、WPR セッションの状態を返します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 * [Windows Device Portal を使用する](using-the-windows-device-portal.md)
 * [デバイスポータルコア API リファレンス (UWP)](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

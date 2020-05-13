@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
-ms.openlocfilehash: 3eb54f84e30b2354907204895e62accdb9ad54f9
-ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
+ms.openlocfilehash: 2f958d45f72d6c39d4222840615c5b177db7c76f
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82604953"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228017"
 ---
 # <a name="scene-understanding-sdk-overview"></a>シーンについて SDK の概要
 
@@ -101,7 +101,7 @@ Unity プロジェクトで SDK を使用している場合は、 [unity 用の 
 
 次のセクションでは、シーンについて理解するための構造の概要について説明します。 このセクションを読むと、シーンの表現方法や、さまざまなコンポーネントがどのように使用されるかについて理解できます。 次のセクションでは、具体的なコード例と、この概要でここしている追加の詳細について説明します。
 
-以下で説明するすべての型は、 `Microsoft.MixedReality.SceneUnderstanding`名前空間に存在します。
+以下で説明するすべての型は、 `Microsoft.MixedReality.SceneUnderstanding` 名前空間に存在します。
 
 ### <a name="scenecomponents"></a>SceneComponents
 
@@ -125,7 +125,7 @@ SceneObjects は、次のいずれかを持つことができます。
 <tr><td>Ceiling</td><td>部屋の上面。</td></tr>
 <tr><td>プラットフォーム</td><td>ホログラムを配置できる大きな平らなサーフェイス。 これらは、テーブル、countertops、およびその他の大きな水平サーフェスを表す傾向があります。</td></tr>
 <tr><td>World</td><td>ラベル付けに依存しないジオメトリックデータ用に予約されたラベル。 EnableWorldMesh update フラグを設定することによって生成されるメッシュは、"世界" として分類されます。</td></tr>
-<tr><td>Unknown</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
+<tr><td>不明</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
 </tr>
 </table>
 
@@ -158,7 +158,7 @@ SceneUnderstanding を操作するための最初の手順は、アプリケー�
 シーンは SceneObserver を使用して計算されます。 シーンを作成する前に、アプリケーションがデバイスを照会して、SceneUnderstanding をサポートしていることを確認し、SceneUnderstanding が必要とする情報に対するユーザーアクセスを要求する必要があります。
 
 ```cs
-if (SceneObserver.IsSupported())
+if (!SceneObserver.IsSupported())
 {
     // Handle the error
 }
@@ -265,7 +265,7 @@ foreach (var mesh in firstFloor.Meshes)
 
 シーンの理解により、変換を処理するときに、従来の3D シーン表現に合わせて意図的に配置しようとしました。 そのため、各シーンは、最も一般的な3D 環境表現と同じように、1つの座標系に限定されます。 SceneObjects は、その座標系内の位置と方向として場所を提供します。 アプリケーションが、1つのオリジンが提供する機能の制限を拡大するシーンを処理している場合は、SceneObjects を SpatialAnchors に固定するか、複数のシーンを生成して結合することができますが、わかりやすくするために、watertight のシーンが独自のオリジンに存在することを想定しています。
 
-次の Unity コードは、Windows 認識と Unity Api を使用して、座標系をまとめて配置する方法を示しています。 Unity の`.ToUnity()`世界の原点に対応する SpatialCoordinateSystem の取得の詳細[について](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)は、「 [SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) and [SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 」、および「」と「」 `System.Numerics.Matrix4x4`と`UnityEngine.Matrix4x4`「」を参照してください。
+次の Unity コードは、Windows 認識と Unity Api を使用して、座標系をまとめて配置する方法を示しています。 Unity の世界の原点に対応する SpatialCoordinateSystem の取得の詳細[について](https://docs.microsoft.com//windows/mixed-reality/unity-xrdevice-advanced)は、「 [SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem) and [SpatialGraphInteropPreview](https://docs.microsoft.com//uwp/api/windows.perception.spatial.preview.spatialgraphinteroppreview) 」、および「」と「」と「」を参照してください `.ToUnity()` `System.Numerics.Matrix4x4` `UnityEngine.Matrix4x4` 。
 
 ```cs
 public class SceneRootComponent : MonoBehavior
@@ -295,7 +295,7 @@ public class SceneRootComponent : MonoBehavior
 }
 ```
 
-各`SceneObject`には`Position` 、 `Orientation`プロパティとプロパティがあります。これを使用すると、を含む`Scene`の原点を基準として、対応するコンテンツを配置できます。 たとえば、次の例では、ゲームがシーンルートの子であることを前提として、そのローカル位置と回転を、 `SceneObject`指定されたに合わせて割り当てます。
+各 `SceneObject` には、 `Position` プロパティとプロパティがあります。これを使用すると、を含むの原点を基準として、 `Orientation` 対応するコンテンツを配置でき `Scene` ます。 たとえば、次の例では、ゲームがシーンルートの子であることを前提として、そのローカル位置と回転を、指定されたに合わせて割り当て `SceneObject` ます。
 
 ```cs
 void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneObject)
@@ -345,7 +345,7 @@ foreach (var sceneObject in myScene.SceneObjects)
 
 ### <a name="mesh"></a>メッシュ
 
-メッシュは、オブジェクトまたは環境の幾何学的表現を表します。 [空間マッピング](spatial-mapping.md)と同様に、各空間サーフェスメッシュで提供されるメッシュインデックスと頂点データは、すべての最新のレンダリング api で三角形メッシュをレンダリングするために使用される頂点およびインデックスバッファーと同じ使い慣れたレイアウトを使用します。 頂点位置は、 `Scene`の座標系で指定されます。 このデータを参照するために使用される特定の Api は次のとおりです。
+メッシュは、オブジェクトまたは環境の幾何学的表現を表します。 [空間マッピング](spatial-mapping.md)と同様に、各空間サーフェスメッシュで提供されるメッシュインデックスと頂点データは、すべての最新のレンダリング api で三角形メッシュをレンダリングするために使用される頂点およびインデックスバッファーと同じ使い慣れたレイアウトを使用します。 頂点位置は、の座標系で指定され `Scene` ます。 このデータを参照するために使用される特定の Api は次のとおりです。
 
 ```cs
 void GetTriangleIndices(int[] indices);

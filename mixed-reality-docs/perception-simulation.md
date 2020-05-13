@@ -3,15 +3,15 @@ title: 認識シミュレーション
 description: 知覚シミュレーションライブラリを使用して、イマーシブアプリケーションのシミュレートされた入力を自動化するためのガイド
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 04/26/2019
+ms.date: 05/12/2020
 ms.topic: article
 keywords: HoloLens、シミュレーション、テスト
-ms.openlocfilehash: 503533bc5a2e9307b7c5217632d42670285aac0a
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 701fd39490d87b70df9bd68cc99da6482d41b676
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73437548"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83228027"
 ---
 # <a name="perception-simulation"></a>認識シミュレーション
 
@@ -23,22 +23,22 @@ ms.locfileid: "73437548"
 
 ## <a name="setting-up-a-visual-studio-project-for-perception-simulation"></a>認識シミュレーションのための Visual Studio プロジェクトの設定
 1. 開発用 PC に[HoloLens エミュレーターをインストール](install-the-tools.md)します。 エミュレーターには、認識シミュレーションに使用するライブラリが含まれています。
-2. 新しい Visual Studio C#デスクトッププロジェクトを作成します (コンソールプロジェクトは、作業を開始するのに適しています)。
-3. 次のバイナリを参照としてプロジェクトに追加します (プロジェクト > 追加 > 参照...)。これらは、HoloLens 2 エミュレーターの% **ProgramFiles (x86)% \ microsoft xde\\10.0.18362.0**などの% ProgramFiles (x86)% \ microsoft xde\\(バージョン) で見つけることができます。  (注: バイナリは HoloLens 2 エミュレーターに含まれていますが、デスクトップ上の Windows Mixed Reality でも機能します)。ある. 認識シミュレーション用の PerceptionSimulationManager マネージC#ラッパー。
+2. 新しい Visual Studio C# デスクトッププロジェクトを作成します (コンソールプロジェクトは、開始するのに適しています)。
+3. 次のバイナリを参照としてプロジェクトに追加します (プロジェクト >追加 >参照...)。これらは、 \\ HoloLens 2 エミュレーターの% **ProgramFiles (x86)% \ MICROSOFT xde \\ 10.0.18362.0**など、% ProgramFiles (X86)% \ microsoft xde (バージョン) で見つけることができます。  (注: バイナリは HoloLens 2 エミュレーターに含まれていますが、デスクトップ上の Windows Mixed Reality でも機能します)。ある. 認識シミュレーション用の PerceptionSimulationManager マネージ C# ラッパー。
     b. PerceptionSimulationRest-HoloLens またはエミュレーターに対する web ソケット通信チャネルを設定するためのライブラリ。
     c. SimulationStream-シミュレーション用の共有型。
-4. 実装バイナリ PerceptionSimulationManager をプロジェクト a に追加します。 まず、これをバイナリとしてプロジェクトに追加します (プロジェクト > 追加 > 既存の項目...)。プロジェクトソースフォルダーにコピーしないように、リンクとして保存します。 PerceptionSimulationManager をリンクとしてプロジェクトに追加 ![b](images/saveaslink.png) ます。 次に、ビルド時に出力フォルダーにコピーされていることを確認します。 これは、バイナリのプロパティシートにあります。 PerceptionSimulationManager マークを付けて、出力ディレクトリにコピー ![](images/copyalways.png)
+4. 実装バイナリ PerceptionSimulationManager をプロジェクト a に追加します。 まず、これをバイナリとしてプロジェクトに追加します (プロジェクト >追加 >既存の項目...)。プロジェクトソースフォルダーにコピーしないように、リンクとして保存します。 ![PerceptionSimulationManager をリンク b としてプロジェクトに追加します ](images/saveaslink.png) 。 次に、ビルド時に出力フォルダーにコピーされていることを確認します。 これは、バイナリのプロパティシートにあります。 ![PerceptionSimulationManager を出力ディレクトリにコピーするようにマークします。](images/copyalways.png)
 5. アクティブソリューションプラットフォームを x64 に設定します。  (Configuration Manager を使用して、x64 用のプラットフォームエントリがまだ存在しない場合は作成します)。
 
 ## <a name="creating-an-iperceptionsimulation-manager-object"></a>IPerceptionSimulation Manager オブジェクトの作成
 
 シミュレーションを制御するには、IPerceptionSimulationManager オブジェクトから取得したオブジェクトに更新を発行します。 最初の手順では、そのオブジェクトを取得し、ターゲットデバイスまたはエミュレーターに接続します。 エミュレーターの IP アドレスを取得するには、[ツールバー](using-the-hololens-emulator.md)の [デバイスポータル] ボタンをクリックします。
 
-![デバイスポータルを開く アイコン](images/emulator-deviceportal.png) 開いている**デバイスポータル**: エミュレーターで HoloLens OS の Windows デバイスポータルを開きます。  Windows Mixed Reality の場合、この設定は、[デバイスポータルを有効にする] の下にある [Connect & Security] (セキュリティの更新) の下にある [設定] アプリで取得できます。  IP アドレスとポートの両方に注意してください。
+![デバイスポータルを開くアイコン開いている ](images/emulator-deviceportal.png) **デバイスポータル**: エミュレーターで HoloLens OS の Windows デバイスポータルを開きます。  Windows Mixed Reality の場合、この設定は、[デバイスポータルを有効にする] の下にある [Connect & Security] (セキュリティの更新) の下にある [設定] アプリで取得できます。  IP アドレスとポートの両方に注意してください。
 
 まず、RestSimulationStreamSink を呼び出して、RestSimulationStreamSink オブジェクトを取得します。 これは、http 接続を介して制御するターゲットデバイスまたはエミュレーターです。 コマンドは、デバイスまたはエミュレーターで実行されている[Windows デバイスポータル](using-the-windows-device-portal.md)に渡され、処理されます。 オブジェクトを作成するには、次の4つのパラメーターが必要です。
-* Uri uri-ターゲットデバイスの IP アドレス (例: "https://123.123.123.123" または "https://123.123.123.123:50080")
-* System .Net. NetworkCredential 資格情報-ターゲットデバイスまたはエミュレーターで[Windows デバイスポータル](using-the-windows-device-portal.md)に接続するためのユーザー名/パスワード。 ローカルアドレスを使用してエミュレーターに接続している場合 (例: 168 *...* *) 同じ PC で、すべての資格情報が受け入れられます。
+* Uri uri-ターゲットデバイスの IP アドレス (例: " https://123.123.123.123 " または " https://123.123.123.123:50080 ")
+* System .Net. NetworkCredential 資格情報-ターゲットデバイスまたはエミュレーターで[Windows デバイスポータル](using-the-windows-device-portal.md)に接続するためのユーザー名/パスワード。 ローカルアドレスを使用してエミュレーターに接続している場合 (例: 168 *...**) 同じ PC で、すべての資格情報が受け入れられます。
 * bool normal-通常の優先度の場合は True、低優先度の場合は false。 テストシナリオでは、通常、これを*true*に設定して、テストで制御を行うことができます。  エミュレーターと Windows Mixed Reality のシミュレーションでは、優先度の低い接続を使用します。  テストで優先度の低い接続も使用している場合は、最後に確立された接続が制御されます。
 * CancellationToken は、非同期操作を取り消すためのトークンです。
 
@@ -46,13 +46,13 @@ ms.locfileid: "73437548"
 
 ## <a name="control-the-simulated-human"></a>シミュレートされた人間を制御する
 
-IPerceptionSimulationManager には、ISimulatedHuman オブジェクトを返すヒューマンプロパティがあります。 シミュレートされた人間を制御するには、このオブジェクトに対して操作を実行します。 次に、例を示します。
+IPerceptionSimulationManager には、ISimulatedHuman オブジェクトを返すヒューマンプロパティがあります。 シミュレートされた人間を制御するには、このオブジェクトに対して操作を実行します。 次に例を示します。
 
 ```
 manager.Human.Move(new Vector3(0.1f, 0.0f, 0.0f))
 ```
 
-## <a name="basic-sample-c-console-application"></a>基本的なC#サンプルコンソールアプリケーション
+## <a name="basic-sample-c-console-application"></a>C# コンソールアプリケーションの基本的なサンプル
 
 ```
 using System;
@@ -108,7 +108,7 @@ namespace ConsoleApplication1
 }
 ```
 
-## <a name="extended-sample-c-console-application"></a>拡張サンプルC#コンソールアプリケーション
+## <a name="extended-sample-c-console-application"></a>拡張サンプル C# コンソールアプリケーション
 
 ```
 using System;
@@ -428,7 +428,7 @@ public enum SimulatedGesture
 
 **PerceptionSimulation. SimulatedEyesCalibrationState**
 
-目が調整されました。  これは既定値です。
+目が調整されました。  これが既定値です。
 
 **PerceptionSimulation. SimulatedEyesCalibrationState**
 
@@ -545,15 +545,15 @@ public struct Vector3
 
 **PerceptionSimulation. Vector3**
 
-ベクターの X 成分。
+ベクトルの X 成分。
 
 **PerceptionSimulation. Vector3**
 
-ベクターの Y 成分。
+ベクトルの Y 成分。
 
 **PerceptionSimulation. Vector3**
 
-ベクターの Z 成分。
+ベクトルの Z 成分。
 
 **#Ctor PerceptionSimulation (system.string、system.string、system.string) を (system.string) します。**
 
@@ -655,6 +655,52 @@ public struct Frustum
 
 ビューの垂直方向のフィールドから、ビューの垂直方向のフィールドまでの比率。
 
+### <a name="microsoftperceptionsimulationsimulateddisplayconfiguration"></a>PerceptionSimulation. SimulatedDisplayConfiguration
+
+シミュレートされたヘッドセットの表示の構成について説明します。
+
+```
+public struct SimulatedDisplayConfiguration
+{
+    public Vector3 LeftEyePosition;
+    public Rotation3 LeftEyeRotation;
+    public Vector3 RightEyePosition;
+    public Rotation3 RightEyeRotation;
+    public float Ipd;
+    public bool ApplyEyeTransforms;
+    public bool ApplyIpd;
+}
+```
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. LeftEyePosition**
+
+ステレオレンダリングの目的で、ヘッドの中心から左目への変換。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. LeftEyeRotation**
+
+ステレオレンダリングの目的での左目の回転。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. RightEyePosition**
+
+ステレオレンダリングの目的で、ヘッドの中心から右目への変換。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. RightEyeRotation**
+
+ステレオレンダリングの目的での右目の回転。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. Ipd**
+
+ステレオレンダリングのためにシステムによって報告された Ipd 値。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration (変換)**
+
+左辺と右辺の変換に指定された値が有効であると見なされ、実行中のシステムに適用されるかどうか。
+
+**PerceptionSimulation. SimulatedDisplayConfiguration. ApplyIpd**
+
+Ipd に指定された値が有効であると見なされ、実行中のシステムに適用されるかどうか。
+
+
 ### <a name="microsoftperceptionsimulationiperceptionsimulationmanager"></a>PerceptionSimulation. IPerceptionSimulationManager
 
 デバイスの制御に使用されるパケットを生成するためのルート。
@@ -707,6 +753,27 @@ public interface ISimulatedDevice
 
 パラメーター
 * type-シミュレートされたデバイスの新しい種類
+
+### <a name="microsoftperceptionsimulationisimulateddevice2"></a>PerceptionSimulation. ISimulatedDevice2
+
+ISimulatedDevice を ISimulatedDevice2 にキャストすると、追加のプロパティを使用できます。
+
+```
+public interface ISimulatedDevice2
+{
+    bool IsUserPresent { [return: MarshalAs(UnmanagedType.Bool)] get; [param: MarshalAs(UnmanagedType.Bool)] set; }
+    SimulatedDisplayConfiguration DisplayConfiguration { get; set; }
+
+};
+```
+
+**PerceptionSimulation. ISimulatedDevice2. IsUserPresent**
+
+シミュレートされた人間がヘッドセットをアクティブに装着しているかどうかを取得または設定します。
+
+**PerceptionSimulation. ISimulatedDevice2. DisplayConfiguration**
+
+シミュレートされた表示のプロパティを取得または設定します。
 
 ### <a name="microsoftperceptionsimulationisimulatedheadtracker"></a>PerceptionSimulation. ISimulatedHeadTracker
 
@@ -1214,7 +1281,7 @@ public static class PerceptionSimulationManager
 
 作成されたシンク。
 
-**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, PerceptionSimulation. ISimulationStreamSinkFactory)**
+**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, PerceptionSimulation.. ISimulationStreamSinkFactory)**
 
 指定されたファイルから記録を読み込みます。
 
@@ -1226,7 +1293,7 @@ public static class PerceptionSimulationManager
 
 読み込まれた記録。
 
-**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, PerceptionSimulation. ISimulationStreamSinkFactory,,PerceptionSimulation. ISimulationRecordingCallback)**
+**PerceptionSimulation. PerceptionSimulationManager. LoadPerceptionSimulationRecording (System.string, PerceptionSimulation ISimulationStreamSinkFactory, PerceptionSimulation. ISimulationRecordingCallback..)**
 
 指定されたファイルから記録を読み込みます。
 
@@ -1252,7 +1319,10 @@ public enum StreamDataTypes
     SpatialMapping = 0x08,
     Calibration = 0x10,
     Environment = 0x20,
-    All = None | Head | Hands | SpatialMapping | Calibration | Environment
+    SixDofControllers = 0x40,
+    Eyes = 0x80,
+    DisplayConfiguration = 0x100
+    All = None | Head | Hands | SpatialMapping | Calibration | Environment | SixDofControllers | Eyes | DisplayConfiguration
 }
 ```
 
@@ -1279,6 +1349,18 @@ public enum StreamDataTypes
 **PerceptionSimulation のデータ型**
 
 デバイスの環境に関するデータのストリーム。
+
+**PerceptionSimulation. SixDofControllers.**
+
+モーションコントローラーに関するデータのストリーム。
+
+**PerceptionSimulation のデータ型**
+
+シミュレートされた人間の目に関するデータのストリーム。
+
+**PerceptionSimulation を構成します。**
+
+デバイスのディスプレイ構成に関するデータのストリーム。
 
 **PerceptionSimulation のデータ型**
 
