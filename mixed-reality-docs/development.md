@@ -4,16 +4,16 @@ title: ツールとアーキテクチャについて学習する
 description: HoloLens とイマーシブ ヘッドセットの Mixed Reality 開発者向け説明書です。
 author: grbury
 ms.author: grbury
-ms.date: 08/27/2019
+ms.date: 04/27/2020
 ms.topic: overview
 ms.localizationpriority: high
-keywords: Mixed Reality, 開発する, 開発, HoloLens, Unity, DirectX
-ms.openlocfilehash: 3bd5fea55a8dad2982a1a14680169eb51764c1df
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+keywords: Mixed Reality, 開発する, 開発, HoloLens, Unity, Unreal, DirectX
+ms.openlocfilehash: 97a6e130af45a9444ead5e6ed40168351c4dbbf6
+ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81277726"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82835291"
 ---
 # <a name="learn-the-tools-and-architecture"></a>ツールとアーキテクチャについて学習する
 
@@ -36,12 +36,12 @@ ms.locfileid: "81277726"
     :::column:::    
        [![Unity](images/unity_logo.png)](development.md#unity)<br>
         **[Unity](development.md#unity)**<br>   
-        Mixed Reality アプリを構築する最速のパスは、Unity を使用するものです。 
+        Unity を使用して、クロスプラットフォームのフル機能を備えた Mixed Reality アプリを構築します。
     :::column-end:::    
     :::column:::    
         [![Unreal](images/Unreal_logo.png)](development.md#unreal)<br>
-         **[Unreal](development.md#unreal)**<br>    
-        HoloLens 2 の実稼働可能サポートも、Unreal Engine 4.23 に含まれる予定です。    
+        **[Unreal](development.md#unreal)**<br> 
+        Unreal Engine での実稼働対応サポートにより、美しい Mixed Reality エクスペリエンスを生み出します。 
     :::column-end:::
     :::column:::    
         [![JavaScript](images/web-logo.png)](development.md#javascript)<br>
@@ -95,6 +95,16 @@ HandInteractionExamples.unity のサンプル シーンには、多関節ハン�
 
 ### <a name="unreal-development-overview"></a>[Unreal 開発の概要](unreal-development-overview.md)
 Unreal を使用した Mixed Reality アプリの構築方法について説明します。
+
+<br>
+
+### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unreal"></a>[Microsoft の Unreal 用 Mixed Reality ツールキット (MRTK)](https://github.com/microsoft/MixedRealityToolkit-Unreal)
+Unreal 用 Mixed Reality ツールキット (MRTK-Unreal) は、Unreal Engine を使用して Mixed Reality アプリケーションの開発を促進するように設計されたプラグイン、サンプル、ドキュメントの形式で構成された一連のコンポーネントです。
+
+<br>
+
+### <a name="open-source-sample-apps-and-a-step-by-step-tutorial"></a>[オープン ソースのサンプル アプリとステップバイステップ チュートリアル](unreal-uxt-ch1.md)
+Unreal の開発者が Mixed Reality の開発を開始するためのチュートリアルです。[Unreal v0.8 向けの UX ツール](https://github.com/microsoft/MixedReality-UXTools-Unreal)を使用した HoloLens 2 アプリの作成のエンドツーエンド プロセスを説明します。
 
 <br>
 

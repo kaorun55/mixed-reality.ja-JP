@@ -8,24 +8,26 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, アカデミー, チュートリアル
-ms.openlocfilehash: ebb40c6ae877ac167c7c16a67e08ef2501f6290d
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: db60ff35156ea20aadd1ba04f9304aa27a2488cb
+ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75334460"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82835651"
 ---
 # <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
 
 ![HoloLens 2 ユーザー](images/08_Tutorials.png)
 
-現在、すべてのチュートリアルとサンプル アプリは Unity ベースです。 他のエンジンおよびプラットフォーム向けのコンテンツを開発する場合は、目次にある関連する見出しの下で確認できます。
+現在、すべてのチュートリアルとサンプル アプリは Unity または Unreal ベースです。 他のエンジンおよびプラットフォーム向けのコンテンツを開発する場合は、目次にある関連する見出しの下で確認できます。
 
 ## <a name="hololens-2-tutorials"></a>HoloLens 2 のチュートリアル
 
-HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。 チュートリアルは、[Mixed Reality ツールキット 2.0 (MRTK 2.0) ](https://github.com/microsoft/MixedRealityToolkit-Unity)が基になっています。
+HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。 Unity チュートリアルは [Mixed Reality Toolkit 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity) に基づいており、Unreal のチュートリアルは [Unreal Engine 0.8 向けの UX ツール](https://github.com/microsoft/MixedReality-UXTools-Unreal)に基づいています。
 
-* チュートリアル入門 - [概要および目標 (1/7 章)](mrlearning-base.md)
+* 入門チュートリアル
+    * Unity - [概要と目標 (1/7 章)](mrlearning-base.md)
+    * Unreal - [概要 (1/6 章)](unreal-uxt-ch1.md)
 * Azure Spatial Anchor チュートリアル - [Azure Spatial Anchors を使い始める (1/3 章)](mrlearning-asa-ch1.md)
 * Azure Speech Services チュートリアル - [音声認識とトランスクリプションの統合と使用 (1/4 章)](mrlearning-speechSDK-ch1.md)
 * マルチユーザー機能のチュートリアル - [Photon Unity ネットワークの設定 (1/5 章)](mrlearning-sharing(photon)-ch1.md)
