@@ -100,6 +100,7 @@
 ## [ツールとアーキテクチャについて学習する](development.md)
 ## [ツールのインストール](install-the-tools.md)
 ## 複合現実クラウド サービス
+### [Azure Remote Rendering](https://docs.microsoft.com/azure/remote-rendering)
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
 ## [チュートリアルとサンプル アプリ](tutorials.md)
 ### Unity
