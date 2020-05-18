@@ -3,16 +3,16 @@ title: HoloLens エミュレーターを使用する
 description: HoloLens エミュレーターを使用して、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストします。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 4/13/2020
+ms.date: 5/12/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: bbdf389a1b7bf42e3dfb1fffb09cf6d3b1a65b6a
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: f525276d127bc0bbb682d7cea6821028258c6177
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81278020"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227987"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
@@ -28,7 +28,7 @@ HoloLens のエミュレーターを使用すると、物理的な HoloLens を�
 HoloLens のエミュレーターをダウンロードします。
 
 バージョン: 
-* [HoloLens 2 エミュレーター (2020 年 4 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2126826)。
+* [HoloLens 2 エミュレーター (Windows Holographic、バージョン 2004)](https://go.microsoft.com/fwlink/?linkid=2129088)。
 * [HoloLens エミュレーター (第 1 世代) およびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 HoloLens エミュレーターのリリース ノートと以前のビルドは、「[HoloLens エミュレーターのアーカイブ](hololens-emulator-archive.md)」ページにあります。
@@ -78,6 +78,8 @@ HoloLens (第 1 世代) のカーソルは、頭の移動と回転に追従し�
 * **ブルーム/システム ジェスチャ** - キーボードの Windows キーまたは F2 キーを押すか、Xbox コントローラーの B ボタンを押します。
 * **手を動かしてスクロールする** - Alt キーを押したままにし、マウスの右ボタンを押しながらマウスを上下にドラッグします。または、Xbox コントローラーで右トリガーと A ボタンを押しながら、右スティックを上下に移動します。
 * **手を動かして向きを変える** (HoloLens 2 エミュレーターのみ) - Alt キーを押しながらマウスを上下左右にドラッグして手を動かします。または、方向キーと Q または E を使用して手を回転させたり傾けたりします。 Xbox コントローラーでは、L または R ボタンを押しながら左サムスティックを使用して手を前後左右に動かし、右サムスティックを使用して手を回転させ、Dpad の上下で手を上げ下げします。
+
+Windows Mixed Reality イマーシブ ヘッドセットをお持ちですか?  HoloLens 2 エミュレーター (Windows Holographic、バージョン 2004) 以降では、Windows Mixed Reality イマーシブ ヘッドセットとモーション コントローラーを使用して、HoloLens 2 エミュレーターを制御し、ステレオで表示することができます。  「[HoloLens 2 エミュレーターで Windows Mixed Reality イマーシブ ヘッドセットとモーション コントローラーを使用する](#using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator)」を参照してください
 
 ## <a name="anatomy-of-the-hololens-2-emulator"></a>HoloLens 2 エミュレーターの構造 
 
@@ -164,6 +166,34 @@ HoloLens (第 1 世代) のカーソルは、頭の移動と回転に追従し�
 
 ![HoloLens エミュレーターの [更新] タブ](images/emulator-updates-500px.png)
 
+### <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>HoloLens 2 エミュレーターで Windows Mixed Reality イマーシブ ヘッドセットとモーション コントローラーを使用する
+
+HoloLens 2 エミュレーター (Windows Holographic、バージョン 2004) 以降では、Windows Mixed Reality ヘッドセットとモーション コントローラーを使用して、HoloLens 2 エミュレーターをステレオで表示して操作できます。  これにより、HoloLens 2 デバイスを使用しなくても、頭と手を使ってより高速かつ自然な動きができます。  これは、HoloLens 2 デバイスに完全に置き換わるものではなく、キーボード、マウス、ゲームパッドを使用して 2D のデスクトップ ウィンドウで行うエミュレーターの操作を超えた、より優れたエクスペリエンスを提供することを目的としたものであることにご注意ください。  この機能を有効にするには:
+
+1. Windows Mixed Reality が使用する PC 上に構成されており、Windows Mixed Reality イマーシブ ヘッドセットが接続されていることを確認します。
+2. HoloLens 2 エミュレーターを起動します
+3. ツール バー ボタンをクリックするか、F7 キーを押して、シミュレーション パネルを開きます。
+4. パネルを一番下までスクロールします。
+5. [Use HMD for simulation]\(HMD をシミュレーションに使用する\) というラベルが付いたボックスをオンにします
+6. Windows Mixed Reality が起動し、エミュレーターの表示が若干変わります。  ヘッドセットを使用しない場合、エミュレーターでは両方の目が頭の中央に配置され、目は 1 つのみ表示されます。  ヘッドセットを使用すると、エミュレーターによって真のステレオ出力が生成されます。デスクトップ ウィンドウには目は 1 つのみレンダリングされますが、ヘッドセットには両方の目がレンダリングされます。
+7. オプションで、モーション コントローラーを 1 つまたは両方オンにします。  コントローラーの入力は、エミュレーターのハンド入力にマップされます。  たとえば、タップする場合は、モーション コントローラーのトリガーを引きます。  移動するには、サムスティックを使用します。  コントロールの完全な一覧については、「[高度な HoloLens エミュレーターと Mixed Reality Simulator の入力](advanced-hololens-emulator-and-mixed-reality-simulator-input.md)」を参照してください
+
+ヘッドセットでのコンテンツ表示に問題がある場合:
+
+- ヘッドセットと Mixed Reality ポータルの両方でディスプレイに何も表示されていないのに、デスクトップの HoloLens 2 エミュレーター ウィンドウにコンテンツが表示されている場合は、エミュレーターでハードウェア グラフィック アクセラレータが有効になっていることを確認します。  Windows Mixed Reality イマーシブ ヘッドセットをサポートするには、エミュレーターでハードウェア グラフィック アクセラレータが有効になっている必要があります。
+- ヘッドセットにコンテンツが表示されているものの、ホログラムがぼやけているか、画像が二重に表示される場合は、次の手順に従ってステレオ表示を自分の目に合わせて調整します。
+
+1. [Use HMD for simulation]\(HMD をシミュレーションに使用する\) を一時的にオフにします。
+2. レジストリ エディター (regedit.exe) を起動します
+3. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PerceptionSimulation に移動します
+4. "EnableEyePoseControl" という名前の新しい DWORD 値を作成し、その値を 1 に設定します。
+5. エミュレーターで [Use HMD for simulation]\(HMD をシミュレーションに使用する\) を有効にします。
+6. ヘッドセットにコンテンツが表示されたら、方向キーを使用して、目の動きを調整します。  左目を調整する場合は左側の Alt キーを押したままにし、右目を調整する場合は右側の Alt キーを押したままにします。  それぞれの目の動きを調整するには、その目を調整するための適切な Alt キーを押したまま、'Q' キーと 'E' キーを使用します。  目の間隔を調整するには、'+' キーと '-' キーを使用します。  (テンキーの + または - は機能しませんので、ご注意ください。  メイン キーボードのボタンを使用してください。)
+7. ステレオ表示が正しく表示されたら、'S' キーを押して、変更を保存します。  この新しい構成は、将来エミュレーターを起動するときのために保存されます。
+8. 変更を破棄して以前の構成に戻す場合は、'L' キーを押して、既定の構成または以前の構成を読み込みます。
+9. レジストリの "EnableEyePoseControl" 値を 0 に変更し、[Use HMD for simulation]\(HMD をシミュレーションに使用する\) オプションを切り替えます。
+
+保存した構成を削除する必要がある場合は、HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PerceptionSimulation の "DisplayConfiguration" という名前の値を削除します。  エミュレーターでヘッドセットを使用している場合、この変更が有効になったことを確認するには、[Use HMD for simulation]\(HMD をシミュレーションに使用する\) を一旦オフにしてからオンにし直す必要があります。
 
 ## <a name="anatomy-of-the-hololens-1st-gen-emulator"></a>HoloLens (第 1 世代) エミュレーターの構造
 
@@ -218,6 +248,11 @@ HoloLens (第 1 世代) のカーソルは、頭の移動と回転に追従し�
 HoloLens (第 1 世代) で [Windows デバイス ポータル](using-the-windows-device-portal.md)のシミュレーションのページを使用すると、自分の部屋を記録してエミュレーターで使用することもできます。
 
 エミュレーターでは、表示するホログラムのみ見えます。 しかし、ホログラムの背後にある疑似ルームは見えません。 この点は、両方がブレンディングされて表示される実際の HoloLens とは異なります。 HoloLens エミュレーターで疑似ルームを見たい場合は、アプリケーションを更新してシーン内の空間マッピング メッシュを表示する必要があります。
+
+## <a name="known-issues"></a>の既知の問題
+
+* HoloLens 2 エミュレーターをアンインストールするときに、ハード ドライブの Windows Kits\10\Emulation\HoloLens\<ビルド番号> フォルダーに、ハード ディスク イメージ (Flash.vhdx) が残ったままになる場合があります。  このファイルは削除しても問題ありません。
+* ハードウェア グラフィック アクセラレータが原因で、AMD または Intel のグラフィックスを使用している一部のシステムではホログラフィック アプリがクラッシュする場合があります。  エミュレーターの [ツール] ウィンドウでハードウェア グラフィック アクセラレータを無効にすることにより、この問題を回避できます。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 

@@ -7,12 +7,12 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 視線入力, 視線入力ターゲット設定, 対話, 設計, 手に近い, HoloLens
-ms.openlocfilehash: 6811fe0b09ecff1ddc76d9df9ddc440f9c934ce3
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 40a8441177582a55b58acbfbd15c7b506853e4da
+ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75723251"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83227997"
 ---
 # <a name="direct-manipulation-with-hands"></a>手で直接操作
 
@@ -41,7 +41,7 @@ ms.locfileid: "75723251"
      <td>手で直接操作</td>
      <td>❌ サポート対象外</td>
      <td>✔️ 推奨</td>
-     <td>➕ 別の選択肢である<a href="point-and-commit.md">手を使ったポイントとコミット</a>を推奨。</td>
+     <td>➕ サポート対象。  UI の場合、代わりに<a href="point-and-commit.md">手を使ったポイントとコミット</a>を推奨。</td>
     
 </tr>
 </table>
