@@ -1,19 +1,19 @@
 ---
-title: お持ちのカメラ
+title: 場所を特定できるカメラ
 description: HoloLens のフロント接続カメラに関する一般的な情報、そのしくみ、および開発者が使用できるプロファイルと解決方法について説明します。
 author: cdedmonds
 ms.author: wguyman
 ms.date: 06/12/2019
 ms.topic: article
 keywords: カメラ、hololens、カラーカメラ、フロント接続、hololens 2、cv、コンピュータービジョン、基準、マーカー、qr コード、qr、写真、ビデオ
-ms.openlocfilehash: f4c62a1c2ad7cf4de569e815ffc405fbcb06744a
-ms.sourcegitcommit: d0da0214fdd2bbac5a91a5d895bf0e87413b29b2
+ms.openlocfilehash: b8e9d926db09d277b3fde7572dd68257599c8d5e
+ms.sourcegitcommit: 09d9fa153cd9072f60e33a5f83ced8167496fcd7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/01/2020
-ms.locfileid: "75597625"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83520017"
 ---
-# <a name="locatable-camera"></a>お持ちのカメラ
+# <a name="locatable-camera"></a>場所を特定できるカメラ
 
 HoloLens には、デバイスの前面に取り付けられている世界中のカメラが搭載されています。これにより、アプリはユーザーに表示される内容を確認できます。 スマートフォン、ノートブック、またはデスクトップのカラーカメラの場合と同じように、開発者はカメラのアクセスと制御を行うことができます。 モバイルおよびデスクトップで動作する同じユニバーサル windows [media capture](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.mediacapture.aspx)および windows Media foundation Api が HoloLens で動作します。 Unity では、[これらの Windows api をラップ](locatable-camera-in-unity.md)して、HoloLens でのカメラの単純な使用を抽象化し、(ホログラムの有無にかかわらず) 通常の写真やビデオを撮影したり、カメラの位置をシーン上で検索したりするなどのタスクを実行しました。
 
@@ -25,10 +25,10 @@ HoloLens には、デバイスの前面に取り付けられている世界中�
 * 世界中のホワイトプライバシー LED は、カメラがアクティブになるたびに点灯します
 * カメラは、30、24、20、15、および 5 fps で、次のモード (すべてのモードが16:9 の縦横比) をサポートしています。
 
-  |  ビデオ  |  ［プレビュー］  |  それでもなお  |  ビューの水平方向のフィールド (H 視界) |  推奨される使用方法 | 
+  |  ビデオ  |  プレビュー  |  それでもなお  |  ビューの水平方向のフィールド (H 視界) |  推奨される使用方法 | 
   |----------|----------|----------|----------|----------|
   |  1280 x 720 |  1280 x 720 |  1280 x 720 |  45度  |  (ビデオ安定化を使用した既定のモード) | 
-  |  なし |  なし |  2048x1152 |  67deg |  高解像度の静止画像 | 
+  |  該当なし |  該当なし |  2048x1152 |  67deg |  高解像度の静止画像 | 
   |  1408x792 |  1408x792 |  1408x792 |  48度 |  ビデオ安定化前のオーバースキャン (埋め込み) 解像度 | 
   |  1344x756 |  1344x756 |  1344x756 |  67deg |  オーバースキャンによる大規模な視界のビデオモード | 
   |  896x504 |  896x504 |  896x504 |  48度 |  イメージ処理タスクの低電力/低解像度モード | 
@@ -40,7 +40,7 @@ HoloLens には、デバイスの前面に取り付けられている世界中�
 * HoloLens 2 では、さまざまなカメラプロファイルがサポートされています。 [カメラの機能を検出して選択](https://docs.microsoft.com//windows/uwp/audio-video-camera/camera-profiles)する方法について説明します。
 * カメラでは、次のプロファイルと解像度がサポートされています (すべてのビデオモードは16:9 縦横比です)。
   
-  | [プロファイル]                                         | ビデオ     | ［プレビュー］   | それでもなお     | フレーム レート | ビューの水平方向のフィールド (H 視界) | 推奨される使用方法                             |
+  | プロファイル                                         | ビデオ     | プレビュー   | それでもなお     | フレーム レート | ビューの水平方向のフィールド (H 視界) | 推奨される使用方法                             |
   |-------------------------------------------------|-----------|-----------|-----------|-------------|----------------------------------|---------------------------------------------|
   | Legacy、0 BalancedVideoAndPhoto、100             | 2272x1278 | 2272x1278 |           | 15、30       | 64.69                            | 高品質なビデオ記録                |
   | Legacy、0 BalancedVideoAndPhoto、100             | 896x504   | 896x504   |           | 15、30       | 64.69                            | 高品質の写真キャプチャ用のプレビューストリーム |
@@ -69,28 +69,131 @@ HoloLens が写真やビデオを撮影する場合、キャプチャされた�
 
 HoloLens ドキュメントの他の場所にある "カメラ" は、"仮想ゲームカメラ" (アプリがレンダリングするための、視錐) を指している場合があります。 特に明記しない限り、このページの "カメラ" は実際の RGB カラーカメラを表します。
 
-このページでは、 [MediaFrameReference](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference)クラスの詳細について説明します。 ただし、[メディアファンデーション属性](https://msdn.microsoft.com/library/windows/desktop/mt740395(v=vs.85).aspx)を使用してカメラの組み込みと場所をプルする api もあります。 詳細については、 [Holographic face tracking サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)を参照してください。
+### <a name="using-unity"></a>Unity の使用
 
-### <a name="images-with-coordinate-systems"></a>座標系の画像
+' CameraIntrinsics ' と ' CameraCoordinateSystem ' からアプリケーション/ワールド座標系に移行するには、 [Unity の検索カメラ](locatable-camera-in-unity.md)の記事に記載されている手順に従ってください。  CameraToWorldMatrix は PhotoCaptureFrame クラスによって自動的に提供されるため、以下で説明する CameraCoordinateSystem の変換について心配する必要はありません。
+
+### <a name="using-mediaframereference"></a>MediaFrameReference の使用
+
+これらの手順は、 [MediaFrameReference](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference)クラスを使用してカメラからイメージフレームを読み取る場合に適用されます。
 
 各イメージフレーム (写真またはビデオ) には、キャプチャ時にカメラでルート化された[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)が含まれています。これには、 [MediaFrameReference](https://docs.microsoft.com//uwp/api/Windows.Media.Capture.Frames.MediaFrameReference)の[CoordinateSystem](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.mediaframereference.coordinatesystem#Windows_Media_Capture_Frames_MediaFrameReference_CoordinateSystem)プロパティを使用してアクセスできます。 さらに、各フレームには、カメラレンズモデルの説明が含まれています。これは、 [CameraIntrinsics](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)プロパティにあります。 これらの変換は、ピクセルを生成した photons によって取得されたパスを表す3D 空間の光をピクセルごとに定義します。 これらの光線は、フレームの座標系から他の座標系 (例:[静止フレーム](coordinate-systems.md#stationary-frame-of-reference)から) への変換を取得することによって、アプリ内の他のコンテンツに関連付けることができます。 要約すると、各イメージフレームには次のものが表示されます。
 * ピクセルデータ (RGB/NV12/JPEG/など)
 * キャプチャの場所からの[SpatialCoordinateSystem](https://docs.microsoft.com//uwp/api/windows.perception.spatial.spatialcoordinatesystem)
 * カメラのレンズモードを含む[CameraIntrinsics](https://docs.microsoft.com//uwp/api/windows.media.capture.frames.videomediaframe.cameraintrinsics#Windows_Media_Capture_Frames_VideoMediaFrame_CameraIntrinsics)クラス
 
-### <a name="camera-to-application-specified-coordinate-system"></a>アプリケーションによって指定された座標系へのカメラ
+[HolographicFaceTracking サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)は、カメラの座標系と独自のアプリケーション座標系との間の変換をクエリするための非常に簡単な方法を示しています。
 
-' CameraIntrinsics ' と ' CameraCoordinateSystem ' からアプリケーション/ワールド座標系に移行するには、次のものが必要です。
+### <a name="using-media-foundation"></a>メディアファンデーションの使用
 
-[Unity の CameraToWorldMatrix カメラ](locatable-camera-in-unity.md): PhotoCaptureFrame クラスによって自動的に提供されます (CameraCoordinateSystem の変換について心配する必要はありません)。
+カメラからイメージフレームを読み取るためにメディアファンデーション直接使用している場合は、次のサンプルコードに示すように、各フレームの[MFSampleExtension_CameraExtrinsics 属性](https://docs.microsoft.com/windows/win32/medfound/mfsampleextension-cameraextrinsics)と[MFSampleExtension_PinholeCameraIntrinsics 属性](https://docs.microsoft.com/windows/win32/medfound/mfsampleextension-pinholecameraintrinsics)を使用して、アプリケーションの他の座標系を基準としたカメラフレームを見つけることができます。
 
-[DirectX の](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)最適なカメラ: Holographic Face Tracking サンプルは、カメラの座標系と独自のアプリケーション座標系との間の変換をクエリするための非常に簡単な方法を示しています。
+```cpp
+#include <winrt/windows.perception.spatial.preview.h>
+#include <mfapi.h>
+#include <mfidl.h>
+ 
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::Foundation::Numerics;
+using namespace winrt::Windows::Perception;
+using namespace winrt::Windows::Perception::Spatial;
+using namespace winrt::Windows::Perception::Spatial::Preview;
+ 
+class CameraFrameLocator
+{
+public:
+    struct CameraFrameLocation
+    {
+        SpatialCoordinateSystem CoordinateSystem;
+        float4x4 CameraViewToCoordinateSytemTransform;
+        MFPinholeCameraIntrinsics Intrinsics;
+    };
+ 
+    std::optional<CameraFrameLocation> TryLocateCameraFrame(IMFSample* pSample)
+    {
+        MFCameraExtrinsics cameraExtrinsics;
+        MFPinholeCameraIntrinsics cameraIntrinsics;
+        UINT32 sizeCameraExtrinsics = 0;
+        UINT32 sizeCameraIntrinsics = 0;
+        UINT64 sampleTimeQpc = 0;
+ 
+        // query sample for calibration and validate
+        if (FAILED(pSample->GetUINT64(MFSampleExtension_DeviceTimestamp, &sampleTimeQpc)) ||
+            FAILED(pSample->GetBlob(MFSampleExtension_CameraExtrinsics, (UINT8*)& cameraExtrinsics, sizeof(cameraExtrinsics), &sizeCameraExtrinsics)) ||
+            FAILED(pSample->GetBlob(MFSampleExtension_PinholeCameraIntrinsics, (UINT8*)& cameraIntrinsics, sizeof(cameraIntrinsics), &sizeCameraIntrinsics)) ||
+            (sizeCameraExtrinsics != sizeof(cameraExtrinsics)) ||
+            (sizeCameraIntrinsics != sizeof(cameraIntrinsics)) ||
+            (cameraExtrinsics.TransformCount == 0))
+        {
+            return std::nullopt;
+        }
+ 
+        // compute extrinsic transform
+        const auto& calibratedTransform = cameraExtrinsics.CalibratedTransforms[0];
+        const GUID& dynamicNodeId = calibratedTransform.CalibrationId;
+        const float4x4 cameraToDynamicNode =
+            make_float4x4_from_quaternion(quaternion{ calibratedTransform.Orientation.x, calibratedTransform.Orientation.y, calibratedTransform.Orientation.z, calibratedTransform.Orientation.w }) *
+            make_float4x4_translation(calibratedTransform.Position.x, calibratedTransform.Position.y, calibratedTransform.Position.z);
+ 
+        // update locator cache for dynamic node
+        if (dynamicNodeId != m_currentDynamicNodeId || !m_locator)
+        {
+            m_locator = SpatialGraphInteropPreview::CreateLocatorForNode(dynamicNodeId);
+            if (!m_locator)
+            {
+                return std::nullopt;
+            }
+ 
+            m_frameOfReference = m_locator.CreateAttachedFrameOfReferenceAtCurrentHeading();
+            m_currentDynamicNodeId = dynamicNodeId;
+        }
+ 
+        // locate dynamic node
+        auto timestamp = PerceptionTimestampHelper::FromSystemRelativeTargetTime(TimeSpanFrodmQpcTicks(sampleTimeQpc));
+        auto coordinateSystem = m_frameOfReference.GetStationaryCoordinateSystemAtTimestamp(timestamp);
+        auto location = m_locator.TryLocateAtTimestamp(timestamp, coordinateSystem);
+        if (!location)
+        {
+            return std::nullopt;
+        }
+ 
+        const float4x4 dynamicNodeToCoordinateSystem = make_float4x4_from_quaternion(location.Orientation()) * make_float4x4_translation(location.Position());
+ 
+        return CameraFrameLocation{ coordinateSystem, cameraToDynamicNode * dynamicNodeToCoordinateSystem, cameraIntrinsics };
+    }
+ 
+private:
+    GUID m_currentDynamicNodeId{ GUID_NULL };
+    SpatialLocator m_locator{ nullptr };
+    SpatialLocatorAttachedFrameOfReference m_frameOfReference{ nullptr };
+ 
+    // Convert a duration value from a source tick frequency to a destination tick frequency.
+    static inline int64_t SourceDurationTicksToDestDurationTicks(int64_t sourceDurationInTicks, int64_t sourceTicksPerSecond, int64_t destTicksPerSecond)
+    {
+        int64_t whole = (sourceDurationInTicks / sourceTicksPerSecond) * destTicksPerSecond;                          // 'whole' is rounded down in the target time units.
+        int64_t part = (sourceDurationInTicks % sourceTicksPerSecond) * destTicksPerSecond / sourceTicksPerSecond;    // 'part' is the remainder in the target time units.
+        return whole + part;
+    }
+ 
+    static inline TimeSpan TimeSpanFromQpcTicks(int64_t qpcTicks)
+    {
+        static const int64_t qpcFrequency = []
+        {
+            LARGE_INTEGER frequency;
+            QueryPerformanceFrequency(&frequency);
+            return frequency.QuadPart;
+        }();
+ 
+        return TimeSpan{ SourceDurationTicksToDestDurationTicks(qpcTicks, qpcFrequency, winrt::clock::period::den) / winrt::clock::period::num };
+    }
+};
+```
 
 ### <a name="distortion-error"></a>ディストーションエラー
 
 HoloLens では、アプリケーションでフレームを利用できるようになる前に、ビデオストリームと静止画像ストリームがシステムのイメージ処理パイプラインで undistorted されます (プレビューストリームには、元のゆがんだフレームが含まれます)。 使用できるのは CameraIntrinsics だけなので、アプリケーションではイメージフレームが完全な pinhole カメラを表すものと想定する必要があります。
 
-HoloLens (第1世代) では、イメージプロセッサのディストーション関数は、フレームメタデータで CameraIntrinsics を使用しているときに最大10ピクセルのエラーを引き続き発生させる場合があります。 多くのユースケースでは、このエラーは問題にはなりませんが、たとえば、ホログラムを実際のポスター/マーカーに整列させている場合、< 10px オフセット (2 m の位置にあるホログラムの場合は約 11 mm) が発生した場合、この歪みエラーが原因である可能性があります。 
+HoloLens (第1世代) では、イメージプロセッサのディストーション関数は、フレームメタデータで CameraIntrinsics を使用しているときに最大10ピクセルのエラーを引き続き発生させる場合があります。 多くのユースケースでは、このエラーは問題にはなりませんが、たとえば、ホログラムを実際のポスター/マーカーに整列させている場合、<10px オフセット (2 m の位置にあるホログラムの場合は約 11 mm) が発生した場合、この歪みエラーが原因である可能性があります。 
 
 ## <a name="locatable-camera-usage-scenarios"></a>お持ちのカメラの使用シナリオ
 
@@ -100,7 +203,7 @@ HoloLens (第1世代) では、イメージプロセッサのディストーシ�
 
 ### <a name="tag--pattern--poster--object-tracking"></a>タグ/パターン/ポスター/オブジェクトの追跡
 
-多くの mixed reality アプリケーションでは、認識可能なイメージまたはビジュアルパターンを使用して、空間内の追跡可能なポイントを作成します。 その後、そのポイントを基準としてオブジェクトをレンダリングしたり、既知の場所を作成したりするために使用されます。 HoloLens の使用例としては、fiducials でタグ付けされた現実世界のオブジェクト (QR コードを使用したテレビモニターなど) の検索、fiducials に対するホログラムの配置、およびを介して HoloLens と通信するように設定されているタブレットなどの非 HoloLens デバイスとの視覚的なペアリングがあります。Wi-fi。
+多くの mixed reality アプリケーションでは、認識可能なイメージまたはビジュアルパターンを使用して、空間内の追跡可能なポイントを作成します。 その後、そのポイントを基準としてオブジェクトをレンダリングしたり、既知の場所を作成したりするために使用されます。 HoloLens の使用例としては、fiducials でタグ付けされた現実世界のオブジェクト (QR コードを使用したテレビモニターなど) の検索、fiducials に対するホログラムの配置、および Wi-fi を介して HoloLens と通信するように設定されているタブレットなどの非 HoloLens デバイスとの視覚的な組み合わせがあります。
 
 ビジュアルパターンを認識し、そのオブジェクトをアプリケーションのワールド空間に配置するには、次のものが必要です。
 1. 画像パターン認識ツールキット (QR コード、AR タグ、顔ファインダー、サークルトラッカー、OCR など)。
@@ -166,12 +269,12 @@ public static Vector3 ClosestPointBetweenRays(
 
 ### <a name="track-or-identify-tagged-stationary-or-moving-real-world-objectsfaces-using-leds-or-other-recognizer-libraries"></a>Led または他のレコグナイザーライブラリを使用して、タグ付き静止を追跡または特定したり、実際のオブジェクト/顔を移動したりします。
 
-例:
+次に例を示します。
 * Led のある工業ロボット (または低速な移動オブジェクトの QR コード)
 * ルーム内のオブジェクトを識別して認識する
 * 部屋のメンバーを識別して認識します (たとえば、顔を holographic 連絡先カードを配置します)。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 * [お持ちのカメラのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
 * [Unity での場所を特定できるカメラ](locatable-camera-in-unity.md)
 * [複合現実キャプチャ](mixed-reality-capture.md)
