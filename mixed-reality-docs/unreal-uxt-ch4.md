@@ -6,15 +6,15 @@ ms.author: suwu
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, mixed reality,、チュートリアル, はじめに, mrtk, uxt, UX Tools, ドキュメント
-ms.openlocfilehash: 17f7ab1c1126c47e5ac6388d125d45cf3f2c2d87
-ms.sourcegitcommit: 189a47b8712dd5b620e19815f5cf6d1ac0f29880
+keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
+ms.openlocfilehash: 2e4d26ed4e0b8199bfc629016aea688bd1c41ef8
+ms.sourcegitcommit: 09d9fa153cd9072f60e33a5f83ced8167496fcd7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851552"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83520027"
 ---
-# <a name="3-making-your-scene-interactive"></a>3.シーンを対話型にする
+# <a name="4-making-your-scene-interactive"></a>4.シーンを対話型にする
 
 このセクションでは、オープン ソースの Mixed Reality Toolkit UX Tools プラグインについて説明します。このプラグインには、シーンを簡単に対話型にするための一連のツールが用意されています。 このセクションを終えると、チェスの駒がユーザー入力に応答するようになります。 
 
