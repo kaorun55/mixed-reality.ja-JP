@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、音声、cortana、音声、入力
-ms.openlocfilehash: 6cf94e6bc828c6f07ee81cb121cb64601df41c4e
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: a5411c338a854660652cfc89aa2d48d85ee89778
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81277980"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866922"
 ---
 # <a name="voice-input"></a>音声入力
 
@@ -25,14 +25,14 @@ ms.locfileid: "81277980"
 
 ## <a name="voice-and-gaze"></a>音声と宝石
 
-音声コマンド (ヘッドまたはアイ) を使用する場合は、通常、ターゲットメカニズムとして、カーソルを使用するか (select)、または対象のアプリケーションにコマンドを暗黙的にチャネル化するかを使用します。 このため、どのような場合でも、そのカーソルを表示する必要がない場合があります _(「参照してください」と言います)_ 。 もちろん、一部の音声コマンドでは、"start to start" や "Cortana のこんにちは" など、ターゲットがまったく必要ありません。
+音声コマンド (ヘッドまたはアイ) を使用する場合は、通常、ターゲットメカニズムとして、カーソルを使用するか (select)、または対象のアプリケーションにコマンドを暗黙的にチャネル化するかを使用します。 このため、どのような場合でも、そのカーソルを表示する必要がない場合があります _(「参照してください」と言います)_。 もちろん、一部の音声コマンドでは、"start to start" や "Cortana のこんにちは" など、ターゲットがまったく必要ありません。
 
 <br>
 
 <iframe width="940" height="530" src="https://www.youtube.com/embed/eHMkOpNUtR8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-## <a name="device-support"></a>デバイスのサポート
+## <a name="device-support"></a>デバイス サポート
 
 <table>
     <colgroup>
@@ -59,7 +59,7 @@ ms.locfileid: "81277980"
 
 **HoloLens (第 1 世代)**
 
-特に音声サポートをアプリに追加しなくても、ユーザーはシステム音声コマンド "select" を指定するだけで、ホログラムをアクティブにすることができます。 これは、HoloLens での[エアタップ](gaze-and-commit.md#composite-gestures)と同じように動作します。また、 [hololens clicker](hardware-accessories.md#hololens-clicker)の [選択] ボタンを押すか、 [Windows Mixed Reality モーションコントローラー](motion-controllers.md)でトリガーを押します。 サウンドが聞こえ、[選択] というヒントが確認として表示されます。 "Select" は、低電力キーワード検出アルゴリズムによって有効にされているため、ユーザー側でも、バッテリ寿命の影響を最小限に抑えていつでもいつでも使用できます。
+特に音声サポートをアプリに追加しなくても、ユーザーはシステム音声コマンド "select" を指定するだけで、ホログラムをアクティブにすることができます。 これは、HoloLens での[エアタップ](gaze-and-commit.md#composite-gestures)と同じように動作します。また、 [hololens clicker](https://docs.microsoft.com/hololens/hololens1-clicker)の [選択] ボタンを押すか、 [Windows Mixed Reality モーションコントローラー](motion-controllers.md)でトリガーを押します。 サウンドが聞こえ、[選択] というヒントが確認として表示されます。 "Select" は、低電力キーワード検出アルゴリズムによって有効にされているため、ユーザー側でも、バッテリ寿命の影響を最小限に抑えていつでもいつでも使用できます。
 
 <br>
 
@@ -84,15 +84,15 @@ ms.locfileid: "81277980"
 ---
 
 
-## <a name="hey-cortana"></a>[コルタナさん]
+## <a name="hey-cortana"></a>コルタナさん
 
 また、いつでも cortana を立ち上げることができます。 自分の質問を続けたり、指示を出したりすることができるようになるまで待つ必要はありません。たとえば、「Cortana について言っていますか?」と言います。 1つの文として。 Cortana とその対処方法の詳細については、 「Cortana とはどういうことですか。」と言います。 次に、作業と推奨されるコマンドの一覧を取得します。 既に Cortana アプリを使用している場合は、[?] をクリックすることもでき**ます。** 同じメニューをプルするためのサイドバーのアイコン。
 
 **HoloLens 固有のコマンド**
 * 音声操作の項目
 * [ブルーム](system-gesture.md#bloom)の代わりに [スタート] メニューから [スタート][メニュー](navigating-the-windows-mixed-reality-home.md#start-menu)に移動する
-* "起動 <app>"
-* "ここに移動 <app>
+* "起動 <app> "
+* "ここに移動 <app> "
 * "写真を撮る"
 * "記録の開始"
 * "記録の停止"
@@ -121,8 +121,8 @@ ms.locfileid: "81277980"
         *イメージ: ユーザーはアプリバーに表示される "調整" コマンドを使用してアプリの位置を調整できます。*
     :::column-end:::
         :::column:::
-        ![領域](images/spacer-20x582.png)<br>
-        アプリウィンドウまたはホログラムを見ると、ユーザーはアプリバーに表示される "調整" コマンドを使用して、世界中のアプリの位置を調整](images/microphone-600px.png) ことができ ![<br>
+        ![space](images/spacer-20x582.png)<br>
+        ![アプリウィンドウまたはホログラムを見ると、ユーザーはアプリバーに表示される "調整" コマンドを使用して、世界中のアプリの位置を調整することができます。](images/microphone-600px.png)<br>
     :::column-end:::
 :::row-end:::
 
@@ -173,7 +173,7 @@ HoloLens 2 では、参照している内容についてのコンテキスト情
 
 音声ディクテーションで入力[するのではなく、アプリケーション](gaze-and-commit.md#composite-gestures)にテキストを入力する方が効率的です。 これにより、ユーザーの負担を軽減しながら、入力を大幅に高速化できます。
 
-音声ディクテーションを開始 ![には、マイクボタンを選択し](images/micbuttonfordictation.png)<br>
+![音声ディクテーションを開始するには、マイクボタンを選択します。](images/micbuttonfordictation.png)<br>
 *音声ディクテーションを開始するには、キーボードのマイクボタンを選択します。*
 
 Holographic キーボードがアクティブなときはいつでも、入力せずにディクテーションモードに切り替えることができます。 開始するには、テキスト入力ボックスの横にあるマイクを選択します。
@@ -235,20 +235,20 @@ Holographic キーボードがアクティブなときはいつでも、入力�
 
 ### <a name="voice-feedback-states"></a>音声のフィードバックの状態
 
-音声が適切に適用されると、**ユーザーは自分が何を言えるのかを理解し、** システムがそれを正しく認識した**という明確なフィードバックを得ます。** こうした 2 つのシグナルにより、ユーザーは音声をメインの入力として使用することに自信を持つことができます。 下の図は、音声入力が認識されたときにカーソルに何が発生するか、またそれがユーザーにどのように伝わるかを示す図です。
+音声が適切に適用されると、**ユーザーは自分が何を言えるのかを理解し、**システムがそれを正しく認識した**という明確なフィードバックを得ます。** こうした 2 つのシグナルにより、ユーザーは音声をメインの入力として使用することに自信を持つことができます。 下の図は、音声入力が認識されたときにカーソルに何が発生するか、またそれがユーザーにどのように伝わるかを示す図です。
 
 
 :::row:::
     :::column:::
-       ![1 です。標準のカーソルの状態](images/voicefeedbackstates-regular.jpg)<br>
+       ![1. 標準のカーソル状態](images/voicefeedbackstates-regular.jpg)<br>
        **1. 標準のカーソル状態**<br>
     :::column-end:::
     :::column:::
-       ![2音声フィードバックを通知してから、表示されなくなり](images/voicefeedbackstates-voice.jpg)<br>
+       ![2. 音声フィードバックを通知してから、非表示にします。](images/voicefeedbackstates-voice.jpg)<br>
         **2. 音声フィードバックを通知してから、非表示にします。**<br>
     :::column-end:::
     :::column:::
-       ![* 3. 標準のカーソルの状態](images/voicefeedbackstates-regular.jpg)<br>
+       ![番. 通常のカーソルの状態](images/voicefeedbackstates-regular.jpg)<br>
        **3. 通常のカーソル状態に戻ります。**<br>
     :::column-end:::
 :::row-end:::
@@ -265,7 +265,7 @@ Holographic キーボードがアクティブなときはいつでも、入力�
 * **「コルタナさん」と言うと、Cortana のリスニングを開始することができます。** 質問をしたり (「コルタナさん、エッフェル塔の高さは?」など)、アプリを開くように指示したり (「コルタナさん、Netflix を開いて」など)、スタート メニューを表示するように指示したり (「コルタナさん、ホームに戻って」など) することができます。
 
 ## <a name="common-questions-and-concerns-users-have-about-voice"></a>音声に関する一般的な質問と問題
-* 音声操作の項目
+* 音声操作の項目。
 * 音声が正しく認識されているかどうかを確認する方法。
    * 音声コマンドが継続的に誤認識される。
    * 音声コマンドに対する反応がない。
@@ -273,7 +273,7 @@ Holographic キーボードがアクティブなときはいつでも、入力�
 * 自分の音声のターゲットを特定のアプリやアプリ コマンドにする方法。
 * HoloLens のホログラフィック フレームから外れたものに音声でコマンドを出せるか。
 
-## <a name="communication"></a>通信
+## <a name="communication"></a>Communication
 
 HoloLens が提供するカスタマイズされたオーディオ入力処理オプションを利用する必要があるアプリケーションでは、アプリが使用できるさまざまな[オーディオストリームのカテゴリ](https://msdn.microsoft.com/library/windows/desktop/hh404178(v=vs.85).aspx)を理解することが重要です。 Windows 10 では、さまざまなストリームカテゴリがサポートされています。 HoloLens では、これらのうちの3つを使用して、音声、通信、およびアンビエント環境のオーディオキャプチャ (つまり "ビデオカメラ") シナリオで使用できるマイクオーディオ品質をカスタム処理によって最適化します。
 * AudioCategory_Communications ストリームカテゴリは、通話の品質とナレーションのシナリオに合わせてカスタマイズされ、クライアントにユーザーの声の 16kHz 24bit mono オーディオストリームを提供します。
@@ -282,7 +282,7 @@ HoloLens が提供するカスタマイズされたオーディオ入力処理�
 
 このようなオーディオ処理はすべてハードウェアアクセラレータです。これは、HoloLens CPU で同じ処理が行われた場合と比べて、機能の電力消費が多くなることを意味します。 システムのバッテリ寿命を最大化し、組み込みのオフロードオーディオ入力処理を活用するために、CPU で他のオーディオ入力処理を実行しないようにします。
 
-## <a name="languages"></a>言語
+## <a name="languages"></a>Languages
 
 HoloLens 2 では、追加の言語もサポートされています。 複数のキーボードがインストールされている場合や、アプリが別の言語で音声認識エンジンを作成しようとした場合でも、音声コマンドは常にシステムの表示言語で実行されることに注意してください。
 
@@ -304,9 +304,9 @@ Windows Mixed Reality Developer Edition release 2017 では、オーディオエ
 
 ---
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 * [視線入力とコミット](gaze-and-commit.md)
 * [本能的な操作](interaction-fundamentals.md)
-* [MR 入力 212: 音声](holograms-212.md)
+* [MR 入力 212:音声](holograms-212.md)
 * [DirectX の音声入力](voice-input-in-directx.md)
 * [Unity の音声入力](voice-input-in-unity.md)

@@ -1,19 +1,19 @@
 ---
-title: 宝石とコミットメント
+title: 視線入力とコミット
 description: "\"宝石とコミット\" 入力モデルの全般的な概要-目または複数の入力を使用します。"
 author: sostel
 ms.author: sostel
 ms.date: 10/31/2019
 ms.topic: article
 keywords: Mixed Reality、宝石、ビジョン化、相互作用、設計、視線追跡、ヘッドトラッキング
-ms.openlocfilehash: df152f6a3a6e4ae2d6c32a0c56fbb615bcfa7aa8
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: c44c1a75e831869a3ed4d12bb6c9e87c478daf56
+ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375849"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83866892"
 ---
-# <a name="gaze-and-commit"></a>宝石とコミットメント
+# <a name="gaze-and-commit"></a>視線入力とコミット
 
 _宝石とコミットメント_は、マウス:_ポイント & クリック_を使用してコンピューターを操作する方法と密接に関連した基本的な入力モデルです。
 このページでは、2種類の宝石入力 (ヘッドと視線) とさまざまな種類のコミットアクションを紹介します。 
@@ -33,7 +33,7 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
 <br>
 
 
-## <a name="device-support"></a>デバイスのサポート
+## <a name="device-support"></a>デバイス サポート
 
 <table>
     <colgroup>
@@ -56,9 +56,9 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
     </tr>
          <tr>
         <td>目の視線入力とコミット</td>
-        <td>❌ 使用できません</td>
+        <td>❌使用できません</td>
         <td>✔️ 推奨 (3 番目の選択肢 -<a href="interaction-fundamentals.md">他のオプションを参照</a>)</td>
-        <td>❌ 使用できません</td>
+        <td>❌使用できません</td>
     </tr>
 </table>
 
@@ -80,7 +80,7 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
     </colgroup>
    <tr>
         <td><strong>目を見つめたターゲット</strong></td>
-        <td><strong>ヘッドを見つめたターゲット</strong></td>
+        <td><strong>頭の視線入力のターゲット設定</strong></td>
     </tr>
     <tr>
         <td>より!</td>
@@ -114,7 +114,7 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
 
 ---
 
-### <a name="cursor"></a>Cursor
+### <a name="cursor"></a>カーソル
 
 :::row:::
     :::column:::
@@ -123,7 +123,7 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
         目を見つめて、通常はカーソルを表示し*ない*ことをお勧めします。これは、ユーザーにとって煩雑で面倒になるためです。 代わりに、視覚的なターゲットを微妙に強調表示するか、非常に薄い目のカーソルを使用して、ユーザーが何を操作しようとしているかについて自信を持っています。 詳細については、HoloLens 2 での[目に基づく入力の設計ガイダンスを](eye-tracking.md)参照してください。
     :::column-end:::
         :::column:::
-       ](images/cursor.jpg) を表示するためのビジュアルカーソルの例を ![<br>
+       ![宝石を示すビジュアルカーソルの例](images/cursor.jpg)<br>
        *Image: 宝石を示すビジュアルカーソルの例*
     :::column-end:::
 :::row-end:::
@@ -132,14 +132,14 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
 
 ---
 
-## <a name="commit"></a>コミット
+## <a name="commit"></a>Commit
 ターゲットを_見つめ_たさまざまな方法について説明した後、「_宝石とコミットメント_」の_コミット_部分についてもう少し詳しく説明します。
 オブジェクトまたは UI 要素をターゲットにした後、ユーザーは2次入力を使用して操作またはクリックできます。 これは、入力モデルのコミットステップと呼ばれます。 
 
 以下のコミット方法がサポートされています。
 - エアタップハンドジェスチャ (つまり、手元に手を入れて、インデックスの指とつまみをまとめる)
 - _"選択"_ または対象となる音声コマンドの1つを言います。
-- [HoloLens Clicker](hardware-accessories.md#hololens-clicker)で1つのボタンを押す
+- [HoloLens Clicker](https://docs.microsoft.com/hololens/hololens1-clicker)で1つのボタンを押す
 - Xbox ゲームパッドで [A] ボタンを押す
 - Xbox adaptive コントローラーで [A] ボタンを押す
 
@@ -149,11 +149,11 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
 
 :::row:::
     :::column:::
-       準備完了の位置に指を ![](images/readyandpress-ready.jpg)<br>
+       ![準備完了の位置にある指](images/readyandpress-ready.jpg)<br>
        **準備完了の位置にある指**<br>
     :::column-end:::
     :::column:::
-       ![に指を押しながらタップまたはクリックし](images/readyandpress-press.jpg)<br>
+       ![指を押しながらタップまたはクリックします。](images/readyandpress-press.jpg)<br>
         **指を押しながらタップまたはクリックします。**<br>
     :::column-end:::
 :::row-end:::
@@ -192,7 +192,7 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
         *イメージ: HoloLens Clicker*
     :::column-end:::
         :::column:::
-       ![HoloLens Clicker](images/hololens-clicker-500px.jpg)<br>
+       ![HoloLens クリッカー](images/hololens-clicker-500px.jpg)<br>
     :::column-end:::
 :::row-end:::
 
@@ -212,7 +212,7 @@ Mixed reality ヘッドセットでは、ユーザーのヘッドの位置と向
         *イメージ: Xbox ワイヤレスコントローラー*
     :::column-end:::
         :::column:::
-       ![Xbox ワイヤレスコントローラー](images/xboxcontroller.jpg)<br>
+       ![Xbox ワイヤレス コントローラー](images/xboxcontroller.jpg)<br>
     :::column-end:::
 :::row-end:::
 
@@ -257,13 +257,13 @@ Xbox Adaptive Controller は、"A" ボタンを使用して、2番目の入力�
 操作ジェスチャを使用すると、ホログラムがユーザーの手の動きに1:1 を反応させる場合に、ホログラムの移動、サイズ変更、または回転を行うことができます。 このような 1 対 1 の動きの 1 つの用途は、ユーザーが世界中で絵を描いたりペイントしたりできるようにすることです。
 操作のジェスチャの最初のターゲット設定は、視線入力またはポインティングによって行う必要があります。 タップとホールドが開始されると、オブジェクトの操作は手動で処理され、ユーザーが操作中に見えなくなるのを解放します。
 
-### <a name="navigation"></a>ナビゲーション
+### <a name="navigation"></a>［ナビゲーション］
 ナビゲーションのジェスチャは仮想ジョイスティックのように動作し、リング メニューなどの UI ウィジェット内で移動するために使用できます。 タップ アンド ホールドでジェスチャを始めてから、最初に押したところを中心に、正規化された 3D 立方体の中で手を動かします。 開始点 0 で、-1 から 1 までの値から X、Y、または Z 軸に沿って手を動かすことができます。
 ナビゲーションを使用すると、マウスの中央ボタンをクリックしてからマウスを上下に移動して 2 次元の UI をスクロールするのと同様に、速度ベースの連続したスクロールやズームのジェスチャを作成できます。
 
 Rails を使用したナビゲーションとは、特定の軸で特定のしきい値に達するまで移動を認識する機能を指します。 これは、開発者によってアプリケーションで複数の軸での移動が有効になっている場合にのみ役立ちます。たとえば、アプリケーションが X 軸と Y 軸にわたるナビゲーションジェスチャを認識するように構成されていても、X 軸に rails が指定されている場合などです。 この場合、システムは x 軸上の架空のレール (ガイド) 内にある限り、X 軸を越えた手の移動を認識します。これは、Y 軸でも手動で移動した場合に発生します。
 
-2D のアプリ内では、ユーザーは、アプリ内でスクロール、ズーム、またはドラッグするために、垂直方向のナビゲーション ジェスチャを使用できます。 これは、同じ種類のタッチ ジェスチャをシミュレートするために、アプリに仮想の指でのタッチを挿入します。 ユーザーは、アプリケーションの上部にあるバーのツールを切り替えることによって実行するアクションを選択できます。これを行うには、ボタンを選択するか、[スクロール/ドラッグ/ズーム > ツールを <] をクリックします。
+2D のアプリ内では、ユーザーは、アプリ内でスクロール、ズーム、またはドラッグするために、垂直方向のナビゲーション ジェスチャを使用できます。 これは、同じ種類のタッチ ジェスチャをシミュレートするために、アプリに仮想の指でのタッチを挿入します。 ユーザーは、アプリケーションの上部にあるバーのツールを切り替えることによって実行するアクションを選択できます。これを行うには、ボタンを選択するか、[スクロール/ドラッグ/ズーム> ツールを <] をクリックします。
 
 [複合ジェスチャに関する詳細情報](gaze-and-commit.md#composite-gestures)
 
@@ -290,7 +290,7 @@ HoloLens でのジェスチャでは、ジェスチャが検出されたカメ�
 
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 * [視線ベースの操作](eye-gaze-interaction.md)
 * [HoloLens 2 上の視線追跡](eye-tracking.md)
 * [視線入力とドウェル](gaze-and-dwell.md)
