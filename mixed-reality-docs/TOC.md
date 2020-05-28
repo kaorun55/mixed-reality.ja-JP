@@ -20,6 +20,7 @@
 ### [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)
 ### [技術者向けガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [場所に基づいたエンターテインメント](location-based-experiences.md)
+## [ハードウェア アクセサリ](hardware-accessories.md)
 ## [コミュニティ リソース](community.md)
 # 設計
 ## [設計とプロトタイプ作成を始める](design.md)
@@ -117,6 +118,7 @@
 ###### [1.Azure Spatial Anchors をお使いになる前に](mrlearning-asa-ch1.md)
 ###### [2.Azure Spatial Anchors の保存、取得、および共有](mrlearning-asa-ch2.md)
 ###### [3.Azure Spatial Anchors フィードバックの表示](mrlearning-asa-ch3.md)
+###### [4.Android と iOS 用の Azure Spatial Anchors](mrlearning-asa-ch4.md)
 ##### Azure 音声認識サービス チュートリアル
 ###### [1.音声認識とトランスクリプションの統合と使用](mrlearning-speechSDK-ch1.md)
 ###### [2.ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
