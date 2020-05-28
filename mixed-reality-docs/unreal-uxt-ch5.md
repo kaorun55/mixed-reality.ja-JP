@@ -7,12 +7,12 @@ ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: df5ea22e7097fdd3b788ec298bc1cd78c315b585
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+ms.openlocfilehash: 77fe2b59db970a2ac4b531d69efec6794478f7d5
+ms.sourcegitcommit: 09d9fa153cd9072f60e33a5f83ced8167496fcd7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82840401"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83519994"
 ---
 # <a name="5-adding-a-button--resetting-piece-locations"></a>5.ボタンの追加およびピースの位置のリセット
 
@@ -46,13 +46,13 @@ ms.locfileid: "82840401"
 
 ![変数を作成する](images/unreal-uxt/5-var.PNG)
 
-4.  WhiteKing 変数を **[My Blueprint]\(マイ ブループリント\) > [Variables]\(変数\)** から Simple Button イベント グラフにドラッグします。 **[Get WhiteKing]\(WhiteKing の取得\)** を選択します。 
+4.  WhiteKing 変数を **[My Blueprint]\(マイ ブループリント\) > [Variables]\(変数\)** から Reset Button イベント グラフにドラッグします。 **[Get WhiteKing]\(WhiteKing の取得\)** を選択します。 
 
 5.  WhiteKing の出力ピンをドラッグしてリリースし、新しいノードを配置します。 **Reset Location** 関数を選択します。 最後に、 **[On Button Pressed]\(ボタンが押されたとき\)** から出力実行ピンを **[Reset Location]** の入力実行ピンにドラッグします。 ResetButton ブループリントの **[Compile]\(コンパイル\)** と **[Save]\(保存\)** の後、メイン ウィンドウに戻ります。 
 
 ![On Button Pressed (ボタンが押されたとき) から Reset Location 関数を呼び出す](images/unreal-uxt/5-callresetloc.PNG)
 
-6.  **SimpleButton** をビューポートにドラッグし、その位置を X = 50、Y = -25、Z = 10 に設定します。 **[Default]\(既定\)** で、WhiteKing 変数の値を **WhiteKing** に設定します。
+6.  **ResetButton** をビューポートにドラッグし、その位置を X = 50、Y = -25、Z = 10 に設定します。 **[Default]\(既定\)** で、WhiteKing 変数の値を **WhiteKing** に設定します。
 
 ![変数の値を設定する](images/unreal-uxt/5-buttonlevel.PNG)
 
