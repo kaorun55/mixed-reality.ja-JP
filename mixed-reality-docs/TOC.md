@@ -5,7 +5,7 @@
 ## プログラムとイベント
 ### [サンフランシスコ Reactor Academy イベント予定表](sf-academy-events.md)
 ### [CVPR 2019 Mixed Reality ワークショップ](cvpr-2019.md)
-## [最新の Mixed Reality のリリース ノート](release-notes-may-2019.md)
+## [最新の Mixed Reality のリリース ノート](release-notes-may-2020.md)
 ## [コミュニティ リソース](community.md)
 ## [このドキュメントに寄稿する](CONTRIBUTING.md)
 # [探索]
