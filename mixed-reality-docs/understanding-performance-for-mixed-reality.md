@@ -6,14 +6,14 @@ ms.author: trferrel
 ms.date: 3/26/2019
 ms.topic: article
 keywords: Windows Mixed Reality、Mixed Reality、Virtual Reality、VR、MR、パフォーマンス、最適化、CPU、GPU
-ms.openlocfilehash: 54e1eec5445fe655a0b498be5c18f08efe2270f0
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 4a0f4cd9caea5dd601ad663801e760261980c429
+ms.sourcegitcommit: b0d15083ec1095e08c9d776e5bae66b4449383bb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81277480"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84111025"
 ---
-# <a name="understanding-performance-for-mixed-reality"></a>Mixed reality のパフォーマンスについて
+# <a name="understanding-performance-for-mixed-reality"></a>複合現実のパフォーマンスを理解する
 
 この記事では、Mixed Reality アプリのパフォーマンスの重要性について説明します。  アプリケーションが最適なフレームレートで実行されない場合、ユーザーエクスペリエンスが大幅に低下する可能性があります。 ホログラムが不安定になり、環境のヘッドトラッキングが不正確になり、ユーザーのエクスペリエンスが低下します。 パフォーマンスは、ポーランド語のタスクではなく、混合現実の開発のためのファーストクラスの機能と考える必要があります。
 
@@ -66,7 +66,7 @@ ms.locfileid: "81277480"
 
 ## <a name="how-to-improve-your-application"></a>アプリケーションを改善する方法
 
-### <a name="cpu-performance-recommendations"></a>CPU のパフォーマンスに関する推奨事項
+### <a name="cpu-performance-recommendations"></a>CPU パフォーマンスに関する推奨事項
 
 一般に、CPU 上の mixed reality アプリケーションでほとんどの作業を行うには、シーンの "シミュレーション" を実行し、アプリケーションロジックを処理する必要があります。 通常、最適化の対象となる領域は次のとおりです。
 
@@ -82,10 +82,10 @@ GPU でフレームをレンダリングする場合、通常、アプリケー�
 
 - **メモリ帯域幅**は、GPU がメモリから実行できる読み取りと書き込みの比率です。
     - 帯域幅の制限を特定するには、テクスチャの品質を下げ、フレームレートが改善されたかどうかを確認します。
-    - Unity では、[**編集** > **プロジェクトの設定**] > [ **[品質設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** ] で **[テクスチャの品質]** を変更することによってこれを行うことができます。
+    - Unity では、[ **Edit** **Texture Quality**  >  **プロジェクト設定**の  >  **[品質設定](https://docs.unity3d.com/Manual/class-QualitySettings.html)** の編集] で [テクスチャの品質] を変更することによってこれを行うことができます。
 - **Fill rate**は、GPU によって1秒あたりに描画できるピクセルを表します。
     - フィルレートの制限を特定するには、ディスプレイの解像度を下げ、フレームレートが改善されたかどうかを確認します。 
-    - Unity では、XRSettings プロパティを使用してこれを行うことができ *[ます。](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)*
+    - Unity では、XRSettings プロパティを使用してこれを行うことができ*[ます。](https://docs.unity3d.com/ScriptReference/XR.XRSettings-renderViewportScale.html)*
 
 通常、メモリ帯域幅には次のいずれかの最適化が伴います。
 1) テクスチャ解像度を下げる
@@ -131,11 +131,11 @@ Occluding オブジェクトによって非表示になっているため、複�
 
 過剰なメモリの割り当ておよび解放操作を行うと、パフォーマンスが低下したり、フレームがフリーズしたり、その他の有害な動作が発生したりする可能性があります。 メモリ管理はガベージコレクターによって制御されるため、Unity で開発するときは、メモリに関する考慮事項を理解することが特に重要です。
 
-#### <a name="object-pooling"></a>オブジェクト プーリング
+#### <a name="object-pooling"></a>オブジェクトプール
 
-オブジェクトプールは、オブジェクトの継続的な割り当てと割り当て解除のコストを削減するための一般的な手法です。 これを行うには、同一のオブジェクトの大規模なプールを割り当て、時間の経過と共にオブジェクトを絶えず生成して破棄するのではなく、このプールの非アクティブで使用可能なインスタンスを再利用します。 オブジェクト プールは、アプリの間の有効期間が一定ではない再使用可能なコンポーネントに最適です。
+オブジェクトプールは、オブジェクトの継続的な割り当てと割り当て解除のコストを削減するための一般的な手法です。 これを行うには、同一のオブジェクトの大規模なプールを割り当て、時間の経過と共にオブジェクトを絶えず破棄するのではなく、このプールから使用可能な非アクティブなインスタンスを再利用します。 オブジェクトプールは、アプリの有効期間が可変の再使用可能なコンポーネントに最適です。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)
 - [Unity で推奨される設定](recommended-settings-for-unity.md)
 - [3D モデルの最適化](https://docs.microsoft.com/dynamics365/mixed-reality/import-tool/optimize-models#performance-targets)
