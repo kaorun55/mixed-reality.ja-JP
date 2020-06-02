@@ -4,7 +4,8 @@
 ## [新しい Microsoft Edge の準備](new-microsoft-edge.md)
 ## プログラムとイベント
 ### [サンフランシスコ Reactor Academy イベント予定表](sf-academy-events.md)
-### [CVPR 2019 Mixed Reality ワークショップ](cvpr-2019.md)
+### [Mixed Reality Dev Days](mr-dev-days.md)
+#### [セッションの記録](mr-dev-days-sessions.md)
 ## [最新の Mixed Reality のリリース ノート](release-notes-may-2020.md)
 ## [コミュニティ リソース](community.md)
 ## [このドキュメントに寄稿する](CONTRIBUTING.md)
