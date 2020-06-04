@@ -6,12 +6,12 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: b128f91947fa8700502f7541cba23c726238a067
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 319e76efbbe1085fc9d60251a6f0f38133de6505
+ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83866852"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327902"
 ---
 # <a name="holographic-remoting-version-history"></a>Holographic リモート処理のバージョン履歴
 
@@ -22,7 +22,7 @@ ms.locfileid: "83866852"
 * [HolographicSpace CameraAdded](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)イベントの動作が変更されました。 以前のバージョンでは、追加された[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera?view=winrt-18362)には、 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createnextframe?view=winrt-18362#Windows_Graphics_Holographic_HolographicSpace_CreateNextFrame)を使用して次のフレームを作成するときに有効な[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362)があることは保証されて**いません**でした。 バージョン 2.1.3 HolographicSpace は、Holographic Remoting Player から来たポーズデータと同期されてい[ます。](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)また、カメラが追加されると、そのカメラでは次のフレームに有効な[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362)も使用できます。
 * DepthBufferStreamResolution に**Disabled**を追加しました。これを使用すると、ConfigureDepthVideoStream を使用した深度バッファーのストリーミングを無効にすることができます。 HolographicCameraRenderingParameters を使用すると、 [CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)は*E_ILLEGAL_METHOD_CALL*で失敗します。
 * Holographic リモート処理プレーヤーのスタートアップ画面が再設計され、ユーザービューをブロックしないようになりました。
-* 安定性の向上と buf の修正。
+* 安定性の向上とバグの修正。
 
 ## <a name="version-212-april-5-2020"></a>バージョン 2.1.2 (2020 年4月5日)<a name="v2.1.2"></a>
 * 最新の Holographic リモート処理プレーヤーと2.1.0 より小さいバージョンを使用したリモートアプリとの間で、オーディオの下位互換性の問題を修正した。
