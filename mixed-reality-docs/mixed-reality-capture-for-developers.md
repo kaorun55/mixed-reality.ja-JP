@@ -1,19 +1,19 @@
 ---
-title: 開発者向けの Mixed reality キャプチャ
+title: 開発者向け複合現実キャプチャ
 description: 開発者向けの mixed reality キャプチャのベストプラクティス。
 author: mattzmsft
 ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、写真、ビデオ、キャプチャ、カメラ
-ms.openlocfilehash: 72600f889997c96a629faebc35aba4b4841d4d8b
-ms.sourcegitcommit: 0a1af2224c9cbb34591b6cb01159b60b37dfff0c
+ms.openlocfilehash: 0d51945444a411563b67af8569fee7ffe3449957
+ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79375969"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84451347"
 ---
-# <a name="mixed-reality-capture-for-developers"></a>開発者向けの Mixed reality キャプチャ
+# <a name="mixed-reality-capture-for-developers"></a>開発者向け複合現実キャプチャ
 
 > [!NOTE]
 > HoloLens 2 の新しい MRC 機能に関するガイダンスについては、以下の[PV カメラのレンダー](#render-from-the-pv-camera-opt-in)に関する説明を参照してください。
@@ -59,9 +59,9 @@ PV カメラからのレンダリングを有効にするには、次の3つの�
 2. 追加の HolographicCamera render を処理する
 3. この追加の HolographicCamera からシェーダーとコードが正しくレンダリングされることを確認します。
 
-##### <a name="enable-the-photovideocamera-holographicviewconfiguration"></a>PhotoVideoCamera HolographicViewConfiguration を有効にする
+##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-directx"></a>DirectX で PhotoVideoCamera HolographicViewConfiguration を有効にする
 
-オプトインするには、アプリは単に PhotoVideoCamera の[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration)を有効にします。
+PV カメラからの表示をオプトインするには、アプリは単に PhotoVideoCamera の[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration)を有効にします。
 ```csharp
 var display = Windows.Graphics.Holographic.HolographicDisplay.GetDefault();
 var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfiguration.PhotoVideoCamera);
@@ -77,14 +77,38 @@ if (view != null)
 1. HolographicSpace の CameraAdded イベントが発生します。 このイベントは、アプリがこの時点でカメラを処理できない場合に遅延する可能性があります。
 2. イベントが完了すると (未処理の遅延がない場合)、HolographicCamera は次の HolographicFrame の AddedCameras の一覧に表示されます。
 
-Mixed reality キャプチャが停止した場合 (または mixed reality キャプチャが実行されているときにアプリがビューの構成を無効にした場合)、次の HolographicFrame の RemovedCameras の一覧に HolographicCamera が表示され、HolographicSpace の CameraRemoved イベントが発生します。起動.
+Mixed reality キャプチャが停止した場合 (または、mixed reality キャプチャが実行されているときにアプリがビューの構成を無効にした場合)、次の HolographicFrame の RemovedCameras の一覧に HolographicCamera が表示され、HolographicSpace の CameraRemoved イベントが発生します。
 
 HolographicCamera に[viewconfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.viewconfiguration)プロパティが追加され、カメラが属している構成を識別できるようになりました。
 
+##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-unity"></a>Unity で PhotoVideoCamera HolographicViewConfiguration を有効にする
+
+> [!NOTE]
+> これには、 **unity 2018.4.13 f1**、 **unity 2019.3.0 f1**、またはそれ以降が必要です。
+
+PV カメラからの表示をオプトインするには、 [Mixed Reality Toolkit](https://microsoft.github.io/MixedRealityToolkit-Unity/README.html)を使用するときに、 [Windows Mixed Reality のカメラ設定](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/CameraSystem/WindowsMixedRealityCameraSettings.html)プロバイダーを有効にし、[ **PV カメラからのレンダリング**] 設定をオンにします。
+
+Mixed Reality Toolkit を使用していない場合は、コンポーネントを使用して、DirectX 用に前述したように[手動でオプトイン](#enable-the-photovideocamera-holographicviewconfiguration-in-directx)できます。
+
 ##### <a name="handle-the-additional-holographiccamera-render-in-unity"></a>Unity で追加の HolographicCamera render を処理する
 
->[!NOTE]
-> PV カメラから表示する Unity サポートは開発中であり、まだ使用することはできません。 このドキュメントは、PV カメラからのレンダリングをサポートする Unity のビルドが利用可能になったときに更新されます。
+これは Unity によって自動的に行われます。
+
+##### <a name="enable-the-photovideocamera-holographicviewconfiguration-in-unreal"></a>Unreal で PhotoVideoCamera HolographicViewConfiguration を有効にする
+
+> [!NOTE]
+> これには、 **Unreal Engine 4.25**以降が必要です。
+
+PV カメラからの表示をオプトインするには、次のようにします。
+
+1. **SetEnabledMixedRealityCamera**と**ResizeMixedRealityCamera**の呼び出し
+    * X の**サイズ**と**サイズの Y**値を使用して、ビデオの大きさを設定します。
+
+![第 3 のカメラ](images/unreal-camera-3rd.PNG)
+
+##### <a name="handle-the-additional-holographiccamera-render-in-unreal"></a>Unreal で追加の HolographicCamera render を処理する
+
+これは、Unreal によって自動的に行われます。
 
 ##### <a name="verify-shaders-and-code-support-additional-cameras"></a>シェーダーとコードがサポートする追加のカメラを確認する
 
@@ -149,7 +173,7 @@ MRC は開発者による追加作業がなくても機能することが期待�
 
 ![透過的な黒に消去する場合に予期される結果](images/cleartransparentblack-300px.png)
 
-**解決方法**:
+**解決策**:
 * アルファ値を0にするために、不透明な黒で表示されているコンテンツを変更します。
 * アプリが透明な黒にクリアされていることを確認します。
 * Unity の既定値は、MixedRealityToolkit で自動的にクリアされるようにクリアされますが、Unity 以外のアプリの場合は、ID3D11DeiceContext:: ClearRenderTargetView () で使用される色を変更する必要があります。 不透明な黒 (0、0、0、1) ではなく、透明な黒 (0、0、0、0) であることを確認する必要があります。
@@ -172,7 +196,7 @@ Mixed reality アプリでは、アプリ内から MRC の写真またはビデ�
 
 ### <a name="mrc-with-built-in-camera-ui"></a>組み込みのカメラ UI を使用した MRC
 
-開発者は、 *[カメラキャプチャ UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* を使用して、わずか数行のコードでユーザーがキャプチャした mixed reality の写真またはビデオを取得できます。
+開発者は、*[カメラキャプチャ UI API](https://docs.microsoft.com/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)* を使用して、わずか数行のコードでユーザーがキャプチャした mixed reality の写真またはビデオを取得できます。
 
 この API は組み込みの MRC カメラ UI を起動します。この UI では、ユーザーは写真やビデオを撮影し、結果として得られたキャプチャをアプリに返すことができます。  独自のカメラ UI を作成する場合、またはキャプチャストリームへの低いレベルのアクセスが必要な場合は、カスタムの Mixed Reality キャプチャレコーダーを作成できます。
 
@@ -190,48 +214,33 @@ Unity アプリケーションでは、プロパティの[Locatable_camera_in_Un
 
 アプリケーションには、効果を追加するためのオプションが2つあります。
 * 以前の API: [MediaCapture. AddEffectAsync ()](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addeffectasync) 。
-* 新しい Microsoft 推奨 API (オブジェクトを返し、動的プロパティを操作できるようにします): [MediaCapture ()](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync)は、アプリが[IVideoEffectDefinition](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IVideoEffectDefinition)と[IAudioEffectDefinition](https://docs.microsoft.com/uwp/api/windows.media.effects.iaudioeffectdefinition)の独自の実装を作成することを必要とする[MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addaudioeffectasync) () を / しています。これにより、 使用例については、MRC 効果のサンプルを参照してください。
+* 新しい Microsoft 推奨 API (オブジェクトを返し、動的プロパティを操作できるようにします)。 MediaCapture [MediaCapture](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync)() は、  /  [Windows.Media.Capture.MediaCapture.AddAudioEffectAsync()](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.addaudioeffectasync)アプリが[IVideoEffectDefinition](https://docs.microsoft.com/uwp/api/Windows.Media.Effects.IVideoEffectDefinition)と[IAudioEffectDefinition](https://docs.microsoft.com/uwp/api/windows.media.effects.iaudioeffectdefinition)の独自の実装を作成する必要があることを必要としますが、これに該当します。 使用例については、MRC 効果のサンプルを参照してください。
 
 >[!NOTE]
 > MixedRealityCapture 名前空間は Visual Studio で認識されませんが、文字列はまだ有効です。
 
 MRC ビデオ効果 (**MixedRealityCapture. MixedRealityCaptureVideoEffect**)
 
-|  プロパティ名  |  種類  |  既定値  |  説明 | 
+|  プロパティ名  |  Type  |  既定値  |  説明 |
 |----------|----------|----------|----------|
-|  StreamType  |  UINT32 ([Mediastreamtype](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType))  |  1 (VideoRecord)  |  この効果がどのキャプチャストリームに使用されるかを説明します。 オーディオは使用できません。 | 
-|  HologramCompositionEnabled  |  boolean  |  TRUE  |  ビデオキャプチャのホログラムを有効または無効にするフラグ。 | 
-|  RecordingIndicatorEnabled  |  boolean  |  TRUE  |  ホログラムのキャプチャ中に画面の記録インジケーターを有効または無効にするフラグ。 | 
-|  VideoStabilizationEnabled  |  boolean  |  FALSE  |  HoloLens トラッカーを使用して、ビデオの安定化を有効または無効にするフラグ。 | 
-|  VideoStabilizationBufferLength  |  UINT32  |  0  |  ビデオ安定化に使用する履歴フレームの数を設定します。 0は待機時間が0で、電源とパフォーマンスの観点からはほぼ "無料" です。 最大品質には15が推奨されます (待機時間とメモリの15フレームのコスト)。 | 
-|  GlobalOpacityCoefficient  |  float  |  0.9 (HoloLens) 1.0 (イマーシブヘッドセット)  |  0\.0 (完全に透明) から 1.0 (完全に不透明) までの範囲内のホログラムのグローバル不透明度係数を設定します。 | 
-|  BlankOnProtectedContent  |  boolean  |  FALSE  |  保護されたコンテンツを示す 2d UWP アプリがある場合に空のフレームを返すことを有効または無効にするフラグ。 このフラグが false で、2d UWP アプリで保護されたコンテンツが表示されている場合、2d UWP アプリはヘッドセットと mixed reality キャプチャの両方で保護されたコンテンツテクスチャに置き換えられます。 |
-|  ShowHiddenMesh  |  boolean  |  FALSE  |  Holographic カメラの非表示領域メッシュと隣接するコンテンツの表示を有効または無効にするフラグ。 |
+|  StreamType  |  UINT32 ([Mediastreamtype](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.MediaStreamType))  |  1 (VideoRecord)  |  この効果がどのキャプチャストリームに使用されるかを説明します。 オーディオは使用できません。 |
+|  HologramCompositionEnabled  |  boolean  |  true  |  ビデオキャプチャのホログラムを有効または無効にするフラグ。 |
+|  RecordingIndicatorEnabled  |  boolean  |  true  |  ホログラムのキャプチャ中に画面の記録インジケーターを有効または無効にするフラグ。 |
+|  VideoStabilizationEnabled  |  boolean  |  false  |  HoloLens トラッカーを使用して、ビデオの安定化を有効または無効にするフラグ。 |
+|  VideoStabilizationBufferLength  |  UINT32  |  0  |  ビデオ安定化に使用する履歴フレームの数を設定します。 0は待機時間が0で、電源とパフォーマンスの観点からはほぼ "無料" です。 最大品質には15が推奨されます (待機時間とメモリの15フレームのコスト)。 |
+|  GlobalOpacityCoefficient  |  float  |  0.9 (HoloLens) 1.0 (イマーシブヘッドセット)  |  0.0 (完全に透明) から 1.0 (完全に不透明) までの範囲内のホログラムのグローバル不透明度係数を設定します。 |
+|  BlankOnProtectedContent  |  boolean  |  false  |  保護されたコンテンツを示す 2d UWP アプリがある場合に空のフレームを返すことを有効または無効にするフラグ。 このフラグが false で、2d UWP アプリで保護されたコンテンツが表示されている場合、2d UWP アプリはヘッドセットと mixed reality キャプチャの両方で保護されたコンテンツテクスチャに置き換えられます。 |
+|  ShowHiddenMesh  |  boolean  |  false  |  Holographic カメラの非表示領域メッシュと隣接するコンテンツの表示を有効または無効にするフラグ。 |
 | OutputSize | サイズ | 0, 0 | ビデオの安定化のトリミング後に、目的の出力サイズを設定します。 0または無効な出力サイズが指定されている場合は、既定のトリミングサイズが選択されます。 |
-| PreferredHologramPerspective | UINT32 | 1 (PhotoVideoCamera) | キャプチャする holographic カメラビュー構成を示すために使用される列挙です。 0 (表示) に設定すると、アプリは写真/ビデオカメラから表示するように要求されません。 |
+| PreferredHologramPerspective | UINT32 | 0 (表示) | キャプチャする holographic カメラビューの構成を示すために使用される列挙: 0 (ディスプレイ) は、アプリが写真/ビデオカメラからのレンダリングを要求されないことを意味します。 1 (PhotoVideoCamera) は、アプリが写真/ビデオカメラからレンダリングするように要求します (アプリがサポートしている場合)。 |
 
 MRC オーディオ効果 (**MixedRealityCapture. MixedRealityCaptureAudioEffect**)
 
-<table>
-<tr>
-<th>プロパティ名</th>
-<th>種類</th>
-<th>既定値</th>
-<th>説明</th>
-</tr>
-<tr>
-<td>MixerMode</td>
-<td>UINT32</td>
-<td>2</td>
-<td>
-<ul>
-<li>0: Mic オーディオのみ</li>
-<li>1: システムオーディオのみ</li>
-<li>2: Mic とシステムオーディオ</li>
-</ul>
-</td>
-</tr>
-</table>
+| プロパティ名 | Type | 既定値 | 説明 |
+|----------|----------|----------|----------|
+| MixerMode | UINT32 | 2 (Mic とシステムオーディオ) | 使用するオーディオソースを示すために使用する列挙: 0 (Mic オーディオのみ)、1 (システムオーディオのみ)、2 (Mic およびシステムオーディオ) |
+| LoopbackGain | float | 1.0 | システムオーディオボリュームに適用します。 範囲は 0.0 ~ 5.0 です。 HoloLens 2 でのみサポートされます |
+| マイクロ電話の獲得 | float | 1.0 | Mic ボリュームに適用します。 範囲は 0.0 ~ 5.0 です。 HoloLens 2 でのみサポートされます |
 
 ### <a name="simultaneous-mrc-limitations"></a>同時の MRC の制限事項
 
@@ -267,6 +276,9 @@ Windows 10 April 2018 更新プログラムでは、MRC ストリームにアク
 
 Windows 10 April 2018 Update より前のバージョンでは、アプリのカスタム MRC レコーダーはシステム MRC と同時に使用できませんでした (写真をキャプチャする、ビデオをキャプチャする、または Windows デバイスポータルからストリーミングする)。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
+
 * [複合現実キャプチャ](mixed-reality-capture.md)
 * [Spectator View](spectator-view.md)
+* [Unity 開発の概要](unity-development-overview.md)
+* [Unreal 開発の概要](unreal-development-overview.md)
