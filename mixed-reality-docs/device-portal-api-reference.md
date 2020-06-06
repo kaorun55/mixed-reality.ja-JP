@@ -6,12 +6,12 @@ ms.author: jlyons
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows デバイスポータル、API
-ms.openlocfilehash: 8c9d60f458cddd3ba258aed0ee82f7aa16c10ba6
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 17268c9a20d3da0ee90e5d6cead4342d3badf800
+ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227963"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84451327"
 ---
 # <a name="device-portal-api-reference"></a>Device Portal API リファレンス
 
@@ -33,7 +33,7 @@ ms.locfileid: "83227963"
 パラメーター
 * パッケージ: インストールするパッケージのファイル名。
 
-Payload
+ペイロード
 * マルチパート準拠の http 本文
 
 **/api/app/packagemanager/packages (GET)**
@@ -320,7 +320,15 @@ Mixed reality の写真を取得し、デバイスにファイルを作成しま
 
 **/api/holographic/mrc/status (GET)**
 
-記録された mixed reality の状態を取得します (実行中、停止済み)
+Windows デバイスポータル内の mixed reality キャプチャの状態を取得します。
+
+***Response***
+
+応答には、Windows デバイスポータルがビデオを記録しているかどうかを示す JSON プロパティが含まれています。
+
+``` javascript
+{"IsRecording" : boolean}
+```
 
 **/api/holographic/mrc/thumbnail (GET)**
 
@@ -501,7 +509,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 WPR プロファイルをアップロードし、アップロードされたプロファイルを使用してトレースを開始します。
 
-Payload
+ペイロード
 * マルチパート準拠の http 本文
 
 データを返します
