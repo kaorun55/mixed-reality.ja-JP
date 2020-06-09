@@ -1,84 +1,135 @@
 ---
 title: HoloLens Research モード
 description: HoloLens で Research モードを使用すると、アプリケーションは主要なデバイスセンサーストリーム (深さ、環境追跡、および赤外線反射) にアクセスできます。
-author: davidgedye
-ms.author: dgedye
+author: hferrone
+ms.author: v-haferr
 ms.date: 05/03/2018
 ms.topic: article
-keywords: research モード, cv, rs4, コンピュータービジョン, 研究, HoloLens
-ms.openlocfilehash: 307df0c226221422f13af09d8f4944c22ead3865
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+keywords: research モード, cv, rs4, コンピュータービジョン, 研究, HoloLens, HoloLens 2
+ms.openlocfilehash: ec6f7b73a1f25932f10c10a7f0daaf78e536c0c4
+ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438308"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84533104"
 ---
 # <a name="hololens-research-mode"></a>HoloLens Research モード
 
-> [!NOTE]
-> この機能は、HoloLens 用の[Windows 10 April 2018 更新プログラム](release-notes-april-2018.md)の一部として追加されたものであり、以前のリリースでは使用できません。
+## <a name="overview"></a>概要
 
-Research モードは、デバイス上のキーセンサーへのアプリケーションアクセスを提供する HoloLens の新機能です。 次のようなクラスがあります。
-- マップの構築とヘッド追跡のためにシステムで使用される4つの環境追跡カメラ。
-- 深度カメラデータの2つのバージョン (高周波数 (30 FPS) のほぼ詳細な検出、通常は手動での追跡で使用)、および空間マッピングで現在使用されている低頻度 (1-5 FPS) の詳細な検出用
-- IR 反射反射ストリームの2つのバージョン。 HoloLens では深度を計算するために使用されますが、これらのイメージは HoloLens から照らされ、アンビエントライトによって適度に影響を受けないという利点があります。
+Research モードは、デバイス上の主要センサーへのアクセスを提供するために、1世代の HoloLens で導入されました。特に、展開を意図していない研究アプリケーションを対象としています。 次の入力からデータを収集できるようになりました。
+
+* **可視性の低い環境の追跡カメラ**-システムでヘッドの追跡とマップの作成に使用されます。
+* **深度カメラ**–2つのモードで動作します。  
+    + [ハンドトラッキング](interaction-fundamentals.md)で使用される短いスロー、高頻度 (30 FPS) のほぼ詳細な検出
+    + Long throw、低頻度 (1-5 FPS)、[空間マッピング](spatial-mapping.md)で使用される深い深さの検出
+* **IR 反射率ストリームの2つのバージョン**。 HoloLens が計算に使用します。 これらのイメージは赤外線によって照らされ、アンビエントに見える光の影響を受けません。
+
+HoloLens 2 を使用している場合は、次の入力にアクセスすることもできます。
+
+* **加速度計**–システムによって使用され、X 軸、Y 軸、Z 軸、重力に沿った線形加速度を決定します。
+* **ジャイロ**–回転を決定するためにシステムによって使用されます。
+* **磁力計**–絶対方向を推定するためにシステムによって使用されます。
 
 ![Research モードアプリのスクリーンショット](images/sensor-stream-viewer.jpg)<br>
 *リサーチモードで使用可能な8個のセンサーストリームを表示するテストアプリケーションの mixed reality キャプチャ*
 
-## <a name="device-support"></a>デバイスのサポート
+> [!NOTE]
+> Research モード機能は、HoloLens 用の[Windows 10 April 2018 更新プログラム](release-notes-april-2018.md)の一部として追加されましたが、以前のリリースでは使用できません。
+
+## <a name="usage"></a>使用
+
+研究モードは、Computer Vision およびロボットのフィールドの新しいアイデアを調査する教育機関および産業用の研究者向けに設計されています。  これは、エンタープライズ環境に配置されているアプリケーションや、Microsoft Store またはその他の配布チャネルを通じて利用できるアプリケーションを対象としていません。
+
+さらに、Microsoft は、今後のハードウェアまたは OS の更新で、リサーチモードまたは同等の機能がサポートされることを保証しません。 ただし、これによって、新しいアイデアの開発とテストには使用できなくなります。
+
+## <a name="security-and-performance"></a>セキュリティとパフォーマンス
+
+リサーチモードを有効にすると、通常の状況下で HoloLens 2 を使用する場合よりも多くのバッテリ電源が使用されることに注意してください。 これは、リサーチモード機能を使用しているアプリケーションが実行されていない場合でも当てはまります。  このモードを有効にすると、アプリケーションがセンサーデータを誤用する可能性があるため、デバイスの全体的なセキュリティを低下させることもできます。  デバイスのセキュリティの詳細については、「 [HoloLens のセキュリティ](https://docs.microsoft.com/hololens/hololens-faq-security)に関する FAQ」を参照してください。  
+
+
+## <a name="device-support"></a>デバイス サポート
 
 <table>
     <colgroup>
-    <col width="33%" />
-    <col width="33%" />
-    <col width="33%" />
+    <col width="50%" />
+    <col width="50%" />
+    <!-- <col width="33%" /> -->
     </colgroup>
     <tr>
         <td><strong>機能</strong></td>
-        <td><a href="hololens-hardware-details.md"><strong>HoloLens</strong></a></td>
-        <td><a href="immersive-headset-hardware-details.md"><strong>イマーシブ ヘッドセット</strong></a></td>
+        <td><a href="hololens-hardware-details.md"><strong>HoloLens ファースト世代</strong></a></td>
+        <!-- <td><a href="hololens2-hardware.md"><strong>HoloLens 2</strong></a></td> -->
     </tr>
      <tr>
-        <td>リサーチモード</td>
+        <td>ヘッドトラッキングカメラ</td>
         <td>✔️</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>IR カメラ & 深度</td>
+        <td>✔️</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>加速度計</td>
         <td>❌</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>ジャイロスコープ</td>
+        <td>❌</td>
+        <!-- <td>❌</td> -->
+    </tr>
+    <tr>
+        <td>磁力計</td>
+        <td>❌</td>
+        <!-- <td>❌</td> -->
     </tr>
 </table>
 
-## <a name="before-using-research-mode"></a>調査モードを使用する前に
-
-リサーチモードは、"Computer Vision" と "ロボット" のフィールドの新しいアイデアを試す教育機関および産業用の研究者を対象としています。  リサーチモードは、企業全体に展開されるか、Microsoft Store で利用可能になるアプリケーションを対象としたものではありません。 その理由は、リサーチモードはデバイスのセキュリティを低下させ、通常の操作よりもはるかに多くのバッテリ電源を消費するためです。 今後のデバイスでは、このモードのサポートに対するコミットは行われません。 そのため、新しいアイデアを開発してテストするために使用することをお勧めします。ただし、リサーチモードを使用するアプリケーションを広く展開することはできません。また、将来のハードウェアでも引き続き動作することが保証されています。
+> [!IMPORTANT]
+> HoloLens 2 のリサーチモードのサポートは、2020年7月にパブリックプレビューで提供される予定であり、上記のすべての機能が含まれています。 詳細については、もう一度確認してください。 
 
 ## <a name="enabling-research-mode"></a>リサーチモードを有効にする
 
-リサーチモードは、開発者モードのサブモードです。 まず、設定アプリで開発者モードを有効にする必要があります (**開発者向け & セキュリティ > の設定 > 更新**)。
+リサーチモードは、開発者モードの拡張機能です。 開始する前に、デバイスの開発機能を有効にして、リサーチモードの設定にアクセスできるようにする必要があります。 
 
-1. [開発機能の使用] を **[オン**] に設定します。
-2. [デバイスポータルを有効にする] を **[オン**] に設定します。
+* [**スタート] メニューを開き > 設定**を開き、[**更新プログラム**] を選択します。
+* **開発者向けに**選択し、**開発者モード**を有効にします。
+* 下へスクロールし、**デバイスポータル**を有効にします。
 
-次に、HoloLens と同じ Wi-fi ネットワークに接続されている web ブラウザーを使用して、HoloLens の IP アドレスに移動します (**設定 > network & Internet > wi-fi > ハードウェアプロパティ**)。 これは[デバイスポータル](using-the-windows-device-portal.md)であり、ポータルの [システム] セクションに "リサーチモード" ページがあります。
+開発者機能が有効になったら、[デバイスポータルに接続](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)して、リサーチモード機能を有効にします。
 
-HoloLens デバイスポータルの ![リサーチモード] タブ](images/ResearchModeDevPortal.png)<br>
-*HoloLens デバイスポータルでのリサーチモード*
+*HoloLens ファースト世代*:
 
-[**センサーストリームへのアクセスを許可**する] を選択した後、HoloLens を再起動する必要があります。 これを行うには、デバイスポータルのページ上部にある [Power] (電源) メニュー項目を使用します。
+* **デバイスポータル**で、**システム > リサーチモード**に切り替えます。
+* [**センサーストリームへのアクセスを許可する**] を選択します。
+* ページの上部にある**電源**メニュー項目からデバイスを再起動します。
 
-デバイスが再起動されると、デバイスポータルから読み込まれたアプリケーションは、リサーチモードのストリームにアクセスできるようになります。
+デバイスを再起動すると、**デバイスポータル**から読み込まれたアプリケーションは、リサーチモードのストリームにアクセスできるようになります。
+
+![HoloLens デバイスポータルの [リサーチモード] タブ](images/ResearchModeDevPortal.png)<br>
+*HoloLens デバイスポータルの [リサーチモード] ウィンドウ*
 
 ## <a name="using-sensor-data-in-your-apps"></a>アプリでセンサーデータを使用する
 
-アプリケーションは、写真/ビデオカメラストリームにアクセスするのとまったく同じ方法で[メディアファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)ストリームを開くことによって、センサーストリームデータにアクセスできます。 
+*HoloLens ファースト世代*
 
-HoloLens 開発に使用できるすべての Api は、リサーチモードでも使用できます。 特に、アプリケーションは、各センサーフレームのキャプチャ時間において HoloLens が6つの領域にある場所を正確に把握できます。
+アプリケーションは、[メディアファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)を使用して写真とビデオのカメラストリームにアクセスするのと同じ方法でセンサーストリームデータにアクセスできます。 
 
-さまざまなリサーチモードのストリームにアクセスする方法、組み込みと extrを使用する方法、およびストリームを記録する方法を示すサンプルアプリケーションは、 [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)で入手できます。
+HoloLens 開発に使用できるすべての Api は、リサーチモードでも使用できます。 具体的には、アプリケーションは、各センサーフレームのキャプチャ時間で HoloLens が6つの領域にあることを正確に把握しています。
+
+さまざまなリサーチモードのストリームにアクセスする方法、[組み込みと extrを](https://docs.microsoft.com/windows/mixed-reality/locatable-camera#locating-the-device-camera-in-the-world)使用する方法、 [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)リポジトリにストリームを記録する方法に関するサンプルアプリケーションを見つけることができます。
+
+ > [!NOTE]
+ > 現時点では、HoloLensForCV サンプルは HoloLens 2 では機能しません。
 
 ## <a name="known-issues"></a>既知の問題
 
-HoloLensForCV リポジトリの[問題トラッカー](https://github.com/Microsoft/HololensForCV/issues)をご覧ください。
+HoloLensForCV リポジトリの[問題トラッカー](https://github.com/Microsoft/HololensForCV/issues)を使用して、既知の問題に従うことができます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 * [Microsoft メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 * [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)
