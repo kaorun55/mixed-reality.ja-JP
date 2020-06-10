@@ -37,7 +37,7 @@ HoloLens 2 を使用している場合は、次の入力にアクセスするこ
 > [!NOTE]
 > Research モード機能は、HoloLens 用の[Windows 10 April 2018 更新プログラム](release-notes-april-2018.md)の一部として追加されましたが、以前のリリースでは使用できません。
 
-## <a name="usage"></a>使用
+## <a name="usage"></a>使用法
 
 研究モードは、Computer Vision およびロボットのフィールドの新しいアイデアを調査する教育機関および産業用の研究者向けに設計されています。  これは、エンタープライズ環境に配置されているアプリケーションや、Microsoft Store またはその他の配布チャネルを通じて利用できるアプリケーションを対象としていません。
 
@@ -129,7 +129,7 @@ HoloLens 開発に使用できるすべての Api は、リサーチモードで
 
 HoloLensForCV リポジトリの[問題トラッカー](https://github.com/Microsoft/HololensForCV/issues)を使用して、既知の問題に従うことができます。
 
-## <a name="see-also"></a>こちらもご覧ください
+## <a name="see-also"></a>関連項目
 
 * [Microsoft メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 * [HoloLensForCV GitHub リポジトリ](https://github.com/Microsoft/HoloLensForCV)

@@ -3,15 +3,15 @@ title: 高度な HoloLens エミュレーターと Mixed Reality Simulator の�
 description: キーボード、マウス、および Xbox コントローラーを使用して、HoloLens エミュレーターと Windows Mixed Reality シミュレーターの入力をシミュレートする方法について詳しく説明します。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 05/12/2020
+ms.date: 06/8/2020
 ms.topic: article
 keywords: HoloLens、エミュレーター、シミュレーション、Windows Mixed Reality
-ms.openlocfilehash: e9051ae9e7853924f583b6c38f6177f2f967d9f0
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: 0812b1d498ea557e84eecc44142b38d86099f832
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227953"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631476"
 ---
 # <a name="advanced-hololens-emulator-and-mixed-reality-simulator-input"></a>高度な HoloLens エミュレーターと Mixed Reality Simulator の入力
 
@@ -61,7 +61,7 @@ HoloLens 2 では豊富な表現を手にしています。  追跡と追跡が�
 |  Z |  /秒 |  |  左のサムスティック (上下) | 
 |  アクション |  スペースの入力 |  右方向ボタン |  ボタンまたはいずれかのトリガー | 
 |  ブルーム/システム |  F2 または Windows キー |  |  B ボタン | 
-|  コントローラーグリップボタン |  G  |  |  | 
+|  コントローラーグリップボタン/手の形 |  G  |  |  | 
 |  コントローラーメニューボタン |  M  |  |  | 
 |  コントローラータッチパッドタッチ |  U  |  |  | 
 |  コントローラータッチパッド押下 |  P  |  |  | 
@@ -84,9 +84,9 @@ HoloLens 2 では豊富な表現を手にしています。  追跡と追跡が�
 
 次の表では、ターゲット設定のオプションと、各オプションをアクティブ化する方法について説明します。
 
-| オブジェクト | キーボード修飾子 | コントローラー修飾子 | Emulator UI 修飾子 |
+| Object | キーボード修飾子 | コントローラー修飾子 | Emulator UI 修飾子 |
 |----------|----------|----------|----------|
-| Body | (既定値)。 | (既定値)。 | (既定値)。 |
+| 本文 | (既定値)。 | (既定値)。 | (既定値)。 |
 | Head | 保持時間 | (使用不可) | (使用不可) |
 | 左側/コントローラー | 左に押す Alt ボタン | 左ショルダーボタンを保持する | 左プッシュピン | 
 | 右手/コントローラー | 右 Alt ボタンを押す | 右ショルダーボタンを保持する | 右プッシュピン |
@@ -108,7 +108,7 @@ HoloLens 2 では豊富な表現を手にしています。  追跡と追跡が�
 
 次のコントロールセットを使用して、日常的に使用することをお勧めします。
 
-|  Operation |  キーボードとマウス |  コントローラー | 
+|  操作 |  キーボードとマウス |  コントローラー | 
 |----------|----------|----------|
 |  本文 X |  A/D |  左のサムスティック左/右 | 
 |  本文 Y |  Pageup/pagedown |  DPad アップ/ダウン | 
@@ -131,13 +131,13 @@ HoloLens 2 では豊富な表現を手にしています。  追跡と追跡が�
 |  移動/回転の高速化 | 左または右の Shift キー | 右スティックを押したままにします。 |
 |  移動/回転速度の低下 | 左または右の Ctrl キー | 左スティックを押したままにします。 |
 
-## <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>Windows Mixed Reality イマーシブヘッドセットと HoloLens 2 エミュレーターでのモーションコントローラーの使用
+## <a name="using-a-windows-mixed-reality-immersive-headset-and-motion-controllers-with-the-hololens-2-emulator"></a>HoloLens 2 エミュレーターで Windows Mixed Reality イマーシブ ヘッドセットとモーション コントローラーを使用する
 
 HoloLens 2 のエミュレーターで Windows Mixed Reality イマーシブヘッドセットを使用する場合、移動と回転は、ヘッドセットの移動と回転に自動的にマップされます。  モーションコントローラーの位置と向きは、エミュレーターの位置と向きに自動的にマップされます。  次の表は、モーションコントローラーを使用する場合に使用できるその他のアクションを示しています。
 
 ヘッドセットを使用する場合、標準キーボード、マウス、およびゲームパッドコントロールは自動的に無視されることに注意してください。
 
-|  Operation |  アクション |  Notes | 
+|  操作 |  アクション |  メモ | 
 |----------|----------|----------|
 |  本文 X |  左または右にサムスティック |   | 
 |  本文 Z |  前方/後方にサムスティック |   | 
@@ -153,7 +153,7 @@ HoloLens 2 のエミュレーターで Windows Mixed Reality イマーシブヘ�
 
 次のキーボードショートカットを使用すると、コントロールパネルの知覚シミュレーションにアクセスし、シミュレーションで使用する PC 入力デバイスを有効または無効にすることができます。
 
-| Operation | ショートカット | 説明/メモ |
+| 操作 | ショートカット | 説明/メモ |
 |-----------|----------|-------------|
 | [シミュレーションにキーボードを使用] を切り替えます | F4 | オフにすると、キーボード入力が HoloLens または Windows Mixed Reality アプリケーションに送られます。 |
 | [シミュレーションにマウスを使用] を切り替えます | F5 | オフにした場合、マウス入力は混合現実環境に移動します (Windows Mixed Reality のみ)。 |
