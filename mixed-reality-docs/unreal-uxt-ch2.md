@@ -1,138 +1,229 @@
 ---
 title: 2. プロジェクトと最初のアプリケーションの初期化
-description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリをビルドするためのチュートリアルのパート 2
-author: sw5813
-ms.author: suwu
+description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリを構築するためのチュートリアル シリーズのパート 6 の 2
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, 機能, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: fc85f011ff3b186f3b4b5449b4f8ec49f0b6418f
-ms.sourcegitcommit: 189a47b8712dd5b620e19815f5cf6d1ac0f29880
+keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
+ms.openlocfilehash: e8f03a87ec6b92e4c62cf3f88f519146254e7387
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851576"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330361"
 ---
-# <a name="2-initializing-your-project-and-first-application"></a><span data-ttu-id="1d740-104">2.プロジェクトと最初のアプリケーションの初期化</span><span class="sxs-lookup"><span data-stu-id="1d740-104">2. Initializing your project and first application</span></span>
+# <a name="2-initializing-your-project-and-first-application"></a><span data-ttu-id="5d52e-104">2.プロジェクトと最初のアプリケーションの初期化</span><span class="sxs-lookup"><span data-stu-id="5d52e-104">2. Initializing your project and first application</span></span>
 
-<span data-ttu-id="1d740-105">このセクションでは、HoloLens 2 用の新しい Unreal アプリケーションの作成を開始します。</span><span class="sxs-lookup"><span data-stu-id="1d740-105">This section gets you started with creating a new Unreal application for HoloLens 2.</span></span> 
+## <a name="overview"></a><span data-ttu-id="5d52e-105">概要</span><span class="sxs-lookup"><span data-stu-id="5d52e-105">Overview</span></span>
 
-## <a name="objectives"></a><span data-ttu-id="1d740-106">目標</span><span class="sxs-lookup"><span data-stu-id="1d740-106">Objectives</span></span>
+<span data-ttu-id="5d52e-106">この最初のチュートリアルでは、HoloLens 2 用の新しい Unreal アプリケーションの使用を開始します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-106">In this first tutorial, you'll get started with a new Unreal application for HoloLens 2.</span></span> <span data-ttu-id="5d52e-107">これには、HoloLens プラグインの追加、レベルの作成と照明、およびゲーム ボードとチェスの駒の設定が含まれます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-107">This is going to include adding the HoloLens plugin, creating and lighting a level, and populating it with a game board and chess piece.</span></span> <span data-ttu-id="5d52e-108">3D チェスの駒とオブジェクト マテリアルには、事前に作成された資産を使用するため、何もないところからモデリングする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5d52e-108">You'll be using pre-made assets for the 3D chess piece and object materials, so don't worry about modeling anything from scratch.</span></span> <span data-ttu-id="5d52e-109">このチュートリアルを完了するまでに、複合現実に対応できる空のキャンバスが完成します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-109">By the end of this tutorial you'll have a blank canvas that's ready for mixed reality.</span></span>
 
-* <span data-ttu-id="1d740-107">HoloLens 開発用に Unreal を構成する</span><span class="sxs-lookup"><span data-stu-id="1d740-107">Configure Unreal for HoloLens development</span></span>
-* <span data-ttu-id="1d740-108">アセットをインポートし、シーンをセットアップする</span><span class="sxs-lookup"><span data-stu-id="1d740-108">Import assets and set up the scene</span></span>
+<span data-ttu-id="5d52e-110">続行する前に、[[はじめに]](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1) ページにあるすべての前提条件を確認してください。</span><span class="sxs-lookup"><span data-stu-id="5d52e-110">Before continuing, make sure you have all the prerequisite from the [Getting Started](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1) page.</span></span>
 
-## <a name="create-a-new-unreal-project"></a><span data-ttu-id="1d740-109">新しい Unreal プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="1d740-109">Create a new Unreal project</span></span>
+## <a name="objectives"></a><span data-ttu-id="5d52e-111">目標</span><span class="sxs-lookup"><span data-stu-id="5d52e-111">Objectives</span></span>
+* <span data-ttu-id="5d52e-112">HoloLens 開発用の Unreal プロジェクトの構成</span><span class="sxs-lookup"><span data-stu-id="5d52e-112">Configuring an Unreal projet for HoloLens development</span></span>
+* <span data-ttu-id="5d52e-113">資産のインポートとシーンのセットアップ</span><span class="sxs-lookup"><span data-stu-id="5d52e-113">Importing assets and setting up a scene</span></span>
+* <span data-ttu-id="5d52e-114">ブループリントを使用したアクターとスクリプトレベルのイベントの作成</span><span class="sxs-lookup"><span data-stu-id="5d52e-114">Creating Actors and script-level events with blueprints</span></span>
 
-1. <span data-ttu-id="1d740-110">Unreal Engine を起動します。</span><span class="sxs-lookup"><span data-stu-id="1d740-110">Launch Unreal Engine</span></span>
+## <a name="creating-a-new-unreal-project"></a><span data-ttu-id="5d52e-115">新しい Unreal プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="5d52e-115">Creating a new Unreal project</span></span>
+<span data-ttu-id="5d52e-116">最初に必要なのは、作業するプロジェクトです。</span><span class="sxs-lookup"><span data-stu-id="5d52e-116">The first thing you need is a project to work with.</span></span>
 
-2. <span data-ttu-id="1d740-111">**[New Project Categories]\(新規プロジェクトのカテゴリ\)** で、 **[ゲーム]** を選択して [次へ] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-111">Under **New Project Categories**, select **Games** and click Next.</span></span> <span data-ttu-id="1d740-112">**[Blank]\(空のプロジェクト\)** テンプレートを選択して [次へ] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-112">Select a **Blank** Template and click Next.</span></span> 
+1. <span data-ttu-id="5d52e-117">Unreal Engine を起動します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-117">Launch Unreal Engine</span></span>
+
+2. <span data-ttu-id="5d52e-118">**[New Project Categories]\(新規プロジェクトのカテゴリ\)** で、 **[ゲーム]** を選択して **[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-118">Select **Games** in **New Project Categories** and click **Next**.</span></span> 
+
+![ゲーム プロジェクト テンプレートの選択](images/unreal-uxt/2-gamestemplate.png)
+
+3. <span data-ttu-id="5d52e-120">**[Blank]\(空のプロジェクト\)** テンプレートを選択して **[次へ]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-120">Select the **Blank** Template and click **Next**.</span></span> 
 
 ![[Blank]\(空のプロジェクト\) テンプレートを選択する](images/unreal-uxt/2-template.PNG)
 
-3. <span data-ttu-id="1d740-114">[Project Settings]\(プロジェクト設定\) で、 **[C++]、[Scalable 3D or 2D]\(3D または 2D に拡張可能\)、[Mobile / Tablet]\(モバイル/タブレット\)** 、 **[No Starter Content]\(スターター コンテンツを有効にしない\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-114">In Project Settings, choose **C++, Scalable 3D or 2D, Mobile / Tablet**, and **No Starter Content**.</span></span> <span data-ttu-id="1d740-115">プロジェクトを保存する場所を選択して、 **[Create Project]\(プロジェクトを作成\)** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-115">Select a location for your project to be saved and click **Create Project**.</span></span> <span data-ttu-id="1d740-116">これにより、Visual Studio プロジェクト内の C++ ファイルと Unreal エディターが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1d740-116">This will open up your C++ files in a Visual Studio project and the Unreal editor.</span></span> 
+4. <span data-ttu-id="5d52e-122">**[Project Settings]\(プロジェクト設定\)** で、 **[C++]** 、 **[Scalable 3D or 2D]\(3D または 2D に拡張可能\)** 、 **[No Starter Content]\(スターター コンテンツを有効にしない\)** を設定します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-122">Set **C++**, **Scalable 3D or 2D, Mobile/Tablet**, and **No Starter Content** as your **Project Settings**.</span></span> 
+    * <span data-ttu-id="5d52e-123">保存場所を選択し、 **[プロジェクトの作成]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-123">Choose a save location and click **Create Project**.</span></span> 
 
 ![最初のプロジェクト設定](images/unreal-uxt/2-project-settings.PNG)
 
-4. <span data-ttu-id="1d740-118">左上隅の **[編集] > [プラグイン]** に移動します。</span><span class="sxs-lookup"><span data-stu-id="1d740-118">In the top left-hand corner, go to **Edit > Plugins**.</span></span> <span data-ttu-id="1d740-119">[Augmented Reality]\(拡張現実\) で、 **[HoloLens]** プラグインを有効にするボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="1d740-119">Under Augmented Reality, check the box to enable the **HoloLens** plugin.</span></span> <span data-ttu-id="1d740-120">[Virtual Reality]\(仮想現実\) セクションまで下にスクロールして、 **[Microsoft Windows Mixed Reality]** プラグインを有効にするボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="1d740-120">Scroll down to the Virtual Reality section and check the box to enable the **Microsoft Windows Mixed Reality** plugin.</span></span> <span data-ttu-id="1d740-121">HoloLens 2 の開発には、両方のプラグインが必要です。</span><span class="sxs-lookup"><span data-stu-id="1d740-121">Both plugins are required for HoloLens 2 development.</span></span> <span data-ttu-id="1d740-122">エディターを再起動します。</span><span class="sxs-lookup"><span data-stu-id="1d740-122">Restart your editor.</span></span> 
+<span data-ttu-id="5d52e-125">Unreal エディターでプロジェクトが自動的に開きます。つまり、次のセクションに進む準備はできています。</span><span class="sxs-lookup"><span data-stu-id="5d52e-125">The project should open up automatically in the Unreal editor, which means you're ready for the next section.</span></span>
 
-![プラグイン](images/unreal-uxt/2-plugins.PNG)
+## <a name="enabling-required-plugins"></a><span data-ttu-id="5d52e-126">必要なプラグインの有効化</span><span class="sxs-lookup"><span data-stu-id="5d52e-126">Enabling required plugins</span></span>
+<span data-ttu-id="5d52e-127">オブジェクトをシーンに追加する前に、2 つのプラグインを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="5d52e-127">Before you start adding objects to the scene you'll need to enable two plugins.</span></span>
 
-5. <span data-ttu-id="1d740-124">左上隅の **[ファイル] > [New Level]\(新規レベル\)** に移動します。</span><span class="sxs-lookup"><span data-stu-id="1d740-124">In the top left-hand corner, go to **File > New Level**.</span></span> <span data-ttu-id="1d740-125">**[Empty Level]\(空のレベル\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-125">Select **Empty Level**.</span></span> <span data-ttu-id="1d740-126">この時点では、ビューポートの既定のシーンは空です。</span><span class="sxs-lookup"><span data-stu-id="1d740-126">The default scene in the viewport should now be empty.</span></span>
+1. <span data-ttu-id="5d52e-128">**[編集] > [プラグイン]** を開き、組み込みオプション リストから **[拡張現実]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-128">Open **Edit > Plugins** and select **Augmented Reality** from the built-in options list.</span></span> 
+    * <span data-ttu-id="5d52e-129">**HoloLens** まで下にスクロールし、 **[有効]** をオンにします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-129">Scroll down to **HoloLens** and check **Enabled**.</span></span> 
 
-6. <span data-ttu-id="1d740-127">左側の [モード] パネルの [基本] タブにある PlayerStart をドラッグ アンド ドロップします。アプリの起動時にユーザーを原点から開始させるために、右側の [詳細] パネルで、位置を X = 0、Y = 0、Z = 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="1d740-127">Drag PlayerStart and drop PlayerStart from the Modes panel on the left, located in the Basic tab. In the Details panel on the right, set the location to X = 0, Y = 0, Z = 0 in order to have the user start at the origin when the app stars.</span></span>
+![HoloLens プラグインの有効化](images/unreal-uxt/2-plugins.PNG)
+
+2. <span data-ttu-id="5d52e-131">組み込みオプション リストから **[仮想現実]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-131">Select **Virtual Reality** from the built-in options list.</span></span> 
+    * <span data-ttu-id="5d52e-132">**[Microsoft Windows Mixed Reality]** までスクロールし、 **[有効]** をオンにして、エディターを再起動します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-132">Scroll down to **Microsoft Windows Mixed Reality**., check **Enabled**, and restart your editor.</span></span> 
+
+![Windows Mixed Reality プラグインを有効にする](images/unreal-uxt/2-virtual-reality-plugin.PNG)
+
+> [!NOTE]
+> <span data-ttu-id="5d52e-134">HoloLens 2 の開発には、両方のプラグインが必要です。</span><span class="sxs-lookup"><span data-stu-id="5d52e-134">Both plugins are required for HoloLens 2 development.</span></span>
+
+<span data-ttu-id="5d52e-135">これで空のレベルになり、会社の準備が完了しました。</span><span class="sxs-lookup"><span data-stu-id="5d52e-135">With that done you're empty level is ready for company.</span></span>
+
+## <a name="creating-a-level"></a><span data-ttu-id="5d52e-136">レベルの作成</span><span class="sxs-lookup"><span data-stu-id="5d52e-136">Creating a level</span></span>
+<span data-ttu-id="5d52e-137">次のタスクは、参照とスケール用の開始点とキューブを使用して単純なプレーヤーのセットアップを作成することです。</span><span class="sxs-lookup"><span data-stu-id="5d52e-137">Your next task is to create a simple player setup with a starting point and a cube for reference and scale.</span></span>
+
+1. <span data-ttu-id="5d52e-138">**[ファイル] > [新しいレベル]** を選択し、 **[空のレベル]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-138">Select **File > New Level** and choose **Empty Level**.</span></span> <span data-ttu-id="5d52e-139">この時点では、ビューポートの既定のシーンは空です。</span><span class="sxs-lookup"><span data-stu-id="5d52e-139">The default scene in the viewport should now be empty.</span></span>
+
+2. <span data-ttu-id="5d52e-140">**[モード]** タブから **[基本]** を選択し、 **[PlayerStart]** をシーンにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-140">Select **Basic** from the **Modes** tab and drag **PlayerStart** into the scene.</span></span> 
+    * <span data-ttu-id="5d52e-141">**[詳細]** タブで、 **[場所]** を **X = 0**、**Y = 0**、および **Z = 0**  に設定します。これにより、アプリの起動時にユーザーがシーンの中心に設定されます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-141">Set **Location** to **X = 0**, **Y = 0**, and **Z = 0** in the **Details** tab. This sets the user at the center of the scene when the app starts up.</span></span>
 
 ![PlayerStart を表示したビューポート](images/unreal-uxt/2-playerstart.PNG)
 
-7. <span data-ttu-id="1d740-129">**[Cube]\(キューブ\)** を [モード] パネルの [基本] タブからビューポートにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="1d740-129">Drag a **Cube** from the Basic tab of the Modes panel into the viewport.</span></span> <span data-ttu-id="1d740-130">[詳細] パネルで、位置を X = 50、Y = 0、Z = 0 に設定して、キューブをプレーヤーの開始位置から 50 cm 離して配置します。</span><span class="sxs-lookup"><span data-stu-id="1d740-130">In the Details panel, set the location to X = 50, Y = 0, Z = 0 to set the cube to 50 cm away from the player at start time.</span></span> <span data-ttu-id="1d740-131">既定のキューブは非常に大きいため、キューブの [Scale]\(スケール\) を (0.2, 0.2, 0.2) に変更します。</span><span class="sxs-lookup"><span data-stu-id="1d740-131">Since the default cube is quite large, change the Scale of the cube to (0.2, 0.2, 0.2).</span></span> 
+3. <span data-ttu-id="5d52e-143">**[キューブ]** を **[基本]** タブからシーンにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-143">Drag a **Cube** from the **Basic** tab into the scene.</span></span> 
+    * <span data-ttu-id="5d52e-144">**[位置]** を **X = 50**、**Y = 0**、および **Z = 0** に設定します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-144">Set **Location** to **X = 50**, **Y = 0**, and **Z = 0**.</span></span> <span data-ttu-id="5d52e-145">これにより、キューブは開始時にプレーヤーから 50 cm 離れた位置に配置されます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-145">This positions the cube 50 cm away from the player at start time.</span></span> 
+    * <span data-ttu-id="5d52e-146">キューブを縮小するには、 **[スケール]** を **X = 0.2**、**Y = 0.2**、および **Z = 0.2** に変更します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-146">Change **Scale** to **X = 0.2**, **Y = 0.2**, and **Z = 0.2** to shrink the cube down.</span></span> 
 
-8. <span data-ttu-id="1d740-132">シーンにライトを追加しない限り、キューブを表示することはできません。</span><span class="sxs-lookup"><span data-stu-id="1d740-132">You won’t be able to see the cube unless you add a light to your scene.</span></span> <span data-ttu-id="1d740-133">[モード] パネルの **[Lights]\(ライト\)** タブに切り替えて、**Directional Light** をシーンの PlayerStart の上にドラッグします。</span><span class="sxs-lookup"><span data-stu-id="1d740-133">Switch to the **Lights** tab on the Modes panel and drag a **Directional Light** into the scene, above the PlayerStart.</span></span>
+<span data-ttu-id="5d52e-147">シーンにライトを追加しない限り、キューブを表示することはできません。これは、シーンをテストする前の最後のタスクです。</span><span class="sxs-lookup"><span data-stu-id="5d52e-147">You won’t be able to see the cube unless you add a light to your scene, which is your last task before testing the scene.</span></span>
+
+4. <span data-ttu-id="5d52e-148">**[モード]** パネルの **[Lights]\(ライト\)** タブに切り替えて、**Directional Light** をシーンにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-148">Switch to the **Lights** tab in the **Modes** panel and drag a **Directional Light** into the scene.</span></span> <span data-ttu-id="5d52e-149">ライトが見えるように、**PlayerStart** の上にライトを配置します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-149">Position the light above **PlayerStart** so you can see it.</span></span>
 
 ![ライトが追加されたビューポート](images/unreal-uxt/2-light.PNG)
 
-9.  <span data-ttu-id="1d740-135">ツールバーの **[Play]\(プレイ\)** ボタンを押して、ビューポートにキューブを表示します。</span><span class="sxs-lookup"><span data-stu-id="1d740-135">Press the **Play** button on the toolbar to see your cube in the viewport!</span></span> <span data-ttu-id="1d740-136">**Esc** キーを押して、レベルを停止します。</span><span class="sxs-lookup"><span data-stu-id="1d740-136">Press **Esc** to stop the level.</span></span> 
+5. <span data-ttu-id="5d52e-151">**[ファイル] > [現在を保存]** に移動し、レベルに **Main** という名前を付けて、 **[保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-151">Go to **File > Save Current**, name your level **Main**, and click **Save**.</span></span> 
+
+<span data-ttu-id="5d52e-152">シーンを設定したら、ツールバーの **[再生]** を押して、キューブの動作を確認します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-152">With the scene set, press **Play** in the toolbar to see your cube in action!</span></span> <span data-ttu-id="5d52e-153">作業内容を鑑賞したら、**Esc** を押してアプリケーションを停止します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-153">When you're finished admiring your work, press **Esc** to stop the application.</span></span>
 
 ![ビューポート内のキューブ](images/unreal-uxt/2-cube.PNG)
 
-10. <span data-ttu-id="1d740-138">レベルを保存しましょう。</span><span class="sxs-lookup"><span data-stu-id="1d740-138">Let’s save your level.</span></span> <span data-ttu-id="1d740-139">左上隅の **[ファイル] > [Save Current]\(現在のレベルを保存\)** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-139">In the top left corner, click on **File > Save Current**.</span></span> <span data-ttu-id="1d740-140">レベルに "Main" という名前を付けて、 **[保存]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-140">Name your level "Main" and click **Save**.</span></span> 
+<span data-ttu-id="5d52e-155">シーンがセットアップされたので、チェス盤とピースを追加して、アプリケーション環境を完成させます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-155">Now that the scene is setup, you can start adding in the chess board and piece to round out the application environment.</span></span>
 
-## <a name="set-up-a-chess-scene"></a><span data-ttu-id="1d740-141">チェス シーンを設定する</span><span class="sxs-lookup"><span data-stu-id="1d740-141">Set up a chess scene</span></span>
+## <a name="importing-assets"></a><span data-ttu-id="5d52e-156">資産のインポート</span><span class="sxs-lookup"><span data-stu-id="5d52e-156">Importing assets</span></span>
+<span data-ttu-id="5d52e-157">現在、シーンは空であるように見えますが、既製の資産をプロジェクトにインポートして修正します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-157">The scene is looking a bit empty at the moment, but you'll fix that by importing the ready-made assets into the project.</span></span>
 
-1. <span data-ttu-id="1d740-142">コンテンツ ブラウザーで、[Add New]\(新規追加\) の下にあるアイコンをクリックして、ソース パネルを表示します。</span><span class="sxs-lookup"><span data-stu-id="1d740-142">In your Content Browser, click icon under Add New to show the sources panel.</span></span> <span data-ttu-id="1d740-143">**[Add New]\(新規追加\) > [New Folder]\(新規フォルダ\)** をクリックして、フォルダーに "ChessAssets" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="1d740-143">Then click on **Add New > New Folder** and name the folder “ChessAssets”.</span></span> <span data-ttu-id="1d740-144">このフォルダーをダブルクリックして、移動します。</span><span class="sxs-lookup"><span data-stu-id="1d740-144">Double-click this folder to navigate in.</span></span> <span data-ttu-id="1d740-145">ここに、チェス セットの 3D アセットをインポートします。</span><span class="sxs-lookup"><span data-stu-id="1d740-145">This is where we’ll import the 3D assets for our chess set.</span></span>
+1. <span data-ttu-id="5d52e-158">[GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z) 資産フォルダーをダウンロードして解凍します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-158">Download and unzip the [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z) assets folder.</span></span>
+
+2. <span data-ttu-id="5d52e-159">**[コンテンツ ブラウザー]** から **[新規追加] > [新しいフォルダー]** をクリックし、**ChessAssets** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-159">Click **Add New > New Folder** from the **Content Browser** and name it **ChessAssets**.</span></span> 
+    * <span data-ttu-id="5d52e-160">新しいフォルダーをダブルクリックします。ここに 3D 資産をインポートします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-160">Double-click the new folder - this is where you'll import the 3D assets.</span></span>
 
 ![ソース パネルの表示と非表示](images/unreal-uxt/2-showhidesources.PNG)
 
-2. <span data-ttu-id="1d740-147">アセットの zip ファイルを [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z) からダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="1d740-147">Download the zip file of assets from [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/blob/master/ChessApp/ChessAssets.7z).</span></span> <span data-ttu-id="1d740-148">このファイルには、チェス盤とチェス セットの 3D モデルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="1d740-148">This file contains the 3D models for a chess board and chess set.</span></span> <span data-ttu-id="1d740-149">このファイルを解凍します。</span><span class="sxs-lookup"><span data-stu-id="1d740-149">Unzip this file.</span></span>
+3. <span data-ttu-id="5d52e-162">**[コンテンツ ブラウザー]** から **[インポート]** をクリックし、解凍した資産フォルダー内のすべての項目を選択して、 **[開く]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-162">Click **Import** from the **Content Browser**, select all the items in the unzipped assets folder and click **Open**.</span></span> 
+    * <span data-ttu-id="5d52e-163">このフォルダーには、チェス盤の 3D オブジェクト メッシュと FBX 形式のピース、およびマテリアルに使用する TGA 形式のテクスチャ マップが含まれています。</span><span class="sxs-lookup"><span data-stu-id="5d52e-163">This folder contains the 3D object meshes for the chess board and pieces in FBX format and texture maps in TGA format that you'll use to for materials.</span></span>  
 
-3. <span data-ttu-id="1d740-150">コンテンツ ブラウザーの上部にある **[インポート]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-150">At the top of the Content Browser, click on **Import**.</span></span> <span data-ttu-id="1d740-151">解凍したばかりのフォルダーに移動して、その中のすべての項目を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-151">Navigate to the folder that you just unzipped and select all the items within.</span></span> <span data-ttu-id="1d740-152">このフォルダーには、チェス盤とチェスの駒の 3D オブジェクト メッシュである FBX ファイルと、チェス盤と駒のマテリアルの作成に使用するテクスチャ マップである TGA ファイルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="1d740-152">This folder contains FBX files which are the 3D object meshes for our chess board and pieces, as well as TGA files which are the texture maps we’ll use to create materials for our board and pieces.</span></span> <span data-ttu-id="1d740-153">**[開く]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-153">Click **Open**.</span></span> 
-
-4. <span data-ttu-id="1d740-154">[FBX Import Options]\(FBX インポート オプション\) ウィンドウが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1d740-154">An FBX Import Options window will pop up.</span></span> <span data-ttu-id="1d740-155">**[Material]\(マテリアル\)** セクションで、 **[Material Import Method]\(マテリアルのインポート方法\)** を **[Do Not Create Material]\(マテリアルを作成しない\)** に変更します。</span><span class="sxs-lookup"><span data-stu-id="1d740-155">In the **Material** section, change the **Material Import Method** to **Do Not Create Material**.</span></span> <span data-ttu-id="1d740-156">次に、 **[Import All]\(すべてインポート\)** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-156">Then, click **Import All**.</span></span>
+4. <span data-ttu-id="5d52e-164">[FBX インポート オプション] ウィンドウが表示されたら、 **[マテリアル]** セクションを展開し、 **[マテリアルのインポート方法]** を **[マテリアルを作成しない]** に変更します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-164">When the FBX Import Options window pops up, expand the **Material** section and change **Material Import Method** to **Do Not Create Material**.</span></span>
+    * <span data-ttu-id="5d52e-165">**[Import All]\(すべてインポート\)** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-165">Click **Import All**.</span></span>
 
 ![FBX インポート オプション](images/unreal-uxt/2-nocreatemat.PNG)
 
-5. <span data-ttu-id="1d740-158">[コンテンツ] フォルダーに戻って、**Blueprints** という名前の新しいフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="1d740-158">Back in your Content folder, create a new folder called **Blueprints**.</span></span> <span data-ttu-id="1d740-159">ここに、すべてのブループリントを格納します。ブループリントは、新しい種類のアクターやスクリプト レベルのイベントを作成するためのノードベースのインターフェイスを提供する特別なアセットです。</span><span class="sxs-lookup"><span data-stu-id="1d740-159">This is where we will store all our blueprints, which are special assets that provide a node-based interface to create new types of Actors and script level events.</span></span> 
+<span data-ttu-id="5d52e-167">これで、資産に対して行う必要な操作は終わりました。</span><span class="sxs-lookup"><span data-stu-id="5d52e-167">That's all you need to do for the assets.</span></span> <span data-ttu-id="5d52e-168">次の一連のタスクでは、ブループリントを使用してアプリケーションの構成要素を作成します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-168">Your next set of tasks is to create the building blocks of the application with blueprints.</span></span>
 
-6. <span data-ttu-id="1d740-160">**[Blueprints]\(ブループリント\)** フォルダーをダブルクリックして、内部に移動し、[Content Browser]\(コンテンツ ブラウザー\) を右クリックして、 **[Blueprint Class]\(ブループリント クラス\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-160">Double click the **Blueprints** folder to navigate inside, then right click in your Content Browser and select **Blueprint Class**.</span></span> <span data-ttu-id="1d740-161">**[Actor]\(アクター\)** をクリックして、新しいブループリントに "Board" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="1d740-161">Click on **Actor** and name the new blueprint “Board”.</span></span> <span data-ttu-id="1d740-162">Board をダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="1d740-162">Double click Board to open it.</span></span> 
+## <a name="adding-blueprints"></a><span data-ttu-id="5d52e-169">ブループリントの追加</span><span class="sxs-lookup"><span data-stu-id="5d52e-169">Adding blueprints</span></span>
+
+1. <span data-ttu-id="5d52e-170">**[コンテンツ ブラウザー]** で、 **[新規追加] > [新しいフォルダー]** をクリックし、**Content Browser** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-170">Click **Add New > New Folder** in the **Content Browser** and name it **Content Browser**.</span></span> 
+
+> [!NOTE]
+> <span data-ttu-id="5d52e-171">[ブループリント](https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html)を初めて使用する場合、これらのブループリントは、新しい種類のアクターとスクリプト レベルのイベントを作成するためのノードベースのインターフェースを提供する特別な資産になります。</span><span class="sxs-lookup"><span data-stu-id="5d52e-171">If you're new to [blueprints](https://docs.unrealengine.com/en-US/Engine/Blueprints/index.html), they're special assets that provide a node-based interface for creating new types of Actors and script level events.</span></span> 
+
+2. <span data-ttu-id="5d52e-172">**[ブループリント]** フォルダーをダブルクリックし、右クリックして **[ブループリント クラス]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-172">Double-click into the **Blueprints** folder, then right-click and select **Blueprint Class**.</span></span>         
+    * <span data-ttu-id="5d52e-173">**[Actor]\(アクター\)** を選択して、ブループリントに **Board** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-173">Select **Actor** and name the blueprint **Board**.</span></span> 
 
 ![ブループリントの親クラスを選択する](images/unreal-uxt/2-bpparent.PNG)
 
+<span data-ttu-id="5d52e-175">次のスクリーンショットに示すように、新しい **[ボード]** ブループリントが **[ブループリント]** フォルダーに表示されます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-175">The new **Board** blueprint now shows up in the **Blueprints** folder as seen in the following screenshot.</span></span> 
+
 ![新しい Board ブループリント](images/unreal-uxt/2-bpboard.PNG)
 
-7. <span data-ttu-id="1d740-165">ブループリント エディターで、[コンポーネント] パネルに移動し、 **[Add Component]\(コンポーネントの追加\) > [シーン]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-165">In the Blueprint editor, navigate to the Components panel and click **Add Component > Scene**.</span></span> <span data-ttu-id="1d740-166">新しく作成したシーンに "Root" という名前を付け、Root をクリックして、DefaultSceneRoot の上にドラッグします。</span><span class="sxs-lookup"><span data-stu-id="1d740-166">Name the newly created scene “Root”, and then click and drag Root over the DefaultSceneRoot.</span></span> <span data-ttu-id="1d740-167">これにより、既定のシーンがルートに置き換えられて、ビューポートで球が削除されます。</span><span class="sxs-lookup"><span data-stu-id="1d740-167">This will replace the default scene root and get rid of the sphere in the viewport.</span></span> 
+<span data-ttu-id="5d52e-177">作成したオブジェクトにマテリアルを追加するためのすべての設定が完了しました。</span><span class="sxs-lookup"><span data-stu-id="5d52e-177">You're all set to start adding materials to the created objects.</span></span>
+
+## <a name="working-with-materials"></a><span data-ttu-id="5d52e-178">マテリアルの操作</span><span class="sxs-lookup"><span data-stu-id="5d52e-178">Working with materials</span></span>
+<span data-ttu-id="5d52e-179">作成したオブジェクトは既定で灰色になりますが、これはあまり見栄えのよいものではありません。</span><span class="sxs-lookup"><span data-stu-id="5d52e-179">The objects you've created are default grey, which isn't much fun to look at.</span></span> <span data-ttu-id="5d52e-180">このチュートリアルの最後のタスク セットは、オブジェクトにマテリアルとメッシュを追加することです。</span><span class="sxs-lookup"><span data-stu-id="5d52e-180">Adding materials and meshes to your objects is the last set of tasks in this tutorial.</span></span>
+
+1. <span data-ttu-id="5d52e-181">**[ボード]** をダブルクリックして、ブループリント エディターを開きます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-181">Double-click **Board** to open the blueprint editor.</span></span> 
+
+2. <span data-ttu-id="5d52e-182">**[コンポーネント]** パネルから **[コンポーネントの追加] > [シーン]** をクリックし、**Root** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-182">Click **Add Component > Scene** from the **Components** panel and name it **Root**.</span></span> <span data-ttu-id="5d52e-183">以下のスクリーンショットでは、**Root** が **DefaultSceneRoot** の子として表示されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="5d52e-183">Notice that **Root** shows up as a child of **DefaultSceneRoot** in the screenshot below:</span></span>
+
+![ルートを置き換える](images/unreal-uxt/2-root-blueprint.PNG)
+
+
+3. <span data-ttu-id="5d52e-185">**ルート**をクリックアンドドラッグして **DefaultSceneRoot** に置換し、ビューポート内の球体を削除します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-185">Click-and-drag **Root** onto **DefaultSceneRoot** to replace it and get rid of the sphere in the viewport.</span></span> 
 
 ![ルートを置き換える](images/unreal-uxt/2-root.PNG)
 
-8. <span data-ttu-id="1d740-169">**[Add Component]\(コンポーネントの追加\)** を再度クリックし、今度は **[Static Mesh]\(スタティック メッシュ\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-169">Click **Add Component** again, and this time choose **Static Mesh**.</span></span> <span data-ttu-id="1d740-170">新しいスタティック メッシュに "SM_Board" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="1d740-170">Name the new static mesh “SM_Board”.</span></span> 
+
+4. <span data-ttu-id="5d52e-187">**[コンポーネント]** パネルから **[コンポーネントの追加] > [静的メッシュ]** をクリックし、**SM_Board** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-187">Click **Add Component > Static Mesh** from the **Components** panel and name it **SM_Board**.</span></span> <span data-ttu-id="5d52e-188">これは、**ルート**の下に子オブジェクトとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-188">It will appear as a child object under **Root**.</span></span>
 
 ![スタティック メッシュの追加](images/unreal-uxt/2-sm-board.PNG)
 
-9. <span data-ttu-id="1d740-172">**[詳細]** パネルで **[Static Mesh]\(スタティック メッシュ\)** セクションを見つけて、ドロップダウンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-172">In the **Details** panel, locate the **Static Mesh** section and click the dropdown.</span></span> <span data-ttu-id="1d740-173">**ChessBoard** を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-173">Select **ChessBoard**.</span></span> 
+4. <span data-ttu-id="5d52e-190">**[SM_Board]** をクリックし、 **[詳細]** パネルの **[静的メッシュ]** セクションまで下にスクロールして、ドロップダウンから **[ChessBoard]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-190">Click **SM_Board**, scroll down to the **Static Mesh** section of the **Details** panel, and select **ChessBoard** from the dropdown.</span></span> 
 
 ![ビューポート内のボード メッシュ](images/unreal-uxt/2-sm-board-view.PNG)
 
-10. <span data-ttu-id="1d740-175">**[詳細]** パネルのままで、 **[Materials]\(マテリアル\)** セクションを見つけて、ドロップダウンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-175">Still in the **Details** panel, locate the **Materials** section and click the dropdown.</span></span> <span data-ttu-id="1d740-176">**[Create New Asset]\(アセットの新規作成\)** で、 **[Material]\(マテリアル\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-176">Under **Create New Asset**, select **Material**.</span></span> <span data-ttu-id="1d740-177">このアセットに **M_ChessBoard** という名前を付けて、**ChessAssets**フォルダーに保存します。</span><span class="sxs-lookup"><span data-stu-id="1d740-177">Name this asset **M_ChessBoard** and save it in the **ChessAssets** folder.</span></span> 
+5.  <span data-ttu-id="5d52e-192">引き続き **[詳細]** パネルで、 **[マテリアル]** セクションを展開し、ドロップダウンから **[新しい資産の作成] > [マテリアル]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-192">Still in the **Details** panel, expand the **Materials** section and click **Create New Asset > Material** from the dropdown.</span></span> 
+    * <span data-ttu-id="5d52e-193">この資産に **M_ChessBoard** という名前を付けて、**ChessAssets** フォルダーに保存します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-193">Name the material **M_ChessBoard** and save it to the **ChessAssets** folder.</span></span> 
 
 ![新しいマテリアルを作成する](images/unreal-uxt/2-newmat.PNG)
 
-11. <span data-ttu-id="1d740-179">M_ChessBoard ドロップダウンの横に表示された四角形をダブルクリックして、新しく作成した M_ChessBoard マテリアルを開きます。</span><span class="sxs-lookup"><span data-stu-id="1d740-179">Double click the square next to M_ChessBoard dropdown to open your newly created M_ChessBoard material.</span></span> <span data-ttu-id="1d740-180">マテリアル エディターで右クリックして、 **[Texture Sample]\(テクスチャ サンプル\)** ノードを検索します。</span><span class="sxs-lookup"><span data-stu-id="1d740-180">In the Material Editor, right click and search for the **Texture Sample** node.</span></span> <span data-ttu-id="1d740-181">**[詳細]** パネルの **[Material Expression Texture Base]\(マテリアル式テクスチャ ベース\)** セクションでドロップダウンをクリックして、**ChessBoard_Albedo** を選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-181">In the **Details** panel under the **Material Expression Texture Base** section, click the dropdown and select **ChessBoard_Albedo**.</span></span> <span data-ttu-id="1d740-182">最後に、 **[RGB]** 出力ピンを **M_ChessBoard** の [Base Color]\(基本色\) ピンにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="1d740-182">Finally, drag the **RGB** output pin to the Base Color pin of **M_ChessBoard**.</span></span> 
+6.  <span data-ttu-id="5d52e-195">マテリアル エディターを開くには、**M_ChessBoard** マテリアルのイメージをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-195">Double-click the **M_ChessBoard** material imaged to open the Material Editor.</span></span> 
+
+![マテリアル エディターを開く](images/unreal-uxt/2-material-editor.PNG)
+
+7. <span data-ttu-id="5d52e-197">マテリアル エディターで右クリックして、 **[Texture Sample]\(テクスチャ サンプル\)** を検索します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-197">In the Material Editor, right-click and search for **Texture Sample**.</span></span> 
+    * <span data-ttu-id="5d52e-198">**[詳細]** パネルの **[Material Expression Texture Base]\(マテリアル式テクスチャ ベース\)** セクションを展開し、 **[テクスチャ]** を **ChessBoard_Albedo** に設定します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-198">Expand the **Material Expression Texture Base** section in the **Details** panel and set **Texture** to **ChessBoard_Albedo**.</span></span> 
+    * <span data-ttu-id="5d52e-199">**[RGB]** 出力ピンを **M_ChessBoard** の [Base Color]\(基本色\) ピンにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-199">Drag the **RGB** output pin to the Base Color pin of **M_ChessBoard**.</span></span> 
 
 ![基本色を設定する](images/unreal-uxt/2-boardalbedomat.PNG)
 
-12. <span data-ttu-id="1d740-184">同じ手順をさらに 4 回実行して、**ChessBoard_AO** テクスチャ サンプルを **[Ambient Occlusion]\(アンビエント オクルージョン\)** ピンに、**ChessBoard_Metal** テクスチャ サンプルを **[Metallic]\(メタリック\)** ピンに、**ChessBoard_Normal** テクスチャ サンプルを **[Normal]\(ノーマル\)** ピンに、**ChessBoard_Rough** テクスチャ サンプルを **[Roughness]\(ラフネス\)** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="1d740-184">Do the same four more times, linking the **ChessBoard_AO** Texture Sample to the **Ambient Occlusion** pin, the **ChessBoard_Metal** Texture Sample to the **Metallic** pin, the **ChessBoard_Normal** Texture Sample to the **Normal** pin, and the **ChessBoard_Rough** Texture Sample to the **Roughness** pin.</span></span> <span data-ttu-id="1d740-185">**[Save]** (保存) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-185">Click **Save**.</span></span> 
+8.  <span data-ttu-id="5d52e-201">前の手順をさらに 4 回繰り返して、次の設定でさらに 4 つの **[テクスチャ サンプル]** ノードを作成します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-201">Repeat the previous step four more times to create four more **Texture Sample** nodes with the following settings:</span></span>
+    * <span data-ttu-id="5d52e-202">**[テクスチャ]** を **ChessBoard_AO** に設定し、**RGB** を **[アンビエント オクルージョン]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-202">Set **Texture** to **ChessBoard_AO** and link the **RGB** to the **Ambient Occlusion** pin.</span></span>
+    * <span data-ttu-id="5d52e-203">**[テクスチャ]** を **ChessBoard_Metal** に設定し、**RGB** を **[メタリック]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-203">Set **Texture** to **ChessBoard_Metal** and link the **RGB** to the **Metallic** pin.</span></span> 
+    * <span data-ttu-id="5d52e-204">**[テクスチャ]** を **ChessBoard_Normal** に設定し、**RGB** を **[ノーマル]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-204">Set **Texture** to **ChessBoard_Normal** and link the **RGB** to the **Normal** pin.</span></span>
+    * <span data-ttu-id="5d52e-205">**[テクスチャ]** を **ChessBoard_Rough** に設定し、**RGB** を **[ラフネス]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-205">Set **Texture** to **ChessBoard_Rough** and link the **RGB** to the **Roughness** pin.</span></span> 
+    * <span data-ttu-id="5d52e-206">**[Save]** (保存) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-206">Click **Save**.</span></span> 
 
 ![残りのテクスチャを接続する](images/unreal-uxt/2-boardmat.PNG)
 
-13. <span data-ttu-id="1d740-187">**Board** ブループリントに戻ります。</span><span class="sxs-lookup"><span data-stu-id="1d740-187">Return to your **Board** Blueprint.</span></span> <span data-ttu-id="1d740-188">作成したばかりのマテリアルがブループリントに適用されていることがわかります。</span><span class="sxs-lookup"><span data-stu-id="1d740-188">You should see that the material you just created has been applied to your Blueprint.</span></span> <span data-ttu-id="1d740-189">チェス盤をシーンに配置した後、それが適切なサイズで適切な位置に配置されるようにするには、チェス盤の **[Scale]\(スケール\)** を (0.05, 0.05, 0.05) に変更し、 **[回転]** を Z = 90 に変更します。</span><span class="sxs-lookup"><span data-stu-id="1d740-189">To ensure the board is at a reasonable size and position once we place it in our scene, change the **Scale** of the board to (0.05, 0.05, 0.05) and the **Rotation** to Z = 90.</span></span> <span data-ttu-id="1d740-190">上部のツールバーで **[コンパイル]** 、 **[保存]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-190">In the toolbar at the top, click **Compile**, then **Save**.</span></span> <span data-ttu-id="1d740-191">メイン ウィンドウに戻ります。</span><span class="sxs-lookup"><span data-stu-id="1d740-191">Return to your Main window.</span></span> 
+<span data-ttu-id="5d52e-208">続行する前に、マテリアルの設定が上のスクリーンショットのようになっていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="5d52e-208">Make sure the your material setup looks like the above screenshot before continuing.</span></span>
+
+## <a name="populating-the-scene"></a><span data-ttu-id="5d52e-209">シーンへのデータの読み込み</span><span class="sxs-lookup"><span data-stu-id="5d52e-209">Populating the scene</span></span>
+<span data-ttu-id="5d52e-210">**[ボード]** ブループリントに戻ると、作成したばかりのマテリアルが適用されていることがわかります。</span><span class="sxs-lookup"><span data-stu-id="5d52e-210">If you go back to the **Board** blueprint, you'll see that the material you just created has been applied.</span></span> <span data-ttu-id="5d52e-211">あとは、シーンをセットアップするだけです。</span><span class="sxs-lookup"><span data-stu-id="5d52e-211">All that's left is setting up the scene!</span></span> <span data-ttu-id="5d52e-212">最初に、以下のプロパティを変更して、ボードが適切なサイズであり、シーンに配置されたときに角度が適切であることを確認します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-212">First, change the following properties to make sure the board is a reasonable size and angled correctly when it's placed in the scene:</span></span>
+1.  <span data-ttu-id="5d52e-213">**[スケール]** を **(0.05、0.05、0.05)** に設定し、 **[Z 回転]** を **90** に設定します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-213">Set **Scale** to **(0.05, 0.05, 0.05)** and **Z Rotation** to **90**.</span></span> 
+    * <span data-ttu-id="5d52e-214">上部のツールバーの **[コンパイル]** をクリックし、 **[保存]** をクリックして、メイン ウィンドウに戻ります。</span><span class="sxs-lookup"><span data-stu-id="5d52e-214">Click **Compile** in the top toolbar, then **Save** and return to the Main window.</span></span> 
 
 ![マテリアルが適用されたチェス盤](images/unreal-uxt/2-chessboard.PNG)
 
-14. <span data-ttu-id="1d740-193">次に、キューブを削除して、それを新しく作成した Board アクターに置き換えましょう。</span><span class="sxs-lookup"><span data-stu-id="1d740-193">Let’s now delete the cube and replace it with your newly created Board actor.</span></span> <span data-ttu-id="1d740-194">**[World Outliner]\(ワールド アウトライナー\)** で、 **[Cube]\(キューブ\) を右クリックして、[編集]、[削除]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="1d740-194">In the **World Outliner**, right click your **Cube > Edit > Delete**.</span></span> <span data-ttu-id="1d740-195">Board をコンテンツ ブラウザーからビューポートにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="1d740-195">Drag Board from your Content Browser into the viewport.</span></span> <span data-ttu-id="1d740-196">チェス盤の位置を X = 80、Y = 0、Z = -20 に設定します。</span><span class="sxs-lookup"><span data-stu-id="1d740-196">Set the location of the board to X = 80, Y = 0, Z = -20.</span></span> 
+2.  <span data-ttu-id="5d52e-216">**[キューブ] > [編集] > [削除]** を右クリックして、 **[ボード]** を **[コンテンツ ブラウザー]** からビューポートにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-216">Right-click **Cube > Edit > Delete** and drag **Board** from the **Content Browser** into the viewport.</span></span> 
+    * <span data-ttu-id="5d52e-217">**[位置]** を **X = 80**、**Y = 0**、および **Z = -20** に設定します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-217">Set **Location** to **X = 80**, **Y = 0**, and **Z = -20**.</span></span> 
 
-15. <span data-ttu-id="1d740-197">**[Play]\(プレイ\)** ボタンをクリックして、新しいチェス盤をレベルに表示します。</span><span class="sxs-lookup"><span data-stu-id="1d740-197">Click the **Play** button to view your new board in your level.</span></span> <span data-ttu-id="1d740-198">**Esc** キーを押してエディターに戻ります。</span><span class="sxs-lookup"><span data-stu-id="1d740-198">Press **Esc** to return to the editor.</span></span> 
+3.  <span data-ttu-id="5d52e-218">**[Play]\(プレイ\)** ボタンをクリックして、新しいチェス盤をレベルに表示します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-218">Click the **Play** button to view your new board in the level.</span></span> <span data-ttu-id="5d52e-219">**Esc** キーを押してエディターに戻ります。</span><span class="sxs-lookup"><span data-stu-id="5d52e-219">Press **Esc** to return to the editor.</span></span> 
 
-16. <span data-ttu-id="1d740-199">次に、チェス盤の作成と同じ手順に従って、チェスの駒を作成します。ただし、今度は、チェスの駒のメッシュとマテリアルを選択します。</span><span class="sxs-lookup"><span data-stu-id="1d740-199">Now we’ll follow the same steps to create a chess piece as we did with the board, this time selecting the mesh and material for the chess piece:</span></span>
+<span data-ttu-id="5d52e-220">次に、ボードで行ったのと同じ手順に従って、チェスの駒を作成します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-220">Now you'll follow the same steps to create a chess piece as you did with the board:</span></span>
 
-    <span data-ttu-id="1d740-200">a) コンテンツ ブラウザーの [ブループリント] フォルダーに移動して、アクター型の新しいブループリント クラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="1d740-200">a) Navigate to the Blueprints folder in the Content Browser and create a new Blueprint class of type Actor.</span></span> <span data-ttu-id="1d740-201">このアクターに "WhiteKing" という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="1d740-201">Name this actor “WhiteKing”.</span></span>
+1. <span data-ttu-id="5d52e-221">**[ブループリント]** フォルダーに移動し、右クリックして **[ブループリント クラス]** を選択し、 **[アクター]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-221">Go to the **Blueprints** folder, right-click and select **Blueprint Class** and choose **Actor**.</span></span> <span data-ttu-id="5d52e-222">このアクターに **WhiteKing** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-222">Name the actor **WhiteKing**.</span></span>
 
-    <span data-ttu-id="1d740-202">b) WhiteKing をダブルクリックして開きます。</span><span class="sxs-lookup"><span data-stu-id="1d740-202">b) Double click WhiteKing to open it.</span></span> <span data-ttu-id="1d740-203">"Root" という名前の新しいシーンを追加し、それを使用して DefaultSceneRoot を置き換えます。</span><span class="sxs-lookup"><span data-stu-id="1d740-203">Add a new Scene component named “Root” and use it to replace DefaultSceneRoot.</span></span> 
+2. <span data-ttu-id="5d52e-223">**WhiteKing** をダブルクリックしてブループリント エディターで開き、 **[コンポーネントの追加] > [シーン]** をクリックして、**Root** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-223">Double click **WhiteKing** to open it in the Blueprint Editor, click **Add Component > Scene** and name it **Root**.</span></span> 
+    * <span data-ttu-id="5d52e-224">**Root** を **DefaultSceneRoot** にドラッグアンドドロップして置換します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-224">Drag-and-drop **Root** onto **DefaultSceneRoot** to replace it.</span></span> 
 
-    <span data-ttu-id="1d740-204">c) "SM_King" という名前の新しいスタティック メッシュ コンポーネントを追加します。</span><span class="sxs-lookup"><span data-stu-id="1d740-204">c) Add a new Static Mesh component named “SM_King”.</span></span> <span data-ttu-id="1d740-205">[詳細] パネルで、 **[Static Mesh]\(スタティック メッシュ\)** を **Chess_King** に設定し、 **[Material]\(マテリアル\)** を、**M_ChessWhite**という名前の新しいマテリアルに設定します。</span><span class="sxs-lookup"><span data-stu-id="1d740-205">In the Details panel, set the **Static Mesh** to **Chess_King** and the **Material** to a new Material called **M_ChessWhite**.</span></span> 
+3. <span data-ttu-id="5d52e-225">**[コンポーネントの追加]> [スタティック メッシュ]** をクリックし、**SM_King** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="5d52e-225">Click **Add Component > Static Mesh** and name it **SM_King**.</span></span> 
+    * <span data-ttu-id="5d52e-226">[詳細] パネルで、 **[Static Mesh]\(スタティック メッシュ\)** を **Chess_King** に設定し、 **[Material]\(マテリアル\)** を、**M_ChessWhite**という名前の新しいマテリアルに設定します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-226">Set **Static Mesh** to **Chess_King** and **Material** to a new Material called **M_ChessWhite** in the Details panel.</span></span> 
 
-    <span data-ttu-id="1d740-206">d) 新しい **M_ChessWhite**マテリアルを開いて、関連テクスチャをその対応するマテリアル入力に接続します。</span><span class="sxs-lookup"><span data-stu-id="1d740-206">d) Open the new **M_ChessWhite** Material and hook up the relevant textures to their corresponding material inputs.</span></span> 
+4. <span data-ttu-id="5d52e-227">マテリアル エディターで、**M_ChessWhite** を開き、次の **[テクスチャ サンプル]** ノードを次のものに接続します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-227">Open **M_ChessWhite** in the Material editor and hook up the following **Texture Sample** nodes to the following:</span></span>
+    * <span data-ttu-id="5d52e-228">**[テクスチャ]** を **ChessWhite_AO** に設定し、**RGB** を **[アンビエント オクルージョン]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-228">Set **Texture** to **ChessWhite_AO** and link the **RGB** to the **Ambient Occlusion** pin.</span></span>
+    * <span data-ttu-id="5d52e-229">**[テクスチャ]** を **ChessWhite_Metal** に設定し、**RGB** を **[メタリック]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-229">Set **Texture** to **ChessWhite_Metal** and link the **RGB** to the **Metallic** pin.</span></span> 
+    * <span data-ttu-id="5d52e-230">**[テクスチャ]** を **ChessWhite_Normal** に設定し、**RGB** を **[ノーマル]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-230">Set **Texture** to **ChessWhite_Normal** and link the **RGB** to the **Normal** pin.</span></span>
+    * <span data-ttu-id="5d52e-231">**[テクスチャ]** を **ChessWhite_Rough** に設定し、**RGB** を **[ラフネス]** ピンにリンクします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-231">Set **Texture** to **ChessWhite_Rough** and link the **RGB** to the **Roughness** pin.</span></span> 
+    * <span data-ttu-id="5d52e-232">**[Save]** (保存) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-232">Click **Save**.</span></span> 
 
-    ![チェスのキングのマテリアルを作成する](images/unreal-uxt/2-chesskingmat.PNG)
+<span data-ttu-id="5d52e-233">続行する前に、**M_ChessKing** マテリアルは次の図のようになります。</span><span class="sxs-lookup"><span data-stu-id="5d52e-233">Your **M_ChessKing** material should look like the following image before continuing.</span></span>
 
-    <span data-ttu-id="1d740-208">e) **WhiteKing** ブループリントに戻って、 **[Scale]\(スケール\)** を (0.05, 0.05, 0.05) に、 **[回転]** を Z = 90 に変更します。</span><span class="sxs-lookup"><span data-stu-id="1d740-208">e) Back in your **WhiteKing** Blueprint, change the **Scale** to (0.05, 0.05, 0.05) and **Rotation** to Z = 90.</span></span>
+![チェスのキングのマテリアルを作成する](images/unreal-uxt/2-chesskingmat.PNG)
 
-    <span data-ttu-id="1d740-209">f) ブループリントをコンパイルして保存した後、メイン ウィンドウに戻ります。</span><span class="sxs-lookup"><span data-stu-id="1d740-209">f) Compile and save your blueprint, then navigate back to your main window.</span></span> 
+<span data-ttu-id="5d52e-235">もう少しで完了です。あとは新しいチェスの駒をシーンに追加するだけです。</span><span class="sxs-lookup"><span data-stu-id="5d52e-235">You're almost there, just need to add the new chess piece into the scene:</span></span> 
 
-17. <span data-ttu-id="1d740-210">WhiteKing をビューポートにドラッグします。</span><span class="sxs-lookup"><span data-stu-id="1d740-210">Drag WhiteKing into your viewport.</span></span> <span data-ttu-id="1d740-211">**[World Outliner]\(ワールド アウトライナー\)** で、WhiteKing を Board にドラッグします。これにより、WhiteKing は Board の子になります。</span><span class="sxs-lookup"><span data-stu-id="1d740-211">In the **World Outliner**, drag WhiteKing onto Board so that WhiteKing is now a child of Board.</span></span> 
+1. <span data-ttu-id="5d52e-236">**WhiteKing** ブループリントを開いて、 **[Scale]\(スケール\)** を **(0.05, 0.05, 0.05)** に、 **[Z 回転]** を **90** に変更します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-236">Open the **WhiteKing** blueprint and change the **Scale** to **(0.05, 0.05, 0.05)** and **Z Rotation** to **90**.</span></span>
+    * <span data-ttu-id="5d52e-237">ブループリントをコンパイルして保存した後、メイン ウィンドウに戻ります。</span><span class="sxs-lookup"><span data-stu-id="5d52e-237">Compile and save your blueprint, then head back to the main window.</span></span> 
+
+2.  <span data-ttu-id="5d52e-238">**WhiteKing** をビューポートにドラッグし、 **[ワールド アウトライナー]** パネルに切り替え、**WhiteKing** を **[ボード]** にドラッグして、子オブジェクトにします。</span><span class="sxs-lookup"><span data-stu-id="5d52e-238">Drag **WhiteKing** into the viewport, switch to the **World Outliner** panel drag **WhiteKing** onto **Board** to make it a child object.</span></span>
 
 ![[World Outliner]\(ワールド アウトライナー\)](images/unreal-uxt/2-child.PNG)
 
-18. <span data-ttu-id="1d740-213">**[詳細]** パネルの **[Transform]\(トランスフォーム\)** で、WhiteKing の **[Location]\(位置\)** を X = -26、Y = 4、Z = 0 に設定します。</span><span class="sxs-lookup"><span data-stu-id="1d740-213">In the **Details** panel under **Transform**, set the **Location** of WhiteKing to X = -26, Y = 4, Z = 0</span></span>
+3.  <span data-ttu-id="5d52e-240">**[詳細]** パネルの **[Transform]\(トランスフォーム\)** で、**WhiteKing** の **[Location]\(位置\)** を **X = -26**、**Y = 4**、**Z = 0** に設定します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-240">In the **Details** panel under **Transform**, set **WhiteKing**'s **Location** to **X = -26**, **Y = 4**, and **Z = 0**.</span></span>
 
-19. <span data-ttu-id="1d740-214">**[Play]\(プレイ\)** をクリックして、レベルを表示します。</span><span class="sxs-lookup"><span data-stu-id="1d740-214">Click **Play** to see your level.</span></span> <span data-ttu-id="1d740-215">**Esc** キーを押して終了します。</span><span class="sxs-lookup"><span data-stu-id="1d740-215">Press **Esc** to exit.</span></span> 
+<span data-ttu-id="5d52e-241">これでおしまいです!</span><span class="sxs-lookup"><span data-stu-id="5d52e-241">That's a wrap!</span></span> <span data-ttu-id="5d52e-242">**[再生]** をクリックして、データ設定されているレベルの動作を確認し、終了する準備ができたら **Esc** を押します。</span><span class="sxs-lookup"><span data-stu-id="5d52e-242">Click **Play** to see your populated level in action, and press **Esc** when you're ready to exit.</span></span> <span data-ttu-id="5d52e-243">このチュートリアルでは、単純なプロジェクトを作成するための多くの基本について説明しましたが、プロジェクトはシリーズの次の部分である「複合現実の設定」に進む準備ができています。</span><span class="sxs-lookup"><span data-stu-id="5d52e-243">This tutorial covered a lot of ground creating a simple project, but your project is ready to move on to the next part of the series: setting up for mixed reality.</span></span> 
 
-[<span data-ttu-id="1d740-216">次のセクション: 3.Mixed Reality 用のプロジェクト設定</span><span class="sxs-lookup"><span data-stu-id="1d740-216">Next Section: 3. Set up your project for mixed reality</span></span>](unreal-uxt-ch3.md)
+[<span data-ttu-id="5d52e-244">次のセクション: 3.Mixed Reality 用のプロジェクト設定</span><span class="sxs-lookup"><span data-stu-id="5d52e-244">Next Section: 3. Set up your project for mixed reality</span></span>](unreal-uxt-ch3.md)

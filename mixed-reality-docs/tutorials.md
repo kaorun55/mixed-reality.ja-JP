@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, アカデミー, チュートリアル
-ms.openlocfilehash: db60ff35156ea20aadd1ba04f9304aa27a2488cb
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+ms.openlocfilehash: e5961a178d571d2f71e98ff4c3c729d6feb0fd40
+ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835651"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327962"
 ---
 # <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
 
@@ -28,7 +28,7 @@ HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケ
 * 入門チュートリアル
     * Unity - [概要と目標 (1/7 章)](mrlearning-base.md)
     * Unreal - [概要 (1/6 章)](unreal-uxt-ch1.md)
-* Azure Spatial Anchor チュートリアル - [Azure Spatial Anchors を使い始める (1/3 章)](mrlearning-asa-ch1.md)
+* Azure Spatial Anchor チュートリアル - [Azure Spatial Anchors を使い始める (1/4 章)](mrlearning-asa-ch1.md)
 * Azure Speech Services チュートリアル - [音声認識とトランスクリプションの統合と使用 (1/4 章)](mrlearning-speechSDK-ch1.md)
 * マルチユーザー機能のチュートリアル - [Photon Unity ネットワークの設定 (1/5 章)](mrlearning-sharing(photon)-ch1.md)
 
@@ -50,7 +50,7 @@ Mixed Reality Academy は、該当のプロジェクト ファイルを含むオ
 * Windows 10 PC に適切な[ツールがインストールされていること](install-the-tools.md)は、各チュートリアルを完了するための共通の前提条件です。
 
 >[!NOTE]
->Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。 そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。 これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは " **_ありません_** "。 これらは、サポートされているデバイス上で継続して動作するように、保守されます。 HoloLens 2 向けには、[新しいチュートリアル シリーズ](mrlearning-base.md)が投稿されています。
+>Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。 そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。 これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは "**_ありません_**"。 これらは、サポートされているデバイス上で継続して動作するように、保守されます。 HoloLens 2 向けには、[新しいチュートリアル シリーズ](mrlearning-base.md)が投稿されています。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
