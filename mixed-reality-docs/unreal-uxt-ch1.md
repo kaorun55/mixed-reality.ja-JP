@@ -1,39 +1,53 @@
 ---
 title: 1. はじめに
-description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリをビルドするためのチュートリアルのパート 1
-author: sw5813
-ms.author: suwu
+description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリを構築するためのチュートリアル シリーズのパート 6 の 1
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: 3ca47cfe7bb0a733932f3777cc8b531ef9df8e71
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+ms.openlocfilehash: c16671fc8f4233378dafa646786df1f7b5ae18e1
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82840131"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330169"
 ---
 # <a name="1-getting-started"></a>1.はじめに
 
-このチュートリアルでは、Unreal Engine 4 を使用して、対話型の HoloLens 2 チェス アプリをビルドする方法をステップバイステップで説明します。 また、Unreal 向け Mixed Reality ツールキットの UX ツール プラグインを使用して、開発を高速化する方法についても説明します。 
+Mixed Reality を初めて使用する場合でも、経験豊富なプロの方でも、[HoloLens 2](https://docs.microsoft.com/windows/mixed-reality/) と [Unreal Engine](https://www.unrealengine.com/en-US/) を使用して体験を始めることができます。 このチュートリアル シリーズでは、[Unreal 用 Mixed Reality ツールキット](https://github.com/microsoft/MixedRealityToolkit-Unreal)の一部である [UX ツール プラグイン](https://github.com/microsoft/MixedReality-UXTools-Unreal)を使用してインタラクティブなチェス アプリを構築する方法をステップごとに説明します。 プラグインは、コード、ブループリント、例を使用してプロジェクトに一般的な UX 機能を追加するのに役立ちます。 
+
+![ビューポートの終わりのシーン](images/unreal-uxt/5-endscene.PNG)
+
+シリーズが完了するまでに、次のことを実際に体験できます。
+* 新しいプロジェクトの開始
+* Mixed Reality 用の設定
+* ユーザー入力の操作
+* ボタンの追加
+* エミュレーターまたはデバイスでの再生
+
+ご不明な点がある場合は、[Unreal 開発の概要](https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview)を確認してください。
 
 ## <a name="prerequisites"></a>前提条件
-
+ジャンプする前に、次の要件を満たしていることを確認してください。
 * Windows 10 1809 以降
 * Windows 10 SDK 10.0.18362.0 以降
-* Unreal Engine 4.25 以降
+* [Unreal Engine](https://www.unrealengine.com/en-US/get-now) 4.25 以降
 * [開発用に構成された](using-visual-studio.md#enabling-developer-mode) Microsoft HoloLens 2 デバイスまたはエミュレーター
-* Visual Studio 2019 (以下のワークロードとコンポーネントを含む)
+* 以下のワークロードを含む Visual Studio 2019
 
-### <a name="installing-visual-studio-2019-workloads-and-components"></a>Visual Studio 2019、ワークロード、コンポーネントのインストール
-1. 最新バージョンの Visual Studio 2019 のインストールまたは更新
-* [Visual Studio 2019 をダウンロードする](https://visualstudio.microsoft.com/downloads/)
-2. 次のワークロードをインストールします。
-* C++ によるデスクトップ開発
-* .NET デスクトップ開発
-* ユニバーサル Windows プラットフォームの開発
-3. 次の個々のコンポーネントをインストールします。
-* コンパイラ、ビルド ツール、ランタイム > MSVC v142 - VS 2019 C++ ARM64 ビルド ツール (最新バージョン)
+### <a name="installing-visual-studio-2019"></a>Visual Studio 2019 のインストール
+最後の手順は、次のように Visual Studio をセットアップすることです。
+1. [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) の最新バージョンのインストール
+2. 次の[ワークロード](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019#modify-workloads)をインストールします。
+    * C++ によるデスクトップ開発
+    * .NET デスクトップ開発
+    * ユニバーサル Windows プラットフォームの開発
+
+3. 次の[コンポーネント](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019#modify-individual-components)をインストールします。
+    * コンパイラ、ビルド ツール、ランタイム > MSVC v142 - VS 2019 C++ ARM64 ビルド ツール (最新バージョン)
+
+以上で作業は終了です。 これで、チェス アプリ プロジェクトを開始するためのすべての設定が完了しました。
 
 [次のセクション: 2.プロジェクトと最初のアプリケーションの初期化](unreal-uxt-ch2.md)

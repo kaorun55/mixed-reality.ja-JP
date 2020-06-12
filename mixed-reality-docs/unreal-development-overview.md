@@ -1,40 +1,58 @@
 ---
 title: Unreal 開発の概要
 description: Unreal Engine 4 を使用した Mixed Reality の開発の概要
-author: sw5813
-ms.author: suwu
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, ストリーミング, リモート処理, Mixed Reality, 開発, 入門, 機能, 新しいプロジェクト, エミュレーター, ドキュメント, ガイド, 特徴, ホログラム
-ms.openlocfilehash: 08ba760acc1a35d8f47de6a7bf6cbc020c8aca3f
-ms.sourcegitcommit: 189a47b8712dd5b620e19815f5cf6d1ac0f29880
+keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, ストリーミング, リモート処理, Mixed Reality, 開発, 入門, 機能, 新しいプロジェクト, エミュレーター, ドキュメント, ガイド, 特徴, ホログラム, ゲームの開発
+ms.openlocfilehash: 3e3862bd701d6e873f623abc9f9cda0b3085e753
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82851566"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330159"
 ---
 # <a name="unreal-development-overview"></a>Unreal 開発の概要
 
-Unreal Engine 4 は、Windows Mixed Reality (VR) と HoloLens 2 (AR) の両方のデバイスの開発を完全にサポートするようになりました。 Unreal での開発を初めて行う場合は、「<a href="https://docs.unrealengine.com//GettingStarted/index.html" target="_blank">UE4 をはじめよう</a>」ページが非常に参考になります。 資産が必要であれば、Unreal には包括的な<a href="https://www.unrealengine.com/marketplace//store" target="_blank">マーケットプレース</a>があります。 
+<a href="https://docs.microsoft.com/en-us/windows/mixed-reality" target="_blank" title="Mixed Reality Docs"> Mixed Reality アプリケーション</a>を使い始めるのは大きなタスクです。 新しい概念、プラットフォーム、最先端のハードウェアは、障壁のように見えるかもしれません。 ただし、Unreal 開発者であれば、ラッキーです。 <a href="https://www.microsoft.com/en-us/windows/windows-mixed-reality" target="_blank" title=" Windows Mixed Reality のドキュメント">Windows Mixed Reality </a> (VR) および <a href="https://www.microsoft.com/en-us/hololens/hardware" target="_blank" title="HoloLens 2 のドキュメント">HoloLens 2</a> (AR) のサポートが、Unreal Engine の最新の <a href="https://docs.unrealengine.com/en-US/Support/Builds/ReleaseNotes/4_25/index.html" target="_blank" title="Unreal Engine 4.25 リリース ノート">リリース</a>に含まれるようになりました。 この更新には、次が含まれます。
+* Mixed Reality UX Tools プラグインのサポート
+* OpenXR のサポート
+* デスクトップ アプリからのアプリのリモート処理
+* パフォーマンスの向上
+* 複合現実キャプチャ
+* Azure Spatial Anchors の初期サポート
 
-Unreal 開発の基本を理解したら、次のセクションのチュートリアルを参照して、HoloLens でアプリをビルドおよび実行する方法を確認してください。 必ず <a href="https://forums.unrealengine.com/development-discussion/vr-ar-development" target="_blank">Unreal 複合現実フォーラム</a>にアクセスして、Unreal で複合現実アプリをビルドしているコミュニティに参加してください。 このコミュニティは、直面した問題の解決策を見つけるのに最適な場所です。
-
-## <a name="tutorial"></a>チュートリアル
-
-Microsoft のエンドツーエンドのチュートリアルに従って、HoloLens 2 用の[簡単なチェス アプリをビルドしてデプロイする](unreal-uxt-ch1.md)方法について説明します。 このチュートリアルでは、UX Tools プラグインを使用して、ボタンやマニピュレーターなどの対話型 UX コンポーネントにより、アプリの開発を促進します。 UX Tools プラグインの詳細については、MRTK に関する次のセクションを参照してください。 
+Unreal 開発が初めての場合は、よくわからないまま開始しないでください。 Unreal の<a href="https://docs.unrealengine.com//GettingStarted/index.html" target="_blank">チュートリアル シリーズ</a>を調べて、Unreal の<a href="https://www.unrealengine.com/marketplace//store" target="_blank">マーケットプレイス</a>と Mixed Reality <a href="https://forums.unrealengine.com/development-discussion/vr-ar-development" target="_blank">フォーラム</a>のアセットとサポートをすばやく理解してください。 これらのリソースは、今日の Mixed Reality 市場におけるビルダーや問題ソルバーのコミュニティへのリンクです。
 
 ## <a name="mixed-reality-toolkit-for-unreal"></a>Unreal 用 Mixed Reality ツールキット
 
-[Unreal 用 Mixed Reality ツールキット](https://github.com/microsoft/MixedRealityToolkit-Unreal)は、Unreal Engine を使用して Mixed Reality アプリケーションの開発を促進することを目的に設計された、プラグイン形式のコンポーネント、サンプル、ドキュメントのセットです。 このツールキットの一部として最初にリリースされたコンポーネントは、[UX Tools for Unreal](https://github.com/microsoft/MixedReality-UXTools-Unreal) です。これは、HoloLens 2 プロジェクトに追加できるプラグインで、HoloLens 2 アプリケーション用の UX 機能を提供します。 Mixed Reality ツールキットと UX Tools for Unreal のドキュメントは、それぞれの GitHub リポジトリにあります。 
+[Unreal 用 Mixed Reality ツールキット](https://github.com/microsoft/MixedRealityToolkit-Unreal)は、Unreal での開発を高速化するために設計されたコンポーネントのセットです。 各コンポーネントには、イマーシブ エクスペリエンスをセットアップするためのプラグイン、サンプル、およびドキュメントが含まれています。 
+
+[Unreal 用 UX Tools](https://github.com/microsoft/MixedReality-UXTools-Unreal) はリリースされる最初のコンポーネントであり、現在 HoloLens 2 でのみサポートされています。 コンポーネント プラグインには、次のような一般的な UX 機能のコード、ブループリント、サンプル アセットが含まれています。
+* 入力シミュレーション
+* ハンド インタラクション アクター
+* 押しボタン コンポーネント
+* マニピュレーター コンポーネント
+* 動作追従コンポーネント
+
+機能の詳細やプロジェクトの設定に関する情報については、[Unreal 用 の UX ツール](https://github.com/microsoft/MixedReality-UXTools-Unreal) GitHub リポジトリを参照してください。
+
+## <a name="tutorial"></a>チュートリアル
+
+新しいスキルを習得する最良の方法は、両手を使って自分で何かを作成することです。 手始めに、UX Tools プラグインを使用して HoloLens 2 用の[単純なチェス アプリを構築してデプロイする](unreal-uxt-ch1.md)方法を学ぶことをお勧めします。 
+
+エンドツーエンドのチュートリアル シリーズでは、一般的なインタラクティブ UX コンポーネントとシナリオを実際に体験できます。 プロジェクトの設定、シーンへの対話式操作の追加、デバイスまたはエミュレーターへのデプロイを行います。 必要なのは、Windows 10、エミュレーター、および Visual Studio 2019 だけです。
+
 
 ## <a name="performance"></a>[パフォーマンス]
 
-安定した応答性の高いホログラムを表示するには、HoloLens 2 アプリを 1 秒あたり 60 フレームで実行する必要があります。 アプリでこれを実現するには、「[Unreal のパフォーマンスに関する推奨事項](performance-recommendations-for-unreal.md)」に従うことを強くおすすめします。 
+Mixed Reality 向けの開発には、プラットフォームに依存するパフォーマンス チェックポイントが含まれます。 安定した応答性の高いホログラムを表示するには、HoloLens 2 アプリを 1 秒あたり 60 フレームで実行する必要があります。 さいわい、Unreal は、アプリケーションでこれを実現するための[パフォーマンスの推奨事項](performance-recommendations-for-unreal.md)を提供しています。
 
 ## <a name="guides-to-specific-features"></a>特定の機能のガイド
 
-Unreal の特定の機能を使用する方法については、以下のガイドを参照してください。 
+このチュートリアル シリーズで取り上げられていない Mixed Reality 開発の主要な機能がいくつかあります。 詳細と実際の適用例については、次のガイドをご覧ください。 
 * [ハンド トラッキング](unreal-hand-tracking.md)
 * [視線追跡](unreal-gaze-input.md)
 * [空間マッピング](unreal-spatial-mapping.md)
@@ -42,6 +60,7 @@ Unreal の特定の機能を使用する方法については、以下のガイ�
 * [音声入力](unreal-voice-input.md)
 * [HoloLens カメラ](unreal-hololens-camera.md)
 * [QR コード](unreal-qr-codes.md)
+
 
 ## <a name="supported-features"></a>サポートされている機能
 

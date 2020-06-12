@@ -1,44 +1,74 @@
 ---
 title: Unreal での QR コード
 description: Unreal で QR コードを使用するためのガイド
-author: sw5813
-ms.author: jacksonf
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, 開発, 機能, ドキュメント, ガイド, ホログラム, QR コード
-ms.openlocfilehash: 67a3a8092ab908cba6768e92ed6a0e7bd2737275
-ms.sourcegitcommit: 5b802078090700e06630c8fc665fedeaa0a16eb7
+ms.openlocfilehash: 90a51227ae455389168fb3262e83f34b64a7bfb5
+ms.sourcegitcommit: ee7f04148d3608b0284c59e33b394a67f0934255
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83342660"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84428753"
 ---
 # <a name="qr-codes-in-unreal"></a>Unreal での QR コード
 
-HoloLens では、空間上の QR コードを見つけて、現実世界の既知の位置にホログラムをレンダリングできます。  これは、エクスペリエンスを共有するために、同じ場所にある複数のデバイスでホログラムをレンダリングするためにも使用できます。 
+## <a name="overview"></a>概要
 
-HoloLens で QR の検出を有効にするには、[プロジェクト設定] > [プラットフォーム] > [HoloLens] > [機能] の下にある Unreal エディターで、"Web カメラ" 機能を確実にオンにします。  
+HoloLens 2 では、Web カメラを使用してワールド空間の QR コードを表示できます。これにより、各コードの実際の位置の座標系を使用して、QR コードをホログラムとしてレンダリングします。  HoloLens 2 は、単一の QR コードに加えて、複数のデバイスの同じ場所にホログラムをレンダリングして、エクスペリエンスを共有することもできます。 アプリケーションに QR コードを追加するためのベスト プラクティスに従っていることを確認してください。
 
-StartARSession 関数を使用して ARSession を開始することにより、Unreal で QR コード追跡を使用することをオプトインします。 
+- サイレント ゾーン
+- 照明と背景
+- サイズ、距離、および角度の位置
 
-QR コードは、追跡対象のイメージとして、Unreal の AR で追跡されたジオメトリ システムによって表示されます。  これを使用するには、ブループリント アクターに AR Trackable Notify コンポーネントを追加します。 
+QR コードがアプリに配置されている場合、[環境への配慮](environment-considerations-for-hololens.md)に特に注意してください。 これらの各トピックの詳細と、必要な NuGet パッケージをダウンロードする方法の手順については、メインの [QR コードの追跡](qr-code-tracking.md)ドキュメントをご覧ください。 
+
+## <a name="enabling-qr-detection"></a>QR 検出の有効化
+HoloLens 2 で QR コードを表示するには Web カメラを使用する必要があるため、プロジェクトの設定で有効にする必要があります。
+- **[編集] > [プロジェクトの設定]** を開いて、 **[プラットフォーム]** セクションまでスクロールし、 **[HoloLens]** をクリックします。
+    + **[機能]** セクションを展開し、 **[Web カメラ]** をオンにします。  
+
+[ARSessionConfig アセットを追加する](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch3#adding-the-session-asset)ことによって、QR コードの追跡をオプトインする必要もあります。
+
+## <a name="setting-up-a-tracked-image"></a>追跡対象のイメージの設定
+
+QR コードは、追跡対象のイメージとして、Unreal の AR で追跡されたジオメトリ システムによって表示されます。 これを利用するには、次の操作を行う必要があります。
+1. ブループリントを作成し、**ARTrackableNotify** コンポーネントを追加します。
 
 ![QR の AR Trackable Notify](images/unreal-spatialmapping-artrackablenotify.PNG)
 
-次に、コンポーネントの詳細にアクセスし、監視するイベントの緑色の [+] ボタンをクリックします。  
+2. **ARTrackableNotify** を選択し、 **[詳細]** パネルの **[イベント]** セクションを展開します。 
 
 ![QR のイベント](images/unreal-spatialmapping-events.PNG)
 
-ここでは、OnUpdateTrackedImage をサブスクライブして、QR コードの中心にポイントをレンダリングし、QR コードのエンコードされたデータを出力しています。 
+3. **[On Add Tracked Geometry]** の横にある **+** をクリックして、ノードをイベント グラフに追加します。
+    - イベントの完全な一覧については、[UARTrackableNotify](https://docs.unrealengine.com/API/Runtime/AugmentedReality/UARTrackableNotifyComponent/index.html) コンポーネント API を参照してください。 
+
+![QR のレンダリングの例](images/unreal-qr-codes-tracked-geometry.png)
+
+## <a name="using-a-tracked-image"></a>追跡対象のイメージの使用
+次の画像のイベント グラフは、QR コードの中心にポイントをレンダリングし、そのデータを出力するために使用される **OnUpdateTrackedImage** イベントを示しています。 
 
 ![QR のレンダリングの例](images/unreal-qr-render.PNG)
 
-最初に、追跡したイメージを ARTrackedQRCode にキャストして、現在の更新されたイメージが QR コードであることを確認します。  これで、QRCode 変数を使用して、エンコードされたデータを取得できます。  QR コードの左上は、GetLocalToWorldTransform の場所から取得できます。  次元は GetEstimateSize で取得できます。 
+流れについて説明します。
+1. 最初に、追跡したイメージが **ARTrackedQRCode** にキャストされ、現在の更新されたイメージが QR コードであることを確認します。  
+2. エンコードされたデータは **QRCode** 変数から取得されます。 **GetLocalToWorldTransform** の位置と **GetEstimateSize** のディメンションから QR コードの左上を取得できます。 
 
-すべての QR コードに独自の GUID があります。 
+また、コードで [QR コードの座標系を取得する](https://docs.microsoft.com/windows/mixed-reality/qr-code-tracking#getting-the-coordinate-system-for-a-qr-code)こともできます。
+
+## <a name="finding-the-unique-id"></a>一意の ID の検索
+すべての QR コードには、一意の GUID ID があります。これは、次の方法で見つけることができます。
+- **As ARTracked QRCode** ピンをドラッグ アンド ドロップして、**Get Unique ID** を検索します。
 
 ![QR の GUID](images/unreal-qr-guid.PNG)
 
+QR コードを使用してバックグラウンドで多くの処理が行われているため、これで終わりというわけではありません。 内部的な処理の詳細については、次のリンクを確認してください。
+
 ## <a name="see-also"></a>関連項目
-* [QR コードの追跡](qr-code-tracking.md)
+* [空間マッピング](spatial-mapping.md)
+* [ホログラム](hologram.md)
+* [座標系](coordinate-systems.md)

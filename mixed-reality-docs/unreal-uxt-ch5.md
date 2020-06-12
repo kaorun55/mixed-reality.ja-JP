@@ -1,63 +1,89 @@
 ---
 title: 5. ボタンの追加およびピースの位置のリセット
-description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリを構築するためのチュートリアルのパート 5
-author: sw5813
-ms.author: suwu
+description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリを構築するためのチュートリアル シリーズのパート 6 の 5
+author: hferrone
+ms.author: v-haferr
 ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: 77fe2b59db970a2ac4b531d69efec6794478f7d5
-ms.sourcegitcommit: 09d9fa153cd9072f60e33a5f83ced8167496fcd7
+ms.openlocfilehash: 49cab5c5a8c6736b800b5ba05de2c88edf008008
+ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83519994"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84330269"
 ---
 # <a name="5-adding-a-button--resetting-piece-locations"></a>5.ボタンの追加およびピースの位置のリセット
 
-このセクションでは、Mixed Reality ツールキット UX ツール プラグインの機能のデモンストレーションと、チェス アプリの機能の構築について引き続き説明します。 新しい関数を作成し、使用しているレベルからアクターへの参照をブループリントに取り込む方法を学習します。
+
+## <a name="overview"></a>概要
+
+前のチュートリアルでは、ポーン コンポーネントにハンド インタラクション アクターを追加し、チェス盤にマニピュレーター コンポーネントを追加して、両方を対話型にしました。 このセクションでは、チェス アプリの機能を構築することによって、Mixed Reality ツールキット UX ツール プラグインを引き続き操作します。 これには、新しい関数の作成と、ブループリントでアクターへの参照を取得する方法についての説明が含まれます。 このセクションの完了までに、デバイスまたはエミュレーターに Mixed Reality アプリをパッケージ化してデプロイする準備が整います。
 
 ## <a name="objectives"></a>目標
 
-* プロジェクトにボタンを追加する
-* ピースを元の位置に戻す新しい "Reset Location" 関数を作成する
-* 押されたときに新しく作成された関数をトリガーするボタンをフックする
+* 対話型ボタンの追加
+* ピースの位置をリセットする関数を作成する
+* 押されたときに関数をトリガーするボタンをフックする
 
-## <a name="create-a-function-to-reset-location"></a>位置をリセットする関数を作成する
+## <a name="creating-a-reset-function"></a>Reset 関数の作成
+最初のタスクは、チェスのピースをシーンの元の位置にリセットする関数のブループリントを作成することです。 
 
-1.  **WhiteKing** を開きます。 **[My Blueprint]\(マイ ブループリント\)** パネルで、 **[Functions]\(関数\)** セクションの横の [+] ボタンをクリックして新しい関数を作成します。 この関数に "Reset Location" という名前を付けます。 
+1.  **WhiteKing** を開き、 **[My Blueprint]** の **[関数]** セクションの横にある **+** アイコンをクリックして、 **[Reset Location]** という名前を付けます。 
 
-2.  新しく作成した **Reset Location** ブループリントで、実行ピンをドラッグし、ブループリント グリッドの任意の場所でリリースして **SetActorRelativeTransform** ノードを呼び出します。 この関数では、アクターの親に対して相対的に変換 (位置、回転、スケール) を設定します。 この関数を使用すると、ボードが元の位置から移動した場合でもボード上のキングの位置がリセットされます。 位置が X = -26、Y = 4、Z = 0 に設定された **Make Transform** ノードを作成し、新しい相対変換入力に接続します。 
+2.  **SetActorRelativeTransform** ノードを作成するには、ブループリント グリッドの **Reset Location** から実行をドラッグしてリリースします。 
+    * この関数では、アクターの親に対して相対的に変換 (位置、回転、スケール) を設定します。 この関数を使用すると、ボードが元の位置から移動した場合でもボード上のキングの位置がリセットされます。 
+    
+3. イベント グラフ内で右クリックし、 **[変換の作成]** を選択し、 **[場所]** を **X =-26**、**Y = 4**、**Z = 0** に変更します。
+    * **SetActorRelativeTransform** の **[新しい相対変換]** ピンに **[戻り値]** を接続します。 
 
 ![Reset Location (位置のリセット) 関数](images/unreal-uxt/5-function.PNG)
 
-3.  **WhiteKing** をコンパイルして保存します。 メイン ウィンドウに戻ります。 
+メイン ウィンドウに戻る前に、プロジェクトを**コンパイル**して**保存**します。 
 
-## <a name="add-a-button"></a>ボタンを追加する
 
-1.  **Blueprints** フォルダーに、SimpleButton をサブクラス化する新しいブループリントを作成します。 SimpleButton は、UX ツール プラグインの一部として提供される 3D ボタンのブループリント アクターです。 このボタンに "ResetButton" という名前を付け、ダブルクリックしてブループリントを開きます。 
+## <a name="adding-a-button"></a>ボタンを追加する
+関数が正しくセットアップされたので、次のタスクでは、タッチしたときにオフにするボタンを作成します。 
+
+1.  **[新規追加] > [ブループリント クラス]** をクリックし、 **[すべてのクラス]** セクションを展開して、 **[SimpleButton]** を検索します。 
+    * これに **ResetButton** という名前を付け、ダブルクリックしてブループリントを開きます。
+
+> [!NOTE]
+> **SimpleButton** は、UX ツール プラグインの一部である 3D ボタンのブループリント アクターです。 。 
 
 ![SimpleButton から新しいブループリントをサブクラス化する](images/unreal-uxt/5-subclass.PNG)
 
-2.  **[コンポーネント]** パネルで、 **[PressableButton (Inherited)]\(PressableButton (継承)\)** をクリックします。 [詳細] パネルで、 **[イベント]** セクションが表示されるまでスクロールします。 **[On Button Pressed]\(ボタンが押されたとき\)** の横にある緑色のプラスのボタンをクリックします。これにより、ボタンが押されたときに呼び出される **[On Button Pressed]\(ボタンが押されたとき\)** イベントがイベント グラフに追加されます。 ここから、WhiteKing の Reset Location 関数を呼び出す必要があります。 これを行うには、まず、このレベルでの WhiteKing アクターへの参照を取得する必要があります。 
+2. **[コンポーネント]** パネルから **[PressableButton (継承)]** をクリックし、 **[詳細]** パネルを下にスクロールして **[イベント]** セクションを表示します。 
+    * **[On Button Pressed]\(ボタンが押されたとき\)** の横にある緑色の **+** のボタンをクリックして、ボタンが押されたときに呼び出されるイベントをイベント グラフに追加します。 
+    
+ここから、レベルの **WhiteKing** アクターへの参照が必要な  **WhiteKing** の **Reset Location** 関数を呼び出す必要があります。 
 
-3.  **[My Blueprint]\(マイ ブループリント\)** パネルで、 **[変数]** セクションを見つけ、 **+** ボタンをクリックして新しい変数を追加します。 この変数に "WhiteKing" という名前を付けます。 [Details]\(詳細\) パネルで、 **[Variable Type]\(変数の種類\)** の横にあるドロップダウンを選択し、"WhiteKing" を検索して、 **[Object Reference]\(オブジェクト参照\)** を選択します。 最後に、 **[Instance Editable]\(インスタンス編集可能\)** の横のボックスをオンにします。 これにより、変数をメイン レベルから設定できるようになります。 
+1.  **[詳細]** パネルの **[変数]** セクションまでスクロールし、 **+** ボタンをクリックして、変数に **WhiteKing** という名前を付けます。 
+    * **[Variable Type]\(変数の種類\)** の横にあるドロップダウンを選択し、**WhiteKing** を検索して、 **[Object Reference]\(オブジェクト参照\)** を選択します。 
+    * **[Instance Editable]\(インスタンス編集可能\)** の横のボックスをオンにします。 これにより、変数をメイン レベルから設定できるようになります。 
 
 ![変数を作成する](images/unreal-uxt/5-var.PNG)
 
-4.  WhiteKing 変数を **[My Blueprint]\(マイ ブループリント\) > [Variables]\(変数\)** から Reset Button イベント グラフにドラッグします。 **[Get WhiteKing]\(WhiteKing の取得\)** を選択します。 
+2.  WhiteKing 変数を **[My Blueprint]\(マイ ブループリント\) > [Variables]\(変数\)** から Reset Button イベント グラフにドラッグし、 **[WhiteKing の取得]** を選択します。 
 
-5.  WhiteKing の出力ピンをドラッグしてリリースし、新しいノードを配置します。 **Reset Location** 関数を選択します。 最後に、 **[On Button Pressed]\(ボタンが押されたとき\)** から出力実行ピンを **[Reset Location]** の入力実行ピンにドラッグします。 ResetButton ブループリントの **[Compile]\(コンパイル\)** と **[Save]\(保存\)** の後、メイン ウィンドウに戻ります。 
+## <a name="firing-the-function"></a>関数の起動
+あとは、ボタンが押されたときに Reset 関数を正式に起動するだけです。
+
+1.  WhiteKing の出力ピンをドラッグしてリリースし、新しいノードを配置します。 **Reset Location** 関数を選択します。 最後に、 **[On Button Pressed]\(ボタンが押されたとき\)** から出力実行ピンを **[Reset Location]** の入力実行ピンにドラッグします。 ResetButton ブループリントの **[Compile]\(コンパイル\)** と **[Save]\(保存\)** の後、メイン ウィンドウに戻ります。 
 
 ![On Button Pressed (ボタンが押されたとき) から Reset Location 関数を呼び出す](images/unreal-uxt/5-callresetloc.PNG)
 
-6.  **ResetButton** をビューポートにドラッグし、その位置を X = 50、Y = -25、Z = 10 に設定します。 **[Default]\(既定\)** で、WhiteKing 変数の値を **WhiteKing** に設定します。
+2.  **ResetButton** をビューポートにドラッグし、その位置を **X = 50**、 **Y = -25**、**Z = 10** に設定します。 **[Default]\(既定\)** で、**WhiteKing** 変数の値を **WhiteKing** に設定します。
 
 ![変数の値を設定する](images/unreal-uxt/5-buttonlevel.PNG)
 
-これで、グラブ可能なチェス ピースとボードを備えた Mixed Reality アプリと、押されたときにピースの位置をリセットする、完全に機能するボタンが完成しました。 この時点まで完成したアプリを [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/tree/master/ChessApp) で見つけることができます。 このチュートリアルをさらに進めて、ユーザーがボタンを押したときにボード全体がリセットされるように、チェスの残りのピースを設定してみてください。
+アプリを実行し、チェスのピースを新しい場所に移動し、大きなピンク色のボタンを押すと、動作中のリセット ロジックが表示されます。
+
+これで、対話可能なチェスの駒とボードを備えた Mixed Reality アプリと、ピースの位置をリセットする、完全に機能するボタンが完成しました。 ここまでで完成したアプリは [GitHub](https://github.com/microsoft/MixedReality-Unreal-Samples/tree/master/ChessApp) リポジトリにあります。 このチュートリアルをさらに進めて、ボタンを押したときにボード全体がリセットされるように、チェスの残りのピースを設定してみてください。
 
 ![ビューポートの終わりのシーン](images/unreal-uxt/5-endscene.PNG)
+
+このチュートリアルの最後のセクションに進む準備ができました。そこでは、アプリを正しくパッケージ化してデバイスまたはエミュレーターにデプロイする方法について説明します。
 
 [次のセクション: 6.デバイスまたはエミュレーターのパッケージ化およびデプロイ](unreal-uxt-ch6.md)

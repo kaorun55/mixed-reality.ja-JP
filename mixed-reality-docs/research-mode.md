@@ -3,15 +3,15 @@ title: HoloLens Research モード
 description: HoloLens で Research モードを使用すると、アプリケーションは主要なデバイスセンサーストリーム (深さ、環境追跡、および赤外線反射) にアクセスできます。
 author: hferrone
 ms.author: v-haferr
-ms.date: 05/03/2018
+ms.date: 06/10/2020
 ms.topic: article
 keywords: research モード, cv, rs4, コンピュータービジョン, 研究, HoloLens, HoloLens 2
-ms.openlocfilehash: ec6f7b73a1f25932f10c10a7f0daaf78e536c0c4
-ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
+ms.openlocfilehash: 62b82e3a36452d4b104bf04999e556ec19d2a5e3
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84533104"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720398"
 ---
 # <a name="hololens-research-mode"></a>HoloLens Research モード
 
@@ -97,7 +97,7 @@ HoloLens 2 を使用している場合は、次の入力にアクセスするこ
 
 * [**スタート] メニューを開き > 設定**を開き、[**更新プログラム**] を選択します。
 * **開発者向けに**選択し、**開発者モード**を有効にします。
-* 下へスクロールし、**デバイスポータル**を有効にします。
+* 下へスクロールし、**デバイス ポータル**を有効にします。
 
 開発者機能が有効になったら、[デバイスポータルに接続](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)して、リサーチモード機能を有効にします。
 
