@@ -6,12 +6,12 @@ ms.author: wguyman
 ms.date: 06/12/2019
 ms.topic: article
 keywords: カメラ、hololens、カラーカメラ、フロント接続、hololens 2、cv、コンピュータービジョン、基準、マーカー、qr コード、qr、写真、ビデオ
-ms.openlocfilehash: b8e9d926db09d277b3fde7572dd68257599c8d5e
-ms.sourcegitcommit: 09d9fa153cd9072f60e33a5f83ced8167496fcd7
+ms.openlocfilehash: e158eb2e708164cbd68620f3f46d3039c2eaa730
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83520017"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216223"
 ---
 # <a name="locatable-camera"></a>場所を特定できるカメラ
 
@@ -28,7 +28,7 @@ HoloLens には、デバイスの前面に取り付けられている世界中�
   |  ビデオ  |  プレビュー  |  それでもなお  |  ビューの水平方向のフィールド (H 視界) |  推奨される使用方法 | 
   |----------|----------|----------|----------|----------|
   |  1280 x 720 |  1280 x 720 |  1280 x 720 |  45度  |  (ビデオ安定化を使用した既定のモード) | 
-  |  該当なし |  該当なし |  2048x1152 |  67deg |  高解像度の静止画像 | 
+  |  N/A |  N/A |  2048x1152 |  67deg |  高解像度の静止画像 | 
   |  1408x792 |  1408x792 |  1408x792 |  48度 |  ビデオ安定化前のオーバースキャン (埋め込み) 解像度 | 
   |  1344x756 |  1344x756 |  1344x756 |  67deg |  オーバースキャンによる大規模な視界のビデオモード | 
   |  896x504 |  896x504 |  896x504 |  48度 |  イメージ処理タスクの低電力/低解像度モード | 
@@ -115,10 +115,10 @@ public:
         MFPinholeCameraIntrinsics cameraIntrinsics;
         UINT32 sizeCameraExtrinsics = 0;
         UINT32 sizeCameraIntrinsics = 0;
-        UINT64 sampleTimeQpc = 0;
+        UINT64 sampleTimeHns = 0;
  
         // query sample for calibration and validate
-        if (FAILED(pSample->GetUINT64(MFSampleExtension_DeviceTimestamp, &sampleTimeQpc)) ||
+        if (FAILED(pSample->GetUINT64(MFSampleExtension_DeviceTimestamp, &sampleTimeHns)) ||
             FAILED(pSample->GetBlob(MFSampleExtension_CameraExtrinsics, (UINT8*)& cameraExtrinsics, sizeof(cameraExtrinsics), &sizeCameraExtrinsics)) ||
             FAILED(pSample->GetBlob(MFSampleExtension_PinholeCameraIntrinsics, (UINT8*)& cameraIntrinsics, sizeof(cameraIntrinsics), &sizeCameraIntrinsics)) ||
             (sizeCameraExtrinsics != sizeof(cameraExtrinsics)) ||
@@ -149,7 +149,7 @@ public:
         }
  
         // locate dynamic node
-        auto timestamp = PerceptionTimestampHelper::FromSystemRelativeTargetTime(TimeSpanFrodmQpcTicks(sampleTimeQpc));
+        auto timestamp = PerceptionTimestampHelper::FromSystemRelativeTargetTime(TimeSpan{ sampleTimeHns });
         auto coordinateSystem = m_frameOfReference.GetStationaryCoordinateSystemAtTimestamp(timestamp);
         auto location = m_locator.TryLocateAtTimestamp(timestamp, coordinateSystem);
         if (!location)
@@ -161,31 +161,11 @@ public:
  
         return CameraFrameLocation{ coordinateSystem, cameraToDynamicNode * dynamicNodeToCoordinateSystem, cameraIntrinsics };
     }
- 
+
 private:
     GUID m_currentDynamicNodeId{ GUID_NULL };
     SpatialLocator m_locator{ nullptr };
     SpatialLocatorAttachedFrameOfReference m_frameOfReference{ nullptr };
- 
-    // Convert a duration value from a source tick frequency to a destination tick frequency.
-    static inline int64_t SourceDurationTicksToDestDurationTicks(int64_t sourceDurationInTicks, int64_t sourceTicksPerSecond, int64_t destTicksPerSecond)
-    {
-        int64_t whole = (sourceDurationInTicks / sourceTicksPerSecond) * destTicksPerSecond;                          // 'whole' is rounded down in the target time units.
-        int64_t part = (sourceDurationInTicks % sourceTicksPerSecond) * destTicksPerSecond / sourceTicksPerSecond;    // 'part' is the remainder in the target time units.
-        return whole + part;
-    }
- 
-    static inline TimeSpan TimeSpanFromQpcTicks(int64_t qpcTicks)
-    {
-        static const int64_t qpcFrequency = []
-        {
-            LARGE_INTEGER frequency;
-            QueryPerformanceFrequency(&frequency);
-            return frequency.QuadPart;
-        }();
- 
-        return TimeSpan{ SourceDurationTicksToDestDurationTicks(qpcTicks, qpcFrequency, winrt::clock::period::den) / winrt::clock::period::num };
-    }
 };
 ```
 
@@ -277,7 +257,7 @@ public static Vector3 ClosestPointBetweenRays(
 ## <a name="see-also"></a>関連項目
 * [お持ちのカメラのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
 * [Unity での場所を特定できるカメラ](locatable-camera-in-unity.md)
-* [複合現実キャプチャ](mixed-reality-capture.md)
+* [Mixed reality キャプチャ](mixed-reality-capture.md)
 * [開発者向け複合現実キャプチャ](mixed-reality-capture-for-developers.md)
 * [メディアキャプチャの概要](https://msdn.microsoft.com/library/windows/apps/mt243896.aspx)
 * [Holographic face tracking サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/HolographicFaceTracking)
