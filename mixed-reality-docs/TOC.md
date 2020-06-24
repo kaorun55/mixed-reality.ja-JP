@@ -94,7 +94,7 @@
 ## 参照情報
 ### [Unity について学習する](https://learn.unity.com/)
 ### [Mixed Reality ツールキット](https://github.com/Microsoft/MixedRealityToolkit-Unity)
-### [Mixed Reality Design Labs](https://github.com/Microsoft/MRDL_Unity_PeriodicTable)
+### [Mixed Reality Design Labs](https://github.com/microsoft/MixedRealityDesignLabs_Unity)
 ### [Microsoft Maquette](https://www.maquette.ms)
 ### [アセット作成プロセス](asset-creation-process.md)
 ### [独自のイマーシブ環境を設計する](add-custom-home-environments.md)
@@ -136,10 +136,14 @@
 ###### [3.ビデオからオーディオの立体化](unity-spatial-audio-ch3.md)
 ###### [4.実行時の立体オーディオの有効化と無効化](unity-spatial-audio-ch4.md)
 ###### [5.リバーブを使用して立体オーディオに距離を追加する](unity-spatial-audio-ch5.md)
+#### HoloLens 2 オープン ソースのサンプル アプリ
+##### [Surfaces](sampleapp-surfaces.md)
+##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+##### [Galaxy Explorer 2.0](galaxy-explorer-update.md)
 #### HoloLens (第 1 世代) オープン ソースのサンプル アプリ
-##### [元素周期表](periodic-table-of-the-elements.md)
+##### [元素周期表 1.0](periodic-table-of-the-elements.md)
+##### [Galaxy Explorer 1.0](galaxy-explorer.md)
 ##### [月着陸船](lunar-module.md)
-##### [銀河エクスプローラー](galaxy-explorer.md)
 #### HoloLens (第 1 世代) とイマーシブ ヘッドセットのチュートリアル
 ##### [MR の基本 100:Unity の概要](holograms-100.md)
 ##### [MR の基本 101:デバイスを使用した完全なプロジェクト](holograms-101.md)
