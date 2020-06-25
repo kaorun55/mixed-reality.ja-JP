@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
-ms.openlocfilehash: 2f958d45f72d6c39d4222840615c5b177db7c76f
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: eb2c6d88ce5a5ba637976a7d67abfdc2763c1674
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83228017"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345682"
 ---
 # <a name="scene-understanding-sdk-overview"></a>シーンについて SDK の概要
 
@@ -47,7 +47,7 @@ Unity プロジェクトで SDK を使用している場合は、 [unity 用の 
 
 各シーンでは、アプリケーションのメモリ領域にデータが格納されるため、シーンオブジェクトまたはその内部データのすべての関数がアプリケーションのプロセスで常に実行されると想定できます。
 
-### <a name="layout"></a>レイアウト
+### <a name="layout"></a>Layout
 
 シーンを理解するには、ランタイムが論理的および物理的にコンポーネントを表す方法を理解し、理解しておくことが重要な場合があります。 シーンは、主要な改訂を必要とせずに将来の要件を満たすように pliable された、基になる構造を維持しながら、単純なレイアウトを持つデータを表します。 このシーンでは、すべてのコンポーネント (すべてのシーンオブジェクトの構成要素) をフラットリストに格納し、特定のコンポーネントが他のコンポーネントを参照する参照を使用して階層とコンポジションを定義します。
 
@@ -119,13 +119,13 @@ SceneObjects は、次のいずれかを持つことができます。
 <tr>
 <th>SceneObjectKind</th> <th>説明</th>
 </tr>
-<tr><td>バックグラウンド</td><td>SceneObject は、他の認識された種類のシーンオブジェクトの1つでは<b>ない</b>ことがわかっています。 このクラスは不明と混同しないでください。背景が壁、床、天井などではないことがわかっています。不明なカテゴリはまだ分類されていません。</b></td></tr>
+<tr><td>背景</td><td>SceneObject は、他の認識された種類のシーンオブジェクトの1つでは<b>ない</b>ことがわかっています。 このクラスは不明と混同しないでください。背景が壁、床、天井などではないことがわかっています。不明なカテゴリはまだ分類されていません。</b></td></tr>
 <tr><td>電話</td><td>物理的な壁面。 壁面は、移動可能な環境構造であると見なされます。</td></tr>
 <tr><td>床</td><td>床は、どのような面でも使用できます。 注: 階段はフロアではありません。 また、このフロアは、明らかになる可能性があるため、1つの床面を明確に示すものではないことにも注意してください。 複数レベルの構造、傾斜などすべてが floor として分類される必要があります。</td></tr>
 <tr><td>Ceiling</td><td>部屋の上面。</td></tr>
 <tr><td>プラットフォーム</td><td>ホログラムを配置できる大きな平らなサーフェイス。 これらは、テーブル、countertops、およびその他の大きな水平サーフェスを表す傾向があります。</td></tr>
 <tr><td>World</td><td>ラベル付けに依存しないジオメトリックデータ用に予約されたラベル。 EnableWorldMesh update フラグを設定することによって生成されるメッシュは、"世界" として分類されます。</td></tr>
-<tr><td>不明</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
+<tr><td>Unknown</td><td>このシーンオブジェクトはまだ分類されていないため、種類が割り当てられています。 これは、背景と混同しないようにしてください。このオブジェクトは何でもかまいません。システムは、十分な量の十分な分類を持っているわけではありません。</td></tr>
 </tr>
 </table>
 
@@ -199,7 +199,7 @@ byte[] newSceneData = new byte[newSceneBuffer.Size];
 newSceneBuffer.GetData(newSceneData);
 Scene mySceneDeSerialized = Scene.Deserialize(newSceneData);
 
-// Save newSceneBlob for later
+// Save newSceneData for later
 ```
 
 ### <a name="sceneobject-enumeration"></a>SceneObject 列挙型
