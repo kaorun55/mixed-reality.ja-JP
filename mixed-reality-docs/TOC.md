@@ -62,14 +62,13 @@
 ### [目の視線入力ベースの操作](eye-gaze-interaction.md)
 ## UX 要素
 ### [概要](app-patterns-landingpage.md)
-### スタイル
+### 基本要素
 #### [色、ライト、素材](color-light-and-materials.md)
 #### [スケール](scale.md)
 #### [文字体裁](typography.md)
-### 立体音響
-#### [立体音響の設計](spatial-sound-design.md)
-#### [ケース スタディ:HoloTour ](case-study-spatial-sound-design-for-holotour.md)
-#### [ケース スタディ:RoboRaid](case-study-using-spatial-sound-in-roboraid.md)
+#### [サウンド](spatial-sound-design.md)
+##### [ケース スタディ:HoloTour ](case-study-spatial-sound-design-for-holotour.md)
+##### [ケース スタディ:RoboRaid](case-study-using-spatial-sound-in-roboraid.md)
 
 ### コントロールと動作
 #### [カーソル](cursors.md)
@@ -81,13 +80,15 @@
 #### [ハンド メニュー](hand-menu.md)
 #### [メニューの近く](near-menu.md)
 #### [オブジェクト コレクション](object-collection.md)
-#### [音声コマンド](voice-input.md)
+#### [音声入力](voice-input.md)
 #### [キーボード](keyboard.md)
 #### [ヒント](tooltip.md)
 #### [スレート](slate.md)
 #### [スライダー](slider.md)
 #### [シェーダー](shader.md)
+#### [ダイアログ](dialog-ui.md)
 #### [ハンド コーチ](hand-coach.md)
+#### [空間メッシュ](spatial-mesh-ux.md)
 #### [Billboard と Tag-along](billboarding-and-tag-along.md)
 #### [進行状況を表示する](progress.md)
 #### [表面吸着](surface-magnetism.md)
@@ -98,12 +99,15 @@
 ### [Microsoft Maquette](https://www.maquette.ms)
 ### [アセット作成プロセス](asset-creation-process.md)
 ### [独自のイマーシブ環境を設計する](add-custom-home-environments.md)
+
 # 開発
 ## [ツールとアーキテクチャについて学習する](development.md)
 ## [ツールのインストール](install-the-tools.md)
+
 ## 複合現実クラウド サービス
 ### [Azure Remote Rendering](https://docs.microsoft.com/azure/remote-rendering)
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
+
 ## [チュートリアルとサンプル アプリ](tutorials.md)
 ### Unity
 #### HoloLens 2 のチュートリアル
@@ -178,6 +182,7 @@
 #### [4.シーンを対話型にする](unreal-uxt-ch4.md)
 #### [5.ボタンの追加およびピースの位置のリセット](unreal-uxt-ch5.md)
 #### [6.デバイスまたはエミュレーターのパッケージ化およびデプロイ](unreal-uxt-ch6.md)
+
 ## Unity
 ### [Unity 開発の概要](unity-development-overview.md)
 ### はじめに
@@ -209,21 +214,25 @@
 #### [Windows 名前空間と HoloLens 用 Unity アプリの使用](using-the-windows-namespace-with-unity-apps-for-hololens.md)
 #### [Unity での Mixed Reality ネイティブ オブジェクト](unity-xrdevice-advanced.md)
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
+
 ## Unreal
 ### [Unreal 開発の概要](unreal-development-overview.md)
 ### [Unreal での手の追跡](unreal-hand-tracking.md)
 ### [Unreal での視線入力](unreal-gaze-input.md)
 ### [Unreal での空間マッピング](unreal-spatial-mapping.md)
+### [Unreal での空間オーディオ](unreal-spatial-sound.md)
 ### [Unreal での空間アンカー](unreal-spatial-anchors.md)
 ### [Unreal での音声入力](unreal-voice-input.md)
 ### [Unreal での HoloLens カメラ](unreal-hololens-camera.md)
 ### [Unreal での QR コード](unreal-qr-codes.md)
 ### [Unreal でのストリーミング](unreal-streaming.md)
 ### [Unreal のパフォーマンスに関する推奨事項](performance-recommendations-for-unreal.md)
+
 ## JavaScript
 ### [JavaScript 開発の概要](javascript-development-overview.md)
 ### [WebXR](webxr-overview.md)
 ### [WebVR](webvr-overview.md)
+
 ## ネイティブ
 ### [ネイティブ開発の概要](directx-development-overview.md)
 ### OpenXR
@@ -236,6 +245,7 @@
 #### [ネイティブ ホログラフィック プロジェクトを作成する](creating-a-holographic-directx-project.md)
 #### [HolographicSpace を入手する](getting-a-holographicspace.md)
 #### [ネイティブ レンダリング](rendering-in-directx.md)
+
 ## プラットフォームの機能と API
 ### コア構成要素
 #### [座標系](coordinate-systems-in-directx.md)
@@ -286,12 +296,14 @@
 #### [Windows Device Portal を使用する](using-the-windows-device-portal.md)
 #### [Device Portal API リファレンス](device-portal-api-reference.md)
 #### [HoloLens Research モード](research-mode.md)
+
 ## アプリの移植
 ### [HTK/MRTK を MRTK v2 に移植する](mrtk-porting-guide.md)
 ### [イマーシブ アプリの移植ガイド](porting-guides.md)
 ### [Unity 用入力移植ガイド](input-porting-guide-for-unity.md)
 ### [Windows Mixed Reality 用に SteamVR アプリケーションを更新する](updating-your-steamvr-application-for-windows-mixed-reality.md)
 ### [複合現実の 2D UWP アプリを更新する](building-2d-apps.md)
+
 # 配布
 ## [3D アプリ起動ツールの設計ガイダンス](3d-app-launcher-design-guidance.md)
 ## [家で使用する 3D モデルの作成](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
