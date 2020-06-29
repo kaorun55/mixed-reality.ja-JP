@@ -6,12 +6,12 @@ ms.author: hakons
 ms.date: 10/03/2019
 ms.topic: article
 keywords: ggv、音声、cortana、音声、入力
-ms.openlocfilehash: 78ff63f2f794bb2b3a4868e38ccaff0582ccca8c
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 37364e90aa1d8a7b607a99f4c9b830972f7f80b3
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345702"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441829"
 ---
 # <a name="voice-input"></a>音声入力
 
@@ -96,6 +96,8 @@ ms.locfileid: "85345702"
 * "写真を撮る"
 * "記録の開始"
 * "記録の停止"
+* "ハンドレイを表示する"
+* "ハンドレイを隠す"
 * 「明るさを上げる」
 * 「明るさを下げる」
 * "ボリュームを増やす"
@@ -282,7 +284,7 @@ HoloLens が提供するカスタマイズされたオーディオ入力処理�
 
 このようなオーディオ処理はすべてハードウェアアクセラレータです。これは、HoloLens CPU で同じ処理が行われた場合と比べて、機能の電力消費が多くなることを意味します。 システムのバッテリ寿命を最大化し、組み込みのオフロードオーディオ入力処理を活用するために、CPU で他のオーディオ入力処理を実行しないようにします。
 
-## <a name="languages"></a>言語
+## <a name="languages"></a>Languages
 
 HoloLens 2 では、[複数の言語がサポート](https://docs.microsoft.com/hololens/hololens2-language-support)されています。 複数のキーボードがインストールされている場合や、アプリが別の言語で音声認識エンジンを作成しようとした場合でも、音声コマンドは常にシステムの表示言語で実行されることに注意してください。
 

@@ -1,17 +1,17 @@
 ---
 title: Device Portal API リファレンス
 description: HoloLens の Windows デバイスポータルの API リファレンス
-author: jonmlyons
-ms.author: jlyons
+author: hamalawi
+ms.author: moelhama
 ms.date: 03/21/2018
 ms.topic: article
 keywords: HoloLens、Windows デバイスポータル、API
-ms.openlocfilehash: 17268c9a20d3da0ee90e5d6cead4342d3badf800
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: b9b9ada49b4f9810dc97c9da2873d4ccb60df424
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451327"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441799"
 ---
 # <a name="device-portal-api-reference"></a>Device Portal API リファレンス
 
@@ -33,7 +33,7 @@ ms.locfileid: "84451327"
 パラメーター
 * パッケージ: インストールするパッケージのファイル名。
 
-ペイロード
+Payload
 * マルチパート準拠の http 本文
 
 **/api/app/packagemanager/packages (GET)**
@@ -376,15 +376,15 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 1280x720p 30 fps 5 Mbit ストリーム。
 
-**/api/holographic/stream/live_high. mp4 (GET)**
+**/api/holographic/stream/live_high.mp4 (GET)**
 
 1280x720p 30 fps 5 Mbit ストリーム。
 
-**/api/holographic/stream/live_med. mp4 (GET)**
+**/api/holographic/stream/live_med.mp4 (GET)**
 
 854x480p 30 fps 2.5 Mbit ストリーム。
 
-**/api/holographic/stream/live_low. mp4 (GET)**
+**/api/holographic/stream/live_low.mp4 (GET)**
 
 428x240p 15fps 0.6 Mbit ストリーム。
 
@@ -509,7 +509,7 @@ HoloLens は、フラグメント化された mp4 のチャンクダウンロー
 
 WPR プロファイルをアップロードし、アップロードされたプロファイルを使用してトレースを開始します。
 
-ペイロード
+Payload
 * マルチパート準拠の http 本文
 
 データを返します
@@ -534,7 +534,7 @@ WPR (パフォーマンス) トレースセッションを停止します
 WPR (パフォーマンス) トレースセッションを開始します
 
 パラメーター
-* プロファイル: プロファイル名。 使用可能なプロファイルは perfprofiles/profiles. json に格納されます。
+* プロファイル: プロファイル名。 使用可能なプロファイルは、の perfprofiles/profiles.jsに格納されます。
 
 データを返します
 * 開始時に、WPR セッションの状態を返します。

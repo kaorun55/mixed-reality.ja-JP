@@ -6,12 +6,12 @@ ms.author: szymons
 ms.date: 07/08/2019
 ms.topic: article
 keywords: シーンの理解、空間マッピング、Windows Mixed Reality、Unity
-ms.openlocfilehash: eb2c6d88ce5a5ba637976a7d67abfdc2763c1674
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 71b5509065ecf6fc700b7f448083754d330e9371
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345682"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441809"
 ---
 # <a name="scene-understanding-sdk-overview"></a>シーンについて SDK の概要
 
@@ -47,7 +47,7 @@ Unity プロジェクトで SDK を使用している場合は、 [unity 用の 
 
 各シーンでは、アプリケーションのメモリ領域にデータが格納されるため、シーンオブジェクトまたはその内部データのすべての関数がアプリケーションのプロセスで常に実行されると想定できます。
 
-### <a name="layout"></a>Layout
+### <a name="layout"></a>レイアウト
 
 シーンを理解するには、ランタイムが論理的および物理的にコンポーネントを表す方法を理解し、理解しておくことが重要な場合があります。 シーンは、主要な改訂を必要とせずに将来の要件を満たすように pliable された、基になる構造を維持しながら、単純なレイアウトを持つデータを表します。 このシーンでは、すべてのコンポーネント (すべてのシーンオブジェクトの構成要素) をフラットリストに格納し、特定のコンポーネントが他のコンポーネントを参照する参照を使用して階層とコンポジションを定義します。
 
@@ -311,6 +311,9 @@ void SetLocalTransformFromSceneObject(GameObject gameObject, SceneObject sceneOb
 
 四角形は四角形のエクステントを持ちますが、任意の形の2D サーフェイスを表します。 3D 環境の四角形を操作するこれらの2D サーフェイス上の配置を有効にするには、この相互作用を可能にするユーティリティを提供します。 現在、シーンの理解には、 **Findセンター**のほとんどの配置と**GetOcclusionMask**という2つの関数が用意されています。 Findセンターのほとんどの配置は、オブジェクトを配置できるクワッド上の位置を特定し、指定した境界ボックスが基になるサーフェイスに存在することを保証するオブジェクトの最適な位置を検索する、高レベルの API です。
 
+> [!NOTE]
+> 出力の座標は、他の windows の Rect 型と同じように、左上隅が (x = 0, y = 0) である "クワッド空間" のクワッドに対して相対的です。 独自のオブジェクトのオリジンを操作するときは、必ずこのことを考慮してください。 
+
 次の例では、中央の最も配置可能な場所を検索し、クワッドにホログラムを固定する方法を示します。
 
 ```cs
@@ -341,7 +344,12 @@ foreach (var sceneObject in myScene.SceneObjects)
 }
 ```
 
-手順1-4 は、特定のフレームワーク/実装に大きく依存しますが、テーマは類似している必要があります。 クワッドは、空間でローカライズされた境界2D 平面を表すだけであることに注意する必要があります。 お使いのエンジンとフレームワークで、クワッドがどこにあるかを認識し、クワッドを基準としてオブジェクトをルート設定することにより、ホログラムは実際の世界に対して正しく配置されます。 詳細については、特定の実装を示す四角形のサンプルを参照してください。
+手順1-4 は、特定のフレームワーク/実装に大きく依存しますが、テーマは類似している必要があります。 クワッドは、空間でローカライズされた境界2D 平面を表すだけであることに注意する必要があります。 お使いのエンジンとフレームワークで、クワッドがどこにあるかを認識し、クワッドを基準としてオブジェクトをルート設定することにより、ホログラムは実際の世界に対して正しく配置されます。 
+
+<!-- 
+// TODO: Add sample link when released
+For more detailed information please see our samples on quads which show specific implementations.
+-->
 
 ### <a name="mesh"></a>メッシュ
 
