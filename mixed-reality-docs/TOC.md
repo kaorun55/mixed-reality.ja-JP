@@ -220,7 +220,7 @@
 ### [Unreal での手の追跡](unreal-hand-tracking.md)
 ### [Unreal での視線入力](unreal-gaze-input.md)
 ### [Unreal での空間マッピング](unreal-spatial-mapping.md)
-### [Unreal での空間オーディオ](unreal-spatial-sound.md)
+### [Unreal での空間オーディオ](unreal-spatial-audio.md)
 ### [Unreal での空間アンカー](unreal-spatial-anchors.md)
 ### [Unreal での音声入力](unreal-voice-input.md)
 ### [Unreal での HoloLens カメラ](unreal-hololens-camera.md)
