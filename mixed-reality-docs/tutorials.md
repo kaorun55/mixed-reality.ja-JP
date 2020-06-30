@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, アカデミー, チュートリアル
-ms.openlocfilehash: e5961a178d571d2f71e98ff4c3c729d6feb0fd40
-ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
+ms.openlocfilehash: 57ddf1569ff87a278134eff0204942094b1cd014
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327962"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216253"
 ---
 # <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
 
@@ -36,9 +36,15 @@ HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケ
 
 オープン ソースのサンプル アプリは、Microsoft のチームによって作成されたアプリケーションであり、開発者がプロジェクトから参照して学習できるようにソース コードを提供しています。
 
-* [元素周期表](periodic-table-of-the-elements.md)
+### <a name="hololens-2-open-source-sample-apps"></a>HoloLens 2 オープン ソースのサンプル アプリ
+* [Surfaces](sampleapp-surfaces.md)
+* [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+* [Galaxy Explorer 2.0](galaxy-explorer-update.md)
+
+### <a name="hololens-1st-gen-open-source-sample-apps"></a>HoloLens (第 1 世代) オープン ソースのサンプル アプリ
+* [元素周期表 1.0](periodic-table-of-the-elements.md)
+* [Galaxy Explorer 1.0](galaxy-explorer.md)
 * [月着陸船](lunar-module.md)
-* [銀河エクスプローラー](galaxy-explorer.md)
 
 ## <a name="mixed-reality-academy-tutorials"></a>Mixed Reality Academy チュートリアル
 
