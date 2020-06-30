@@ -3,18 +3,20 @@ title: Unreal での HoloLens 写真/ビデオ カメラ
 description: HoloLens 写真/ビデオを Unreal で使用するためのガイド
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, 開発, 機能, ドキュメント, ガイド, ホログラム, カメラ, PV カメラ, MRC
-ms.openlocfilehash: 06ceb26d58fe60848e5e90360aa2e05984a901c5
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: e15ea593283a22dc31cd496de596159035d83799
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451337"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720328"
 ---
 # <a name="hololens-photovideo-camera-in-unreal"></a>Unreal での HoloLens 写真/ビデオ カメラ
+
+## <a name="overview"></a>概要
 
 HoloLens には、Mixed Reality Capture (MRC) に使用される写真/ビデオ (PV) カメラがあり、アプリで実際のビジュアルにアクセスするために使用できます。
 

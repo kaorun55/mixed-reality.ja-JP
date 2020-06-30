@@ -3,16 +3,16 @@ title: Unreal での空間アンカー
 description: Unreal で空間アンカーを使用するためのガイド
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, 開発, 機能, ドキュメント, ガイド, ホログラム, 空間アンカー
-ms.openlocfilehash: 1100704cae40de1997eb869bfc6c82bba3d0dc6e
-ms.sourcegitcommit: ee7f04148d3608b0284c59e33b394a67f0934255
+ms.openlocfilehash: 58394f4e27aff5070d55ed5f0d62cd81ff579d1f
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428731"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720318"
 ---
 # <a name="spatial-anchors-in-unreal"></a>Unreal での空間アンカー
 
