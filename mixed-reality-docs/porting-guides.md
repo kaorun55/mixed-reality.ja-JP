@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 10/02/2018
 ms.topic: article
 keywords: ポート、移植、unity、ミドルウェア、エンジン、UWP
-ms.openlocfilehash: 06501742d4b5c30036982deef2ec2a88171912bf
-ms.sourcegitcommit: d6ac8f1f545fe20cf1e36b83c0e7998b82fd02f8
+ms.openlocfilehash: 73126ae90ed12988177cc9192b7db41bae30fcc2
+ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81278040"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85570318"
 ---
 # <a name="porting-guides"></a>移植ガイド
 
@@ -54,7 +54,7 @@ Windows Mixed Reality プラットフォームは依然としてアクティブ�
 
 ### <a name="unity-step-1-follow-the-common-porting-steps"></a>Unity 手順 1: 一般的な移植手順に従う
 
-すべての一般的な手順を実行します。 手順 #3 で、 **[Unity を使用したゲーム開発]** ワークロードを選択します。 以下の手順から新しいバージョンの Unity をインストールするため、Unity エディターのオプションコンポーネントを選択解除することができます。
+すべての一般的な手順を実行します。 手順 #3 で、[ **Unity を使用したゲーム開発**] ワークロードを選択します。 以下の手順から新しいバージョンの Unity をインストールするため、Unity エディターのオプションコンポーネントを選択解除することができます。
 
 ### <a name="unity-step-2-upgrade-to-the-latest-public-build-of-unity-with-windows-mr-support"></a>Unity 手順 2: Windows MR サポートを使用して Unity の最新のパブリックビルドにアップグレードする
 1. Mixed reality サポートを使用して、 [Unity の最新の推奨パブリックビルド](install-the-tools.md)をダウンロードします。
@@ -70,9 +70,10 @@ Unity の更新プログラムでは、ゲームまたはアプリケーショ�
 ### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 手順 4: ユニバーサル Windows プラットフォーム (UWP) で実行するようにアプリケーションをターゲットにする
 
 ツールをインストールしたら、アプリをユニバーサル Windows アプリとして実行する必要があります。
+
 * Unity によって提供される[詳細な手順に](https://unity3d.com/partners/microsoft/porting-guides)従ってください。 Windows MR の最新の LTS リリース (すべての20xx リリース) をご確認ください。
 * UWP 開発リソースの詳細については、「 [Windows 10 ゲーム開発ガイド」](https://docs.microsoft.com/windows/uwp/gaming/e2e)を参照してください。
-* Unity は引き続き IL2CPP サポートを強化することに注意してください。IL2CPP を使用すると、いくつかの UWP ポートが非常に簡単になります。 .Net scripting バックエンドを現在対象としている場合は、代わりに IL2CPP バックエンドを活用するように変換することを検討してください。
+* Unity は引き続き IL2CPP サポートを強化することに注意してください。IL2CPP を使用すると、いくつかの UWP ポートが非常に簡単になります。 .NET scripting バックエンドを現在対象としている場合は、代わりに IL2CPP バックエンドを活用するように変換することを検討してください。
 
 注: アプリケーションがデバイス固有のサービス (ストリームからの一致など) に依存している場合は、この手順で無効にする必要があります。 後で、Windows が提供する同等のサービスにフックすることができます。
 
@@ -104,7 +105,7 @@ XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
 
 これにより、Unity のワールド座標系が、[参照の静止フレーム](coordinate-systems.md#spatial-coordinate-systems)を追跡するように設定されます。 静止の追跡モードでは、アプリの起動時に、カメラの既定の場所 (前方が Z) の直前にあるエディターに配置されたコンテンツがユーザーの前に表示されます。 ユーザーが recenter した元の位置を確認するには、Unity の XR を呼び出すことができ[ます。InputTracking. Recenter](https://docs.unity3d.com/ScriptReference/XR.InputTracking.Recenter.html)メソッド。
 
-継続的な**スケールエクスペリエンス**または**ルームスケールエクスペリエンス**を移植している場合は、フロアを基準にコンテンツを配置します。 ユーザーが定義したフロアレベルのオリジンとオプションの部屋の境界を表す **[空間ステージ](coordinate-systems.md#spatial-coordinate-systems)** を使用して、ユーザーのフロアについては、最初の実行時に設定します。 これらのエクスペリエンスについては、Unity が**RoomScale**の追跡領域の種類に設定されていることを確認する必要があります。 RoomScale が既定値であるのに対し、明示的に設定して、ユーザーが自分のコンピューターを調整した部屋から離れた状況を検出するために、true に戻すことをお勧めします。
+継続的な**スケールエクスペリエンス**または**ルームスケールエクスペリエンス**を移植している場合は、フロアを基準にコンテンツを配置します。 ユーザーが定義したフロアレベルのオリジンとオプションの部屋の境界を表す**[空間ステージ](coordinate-systems.md#spatial-coordinate-systems)** を使用して、ユーザーのフロアについては、最初の実行時に設定します。 これらのエクスペリエンスについては、Unity が**RoomScale**の追跡領域の種類に設定されていることを確認する必要があります。 RoomScale が既定値であるのに対し、明示的に設定して、ユーザーが自分のコンピューターを調整した部屋から離れた状況を検出するために、true に戻すことをお勧めします。
 
 ```cs
 if (XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale))
@@ -152,7 +153,7 @@ Windows Mixed Reality は、ハイエンドゲーム Pc から広範な市場メ
 
 [Unity](https://docs.unity3d.com/Manual/Profiler.html)と[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)のどちらにも、パフォーマンスプロファイラーと、パフォーマンスプロファイルと最適化に関する[Microsoft](understanding-performance-for-mixed-reality.md)と[Intel](https://software.intel.com/articles/vr-content-developer-guide)の両方の発行ガイドラインが含まれています。 [混合現実のパフォーマンスを理解](understanding-performance-for-mixed-reality.md)することで、パフォーマンスの詳細な説明があります。 さらに、unity の[パフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)には、unity に関する具体的な詳細があります。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 * [Unity 用入力移植ガイド](input-porting-guide-for-unity.md)
 * [Windows Mixed Reality の PC ハードウェアの最小互換性ガイドライン](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [Mixed Reality のパフォーマンスについて](understanding-performance-for-mixed-reality.md)
