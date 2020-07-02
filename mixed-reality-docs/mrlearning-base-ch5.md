@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: ec078015304e1cddc9b042fb5e94cf1904a302cb
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 9a19ad59e520a2743aafd954910f43c6f51d6c8a
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79376089"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441859"
 ---
 # <a name="6-exploring-advanced-input-options"></a>6.高度な入力オプションの探索
 
@@ -38,10 +38,15 @@ ms.locfileid: "79376089"
 5. 音声コマンドの Response イベントを実装する
 
 ### <a name="1-clone-the-default-input-system-profile"></a>1.既定の入力システム プロファイルを複製する
-
 [Hierarchy]\(階層\) ウィンドウで **[MixedRealityToolkit]** オブジェクトを選択し、[Inspector]\(インスペクター\) ウィンドウで **[Input]\(入力\)** タブを選択し、 **[DefaultHoloLens2InputSystemProfile]** を複製して、カスタマイズ可能な独自の**入力システム プロファイル**に置き換えます。
 
 ![mrlearning-base](images/mrlearning-base/tutorial5-section1-step1-1.png)
+
+> [!NOTE]
+> MRTK 2.4.0 以降を使用している場合:
+> * [階層] タブから **MixedRealityToolkit** オブジェクトを選択し、[インスペクター] ウィンドウの **[入力]** タブをクリックして、 **[ポインター]** セクションを展開します。 
+> * **DefaultMixedRealityInputPointerProfile** を複製し、カスタマイズ可能な独自の**入力ポインター プロファイル**に置き換えます。
+> * **[Gaze Settings]\(視線入力設定\)** セクションで、 **[Is Eye Tracked Enabled]\(視線追跡の有効化\)** が true になっていることを確認します。 
 
 > [!TIP]
 > MRTK プロファイルを複製する方法については、[Mixed Reality Toolkit プロファイルを構成する方法](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)に関する説明を参照してください。

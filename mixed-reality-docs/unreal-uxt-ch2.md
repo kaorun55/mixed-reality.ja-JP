@@ -3,16 +3,16 @@ title: 2. プロジェクトと最初のアプリケーションの初期化
 description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリを構築するためのチュートリアル シリーズのパート 6 の 2
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: e8f03a87ec6b92e4c62cf3f88f519146254e7387
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 150fee721bb9cd72d287737aca4262bd87dccba8
+ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330361"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345732"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.プロジェクトと最初のアプリケーションの初期化
 
@@ -20,7 +20,7 @@ ms.locfileid: "84330361"
 
 この最初のチュートリアルでは、HoloLens 2 用の新しい Unreal アプリケーションの使用を開始します。 これには、HoloLens プラグインの追加、レベルの作成と照明、およびゲーム ボードとチェスの駒の設定が含まれます。 3D チェスの駒とオブジェクト マテリアルには、事前に作成された資産を使用するため、何もないところからモデリングする必要はありません。 このチュートリアルを完了するまでに、複合現実に対応できる空のキャンバスが完成します。
 
-続行する前に、[[はじめに]](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1) ページにあるすべての前提条件を確認してください。
+続行する前に、「[はじめに](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1)」ページにあるすべての前提条件を確認してください。
 
 ## <a name="objectives"></a>目標
 * HoloLens 開発用の Unreal プロジェクトの構成
@@ -28,7 +28,7 @@ ms.locfileid: "84330361"
 * ブループリントを使用したアクターとスクリプトレベルのイベントの作成
 
 ## <a name="creating-a-new-unreal-project"></a>新しい Unreal プロジェクトの作成
-最初に必要なのは、作業するプロジェクトです。
+最初に必要なのは、作業するプロジェクトです。 HoloLens 用の Unreal アプリを初めて作成する場合は、Epic Launcher から[サポート ファイルをダウンロードする](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch6#packaging-and-deploying-the-app)必要があります。
 
 1. Unreal Engine を起動します。
 
@@ -43,6 +43,9 @@ ms.locfileid: "84330361"
 4. **[Project Settings]\(プロジェクト設定\)** で、 **[C++]** 、 **[Scalable 3D or 2D]\(3D または 2D に拡張可能\)** 、 **[No Starter Content]\(スターター コンテンツを有効にしない\)** を設定します。 
     * 保存場所を選択し、 **[プロジェクトの作成]** をクリックします。 
 
+> [!NOTE]
+> UX Tools プラグインをビルドするには、ブループリント プロジェクトではなく、C++ プロジェクトを選択する必要があります。UX Tools プラグインは、この後のセクション 4 でセットアップします。
+
 ![最初のプロジェクト設定](images/unreal-uxt/2-project-settings.PNG)
 
 Unreal エディターでプロジェクトが自動的に開きます。つまり、次のセクションに進む準備はできています。
@@ -56,14 +59,14 @@ Unreal エディターでプロジェクトが自動的に開きます。つま�
 ![HoloLens プラグインの有効化](images/unreal-uxt/2-plugins.PNG)
 
 2. 組み込みオプション リストから **[仮想現実]** を選択します。 
-    * **[Microsoft Windows Mixed Reality]** までスクロールし、 **[有効]** をオンにして、エディターを再起動します。 
+    * **[Microsoft Windows Mixed Reality]** まで下にスクロールし、 **[有効]** をオンにして、エディターを再起動します。 
 
 ![Windows Mixed Reality プラグインを有効にする](images/unreal-uxt/2-virtual-reality-plugin.PNG)
 
 > [!NOTE]
 > HoloLens 2 の開発には、両方のプラグインが必要です。
 
-これで空のレベルになり、会社の準備が完了しました。
+これで空のレベルを使用できるようになりました。
 
 ## <a name="creating-a-level"></a>レベルの作成
 次のタスクは、参照とスケール用の開始点とキューブを使用して単純なプレーヤーのセットアップを作成することです。

@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 ms.topic: article
 keywords: グラフィックス, cpu, gpu, レンダリング, ガベージ コレクション, hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 28f09986cdb8c562aedfc9deae7b0369214ebc05
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: c6c68a6dd6e8ba59bee983e158e210aed27d2b17
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81277570"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216243"
 ---
 # <a name="performance-recommendations-for-unity"></a>Unity のパフォーマンスに関する推奨事項
 
@@ -282,6 +282,8 @@ Unity で[リアルタイム全体照明](https://docs.unity3d.com/Manual/GIIntr
 
 **[Edit]\(編集\)**  >  **[Project Settings]\(プロジェクト設定\)** で **[Quality]\(品質\)** カテゴリを選択し、UWP プラットフォームに対して **[Low Quality]\(低品質\)** を選択します。 また、 **[Shadows]\(シャドウ\)** プロパティを **[Disable Shadows]\(シャドウを無効にする\)** に設定するだけでもかまいません。
 
+Unity のモデルでは、ベイク済みライティングを使用することをお勧めします。
+
 ### <a name="reduce-poly-count"></a>多角形の数を減らす
 
 通常、多角形の数は次のようにすると減ります
@@ -344,7 +346,7 @@ Unity では、ガベージ コレクターの詳細なしくみと、メモリ�
 その他のクイックヒント:
 - C# の [StringBuilder](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder?view=netframework-4.7.2) クラスを使用して、実行時に複雑な文字列を動的に構築します
 - アプリのすべてのビルド バージョンで実行されるため、Debug.Log() の呼び出しは不要になったら削除します
-- ホログラフィック アプリで一般に多くのメモリが必要な場合は、読み込み中や移行中の画面を表示するときなど、読み込みフェーズの間に、[ _**System.GC.Collect()**_ ](https://docs.microsoft.com/dotnet/api/system.gc.collect?view=netframework-4.7.2) を呼び出すことを検討します
+- ホログラフィック アプリで一般に多くのメモリが必要な場合は、読み込み中や移行中の画面を表示するときなど、読み込みフェーズの間に、[_**System.GC.Collect()**_](https://docs.microsoft.com/dotnet/api/system.gc.collect?view=netframework-4.7.2) を呼び出すことを検討します
 
 #### <a name="object-pooling"></a>オブジェクト プーリング
 

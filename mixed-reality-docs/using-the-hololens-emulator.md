@@ -3,16 +3,16 @@ title: HoloLens エミュレーターを使用する
 description: HoloLens エミュレーターを使用して、物理的な HoloLens を使用せずに、PC 上で Mixed Reality アプリをテストします。
 author: pbarnettms
 ms.author: pbarnett
-ms.date: 5/12/2020
+ms.date: 6/8/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: f525276d127bc0bbb682d7cea6821028258c6177
-ms.sourcegitcommit: 6d9d01d53137435c787f247f095d5255581695fc
+ms.openlocfilehash: dba0b1a1260c62ac7f26bc80678439d12183d77f
+ms.sourcegitcommit: dc60c6ca075e7086b87478f1d7e87ebe02160c0c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83227987"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84631503"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
@@ -28,7 +28,7 @@ HoloLens のエミュレーターを使用すると、物理的な HoloLens を�
 HoloLens のエミュレーターをダウンロードします。
 
 バージョン: 
-* [HoloLens 2 エミュレーター (Windows Holographic、バージョン 2004)](https://go.microsoft.com/fwlink/?linkid=2129088)。
+* [HoloLens 2 エミュレーター (Windows Holographic バージョン 2004、2020 年 6 月の更新プログラム)](https://go.microsoft.com/fwlink/?linkid=2132415)。
 * [HoloLens エミュレーター (第 1 世代) およびホログラフィック プロジェクト テンプレート](https://go.microsoft.com/fwlink/?linkid=2065980)。
 
 HoloLens エミュレーターのリリース ノートと以前のビルドは、「[HoloLens エミュレーターのアーカイブ](hololens-emulator-archive.md)」ページにあります。
@@ -251,7 +251,7 @@ HoloLens (第 1 世代) で [Windows デバイス ポータル](using-the-window
 
 ## <a name="known-issues"></a>の既知の問題
 
-* HoloLens 2 エミュレーターをアンインストールするときに、ハード ドライブの Windows Kits\10\Emulation\HoloLens\<ビルド番号> フォルダーに、ハード ディスク イメージ (Flash.vhdx) が残ったままになる場合があります。  このファイルは削除しても問題ありません。
+* HoloLens 2 エミュレーターをアンインストールするときに、ハード ドライブの Windows Kits\10\Emulation\HoloLens\<build number> フォルダーに、ハード ディスク イメージ (Flash.vhdx) が残ったままになる場合があります。  このファイルは削除しても問題ありません。
 * ハードウェア グラフィック アクセラレータが原因で、AMD または Intel のグラフィックスを使用している一部のシステムではホログラフィック アプリがクラッシュする場合があります。  エミュレーターの [ツール] ウィンドウでハードウェア グラフィック アクセラレータを無効にすることにより、この問題を回避できます。
 
 ## <a name="troubleshooting"></a>トラブルシューティング

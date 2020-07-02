@@ -7,12 +7,12 @@ ms.date: 02/24/2019
 ms.topic: article
 keywords: Windows デバイス ポータル, HoloLens
 ms.localizationpriority: high
-ms.openlocfilehash: 4c84670e616d822bb8a9701a82f779a66ec19fe1
-ms.sourcegitcommit: f24ac845e184c2f90e8b15adab9addb913f5cb83
+ms.openlocfilehash: 234f8a5f2550c4437445ec3ac2726a3588f8bdbe
+ms.sourcegitcommit: 5612e8bfb9c548eac42182702cec87b160efbbfe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84451363"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85441845"
 ---
 # <a name="using-the-windows-device-portal"></a>Windows デバイス ポータルを使用する
 
@@ -44,8 +44,12 @@ HoloLens 用の Windows デバイス ポータルでは、Wi-Fi または USB �
 ## <a name="connecting-over-wi-fi"></a>Wi-Fi 経由で接続する
 
 1. [HoloLens を Wi-Fi に接続します](connecting-to-wi-fi-on-hololens.md)。
-2. デバイスの IP アドレスを調べます。
-   * **[設定] > [ネットワークとインターネット] > [Wi-Fi] > [詳細設定]** に移動して、デバイスの IP アドレスを確認します。
+2. 次のどちらかの方法でデバイスの IP アドレスを検索します。
+   * **[設定] > [ネットワークとインターネット] > [Wi-Fi] > [詳細オプション]** の順に移動する。
+   * **[設定] > [ネットワークとインターネット]** の順に移動し、 **[ハードウェアのプロパティ]** を選択する。
+
+![HoloLens 2 の設定](images/windows-device-portal-img-16.png)
+
 3. PC の Web ブラウザーで、 https://<HoloLens の IP アドレス> に移動します
    * ブラウザーに次のメッセージが表示されます。"この Web サイトのセキュリティ証明書には問題があります"。 これは、Device Portal に発行された証明書がテスト証明書であるためです。 ここでは、この証明書エラーを無視して続行できます。
 
@@ -175,6 +179,7 @@ Mixed Reality キャプチャ ページを使うと、HoloLens からメディ�
 * **[Videos and photos]\(ビデオと写真\)** : デバイスで取得されたビデオと写真のキャプチャの一覧を表示します。
 
 このページのすべての設定は、Windows デバイス ポータルを使用して取得したキャプチャに適用されますが、一部はシステム MRC (スタート メニュー、ハードウェア ボタン、グローバル ボイス コマンド、Miracast) およびカスタム MRC レコーダーにも適用されます。
+
 |  設定  |  システム MRC に適用されます  |  カスタム MRC レコーダーに適用されます |
 |----------|----------|----------|
 |  ホログラム  |  いいえ  |  いいえ |

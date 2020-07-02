@@ -3,16 +3,16 @@ title: 3. Mixed Reality のプロジェクト設定
 description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリを構築するためのチュートリアル シリーズのパート 6 の 3
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: d22c3d8c9048f53171298642768877d7bcdcb972
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: f79985b2ce9e26971c23acf36a3538bf7f3c166e
+ms.sourcegitcommit: ff0e89b07d0b4a945967d64c5b8845a21dc5f476
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330297"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84879556"
 ---
 # <a name="3-setting-up-your-project-for-mixed-reality"></a>3.Mixed Reality のプロジェクト設定
 
@@ -37,17 +37,21 @@ Unreal の AR セッションは、それ自体では発生しません。 セ�
 
 ![AR セッション構成](images/unreal-uxt/3-arsessionconfig.PNG)
 
-これが完了したら、次のステップとして、レベルが読み込まれたときに AR セッションが開始されるようにします。 さいわい、Unreal には、**レベル ブループリント**と呼ばれる特別な種類のブループリントがあり、レベル全体のグローバル イベント グラフとして機能します。 **レベル ブループリント**で ARSessionConfig アセットを接続すると、ゲームの再生が開始されたときに AR セッションが正常に起動します。
+これが完了したら、次のステップとして、レベルが読み込まれたときに AR セッションが開始され、レベルが終了したときに AR セッションが停止するようにします。 さいわい、Unreal には、**レベル ブループリント**と呼ばれる特別な種類のブループリントがあり、レベル全体のグローバル イベント グラフとして機能します。 **レベル ブループリント**で ARSessionConfig アセットを接続すると、ゲームの再生が開始されたときに AR セッションが正常に起動します。
 
 1. エディタのツールバーから、 **[ブループリント] > [レベル ブループリントを開く]** をクリックします。 
 
 ![オープン レベルのブループリント](images/unreal-uxt/3-level-blueprint.PNG)
 
-5. 実行ノード (左向き矢印アイコン) を **Event BeginPlay** からドラッグ アンド リリースします。 **AR セッションを開始する**を検索し、Enter キーを押します。  
+5. 実行ノード (左向き矢印アイコン) を **Event BeginPlay** からドラッグ アンド リリースします。 **[Start AR Session]\(AR セッションの開始\)** ノードを検索し、Enter キーを押します。  
     * **[セッション構成]** の下にある **[アセットの選択]** ドロップダウンをクリックし、**ARSessionConfig** アセットを選択します。 
-    * **[コンパイル]** 、 **[保存]** をクリックして、メイン ウィンドウに戻ります。
 
 ![AR セッションを開始する](images/unreal-uxt/3-start-ar-session.PNG)
+
+6. EventGraph 内の任意の場所を右クリックし、新しい **Event EndPlay** ノードを作成します。 実行ピンをドラッグ アンド リリースします。 **[Stop AR Session]\(AR セッションの停止\)** ノードを検索し、Enter キーを押します。 レベルが終了しても AR セッションが停止していない場合、ヘッドセットへのストリーミング中にアプリを再起動すると、特定の機能が動作しなくなることがあります。 
+    * **[コンパイル]** 、 **[保存]** をクリックして、メイン ウィンドウに戻ります。
+
+![AR セッションの停止](images/unreal-uxt/3-stoparsession.PNG)
 
 ## <a name="create-a-pawn"></a>ポーンを作成する
 この時点では、プロジェクトにはまだプレーヤー オブジェクトが必要です。 Unreal では、**ポーン**はゲーム内のユーザーを表しますが、この場合は HoloLens 2 になります。

@@ -3,16 +3,16 @@ title: Unreal 開発の概要
 description: Unreal Engine 4 を使用した Mixed Reality の開発の概要
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, ストリーミング, リモート処理, Mixed Reality, 開発, 入門, 機能, 新しいプロジェクト, エミュレーター, ドキュメント, ガイド, 特徴, ホログラム, ゲームの開発
-ms.openlocfilehash: 3e3862bd701d6e873f623abc9f9cda0b3085e753
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 0e3f40c7aa05a9c5f93d7eb9dc9793b6daeb8b90
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330159"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720368"
 ---
 # <a name="unreal-development-overview"></a>Unreal 開発の概要
 
@@ -38,6 +38,9 @@ Unreal 開発が初めての場合は、よくわからないまま開始しな�
 * 動作追従コンポーネント
 
 機能の詳細やプロジェクトの設定に関する情報については、[Unreal 用 の UX ツール](https://github.com/microsoft/MixedReality-UXTools-Unreal) GitHub リポジトリを参照してください。
+
+## <a name="additional-files"></a>追加ファイル
+HoloLens 用の Unreal アプリを初めて作成またはデプロイする場合は、Epic Launcher から[サポート ファイルをダウンロードする](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch6#packaging-and-deploying-the-app)必要があります。
 
 ## <a name="tutorial"></a>チュートリアル
 

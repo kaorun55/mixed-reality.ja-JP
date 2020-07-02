@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 2a171d601d094375a56734e8d7890c9d3e17c887
-ms.sourcegitcommit: e65f1463aec3c040a1cd042e61fc2bd156a42ff8
+ms.openlocfilehash: 385b302f3a2b9ad80527387353746947d91e3aa3
+ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83866912"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216303"
 ---
 # <a name="1-getting-started-with-azure-spatial-anchors"></a>1.Azure Spatial Anchors をお使いになる前に
 
@@ -41,16 +41,18 @@ HoloLens 2 チュートリアルのシリーズ 2 へようこそ。 この 4 �
 * 正しい[ツールがインストールされている](install-the-tools.md)構成済みの Windows 10 PC
 * Windows 10 SDK 10.0.18362.0 以降
 * 基本的な C# プログラミング能力
-* [開発用に構成された](using-visual-studio.md#enabling-developer-mode) HoloLens 2 デバイス
+* [開発用に構成された](using-visual-studio.md#enabling-developer-mode) HoloLens (第 1 世代) または HoloLens 2 デバイス
 * Unity 2019.2.X がインストールされ、ユニバーサル Windows プラットフォーム ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
-* 「[Spatial Anchors リソースを作成する](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)」セクション ([クイック スタート:Azure Spatial Anchors を使用する Unity HoloLens アプリを作成する](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens) チュートリアルにあります) を完了します。
-* Android 用にデプロイする場合
-    * Windows コンピューターか macOS コンピューターに USB 接続された、<a href="https://developer.android.com/studio/debug/dev-options" target="_blank">開発者向けオプションが有効</a>に設定された <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore 対応</a>の Android デバイス
-    * Unity 2019.2.X がインストールされ、Android ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
-* iOS 用にデプロイする場合
-    * <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> および <a href="https://cocoapods.org" target="_blank">CocoaPods</a> の最新バージョンがインストールされた macOS コンピューター
-    * macOS コンピューターに USB 接続された、<a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">ARKit 互換</a> iOS デバイス
-    * Unity 2019.2.X がインストールされ、iOS ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
+* [HoloLens のクイックスタート](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens) チュートリアルの「[Spatial Anchors リソースを作成する](https://docs.microsoft.com/azure/spatial-anchors/quickstarts/get-started-unity-hololens#create-a-spatial-anchors-resource)」セクションを完了する。
+
+Android 用にデプロイする場合
+* Windows コンピューターか macOS コンピューターに USB 接続された、<a href="https://developer.android.com/studio/debug/dev-options" target="_blank">開発者向けオプションが有効</a>に設定された <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore 対応</a>の Android デバイス
+* Unity 2019.2.X がインストールされ、Android ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
+
+iOS 用にデプロイする場合
+* <a href="https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">Xcode</a> および <a href="https://cocoapods.org" target="_blank">CocoaPods</a> の最新バージョンがインストールされた macOS コンピューター
+* macOS コンピューターに USB 接続された、<a href="https://developer.apple.com/documentation/arkit/verifying_device_support_and_user_permission" target="_blank">ARKit 互換</a> iOS デバイス
+* Unity 2019.2.X がインストールされ、iOS ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
 
 > [!IMPORTANT]
 > このチュートリアル シリーズで推奨されている Unity バージョンは Unity 2019.2.X です。 これは、上のリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。

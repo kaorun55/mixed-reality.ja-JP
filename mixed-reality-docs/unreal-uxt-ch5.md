@@ -3,16 +3,16 @@ title: 5. ボタンの追加およびピースの位置のリセット
 description: Unreal Engine 4 と Mixed Reality ツールキット UX ツール プラグインを使用して簡単なチェス アプリを構築するためのチュートリアル シリーズのパート 6 の 5
 author: hferrone
 ms.author: v-haferr
-ms.date: 5/5/2020
+ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: 49cab5c5a8c6736b800b5ba05de2c88edf008008
-ms.sourcegitcommit: 1b8090ba6aed9ff128e4f32d40c96fac2e6a220b
+ms.openlocfilehash: 473f47884bbc492451007436f80e8d9762cf1ab7
+ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84330269"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84720258"
 ---
 # <a name="5-adding-a-button--resetting-piece-locations"></a>5.ボタンの追加およびピースの位置のリセット
 
@@ -54,7 +54,7 @@ ms.locfileid: "84330269"
 
 ![SimpleButton から新しいブループリントをサブクラス化する](images/unreal-uxt/5-subclass.PNG)
 
-2. **[コンポーネント]** パネルから **[PressableButton (継承)]** をクリックし、 **[詳細]** パネルを下にスクロールして **[イベント]** セクションを表示します。 
+2. **[コンポーネント]** パネルから **[Pressable Button (Inherited)]\(押しボタン (継承)\)** をクリックし、 **[詳細]** パネルを下にスクロールして **[イベント]** セクションを表示します。 
     * **[On Button Pressed]\(ボタンが押されたとき\)** の横にある緑色の **+** のボタンをクリックして、ボタンが押されたときに呼び出されるイベントをイベント グラフに追加します。 
     
 ここから、レベルの **WhiteKing** アクターへの参照が必要な  **WhiteKing** の **Reset Location** 関数を呼び出す必要があります。 
