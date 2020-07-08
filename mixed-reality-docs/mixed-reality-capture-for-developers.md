@@ -6,12 +6,12 @@ ms.author: mazeller
 ms.date: 02/24/2019
 ms.topic: article
 keywords: mrc、写真、ビデオ、キャプチャ、カメラ
-ms.openlocfilehash: 1116e9a0923129aa2b18d838917eebf12adae694
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: 44b853e96ab956e5ea6c03d8c23a61e91ac733d4
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720418"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061145"
 ---
 # <a name="mixed-reality-capture-for-developers"></a>開発者向け複合現実キャプチャ
 
@@ -64,10 +64,10 @@ PV カメラからのレンダリングを有効にするには、次の3つの�
 PV カメラからの表示をオプトインするには、アプリは単に PhotoVideoCamera の[HolographicViewConfiguration](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic.HolographicViewConfiguration)を有効にします。
 ```csharp
 var display = Windows.Graphics.Holographic.HolographicDisplay.GetDefault();
-var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfiguration.PhotoVideoCamera);
+var view = display.TryGetViewConfiguration(Windows.Graphics.Holographic.HolographicViewConfigurationKind.PhotoVideoCamera);
 if (view != null)
 {
-   view.IsEnabled = true;
+    view.IsEnabled = true;
 }
 ```
 
@@ -288,7 +288,7 @@ Windows 10 April 2018 Update より前のバージョンでは、アプリのカ
 
 ## <a name="see-also"></a>関連項目
 
-* [Mixed reality キャプチャ](mixed-reality-capture.md)
+* [複合現実キャプチャ](mixed-reality-capture.md)
 * [Spectator View](spectator-view.md)
 * [Unity 開発の概要](unity-development-overview.md)
 * [Unreal 開発の概要](unreal-development-overview.md)

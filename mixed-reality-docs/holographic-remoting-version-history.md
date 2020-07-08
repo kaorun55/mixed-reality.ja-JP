@@ -6,21 +6,32 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 319e76efbbe1085fc9d60251a6f0f38133de6505
-ms.sourcegitcommit: 7011ac6fde80e5c45f04192fa1db6e1eb559e3b0
+ms.openlocfilehash: 131c5237801c381a371b197a5b7d8e0ec64fa2d6
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327902"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061125"
 ---
 # <a name="holographic-remoting-version-history"></a>Holographic リモート処理のバージョン履歴
 
 > [!IMPORTANT]
 > このガイダンスは、HoloLens 2 の Holographic リモート処理に固有のものです。
 
+## <a name="version-221-july-6-2020"></a>バージョン 2.2.1 (2020 年7月6日)<a name="v2.2.1"></a>
+> [!IMPORTANT]
+> [Windows アプリ認定キット](https://developer.microsoft.com/windows/downloads/app-certification-kit/)のバージョン[2.2.0](holographic-remoting-version-history.md#v2.2.0)による検証は失敗します。 バージョン[2.2.0](holographic-remoting-version-history.md#v2.2.0)を使用していて、Microsoft ストアにアプリケーションを送信する場合は、バージョン2.2.1 以降に更新してください。
+* [Windows アプリ認定キット](https://developer.microsoft.com/windows/downloads/app-certification-kit/)のコンプライアンスに関する問題を修正します。
+
+## <a name="version-220-july-1-2020"></a>バージョン 2.2.0 (2020 年7月1日)<a name="v2.2.0"></a>
+* [Windows Mixed Reality](navigating-the-windows-mixed-reality-home.md)を実行している Pc に Holographic リモート処理プレーヤーをインストールできるようになりました。これにより、イマーシブヘッドセットにストリーミングすることができます。
+* Holographic リモート処理では、[モーションコントローラー](motion-controllers.md)がサポートされるようになりました。コントローラー固有のデータは、 [SpatialInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource.controller#Windows_UI_Input_Spatial_SpatialInteractionSource_Controller)を使用して取得できます。
+* [SpatialStageFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference)がサポートされるようになり、現在のステージを[SpatialStageFrameOfReference](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.current)経由で取得できるようになりました。 また、SpatialStageFrameOfReference を使用して新しいステージを要求することもできます[。 RequestNewStageAsync](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialstageframeofreference.requestnewstageasync)です。
+* 以前のバージョンでは、Holographic リモート処理プレーヤーによって、プレーヤー側で予測が完全に処理されました。 バージョン2.2.0 以降では、Holographic リモート処理に時間の同期があり、予測はリモートアプリケーションによって完全に実行されます。 また、複雑なネットワークの状況下では、ユーザーがホログラムの安定性を向上させる必要があります。
+
 ## <a name="version-213-may-25-2020"></a>バージョン 2.1.3 (2020 年5月 25)<a name="v2.1.3"></a>
 * [HolographicSpace CameraAdded](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)イベントの動作が変更されました。 以前のバージョンでは、追加された[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera?view=winrt-18362)には、 [HolographicSpace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.createnextframe?view=winrt-18362#Windows_Graphics_Holographic_HolographicSpace_CreateNextFrame)を使用して次のフレームを作成するときに有効な[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362)があることは保証されて**いません**でした。 バージョン 2.1.3 HolographicSpace は、Holographic Remoting Player から来たポーズデータと同期されてい[ます。](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace.cameraadded?view=winrt-18362)また、カメラが追加されると、そのカメラでは次のフレームに有効な[HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose?view=winrt-18362)も使用できます。
-* DepthBufferStreamResolution に**Disabled**を追加しました。これを使用すると、ConfigureDepthVideoStream を使用した深度バッファーのストリーミングを無効にすることができます。 HolographicCameraRenderingParameters を使用すると、 [CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)は*E_ILLEGAL_METHOD_CALL*で失敗します。
+* DepthBufferStreamResolution に**無効**にされました。これを使用して、RemoteContext.ConfigureDepthVideoStream を介した深度バッファーストリーミングを無効にすることができます。 HolographicCameraRenderingParameters を使用すると、 [CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer?view=winrt-18362#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)は*E_ILLEGAL_METHOD_CALL*で失敗します。
 * Holographic リモート処理プレーヤーのスタートアップ画面が再設計され、ユーザービューをブロックしないようになりました。
 * 安定性の向上とバグの修正。
 
@@ -75,9 +86,9 @@ ms.locfileid: "84327902"
 
 * HoloLens 2 の Holographic リモート処理の最初のパブリックリリース。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 * [カスタム Holographic リモート処理プレーヤーアプリの作成](holographic-remoting-create-player.md)
 * [Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
 * [Holographic リモート処理のトラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
 * [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
-* [Microsoft プライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
+* [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)

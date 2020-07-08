@@ -1,46 +1,88 @@
 ---
-title: ハンドメニュー
+title: ハンド メニュー
 description: メニューを使用すると、ユーザーは頻繁に使用される関数のための直接の UI をすぐに表示できます。 これらは、メニューのベストプラクティスと推奨事項です。
 author: nbarragan23
 ms.author: nobarr
 ms.date: 08/27/2019
 ms.topic: article
 keywords: ハンド、メニュー、ボタン、クイックアクセス、レイアウト
-ms.openlocfilehash: 41a936d6041438c1cf1d8e4d4cc8cc30a5167491
-ms.sourcegitcommit: 40b37104b0aec4554502dcc7dc430e340a6fa46a
+ms.openlocfilehash: d1d15b36bab2ca2082ca4ba91b9c64862893f80c
+ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77092056"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86061171"
 ---
-# <a name="hand-menu"></a>ハンドメニュー
+# <a name="hand-menu"></a>ハンド メニュー
 
 ![Ulnar side location](images/UX/UX_Hero_HandMenu.jpg)
 
-メニューを使用すると、ユーザーは頻繁に使用される関数のための直接の UI をすぐに表示できます。 
+このメニューは、HoloLens 2 の最も一意な UX パターンの1つです。 これにより、ハンドアタッチされた UI をすばやく表示できます。 いつでもアクセスできるため、簡単に表示および非表示にすることができます。
 
-メニューについては、以下のベストプラクティスをご覧ください。 また、 [Mrtk](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)の手の形を示すシーンの例も見つかります。
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4AJAg]
+
+以下の一覧で、メニューを使用するための推奨されるベストプラクティスを紹介します。 また、 [Mrtk](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_HandMenu.html)の手の形を示すシーンの例も見つかります。
 
 <br>
+
 
 ---
 
-## <a name="behavior-best-practices"></a>動作のベストプラクティス
-**A. ボタンの数を小さく**します。ハンドロックされたメニューと目の間の距離が近づいているため、またはユーザーが比較的小さな視覚面に焦点を当てる傾向がある場合 (attentional コーンは約10度)、ボタンの数を小さくしておくことをお勧めします。 この探索に基づいて、3つのボタンがある1つの列は、ユーザーが視界の中央に移動した場合でも、ビューのフィールド (視界) 内のすべてのコンテンツを保持することで効果的に機能します。 
+## <a name="best-practices"></a>ベスト プラクティス
+**ボタンの数を小さくする** 
 
-**B. 迅速な対処のために手のメニューを使用**します。 arm を持ち上げて位置を維持すると、arm の疲労が簡単になります。 短い対話を必要とするメニューには、ハンドロックされたメソッドを使用します。 メニューが複雑で、対話時間の延長が必要な場合は、代わりにワールドロックまたは本体ロックを使用することを検討してください。 
+ハンドロックされたメニューと目の間には距離が近づいているのに対して、比較的小さな視覚面に焦点を当てるという傾向があるため (attentional コーンは約10度)、ボタンの数を小さくしておくことをお勧めします。 この探索に基づいて、3つのボタンがある1つの列は、ユーザーが視界の中央に移動した場合でも、ビューのフィールド (視界) 内のすべてのコンテンツを保持することで効果的に機能します。 
 
-**C. ボタン/パネルアングル:** メニューは、両端が反対のショルダーと真ん中になるようにする必要があります。これにより、自然な移動は反対の手でメニューと対話し、ボタンをタッチするときに不快または不快な針を回避できます。 
+**クイックアクションに手のメニューを使用する** 
 
-**D. ワンきき操作またはハンズフリー操作のサポートを検討する:** 両方のユーザーが常に使用できるとは限りません。 一方または両方のハンズオンが使用できない場合は、さまざまなコンテキストを検討し、そのような状況に合わせて設計アカウントを確認します。 片手メニューをサポートするには、手動でロックしたときに、メニューの配置を手動でロックしてみてください。 ハンドフリーのシナリオでは、音声コマンドを使用して、メニューボタンを起動することを検討してください。
+Arm を持ち上げて位置を維持すると、arm の疲労が簡単に生じる可能性があります。 短い対話を必要とするメニューには、ハンドロックされたメソッドを使用します。 メニューが複雑で、対話時間の延長が必要な場合は、代わりにワールドロックまたは本体ロックを使用することを検討してください。 
 
-**E. 2 段階呼び出し:** ポップアップをイベントとして使用した場合は、不要になったときに誤って表示されることがあります (偽陽性)。これは、ユーザーが (通信とオブジェクトの操作のために) 意図的に (通信とオブジェクトの操作のために)、意図せずに手を移動するためです。 アプリで誤検知が発生した場合は、完全に開いた指などの手のメニューを呼び出すために、パームアップイベント以外に追加の手順を追加することを検討してください。
+**ボタン/パネルの角度**
 
-**F. 手首 (システムホームボタン) の近くにボタンを追加しないよう**にします。メニューボタンが [ホーム] ボタンの近くにある場合、メニューを操作しているときに誤ってトリガーされることがあります。
+メニューは、両端が反対のショルダーと真ん中になるようにする必要があります。これにより、自然な移動は反対の手でメニューと対話し、ボタンをタッチするときに不快または不快な針を回避できます。 
 
-**G. テスト、テスト、テスト:** 人間は、快適で不快感のためにさまざまなしきい値を持つさまざまな本体を持っています。設計をでテストし、さまざまなユーザーからフィードバックを受け取るようにしてください。
+**1ききまたはハンズフリー操作のサポートを検討する**
+
+両方のユーザーが常に使用できるとは限りません。 一方または両方のハンズオンが使用できない場合は、さまざまなコンテキストを検討し、そのような状況に合わせて設計アカウントを確認します。 片手メニューをサポートするには、手動でロックしたときに、メニューの配置を手動でロックしてみてください。 ハンドフリーのシナリオでは、音声コマンドを使用して手の形のメニューを呼び出すことを検討してください。
+
+**手首 (システムホームボタン) の近くにボタンが追加されないようにする**
+
+手の形のボタンが [ホーム] ボタンの近くに置かれている場合は、メニューを操作しているときに誤ってトリガーされることがあります。
 
 <br>
+
+## <a name="hand-menu-with-large-and-complex-ui-controls"></a>大規模で複雑な UI コントロールを持つ手のメニュー
+<img src="images/UX/HandMenu_SizeExample.png" alt="HoloLens perspective of a menu system that always faces the user" width="940px">
+手動でアタッチしたメニューでは、ボタンまたは UI コントロールの数を制限することをお勧めします。 これは、多数の UI 要素との拡張操作によって arm の疲労が発生する可能性があるためです。 エクスペリエンスに大きなメニューが必要な場合は、ユーザーがメニューをロックするための簡単な方法を提供します。 1つの方法として、ユーザーを手に入れたり、逆にしたりするときに、メニューを使うことをお勧めします。 もう1つの方法は、ユーザーが直接メニューを取得できるようにすることです。 ユーザーがメニューを離すと、メニューがロックされます。 こうすることで、ユーザーはさまざまな UI 要素との対話を長時間にわたって容易に行うことができます。 
+
+メニューが世界中にロックされている場合は、メニューを移動する方法を用意して、不要になったときにメニューを閉じるようにしてください。 メニューの横または上部にハンドルを入力して、メニューを移動できるようにします。 [閉じる] ボタンを追加して、メニューを閉じることができるようにします。 ユーザーがユーザーを手にしたときに、メニューを手動で再アタッチできるようにします。 また、誤ったアクティベーションを防ぐために、ユーザーが手動で gazes するように要求することもお勧めします (下記参照)。
+
+**ユーザビリティの問題を示す大きなメニュー**
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4AOPx]
+
+**手の形でロックされたメニュー**
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4AGZi]
+
+**手動によるグラブ & [ワールドにプル]-メニューをロックする**
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4AJAf]
+
+
+## <a name="how-to-prevent-false-activation"></a>偽のアクティベーションを防止する方法
+
+ポップアップをイベントとしてのみ使用して、メニューをトリガーすると、不要になったときに誤って表示されることがあります (偽陽性)。これは、ユーザーが (通信とオブジェクトの操作のために) 意図的に移動し、意図せずに移動するためです。 偽のライセンス認証を減らすには、手のひらイベント以外に追加の手順を追加して、手のひら (完全に開いた指など) を呼び出すか、ユーザーが意図的に整理します。
+
+**フラットなパームが必要**
+
+フラットなオープンハンドを要求することで、ユーザーが環境内で通信中にオブジェクトやジェスチャを操作するときに、偽のアクティブ化を防ぐことができます。 
+
+**宝石が必要**
+
+ユーザーが自分の手を見つめ (目を見つめているか、頭を見つめている) ことを要求することで、誤ったライセンス認証を防ぐことができます。これは、ユーザーが補助的なアクティブ化の手順として手動で注意を向ける必要があるためです  
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4Asn4]
 
 ---
 
@@ -80,13 +122,13 @@ ms.locfileid: "77092056"
 
 :::row:::
     :::column:::
-        arm](images/AboveArm.gif) 上の ![<br>
+        ![Arm より上](images/AboveArm.gif)<br>
         **Arm の上**<br>
         1-適切な追跡を維持することが困難<br>
         2-不自然な位置が原因でユーザーの疲労が発生する
     :::column-end:::
     :::column:::
-        ![指](images/AboveFingers.gif)<br>
+        ![上の指](images/AboveFingers.gif)<br>
         **上の指**<br>
         長い時間が経過したことによる1つの疲労<br>
         インデックスと中段指に関する2つの問題の追跡
@@ -97,13 +139,13 @@ ms.locfileid: "77092056"
 
 :::row:::
     :::column:::
-        中央の](images/handCenter.gif) の ![<br>
+        ![中央の上にあるパーム](images/handCenter.gif)<br>
         **上-中央のパーム**<br>
         両手が重なっているために問題を追跡する<br>
         メニューと対話するためにハンドを長時間保持することによる2ハンドの疲労
     :::column-end:::
     :::column:::
-        top**指先**の ![top 指先](images/TopFingerTip.gif)<br>
+        ![Top 指先 ](images/TopFingerTip.gif) **top 指先**<br>
         1ハンドトラッキングの問題<br>
         通常の姿勢を超えたままの2ハンドの疲労<br>
         3-指間のスペースが限られているために偶発的に他の指でボタンを押す問題
@@ -114,7 +156,7 @@ ms.locfileid: "77092056"
 
 :::row:::
     :::column:::
-        Arm](images/BackOfTheArm.gif) の ![戻します。<br>
+        ![Arm の背面](images/BackOfTheArm.gif)<br>
         **Arm の背面**<br>
         1-事故によってホームボタンをトリガーできる<br>
         2-自然または快適な位置
@@ -128,17 +170,20 @@ ms.locfileid: "77092056"
 ---
 
 ## <a name="hand-menu-in-mrtk-mixed-reality-toolkit-for-unity"></a>Unity の MRTK (Mixed Reality Toolkit) の手の形のメニュー
-**[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、ハンドメニューのスクリプトとサンプルシーンが用意されています。 HandConstraintPalmUp ソルバースクリプトを使用すると、さまざまな構成可能なオプションを使用して、任意のオブジェクトを簡単にアタッチできます。
+**[Mrtk](https://github.com/Microsoft/MixedRealityToolkit-Unity)** には、ハンドメニューのスクリプトとサンプルシーンが用意されています。 HandConstraintPalmUp ソルバースクリプトを使用すると、さまざまな構成可能なオプションを使用して、任意のオブジェクトをハンドにアタッチできます。 MRTK の手の形のメニューの例には、誤ったアクティベーションを防止するためのフラットなパームや宝石の要件などの便利なオプションが含まれています。
 
-* [HandConstraintPalmUp を使用した MRTK ハンドメニュー](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Documentation/README_Solver.md#hand-menu-with-handconstraint-and-handconstraintpalmup)
+* [ハンドメニュードキュメント](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_HandMenu.html)
+* [ハンドメニューのシーンの例](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_development/Assets/MRTK/Examples/Demos/HandTracking/Scenes/HandMenuExamples.unity)
 
+MRTK サンプルハブアプリを使用して、HoloLens 2 でメニューの例を試すことができます。 
+* [MRTK サンプルハブの手メニューシーン](https://www.microsoft.com/en-us/p/mrtk-examples-hub/9mv8c39l2sj4?activetab=pivot:overviewtab)
 
 <br>
 
 ---
 
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 * [カーソル](cursors.md)
 * [ハンド レイ](point-and-commit.md)

@@ -6,12 +6,12 @@ ms.author: jemccull
 ms.date: 12/27/2019
 ms.topic: article
 keywords: Mixed Reality、コミュニティ、mvp、meetup
-ms.openlocfilehash: b87d6e0d65870d8795770d9662b90d5169ce6edc
-ms.sourcegitcommit: 8599a11b012f4261ae3b37a75b7a3f52a9067196
+ms.openlocfilehash: b62ef1a0a7262421b6f197561203af6577e56d54
+ms.sourcegitcommit: 0e09e0be430d931da4d0a0919dba294c97833fd6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372112"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092376"
 ---
 # <a name="mixed-reality-community"></a>Mixed Reality コミュニティ
 
@@ -31,13 +31,13 @@ Microsoft では、開発者、プラットフォーム、およびエコシス�
 ## <a name="local-communities"></a>ローカルコミュニティ
 このページに掲載するコミュニティを実行する場合は、詳細を記載した[電子メールをここ](mailto:jemccull@microsoft.com)に送信してください
 
-|コミュニティ名|国|City|Link|
+|コミュニティ名|国|City|リンク|
 |---------|---------|---------|---------|
 |**_拡張現実メルボルン_**|オーストラリア|メルボルン|[リンク](https://www.meetup.com/armelbourne/)|
 |**_シカゴ AWE Nite_**|米国|シカゴ|[リンク](https://www.meetup.com/AWENiteChicago/)|
 |**_HoloMagicians_**|日本|東京|[リンク](https://hololens.connpass.com/)|
 |**_Mixed Reality ユーザーグループ-オランダ_**|オランダ|Rijswijk|[リンク](https://www.mixug.com)|
-|**_VR フィリピン_**|フィリピン|N/A|[リンク](https://www.facebook.com/vrphilippines/)|
+|**_VR フィリピン_**|フィリピン|該当なし|[リンク](https://www.facebook.com/vrphilippines/)|
 |**_XRLA_**|米国|Los Angeles|[リンク](https://www.meetup.com/XRLA_Meetup/)|
 
 <br>
@@ -84,7 +84,6 @@ Microsoft の最も重要な専門家 (Mvp) は、コミュニティとの知識
 |![Bronwen Zande](images/BiographyImages/BronwenZande_270x270.png)</br>**Bronwen Zande**</br>*ブリスベン (オーストラリア)*|Bronwen Zande は、より多くの開発者としての経験を持っているのではなく、ソウルソリューションのディレクターです。</br></br>Microsoft では、Windows 開発、新たなエクスペリエンス、Kinect、Bing Maps、Live サービスに関する MVP の状態を獲得しています。</br></br>Bronwen は、審査を想像しています。私たちのキャリアとしてのキャリアとしての宣伝として、若い ICT エクスプローラやテクノロジがどこからでもお伝えしています。 Bronwen は、ブリスベンのマニアディナー、organiser の developer、developer、Developer ブリスベン (now DDD ブリスベン)、および SheEO ののオーストラリアアクティベーターの設立メンバーでした。</br></br>彼女は熱心な旅であり、カメラのレンズの背後にいないと、多くの場合、ローカルの meetup グループまたはユーザーグループを移動中に表示することができます。|[電子メール](mailto:bronwen@soulsolutions.com.au)|
 |![Bruno Anjos](images/BiographyImages/BrunoAnjos_270x270.jpg)</br>**Bruno Anjos**</br>*ブラジル*|イノベーションマネージャは、デジタルページイノベーションプロジェクトの管理とアーキテクチャについての作業を行い、XR、Mixed、および Virtual Reality のプラットフォームに関する専門知識を備えています。 Microsoft MVP と mixed reality 2020-2021 混合現実では、Microsoft HoloLens に焦点を当てる Mixed Reality ソリューションの開発と計画の専門家として機能しています。 ゲームとアプリケーションの開発に加えて、アセットの作成とマルチメディアコンテンツを利用できます。|[電子メール](mailto:brunof.anjos@outlook.com)|
 |![Clemente Giorio](images/BiographyImages/ClementeGiorio_270x270.png)</br>**Clemente Giorio**</br>*Torino、イタリア*|"ハッカー、マニア、メーカー、研究者、実力先進的、トレーナー、開発者...</br>は、科学とテクノロジを仕事以外の情熱にしました。</br>多くのコミュニティに準拠しており、特に、ジム、DotNetPodcast、FabLabNapoli、DotNetCampania、HoloLens の各開発者のために、特に講演者やイベントオーガナイザーとして積極的に関与しています。</br>彼の署名のエサは、人工知能、Computer Vision、モノのインターネット、自然なユーザーインターフェイス、および Mixed Reality です。</br>Microsoft MVP と Intel Software 実力先進的は、Deltatre のための上級研究 & 開発エンジニアとして機能し、ソフトウェアプロトタイプを開発します。|[電子メール](mailto:tinuxnet@hotmail.com)|
-|![Dave Smits](images/BiographyImages/DaveSmits_270x270.jpg)</br>**Dave Smits**</br>*Amersfoort、オランダ*|Dave Smits は、2014以降の Microsoft MVP であり、最初に起動されてから HoloLens を使用します。 いくつかのプロジェクトが、単純なモデルから始まり、ホログラムで使用されるモーショントラッキングセンサーを含むアプリケーションまで、いくつかのプロジェクトを開始しました。|[電子メール](mailto:dave@familie-smits.com)|
 |![Eric Provencher](images/BiographyImages/EricProvencher_270x270.jpg)</br>**Eric Provencher**</br>*モントリオール、QC (カナダ)*|Eric は、Unity Labs での高度な XR 作成の研究に取り組んでいる空間設計エンジニアです。 MRTK とクロスプラットフォームの混合現実アプリケーションフレームワークの開発に携わってきました。 CAE では、Microsoft Mixed Reality パートナーをクローズし、mrtk に広く使用されているオープンソースの拡張機能である mrtk を管理して、Oculus Quest でのコントローラーと手動の追跡のサポートを含む Oculus エコシステムのネイティブサポートを行います|[電子メール](mailto:erproven@gmail.com)|
 |![Fabrice Barbin](images/BiographyImages/FabriceBarbin_270x270.jpg)</br>**Fabrice Barbin**</br>*フランス*|Fabrice は、長年にわたりイノベーションとテクノロジを実現しています。 CEO は、 [SYNERGIZ](http://www.synergiz.com)、Microsoft Mixed Reality パートナー、およびフランスでの HoloLens ユースケースのパイオニアです。 Microsoft テクノロジを講演者として積極的に推進することにより、MVP、Kinect4Azure、IoT、Surface Hub、インク、タッチ、IA、Machine Learning、Cognitive Services、Azure など、多数の製品が対象となります。|[電子メール](mailto:fbarbin@synergiz.com)|
 |![Francesco Clasadonte](images/BiographyImages/FrancescoClasadonte_270x270.jpg)</br>**Francesco Clasadonte**</br>*ミラノ (イタリア)*|Fanciful と creative は、passioned に関するすべてのことを扱っています。 3年間、私は Politecnico di Milano の研究員として取り組んでいます。これにより、お客様は、子供たちのための対話型テクノロジについての調査を行い、IOT システム、スマートオブジェクト、ロボット相互作用、照明設計、multisensory 環境、自然ユーザーインターフェイスを国内プロジェクトと国際プロジェクトの両方で利用できます。</br></br>現在、 [FifthIngenium](https://fifthingenium.com)で作業しているのは、IOT、web ソリューション、システム統合の分野における上級クリエイティブ開発者であり、mixed reality や人工知能などの最新の革新的なテクノロジに焦点を合わせています。|[電子メール](mailto:klasaf@outlook.com)|
@@ -99,7 +98,6 @@ Microsoft の最も重要な専門家 (Mvp) は、コミュニティとの知識
 |![Rafał Legiędź](images/BiographyImages/RafelLegiedz_270x270.jpg)</br>**Rafał Legiędź**</br>*Pabianice, ポーランド*|Rafałは、Avenga のソフトウェアエンジニアとして機能します。 2007以来、業界では、可能な限りソフトウェアに情熱を持っています。 私は、現場では実用的であると考えており、新しい概念を習得する必要があるときや機会があるときに使用するテクノロジを切り替えることによって、非常に便利であることを証明しています。 .NET バックエンドソリューションの使用を開始すると、彼はすぐに web guy になり、さまざまな種類のモバイルテクノロジと VR/AR を使っています。 Windows 開発の Microsoft MVP もあります。</br></br>彼は、情熱を遂げたときに、知識の共有とコミュニティのアクティビティに夢中しました。 これにより、会議や、チャットやワークショップの実施など、他の一連のアクションが開催されました。|[電子メール](mailto:rafal.legiedz@gmail.com)|
 |![René/Te](images/BiographyImages/ReneSchulte_270x270.jpg)</br>**René/Te**</br>*Dresden、ドイツ*|Renéを使用したグローバルイノベーションは、革新的な3D 容量ビデオの受付プレゼンスソリューション HoloBeam や AR Cloud などの革新的なテクノロジによって世界中のチームと連携しています。これにより、永続化による大規模なクロスプラットフォームユーザーエクスペリエンスが実現します。</br></br>彼は、UX と深い技術的知識について、VR/AR/MR/XR テクノロジと3D プログラミングで10年以上の経験を持つ独創的なアイデアリーダーです。2015以降の Microsoft HoloLens 向けの開発は Forbes におすすめで、VR/AR/MR dev の実力として一覧表示されています。 また、AI ディープラーニングニューラルネットワークをクールにコーディングし、現代的な AI を利用して人間を支援しています。</br></br>彼は、ビルド、結合、ビジョン VR/AR サミット、VRDC (GDC)、AWE、ESA などのカンファレンスで、よく寄せられる基調講演とセッション講演者としての一覧を示しています。 多くのトピックに関するブログです。 また、WriteableBitmapEx や AR library SLARToolKit などの一般的なオープンソースライブラリも作成しました。</br></br>彼の開発コミュニティでは、microsoft MVP アワードと共に、VR/AR アソシエーションの Microsoft リージョンディレクターとグローバルアドバイザリボードメンバーとして認められています。</br></br>彼は、Dresden に住んでいて、彼の妻とその5つの子供を務めています。|[電子メール](mailto:schulte.rene@outlook.com)|
 |![Simon Darkside Jackson](images/BiographyImages/SimonJackson_270x270.jpg)</br>**Simon Darkside Jackson**</br>*イギリス*|長い時間のゲームエバンジェリスト。 basic、pascal、C++ の初期の日から。</br></br>XNA のバンド・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・・誕生</br></br>現在、公開されている作成者として、ID プログラムで参加者として利用しています。また、できるだけ多くの人がオンボードを得ることを求めています。</br></br>さらに、Unity の移植プログラム (後ではモノのゲーム) をサポートし、多くのプロジェクトを windows プラットフォームで利用する英国のラウンドをドラッグしています。|[電子メール](mailto:gamedevspace@hotmail.co.uk)|
-|![Stephen Hodgson](images/BiographyImages/StephenHodgson_270x270.jfif)</br>**Stephen Hodgson**</br>*アトランタ、GA、米国*|こんにちは。</br>Stephen Hodgson は、アトランタの AR/XR/VR に焦点を合わせた Microsoft MVP です。</br></br>[https://twitter.com/StephenHodgson_](https://twitter.com/StephenHodgson_)</br>[https://linkedin.com/in/stephenjhodgson/](https://linkedin.com/in/stephenjhodgson/)</br></br></br>Unity で15年以上の経験を持ち、ほぼ10年間のトレーニングとシミュレーションベースの混合現実アプリケーションに重点を置いてきました。 私は、航空宇宙、AEC & 構築、核電力の生成から対話型のストーリーテリングまで、すべての市場について話しました。 私は、Unity、Triて、および Webby から受賞したプロジェクトに取り組んでいます。</br></br>これは、Mixed Reality Toolkit の元の作成者と設計者の1つであり、Mixed Reality コンテンツを作成するすべてのユーザーに対して、プラットフォームに依存しない開発を容易にすることを目指しています。 主な目的は、YouTube ビデオを作成してアップロードする際に、XR コンテンツを簡単に作成できるようにすることです。</br></br>私は高度な C# 開発者であり、Unity で非常に困難な問題を解決するのに役立ちます。また、2d/3d アセットのすべてのコンテンツパイプライン、UX prefab の構築に関するベストプラクティスを、プロジェクトの編成とセットアップに完全に理解しています。||
 |![Takahiro Miyaura](images/BiographyImages/TakahiroMiyaura_270x270.jpg)</br>**Takahiro Miyaura**</br>*Nara (日本)*|私はソフトウェアエンジニアとして、IT 業界で開発者として働いています。 具体的には、研究 XR (VR/AR/MR など) を実行しています。 ) テクノロジと、XR を利用できるさまざまなテクノロジ (AI、IoT など) があります。|[電子メール](mailto:cafe.kobe@gmail.com)|
 |![Tamás Deme](images/BiographyImages/tamasdeme_270.png)</br>**Tamás Deme**</br>*ブダペスト (ハンガリー)*|Tamás は、アトランタベースの VIM で働いている mixed reality エンジニアで、サーバーから、ホログラムを表示するヘッドセットまで、さまざまなデバイス向けのソリューションを開発しています。 Windows 開発における Microsoft MVP の5回で、オープンソースプロジェクトに関心を持っています。 これら [https://tomzorz.me](https://tomzorz.me) のユーザーは、または twitter のでオンラインで見つけることができ [https://twitter.com/tomzorz_](https://twitter.com/tomzorz_) ます。|[電子メール](mailto:mixedreality@tomzorz.me)|
 |![Tatsuro Ueda](images/BiographyImages/TatsuroUeda_270x270.png)</br>**Tatsuro Ueda**</br>*Mie、日本*|5つの国 (Afrika を含む) の物理教育副社長|[電子メール](mailto:tatsuro.ueda@feel-physics.jp)|
