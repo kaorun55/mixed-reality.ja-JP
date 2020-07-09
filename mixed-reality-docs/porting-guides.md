@@ -5,19 +5,19 @@ author: JBrentJ
 ms.author: alexturn
 ms.date: 07/07/2020
 ms.topic: article
-keywords: ポート、移植、unity、ミドルウェア、エンジン、UWP
-ms.openlocfilehash: 5cf66ce857806ab6fcf8c94b94c7a9a540339b97
-ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
+keywords: ポート、移植、unity、ミドルウェア、エンジン、UWP、Win32
+ms.openlocfilehash: a1e3cd47096d728091d62d6c038bf6b2eb6bab16
+ms.sourcegitcommit: 0eb99fae933d4374af2c032af4e9ceda1807e532
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86061155"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86156773"
 ---
 # <a name="porting-guides"></a>移植ガイド
 
 ## <a name="overview"></a>概要
 
-Windows 10 には、イマーシブおよび holographic ヘッドセットの直接サポートが含まれています。 Oculus Rift や HTC Naopak など、他のデバイス用にコンテンツを構築した場合は、オペレーティングシステムのプラットフォーム API の上に存在するライブラリに依存関係があります。 既存のコンテンツを Windows Mixed Reality に取り込むには、これらの他の Sdk を Windows Api に再ターゲット使用する必要があります。 [Mixed reality 用の windows プラットフォーム api](https://docs.microsoft.com/uwp/api/Windows.Perception)は、windows x86 とユニバーサル WINDOWS プラットフォーム (UWP) アプリモデルの両方で動作します。 アプリが UWP 用にまだ構築されていない場合は、UWP への変更が移植エクスペリエンスの一部になります。
+Windows 10 には、イマーシブおよび holographic ヘッドセットの直接サポートが含まれています。 Oculus Rift や HTC Naopak など、他のデバイス用にコンテンツを構築した場合は、オペレーティングシステムのプラットフォーム API の上に存在するライブラリに依存関係があります。 既存のコンテンツを Windows Mixed Reality に取り込むには、これらの他の Sdk を Windows Api に再ターゲット使用する必要があります。 [Mixed reality 用の Windows プラットフォーム api](https://docs.microsoft.com/uwp/api/Windows.Perception)は、Win32 とユニバーサル WINDOWS プラットフォーム (UWP) アプリモデルの両方で動作します。 アプリが UWP 用にまだ構築されていない場合は、UWP への変更が移植エクスペリエンスの一部になります。
 
 ## <a name="porting-overview"></a>移植の概要
 
@@ -74,7 +74,7 @@ Unity の更新プログラムでは、ゲームまたはアプリケーショ�
 
 ### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 手順 4: ユニバーサル Windows プラットフォーム (UWP) で実行するようにアプリケーションをターゲットにする
 
-Windows x86 を対象としている場合は、この手順をスキップして手順 5. に進むことができます。
+Win32 を対象としている場合は、この手順をスキップして手順 5. に進むことができます。
 
 ツールをインストールしたら、アプリをユニバーサル Windows アプリとして実行する必要があります。
 
@@ -84,12 +84,12 @@ Windows x86 を対象としている場合は、この手順をスキップし�
 > [!NOTE]
 > Unity は引き続き IL2CPP サポートを強化します。IL2CPP は、いくつかの UWP ポートを簡単にします。 .NET scripting バックエンドを現在対象としている場合は、代わりに IL2CPP バックエンドを活用するように変換することを検討してください。
 
-* X86 ではなく UWP を対象としているため、"Unity 手順 5" はスキップできます。
+* Win32 ではなく UWP を対象としているため、"Unity 手順 5" はスキップできます。
 
 > [!NOTE] 
 > アプリケーションがデバイス固有のサービスに依存している場合 (ストリームからの照合など)、この手順で無効にする必要があります。 後で Windows が提供する同等のサービスにフックできます。
 
-### <a name="unity-step-5-target-your-application-to-run-on-windows-x86"></a>Unity 手順 5: Windows x86 で実行するようにアプリケーションをターゲットにする
+### <a name="unity-step-5-target-your-application-to-run-on-win32"></a>Unity 手順 5: Win32 で実行するようにアプリケーションをターゲットにする
 
 Unity アプリケーション内から:
 
