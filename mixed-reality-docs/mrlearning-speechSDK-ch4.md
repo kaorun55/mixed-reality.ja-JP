@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: b2342e7d0d502af2787ca311d18a44f8726acf2d
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 8cebe1fb203aeed9a262a2e9f482993b4775e0a6
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79028434"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303663"
 ---
 # <a name="4-setting-up-intent-and-natural-language-understanding"></a>4.意図と自然言語の理解の設定
 
@@ -63,7 +63,7 @@ ms.locfileid: "79028434"
 > このドキュメントの執筆時点では、次のセクションで Language Understanding Intelligent Service (LUIS) を作成すると、作成試用版キーが LUIS 内で自動的に生成されるため、作成リソースを作成する必要はありません。
 
 > [!TIP]
-> Azure アカウントに別の適切なリソース グループが既にある場合 ([Azure Spatial Anchors](mrlearning-asa-ch1.md) チュートリアルを完了している場合など)、新しいリソース グループを作成する代わりに、それを使用できます。
+> Azure アカウントに別の適切なリソース グループが既にある場合 ([Azure Spatial Anchors](mr-learning-asa-01.md) チュートリアルを完了している場合など)、新しいリソース グループを作成する代わりに、それを使用できます。
 
 引き続き [作成] ページで、次の値を入力します。
 
