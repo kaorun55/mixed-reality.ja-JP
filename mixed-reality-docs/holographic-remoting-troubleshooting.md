@@ -6,12 +6,12 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: Windows Mixed Reality, ホログラム, holographic リモート処理, リモートレンダリング, ネットワークレンダリング, HoloLens, リモートホログラム, トラブルシューティング, ヘルプ
-ms.openlocfilehash: 79650ceab5d0125a8a06c776a59a45a78d0aa20c
-ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
+ms.openlocfilehash: 593b242326b83d4596d22a7e1a39ef18c26bc67a
+ms.sourcegitcommit: b392847529961ac36bbff154ce0830f8b2dbd766
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86061115"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86300504"
 ---
 # <a name="holographic-remoting-troubleshooting"></a>Holographic リモート処理のトラブルシューティング
 
@@ -22,11 +22,15 @@ ms.locfileid: "86061115"
 
 Holographic リモート処理サンプルアプリでは、リリース構成で Spectre 軽減策 (/Qspectre) が有効になっています。
 
-"Vccorlib .lib" を開くことができないという致命的なリンカーエラーが発生した場合は、Visual Studio ワークロードに Spectre 軽減可能なライブラリが含まれていることを確認してください。 詳細については、「https://aka.ms/Ofhn4c」を参照してください。
+"Vccorlib .lib" を開くことができないという致命的なリンカーエラーが発生した場合は、Visual Studio ワークロードに Spectre 軽減可能なライブラリが含まれていることを確認してください。 詳細については、「 https://aka.ms/Ofhn4c 」を参照してください。
 
 ## <a name="speech"></a>音声
 
 Holographic Remoting Player は診断オーバーレイをサポートしています。これは、「」と言って無効にすることで有効にすることができ ```Enable Diagnostics``` ```Disable Diagnostics``` ます。 これらの音声コマンドで問題が発生した場合は、URL としてを使用して web ブラウザーで Holographic リモート処理プレーヤーを起動することもできます ```ms-holographic-remoting:?stats``` 。
+
+## <a name="h265-video-codec-not-available"></a>H265 video コーデックは使用できません
+
+リモートアプリで H265 video コーデックを使用する場合は、 [HEVC ビデオ拡張機能](https://www.microsoft.com/p/hevc-video-extensions/9nmzlz57r3t7)をインストールする必要があります。 コーデックがインストールされていても使用できない問題が発生した場合は、「[トラブルシューティング](https://docs.microsoft.com/azure/remote-rendering/resources/troubleshoot#h265-codec-not-available)ガイド」を参照してください。
 
 ## <a name="limitations"></a>制限事項
 
@@ -39,10 +43,12 @@ Holographic Remoting を HoloLens 2 に使用する場合、次の Api は現在
   - 以前のバージョンでは、常にエラーが発生します。
 * [HolographicCamera.IsHardwareContentProtectionEnabled](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.ishardwarecontentprotectionenabled#Windows_Graphics_Holographic_HolographicCamera_IsHardwareContentProtectionEnabled)
 * [HolographicViewConfiguration.RequestRenderTargetSize](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicviewconfiguration.requestrendertargetsize#Windows_Graphics_Holographic_HolographicViewConfiguration_RequestRenderTargetSize_Windows_Foundation_Size_)
-  - は失敗しませんが、レンダーターゲットのサイズは変更されません。
+  - バージョン[2.2.0](holographic-remoting-version-history.md#v2.2.0)以降でサポートされます。
+  - 以前のバージョンでは、は失敗しませんが、レンダーターゲットのサイズは変更されません。
 * [HolographicCameraPose.OverrideProjectionTransform](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideprojectiontransform)
 * [HolographicCameraPose ビューポート](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideviewport)
 * [HolographicCameraPose](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerapose.overrideviewtransform)
+  - バージョン[2.2.0](holographic-remoting-version-history.md#v2.2.0)以降でサポートされます。
 * [HolographicCameraRenderingParameters.CommitDirect3D11DepthBuffer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters.commitdirect3d11depthbuffer#Windows_Graphics_Holographic_HolographicCameraRenderingParameters_CommitDirect3D11DepthBuffer_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_)
   - は失敗しませんが、深度バッファーはリモート処理されません。
   - サポートされているバージョン[2.1.0](holographic-remoting-version-history.md#v2.1.0)以降
@@ -102,4 +108,4 @@ Holographic Remoting を HoloLens 2 に使用する場合、次の Api は現在
 * [Holographic Remoting リモート アプリの作成](holographic-remoting-create-host.md)
 * [カスタム Holographic リモート処理プレーヤーアプリの作成](holographic-remoting-create-player.md)
 * [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
-* [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
+* [Microsoft プライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)

@@ -6,17 +6,21 @@ ms.author: flbagar
 ms.date: 03/11/2020
 ms.topic: article
 keywords: HoloLens、リモート処理、Holographic リモート処理
-ms.openlocfilehash: 131c5237801c381a371b197a5b7d8e0ec64fa2d6
-ms.sourcegitcommit: fef42e2908e49822f2d13b05d2f9260bf0d72158
+ms.openlocfilehash: 1f4d463ab734cbb627f251486b0058fbf295d2ed
+ms.sourcegitcommit: b392847529961ac36bbff154ce0830f8b2dbd766
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86061125"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86300523"
 ---
 # <a name="holographic-remoting-version-history"></a>Holographic リモート処理のバージョン履歴
 
 > [!IMPORTANT]
 > このガイダンスは、HoloLens 2 の Holographic リモート処理に固有のものです。
+
+## <a name="version-222-july-10-2020"></a>バージョン 2.2.2 (2020 年7月10日)<a name="v2.2.2"></a>
+* LeftViewportParameters と[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.rightviewportparameters?view=winrt-19041#Windows_Graphics_Holographic_HolographicCamera_RightViewportParameters)の[HolographicCamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera.leftviewportparameters?view=winrt-19041#Windows_Graphics_Holographic_HolographicCamera_LeftViewportParameters)の問題を修正し、Windows Mixed Reality ヘッドセットからのストリーミング時に非表示領域メッシュ頂点が返されないようにしています。
+* ネットワーク接続が不十分な場合に発生する可能性があるクラッシュを修正します。
 
 ## <a name="version-221-july-6-2020"></a>バージョン 2.2.1 (2020 年7月6日)<a name="v2.2.1"></a>
 > [!IMPORTANT]
@@ -91,4 +95,4 @@ ms.locfileid: "86061125"
 * [Holographic Remoting ホストアプリの作成](holographic-remoting-create-host.md)
 * [Holographic リモート処理のトラブルシューティングと制限事項](holographic-remoting-troubleshooting.md)
 * [Holographic Remoting ソフトウェア ライセンス条項](https://docs.microsoft.com/legal/mixed-reality/microsoft-holographic-remoting-software-license-terms)
-* [Microsoft のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
+* [Microsoft プライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkId=521839)
