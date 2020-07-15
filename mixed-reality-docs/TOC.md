@@ -112,34 +112,47 @@
 ### Unity
 #### HoloLens 2 のチュートリアル
 ##### 入門チュートリアル
-###### [1.概要と目標](mrlearning-base.md)
-###### [2.プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)
-###### [3.ユーザー インターフェイスの作成と Mixed Reality ツールキットの構成](mrlearning-base-ch2.md)
-###### [4.動的なコンテンツの配置とソルバーの使用](mrlearning-base-ch3.md)
-###### [5.3D オブジェクトの操作](mrlearning-base-ch4.md)
-###### [6.高度な入力オプションの探索](mrlearning-base-ch5.md)
-###### [7.月着陸船サンプル アプリケーションの作成](mrlearning-base-ch6.md)
+###### [1.概要](mr-learning-base-01.md)
+###### [2.プロジェクトと最初のアプリケーションの初期化](mr-learning-base-02.md)
+###### [3.Mixed Reality ツールキット プロファイルの構成](mr-learning-base-03.md)
+###### [4.シーン内のオブジェクトの配置](mr-learning-base-04.md)
+###### [5.ソルバーを使用した動的なコンテンツの作成](mr-learning-base-05.md)
+###### [6.ユーザー インターフェイスの作成](mr-learning-base-06.md)
+###### [7.3D オブジェクトの操作](mr-learning-base-07.md)
+###### [8.視線追跡の使用](mr-learning-base-08.md)
+###### [9.音声コマンドの使用](mr-learning-base-09.md)
 ##### Azure Spatial Anchors チュートリアル
-###### [1.Azure Spatial Anchors をお使いになる前に](mrlearning-asa-ch1.md)
-###### [2.Azure Spatial Anchors の保存、取得、および共有](mrlearning-asa-ch2.md)
-###### [3.Azure Spatial Anchors フィードバックの表示](mrlearning-asa-ch3.md)
-###### [4.Android と iOS 用の Azure Spatial Anchors](mrlearning-asa-ch4.md)
+###### [1.概要](mr-learning-asa-01.md)
+###### [2.Azure Spatial Anchors をお使いになる前に](mr-learning-asa-02.md)
+###### [3.Azure Spatial Anchors の保存、取得、共有](mr-learning-asa-03.md)
+###### [4.Azure Spatial Anchors フィードバックの表示](mr-learning-asa-04.md)
+###### [5.Android と iOS 用の Azure Spatial Anchors](mr-learning-asa-05.md)
+##### マルチユーザー機能のチュートリアル
+###### [1.概要](mr-learning-sharing-01.md)
+###### [2.Photon Unity ネットワークの設定](mr-learning-sharing-02.md)
+###### [3.複数ユーザーの接続](mr-learning-sharing-03.md)
+###### [4.オブジェクトの動きの複数のユーザーとの共有](mr-learning-sharing-04.md)
+###### [5.Azure Spatial Anchors の共有エクスペリエンスへの統合](mr-learning-sharing-05.md)
 ##### Azure 音声認識サービス チュートリアル
 ###### [1.音声認識とトランスクリプションの統合と使用](mrlearning-speechSDK-ch1.md)
 ###### [2.ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
 ###### [3.Azure Cognitive Services の音声変換コンポーネントの追加](mrlearning-speechSDK-ch3.md)
 ###### [4.インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)
-##### マルチユーザー機能のチュートリアル
-###### [1.Photon Unity ネットワークの設定](mrlearning-sharing(photon)-ch1.md)
-###### [2.複数ユーザーの接続](mrlearning-sharing(photon)-ch2.md)
-###### [3.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch3.md)
-###### [4.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch4.md)
 ##### 立体オーディオのチュートリアル
 ###### [1.プロジェクトへの立体オーディオの追加](unity-spatial-audio-ch1.md)
 ###### [2.ボタンの対話式操作サウンドの立体化](unity-spatial-audio-ch2.md)
 ###### [3.ビデオからオーディオの立体化](unity-spatial-audio-ch3.md)
 ###### [4.実行時の立体オーディオの有効化と無効化](unity-spatial-audio-ch4.md)
 ###### [5.リバーブを使用して立体オーディオに距離を追加する](unity-spatial-audio-ch5.md)
+#### Azure Cloud Services チュートリアル
+##### [1.HoloLens 2 用の Azure Cloud Services](mr-learning-azure-01.md)
+##### [2.Azure Storage の統合](mr-learning-azure-02.md)
+##### [3.Azure Custom Vision の統合](mr-learning-azure-03.md)
+##### [4.Azure Spatial Anchors の統合](mr-learning-azure-04.md)
+##### [5.Azure Bot Service の統合](mr-learning-azure-05.md)
+#### PC Holographic Remoting のチュートリアル
+##### [1.PC Holographic Remoting の概要](mr-learning-pc-holographic-remoting-01.md)
+##### [2.Holographic Remoting PC アプリケーションの作成](mr-learning-pc-holographic-remoting-02.md)
 #### HoloLens 2 オープン ソースのサンプル アプリ
 ##### [Surfaces](sampleapp-surfaces.md)
 ##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
@@ -217,15 +230,17 @@
 
 ## Unreal
 ### [Unreal 開発の概要](unreal-development-overview.md)
-### [Unreal での手の追跡](unreal-hand-tracking.md)
 ### [Unreal での視線入力](unreal-gaze-input.md)
+### [Unreal での手の追跡](unreal-hand-tracking.md)
+### [Unreal での HoloLens カメラ](unreal-hololens-camera.md)
+### [Unreal での QR コード](unreal-qr-codes.md)
 ### [Unreal での空間マッピング](unreal-spatial-mapping.md)
 ### [Unreal での空間オーディオ](unreal-spatial-audio.md)
 ### [Unreal での空間アンカー](unreal-spatial-anchors.md)
-### [Unreal での音声入力](unreal-voice-input.md)
-### [Unreal での HoloLens カメラ](unreal-hololens-camera.md)
-### [Unreal での QR コード](unreal-qr-codes.md)
 ### [Unreal でのストリーミング](unreal-streaming.md)
+### [Unreal でのデバイスへのデプロイ](unreal-deploying.md)
+### [Unreal での音声入力](unreal-voice-input.md)
+### [Unreal での WinRT](unreal-winrt.md)
 ### [Unreal のパフォーマンスに関する推奨事項](performance-recommendations-for-unreal.md)
 
 ## JavaScript
