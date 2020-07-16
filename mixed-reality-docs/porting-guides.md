@@ -6,25 +6,26 @@ ms.author: alexturn
 ms.date: 07/07/2020
 ms.topic: article
 keywords: ポート、移植、unity、ミドルウェア、エンジン、UWP、Win32
-ms.openlocfilehash: a1e3cd47096d728091d62d6c038bf6b2eb6bab16
-ms.sourcegitcommit: 0eb99fae933d4374af2c032af4e9ceda1807e532
+ms.openlocfilehash: ff97f843d6af62a5d49d7920abdf78fa4d1e46c9
+ms.sourcegitcommit: 2813f5b3027d47f7c6e9772338935eeccfa2aaec
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86156773"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86408200"
 ---
 # <a name="porting-guides"></a>移植ガイド
 
 ## <a name="overview"></a>概要
 
-Windows 10 には、イマーシブおよび holographic ヘッドセットの直接サポートが含まれています。 Oculus Rift や HTC Naopak など、他のデバイス用にコンテンツを構築した場合は、オペレーティングシステムのプラットフォーム API の上に存在するライブラリに依存関係があります。 既存のコンテンツを Windows Mixed Reality に取り込むには、これらの他の Sdk を Windows Api に再ターゲット使用する必要があります。 [Mixed reality 用の Windows プラットフォーム api](https://docs.microsoft.com/uwp/api/Windows.Perception)は、Win32 とユニバーサル WINDOWS プラットフォーム (UWP) アプリモデルの両方で動作します。 アプリが UWP 用にまだ構築されていない場合は、UWP への変更が移植エクスペリエンスの一部になります。
+Windows 10 には、イマーシブおよび holographic ヘッドセットの直接サポートが含まれています。 Oculus Rift や HTC Naopak など、他のデバイス用にコンテンツを構築した場合は、オペレーティングシステムのプラットフォーム API の上に存在するライブラリに依存関係があります。 既存の Win32 Unity VR アプリを Windows Mixed Reality に導入するには、ベンダー固有の VR Sdk を Unity のクロスベンダ VR Api に再ターゲット使用する必要があります。
+
 
 ## <a name="porting-overview"></a>移植の概要
 
 大まかに言えば、既存のコンテンツの移植には次の手順が関係します。
 1. **PC で Windows 10 の秋の作成者の更新プログラム (16299) が実行されていることを確認します。** 内部からのプレビュービルドを受信することはお勧めできなくなりました。これらのビルドは、mixed reality 開発では最も安定していないためです。
 2. **グラフィックスまたはゲームエンジンの最新バージョンにアップグレードします。** ゲームエンジンは、Windows 10 SDK バージョン 10.0.15063.0 (2017 年4月にリリース) 以降をサポートする必要があります。
-3. **任意のミドルウェア、プラグイン、またはコンポーネントをアップグレードします。** アプリにコンポーネントが含まれている場合は、最新バージョンにアップグレードすることをお勧めします。 最も一般的なプラグインの新しいバージョンでは、UWP がサポートされています。
+3. **任意のミドルウェア、プラグイン、またはコンポーネントをアップグレードします。** アプリにコンポーネントが含まれている場合は、最新バージョンにアップグレードすることをお勧めします。
 4. **重複する sdk の依存関係を削除**します。 コンテンツがターゲットとしているデバイスによっては、その SDK を削除するか条件付きでコンパイルする必要があります (たとえば、SteamVR)。そのため、代わりに Windows Api を対象にすることができます。
 5. **ビルドの問題を解決します。** この時点で、移植の演習は、アプリ、エンジン、およびコンポーネントの依存関係に固有です。
 
@@ -42,26 +43,23 @@ Windows Mixed Reality プラットフォームは、まだアクティブな開�
 3. [開発者モード](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)を有効にする
 4. [**設定 > 更新 & セキュリティ] セクション**で、 [Windows Insider Fast のフライト](https://blogs.technet.microsoft.com/uktechnet/2016/07/01/joining-insider-preview)に切り替えます。
 
-### <a name="common-step-3-upgrade-to-the-most-recent-build-of-visual-studio-uwp-only"></a>一般的な手順 3: Visual Studio の最新のビルドにアップグレードする (UWP のみ)
+### <a name="common-step-3-upgrade-to-the-most-recent-build-of-visual-studio"></a>一般的な手順 3: Visual Studio の最新のビルドにアップグレードする
+* Visual Studio を使用している場合は、最新のビルドにアップグレードします。
 * 「Visual Studio 2019 で[のツールページのインストール」を](install-the-tools.md#installation-checklist)参照してください。
 
-### <a name="common-step-4-be-ready-for-the-store-uwp-only"></a>共通手順 4: ストアの準備ができている (UWP のみ)
-* [Windows アプリ認定キット](https://developer.microsoft.com/windows/develop/app-certification-kit)(wack とも呼ばれます) を早期および頻繁に使用します。
-* [移植性アナライザー](https://docs.microsoft.com/dotnet/standard/portability-analyzer) ([ダウンロード](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer)) を使用する
-
-### <a name="common-step-5-choose-the-correct-adapter"></a>一般的な手順 5: 正しいアダプターを選択する
+### <a name="common-step-4-choose-the-correct-adapter"></a>一般的な手順 4: 正しいアダプターを選択する
 * 2つの Gpu を持つ notebook などのシステムでは、[正しいアダプターをターゲット](rendering-in-directx.md#hybrid-graphics-pcs-and-mixed-reality-applications)にします。 これは、Unity とネイティブ DirectX アプリに適用されます。 ID3D11Device は、明示的に、または暗黙的に (メディアファンデーション) 機能に対して作成されます。
 
 ## <a name="unity-porting-guidance"></a>Unity の移植に関するガイダンス
 
-### <a name="unity-step-1-follow-the-common-porting-steps"></a>Unity 手順 1: 一般的な移植手順に従う
+### <a name="unity-step-1-review-the-common-porting-steps-listed-above"></a>Unity 手順 1: 上記の一般的な移植手順を確認する
 
-すべての一般的な手順を実行します。 手順 #3 で、[ **Unity を使用したゲーム開発**] ワークロードを選択します。 以下の手順から新しいバージョンの Unity をインストールするため、Unity エディターのオプションコンポーネントを選択解除することができます。
+開発環境が正しく設定されていることを確認するために、上記の一般的な手順を確認してください。 Visual Studio を使用している場合は、手順 #3 で、[ **Unity を使用したゲーム開発**] ワークロードを選択する必要があります。 次の手順で新しいバージョンの Unity をインストールするため、"Unity エディターオプション" コンポーネントの選択を解除できます。
 
 ### <a name="unity-step-2-upgrade-to-the-latest-public-build-of-unity-with-windows-mr-support"></a>Unity 手順 2: Windows MR サポートを使用して Unity の最新のパブリックビルドにアップグレードする
 1. Mixed reality サポートを使用して、 [Unity の最新の推奨パブリックビルド](install-the-tools.md)をダウンロードします。
 2. 作業を開始する前にプロジェクトのコピーを保存する
-3. 移植時に Unity から入手できる[ドキュメント](https://docs.unity3d.com/Manual/UpgradeGuides.html)を確認します。
+3. 以前のバージョンの Unity でプロジェクトがビルドされている場合は、アップグレード時に Unity から入手できる[ドキュメント](https://docs.unity3d.com/Manual/UpgradeGuides.html)を確認してください。
 4. Unity のサイトで自動 API アップデーターを使用する[手順](https://docs.unity3d.com/Manual/APIUpdater.html)に従います。
 5. プロジェクトを実行するために必要な追加の変更があるかどうかを確認し、残りのエラーと警告を解決します。 
 
@@ -70,26 +68,9 @@ Windows Mixed Reality プラットフォームは、まだアクティブな開�
 
 ### <a name="unity-step-3-upgrade-your-middleware-to-the-latest-versions"></a>Unity 手順 3: ミドルウェアを最新バージョンにアップグレードする
 
-Unity の更新プログラムでは、ゲームまたはアプリケーションが依存している1つ以上のミドルウェアパッケージを更新することが必要になる可能性があります。 さらに、最新のミドルウェアで最新の状態になると、移植プロセスの残りの部分全体で成功の可能性が高まります。 最近、多くのミドルウェアパッケージでユニバーサル Windows プラットフォーム (UWP) のサポートが追加され、最新バージョンにアップグレードすると、その作業を利用できるようになります。
+Unity の更新プログラムでは、ゲームまたはアプリケーションが依存している1つ以上のミドルウェアパッケージを更新することが必要になる可能性があります。 さらに、最新のミドルウェアで最新の状態になると、移植プロセスの残りの部分全体で成功の可能性が高まります。
 
-### <a name="unity-step-4-target-your-application-to-run-on-universal-windows-platform-uwp"></a>Unity 手順 4: ユニバーサル Windows プラットフォーム (UWP) で実行するようにアプリケーションをターゲットにする
-
-Win32 を対象としている場合は、この手順をスキップして手順 5. に進むことができます。
-
-ツールをインストールしたら、アプリをユニバーサル Windows アプリとして実行する必要があります。
-
-* Unity によって提供される[詳細な手順に](https://unity3d.com/partners/microsoft/porting-guides)従ってください。 Windows MR の最新の LTS リリース (20xx リリース) をご確認ください。
-* UWP 開発リソースの詳細については、「 [Windows 10 ゲーム開発ガイド」](https://docs.microsoft.com/windows/uwp/gaming/e2e)を参照してください。
-
-> [!NOTE]
-> Unity は引き続き IL2CPP サポートを強化します。IL2CPP は、いくつかの UWP ポートを簡単にします。 .NET scripting バックエンドを現在対象としている場合は、代わりに IL2CPP バックエンドを活用するように変換することを検討してください。
-
-* Win32 ではなく UWP を対象としているため、"Unity 手順 5" はスキップできます。
-
-> [!NOTE] 
-> アプリケーションがデバイス固有のサービスに依存している場合 (ストリームからの照合など)、この手順で無効にする必要があります。 後で Windows が提供する同等のサービスにフックできます。
-
-### <a name="unity-step-5-target-your-application-to-run-on-win32"></a>Unity 手順 5: Win32 で実行するようにアプリケーションをターゲットにする
+### <a name="unity-step-4-target-your-application-to-run-on-win32"></a>Unity 手順 4: Win32 で実行するようにアプリケーションをターゲットにする
 
 Unity アプリケーション内から:
 
@@ -98,20 +79,22 @@ Unity アプリケーション内から:
 * ターゲットプラットフォームを "Windows" に設定します
 * アーキテクチャを "x86" に設定し、[プラットフォームの切り替え] を選択します。
 
+> [!NOTE] 
+> アプリケーションがデバイス固有のサービスに依存している場合 (ストリームからの照合など)、この手順で無効にする必要があります。 後で Windows が提供する同等のサービスにフックできます。
 
-### <a name="unity-step-6-setup-your-windows-mixed-reality-hardware"></a>Unity 手順 6: Windows Mixed Reality ハードウェアをセットアップする
+### <a name="unity-step-5-setup-your-windows-mixed-reality-hardware"></a>Unity 手順 5: Windows Mixed Reality ハードウェアをセットアップする
 1. [イマーシブヘッドセットのセットアップ](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/before-you-start
 )の手順を確認する
 2. [Windows Mixed reality シミュレーターを使用する](using-the-windows-mixed-reality-simulator.md)方法と[windows mixed Reality ホームを移動](navigating-the-windows-mixed-reality-home.md)する方法について説明します。
 
-### <a name="unity-step-7-target-your-application-to-run-on-windows-mixed-reality"></a>Unity 手順 7: Windows Mixed Reality で実行するようにアプリケーションをターゲットにする
+### <a name="unity-step-6-target-your-application-to-run-on-windows-mixed-reality"></a>Unity 手順 6: Windows Mixed Reality で実行するようにアプリケーションをターゲットにする
 1. まず、特定の VR SDK に固有の他のライブラリサポートを削除するか、条件に応じてコンパイルする必要があります。 これらの資産は、Windows Mixed Reality などの他の VR Sdk と互換性のない方法でプロジェクトの設定とプロパティを頻繁に変更します。
-    * たとえば、プロジェクトが SteamVR SDK を参照している場合は、Windows ストアビルドターゲットのエクスポート時に、プロジェクトを更新して、prefabs と script API 呼び出しを除外する必要があります。
+    * たとえば、プロジェクトが SteamVR SDK を参照している場合は、代わりに、Windows Mixed Reality と SteamVR の両方をサポートする Unity の一般的な VR Api を使用するようにプロジェクトを更新する必要があります。
     * 条件付きで他の VR Sdk を除外するための具体的な手順は近日対応予定です。
 2. Unity プロジェクトで、 [Windows 10 SDK を対象とする](holograms-100.md#target-windows-10-sdk)
 3. シーンごとに、[カメラを設定します](holograms-100.md#chapter-2---setup-the-camera)。
 
-### <a name="unity-step-8-use-the-stage-to-place-content-on-the-floor"></a>Unity 手順 8: ステージを使用して、床にコンテンツを配置する
+### <a name="unity-step-7-use-the-stage-to-place-content-on-the-floor"></a>Unity 手順 7: ステージを使用して、床にコンテンツを配置する
 
 さまざまな[エクスペリエンススケール](coordinate-systems.md)にわたって、混合した現実のエクスペリエンスを構築できます。
 
@@ -157,7 +140,7 @@ else
 
 アルゴリズムは、Daniel Smilkov: [polygon 内の最大の四角形](https://d3plus.org/blog/behind-the-scenes/2014/07/08/largest-rect/)によるブログに基づいています
 
-### <a name="unity-step-9-work-through-your-input-model"></a>Unity 手順 9: 入力モデルを操作する
+### <a name="unity-step-8-work-through-your-input-model"></a>Unity 手順 8: 入力モデルを処理する
 
 既存の HMD を対象とする各ゲームまたはアプリケーションには、処理する入力のセット、エクスペリエンスに必要な入力の種類、およびそれらの入力を取得するために呼び出す特定の Api が含まれます。 Windows Mixed Reality で利用可能な入力を活用するために、可能な限りシンプルで単純なものにするために投資してきました。
 1. 詳細については、「 **[Unity の入力移植ガイド」](input-porting-guide-for-unity.md)** を参照してください。これは、Windows Mixed Reality が入力を公開する方法と、その方法がアプリケーションにどのように対応しているかについて詳しく説明します。
@@ -165,7 +148,7 @@ else
     * Unity のモーションコントローラーデータにアクセスするには、一般的な GetAxis Api または MR 固有の UnityEngine. XR Api を使用します (複数の場合があります)。 (以前は Unity 5.6 の UnityEngine. XR 名前空間にあります)
     * ゲームパッドとモーションコントローラーを組み合わせた[ツールキットの例](https://github.com/Microsoft/HoloToolkit-Unity/pull/572)を参照してください。
 
-### <a name="unity-step-10-performance-testing-and-tuning"></a>Unity 手順 10: パフォーマンステストとチューニング
+### <a name="unity-step-9-performance-testing-and-tuning"></a>Unity 手順 9: パフォーマンステストとチューニング
 
 Windows Mixed Reality は、ハイエンドゲーム Pc から広範な市場メインストリーム Pc まで、さまざまな種類のデバイスで利用できます。 対象となる市場によっては、アプリケーションに対して使用可能なコンピューティングとグラフィックの予算に大きな違いがあります。 この移植の演習では、premium PC を利用している可能性があります。また、アプリで使用できるコンピューティングとグラフィックの大きな予算があります。 アプリをより広範囲のユーザーが使用できるようにする場合は、[対象とする代表的なハードウェア](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)でアプリをテストしてプロファイリングする必要があります。
 
@@ -176,4 +159,3 @@ Windows Mixed Reality は、ハイエンドゲーム Pc から広範な市場メ
 * [Windows Mixed Reality の PC ハードウェアの最小互換性ガイドライン](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [Mixed Reality のパフォーマンスについて](understanding-performance-for-mixed-reality.md)
 * [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)
-* [UWP のために Xbox Live サポートを Unity に追加する](https://docs.microsoft.com/windows/uwp/xbox-live/get-started-with-partner/partner-add-xbox-live-to-unity-uwp)

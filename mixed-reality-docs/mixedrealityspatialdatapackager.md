@@ -5,23 +5,23 @@ author: alfred-msft
 ms.author: yuripek
 ms.date: 05/16/2019
 ms.topic: article
-keywords: lbe、MixedRealitySpatialDataPackager、MixedRealitySpatialDataPackager
-ms.openlocfilehash: 3beb8f9168bfb6fd921d6d5c1eb6d250c70a714d
-ms.sourcegitcommit: 83698638b93c5ba77b3ffc399f1706482539f27b
+keywords: lbe、MixedRealitySpatialDataPackager.exe、MixedRealitySpatialDataPackager
+ms.openlocfilehash: 4a285cbd7423d7cacaf52370e6e19acf42672289
+ms.sourcegitcommit: cfca6cb016d8683fa2c611a97d493a4947935dbb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74539684"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86402741"
 ---
 # <a name="mixed-reality-spatial-data-packager-documentation"></a>Mixed Reality 空間データパッケージャーのドキュメント
 
 >[!NOTE]
 > このツールとその操作は、そのとおりに提供されます。 予告なしに変更されることがあり、今後の Windows または Windows Mixed Reality のリリースと互換性がない可能性があります。
 
-## <a name="download"></a>[ダウンロード]
+## <a name="download"></a>ダウンロード
  [MixedRealitySpatialDataPackager をこちら](https://download.microsoft.com/download/A/1/2/A12B8A90-B3F7-4ED9-A4BB-D59DDCDAA125/MixedRealitySpatialDataPackager.zip)からダウンロード
 
-## <a name="device-support"></a>デバイスのサポート
+## <a name="device-support"></a>デバイス サポート
 
 <table>
     <colgroup>
@@ -44,7 +44,7 @@ ms.locfileid: "74539684"
     </tr>
 </table>
 
-## <a name="quickstart"></a>クィック
+## <a name="quickstart"></a>クイックスタート
 
 Mixed Reality 空間データパッケージャーツールは、エクスポートとインポートの2つの手順を通じて、ターゲットアプリの空間データをある PC から別の PC にコピーします。 このツールは、管理者特権で実行する必要があり、インポート時に既存の空間データを削除します。 Export は、既存の空間データをそのまま残します。
 
@@ -71,7 +71,7 @@ Mixed Reality 空間データパッケージャーツールは、エクスポー
 
 ## <a name="running-mixed-reality-spatial-data-packager-with-companion-script"></a>コンパニオンスクリプトを使用した Mixed Reality 空間データパッケージャーの実行
 
-マップツールを実行する MRSpatialPackagerHelperScript が用意されています。 
+ツールのマップを実行する MRSpatialPackagerHelperScript.ps1 が用意されています。 
 
 
 スクリプトのパラメーターは次のように定義されています。
@@ -102,7 +102,7 @@ Mixed Reality 空間データパッケージャーツールは、エクスポー
 
 ### <a name="powershell-script-example-usage-and-output"></a>Powershell スクリプトの使用例と出力
 
-.\MRSpatialPackagerHelperScript.ps1-AppName holoshell-UserName Administrator-Mode export-MapxPath D:\temp\-LockMap 0
+.\MRSpatialPackagerHelperScript.ps1-AppName holoshell-UserName D:\temp\-MapxPath-LockMap 0
 ```
 Package Family Name for holoshell: HoloShell_cw5n1h2txyewy
 User SID for Administrator: S-1-5-21-1279937937-3984375698-1043392598-499
@@ -135,14 +135,14 @@ Started SPECTRUM
 IMPORT SUCCESS
 ```
 
-### <a name="how-to-export-using-mixedrealitypackagerexe"></a>MixedRealityPackager を使用してエクスポートする方法
+### <a name="how-to-export-using-mixedrealityspatialdatapackagerexe"></a>MixedRealitySpatialDataPackager.exe を使用してエクスポートする方法
 ```
 MixedRealitySpatialDataPackager.exe export <folderpath to mapx files> <source package family name>    
 ```
 
 デバイスからマップをエクスポートすると、het. mapx と sa. mapx という2つの mapx ファイルが生成されます。 エクスポートプロセスでは、指定されたアプリとユーザーが作成した境界 (存在する場合) を除き、すべての空間アンカーが削除されます。 ソースパッケージファミリ名は、インストールされている既存のアプリと一致する必要があります。一致しないと、exe は失敗します。
 
-### <a name="how-to-import-using-mixedrealitypackagerexe"></a>MixedRealityPackager を使用してインポートする方法
+### <a name="how-to-import-using-mixedrealityspatialdatapackagerexe"></a>MixedRealitySpatialDataPackager.exe を使用してインポートする方法
 ```
 MixedRealitySpatialDataPackager.exe import <folderpath to mapx files> <target package family name> <user SID>
 ```
