@@ -1,28 +1,26 @@
-# 新機能 
-## [アプリを HL2 用に準備する](mrtk-porting-guide.md)
-## [Azure Services について](azure-services.md)
-## [新しい Microsoft Edge の準備](new-microsoft-edge.md)
-## プログラムとイベント
-### [サンフランシスコ Reactor Academy イベント予定表](sf-academy-events.md)
-### [Mixed Reality Dev Days](mr-dev-days.md)
-#### [セッションの記録](mr-dev-days-sessions.md)
-## [最新の Mixed Reality のリリース ノート](release-notes-may-2020.md)
-## [コミュニティ リソース](community.md)
-## [このドキュメントに寄稿する](CONTRIBUTING.md)
+<!-- Hub landing page -->
+# [Mixed Reality へようこそ](index.yml)
+
+<!-- Discover top level folder -->
 # [探索]
-## [Mixed Reality の概要](index.md)
+## [Mixed Reality の概要](get-started-with-mr.md)
 ## [デザイン プロセスを展開する](case-study-expanding-the-design-process-for-mixed-reality.md)
-## [ケース スタディ ギャラリー](case-studies-overview.md)
+
 ## HoloLens ハードウェア
 ### [HoloLens 2 ハードウェアの詳細](https://docs.microsoft.com/hololens/hololens2-hardware)
 ### [HoloLens (第 1 世代) ハードウェアの詳細](https://docs.microsoft.com/hololens/hololens1-hardware)
+
 ## イマーシブ ヘッドセット
 ### [イマーシブ ヘッドセット ハードウェアの詳細](immersive-headset-hardware-details.md)
 ### [Windows Mixed Reality ホームのナビゲーション](navigating-the-windows-mixed-reality-home.md)
 ### [技術者向けガイド](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide)
 ### [場所に基づいたエンターテインメント](location-based-experiences.md)
-## [ハードウェア アクセサリ](hardware-accessories.md)
+
 ## [コミュニティ リソース](community.md)
+## [ケース スタディ ギャラリー](case-studies-overview.md)
+## [ハードウェア アクセサリ](hardware-accessories.md)
+
+<!-- Design top level folder -->
 # 設計
 ## [設計とプロトタイプ作成を始める](design.md)
 ## [この設計ガイダンスについて](about-this-design-guidance.md)
@@ -60,6 +58,7 @@
 #### [目の視線入力とコミット](gaze-and-commit-eyes.md)
 #### [頭の視線入力とコミット](gaze-and-commit-head.md)
 ### [目の視線入力ベースの操作](eye-gaze-interaction.md)
+
 ## UX 要素
 ### [概要](app-patterns-landingpage.md)
 ### 基本要素
@@ -92,6 +91,7 @@
 #### [Billboard と Tag-along](billboarding-and-tag-along.md)
 #### [進行状況を表示する](progress.md)
 #### [表面吸着](surface-magnetism.md)
+
 ## 参照情報
 ### [Unity について学習する](https://learn.unity.com/)
 ### [Mixed Reality ツールキット](https://github.com/Microsoft/MixedRealityToolkit-Unity)
@@ -100,16 +100,28 @@
 ### [アセット作成プロセス](asset-creation-process.md)
 ### [独自のイマーシブ環境を設計する](add-custom-home-environments.md)
 
+<!-- Develop top level folder -->
 # 開発
 ## [ツールとアーキテクチャについて学習する](development.md)
 ## [ツールのインストール](install-the-tools.md)
+## [Cloud Services の概要](mixed-reality-cloud-services.md)
 
-## 複合現実クラウド サービス
+<!-- Deprecated
+## Mixed reality cloud services
 ### [Azure Remote Rendering](https://docs.microsoft.com/azure/remote-rendering)
 ### [Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors)
+-->
 
-## [チュートリアルとサンプル アプリ](tutorials.md)
-### Unity
+<!-- Unity section -->
+## Unity
+### [Unity 開発の概要](unity-development-overview.md)
+### はじめに
+#### [Mixed Reality Toolkit v2 の概要](mrtk-getting-started.md)
+#### [Windows Mixed Reality 用に Unity プロジェクトを構成する](Configure-Unity-Project.md)
+#### [アプリを HL2 用に準備する](mrtk-porting-guide.md)
+
+### チュートリアル
+#### [概要](tutorials.md)
 #### HoloLens 2 のチュートリアル
 ##### 入門チュートリアル
 ###### [1.概要](mr-learning-base-01.md)
@@ -122,57 +134,43 @@
 ###### [8.視線追跡の使用](mr-learning-base-08.md)
 ###### [9.音声コマンドの使用](mr-learning-base-09.md)
 ##### Azure Spatial Anchors チュートリアル
-###### [1.概要](mr-learning-asa-01.md)
-###### [2.Azure Spatial Anchors をお使いになる前に](mr-learning-asa-02.md)
-###### [3.Azure Spatial Anchors の保存、取得、共有](mr-learning-asa-03.md)
-###### [4.Azure Spatial Anchors フィードバックの表示](mr-learning-asa-04.md)
-###### [5.Android と iOS 用の Azure Spatial Anchors](mr-learning-asa-05.md)
-##### マルチユーザー機能のチュートリアル
-###### [1.概要](mr-learning-sharing-01.md)
-###### [2.Photon Unity ネットワークの設定](mr-learning-sharing-02.md)
-###### [3.複数ユーザーの接続](mr-learning-sharing-03.md)
-###### [4.オブジェクトの動きの複数のユーザーとの共有](mr-learning-sharing-04.md)
-###### [5.Azure Spatial Anchors の共有エクスペリエンスへの統合](mr-learning-sharing-05.md)
+###### [1.Azure Spatial Anchors をお使いになる前に](mrlearning-asa-ch1.md)
+###### [2.Azure Spatial Anchors の保存、取得、および共有](mrlearning-asa-ch2.md)
+###### [3.Azure Spatial Anchors フィードバックの表示](mrlearning-asa-ch3.md)
+###### [4.Android と iOS 用の Azure Spatial Anchors](mrlearning-asa-ch4.md)
 ##### Azure 音声認識サービス チュートリアル
 ###### [1.音声認識とトランスクリプションの統合と使用](mrlearning-speechSDK-ch1.md)
 ###### [2.ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
 ###### [3.Azure Cognitive Services の音声変換コンポーネントの追加](mrlearning-speechSDK-ch3.md)
 ###### [4.インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)
+##### マルチユーザー機能のチュートリアル
+###### [1.Photon Unity ネットワークの設定](mrlearning-sharing(photon)-ch1.md)
+###### [2.複数ユーザーの接続](mrlearning-sharing(photon)-ch2.md)
+###### [3.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch3.md)
+###### [4.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch4.md)
 ##### 立体オーディオのチュートリアル
 ###### [1.プロジェクトへの立体オーディオの追加](unity-spatial-audio-ch1.md)
 ###### [2.ボタンの対話式操作サウンドの立体化](unity-spatial-audio-ch2.md)
 ###### [3.ビデオからオーディオの立体化](unity-spatial-audio-ch3.md)
 ###### [4.実行時の立体オーディオの有効化と無効化](unity-spatial-audio-ch4.md)
 ###### [5.リバーブを使用して立体オーディオに距離を追加する](unity-spatial-audio-ch5.md)
+
 #### Azure Cloud Services チュートリアル
 ##### [1.HoloLens 2 用の Azure Cloud Services](mr-learning-azure-01.md)
 ##### [2.Azure Storage の統合](mr-learning-azure-02.md)
 ##### [3.Azure Custom Vision の統合](mr-learning-azure-03.md)
 ##### [4.Azure Spatial Anchors の統合](mr-learning-azure-04.md)
 ##### [5.Azure Bot Service の統合](mr-learning-azure-05.md)
+
 #### PC Holographic Remoting のチュートリアル
 ##### [1.PC Holographic Remoting の概要](mr-learning-pc-holographic-remoting-01.md)
 ##### [2.Holographic Remoting PC アプリケーションの作成](mr-learning-pc-holographic-remoting-02.md)
-#### HoloLens 2 オープン ソースのサンプル アプリ
-##### [Surfaces](sampleapp-surfaces.md)
-##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
-##### [Galaxy Explorer 2.0](galaxy-explorer-update.md)
-#### HoloLens (第 1 世代) オープン ソースのサンプル アプリ
-##### [元素周期表 1.0](periodic-table-of-the-elements.md)
-##### [Galaxy Explorer 1.0](galaxy-explorer.md)
-##### [月着陸船](lunar-module.md)
+
 #### HoloLens (第 1 世代) とイマーシブ ヘッドセットのチュートリアル
 ##### [MR の基本 100:Unity の概要](holograms-100.md)
 ##### [MR の基本 101:デバイスを使用した完全なプロジェクト](holograms-101.md)
 ##### [MR の基本 101E:エミュレーターを使用した完全なプロジェクト](holograms-101e.md)
-##### [MR 入力 210:視線入力](holograms-210.md)
-##### [MR 入力 211:ジェスチャ](holograms-211.md)
-##### [MR 入力 212:音声](holograms-212.md)
-##### [MR 入力 213:モーション コントローラー](mixed-reality-213.md)
-##### [MR 空間 220:立体音響](holograms-220.md)
-##### [MR 空間 230:空間マッピング](holograms-230.md)
-##### [MR 共有 240:複数の HoloLens デバイス](holograms-240.md)
-##### [MR 共有 250:HoloLens (第 1 世代) とイマーシブ ヘッドセット](mixed-reality-250.md)
+
 #### Mixed Reality および Azure サービスのチュートリアル
 ##### [MR と Azure 301:言語翻訳](mr-azure-301.md)
 ##### [MR と Azure 302:コンピューター ビジョン](mr-azure-302.md)
@@ -188,24 +186,18 @@
 ##### [MR と Azure 311:Microsoft Graph](mr-azure-311.md)
 ##### [MR と Azure 312:ボットの統合](mr-azure-312.md)
 ##### [MR と Azure 313:IoT Hub サービス](mr-azure-313.md)
-### Unreal
-#### [1.はじめに](unreal-uxt-ch1.md)
-#### [2.プロジェクトと最初のアプリケーションの初期化](unreal-uxt-ch2.md)
-#### [3.Mixed Reality 用のプロジェクト設定](unreal-uxt-ch3.md)
-#### [4.シーンを対話型にする](unreal-uxt-ch4.md)
-#### [5.ボタンの追加およびピースの位置のリセット](unreal-uxt-ch5.md)
-#### [6.デバイスまたはエミュレーターのパッケージ化およびデプロイ](unreal-uxt-ch6.md)
 
-## Unity
-### [Unity 開発の概要](unity-development-overview.md)
-### はじめに
-#### [Mixed Reality Toolkit v2 の概要](mrtk-getting-started.md)
-#### [Windows Mixed Reality 用に Unity プロジェクトを構成する](Configure-Unity-Project.md)
-#### [Unity で推奨される設定](recommended-settings-for-unity.md)
-#### [Unity の再生モード](unity-play-mode.md)
-#### [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)
-#### [Unity と Visual Studio を使用するためのベスト プラクティス](best-practices-for-working-with-unity-and-visual-studio.md)
-#### [Unity IL2CPP を使用したマネージド デバッグ](managed-debugging-with-unity-il2cpp.md)
+<!-- Deprecated HTK tutorials
+##### [MR Input 210: Gaze](holograms-210.md)
+##### [MR Input 211: Gesture](holograms-211.md)
+##### [MR Input 212: Voice](holograms-212.md)
+##### [MR Input 213: Motion controllers](mixed-reality-213.md)
+##### [MR Spatial 220: Spatial sound](holograms-220.md)
+##### [MR Spatial 230: Spatial mapping](holograms-230.md)
+##### [MR Sharing 240: Multiple HoloLens devices](holograms-240.md)
+##### [MR Sharing 250: HoloLens (1st gen) and immersive headsets](mixed-reality-250.md)
+-->
+
 ### コア構成要素
 #### [MRTK 101:基本的な操作に Mixed Reality ツールキット Unity を使用する方法](mrtk-101.md)
 #### [Unity のカメラ](camera-in-unity.md)
@@ -218,6 +210,7 @@
 #### [Unity の音声入力](voice-input-in-unity.md)
 #### [Unity の空間マッピング](spatial-mapping-in-unity.md)
 #### [Unity の立体音響](spatial-sound-in-unity.md)
+
 ### プラットフォームの機能と API
 #### [Unity での共有エクスペリエンス](shared-experiences-in-unity.md)
 #### [Unity での場所を特定できるカメラ](locatable-camera-in-unity.md)
@@ -228,8 +221,35 @@
 #### [Unity での Mixed Reality ネイティブ オブジェクト](unity-xrdevice-advanced.md)
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
 
+### サンプル アプリ
+#### HoloLens 2 
+##### [Surfaces](sampleapp-surfaces.md)
+##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
+##### [Galaxy Explorer 2.0](galaxy-explorer-update.md)
+#### HoloLens (第 1 世代)
+##### [元素周期表 1.0](periodic-table-of-the-elements.md)
+##### [Galaxy Explorer 1.0](galaxy-explorer.md)
+##### [月着陸船](lunar-module.md)
+
+### 設定とデバッグ
+#### [Unity IL2CPP を使用したマネージド デバッグ](managed-debugging-with-unity-il2cpp.md)
+#### [Unity で推奨される設定](recommended-settings-for-unity.md)
+#### [Unity の再生モード](unity-play-mode.md)
+### Visual Studio ソリューション
+#### [Unity Visual Studio ソリューションのエクスポートとビルド](exporting-and-building-a-unity-visual-studio-solution.md)
+#### [Unity と Visual Studio を使用するためのベスト プラクティス](best-practices-for-working-with-unity-and-visual-studio.md)
+
+<!-- Unreal section -->
 ## Unreal
 ### [Unreal 開発の概要](unreal-development-overview.md)
+### チュートリアル
+#### MRTK UX ツールでチェス アプリを構築する
+##### [1.はじめに](unreal-uxt-ch1.md)
+##### [2.プロジェクトの初期化](unreal-uxt-ch2.md)
+##### [3.Mixed Reality の設定](unreal-uxt-ch3.md)
+##### [4.対話機能の追加](unreal-uxt-ch4.md)
+##### [5.UI と関数](unreal-uxt-ch5.md)
+##### [6.パッケージ化とデプロイ](unreal-uxt-ch6.md)
 ### コア構成要素
 #### [Unreal での視線入力](unreal-gaze-input.md)
 #### [Unreal での手の追跡](unreal-hand-tracking.md)
@@ -246,6 +266,7 @@
 #### [Unreal のパフォーマンスに関する推奨事項](performance-recommendations-for-unreal.md)
 #### [Unreal でのストリーミング](unreal-streaming.md)
 
+<!-- Javascript section -->
 ## JavaScript
 ### [JavaScript 開発の概要](javascript-development-overview.md)
 ### [WebXR](webxr-overview.md)
@@ -322,11 +343,27 @@
 ### [Windows Mixed Reality 用に SteamVR アプリケーションを更新する](updating-your-steamvr-application-for-windows-mixed-reality.md)
 ### [複合現実の 2D UWP アプリを更新する](building-2d-apps.md)
 
+<!-- Distribute top level folder -->
 # 配布
-## [3D アプリ起動ツールの設計ガイダンス](3d-app-launcher-design-guidance.md)
-## [家で使用する 3D モデルの作成](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
-## [3D アプリ起動ツールの実装 (UWP アプリ)](implementing-3d-app-launchers.md)
-## [3D アプリ起動ツールの実装 (Win32 アプリ)](implementing-3d-app-launchers-win32.md)
-## [家で 3D モデルの配置を有効にする](enable-placement-of-3d-models-in-the-home.md)
+## 3D アプリ起動ツール
+### [設計のガイダンス](3d-app-launcher-design-guidance.md)
+### [家で使用する 3D モデルの作成](creating-3d-models-for-use-in-the-windows-mixed-reality-home.md)
+### 3D アプリ起動ツールの実装
+#### [UWP アプリ](implementing-3d-app-launchers.md)
+#### [Win32 アプリ](implementing-3d-app-launchers-win32.md)
+### [家で 3D モデルの配置を有効にする](enable-placement-of-3d-models-in-the-home.md)
 ## [アプリ内購入](in-app-purchases.md)
 ## [Microsoft Store へのアプリの送信](submitting-an-app-to-the-microsoft-store.md)
+
+<!-- What's new? top level folder -->
+# 新機能
+## [Azure Services について](azure-services.md)
+## [新しい Microsoft Edge の準備](new-microsoft-edge.md)
+## プログラムとイベント
+### [サンフランシスコ Reactor Academy イベント予定表](sf-academy-events.md)
+### [Mixed Reality Dev Days](mr-dev-days.md)
+#### [セッションの記録](mr-dev-days-sessions.md)
+## [最新の Mixed Reality のリリース ノート](release-notes-may-2020.md)
+## [コミュニティ リソース](community.md)
+## [このドキュメントに寄稿する](CONTRIBUTING.md)
+## [大規模な HoloLens のデプロイ](https://docs.microsoft.com/hololens/)
