@@ -8,12 +8,12 @@ ms.date: 04/27/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 開発する, 開発, HoloLens, Unity, Unreal, DirectX
-ms.openlocfilehash: 97a6e130af45a9444ead5e6ed40168351c4dbbf6
-ms.sourcegitcommit: ba4c8c2a19bd6a9a181b2cec3cb8e0402f8cac62
+ms.openlocfilehash: 3c874e45e555ec6defa611bd5404abbb18e6612e
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82835291"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447858"
 ---
 # <a name="learn-the-tools-and-architecture"></a>ツールとアーキテクチャについて学習する
 
@@ -140,8 +140,8 @@ DirectX を使用して Mixed Reality アプリを記述するのに必要なも
 
 :::row:::
     :::column:::
-       [![基本を理解する](images/icon-lightbulb.png)](index.md#understand-the-basics)<br>
-        **[基本を理解する](index.md#understand-the-basics)**<br>
+       [![基本を理解する](images/icon-lightbulb.png)](get-started-with-mr.md#understand-the-basics)<br>
+        **[基本を理解する](get-started-with-mr.md#understand-the-basics)**<br>
         Mixed Reality が何によって定義され、どのように使用されているかについて理解を深めます。
     :::column-end:::
     :::column:::
