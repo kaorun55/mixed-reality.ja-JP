@@ -7,12 +7,12 @@ ms.date: 03/21/2018
 ms.topic: article
 keywords: 複合現実, ホログラフィック, ar, vr, mr, xr, 拡張現実, 仮想現実, 説明
 ms.localizationpriority: high
-ms.openlocfilehash: 7b0dcbdb88f880d4c1632fae874ba6a610f023fb
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 541752ef32149f64f9b85616883c284b33bb8fed
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81278050"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447908"
 ---
 # <a name="what-is-mixed-reality"></a>Mixed Reality とは
 
@@ -117,7 +117,7 @@ Windows Mixed Reality のエクスペリエンスを提供するデバイスに�
 ## <a name="see-also"></a>関連項目
 
 * [ホログラムとは](hologram.md)
-* [Mixed Reality の基本を理解する](index.md#understand-the-basics)
+* [Mixed Reality の基本を理解する](get-started-with-mr.md#understand-the-basics)
 * [作成とプロトタイプ作成を始める](design.md)
 * [ツールとアーキテクチャについて学習する](development.md)
 

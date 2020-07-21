@@ -8,12 +8,12 @@ ms.date: 08/24/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト, 主要な概念, 操作
-ms.openlocfilehash: d011a00b55a6b78332233b21535a129774f99c9f
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 708a6f83c2de149be9c221130b83f5d787f8f56a
+ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345652"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86447918"
 ---
 # <a name="start-designing-and-prototyping"></a>設計とプロトタイプ作成を始める
 
@@ -156,8 +156,8 @@ Mixed Reality のエクスペリエンスで、頻繁に使用される一般的
 
 :::row:::
     :::column:::
-       [![基本を理解する](images/icon-lightbulb.png)](index.md#understand-the-basics)<br>
-        **[基本を理解する](index.md#understand-the-basics)**<br>
+       [![基本を理解する](images/icon-lightbulb.png)](get-started-with-mr.md#understand-the-basics)<br>
+        **[基本を理解する](get-started-with-mr.md#understand-the-basics)**<br>
         Mixed Reality が何によって定義され、どのように使用されているかについて理解を深めます。
     :::column-end:::
     :::column:::
