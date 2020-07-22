@@ -134,20 +134,22 @@
 ###### [8.視線追跡の使用](mr-learning-base-08.md)
 ###### [9.音声コマンドの使用](mr-learning-base-09.md)
 ##### Azure Spatial Anchors チュートリアル
-###### [1.Azure Spatial Anchors をお使いになる前に](mrlearning-asa-ch1.md)
-###### [2.Azure Spatial Anchors の保存、取得、および共有](mrlearning-asa-ch2.md)
-###### [3.Azure Spatial Anchors フィードバックの表示](mrlearning-asa-ch3.md)
-###### [4.Android と iOS 用の Azure Spatial Anchors](mrlearning-asa-ch4.md)
+###### [1.概要](mr-learning-asa-01.md)
+###### [2.Azure Spatial Anchors をお使いになる前に](mr-learning-asa-02.md)
+###### [3.Azure Spatial Anchors の保存、取得、および共有](mr-learning-asa-03.md)
+###### [4.Azure Spatial Anchors フィードバックの表示](mr-learning-asa-04.md)
+###### [5.Android と iOS 用の Azure Spatial Anchors](mr-learning-asa-05.md)
+##### マルチユーザー機能のチュートリアル
+###### [1.概要](mr-learning-sharing-01.md)
+###### [2.Photon Unity ネットワークの設定](mr-learning-sharing-02.md)
+###### [3.複数ユーザーの接続](mr-learning-sharing-03.md)
+###### [4.オブジェクトの動きの複数のユーザーとの共有](mr-learning-sharing-04.md)
+###### [5.Azure Spatial Anchors の共有エクスペリエンスへの統合](mr-learning-sharing-05.md)
 ##### Azure 音声認識サービス チュートリアル
 ###### [1.音声認識とトランスクリプションの統合と使用](mrlearning-speechSDK-ch1.md)
 ###### [2.ローカル音声からテキストへの変換用のオフライン モードの追加](mrlearning-speechSDK-ch2.md)
 ###### [3.Azure Cognitive Services の音声変換コンポーネントの追加](mrlearning-speechSDK-ch3.md)
 ###### [4.インテントの設定と自然言語の理解](mrlearning-speechSDK-ch4.md)
-##### マルチユーザー機能のチュートリアル
-###### [1.Photon Unity ネットワークの設定](mrlearning-sharing(photon)-ch1.md)
-###### [2.複数ユーザーの接続](mrlearning-sharing(photon)-ch2.md)
-###### [3.オブジェクトの動きの複数のユーザーとの共有](mrlearning-sharing(photon)-ch3.md)
-###### [4.Azure Spatial Anchors の共有エクスペリエンスへの統合](mrlearning-sharing(photon)-ch4.md)
 ##### 立体オーディオのチュートリアル
 ###### [1.プロジェクトへの立体オーディオの追加](unity-spatial-audio-ch1.md)
 ###### [2.ボタンの対話式操作サウンドの立体化](unity-spatial-audio-ch2.md)
