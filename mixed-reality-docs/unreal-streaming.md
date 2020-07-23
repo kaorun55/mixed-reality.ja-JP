@@ -1,21 +1,21 @@
 ---
 title: Unreal でのストリーミング
 description: Unreal での HoloLens 2 へのストリーミングに関するガイド
-author: suwu
+author: sw5813
 ms.author: suwu
-ms.date: 6/8/2020
+ms.date: 7/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, ストリーミング, PC, ホログラフィック アプリのリモート処理, Holographic Remoting Player, ドキュメント
 appliesto:
 - HoloLens
 - HoloLens 2
-ms.openlocfilehash: 78a019f5b74b254c1f32ec85dc639df47648555f
-ms.sourcegitcommit: ff0e89b07d0b4a945967d64c5b8845a21dc5f476
+ms.openlocfilehash: d25efbcf83e45749cc4eb8b99581b71105c59c9d
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84888913"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303533"
 ---
 # <a name="streaming-in-unreal"></a>Unreal でのストリーミング
 
@@ -32,7 +32,8 @@ PC から HoloLens にストリーミングを行うことには、次の 2 つ�
 ストリーミング時には、アプリケーションをデバイス上で実行する場合と同じ HoloLens の機能をほぼすべて利用できます。 これには、[ハンド ジョイント トラッキング](unreal-hand-tracking.md) (HoloLens 2 を使用している場合)、[空間マッピング](unreal-spatial-mapping.md)、[空間アンカー](unreal-spatial-anchors.md)などが含まれます。ただし、この[制限事項の一覧](holographic-remoting-troubleshooting.md)に記載されている機能は含まれません。 
 
 > [!NOTE]
-> ストリーミング品質は、ユーザーの Wi-Fi ネットワークの強度に大きく依存します。
+> * ストリーミング品質は、ユーザーの Wi-Fi ネットワークの強度に大きく依存します。
+> * Holographic Remoting Player では、すべての機能が自動的に有効になります。 ユーザーのアクセス許可が必要な機能 (例: 視線追跡) がストリーミングでは機能しているものの、デバイスでの実行では機能していない場合、プロジェクト設定で適切な機能を有効にしていることをご確認ください。
 
 ## <a name="device-support"></a>デバイス サポート
 
@@ -50,7 +51,7 @@ PC から HoloLens にストリーミングを行うことには、次の 2 つ�
     </tr>
      <tr>
         <td>Unreal エディター</td>
-        <td>✔</td>
+        <td>✔️</td>
         <td>✔️</td>
         <td>❌</td>
     </tr>
