@@ -8,12 +8,12 @@ ms.date: 10/22/2019
 ms.topic: article
 ms.localizationpriority: high
 keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, アカデミー, チュートリアル
-ms.openlocfilehash: 57ddf1569ff87a278134eff0204942094b1cd014
-ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
+ms.openlocfilehash: b1c448e7a5289c6d099d73c3bcf18d0f552dbc51
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216253"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303653"
 ---
 # <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
 
@@ -26,11 +26,11 @@ ms.locfileid: "85216253"
 HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。 Unity チュートリアルは [Mixed Reality Toolkit 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity) に基づいており、Unreal のチュートリアルは [Unreal Engine 0.8 向けの UX ツール](https://github.com/microsoft/MixedReality-UXTools-Unreal)に基づいています。
 
 * 入門チュートリアル
-    * Unity - [概要と目標 (1/7 章)](mrlearning-base.md)
+    * Unity - [紹介 (1/9 章)](mr-learning-base-01.md)
     * Unreal - [概要 (1/6 章)](unreal-uxt-ch1.md)
-* Azure Spatial Anchor チュートリアル - [Azure Spatial Anchors を使い始める (1/4 章)](mrlearning-asa-ch1.md)
+* Azure Spatial Anchors のチュートリアル - [紹介 (1/5 章)](mr-learning-asa-01.md)
+* マルチユーザー機能のチュートリアル - [紹介 (1/5 章)](mr-learning-sharing-01.md)
 * Azure Speech Services チュートリアル - [音声認識とトランスクリプションの統合と使用 (1/4 章)](mrlearning-speechSDK-ch1.md)
-* マルチユーザー機能のチュートリアル - [Photon Unity ネットワークの設定 (1/5 章)](mrlearning-sharing(photon)-ch1.md)
 
 ## <a name="open-source-sample-apps"></a>オープン ソースのサンプル アプリ
 
@@ -56,7 +56,7 @@ Mixed Reality Academy は、該当のプロジェクト ファイルを含むオ
 * Windows 10 PC に適切な[ツールがインストールされていること](install-the-tools.md)は、各チュートリアルを完了するための共通の前提条件です。
 
 >[!NOTE]
->Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。 そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。 これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは "**_ありません_**"。 これらは、サポートされているデバイス上で継続して動作するように、保守されます。 HoloLens 2 向けには、[新しいチュートリアル シリーズ](mrlearning-base.md)が投稿されています。
+>Mixed Reality Academy のチュートリアルは、HoloLens (第 1 世代) と Mixed Reality イマーシブ ヘッドセットを念頭に置いて編成されています。 そのため、それらのデバイスの開発に関するガイダンスを引き続き探している開発者のために、これらのチュートリアルをそのまま残しておくことが重要だと考えています。 これらのチュートリアルが、HoloLens 2 に使用されている最新のツールセットや操作に更新されることは "**_ありません_**"。 これらは、サポートされているデバイス上で継続して動作するように、保守されます。 HoloLens 2 向けには、[新しいチュートリアル シリーズ](mr-learning-base-01.md)が投稿されています。
 
 <br>
 <ul id="cardtypes-W" class="cardsW panelContent" style="display: flex; margin-top: 0px;">
