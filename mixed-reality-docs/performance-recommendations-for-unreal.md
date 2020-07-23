@@ -7,12 +7,12 @@ ms.date: 5/5/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, パフォーマンス, 最適化, 設定, ドキュメント
-ms.openlocfilehash: 9f128a3ef09f29fc745c21b09b7ec97f5db33605
-ms.sourcegitcommit: 7f50210b71a65631fd1bc3fdb215064e0db34333
+ms.openlocfilehash: a7972962eeb2b1480a7da38210b5ee77104f508b
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84533124"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303639"
 ---
 # <a name="performance-recommendations-for-unreal"></a>Unreal のパフォーマンスに関する推奨事項
 
@@ -32,10 +32,11 @@ ms.locfileid: "84533124"
     * **[エンジン]** セクションまでスクロールし、 **[レンダリング]** を選択し、 **[カリング]** セクションを展開して、 **[オクルージョン カリング]** をオフにします。
         + レンダリングされる詳細なシーンのオクルージョン カリングが必要な場合は、 **[エンジン] > [レンダリング]** で **[ソフトウェア オクルージョン カリングのサポート]** を有効にすることをお勧めします。 これにより、Unreal の作業は CPU 上で実行され、HoloLens 2 でのパフォーマンスが低い GPU オクルージョン クエリを回避できます。
 
-![モバイル ターゲット設定](images/unreal/performance-recommendations-img-02.png)
+![オクルージョン カリングの無効化](images/unreal/performance-recommendations-img-02.png)
 
-3. VR レンダリングの更新:
-    * **[エンジン]** セクションまでスクロールし、 **[レンダリング]** を選択し、 **[VR]** セクションを展開して、 **[インスタンス化ステレオ]** と **[モバイル マルチビュー]** の両方を有効にします。
-        + **[Mobile Multi-View]\(モバイル マルチビュー\)** をオンにできるようにするために、 **[Mobile Post-Processing]\(モバイル後処理\)** をオフにすることが必要な場合があります。
+3. モバイル マルチビューの使用:
+    * **[エンジン]** セクションまでスクロールし、 **[レンダリング]** を選択し、 **[VR]** セクションを展開して、 **[インスタンス化ステレオ]** と **[モバイル マルチビュー]** の両方を有効にします。 モバイル HDR をオフにする必要があります。
 
-![モバイル ターゲット設定](images/unreal/performance-recommendations-img-03.png)
+![VR レンダリング設定](images/unreal/performance-recommendations-img-03.png)
+
+4. **[Maximum number of CSM cascades to render]\(レンダリングする CSM カスケードの最大数\)** を **1** に設定し、 **[Max Movable Spotlights / Point Lights]\(移動可能スポットライト / ポイント ライトの最大数\)** を **0** に設定します。 

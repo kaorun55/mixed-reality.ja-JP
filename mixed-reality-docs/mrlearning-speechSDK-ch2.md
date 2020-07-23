@@ -7,12 +7,12 @@ ms.date: 06/27/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 75ddce9063bb9d33f5fe2343fe30178222a5f8ac
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 7a0fa915a80763300eff470e29356034d6a0f841
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79031617"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303673"
 ---
 # <a name="2-using-speech-recognition-to-execute-commands"></a>2.音声認識を使用したコマンドの実行
 
@@ -46,7 +46,7 @@ ms.locfileid: "79031617"
 > アプリケーションは Azure に接続する必要があるため、お使いのコンピューター/デバイスがインターネットに接続されていることを確認してください。
 
 > [!TIP]
-> 頻繁に Azure に接続できないことが予測される場合は、「[音声コマンドの有効化](mrlearning-base-ch5.md#enabling-voice-commands)」の手順に従うことで、MRTK を使用して音声コマンドを実装することもできます。
+> 頻繁に Azure に接続できないことが予測される場合は、「[音声コマンドの使用](mr-learning-base-09.md)」の手順に従うことで、MRTK を使用して音声コマンドを実装することもできます。
 
 ## <a name="congratulations"></a>結論
 

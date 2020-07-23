@@ -7,12 +7,12 @@ ms.date: 02/26/2019
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 71a6c2124258f05e80e624b940386db72a36070b
-ms.sourcegitcommit: 92ff5478a5c55b4e2c5cc2f44f1588702f4ec5d1
+ms.openlocfilehash: f376ab268e9c2869e48b325fa728672a16ee6d32
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82604983"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303683"
 ---
 # <a name="1-integrating-and-using-speech-recognition-and-transcription"></a>1.音声認識と文字起こしの統合と使用
 
@@ -29,7 +29,7 @@ ms.locfileid: "82604983"
 ## <a name="prerequisites"></a>前提条件
 
 >[!TIP]
->[入門チュートリアル](mrlearning-base.md) シリーズをまだ完了していない場合は、まずこれらのチュートリアルを完了することをお勧めします。
+>[入門チュートリアル](mr-learning-base-01.md) シリーズをまだ完了していない場合は、まずこれらのチュートリアルを完了することをお勧めします。
 
 * 正しい[ツールがインストールされている](install-the-tools.md)構成済みの Windows 10 PC
 * Windows 10 SDK 10.0.18362.0 以降
@@ -44,24 +44,16 @@ ms.locfileid: "82604983"
 
 このセクションでは、新しい Unity プロジェクトを作成し、MRTK 開発用に準備をします。
 
-このためには、まず「[プロジェクトと最初のアプリケーションの初期化](mrlearning-base-ch1.md)」に従ってください (「[デバイスへのアプリケーションのビルド](mrlearning-base-ch1.md#build-your-application-to-your-device)」の手順は除く)。これには、次の手順が含まれます。
+このためには、まず「[プロジェクトと最初のアプリケーションの初期化](mr-learning-base-02.md)」に従ってください (「[デバイスへのアプリケーションのビルド](mr-learning-base-02.md#building-your-application-to-your-hololens-2)」の手順は除く)。これには、次の手順が含まれます。
 
-1. [新しい Unity プロジェクトを作成](mrlearning-base-ch1.md#create-new-unity-project)して、適切な名前を付ける (たとえば、*MRTK Tutorials*)
+1. [Unity プロジェクトを作成](mr-learning-base-02.md#creating-the-unity-project)し、"*MRTK チュートリアル*" などの適切な名前を付ける
+2. [ビルド プラットフォームを切り替える](mr-learning-base-02.md#configuring-the-unity-project)
+3. [TextMeshPro の重要なリソースをインポートする](mr-learning-base-02.md#importing-the-textmeshpro-essential-resources)
+4. [Mixed Reality Toolkit をインポートする](mr-learning-base-02.md#importing-the-mixed-reality-toolkit)
+5. [Unity プロジェクトを構成する](mr-learning-base-02.md#configuring-the-unity-project)
+6. [シーンを作成して構成](mr-learning-base-02.md#creating-and-configuring-the-scene)し、シーンに *AzureSpeechServices* などの適切な名前を付ける
 
-2. [Windows Mixed Reality 用に Unity プロジェクトを構成する](mrlearning-base-ch1.md#configure-the-unity-project-for-windows-mixed-reality)
-
-3. [TextMesh Pro の Essential Resources (重要なリソース) をインポートする](mrlearning-base-ch1.md#import-textmesh-pro-essential-resources)
-
-4. [Mixed Reality Toolkit をインポートする](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)
-
-5. [Mixed Reality Toolkit 用に Unity プロジェクトを構成する](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)
-
-6. [Mixed Reality Toolkit を Unity シーンに追加](mrlearning-base-ch1.md#configure-the-mixed-reality-toolkit)し、シーンに適切な名前を付ける (たとえば、*AzureSpeechServices*)
-
-次に、「[Mixed Reality Toolkit プロファイルを構成する方法 (空間認識表示オプションの変更)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)」の手順に従って、シーンの MRTK 構成プロファイルを **[DefaultHoloLens2ConfigurationProfile]** に変更し、空間認識メッシュの表示オプションを **[Occlusion]\(オクルージョン\)** に変更します。
-
-> [!CAUTION]
-> 上のリンクの「[Mixed Reality Toolkit 用に Unity プロジェクトを構成する](mrlearning-base-ch1.md#configure-the-unity-project-for-the-mixed-reality-toolkit)」の手順で述べられているように、MSBuild for Unity を有効にしないことを強くお勧めします。
+その後、「[空間認識表示オプションの変更](mr-learning-base-03.md#changing-the-spatial-awareness-display-option)」の手順に従って、シーンの MRTK 構成プロファイルを **[DefaultHoloLens2ConfigurationProfile]** に変更し、空間認識メッシュの表示オプションを **[Occlusion]\(オクルージョン\)** に変更します。
 
 ## <a name="configuring-the-speech-commands-start-behavior"></a>音声コマンドの開始動作の構成
 
@@ -72,7 +64,7 @@ ms.locfileid: "82604983"
 ![mrlearning-speech](images/mrlearning-speech/tutorial1-section2-step1-1.png)
 
 > [!TIP]
-> MRTK プロファイルを複製して構成する方法については、「[Mixed Reality Toolkit プロファイルを構成する方法 (空間認識表示オプションの変更)](mrlearning-base-ch2.md#how-to-configure-the-mixed-reality-toolkit-profiles-change-spatial-awareness-display-option)」の説明を参照してください。
+> MRTK プロファイルを複製し、構成する方法については、[Mixed Reality ツールキット プロファイルの構成](mr-learning-base-03.md)に関するページにある手順を参照してください。
 
 ## <a name="configuring-the-capabilities"></a>機能の構成
 
@@ -93,7 +85,7 @@ Unity メニューで **[Edit]\(編集\)**  >  **[Project Settings]\(プロジ�
 * [MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage](https://github.com/microsoft/MixedRealityLearning/releases/download/azure-speech-services-v2.3.0.0/MRTK.HoloLens2.Unity.Tutorials.Assets.AzureSpeechServices.2.3.0.0.unitypackage)
 
 > [!TIP]
-> Unity カスタム パッケージをインポートする方法については、「[Mixed Reality Toolkit をインポートする](mrlearning-base-ch1.md#import-the-mixed-reality-toolkit)」を参照してください。
+> Unity カスタム パッケージをインポートする方法については、「[Mixed Reality Toolkit をインポートする](mr-learning-base-02.md#importing-the-mixed-reality-toolkit)」の手順を参照してください。
 
 チュートリアルのアセットをインポートすると、プロジェクト ウィンドウは次のようになります。
 

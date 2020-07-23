@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: 99407a4069f914bf077e6323dde3e12978f6b765
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: c49e2a69cb97a996da4bf601a105c2176ccf267f
+ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345692"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86303543"
 ---
 # <a name="6-packaging--deploying-to-device-or-emulator"></a>6.デバイスまたはエミュレーターへのパッケージ化とデプロイ
 
@@ -30,15 +30,15 @@ ms.locfileid: "85345692"
 
 チェス アプリでこのルートを使用する場合は、次のことを行う必要があります。
 
-1.  Microsoft Store から **Holographic Remoting Player** を HoloLens 2 にインストールし、アプリを実行します。
+1.  Microsoft Store から **Holographic Remoting Player** を HoloLens 2 にインストールし、アプリを実行します。 アプリに表示される IP アドレスをメモします。
 
-2.  **[編集] > [プロジェクトの設定]** に移動し、 **[Holographic Remoting]** セクションで **[リモート処理を有効にする]** をオンにします。
+2.  Unreal エディターに戻り、 **[編集]、[プロジェクトの設定]** の順に移動し、 **[Holographic Remoting]** セクションで **[リモート処理を有効にする]** をオンにします。
 
-3.  エディターを再起動し、[デバイスの IP アドレスを検索](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens#connect-over-wi-fi)して入力し、 **[接続]** をクリックします。
+3.  エディターを再起動し、デバイスの IP アドレス (Holographic Remoting Player アプリに表示されるもの) を入力し、 **[接続]** をクリックします。
 
 接続後、 **[Play]\(再生\)** ボタンの右側にあるドロップダウン矢印をクリックし、 **[VR Preview]\(VR プレビュー\)** を選択します。 これにより、VR プレビュー ウィンドウでアプリが実行され、HoloLens ヘッドセットにストリーミングされます。 
 
-## <a name="packaging-and-deploying-the-app"></a>アプリのパッケージ化とデプロイ 
+## <a name="packaging-and-deploying-the-app-via-device-portal"></a>デバイス ポータル経由でのアプリのパッケージ化とデプロイ
 
 >[!NOTE]
 >HoloLens 用の Unreal アプリを初めてパッケージ化する場合は、Epic Launcher からサポート ファイルをダウンロードする必要があります。 
