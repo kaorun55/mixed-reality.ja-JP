@@ -3,15 +3,15 @@ title: Unity で推奨される設定
 description: Unity には、プロジェクトの設定によって切り替えることができる mixed reality に固有のいくつかの動作が用意されています。
 author: troy-ferrell
 ms.author: trferrel
-ms.date: 03/26/2019
+ms.date: 07/07/2020
 ms.topic: article
 keywords: unity、設定、mixed reality
-ms.openlocfilehash: e7628a8653fffbab9c792161ac8ff1666b47fa62
-ms.sourcegitcommit: f523b74a549721b6bec69cb5d2eca5b7673a793c
+ms.openlocfilehash: d2cc79ba0818985795c49f8812d33eba77b92b74
+ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85570327"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87390119"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity で推奨される設定
 
@@ -23,9 +23,7 @@ Unity には、すべてのプラットフォームの平均ケースである�
 
 環境の**Unity 品質設定**を**非常に低い**ものに変更することが重要です。 これにより、アプリケーションが適切なフレームレートで実行されるようにすることができます。 これは、HoloLens 開発で非常に重要です。 イマーシブヘッドセットでの開発では、VR エクスペリエンスを実現するデスクトップの仕様によっては、より低い品質パラメーターを使用せずにフレームレートを達成できます。
 
-Unity 2018 LTS + では、プロジェクトの品質レベルは次の方法で設定できます。
-
-[ **Edit**  >  **プロジェクト設定**の品質の編集] で、[  >  **Quality** **低**品質レベルの下矢印をクリックして**既定値**を設定 > ます。
+Unity 2019 LTS + では、プロジェクトの品質レベルを設定するには、[プロジェクト設定の品質の**編集**] に移動  >  **Project Settings**  >  **Quality**し、下矢印を [**低**品質] レベルまでクリックして**既定値**を設定します。
 
 ### <a name="lighting-settings"></a>光源の設定
 
@@ -44,18 +42,18 @@ Unity 2018 LTS + では、プロジェクトの品質レベルは次の方法で
 
 Unity プロジェクトでこの機能を有効にするには
 
-1)  **プレーヤーの XR の設定**を開く ([プロジェクト設定の編集] にアクセスして、 **Edit**  >  **Project Settings**  >  **プレーヤー**  >  **XR 設定**を編集)
-2) [**ステレオレンダリングメソッド**] ドロップダウンメニューから [**シングルパスインスタンス**] を選択します ([**Virtual Reality がサポートさ**れる] チェックボックスをオンにする必要があります)
+1)  **[Player XR Settings]\(プレーヤー XR 設定\)** を開きます ( **[Edit]\(編集\)**  >  **[Project Settings]\(プロジェクト設定\)**  >  **[Player]\(プレーヤー\)**  >  **[XR Settings]\(XR 設定\)** )
+2) **[Stereo Rendering Method]\(ステレオ レンダリング方法\)** ドロップダウン メニューから **[Single Pass Instanced]\(単一パス インスタンス化\)** を選択します ( **[Virtual Reality Supported]\(仮想現実のサポート\)** チェック ボックスをオンにする必要があります)
 
 この表示方法の詳細については、Unity から次の記事をお読みください。
 
-- [高度なステレオレンダリングを使用して AR と VR のパフォーマンスを最大化する方法](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
-- [シングルパスのインスタンス化](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
+- [高度なステレオ レンダリングを使用して AR と VR のパフォーマンスを最大化する方法](https://blogs.unity3d.com/2017/11/21/how-to-maximize-ar-and-vr-performance-with-advanced-stereo-rendering/)
+- [単一パス インスタンス化](https://docs.unity3d.com/Manual/SinglePassInstancing.html)
 
 >[!NOTE]
-> 単一パスのインスタンス化に関する一般的な問題の1つは、開発者が既にインスタンス化用に作成されていない既存のカスタムシェーダーを持っている場合です。 この機能を有効にした後、開発者は、一部のオブジェクトが1つの目にしか表示されないことに気付く場合があります。 これは、関連付けられたカスタムシェーダーに、インスタンス化するための適切なプロパティがないためです。
+> 単一パス インスタンス化レンダリングに関する一般的な問題の 1 つは、開発者がインスタンス化対応に作成されていない既存のカスタム シェーダーを持っている場合に発生します。 この機能を有効にした後、開発者は、一部の GameObject が 1 つの視線でしかレンダリングしないことに気付く場合があります。 これは、関連付けられたカスタム シェーダーに、インスタンス化のための適切なプロパティがないためです。
 >
-> この問題への対処方法については、Unity[の HoloLens のシングルパスステレオレンダリング](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)に関する説明を参照してください。
+> この問題への対処方法については、Unity から提供されている [HoloLens 用の単一パス ステレオ レンダリング](https://docs.unity3d.com/Manual/SinglePassStereoRenderingHoloLens.html)に関する記事を参照してください
 
 ### <a name="enable-depth-buffer-sharing"></a>深度バッファーの共有を有効にする
 
@@ -63,7 +61,7 @@ Unity プロジェクトでこの機能を有効にするには
 
 Unity プロジェクトでこの機能を有効にするには
 
-1) **プレーヤーの XR の設定**を開く ([プロジェクト設定の編集] にアクセスして、 **Edit**  >  **Project Settings**  >  **プレーヤー**  >  **XR 設定**を編集)
+1) **[Player XR Settings]\(プレーヤー XR 設定\)** を開きます ( **[Edit]\(編集\)**  >  **[Project Settings]\(プロジェクト設定\)**  >  **[Player]\(プレーヤー\)**  >  **[XR Settings]\(XR 設定\)** )
 2) [**仮想現実の sdk**での**深度バッファーの共有を有効にする**] のチェックボックスをオンにします。 [  >  **Windows Mixed reality**の展開 (仮想環境のサポート] チェックボックスをオンにし**て**ください)
 
 また、特に HoloLens 開発の場合は、このパネルの [**深度書式**] の下にある**16 ビット深度**を選択することをお勧めします。 16ビットを24ビットに比較すると、帯域幅の要件を大幅に削減できます。これにより、移動または処理する必要があるデータの量が少なくなります。
@@ -116,10 +114,10 @@ Holographic スプラッシュスクリーンを切り替えるには、次の�
 
 |  Unity スプラッシュスクリーンを表示する  |  Holographic スプラッシュイメージ  |  動作 |
 |----------|----------|----------|
-|  オン  |  None  |  既定の Unity スプラッシュスクリーンを5秒間、またはアプリが読み込まれるまでのいずれか長い方に表示します。 |
+|  オン  |  なし  |  既定の Unity スプラッシュスクリーンを5秒間、またはアプリが読み込まれるまでのいずれか長い方に表示します。 |
 |  オン  |  Custom  |  5秒間、またはアプリが読み込まれるまでのいずれか長い方のカスタムスプラッシュスクリーンを表示します。 |
-|  オフ  |  None  |  アプリが読み込まれるまで、透明な黒 (何も表示されません) を表示します。 |
-|  オフ  |  Custom  |  5秒間、またはアプリが読み込まれるまでのいずれか長い方のカスタムスプラッシュスクリーンを表示します。 |
+|  Off  |  なし  |  アプリが読み込まれるまで、透明な黒 (何も表示されません) を表示します。 |
+|  Off  |  Custom  |  5秒間、またはアプリが読み込まれるまでのいずれか長い方のカスタムスプラッシュスクリーンを表示します。 |
 
 詳細については、 [Unity のスプラッシュスクリーンのドキュメント](https://docs.unity3d.com/Manual/class-PlayerSettingsSplashScreen.html)を参照してください。
 
@@ -172,5 +170,5 @@ Holographic アプリで一般的に使用される Api を有効にするため
 ## <a name="see-also"></a>関連項目
 
 * [Unity 開発の概要](unity-development-overview.md)
-* [Mixed Reality のパフォーマンスについて](understanding-performance-for-mixed-reality.md)
+* [Mixed Reality のパフォーマンスを理解する](understanding-performance-for-mixed-reality.md)
 * [Unity のパフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)

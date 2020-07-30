@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、コントロール、フォント、タイポグラフィ、ui、ux
-ms.openlocfilehash: 8662ff8a8e1e99455354392d7dc852feb1fe1589
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 6aa03eedf717fb73877db8660526e13444c43fe9
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345712"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376574"
 ---
 # <a name="text-in-unity"></a>Unity のテキスト
 
@@ -99,7 +99,7 @@ Unity の既定のフォントマテリアルでは、オクルージョンは�
 
 
 ## <a name="see-also"></a>関連項目
-* [MRTK のテキスト Prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MixedRealityToolkit.SDK/StandardAssets/Prefabs/Text)
+* [MRTK のテキスト Prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)
 * [文字体裁](typography.md)
 
  
