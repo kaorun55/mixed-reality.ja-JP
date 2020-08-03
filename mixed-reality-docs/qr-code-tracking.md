@@ -6,29 +6,29 @@ ms.author: dobrown
 ms.date: 05/15/2019
 ms.topic: article
 keywords: vr, lbe, 位置情報ベースのエンターテインメント, vr アーケード, アーケード, イマーシブ, qr, qr コード, hololens2
-ms.openlocfilehash: e14fe14fd76bceaf506dd7b85a57825c3f18d223
-ms.sourcegitcommit: 6bc6757b9b273a63f260f1716c944603dfa51151
+ms.openlocfilehash: 6d3dc442c28e498cc00e14325398de2026261a17
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73438119"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476764"
 ---
 # <a name="qr-code-tracking"></a>QR コードの追跡
 
 HoloLens 2 では、ヘッドセット周辺の環境内の QR コードを検出し、各コードの実際の場所で座標系を確立します。
 
-## <a name="device-support"></a>デバイスのサポート
+## <a name="device-support"></a>デバイス サポート
 
 <table>
 <tr>
 <th>機能</th><th style="width:150px"> <a href="hololens-hardware-details.md">HoloLens (第 1 世代)</a></th><th style="width:150px">HoloLens 2</th><th style="width:150px"> <a href="immersive-headset-hardware-details.md">イマーシブ ヘッドセット</a></th>
 </tr><tr>
-<td> QR コードの検出</td><td style="text-align: center;">️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">注を参照</td>
+<td> QR コードの検出</td><td style="text-align: center;">️</td><td style="text-align: center;"> ✔️</td><td style="text-align: center;">✔️</td>
 </tr>
 </table>
 
 >[!NOTE]
->デスクトップ Pc でのイマーシブ Windows Mixed Reality ヘッドセットのサポートは、現在、次の NuGet パッケージではサポートされていません。  デスクトップサポートで更新プログラムを引き続きご利用ください。
+>デスクトップ Pc でのイマーシブ Windows Mixed Reality ヘッドセットを使用した QR コードの追跡は、Windows 10 バージョン2004以降でサポートされています。 MixedReality () API を使用して、機能が現在のデバイスでサポートされているかどうかを判断します。
 
 ## <a name="getting-the-qr-package"></a>QR パッケージの取得
 QR コード検出用の NuGet パッケージは[こちら](https://nuget.org/Packages/Microsoft.MixedReality.QR)からダウンロードできます。
@@ -36,31 +36,31 @@ QR コード検出用の NuGet パッケージは[こちら](https://nuget.org/P
 ## <a name="detecting-qr-codes"></a>QR コードの検出
 
 ### <a name="adding-the-webcam-capability"></a>Web カメラ機能の追加
-QR コードを検出するには、マニフェストに機能 `webcam` を追加する必要があります。 この機能は、ユーザーの環境で検出されたコード内のデータに機密情報が含まれている場合に必要です。
+QR コードを検出するには、マニフェストに機能を追加する必要があり `webcam` ます。 この機能は、ユーザーの環境で検出されたコード内のデータに機密情報が含まれている場合に必要です。
 
-アクセス許可は `QRCodeWatcher.RequestAccessAsync()`を呼び出すことによって要求できます。
+アクセス許可を要求するには、次のように呼び出し `QRCodeWatcher.RequestAccessAsync()` ます。
 
-_C#:_
+_Visual_
 ```cs
 await QRCodeWatcher.RequestAccessAsync();
 ```
 
-_C++:_
+_C++_
 ```cpp
 co_await QRCodeWatcher.RequestAccessAsync();
 ```
 
 QRCodeWatcher オブジェクトを構築する前に、アクセス許可を要求する必要があります。
 
-QR コードの検出には `webcam` 機能が必要ですが、検出はデバイスの追跡カメラを使用して行われます。 これにより、デバイスの写真/ビデオ (PV) カメラとの検出と比較して、より広範な検出とバッテリ寿命が提供されます。
+QR コードの検出には機能が必要ですが、 `webcam` 検出はデバイスの追跡カメラを使用して行われます。 これにより、デバイスの写真/ビデオ (PV) カメラとの検出と比較して、より広範な検出とバッテリ寿命が提供されます。
 
 ### <a name="detecting-qr-codes-in-unity"></a>Unity での QR コードの検出
 
 Unity の QR コード検出 API は、MRTK に依存せずに使用できます。 これを行うには、nuget [For Unity](https://github.com/GlitchEnzo/NuGetForUnity)を使用して nuget パッケージをインストールする必要があります。
 
-サンプル Unity アプリには、QR コードに holographic 二乗と、関連するデータ (GUID、物理サイズ、タイムスタンプ、デコードされたデータなど) が表示されます。 このアプリは https://github.com/chgatla-microsoft/QRTracking/tree/master/SampleQRCodes にあります。
+サンプル Unity アプリには、QR コードに holographic 二乗と、関連するデータ (GUID、物理サイズ、タイムスタンプ、デコードされたデータなど) が表示されます。 このアプリは、にあり https://github.com/chgatla-microsoft/QRTracking/tree/master/SampleQRCodes ます。
 
-### <a name="detecting-qr-codes-in-c"></a>検出 (QR コードを)C++
+### <a name="detecting-qr-codes-in-c"></a>C++ での QR コードの検出
 
 ```cpp
 using namespace winrt::Windows::Foundation;
@@ -128,7 +128,7 @@ QR コードの SpatialCoordinateSystem は、示されているように配置�
 
 ![QR コードの座標系](images/Qr-coordinatesystem.png) 
 
-QRCode オブジェクトの場合、次C++のコードは、QR コードの座標系を使用して、四角形を作成して配置する方法を示しています。
+QRCode オブジェクトの場合、次の C++ コードは、QR コードの座標系を使用して、四角形を作成して配置する方法を示しています。
 
 ```cpp
 // Creates a 2D rectangle in the x-y plane, with the specified properties.
