@@ -102,7 +102,7 @@
 
 <!-- Develop top level folder -->
 # 開発
-## [ツールとアーキテクチャについて学習する](development.md)
+## [Mixed Reality 開発の概要](development.md)
 ## [ツールのインストール](install-the-tools.md)
 ## [Cloud Services の概要](mixed-reality-cloud-services.md)
 
@@ -222,6 +222,7 @@
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
 
 ### サンプル アプリ
+#### [概要](samples.md)
 #### HoloLens 2
 ##### [Surfaces](sampleapp-surfaces.md)
 ##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
