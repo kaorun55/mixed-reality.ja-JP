@@ -1,99 +1,219 @@
-### YamlMime:Landing
-title: Mixed Reality へようこそ
+### YamlMime:Hub
+title: Mixed Reality に関するドキュメント
 summary: HoloLens と Windows イマーシブ ヘッドセットに対応した、Windows Mixed Reality、Mixed Reality Toolkit (MRTK)、Unity、Unreal などを使用する Mixed Reality アプリケーションの拡大を続ける世界をご紹介します。
+brand: windows
 metadata:
-  title: Mixed Reality へようこそ
-  description: HoloLens 2 などのデバイスで Mixed Reality のツールと機能を使用する方法について説明します。
-  ms.topic: landing-page
+  title: Mixed Reality に関するドキュメント
+  description: HoloLens と Windows イマーシブ ヘッドセットに対応した、Windows Mixed Reality、Mixed Reality Toolkit (MRTK)、Unity、Unreal などを使用する Mixed Reality アプリケーションの拡大を続ける世界をご紹介します。
+  services: service
+  ms.service: service
+  ms.subservice: subservice
+  ms.topic: hub-page
+  ms.collection: collection
   author: hferrone
   ms.author: v-haferr
-  ms.date: 07/03/2020
-  ms.openlocfilehash: 4e4d070b04c722c66c04bb28c5880dc64f46b15b
-  ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
+  ms.date: 07/23/2020
+  ms.openlocfilehash: def9c41323029265a3f7d1c89b811eda94d88cbf
+  ms.sourcegitcommit: 36316e2658d3dfa804d798b9f4fb2f9186052144
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87390199"
-landingContent:
-- title: 新しいイマーシブな世界を探索する
-  linkLists:
-  - linkListType: overview
+  ms.lasthandoff: 08/01/2020
+  ms.locfileid: "87507706"
+highlightedContent:
+  items:
+  - title: Mixed Reality とは
+    itemType: overview
+    url: mixed-reality.md
+  - title: HoloLens 2 の概要
+    itemType: overview
+    url: https://docs.microsoft.com/hololens/hololens2-hardware
+  - title: サンプル アプリを試す
+    itemType: sample
+    url: samples.md
+  - title: 開発者向け
+    itemType: overview
+    url: development.md
+  - title: IT 管理者
+    itemType: concept
+    url: https://docs.microsoft.com/hololens/hololens-requirements
+  - title: VR 愛好者
+    itemType: overview
+    url: https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/
+productDirectory:
+  title: Mixed Reality を使ってみる
+  summary: デザイナー、開発者、IT 専門家それぞれが使用を開始するためのパスが用意されています。
+  items:
+  - title: 設計
+    imageSrc: images/icon-design.jpg
     links:
-    - text: Mixed Reality とは
-      url: get-started-with-mr.md
-    - text: Mixed Reality の概要を理解する
-      url: case-study-expanding-the-design-process-for-mixed-reality.md
-    - text: コミュニティに参加する
-      url: community.md
-- title: Mixed Reality 向けの設計
-  linkLists:
-  - linkListType: concept
+    - url: design.md
+      text: 設計とプロトタイプ
+    - url: types-of-mixed-reality-apps.md
+      text: Mixed Reality アプリの種類を選択する
+    - url: case-study-expanding-the-design-process-for-mixed-reality.md
+      text: デザイン プロセスを展開する
+    - url: app-patterns-landingpage.md
+      text: UX 要素について
+    - url: comfort.md
+      text: ユーザーの快適さについて
+    - url: interaction-fundamentals.md
+      text: 操作の基礎を確認する
+  - title: 開発
+    imageSrc: images/icon-developer.jpg
     links:
-    - text: 設計とプロトタイプ作成を始める
-      url: design.md
-    - text: 核となる設計概念を調べる
-      url: core-concepts-landingpage.md
-    - text: 操作の基礎について
-      url: interaction-fundamentals.md
-    - text: UX 要素の組み込み
-      url: app-patterns-landingpage.md
-- title: Mixed Reality 向けの開発
-  linkLists:
-  - linkListType: get-started
+    - url: development.md
+      text: テクノロジ パスの選択
+    - url: install-the-tools.md
+      text: ツールのインストール
+    - url: unity-development-overview.md
+      text: Unity の概要
+    - url: unreal-development-overview.md
+      text: Unreal の概要
+    - url: directx-development-overview.md
+      text: Native の概要
+    - url: mrtk-porting-guide.md
+      text: アプリを HoloLens 2 で利用できるようにする
+  - title: HoloLens 2 のデプロイ
+    imageSrc: images/icon-distribution.png
     links:
-    - text: Mixed Reality 開発の体験を選ぶ
-      url: development.md
-    - text: ツールのインストール
-      url: install-the-tools.md
-    - text: チュートリアルに従う
-      url: tutorials.md
-    - text: Unity の体験を開始する
+    - url: https://docs.microsoft.com/hololens/hololens-requirements
+      text: 商用環境でのデプロイの準備
+    - url: https://docs.microsoft.com/hololens/hololens-identity
+      text: ユーザー ID とサインインの管理
+    - url: https://docs.microsoft.com/hololens/hololens-enroll-mdm
+      text: デバイスの登録
+    - url: https://docs.microsoft.com/hololens/hololens-updates
+      text: HoloLens 更新プログラムの管理
+    - url: https://docs.microsoft.com/hololens/hololens-release-notes
+      text: リリース ノート
+    - url: https://docs.microsoft.com/hololens/hololens-feedback
+      text: トラブルシューティングとサポート
+conceptualContent:
+  title: フレームワーク
+  summary: お好みのエンジンや言語、またはご使用のハードウェアによって開発プロセスは異なりますが、それぞれに対応しています。
+  items:
+  - title: Unity
+    summary: Mixed Reality Toolkit SDK を使用して、Unity でアプリケーションを作成、構成、デプロイします。
+    links:
+    - url: unity-development-overview.md
+      itemType: overview
+      text: Unity 開発の概要
+    - url: mrtk-getting-started.md
+      itemType: overview
+      text: MSIX とは
+    - url: mr-learning-base-01.md
+      itemType: tutorial
+      text: HoloLens 2 チュートリアル シリーズ
+    - url: mrtk-101.md
+      itemType: concept
+      text: コア構成要素
+    - url: shared-experiences-in-unity.md
+      itemType: concept
+      text: プラットフォームの機能と API
+    - url: exporting-and-building-a-unity-visual-studio-solution.md
+      itemType: deploy
+      text: デバイスまたはエミュレーターへの展開
+    footerLink:
       url: unity-development-overview.md
-    - text: Unreal の体験を開始する
+      text: さらに詳しく
+  - title: Unreal
+    summary: Mixed Reality Toolkit SDK を使用して、Unreal でアプリケーションをビルド、カスタマイズ、デプロイします。
+    links:
+    - url: unreal-development-overview.md
+      itemType: overview
+      text: Unreal 開発の概要
+    - url: unreal-uxt-ch1.md
+      itemType: tutorial
+      text: チェス アプリのチュートリアル シリーズをビルドする
+    - url: unreal-gaze-input.md
+      itemType: concept
+      text: コア構成要素
+    - url: unreal-hololens-camera.md
+      itemType: concept
+      text: プラットフォームの機能と API
+    - url: performance-recommendations-for-unreal.md
+      itemType: concept
+      text: パフォーマンスの推奨事項
+    - url: unreal-deploying.md
+      itemType: deploy
+      text: デバイスまたはエミュレーターへの展開
+    footerLink:
       url: unreal-development-overview.md
-    - text: JavaScript の体験を開始する
-      url: javascript-development-overview.md
-    - text: ネイティブ (OpenXR/WinRT) の体験を開始する
+      text: さらに詳しく
+  - title: ネイティブ
+    summary: OpenXR、WinRT、DirectX を使用してネイティブの Holographic エクスペリエンスを構築します。
+    links:
+    - url: directx-development-overview.md
+      itemType: overview
+      text: ネイティブ開発の概要
+    - url: openxr.md
+      itemType: overview
+      text: OpenXR とは
+    - url: openxr-getting-started.md
+      itemType: get-started
+      text: OpenXR で作業を始める
+    - url: openxr-best-practices.md
+      itemType: concept
+      text: OpenXR ベスト プラクティス
+    - url: openxr-troubleshooting.md
+      itemType: reference
+      text: OpenXR トラブルシューティング
+    footerLink:
       url: directx-development-overview.md
-- title: アプリの配布
-  linkLists:
-  - linkListType: deploy
-    links:
-    - text: 3D アプリ起動ツールの設計ガイダンス
-      url: 3d-app-launcher-design-guidance.md
-    - text: アプリ内購入の統合
-      url: in-app-purchases.md
-    - text: Microsoft Store へのアップロード
-      url: submitting-an-app-to-the-microsoft-store.md
-- title: HoloLens の詳細
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Hololens とは
-      url: https://docs.microsoft.com/hololens/
-    - text: HoloLens 2 ハードウェア
-      url: https://docs.microsoft.com/hololens/hololens2-hardware
-    - text: HoloLens 2 の基本操作
-      url: https://docs.microsoft.com/hololens/hololens2-basic-usage
-    - text: 商用環境での HoloLens のデプロイ
-      url: https://docs.microsoft.com/hololens/hololens-requirements
-- title: Azure 開発者向けサービス
-  linkLists:
-  - linkListType: concept
-    links:
-    - text: Cloud Services の概要
-      url: mixed-reality-cloud-services.md
-    - text: Azure Spatial Anchors の開始
-      url: https://docs.microsoft.com/azure/spatial-anchors/
-    - text: Azure Remote Rendering を使った開発
-      url: https://docs.microsoft.com/azure/remote-rendering/
-- title: 新機能に関する情報をご確認ください。
-  linkLists:
-  - linkListType: whats-new
-    links:
-    - text: Azure Services について
-      url: azure-services.md
-    - text: 新しい Microsoft Edge
-      url: new-microsoft-edge.md
-    - text: Mixed Reality コミュニティに参加する
-      url: community.md
+      text: さらに詳しく
+tools:
+  title: SDK と API
+  summary: お気に入りのゲーム エンジンで Mixed Reality Toolkit SDK を使ってみましょう。
+  items:
+  - title: Unity 用の MRTK
+    imageSrc: images/Final_mrtk-small_logo.png
+    url: https://github.com/microsoft/MixedRealityToolkit-Unity
+  - title: Unreal 用の MRTK
+    imageSrc: images/Final_mrtk-small_logo.png
+    url: https://github.com/microsoft/MixedRealityToolkit-Unreal
+  - title: Unity 用の Windows XR プラグイン
+    imageSrc: images/Final_unity_logo.png
+    url: https://docs.unity3d.com/Manual/com.unity.xr.windowsmr.html
+  - title: OpenXR の仕様
+    imageSrc: images/Final_mrdl_logo.png
+    url: https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html
+  - title: OpenXR API
+    imageSrc: images/Final_mrdl_logo.png
+    url: https://www.khronos.org/registry/OpenXR/specs/1.0/man/html/openxr.html
+additionalContent:
+  sections:
+  - title: その他の資料
+    summary: 商用環境での展開、Azure Cloud Services の統合、サンプル アプリケーションのテストのためにアプリケーションを準備します。
+    items:
+    - title: 配布
+      links:
+      - text: 3D アプリ起動ツールの設計
+        url: 3d-app-launcher-design-guidance.md
+      - text: Mixed Reality ホームの 3D モデルの作成
+        url: creating-3d-models-for-use-in-the-windows-mixed-reality-home.md
+      - text: UWP アプリでの 3D アプリ起動ツールの実装
+        url: implementing-3d-app-launchers.md
+      - text: アプリ内購入の追加
+        url: in-app-purchases.md
+      - text: Microsoft Store への提出
+        url: submitting-an-app-to-the-microsoft-store.md
+    - title: Azure Cloud Services
+      links:
+      - text: Cloud Services の概要
+        url: mixed-reality-cloud-services.md
+      - text: Azure Spatial Anchors の開始
+        url: https://docs.microsoft.com/azure/spatial-anchors/
+      - text: Azure Spatial Anchors チュートリアル
+        url: mr-learning-asa-01.md
+      - text: Azure Remote Rendering を使った開発
+        url: https://docs.microsoft.com/azure/remote-rendering/
+      - text: Azure Remote Rendering チュートリアル
+        url: https://docs.microsoft.com/en-us/azure/remote-rendering/tutorials/unity/tutorial-landing
+    - title: HoloLens 2 のサンプル アプリ
+      links:
+      - text: Surfaces
+        url: sampleapp-surfaces.md
+      - text: 元素周期表 2.0
+        url: https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158
+      - text: Galaxy Explorer 2.0
+        url: galaxy-explorer-update.md

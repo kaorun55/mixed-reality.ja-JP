@@ -6,12 +6,12 @@ ms.author: alexturn
 ms.date: 07/07/2020
 ms.topic: article
 keywords: ポート、移植、unity、ミドルウェア、エンジン、UWP、Win32
-ms.openlocfilehash: ff97f843d6af62a5d49d7920abdf78fa4d1e46c9
-ms.sourcegitcommit: 2813f5b3027d47f7c6e9772338935eeccfa2aaec
+ms.openlocfilehash: ed6c613c8aa3649cffb42d08dbb18661f06b9a53
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86408200"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476934"
 ---
 # <a name="porting-guides"></a>移植ガイド
 
@@ -33,7 +33,7 @@ Windows 10 には、イマーシブおよび holographic ヘッドセットの�
 
 ### <a name="common-step-1-make-sure-you-have-the-right-development-hardware"></a>一般的な手順 1: 適切な開発ハードウェアがあることを確認する
 
-[[ツールのインストール](install-the-tools.md#for-immersive-vr-headset-development)] ページに、推奨される開発ハードウェアの一覧が表示されます。
+[[ツールのインストール](install-the-tools.md#immersive-vr-headset-requirements)] ページに、推奨される開発ハードウェアの一覧が表示されます。
 
 ### <a name="common-step-2-upgrade-to-the-latest-flight-of-windows-10"></a>一般的な手順 2: Windows 10 の最新のフライトにアップグレードする
 
@@ -154,7 +154,7 @@ Windows Mixed Reality は、ハイエンドゲーム Pc から広範な市場メ
 
 [Unity](https://docs.unity3d.com/Manual/Profiler.html)と[Visual Studio](https://docs.microsoft.com/visualstudio/profiling/index)のどちらにも、パフォーマンスプロファイラーと、パフォーマンスプロファイルと最適化に関する[Microsoft](understanding-performance-for-mixed-reality.md)と[Intel](https://software.intel.com/articles/vr-content-developer-guide)の両方の発行ガイドラインが含まれています。 [混合現実のパフォーマンスを理解](understanding-performance-for-mixed-reality.md)することで、パフォーマンスに関する広範な説明があります。 さらに、unity の[パフォーマンスに関する推奨事項](performance-recommendations-for-unity.md)には、unity に関する具体的な詳細があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 * [Unity 用入力移植ガイド](input-porting-guide-for-unity.md)
 * [Windows Mixed Reality の PC ハードウェアの最小互換性ガイドライン](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/windows-mixed-reality-minimum-pc-hardware-compatibility-guidelines)
 * [Mixed Reality のパフォーマンスについて](understanding-performance-for-mixed-reality.md)

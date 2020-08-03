@@ -3,15 +3,15 @@ title: Unity で推奨される設定
 description: Unity には、プロジェクトの設定によって切り替えることができる mixed reality に固有のいくつかの動作が用意されています。
 author: troy-ferrell
 ms.author: trferrel
-ms.date: 07/07/2020
+ms.date: 07/29/2020
 ms.topic: article
 keywords: unity、設定、mixed reality
-ms.openlocfilehash: d2cc79ba0818985795c49f8812d33eba77b92b74
-ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
+ms.openlocfilehash: 414e18686926fd8105726fb3811f3eef1d365bd9
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87390119"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476724"
 ---
 # <a name="recommended-settings-for-unity"></a>Unity で推奨される設定
 
@@ -116,8 +116,8 @@ Holographic スプラッシュスクリーンを切り替えるには、次の�
 |----------|----------|----------|
 |  オン  |  なし  |  既定の Unity スプラッシュスクリーンを5秒間、またはアプリが読み込まれるまでのいずれか長い方に表示します。 |
 |  オン  |  Custom  |  5秒間、またはアプリが読み込まれるまでのいずれか長い方のカスタムスプラッシュスクリーンを表示します。 |
-|  Off  |  なし  |  アプリが読み込まれるまで、透明な黒 (何も表示されません) を表示します。 |
-|  Off  |  Custom  |  5秒間、またはアプリが読み込まれるまでのいずれか長い方のカスタムスプラッシュスクリーンを表示します。 |
+|  オフ  |  なし  |  アプリが読み込まれるまで、透明な黒 (何も表示されません) を表示します。 |
+|  オフ  |  Custom  |  5秒間、またはアプリが読み込まれるまでのいずれか長い方のカスタムスプラッシュスクリーンを表示します。 |
 
 詳細については、 [Unity のスプラッシュスクリーンのドキュメント](https://docs.unity3d.com/Manual/class-PlayerSettingsSplashScreen.html)を参照してください。
 
@@ -167,7 +167,7 @@ Holographic アプリで一般的に使用される Api を有効にするため
 |  Microphone  |  VideoCapture (オーディオをキャプチャする場合)、DictationRecognizer、GrammarRecognizer、および KeywordRecognizer |
 |  InternetClient  |  DictationRecognizer (および Unity Profiler の使用) |
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 
 * [Unity 開発の概要](unity-development-overview.md)
 * [Mixed Reality のパフォーマンスを理解する](understanding-performance-for-mixed-reality.md)

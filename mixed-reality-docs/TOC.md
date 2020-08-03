@@ -156,17 +156,15 @@
 ###### [3.ビデオからオーディオの立体化](unity-spatial-audio-ch3.md)
 ###### [4.実行時の立体オーディオの有効化と無効化](unity-spatial-audio-ch4.md)
 ###### [5.リバーブを使用して立体オーディオに距離を追加する](unity-spatial-audio-ch5.md)
-
-#### Azure Cloud Services チュートリアル
-##### [1.HoloLens 2 用の Azure Cloud Services](mr-learning-azure-01.md)
-##### [2.Azure Storage の統合](mr-learning-azure-02.md)
-##### [3.Azure Custom Vision の統合](mr-learning-azure-03.md)
-##### [4.Azure Spatial Anchors の統合](mr-learning-azure-04.md)
-##### [5.Azure Bot Service の統合](mr-learning-azure-05.md)
-
-#### PC Holographic Remoting のチュートリアル
-##### [1.PC Holographic Remoting の概要](mr-learning-pc-holographic-remoting-01.md)
-##### [2.Holographic Remoting PC アプリケーションの作成](mr-learning-pc-holographic-remoting-02.md)
+##### Azure Cloud Services チュートリアル
+###### [1.HoloLens 2 用の Azure Cloud Services](mr-learning-azure-01.md)
+###### [2.Azure Storage の統合](mr-learning-azure-02.md)
+###### [3.Azure Custom Vision の統合](mr-learning-azure-03.md)
+###### [4.Azure Spatial Anchors の統合](mr-learning-azure-04.md)
+###### [5.Azure Bot Service の統合](mr-learning-azure-05.md)
+##### PC Holographic Remoting のチュートリアル
+###### [1.PC Holographic Remoting の概要](mr-learning-pc-holographic-remoting-01.md)
+###### [2.Holographic Remoting PC アプリケーションの作成](mr-learning-pc-holographic-remoting-02.md)
 
 #### HoloLens (第 1 世代) とイマーシブ ヘッドセットのチュートリアル
 ##### [MR の基本 100:Unity の概要](holograms-100.md)
@@ -224,7 +222,7 @@
 #### [Vuforia と Unity の使用](vuforia-development-overview.md)
 
 ### サンプル アプリ
-#### HoloLens 2 
+#### HoloLens 2
 ##### [Surfaces](sampleapp-surfaces.md)
 ##### [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
 ##### [Galaxy Explorer 2.0](galaxy-explorer-update.md)
@@ -257,7 +255,8 @@
 #### [Unreal での手の追跡](unreal-hand-tracking.md)
 #### [Unreal での空間マッピング](unreal-spatial-mapping.md)
 #### [Unreal での空間オーディオ](unreal-spatial-audio.md)
-#### [Unreal での空間アンカー](unreal-spatial-anchors.md)
+#### [Unreal でのローカル空間アンカー](unreal-spatial-anchors.md)
+#### [Unreal での Azure Spatial Anchor](unreal-azure-spatial-anchors.md)
 #### [Unreal での音声入力](unreal-voice-input.md)
 ### プラットフォームの機能と API
 #### [Unreal での HoloLens カメラ](unreal-hololens-camera.md)

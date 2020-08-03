@@ -6,12 +6,12 @@ ms.author: dongpark
 ms.date: 06/03/2019
 ms.topic: article
 keywords: Windows Mixed Reality、デザイン、コントロール、フォント、タイポグラフィ、ui、ux
-ms.openlocfilehash: 6aa03eedf717fb73877db8660526e13444c43fe9
-ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
+ms.openlocfilehash: 63f0992a4623cf91c1b9c62c4ebf30de12529515
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87376574"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476944"
 ---
 # <a name="text-in-unity"></a>Unity のテキスト
 
@@ -83,22 +83,24 @@ Segoe UI (Windows の既定のフォント) は、ほとんどの場合に適し
 ![角度 ](images/Text_In_Unity_ViewingAngle.jpg)
  *表示距離、角度、およびテキストの高さ*を表示する
 
-## <a name="sharp-text-rendering-quality-with-proper-dimension"></a>適切なディメンションを使用した鋭いテキストレンダリング品質
+## <a name="text-with-mixed-reality-toolkit-v2"></a>Mixed Reality Toolkit v2 を使用したテキスト
+
+### <a name="sharp-text-rendering-quality-with-proper-dimension"></a>適切なディメンションを使用した鋭いテキストレンダリング品質
 
 これらのスケールファクターに基づき、 [UI テキストと3D テキストメッシュを使用してテキスト prefabs](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)を作成しました。 開発者は、これらの prefabs を使用して、鋭いテキストと一貫したフォントサイズを取得できます。
 
 ![適切なディメンションを使用した鋭いテキストレンダリング品質](images/hug-text-06-1000px.png)<br>
 *適切なディメンションを使用した鋭いテキストレンダリング品質*
 
-## <a name="shader-with-occlusion-support"></a>オクルージョンサポート付きのシェーダー
+### <a name="shader-with-occlusion-support"></a>オクルージョンサポート付きのシェーダー
 
-Unity の既定のフォントマテリアルでは、オクルージョンはサポートされていません。 このため、既定ではオブジェクトの背後にテキストが表示されます。 [遮蔽をサポートする](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MixedRealityToolkit/StandardAssets/Shaders/Text3DShader.shader)単純なシェーダーが含まれています。 次の画像は、既定のフォントマテリアル (左側) が付いたテキストと、適切な遮蔽 (right) のテキストを示しています。
+Unity の既定のフォントマテリアルでは、オクルージョンはサポートされていません。 このため、既定ではオブジェクトの背後にテキストが表示されます。 [遮蔽をサポートする](https://github.com/microsoft/MixedRealityToolkit-Unity/blob/mrtk_release/Assets/MRTK/Core/StandardAssets/Shaders/Text3DShader.shader)単純なシェーダーが含まれています。 次の画像は、既定のフォントマテリアル (左側) が付いたテキストと、適切な遮蔽 (right) のテキストを示しています。
 
 ![オクルージョンサポート付きのシェーダー](images/hug-text-07-1000px.png)<br>
 *オクルージョンサポート付きのシェーダー*
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>こちらもご覧ください
 * [MRTK のテキスト Prefab](https://github.com/microsoft/MixedRealityToolkit-Unity/tree/mrtk_development/Assets/MRTK/SDK/StandardAssets/Prefabs/Text)
 * [文字体裁](typography.md)
 

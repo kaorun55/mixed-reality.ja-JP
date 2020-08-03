@@ -3,15 +3,15 @@ title: Windows Mixed Reality と新しい Microsoft Edge
 description: Windows Mixed Reality の新しい Microsoft Edge の準備をします。 予想される変更、検索対象の更新、および既知の問題が含まれます。
 author: mattzmsft
 ms.author: mazeller
-ms.date: 01/15/2020
+ms.date: 07/31/2020
 ms.topic: article
 keywords: edge、新規、イマーシブ web、microsoft edge、browser、vr
-ms.openlocfilehash: d61780045e795850012536a36fde67b9934c76aa
-ms.sourcegitcommit: 4282d92e93869e4829338bdf7d981c3ee0260bfd
+ms.openlocfilehash: 107b825496cc318042da0e0cd9acdbe482994a69
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216233"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476984"
 ---
 # <a name="windows-mixed-reality-and-the-new-microsoft-edge"></a>Windows Mixed Reality と新しい Microsoft Edge
 
@@ -46,13 +46,41 @@ Mixed reality ホームで新しい Microsoft Edge を使用する windows Mixed
 - Webvr ショーケースアプリは、WebVR がサポートされなくなっても、mixed reality ホームに存在します。
 - キーボード起動とビジュアルの全般的な機能強化。
 
+### <a name="monitor-and-input-handling-issues"></a>モニターと入力処理の問題
+
+Windows 10 バージョン 1903 (またはそれ以降) の2020-01 の累積的な更新プログラムを実行した後、仮想モニターは、Windows Mixed Reality セッション中に**表示 > システム >** の [設定] に、汎用的な物理モニターとして表示されます。 一部のお客様 (特に複数の物理モニタを持つもの) は、デスクトップレイアウトと入力処理に関する問題を結果として通知することがあります。
+
+**理由**
+
+Windows [10 月2019更新プログラム](#release-notes-may-2019.md)では、Windows Mixed Reality の従来の Win32 アプリケーションのサポートが導入されました。 このサポートを有効にするには、Win32 アプリケーションをホストするために仮想モニターを作成する必要があります。 新しい Win32 アプリケーションを起動するたびに、別の仮想モニターを作成する必要があります。 残念ながら、仮想モニターの作成は集中的なタスクであり、ヘッドセットの表示が短時間フリーズすることがあります。 お客様は、これが不快で破壊的なエクスペリエンスであるというフィードバックを提供しました。 このフィードバックにより、Win32 アプリケーションの使用量が増えると同時に、Windows Mixed Reality の起動時に3つの仮想モニターを事前に割り当てて、この中断を防止し、ユーザーがヘッドセットの表示を停止せずに最大で3つの Win32 アプリケーションを起動できるようにしました。
+
+**回避策**
+
+私たちは、一部のお客様 (特に複数の物理モニタを持つもの) がこの仮想モニタの事前割り当てを無効にするというフィードバックを受け取りました。 お客様に制御と選択肢を提供するために、レジストリキー値の変更を伴う回避策を有効にしました (Windows 10 バージョン2004の2020-07 累積更新プログラムで利用可能)。
+
+>[!NOTE]
+>レジストリキー値の変更は、上級ユーザーを対象としています。
+
+>[!WARNING]
+>仮想モニタの事前割り当てを無効にすると、Windows Mixed Reality で Win32 アプリケーション (ストリーム、新しい Microsoft Edge、または Google Chrome など) を起動したときにヘッドセットが短時間で表示されることがあります。
+
+仮想モニタの事前割り当てを無効にするには:
+1. Windows 10 バージョン2004の2020-07 累積更新プログラムを**Windows Update**確認し、使用可能な場合は更新プログラムをインストールします。
+2. **レジストリエディター**を起動します。
+3. HKEY_CURRENT_USER \SOFTWARE\Microsoft\Windows\CurrentVersion\Holographic\PreallocateVirtualMonitors に移動します。
+4. DWORD 値を 1 (既定値) から 0 (ゼロ) に変更します。
+    * TRUE-1
+    * FALSE-0
+
+事前割り当てではなく、Windows Mixed Reality で Win32 アプリケーションを起動しようとすると、仮想モニターが割り当てられるようになりました。 これをリセットし、仮想モニタの事前割り当てを再び有効にするには、DWORD 値を1に戻します。
+
 ### <a name="additional-known-issues"></a>その他の既知の問題
 
 -   Windows Mixed reality で開かれている web サイトは、Mixed reality ポータルが閉じたときに失われます。ただし、Microsoft Edge ウィンドウは、mixed reality ホームに配置された場所に残ります。
 - 360 Viewer 拡張機能などの WebXR エクスペリエンスは、ハイブリッド GPU セットアップを使用している Pc では正常に起動しない可能性があります。 グラフィックスカードソフトウェアの既定の GPU として専用 GPU を選択することで、この問題を回避できる場合があります。
 -   Microsoft Edge ウィンドウからのオーディオは spatialized ません。
 -   **360 Viewer 拡張機能のバージョン 2.3.8**: Windows Mixed Reality で YouTube から360ビデオを開くと、ヘッドセットでビデオがゆがんでしまう可能性があります。 Edge を再起動して、この問題を解決するには、360 Viewer 拡張機能を非表示にする必要があります。 `edge://system/`アドレスバーに「」と入力し、[拡張機能] の横にある**展開**ボタンを選択すると、拡張機能のバージョンを確認できます。
--   Windows Mixed Reality セッション中に、[設定] の [> システム > 表示に汎用物理モニターとして表示されます。
+
 
 
 
