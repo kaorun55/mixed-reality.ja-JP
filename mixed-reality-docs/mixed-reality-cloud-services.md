@@ -8,12 +8,12 @@ ms.date: 06/5/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 開発する, 開発, HoloLens, クラウド サービス
-ms.openlocfilehash: 80b0b802222684c1219987b197e4219eca8bfc56
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: 26c5f91eab2b39fbd809010ab0ac738d81dff854
+ms.sourcegitcommit: 161f3c5a80f6988a9c4af26e29481fee06840e0f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451388"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87390219"
 ---
 # <a name="cloud-services"></a>クラウド サービス
 
@@ -31,7 +31,7 @@ ms.locfileid: "86451388"
 ![Unity ショーケース アプリでの Azure Remote Rendering の例](images/showcase-app.png)
 
 ### <a name="azure-spatial-anchors"></a>Azure Spatial Anchors
-[Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors) (ASA) は、空間認識 Mixed Reality アプリケーションを構築するための、クロスプラットフォームのサービスです。 Azure Spatial Anchors を使用すると、複数デバイス間でのホログラフィック コンテンツのマッピング、保持、共有を、実世界のスケールで実現できます。 
+[Azure Spatial Anchors](https://docs.microsoft.com/azure/spatial-anchors) (ASA) は、空間認識 Mixed Reality アプリケーションを構築するための、クロスプラットフォームのサービスです。 Azure Spatial Anchors を使用すると、複数デバイス間でのホログラフィック コンテンツのマッピング、保持、共有を、実世界のスケールで実現できます。
 
 ![Azure Spatial Anchors の例](images/persistence.gif)
 
