@@ -3,16 +3,16 @@ title: マルチユーザー機能のチュートリアル - 3. 複数のユー�
 description: このコースでは、HoloLens 2 アプリケーション内でマルチユーザー共有エクスペリエンスを実装する方法を学習します。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: 56bd4e251d11e39d5495d3fcaf4e3c5fc4e087de
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 5937b581e92ffc5a13b55574ffd8a0ca7c4bca40
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86306732"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376394"
 ---
 # <a name="3-connecting-multiple-users"></a>3.複数のユーザーの接続
 

@@ -3,16 +3,16 @@ title: Mixed Reality の概要
 description: Mixed Reality を初めて使用するユーザーにその概要と機能について説明します。
 author: grbury
 ms.author: grbury
-ms.date: 08/24/2019
+ms.date: 07/29/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 検出, 配布, インデックス, ランディング ページ, 設計, 開発, チュートリアル, サンプル アプリ, 基本事項, ケース スタディ, リソース, HoloLens の使い方, オープン ソース プロジェクト
-ms.openlocfilehash: 720261164a4b2eedc47c1054f19edfb109ed3f83
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: 010e0b9d73b5537d480a28ee510fe2ae1bde3b10
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86451378"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476924"
 ---
 # <a name="get-started-with-mixed-reality"></a>Mixed Reality の概要
 
@@ -184,7 +184,7 @@ HoloLens 2 は、数分で価値を提供できる業界最先端のソリュー
     :::column:::
        [![試す](images/icon-hololensuser.jpg)](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)<br>
         **[Mixed Reality を試す](https://www.microsoft.com//windows/windows-mixed-reality?icid=SSM_Search_Promo_XCat_WindowsMixedReality_CTA1#storelocator)**<br>
-        ローカルの Microsoft Store で、Mixed Reality と HoloLens のデモを入手してください。 
+        ローカルの Microsoft Store で、Mixed Reality と HoloLens のデモを入手してください。
     :::column-end:::
     :::column:::
         [![作成者になる](images/icon-design.jpg)](design.md)<br>
@@ -211,4 +211,4 @@ HoloLens 2 は、数分で価値を提供できる業界最先端のソリュー
 
 
 >[!IMPORTANT]
->このサイトで提供されるすべての複合現実の開発に関する資料は参照のみを目的としています。 アプリケーションとその使用法およびエンド ユーザーに与える影響は、アプリケーション開発者としてお客様に責任があるものとし、これには、アプリがエンド ユーザーに対して不快感、傷害、またはその他の害をもたらしたりするものではないことや適切な警告文および免責文を含むことが含まれます。 お客様は、自分のアプリケーションが安全であり、「[Microsoft とのアプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」のすべての責務を満たしていることを保証するために、アプリケーションの開発と発行において常に適切な手順を踏む必要があります。 
+>このサイトで提供されるすべての複合現実の開発に関する資料は参照のみを目的としています。 アプリケーションとその使用法およびエンド ユーザーに与える影響は、アプリケーション開発者としてお客様に責任があるものとし、これには、アプリがエンド ユーザーに対して不快感、傷害、またはその他の害をもたらしたりするものではないことや適切な警告文および免責文を含むことが含まれます。 お客様は、自分のアプリケーションが安全であり、「[Microsoft とのアプリ開発者契約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」のすべての責務を満たしていることを保証するために、アプリケーションの開発と発行において常に適切な手順を踏む必要があります。

@@ -3,16 +3,16 @@ title: 入門チュートリアル - 5. ソルバーを使用した動的なコ�
 description: このコースでは、Mixed Reality Toolkit (MRTK) を使用して Mixed Reality アプリケーションを作成する方法について説明します。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 02/26/2019
+ms.date: 07/01/2020
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: cbeaa8b65b7aecc0600294b3739fedfb903e568e
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 1a5017d8bc18ef239db88ee62cb2b65c77b2ab6f
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86306653"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376614"
 ---
 # <a name="5-creating-dynamic-content-using-solvers"></a>5.ソルバーを使用した動的なコンテンツの作成
 
