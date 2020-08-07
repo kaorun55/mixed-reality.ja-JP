@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, チュートリアル, 入門, mrtk, uxt, UX ツール, ドキュメント
-ms.openlocfilehash: 150fee721bb9cd72d287737aca4262bd87dccba8
-ms.sourcegitcommit: 7ca383ef1c5dc895ca2a289435f2e9d4c1ee6e65
+ms.openlocfilehash: 1fce9c34b1d31c56eb628979089399926f3cbf51
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85345732"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376510"
 ---
 # <a name="2-initializing-your-project-and-first-application"></a>2.プロジェクトと最初のアプリケーションの初期化
 
@@ -40,8 +40,7 @@ ms.locfileid: "85345732"
 
 ![[Blank]\(空のプロジェクト\) テンプレートを選択する](images/unreal-uxt/2-template.PNG)
 
-4. **[Project Settings]\(プロジェクト設定\)** で、 **[C++]** 、 **[Scalable 3D or 2D]\(3D または 2D に拡張可能\)** 、 **[No Starter Content]\(スターター コンテンツを有効にしない\)** を設定します。 
-    * 保存場所を選択し、 **[プロジェクトの作成]** をクリックします。 
+4. **[C++]** 、 **[Scalable 3D or 2D]\(スケーラブル 3D または 2D\)、[Mobile/Tablet]\(モバイル/タブレット\)** 、 **[No Starter Content]\(スターター コンテンツを有効にしない\)** を **[Project Settings]\(プロジェクト設定\)** として設定し、保存場所を選択して、 **[Create Project]\(プロジェクトの作成)** をクリックします。 
 
 > [!NOTE]
 > UX Tools プラグインをビルドするには、ブループリント プロジェクトではなく、C++ プロジェクトを選択する必要があります。UX Tools プラグインは、この後のセクション 4 でセットアップします。

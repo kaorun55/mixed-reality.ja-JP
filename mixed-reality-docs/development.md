@@ -4,164 +4,60 @@ title: ツールとアーキテクチャについて学習する
 description: HoloLens とイマーシブ ヘッドセットの Mixed Reality 開発者向け説明書です。
 author: grbury
 ms.author: grbury
-ms.date: 04/27/2020
+ms.date: 07/31/2020
 ms.topic: overview
 ms.localizationpriority: high
 keywords: Mixed Reality, 開発する, 開発, HoloLens, Unity, Unreal, DirectX
-ms.openlocfilehash: 3c874e45e555ec6defa611bd5404abbb18e6612e
-ms.sourcegitcommit: 8daefb763d1f23fe02b95b766b00b373f04c5c2d
+ms.openlocfilehash: 56da3a795fe8b2cfcc5eca371bc00c87d72b4a8c
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86447858"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476821"
 ---
-# <a name="learn-the-tools-and-architecture"></a>ツールとアーキテクチャについて学習する
+# <a name="introduction-to-mixed-reality-development"></a>Mixed Reality 開発の概要
 
-![抽象的な 3D の球](images/07_Development.png)
+![抽象的な 3D の球](images/development-hero-image.png)
 
-## <a name="expand-your-design-process"></a>[デザイン プロセスを展開する](case-study-expanding-the-design-process-for-mixed-reality.md)
-
-2016 年に Microsoft が待ち望む開発者のために HoloLens を発表したとき、チームは既に Microsoft の内外のスタジオと協力してデバイスの起動エクスペリエンスを構築していました。 これらのチームは、Mixed Reality の設計の新しいフィールドにおける機会と課題の両方を明らかにして学習しました。 [詳細を見る](case-study-expanding-the-design-process-for-mixed-reality.md)
-
-
-<br>
-
----
-
+Mixed Reality は、現実世界と仮想世界が融合した巨大な空間です。 可能性は無限で、すべてはあなた次第です。 エンジンを選択し、ツールをダウンロードして、キーボードのほこりをふき取りましょう。 Mixed Reality エコシステムへようこそ。さあ、開発を始めましょう。
 
 ## <a name="what-technology-path-are-you-interested-in"></a>どのようなテクノロジ パスに興味がありますか? 
 
+このドキュメントでは、ユーザーが選択できる開発パスがいくつか用意されています。 まず、ご自分に適したテクノロジを見つけましょう。 どのテクノロジを採用するかが既に決まっている場合は、下から該当するタブを直接選択してください。 判断に迷う場合や不明な点がある場合は、各テクノロジに目を通して、それぞれの機能と使用可能なプラットフォームやツールを確認してから、開発を開始しましょう。
 
-:::row:::   
-    :::column:::    
-       [![Unity](images/unity_logo.png)](development.md#unity)<br>
-        **[Unity](development.md#unity)**<br>   
-        Unity を使用して、クロスプラットフォームのフル機能を備えた Mixed Reality アプリを構築します。
-    :::column-end:::    
-    :::column:::    
-        [![Unreal](images/Unreal_logo.png)](development.md#unreal)<br>
-        **[Unreal](development.md#unreal)**<br> 
-        Unreal Engine での実稼働対応サポートにより、美しい Mixed Reality エクスペリエンスを生み出します。 
-    :::column-end:::
-    :::column:::    
-        [![JavaScript](images/web-logo.png)](development.md#javascript)<br>
-        **[JavaScript](development.md#javascript)**<br>
-        JavaScript と WebXR デバイス API は、任意のプラットフォームのブラウザーで Mixed Reality を体験できるようにするオープン仕様です。    
-    :::column-end:::        
-    :::column:::    
-        [![Native](images/VisualStudio-small_logo.png)](development.md#native)<br>
-        **[Native](development.md#native)**<br> 
-        Windows Mixed Reality API に直接コーディングすることで、Mixed Reality アプリを作成します。 
-    :::column-end:::    
-:::row-end:::
+[!INCLUDE[](~/includes/tech-path-overview.md)]
 
-<br>
+## <a name="whats-next"></a>次の手順
 
----
+テクノロジ パスの候補が決まりました。必要なツールを準備して、体験を開始しましょう。
 
-## <a name="unity"></a>Unity
+> [!div class="nextstepaction"]
+> [ツールのインストール](install-the-tools.md)
 
-
-### <a name="unity-development-overview"></a>[Unity 開発の概要](unity-development-overview.md)
-時間を取って、Unity のチュートリアルをご覧になることをお勧めします。 資産が必要な場合、Unity には包括的な資産ストアがあります。 
-
-<br>
-
-### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unity"></a>[Microsoft の Unity 用 Mixed Reality ツールキット (MRTK)](mrtk-getting-started.md)
-Unity での MRTK v2 は、Mixed Reality アプリケーション向けのオープンソースのクロスプラットフォーム開発キットです。 MRTK バージョン 2 は、Microsoft HoloLens、Windows Mixed Reality イマーシブ (VR) ヘッドセット、OpenVR プラットフォームをターゲットとしたアプリケーションの開発を加速することを目的としています。
-
-<br>
-
-### <a name="open-source-sample-apps-and-step-by-step-tutorials"></a>[オープンソースのサンプル アプリとステップバイステップ チュートリアル](tutorials.md)
-HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。 チュートリアルは、Mixed Reality ツールキット 2.0 (MRTK 2.0) が基になっています。
-
-<br>
-
-### <a name="hand-interaction-examples-scene-mrtk-for-unity"></a>[Unity 用の手による操作のサンプル シーン (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/GettingStartedWithTheMRTK.html#open-and-run-the-handinteractionexamples-scene-in-editor)
-HandInteractionExamples.unity のサンプル シーンには、多関節ハンド入力が強調されているさまざまな種類の操作と UI コントロールが含まれています。
->[!NOTE]
->MRTK Foundation パッケージとサンプル Unity パッケージのインストールが必要です。
-
-### <a name="eye-tracking-examples-mrtk-for-unity"></a>[Unity 用の視線追跡のサンプル (MRTK)](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/EyeTracking/EyeTracking_ExamplesOverview.html)
-このページでは、提供されている MRTK の視線追跡サンプルを基に構築することにより、MRTK での視線追跡をすばやく開始する方法について説明します。
->[!NOTE]
->MRTK Foundation パッケージとサンプル Unity パッケージのインストールが必要です。
-
-<br>
-
----
-
-## <a name="unreal"></a>Unreal
-
-### <a name="unreal-development-overview"></a>[Unreal 開発の概要](unreal-development-overview.md)
-Unreal を使用した Mixed Reality アプリの構築方法について説明します。
-
-<br>
-
-### <a name="microsofts-mixed-reality-toolkit-mrtk-for-unreal"></a>[Microsoft の Unreal 用 Mixed Reality ツールキット (MRTK)](https://github.com/microsoft/MixedRealityToolkit-Unreal)
-Unreal 用 Mixed Reality ツールキット (MRTK-Unreal) は、Unreal Engine を使用して Mixed Reality アプリケーションの開発を促進するように設計されたプラグイン、サンプル、ドキュメントの形式で構成された一連のコンポーネントです。
-
-<br>
-
-### <a name="open-source-sample-apps-and-a-step-by-step-tutorial"></a>[オープン ソースのサンプル アプリとステップバイステップ チュートリアル](unreal-uxt-ch1.md)
-Unreal の開発者が Mixed Reality の開発を開始するためのチュートリアルです。[Unreal v0.8 向けの UX ツール](https://github.com/microsoft/MixedReality-UXTools-Unreal)を使用した HoloLens 2 アプリの作成のエンドツーエンド プロセスを説明します。
-
-<br>
-
----
-
-## <a name="javascript"></a>JavaScript   
-
-### <a name="javascript-development-overview"></a>[JavaScript 開発の概要](javascript-development-overview.md)   
-任意のプラットフォームでJavaScript を使用した Mixed Reality アプリの構築方法をご確認ください。
-
-<br>
-
----
-
-## <a name="native"></a>ネイティブ
-
-
-### <a name="native-development-overview"></a>[ネイティブ開発の概要](directx-development-overview.md)
-ネイティブな Mixed Reality アプリを構築するための最速のパスです。
-
-<br>
-
-### <a name="directx-uwp-app-templates-for-mixed-reality"></a>[Mixed Reality 用 DirectX UWP アプリ テンプレート](https://marketplace.visualstudio.com/items?itemName=WindowsMixedRealityteam.WindowsMixedRealityAppTemplatesVSIX)
-DirectX を使用して Mixed Reality アプリを記述するのに必要なものすべてが含まれます。
-
-<br>
-
----
-
-
-## <a name="what-would-you-like-to-do-next"></a>次に行うこと
-
+<!-- 
+## What would you like to do next?
 
 :::row:::
     :::column:::
-       [![基本を理解する](images/icon-lightbulb.png)](get-started-with-mr.md#understand-the-basics)<br>
-        **[基本を理解する](get-started-with-mr.md#understand-the-basics)**<br>
-        Mixed Reality が何によって定義され、どのように使用されているかについて理解を深めます。
+       [![Understand the basics](images/icon-lightbulb.png)](get-started-with-mr.md#understand-the-basics)<br>
+        **[Understand the basics](get-started-with-mr.md#understand-the-basics)**<br>
+        Get a better understanding of what defines mixed reality and how it’s being used.
     :::column-end:::
     :::column:::
-        [![作成者になる](images/icon-design.jpg)](design.md)<br>
-         **[作成者になる](design.md)**<br>
-        設計とプロトタイプ作成を開始するために必要な基本的な概念について説明します。
+        [![Become a creator](images/icon-design.jpg)](design.md)<br>
+         **[Become a creator](design.md)**<br>
+        Learn the basic concepts you need to begin designing and prototyping.
     :::column-end:::
     :::column:::
-        [![ツールのインストール](images/icon-developer.jpg)](install-the-tools.md)<br>
-         **[ツールのインストール](install-the-tools.md)**<br>
-        インストール チェックリストを使用して、HoloLens や Mixed Reality 用のアプリを構築するのに必要なツールを取得します。
+        [![Install the tools](images/icon-developer.jpg)](install-the-tools.md)<br>
+         **[Install the tools](install-the-tools.md)**<br>
+        Use the installation checklist to get the tools you need to build apps for HoloLens and mixed reality.
     :::column-end:::
     :::column:::
-        [![イベントに参加する](images/icon-calendar.jpg)](sf-academy-events.md)<br>
-         **[イベントに参加する](sf-academy-events.md)**<br>
-        最初の HoloLens 2 アプリケーションを作成するには、ハードウェアを参照し、ハンズオン チュートリアルを入手してください。
+        [![Come to an event](images/icon-calendar.jpg)](sf-academy-events.md)<br>
+         **[Come to an event](sf-academy-events.md)**<br>
+        See the hardware and get a hands-on tutorial to make your first HoloLens 2 application.
     :::column-end:::
 :::row-end:::
+-->
 
-
-<br>
-
-<br>

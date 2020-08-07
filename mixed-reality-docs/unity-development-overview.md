@@ -3,28 +3,26 @@ title: Unity 開発の概要
 description: Unity で Mixed Reality アプリのビルドを開始します。
 author: thetuvix
 ms.author: kurtie
-ms.date: 10/25/2018
+ms.date: 07/29/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unity, Mixed Reality, 開発, 概要, 新しいプロジェクト, 移植, 機能, カメラ, シミュレーション, エミュレーション, ドキュメント
-ms.openlocfilehash: e0fe775f5fe891416145d91e52a5a801e049c568
-ms.sourcegitcommit: 9df82dba06a91a8d2cedbe38a4328f8b86bb2146
+ms.openlocfilehash: 4679e1a2b58a7e0d77e6b295803624a4de1fac19
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81433418"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476714"
 ---
 # <a name="unity-development-overview"></a>Unity 開発の概要
 
 [Mixed Reality アプリ](app-views.md)を構築する最速の方法は、[Unity](https://unity.com) を使用することです。 時間を取って、[Unity のチュートリアル](https://unity3d.com/learn/tutorials)をご覧になることをお勧めします。 資産が必要な場合、Unity には包括的な[資産ストア](https://www.assetstore.unity3d.com/)があります。 Unity についての基本的な理解ができたら、[チュートリアル](tutorials.md)にアクセスして、Unity を使用した Mixed Reality 開発の詳細を確認できます。 [Unity Mixed Reality フォーラム](https://forum.unity3d.com/forums/hololens.102/)にアクセスして、Unity で Mixed Reality アプリを構築する他のコミュニティと協働し、遭遇しがちな問題の解決策を見つけてください。
 
-Unity を使用して Mixed Reality アプリの構築を開始するには、まず、[ツールをインストール](install-the-tools.md)します。 
-
->[!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Setting-up-your-HoloLens-2-development-environment/player?format=ny]
+Unity を使用して Mixed Reality アプリの構築を開始するには、まず、[ツールをインストール](install-the-tools.md)します。
 
 ## <a name="new-unity-project-with-mixed-reality-toolkit"></a>Mixed Reality Toolkit による新しい Unity プロジェクト 
 
-Unity で開発する場合の最も簡単な方法は、Mixed Reality Toolkit を使用することです。 これにより、プロジェクトでの設定を自動的に行い、一連の Mixed Reality 機能を提供して開発を促進できます。 詳細を確認して使い始めるには、[Mixed Reality Toolkit v2](mrtk-getting-started.md) に関する記事をご覧ください。 
+Unity で開発する最も簡単な方法は、Mixed Reality Toolkit を使用することです。これを使用すると、プロジェクトでの設定を自動的に行い、用意されている一連の Mixed Reality 機能を利用して開発を促進できます。 詳細を確認して使い始めるには、[Mixed Reality Toolkit v2](mrtk-getting-started.md) に関する記事を参照してください。 
 
 ## <a name="porting-an-existing-unity-app-to-windows-mixed-reality"></a>既存の Unity アプリを Windows Mixed Reality に移植する
 
@@ -32,11 +30,11 @@ Windows Mixed Reality への移植を予定している既存の Unity プロジ
 
 ## <a name="configuring-new-unity-project-for-windows-mixed-reality"></a>Windows Mixed Reality 用に新しい Unity プロジェクトを構成する
 
-Mixed Reality Toolkit をインポートせずに新しい Unity プロジェクトを作成する場合には、Windows Mixed Reality 用に手動で変更する必要がある小規模な Unity 設定のセットがあります。 これらは、プロジェクトごととシーンごとの 2 つのカテゴリに分類されます。 ステップ バイ ステップ ガイドについては、こちらの「[Windows Mixed Reality 用の新しい Unity プロジェクトを構成する](Configure-Unity-Project.md)」を参照してください。
+Mixed Reality Toolkit をインポートせずに新しい Unity プロジェクトを作成する場合は、いくつかの Unity 設定を Windows Mixed Reality 用に変更する必要があります。 これらの設定は、プロジェクトごととシーンごとの 2 つのカテゴリに分類されます。 ステップ バイ ステップ ガイドについては、「[Windows Mixed Reality 用の新しい Unity プロジェクトを構成する](Configure-Unity-Project.md)」を参照してください。
 
 ## <a name="adding-mixed-reality-capabilities-and-inputs"></a>Mixed Reality の機能と入力値を追加する
 
-プロジェクトに MRTK V2 をセットアップするか、前述のようにプロジェクトを構成したら、標準の Unity ゲーム オブジェクト (カメラなど) が **座位のエクスペリエンス**に対応してすぐに点灯します。ユーザーが頭を移動すると、カメラの位置が自動的に更新されます。
+プロジェクトに MRTK V2 をセットアップするか、前述のようにプロジェクトを構成したら、標準の Unity ゲーム オブジェクト (カメラなど) が**座位のエクスペリエンス**に対応してすぐに点灯します。ユーザーが頭を移動すると、カメラの位置が自動的に更新されます。
 
 Unity に直接組み込まれている API を使用して、[空間ステージ](coordinate-systems.md#spatial-coordinate-systems)、[ジェスチャ、モーション コントローラー](gestures-and-motion-controllers-in-unity.md)、[音声入力](voice-input-in-unity.md)など、Windows Mixed Reality 機能のサポートを追加できます。 
 

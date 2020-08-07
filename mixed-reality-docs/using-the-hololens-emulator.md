@@ -7,12 +7,12 @@ ms.date: 7/13/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: HoloLens, エミュレーター
-ms.openlocfilehash: e7c89cc2d839edc46a73a765acad603341b52716
-ms.sourcegitcommit: 3c867622e99c07f95db92e88551d2b904ceb8def
+ms.openlocfilehash: 597a0a9103f8313d26449b996c1e7af6f5619b2c
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86383074"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376664"
 ---
 # <a name="using-the-hololens-emulator"></a>HoloLens エミュレーターを使用する
 
@@ -253,6 +253,8 @@ HoloLens (第 1 世代) で [Windows デバイス ポータル](using-the-window
 
 * HoloLens 2 エミュレーターをアンインストールするときに、ハード ドライブの Windows Kits\10\Emulation\HoloLens\<build number> フォルダーに、ハード ディスク イメージ (Flash.vhdx) が残ったままになる場合があります。  このファイルは削除しても問題ありません。
 * ハードウェア グラフィック アクセラレータが原因で、AMD または Intel のグラフィックスを使用している一部のシステムではホログラフィック アプリがクラッシュする場合があります。  エミュレーターの [ツール] ウィンドウでハードウェア グラフィック アクセラレータを無効にすることにより、この問題を回避できます。
+* 2020 年 7 月時点の最新の Windows 更新プログラムをインストールすると、HoloLens エミュレーター (第 1 世代) のハードウェア グラフィックス アクセラレータが使用できなくなる可能性があります。
+ハードウェア グラフィックス アクセラレータに必要だった RemoteFX コンポーネントは非推奨になったため、今後の Windows リリースで削除される予定です。  ハードウェア グラフィックス アクセラレータを再び有効にするには、[Enable-VMRemoteFXPhysicalVideoAdapter PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/hyper-v/enable-vmremotefxphysicalvideoadapter?view=win10-ps)を使用します。  詳細については、[Windows での RemoteFX サポートの非推奨化と削除に関するドキュメント](https://support.microsoft.com/help/4570006/update-to-disable-and-remove-the-remotefx-vgpu-component)を参照してください。 
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 

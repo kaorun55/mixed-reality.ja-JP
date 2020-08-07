@@ -3,16 +3,16 @@ title: PC Holographic Remoting のチュートリアル - 1. PC Holographic Remo
 description: このコースを完了すると、Mixed Reality エクスペリエンスを PC から HoloLens 2 にリモート処理する方法を学習できます。
 author: jessemcculloch
 ms.author: jemccull
-ms.date: 05/19/2020
+ms.date: 07/29/2020
 ms.topic: article
 keywords: Mixed Reality、Unity、チュートリアル、Hololens
 ms.localizationpriority: high
-ms.openlocfilehash: cbbad9548abeb1b8392b99d187b5b051d5b4ddd4
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+ms.openlocfilehash: 4929634d70a082e835eb7bd6b5680719338a5e92
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86306733"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87476974"
 ---
 # <a name="1-getting-started-with-pc-holographic-remoting"></a>1.PC Holographic Remoting の概要
 
@@ -38,14 +38,15 @@ ms.locfileid: "86306733"
 * [開発用に構成された](using-visual-studio.md#enabling-developer-mode) HoloLens 2 デバイス
 * Unity 2019.3.X がマウントされ、ユニバーサル Windows プラットフォーム ビルド サポート モジュールが追加された <a href="https://docs.unity3d.com/Manual/GettingStartedInstallingHub.html" target="_blank">Unity Hub</a>
 
->[強く推奨] 入門チュートリアル シリーズを完了しているか、Unity および MRTK の基本操作に関する以前の経験
+続行する前に、[入門チュートリアル](mr-learning-base-01.md) シリーズを完了するか、Unity および MRTK の基本操作を経験しておくことを**強くお勧め**します。
 
 > [!IMPORTANT]
-> このチュートリアル シリーズで推奨されている Unity バージョンは Unity 2019.3.X です。 これは、上でリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
+> * このチュートリアル シリーズで推奨されている Unity バージョンは Unity 2019.3.X です。 これは、上でリンクされた前提条件に記載されている Unity のバージョン要件または推奨事項に代わるものです。
+> * MRTK プロジェクトでの Holographic Remoting は、レガシ XR でのみ機能します。 現時点では、XR SDK はサポートされていません。
 
 ## <a name="creating-and-preparing-the-unity-project"></a>Unity プロジェクトの作成と準備
 
-このセクションでは、新しい Unity プロジェクトを作成し、MRTK 開発用に準備をします。
+このセクションでは、新しい Unity プロジェクトを作成し、MRTK 開発用に準備します。
 
 このためには、まず「[プロジェクトと最初のアプリケーションの初期化](mr-learning-base-02.md)」に従ってください (「[デバイスへのアプリケーションのビルド](mr-learning-base-02.md#building-your-application-to-your-hololens-2)」の手順は除く)。これには、次の手順が含まれます。
 
@@ -168,11 +169,11 @@ ModelParent オブジェクトの子オブジェクトを、これらのフィ�
 
 このセクションでは、プロジェクトで視線追跡を有効にする方法を学習します。 たとえば、MarsCuriosityRover のパーツに関連付けられているヒントを、それらのパーツに視線を向けている時は強調表示し、視線を外すと非表示にする機能を実装できます。
 
-### <a name="1-identify-target-objects-and-associated-tooltips"></a>1.ターゲット オブジェクトと関連するヒントを特定する
+### <a name="1-identify-target-objects-and-associated-tooltips"></a>1.ターゲット オブジェクトおよび関連するヒントを特定する
 
 [階層] ウィンドウで、ModelParent オブジェクトを選択します。 ***[MarsCuriosity] -> [Rover]*** の順に展開し、MarsCuriosityRover の 5 つのメイン パーツである、**POI-Camera**、**POI-Wheels**、**POI-Antena**、**POI-Spectrometer**、**POI-RUHF Antenna** を表示します。
 
-* [階層] ウィンドウで、MarsCuriosityRover パーツに関連付けられている、対応する 5 つのヒント オブジェクトを確認します。 
+* [階層] ウィンドウで、MarsCuriosityRover パーツに関連付けられている、対応する 5 つのヒント オブジェクトを確認します。
 * これらの MarsCuriosityRover パーツに視線を向けたときにそのエクスペリエンスを強調表示するように、これらのオブジェクトを構成していきます。
 
 ![mrlearning-pc-holographic-remoting](images/mrlearning-pc-holographic-remoting/Tutorial1-Section6-Step1-1.png)

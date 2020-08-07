@@ -7,12 +7,12 @@ ms.date: 06/10/2020
 ms.topic: article
 ms.localizationpriority: high
 keywords: Unreal, Unreal Engine 4, UE4, HoloLens, HoloLens 2, Mixed Reality, 開発, 機能, ドキュメント, ガイド, ホログラム, QR コード
-ms.openlocfilehash: cf6c113f6bf4a13a96f46d6420a3093966455c3b
-ms.sourcegitcommit: 45da0a056fa42088ff81ccdd11232830fbe8430f
+ms.openlocfilehash: a53fad14ab76136f1da419379dd39eca3a29701a
+ms.sourcegitcommit: 2f5f95a9ca1b02d94eb9163f0f4ff6b1e4126de2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84720388"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87376104"
 ---
 # <a name="qr-codes-in-unreal"></a>Unreal での QR コード
 
@@ -32,6 +32,8 @@ HoloLens 2 で QR コードを表示するには Web カメラを使用する必
     + **[機能]** セクションを展開し、 **[Web カメラ]** をオンにします。  
 
 [ARSessionConfig アセットを追加する](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch3#adding-the-session-asset)ことによって、QR コードの追跡をオプトインする必要もあります。
+
+使用する前に、`UHoloLensARFunctionLibrary::StartQRCodeCapture()` を呼び出して、追跡を手動で有効にする必要があります。 QR コードの追跡を終了したら、デバイス リソースを保存するために、`UHoloLensARFunctionLibrary::StopCameraCapture()` で追跡を無効にする必要があります。 
 
 ## <a name="setting-up-a-tracked-image"></a>追跡対象のイメージの設定
 
