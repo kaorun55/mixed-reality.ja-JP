@@ -1,27 +1,27 @@
 ---
 layout: LandingPage
-title: チュートリアルとサンプル アプリ
-description: Mixed Reality 開発に関するコード サンプルとチュートリアルを提供します。
+title: チュートリアル
+description: Mixed Reality 開発に関するチュートリアルを提供します。
 author: keveleigh
 ms.author: kurtie
-ms.date: 10/22/2019
+ms.date: 07/30/2020
 ms.topic: article
 ms.localizationpriority: high
-keywords: holotoolkit, mixedrealitytoolkit, mixedrealitytoolkit-unity, アカデミー, チュートリアル
-ms.openlocfilehash: b1c448e7a5289c6d099d73c3bcf18d0f552dbc51
-ms.sourcegitcommit: 96ae8258539b2f3edc104dd0dce8bc66f3647cdd
+keywords: mixedrealitytoolkit, mixedrealitytoolkit-unity, アカデミー, チュートリアル
+ms.openlocfilehash: dc446be531e2a2fa1b27cdaefbf3adfeb7814740
+ms.sourcegitcommit: ef0bf03833eda826ed0b884859b4573775112aba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86303653"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87477004"
 ---
-# <a name="tutorials-and-sample-apps"></a>チュートリアルとサンプル アプリ
+# <a name="tutorials"></a>チュートリアル 
 
 ![HoloLens 2 ユーザー](images/08_Tutorials.png)
 
 現在、すべてのチュートリアルとサンプル アプリは Unity または Unreal ベースです。 他のエンジンおよびプラットフォーム向けのコンテンツを開発する場合は、目次にある関連する見出しの下で確認できます。
 
-## <a name="hololens-2-tutorials"></a>HoloLens 2 のチュートリアル
+## <a name="hololens-2"></a>HoloLens 2 
 
 HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケーションの開発に関する手法とベスト プラクティスの両方を学習できるように設計されています。 Unity チュートリアルは [Mixed Reality Toolkit 2.0 (MRTK 2.0)](https://github.com/microsoft/MixedRealityToolkit-Unity) に基づいており、Unreal のチュートリアルは [Unreal Engine 0.8 向けの UX ツール](https://github.com/microsoft/MixedReality-UXTools-Unreal)に基づいています。
 
@@ -32,21 +32,7 @@ HoloLens 2 のチュートリアルは、開発者が Mixed Reality アプリケ
 * マルチユーザー機能のチュートリアル - [紹介 (1/5 章)](mr-learning-sharing-01.md)
 * Azure Speech Services チュートリアル - [音声認識とトランスクリプションの統合と使用 (1/4 章)](mrlearning-speechSDK-ch1.md)
 
-## <a name="open-source-sample-apps"></a>オープン ソースのサンプル アプリ
-
-オープン ソースのサンプル アプリは、Microsoft のチームによって作成されたアプリケーションであり、開発者がプロジェクトから参照して学習できるようにソース コードを提供しています。
-
-### <a name="hololens-2-open-source-sample-apps"></a>HoloLens 2 オープン ソースのサンプル アプリ
-* [Surfaces](sampleapp-surfaces.md)
-* [元素周期表 2.0](https://medium.com/@dongyoonpark/bringing-the-periodic-table-of-the-elements-app-to-hololens-2-with-mrtk-v2-a6e3d8362158)
-* [Galaxy Explorer 2.0](galaxy-explorer-update.md)
-
-### <a name="hololens-1st-gen-open-source-sample-apps"></a>HoloLens (第 1 世代) オープン ソースのサンプル アプリ
-* [元素周期表 1.0](periodic-table-of-the-elements.md)
-* [Galaxy Explorer 1.0](galaxy-explorer.md)
-* [月着陸船](lunar-module.md)
-
-## <a name="mixed-reality-academy-tutorials"></a>Mixed Reality Academy チュートリアル
+## <a name="mixed-reality-academy"></a>Mixed Reality Academy 
 
 Mixed Reality Academy は、該当のプロジェクト ファイルを含むオンラインでの一連のステップ バイ ステップ チュートリアルです。
 
