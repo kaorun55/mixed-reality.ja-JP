@@ -57,7 +57,7 @@ HoloLens 用の Windows デバイス ポータルでは、Wi-Fi または USB �
 
 1. PC に Visual Studio Update 1 と Windows 10 開発者[ツールをインストール](install-the-tools.md)します。 これで USB 接続が有効になります。
 2. Hololens 用のマイクロ USB ケーブル (第 1 世代) または HoloLens 2 用の USB-C を使用して、HoloLens を PC に接続します。
-3. PC の Web ブラウザーから、[https://127.0.0.1:10080](https://127.0.0.1:10080) にアクセスします。
+3. PC の Web ブラウザーから、[http://127.0.0.1:10080](http://127.0.0.1:10080) にアクセスします。
 
 ## <a name="connecting-to-an-emulator"></a>エミュレーターに接続する
 
